@@ -7,58 +7,89 @@
     "appellations": {
       "mainName": "Wane",
       "selfAppellation": "Wane",
-      "exonyms": ["Wane (terme utilisé par les Européens)"],
+      "exonyms": ["Hwane", "Ngwane"],
+      "originOfExonyms": "Hwane et Ngwane sont des variantes orthographiques du meme nom, issues de differentes conventions de romanisation utilisees par les linguistes et missionnaires. Le code ISO hwa reflete la prononciation avec aspiration initiale. Wane est la forme francisee courante.",
+      "whyProblematic": "La denomination Wane peut preter a confusion avec d'autres groupes africains portant des noms similaires (notamment les Ngwane d'Afrique australe). Ce petit peuple krou de Cote d'Ivoire est tres peu documente et souvent confondu avec les Bakwe, son groupe linguistique frere de la branche est krou.",
+      "contemporaryUsage": "Wane ou Wane est utilise dans les sources ivoiriennes et linguistiques. La langue est classee comme en danger (Ethnologue : langue en danger, Wane Language HWA). PeopleGroups.org recense 5 800 Wane en Cote d'Ivoire.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou",
-      "historicalRegion": "Côte d'Ivoire",
+      "ethnoLinguisticGroup": "Krou oriental (branche Bakwe-Wane)",
+      "historicalRegion": "Cote sud-ouest de la Cote d'Ivoire, region maritime entre San Pedro et Sassandra",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Wane du Nord", "Wane du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Wane du littoral — communautes cotieres pratiquant la peche artisanale et le commerce maritime le long du golfe de Guinee",
+      "Wane de l'interieur — agriculteurs de la foret tropicale, producteurs de riz, de manioc et d'igname",
+      "Wane de la region de San Pedro — sous-groupe influence par le developpement portuaire depuis les annees 1970",
+      "Wane de la region de Sassandra — sous-groupe historique de la ville de Sassandra, l'une des plus anciennes de la cote ivoirienne",
+      "Lineages fondateurs des villages de la zone cotiere, dont les chefs portent les titres traditionnels de proprietaires de terre"
+    ],
     "origins": {
-      "ancientOrigins": "Les Wane sont originaires de la CIV, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Wane font partie du groupe krou oriental (Eastern Kru, branche Bakwe), qui occupe la zone de transition entre la foret et la cote du sud-ouest ivoirien. Comme tous les peuples krou, ils sont vraisemblablement arrives dans leur region actuelle entre le XVe et le XVIIe siecle, depuis l'interieur forestier, poussés par les pressions des royaumes mandingues et les mouvements de populations regionales. Leur etablissement sur la cote sud-ouest de la Cote d'Ivoire leur a confere un role dans les reseaux commerciaux cotiers.",
+      "formationPeriod": "La langue wane est documentee par SIL Ethnologue avec 2 100 locuteurs en 1993 (estimate 5 800 en 2025 selon PeopleGroups.org). Le groupe se situe sur la cote sud-ouest ivoirienne, zone historiquement frequentee par les commercants europeens depuis le XVe siecle (Portugais) et les negociants de traite aux XVIIe-XIXe siecles.",
+      "migrationRoutes": [
+        "Depuis l'interieur forestier ivoirien vers la cote sud-ouest, suivant les vallees de la Sassandra et de ses affluents",
+        "Trajectoire commune au groupe krou oriental (Bakwe) : installation dans la zone cotiere entre Sassandra et San Pedro"
+      ],
+      "historicalSettlementZones": [
+        "Cote sud-ouest de la Cote d'Ivoire, region de San Pedro et Sassandra",
+        "Zone littorale entre le fleuve Sassandra et la frontiere liberienne"
+      ],
+      "unificationsOrDivisions": "Organisation en lignages autonomes sans structure politique supra-locale permanente. Le groupe wane est etroitement lie au groupe bakwe (linguistiquement frere), et des echanges matrimoniaux et culturels existent entre ces deux groupes voisins.",
+      "externalInfluences": "Contacts avec les commerçants europeens (Portugais, puis Français) sur la cote depuis le XVe siecle. Influence des missions chretiennes au XIXe et XXe siecles. Integration dans la colonie française de Cote d'Ivoire (1893-1960) et dans l'Etat ivoirien post-independance. Contacts avec les peuples neyo et bakwe voisins. Pression de l'orpaillage et de l'exploitation forestiere sur les terres traditionnelles au XXe-XXIe siecles.",
+      "majorHistoricalEvents": "Resistance a la penetration coloniale française dans la region du Bas-Sassandra a la fin du XIXe siecle. Integration dans l'administration coloniale française de la Cote d'Ivoire apres 1915. Pendant la crise ivoirienne (2002-2011), la region du Bas-Sassandra fut affectee par des tensions. Le developpement du port de San Pedro depuis les annees 1970 a transforme la region cotiere wane."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation decentralisee typique des peuples krou orientaux : chaque village est gouverne par ses anciens patrilineaires. Pas de chef supreme hereditaire. Le chef de village est choisi sur la base de ses qualites personnelles et de son experience. Les decisions importantes sont prises de maniere consensuelle par les aines du clan. Avec l'integration dans l'Etat ivoirien, des chefs de village officiels ont ete reconnus.",
+      "clanOrganization": "Structure en lignages patrilineaires. Chaque village correspond a un groupe de descendance fonde par un ancetre eponyme. Les lignages regissent l'acces a la terre, les alliances matrimoniales et les obligations rituelles. La propriete fonciere est communautaire au niveau du lignage.",
+      "ageClassSystems": "Rites de passage pour les garçons et les filles, dans le cadre de ceremonies initiatiques collectives communes aux peuples krou. La transmission des savoirs traditionnels (peche, agriculture, rites) se fait au sein des groupes d'age.",
+      "roleOfLineages": "Les lignages patrilineaires constituent l'unite fondamentale de l'organisation sociale. Ils determinent l'identite clanique, l'acces aux ressources (terres agricoles, zones de peche), les alliances et les obligations cerimoniales.",
+      "religiousAuthority": "Comme les autres peuples krou, les Wane reconnaissent des specialistes rituels (deya chez les Kru voisins) charges de la mediation avec les esprits territoriaux de la mer, des rivieres et de la foret. Les rites agricoles et de peche requierent des ceremoniels specifiques avant et apres les saisons de travail. L'autorite des anciens est etroitement liee a leurs fonctions rituelles de gardiens de la memoire ancestrale et de gestionnaires des relations avec les entites spirituelles. Les chefs de terre (proprietaires symboliques du sol) ont une fonction religieuse centrale dans la benediction des cultures et l'accueil de nouveaux habitants."
     },
     "languages": {
-      "mainLanguage": "Wane",
-      "vehicularRole": "Le wane est parlé par la majorité des Wane. Le français est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Wane (Hwane)",
+      "isoCodes": ["hwa"],
+      "dialects": [
+        "Pas de dialectes documentes ; varietes inter-villageoises possibles"
+      ],
+      "vehicularRole": "La langue wane est classee en danger par Ethnologue (langue indigene en danger, CIV). SIL recense 2 100 locuteurs en 1993 ; PeopleGroups.org estime la communaute wane a 5 800 personnes en 2025. Le français est la langue d'education et d'administration. Le dioula (bambara ivoirien) est utilise comme lingua franca dans les marches regionaux. La langue wane appartient a la branche Bakwe-Wane de l'est krou (classification : Niger-Congo, Volta-Congo, Kru, Eastern, Bakwe)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels wane, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Ceremonies d'initiation masculine collectives en foret sacree, similaires a celles des peuples krou voisins (Bakwe, Neyo). Rites funeraires associant chants, danses et percussions pendant plusieurs jours. Rites de premiere peche et de premiere recolte : offrandes aux esprits de la mer et de la foret avant l'exploitation des ressources naturelles. Rites de guerison par les specialistes rituels. Ceremonies de mariage comportant des echanges de dons entre lignages et des celebrations collectives.",
+      "symbols": "Les masques en bois (comme dans tout le monde krou) sont les supports des esprits protecteurs et des forces ancestrales. Les pirogues de peche artisanale symbolisent le lien au monde maritime. Les ornements corporels (parures, scarifications traditionnelles) marquent les etapes de la vie et l'appartenance clanique.",
+      "artsAndMusic": "Les arts et la musique des Wane s'inscrivent dans le continuum culturel krou oriental (partage avec les Bakwe et les Neyo). Sculpture sur bois pour les masques et les objets rituels. Percussions : tambours membranophones de differentes tailles, hochets et cloches rituelles. Chants responsoriaux (soliste et choeur collectif) lies aux ceremonies de la vie, aux rites agricoles et aux fetes. Danse ceremoniale integrant des masques. Artisanat de peche : construction de pirogues monoxyles, fabrication de filets et de nasses tresses. Tissage de nattes et de paniers par les femmes.",
+      "spiritualities": "Animisme traditionnel avec croyance en un dieu createur supreme, des esprits territoriaux (foret, riviere, mer) et les ames des ancetres. Les Wane, comme les autres peuples krou, reconnaissent des esprits de brousse et des esprits marins qui protegent ou menacent les communautes selon leur contentement. Les specialistes rituels assurent la mediation entre les vivants et les entites spirituelles. Influence du christianisme (protestantisme et catholicisme) depuis les missions du XIXe-XXe siecles, plus forte en zone cotiere. L'islam est minoritaire dans cette region forestiere."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora wane dans les grandes villes ivoiriennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaumes ni de chefferies centralisees documentees. Organisation clanique autonome sans structure supra-locale permanente, typique de l'organisation krou. Les Wane ont ete incorpores dans le systeme administratif colonial français (Bas-Sassandra) puis dans les structures de l'Etat ivoirien.",
+      "relationsWithNeighbors": "Voisinage linguistique et culturel etroit avec les Bakwe (groupe frere dans la branche east krou). Relations avec les Neyo et les populations cotieres voisines. Contacts historiques avec les Kru/Klao liberiens a travers la frontiere ivoiro-liberienne. Relations commerciales avec les Dida, les Bete et les groupes interieurs. Presence de travailleurs peuls et burkinabes dans la region depuis le XXe siecle.",
+      "conflictsOrAlliances": "Resistance a la penetration coloniale dans la region du Bas-Sassandra. Les populations krou cotieres, dont les Wane, ont ete mises a contribution comme travailleurs dans les chantiers coloniaux. Pendant la crise ivoirienne (2002-2011), la region du Bas-Sassandra a connu des tensions entre communautes autochtones et immigres.",
+      "diaspora": "Migration economique interne vers San Pedro (principal port de la region, developpe depuis les annees 1970 avec l'essor de l'exportation de bois et de cacao) et vers Abidjan. La region du Bas-Sassandra a attire des travailleurs migrants des pays voisins (Burkina Faso, Mali, Ghana) dans les plantations de cacao et de cafe, modifiant la composition demographique locale. Les Wane urbains maintiennent des liens avec leurs villages d'origine par des visites lors des ceremonies importantes. Pas de diaspora internationale wane significative documentee hors de Cote d'Ivoire."
     },
     "demography": {
-      "totalPopulation": 20000,
+      "totalPopulation": 5800,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+      "source": "PeopleGroups.org — Wane of Cote d'Ivoire (PGID: PG013141) : 5 800 personnes en 2025. SIL Ethnologue 1993 : 2 100 locuteurs. Ethnologue : langue en danger (HWA). Estimation 2025 basee sur les donnees demographiques disponibles.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 5800,
+          "note": "Cote sud-ouest de la Cote d'Ivoire, region littorale entre Sassandra et San Pedro (departement du Bas-Sassandra)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Wane language",
-      "CIA World Factbook – Côte d'Ivoire",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples krou"
+      "PeopleGroups.org — Wane of Cote d'Ivoire (PGID: PG013141). https://peoplegroups.org/people_groups/pg013141/",
+      "SIL Ethnologue — Wane language (hwa). https://www.ethnologue.com/language/hwa/",
+      "Wikipedia EN — Wane language. https://en.wikipedia.org/wiki/Wan%C3%A9_language",
+      "Glottolog — Wane (wane1242). https://glottolog.org/resource/languoid/id/wane1242",
+      "Day Translations — Ivory Coast Language Profile (hwa: 2 100 locuteurs 1993). https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+      "Wikipedia FR — Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "CIA World Factbook — Cote d'Ivoire. https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
+      "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012). https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
+      "Ethnologue CI — Cote d'Ivoire languages (Wane listed). https://www.ethnologue.com/country/CI/",
+      "Britannica — Kru ethnic group. https://www.britannica.com/topic/Kru"
     ]
   }
 }

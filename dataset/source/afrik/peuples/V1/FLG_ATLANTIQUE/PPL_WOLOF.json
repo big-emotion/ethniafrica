@@ -1,0 +1,27 @@
+{
+  "id": "PPL_WOLOF",
+  "nameMain": "",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GMB", "MRT"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Wolof",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "historicalRegion": "Sénégal (Cayor, Baol), GMB, MRT",
+      "currentCountries": ["GMB", "MRT"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": [
+      "Ethnologue (wol)",
+      "Sénégal ANSD 2023",
+      "Djolof Historical Records"
+    ]
+  }
+}

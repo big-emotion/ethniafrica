@@ -6,63 +6,105 @@
   "content": {
     "appellations": {
       "mainName": "Ovambo",
-      "selfAppellation": "Ovambo",
-      "exonyms": ["Ovambo (terme utilisé par les Européens)"],
+      "selfAppellation": "Aawambo / Ovawambo",
+      "exonyms": ["Ambo", "Ovambo (terme europeen)", "Owambo"],
+      "originOfExonyms": "Le terme Ovambo est la forme europeisee de Aawambo (en ndonga) ou Ovawambo (en kwanyama). Le prefixe Ova-/Aa- est un prefixe bantou de pluriel pour les personnes. La forme Ambo est l'abrege anglophone courant. Owambo est une variante orthographique namibienne.",
+      "whyProblematic": "Le terme Ovambo recouvre en realite une confederation de neuf a onze tribus distinctes partageant une langue commune (Oshiwambo) mais ayant des chefferies independantes. Son utilisation comme terme unificateur peut masquer les differences inter-tribales significatives.",
+      "contemporaryUsage": "Ovambo est le terme consacre dans les textes officiels namibiens et internationaux. Aawambo est prefere dans la communication en langue oshiwambo. Le terme Owambo designe aussi la region historique (Ovamboland) dans le nord de la Namibie.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "NAM, AGO",
+      "ethnoLinguisticGroup": "Bantou (Zone R), groupe Oshiwambo (R20)",
+      "historicalRegion": "Ovamboland — plaines du nord-centre de la Namibie (regions Oshana, Ohangwena, Omusati, Oshikoto) et sud de la province du Cunene en Angola",
       "currentCountries": ["NAM", "AGO"]
     },
     "ethnicities": [
-      "Ovambo de Namibie",
-      "Ovambo d'Angola",
-      "Sous-groupes régionaux"
+      "AaNdonga — tribu la plus nombreuse en Namibie, sud d'Ovamboland, dialecte Oshindonga",
+      "Ovakwanyama — tribu la plus nombreuse avec presence en Angola, dialecte Oshikwanyama",
+      "Aakwambi — centre d'Ovamboland, region d'Oshakati, dialecte Oshikwambi",
+      "Aangandjera — centre d'Ovamboland, dialecte Oshingandjera",
+      "Aambalantu — ouest d'Ovamboland, dialecte Oshimbalantu",
+      "Aakolonkadhi — ouest d'Ovamboland, dialecte Oshikolonkadhi",
+      "Aakwaluudhi — ouest d'Ovamboland, dialecte Oshikwaluudhi",
+      "Ovaunda — ouest d'Ovamboland, region d'Epalela, dialecte Oshiunda",
+      "Ovambadja — sud de l'Angola, region de Shangalala, dialecte Oshimbadja"
     ],
     "origins": {
-      "ancientOrigins": "Les Ovambo sont originaires de la région de la Namibie et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les Ovambo descendent de populations bantoues qui migrerent vers leur territoire actuel aux alentours du 14e siecle depuis la region correspondant a la Zambie actuelle. Ils s'installerent progressivement dans les plaines inondables (oshanas) du nord de la Namibie actuelle et du sud de l'Angola. Leur installation dans la region, protegee par des deserts au sud et a l'ouest, leur permit de se developper a l'abri des grandes perturbations commerciales et militaires de l'Afrique australe.",
+      "formationPeriod": "Les tribus ovambo se consoliderent entre le 14e et le 17e siecle comme unites politiques distinctes (chefferies hereditaires). L'expansion vers le sud dans l'Ovamboland namibien se poursuivit au 17e siecle. Le contact avec les missionnaires lutheriens allemands (Rhenish Mission) a partir de 1870 marque l'entree des Ovambo dans l'histoire documentee europeenne.",
+      "migrationRoutes": [
+        "Migration depuis la region de Zambie actuelle vers le sud-ouest, aux alentours du 14e siecle",
+        "Installation progressive dans les oshanas (plaines inondables) du nord de la Namibie",
+        "Expansion vers le sud en Namibie au 17e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Regions Oshana, Ohangwena, Omusati et Oshikoto (nord-centre de la Namibie)",
+        "Province du Cunene, sud de l'Angola (Ovakwanyama et Aandonga principalement)",
+        "Windhoek et autres centres urbains namibiens (migrations economiques)"
+      ],
+      "unificationsOrDivisions": "Les Ovambo ne forment pas un royaume unifie mais une confederation de tribus autonomes partageant la langue oshiwambo et une culture commune. Chaque tribu a son propre chef hereditaire. L'identite ovambo collective s'est renforcee sous la colonisation sud-africaine (system de bantoustans) et surtout dans le cadre de la lutte de liberation (SWAPO, fondee en 1960 comme successeur de la Ovamboland People's Organization).",
+      "externalInfluences": "Contact avec les peuples Khoisan precedents dans la region. Missions lutheriennes allemandes (Rhenish Mission, 1870). Colonisation allemande (1884) sans penetration directe en Ovamboland. Mandat sud-africain apres 1915 : introduction de l'apartheid en Ovamboland (1948), travaux forces dans les mines namibiennes. Campaign de pacification portugaise en Angola 1915. Independance de la Namibie en 1990 sous gouvernement SWAPO.",
+      "majorHistoricalEvents": "Arrivee des premiers missionnaires lutheriens en Ovamboland (1870), debut de la christianisation massive. Guerre mondiale et transfert du mandat de l'Afrique du Sud-Ouest a la Afrique du Sud (1919). Introduction du systeme de l'apartheid en Ovamboland (1948). Fondation du SWAPO (1960) par Sam Nujoma, d'origine Aandonga. Proclamation d'Ovamboland comme province independante par Pretoria (1973), refusee par les Ovambo. Assassinat du chief minister d'Ovamboland (1975). Independence de la Namibie (21 mars 1990) : les Ovambo constituent la base electorale du SWAPO, parti gouvernant depuis lors."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chefferies hereditaires (omukwaniilwa) dans chaque tribu, avec transmission du pouvoir par ligne matrilineaire (le successeur est le fils de la soeur du chef, pas son propre fils). Conseil de notables (oombelamutima) assistant le chef. Le chef traditionnel cumule fonctions politiques, judiciaires et spirituelles, etant notamment chef des pretres (ombudhi) et gardien du feu sacre. Depuis l'independance, les chefs traditionnels coexistent avec les structures de l'Etat namibien.",
+      "clanOrganization": "Double systeme de filiation : le systeme matrilineaire eanda (clan maternel, determinant la succession et l'heritage) et le systeme patrilineaire oruzo (clan paternel, determinant les tabous rituels et la participation aux ceremonies). Chaque individu appartient simultanement a un eanda (transmis par la mere) et a un oruzo (transmis par le pere). L'eanda determine les droits politiques et fonciers ; l'oruzo definit les obligations rituelles et les restrictions alimentaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme eanda (lignage matrilineaire) est fondamental : il determine la succession aux chefferies, les droits sur les terres et le betail, et les alliances matrimoniales. Les mariages entre membres d'un meme eanda sont interdits. L'oruzo (lignage patrilineaire) regle les pratiques rituelles et les tabous alimentaires specifiques a chaque lignage paternel.",
+      "religiousAuthority": "Le chef (omukwaniilwa) est egalement chef spirituel et gardien du feu sacre (okoto). Les ceremonies rituelles autour du feu sacre — allumage, entretien, extinction lors du deces du chef et rallumage par son successeur — sont centrales. Des inhalations d'herbes brulees et des danses de priere pour la pluie constituent les rituels traditionnels principaux. Depuis le 19e siecle, le lutheranisme est la religion dominante (97% des Ovambo au debut du 21e siecle), introduit par les missions allemandes et finlandaises."
     },
     "languages": {
-      "mainLanguage": "Ovambo",
-      "vehicularRole": "L'ovambo est parlé par la majorité des Ovambo. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Oshiwambo (Oshivambo)",
+      "isoCodes": ["kua", "ndo"],
+      "dialects": [
+        "Oshindonga — standard ecrit au Malawi, dialecte des AaNdonga, plus grand nombre de locuteurs en Namibie",
+        "Oshikwanyama — standard ecrit, dialecte des Ovakwanyama, parle des deux cotes de la frontiere namibio-angolaise",
+        "Oshikwambi — dialecte des Aakwambi, centre d'Ovamboland",
+        "Oshingandjera — dialecte des Aangandjera",
+        "Oshimbalantu — dialecte des Aambalantu",
+        "Oshikolonkadhi — dialecte des Aakolonkadhi",
+        "Oshikwaluudhi — dialecte des Aakwaluudhi",
+        "Oshiunda — dialecte des Ovaunda",
+        "Oshimbadja — dialecte des Ovambadja (Angola)"
+      ],
+      "vehicularRole": "L'oshiwambo (ensemble des dialectes) est la langue locale la plus parlee en Namibie, estimee a environ 1 million de locuteurs en Namibie et en Angola. Oshindonga et Oshikwanyama sont les deux formes standardisees avec ecriture. L'anglais est la langue officielle de la Namibie depuis 1990. L'oshiwambo est enseigne dans les ecoles du nord de la Namibie et diffuse sur la radio et la television nationale."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ovambo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Ceremonies autour du feu sacre (okoto) : allumage symbolique lors de l'intronisation d'un chef, extinction a sa mort et rallumage pour son successeur, symbolisant la continuite du pouvoir. Dances de priere pour la pluie (efundula) lors des periodes de secheresse. Rites d'initiation feminine (efundula) marquant le passage a l'age adulte et l'acces au mariage, avec port de costumes distinctifs et ceremonies collectives. Ceremonies funebres selon les traditions tribales, desormais souvent combinees avec des rites lutheriens. Mariages combinant traditions ovambo (dot en betail) et benedictions chretiennes.",
+      "symbols": "Le boeuf occupe une place symbolique centrale comme marque de richesse et support des transactions matrimoniales. Les coiffures feminines traditionnelles — notamment l'elende des Ovakwanyama (cheveux allonges avec fibres, huile olukula et coquillages cauris) — sont des symboles identitaires forts. Le feu sacre (okoto) symbolise la continuite dynastique. Les pirogues (ekori) et les greniers traditionnels (omakunde) sont des symboles materiels de la vie ovambo.",
+      "artsAndMusic": "Musique folklorique oshiwambo avec percussions (tambours), chants polyphoniques et danses collectives. Danse efundula lors des initiations feminines avec costumes distinctifs. Artisanat : vannerie fine, poterie, sculpture de bois, travail du cuir. Broderie et perles dans les parures feminines traditionnelles. Poesie orale et chants epiques (omaimbilo) transmis par les anciens. Architecture traditionnelle en enclos circulaires (kraal) avec maisons rondes en torchis.",
+      "spiritualities": "Croyance traditionnelle en un dieu supreme (Kalunga ou Ondebuka selon les tribus), accessibles par l'intermediaire des ancetres et des esprits. Le chef-pretre (ombudhi) assure la mediation avec le monde spirituel par les ceremonies du feu sacre. Moins de 3% des Ovambo pratiquent exclusivement la religion traditionnelle au debut du 21e siecle. Le lutheranisme (introduit par les missions allemandes Rhenish et finlandaises a partir de 1870) est devenu la religion dominante, pratique par environ 97% des Ovambo. Syncrétisme persistant entre rituel lutherien et pratiques coutumières ovambo."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ovambo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Chaque tribu ovambo est organisee en chefferie independante avec un chef hereditaire (omukwaniilwa). Les plus importantes sont : le Royaume Ondonga (AaNdonga), le Royaume Uukwambi (Aakwambi), le Royaume Uukwanyama (Ovakwanyama — le plus grand, chevauchant la frontiere namibio-angolaise), ainsi que les chefferies Ungandjera, Ombalantu, Uukolonkadhi, Uukwaluudhi, Eunda et Ombadja. Ces chefferies conserverent leur independance face aux Allemands (qui laissserent l'Ovamboland en dehors de leur colonie) et negocierent separement avec les puissances coloniales.",
+      "relationsWithNeighbors": "Relations d'echange avec les San (Bochiman) predecesseurs dans la region. Commerce de betail avec les Herero et les Himba. Contacts avec les Nama au sud. Relations ambivalentes avec les Portugais en Angola (commerce et conflits). Interactions avec les Ovimbundu (commerce a longue distance). Sous l'apartheid, les Ovambo fournirent la main-d'oeuvre des mines namibiennes (systeme des contrats de travail forces).",
+      "conflictsOrAlliances": "Independance preservee face a la colonisation allemande (Ovamboland non incorpore dans la colonie). Campagne portugaise violente de 1915 contre les Ovakwanyama en Angola (massacres, incendies, famines, qualifiee de genocide par une etude de 2026). Revoltes armees contre l'administration sud-africaine dans les annees 1920-1930 reprimees par l'Union Defence Force. Fondation du SWAPO (1960) par Sam Nujoma : guerre de guerilla contre l'administration sud-africaine jusqu'a l'independance (1990). Les Ovambo ont domine politiquement la Namibie depuis l'independance via le SWAPO.",
+      "diaspora": "Diaspora ovambo importante dans les centres urbains de Namibie (Windhoek, Walvis Bay, Swakopmund) due aux migrations de travail de l'epoque coloniale et post-coloniale. Communautes en Afrique du Sud. Presence en Angola (Ovakwanyama de Cunene). Emigration economique vers l'Europe (Allemagne, Royaume-Uni) depuis l'independance namibienne."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 2100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN (Ovambo people) : ~2 millions en debut de 21e siecle. Recensement namibien 2011 : Ovambo ~50% des 2,1 millions de Namibiens. State.gov (2005) : ~50% des Namibiens. Projections 2025 basees sur recensements namibiens et angolais.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 1600000,
+          "note": "Environ 50% de la population namibienne (3,2 millions en 2025) ; regions Oshana, Ohangwena, Omusati, Oshikoto et diaspora a Windhoek"
+        },
+        {
+          "country": "AGO",
+          "population": 500000,
+          "note": "Province du Cunene, principalement Ovakwanyama et Aandonga ; environ 2% de la population angolaise"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ovambo languages (kua, ndo)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ovambo people. https://en.wikipedia.org/wiki/Ovambo_people",
+      "Wikipedia EN — Ovambo language. https://en.wikipedia.org/wiki/Ovambo_language",
+      "Wikipedia EN — SWAPO. https://en.wikipedia.org/wiki/SWAPO",
+      "eHRAF World Cultures — Ovambo (fx08). https://ehrafworldcultures.yale.edu/cultures/fx08/summary",
+      "Travel News Namibia — The Owambo: People of the North (2017). https://travelnam.com/owambo-people-north/",
+      "Britannica — SWAPO Party of Namibia. https://www.britannica.com/topic/SWAPO-Party-of-Namibia",
+      "U.S. State Department — Namibia Background Note (2005). https://2009-2017.state.gov/outofdate/bgn/namibia/47517.htm",
+      "SIL Ethnologue — Kwanyama (kua) et Ndonga (ndo). https://www.ethnologue.com/language/kua/"
     ]
   }
 }

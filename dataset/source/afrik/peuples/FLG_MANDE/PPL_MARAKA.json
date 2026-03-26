@@ -2,67 +2,117 @@
   "id": "PPL_MARAKA",
   "nameMain": "Maraka",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["MLI", "SEN"],
+  "currentCountries": ["MLI", "BFA", "SEN", "GHA"],
   "content": {
     "appellations": {
       "mainName": "Maraka",
       "selfAppellation": "Maraka",
-      "exonyms": ["Maraka (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Marka",
+        "Marka Dafing",
+        "Meka",
+        "Dafing",
+        "Dafin",
+        "Soninke du Mali"
+      ],
+      "originOfExonyms": "Le terme Maraka signifie litteralement hommes qui gouvernent en bambara, possiblement issu d'un terme de respect pour ces colonisateurs venus de Wagadu. Marka Dafing designe le sous-groupe installe au Burkina Faso, dans la region appelee Dafina. Meka et Dafin sont des variantes regionales du meme nom ethnique. Les Bambaras appellaient ce peuple Marakas en raison de leur role de marchands et de proprietaires terriens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Maraka est utilise au Mali pour designer principalement les marchands soninke islamises de la region de Segou. Au Burkina Faso, Marka Dafing et Dafin sont les appellations courantes. La distinction entre Maraka (Mali, lies aux Soninkes) et Marka Dafing (Burkina Faso, culture agricole plus independante) est importante ethnologiquement.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "Mandé occidental",
-      "historicalRegion": "MLI, SEN",
-      "currentCountries": ["MLI", "SEN"]
+      "ethnoLinguisticGroup": "Manding (branche Mande occidental)",
+      "historicalRegion": "Segou (Mali), Dafina (Burkina Faso), vallee du Niger moyen",
+      "currentCountries": ["MLI", "BFA", "SEN", "GHA"]
     },
     "ethnicities": [
-      "Maraka du Mali",
-      "Maraka du Sénégal",
-      "Sous-groupes régionaux"
+      "Maraka du Mali (Segou, Koulikoro): marchands soninkes islamises, centres commerciaux de Nyamina, Sansanding, Baroueli, Banamba",
+      "Marka Dafing du Burkina Faso (Dafina, ouest du pays): agriculteurs et artisans, 465 000 personnes environ",
+      "Meka: variante proche des Marka Dafing",
+      "Dafin de la region de Dori (nord-est du Burkina Faso)",
+      "Maraka de la diaspora urbaine (Bamako, Dakar, villes cotieres)"
     ],
     "origins": {
-      "ancientOrigins": "Les Maraka sont originaires du Mali et du SEN, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples mandé.",
-      "externalInfluences": "Contacts avec les peuples mandé voisins, influence de l'islam."
+      "ancientOrigins": "Les Maraka descendent des Soninkes de l'Empire de Wagadu (Ghana), l'un des plus anciens empires de l'Afrique de l'Ouest (3e-12e siecle). Apres la chute de Wagadu sous les pressions almoravides et les invasions du 11e siecle, les Soninkes se disperserent. Un groupe migra vers le Niger moyen entre le 11e et le 13e siecle et s'etablit dans la region de Segou, devenant les Maraka.",
+      "formationPeriod": "La formation de l'identite maraka distincte se produisit entre le 11e et le 13e siecle, lors des grandes migrations post-Ghana. Ils fondirent Nyamina et Sansanding (11e-13e siecle), puis Baroueli et Banamba au 19e siecle. Ces villes devinrent d'importants centres commerciaux et religieux. Sous l'Empire bambara de Segou (17e-19e siecle), les Maraka constituaient la principale classe marchande.",
+      "migrationRoutes": [
+        "Migration depuis Wagadu (Ghana actuel / Mali nord-ouest) vers la vallee du Niger moyen (11e-13e siecle)",
+        "Etablissement dans la region de Segou (Mali) comme marchands et planteurs",
+        "Expansion vers le Dafina (Burkina Faso occidental) pour le groupe Marka Dafing",
+        "Migrations recentes vers Bamako et les zones cotieres d'Afrique de l'Ouest"
+      ],
+      "historicalSettlementZones": [
+        "Region de Segou (Mali): Sansanding, Nyamina, Baroueli, Banamba",
+        "Dafina (ouest du Burkina Faso): coeur du territoire Marka Dafing",
+        "Nord du Senegal (communautes marchandes)",
+        "Ghana (quelques communautes Dafin)"
+      ],
+      "unificationsOrDivisions": "Les Maraka ne formerent jamais un Etat unifie propre. Ils s'integrerent dans les structures politiques des empires voisins (Empire bambara de Segou, Empire toucouleur) tout en maintenant leur identite culturelle islamique. La distinction entre Maraka du Mali et Marka Dafing du Burkina Faso temoigne d'une evolution culturelle et linguistique differenciee malgre une origine commune soninke.",
+      "externalInfluences": "L'islam, adopte tres tot (11e-12e siecle) via les routes commerciales transsahariennes, est le facteur definitoire majeur de l'identite maraka. Le djihad d'El Hadj Oumar Tall (1850s), chef toucouleur, detruisit l'Empire bambara et affaiblit la position economique privilegiee des Maraka sous cet empire. La colonisation francaise et la modernisation des transports (camions, avions) ont affaibli leur role d'intermediaires commerciaux au 20e siecle.",
+      "majorHistoricalEvents": "Fondation de Nyamina et Sansanding comme centres commerciaux (11e-13e siecle). Integration dans l'Empire bambara de Segou (17e-19e siecle) comme classe marchande et planter. Defaite de l'Empire bambara par El Hadj Oumar Tall (1861-1862), marquant le declin de la prosperite maraka. Fondation de Baroueli et Banamba comme nouveaux centres au 19e siecle. Periode coloniale francaise: maintien des communautes marchandes mais reduction de leur role geopolitique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite (malékite) structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles et en hierarchies de lignages. Au Mali, la societe maraka est structuree en trois strates: les nobles (familles marchandes et religieuses, marabouts), les artisans (forgerons, menuisiers), et les anciens esclaves et fils d'esclaves (strate inferieure). Les marabouts (chefs religieux islamiques) exercent une autorite morale et sociale considerable. Les societes secretes jouaient un role educatif et organisationnel dans les zones non centralisees.",
+      "clanOrganization": "Structure clanique patrilineaire. Les lignages nobles marchands (diula) constituent la caste superieure. Les forgerons et autres artisans forment une caste intermediaire (nyamakala). Les descendants d'esclaves forment la couche inferieure. Ce systeme de castes est commun a l'ensemble des peuples mande.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, les alliances commerciales et matrimoniales. Les grandes familles marchandes (familles maraboutiques) concentrent le pouvoir economique et religieux. Les mariages entre castes sont traditionnellement interdits.",
+      "religiousAuthority": "Islam sunnite (ecole malikite) au coeur de l'identite maraka. Les Maraka ont joue un role crucial dans la diffusion et la consolidation de l'islam en Afrique de l'Ouest en construisant des mosquees, des ecoles coraniques et des centres d'apprentissage (dont Djenne et San). Les marabouts (chefs religieux et lettrés) jouissent d'une autorite sociale et politique equivalente aux chefs civils. Certains groupes ruraux du Burkina Faso maintiennent des pratiques spirituelles pre-islamiques liees aux societes secretes et aux masques."
     },
     "languages": {
-      "mainLanguage": "Maraka (variété mandé)",
-      "vehicularRole": "Le maraka est parlé par la majorité des Maraka. Le bambara, le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Marka (Manding occidental) / Dafing",
+      "isoCodes": ["rkm"],
+      "dialects": [
+        "Maraka du Mali (proche du bambara et du soninke, variante de manding)",
+        "Marka Dafing du Burkina Faso (variante avec influences gur/fulfude, distinct du maraka malien)"
+      ],
+      "vehicularRole": "Aujourd'hui seulement environ 25 000 locuteurs du marka stricto sensu. Les Maraka du Mali parlent majoritairement le bambara comme langue vehiculaire, ainsi que le francais. Les Marka Dafing du Burkina Faso utilisent le dioula et le mooré en plus de leur langue propre. Certains groupes Marka Dafing ont aussi adopte des langues gur (fulfude) suite a l'assimilation culturelle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels maraka.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture maraka."
+      "majorRites": "Celebrations islamiques: Ramadan, Aid el-Fitr et Aid el-Adha sont les fetes majeures. Mariage islamique: ceremonies de plusieurs jours, remise de la dot (mahr), benedictions coraniques. Circoncision masculine (birou): rite de passage important, accompagne de festivites. Pelerinage a La Mecque (Hajj) tres valorise socialement. Dans certaines communautes rurales du Burkina Faso, des rites pre-islamiques associes aux masques en bois et aux societes secretes persistent, remplissant des fonctions educatives et d'initiation pour les jeunes.",
+      "symbols": "Tissu teint a l'indigo: signe de l'excellence artisanale maraka, produit phare de leur commerce historique. Masques en bois (Marka Dafing, Burkina Faso): abstractions geometriques combinees avec des formes animales (antilopes) et humaines, portant une valeur symbolique et spirituelle. La mosquee (lieu de savoir et de pouvoir) est le symbole central de la communaute islamique maraka.",
+      "artsAndMusic": "Artisanat de tissage et teinture: production de tissus en coton teints a l'indigo par procede naturel, reflet de leur role dans le commerce regional (tissu vital dans les echanges entre le Sahel et les regions agricoles). Masques en bois (Marka Dafing du Burkina Faso): style caracterise par l'abstraction geometrique, les sculptures d'animaux (antilopes) et de visages humains stylises; utilises dans les societes secretes et les rituels. Forge: les forgerons jouent un role artisanal mais aussi rituel et spirituel dans certaines communautes. Poesie orale et chants islamiques (qasidas, chants de louange) transmis par les marabouts.",
+      "spiritualities": "Islam sunnite malikite: foi centrale et definissante. Les Maraka ont activement contribue a l'islamisation de l'Afrique de l'Ouest en construisant mosquees et ecoles coraniques. La classe des marabouts-lettres incarne la fusion du pouvoir religieux et economique. Dans les zones rurales du Burkina Faso, des traditions spirituelles pre-islamiques subsistent, manifestees notamment par des masques et des societes secretes a vocation educative et sociale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques maliennes et sénégalaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora maraka dans les grandes villes maliennes et sénégalaises, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Maraka n'ont pas forme d'empire propre, mais ont constitue la classe marchande et intellectuelle islamique dominante sous l'Empire bambara de Segou (17e-19e siecle). Les villes fondees ou developpees par les Maraka (Nyamina, Sansanding, Baroueli, Banamba) etaient d'importants centres de commerce et de religion. Les Maraka controlaient en grande partie le commerce transsaharien entre le Sahel et les nomades berberes et maures du Sahara.",
+      "relationsWithNeighbors": "Relations etroites et interdependantes avec les Bambaras du Mali: les Maraka etaient integres dans l'etat bambara comme classe marchande et planter. Au Burkina Faso, relations reciproques avec les Mossis, avec lesquels ils entretenaient des echanges commerciaux et culturels. Relations avec les Soninkes dont ils sont issus. Interactions avec les Berberes et Maures du Sahara via le commerce des caravanes (sel, or, coton). Rivalite commerciale moindre que leurs concurrents marchands jakhanke et dioula.",
+      "conflictsOrAlliances": "Alliance implicite avec l'Empire bambara de Segou qui leur accordait des concessions commerciales et foncières uniques. Rupture lors du djihad d'El Hadj Oumar Tall (1861-1862): la destruction de l'Empire bambara priva les Maraka de leur protection et de leurs privileges economiques, un coup dont ils ne se remirent jamais totalement. Periode coloniale: integration dans l'economie coloniale francaise.",
+      "diaspora": "Diaspora Maraka dans les grandes villes maliennes (Bamako, Segou) et dans les capitales d'Afrique de l'Ouest. Migrations recentes vers les zones cotieres et les pays occidentaux en quete d'emploi. Les defis contemporains (insecurite au Sahel, desertification, concurrence du commerce moderne) accelerent les migrations internes."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 525000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements maliens et sénégalais, SIL Ethnologue, et études démographiques"
+      "source": "101 Last Tribes / Peoplegroups.org (2023): 524 500 dans 2 pays (Burkina Faso 465 000, Mali environ 60 000). Wikipedia: environ 25 000 locuteurs du marka stricto sensu mais la population ethnique est bien superieure car integree aux Bambaras et Soninkes. Estimations totales incluant la diaspora urbaine.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 465000,
+          "note": "Marka Dafing dans l'ouest du Burkina Faso (region de Dafina), source: Peoplegroups.org 2023"
+        },
+        {
+          "country": "MLI",
+          "population": 55000,
+          "note": "Region de Segou (Sansanding, Nyamina, Baroueli, Banamba) et Bamako"
+        },
+        {
+          "country": "SEN",
+          "population": 3000,
+          "note": "Communautes marchandes dans les villes senegalaises"
+        },
+        {
+          "country": "GHA",
+          "population": 2000,
+          "note": "Quelques communautes Dafin dans le nord du Ghana"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Maraka language",
-      "CIA World Factbook – MLI, Senegal",
-      "Recensements maliens et sénégalais",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Marka people. https://en.wikipedia.org/wiki/Marka_people",
+      "Wikipedia EN — Marka language. https://en.wikipedia.org/wiki/Marka_language",
+      "101 Last Tribes — Marka people of Mali and Burkina Faso. https://www.101lasttribes.com/tribes/marka.html",
+      "Qiraat Africa — Marka, people of Mali and Burkina Faso (2025). https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
+      "SIL Ethnologue — Marka language (rkm). https://www.ethnologue.com/language/rkm/",
+      "Joshua Project — Marka Dafing in Burkina Faso. https://joshuaproject.net/people_groups/13550/UV",
+      "CEDS / SIL — ISO 639-3 Language Code Table: Marka = rkm. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+      "Glottolog — Marka. https://glottolog.org/resource/languoid/id/mark1256"
     ]
   }
 }

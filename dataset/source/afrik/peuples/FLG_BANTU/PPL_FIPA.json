@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Fipa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wafipa (forme plurielle bantoue) ; Ichifipa (nom de leur langue)",
+      "exonyms": ["Fipa", "Wafipa", "BaFipa"],
+      "originOfExonyms": "Le nom Fipa aurait ete attribue par des marchands du XIXe siecle et signifie les gens de l'escarpement en reference au plateau d'Ufipa. Ce nom fut ensuite adopte par les administrateurs coloniaux allemands et britanniques comme etiquette commode pour designer ce peuple.",
+      "whyProblematic": "Le nom Fipa est un terme generique exogene ; l'endonyme collectif des habitants est Wafipa. Le plateau d'Ufipa regroupe en realite plusieurs composantes (Fipa proprement dits, Wanda, Nyika) qui se sont fusionnees progressivement.",
+      "contemporaryUsage": "Le terme Fipa est largement utilise en Tanzanie et dans la litterature scientifique. Les Fipa s'identifient eux-memes comme Wafipa et habitent principalement les districts de Sumbawanga Rural et de Nkasi (region de Rukwa).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Bantu de l'Afrique centrale orientale, groupe M (Guthrie M.13)",
+      "historicalRegion": "Plateau d'Ufipa, region de Rukwa, sud-ouest de la Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Fipa"],
+    "ethnicities": ["Fipa (Wafipa)", "Wanda", "Nyika"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Fipa sont une population mixte issue de migrants venus principalement du nord de la Zambie actuelle et du sud-est du Zaire (RDC actuelle). Un premier centre de travail du fer et de royaute sacree fut etabli a Milansi, au coeur du plateau Fipa. Un groupe immigrant plus recent, les Twa, s'organisa en clan unique et prit le controle de dynasties locales par la force et la ruse ; ils formerent l'aristocratie dirigeante tout en laissant a l'ancienne dynastie Milansi le pouvoir rituel. Les Twa seraient d'ascendance Tutsi ou auraient adopte les formes politiques tutsi.",
+      "formationPeriod": "Avant le XIXe siecle. La societe fipa complexe avec chefferies, ministres et meres royales semble etablie avant les perturbations des annees 1860-1890.",
+      "migrationRoutes": [
+        "Migration depuis le nord de la Zambie actuelle et le sud-est de la RDC vers le plateau d'Ufipa",
+        "Arrivee subsequente des Twa depuis une region non precisee (probablement Afrique centrale ou des Grands Lacs)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Ufipa (entre le lac Tanganyika et le lac Rukwa, region de Rukwa, sud-ouest de la Tanzanie)",
+        "Districts de Sumbawanga Rural et de Nkasi"
+      ],
+      "unificationsOrDivisions": "Le plateau d'Ufipa comprenait a l'origine plusieurs chefferies ; les Twa s'organiserent en deux chefferies principales (Lyangalile et Nkansi) qui suppleanterent progressivement les autorites locales. L'ancienne chefferie de Milansi (fondee par les forgerons hereditaires) conserva son role rituel d'installation des chefs Twa.",
+      "externalInfluences": "A partir des annees 1860, les marchands arabo-swahilis de Zanzibar etaient presents dans les cours du plateau Fipa et participaient au commerce des esclaves et de l'ivoire. La periode 1870-1890 fut marquee par des raids et une violence intense. Les Europeens arriverent dans les annees 1850-1870 : Paul Reichard visita les Fipa en 1882 et nota calme et ordre sous le roi Kapuufi. H.H. Johnston observa en 1889-1890 les devastations causees par les guerres dans la region.",
+      "majorHistoricalEvents": "Annees 1860 : periode de prosperite relative perturbee par des raiders exterieurs. 1870-1890 : violences, epidemies et famines dus a des armee privees (Kimaurunga/Kimalaunga). 1882 : visite de Paul Reichard, description d'une societe organisee et prospere. 1889-1890 : H.H. Johnston constate les ravages sur la population. 1905-1919 : les Wafipa cherchent du travail aupres des Europeens. Prophetie de Kaswa (avant la colonisation) annonçant l'arrivee d'etrangers terribles qui viendraient piller le pays."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme monarchique centralise avec des frontieres precises et une supervision stricte. La chefferie de Nkasi comportait un premier ministre ; le chef hereditaire etait entoure d'une cour d'au moins neuf officiels titres ainsi que des administrateurs pour des territoires specifiques. Une Reine Mere avait son propre palais, sa cour et un grand domaine tributaire. Au niveau inferieur, des chefs de village elus etaient assistes d'une magistrate feminine chargee des infractions a l'ordre public. La justice remontait du chef de village au sous-chef de district, puis a la cour royale et enfin au chef, a la Reine Mere et au conseil des anciens. Toute la terre appartenait au chef.",
+      "clanOrganization": "Societe divisee entre roturiers (ancetres venus du sud ou sud-ouest du lac Tanganyika, notamment les Tabwa) et le groupe dirigeant patrilineaire Twa. Les forgerons constituaient une caste hereditaire de specialistes, soumise a des interdits stricts (les femmes et les chefs Twa ne pouvaient visiter la forge). La chefferie centrale de Milansi etait dirigee par une dynastie de forgerons ayant le droit rituel d'installer les chefs Twa.",
+      "roleOfLineages": "La filiation etait patrilineaire pour les Twa (groupe dominant). L'heritage de la veuve revenait a l'heritier masculin. La classe des forgerons transmettait son savoir et ses interdits de maniere hereditaire. Les lineages Twa monopolisaient le pouvoir politique et les symboles du commandement.",
+      "religiousAuthority": "Le dieu supreme Umweele etait reconnu mais sans culte organise ; on lui adressait des prieres de pardon. La divinite Katai (apporteur et guerisseur de maladies, ennemie des animaux et de la variole) prenait la forme d'un chien, d'une souris, d'un jeune homme ou de fumee. Les esprits localises (collines, lacs, arbres, rochers, bosquets sacres) avaient des sanctuaires avec des pythons apprivoises comme pretres. Les esprits ancestraux etaient honores aux seuils des maisons avec de l'eau et de la farine. Les jumeaux etaient veneres comme divinites de la pluie et des recoltes. Aujourd'hui les Fipa sont majoritairement chretiens catholiques romains, avec persistence de pratiques traditionnelles en zone rurale."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Fipa (Ichifipa)",
+      "isoCodes": ["fip"],
+      "dialects": [
+        "Sukuuma (dialecte principal du fipa, sans lien avec le sukuma de Tanzanie orientale)",
+        "Mambwe (langue proche, souvent parlee en complement)"
+      ],
+      "vehicularRole": "La plupart des Fipa parlent aussi le swahili, langue nationale de la Tanzanie. La langue fipa (ISO 639-3 : fip, code Guthrie M.13) est une langue bantoue linguistiquement proche du lungu, du pimbwe et du mambwe."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies de fabrication de pluie. Sacres royaux impliquant la dynastie de Milansi (forgerons) pour installer les chefs Twa. Rituels autour des jumeaux veneres comme divinites (acclamation sur plateau, sacrifices a la nouvelle lune et a la recolte ou lors d'epidemies). Extraction des incisives inferieures (2 ou 4) avant ou apres la puberte. Extension des petites levres par les jeunes filles non mariees. Ceremonies funebres : reunion des parents pour la succession, la veuve passant a l'heritier ; si la femme mourait en couches, l'enfant non ne etait place sur son dos dans la tombe, et la hutte detruite.",
+      "symbols": "Le fer et la forge sont symboles du pouvoir (les forgerons hereditaires avaient un role politique et rituel central). Les pythons apprivoises dans les sanctuaires des esprits localises symbolisaient la presence divine. Les jumeaux etaient consideres comme un signe de puissance surnaturelle.",
+      "artsAndMusic": "Tissage du coton par les hommes (tissu blanc lourd a bordure noire et blanche, 5x6 pieds, porte en toge). Poterie faite par les femmes (methode au colombin). Fabrication de paniers et de nattes en roseaux. Architecture en rondins ronds (20 a 30 cabanes par village, avec couloirs pour le betail et une chambre interieure pour manger et dormir). Agriculture sur piles de compost (environ 1 mile du village, culture principale du millet).",
+      "spiritualities": "Religion traditionnelle centree sur le dieu supreme Umweele, la divinite Katai, les esprits ancestraux et les esprits localises (Mulungu comme createur supreme, Mawisukila comme divinite de la pluie et de la fertilite selon les sources contemporaines). Christianisme catholique romain predominant aujourd'hui. Les divinites traditionnelles de type Ipyana et Nakalonga servaient d'archétypes moraux et spirituels dans la mythologie fipa."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Deux chefferies principales Twa etablies sur le plateau d'Ufipa : Lyangalile et Nkansi. La chefferie originelle de Milansi (forgerons) conserva le pouvoir rituel d'installation des souverains. Ces chefferies controlaient les routes commerciales entre l'Afrique de l'Est et l'Afrique centrale bien avant le XIXe siecle.",
+      "relationsWithNeighbors": "Le plateau d'Ufipa etait un couloir strategique entre l'Afrique de l'Est et l'Afrique centrale. Les Fipa echangeaient du grain contre des esclaves et des armes avec les marchands arabes et cotieres dans les annees 1860-1890. Ils etaient en contact avec les Pimbwe, Bende, Kimbu et Konongo de la region de Rukwa. De frequents mariages inter-ethniques et un multilinguisme generalise caracterisaient les relations avec les voisins.",
+      "conflictsOrAlliances": "Les Fipa souffrirent des raids des armees privees (Kimaurunga/Kimalaunga) dans les annees 1870-1890, ainsi que des epidemies de rinderpest dans les annees 1890. Les marchands arabes etaient etablis dans les cours chiefly du plateau Fipa lors de l'arrivee des Europeens (annees 1850-1870). Les castes chiefly de Rukwa (Nyamwezi et Tuutsi) controlaient les routes commerciales dans les annees 1860.",
+      "diaspora": "Presence signalees de Fipa dans l'est de la Republique democratique du Congo (population minoritaire). La population fipa est essentiellement concentree dans la region de Rukwa en Tanzanie."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 423000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/11211)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 423000,
+          "note": "Districts de Sumbawanga Rural et de Nkasi, region de Rukwa"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Fipa people – Wikipedia EN (https://en.wikipedia.org/wiki/Fipa_people)",
+      "Fipa in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11211)",
+      "Fipa – Encyclopaedia Britannica (https://www.britannica.com/topic/Fipa)",
+      "Fipa language (Ichifipa) – Wikipedia EN (https://en.wikipedia.org/wiki/Fipa_language)",
+      "Fipa tribe – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/fipa.html)",
+      "Waters, T. – Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa, African Studies Quarterly, Univ. of Florida (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)"
+    ]
   }
 }

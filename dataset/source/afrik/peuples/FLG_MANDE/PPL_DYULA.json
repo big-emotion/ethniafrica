@@ -1,23 +1,117 @@
 {
   "id": "PPL_DYULA",
-  "nameMain": "",
+  "nameMain": "Dyula",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["BFA", "MLI"],
+  "currentCountries": ["CIV", "BFA", "MLI", "GHA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Dyula",
       "selfAppellation": "Jula / Dyula",
+      "exonyms": ["Dioula", "Juula", "Wangara", "Julakan"],
+      "originOfExonyms": "Le terme Dyula est un mot mandingue signifiant litteralement marchand ou commercant itinerant. Il designait initialement une categorie socioprofessionnelle (les marchands musulmans de longue distance) plutot qu'un groupe ethnique. Le terme est devenu progressivement un ethnyme pour les communautes manding etablies parmi les populations Gur comme les Senufo et les Kulango. Wangara est une autre denomination utilisee par les sources arabes medievales pour les memes marchands.",
+      "whyProblematic": "L'identite dyula est complexe car le terme a ete a la fois un nom de metier, une denomination religieuse (musulman commerçant) et un ethnyme. Des communautes Bambara et Mandinka se sont parfois vu attribuer ce terme de l'exterieur. Il existe aussi une forme vehiculaire simplifiee du dyula (dioula commercial) distincte du dyula identitaire parle par les communautes originaires.",
+      "contemporaryUsage": "Le terme Dyula ou Dioula est couramment utilise en Cote d'Ivoire, au Burkina Faso et au Mali. La langue dioula sert de lingua franca dans une grande partie de la Cote d'Ivoire (61% de la population l'utilise) et du Burkina Faso (35%). Des villes comme Bobo-Dioulasso, Odienné et Kong sont historiquement associees aux communautes dyula.",
       "linguisticFamily": "FLG_MANDE",
-      "historicalRegion": "Côte d’Ivoire, BFA, MLI",
-      "currentCountries": ["BFA", "MLI"]
+      "ethnoLinguisticGroup": "Mandingue (Manding oriental)",
+      "historicalRegion": "Bande Nord de la Cote d'Ivoire (Kong, Bondoukou, Odienné), ouest du Burkina Faso (Bobo-Dioulasso), region de Segou (Mali)",
+      "currentCountries": ["CIV", "BFA", "MLI", "GHA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (dyu)", "Manding Historical Archives"]
+    "ethnicities": [
+      "Dyula de Kong (Cote d'Ivoire nord-est)",
+      "Dyula d'Odienné (Koyaga Jula, Cote d'Ivoire nord-ouest)",
+      "Dyula de Bobo-Dioulasso (Burkina Faso)",
+      "Dyula de Bondoukou (Cote d'Ivoire)",
+      "Dyula de Buna (Ghana-CIV frontalier)",
+      "Clan Saghanughu (linage clerical de Bobo-Dioulasso)",
+      "Clan Taraweré (premiers dirigeants de Kong)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dyula sont les descendants des marchands mandingues de l'empire du Mali (13e-17e siecles), eux-memes issus du foyer cultural du Mande dans la haute vallee du Niger. Le mot dyula (jula) designait les marchands musulmans de longue distance envoyes par les empereurs du Mali pour etablir des comptoirs commerciaux pres des gisements auriferes d'Afrique occidentale. Leurs ancetres ont embrasse l'islam au 13e siecle au contact des negociants nord-africains.",
+      "formationPeriod": "L'identite dyula distincte s'est consolidee entre le 14e et le 17e siecle, lors de l'etablissement de reseaux commerciaux dans la zone forestiere et de savane d'Afrique occidentale. La fondation de villes comme Kong (12e-17e siecles) et Bondoukou a marque la cristallisation de communautes dyula stables et autogouvernees.",
+      "migrationRoutes": [
+        "Empire du Mali vers les gisements auriferes du Ghana et de la Cote d'Ivoire (14e-15e siecle)",
+        "Axe Djenne-Begho-Bono Manso vers le sud forestier",
+        "Routes commerciales vers Bondoukou, Kong, Buna (15e-17e siecle)",
+        "Penetration des zones forestieres vers la cote du Ghana (debut du 16e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Kong et region Nord-Est de la Cote d'Ivoire",
+        "Bondoukou (Cote d'Ivoire)",
+        "Bobo-Dioulasso (Burkina Faso)",
+        "Buna (Ghana-CIV frontalier)",
+        "Gonja (nord du Ghana actuel)",
+        "Odienné (Cote d'Ivoire nord-ouest)"
+      ],
+      "unificationsOrDivisions": "Les Dyula n'ont jamais forme un Etat centralise unique. Ils ont constitue une diaspora commerciale organisee en reseaux de clans familiaux (lu) disperses sur de vastes territoires. La creation de l'empire de Kong par Seku Wattara en 1710 constitue la tentative la plus aboutie d'unification politique. La conquete de Samory Touré dans les années 1890 a ravage les grandes villes dyula de Kong et Buna.",
+      "externalInfluences": "Islam (13e siecle) : facteur identitaire majeur et reseau de solidarite economique. Empire du Mali et empire Songhai : contexte de leur essor commercial. Contacts avec les Europeens (Portugais, Anglais, Français) depuis le 15e siecle pour le commerce cotiaire. Colonisation française (fin 19e siecle) : soumission pacifique. L'afflux de travailleurs migrants sahéliens en Cote d'Ivoire au 20e siecle a renforce l'usage du dioula comme lingua franca.",
+      "majorHistoricalEvents": "Creation du royaume de Gonja au Ghana (16e siecle) par Naba'a. Fondation de l'empire de Kong par Seku Wattara (Ouattara) en 1710, premier Etat dyula independant. Developpement du systeme educatif islamique par le clan Saghanughu a Bobo-Dioulasso (18e siecle). Devastation de Kong et Buna par Samory Touré (1895-1897), soupçonnees de négocier avec les Français. Annexion française (1898). Role actif des Dyula dans le mouvement ivoirien d'independance (milieu 20e siecle). Alassane Ouattara, d'origine dyula, devient president de Cote d'Ivoire en 2011."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe hierarchique fondee sur les clans avec une noblesse marchande et militaire, des vassaux et, historiquement, des esclaves (jonw, prisonniers de guerre). L'autorite traditionnelle appartient aux anciens males (patriarcat). Chaque ville avait un conseil des anciens et un chef. La classe des tuntigi (guerriers hereditaires) assurait la defense des caravanes et des cites.",
+      "clanOrganization": "Organisation en groupes claniques familiaux (lu) : unite de travail composee du pere, de ses fils et d'autres males attaches. Le clan est l'element identitaire fondamental. Principaux clans : Ouattara/Wattara, Coulibaly, Traore, Diabate, Saghanughu. Les clans Saghanughu (Bobo-Dioulasso) et Taraweré (Kong) ont une importance historique particuliere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Filiation et heritage patrilineaires et patriarcaux. Le pere est chef de famille ; les inheritances passent de pere en fils. Les anciens males detiennent le plus de pouvoir et d'influence. Les unions endogames (au sein du clan, y compris cousins) sont encouragees pour preserver la cohesion clanique et l'integration economique.",
+      "religiousAuthority": "Classe de scholars islamiques (karamogo, ulema) : formes pendant 5 a 30 ans sous un sheikh, ils enseignent le Coran, le tafsir, le hadith et la vie du Prophete. A leur formation, ils recoivent un turban et un isnad (chaine de transmission). Les imams et qadi sont les autorites religieuses locales. La tradition Suwariante (Sheikh Al-Hajj Salim Suwari, vers 1500) preconise un islam tolerant et pacifique, coexistant avec les non-musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Dyula (Dioula, Jula, Julakan)",
+      "isoCodes": ["dyu"],
+      "dialects": [
+        "Konyakakan (dialecte identitaire d'Odienné, Cote d'Ivoire)",
+        "Maukakan (dialecte de Kong, nord-est de la Cote d'Ivoire)",
+        "Dioula de Bobo-Dioulasso (Burkina Faso)",
+        "Dioula commercial ou vehiculaire (forme simplifiee de lingua franca)"
+      ],
+      "vehicularRole": "Le dioula est la principale langue vehiculaire d'Afrique de l'Ouest soudano-forestiere. Il est parle ou compris par environ 61% de la population de Cote d'Ivoire et 35% de celle du Burkina Faso. Langue d'enseignement au Burkina Faso. Tres proche du bambara (intercomprehension mutuelle). Langue d'instruction officielle au Burkina Faso depuis 1979. Parle aussi en territoire ghanéen et malien."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de circoncision masculine (rite de passage vers l'age adulte) avec festivites communautaires. Mariages endogames encourages avec ceremonies traditionnelles et religieuses. Celebrations islamiques majeures : Ramadan (Korité), Tabaski (Aïd el-Adha), Maouloud (anniversaire du Prophete). Pelerinage a La Mecque (Hajj) constitue un rite de prestige social. Funerailles islamiques avec recitation du Coran, cortege et repas collectifs. Ceremonies de nomination des enfants (bapteme islamique le 7e jour). Rites d'accueil des caravanes marchandes et de conclusion des transactions commerciales.",
+      "symbols": "L'architecture soudano-sahelienne : mosquees et palais en pisé a toits plats ornes de poutres en bois, dont la mosquee du Vendredi de Kong (17e siecle, reconstruite). Le turban blanc porté par les scholars islamiques est signe de prestige. Les amulets et gris-gris coraniques portés comme protection. La kora (harpe-luth) et le balafon comme instruments emblematiques. Les bijoux en or et argent artisanaux.",
+      "artsAndMusic": "Tradition orale riche transmise par les griots (djeli, jali) : genealogies, epopees de l'empire du Mali, contes et proverbes. Musique : balafon (xylophone), djembé (tambour), kora (harpe-luth a 21 cordes), ngoni. Danses collectives lors des mariages et ceremonies. Artisanat de tissage de coton (faso danfani, tissu du pays) et poterie. Joaillerie et bijouterie en or (heritage du commerce aurifere). Architecture en banco (pisé) des mosquees et des maisons commerciales. Alpha Blondy (musicien reggae ivoirien d'origine dyula) et Yaya Touré (footballeur) sont des figures contemporaines.",
+      "spiritualities": "Islam sunnite malekite, pratique depuis le 13e siecle, est au coeur de l'identite dyula. La tradition Suwariante (Sheikh Al-Hajj Salim Suwari) prône un islam tolerant, pacifique et accommodant, distinct du jihad. Les zones rurales combinent l'islam avec des pratiques animistes preislamiques : croyances aux esprits (djinns), utilisation d'amulettes, respect des sites sacres. La classe des karamogo (ulema) transmet un enseignement coranique rigoureuse sur 28 livres canoniques. Les confreries soufies ont une influence limitee mais presente."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Gonja (16e-17e siecle, nord du Ghana actuel), fonde par Naba'a; chef suprême Yagbongwura. Empire de Kong (fonde vers 1710 par Seku Wattara/Ouattara), premier Etat dyula independant en Cote d'Ivoire, centre du commerce de l'or et de la kola. Royaume de Wasulu (1883) fonde par Samory Touré (d'origine dyula), qui a resiste a la colonisation française et britannique pendant 17 ans. Les villes marchandes de Kong, Bondoukou, Bobo-Dioulasso et Buna furent des poles commerciaux et culturels majeurs.",
+      "relationsWithNeighbors": "Relations commerciales etroites avec les Senufo, Kulango, Mossi et Lobi des zones environnantes. Les Dyula s'etablissaient comme marchands sous l'autorite de dirigeants locaux non-musulmans, leur accordant autonomie juridique et religieuse en echange de services commerciaux. Relations avec les peuples de la foret (Akan, Baule) pour le commerce de la kola et de l'or. Tension-cooperation avec les empires sahéliens voisins (Bambara, Songhai).",
+      "conflictsOrAlliances": "Alliance avec les sultans du nord pour la protection des routes caravanières. Tensions avec les Bono (Ghana) au 17e siecle ayant mene a l'abandon de Begho. Fondation du Gonja en reponse aux pressions des Dagomba et Hausa. Devastation de Kong et Buna par Samory Touré (1895-1897). Soumission pacifique a la France (1898). Role actif dans le mouvement ivoirien d'independance (milieu 20e siecle).",
+      "diaspora": "Presence aux Etats-Unis (16 000 personnes selon Joshua Project), au Canada et en Europe (notamment en France). Communautes dyula dans toutes les grandes villes d'Afrique de l'Ouest (Abidjan, Ouagadougou, Bamako, Accra). La mobilite est une caracteristique historique fondamentale du groupe : les Dyula continuent de s'etablir le long des routes commerciales contemporaines."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (population par pays), Ethnologue (dyu), Globalization Partners International (2024), CIA World Factbook. Estimations tenant compte des locuteurs natifs du dioula-jula distinct du dioula vehiculaire.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 2456000,
+          "note": "Principalement dans l'ouest et le centre du Burkina Faso, autour de Bobo-Dioulasso"
+        },
+        {
+          "country": "CIV",
+          "population": 2229000,
+          "note": "Nord de la Cote d'Ivoire : Kong, Bondoukou, Odienné, Korhogo"
+        },
+        {
+          "country": "MLI",
+          "population": 250000,
+          "note": "Region de Segou et long des routes commerciales historiques"
+        },
+        {
+          "country": "GHA",
+          "population": 65000,
+          "note": "Nord-ouest du Ghana, region de Gonja et Bondoukou frontalier"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dyula people. https://en.wikipedia.org/wiki/Dyula_people",
+      "Wikipedia EN — Dyula language. https://en.wikipedia.org/wiki/Dyula_language",
+      "Ethnologue — Jula language (dyu). https://www.ethnologue.com/language/dyu/",
+      "Joshua Project — Dyula in Mali. https://joshuaproject.net/people_groups/12375/ML",
+      "Joshua Project — Jula in Cote d'Ivoire. https://joshuaproject.net/people_groups/12375/IV",
+      "Britannica — Dyula. https://www.britannica.com/topic/Dyula",
+      "Globalization Partners International — Burkina Faso language and culture (2024). https://www.globalizationpartners.com/2024/07/29/burkina-faso-language-and-culture/",
+      "101 Last Tribes — Dyula people. https://www.101lasttribes.com/tribes/dyula.html"
+    ]
   }
 }

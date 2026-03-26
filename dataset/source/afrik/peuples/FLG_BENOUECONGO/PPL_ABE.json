@@ -6,54 +6,82 @@
   "content": {
     "appellations": {
       "mainName": "Abé",
-      "selfAppellation": "",
-      "exonyms": ["Abbey"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abé",
+      "exonyms": ["Abbey", "Abbeys", "Abbays", "Abès", "Béssouffouè"],
+      "originOfExonyms": "Abbey est la transcription anglophone la plus courante du nom Abe. Bessouffoue est le nom donne par les Baoule voisins. Les variantes orthographiques (Abbeys, Abbays, Abes) refletent les differentes translitterations coloniales et academiques du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Abe est la forme officielle utilisee en Cote d'Ivoire. Abbey est frequemment utilise dans les sources anglophones et les bases de donnees de langues (Joshua Project, code ISO aba).",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Akan lagunaire, groupe Kwa (Niger-Congo)",
+      "historicalRegion": "Region d'Agboville et sous-prefecture de N'douci, sud de la Cote d'Ivoire",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Abé"],
+    "ethnicities": [
+      "Abé",
+      "Abé-N'Damé",
+      "Abé-évé",
+      "Abé-Krobou",
+      "Abé-Agni",
+      "Abé-Dida"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Abe sont originaires du Ghana, rattaches au groupe Ashanti. Ils descendent des Agoua que les Agni Brafe, N'Denie et Moronou auraient rencontres lors de leur exode en Cote d'Ivoire. Leur premier ancetre est Kery-Kery, suivi par Attobra, Kouassan, Kery-Kery Abobia et Akossou. La tradition orale les lie aux groupes Ewe du Ghana, du Benin et du Togo.",
+      "formationPeriod": "Migration principale entre le XVIIe et le XVIIIe siecle. L'exode conduit par Patchibo (fils d'Akossou et de Nana Yah Abobia) vers le XVIIIe siecle marque la formation du peuple Abe en Cote d'Ivoire.",
+      "migrationRoutes": [
+        "Depart du Ghana (region Ashanti)",
+        "Franchissement de la Tanoe puis du Comoe",
+        "Arret entre Adzope et Agboville : Patchibo cree le village Douda (auj. Grand-Morie)",
+        "Installation a Allahin (auj. Loviguie), a quinze kilometres de l'Agnesby",
+        "Extension vers l'ouest du cote du Bandama (Tiassale) et vers l'est (Bingerville)"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Agboville (57 km au nord d'Abidjan)",
+        "Sous-prefecture de N'douci",
+        "Departements : Azaguie, Rubino, Grand Morie, Loviguie, Wahin, Guessiguie, Ottope, Offoumpo, Grand-Yapo, Attobrou, Blida",
+        "Sous-prefecture de Tiassale (plus de huit villages)",
+        "Sous-prefecture de Bingerville"
+      ],
+      "unificationsOrDivisions": "Le peuple Abe est subdivise en cinq grands cantons : Morie, Tchoffo, Koss (ou Khon), Abe-ve, Krobou. D'autres Abe partis de Douda s'installerent au-dela de Tiassale pour former les Didas au centre-ouest de la Cote d'Ivoire.",
+      "externalInfluences": "Influence ashanti et akan marquee dans l'onomastique, la langue et la culture. Alliance strategique avec Miezan, chef du village de Konou, contre les Konogos et les Ashantis. Colonisation francaise a partir du XIXe siecle.",
+      "majorHistoricalEvents": "Revolt de janvier 1910 contre le colonisateur francais (portage, travail force) : attaque du chemin de fer le 7 janvier 1910, tuant plusieurs voyageurs dont l'Europeen Rubino (employe de la CFAO). La revolte dura trois mois, reprimee par le commandant Nogues et 1 400 tirailleurs senegalais fin mars 1910. Destructions de villages, desarmement, amende de guerre, deportation de chefs vers la Centrafrique et le Congo-Brazzaville. La ville de Rubino fut nommee en memoire de l'employe francais tue."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe patriarcale depuis l'alliance avec Miezan (qui modifia la coutume de succession oncle-neveu au profit d'une succession pere-fils). Les chefs successeurs de Patchibo furent : Ossohou, Akoua (reine), Obodji Soboa (nomme chef superieur par les Francais, chevalier puis officier de la Legion d'honneur, decheance en 1940), Monso, Francois Eddo M'Bassidje (interim 1940-1944).",
+      "clanOrganization": "Organisation en cinq cantons principaux : Morie, Tchoffo, Koss, Abe-ve, Krobou. Les sous-groupes comprennent : Abe proprement dit, Abe-N'Dame, Abe-eve, Abe-Krobou, Abe-Agni, Abe-Anou (metissage Agba-Abe), Abe-Dida. Les Abidji et Mbattos sont des ethnies derivees de l'Abe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee patrilineaire structure la succession au pouvoir et la transmission des droits depuis l'alliance fondatrice avec Miezan. L'appartenance au canton et au clan determine les droits et obligations coutumiers.",
+      "religiousAuthority": "Autorite religieuse traditionnelle liee aux chefs de clan et aux anciens. Le christianisme est aujourd'hui la religion dominante."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Abe (Abbey)",
+      "isoCodes": ["aba"],
+      "dialects": [],
+      "vehicularRole": "La langue abe appartient au groupe Kwa (Niger-Congo), proche des langues akan. Le francais est la langue officielle de la Cote d'Ivoire et sert de vehiculaire inter-ethnique. Des portions bibliques ont ete traduites en abe (code aba)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mariage en tenue traditionnelle akan. Alliance toukpe (alliance de paix) avec les Didas, ceremonie de vente symbolique (N'takpe vendu pour un sou pour conjurer le mauvais sort). Les pratiques culturelles partagent de nombreux elements avec les cousins ashantis, beninoises et togolaises.",
+      "symbols": "Sandalettes en pneu d'auto connues sous le nom de Abodje (associees au chef Obodji Soboa, dont le nom signifie joli garcon prevoyant). Tenue traditionnelle akan lors des ceremonies.",
+      "artsAndMusic": "Traditions musicales et vestimentaires proches du groupe akan et ashanti. Chants et danses rituels lors des ceremonies de mariage et des rites communautaires.",
+      "spiritualities": "Christianisme majoritaire (Cote d'Ivoire). Subsistance de pratiques animistes et de cultes traditionnels akan en parallele. La tradition orale et les mythes fondateurs (Kery-Kery, Patchibo) occupent une place importante dans la vie spirituelle du groupe."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise unifie ; organisation en cantons sous une chefferie superieure reconnue par les autorites coloniales francaises. Chefs importants : Patchibo (fondateur), Ossohou, Obodji Soboa (officier de la Legion d'honneur).",
+      "relationsWithNeighbors": "Guerriers de l'aile gauche de l'armee de la reine Pokou (Baoule). Origines communes avec Ashantis, Agnis et autres groupes akan du Ghana. Repoussement des Attie vers l'est. Alliance de paix (toukpe) avec les Didas. Revolte commune avec les Attie en 1910.",
+      "conflictsOrAlliances": "Menaces historiques des Konogos et Ashantis au Ghana (conduit a la migration). Alliance avec Miezan contre ces menaces. Revolte anti-coloniale de 1910 avec les Attie voisins, severement reprimee. Massacres post-soumission de juin 1910 (villages de Diepe-Attie et Makoundie-Abe).",
+      "diaspora": "Des communautes Abe se trouvent dans plusieurs sous-prefectures ivoiriennes au-dela de leur territoire d'origine : Bingerville, Tiassale, Sikensi, Lakota, Divo, M'Babakro, Ouellé, Ananda Koidiokro."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 350000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (350 000) ; Wikipedia FR evoque plus de 580 000 (estimation large incluant diaspora)",
+      "distributionByCountry": [{ "country": "CIV", "population": 350000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Abbey (peuple) – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abbey_(peuple))",
+      "Abe, Abbey – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10141/IV)",
+      "Cote d'Ivoire people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/iv)",
+      "Global Recordings Network – Abe ISO aba (https://globalrecordings.net/af/country/iv)",
+      "Ethnologue – Cote d'Ivoire Languages (https://www.ethnologue.com/country/CI/)"
+    ]
   }
 }

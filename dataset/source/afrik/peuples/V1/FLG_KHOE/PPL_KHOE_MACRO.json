@@ -1,0 +1,70 @@
+{
+  "id": "PPL_KHOE_MACRO",
+  "nameMain": "Peuples Khoe (macro-groupe)",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["NAM", "BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Khoe (macro-groupe)",
+      "selfAppellation": "Variées selon les groupes (Khoekhoe, Nama, Damara, etc.)",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoe (macro-groupe)",
+      "historicalRegion": "NAM, BWA, Afrique du Sud",
+      "currentCountries": ["NAM", "BWA"]
+    },
+    "ethnicities": [
+      "Nama",
+      "Damara",
+      "Khoekhoe",
+      "Haiǁom",
+      "Kgalagadi",
+      "Autres groupes Khoe"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Khoe sont originaires de la NAM, du Botswana et d'Afrique du Sud, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.",
+      "externalInfluences": "Contacts avec les peuples bantous et européens, influence du christianisme et des croyances traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Langues Khoe (Nama, Damara, Khoekhoe, etc.)",
+      "vehicularRole": "Les langues Khoe sont parlées par les peuples Khoe. L'afrikaans, l'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels khoe, art traditionnel.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques namibiennes, botswanaises et sud-africaines.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora khoe dans les grandes villes namibiennes, botswanaises et sud-africaines, et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Khoe languages",
+      "CIA World Factbook – Namibia, BWA, South Africa",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples khoisan"
+    ]
+  }
+}

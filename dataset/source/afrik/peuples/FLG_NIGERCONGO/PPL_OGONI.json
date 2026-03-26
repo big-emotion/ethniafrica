@@ -6,54 +6,94 @@
   "content": {
     "appellations": {
       "mainName": "Ogoni",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Khana (nom propre de la communaute ; les sous-groupes se designent par le nom de leur royaume)",
+      "exonyms": ["Ogoni", "Igoni"],
+      "originOfExonyms": "Le terme Ogoni proviendrait du mot Ibani/Ijaw Igoni signifiant etrangers, atteste dans les contacts entre les Ogoni et les peuples de la cote du delta du Niger. Certains theoriciens lient le nom propre Khana aux origines historiques de l'ancien Ghana dont les Ogoni auraient migre.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ogoni est universellement utilise dans les documents officiels, la presse internationale et la litterature academique. Le mouvement MOSOP a contribue a l'internationalisation du terme. Ogoniland est la denomination officielle du territoire.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Kegboid (branche des langues Benue-Congo, Niger-Congo)",
+      "historicalRegion": "Delta du Niger, district senatoral Rivers South-East, Etat du Rivers, Nigeria du sud",
       "currentCountries": ["NGA"]
     },
-    "ethnicities": ["Ogoni"],
+    "ethnicities": [
+      "Khana (Ken-Khana, Nyo-Khana)",
+      "Gokana",
+      "Tai (Tẹẹ)",
+      "Eleme",
+      "Babbe",
+      "Baan (Ogoi)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la tradition orale la plus repandue, les Ogoni auraient migre depuis l'ancien empire du Ghana vers la cote atlantique, puis se seraient deplaces vers le delta du Niger oriental ou ils se sont melanges avec les populations Ibibio, Annang, Igbo et Ijaw deja presentes. Une theorie alternative suggere une migration par bateaux depuis le Ghana. Les evidences archeologiques et linguistiques situent la presence des Ogoni dans le delta du Niger depuis au moins 500 ans.",
+      "formationPeriod": "L'identite ogoni s'est consolidee avant la colonisation britannique. Les Ogoni ont survecu a la periode de la traite negriere en relative isolation, ne perdant aucun de leurs membres en esclavage. La colonisation britannique formelle debuta en 1885 (traite de Berlin) mais les forces britanniques n'atteignirent Ogoniland qu'en 1901.",
+      "migrationRoutes": [
+        "Migration presumee depuis l'ancien empire du Ghana vers la cote atlantique",
+        "Deplacement vers le delta du Niger oriental",
+        "Installation dans l'Ogoniland actuel (est de Port Harcourt, entre le fleuve Imo et le golfe de Guinee)"
+      ],
+      "historicalSettlementZones": [
+        "Ogoniland : territoire de 1 050 km2 dans l'Etat du Rivers, Nigeria",
+        "A l'est de Port Harcourt, borde par la riviere Imo au nord et a l'est",
+        "District senatoral Rivers South-East, reparti sur quatre LGA (Local Government Areas) : Khana, Gokana, Tai et Eleme"
+      ],
+      "unificationsOrDivisions": "Ogoniland est divise en six royaumes : Babbe, Gokana, Ken-Khana, Nyo-Khana, Tai et Eleme. Ces royaumes sont regroupes en deux ensembles linguistiques : les langues Est (Khana/Ken-Khana/Nyo-Khana et Tẹẹ/Tai, avec environ 1 800 000 locuteurs ensemble ; Gokana) et les langues Ouest (Eleme et Baan). La structure politique interne varie de communaute a communaute.",
+      "externalInfluences": "La presence de la Royal Dutch/Shell depuis 1956 et l'extraction petroliere depuis 1958 ont radicalement transforme le milieu environnemental et social de l'Ogoniland. La colonisation britannique (1901-1960), la guerre du Biafra (1967-1970) et le regime militaire nigerian des annees 1990 ont successivement affecte la societe ogoni. L'exploration petroliere a conduit a une des pires catastrophes ecologiques du continent africain.",
+      "majorHistoricalEvents": "1901 : arrivee des forces britanniques en Ogoniland ; resistance jusqu'en 1914. 1956 : decouverte d'un champ petrolier commercial par Royal Dutch/Shell avec la cooperation du gouvernement britannique. 1958 : debut de la production petroliere. 1967-1970 : guerre du Biafra. 1976-1991 : 2 976 deversements de petrole representant 2,1 millions de barils en Ogoniland (40 % des deversements totaux de Shell dans le monde). Octobre 1990 : publication de la Charte des droits d'Ogoni (Ogoni Bill of Rights) par MOSOP. Janvier 1993 : 300 000 Ogoni manifestent pacifiquement. 1993 : Shell retire ses employes americains d'Ogoniland. 21 mai 1994 : arrestation de Ken Saro-Wiwa. 10 novembre 1995 : execution de Ken Saro-Wiwa et huit autres dirigeants de MOSOP par le regime militaire de Sani Abacha. 2011 : rapport PNUE estimant jusqu'a 30 ans necessaires pour la rehabilitation de l'Ogoniland."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme monarchique traditionnel divise en six royaumes (kingdoms) : Babbe, Gokana, Ken-Khana, Nyo-Khana, Tai et Eleme. La structure politique est decentralisee, variant de communaute en communaute. Des chefs et des organes de developpement communautaire sont nommes, certains reconnus par le gouvernement nigerian, d'autres non. Les Ogoni ont etabli un systeme social organise avec un statut special pour les hommes et les femmes de courage et d'aptitude.",
+      "clanOrganization": "Organisation par royaumes et sous-communautes. Les societes Amanikpo et Karikpo commanditent les representations artistiques et rituelles (masques, marionnettes, danses) ayant des fonctions de promotion de la fertilite et d'exorcisme des mauvais esprits.",
+      "ageClassSystems": "Les societes initiatiques (Amanikpo, Karikpo) structurent la vie communautaire et artistique avec un role de regulation sociale.",
+      "roleOfLineages": "Les lignages communautaires definissent l'acces a la terre agricole et de peche. L'organisation sociale a ete perturbee par les deversements petroliers rendant le sol agricole inutilisable et les eaux contaminees.",
+      "religiousAuthority": "Divinite supreme feminine Bari (egalement Wa-Bari, Kara-Bari), residant dans les cieux et consultee via des sanctuaires pour les affaires terrestres. Avant la colonisation, tous les aspects de la vie s'organisaient autour de cette divinite. La mort est concue comme une transition vers le monde des esprits, causee par des esprits malins appeles Taa (aussi Poro-Edon ou Yo)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Khana (langue prestige des Ogoni de l'Est, egalement langue vehiculaire entre les locuteurs des langues Ogoni de l'Est)",
+      "isoCodes": ["ogo", "gkn", "ele", "tee", "boj"],
+      "dialects": [
+        "Khana (ogo) : langue Est dominante, parlce dans les royaumes Ken-Khana et Nyo-Khana",
+        "Tẹẹ / Tai (tee) : langue Est parlce dans le royaume de Tai, environ 313 000 locuteurs (2006)",
+        "Gokana (gkn) : langue Est parlce dans le royaume de Gokana",
+        "Eleme (ele) : langue Ouest parlce dans le royaume d'Eleme, environ 90 000 locuteurs",
+        "Baan / Ogoi (boj) : langue Ouest parlce par les Baan-Ogoi, moins de 5 000 locuteurs"
+      ],
+      "vehicularRole": "Le Khana est la langue vehiculaire intra-communautaire pour les locuteurs des langues Ogoni de l'Est. L'anglais est la langue officielle du Nigeria et de l'enseignement. Le pidgin nigerian est utilise dans les echanges commerciaux. Les cinq langues ogoni ne sont que partiellement intelligibles entre elles : les membres des groupes Est et Ouest ne se comprennent pas toujours directement."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les rituels de masques constituent le coeur de la vie ceremonielle Ogoni. Les societes Amanikpo et Karikpo organisent des performances avec des marionnettes de grande taille aux membres articules et des vetements de raphia, pour promouvoir la fertilite et chasser les mauvais esprits. Des masques au visage humain aux machoires articulees, blancs ou brun-pigmentes, et des masques grotesques representant des esprits agites ou des personnages de haut rang sont utilises dans des spectacles integrant danse et musique.",
+      "symbols": "La divinite Bari est le symbole spirituel supreme. Les masques ogoni (sculptures sur bois representant ancetres, animaux, esprits) sont reconnus parmi les chefs-d'oeuvre de l'art de l'Afrique subsaharienne. L'environnement naturel du delta du Niger (palmiers, igname, fruits) est un symbole culturel de prosperite aujourd'hui gravement degrade par la pollution petroliere.",
+      "artsAndMusic": "Sculpture sur bois : masques au visage humain, figures humaines, marionnettes et coiffures ornees representant des esprits ancestraux ou des personnages seculiers. Danse integrant masques et coiffures avec membres articules et vetements de raphia. Style artistique partage en partie avec les voisins Igbo, Ibibo, Efik et Ijaw, mais avec des caracteristiques distinctives (petite tete, machoires articulees, pigmentation autour des yeux). Les arts ogoni sont consideres comme parmi les plus remarquables du delta du Niger.",
+      "spiritualities": "Systeme de croyances centre sur Bari, divinite supreme feminine. Croyance dans les esprits Taa (malins), responsables de la mort non naturelle. Les pratiques spirituelles traditionnelles ont subsiste a travers la colonisation et la christianisation partielle. La vision du monde ogoni integre la nature, les ancetres et les vivants dans un systeme cosmologique coherent."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Six royaumes : Babbe, Gokana, Ken-Khana, Nyo-Khana, Tai et Eleme. Ces royaumes constituent la structure politique traditionnelle de l'Ogoniland. Ils correspondent grossierement aux quatre LGA officiels de l'Etat du Rivers : Khana, Gokana, Tai et Eleme. Une organisation en monarchie traditionnelle leur a permis d'etablir des systemes sociaux resilients avant la colonisation.",
+      "relationsWithNeighbors": "Les Ogoni partagent des problemes environnementaux lies au petrole avec les Ijaw du delta du Niger. Ils entretiennent des similarites culturelles avec les Igbo, Ibibo, Efik et Ijaw voisins. Historiquement, l'Ogoniland se trouvait sur les routes de la traite negriere depuis l'interieur vers les marches cotiers, mais les Ogoni auraient surveCU sans perdre de membres en esclavage.",
+      "conflictsOrAlliances": "1901-1914 : resistance majeure a la domination britannique. 1967-1970 : guerre du Biafra affectant la region. 1990-1995 : conflict majeur avec Shell et l'etat nigerian (MOSOP). 1993 : raids de la police mobile nigeriane (27 villages selon les rapports, 2 000 morts ogoni, 80 000 deplaces). 1995 : execution de l'Ogoni Nine (dont Ken Saro-Wiwa) par le regime Abacha, provoquant l'exclusion du Nigeria du Commonwealth. 2011 : rapport PNUE documentant 50 ans de dommages environnementaux. MOSOP est membre de l'Unrepresented Nations and Peoples Organization (UNPO).",
+      "diaspora": "Presence d'Ogoni dans les grandes villes nigerianes (Lagos, Abuja, Port Harcourt). Des organisations diasporiques soutiennent MOSOP depuis l'Europe et l'Amerique du Nord. Apres l'execution de Ken Saro-Wiwa, une diaspora politique plus active s'est constitute."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 2000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia EN (Ogoni people) : juste au-dessus de 2 millions. Joshua Project 2025 : 496 000 (sous-estimation possible). Estimation retenue : 2 000 000 en 2025 conforme a Wikipedia et aux projections demographiques de la region du Rivers State.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 2000000,
+          "note": "Concentres dans l'Etat du Rivers, LGA de Khana, Gokana, Tai et Eleme, a l'est de Port Harcourt. Densite de population parmi les plus elevees d'Afrique (environ 1 233 habitants/mile2 selon les estimations)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN – Ogoni people (https://en.wikipedia.org/wiki/Ogoni_people)",
+      "Wikipedia EN – Ogoni languages (https://en.wikipedia.org/wiki/Ogoni_languages)",
+      "Wikipedia EN – Khana language (https://en.wikipedia.org/wiki/Khana_language)",
+      "Joshua Project – Ogoni in Nigeria (https://joshuaproject.net/people_groups/19639)",
+      "Oyinlade, A. Olu et Vincent, Jeffery M. – The Ogoni of Nigeria, University of Nebraska-Lincoln, 2016 (https://digitalcommons.unl.edu/anthropologyfacpub/113/)",
+      "Right Livelihood – Ken Saro-Wiwa / MOSOP (https://rightlivelihood.org/the-change-makers/find-a-laureate/ken-saro-wiwa-movement-for-the-survival-of-the-ogoni-people/)",
+      "Human Rights Watch – Nigeria 1995 (https://www.hrw.org/reports/1995/Nigeria.htm)",
+      "UNEP – Environmental Assessment of Ogoniland, 2011 (https://www.unep.org/explore-topics/disasters-conflicts/where-we-work/nigeria/environmental-assessment-ogoniland)",
+      "USC Scalar – Ken Saro-Wiwa, MOSOP and the International Response (https://scalar.usc.edu/works/niger-delta-black-gold-blues/15-the-1990s-ken-saro-wiwa-mosop-and-the-international-response-rachel)"
+    ]
   }
 }

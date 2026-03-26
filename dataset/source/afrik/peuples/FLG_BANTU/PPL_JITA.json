@@ -6,54 +6,72 @@
   "content": {
     "appellations": {
       "mainName": "Jita",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wajita",
+      "exonyms": ["Majita", "Wajita"],
+      "originOfExonyms": "Le nom Jita serait derive du mont Masita situe a l'est du lac Victoria en Tanzanie, autour duquel les Jita se sont etablis. L'exonyme Majita etait utilise par les autorites coloniales allemandes. Wajita est la forme plurielle bantoue (prefixe Wa- = personnes).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Jita est utilise en Tanzanie pour designer ce peuple vivant dans la region de Mara (district de Musoma) au bord du lac Victoria. Le terme Wajita est courant dans les contextes communautaires et religieux. Kijita ou Echijita designe leur langue.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Ouest",
+      "ethnoLinguisticGroup": "Bantu des Grands Lacs, sous-groupe Suguti (zone JE)",
+      "historicalRegion": "Region de Mara (district de Musoma), nord-ouest de la Tanzanie, rive sud-est du lac Victoria",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Jita"],
+    "ethnicities": ["Jita", "Wajita"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Jita ne sont pas tous d'origine bantoue a l'origine. Le clan fondateur, les Rusori, retrace son ascendance depuis l'Ethiopie, l'Egypte et le Soudan, s'identifiant comme descendants des Nubiens. Certaines traditions les associent aux Bachwezi de Bunyoro-Kitara et aux Bahuma de Batoro (Ouganda). Ils ont adopte la langue bantoue lors de leur installation dans la region de Mara.",
+      "formationPeriod": "L'installation des Jita dans la region de Mara autour du lac Victoria remonte probablement aux XVIIe-XIXe siecles. Le clan Rusori est considere comme le premier groupe a s'etablir dans la region.",
+      "migrationRoutes": [
+        "Depuis l'Ethiopie/Soudan/Egypte (ancetres nubiens selon la tradition orale du clan Rusori)",
+        "Descente via le Soudan et l'Ouganda jusqu'au lac Victoria",
+        "Traversee du lac Victoria en pirogue depuis l'Ouganda jusqu'au Tanganyika (actuelle Tanzanie)"
+      ],
+      "historicalSettlementZones": [
+        "District de Musoma, region de Mara, nord-ouest de la Tanzanie",
+        "Rive sud-est du lac Victoria, ile d'Ukerewe",
+        "Zone d'environ 1200 km2 dans la partie sud-ouest de la region de Mara"
+      ],
+      "unificationsOrDivisions": "Les Jita sont organises en plus de huit clans : Rusori (clan originel), Batimba, Bagamba, Bhajigabha, Bharungu, Bhakwabhi, Bhatata, Bhaanga, Bhalibwa, Bhalinga. Chaque clan a sa propre culture et ses croyances, unifies par les mariages interclanique.",
+      "externalInfluences": "Influences des peuples bantous voisins (Haya, Nyambo, Kerebe, Bakwaya, Zinza) lors de l'adoption du bantou. Presence coloniale allemande puis britannique au Tanganyika. Missions chretiennes actives depuis le XIXe siecle. Traduction du Nouveau Testament en Kijita.",
+      "majorHistoricalEvents": "Adoption de la langue bantoue (Suguti) lors de l'installation dans la region de Mara. Colonisation europeenne du Tanganyika (fin XIXe siecle). Independance de la Tanzanie (1961). Programme de traduction biblique en kijita aux XXe-XXIe siecles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation clanique avec des structures de pouvoir reparties entre les clans. Le clan Rusori, considere comme le groupe fondateur, jouit d'une autorite ceremonielle particuliere. Les affaires communautaires sont gerees au niveau des clans et des conseils d'anciens.",
+      "clanOrganization": "Plus de huit clans distincts : Rusori (grands, teint clair, nez allonge, traditions pastorales et de peche, tabous alimentaires sur le poisson et le poulet historiquement), Batimba, Bagamba, Bhajigabha (evite de manger les abats), Bharungu, Bhakwabhi, Bhatata, Bhaanga, Bhalibwa, Bhalinga. L'intermariage entre clans cree une cohesion culturelle commune.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques transmettent les terres, les biens et les traditions. Les tabous alimentaires distincts par clan (comme l'interdiction du poisson et du poulet pour les Rusori, aujourd'hui assouplie) temoignent d'identites claniques fortes.",
+      "religiousAuthority": "Religion ethnique traditionnelle encore pratiquee (env. 50% selon Joshua Project). Presence chretienne significative, renforcee par les missions et les programmes de traduction biblique. Une minorite de musulmans est presente."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Jita (Kijita, Echijita)",
+      "isoCodes": ["jit"],
+      "dialects": ["Kijita", "Echijita"],
+      "vehicularRole": "Le jita (ISO jit, code Guthrie JE.25) appartient au groupe bantou Suguti et est parle sur la rive sud-est du lac Victoria et sur l'ile d'Ukerewe. Le jita partage des similarites linguistiques avec le haya, le nyambo, le kerebe, le bakwaya et le zinza. Le swahili est la lingua franca nationale. Une traduction du Nouveau Testament en kijita est en cours."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage clanique, ceremonies de mariage avec dot bovine. Les tabous alimentaires claniques jouent un role rituel important (ex. les Rusori evitaient historiquement le poisson et le poulet). Celebrations communautaires lors des cycles agricoles et des fetes religieuses.",
+      "symbols": "Le lac Victoria est le coeur identitaire et economique des Jita, reconnus comme pecheurs. Le mont Masita, qui a donne son nom au peuple, est un repere geographique sacre. Le pirogue est un symbole de leur tradition maritime.",
+      "artsAndMusic": "Les Jita sont connus pour leur tradition de peche sur le lac Victoria. Artisanat de la pirogue et filets de peche. Musique traditionnelle et chants lors des ceremonies. Tradition orale preservant les genealogies et les recits fondateurs, notamment les origines ethiopiennes et nubiennes du clan Rusori.",
+      "spiritualities": "Religion ethnique traditionnelle avec pratiques spirituelles ancestrales (env. 50% de la population). Christianisme present, notamment protestant, renforce par les missions. Presence d'une petite minorite musulmane. Les noms commencant par Chi (Chikere, Chijoriga, Chinyere) dans la culture jita evoquent le concept de Chi (Dieu) partage avec les Igbo du Nigeria."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation clanique sans royaume centralise. Le clan Rusori detient une autorite ancestrale en tant que premier occupant du territoire.",
+      "relationsWithNeighbors": "Affinites linguistiques avec les Baruuli (Ouganda), Haya, Nyambo, Kerebe, Bakwaya et Zinza. Les Zinza sont consideres comme ayant des racines en Ouganda (Jinja) et appartenant au groupe ethnique Nyankole. Les Jita entretiennent des relations historiques avec les peuples lacustres de la region de Mara et du bassin du lac Victoria.",
+      "conflictsOrAlliances": "Migrations conjointes et relations d'alliance avec les Nyankole via les Bachwezi. Les Jita partageaient des tabous alimentaires similaires avec les Banyoro, Batoro et Nyambo de Karagwe. Integration dans le systeme colonial allemand puis britannique du Tanganyika.",
+      "diaspora": "Presence Jita dans les pays voisins : Burundi, Rwanda, Ouganda, attestee par des villages nommes Buruli, Rusoro et Bulinga qui indiquent d'anciens etablissements Jita."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 414000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (https://joshuaproject.net/people_groups/print/12363/TZ)",
+      "distributionByCountry": [{ "country": "TZA", "population": 414000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Jita people – Wikipedia (https://en.wikipedia.org/wiki/Jita_people)",
+      "Jita language – Wikipedia (https://en.wikipedia.org/wiki/Jita_language)",
+      "Jita in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/12363/TZ)",
+      "Jita Language – Ethnologue (https://www.ethnologue.com/language/jit/)",
+      "Adventists and Jita Culture – ESDA Encyclopedia (https://encyclopedia.adventist.org/article?id=HF73)",
+      "Jita – TanzaniaScripture.com (https://tanzaniascripture.com/languages/jita/)"
+    ]
   }
 }

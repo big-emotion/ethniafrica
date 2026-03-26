@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Nao",
-      "selfAppellation": "",
-      "exonyms": ["Nayi"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Na'o",
+      "exonyms": ["Nayi", "Nayee", "Tol", "Tolwo", "Suc", "Su", "La'andi"],
+      "originOfExonyms": "Le nom Na'o est l'auto-designation du peuple; le terme Nayi designe leur langue. Tol est le nom donne par les Sheko et les Bench; Tolwo par les Me'en de l'ouest; Suc ou Su par les Me'en de l'est (au-dela de la riviere Sharmi); La'andi est l'appellation donnee par les Chara.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Nao est utilise dans les bases de donnees internationales (Joshua Project, PeopleGroups.org). Le nom Nayi est retenu pour la langue dans les bases linguistiques (code ISO noz). Les deux formes coexistent dans la litterature academique et les textes officiels.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Omotic septentrional, branche Majoid (Dizoid); etroitement apparente au dizi (dizin), au sheko et au bench",
+      "historicalRegion": "Zone de Kafa (Goba Woreda), hauts plateaux forestiers du sud-ouest ethiopien",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Nao"],
+    "ethnicities": ["Nao", "Na'o"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Na'o sont l'un des peuples autochtones du sud-ouest de l'Ethiopie. Avec les Tsara, ils sont les habitants indigenes de la region, par opposition aux Dizi, Benesho et autres groupes qui sont des migrants. La tradition orale retrace leur origine aux ancetres Nayikiyazu, Saaimaje et Shako, trois freres partis de la region de Majji (zone Bench-Majji). Le peuple Na'o est etabli dans les hauts plateaux forestiers de Kafa depuis une periode anterieure a la dynast Minjo de Kaffa (vers 1390).",
+      "formationPeriod": "Entite sociopolitique forte avant le milieu du XIXe siecle, avec leur propre royaume independant. La conquete par le royaume de Kaffa (vers 1843-1868) et la soumission a l'empire ethiopien (1897) ont profondement transforme leur organisation.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis la region de Majji-Dulumita (zone Bench-Majji) vers les vallees des rivieres Adaa, Gebera, Sharma et Gummi, puis expansion vers Goba-Dishi, Angela et Ogeya"
+      ],
+      "historicalSettlementZones": [
+        "Qabeles de Dishi, Angela et Ogoye, Goba Woreda, zone de Kafa",
+        "Village de Dulkuma (Sha-Bench Woreda, zone Bench-Majji)",
+        "Villages d'Aybera, Kosa, Jomodos (Sheko Woreda, zone Bench-Majji et zone Shaka)"
+      ],
+      "unificationsOrDivisions": "Les Na'o sont organises en 22 clans, structures en classes sociales: classe superieure (famille royale Naykiyasu/Bushasho, dignitaires Turbabisiyab et Gesubez, experts rituels Diggi/Qaya), classe moyenne (Karsu/retainers) et castes artisanales (Koykes/Kiyumu). Apres la conquete kaffa puis ethiopienne, l'autonomie politique a ete reduite a une representation nominale par un conseil (Bohaiyabab/Mikira de 7 membres).",
+      "externalInfluences": "Conquete par le royaume de Kaffa (roi Kayee Sharochi, vers 1843-1868), guerre et servitude; puis soumission a l'empire ethiopien de Menilek II (1897). La politique active de kaffanisation (adoption de la langue et de la culture kaffa) a conduit au bord de l'extinction du peuple et de la langue na'o. Presence italienne (1936-1941) moins repressive; regime Derg (1974-1991): reformes foncieres mais executions de chefs locaux; EPRDF (depuis 1991): reconnaissance de l'identite na'o.",
+      "majorHistoricalEvents": "Vers 1843-1868: conquete par le roi Kaffa Kayee Sharochi; servitude et guerres. 1897: soumission a Ras Waldagiyorgis (forces de Menilek II); integration dans l'empire ethiopien. 1912: raids de Lij Iyasu; massacres a Ecci-Maholi et Damuti. 1936-1941: occupation italienne; abolition du systeme gabbar-naftanya. 1975: reforme fonciere du Derg. 1975: execution du chef local Gerazmach Temesgen Gabreselassie. 1986-1987: villagisation forcee. 1991: reconnaissance officielle de l'identite na'o par l'EPRDF. 2018: creation du district de Goba comme entite administrative distincte dans la zone de Kafa."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Avant la conquete kaffa, les Na'o avaient leur propre royaume independant (Nai Kiyas) avec un roi hereditaire (Naikayizu/Nai Taatt) issu du clan Bushasho. Sous la domination kaffa puis ethiopienne, un conseil nominal (Bohaiyabab/Mikira, 7 membres) a maintenu une representation locale. Les chefs na'o portaient les titres de balabat, abegaz et chikashum sous l'empire ethiopien.",
+      "clanOrganization": "22 clans, structures en hierarchie sociale: le clan Bushasho (famille royale, Nayikiyazu) occupait le sommet, suivi des Turbabisiyab (dignitaires), Gesubez (chefs de village), Turbez, Diggi/Qaya (experts rituels). Les Karsu constituaient la classe moyenne (retainers). Les castes artisanales (Koykes/Kiyumu) etaient des groupes d'artisans non-Na'o integres dans la societe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages gouvernaient la succession royale, l'acces aux titres et aux fonctions rituelles. Le conflit resolution impliquait differents mecanismes selon la gravite: anciens et clans (differends mineurs), Turbabisiyab (differends economiques/sociaux avec serment sur l'esprit Qay), et le Garamanjo (juridiction supreme et inapelable pour les homicides).",
+      "religiousAuthority": "Le Garamanjo est le chef rituel supreme et medium du peuple na'o. Les ceremonies principales ont lieu dans la maison Kay'i (construite en bois shashina). La religion traditionnelle reconnait un dieu supreme (Yer, dieu du ciel), des esprits de la terre (Qawaala) et des esprits ancestraux (Qay). Des forets sacrees (Qawaala Shawa, Bamba, Qaaye) etaient protegees et le lieu de sacrifices pour la fertilite."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nayi (Nayee)",
+      "isoCodes": ["noz"],
+      "dialects": [
+        "Dialectes lies au dizi, au sheko et au bench (similarite lexicale de 58 % avec le dizin)"
+      ],
+      "vehicularRole": "La langue nayi (noz) est une langue gravement menacee. En 2007, on comptait environ 3 656 locuteurs maternels, dont seulement 1 137 monolingues. A Decha, les jeunes ne parlent plus la langue. Le glissement linguistique est actif vers le kaffa, le bench, le sheko et l'amharique. La langue a une structure SOV (sujet-objet-verbe), trois tons phonemiques et des consonnes retroflexes caracteristiques. Des ressources Global Recordings sont disponibles en nayi. Une traduction de Scripture est en cours (Joshua Project: statut 'Translation Started')."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Agriculture de subsistance avec l'ensete (udo), le sorgho, le ble, le teff, le mais et l'orge. Un rituel important consiste a planter un ensete a l'endroit ou le cordon ombilical d'un nouveau-ne est enterre. Les ceremonies annuelles (Ganna/Madekamo) impliquent le sacrifice d'un taureau, d'une chevre et d'un mouton, ainsi que la consommation de la nouvelle recolte (gabezu).",
+      "symbols": "La foret est un element identitaire et spirituel fort: les forets sacrees (Qawaala Shawa, Bamba, Qaaye) sont des lieux tabous ou se pratiquent des sacrifices pour la fertilite et la protection. Le cafe, l'aframomum corrorima (epice locale) et la riviere Sharmi (peche) sont des ressources identitaires.",
+      "artsAndMusic": "Artisanat traditionnel incluant la fabrication de nattes en fibre d'ensete (dabos). Peche traditionnelle sur la riviere Sharmi. Chants et traditions orales transmettant l'histoire des clans et les mythes d'origine.",
+      "spiritualities": "Religion traditionnelle centree sur Yer (dieu supreme du ciel), Qawaala (esprit de la terre) et Qay (esprits ancestraux). Le Garamanjo est le medium principal. Les sacrifices et les reunions rituelles ont lieu dans des maisons speciales (Kay'i) et dans des forets sacrees. La religion traditionnelle est en declin sous la pression du christianisme et de l'islam, ainsi que de la modernisation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Na'o avaient leur propre royaume independant (Nai Kiyas) avant la conquete kaffa du milieu du XIXe siecle. Les dynasties royales Hamma et Bushasho se sont succede. Ce royaume etait une entite politiquement forte dans les hauts plateaux forestiers du sud-ouest ethiopien.",
+      "relationsWithNeighbors": "Relations harmonieuses et commerciales avec les Kaffa (marriages, echanges) malgre la domination politique. Relations de proximite et d'echanges avec les Chara (partage de l'esprit Garamanjo, commerce de betail). Relations hostiles avec les Me'en/Shuro (pillages, competition pour la peche sur la riviere Sharmi). Relations de nomination et de migration avec les Sheko et les Bench.",
+      "conflictsOrAlliances": "Conquete par le royaume de Kaffa (vers 1843-1868): guerre, servitude, Na'o reduits au statut de gabbar (serfs). 1897: soumission a l'empire ethiopien. 1976-1977: deplacement de familles vers le Sheko woreda en raison de conflits entre seigneurs feodaux locaux et le gouvernement militaire. Kaffanisation active: adoption forcee de la langue et de la culture kaffa par les Na'o, conduisant a leur quasi-extinction en tant que groupe linguistique distinct.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 19000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project / Mission Infobank (2025): 19 000; recensement ethiopien 2007 (CSA): 9 796 Na'o dans le Goba Woreda; 3 656 locuteurs de nayi (1994)",
+      "distributionByCountry": [{ "country": "ETH", "population": 19000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Gesese, Aemero – A History of Na'o People of Goba Warada, Kafa Zone, ca. 1897 to 1991 (these, Universite de Jimma), 2020 (https://repository.ju.edu.et/handle/123456789/5286)",
+      "Nayi language – Wikipedia (https://en.wikipedia.org/wiki/Nayi_language)",
+      "Nao in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13951)",
+      "Nao in Ethiopia – Mission Infobank / Joshua Project (https://www.missioninfobank.org/mib/index.php?main_page=document_general_info&products_id=37019)",
+      "Nao of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011624/)",
+      "Nayi – Ethnologue (https://www.ethnologue.com/language/noz/)",
+      "Description and Documentation of the Nayi Language – GLOCAL / AFALA, 2023 (https://glocal.soas.ac.uk/afala2024/172-2/)",
+      "Nayi language endangerment – Foundation for Endangered Languages, Ogmios 52, 2013 (http://www.ogmios.org/ogmios/Ogmios_052.pdf)",
+      "ISO 639-3: noz (Nayi) – SIL International / Ethnologue"
+    ]
   }
 }

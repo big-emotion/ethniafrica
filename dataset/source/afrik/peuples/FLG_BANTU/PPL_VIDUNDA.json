@@ -6,54 +6,77 @@
   "content": {
     "appellations": {
       "mainName": "Vidunda",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Vidunda",
+      "exonyms": ["Ndunda", "Wavidunda"],
+      "originOfExonyms": "Ndunda est une forme alternative utilisee dans certaines sources scientifiques. Wavidunda est la forme swahilie avec le prefixe Wa- (peuple). Le nom vient du massif montagneux des monts Uvidunda (ou Vidunda) dans le district de Kilosa.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Vidunda est utilise en Tanzanie pour designer ce groupe ethnique des montagnes de Kilosa. Le terme est egalement utilise pour nommer leur langue (Chividunda) et leur territoire (Ward Vidunda).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu centre-tanzanien, branche Ruvu (Bantu de la cote nord-est)",
+      "historicalRegion": "Monts Uvidunda, district de Kilosa, region de Morogoro (Tanzanie centrale)",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Vidunda"],
+    "ethnicities": ["Vidunda", "Ndunda"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Vidunda font partie du cluster Ruvu (Northeast Coast Bantu) qui comprend aussi les Kaguru, Kwere, Kutu, Kami, Sagara, Zaramo et Luguru. Ces peuples partagent une commune origine bantoue et des traits culturels proches (matrilinaite, langue, organisation sociale). Des similitudes ethniques avec les Zaramo ont ete notees par les ethnologues des le XIXe siecle (Last, 1885).",
+      "formationPeriod": "Formation comme groupe ethnique distinct vraisemblablement entre le Xe et XVe siecle, lors de la sedentarisation des groupes Ruvu dans les massifs montagneux du centre-est de la Tanzanie.",
+      "migrationRoutes": [
+        "Installation dans les monts Uvidunda, district de Kilosa, region de Morogoro, a partir de migrations bantoues depuis le centre-est africain"
+      ],
+      "historicalSettlementZones": [
+        "Monts Uvidunda (jusqu'a 1600 m d'altitude), district de Kilosa, region de Morogoro, Tanzanie centrale",
+        "Ward Vidunda, l'unique zone administrative de residence principale"
+      ],
+      "unificationsOrDivisions": "Le groupe Vidunda est homogene et concentre dans le Ward Vidunda. L'isolement geographique (montagne accessible uniquement par une piste 4x4 depuis Kidoti) a contribue a la preservation de leur identite et de leur langue.",
+      "externalInfluences": "Contact avec les administrateurs allemands puis britanniques a l'epoque coloniale. Influence croissante du swahili comme langue nationale depuis l'independance de la Tanzanie (1961). Presence de missionnaires catholiques (paroisse et hopital catholiques dans le village Vidunda).",
+      "majorHistoricalEvents": "Recensement tanzanien de 1967 : 19 585 personnes s'identifiant comme Vidunda. Recensement de 2002 : population du Ward d'environ 9 794 personnes, refletant la concentration dans la zone coeur. Etudes linguistiques de Karsten Legere (Universite de Gothenburg) dans les annees 2000 sur le statut de langue menacee du Chividunda."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation villageoise traditionnelle avec des chefs de village (wazee, anciens). La structure politique s'est errodee apres 1963, quand le gouvernement tanzanien a supprime 132 chefferies nationales. L'administration actuelle est celle de l'etat tanzanien (Ward, Village).",
+      "clanOrganization": "Organisation matrilineaire caracteristique du cluster Ruvu. Les clans sont transmis par la mere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires jouent un role dans l'heritage des terres et dans l'organisation sociale. Cette matrilinaite est partagee avec les peuples Ruvu voisins (Zaramo, Luguru, Kwere).",
+      "religiousAuthority": "Autorite religieuse traditionnelle des anciens, coexistant avec la religion catholique (majorite de chretiens, environ 90% selon Joshua Project). Des croyances traditionnelles (sacrifices aux ancetres et aux esprits) perdurent."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Chividunda (Vidunda)",
+      "isoCodes": ["vid"],
+      "dialects": [
+        "Pas de dialectes internes majeurs repertories. La langue appartient a la branche Ruvu (G38 selon la classification Guthrie) du groupe Northeast Coast Bantu."
+      ],
+      "vehicularRole": "Le Chividunda est la langue exclusive de la communaute dans le Ward Vidunda. Le swahili est utilise comme langue seconde, surtout par les jeunes et les adultes scolarises. L'enseignement scolaire se fait en swahili (langue nationale), ce qui entraine un bilinguisme generalise. La langue est classee menacee (threatened) par Glottolog mais maintient une transmission intergenerationnelle."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage matrilineaires caracteristiques des peuples Ruvu. Sacrifices aux esprits ancestraux (pratique traditionnelle). La communaute est principalement chretienne (environ 90%) mais de nombreuses personnes maintiennent des pratiques spirituelles traditionnelles en parallele.",
+      "symbols": "Les monts Uvidunda sont le symbole territorial et identitaire central. L'isolement montagnard est a la fois un gage de survie culturelle et un defi de developpement.",
+      "artsAndMusic": "Production agricole de legumes (mais, haricots, etc.) vendus a Morogoro et Dar es Salaam. Artisanat traditionnel. Musique ceremonielle liee aux rites de passage.",
+      "spiritualities": "Christianisme majoritaire (environ 90% selon Joshua Project), principalement catholique en raison de la mission catholique presente dans le village Vidunda. Coexistence avec des croyances animistes (sacrifices aux esprits et aux ancetres) considerees comme ayant un effet negatif selon certaines sources missionnaires."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise important. Organisation en chefferies de village (wazee). La chefferie a ete supprimee comme structure officielle par le gouvernement tanzanien en 1963.",
+      "relationsWithNeighbors": "Les Vidunda font partie du cluster Ruvu/Zaramo et partagent des liens culturels et linguistiques etroits avec les Zaramo, Kwere, Luguru, Kutu, Kami, Kaguru et Sagara. Ces relations ont ete documentees par les ethnologues des le XIXe siecle.",
+      "conflictsOrAlliances": "Pas de conflits majeurs documentes. Coexistence pacifique avec les peuples voisins du cluster Ruvu.",
+      "diaspora": "Migrations saisonnieres ou permanentes vers Morogoro, Dar es Salaam et d'autres centres urbains tanzaniens pour les activites economiques (vente de surplus agricoles, emploi). La plupart retournent dans le Ward Vidunda."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 90000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia – Vidunda people (estimation 90 000); Legere (2007) : 9 794 dans le Ward Vidunda coeur en 2002, population totale estimee a 90 000",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 90000,
+          "notes": "Principalement dans le Ward Vidunda, district de Kilosa, region de Morogoro; dispersion en milieu urbain (Morogoro, Dar es Salaam)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia – Vidunda people (https://en.wikipedia.org/wiki/Vidunda_people)",
+      "Wikipedia – Vidunda language (https://en.wikipedia.org/wiki/Vidunda_language)",
+      "Legere, K. – Vidunda (G38) as an Endangered Language?, ACAL 37, 2007 (http://www.lingref.com/cpp/acal/37/paper1594.pdf)",
+      "Glottolog – Vidunda (vidu1238) (https://glottolog.org/resource/languoid/id/vidu1238)",
+      "Joshua Project – Vidunda in Tanzania (https://www.joshuaproject.net/people_groups/15789)",
+      "PeopleGroups.org – Vidunda of Tanzania PG015055 (https://peoplegroups.org/people_groups/pg015055/)"
+    ]
   }
 }

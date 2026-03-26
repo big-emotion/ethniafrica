@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_CHARA",
   "nameMain": "Chara",
   "languageFamilyId": "FLG_COUCHITIQUE",
@@ -6,54 +11,67 @@
   "content": {
     "appellations": {
       "mainName": "Chara",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Tsara",
+      "exonyms": ["Ciara", "C'ara", "Chara"],
+      "originOfExonyms": "Tsara est l'auto-appellation du peuple dans leur propre langue. Les formes Ciara et C'ara sont des transcriptions académiques alternatives utilisées dans la linguistique comparative éthiopienne. Chara est la forme standardisée dans les documents gouvernementaux éthiopiens et la littérature anglophone.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chara est le nom officiel utilisé dans l'administration éthiopienne de la région des Nations, Nationalités et Peuples du Sud (SNNPRS). Tsara est l'endonyme utilisé par la communauté dans sa langue maternelle."
     },
-    "ethnicities": ["Chara"],
+    "ethnicities": ["Chara", "Gimira"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Chara font partie des peuples Gimira d'Éthiopie. Leur langue appartient à la branche Omotic nord de la famille afro-asiatique, dans la sous-branche Gonga-Gimojan, groupe Ometo-Gimira. Bien que classés dans les dossiers du projet sous FLG_COUCHITIQUE, les Chara sont linguistiquement Omotic, un groupe autrefois appelé Couchitique occidental et désormais reconnu comme famille distincte.",
+      "formationPeriod": "Les Chara occupent depuis des temps anciens les hauts plateaux de Kaffa et la région du Debub Omo dans le sud-ouest de l'Éthiopie. Leur nombre a été considérablement réduit par l'esclavage et les guerres, notamment lors de l'incorporation forcée dans l'Empire éthiopien à la fin du XIXe siècle.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Hauts plateaux de Kaffa, Éthiopie du Sud-Ouest",
+        "Zone du Debub Omo, Région des Nations, Nationalités et Peuples du Sud (SNNPRS)",
+        "Villages de Geba a mesa, Buna Anta et Kumba, Éthiopie"
+      ],
+      "unificationsOrDivisions": "Les Chara sont situés géographiquement au sud-est du peuple Nayi, à l'ouest des Kullo, au nord-est des Mesketo et au nord-ouest des Gofa. Leur territoire est défini par les deux rives de la rivière Omo, dans la zone de Debub Omo.",
+      "externalInfluences": "La décimation historique de la population Chara par l'esclavage, les conflits armés et l'imposition de l'autorité de l'Empire éthiopien a profondément affecté leur culture et leur nombre. Le contact avec les locuteurs du Wolaytta, beaucoup plus nombreux, a créé un fort bilinguisme chez les Chara.",
+      "majorHistoricalEvents": "Réduction massive de la population chara due à l'esclavage et aux guerres lors de l'expansion de l'Empire éthiopien au XIXe siècle. Les Chara se considèrent comme faisant partie des peuples Gimira d'Éthiopie. La langue Chara a été étudiée lors de relevés sociolinguistiques menés par Aklilu Yilma en 2002 pour SIL International."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Chara pratiquent une agriculture de subsistance et vivent dans de petits villages. Leur système politique traditionnel repose sur des chefs de village et des anciens. Leur organisation sociale a été profondément perturbée par l'incorporation à l'Empire éthiopien.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "La vie religieuse Chara est syncrétique, mêlant le Christianisme orthodoxe oriental (Tewahedo) hérité des contacts avec l'Église éthiopienne et des pratiques religieuses tribales traditionnelles. Bien que classés sous FLG_COUCHITIQUE dans ce projet, les Chara partagent des pratiques avec leurs voisins Omotic."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Chara (cra)",
+      "isoCodes": ["cra"],
+      "dialects": [],
+      "vehicularRole": "La langue Chara (code ISO 639-3 : cra, aussi appelée Tsaara par Ethnologue) appartient à la branche Omotic nord, sous-groupe Gonga-Gimojan, Ometo-Gimira, Chara. Elle présente une similarité lexicale de 54% avec le Wolaytta, langue beaucoup plus répandue à l'est. Les locuteurs Chara parlent également souvent le Melo (ou Mela) et le Wolaytta comme langues secondaires. L'amharique est utilisé pour les communications avec l'administration nationale éthiopienne."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": "Les Chara pratiquent une religion syncrétique mêlant le Christianisme orthodoxe éthiopien (Tewahedo) à des pratiques tribales ancestrales. Ce syncrétisme est commun à plusieurs petits peuples du sud de l'Éthiopie incorporés dans l'orbite culturelle de l'Église éthiopienne tout en maintenant des croyances et rituels locaux."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Chara coexistent avec les locuteurs du Nayi au nord-ouest, du Kullo à l'est, du Mesketo au sud-est et du Gofa au sud. La forte similarité lexicale avec le Wolaytta (54%) traduit des contacts prolongés avec ce groupe. Les Chara parlent souvent plusieurs de ces langues voisines.",
+      "conflictsOrAlliances": "La population Chara a été drastiquement réduite par des razzia esclavagistes et des conflits lors de l'expansion de l'Empire éthiopien sous Menelik II à la fin du XIXe siècle, période documentée pour de nombreux peuples du sud de l'Éthiopie.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 20000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia Chara people (estimation 16 500, recensement 1994 : 6 984) / Ethnologue Tsaara : 13 000 locuteurs – estimation 2025 avec croissance modérée",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 20000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Chara people – Wikipedia EN, 2014 (https://en.wikipedia.org/wiki/Chara_people)",
+      "Chara language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Chara_language)",
+      "Tsaara Language (CRA) – Ethnologue (https://www.ethnologue.com/language/cra/)",
+      "Chara – Ethnologue subgroup (https://www.ethnologue.com/subgroup/1107/)",
+      "Chara – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/char1269)",
+      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Yilma, Aklilu – Sociolinguistic survey report on the Chara language of Ethiopia, SIL International, 2002"
+    ]
   }
 }

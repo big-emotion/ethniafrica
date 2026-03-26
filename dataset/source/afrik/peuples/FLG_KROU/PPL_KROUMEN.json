@@ -1,27 +1,109 @@
 {
   "id": "PPL_KROUMEN",
-  "nameMain": "",
+  "nameMain": "Kroumen",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["LBR"],
+  "currentCountries": ["CIV", "LBR"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kroumen",
       "selfAppellation": "Krumen / Kroomen",
+      "exonyms": [
+        "Krumen",
+        "Kroomen",
+        "Kroo",
+        "Krou côtiers",
+        "Kroomen (Royal Navy)"
+      ],
+      "originOfExonyms": "Le terme Krumen (ou Kroumen, Kroomen) est utilisé par les Européens depuis le XVIIIe siècle pour désigner les marins Krou employés à bord des navires européens. La théorie d'une dérivation de l'anglais crewmen (hommes d'équipage) est populaire mais linguistiquement inexacte : le terme Kru précède l'usage maritime anglophone et dérive du nom propre Klao (Krao) que le peuple se donne lui-même. Dès 1588, une carte anglaise désigne la côte kru du Liberia sous le terme Crua. Le terme Kroumen a acquis une signification à la fois ethnique et professionnelle : il désignait tout marin d'origine krou, quelle que soit sa sous-appartenance clanique.",
+      "whyProblematic": "Le terme Kroumen a oscillé entre désignation ethnique et désignation professionnelle : des marins d'origines diverses adoptaient l'identité Kroumen pour bénéficier de la réputation maritime krou. Il peut donc désigner un sous-groupe ethnique précis (populations côtières de Tabou à San Pedro en CIV) ou plus largement tout marin d'origine krou.",
+      "contemporaryUsage": "Kroumen désigne aujourd'hui spécifiquement les populations Krou côtières du littoral sud-ouest de la Côte d'Ivoire, entre l'embouchure du Cavally (Tabou) et la lagune Digboué (San Pedro), réparties en 25 à 27 communautés ou tribus. Ce groupe comprend trois principales variantes linguistiques : Tepo, Pye et Plapo.",
       "linguisticFamily": "FLG_KROU",
-      "historicalRegion": "Côte d’Ivoire (littoral sud-ouest), LBR",
-      "currentCountries": ["LBR"]
+      "ethnoLinguisticGroup": "Krou occidental côtier (sous-branche Grebo ivoirienne)",
+      "historicalRegion": "Côte sud-ouest de la Côte d'Ivoire (Tabou, Grabo, Grand-Béréby, San Pedro) et littoral sud-est du Liberia",
+      "currentCountries": ["CIV", "LBR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
+    "ethnicities": [
+      "Tepo (tribu principale, autour de Grabo, Olodio, San Pedro)",
+      "Pye / Piè (entre Grand-Béréby et San Pedro, aussi appelé Bereby Kru)",
+      "Plapo (autour de Tabou, peu nombreux, env. 100 locuteurs)",
+      "Koussé, Douwé, Gnagbiyou (tribus de la zone de San Pedro)",
+      "Himbé, Plawé (tribus de la zone de Grabo)",
+      "Communautés côtières entre l'embouchure du Cavally et la lagune Digboué"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kroumen sont des populations Krou côtières dont les origines remontent à la grande migration Krou depuis les hautes terres intérieures vers la côte atlantique, entre le XIVe et le XVIIe siècle. Selon une tradition citée dans les sources ivoiriennes, le peuple Kroumen serait parti du delta du Nil et aurait effectué une longue migration vers l'Afrique de l'Ouest. Cette tradition orale fait partie de nombreuses épopées de fondation africaines. Plus établi historiquement est le fait qu'ils appartiennent au coeur géographique de l'ensemble Krou, entre l'embouchure du Cavally et San Pedro, zone considérée comme un des berceaux de la culture et de la langue Krou.",
+      "formationPeriod": "L'identité Kroumen comme marins côtiers de renom se constitue au XVIIIe siècle, avec l'intensification du commerce maritime européen le long de la côte du Golfe de Guinée. Dès les années 1790, les Kroumen sont recrutés comme marins libres sur les navires européens. L'identité maritime Kroumen atteint son apogée au XIXe siècle, lors de la collaboration avec la Royal Navy britannique pour la suppression de la traite négrière.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis les hautes terres intérieures (nord-est) vers le littoral atlantique du Liberia et de la CIV",
+        "Dispersion maritime vers Freetown (Sierra Leone), Lagos (Nigeria), Accra (Ghana), Le Cap (Afrique du Sud), Liverpool (Royaume-Uni)"
+      ],
+      "historicalSettlementZones": [
+        "Bande côtière entre l'embouchure du Cavally et la lagune Digboué (San Pedro, CIV)",
+        "Littoral des sous-préfectures de Tabou, Grabo, Grand-Béréby, Bereby",
+        "Ports de la côte libérienne (Sinoe, Grand Kru County)",
+        "Simon's Town (Afrique du Sud) : présence lors du service à la Royal Navy (XIXe-XXe siècles)"
+      ],
+      "unificationsOrDivisions": "Organisation en 25 à 27 tribus ou communautés côtières autonomes, sans pouvoir central. Chaque communauté gère ses propres affaires selon un système de clans patrilinéaires (Panton System). Les identités sub-tribales (Tepo, Pye, Plapo) sont distinctes linguistiquement, mais toutes se reconnaissent comme faisant partie du peuple Kroumen.",
+      "externalInfluences": "Contact précoce avec les navigateurs européens depuis le XVe siècle. Recrutement massif par la Royal Navy britannique (1820-1924) et par des navires marchands européens et américains. Influence du christianisme missionnaire. Impact des guerres civiles libériennes (1989-2003) et de la crise ivoirienne (2002-2011) sur les communautés côtières. Développement portuaire de San Pedro (port en eau profonde depuis 1971) transformant l'économie régionale.",
+      "majorHistoricalEvents": "Collaboration avec la Royal Navy britannique pour la suppression de la traite négrière (XIXe siècle) : les Kroumen étaient des chasseurs de négriers réputés. Service dans la Royal Navy au Cap (Simon's Town) de 1820 à 1924, avec un cimetière Kroumen toujours présent à Simon's Town. Des dizaines de Kroumen sont peints dans un camp de prisonniers de guerre allemand lors de la Première Guerre mondiale. Guerres civiles libériennes entraînant des déplacements de communautés Kroumen du Liberia vers la CIV."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautés côtières autonomes (Panton System). Décisions collectives prises par des conseils d'anciens et de leaders locaux. Un rôle important est accordé aux commandants militaires et aux navigateurs expérimentés. La chefferie côtière reste l'unité politique de base. Le développement de San Pedro a entraîné une modernisation et une intégration dans les structures administratives ivoiriennes.",
+      "clanOrganization": "Organisation en clans patrilinéaires (Panton System). Chaque clan est responsable de la gestion des affaires de ses membres et de la résolution des conflits internes. La terre est considérée comme propriété communale du clan, inaliénable aux étrangers, principe qui a engendré des conflits fonciers avec l'administration et les investisseurs.",
+      "ageClassSystems": "Classes d'âge liées à l'apprentissage maritime et aux activités de pêche. Le passage du statut d'apprenti à celui de marin confirmé est marqué par des rites spécifiques transmettant les savoirs de navigation côtière et de gestion des pirogues de surf.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité sociale, les droits fonciers et l'accès aux zones de pêche. Les alliances inter-claniques se renforcent lors des cérémonies traditionnelles. La notoriété acquise dans les activités maritimes rejaillit sur le prestige du lignage.",
+      "religiousAuthority": "Chefs spirituels traditionnels présidant aux rites liés à la mer (départ des pirogues, retour de la pêche, cérémonies propitiatoires). Pratiques syncrétiques mêlant animisme traditionnel et christianisme. Les Kroumen du service maritime européen ont souvent été parmi les premiers convertis au christianisme, notamment via les missions wesleyennes de Freetown."
+    },
+    "languages": {
+      "mainLanguage": "Krumen (dialecte continuum Tepo-Pye-Plapo)",
+      "isoCodes": ["ted", "pye", "ktj"],
+      "dialects": [
+        "Tepo (ted) : dialecte principal, parlé autour de Grabo et Olodio ; sous-dialectes Bapo, Wlopo/Ropo, Dapo, Honpo, Yrepo/Kapo, Glawlo",
+        "Pye / Piè (pye) : parlé entre Grand-Béréby et San Pedro ; sous-dialectes Trepo, Wluwe-Hawlo, Gbowe-Hran, Wlepo, Dugbo, Yrewe/Jrwe, Yapo",
+        "Plapo (ktj) : peu nombreux, autour de Tabou, sans variation dialectale notoire"
+      ],
+      "vehicularRole": "Le krumen (sous ses formes Tepo, Pye, Plapo) est la langue maternelle des communautés côtières. Les différentes variantes nécessitent un temps d'adaptation pour une intercompréhension complète. Le français est la langue officielle en CIV. Un pidgin krou-anglais s'est développé dans les communautés portuaires diasporiques. Le dioula est la langue commerciale régionale."
+    },
+    "culture": {
+      "majorRites": "Fête de la récolte du riz et funérailles traditionnelles en janvier (chez les Kroumen selon les sources krou). Danse bollo : danse cérémonielle revendiquée par les Kroumen de la région de San Pedro, documentée dans les publications ethnomusicologiques (OpenEdition, 2023). Cérémonies propitiatoires avant la saison de pêche pour demander la protection des esprits marins. Rites de passage à l'âge adulte intégrant l'apprentissage des techniques de navigation. Funérailles élaborées mobilisant les communautés villageoises.",
+      "symbols": "La pirogue de surf (canot kroumen) est le symbole identitaire central, symbole de l'excellence maritime et de la liberté. Technique unique de navigation dans les ressacs côtiers avec des pirogues peu profondes (moins d'un mètre de tirant d'eau) capables d'affronter des vagues de cinq mètres ou plus. Noix de kola utilisée lors des cérémonies de bienvenue chez les notables de chefferie (documenté à San Pedro, 2017).",
+      "artsAndMusic": "Danse bollo : danse cérémonielle Kroumen circulant entre les communautés de la région de San Pedro, étudiée pour ses circulations et ses transformations contemporaines (OpenEdition Ethnomusicologie, 2023). Musique de percussion accompagnant les cérémonies. Chants traditionnels de travail maritime. Tradition de navigation et de construction de pirogues transmise comme art pratique de génération en génération. Poésie orale et récits de navigateurs.",
+      "spiritualities": "Croyances animistes centrées sur les esprits de la mer et de la côte (esprits marins gardiens des zones de pêche). Culte des ancêtres marins. Un dieu créateur suprême est reconnu mais approché via des intermédiaires spirituels. Pratiques propitiatoires avant chaque saison de pêche. Syncrétisme avec le christianisme protestant (méthodiste et baptiste) adopté via les diasporas maritimes. Certains villages maintiennent des pratiques traditionnelles en parallèle avec la pratique chrétienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaumes centralisés. Organisation en chefferies côtières autonomes gérées par des conseils d'anciens. Les Kroumen ont exercé un pouvoir économique et culturel majeur via le contrôle du commerce maritime côtier, sans jamais chercher à constituer un état politique unifié.",
+      "relationsWithNeighbors": "Relations commerciales avec tous les peuples côtiers de l'Afrique de l'Ouest, de Dakar à Douala. Relations de co-résidence avec les Bakwé et les Wané à San Pedro (les trois peuples autochtones de la zone). Tensions historiques avec les settlers americo-libériens du Liberia sur le contrôle du commerce côtier. Conflits fonciers avec l'Etat ivoirien lors du développement du port de San Pedro.",
+      "conflictsOrAlliances": "Alliance stratégique avec la Royal Navy britannique pour la suppression de la traite négrière (XIXe siècle). Résistance aux tentatives de taxation et de contrôle libériennes (XIXe-XXe siècles). Participation à la révolte Kru de 1915-1916 contre le gouvernement libérien. Impact des guerres civiles libériennes (1989-2003) entraînant des migrations de réfugiés vers la CIV.",
+      "diaspora": "Diaspora maritime historique dans tous les grands ports de l'Afrique de l'Ouest. Communautés établies à Freetown, Lagos, Accra, Douala. Simon's Town (Afrique du Sud) : cimetière Kroumen témoignant de leur présence au service de la Royal Navy. Liverpool (Royaume-Uni) : une des premières communautés africaines organisées au Royaume-Uni. Diaspora contemporaine dans les villes ivoiriennes (Abidjan) due aux migrations économiques internes."
+    },
+    "demography": {
+      "totalPopulation": 65000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Krumen people) : 48 300 en 1993, dont 28 300 en CIV. PeopleGroups.org : Kroumen du Nord-Est de CIV env. 20 500. Estimation 2025 basée sur la croissance démographique ivoirienne (2,5% par an) depuis 1993.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 55000,
+          "note": "Littoral sud-ouest de Côte d'Ivoire, bande côtière de Tabou à San Pedro (sous-préfectures de Tabou, Grabo, Grand-Béréby, San Pedro)"
+        },
+        {
+          "country": "LBR",
+          "population": 10000,
+          "note": "Littoral sud-est du Liberia, comtés de Grand Kru et Sinoe"
+        }
+      ]
+    },
     "sources": [
-      "Ethnologue (kde)",
-      "Liberia Maritime Cultural Records",
-      "Côte d’Ivoire Littoral Archives"
+      "Wikipedia EN — Krumen people. https://en.wikipedia.org/wiki/Krumen_people",
+      "Wikipedia EN — Krumen language. https://en.wikipedia.org/wiki/Krumen_language",
+      "OpenEdition Ethnomusicologie — La danse bollo des Kroumen en Côte d'Ivoire, 2023. https://journals.openedition.org/ethnomusicologie/5068",
+      "Glottolog — Tepo Krumen (ted). https://glottolog.org/resource/languoid/id/tepo1239",
+      "Kroumen.com — Aspects of tone change in three Krumen languages. https://kroumen.com/sites/www.kroumen.com/files/20414%20Krumen%20Tones%20ver2_0.pdf",
+      "History Today — Kroomen: Black Slaver Hunters. https://www.historytoday.com/archive/feature/kroomen-black-slaver-hunters",
+      "Wikipedia EN — Seedies and Kroomen. https://en.wikipedia.org/wiki/Seedies_and_Kroomen",
+      "Qiraat Africa — The Kru/Kroo of West Africa. https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/",
+      "Facebook/APRNews1 — Les Kroumen, 2024. https://www.facebook.com/APRNEWS1/posts/connais-tu-les-kroumen",
+      "Wikipedia FR — San-Pedro (CIV). https://fr.wikipedia.org/wiki/San-P%C3%A9dro"
     ]
   }
 }

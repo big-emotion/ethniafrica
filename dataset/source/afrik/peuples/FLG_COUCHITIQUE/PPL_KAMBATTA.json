@@ -6,54 +6,68 @@
   "content": {
     "appellations": {
       "mainName": "Kambatta",
-      "selfAppellation": "",
-      "exonyms": ["Kambatta"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Kambaata",
+      "exonyms": ["Kambatta", "Kembata", "Cambat", "Cambatta", "Khambat"],
+      "originOfExonyms": "Le nom Kambaata est l'auto-désignation officielle du peuple et de sa langue. Les variantes orthographiques Kambatta, Kembata, Cambat, Cambatta et Khambat apparaissent dans les chroniques historiques éthiopiennes et chez les explorateurs étrangers des XVIIIe-XIXe siècles. Le terme Kambatigna désigne la langue en amharique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kambaata est le nom officiel utilisé dans le recensement éthiopien de 2007 et dans l'organisation administrative (Kambaata Zone, région du Centre-Ethiopie). La langue Kambaatissa est l'une des langues de travail officielles de l'Ethiopie et est enseignée dans les écoles primaires de la zone."
     },
-    "ethnicities": ["Kambatta"],
+    "ethnicities": ["Kambaata", "Alaba", "Tambaro (Tembaro)", "Qabeena"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kambaata sont un peuple cushitique des hauts plateaux du centre-sud de l'Ethiopie, appartenant au sous-groupe Highland East Cushitic. Ils sont mentionnés pour la première fois dans les chroniques de l'Empereur Yeshaq I (XIVe-XVe siècle). Leur territoire historique est centré sur le massif de l'Hambaricho, dans la zone actuellement connue sous le nom de Kambaata Zone.",
+      "formationPeriod": "Le Royaume de Kembata fut institué au XVIe siècle sous une monarchie héréditaire continue. Son premier roi Hamlmal (Hamo) fonda la dynastie Oyeta. Le royaume fonctionna sans interruption jusqu'à la fin du XIXe siècle.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans les hauts plateaux autour du massif de l'Hambaricho, entre les régions du lac Awasa et les contreforts du Rift occidental."
+      ],
+      "historicalSettlementZones": [
+        "Kambaata Zone, région du Centre-Ethiopie (anciennement SNNPR)",
+        "Environs du mont Hambaricho, sud-centre de l'Ethiopie"
+      ],
+      "unificationsOrDivisions": "La communauté Kambaata rassemble trois groupes autonomes parlant des dialectes de la même langue : Kambata (coeur), Alaba et Tambaro. A ces trois groupes s'ajoutent les Qabeena (K'abeena), parfois traités comme groupe distinct. Leurs différences ne sont pas très strictes : les peuples se mélangent, s'intermarient et parlent les langues de leurs voisins. Le clan des tanneurs Shekla Seriwoch occupe une position sociale marginalisée, sans droit à l'intermariage avec les Kambaata.",
+      "externalInfluences": "L'incorporation au XIXe siècle par l'Empereur Menelik II a entraîné une christianisation massive de la population. L'influence amharique est forte sur la langue et les noms propres contemporains. L'islam est présent notamment dans le woreda de Kebena, où existent des mosquées centenaires (Katbare, Zebimola).",
+      "majorHistoricalEvents": "Première mention dans les chroniques d'Yeshaq I. Expiation royale du XVIe siècle. Le roi Dagoye est célèbre pour l'expansion des territoires Kambaata. Le dernier roi indépendant, Woma Delbato Degoye, fut tué par les armées de Menelik II à la fin du XIXe siècle. Lors de la conquête par Menelik II, la province fut largement christianisée. L'annexion au Royaume de Kaffa sous Hoti Gaocho (1798-1821) est attestée, avant une reprise d'autonomie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie héréditaire sous des rois appelés Woma. La résidence royale était le mont Hambaricho, où vivait aussi Abba Sarecho, le dieu des Kambaata. Le système monarchique était bien établi depuis le XVIe siècle et a fonctionné sans interruption jusqu'à la fin du XIXe siècle.",
+      "clanOrganization": "Plusieurs clans composent la communauté Kambaata : le clan royal Oyeta (fondé par Hamlmal), les clans Tembaro, Alaba et d'autres. Le clan des tanneurs Shekla Seriwoch est socialement marginalisé et ne peut contracter d'alliance matrimoniale avec les autres Kambaata.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique et les droits fonciers. Le lignage Oyeta détient la légitimité royale.",
+      "religiousAuthority": "Les Woma (rois) cumulent autorité politique et religieuse : ils partagent la résidence sacrée du mont Hambaricho avec Abba Sarecho, divinité tutélaire. Les Kambaata célèbrent Gifata, leur festival annuel traditionnel. Après la christianisation du XIXe siècle, l'Eglise orthodoxe éthiopienne puis les Eglises évangéliques ont pris une place dominante."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kambaatissa (ktb)",
+      "isoCodes": ["ktb"],
+      "dialects": ["Tembaaro (Tambaro)", "Alaba", "Qabeena (K'abeena)"],
+      "vehicularRole": "Le kambaatissa est l'une des langues de travail officielles de l'Ethiopie, enseignée dans les écoles primaires. Il serait parlé par environ 4 millions de personnes selon Wikipedia. Closely related to Hadiyya and Sidama. Langues d'écriture : ge'ez (fidel) et latin. L'amharique est la langue de communication inter-ethnique et de l'enseignement secondaire. L'anglais est la langue d'enseignement au lycée."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Le festival annuel Gifata est la principale célébration culturelle Kambaata. Le droit coutumier traditionnel Bobani Geltita régit les relations sociales et est appliqué par l'assemblée des anciens (Oget). Ce système inclut des mécanismes de résolution des conflits, des règles de coopération et un style vestimentaire distinctif.",
+      "symbols": "Le mont Hambaricho est le symbole identitaire le plus important des Kambaata : il fut la résidence des rois Woma et le siège de la divinité Abba Sarecho. La plante ensète (fausse banane) est le symbole culinaire et agricole central.",
+      "artsAndMusic": "Style vestimentaire traditionnel distinctif, habitudes alimentaires spécifiques incluant le kocho (plat à base d'ensète). Cultures de coopération communautaire codifiées dans le Bobani Geltita.",
+      "spiritualities": "Traditions religieuses ancestrales centrées sur Abba Sarecho et le mont Hambaricho. Christianisme majoritaire (orthodoxe et surtout évangélique) suite à la christianisation du XIXe siècle. Présence islamique dans certains woreda (Kebena). La grande majorité des Kambaata actuels est chrétienne évangélique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le Royaume de Kembata (XVIe siècle - 1897) fut un Etat monarchique bien établi reconnu dans les chroniques éthiopiennes. Il résista à plusieurs siècles de pressions extérieures avant d'être annexé par Menelik II.",
+      "relationsWithNeighbors": "Relations avec le Royaume de Kaffa (annexion par Hoti Gaocho, 1798-1821), le royaume de Jimma et les peuples Hadiyya, Sidama et Wolaytta voisins. Les Kambaata furent pionniers dans la diffusion de l'islam dans le sud de l'Ethiopie sous la direction de Hassen Enjamo.",
+      "conflictsOrAlliances": "Résistance à l'expansion du Royaume de Kaffa au XVIIIe siècle. Soumission finale aux armées de Menelik II à la fin du XIXe siècle, entraînant la mort du dernier roi Woma Delbato Degoye. Incorporation à l'Empire éthiopien avec christianisation massive.",
+      "diaspora": "Migration importante vers les grandes villes, zones industrielles et plantations en Ethiopie en raison de la surpopulation et du manque d'opportunités économiques dans la zone Kambaata. Flux migratoire croissant vers l'Afrique du Sud et les pays du Moyen-Orient ces dernières années."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 900000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Recensement éthiopien 2007 : 630 236 Kambaata (90,89% dans le SNNPR). Estimation 2025 par projection du taux de croissance démographique éthiopien (~2,4% annuel).",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 900000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kambaata people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kambaata_people)",
+      "Kambaata language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kambaata_language)",
+      "Kambaata Language (KTB) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/ktb/)",
+      "Kambata in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12468)",
+      "Kambata of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011602/)",
+      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)",
+      "Cushitic languages – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Cushitic_languages)"
+    ]
   }
 }

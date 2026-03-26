@@ -7,58 +7,85 @@
     "appellations": {
       "mainName": "Kpana",
       "selfAppellation": "Kpana",
-      "exonyms": ["Kpana (terme utilisé par les Européens)"],
+      "exonyms": ["Kpana"],
+      "originOfExonyms": "Le terme Kpana est le nom courant utilisé localement et repris par les administrateurs coloniaux britanniques en Sierra Leone pour désigner ce groupe mandé de la region forestiere.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kpana reste peu documenté dans les sources académiques contemporaines. Le groupe est souvent subsumé sous la vaste catégorie des peuples mandé de Sierra Leone. Il est possible que Kpana soit un sous-groupe ou une variante locale d'un groupe mandé plus large.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "Mandé",
-      "historicalRegion": "Sierra Leone",
+      "ethnoLinguisticGroup": "Mandé méridional",
+      "historicalRegion": "Region forestière de Sierra Leone, province du Sud et province de l'Est",
       "currentCountries": ["SLE"]
     },
-    "ethnicities": ["Kpana du Nord", "Kpana du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Kpana du Nord (province du Nord de Sierra Leone)",
+      "Kpana du Sud (province du Sud)",
+      "Kpana de l'Est (province de l'Est, region de Kenema)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kpana sont originaires de la SLE, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples mandé voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Kpana font partie des peuples mandé méridionaux qui ont migré vers la région côtière de l'Afrique de l'Ouest à partir du 15e et 16e siècle, dans le sillage des grandes vagues migratoires mane. Leurs ancêtres provenaient vraisemblablement de l'intérieur du continent, de la région du Mandé (actuel Mali et Guinée), berceau commun des peuples mandé.",
+      "formationPeriod": "La formation du groupe Kpana en Sierra Leone s'est probablement consolidée aux 17e-18e siècles, lors des processus de sédentarisation des groupes mandé méridionaux dans les régions forestières de Sierra Leone.",
+      "migrationRoutes": [
+        "Depuis le berceau mandé (Mali/Guinée) vers l'ouest et le sud-ouest",
+        "Traversée des régions de Guinée Forestière vers Sierra Leone",
+        "Installation dans les zones forestières des provinces du Sud et de l'Est de Sierra Leone"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sud de Sierra Leone (districts de Bo et Pujehun)",
+        "Province de l'Est de Sierra Leone (district de Kenema)",
+        "Zones forestières de la région côtière de Sierra Leone"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts partageant une identité culturelle et linguistique commune mandé. Comme beaucoup de peuples mandé méridionaux de Sierra Leone, les Kpana se sont organisés en chefferies indépendantes tout en maintenant des liens culturels avec les autres groupes mandé voisins tels que les Mende et les Loko.",
+      "externalInfluences": "Contacts étroits avec les peuples mandé voisins (Mende, Loko, Temne). Influence progressive de l'islam via les réseaux marchands mandé. Christianisme introduit par les missionnaires britanniques au 19e siècle. Colonisation britannique (Sierra Leone comme colonie de la Couronne dès 1808, protectorat dès 1896) ayant restructuré les chefferies.",
+      "majorHistoricalEvents": "Intégration au protectorat britannique de Sierra Leone en 1896. Résistance ponctuelle à l'imposition des taxes coloniales (guerre de Hut Tax de 1898 impliquant de nombreux groupes du protectorat). Indépendance de Sierra Leone en 1961. Conflit civil de 1991-2002 ayant affecté les populations rurales de la région forestière."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (chiefdoms) héréditaires, structure caractéristique des peuples de Sierra Leone. Chaque chefferie est dirigée par un chef paramountain (paramount chief) élu par un conseil de chefs de famille notables. Le chef paramountain est reconnu par l'État sierra-léonais. En-dessous existent des chefs de section (section chiefs) et des chefs de village (town chiefs) qui gèrent les affaires locales quotidiennes.",
+      "clanOrganization": "Structure clanique patrilinéaire, avec organisation en familles étendues (extended families) constituant des unités de base sociales et économiques. Les clans sont identifiés par des patronymes communs et revendiquent une ascendance commune.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et les alliances matrimoniales. Les anciens des lignages jouent un rôle consultatif dans la gouvernance locale et la résolution des conflits.",
+      "religiousAuthority": "Autorité des prêtres et divinateurs traditionnels (medicine men) spécialistes des rituels de protection et de guérison. Influence croissante des imams musulmans dans les communautés converties à l'islam. Présence de pasteurs et prêtres chrétiens dans les zones urbaines et semi-urbaines."
     },
     "languages": {
-      "mainLanguage": "Kpana",
-      "vehicularRole": "Le kpana est parlé par la majorité des Kpana. L'anglais est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Kpana (langue mandé méridionale de Sierra Leone)",
+      "isoCodes": [],
+      "dialects": [
+        "Variante du Nord (zone Bo)",
+        "Variante du Sud (zone Pujehun)"
+      ],
+      "vehicularRole": "Le kpana est une langue mandé mineure peu documentée, dont le statut ISO 639-3 n'est pas établi de façon indépendante dans les bases Ethnologue ou Glottolog à ce jour. L'anglais est la langue officielle de Sierra Leone et sert dans l'éducation et l'administration. Le krio (créole anglais) est la lingua franca nationale. Le mende, langue mandé majeure de Sierra Leone, sert de langue de communication interethnique dans la region du Sud."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels kpana, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Rites d'initiation à la puberté pour les garçons, organisés dans le cadre de la société secrète Poro (propre aux peuples mandé méridionaux de Sierra Leone et du Libéria). La Poro supervise le passage à l'âge adulte masculin via un séjour dans la brousse et un enseignement des responsabilités d'adulte. La société féminine Sande (ou Bondo) organise les rites d'initiation des filles à la puberté. Rites funéraires avec veillées communautaires et repas collectifs. Cérémonies de mariage impliquant négociations entre familles et paiement de dot. Rites agricoles marquant le début de la saison des pluies et des récoltes.",
+      "symbols": "Masques rituels utilisés lors des cérémonies Poro et Sande, sculptés en bois et représentant des esprits ancestraux. Instruments de musique traditionnels comme emblèmes culturels. Scarifications rituelles marquant le passage à l'âge adulte chez certains initiés.",
+      "artsAndMusic": "Musique traditionnelle à base de percussions (djembé, tam-tam, balafon). Chants collectifs lors des cérémonies d'initiation et des fêtes de récolte. Tradition orale de contes et proverbes transmis par les anciens. Artisanat local incluant la poterie féminine, le tissage de pagnes et la sculpture de masques rituels. Danse traditionnelle lors des fêtes et cérémonies communautaires.",
+      "spiritualities": "Croyances animistes traditionnelles centrées sur la vénération des esprits ancestraux et des forces de la nature. Existence de fétiches protecteurs et de médecines traditionnelles (gris-gris). Islam sunnite présent dans une partie de la communauté, adopté progressivement via les réseaux marchands mandé. Christianisme (protestants et catholiques) présent suite à l'évangélisation coloniale britannique. Syncrétisme fréquent entre croyances traditionnelles et religion abrahamique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques sierra-léonaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kpana dans les grandes villes sierra-léonaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation historique en chefferies autonomes sans royaume centralisé documenté. Intégration progressive dans les structures politiques du protectorat britannique (1896) puis de l'État sierra-léonais indépendant (1961). Les chefferies kpana ont maintenu une certaine autonomie locale dans le cadre du système de gouvernance indirect (indirect rule) britannique.",
+      "relationsWithNeighbors": "Relations étroites avec les peuples mandé voisins, notamment les Mende (groupe mandé majoritaire de Sierra Leone) et les Loko. Contacts commerciaux et alliances matrimoniales avec les Temne et d'autres groupes de Sierra Leone. Relations pacifiques en temps normal, avec des tensions périodiques liées aux ressources foncières.",
+      "conflictsOrAlliances": "Participation aux résistances contre l'imposition fiscale coloniale britannique (guerre de Hut Tax, 1898). Impact du conflit civil sierra-léonais (1991-2002) sur les communautés rurales, avec déplacements forcés et destructions de villages. Alliances défensives ponctuelles avec d'autres groupes mandé face aux menaces extérieures.",
+      "diaspora": "Diaspora kpana limitée, principalement dans les grandes villes sierra-léonaises (Freetown, Bo, Kenema) suite aux migrations économiques et aux déplacements liés à la guerre civile. Présence minoritaire dans les pays voisins (Guinée, Libéria) parmi les réfugiés de la guerre civile."
     },
     "demography": {
       "totalPopulation": 20000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements sierra-léonais, SIL Ethnologue, et études démographiques"
+      "source": "Estimation approximative basée sur les données des recensements sierra-léonais (Statistics Sierra Leone 2015, projections 2025) et les études de SIL Ethnologue sur les langues mandé de Sierra Leone. Le groupe Kpana est peu documenté et les chiffres exacts sont difficiles à établir.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 20000,
+          "note": "Principalement dans les provinces du Sud et de l'Est de Sierra Leone"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kpana language",
-      "CIA World Factbook – Sierra Leone",
-      "Recensements sierra-léonais",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Mande peoples. https://en.wikipedia.org/wiki/Mand%C3%A9_peoples",
+      "SIL Ethnologue — Sierra Leone languages. https://www.ethnologue.com/country/SL/",
+      "Wikipedia EN — Mende people (groupe mandé voisin de Sierra Leone). https://en.wikipedia.org/wiki/Mende_people",
+      "Joshua Project — Mende, Boumpe in Sierra Leone. https://joshuaproject.net/people_groups/16123/SL",
+      "Statistics Sierra Leone — 2015 Population and Housing Census. https://www.statistics.sl/",
+      "Britannica — Mande. https://www.britannica.com/topic/Mande",
+      "CIA World Factbook — Sierra Leone. https://www.cia.gov/the-world-factbook/countries/sierra-leone/"
     ]
   }
 }

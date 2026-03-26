@@ -2,63 +2,123 @@
   "id": "PPL_SARA",
   "nameMain": "Sara",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["TCD", "CAF"],
+  "currentCountries": ["TCD", "CAF", "SDN"],
   "content": {
     "appellations": {
       "mainName": "Sara",
       "selfAppellation": "Sara",
-      "exonyms": ["Sara (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Kameeni (Sara-Kameeni)",
+        "Sara-Kaba",
+        "Kirdi (terme pejoratif utilise par les populations musulmanes du nord du Tchad pour designer les non-musulmans du sud)"
+      ],
+      "originOfExonyms": "Le terme Sara est employe par les observateurs exterieurs pour designer un ensemble de tribus non-musulmanes du sud du Tchad partageant des langues mutuellement intelligibles. Chaque tribu se designe elle-meme par son propre nom (Ngambay, Sar, Mbay, etc.). Le terme Kameeni qualifie les Sara dans leur variante solaire et agricole ancienne. Kirdi est un terme arabe et peul signifiant non-croyant, utilise de facon pejorative par les peuples musulmans du nord pour designer les populations non-islamisees du sud.",
+      "whyProblematic": "La denomination Sara est une construction exterieure regroupant sous un seul terme une douzaine de tribus distinctes qui ne se designaient pas collectivement ainsi. Ce regroupement artificiel a ete amplifie par l'administration coloniale francaise et a ensuite acquis une realite politique post-independance.",
+      "contemporaryUsage": "Le terme Sara est aujourd'hui largement accepte et utilise par les membres du groupe eux-memes, notamment dans le contexte politique tchadien ou les Sara forment le plus grand bloc ethnique. Les sous-groupes conservent leurs identites specifiques (Ngambay, Sar, Mbay, Gulay, Kaba, Dai).",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central",
-      "historicalRegion": "TCD, CAF",
-      "currentCountries": ["TCD", "CAF"]
+      "ethnoLinguisticGroup": "Soudanique central, branche Bongo-Bagirmi",
+      "historicalRegion": "Sud du Tchad (Logone, Chari, Moyen-Chari), nord de la Republique centrafricaine",
+      "currentCountries": ["TCD", "CAF", "SDN"]
     },
-    "ethnicities": ["Sara du Tchad", "Sara de RCA", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Ngambay (Sara Ngambay ou Gambaye) — le plus numereux, environ 1 million de locuteurs, sudouest du Tchad",
+      "Sar (Sara Madjingaye) — groupe eponyme, region de Sarh, environ 92 000 en 1977",
+      "Mbay — est du Tchad et nord de la RCA",
+      "Gulay — est Sara, environ 112 000 en 1977",
+      "Kaba (Sara Kaba) — sous-groupe Sara-Kaba distinct",
+      "Dai — sous-groupe du sud du Tchad",
+      "Nar — variete dialectale de l'est",
+      "Bedjond — sara central, region de Doba",
+      "Mango — sara central",
+      "Laka — ouest Sara",
+      "Horo — est Sara",
+      "Dagba — est Sara"
+    ],
     "origins": {
-      "ancientOrigins": "Les Sara sont originaires du Tchad et de la RCA. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples sahariens, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Sara tracent leurs origines a la civilisation Sao, qui a fleuri le long du fleuve Chari au sud du lac Tchad du 6e siecle avant J.-C. au 16e siecle de notre ere. Les Sao etaient des artisans qualifies (bronze, cuivre, fer, terre cuite) organises en clans patrilineaires unis en une seule polite. Selon les traditions orales Sara, leur nom derivrait de Sa-Ra (fils de Ra), evoquant un lien avec les croyances solaires nilotiques, indiquant une origine probable dans la vallee du Nil. Ils auraient migre vers l'ouest pour echapper aux razzias arabes.",
+      "formationPeriod": "La formation de l'identite sara distincte s'est consolidee entre le 14e et le 16e siecle, au moment de l'islamisation progressive et de la desintegration de la civilisation Sao sous les assauts des Yemenites (probablement des Arabes bedouins ou Sayfuwa) et des emirats musulmans du nord. Au 16e siecle, les groupes ancestors des Sara actuels ont migre vers le sud pour s'etablir dans les zones de savane du Tchad meridional.",
+      "migrationRoutes": [
+        "Vallee du Nil (origines legendaires) vers le Tchad via le Darfour",
+        "Lac Tchad vers le sud le long du Chari et du Logone",
+        "Migrations interieures depuis le Moyen-Chari vers les regions de Logone Oriental et Occidental pour fuir les razzias esclavagistes du nord"
+      ],
+      "historicalSettlementZones": [
+        "Moyen-Chari (region de Sarh, anciennement Fort-Archambault)",
+        "Logone Oriental (region de Doba)",
+        "Logone Occidental (region de Moundou)",
+        "Tandjile (sud-ouest du Tchad)",
+        "Nord-ouest de la Republique centrafricaine"
+      ],
+      "unificationsOrDivisions": "Les Sara ont maintenu une organisation en clans patrilineaires autonomes sans Etat centralise. Chaque tribu (Ngambay, Sar, Mbay, etc.) formait une entite politique et endogame distincte. La premiere presidence tchadienne de Francois Tombalbaye (lui-meme Sara-Sar) a produit une conscience politique unitaire sara, mais la rivalite entre sous-groupes reste presente.",
+      "externalInfluences": "Razzias esclavagistes recurrentes des emirats du nord du Tchad (Bagirmi, Borno, Sultanat du Ouaddai) du 16e au 19e siecle. Colonisation francaise (Afrique Equatoriale Francaise) depuis la fin du 19e siecle : recrutement force, travail oblige (chemin de fer Congo-Ocean 1920-1934), incorporation massive dans les troupes coloniales (Tirailleurs senegelais). Christianisation par les missions catholiques et protestantes. Independance du Tchad en 1960.",
+      "majorHistoricalEvents": "Au 14e-16e siecle, la civilisation Sao s'effondre sous les pressions islamiques. Pendant toute la periode precoloniale (16e-19e siecle), les Sara subissent les razzias esclavagistes des emirats du nord. Dans les annees 1920-1930, des milliers de Sara sont envoyes de force construire le chemin de fer Congo-Ocean, avec une mortalite tres elevee. En 1940-1945, les Sara forment le plus grand contingent africain dans les Forces Francaises Libres. En 1960, Francois Tombalbaye, Sara-Sar, devient premier president du Tchad. En 1973, Tombalbaye lance l'Authenticite (yondo obligatoire), provoquant une grave crise politique. En 1975, un coup d'etat militaire renverse et tue Tombalbaye. Depuis 1990, avec le regime de Deby (Gorane), les Sara sont dans l'opposition politique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en clans patrilineaires autonomes sans instance politique centralisee au niveau supra-tribal. Chaque clan villageois est dirige par un kwa begi (proprietaire de la terre) dont l'autorite est basee sur une association spirituelle avec la terre ancestrale. Absence de tribunaux ou de mecanismes formels de resolution des conflits : les differends etaient regles par auto-justice (vengeance) ou par divination. Le systeme precolonial etait egalitaire au sein du clan mais endogame et exclusif entre tribus.",
+      "clanOrganization": "Structure clanique strictement patrilineaire. Les clans detiennent des droits collectifs sur les terres agricoles. L'appartenance clanique determine l'identite, les alliances matrimoniales (endogamie tribale), et les obligations de vengeance. Les non-membres de clans pouvaient obtenir des terres cultivables en demandant la permission aux membres du clan.",
+      "ageClassSystems": "Systeme d'age male structure autour du yondo (rite d'initiation masculin). Les jeunes hommes passent ensemble par les epreuves initiatiques qui les unissent en classes d'age avec des obligations mutuelles de solidarite et d'entraide tout au long de la vie.",
+      "roleOfLineages": "Les lignages patrilineaires (tani) sont l'unite politique et economique de base. Ils organisent la production agricole collective, les obligations de mariage (dot), la vengeance en cas de mort d'un membre, et les ceremonies religieuses ancestrales. La residence est patrilocale.",
+      "religiousAuthority": "Autorite des specialistes religieux traditionnels charges de medier avec les esprits de la nature et les ancetres. Les pretres du yondo exercent une autorite spirituelle et sociale majeure lors des initiations. Depuis la colonisation, les pasteurs et pretres chretiens (catholiques et protestants) jouent un role important, mais de nombreux Sara maintiennent leurs pratiques animistes ancestrales en paralelle."
     },
     "languages": {
-      "mainLanguage": "Sara",
-      "vehicularRole": "Le sara est parlé par la majorité des Sara. L'arabe, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Langues sara (cluster Bongo-Bagirmi, famille soudanique centrale)",
+      "isoCodes": ["sba", "mwm", "myb", "gvl"],
+      "dialects": [
+        "Ngambay (sba) — le plus parle, environ 1 million de locuteurs, langue de commerce du sud du Tchad",
+        "Sar ou Sara Madjingaye (mwm) — lingua franca de Sarh, groupe eponyme",
+        "Mbay (myb) — dialecte est, Tchad et nord RCA",
+        "Gulay (gvl) — dialecte est Sara",
+        "Sara Kaba — groupe distinct mais apparente",
+        "Laka, Bedjond, Mango — dialectes ouest et central Sara"
+      ],
+      "vehicularRole": "Le ngambay est la principale langue de commerce du sud du Tchad. Le sara (ensemble des dialectes) est la troisieme langue du Tchad apres l'arabe et le francais (officiels). L'ensemble du groupe sara compte entre 2,5 et 3 millions de locuteurs. Le francais est largement utilise par les Sara instruits comme langue seconde depuis l'epoque coloniale."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes et islamiques",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sara, symboles chrétiens et islamiques.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres."
+      "majorRites": "Le yondo est le rite initiatique masculin central de la culture sara, marque par des epreuves physiques intenses, des scarifications rituelles et un isolement en brousse pendant plusieurs semaines. Il transforme les garcons en hommes responsables et les unit en classes d'age. Le ndo est le rite equivalent pour les femmes (yondo bagne), centrant sur la formation a la vie adulte, les roles feminins et l'identite sociale. Les femmes sara pratiquaient historiquement l'insertion de plateaux labiaux (disques en bois) pour se rendre moins attrayantes aux negriers, pratique aujourd'hui quasi disparue. Les ceremonies de mariage impliquent de longues negociations de dot entre les familles. Les rites funeraires comprennent des veillees, danses et repas communautaires.",
+      "symbols": "Les plateaux labiaux (kabe) etaient le symbole le plus visible de l'identite sara feminine, devenu emblematique dans la documentation ethnographique mondiale. Les scarifications rituelles (sur le visage et le corps) marquent l'appartenance clanique et les etapes initiatiques. Le sorgho et le mil sont des symboles agricoles centraux. La lance et le bouclier symbolisent la virilite et le statut guerrier masculin.",
+      "artsAndMusic": "Musique rythmee par des percussions multiples (tambours, hochets, cloches de fer) et des chants collectifs lors des ceremonies. Danses collectives lors des initiations (yondo) et des fetes agricoles. Artisanat en poterie feminine (jarres, recipients), tissage de nattes et de cordes en fibres vegetales. Sculpture sur bois de masques et figures ancestrales utilisees lors des ceremonies. Litterature orale riche comprenant des epopees sur les guerres anti-esclavagistes, des contes d'animaux et des recits de la civilisation Sao.",
+      "spiritualities": "Animisme traditionnel centre sur la veneration de la nature (soleil, eau, terre, arbres sacres) et des ancetres. Croyance en des forces spirituelles (esprits de la brousse, de l'eau, des ancetres) pouvant influencer la vie quotidienne positivement ou negativement. La divination est pratiquee en cas de maladie ou de mort pour identifier la cause spirituelle. Le yondo initiatique est profondement lie aux croyances traditionnelles. Depuis la colonisation, environ un tiers des Sara sont chretiens (catholiques et protestants), principalement dans les zones urbaines, avec un fort syncretisme avec les croyances ancestrales. Minorite musulmane dans les zones de contact avec le nord."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sara dans les grandes villes tchadiennes et centrafricaines, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Sara n'ont pas developpe de royaume centralise. Leur organisation en clans patrilineaires autonomes excluait la constitution d'entites politiques supra-tribales precoloniales. Ils se liaient au territoire de leurs ancetres et resistaient a toute forme d'hegémonie externe.",
+      "relationsWithNeighbors": "Relations hostiles avec les emirats musulmans du nord du Tchad (Bagirmi, Ouaddai, Borno) qui les ciblaient pour les razzias esclavagistes du 16e au 19e siecle. Relations commerciales et parfois conflictuelles avec les peuples de la savane environnants. Au 20e siecle, opposition politique persistante entre les Sara du sud et les populations musulmanes du nord du Tchad, notamment depuis l'independance de 1960.",
+      "conflictsOrAlliances": "Confrontation multiséculaire avec les emirats esclavagistes du nord. Resistance aux razzias du Bagirmi et du Ouaddai qui capturaient des Sara pour les vendre comme esclaves. Incorporation massive dans les troupes coloniales francaises durant les deux guerres mondiales et les guerres de pacification coloniales. Domination politique post-independance (1960-1975) sous Tombalbaye, suivie d'une guerre civile (1965-) opposant nord et sud. Tombalbaye a ete renverse en 1975 par le general Malloum, lui aussi Sara. Desde 1990, marginalisation politique sous Idriss Deby (Gorane du nord).",
+      "diaspora": "Forte presence Sara dans les grandes villes tchadiennes (N'Djamena, Moundou, Sarh) ou ils sont bien representes dans les administrations et forces armees depuis l'independance. Presence dans les villes de Bangui (RCA) et dans certains pays d'Europe (France principalement) parmi la diaspora tchadienne."
     },
     "demography": {
-      "totalPopulation": 3000000,
+      "totalPopulation": 3800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "CIA World Factbook (Sara Ngambay/Sara/Madjingaye/Mbaye : 30,5% de la population tchadienne estimee a 18 millions en 2025, soit environ 5,5 millions au Tchad). Estimations corrigees pour exclure les locueurs de sara vehiculaire : population ethnique sara totale estimee a 3,8 millions. Source : CIA World Factbook Chad, Ethnologue SIL, recensement tchadien 1993 (27,7% de la population), estimations UNFPA 2024.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 3500000,
+          "note": "Concentres dans les regions de Moyen-Chari (Sarh), Logone Oriental (Doba), Logone Occidental (Moundou), Tandjile. Constituent environ 30,5% de la population tchadienne totale."
+        },
+        {
+          "country": "CAF",
+          "population": 250000,
+          "note": "Nord-ouest de la Republique centrafricaine, 4e groupe ethnique du pays (environ 10% de la population)"
+        },
+        {
+          "country": "SDN",
+          "population": 50000,
+          "note": "Frontiere meridionale du Soudan du Sud, zone de contact avec le Tchad"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sara languages (sre)",
-      "CIA World Factbook – Chad, CAR",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Sara people. https://en.wikipedia.org/wiki/Sara_people",
+      "Wikipedia EN — Sara languages. https://en.wikipedia.org/wiki/Sara_languages",
+      "Wikipedia EN — Authenticite (Chad). https://en.wikipedia.org/wiki/Authenticit%C3%A9_(Chad)",
+      "101 Last Tribes — Sara people. https://www.101lasttribes.com/tribes/sara.html",
+      "Qiraat Africa — The Sara people. https://qiraatafrican.com/en/15532/the-sara-people/",
+      "Kwekudee Trip Down Memory Lane — Sara (Kameeni) people. https://kwekudee-tripdownmemorylane.blogspot.com/2014/09/sara-kameeni-people-ancient-sun.html",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
+      "Kumakonda Travel — Sara initiation rites Ndo and Yondo. https://kumakonda.com/trip/tribes-of-chad-sara-initiation/",
+      "SIL Ethnologue — Ngambay (sba). https://www.ethnologue.com/language/sba/",
+      "Glottolog — Ngambay. https://glottolog.org/resource/languoid/id/ngam1268",
+      "New York Times — Chad Tribal Rite Disrupting Nation, 13 octobre 1974. https://www.nytimes.com/1974/10/13/archives/chad-tribal-rite-disrupting-nation-sole-party-is-renamed.html"
     ]
   }
 }

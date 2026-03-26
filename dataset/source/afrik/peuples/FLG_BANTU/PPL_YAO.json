@@ -2,63 +2,117 @@
   "id": "PPL_YAO",
   "nameMain": "Yao",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["MWI", "MOZ", "TZA"],
+  "currentCountries": ["MWI", "MOZ", "TZA", "ZMB"],
   "content": {
     "appellations": {
       "mainName": "Yao",
-      "selfAppellation": "Yao",
-      "exonyms": ["Yao (terme utilisé par les Européens)"],
+      "selfAppellation": "Wayao",
+      "exonyms": ["Yao", "Ajao", "Achawa", "Adsawa", "Haiao", "Veiao"],
+      "originOfExonyms": "Le nom Yao viendrait du nom d'une colline situee dans le nord du Mozambique (province de Niassa), une colline denudee, forme plurielle d'un nom signifiant colline sans arbres. Les formes Ajao et Achawa sont des transcriptions swahili ou europeennes anciennes. Wayao est l'autonym au pluriel (wa- etant le prefixe de classe pour les personnes en bantu). Chiyao (chi-) est le nom de la langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Yao et Wayao sont les termes courants. Chiyao designe la langue. Les gouvernements du Malawi, du Mozambique et de la Tanzanie reconnaissent les Yao comme groupe ethnique distinct.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "MWI, MOZ, TZA",
-      "currentCountries": ["MWI", "MOZ", "TZA"]
+      "ethnoLinguisticGroup": "Bantou Zone P (P.21, Guthrie) — groupe Makua-Yao",
+      "historicalRegion": "Nord du Mozambique (province de Niassa) — entre les rivieres Rovuma et Lugenda ; puis lac Malawi (Lake Nyasa) et zones adjacentes au Malawi et en Tanzanie",
+      "currentCountries": ["MWI", "MOZ", "TZA", "ZMB"]
     },
-    "ethnicities": ["Yao du Malawi", "Yao du Mozambique", "Yao de Tanzanie"],
+    "ethnicities": [
+      "Yao du Malawi — majoritairement au Malawi meridional (Mangochi, Machinga), plus grand groupe national Yao",
+      "Machinga — sous-groupe Yao principal autour du district de Machinga (Malawi)",
+      "Mangochi — sous-groupe Yao du district de Mangochi, Malawi, au bord du lac Malawi",
+      "Yao du Mozambique — zones orientales et nord de la province de Niassa (Lichinga environ 40% de la population)",
+      "Yao de Tanzanie — zones meridionales de Tanzanie, district de Masasi et region de Ruvuma",
+      "Makale — sous-groupe Yao du Mozambique",
+      "Massaninga — sous-groupe Yao du Mozambique septentrional"
+    ],
     "origins": {
-      "ancientOrigins": "Les Yao sont originaires du MWI, du Mozambique et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence de l'islam et du christianisme."
+      "ancientOrigins": "Les Yao sont un peuple bantou de l'Afrique de l'Est meridionale. Leur centre ethnologique et geographic originel se trouvait dans le petit village de Chiconono, dans la province nord-ouest de Niassa au Mozambique. La region traditionnelle s'etend entre les fleuves Rovuma et Lugenda dans le nord du Mozambique. Le nom du peuple derive du nom d'une colline (yao en langue locale, colline denudee) situee dans cette zone montagneuse. Les Yao sont apparentes aux Makonde et aux Makua du nord du Mozambique.",
+      "formationPeriod": "Periode de formation : XIVe-XVIIIe siecle. L'integration dans les reseaux commerciaux swahili-arabes (surtout a partir du XVIIIe siecle) transforma profondement l'identite yao. L'expansion politique yao au XIXe siecle, liee au commerce de l'ivoire et des esclaves, entraina la formation de chefferies et de royaumes structurés.",
+      "migrationRoutes": [
+        "Expansion originelle depuis les collines du Niassa (Mozambique) vers le lac Malawi",
+        "Migration vers le Malawi oriental a partir des annees 1830 (est de la region de Malawi actuelle)",
+        "Expansion vers les zones meridionales de Tanzanie (regions de Ruvuma et Mtwara)",
+        "Route commerciale Makanjila (lac Nyasa) vers Kilwa Kivinje (cote tanzanienne) : axe majeur des caravanes Yao"
+      ],
+      "historicalSettlementZones": [
+        "Province de Niassa, Mozambique (terre ancestrale : Chiconono, region Lugenda-Rovuma)",
+        "District de Mangochi, Malawi (extremite sud-est du lac Malawi)",
+        "District de Machinga, Malawi (region du lac Chilwa)",
+        "Malawi meridional (Southern Region) — zone de plus forte concentration actuelle",
+        "Region de Ruvuma, Tanzanie (district de Masasi et ses environs)",
+        "Zambie orientale (petite communaute)"
+      ],
+      "unificationsOrDivisions": "Avant le XIXe siecle, les Yao etaient organises en groupes relatvement independants. L'essor du commerce de l'ivoire et des esclaves au XIXe siecle favorisa la montee de puissants chefs qui se proclamerent sultans, creant de veritables royaumes Yao (Makanjila, Mataka, Kawinga). La conversion a l'islam en 1870 par Makanjila III renforça l'identite commune. La colonisation (portugaise au Mozambique, britannique au Malawi et Tanzanie) fragmenta cette unite politique.",
+      "externalInfluences": "Commerce swahili-arabe des le XVIIIe siecle : acces aux tissus, aux armes a feu, et adoption de l'islam et d'elements de la culture swahili (architecture, habillement, calendrier). Traite negriere avec les Arabes et les Swahili (les Yao fournirent et transporterent des esclaves depuis l'interieur vers la cote). Acces aux armes a feu donnant un avantage militaire sur les Ngoni et les Chewa. Colonisation europeenne : Portugal (Mozambique), Royaume-Uni (Nyassaland/Malawi et Afrique orientale allemande/Tanzanie). Influence allemande en Tanzanie (resistance Yao contre la German East Africa Company, 1888-1890s).",
+      "majorHistoricalEvents": "Commerce de l'ivoire et des esclaves (XVIIIe-XIXe s.) : les Yao devinrent des intermediaires cles entre l'interieur et la cote swahili (Kilwa Kivinje). Conversion a l'islam (1870 : Makanjila III ; conversion de masse de la chefferie). Declaration du roi Machemba au commandant von Wissmann (1890) : refuse la domination allemande. Conquete britannique de Makanjila (1893 : Harry Johnston). Resistance a la Niassa Company portugaise (plantation coloniale). Independance du Malawi (1964), du Mozambique (1975), et de la Tanzanie (1961)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas, des pasteurs chrétiens, et des chefs religieux. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe matrilineaire organisee en chefferies hereditaires. Au XIXe siecle, certains chefs se proclamerent sultans et constituerent de veritables royaumes (Makanjila, Mataka, Kawinga). Ces sultans emploierent des scribes islamiques comme secretaires et conseillers. La conversion a l'islam renforça l'autorite chiefly en lui conferant un cadre juridique et symbolique (droit islamique, titulature arabe).",
+      "clanOrganization": "Societe matrilineaire : la filiation, l'heritage et la succession passent par la ligne maternelle. Le mariage est virilocal (la femme rejoint le foyer de l'epoux), mais la filiation reste matrilineaire. Taux de divorce eleve ; polygamie repandue. Le groupe de parente matrilineaire est la cellule economique et sociale de base.",
+      "ageClassSystems": "Rites d'initiation pour les filles (chiputu) : reclusion et enseignement des codes de la feminite. Rites d'initiation pour les garcons (jando) incluant la circoncision, hérités en partie des traditions swahili-arabes et renforces par l'islamisation.",
+      "roleOfLineages": "Les lignages matrilineaires determinent la succession chiefly, l'acces a la terre et les alliances matrimoniales. L'oncle maternel (malume) joue un role fondamental dans l'education et la transmission des biens. La residence virilocale creer une tension entre autorite du mari (patrilocal) et filiation matrilineaire.",
+      "religiousAuthority": "Islam (sunnite, majoritairement de tradition soufie influencee par la pratique cotieres swahili) dominant depuis le XIXe siecle. Les imams et les maalim (enseignants coraniques) jouent un role central dans la vie communautaire. Folk islam syncretise avec des croyances animistes ancestrales. Croyances en maladies causees par des malédictions ou la violation de tabous culturels (undubidwa, ndaka). Medecine traditionnelle coexiste avec les pratiques islamiques."
     },
     "languages": {
-      "mainLanguage": "Yao",
-      "vehicularRole": "Le yao est parlé par la majorité des Yao. L'anglais, le portugais, le swahili et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Chiyao / Ciyawo (yao)",
+      "isoCodes": ["yao"],
+      "dialects": [
+        "Mangochi — dialecte principal du Malawi, parle autour du district de Mangochi",
+        "Machinga — dialecte Yao du Malawi meridional (district de Machinga)",
+        "Makale — dialecte du Mozambique",
+        "Massaninga — dialecte du Mozambique nord",
+        "Niassa — dialecte de la province de Niassa (Mozambique)",
+        "Ruvuma — dialecte de la region de Ruvuma (Tanzanie)"
+      ],
+      "vehicularRole": "Le chiyao est parle par environ 2 millions de personnes au Malawi, Mozambique et Tanzanie. Au Malawi, la langue nationale est le chichewa ; les Yao parlent aussi le chichewa comme deuxieme langue. En Tanzanie, le swahili est la lingua franca officielle. Au Mozambique, le portugais est la langue officielle. Le chiyao contient de nombreux emprunts arabes et swahili dus aux siecles de commerce et d'islamisation. La langue est ecrite en alphabet latin etendu."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles islamiques et chrétiens, symboles culturels yao.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Chiputu : initiation des filles dans un cadre islamique syncretise (reclusion, enseignement des devoirs feminins, chants rituels). Jando : initiation des garcons avec circoncision. Mariages : polygamie repandue, ceremonies melant rites traditionnels et pratiques islamiques. Ramadan et Aid comme fetes majeures. Pratique traditionnelle du guidage par la grande honeyguide (Indicator indicator) : les chasseurs Yao utilisent un appel specifique brrrr-hmm transmis de pere en fils pour collaborer avec cet oiseau afin de trouver les ruches (etudie scientifiquement en 2016, publication dans Science). Rites funeraires islamiques (inhumation rapide, priere funèbre).",
+      "symbols": "La colline Yao (mont symbolique originel au Niassa, Mozambique). Le croissant et l'etoile islamiques comme symboles d'identite. La honeyguide (oiseau indicateur) comme symbole de la relation homme-nature dans la culture yao. Architecture swahilo-yao : mosquees et maisons en pierre ou en brique dans les villages des chefs.",
+      "artsAndMusic": "Danse yao : repertoire de danses rituelles et festives (chioda, initiation feminine). Musique de percussions et chants lors des ceremonies d'initiation et des fetes islamiques. Tissage et artisanat de paniers. Tradition orale de contes (ngano) et de chants epiques accompagnes de tambours. Litterature orale riche en proverbes et en recits historiques. Poterie et sculpture sur bois a petite echelle.",
+      "spiritualities": "Islam sunnite, fortement marque par la tradition soufie cotieres swahili, constitue la religion dominante (plus de 80% des Yao du Malawi). Islam syncrétise avec des croyances animistes : croyance en esprits ancestraux, en maladies causees par des malédictions (undubidwa) ou la violation de tabous (ndaka, maladies associees au contact entre personnes sexuellement actives et inactives). Guerisseurs traditionnels et pratiques de medecine par les plantes coexistent avec la medecine islamique. Les Yao sont l'un des groupes africains les plus fortement islamises."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora yao dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaumes Yao du XIXe siecle : sultanat de Makanjila (lac Malawi meridional, puissant chef commercial et politique), chefferie de Mataka (zone de Niassa), chefferie de Kawinga (Malawi), chefferie de Zarafi (Tanzanie). Ces royaumes controlerent les routes commerciales d'ivoire et d'esclaves entre le lac Malawi et la cote tanzanienne.",
+      "relationsWithNeighbors": "Cooperation commerciale avec les marchands swahili-arabes de la cote (Kilwa Kivinje). Conflits armes avec les Ngoni (fuyant le Mfecane zoulou) et les Chewa pour le controle des routes commerciales ; l'acces aux armes a feu donnait un avantage aux Yao. Resistance aux Britanniques au Malawi (Nyassaland) et aux Allemands en Tanzanie. Tensions avec le Portugal au Mozambique (Niassa Company). Assimilation partielle de la culture swahili (architecture, vetements, langue, religion).",
+      "conflictsOrAlliances": "Traite des esclaves active jusqu'a la fin du XIXe siecle : les Yao furent parmi les principaux fournisseurs et transporteurs d'esclaves entre l'interieur et la cote. Resistance a la colonisation allemande : revolt contre la German East Africa Company (1888) dans les zones cotieres de Kilwa, Mikindani et Lindi ; execution de Hassan bin Omari a Kilwa (1895). Resistance au Portugal au Mozambique. Defaite finale face aux forces britanniques de Harry Johnston (1893).",
+      "diaspora": "Migration vers les villes de Blantyre et Lilongwe au Malawi. Presence a Dar es-Salaam et dans les villes tanzaniennes. Petite diaspora en Zambie orientale. Migration urbaine croissante depuis les zones rurales du Niassa et du lac Malawi."
     },
     "demography": {
-      "totalPopulation": 3000000,
+      "totalPopulation": 3900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025) : 3 862 000 Yao dans tous les pays. Wikipedia EN : environ 2 millions (locuteurs de chiyao). SIL Ethnologue : 1 000 000 au Malawi, 495 000 au Mozambique, 492 000 en Tanzanie. Projection 2025 avec taux de croissance regional : environ 3,9 millions.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 2300000,
+          "note": "Majorite dans le Malawi meridional : districts de Mangochi, Machinga, Balaka, Zomba et Chiradzulu"
+        },
+        {
+          "country": "MOZ",
+          "population": 1000000,
+          "note": "Province de Niassa (surtout Lichinga), nord du Mozambique ; environ 40% de la population de Lichinga"
+        },
+        {
+          "country": "TZA",
+          "population": 500000,
+          "note": "Region de Ruvuma et zones meridionales de Tanzanie, district de Masasi"
+        },
+        {
+          "country": "ZMB",
+          "population": 100000,
+          "note": "Zambie orientale, province de l'Est"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Yao language (yao)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Yao people (East Africa) : https://en.wikipedia.org/wiki/Yao_people_(East_Africa)",
+      "Wikipedia EN — Yao language : https://en.wikipedia.org/wiki/Yao_language",
+      "Joshua Project — Yao all countries (2025) : https://joshuaproject.net/people_groups/15988",
+      "Joshua Project — Yao in Malawi : https://joshuaproject.net/people_groups/15988/MI",
+      "Qiraat Africa — The Yao/Wayao people of Lake Malawi (2026) : https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+      "101 Last Tribes — Yao people : https://www.101lasttribes.com/tribes/yao.html",
+      "SIL Ethnologue — Yao language (yao) : https://www.ethnologue.com/language/yao/"
     ]
   }
 }

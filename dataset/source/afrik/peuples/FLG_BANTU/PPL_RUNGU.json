@@ -1,59 +1,82 @@
 {
   "id": "PPL_RUNGU",
-  "nameMain": "Rungu",
+  "nameMain": "Rungwa",
   "languageFamilyId": "FLG_BANTU",
   "currentCountries": ["TZA"],
   "content": {
     "appellations": {
-      "mainName": "Rungu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "mainName": "Rungwa",
+      "selfAppellation": "Warungwa",
+      "exonyms": [
+        "Warungu (variante orthographique)",
+        "Ichirungwa (nom de la langue)",
+        "Lungwa",
+        "Nyalungwa"
+      ],
+      "originOfExonyms": "Le nom Rungwa (ou Rungu) designe le peuple et sa langue. Ichirungwa (aussi Icilungwa, Kirungwa) est le terme en langue propre pour designer la langue. Le prefixe swahili Wa- donne Warungwa. La langue est aussi appelee Icilungwa selon le Joshua Project.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Rungwa et Warungwa sont employes dans les contextes officiels tanzaniens. La langue est repertoriee sous le code ISO rnw (Rungwa). Le peuple est parfois designe Rungu dans certaines sources.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Bantu, branche M.12 selon la classification Guthrie, groupe Rukwa occidental",
+      "historicalRegion": "District de Mpanda, region de Katavi, Tanzanie occidentale, pres des plaines nord du lac Rukwa",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Rungu"],
+    "ethnicities": ["Rungwa", "Warungwa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Rungwa sont un peuple bantu de la branche M.12 (classification Guthrie), etabli dans le district de Mpanda dans la region de Katavi, en Tanzanie occidentale. Ils font partie du corridor de peuples bantu de la zone Rukwa qui comprend egalement les Fipa, Pimbwe, Bende et Konongo. Selon les etudes linguistiques (Waters, African Studies Quarterly), les peuples du Rukwa, dont les Rungwa, ont des origines proches de la Zambie actuelle. La langue rungwa presente des affinites lexicales avec le pimbwe et le mambwe-lungu.",
+      "formationPeriod": "Periode precoloniale ; les Rungwa sont attestes comme groupe ethnique distinct avant le XIXe siecle dans la region de Rukwa-Katavi. La colonisation allemande puis britannique a fige les identites ethniques de la region.",
+      "migrationRoutes": [
+        "Corridor Zambie-Tanganyika-Rukwa (origine probable partagee avec les Fipa et Pimbwe)"
+      ],
+      "historicalSettlementZones": [
+        "District de Mpanda, region de Katavi",
+        "Plaines nord du lac Rukwa",
+        "Rukwa Region (ancienne denomination administrative avant 2012)"
+      ],
+      "unificationsOrDivisions": "Les Rungwa coexistent avec d'autres groupes bantu de la region (Fipa, Pimbwe, Bende, Konongo). La region de Rukwa constitue un carrefour de trois groupes linguistiques bantu : Nyamwezi-Sukuma (nord-est), Bende (nord), et Fipa-Pimbwe-Rungwa (sud, avec origines en Zambie).",
+      "externalInfluences": "Contact avec les negociants arabes-swahili au XIXe siecle. Colonisation allemande puis britannique. Politique tanzanienne post-independance avec le kiswahili comme langue nationale. Creation de la region de Katavi en 2012 (detachee de Rukwa), modifiant l'organisation administrative locale.",
+      "majorHistoricalEvents": "Creation de la region de Katavi en 2012 par separation de la region de Rukwa. Le district de Mpanda est l'un des plus isoles de Tanzanie occidentale, limitant les echanges. Les Rungwa ont progressivement integre l'agriculture et l'elevage a leur mode de vie traditionnel de chasseurs-pecheurs."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en communautes villageoises avec des anciens (elders) et des structures familiales etendues. Pas de royaume ou de chefferie centralisee documentee. Le statut social est lie a la participation agricole, a la possession de betail et aux relations avec les groupes voisins.",
+      "clanOrganization": "Organisation en unites familiales etendues dans des villages ruraux. Les clans organisent les alliances matrimoniales et la transmission des terres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages organisent la transmission des savoir-faire (chasse, peche, apiculture) et l'acces aux ressources naturelles.",
+      "religiousAuthority": "Majorite chretienne (74%, principalement catholiques romains selon Joshua Project). Persistance de pratiques spirituelles traditionnelles en syncretisme avec le christianisme."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Rungwa (Icilungwa)",
+      "isoCodes": ["rnw"],
+      "dialects": ["Ichirungwa", "Kirungwa", "Nyalungwa"],
+      "vehicularRole": "Le swahili est la langue nationale vehiculaire, utilise dans les ecoles, l'administration et les echanges. Le rungwa est parle localement dans le district de Mpanda. La langue est encore non ecrite (unwritten selon ScriptSource)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques rituelles liees aux cycles de chasse, de peche et d'agriculture. Syncrethisme entre le christianisme catholique et les croyances ancestrales traditionnelles. Celebrations communautaires autour des recoltes.",
+      "symbols": "Le lac Rukwa et les plaines environnantes sont au coeur de l'identite territoriale rungwa. L'apiculture est une activite culturellement et economiquement valorisee.",
+      "artsAndMusic": "Traditions artisanales et musicales propres a la zone Rukwa-Katavi. L'apiculture est une specialite economique. L'architecture traditionnelle en terre crue est pratiquee dans les villages ruraux.",
+      "spiritualities": "Christianisme majoritaire (74%, principalement catholique romain, avec seulement 0,1% d'evangeliques declares selon Joshua Project). Les pratiques spirituelles traditionnelles animistes persistent en syncretisme, revelant le besoin d'une evangelisation plus profonde selon les sources missionnaires. Croyances ancestrales liees a la nature et aux ancetres."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente. Chefferies locales dans le cadre du systeme administratif tanzanien.",
+      "relationsWithNeighbors": "Coexistence avec les Fipa, Pimbwe, Bende et Konongo dans le couloir Rukwa-Katavi. Relations de multilinguisme et d'intermariage entre les peuples voisins de la region. Les Rungwa font partie des peuples de la zone M.12 dont la langue a des affinites avec le Pimbwe (M.11) et le Mambwe-Lungu.",
+      "conflictsOrAlliances": "La region de Katavi, tres isolee, a limite les conflits avec des groupes exterieurs. Les tensions locales ont souvent trait aux ressources naturelles (chasse, peche, terres agricoles) et aux pressions demographiques.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 59000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 : 59 000 ; PeopleGroups.org 2025 : environ 52 500-53 500 ; Wikipedia (1987) : 18 000 (recensement ancien)",
+      "distributionByCountry": [{ "country": "TZA", "population": 59000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Rungwa people – Wikipedia (https://en.wikipedia.org/wiki/Rungwa_people)",
+      "Rungwa language – Wikipedia (https://en.wikipedia.org/wiki/Rungwa_language)",
+      "Rungwa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14594/TZ)",
+      "Rungwa of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015029/)",
+      "Rungwa – Language Info, Swordshare Map (https://map.swordshare.com/rnw)",
+      "Rungwa – ScriptSource (https://www.scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=vl25fkvzt2)",
+      "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
+      "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
   }
 }

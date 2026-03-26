@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_GEDEO",
   "nameMain": "Gedeo",
   "languageFamilyId": "FLG_COUCHITIQUE",
@@ -6,54 +11,76 @@
   "content": {
     "appellations": {
       "mainName": "Gedeo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Gedeo",
+      "exonyms": [
+        "Darasa",
+        "Darassa",
+        "Derasa",
+        "Derasanya",
+        "Deresa",
+        "Geddeo"
+      ],
+      "originOfExonyms": "Les exonymes Darasa et Derasa ont été utilisés dans la littérature ethnographique ancienne et par les populations voisines Oromo. Ces appellations sont aujourd'hui moins courantes ; le terme Gedeo est privilégié par la communauté et les autorités éthiopiennes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Gedeo est utilisé officiellement dans les documents d'État, dans la dénomination de la zone administrative Gedeo (État du Sud de l'Éthiopie) et dans les médias nationaux. La zone Gedeo tire son nom de ce peuple."
     },
     "ethnicities": ["Gedeo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les origines des Gedeo sont objet de plusieurs traditions. L'une les fait remonter à la tribu aborigène Murgga-Gosallo, peut-être le plus ancien peuple de la région. Une autre tradition orale leur attribue comme ancêtre Daraso, frère ainé de Gujo (ancêtre des Oromo Guji) et de Boro (ancêtre des Oromo Borana) ; cette tradition peut s'expliquer par la pratique de l'adoption de masse (guddifacha) au sein des Oromo. Les Gedeo ont acquis la pratique du baalle (système de classes d'âge) auprès des Guji Oromo, avec lesquels ils ont entretenu des relations historiques étroites.",
+      "formationPeriod": "Formation ancienne dans les hautes terres du sud de l'Éthiopie. L'organisation politique en fédération de trois territoires (Sasserogo) est documentée avant l'intégration à l'empire éthiopien en 1895.",
+      "migrationRoutes": [
+        "Hautes terres à l'ouest du lac Abaya et au sud de Dilla (zone Gedeo actuelle)",
+        "Migration forcée vers les zones périphériques après les confiscations foncières des années 1920"
+      ],
+      "historicalSettlementZones": [
+        "Zone centrale des hautes terres, au sud-ouest de Dilla et à l'est du lac Abaya (zone Gedeo)",
+        "Parties adjacentes de la région Oromia (24,84 % de la population)"
+      ],
+      "unificationsOrDivisions": "Avant 1895, les Gedeo formaient une fédération de trois territoires (Sasserogo ou trois Roga) : Sobbho, Ributa et Rikuta, partageant un Aba Gada (chef politique-religieux) commun renouvelé tous les huit ans. Sept clans descendent des sept fils de Daraso issus de deux épouses.",
+      "externalInfluences": "Intégration à l'empire éthiopien en 1895 avec confiscations foncières et imposition d'un système féodal (naftagna, balabat) ; missions protestantes dans les années 1950 (Église éthiopienne Kalehiywot, Église évangélique éthiopienne Mekaneyesus) qui ont transformé la pratique religieuse de la majorité.",
+      "majorHistoricalEvents": "1895 : intégration à l'empire éthiopien, confiscations foncières, réduction au statut de gebbar (serfs). 1920s : arpentage des terres non occupées par les autorités. 1950s : arrivée des missions protestantes et construction d'écoles. 1960 : affrontement au mont Michille près de Dilla (68 morts côté armée/fonctionnaires, 86 morts côté Gedeo). 2018 : violences avec les Guji Oromo menant au déplacement d'environ 800 000 personnes, principalement des Gedeo, le plus grand mouvement de population interne au monde cette année-là."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Système du baalle : organisation en classes d'âge et de rangs similaire au gadaa Oromo, avec sept grades couvrant des périodes de dix ans créant un cycle de 70 ans. L'Aba Gada est le chef politique et rituel suprême, issu alternativement des clans Logoda et Henbba'a, dont le mandat est renouvelé tous les huit ans lors de cérémonies de baalle.",
+      "clanOrganization": "Sept clans issus des sept fils de Daraso : Doobba'a, Darashsha, Gorggorshsha, Hanuma, Bakarro, Henbba'a, Logoda. Organisés en deux maisons : Shoole baxxe (ainees, quatre clans, plus de vingt-cinq sous-tribus) et Sase baxxe (cadets, trois clans, dix sous-tribus). Tous les sous-clans pratiquent l'exogamie.",
+      "ageClassSystems": "Baalle : système de rangs et classes d'âge en sept grades sur un cycle de 70 ans, similaire au gadaa oromo. Toutes les fonctions de leadership sont assignées lors des cérémonies du baalle.",
+      "roleOfLineages": "Les lignages définissent les rôles politiques et rituels : l'Aba Gada est choisi parmi les clans Logoda et Henbba'a ; d'autres fonctions (Hyiticha) sont attribuées à des sous-clans spécifiques. La transmission foncière et les droits matrimoniaux sont régis par les lignages.",
+      "religiousAuthority": "Tradition : Mageno (Etre suprême) est la divinité centrale. Après les années 1950, la majorité de la population s'est convertie à l'Église éthiopienne Kalehiywot (protestante) ; présence de l'Église évangélique Mekaneyesus. L'Église orthodoxe éthiopienne perçoit historiquement l'asrat (un dixième de la production) comme dîme."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Gedeo (drs)",
+      "isoCodes": ["drs"],
+      "dialects": [],
+      "vehicularRole": "L'amharique est la langue administrative principale. La langue gedeo est étroitement apparentée au sidama (langue voisine) ; elle est utilisée comme langue d'enseignement primaire dans la zone Gedeo. Environ 1,4 million de locuteurs natifs en 2018 (Wikipedia / Gedeo language)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Cérémonies du baalle (intronisation de l'Aba Gada et transmission des rangs) tous les huit ans ; rituels de médecine traditionnelle assurés par des sous-clans spécialisés ; pratiques agraires autour de la culture de l'enset et du café.",
+      "symbols": "La culture du cafe (Coffea arabica) est le symbole économique et identitaire central des Gedeo : ils sont reconnus comme l'un des principaux producteurs de café d'Éthiopie. L'enset (fausse banane) est la culture vivrière de base. Les modèles de plantation agroforestière associant café, enset et arbres constituent un patrimoine agricole millénaire.",
+      "artsAndMusic": "Architecture traditionnelle des hautes terres ; pratiques musicales lors des cérémonies de baalle. Les Gedeo sont connus pour leur système agroforestier dense, avec des plantations à plusieurs strates (café sous couvert d'arbres natifs) qui ont inspiré des programmes de conservation biodiversitaire.",
+      "spiritualities": "Religion traditionnelle centrée sur Mageno (Etre suprême) ; pratiques rituelles de médecine et de divination. Depuis les années 1950, conversion massive au protestantisme (Église Kalehiywot), qui a substitué le Dieu chrétien à Mageno. Des pratiques animistes persistent localement."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Fédération de trois territoires (Sasserogo) dirigée par un Aba Gada commun avant 1895 ; système politique sophistiqué du baalle comparable au gadaa oromo.",
+      "relationsWithNeighbors": "Relations historiques étroites avec les Guji Oromo (transmission du baalle, traditions d'origine communes, tensions foncières chroniques). Les Sidama sont linguistiquement proches (langues apparentées, culture de l'enset commune). Les Borana Oromo partagent des traditions d'origine mythologiques.",
+      "conflictsOrAlliances": "1960 : affrontement armé au mont Michille près de Dilla avec les forces de l'État. 1981 : affrontement près de Rago-Qishsha. 1995-2018 : clashes récurrents avec les Guji Oromo pour le contrôle des terres frontalières. 2018 : violence intercommunautaire menant au déplacement de 800 000 personnes (principalement des Gedeo), le plus grand déplacement interne au monde cette année-là, surpassant même la crise rohingya.",
+      "diaspora": "Présence gedeo dans la région Oromia (24,84 % de la population gedeo vit dans des parties adjacentes de l'Oromia) ; déplacements massifs en 2018 ont créé de grandes concentrations de déplacés dans les zones de Bule, Gedeb, Kochere, Wonago, Dilla et Yirgacheffe."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1897000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 ; recensement éthiopien 2007 : 986 977 personnes (75,05 % dans le SNNPR, 24,84 % en Oromia) ; Ethnologue (drs) : environ 637 000 (1994 census)",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 1897000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Gedeo people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo_people)",
+      "Gedeo language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo_language)",
+      "Gedeo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11504)",
+      "Gedeo language (DRS) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/drs/)",
+      "Gedeo-Guji clashes – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo%E2%80%93Guji_clashes)",
+      "West Guji-Gedeo Conflict Displacement Flash Update – ReliefWeb / OCHA, mai 2018 (https://reliefweb.int/report/ethiopia/ethiopia-west-guji-gedeo-conflict-displacement-flash-update-1-9-may-2018)",
+      "ISO 639-3 drs : Gedeo – CEDS / National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
   }
 }

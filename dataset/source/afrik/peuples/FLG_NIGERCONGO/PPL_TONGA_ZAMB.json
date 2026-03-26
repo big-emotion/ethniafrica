@@ -6,59 +6,105 @@
   "content": {
     "appellations": {
       "mainName": "Tonga (Zambie)",
-      "selfAppellation": "Tonga",
-      "exonyms": ["Tonga (terme utilisé par les Européens)"],
+      "selfAppellation": "Batonga (Chitonga : Batonga, langue : Chitonga)",
+      "exonyms": [
+        "Tonga",
+        "Zambezi Tonga",
+        "Plateau Tonga",
+        "Valley Tonga",
+        "Gwembe Tonga",
+        "Korekore (Zimbabwe)"
+      ],
+      "originOfExonyms": "Batonga est la forme endonyme avec le préfixe bantu ba- (pluriel). Zambezi Tonga souligne la connexion à la rivière Zambèze. Gwembe Tonga ou Valley Tonga désigne le sous-groupe de la vallée de la Gwembe (déplacé par le barrage de Kariba). Plateau Tonga désigne le sous-groupe des hauts plateaux de la province Sud. Korekore est parfois utilisé au Zimbabwe pour des groupes Shona voisins des Tonga du fleuve, créant des confusions. Munchi est un terme péjoratif fula (comme pour les Tiv) non applicable aux Tonga.",
+      "whyProblematic": "Le terme Tonga est partagé par des peuples sans lien direct dans toute l'Afrique australe. Le Chitonga de Zambie (M64, ISO toi) et le Chitonga du Malawi (N15, ISO tog) appartiennent à des branches bantoues différentes et sont mutuellement inintelligibles. Le nom Tonga du Mozambique (S62) est encore une langue distincte. Au Zimbabwe, les Tonga du Zambèze (districts de Binga, Hwange, Gokwe Nord) sont parfois confondus avec d'autres groupes. La tragédie du barrage de Kariba (1957-1958) a dispersé les Gwembe Tonga dans deux pays et reste une identité mémorielle centrale.",
+      "contemporaryUsage": "Batonga est l'appellation courante en Zambie (Province du Sud, province de Lusaka, province Centrale). Le Chitonga est une des sept langues nationales enseignées dans les écoles de la province du Sud, de Lusaka et de la province Centrale. Les Tonga de Zambie représentent l'un des plus grands groupes ethniques du pays. Au Zimbabwe, ils sont établis dans les districts de Binga, Hwange, Gokwe Nord et d'autres. Le déplacement par le barrage de Kariba reste un sujet de revendication mémorielle et foncière actif.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "Zambie",
+      "ethnoLinguisticGroup": "Bantou — groupe Botatwe (M64, Guthrie); branche Benue-Congo, famille Niger-Congo; proche de l'Ila, du Lenje et du Sala",
+      "historicalRegion": "Province du Sud de la Zambie (plateau Batoka, vallée de la Gwembe/Zambèze), Province Centrale et province de Lusaka (Zambie); districts de Binga, Hwange et Gokwe Nord (Zimbabwe)",
       "currentCountries": ["ZMB", "ZWE"]
     },
-    "ethnicities": ["Tonga du Nord", "Tonga du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Plateau Tonga (Batoka Tonga) : sous-groupe des hauts plateaux de la province du Sud; considérés par certains comme les Tonga originaux; concentrés autour de Monze et du plateau Batoka",
+      "Valley Tonga (Gwembe Tonga / Kweembe) : sous-groupe de la vallée de la Gwembe, au bord du Zambèze; chasseurs, pêcheurs et agriculteurs déplacés par le barrage de Kariba (1957-1958)",
+      "Tonga du Zimbabwe (Tonga du fleuve) : établis dans les districts de Binga, Hwange et Gokwe Nord après le déplacement de Kariba",
+      "Toka-Leya (Livingstone) : sous-groupe Tonga de la région de Livingstone et des chutes Victoria, lié au chiefdom de Mukuni",
+      "Iwe, Toka, Leya : peuples de la région des chutes Victoria parlant des variétés proches du Chitonga"
+    ],
     "origins": {
-      "ancientOrigins": "Les Tonga de Zambie sont originaires de la région de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Tonga du ZWE, du Malawi et du Mozambique.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Batonga sont probablement les premiers locuteurs bantous à s'être établis dans le sud de la Zambie actuelle. L'archéologue Desmond Clark suggère, sur la base de données archéologiques, qu'ils entrèrent dans la région par la rive est du lac Nyasa (via la vallée du Zambèze) entre le 15e et le 16e siècle. Des données archéologiques les situent dans le nord du plateau Batoka depuis au moins 1100 apr. J.-C. Ils ne possèdent pas d'histoire enregistrée avant 1853, date du premier contact documenté avec Livingstone. Les Tonga du plateau et de la vallée de la Gwembe constituent un même peuple mais revendiquent des identités locales distinctes.",
+      "formationPeriod": "L'identité Tonga de Zambie s'est consolidée progressivement sur le plateau Batoka et dans la vallée du Zambèze. Leur organisation sociale matrilinéaire sans chefferie centrale a longtemps prévalu. Dans les années 1800, sous le règne de Mzilikazi et Lobengula, les Ndébélé considéraient les Tonga comme un peuple pacifique. La colonisation britannique via la British South Africa Company (BSAC) de Cecil Rhodes intégra les terres Tonga dans la Rhodésie du Nord (actuelle Zambie). L'événement identitaire le plus marquant du 20e siècle est le déplacement forcé de 57 000 Gwembe Tonga par la construction du barrage de Kariba (1957-1958).",
+      "migrationRoutes": [
+        "Entrée en Zambie depuis la rive est du lac Nyasa via la vallée du Zambèze, entre le 15e et le 16e siècle",
+        "Expansion sur le plateau Batoka (nord de la province du Sud actuelle)",
+        "Occupation de la vallée de la Gwembe le long du Zambèze",
+        "Déplacement forcé par le barrage de Kariba (1957-1958) : vers les collines au-dessus du lac Kariba ou vers les terres arides en dessous du barrage"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sud de la Zambie : plateau Batoka (districts de Monze, Mazabuka, Choma, Kalomo)",
+        "Vallée de la Gwembe : zone inondée par le lac Kariba (districts de Siavonga et Gwembe, Zambie; Binga, Zimbabwe)",
+        "Province de Lusaka et province Centrale (Zambie) : expansions récentes",
+        "Districts zimbabwéens de Binga, Hwange, Gokwe Nord : Tonga du côté zimbabwéen du Zambèze"
+      ],
+      "unificationsOrDivisions": "Les Batonga sont un peuple fondamentalement sans chefferie centrale (acéphale dans une large mesure). Leur organisation sociale matrilinéaire est décentralisée : les clans matrilinéaires (mizimo) et les unités locales fonctionnaient de façon autonome. À la différence de nombreux voisins d'origine congolaise avec un système féodal, la structure Tonga est plus simple et dépourvue de contrôle centralisé. Les chefs (chiefs) Tonga sont des figures de prestige et d'arbitrage, non des souverains absolus. Le déplacement de Kariba (1958) constitue le principal événement de fragmentation géographique et sociale du 20e siècle.",
+      "externalInfluences": "Période précoloniale : contacts et tensions avec les Ndébélé (Matabele) qui les considéraient comme pacifiques. Colonisation par la British South Africa Company de Cecil Rhodes (1890s). Domination des Kololo (sous Sebitwane, 1830-1836) qui transitèrent dans la région avant de s'établir en pays Lozi. Construction du barrage de Kariba (1957-1959) sur le Zambèze par la Fédération de Rhodésie-Nyasaland : déplacement forcé de 57 000 Tonga. Indépendance de la Zambie (1964). Évangélisation chrétienne par les missionnaires de la Paris Evangelical Missionary Society et d'autres.",
+      "majorHistoricalEvents": "1100 apr. J.-C. : présence documentée archéologiquement sur le plateau Batoka. 1853 : premier contact documenté avec David Livingstone. 1890s : incorporation dans la Rhodésie du Nord (BSAC). 1956-1958 : construction du barrage de Kariba sur le Zambèze; déplacement forcé de 57 000 Gwembe Tonga (23 000 du côté zimbabwéen, environ 34 000 du côté zambien). 1958 : résistance initiale des Tonga au déplacement; intervention militaire à Chisamu. 1959 : fin du déplacement, versement de 270 dollars zambiens par personne déplacée. 1964 : indépendance de la Zambie. 2007 : rapport IRIN-New Humanitarian sur la persistance des difficultés des Tonga déplacés."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation matrilinéaire sans chefferie centrale. Les Tonga de Zambie appartiennent à des clans matrilinéaires (mizimo) mais leur organisation politique locale est fondée sur des chefs de village et de district (indunas, headmen) sans hiérarchie élaborée. Les chefs traditionnels (chiefs) importants incluent le chef Monze (figure spirituelle centrale du plateau, gardien des rites de pluie) et les chefs du groupe Toka-Leya comme le Senior Chief Mukuni (région de Livingstone). L'assemblée des hommes adultes délibère des affaires communautaires. Le manque de centralisation avait facilité la soumission aux différentes puissances extérieures (Kololo, Ndébélé, Britanniques).",
+      "clanOrganization": "Société matrilinéaire : appartenance au clan et droits de succession transmis par la lignée maternelle. Les enfants appartiennent aux clans et aux groupes de descendance de leur mère, bien qu'ils s'identifient aussi à leur père. Les clans sont totémiques et exogames. La structure sociale est qualifiée de rudimentaire par les anthropologues en comparaison des peuples voisins d'origine congolaise, avec moins de contrôle centralisé féodal.",
+      "ageClassSystems": "Pas de système formel de classes d'âge structurant. Les cérémonies Lwiindi et les rassemblements saisonniers constituent des occasions collectives transcendant les frontières de village.",
+      "roleOfLineages": "Les lignages matrilinéaires déterminent l'héritage, l'appartenance clanique et les alliances matrimoniales. La dot (lobola) est versée par le marié à la famille de la mariée. Les droits fonciers sur les terres agricoles sont déterminés par l'occupation et l'usage communautaire, sans titre privé traditionnel.",
+      "religiousAuthority": "Le chef Monze est la figure spirituelle la plus importante des Plateau Tonga : il est le grand-prêtre des rites de pluie (rain-calling) sur le plateau Batoka. Il est considéré comme intermédiaire entre les vivants et les esprits ancestraux (mizimo) et la divinité suprême (Leza). Lors de la cérémonie annuelle Lwiindi, c'est le chef Monze (vêtu de peaux de léopard et de l'ivoire) qui fait les offrandes aux ancêtres. Les leaders des cultes de possession (basangu) exercent une autorité religieuse dans les cérémonies de guérison."
     },
     "languages": {
-      "mainLanguage": "Tonga",
-      "vehicularRole": "Le tonga est parlé par la majorité des Tonga de Zambie. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Chitonga (Tonga de Zambie et Zimbabwe)",
+      "isoCodes": ["toi"],
+      "dialects": [
+        "Valley Tonga (Chitonga de la Gwembe) : dialecte de la vallée du Zambèze, parlé par les Gwembe Tonga (déplacés à Kariba)",
+        "Plateau Tonga : dialecte du plateau Batoka, autour de Monze; considéré par certains comme la variété la plus pure",
+        "Chitonga de Zimbabwe (Binga) : variété parlée dans les districts de Binga et Hwange (Zimbabwe)"
+      ],
+      "vehicularRole": "Le Chitonga est parlé par environ 1,38 million de personnes en Zambie et 137 000 au Zimbabwe (données Ethnologue/Wikidata). C'est l'une des sept langues nationales de Zambie, enseignée dans les écoles de la province du Sud, de Lusaka et de la province Centrale. Il est classé M64 (Guthrie) et appartient au groupe Botatwe. C'est aussi une langue franca importante dans le sud de la Zambie, aux côtés du bemba, du lozi et du nyanja. Le Chitonga est distinct et non intelligible avec le Tonga du Malawi (N15, tog) ou le Tonga du Mozambique (S62)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tonga, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"lwiindiCeremony\": {\"description\": \"Le Lwiindi (aussi Lwiindi Gonde) est la cérémonie annuelle de thanksgiving des Tonga de Zambie, tenue chaque année le premier week-end de juillet à Monze (plateau) et en juillet-août à Sinazongwe (côté zambien du lac Kariba). C'est une cérémonie de remerciement aux dieux pour les bonnes pluies et la récolte. Le chef Monze, vêtu de peaux de léopard et d'ivoire, fait des offrandes de grains, de bière et de bétail aux esprits ancestraux dans des espaces sacrés. Les danseuses Chitombi exécutent des danses rituelles. La cérémonie renforce les liens communautaires et le lien entre vivants et ancêtres.\"}, \"initiationRites\": {\"malePuberty\": \"Rites de passage à l'adolescence incluant des périodes d'instruction sur les responsabilités d'adulte, les tabous alimentaires et les obligations claniques.\", \"femalePuberty\": \"Cérémonies d'initiation féminine marquant la puberté et la transition vers le statut de femme mariable; instruction sur les rôles domestiques et les relations avec les esprits.\"}, \"funeraryRites\": {\"burial\": \"Enterrement rapide. Les Tonga croient que l'esprit (muuya) quitte le corps à la mort et peut devenir un muzimo (esprit ancestral bienfaisant) ou un masabe (esprit errant malveillant). Les funérailles incluent des lamentations rituelles, des offrandes et des consultations d'un diviner pour identifier la cause du décès.\", \"mourning\": \"Période de deuil communautaire, rasage des cheveux. Les rites funèbres incluent des danses et des chants pour accompagner l'âme du défunt.\"}, \"rainRites\": {\"rainCalling\": \"Les rites de pluie (appelés par le chef Monze) sont parmi les plus importants : libations versées aux autels des ancêtres (mizimo) et prières à Leza pour solliciter les pluies nécessaires aux cultures. Les périodes de sécheresse déclenchent des cérémonies d'urgence.\"}}",
+      "symbols": "{\"leopardSkinIvory\": \"Les insignes du chef Monze lors du Lwiindi (peaux de léopard et ivoire) symbolisent l'autorité royale, la connexion avec les ancêtres et la fonction de gardien de la communauté.\", \"chitombiDance\": \"La danse Chitombi, exécutée lors du Lwiindi, est le symbole chorégraphique de la culture Tonga du plateau : elle exprime la gratitude, la fertilité et l'harmonie entre les vivants et les ancêtres.\", \"karibaTrauma\": \"Le déplacement forcé par le barrage de Kariba (1957-1958) est devenu un symbole mémoriel et politique central de l'identité Tonga : symbole de la dépossession coloniale, de la résistance et de la résilience culturelle. L'eau montante qui inonda les villages, les cimetières et les terres agricoles ancestrales reste une mémoire vive.\"}",
+      "artsAndMusic": "{\"chitombiDance\": \"La danse Chitombi, danse rituelle féminine exécutée lors du Lwiindi, est la forme d'expression artistique la plus emblématique des Plateau Tonga. Elle combine des pas rythmiques avec des gestes symboliques liés à la pluie, la fertilité et la gratitude.\", \"musicalInstraments\": \"Tambours (ngoma) de différentes tailles pour les cérémonies; hochets de calebasse (nsengele); xylophones; chants polyphoniques lors des cérémonies Lwiindi et des veillées funèbres. Les ngoma sont aussi utilisés pour la communication de village en village.\", \"cattle\": \"L'élevage bovin est un art économique et identitaire majeur : les Tonga du plateau sont de grands éleveurs et le bétail constitue la mesure de richesse, de prestige et de dot. Les bovins participent aux rites du Lwiindi comme offrandes.\", \"basketry\": \"Vannerie et poterie traditionnelles féminines pour les usages domestiques. Les Tonga de la Gwembe étaient aussi réputés pour leur savoir-faire en matière de pêche fluviale (nasses, filets, pirogues) sur le Zambèze avant le déplacement de Kariba.\", \"oralTradition\": \"Tradition de contes, épopées et proverbes transmis oralement lors des veillées. Les griots (chanteurs traditionnels) racontent l'histoire du déplacement de Kariba et des ancêtres.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Leza\", \"attributes\": \"Dieu suprême des Tonga de Zambie et Zimbabwe, partagé avec d'autres peuples bantous d'Afrique centrale et australe. Leza est le dieu du ciel et de la pluie, créateur et tout-puissant. Il est dit avoir vécu autrefois sur Terre comme être humain et être devenu le dieu du ciel. Il est le bringer of rain dans les expressions courantes (Leza uleeta mvula = Dieu amène la pluie). Leza est une divinité transcendante, peu accessible directement.\"}, \"intermediateDivinities\": [{\"name\": \"Mizimo (Muzimo au singulier)\", \"role\": \"Esprits ancestraux bienfaisants, de parents décédés (myoza wabalobe bazyali = esprits propres des parents). Ce sont les intermédiaires essentiels entre Leza et les vivants. Invoqués dans les prières, les libations et les cérémonies Lwiindi pour protéger la famille et assurer la fertilité.\"}, {\"name\": \"Basangu\", \"role\": \"Esprits errants (ancêtres d'autres communautés), parfois capricieux ou malveillants. Peuvent posséder des individus. Les cérémonies de possession (tambours basangu) permettent de canaliser ces esprits à des fins de guérison.\"}, {\"name\": \"Masabe\", \"role\": \"Esprits malveillants ou errants qui n'ont pas trouvé leur place parmi les ancêtres. Peuvent causer maladies et malchance. Doivent être apaisés par des rites spéciaux.\"}], \"ancestors\": {\"roleOfAncestors\": \"Les ancêtres jouent un rôle structurant dans la vie quotidienne et saisonnière. Le chef Monze est l'intercesseur principal auprès des ancêtres lors du Lwiindi. Les familles maintiennent des autels domestiques pour les libations aux mizimo.\"}, \"christianity\": {\"specificPractices\": \"Christianisme répandu depuis l'ère coloniale (missionnaires catholiques, protestants réformés). Syncrétisme fréquent entre pratiques chrétiennes et rites traditionnels Lwiindi, invocations aux ancêtres et cérémonies de possession basangu.\"}, \"religiousSyncretism\": {\"description\": \"La cérémonie Lwiindi est explicitement syncrétique : elle combine la vénération des ancêtres (mizimo), l'invocation de Leza et des éléments de la cosmologie chrétienne dans les communautés contemporaines.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tonga dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Tonga de Zambie n'ont pas formé de royaumes centralisés. Les chefs (chiefs) importants incluent le chef Monze (autorité spirituelle et politique sur le plateau Batoka, gardien des rites de pluie), les chefs du district de Gwembe pour les Valley Tonga, et le Senior Chief Mukuni pour les Toka-Leya de Livingstone. La chefferie de Mukuni remonte probablement au milieu du 18e siècle, fondée par Chef Sichi Mukuni séparé du roi Mulopwe de l'empire Bayeke (Congo). Les chefs Tonga ont signé des traités avec la British South Africa Company dans les années 1890.",
+      "relationsWithNeighbors": "Relations pacifiques avec les Ndébélé qui les considéraient comme un peuple non-belliqueux. Relations de domination et de tributarisation par les Kololo (1830-1864) avant leur dissolution. Relations commerciales avec les Lozi (Zambèze), les Ila et les Lenje (plateau central). Relations tendues avec le gouvernement colonial lors du déplacement de Kariba (1958) : résistance armée brève à Chisamu avant la reddition sous contrainte militaire. Relations avec le Zimbabwe pour les Tonga de Binga et Hwange, qui maintiennent des liens transfrontaliers avec les Tonga zambiens.",
+      "conflictsOrAlliances": "1830-1836 : transit des Kololo (sous Sebitwane) dans les terres Tonga vers le pays Lozi. 1890s : soumission à la British South Africa Company via des traités. 1957-1959 : résistance au déplacement de Kariba; troubles à Chisamu (Zambie) en 1958 supprimés par l'armée coloniale. Les Tonga déplacés reçurent 270 dollars zambiens par personne; les promesses de terres agricoles équivalentes ne furent pas respectées. 2007 : rapport de The New Humanitarian documentant la persistance des difficultés des Tonga déplacés, sans compensation adéquate 50 ans après.",
+      "diaspora": "Le déplacement par le barrage de Kariba (1957-1958) dispersa 57 000 Tonga dans deux pays : environ 34 000 du côté zambien relocalisés vers les collines du plateau ou les terres arides sous le barrage; environ 23 000 du côté zimbabwéen (Binga). Cette dispersion constitue la diaspora interne la plus significative de l'histoire Tonga. Au-delà, les Tonga participent à la migration économique interne zambienne (Lusaka, Copperbelt) et en moindre mesure à des migrations vers l'Afrique du Sud. La communauté Tonga de Zimbabwe (300 000 personnes) reste liée culturellement aux Tonga de Zambie."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur : SIL Ethnologue (toi) et Wikidata (1 270 000 locuteurs du Chitonga en Zambie); Facebook/Batonga (1,38 million en Zambie, 137 000 au Zimbabwe); Wikipedia Tonga language ZMB-ZWE (1,38 million Zambie, 300 000 Zimbabwe). Projection 2025 estimée à 1,8 million en incluant la croissance démographique de la province du Sud (~2,9 % par an depuis 2010).",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 1500000,
+          "note": "Province du Sud (plateau Batoka et vallée Gwembe), province de Lusaka, province Centrale"
+        },
+        {
+          "country": "ZWE",
+          "population": 300000,
+          "note": "Districts de Binga, Hwange, Gokwe Nord (côté zimbabwéen du lac Kariba et du Zambèze)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tonga languages (toi, tog)",
-      "CIA World Factbook – Zambia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tonga people (Zambia and Zimbabwe). https://en.wikipedia.org/wiki/Tonga_people_(Zambia_and_Zimbabwe)",
+      "Wikipedia EN — Tonga language (Zambia and Zimbabwe). https://en.wikipedia.org/wiki/Tonga_language_(Zambia_and_Zimbabwe)",
+      "SIL Ethnologue — Tonga (toi, Zambia). https://www.ethnologue.com/language/toi/",
+      "eHRAF World Cultures — Tonga (fq12). https://ehrafworldcultures.yale.edu/cultures/fq12/summary",
+      "The New Humanitarian — The Tonga: Left High and Dry (2007). https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry",
+      "Inclusive Human Learning — Zambia/Tonga/Forced Away. https://inclusivehuman.org/zambia-tonga-forced-away/",
+      "Nkwazi Magazine — Lwiindi Gonde: A Harvest Ceremony of Gratitude. https://nkwazimagazine.com/p-data-block-keylhrgplwiindi-gonde-a-harvest-ceremony-of-gratitudep/",
+      "Encyclopedia.com — Leza. https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/leza",
+      "Facebook/Batonga — The Ancient Tonga Spiritual Hierarchy (Leza, Mizimo). https://www.facebook.com/groups/batonga/posts/10161294996454258/"
     ]
   }
 }

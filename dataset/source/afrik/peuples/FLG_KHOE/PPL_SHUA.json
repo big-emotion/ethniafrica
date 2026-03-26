@@ -6,59 +6,105 @@
   "content": {
     "appellations": {
       "mainName": "Shua",
-      "selfAppellation": "Shua",
-      "exonyms": ["Shua (terme utilisé par les Européens)"],
+      "selfAppellation": "Shwakhwe",
+      "exonyms": ["Hietshware", "Hietshwari", "Shwa-khwe", "Sua", "Tshua"],
+      "originOfExonyms": "Shwakhwe est l'autodenomination signifiant gens (khwe) de la zone salee (shwa), en reference aux zones de sel et de marais de l'est du Botswana. Hietshware (aussi ecrit Hietshwari ou Hietjo) est un exonyme utilise pour designer a la fois les Shua et leur langue-soeur Tshwa. Sua est une corruption du nom Tshua ou Shua. Le terme Basarwa est utilise au Botswana pour l'ensemble des peuples San.",
+      "whyProblematic": "Le terme Basarwa utilise par les Tswana (signifiant ceux qui ne possedent pas de betail) est consideré pejoratif par certains membres du groupe. L'appellation generique Bushmen est aussi rejetee. Hietshware est parfois utilise pour designer indistinctement Shua et Tshwa, ce qui cree une confusion.",
+      "contemporaryUsage": "Shua est le terme le plus utilise dans la litterature academique et linguistique. Shwakhwe est l'autodenomination interne. Les Shua se reconnaissent dans la categorie San au Botswana. La langue Shua est documentee comme langue distincte du Tshwa (langue-soeur) bien que les frontières dialectales soient parfois floues.",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "Khoe",
-      "historicalRegion": "Botswana",
+      "ethnoLinguisticGroup": "Kalahari Khoe oriental (branche Ost-Kxoe, famille Khoe-Kwadi)",
+      "historicalRegion": "Bassin oriental du Kalahari (Botswana central et nord), region de Nata et environs, nord du district de Chobe",
       "currentCountries": ["BWA"]
     },
-    "ethnicities": ["Shua du Nord", "Shua du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Shwa-khwe — sous-groupe principal, region de Nata",
+      "Deti — sous-groupe le plus menace (moins de 10 locuteurs, distinct du Shua)",
+      "Ganadi — sous-groupe de la region centrale",
+      "Nǀoo-khwe — sous-groupe du Kalahari central-oriental",
+      "Kǀoree-khoe (ǀOree-khwe) — sous-groupe oriental",
+      "ǁAiye (ǀAaye) — sous-groupe du nord",
+      "ǀXaise (ǀTaise) — variante distincte",
+      "Tshidi-khwe (Tcaiti, Sili, Shete Tsere) — sous-groupe du nord-est",
+      "Danisi (Demisa, Madinnisane) — variante dialectale",
+      "Cara — sous-groupe de la region de Nata",
+      "ǁGoro (ǀXaio) — sous-groupe peripherique"
+    ],
     "origins": {
-      "ancientOrigins": "Les Shua sont originaires du BWA, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoisan voisins, influence du christianisme et des croyances traditionnelles."
+      "ancientOrigins": "Les Shua sont l'un des groupes autochtones les plus anciens du Botswana, dont les ancetres chasseurs-cueilleurs occupaient les regions du Kalahari oriental depuis des milliers d'annees, bien avant l'arrivee des peuples bantous et tswana. Leur langue, appartenant a la branche Ost-Kxoe (Kalahari Khoe oriental) de la famille Khoe-Kwadi, temoigne d'une longue histoire d'isolement relatif dans les zones salines et les savanes arides de l'est du Botswana.",
+      "formationPeriod": "L'identite Shua en tant que groupe distinct s'est cristallisee dans les zones du bassin de Makgadikgadi et de Nxai Pan. Les Shua etaient autrefois les habitants dominants de ces zones salees et du nord-est du Botswana. L'arrivee et la domination progressive des Tswana a partir du XVIIIe-XIXe siecle a marginalise les Shua, les contraignant a des zones moins disputees.",
+      "migrationRoutes": [
+        "Mouvement ancestral vers les zones humides et salees du bassin de Makgadikgadi, qui constituaient une source de ressources abondantes",
+        "Repli progressif vers les marges du Kalahari sous la pression des groupes tswana et bantous"
+      ],
+      "historicalSettlementZones": [
+        "Region de Nata et ses environs (est du Botswana, nord de la province de Central)",
+        "Bassin de Makgadikgadi et Nxai Pan (nord-est du Botswana)",
+        "Parties du district de Chobe (extreme nord du Botswana)",
+        "Marges du Kalahari oriental"
+      ],
+      "unificationsOrDivisions": "Les Shua ne forment pas une entite politique unifiee mais un ensemble de sous-groupes linguistiquement et culturellement apparentes. La multiplicite des sous-groupes et des variantes dialectales reflete la dispersion dans des micro-territoires distincts. Les sous-groupes partagent une identite culturelle et une cosmologie commune. Certains sous-groupes comme les Deti sont au bord de l'extinction linguistique totale.",
+      "externalInfluences": "Les Shua ont ete progressivement assimiles dans la sphere d'influence des chefferies tswana, qui les ont souvent consideres comme des sujets ou de la main-d'oeuvre. La politique botswanaise post-independance (1966) a poursuivi cette assimilation en imposant le setswana comme seule langue nationale et en relocdisant les San hors des zones protegees. L'influence chretienne (missions protestantes) s'est exercee depuis le XIXe siecle. Les pressions liees aux parcs nationaux (Makgadikgadi, Nxai Pan) ont contraint des families a abandonner leurs territoires ancestraux.",
+      "majorHistoricalEvents": "Comme d'autres groupes San du Botswana, les Shua ont ete marginalises par la politique d'assimilation. Les programmes de relocalisation des San hors de la Reserve du Kalahari Central (CKGR) a partir des annees 1990 ont touche des communautes apparentees. En 2006, la Cour supreme du Botswana a reconnu le droit des San a vivre dans leurs terres ancestrales, mais cette decision n'a eu qu'un effet limite sur les Shua des zones de Nata et de Makgadikgadi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en bandes de chasseurs-cueilleurs (band groups) dirigees par un headman dont l'autorite est fondee sur le prestige, l'experience et le consensus. Les decisions importantes sont discutees collectivement au sein du groupe. Il n'existe pas de chefferie formelle ni de structure politique hierarchique centralisee. Depuis la sedentarisation, des chefs de village reconnus par les autorites botswanaises representent les communautes Shua.",
+      "clanOrganization": "Les Shua sont organises en groupes de parente localises, avec une filiation principalement patrilineaire determinant les droits d'usage sur les territoires de chasse et de cueillette. Les alliances matrimoniales se concluent preferentiellement avec d'autres Shua ou avec des groupes San apparentes. La mobilite saisonniere des bandes etait la norme avant la sedentarisation.",
+      "ageClassSystems": "La seniorite joue un role important dans la societe Shua. Les anciens sont les depositaires de la connaissance ecologique du territoire (lieux d'eau, especes vegetales et animales), des recits mythologiques et des pratiques spirituelles. Les jeunes sont initie graduellement par les anciens aux savoirs de la chasse et de la cueillette.",
+      "roleOfLineages": "Les lignages patrilineaires structurent l'appartenance aux groupes locaux et gouvernent les regles de mariage (exogamie de bande). La transmission des droits sur les territoires de chasse suit la lignee paternelle. Les femmes maintiennent des liens avec leur groupe d'origine, garantissant des reseaux d'entraide en cas de stress alimentaire.",
+      "religiousAuthority": "L'autorite spirituelle est incarnee par le chamane-guerisseur (n/om-kxao), specialiste de la danse de transe permettant d'entrer en communication avec le monde des esprits. Les anciens assurent la transmission des recits mythologiques. L'influence chretienne a introduit des pasteurs et des responsables d'eglises dans certaines communautes sedentarisees."
     },
     "languages": {
-      "mainLanguage": "Shua (variété Khoe)",
-      "vehicularRole": "Le shua est parlé par la majorité des Shua. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "Shua (Shwakhwe)",
+      "isoCodes": ["shg"],
+      "dialects": [
+        "Shwa-khwe — variete principale, region de Nata",
+        "Nǀoo-khwe — variete distincte du Kalahari central-oriental",
+        "Kǀoree-khoe — variete orientale",
+        "ǁAiye — variete du nord",
+        "ǀXaise — variete distincte",
+        "Tshidi-khwe — variete du nord-est",
+        "Danisi — variete avec phoneme /kx/ distinctif",
+        "Cara — variete de la region de Nata",
+        "ǁGoro — variete peripherique",
+        "Deti — variete gravement menacee (moins de 10 locuteurs)"
+      ],
+      "vehicularRole": "Le shua est parle par environ 6 000 personnes selon Cook (2004), dont seulement 2 000 locuteurs natifs. La variete de Nata est consideree comme gravement menacee, parlee couramment seulement par des adultes de plus de trente ans. La langue cede progressivement devant le setswana, langue nationale du Botswana et vehiculaire dominant. Le shua n'a pas de statut officiel et n'est pas enseigne dans l'education formelle au Botswana. L'ordre des mots est SOV (sujet-objet-verbe), comme le Nama, contrairement a la plupart des langues khoisan."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels shua, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "La danse de transe (healing dance) est le rite central commun a tous les peuples San, pratique aussi par les Shua. Lors de ceremonies nocturnes autour d'un feu, les femmes chantent en polyphonie et frappent des mains pendant que les chamanes dansent jusqu'a la transe pour guerir les malades et contrer les forces malefiques. Les rites de passage marque la naissance, la puberte (notamment le rite de la premiere menstruation pour les filles, lors duquel la jeune fille est recluse et des chants et danses sont organises), le mariage et la mort. A la puberté masculine, les jeunes garcons accompagnent les chasseurs experimentes et doivent reussir leur premier grand gibier pour etre reconnus comme hommes. Les rites funeraires comprennent l'inhumation rapide et une periode de deuil communautaire avec interdits alimentaires.",
+      "symbols": "Les peintures rupestres et les gravures de la region de l'Okavango et du Kalahari, realises par les ancetres des peuples San, constituent le patrimoine symbolique majeur. L'eland (grand antilope des plaines) est l'animal sacre central, associe a la puissance chamanique et a l'energie de transe. Les ornements en coquilles d'oeuf d'autruche (perles percees) sont des symboles d'identite et d'appartenance au groupe. Les hochets et grelots portes lors des danses rituelles ont une valeur symbolique forte.",
+      "artsAndMusic": "La musique des Shua, comme celle de l'ensemble des San du Kalahari, est caracterisee par le chant polyphonique feminin (yodel, clapping, overtone singing) accompagnant les danses de transe. Les instruments comprennent l'arc a bouche (bow harp, joue avec la bouche comme caisse de resonance), le thumb piano (lamellophone), des hochets en coques de chrysalide et des grelots. La narration orale (contes mythologiques, histoires d'animaux, recits de chasse) est le principal vecteur de transmission culturelle. L'artisanat comprend la confection de bijoux en perles d'oeuf d'autruche, de sacs en peau de gemsbok, d'arcs et fleches, et de nattes tressees.",
+      "spiritualities": "La cosmologie Shua est partagee avec l'ensemble des San Khoe. Elle repose sur la croyance en une divinite superieure bienfaisante (Hishe ou //Gauwa) associee au ciel et a la pluie, et en des esprits des morts pouvant intervenir dans la vie des vivants pour causer maladies ou malheurs. Le chamane (n/om-kxao) est la figure spirituelle centrale, capable d'entrer en transe lors de la danse de guerison pour acceder au monde des esprits et guerir. L'energie spirituelle (n/om) est presente dans toute la nature et peut etre mobilisee par les chamanes experimentes. Le christianisme, introduit par les missions protestantes, a partiellement influence certaines communautes sedentarisees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques botswanaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora shua dans les grandes villes botswanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Shua n'ont pas developpe de royaumes ni de chefferies formelles. Leur organisation en bandes mobiles de chasseurs-cueilleurs ne favorise pas la centralisation du pouvoir. Ils n'ont pas constitue d'entite politique distincte reconnue dans les archives coloniales ou postcoloniales.",
+      "relationsWithNeighbors": "Les Shua ont entretenu des relations ambivalentes avec les groupes tswana dominants, souvent caracterisees par des rapports de subordination (main-d'oeuvre agricole et pastorale, tribut). Des echanges commerciaux existaient : le gibier, les produits de la foret et les plantes medicinales contre du betail, du metal et des produits alimentaires de culture. Des relations de voisinage avec d'autres groupes San (Tshwa, llAni, Buga) ont ete fondees sur la reciprocite et le partage.",
+      "conflictsOrAlliances": "Les Shua ont ete particulierement vulnerables aux politiques de relocalisation du gouvernement botswanais, qui les a assimiles a des sujets des chefferies tswana. En 2006, la decision de la Cour supreme a reconnu le droit des San a rester dans leurs terres ancestrales de la CKGR, mais les communautes Shua hors de cette reserve n'ont pas beneficie de la meme protection. La pression des parc nationaux (Makgadikgadi, Nxai Pan) sur les zones de Shua est documentee par des organisations comme l'IWGIA et Survival International.",
+      "diaspora": "Une diaspora interne existe dans les centres urbains du Botswana (Francistown, Maun), ou des Shua deracinés vivent dans une marginalite economique et sociale. Il n'existe pas de diaspora internationale significative."
     },
     "demography": {
-      "totalPopulation": 5000,
+      "totalPopulation": 6000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "Cook (2004) estime environ 6 000 locuteurs du Shua, dont 2 000 locuteurs natifs. Glottolog classe la langue comme menacee (endangered). La population Shua au sens large (y compris les locateurs partiels et les personnes d'ascendance Shua) est estimee entre 5 000 et 8 000 individus au Botswana. SIL Ethnologue code shg.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 6000,
+          "note": "Region de Nata (nord-est), district de Chobe (extreme nord), bassin de Makgadikgadi, Kalahari oriental"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Shua language (shg)",
-      "CIA World Factbook – Botswana",
-      "Recensements botswanais",
-      "Études anthropologiques sur les peuples khoisan"
+      "Wikipedia EN — Shua language. https://en.wikipedia.org/wiki/Shua_language",
+      "Glottolog 5.3 — Shua (shua1254), ISO 639-3 : shg. https://glottolog.org/resource/languoid/id/shua1254",
+      "SIL Ethnologue — Shua (shg). https://www.ethnologue.com/language/shg/",
+      "Cook, Anthony. Shua Phonology and Morphology. SOAS, University of London, 2004.",
+      "SciELO — The case of Khoisan languages of Botswana. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
+      "Botswana country page — Joshua Project. https://joshuaproject.net/countries/bc",
+      "Wikipedia EN — Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "IWGIA — Indigenous World 2025. https://iwgia.org/",
+      "Facebook — Culture Botswana : SUA is corruption of original Khwe name. https://www.facebook.com/culturebotswana/posts/788683589930727/",
+      "Laskon Wiki — Shua language. https://laskon.fandom.com/wiki/Shua_language"
     ]
   }
 }

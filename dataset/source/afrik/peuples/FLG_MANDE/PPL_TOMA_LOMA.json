@@ -2,59 +2,97 @@
   "id": "PPL_TOMA_LOMA",
   "nameMain": "Toma / Loma",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["GIN"],
+  "currentCountries": ["GIN", "LBR"],
   "content": {
     "appellations": {
       "mainName": "Toma / Loma",
-      "selfAppellation": "",
-      "exonyms": ["Toma, Loma (termes utilisés par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Lögömàgìtì (Guinee) ou Löömàgìtì (Liberia)",
+      "exonyms": [
+        "Toma",
+        "Loma",
+        "Lorma",
+        "Loghoma",
+        "Looma",
+        "Logoma",
+        "Buzi",
+        "Buzzi",
+        "Toale",
+        "Toali",
+        "Toa",
+        "Tooma"
+      ],
+      "originOfExonyms": "Toma est le nom donne par les voisins Mandinka, Koniaka et Kissi, repris par l'administration coloniale francaise. Loma est l'appellation usuelle au Liberia anglophone. Lorma est la forme adoptee par les locuteurs liberiens dans les ecrits contemporains. Loghoma (ou Löghömagiti en Guinee) est une variante de l'autonym. Les quatre dialectes principaux de la region de Wubomai (Liberia) sont attribues par la legende aux sept fils du roi Fala Wubo.",
+      "whyProblematic": "DOUBLON POTENTIEL : PPL_TOMA_LOMA et PPL_LOMA (id: PPL_LOMA, currentCountries: [LBR]) decrivent le meme peuple sous deux appellations differentes selon le pays. L'Ethnologue divise la langue en deux codes : lom [lom] pour le Liberia et tod [tod] pour la Guinee, ce qui peut expliquer la creation de deux fiches distinctes. La Yale Linguistics (2024) confirme qu'il s'agit bien d'un seul peuple (Loma/Toma) avec une seule langue a deux varietes codifiees separement. Il est recommande de fusionner PPL_LOMA et PPL_TOMA_LOMA, ou d'assigner PPL_LOMA au Liberia (code lom) et PPL_TOMA_LOMA a la Guinee (code tod) en les liant explicitement.",
+      "contemporaryUsage": "Toma est l'appellation officielle en Republique de Guinee (langue nationale depuis l'ere Sekou Toure). Loma (ou Lorma) est le terme officiel au Liberia. Les deux termes sont utilises par les membres du groupe selon leur pays de residence.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Guinée forestière (montagnes)",
-      "currentCountries": ["GIN"]
+      "ethnoLinguisticGroup": "Mande du Sud-Ouest (branche Loma-Kpelle)",
+      "historicalRegion": "Guinee forestiere (prefecture de Macenta) et comte de Lofa (Liberia nord-ouest)",
+      "currentCountries": ["GIN", "LBR"]
     },
-    "ethnicities": ["Toma / Loma"],
+    "ethnicities": ["Toma (Guinee)", "Loma / Lorma (Liberia)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Guinée forestière (montagnes)"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Loma/Toma font partie des peuples mande du Sud-Ouest. Situes depuis le 16e siecle a la jonction de la savane et de la foret du centre-ouest africain, ils ont ete meles aux courants commerciaux liant le Soudan occidental au littoral atlantique. L'histoire de Fala Wubo (roi loma dont les sept fils sont a l'origine des quatre dialectes principaux) est au coeur de la tradition orale identitaire.",
+      "formationPeriod": "15e-17e siecle, lors de la desintegration de l'empire mande et des migrations subsequentes. La Confederation Condo, fondee par les Loma et d'autres groupes, marque une etape importante dans leur organisation politique pre-coloniale.",
+      "migrationRoutes": [
+        "Migrations depuis le nord et l'est lors de la desintegration de l'empire mande (15e siecle)",
+        "Installation dans la zone forestiere frontiere Guinee-Liberia (Macenta, Lofa County)",
+        "Contacts avec les negriers portugais depuis le 16e siecle qui penètrent jusqu'en territoire loma"
+      ],
+      "historicalSettlementZones": [
+        "Prefecture de Macenta (Guinee forestiere)",
+        "Comte de Lofa (Liberia nord-ouest) : district de Belleh, Gbarpolu County",
+        "Zone forestiere frontaliere Guinee-Liberia"
+      ],
+      "unificationsOrDivisions": "Pression historique des Mandinka/Mandingue, appeles 'guerre roulante' par les Loma. Cette resistance a l'islamisation a maintenu leur cohesion ethnique et leur religion traditionnelle. Separation culturelle entre Toma de Guinee et Loma du Liberia accentuee par la colonisation (francaise vs britannique/americaine) et les politiques linguistiques divergentes.",
+      "externalInfluences": "Commerce esclavagiste portugais des le 16e siecle. Pression des Mandinka/Mandingue (islamisation refusee). Colonisation francaise (penetration 1892) et americaine au Liberia. Politique de Langue Nationale de Sekou Toure (1960-1984) : le toma/loma est une des huit langues nationales de Guinee. En 1930-40, un systeme syllabique propre au loma a ete invente par Wido Zobo (Liberia).",
+      "majorHistoricalEvents": "Traite negriere portugaise (16e siecle) : les Loma sont profondement transformes economiquement (developpement de l'esclavage productif interne). Penetration coloniale francaise (1892). Politique de Langue Nationale de Sekou Toure (1960s-1984). Reversion au francais sous le gouvernement militaire (1984). Guerre civile liberienne : impact sur les Loma du comte de Lofa (1989-2003)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe tres hierarchisee, organisee en chefferies patrilineaires. Le systeme politique pre-colonial est decrit comme 'democratique' (sans rapports d'oppression entre hommes libres) selon l'historien Remy Bah (1991). Les chefferies claniques sont la principale unite politico-territoriale.",
+      "clanOrganization": "Organisation patrilineaire exogame : les familles sont regroupees en lignages dont les membres doivent se marier en dehors de leur groupe. Les familles de freres vivent proches (virilocal). Le terme clan au sens colonial (depuis 1930) designe les unites politico-territoriales des chefferies, different du sens anthropologique.",
+      "ageClassSystems": "Societe du Poro (hommes) : initiation masculine avec retraite dans la foret sacree, dure de plusieurs semaines a un an selon les sous-groupes. L'initiation Poro chez les Loma peut durer jusqu'a un an, plus longtemps que chez les Mano, Mende ou Kpelle. L'initiation a lieu avant la saison des pluies.",
+      "roleOfLineages": "Les anciens controlent les terres et arbitrent les conflits. La succession et l'heritage sont patrilineaires. Les chefs de lignage jouent un role central dans les ceremonies du Poro et les sacrifices communautaires.",
+      "religiousAuthority": "Religion traditionnelle animiste conservee avec resistance remarquable a l'islamisation (la 'guerre roulante' contre les Mandinka). La societe Poro est le pilier spirituel et social. En Guinee, certains Toma se sont convertis a l'islam ou au christianisme. De nombreux Loma de Guinee pratiquent leur religion clandestinement ou envoient leurs enfants se faire initier au Liberia."
     },
     "languages": {
-      "mainLanguage": "Toma / Loma (tod)",
-      "isoCodes": ["tod"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Loma / Toma",
+      "isoCodes": ["lom", "tod"],
+      "dialects": [
+        "Loma du Liberia : Gizima, Wubomai, Ziema, Gbunde, Briama (Belleh district, Gbarpolu County, Lofa County)",
+        "Toma de Guinee : dialecte nord de Koimei (standard officiel guineens, prefecture de Macenta)"
+      ],
+      "vehicularRole": "Langue vernaculaire locale de la zone forestiere Guinee-Liberia. Langue nationale de Guinee (une des huit depuis l'ere Sekou Toure). Le loma est enseigne dans les ecoles primaires guineennes de 1969 a 1984. Environ 552 000 locuteurs totaux (Ethnologue) : 261 000 en Guinee, 291 000 au Liberia. Ecriture : alphabet latin officiel (Liberia et Guinee) ; syllabaire propre au Loma invente dans les annees 1930 par Wido Zobo (185 caracteres)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation au Poro (hommes) : retraite en foret sacree, masque Landai (Landa) qui symboliquement devore les candidats avant de les revivre comme membres adultes. Initiation feminine equivalente. Le masque Landai est un grand masque a machoire de crocodile articulee et visage humain stylise. Sacrifices communautaires (taa-fai) et rites funeraires en saison seche. Attribution de prenoms initiatiques : garcons inities = Kounougui, filles = Zadegui.",
+      "symbols": "Le masque Landai (Loma), grand masque anthropo-zoomorphe a machoire de crocodile articulee (jusqu'a 1,80m de hauteur), avec decorations de plumes, represente les esprits de la foret. Les Loma sont reputes pour leurs grands masques en bois fusionnant des motifs animaux et humains syncrétiques. Le nom Nimba Tun (collines) est partage avec les Mano.",
+      "artsAndMusic": "Reputation artistique internationale pour les masques Landai et Poro, conserves dans les grands musees europeens et americains. Figures de menage gardees dans chaque foyer. Chants et danses du Poro. Riziculture en essartage (shifting farms) comme activite economique centrale. Transmission de l'histoire par la tradition orale (griotisme).",
+      "spiritualities": "Religion traditionnelle animiste, axee sur la societe Poro et les esprits de la foret (esprit du Landai). Resistance historique a l'islamisation (guerre roulante contre les Mandinka). Presence chretienne en croissance au Liberia. En Guinee, hybridation progressive avec l'islam. Les Loma ont conserve leurs pratiques traditionnelles en les pratiquant, si necessaire, clandestinement."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Confederation Condo (pre-coloniale) fondee par les Loma et des groupes allies : premiere forme d'organisation supra-clanique. Organisation en chefferies patrilineaires decentralisees. Pas de royaute centralisee a grande echelle documentee.",
+      "relationsWithNeighbors": "Proximite linguistique avec les Kpelle, Mende, Vai et Bandi. Relations conflictuelles historiques avec les Mandinka (guerre roulante autour de l'islamisation). Liens avec les Kissi et les Guerze. Commerce avec les peuples cotiers via les routes commerciales foret-Sahel.",
+      "conflictsOrAlliances": "Resistance a l'islamisation mandinka ('guerre roulante'). Integration au systeme colonial francais en 1892 au detriment des structures politiques traditionnelles (les chefs de canton coloniaux des annees 1930 supplantent les chefs claniques). Guerre civile liberienne (1989-2003) : impact majeur sur les Loma du comte de Lofa.",
+      "diaspora": "Communautes urbaines a Conakry (Guinee) et Monrovia (Liberia). Diaspora guineenne en France et en Europe utilisant Internet pour maintenir les liens culturels (etude Yale Linguistics, 2024). Echanges transfrontaliers frequents entre Toma de Guinee et Loma du Liberia."
     },
     "demography": {
-      "totalPopulation": 450,
+      "totalPopulation": 560000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ethnologue/SIL : 552 000 totaux (261 000 en Guinee, 291 000 au Liberia). Omniglot (2020) : 299 000 locuteurs du Loma au Liberia. Recensement guineen 2018 : Toma = 1,6% de la population guinéenne (~230 000). Recensement liberien 2008 : Lorma = 5,1% (~265 000). Estimation 2025 avec croissance demographique.",
+      "distributionByCountry": [
+        { "country": "GIN", "population": 270000 },
+        { "country": "LBR", "population": 290000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia – Loma people (EN), 2024 (https://en.wikipedia.org/wiki/Loma_people)",
+      "Wikipedia – Loma (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Loma_(peuple))",
+      "Wikipedia – Loma language (EN), 2024 (https://en.wikipedia.org/wiki/Loma_language)",
+      "Omniglot – Loma language and alphabet, 2025 (https://www.omniglot.com/writing/loma.htm)",
+      "Yale Linguistics – Promouvoir la Culture Loma (article sur les politiques linguistiques en Guinee), 2024 (https://ling.yale.edu/media/478/download?inline)",
+      "101 Last Tribes – Loma people (https://www.101lasttribes.com/tribes/loma.html)",
+      "Theses.fr – Contribution a l'histoire des Loma de la Guinee forestiere (Paris 7, 1991) (https://theses.fr/1991PA070030)",
+      "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)"
+    ]
   }
 }

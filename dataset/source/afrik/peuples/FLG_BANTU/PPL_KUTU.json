@@ -6,54 +6,71 @@
   "content": {
     "appellations": {
       "mainName": "Kutu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wakutu",
+      "exonyms": ["Khutu", "Ziraha", "Kikutu", "Kixutu"],
+      "originOfExonyms": "Wakutu est le nom en swahili pour designer ce peuple (prefixe Wa- pour les personnes). Khutu est une variante orthographique courante. Ziraha est un autre nom parfois utilise. Kikutu designe la langue en swahili.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kutu (ou Wakutu) est utilise en Tanzanie pour designer ce groupe matrilineaire de la region de Morogoro. Kikutu designe leur langue.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Cluster Zaramo, Bantu de la cote nord-est (sous-groupe Ruvu)",
+      "historicalRegion": "Region de Morogoro, centre de la Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Kutu"],
+    "ethnicities": ["Kutu", "Wakutu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kutu font partie du groupe linguistique Ruvu des Bantu de la cote nord-est. Leurs ancetres font partie des populations proto-Northeast-Coastal-Bantu qui ont migre dans le centre-est de la Tanzanie dans le dernier millenaire de l'ere pre-chretienne. Ils sont etroitement apparentes aux Zaramo, Luguru, Kami, Kwere et Doe, tous membres du sous-groupe Ruvu.",
+      "formationPeriod": "Constitues en groupe distinct au cours du premier millenaire de notre ere dans la region des contreforts des monts Uluguru et de la plaine du Morogoro. Leur identite ethnique est attestee depuis au moins le XIXe siecle dans les sources europeennes.",
+      "migrationRoutes": [
+        "Bassin du lac Nyanza du Sud (Southern Nyanza Basin) vers le centre-est de la Tanzanie durant les derniers siecles av. J.-C.",
+        "Installation dans la region basse de la riviere Mbeta et les contreforts sud des monts Uluguru dans le district de Morogoro et de Kilosa"
+      ],
+      "historicalSettlementZones": [
+        "District de Morogoro (sud), Region de Morogoro",
+        "District de Kilosa, Region de Morogoro",
+        "Zone tampon de la riviere Mbeta, contreforts des monts Uluguru"
+      ],
+      "unificationsOrDivisions": "Le groupe Kutu a historiquement entretenu des liens culturels et claniques etroits avec les Zaramo et les Luguru. Durant la periode coloniale, deux sultans gouvernaient separement avant d'etre reunifies sous un seul chef. Ce systeme fut aboli en 1962 apres l'independance tanzanienne.",
+      "externalInfluences": "Victimes de la traite des esclaves arabe et de l'activite des caravanes swahilies au XIXe siecle, qui les ont pousses a construire des villages fortifies. Colonisation allemande puis britannique ayant profondement modifie leurs structures sociales, notamment en favorisant la patrilinearite. La politique ujamaa de Julius Nyerere apres 1974 a regroupe les communautes dispersees en villages concentres.",
+      "majorHistoricalEvents": "Victimisation par la traite arabe au XIXe siecle avec construction de villages palisades. Passage sous administration allemande, puis britannique. Deux sultans sous administration britannique fusionnes en un seul chef. Abolition du sultanat en 1962 apres l'independance. Politique de villagisation ujamaa apres 1974 changeant profondement le mode de residence."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme matrilineaire avec autorite distribuee entre les chefs de lignages (mwenyemzi, mndewa, phazi). Deux sultans existaient au debut de la periode britannique, fusionnes en un seul poste, aboli en 1962. Sous colonisation allemande, des representants du gouvernement (akidas) géraient les affaires Kutu.",
+      "clanOrganization": "Organisation en matriclans (lukolo) divises en matrilineages (tombo), chacun dirige par un ancien responsable de la distribution des terres, des rites ancestraux et des affaires du lignage. Certains clans entretiennent des relations de plaisanterie (wagongo) entre eux.",
+      "roleOfLineages": "Les matrilineages (tombo) controlent historiquement la gestion des terres. La transmission se fait normalement par la ligne maternelle, bien que la colonisation arabe et europeenne ait partiellement introduit la patrilinearite. Le chef de lignage (mwenyemzi) est assiste de femmes seniors (mke kolo) et de jeunes anciens.",
+      "religiousAuthority": "Les chefs de lignages assument des fonctions rituelles ancestrales, notamment la mediation avec les esprits des ancetres. L'islam sunnite est devenu dominant apres l'influence arabe ; les croyances traditionnelles et le culte des esprits coexistent avec les pratiques islamiques."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kutu (Kikutu)",
+      "isoCodes": ["kdc"],
+      "dialects": [],
+      "vehicularRole": "Langue maternelle des Kutu. Le swahili est utilise comme langue vehiculaire regionale et nationale en Tanzanie. Les communautes Kutu sont generalement bilingues kutu-swahili. Certaines ecoles publiques de la zone enseignaient l'allemand, heritage de la colonisation."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites d'initiation et de mariage impliquant un intermediaire (msenga) et une dot initiale (vilana). Les pratiques de circumcision et de scarification thoracique existaient historiquement. La gestion des terres et les rites de succession sont des moments cles de la vie communautaire.",
+      "symbols": "Les habitations traditionnelles en terre et torchis avec de hauts toits coniques de chaume sont caracteristiques. Les toits de chaume laissent progressivement place aux toits en tole.",
+      "artsAndMusic": "Traditions de vannerie, poterie et fabrication d'instruments de musique. La tradition orale preservait l'histoire clanique. Musique de ceremonies avec tambours et chants.",
+      "spiritualities": "Islam sunnite dominant depuis le XIXe siecle sous influence arabe et swahilie. Le Joshua Project indique que les Kutu croient en un Dieu supreme (Allah) tout en dependant aussi des esprits pour les besoins quotidiens. Utilisation de charmes et d'amulettes pour les forces spirituelles. Les croyances ancestrales et les rites claniques persistent sous la surface islamique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise ; organisation en chefferies de lignages et en sultanats locaux sous la periode coloniale. Deux sultans existaient au debut de l'administration britannique avant d'etre unifies en un seul poste aboli en 1962.",
+      "relationsWithNeighbors": "Proches voisins et parents culturels des Zaramo, Luguru, Kami, Kwere et Doe. Les Kutu font partie du cluster Zaramo des Bantu de la cote nord-est. Au XIXe siecle, leur region a connu la presence de colonies de Nyamwezi. Relations commerciales avec les caravanes swahilies.",
+      "conflictsOrAlliances": "Victimes de la traite des esclaves arabe au XIXe siecle, ayant reagit en construisant des villages fortifies. Sous colonisation allemande puis britannique. L'independance tanzanienne en 1961 mit fin au systeme de sultanats.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 119000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur PeopleGroups.org (119 000 en 2023) et SwordsShare/Joshua Project (148 000 locuteurs de la langue kdc). Population en croissance depuis l'estimation de 45 000 en 1987.",
+      "distributionByCountry": [{ "country": "TZA", "population": 119000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kutu people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kutu_people)",
+      "Kutu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kutu_language)",
+      "Kutu in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12891)",
+      "Kutu people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/kutu.html)",
+      "Kutu of Tanzania – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014969/)",
+      "Kutu – ISO 639-3 kdc, SwordsShare Map (https://map.swordshare.com/kdc)",
+      "Societies, Religion, and History – Gutenberg-e, 2008 (http://www.gutenberg-e.org/gonzales/chapter2.html)"
+    ]
   }
 }

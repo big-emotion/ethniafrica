@@ -2,58 +2,105 @@
   "id": "PPL_MBUNDA",
   "nameMain": "Mbunda",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["AGO"],
+  "currentCountries": ["AGO", "ZMB", "NAM", "COD"],
   "content": {
     "appellations": {
       "mainName": "Mbunda",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Vambunda",
+      "exonyms": ["Vambunda", "Kambunda (singulier)", "Chimbunda (langue)"],
+      "originOfExonyms": "Le nom Mbunda designe a la fois le peuple et la couleur de la terre rouge (rougeâtre) caracteristique de leur territoire d'origine. Ce detail etymologique est confirme par la tradition orale : les Mbunda cherchaient a s'etablir sur des terres rouges similaires a celles du Soudan dont ils venaient. Le prefixe Va- (Vambunda) est le prefixe Bantu du pluriel humain. Kambunda est la forme singulier. Chimbunda ou Ki-mbunda designe la langue.",
+      "whyProblematic": "Le nom Mbunda peut etre confondu avec Ambundu (ou Mbundu), qui designe un groupe ethnique distinct d'Angola parlant le Kimbundu. Les Mbunda (parlant le Chimbunda) et les Ambundu (parlant le Kimbundu) sont deux peuples differents. Cette confusion apparait dans certaines sources moins rigoureuses.",
+      "contemporaryUsage": "Mbunda est l'appellation standard dans les sources academiques et gouvernementales angolaises et zambiennes. En Zambie, Chimbunda est reconnu comme l'une des langues locales avec utilisation dans la radio locale et certains niveaux d'enseignement. Le terme Ganguela est parfois employe de maniere generique pour inclure les Mbunda avec d'autres groupes apparentes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["AGO"]
+      "ethnoLinguisticGroup": "Bantu central-occidental, sous-groupe Ngangela-Nyemba (Ganguela)",
+      "historicalRegion": "Sud-est de l'Angola (Mbundaland : provinces de Moxico et Cuando Cubango), Province occidentale de la Zambie (Barotseland)",
+      "currentCountries": ["AGO", "ZMB", "NAM", "COD"]
     },
-    "ethnicities": ["Mbunda"],
+    "ethnicities": [
+      "Mbunda",
+      "Vambunda",
+      "Mbunda Mathzi (Katavola)",
+      "Yauma",
+      "Nkangala",
+      "Mbalango",
+      "Sango",
+      "Shamuka (Chiyengele)",
+      "Ndundu"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la tradition orale des Vambunda, les Mbunda ont migre depuis une region situee dans l'actuel Soudan du Sud, traversant l'Ouganda, le Kenya, le Burundi, le Rwanda, et les forets equatoriales du Congo, a la recherche de terres rouges (mbunda) similaires a celles de leur terre d'origine. Ils s'etablirent d'abord dans la region de Kola (Congo actuel) ou ils rencontrerent les peuples Luba et Ruund, avant de poursuivre vers le sud-est de l'Angola. Le premier monarque Mbunda etait le roi Mwene Nkuungu.",
+      "formationPeriod": "Vers 1500 de notre ere selon les traditions orales. Le Mbundaland, territoire entre les rivieres Lungwevungu et Kwandu, se developpa comme entite politique distincte sous la direction de rois successifs. Le 12e et 13e monarques Mbunda (Mwene Kathangila ka Mukenge et Yambayamba Kapanda) entreprirent des expeditions d'expansion qui donnerent naissance a 13 ethnies descendantes dont les Luimbi, Nyemba, Luchazi, et d'autres.",
+      "migrationRoutes": [
+        "Du Soudan actuel vers le Congo via l'Ouganda, le Kenya, le Burundi et le Rwanda",
+        "Du Congo (region de Kola, entre les rivieres Kwilu et Kasai) vers le Haut-Zambeze",
+        "Installation le long des rivieres Mithimoyi, Lunchathzi, Lungwevungu (Angola sud-est)",
+        "Migration de la fin du 18e siecle vers le Barotseland (Province occidentale de Zambie)",
+        "Migration au debut du 20e siecle vers la Zambie sous pression coloniale portugaise",
+        "Migrations de guerre (1975-2002) vers la Zambie occidentale, la Namibie du nord (Rundu) et le Congo-Kinshasa"
+      ],
+      "historicalSettlementZones": [
+        "Mbundaland : provinces de Moxico et Cuando Cubango (Angola sud-est)",
+        "Capital Lumbala Nguimbo (Angola)",
+        "Province occidentale de Zambie : districts de Mongu, Kaoma, Kalabo, Senanga, Lukulu, Kabompo",
+        "Province nord-occidentale de Zambie (district de Kabompo, Manyinga, Kayombo)",
+        "Region de Rundu et Nkurenkuru, Kavango (Namibie)",
+        "Entre les rivieres Kwilu et Kasai (Congo-Kinshasa)"
+      ],
+      "unificationsOrDivisions": "Le royaume Mbunda fut divise en 6 dialectes distincts apres la mort du roi Katavola I Mwechela et les conflits qui s'ensuivirent. Les expansions sous les 12e et 13e monarques produisirent 13 ethnies descendantes. La migration vers le Barotseland a la fin du 18e siecle crea une diaspora Mbunda structuree en plusieurs chefferies en Zambie. Le traite Mulambwa-Chiyengele scella l'alliance entre les Mbunda et les Aluyi (Lozi).",
+      "externalInfluences": "Influence Luba et Ruund lors du passage par le Congo. Conflits avec les Chokwe au 19e siecle (guerre Mbunda-Chokwe). Conflits avec les Luvale. Alliance strategique avec les Lozi de Barotseland (Aluyi) : les Mbunda participent a la defense du royaume Lozi contre les Makololo (1830), les Tonga (1880s) et les Kaonde. Resistance a la colonisation portugaise (capture du roi Mbandu I Kapova par les Portugais). Guerre civile angolaise (1975-2002) : deplacements massifs.",
+      "majorHistoricalEvents": "Vers 1500 : debut du Mbundaland. 19e siecle : guerres avec les Chokwe et les Luvale. Fin 18e siecle : premiere migration vers le Barotseland, traite Mulambwa-Chiyengele. 1830 : participation decisive a la guerre Aluyi-Makololo. 1880s : guerre aux cotes des Lozi contre les Tonga. Debut 20e siecle : resistance a la colonisation portugaise et capture du roi Mbandu I Kapova. 1961-1974 : guerre d'independance angolaise. 1975-2002 : guerre civile angolaise et vagues de migration vers la Zambie, la Namibie et la RDC. 2002 : retour de la paix et retour progressif des deplaces."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Royaume Mbunda avec un roi (Mwene) a la tete, detenant une autorite absolue. Le roi legifere et gouverne ; ses decisions ne sont pas remises en question. Systeme decentralise de chefferies locales dans les zones et localites. La lignee royale est matrilineaire. En Zambie, les chefferies Mbunda s'inscrivent dans la structure du Conseil National Barotse (Barotse National Council). Le roi actuel est Sa Majeste Mbandu III Mbandu Lifuti a Lumbala Nguimbo (Angola).",
+      "clanOrganization": "Societe historiquement matrilineaire avec transmission du titre royal par la ligne centrale matrilineaire royale (ce qui limitait le nombre de pretendants au trone). Contacts avec des systemes patrilineaires voisins ont introduit certaines influences. Les Mbunda se divisent en plusieurs sous-groupes dialectaux (Katavola, Yauma, Nkangala, Mbalango, Sango, Shamuka, Ndundu) chacun avec sa propre chefferie.",
+      "ageClassSystems": "Mukanda : ceremonie d'initiation masculine (circoncision) avec retraite au camp pendant plusieurs mois, apprentissage des lois de la communaute, des techniques de chasse, des regles du comportement adulte. Les Mbunda sont consideres comme les principaux acteurs du systeme Makishi avec plus de 50 masques et artefacts exclusifs Mbunda. Litungu ou Bwali : initiation feminine liee a la puberte.",
+      "roleOfLineages": "Les lignages matrilineaires royaux structurent la succession au trone. Les lignages dans les localites gerent l'acces aux terres et la resolution des conflits. L'appartenance clanique determine le statut social et les droits coutumiers.",
+      "religiousAuthority": "Respect des ancetres comme pilier spiritual fondamental. Rites religieux lies aux ceremonials saisonniers et aux initiations. Le christianisme a penetre progressivement les communautes Mbunda tout en coexistant avec les pratiques traditionnelles dans de nombreux villages."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Mbunda (Chimbunda)",
+      "isoCodes": ["mck"],
+      "dialects": [
+        "Katavola (Mbunda Mathzi)",
+        "Yauma",
+        "Nkangala",
+        "Mbalango",
+        "Sango",
+        "Shamuka (Chiyengele)",
+        "Ndundu"
+      ],
+      "vehicularRole": "Le Chimbunda (Ki-mbunda ou Gimbunda) est reconnu comme l'une des langues locales en Zambie, utilise dans les emissions de radio locale et partiellement dans l'enseignement de base. Les linguistes du groupe ont fourni d'importants efforts pour documenter et codifier la langue. En Angola, le portugais est la langue officielle. En Zambie, l'anglais et le Lozi (Silozi) servent de vehiculaires dans la Province occidentale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mukanda : rite d'initiation masculine central, avec circoncision et retraite prolongee (plusieurs mois), suivi d'une grande ceremonie de reintegration dans la communaute symbolisant la renaissance du garcon en homme adulte. Ce rite est aussi pratique par les Chokwe, Luvale et Luchazi, les Mbunda etant consideree comme les principaux depositaires avec plus de 50 artefacts Makishi exclusifs. Litungu (Bwali) : initiation feminine. Calendrier rituel saisonnier (Kuwana en mars : fete des nouvelles recoltes ; ceremonie de Mars marquant le Nouvel An Mbunda).",
+      "symbols": "Masques Makishi (plus de 50 artefacts pantomimes exclusifs Mbunda) utilises lors des initiations. Marimba et tambours comme instruments rituels et festifs. Lances, arcs et fleches : attributs traditionnels des guerriers et chasseurs Mbunda. Le nom Mbunda signifie 'terre rouge' : symbole identitaire fondamental.",
+      "artsAndMusic": "Vannerie decorative a partir des racines de makenge. Instruments de musique (tambours, marimbas). Sculpture et construction. Art de la chasse (celebrated elephant hunters). Metallurgie. Les danseurs Makishi executent des spectacles pantomimes lors des ceremonies d'initiation. Marimba et percussions lors des celebrations communautaires.",
+      "spiritualities": "Respect profond des ancetres, pilier de la vie spirituelle Mbunda. Ceremonies de propitiation ancestrale. Pratiques chamaniques et guerison traditionnelle. Commerce spirituel avec les forces de la nature (riviers, forets). Le christianisme est aujourd'hui present dans de nombreuses communautes, en particulier en Zambie, souvent en syncretisme avec les croyances ancestrales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume Mbunda de Mbundaland (Angola sud-est), avec Lumbala Nguimbo comme capitale royale. Plus de 21 rois successifs documentes dans la tradition orale. Chefferies Mbunda etablies en Zambie : Senior Chief Mwene Sikufele a Lukwakwa (Kabompo District), Chief Mwene Kasimba a la confluence de Lalafuta et Kyamenge, Senior Chief Chikufele a Manyinga, Chief Chingumbe Chiyengele a Kayombo.",
+      "relationsWithNeighbors": "Alliance strategique durable avec les Lozi (Aluyi) de Barotseland : les Mbunda servirent comme force militaire d'elite du royaume Lozi. Inclus dans le Barotse National Council. Conflits historiques avec les Chokwe (guerre Mbunda-Chokwe au 19e siecle) et les Luvale (invasion repousse par le roi Mbandu I). Relations de voisinage avec les Luchazi, Luimbi, Nyemba, Nkangala, Yauma (ethnies descendantes du tronc Mbunda).",
+      "conflictsOrAlliances": "Guerre Mbunda-Chokwe (19e siecle) : victoire Mbunda apres l'elimination du chef Chokwe Musangu. Guerre contre les Luvale : victoire Mbunda sous le roi Mbandu I Lyondthzi Kapova. Alliance Mulambwa-Chiyengele avec les Aluyi (Lozi) fin 18e siecle. Guerre Aluyi-Makololo (1830) : participation decisive des Mbunda. Guerre contre les Tonga (1880s). Guerre Lozi-Kaonde (fin 19e siecle). Resistance a la colonisation portugaise : le roi Mbandu I Kapova est fait prisonnier par les Portugais.",
+      "diaspora": "Quatre vagues migratoires documentees : (1) fin 18e siecle vers Barotseland (Mongu) ; (2) debut 20e siecle sous pression coloniale portuguaise ; (3-4) periodes de la guerre civile angolaise (1975-2002) vers la Province occidentale de Zambie, la Namibie du nord (Rundu, Nkurenkuru, bande de Caprivi) et le Congo-Kinshasa. Presence aujourd'hui dans les provinces Zambiennes de l'Ouest et du Nord-Ouest, en Namibie, en RDC et dans des villes comme Lusaka et Luanda."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 563000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 : 380 000 en Angola et 183 000 en Zambie, total 563 000. Des communautes supplementaires existent en Namibie (region de Kavango) et en RDC (entre Kwilu et Kasai).",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 380000 },
+        { "country": "ZMB", "population": 183000 },
+        { "country": "NAM", "population": 8000 },
+        { "country": "COD", "population": 5000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia – Mbunda people (https://en.wikipedia.org/wiki/Mbunda_people)",
+      "Joshua Project – Mbunda in Angola, 2025 (https://joshuaproject.net/people_groups/13643/AO)",
+      "Joshua Project – Mbunda in Zambia, 2025 (https://joshuaproject.net/people_groups/13643/ZA)",
+      "The Mbunda Royal Establishment Zambia – The History of the Mbunda People (https://mbundaroyalestablishmentzambia.wordpress.com/the-history-of-the-mbunda-people/)",
+      "Qiraat Africa – Mbunda people of Angola and Zambia (https://qiraatafrican.com/en/19885/mbunda-people-of-angola-and-zambia/)",
+      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)"
+    ]
   }
 }

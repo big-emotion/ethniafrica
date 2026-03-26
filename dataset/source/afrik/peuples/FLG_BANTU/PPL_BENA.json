@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Bena",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wabena",
+      "exonyms": ["Bena of Njombe", "Bena Manga", "Ekibena"],
+      "originOfExonyms": "Le terme Ekibena designe a la fois le peuple et sa langue. Bena Manga (ou Benamanga) designe le sous-groupe Bena qui emigra au XIXe siecle vers les districts d'Ulanga et de Kilombero (region de Morogoro). Wabena est le pluriel swahili courant.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Wabena est utilise couramment en Tanzanie. Leur langue est appelee KiBena ou Ekibena. Dans les statistiques tanzaniennes, ils sont classes sous Bena (Tanzania) avec le code ISO 639-3 bez.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre-Sud",
+      "ethnoLinguisticGroup": "Bantou (zone G, groupe G60)",
+      "historicalRegion": "Hauts plateaux de Njombe, sud-centre de la Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Bena"],
+    "ethnicities": ["Wabena", "Bena Manga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre-Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Bena sont un peuple bantou etabli depuis plusieurs siecles dans les hauts plateaux de Njombe en Tanzanie meridionale. Leur tradition orale evoque une migration depuis des zones septentrionales et leur etablissement dans la region des hauts plateaux Njombe. Ils partagent des liens linguistiques et culturels etroits avec les Hehe voisins (KiBena et KiHehe sont mutuellement intelligibles) ainsi qu'avec les Kinga, Wanji et Sangu. L'existence du chef Bena et la bataille de Mgodamtitu sont des evenements fondateurs de l'identite et de la cohesion clanique Bena.",
+      "formationPeriod": "La formation de l'identite collective Bena remonte au moins au XIXe siecle. Des chefs Bena organiserent la cohesion politique en s'appuyant sur des recits historiques de migration et de batailles fondatrices.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans les hauts plateaux de Njombe (district de Njombe, region d'Iringa puis region de Njombe)",
+        "Migration d'un sous-groupe vers les districts d'Ulanga et de Kilombero (region de Morogoro) au XIXe siecle, donnant les Bena Manga",
+        "Migrations de travail vers d'autres regions de Tanzanie au XXe et XXIe siecles"
+      ],
+      "historicalSettlementZones": [
+        "District de Njombe, region de Njombe (coeur du territoire Bena)",
+        "District d'Ulanga, region de Morogoro (Bena Manga)",
+        "District de Kilombero, region de Morogoro (Bena Manga)"
+      ],
+      "unificationsOrDivisions": "Les Bena sont divises en deux branches principales: les Bena des hauts plateaux de Njombe et les Bena de l'Ulanga (Bena Manga). La cohesion clanique fut renforcee par les chefs Bena qui s'appuyaient sur des recits historiques communs de migration et de batailles.",
+      "externalInfluences": "Influence des voisins Hehe (langue mutuellement intelligible). Impact de la periode coloniale allemande (fin XIXe siecle) puis britannique (apres 1919). L'islamisation et la christianisation a partir de la fin du XIXe siecle ont modifie les pratiques religieuses. La politique tanzanienne post-independance a aboli les chefferies traditionnelles.",
+      "majorHistoricalEvents": "Bataille de Mgodamtitu (evenement fondateur dans la tradition orale). Periode coloniale allemande suivie de la mainmise britannique sur le Tanganyika (1919). Independance de la Tanzanie (1961) et abolition des chefferies tribales. La region de Njombe a ete separee de la region d'Iringa en 2012."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferies. Le chef Bena exercait une autorite politique et culturelle en s'appuyant sur la cohesion clanique et des recits historiques de migration fondateurs. Apres l'independance tanzanienne en 1961, les chefferies tribales furent abolies et remplacees par des autorites locales elues.",
+      "clanOrganization": "Organisation clanique patrilineaire avec clans exogames. Plusieurs clans constituent le groupe Bena. Les hommes restent dans leur communaute d'origine apres le mariage, la femme rejoignant la communaute du mari. L'appartenance clanique se transmet par la ligne paternelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent la vie sociale, les droits fonciers et les rites de passage. La terre est consideree comme appartenant au clan du pere. Le systeme de reciprocite (echanges, cooperation agricole, construction) structure les relations inter-lignages.",
+      "religiousAuthority": "Des anciens et des specialistes rituels supervisant les ceremonies de passage (initiation, mariage, funerailles). Croyances en les ancetres comme mediateurs spirituels. Presence croissante de clerges chretiens et musulmans depuis le XIXe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "KiBena (Ekibena)",
+      "isoCodes": ["bez"],
+      "dialects": [
+        "Maswamu",
+        "Twangabita",
+        "dialectes des hauts plateaux de Njombe",
+        "parler des Bena Manga (Ulanga)"
+      ],
+      "vehicularRole": "Le KiBena est la langue vernaculaire de la communaute Bena. Il est mutuellement intelligible avec le KiHehe. Le swahili est la langue nationale et vehiculaire de la Tanzanie, utilise dans les ecoles, l'administration et les echanges interethniques. Environ 600 000 locuteurs selon l'Ethnologue."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage marques par trois phases (separation, transition, incorporation) selon les etapes du cycle de vie: naissance, initiation, mariage, mort. Ceremonies de mariage avec transfert de betail entre lignages. Rites funebres incluant des prieres aux ancetres, libations et rituels de deuil. Ceremonies agricoles liees aux saisons des pluies. Le Nyumbanitu est une foret traditionnelle sacree associee a des folklores et pratiques rituelles Wabena.",
+      "symbols": "La foret sacree de Nyumbanitu constitue un site de reference culturel et spirituel majeur pour les Wabena. Les festivals de naissance de jumeaux sont marques par des rituels speciaux. Les recits oraux historiques (notamment la bataille de Mgodamtitu) sont des vecteurs de memoire et de cohesion identitaire.",
+      "artsAndMusic": "Artisanat traditionnel: tissage de nattes et paniers, poterie (dans les zones a argile adaptee), forge (travail du fer pour outils agricoles et armes). Agriculture de houe comme activite centrale des femmes. Construction de maisons rectangulaires en boue avec greniers coniques. Traditions de chants et percussions lors des ceremonies.",
+      "spiritualities": "Croyances animistes et en les ancetres: les ancetres sont invoques par des prieres, libations (eau, bouillie) et des rituels aux sites funeraires. Divinateurs consultes pour diagnostics de maladies et malheurs. Notion d'un dieu createur. Presence importante du christianisme (catholique et protestant) et, dans une moindre mesure, de l'islam, tous deux introduits au XIXe siecle. Les traditions rituelles decroissent sous l'influence de la religion et de la scolarisation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Bena etaient organises en chefferies dont l'autorite etait maintenue par des chefs qui s'appuyaient sur la memoire historique collective. Pas d'etat centralise comparable aux royaumes voisins Hehe. La chefferie Bena fut abolie apres l'independance tanzanienne en 1961.",
+      "relationsWithNeighbors": "Relations etroites avec les Hehe (langue mutuellement intelligible, histoire partagee dans la region des hauts plateaux d'Iringa). Liens avec les Sangu, Kinga, Wanji et Kisi (meme grappe linguistique). Interactions commerciales avec d'autres groupes tanzaniens via les routes de la region des hauts plateaux.",
+      "conflictsOrAlliances": "La bataille de Mgodamtitu est un evenement majeur dans la tradition orale Bena. La region connut des tensions et reconfigurations territoriales au XIXe siecle liees aux migrations et aux pressions externes (Ngoni, commerce arabe, puis colonisation allemande). Les Wabena furent integres dans le systeme colonial allemand puis britannique.",
+      "diaspora": "Un sous-groupe Bena (Bena Manga) emigra au XIXe siecle vers les districts d'Ulanga et de Kilombero (Morogoro), developpant une identite propre. Des Bena se sont disperses dans d'autres regions tanzaniennes, notamment en milieu urbain, au cours du XXe et XXIe siecles."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1474000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project, estimation 2025 (https://joshuaproject.net/countries/TZ)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1474000,
+          "note": "Region de Njombe principalement; groupes en region de Morogoro (Bena Manga)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Bena people – Wikipedia (https://en.wikipedia.org/wiki/Bena_people)",
+      "Bena language – Wikipedia (https://en.wikipedia.org/wiki/Bena_language)",
+      "Bena in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/countries/TZ)",
+      "Bena Language (BEZ) – Ethnologue SIL (https://www.ethnologue.com/language/bez/)",
+      "Dialect Variation in a Minority Language: The Case of Bena – Morrison, 2015 (http://www.lingref.com/cpp/acal/44/paper3138.pdf)",
+      "Inside Nyumbanitu Traditional Forest – Academia.edu, 2018 (https://www.academia.edu/35750250/INSIDE_NYUMBANITU_TRADITIONAL_FOREST_REINTERPRETATION_OF_FOREST_EMBEDDED_FOLKLORES_OF_WABENA_IN_NJOMBE)",
+      "Memory, Migration and the Authority of History in Southern Tanzania – JSTOR (https://www.jstor.org/stable/183473)"
+    ]
   }
 }

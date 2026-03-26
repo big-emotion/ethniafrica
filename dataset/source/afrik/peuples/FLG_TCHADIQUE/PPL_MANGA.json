@@ -1,64 +1,105 @@
 {
   "id": "PPL_MANGA",
-  "nameMain": "Manga",
+  "nameMain": "Manga Kanuri",
   "languageFamilyId": "FLG_TCHADIQUE",
-  "currentCountries": ["NER"],
+  "currentCountries": ["NER", "NGA"],
   "content": {
     "appellations": {
       "mainName": "Manga",
-      "selfAppellation": "Manga",
-      "exonyms": ["Manga (terme utilisé par les Européens)"],
+      "selfAppellation": "Manga / Mangawa",
+      "exonyms": [
+        "Mangari",
+        "Barebari (terme haoussa, employé dans les plaines du Niger)",
+        "Kanuri Manga"
+      ],
+      "originOfExonyms": "Le terme Barebari est d'origine haoussa et désigne les Kanuri sedentaires de la zone. Mangari et Mangawa sont des variantes du nom propre du groupe. Manga designe la region historique habitee.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les Manga se desinent eux-memes sous le nom Manga ou Mangawa. Ils se distinguent des autres sous-groupes Kanuri (Yerwa, Tumari, Bilma) et se considerent comme une communaute distincte au sein de la grande famille Kanuri.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique",
-      "historicalRegion": "Niger",
-      "currentCountries": ["NER"]
+      "ethnoLinguisticGroup": "Kanuri (branche Saharienne du Nilo-Saharien) — sous-groupe Manga",
+      "historicalRegion": "Region Manga, a l'est de Zinder et dans la region de Diffa (Niger oriental), ainsi que l'etat de Yobe (Nigeria)",
+      "currentCountries": ["NER", "NGA"]
     },
-    "ethnicities": ["Manga du Nord", "Manga du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Manga du Niger — sous-groupe principal, region de Zinder et Diffa",
+      "Manga du Nigeria — etat de Yobe, Jigawa, Bauchi",
+      "Dagara (Dogara) — dialecte et sous-groupe distinct dans la region de Diffa",
+      "Tumari — sous-groupe apparente de la region de N'Guigmi",
+      "Mober — sous-groupe Kanuri de Borno (Nigeria) parfois associe aux Manga"
+    ],
     "origins": {
-      "ancientOrigins": "Les Manga sont originaires du Niger. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples haoussa et sahariens, influence de l'islam."
+      "ancientOrigins": "Les Manga sont un sous-groupe des Kanuri, peuple d'origine nilo-saharienne dont l'expansion dans le bassin du lac Tchad remonte au 7e siecle de l'ere commune. Les Kanuri, anciennement pasteurs nomades du Sahara central, s'etablirent progressivement dans les plaines du Kanem, au nord-est du lac Tchad, avant de fonder l'empire du Kanem-Bornu. Selon la tradition orale kanuri, leur ancetre fondateur Sef, fils de Dhu Ifazan du Yemen, unit les populations en une dynasties Sayfawa vers le 9e siecle. Les Manga occupent la zone est de Zinder et la region de Diffa depuis plusieurs siecles.",
+      "formationPeriod": "L'identite Manga comme sous-groupe distinct s'est formee progressivement au sein de l'empire du Kanem-Bornu (9e-19e siecles). La region Manga, a l'est de Zinder, fut longtemps une zone de contact entre les Kanuri sedentaires et les peuples pastoraux sahariens. La colonisation europeenne (fin 19e siecle) fixa les frontieres et divisa les Manga entre le Niger (colonie francaise) et le Nigeria (colonie britannique).",
+      "migrationRoutes": [
+        "Expansion kanuri depuis le Kanem (nord-est du lac Tchad) vers l'ouest et le sud-ouest",
+        "Installation progressive dans la region de Zinder et Diffa (Niger actuel)",
+        "Presence egalement dans l'etat de Yobe et les etats adjacents du nord-est du Nigeria"
+      ],
+      "historicalSettlementZones": [
+        "Region de Zinder (Niger) — principalement a l'est de la ville de Zinder",
+        "Region de Diffa (Niger) — zone frontaliere avec le Nigeria et le Tchad",
+        "Etat de Yobe (Nigeria) — notamment les LGA de Geidam et Nguru",
+        "Etats de Jigawa et Bauchi (Nigeria) — minorites Manga"
+      ],
+      "unificationsOrDivisions": "Les Manga se distinguent des Kanuri centraux (Yerwa) par leur dialecte et leur localisation geographique. Ils entretiennent des liens culturels et linguistiques avec les Tumari et les Bilma, autres sous-groupes Kanuri du Niger. L'empire du Kanem-Bornu constituait le cadre politique unificateur historique. La division coloniale entre France et Royaume-Uni a partage la communaute Manga entre Niger et Nigeria.",
+      "externalInfluences": "L'empire Kanem-Bornu (fondateur de l'identite kanuri, 9e-19e siecles). Islamisation progressive depuis le 11e siecle via les routes commerciales sahariennes. Contacts avec les Haoussa voisins au sud et les Toubou au nord. Colonisation francaise (Niger, 1900-1960) et britannique (Nigeria, 1914-1960). Depuis les annees 2000, impact du conflit Boko Haram dans la region du lac Tchad.",
+      "majorHistoricalEvents": "L'empire du Kanem-Bornu, dont les Manga sont l'un des piliers, a domine la region du lac Tchad pendant plus d'un millenaire. En 1914, la prise de controle britannique du Bornu a affaibli le pouvoir politique Kanuri en Nigeria. Au Niger, la region de Diffa a ete fortement affectee par les attaques de Boko Haram et du Mouvement pour l'unite et le jihad en Afrique de l'Ouest (MUJAO) depuis 2011, provoquant des deplacements de populations manga."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Les Manga sont organises en chefferies traditionnelles (maigari ou bulama au niveau village, avec un chef superieur au niveau district). L'autorite politique traditionnelle s'articule autour du Shehu (chef supreme des Kanuri en Nigeria) et de l'emirat de Bornu. En Niger, des chefs de cantons manga supervises par l'administration etatique exercent l'autorite locale. Le systeme est patrilinealire et l'heredite de la chefferie suit la lignee paternelle.",
+      "clanOrganization": "La societe manga est organisee en familles etendues et en clans patrilineaires. Le menage (ganda) est l'unite economique fondamentale. Un homme de prestige dirige plusieurs menages. Les jeunes hommes peuvent etre confies (en pret de travail) a des menages prosperes en echange de nourriture, vetements et aide au mariage — pratique centrale de la solidarite sociale kanuri.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. La polygamie est repandue (jusqu'a quatre epouses selon la loi islamique). Le divorce est extremement frequent dans la societe kanuri-manga, et les femmes divorcees ont un statut social reconnu.",
+      "religiousAuthority": "L'autorite religieuse est exercee par les imams et les oulemmas locaux, souvent attaches aux mosquees des villages. La confraternite Tijaniyya est influente dans la region. Certaines pratiques pre-islamiques persistent sous forme de charmes et amulettes (gris-gris) portes pour la protection."
     },
     "languages": {
-      "mainLanguage": "Manga",
-      "vehicularRole": "Le manga est parlé par la majorité des Manga. Le haoussa, le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Manga Kanuri (dialecte Manga du Kanuri)",
+      "isoCodes": ["kby"],
+      "dialects": [
+        "Manga — dialecte principal, parle dans la region de Zinder et Diffa (Niger)",
+        "Dagara (Dogara) — dialecte proche, parle dans la zone frontaliere Niger-Nigeria",
+        "Variante de Yobe — parlee dans l'etat de Yobe, Nigeria"
+      ],
+      "vehicularRole": "Le manga kanuri est la deuxieme variete la plus parlee du continuum kanuri, avec environ 450 000 locuteurs au Niger et plus de 250 000 au Nigeria. Il est utilise comme langue de commerce dans la region de Zinder et Diffa. Le haoussa, le francais (Niger) et l'anglais (Nigeria) sont egalement parles. Le kanuri manga est classe dans la famille Nilo-Saharienne (branche Saharienne), malgre son inclusion administrative dans les peuples tchadiques de la region."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels manga.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture manga."
+      "majorRites": "Celebrations islamiques majeures : Eid al-Fitr (fin du Ramadan), Eid al-Adha (Fete du mouton), Mawlid (anniversaire du Prophete). Rites de passage : circoncision masculine, mariage traditionnel avec bride price (dowry en bovins, ovins et especes). Ceremonies funebres : inhumation rapide selon le rite islamique, priere collective, condoleances sur trois jours. Celebrations de naissance (nomination de l'enfant au 7e jour). Les chevaux jouent un role symbolique fort lors des fetes et ceremonies — ils sont signes de prestige et de statut social.",
+      "symbols": "Le cheval est le symbole de prestige par excellence chez les Manga Kanuri. Les grandes robes (djellabas) et les turbans brodes sont les habits de cour et de ceremonie. Les amulettes (hirizi) et charmes coraniques sont portes pour la protection contre le mauvais oeil et les esprits malveillants. La mosquee du village est le centre symbolique de la vie communautaire.",
+      "artsAndMusic": "Tradition de poesie orale et de chants epiques celebrant les hauts faits des chefs et des guerriers. Musique instrumentale avec percussions (tambours, bendirs), flutes et luth kamun. Artisanat : poterie feminine, tissage et broderie de bonnets brodes (tres caracteristiques de la culture kanuri), travail du cuir et fabrication de sandales. Danse collective lors des fetes islamiques et des mariages. La litterature orale kanuri incluant contes, proverbes et genealogies est riche et transmise par des griots specialises.",
+      "spiritualities": "Les Manga sont musulmans sunnites (rite malekite) depuis le 11e siecle. L'islam structure entierement la vie sociale, le calendrier, les pratiques matrimoniales et les rites funeraires. La confraternite Tijaniyya est la principale confrerie soufie presente dans la region. Des croyances et pratiques pre-islamiques persistent : port d'amulettes et charmes coraniques, consultation de devins pour les maladies et les conflits, croyance en des esprits des lieux (djinns). La ligne entre pratique islamique orthodoxe et traditions locales est souvent permeabilisee."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora manga dans les grandes villes nigériennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Manga sont une composante de l'empire du Kanem-Bornu, l'un des plus anciens et durables etats d'Afrique subsaharienne (fondé avant 1000 CE, perdura jusqu'en 1900). La dynasties Sayfawa gouverna le Kanem-Bornu pendant pres de 1000 ans avant d'etre remplacee par la dynasties al-Kanemi au debut du 19e siecle. Les regions manga constituaient une zone periferique mais importante de l'empire, contribuant aux echanges commerciaux et a la defense des frontieres nord et ouest.",
+      "relationsWithNeighbors": "Relations commerciales et parfois conflictuelles avec les Haoussa au sud (echanges de sel, millet, betail). Relations avec les Toubou et Tuareg au nord (nomades sahariens). Contacts avec les Arabes Shuwa de la zone du lac Tchad. La region de Diffa est une zone de convergence multietnique avec les Fulfude (Peuls), les Buduma (lac Tchad) et les Zarma.",
+      "conflictsOrAlliances": "Participation aux guerres de l'empire Kanem-Bornu contre les sultanats haoussa, les Tuareg et les Zaghawa. Resistance au jihad de Ousman dan Fodio (19e siecle) qui declencha la refonte politique de toute la region. Prise de controle coloniale britannique (Nigeria, 1914) et francaise (Niger, 1900). Depuis 2009, la region de Diffa est affectee par les violences de Boko Haram et de l'ISWAP, entrainant des deplacements massifs de populations manga.",
+      "diaspora": "Migration interne vers les grandes villes nigeriennes (Niamey, Zinder, Diffa) et nigerianes (Maiduguri, Damaturu, Kano) pour raisons economiques et securitaires. Communautes manga dans les capitales africaines. Emigration vers la France et d'autres pays europeens, notamment depuis les annees 2000."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigériens, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur SIL Ethnologue (450 000 locuteurs au Niger, 250 000+ au Nigeria en 2000, avec croissance demographique), Joshua Project, Wikipedia EN — Kanuri people, Facebook Kanuri language origins (2024). Les recensements nationaux ne distinguent pas toujours les sous-groupes Kanuri.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 450000,
+          "note": "Regions de Zinder et Diffa principalement ; certains deplaces en raison du conflit Boko Haram"
+        },
+        {
+          "country": "NGA",
+          "population": 250000,
+          "note": "Etat de Yobe (Geidam, Nguru), Jigawa et Bauchi"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Manga language (mgl)",
-      "CIA World Factbook – Niger",
-      "Recensements nigériens",
-      "Études anthropologiques sur les peuples tchadiques"
+      "Wikipedia EN — Manga Kanuri. https://en.wikipedia.org/wiki/Manga_Kanuri",
+      "Wikipedia EN — Kanuri people. https://en.wikipedia.org/wiki/Kanuri_people",
+      "Wikipedia EN — Kanuri language. https://en.wikipedia.org/wiki/Kanuri_language",
+      "SIL Ethnologue — Manga Kanuri (kby). https://www.ethnologue.com/language/kby/",
+      "Joshua Project — Kanuri, Manga in Niger. https://joshuaproject.net/people_groups/13496/NG",
+      "Joshua Project — Kanuri, Manga in Nigeria. https://joshuaproject.net/people_groups/13496/NI",
+      "Encyclopaedia Britannica — Manga people. https://www.britannica.com/topic/Manga-people",
+      "Introduction to the Kanuri Language — Michigan State University (ALMA). https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf"
     ]
   }
 }

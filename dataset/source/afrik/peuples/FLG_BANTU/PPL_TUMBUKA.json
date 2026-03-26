@@ -6,63 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "Tumbuka",
-      "selfAppellation": "Tumbuka",
-      "exonyms": ["Tumbuka (terme utilisé par les Européens)"],
+      "selfAppellation": "WaTumbuka (pl.), Mutumbuka (sg.)",
+      "exonyms": [
+        "Tumbuka (terme colonial generique)",
+        "Kamanga",
+        "Batumbuka",
+        "Matumbuka",
+        "Phoka (sous-groupe)"
+      ],
+      "originOfExonyms": "Le terme Tumbuka fut standardise par les missionnaires europeens du XIXe siecle. Les sous-groupes Senga, Henga, Yombe, Phoka et Kamanga s'identifient separement mais sont englobes sous le terme Tumbuka dans les recensements officiels.",
+      "whyProblematic": "Le terme Tonga designe un sous-groupe tumbuka du Malawi (Nyasa Tonga) qui est distinct des Tonga de Zambie et Zimbabwe — confusion frequente dans les sources.",
+      "contemporaryUsage": "WaTumbuka est l'autodesignation courante. En politique malawite, le terme Tumbuka a ete instrumentalise lors des purges de Hastings Banda (1964-1994) qui interdit la langue de la radio et des ecoles.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "MWI, ZMB, TZA",
+      "ethnoLinguisticGroup": "Bantous d'Afrique centrale et orientale, zone N (Nyanja-Tumbuka)",
+      "historicalRegion": "Region du royaume de Nkhamanga (nord du Malawi, vallee de Henga) ; plateau entre la vallee de la Luangwa et le lac Malawi au nord",
       "currentCountries": ["MWI", "ZMB", "TZA"]
     },
     "ethnicities": [
-      "Tumbuka du Malawi",
-      "Tumbuka de Zambie",
-      "Tumbuka de Tanzanie"
+      "Henga (vallee de Henga, nord de Rumphi — berceau de la dynastic Chikulamayembe)",
+      "Phoka (sud du plateau de Nyika)",
+      "Senga (Zambie, province orientale — Lundazi, Chasefu)",
+      "Yombe (nord-ouest du Malawi)",
+      "Kamanga (sous-groupe du Malawi septentrional)",
+      "Tonga (Nyasa Tonga, district de Nkhata Bay, Malawi — distinct des Tonga de Zambie)",
+      "Nyika (region du plateau de Nyika)",
+      "Wenya (sous-groupe distinct)"
     ],
     "origins": {
-      "ancientOrigins": "Les Tumbuka sont originaires du MWI, de la Zambie et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Tumbuka sont originaires des Luba du centre du Congo actuel. Apres une rupture avec les tribus bantoues du haut-centre africain, ils furent chasses par le groupe guerrier Kongolo. Ils entrerent dans la region entre la vallee de la Luangwa et le nord du lac Malawi au XVe siecle. Langue originaire de la zone entre la riviere Luangwa a l'ouest, le lac Malawi a l'est, la riviere North Rukuru au nord et la riviere Dwangwa au sud.",
+      "formationPeriod": "Debut du XVIIIe siecle : formation de petites communautes independantes a faible organisation centrale (agriculteurs de millet, eleveurs de chevres et moutons). Vers 1750-1780 : etablissement de la dynastic Chikulamayembe, federation de chefferies sur la region Nkhamanga-Henga. Declin du XVe siecle au XIXe siecle avec arrivee des negociants arabes et des Ngoni.",
+      "migrationRoutes": [
+        "Migration depuis le bassin du Congo (Luba) vers l'est et le sud (XVe s.)",
+        "Installation sur le plateau entre la Luangwa et le lac Malawi (XVe-XVIe s.)",
+        "Migration de travailleurs vers la Tanzanie, le Zimbabwe et l'Afrique du Sud (XXe s.)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Nkhamanga et vallee de Henga (nord du Malawi, district de Rumphi)",
+        "Plateau de Nyika et districts de Mzimba, Karonga, Chitipa (Malawi)",
+        "Province orientale de Zambie (Lundazi, Chasefu, Lumezi, Chama)",
+        "Province de Muchinga (Zambie : Isoka, Mafinga)",
+        "Tanzanie meridionale (Mbeya, Rungwe, Njombe)"
+      ],
+      "unificationsOrDivisions": "La dynastic Chikulamayembe (vers 1750) unifica temporairement les chefferies Tumbuka en une federation. Elle fut fondee par un chef de caravane commerçant (de la region d'Unyamwezi en Tanzanie) qui s'allia aux groupes Henga. En declin des les annees 1830, elle fut restauree en 1907 sous protectorat britannique. La fete Gonapamuhanya commemore le premier Chikulamayembe installe dans le Nkhamanga.",
+      "externalInfluences": "1840s : negociants arabes swahili (Jumbe Salim bin Abdallah a Nkhotakota) et commerce d'ivoire et d'esclaves. Vers 1855 : arrivee des Ngoni de Zwangendaba (de l'Afrique du Sud), qui traitent les Henga comme sujets tributaires. 1858 : David Livingstone documente l'esclavage Tumbuka. 1870s : arrivee des missionnaires chretiens. 1891 : protectorat britannique du Nyasaland. 1907 : restauration du Chikulamayembe.",
+      "majorHistoricalEvents": "1887-1889 : Guerre de Karonga (alliance swahili/Henga contre Ngonde et African Lakes Company). 1904 : acceptation du pouvoir britannique par les Ngoni du Nord, liberation des Tumbuka de leur vassalite. 1934 : Chitumbuka langue officielle du Malawi (avec Chewa et anglais). 1964 : independance du Malawi, crise du Cabinet, purge des ministres tumbuka par Banda. 1968 : Banda supprime le Chitumbuka des ecoles et de la radio. 1994 : retour de la democratie pluraliste, reintroduction des programmes radio en Chitumbuka."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies (chiefdoms) dirigees par des chefs hereditaires. La dynastic Chikulamayembe (restauree en 1907, basee a Bolero, district de Rumphi) reste l'institution royale de reference. Le systeme est patrilineaire pour la succession des chefs mais certains sous-groupes ont des elements matrilineaires. Conseils d'anciens (elders) pour la gouvernance locale.",
+      "clanOrganization": "Structure clanique avec plusieurs sous-groupes distincts (Henga, Phoka, Senga, Yombe, Kamanga, Tonga du Malawi). L'identite clanique est transmise patrilineairement. Les alliances inter-clans etaient scellees par des mariages.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires pour la succession et l'heritage. Dans certains sous-groupes, les lignages matrilineaires determinent l'identite clanique. Les liens de parente structurent l'acces aux terres agricoles.",
+      "religiousAuthority": "Devins (ng'anga) et guerisseurs traditionnels jouent un role central, notamment dans la pratique du Vimbuza. Les ancetres (mizimu) sont invoques comme intermediaires spirituels. Pasteurs chretiens influents (protestantisme, catholicisme) depuis le XIXe s. Syncrétisme marque."
     },
     "languages": {
-      "mainLanguage": "Tumbuka",
-      "vehicularRole": "Le tumbuka est parlé par la majorité des Tumbuka. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Chitumbuka (tumbuka)",
+      "isoCodes": ["tum"],
+      "dialects": [
+        "Chitumbuka standard (base de l'ecriture officielle)",
+        "Chitonga (Nyasa Tonga, Nkhata Bay — ajoute 'u' final sur certains mots)",
+        "Senga (Zambie orientale)",
+        "Wenya",
+        "Yombe",
+        "Henga",
+        "Phoka",
+        "Kamanga",
+        "12 dialectes au total recenses selon les linguistes"
+      ],
+      "vehicularRole": "Langue principale du nord du Malawi (6 districts de la Northern Region : Rumphi, Mzimba, Karonga, Chitipa, Nkhata Bay, Likoma). Langue vehiculaire dans le centre du Malawi (Kasungu, Nkhotakota, Ntchisi) et dans la province orientale de Zambie. A ete langue officielle du Malawi (1934-1968). Banni des ecoles et medias par Banda (1968-1994), reintroduit a la radio en 1994."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tumbuka, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Vimbuza : danse de guerison rituelle inscrite au patrimoine culturel immateriel de l'UNESCO en 2008. Pratique therapeutique pour traiter les maladies mentales et les possessions spirituelles par les esprits (mizimu). Healing dance avec tambours (ng'oma), chants et transe. Le guerisseur diagnostique la possession et les hommes creent des rythmes de tambours specifiques aux esprits. Fete Gonapamuhanya : commemoration du premier Chikulamayembe a Nkhamanga (Rumphi), inclut recit de l'histoire tumbuka. Ceremonies agricoles liees aux semailles et aux recoltes. Rites de passage (initiation, mariage, funerailles).",
+      "symbols": "Le plateau de Nyika et la vallee de Henga comme berceau identitaire. Les tambours ng'oma (instruments du Vimbuza) comme symboles de guerison et de communication spirituelle. Le Chitumbuka comme marqueur identitaire fort (malgre la repression de Banda).",
+      "artsAndMusic": "Vimbuza : musique rituelle de transe avec tambours ng'oma, chants de possession et danse therapeutique (patrimoine UNESCO 2008). Musique vocale polyphonique lors des ceremonies. Danses collectives de celebration et de rite de passage. Poesie orale et chants epiques racontant l'histoire de la dynastic Chikulamayembe. Artisanat : poterie, vannerie, sculpture de bois. Agriculture de millet, manioc et mais comme base culturelle.",
+      "spiritualities": "Croyance aux esprits ancestraux (mizimu) qui peuvent causer des maladies ou proteger les vivants. Le Vimbuza est la pratique centrale de communication avec ces esprits : les malades entrent en transe pour que les esprits 'dansent leur maladie'. Mkhalachitatu Vimbuza : exorcisme de demons et esprits malveillants. Forte influence du christianisme (protestants, catholiques) depuis les missions du XIXe s. Syncrétisme chretien-animiste repandu."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tumbuka dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume de Nkhamanga et dynastic Chikulamayembe (etablie vers 1750, declinee dans les annees 1830, restauree en 1907). Federation de petites chefferies sous l'autorite du Chikulamayembe dans la vallee de Henga et le district de Rumphi (base a Bolero). Les Tumbuka furent subjugues par les Ngoni de Zwangendaba vers 1855 et traites comme tributaires jusqu'en 1904.",
+      "relationsWithNeighbors": "Relations commerciales avec les negociants arabes swahili (XIXe s., ivoire et esclaves). Conflit avec les Ngoni du Nord (Mbelwa) a partir de 1855 : les Tumbuka-Henga furent asservis comme soldats et agriculteurs. Alliance avec les Ngonde contre les esclavagistes dans la Guerre de Karonga (1887-1889). Relations avec les missionnaires de l'African Lakes Company.",
+      "conflictsOrAlliances": "Traite des esclaves vers les marchands arabes et comme regle-ment de dettes (documente par Livingstone, 1858). Soumission aux Ngoni (1855-1904). Guerre de Karonga (1887-1889). Suppression politique sous Banda (1964-1994) : purge des elites tumbuka, interdiction de la langue. Revendications culturelles apres la democratisation (1994).",
+      "diaspora": "Migrants tumbuka dans les centres miniers et urbains de Zambie, Tanzanie et Zimbabwe (Harare, plus de 20 000 personnes). Diaspora dans les grandes villes du Malawi (Blantyre, Lilongwe, Mzuzu). Diaspora internationale en Europe et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 10346000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International, 2022) : 10 346 000 locuteurs de Chitumbuka. Qiraat Africa (2025) : estimation totale de locuteurs. Ember et al. estimaient un million supplementaire en raison de la migration de travailleurs en Tanzanie et Zimbabwe.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 7000000,
+          "notes": "Malawi septentrional (6 districts de la Northern Region) et centre (Kasungu, Nkhotakota)"
+        },
+        {
+          "country": "ZMB",
+          "population": 2500000,
+          "notes": "Province orientale (Lundazi, Chasefu, Lumezi, Chama) et Muchinga (Isoka, Mafinga)"
+        },
+        {
+          "country": "TZA",
+          "population": 700000,
+          "notes": "Sud de la Tanzanie (Mbeya, Rungwe, Njombe) frontaliers avec le Malawi nord"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tumbuka language (tum)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tumbuka people : https://en.wikipedia.org/wiki/Tumbuka_people",
+      "Wikipedia EN — Tumbuka language : https://en.wikipedia.org/wiki/Tumbuka_language",
+      "Wikipedia EN — Chikulamayembe dynasty : https://en.wikipedia.org/wiki/Chikulamayembe_dynasty",
+      "UNESCO — Vimbuza healing dance (inscrit 2008) : https://ich.unesco.org/en/RL/vimbuza-healing-dance-00158",
+      "SIL Ethnologue — Tumbuka (tum) : https://www.ethnologue.com/language/tum/",
+      "Qiraat Africa — The Tumbuka People of Africa (2025) : https://qiraatafrican.com/en/15125/the-tumbuka-people-of-africa/",
+      "Encyclopaedia Britannica — Tumbuka : https://www.britannica.com/topic/Tumbuka"
     ]
   }
 }

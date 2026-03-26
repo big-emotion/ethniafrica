@@ -1,0 +1,23 @@
+{
+  "id": "PPL_KONO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Kono",
+      "linguisticFamily": "FLG_MANDE",
+      "historicalRegion": "Sierra Leone (Est)",
+      "currentCountries": ["SLE"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (kno)", "Sierra Leone Historical Records"]
+  }
+}

@@ -1,80 +1,129 @@
 {
   "id": "PPL_AUSTRO_MACRO",
-  "nameMain": "Peuples Austronésiens (macro-groupe)",
+  "nameMain": "Peuples Austronésiens de Madagascar (macro-groupe)",
   "languageFamilyId": "FLG_AUSTRONESIENNE",
   "currentCountries": ["MDG"],
   "content": {
     "appellations": {
-      "mainName": "Peuples Austronésiens (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (Merina, Betsimisaraka, Sakalava, etc.)",
+      "mainName": "Peuples Austronésiens de Madagascar (macro-groupe)",
+      "selfAppellation": "Malagasy (nom collectif — terme unificateur désignant tous les peuples de Madagascar)",
+      "exonyms": ["Malgaches (français)", "Malagasy peoples (anglais)"],
+      "originOfExonyms": "Le terme Malagasy désigne l'ensemble des peuples de l'île de Madagascar et leur langue commune (dans ses variantes dialectales). Il est d'usage interne comme exonyme international. La distinction entre highlanders (hauts plateaux) et côtiers (wastes du littoral) a été popularisée par les missionnaires anglais du XIXe siècle.",
+      "whyProblematic": "La dénomination macro groupe austronésien est une catégorie analytique scientifique (linguistique et génétique) qui masque la grande diversité culturelle et identitaire des 18 à 20 groupes ethniques malgaches distincts. Aucun de ces groupes ne se nomme lui-même austronésien.",
+      "contemporaryUsage": "Le terme Malagasy est l'identité nationale commune de tous les habitants de Madagascar. Les identités ethniques spécifiques (Merina, Betsimisaraka, Sakalava, etc.) coexistent avec cette identité nationale dans le contexte post-indépendance.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien (macro-groupe)",
-      "historicalRegion": "Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynésien — sous-branche malgache (dialectes pluriels unifiés par la langue nationale standard merina)",
+      "historicalRegion": "Madagascar — grande île de l'océan Indien, quatrième plus grande île du monde (587 041 km2), côtes est, ouest, nord et hauts plateaux centraux",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Merina",
-      "Betsimisaraka",
-      "Sakalava",
-      "Antandroy",
-      "Betsileo",
-      "Tsimihety",
-      "Antakarana",
-      "Vezo",
-      "Tanosy (Antanosy)",
-      "Antambahoaka",
-      "Bezanozano",
-      "Mikea",
-      "Antsalova",
-      "Autres groupes malgaches"
+      "Merina — hauts plateaux centraux, groupe le plus nombreux et historiquement dominant (environ 26% de la population)",
+      "Betsimisaraka — côte est, deuxième groupe (environ 15% de la population)",
+      "Betsileo — hauts plateaux méridionaux, troisième groupe",
+      "Tsimihety — nord-centre, groupe nomade agricole",
+      "Sakalava — côte ouest, ancienne puissance royale (deux royaumes : Menabe et Boina)",
+      "Antandroy — extrême sud aride, éleveurs de zébus",
+      "Tanala (Antanala) — forêts du centre-est",
+      "Antaimoro — côte sud-est, groupe d'ascendance arabo-somalienne revendiquée",
+      "Bara — hautes terres méridionales, éleveurs",
+      "Sihanaka — région du lac Alaotra",
+      "Antanosy (Tanosy) — pointe sud-est",
+      "Antambahoaka — côte sud-est (descendants revendiqués d'Arabes)",
+      "Bezanozano — centre-est, région de l'Ankay",
+      "Antakarana — extrême nord",
+      "Vezo — nomades de la mer, côte sud-ouest",
+      "Mahafaly — sud-ouest, maîtres de l'art funéraire",
+      "Mikea — forêt sèche de l'ouest, chasseurs-cueilleurs",
+      "Antsalova — région Melaky, ouest"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples Austronésiens de Madagascar sont originaires de migrations depuis l'Asie du Sud-Est (probablement Bornéo) vers Madagascar (500-700 ap. J.-C.). Fusion avec les populations bantoues venues de la côte est-africaine.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme, de l'islam, et des croyances traditionnelles."
+      "ancientOrigins": "Les peuples malgaches descendent d'un événement de peuplement exceptionnel combinant deux sources distinctes : des Austronésiens venus du sud de Bornéo (groupe Ma'anyan-Banjar, dont les ancêtres de la population Banjar actuelle du Kalimantan du sud-est) et des Bantous d'Afrique orientale (côte mozambicaine et swahilie). Les études génomiques récentes (projet MAGE, 2008-2018 ; Kusuma et al. 2016) ont précisé que la proportion moyenne de l'ancestralité asiatique (32%) et africaine (68%) varie selon les groupes : les Highlanders (Merina, Betsileo) ont environ 45% d'ascendance africaine, tandis que les groupes côtiers en ont environ 70%. Les premières colonies attestées sur l'île remontent au Ve siècle ap. J.-C. dans le nord.",
+      "formationPeriod": "Le peuplement de Madagascar s'est étalé sur plusieurs siècles : premières colonies austronésiennes vers 400-500 ap. J.-C., migrations bantoues entre le VIIe et le XIIe siècle, influences arabes et comoriennes à partir du IXe siècle, puis contacts avec les marchands indiens, persans et européens à partir du XVe siècle. La diversification en 18-20 groupes ethniques distincts s'est accomplie entre le Xe et le XIXe siècle, avant l'unification partielle sous l'Empire Merina (XIXe siècle) puis la colonisation française (1896-1960).",
+      "migrationRoutes": [
+        "Migration austronésienne depuis Taiwan puis le sud de Bornéo (Ma'anyan) : route maritime via l'Inde et l'Afrique de l'Est vers Madagascar (Ve-VIIe siècle ap. J.-C.) — sous l'impulsion des réseaux commerciaux de l'Empire Srivijaya (Sumatra-Java, VIe-XIIIe siècle)",
+        "Migrations bantoues depuis la côte africaine orientale (Mozambique, Comores) vers Madagascar (VIIe-XIIe siècle)",
+        "Apports arabes et somaliens (commerçants et navigateurs) notamment sur les côtes nord et est (IXe-XVe siècle) — ancêtres revendiqués des Antaimoro et Antambahoaka",
+        "Contacts avec des marchands et marins indiens et persans dans les ports du nord et de l'ouest",
+        "Arrivée de pirates et marins européens sur la côte est (XVIIe-XVIIIe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Nord de Madagascar — premières colonies austronésiennes attestées vers 500 ap. J.-C.",
+        "Hauts plateaux centraux — Imerina (Merina), Betsileo (Fianarantsoa), Sihanaka (lac Alaotra)",
+        "Côte est — Betsimisaraka (de Mananjary à Antalaha), Bezanozano (Ankay), Antaimoro, Antambahoaka",
+        "Côte ouest et nord-ouest — Sakalava (Menabe et Boina), Tsimihety, Antakarana",
+        "Extrême sud — Antandroy, Mahafaly, Bara, Vezo (nomades de la mer)",
+        "Forêts — Tanala (est), Mikea (sud-ouest)"
+      ],
+      "unificationsOrDivisions": "La diversification des 18-20 groupes ethniques s'est accomplie sur plusieurs siècles de séparation géographique et culturelle. L'Empire Merina (XIXe siècle) a unifié une grande partie de l'île sous l'autorité d'Antananarivo (Radama I, Ranavalona I, Radama II). La colonisation française (1896-1960) a exploité les tensions inter-ethniques en s'appuyant sur l'infrastructure administrative merina. L'État indépendant (depuis 1960) maintient une identité nationale malagasy tout en reconnaissant la diversité ethnique.",
+      "externalInfluences": "Influences arabes : introduction de l'islam (nord-ouest), du système calendaire lunaire, des pratiques de divination (sikidy), des mots d'emprunt arabes dans la langue malgache, et du système d'écriture arabico-malgache (sorabe). Influences indiennes et persanes : commerce, textiles, épices. Influences européennes : colonisation française (1896-1960), missions chrétiennes britanniques (LMS) et françaises dès le début du XIXe siècle, christianisation de la majorité de la population.",
+      "majorHistoricalEvents": "Peuplement austronésien (Ve siècle). Apports bantous et arabes (VIIe-XIIe siècle). Consolidation des royaumes regionaux (XVe-XVIIIe siècle). Empire Merina de Radama I (début XIXe siècle). Colonisation française (1896-1960). Insurrection de 1947. Indépendance en 1960. Crises politiques récurrentes (1972, 1991, 2002, 2009)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaumes et chefferies traditionnelles. Système de fokonolona (communautés villageoises). Diversité des systèmes politiques.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Grande diversité de systèmes politiques selon les groupes : royaumes centralisés (Merina, Sakalava, Betsileo, Betsimisaraka), chefferies locales (Bezanozano, Tsimihety), organisations lignagères décentralisées (Antandroy, Bara). Deux institutions communes à tous les groupes : le fokonolona (assemblée villageoise pour la gestion collective des affaires locales) et le fady (système de tabous ancestraux régulant la vie quotidienne). Le concept de hasina (force vitale sacrée légitimatrice de l'autorité) est partagé à travers l'île.",
+      "clanOrganization": "Prédominance des structures patrilinéaires à travers Madagascar, avec des nuances selon les groupes. Les clans (karazana ou foko) maintiennent des droits fonciers, des obligations rituelles et des alliances matrimoniales. Les stratifications sociales historiques (andriana-nobles, hova-libres, andevo-esclaves) persistent dans les représentations sociales malgré leur abolition légale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le respect des ancêtres (razana) est le principe spirituel et social le plus fondamental de la civilisation malgache, partagé par tous les groupes ethniques. Les ancêtres exercent une influence permanente sur la vie des vivants : ils peuvent bénir ou punir, guider ou tourmenter. Les tombeaux (fasana) sont souvent construits plus solidement que les maisons des vivants. Les fady (tabous) ancestraux régissent de nombreux aspects de la vie quotidienne.",
+      "religiousAuthority": "Autorité des mpisikidy (devins), ombiasy (sages-guérisseurs), mpanandro (astrologues-calendristes) dans les systèmes traditionnels. Influence croissante des Églises chrétiennes (protestantisme depuis les missions britanniques LMS du XIXe siècle, catholicisme depuis la colonisation française). Islam minoritaire (environ 3%) concentré dans le nord-ouest. Syncrétisme généralisé entre christianisme et pratiques ancestrales."
     },
     "languages": {
-      "mainLanguage": "Malgache (langue austronésienne)",
-      "isoCodes": ["sud"],
-      "vehicularRole": "Le malgache est la langue officielle de Madagascar. Le français est également utilisé."
+      "mainLanguage": "Malgache (langue austronésienne de la branche malayo-polynésienne, dérivée principalement des langues barito du sud de Bornéo)",
+      "isoCodes": [
+        "mlg",
+        "plt",
+        "bmm",
+        "bzc",
+        "xmv",
+        "skg",
+        "bhr",
+        "bjq",
+        "msh",
+        "txy"
+      ],
+      "dialects": [
+        "Malgache du Plateau (plt) — merina, langue standard nationale, environ 10 893 000 locuteurs (Ethnologue 2024)",
+        "Betsimisaraka du Nord (bmm) — côte nord-est, environ 1 270 000 locuteurs",
+        "Betsimisaraka du Sud (bzc) — côte centre-est, environ 2 000 000 locuteurs",
+        "Tsimihety (xmv) — nord-centre, environ 1 615 000 locuteurs",
+        "Sakalava (skg) — côte ouest, environ 1 210 000 locuteurs",
+        "Bara (bhr) — hautes terres sud, environ 724 000 locuteurs",
+        "Tandroy-Mahafaly (bjq) — extrême sud, environ 1 300 000 locuteurs",
+        "Masikoro (msh) — sud-ouest, environ 550 000 locuteurs",
+        "Tanosy (txy) — pointe sud-est, environ 639 000 locuteurs",
+        "Dialectes betsileo, bezanozano, sihanaka, tanala, antaimoro, antambahoaka (tous classés sous plt ou comme variétés distinctes selon Ethnologue et Glottolog)",
+        "Français — langue officielle co-officielle depuis la Constitution de 1958, enseignement supérieur et administration nationale"
+      ],
+      "vehicularRole": "Le malgache est la langue nationale et officielle de Madagascar (co-officielle avec le français depuis 1958). Le dialecte merina, dit malgache standard ou malgache officiel, sert de lingua franca nationale et de langue d'enseignement primaire. Ethnologue classe le malgache comme macrolangue (code mlg) regroupant 12 variétés principales. Les dialectes régionaux sont généralement intercompréhensibles entre eux, avec des différences phonologiques et lexicales notables. Le français assure les fonctions administratives et d'enseignement supérieur."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées au riz, à la pêche, à l'élevage",
-      "Symboles": "Symboles royaux, symboles liés au riz, symboles liés à la mer, symboles chrétiens et musulmans.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (valiha, sodina)",
-      "source_5": "Danse traditionnelle (hira gasy)",
-      "source_6": "Poésie orale (hainteny)",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+      "majorRites": "Famadihana (retournement des ancêtres) : pratiqué principalement sur les hautes terres (Merina, Betsileo, Bezanozano) — les restes des défunts sont exhumés, enveloppés dans de nouveaux linceuls de soie lambamena et célébrés en famille tous les sept ans environ. Sambatra (circoncision collective) : rite de passage masculin universel dans toute l'île, avec des variations régionales importantes. Tromba (possession par les esprits) : prédominant sur la côte est (Betsimisaraka) et dans d'autres groupes côtiers. Sacrifice de zébus : pratique pan-malgache pour honorer les ancêtres lors des rites de passage, funérailles et grandes cérémonies. Kabary : art oratoire cérémoniel malgache, pratiqué lors de tous les rites officiels (mariages, deuils, cérémonies politiques). Consultation du mpanandro (astrologue-calendriste) pour fixer les dates auspicieuses des cérémonies.",
+      "symbols": "Le zébu est le symbole de la richesse, du prestige et du lien aux ancêtres dans toute l'île. Le riz (vary) est l'aliment central de la culture malgache — l'invitation à dîner est une invitation à manger du riz. La valiha (cithare en bambou) est l'instrument de musique emblématique national, héritage direct du Bornéo. Le lamba (tissu national) symbolise l'identité malgache. Le fihavanana (solidarité, lien communautaire) est la valeur morale centrale. Le hasina (force vitale sacrée) légitime l'autorité et le statut. Les tombeaux familiaux construits plus solidement que les maisons des vivants symbolisent la primauté des ancêtres.",
+      "artsAndMusic": "Valiha (cithare en bambou — instrument national emblématique, similaire aux instruments du Kalimantan sud). Sodina (flûte en bambou). Marovany (cithare à caisse). Amponga (tambour). Hira gasy : genre de spectacle musical et poétique traditionnel des hautes terres (musique, poésie, acrobaties). Salegy : musique populaire festive de la côte nord-ouest. Basesa et valse : genres de la côte est (Betsimisaraka), accordéon et percussions. Hainteny : poésie orale malgache, genre littéraire ancestral. Tissage du lamba, du lambamena (soie rouge funéraire) et du lamba hoany (tissu coloré). Art funéraire : aloalo (poteaux funéraires sculptés betsileo et mahafaly), tombes ornées de cornes de zébus (toutes régions). Moraingy : art martial traditionnel de la côte ouest.",
+      "spiritualities": "Croyance pan-malgache en Zanahary ou Andriamanitra — divinité créatrice suprême, invoquée lors des cérémonies. Culte des ancêtres (razana) : valeur spirituelle fondamentale partagée par tous les groupes malgaches — environ 4,6% de la population se revendique uniquement des religions traditionnelles (fomba-gasy) selon les estimations, mais la grande majorité des chrétiens (environ 50% de la population) maintient les pratiques ancestrales en parallèle. Islam sunnite (environ 3%) concentré dans le nord-ouest (Mahajanga, Antsiranana). Fady (tabous ancestraux) : régissent de nombreux aspects de la vie quotidienne à travers toute l'île. Vintana (destin), tody (karma malgache), fihavanana (solidarité) : valeurs morales et cosmologiques partagées."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora malgache dans les grandes villes et dans les pays occidentaux (France, Canada, États-Unis)."
+      "kingdomsOrChiefdoms": "Les principales entités politiques historiques : Royaume Merina d'Imerina (hauts plateaux centraux, apogée XIXe siècle sous Andrianampoinimerina et Radama I, unifiant une grande partie de l'île). Royaumes Sakalava de Menabe et Boina (côte ouest, XVIe-XIXe siècle). Royaume Betsimisaraka de Ratsimilaho (côte est, XVIIIe siècle). Royaumes Betsileo multiples (Isandra, Lalangina, Fandriana, XVIIe-XIXe siècle). Confédérations Antandroy et Mahafaly (extrême sud). Sultanat d'Antalaotsy (côte nord, influence arabe). Chefferie Bezanozano (centre-est, Randrianjomoina).",
+      "relationsWithNeighbors": "Relations commerciales intenses dans l'océan Indien : échanges avec les marchands arabes (Oman, Perse), les commerçants indiens et gujaratis, les Comoriens, les Swahilis d'Afrique orientale. Exportation de riz, esclaves, or, bois précieux et bovins. Importation d'étoffes, de perles, de porcelaine et de métaux. Contacts avec les explorateurs et colonisateurs européens (Portugais dès 1500, Français et Anglais aux XVIIe-XVIIIe siècles).",
+      "conflictsOrAlliances": "Guerres inter-royaumes malgaches (Merina contre Sakalava, Betsileo, Betsimisaraka, Bezanozano). Commerce d'esclaves interne (principalement victimes de guerres vendues aux marchands européens et aux Mascareignes). Résistance à la colonisation française (1895-1896 : défaite du royaume Merina). Insurrection nationale de 1947 (réprimée dans le sang par les forces françaises). Indépendance pacifique en 1960. Crises politiques post-indépendance avec des dimensions ethniques (merina vs côtiers).",
+      "diaspora": "Diaspora malgache internationale concentrée en France (environ 100 000-120 000 personnes, principalement d'ascendance merina), à la Réunion (environ 20 000), au Canada et aux États-Unis. Diaspora régionale dans les îles voisines (Comores, Mayotte, Maurice, Seychelles). Les Malgaches de la diaspora maintiennent des liens forts avec leurs communautés d'origine et contribuent à l'économie nationale via les transferts de fonds."
     },
     "demography": {
-      "totalPopulation": 27000000,
+      "totalPopulation": 29600000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, recensements malgaches, et études démographiques"
+      "source": "Estimations basées sur CIA World Factbook Madagascar (2025 : environ 29-30 millions d'habitants), Britannica (population ranking 51e au monde en 2025, projection 33,4 millions en 2030), UNFPA Madagascar, INSTAT Madagascar (Institut National de la Statistique). Le total du macro-groupe correspond à l'ensemble de la population malgache, tous groupes austronésiens confondus.",
+      "distributionByCountry": [{ "country": "MDG", "population": 29600000 }]
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches",
-      "Études historiques sur les royaumes malgaches"
+      "Wikipedia — Malagasy peoples, https://en.wikipedia.org/wiki/Malagasy_peoples (consulté 2025)",
+      "Wikipedia — Malagasy language, https://en.wikipedia.org/wiki/Malagasy_language (consulté 2025)",
+      "Britannica — Malagasy peoples, https://www.britannica.com/topic/Malagasy-peoples (consulté 2025)",
+      "Ethnologue — Malagasy macrolanguage (mlg), https://www.ethnologue.com/language/mlg/ (consulté 2025)",
+      "Kusuma, P. et al. Malagasy Genetic Ancestry Comes from an Historical Malay Trading. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/",
+      "RAIS Conference — The Ethnicity and Identity of the Malagasy People. https://rais.education/wp-content/uploads/2022/07/0203.pdf",
+      "Wikipedia — Austronesian peoples, https://en.wikipedia.org/wiki/Austronesian_peoples (consulté 2025)",
+      "Wikipedia — Culture of Madagascar, https://en.wikipedia.org/wiki/Culture_of_Madagascar (consulté 2025)",
+      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
+      "Beaujard, Philippe. Les mondes de l'océan Indien (2 vol.). Paris : Armand Colin, 2012.",
+      "INSTAT Madagascar — Institut National de la Statistique, https://www.instat.mg (consulté 2025)"
     ]
   }
 }

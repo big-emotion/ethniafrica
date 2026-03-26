@@ -1,23 +1,95 @@
 {
   "id": "PPL_GA",
-  "nameMain": "",
+  "nameMain": "Ga",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["GHA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Ga",
       "selfAppellation": "Gã / Ga",
+      "exonyms": [
+        "Gan",
+        "Ga-Mashie (pour les Ga originels du centre d'Accra)",
+        "Accra (désignation des Européens pour les Ga d'Accra)"
+      ],
+      "originOfExonyms": "Gan est une variante orthographique européenne. Ga-Mashie (Gã Mashi) désigne spécifiquement les Ga du vieux centre-ville d'Accra, considérés comme les Ga originels. Les Européens utilisèrent parfois le nom de la ville, Accra, pour désigner le peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ga est universellement utilisé au Ghana et dans la littérature académique. Il désigne le sous-groupe Ga du plus large ensemble Ga-Dangme.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Ghana (Grande Accra)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Ga-Dangme (branche Kwa du Niger-Congo)",
+      "historicalRegion": "Ghana (Grande Accra) — littoral atlantique et arrière-pays immédiat d'Accra",
+      "currentCountries": ["GHA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (gaa)", "Ghana Ga Heritage Archives"]
+    "ethnicities": [
+      "Ga Mashie (Gã Mashi) — Accra historique, noyau originel, premiers à s'établir",
+      "Osu — communauté côtière est d'Accra",
+      "La — communauté côtière, Accra",
+      "Teshie — communauté côtière est, fondatrice d'arts funéraires",
+      "Nungua — communauté côtière, première à célébrer Homowo",
+      "Tema — communauté portuaire, la plus jeune (fondée v. 1710, ayant quitté La)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Ga sont originaires de la région du lac Tchad. Sous la direction du roi Ayi Kushi (Cush, 1483-1519), ils furent conduits depuis l'est à travers plusieurs États avant d'atteindre la côte de l'actuelle Accra au Ghana. Ils appartiennent au grand groupe Ga-Dangme dont les Dangme (plus nombreux) constituent l'autre branche. Le roi Ayi Kushi a codifié sept lois puritaines qui forment la philosophie et la base culturelle Ga.",
+      "formationPeriod": "XVIe-XVIIe siècle — installation progressive sur le littoral atlantique. Au XVIIe siècle, les Ga ont traversé le fleuve Niger et la Volta pour s'établir définitivement dans la zone de l'actuelle Accra. Les six villes indépendantes se constituent à cette période.",
+      "migrationRoutes": [
+        "Lac Tchad vers l'est du bassin du Niger — origine ancienne",
+        "Vallée du Niger vers la Volta — migration médiévale",
+        "Franchissement de la Volta pour atteindre la côte d'Accra (XVIe-XVIIe siècle)",
+        "Dispersion interne : de Nungua et Ga Mashie vers Osu, La, Teshie et Tema"
+      ],
+      "historicalSettlementZones": [
+        "Côte de la Grande Accra (six villes traditionnelles : Ga Mashie, Osu, La, Teshie, Nungua, Tema)",
+        "Arrière-pays immédiat d'Accra",
+        "Région de la Grande Accra (env. 70% des terres contrôlées par les Ga-Dangme)"
+      ],
+      "unificationsOrDivisions": "Les Ga étaient organisés en six villes indépendantes, chacune avec son propre trône (stool) servant d'objet rituel central et de symbole du pouvoir de guerre. Ces six États ne formaient pas de confédération permanente mais s'alliaient face aux ennemis extérieurs. Accra (Ga Mashie) devint la ville la plus prominente et est aujourd'hui la capitale du Ghana.",
+      "externalInfluences": "Contact précoce avec les marchands portugais (XVe siècle), puis hollandais, britanniques et danois. La colonisation britannique a fait d'Accra la capitale de la Gold Coast (1877). Influence des peuples voisins Akan (Fante, Asante) et Ewe sur la culture Ga contemporaine, notamment dans les styles de tissage et de parure.",
+      "majorHistoricalEvents": "Règne du roi Ayi Kushi (1483-1519) : fondation de la civilisation Ga moderne et codification des lois culturelles. Guerres avec les Denkyira et les Akwamu (XVIIe siècle). Alliance anti-Anlo (1784) aux côtés du gouverneur danois de Christiansborg. Accra désignée capitale de la Gold Coast britannique (1877), puis du Ghana indépendant (1957)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chaque ville Ga est gouvernée par un chef (mantse, pluriel mantsemei) assisté d'un conseil d'anciens. Le stool (trône) est l'objet central du pouvoir rituel et guerrier de chaque ville. Les compagnies Asafo (guerriers organisés) participaient aux décisions défensives et aux festivals. Les chefs exercent une autorité traditionnelle reconnue dans le Ghana contemporain.",
+      "clanOrganization": "Organisation clanique à double descendance : les biens et fonctions des hommes suivent la lignée patrilinéaire, tandis que les biens et fonctions des femmes suivent la lignée matrilinéaire. Les clans se subdivisent en lignages patrilinéaires localisés (weku), unités politiques et culturelles de base. Les femmes contrôlent les activités commerciales des marchés.",
+      "ageClassSystems": "Les Asafo (compagnies de guerriers) organisaient la défense des villes et participaient aux décisions politiques. Les compagnies Asafo sont encore actives lors du festival Homowo et d'autres cérémonies collectives.",
+      "roleOfLineages": "Les lignages (weku) forment les unités de base de la vie politique, rituelle et économique. Ils déterminent les droits fonciers, les alliances et les devoirs envers les ancêtres. La résidence est séparée : les hommes vivent dans leur propre compound, les femmes et enfants dans le leur.",
+      "religiousAuthority": "Chaque ville Ga possède plusieurs cultes et divinités (obosom). Le grand prêtre du culte principal de chaque ville joue un rôle central dans la décision politique et rituelle. Les offrandes aux ancêtres (libations) et les cérémonies saisonnières structurent la vie communautaire."
+    },
+    "languages": {
+      "mainLanguage": "Ga (Gã)",
+      "isoCodes": ["gaa"],
+      "dialects": [
+        "Ga proprement dit (Ga Mashie, Osu) — norme centrale avec peu de variation dialectale",
+        "La — variante légèrement distincte",
+        "Teshie et Nungua — variantes orientales",
+        "Tema — variante de la communauté portuaire"
+      ],
+      "vehicularRole": "Le ga est la langue maternelle des Ga et une importante langue de communication dans la région de la Grande Accra. Il est utilisé dans l'enseignement primaire, les émissions de radio locales et les cérémonies traditionnelles. L'anglais est la langue officielle du Ghana. Le ga connaît des pressions des langues dominantes akan (twi) et anglaise dans le contexte urbain d'Accra."
+    },
+    "culture": {
+      "majorRites": "Homowo (hooting at hunger, railler la faim) est le festival annuel central des Ga, célébré en août. Il commémore la grande famine que subirent les Ga lors de leur installation côtière ; la survie est célébrée avec abondance alimentaire, tambours et danses. Le cycle commence en mai avec la plantation des cultures, suivi de gbemlilaa (voie fermée, période de restrictions), puis de la grande célébration en août. Nungua ouvre le cycle, Tema le ferme en tant que ville la plus jeune. Twins Festival (Yeyeye) : festival dédié aux jumeaux avec deuil traditionnel et célébration communautaire. Asafo/Asafotu (festival guerrier de Ada) : reconstitution de batailles et durbar des chefs.",
+      "symbols": "Le stool (trône) — objet sacré de chaque ville, symbole de l'âme collective et du pouvoir de guerre. Les cercueils fantaisie (fantasy coffins) — créations artistiques funéraires reflétant l'identité du défunt (taxi, poisson, lion, animal totem du clan). Le kpokpoi — plat rituel de Homowo préparé à base de noix de palme et de farine de maïs, partagé avec les ancêtres lors de libations.",
+      "artsAndMusic": "Les cercueils fantaisie (fantasy coffins) sont une tradition artistique ga née dans les années 1950. Pionniers : Ataa Oko (1919-2012, La), Seth Kane Kwei (1925-1992, Teshie) ; suivis de Paa Joe, Daniel Mensah, Kudjoe Affutu. Ces cercueils sculptés en formes symboliques (voiture, oiseau, animal totem) expriment la continuité de la vie après la mort et coûtent jusqu'à 600 dollars. Musique traditionnelle : kpanlogo (genre modernisé v. 1960), Klama, Kpatsa. Tambours et danses cérémonielles lors de Homowo. Quartier de boxeurs de Bukom (pêcheurs Ga d'Accra) : Azumah Nelson, David Kotei, Ike Quartey — tradition de champions du monde issus de la communauté Ga.",
+      "spiritualities": "Religion traditionnelle centrée sur les divinités (obosom) et les ancêtres. Chaque ville a ses propres cultes. Les ancêtres sont puissants et présents dans la vie des vivants ; les funérailles sont des célébrations élaborées pour les accompagner dans l'au-delà. Homowo est à la fois fête de la récolte et communion avec les ancêtres (libations versées aux carrefours et dans les maisons). Forte présence chrétienne contemporaine (protestantisme, catholicisme, pentecôtisme largement répandus à Accra)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en six villes-États indépendantes (Accra/Ga Mashie, Osu, La, Teshie, Nungua, Tema), chacune gouvernée par son propre mantse. Accra devint le principal centre commercial de la côte de l'or dès le XVIIe siècle, attirant marchands européens et africains. Le roi Ayi Kushi a codifié les sept lois puritaines fondamentales de la culture Ga.",
+      "relationsWithNeighbors": "Relations commerciales avec les Fante, les Asante et les Akan en général. Alliances militaires et conflits avec les Denkyira et l'Akwamu. Participation à la coalition menée par le gouverneur danois contre les Anlo Ewe (1784). La communauté Ga a accueilli les commerçants européens dès le XVe siècle, ce qui fit d'Accra un pôle commercial majeur de l'Afrique de l'Ouest.",
+      "conflictsOrAlliances": "Domination temporaire par l'Akwamu (XVIIe siècle). Alliance avec les Danois, Britanniques et autres Akan contre les Anlo (1784). L'installation des Britanniques à Accra (1877) comme capitale coloniale transforma définitivement la ville. Les Ga ont mené des luttes foncières persistantes pour maintenir leurs droits sur les terres ancestrales face à l'urbanisation d'Accra.",
+      "diaspora": "La diaspora Ga est présente dans les grandes villes du Ghana (Kumasi, Tamale) et dans les communautés ghanéennes à l'étranger (Royaume-Uni, États-Unis, Allemagne, Pays-Bas). Le festival Homowo est célébré dans la diaspora mondiale, servant de moment de retour aux sources et de préservation de l'identité Ga."
+    },
+    "demography": {
+      "totalPopulation": 1500000,
+      "referenceYear": 2025,
+      "source": "Recensement ghanaen 2021 : la Grande Accra compte 1 316 003 Ga-Dangme sur 5 455 692 habitants. Les Ga (sous-groupe) représentent environ 50-60% des Ga-Dangme, soit entre 700 000 et 800 000 en Grande Accra. Population totale Ga (incluant diaspora interne nationale) estimée à 1,5 million en 2025 (Ghana Statistical Service, SIL Ethnologue).",
+      "distributionByCountry": [{ "country": "GHA", "population": 1500000 }]
+    },
+    "sources": [
+      "Wikipedia EN — Ga-Adangbe : https://en.wikipedia.org/wiki/Ga-Adangbe",
+      "Wikipedia EN — Ga language : https://en.wikipedia.org/wiki/Ga_language",
+      "Wikipedia EN — Greater Accra Region : https://en.wikipedia.org/wiki/Greater_Accra_Region",
+      "SIL Ethnologue — Ga language (gaa) : https://www.ethnologue.com/language/gaa/",
+      "African Roots Travel — Ga Homowo Festival : https://www.africanrootstravel.com/post/the-origin-story-of-homowo-hooting-at-hunger",
+      "Ghana Statistical Service — Greater Accra Region Census 2021 : https://www.citypopulation.de/en/ghana/admin/03__greater_accra/",
+      "Carleton University — The Ga People and Homowo Festival (Osabu-Kle) : https://carleton.ca/africanstudies/wp-content/uploads/Ga-People-and-Homowo-Festival.pdf"
+    ]
   }
 }

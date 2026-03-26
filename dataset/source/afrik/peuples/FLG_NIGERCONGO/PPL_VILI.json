@@ -2,68 +2,122 @@
   "id": "PPL_VILI",
   "nameMain": "Vili",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["COD", "COG", "GAB"],
+  "currentCountries": ["COG", "GAB", "COD", "AGO"],
   "content": {
     "appellations": {
       "mainName": "Vili",
-      "selfAppellation": "Vili",
-      "exonyms": ["Vili (terme utilisé par les Européens)"],
+      "selfAppellation": "Vili (singulier: Muvili)",
+      "exonyms": [
+        "Bavili",
+        "Bavilis",
+        "Fiote (terme portugais pejoratif signifiant noir)",
+        "Loango (en reference au royaume)",
+        "Bafiote (terme utilise par les missionnaires du 19e siecle)"
+      ],
+      "originOfExonyms": "Le terme Vili, atteste des le 17e siecle sous la forme Mobili (pluriel Mobilis en portugais), derive du mot Piri (nom du territoire d'origine dans le Loango). Une personne de Piri etait appelee Mbanza Loango, d'ou Muvili par syncopation. Le terme Fiote (du portugais feitiço ou du mot local pour noir) est considere comme pejoratif et abandonné. Bavili est la forme bantou au pluriel.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Vili est aujourd'hui le nom propre du peuple. Bavili est utilise dans les contextes anthropologiques et historiques. La langue est appellee civili (ou tshivili). Les Vili se definissent comme les heritiers du royaume de Loango.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "COD, COG, GAB",
-      "currentCountries": ["COD", "COG", "GAB"]
+      "ethnoLinguisticGroup": "Bantou (Zone H, sous-groupe Kongo; classification Guthrie H12)",
+      "historicalRegion": "Cote de Loango (facade atlantique de l'actuelle Republique du Congo, sud du Gabon, Cabinda/Angola), bassin des rivieres Kouilou et Niari",
+      "currentCountries": ["COG", "GAB", "COD", "AGO"]
     },
     "ethnicities": [
-      "Vili de RDC",
-      "Vili du Congo",
-      "Vili du Gabon",
-      "Sous-groupes régionaux"
+      "Vili de la region de Kouilou (Republique du Congo), groupe principal autour de Pointe-Noire et de l'ancienne capitale Bwali/Loango",
+      "Vili de Mayumba (Gabon, environ 5 000 personnes)",
+      "Vili de Cabinda (Angola)",
+      "Vili de la RDC (zone de l'embouchure du Congo)",
+      "Clans Kondi et Nkata (famille royale du royaume de Loango)",
+      "Clan Bawoyo (dynasty fondatrice du royaume, descend de la fraternite des Forgerons du Buvandji)"
     ],
     "origins": {
-      "ancientOrigins": "Les Vili sont originaires de la région de la COD, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Vili sont originellement une province du grand royaume de Kongo (Kongo Dia Nthotila). Ils constituent une branche du peuple Kongo etablie sur la cote atlantique au nord du fleuve Congo. Selon les sources europeennes du 17e siecle (Andrew Battel vers 1610, Olfert Dapper), le fondateur du royaume de Loango fut Njimbe, chef de la dynastic Bawoyo issu de la fraternite des Forgerons du Buvandji, dont le regne dura environ soixante ans au 16e siecle. La province de Loango se separa du royaume de Kongo, avec les provinces de Ngoyo et Kakongo, pour devenir independante au 16e siecle.",
+      "formationPeriod": "Le royaume de Loango s'etablit probablement avant 1485 (selon Britannica, c'est l'un des plus anciens et plus grands royaumes de la region). Il s'emancipe definitivement du Kongo vers 1584 et developpe ses propres structures politiques et commerciales. La langue civili se distinct progressivement du kikongo au cours des 16e-18e siecles.",
+      "migrationRoutes": [
+        "Etablissement originel issu de la migration bantou depuis l'Afrique centrale vers la cote atlantique entre le 1er et le 15e siecle",
+        "Extension du peuplement vili depuis la capitale Bwali/Loango le long de la cote vers le nord (Gabon) et vers le sud (Cabinda, Bas-Congo)",
+        "Migrations induites par le commerce cotier et les routes de caravanes vers l'interieur (Massif du Mayombe, Pool Malebo)"
+      ],
+      "historicalSettlementZones": [
+        "Bwali / Loango (capitale historique du royaume, departement de Kouilou, Republique du Congo)",
+        "Cote de Loango (entre Sette Cama au nord et Cabinda au sud)",
+        "Departement de Kouilou (plaine cotiere entre l'ocean et le Massif du Mayombe, Republique du Congo)",
+        "Mayumba (cote sud du Gabon)",
+        "Region de Cabinda (exclave angolaise, ancienne province de Ngoyo)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Loango englobait sept provinces gouvernees par des gouverneurs designes par le Ma Loango (roi). Les peuples voisins Yombe, Lumbu, Vungu, Punu et Kugni vivaient harmonieusement sous l'autorite du Loango. La relation Bundiku (bon voisinage) fut developpee avec les Kugni pour eviter les conflits. La colonisation francaise (traites de 1883-1885) desintegra progressivement le royaume. La ville de Pointe-Noire (fondee en 1922) depopula les villages vili traditionnels.",
+      "externalInfluences": "Contacts precoces avec les Portugais (fin 15e siecle), puis avec les Hollandais, Anglais et Allemands qui ouvrirent des comptoirs commerciaux sur la cote. La traite negriere (17e-19e siecles) enrichit une minorite vili mais desarticule la structure sociale et reduisit considerablement la population. Les epidemies de trypanosomiase et de variole decimèrent le peuple. La colonisation francaise (traites de 1883-1885, Berlin 1885) mit fin a l'independance du Loango.",
+      "majorHistoricalEvents": "En 1849, des esclaves vili, lumbu, yaka et bongo liberes par la marine francaise furent installes aupres des Mpongwé, donnant naissance a Libreville (Gabon). Le traite de Tchimbamba (21 juin 1883) signa la cession de souverainete au lieutenant Robert Cordier (France). En 1885, le traite de Simulambuco plaça les royaumes de Kakongo, Loango et Ngoyo sous protection portugaise (Cabinda). La construction du port en eaux profondes de Pointe-Noire (1922) et du chemin de fer Congo-Ocean (CFCO) provoquerent un exode rural massif. En 1982, le palais du Ma Loango (Moe Poaty III, construit en 1952) devient musee national. La restauration symbolique du royaume de Loango fut entreprise apres 1991."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le royaume de Loango etait dirige par un roi (Ma Loango) entoure d'un gouvernement et de gouverneurs des sept provinces. Un mecanisme electif participait a la designation du souverain (contrairement aux monarchies purement hereditaires). Apres la colonisation, les chefferies locales subsisterent sous supervision francaise puis congolaise. Aujourd'hui, le Ma Mboma Si Loango (chef traditionnel de Bwali) represente la continuite symbolique de l'autorite royale.",
+      "clanOrganization": "La societe vili est fondamentalement matrilineaire. Les clans (likanda) sont definis par la lignee maternelle. Le clan maternel (tchifumba) determine l'appartenance sociale et les droits hereditaires, tandis que le clan paternel (tchisya) a un role secondaire. Les clans royaux sont Kondi et Nkata. L'oncle maternel (ma nkashi) detient historiquement un droit de vie et de mort sur ses neveux (bana bu nkashi) et gere le territoire clanique (si likanda).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La matrilinearite est la fondation de toute l'organisation sociale vili. La succession au trone et aux titres se transmet par la lignee maternelle (seul le sang Moe/Mwe de noblesse permet d'acceder au trone). L'oncle maternel (Ma Nkashi) est la figure d'autorite clanique la plus importante, gerant les biens collectifs du clan et arbitrant les conflits. Le territoire clanique (si likanda) est delimite spirituellement par les genies ancestraux (nkisi/bakisi), pas par les hommes.",
+      "religiousAuthority": "Les pretres et pretresses associes aux sanctuaires sacres (tchibila: sources, rivieres, montagnes dont le mont Bamba, gorges de Diosso et gorges de Sunda, bosquets sacres) detiennent une autorite religieuse importante. Les nkisi (objets-fetiches) et les nkisi konde (fetiches a clous) sont les representations physiques celebres de la spiritualite vili, reconnus dans les grandes collections d'art africain mondiales. L'oncle maternel est aussi l'intercesseur aupres des ancetres. Les eglises chretiennes (catholiques, protestantes, kimbanguistes) sont tres presentes depuis le 20e siecle."
     },
     "languages": {
-      "mainLanguage": "Vili",
-      "vehicularRole": "Le vili est parlé par la majorité des Vili. Le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Civili (Vili)",
+      "isoCodes": ["vif"],
+      "dialects": [
+        "Civili ci Luango (dialecte de Loango/Bwali, reference)",
+        "Civili ci Moongo (dialecte de Moeindji)",
+        "Civili ci Waanda (dialecte de Ouanda)",
+        "Civili ci Yombe (dialecte proche du yombe, mutuelle intelligibilite)",
+        "Tshivili / Tsivili (formes orthographiques alternatives)"
+      ],
+      "vehicularRole": "Le civili est parle par environ 50 000 personnes (estimation 2010), dont 45 000 en Republique du Congo et 5 000 au Gabon. C'est la langue maternelle des Vili du Kouilou. Il est mutuellement intelligible avec le yombe (dialecte du kikongo). Le francais est la langue officielle et vehiculaire au Congo et au Gabon. Le lingala et le kikongo sont des langues nationales du Congo. La classification Guthrie place le civili en H12 (Zone H, groupe Kongo)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels vili, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les rites funeraires vili sont parmi les plus elabores: apres le deces, la maison du defunt est traditionnellement demontee ou abandonnee (symbolisant la rupture avec la vie terrestre). Des manguiers et d'autres arbres fruitiers plantes par le defunt marquent l'age du village. Les rituels d'installation des nkisi (fetiches) impliquent des ceremonies de consecration avec des ingredients vegetaux, animaux et mineraux. Les rites de passage impliquent des ceremonies d'initiation pour les garcons et les filles au sein de la structure clanique. Les libations rituelles de vin de palme etaient effectuees lors des ceremonies importantes. Le proverbe fondateur: Bukulu vandu vandu (Honneurs aux Anciens!) symbolise le respect des ancetres.",
+      "symbols": "Le nkisi (objet-fetiche, singulier; bakisi au pluriel) est le symbole spirituel le plus celebre des Vili, connu dans le monde entier depuis les collections coloniales (influences reconnues par Henri Matisse et Pablo Picasso en 1906). Le Ma Loango (roi) est le symbole supreme du pouvoir et de l'unite vili. La mangrove (misenge, plante qui semble morte mais dont les rejets sont perennes) est le symbole de la resilience du peuple vili (selon le proverbe d'accueil). Les sanctuaires naturels (tchibila) - sources, gorges de Diosso, mont Bamba - sont des symboles spirituels territoriaux.",
+      "artsAndMusic": "La sculpture vili est celebre dans le monde entier, notamment les nkisi konde (fetiches a clous en bois, invoques pour reparer les injustices sociales: chaque clou marque un contrat ou une accusation). Les sculptures ont influence directement l'art moderne occidental (Picasso, Matisse). La ceramique traditionnelle et le tissage de raphia font partie des artisanats vili. La musique traditionnelle utilise des tambours, des rhombes et des chants a repondre. Les proverbes (malunga) occupent une place centrale dans la langue et la culture vili, refletant leur vision du monde et leur organisation sociale.",
+      "spiritualities": "La spiritualite vili est centree sur la notion de nkisi (force spirituelle, objet qui la materialise). Les nkisi sont des assemblages d'ingredients (os, plumes, poudres, miroirs, clous, tissus) concentrant des forces ancestrales ou naturelles. Le territoire (si ou tsi) est delimite spirituellement par des genies (nkisi/bakisi) qui en gardent les limites. Les ancetres du clan veillent sur les vivants depuis l'au-dela et peuvent etre invoques ou apaises par des rituels. Le dieu-serpent Bunzi (dieu de la pluie et de la fertilite, venere dans le sanctuaire de Tchissanga) est une divinite specifique au pantheon vili-loango. Depuis le 20e siecle, le christianisme (catholique, protestant, kimbanguiste) est tres repandu, en syncrétisme avec les pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora vili dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Loango (fonde avant 1485, capital Bwali) fut l'un des royaumes precoloniaux les plus puissants de l'Afrique centrale atlantique. Gouverne par les Ma Loango (rois), il controlait un vaste territoire de Sette Cama (Gabon) jusqu'a Cabinda (Angola), des la cote jusqu'au Massif du Mayombe. A son apogee (16e-17e siecle), il importait de l'ivoire et des esclaves depuis l'interieur via des routes commerciales atteignant le Pool Malebo. Les Ma Loango notables incluent: Moe Poaty III (couronne le 18 mars 1931, decede le 3 mai 1975) et Manimakosso-Tchinkosso (1879-1885, ayant capitule devant le lieutenant Cordier).",
+      "relationsWithNeighbors": "Les Vili developperent tres tot des relations commerciales d'egal a egal avec les Europeens (Portugais, Hollandais, Anglais, Allemands) qui etablirent des comptoirs sur la cote de Loango. Ils furent des intermediaires commerciaux essentiels entre les peuples de l'interieur et les marchands europeens. La relation Bundiku avec les Kugni voisins illustre une diplomatie de bon voisinage. Avec les Yombe (groupe ethniquement le plus proche des Vili), les Lumbu, Vungu et Punu, ils coexistaient harmonieusement au sein du Loango. Des interminages avec les pygmees Babenzi, Binga ou Baka sont documentes.",
+      "conflictsOrAlliances": "L'engagement dans la traite negriere aux 17e-19e siecles profita a une elite vili tout en bouleversant la societe. En 1849, un incident impliquant un navire bresilien fit que des esclaves vili liberes par la marine francaise fondirent la ville de Libreville au Gabon. La rivalite entre Pierre Savorgnan de Brazza et Henry Morton Stanley pour le controle de l'Afrique centrale se fit au detriment du Loango (traites imposes dans les annees 1880). La France et le Portugal se partagerent les territoires vili lors de la Conference de Berlin (1885). Des guerres civiles en Republique du Congo (1993, 1997) n'epargnerent pas la region de Kouilou.",
+      "diaspora": "Depuis les annees 1920-1960, la construction du port de Pointe-Noire et du chemin de fer Congo-Ocean a provoque une urbanisation massive des Vili, dont plus de 60% vivent desormais en ville (principalement Pointe-Noire). La diaspora vili se retrouve a Brazzaville, Libreville et dans les grandes villes d'Afrique centrale. A l'etranger, des communautes congolaises dont des Vili sont presentes en France, en Belgique et aux Etats-Unis."
     },
     "demography": {
-      "totalPopulation": 300000,
+      "totalPopulation": 100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International): environ 50 000 locuteurs du civili en 2010 (45 000 en Republique du Congo, 5 000 au Gabon). Estimation demographique de Maurice Chabeuf (1957): 36 000 nationaux vili. La population totale (incluant les membres du groupe ethnique au-dela des locuteurs stricts) est estimee a environ 100 000 personnes en 2025, avec une majorite en Republique du Congo.",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 85000,
+          "note": "Principalement departement de Kouilou (cote atlantique), avec une concentration a Pointe-Noire et dans les villages autour de Bwali/Loango"
+        },
+        {
+          "country": "GAB",
+          "population": 10000,
+          "note": "Principalement la region de Mayumba (sud du Gabon)"
+        },
+        {
+          "country": "AGO",
+          "population": 4000,
+          "note": "Exclave de Cabinda (ancienne province de Ngoyo du royaume de Loango)"
+        },
+        {
+          "country": "COD",
+          "population": 1000,
+          "note": "Zone du Bas-Congo, groupes residuels"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Vili language (vif)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Vili people. https://en.wikipedia.org/wiki/Vili_people",
+      "Wikipedia EN — Kingdom of Loango. https://en.wikipedia.org/wiki/Kingdom_of_Loango",
+      "Britannica — Kingdom of Loango. https://www.britannica.com/place/Kingdom-of-Loango",
+      "Britannica — Vili people. https://www.britannica.com/topic/Vili-people",
+      "SIL ISO 639-3 — Vili (vif). https://iso639-3.sil.org/code/vif",
+      "Ethnologue — Vili language (vif). https://www.ethnologue.com/language/vif/",
+      "Joshua Project — Vili, Fioti in Congo, Republic of the. https://joshuaproject.net/people_groups/15792/CF",
+      "African History Extra — A history of the Loango kingdom (ca.1500-1883). https://www.africanhistoryextra.com/p/a-history-of-the-loango-kingdom-ca1500",
+      "101 Last Tribes — Vili people. https://www.101lasttribes.com/tribes/vili.html",
+      "Guthrie classification of Bantu languages. https://en.wikipedia.org/wiki/Guthrie_classification_of_Bantu_languages"
     ]
   }
 }

@@ -6,59 +6,113 @@
   "content": {
     "appellations": {
       "mainName": "Kamba",
-      "selfAppellation": "Kamba",
-      "exonyms": ["Kamba (terme utilisé par les Européens)"],
+      "selfAppellation": "Akamba",
+      "exonyms": ["Wakamba", "Kamba"],
+      "originOfExonyms": "Le terme Wakamba est le pluriel bantu prefixe en wa- utilise par les peuples voisins swahili et nilotiques pour designer ce peuple. Akamba est l'auto-denomination en kikamba (prefixe a- pluriel). Kamba, forme abregee, a ete consacree par l'administration coloniale britannique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Akamba et Kamba sont tous deux courants au Kenya. Akamba est prefere dans les contextes culturels et identitaires, tandis que Kamba est utilise dans les recensements officiels et la litterature academique.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone E)",
-      "historicalRegion": "Centre-est du Kenya",
+      "ethnoLinguisticGroup": "Bantou (Zone E, sous-groupe E.55)",
+      "historicalRegion": "Ukambani — region du centre-est du Kenya, comprenant les collines de Mbooni, les districts de Machakos, Kitui et Makueni",
       "currentCountries": ["KEN"]
     },
-    "ethnicities": ["Kamba du Nord", "Kamba du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Anzauni (Munzauni) — clan du Lion",
+      "Aombe (Mwiombe) — clan du Singe a longue queue, divise en Mbaa Mai et Mbaa Mululu",
+      "Akitondo (Mukitondo) — clan du Corbeau, divise en Mbaa Mbuli et Mbaa Nyumba",
+      "Amwei (Angwina / Muwi) — clan important",
+      "Atwii (Mutwii) — clan etabli",
+      "Asii (Musii) — clan du Lion",
+      "Ethanga (Mwithanga) — clan du forgeron, dont le fondateur travaillait le sable ferreux",
+      "Atangwa (Mutangwa) — clan du Babouin, divise en quatre sous-clans",
+      "Akitutu (Mukitutu) — clan de l'Epervier",
+      "Aewani (Muewani) — clan du Leopard",
+      "Amumui (Mumumui) — clan etabli",
+      "Ambua (Mumbua) — clan etabli",
+      "Amutei (Mumumtei) — clan de l'Oiseau-secretaire",
+      "Andundu (Munundu) — clan du Porc-epic"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kamba sont originaires du centre-est du Kenya. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Les Akamba sont d'origine bantou et descendent des populations venues du bassin du Congo en Afrique centrale. Ils font partie du grand ensemble bantou de la Zone E (bantou oriental) et sont etroitement apparentes aux Kikuyu, Embu, Mbeere et Meru, avec lesquels ils forment la communaute GEMA. Selon la tradition orale, le premier groupe s'est installe dans les collines de Mbooni (district de Machakos) dans la seconde moitie du 17e siecle, avant de se repandre dans les districts de Machakos, Makueni et Kitui.",
+      "formationPeriod": "L'identite akamba distincte s'est consolidee entre le 17e et le 19e siecle, lors de l'installation dans les basses terres du sud-est du Kenya. Les Akamba se sont distingues comme grands commercants interieurs, assurant la liaison entre les peuples des cotes swahili-arabes et les populations de l'interieur.",
+      "migrationRoutes": [
+        "Du bassin du Congo vers l'Afrique orientale (migrations bantoues generales, debut du premier millenaire)",
+        "Installation dans les collines de Mbooni (Machakos) vers la seconde moitie du 17e siecle",
+        "Expansion vers Machakos, Makueni et Kitui aux 18e-19e siecles",
+        "Migrations pastorales vers la cote (Mariakani, Kwale, Mombasa) au milieu du 18e siecle dues a la secheresse"
+      ],
+      "historicalSettlementZones": [
+        "Collines de Mbooni — lieu d'installation initial (Machakos)",
+        "District de Machakos — zone la plus peuplee de l'Ukambani",
+        "District de Kitui — plaines de l'est",
+        "District de Makueni — basses terres sud",
+        "Comtes cotiers de Kwale et Mombasa — expansion pastorale du 18e siecle"
+      ],
+      "unificationsOrDivisions": "Les Akamba etaient organises en environ 25 clans patrilineaires disperses (utui) souvent en rivalite entre eux. Il n'existait pas de chefferie centralisee mais un systeme d'assemblee d'anciens (king'ole). L'identite commune akamba s'est renforcee face aux defis exterieurs (pression maasai, colonisation britannique).",
+      "externalInfluences": "Contacts commerciaux avec les Arabes et les Swahili de la cote depuis le 18e siecle. Relations d'echange avec les Maasai (betail contre produits agricoles), les Kikuyu et les Meru. Colonisation britannique a partir de la fin du 19e siecle. Christianisation massive au 20e siecle. Les Akamba etaient consideres par l'administration coloniale britannique comme une race martiale superieure.",
+      "majorHistoricalEvents": "Les Akamba ont joue un role de premiers commercants et intermediaires dans le commerce caravanier entre la cote de l'ocean Indien et l'interieur du Kenya au 19e siecle. Ils ont guide des explorateurs europeens comme Johann Ludwig Krapf. Durant la periode coloniale, des soldats akamba ont servi dans le regiment des King's African Rifles. La resistance au colonialisme s'est manifestee notamment lors du mouvement Mungiki. En 1820, environ 250 guerriers akamba ('lanceros de Artigas') ont accompagne le general Jose Gervasio Artigas en exil au Paraguay, fondant ainsi la communaute afro-paraguayenne de Kamba Cua."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Akamba n'avaient pas de chefferie centralisee ni de systeme monarchique. La gouvernance reposait sur des conseils d'anciens (king'ole) au niveau du clan ou du quartier (utui). Les anciens deliberaient pour resoudre les conflits, organiser les rites collectifs et administrer les ressources. Les decisions etaient prises par consensus.",
+      "clanOrganization": "La societe akamba est organisee en environ 25 clans patrilineaires disperses (utui). Chaque clan est identifie par un totem animal ou vegetal (symbole clanique). Les clans sont les unites de base de la solidarite sociale, reglant l'heritage, les alliances matrimoniales et la resolution des conflits. Le mariage entre membres du meme clan est interdit.",
+      "ageClassSystems": "Les classes d'age (nthele) structurent le passage des hommes de l'enfance a la maturite sociale. La circoncision (mwilu) marque l'entree dans l'age adulte et donne acces aux droits et responsabilites des hommes.",
+      "roleOfLineages": "Les lignages patrilineaires (mbaa) determinent l'appartenance clanique, les droits sur la terre et le betail, et les alliances matrimoniales. L'ancetre fondateur de chaque lignage est venere et invoque lors des rituels familiaux.",
+      "religiousAuthority": "Les devins-guerisseurs (mundu mue) jouent un role central comme intermediaires entre le monde spirituel et la communaute. Ils diagnostiquent les causes des maladies et des malheurs, prescrivent des remedes et conduisent les rituels de propitiation. Les anciens du clan ont aussi une autorite rituelle. Aujourd'hui, les pasteurs chretiens coexistent avec les pratiques traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Kamba",
-      "vehicularRole": "Le kamba est parlé par la majorité des Kamba. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kikamba (Kamba)",
+      "isoCodes": ["kam"],
+      "dialects": [
+        "Dialecte de Machakos — variete standard, utilisee pour la traduction biblique et l'enseignement",
+        "Dialecte de Kitui — variete orientale distincte",
+        "Dialecte de Makueni — variete meridionale",
+        "Dialecte cotier (Kwale) — influence par le contact avec le swahili"
+      ],
+      "vehicularRole": "Le kikamba est la langue maternelle de la majorite des Akamba. Il appartient a la branche bantou (Zone E) de la famille Niger-Congo. Le swahili est largement utilise comme lingua franca au Kenya, et l'anglais comme langue officielle et d'enseignement. Le kikamba est enseigne comme matiere dans les ecoles primaires des comtes de Machakos, Kitui et Makueni."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kamba, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Kilumi : danse-rituel pluviale et therapeutique presente dans la culture akamba depuis ses origines. Combine danse symbolique, offrandes et prieres pour restaurer l'equilibre environnemental et social par la benediction spirituelle. Mwilu : rite de circoncision masculin marquant l'entree dans l'age adulte, accompagne de danses et chants specifiques. Rites funeraires : prieres et libations offertes aux ancetres (Aimu/Maimu) lors des deuils pour assurer la protection de la famille. Rites agricoles et matrimoniaux : ceremonies de mariage traditionnel avec chants, danses Mbalya et ngoma ; ceremonies lies au cycle agricole.",
+      "symbols": "Totems claniques (animaux et plantes) identifiant chaque utui : lion (Asii), singe a longue queue (Aombe), epervier (Akitutu), leopard (Aewani), babouin (Atangwa), porc-epic (Andundu), corbeau (Akitondo). Arbres sacres : figuier (muumo), sycomore et certains rochers significatifs comme sites de communication avec le divin. Calebasses et poteries utilisees dans les rituels de libation aux ancetres.",
+      "artsAndMusic": "Musique : chants composes sur echelle pentatonique pour les occasions de mariage, naissance et evenements importants. Chants satiriques critiquant les comportements deviants. Chants de travail comme Ngulu Mwelela (chante en creusant). Instruments : tambours ngoma, arc musical. Danses : Kilumi et Ngoma (danses religieuses de guerison et de pluviosite) ; Mwilu (danse de circoncision) ; Mbalya ou Ngutha (danses des jeunes apres les taches quotidiennes) ; Kamandiko (danse moderne lors des mariages). Les techniques de danse akamba ressemblent a celles des Batutsi du Rwanda-Burundi. Arts visuels : sculpture sur bois (statuettes et masques), vannerie de haute qualite, poterie. Les produits artisanaux akamba sont exposes dans les galeries et boutiques de Nairobi et des grandes villes du Kenya.",
+      "spiritualities": "Monothéisme : Ngai ou Mulungu (aussi nomme Mumbi, Asa, Mwatuangi) est le Dieu supreme, invisible, transcendant, createur de toute vie, resident dans le ciel (yayayani ou ituni). Il est misericordieux mais distant des affaires humaines ordinaires. Les esprits des ancetres defunts (Aimu ou Maimu) servent d'intercesseurs entre les vivants et Ngai Mulungu. Les ancetres sont veneres lors de rituels familiaux, libations et offrandes a des autels individuels. Les Aimu peuvent revenir en forme d'enfants pour assurer la continuite du lignage. Le devin-guerisseur (mundu mue) diagnostique et traite les afflictions causees par les esprits. Depuis le 20e siecle, le christianisme (principalement protestant) est tres repandu et coexiste avec les croyances traditionnelles en un syncrétisme vivant."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kamba dans les grandes villes kenyanes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Akamba n'ont jamais forme de royaume centralise. Leur structure politique etait decentralisee, fondee sur des conseils d'anciens (king'ole) au niveau clanique. Ils ont cependant developpe un reseau commercial tres elabore sur de longues distances, controlant les routes caravannieres entre la cote swahili et l'interieur du Kenya aux 18e-19e siecles. Ce reseau constituait une forme de pouvoir economique et d'influence regionale significative.",
+      "relationsWithNeighbors": "Commerce de troc avec les Kikuyu, Maasai, Meru et Embu dans l'interieur, et avec les Arabes, Swahili et Mijikenda sur la cote. Les Akamba etaient renommes comme intermediaires commerciaux, vendant ivoire, betail et produits agricoles. Des conflits recurrents avec les Maasai pour le betail et les paturages sur les plaines de Konza ont conduit a l'etablissement de cooperatives et de ranchs coloniaux. Relations generalement cordiales avec les Kikuyu voisins (partage de la communaute GEMA).",
+      "conflictsOrAlliances": "Persistance de razzias de betail et conflits de paturage avec les Maasai jusqu'a la fin du 20e siecle. Durant la colonisation britannique, les Akamba ont fourni des soldats aux King's African Rifles et ont ete consideres comme une 'race martiale'. Resistance au colonialisme manifestee dans divers mouvements d'autonomie locale. Les guerriers akamba de l'armee d'Artigas ont fonde une communaute distinctive au Paraguay (Kamba Cua et Kamba Kokue) en 1820.",
+      "diaspora": "Diaspora interne importante dans les grandes villes kenyanes (Nairobi, Mombasa). Diaspora internationale : environ 110 000 Akamba en Tanzanie, 8 280 en Ouganda. Communaute historique unique au Paraguay (10 000 personnes dans les villages de Kamba Cua et Kamba Kokue), descendants de soldats akamba arrives en 1820, reconnus pour leur ballet traditionnel africain."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 5600000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements kenyans, SIL Ethnologue, et études démographiques"
+      "source": "Recensement national du Kenya 2019 (4 663 910 Akamba) ; projections Joshua Project 2025 (7 297 000 au Kenya) ; PeopleGroups.org 2024 (5 366 000 au total mondial) ; estimations SIL Ethnologue 2024",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 5480000,
+          "note": "Principalement dans les comtes de Machakos, Kitui, Makueni ; presences a Nairobi, Mombasa et cote"
+        },
+        {
+          "country": "TZA",
+          "population": 110000,
+          "note": "Communaute de la diaspora akamba en Tanzanie"
+        },
+        {
+          "country": "UGA",
+          "population": 8280,
+          "note": "Communaute de la diaspora akamba en Ouganda"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kamba language (kam)",
-      "CIA World Factbook – Kenya",
-      "Recensements kenyans",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Kamba people. https://en.wikipedia.org/wiki/Kamba_people",
+      "Wikipedia EN — Kamba language. https://en.wikipedia.org/wiki/Kamba_language",
+      "SIL Ethnologue — Kamba language (kam). https://www.ethnologue.com/language/kam/",
+      "Joshua Project — Kamba in Kenya. https://joshuaproject.net/people_groups/12466/KE",
+      "The Akamba of Kenya — Clans System. https://msgr-john.solutiosoftware.com/akamba-culture/21-clans-system",
+      "The Akamba of Kenya — Traditional Beliefs and Practices. https://machakoskenya.com/akamba-culture/religion/16-akamba-traditional-beliefs-and-practices",
+      "101 Last Tribes — Kamba. https://www.101lasttribes.com/tribes/kamba.html",
+      "Britannica — Kamba. https://www.britannica.com/topic/Kamba"
     ]
   }
 }

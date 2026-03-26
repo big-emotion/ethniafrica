@@ -2,63 +2,134 @@
   "id": "PPL_YORUBA",
   "nameMain": "Yoruba / Nago",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["BEN"],
+  "currentCountries": ["NGA", "BEN", "TGO", "GHA", "CIV", "BFA", "NER"],
   "content": {
     "appellations": {
       "mainName": "Yoruba / Nago",
-      "selfAppellation": "",
+      "selfAppellation": "Omo Oduduwa (enfants d'Oduduwa)",
       "exonyms": [
-        "Yoruba, Nago (termes utilisés par les Européens), \"Nago\" peut avoir une connotation réductrice dans certains contextes mais est accepté comme auto-appellation par les Anago"
+        "Nago",
+        "Anago",
+        "Lucumi (Cuba)",
+        "Aku (Sierra Leone)",
+        "Nagot"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le terme Nago ou Anago est d'origine inconnue mais largement utilise par les Européens et les peuples voisins (Fon, Ewe) pour designer les Yoruba du Bénin et du Togo. Lucumi vient de la salutation yoruba oluku mi (mon ami). Aku est un exonyme utilise en Afrique de l'Ouest atlantique.",
+      "whyProblematic": "Le terme Nago peut etre perçu comme réducteur car il s'applique originellement a un sous-groupe (les Anago du Bénin) mais fut generalisé a tous les Yoruba par les Européens.",
+      "contemporaryUsage": "Yoruba est le terme officiel et academique. Nago reste en usage courant au Bénin, au Togo et dans les religions afro-brésiliennes (Candomblé). Les Yoruba du Nigeria se désignent eux-memes simplement comme Yoruba.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria",
-      "currentCountries": ["BEN"]
+      "ethnoLinguisticGroup": "Yoruboide (branche Niger-Congo, Volta-Niger)",
+      "historicalRegion": "Yorubaland : sud-ouest Nigeria, sud-est Bénin, sud Togo",
+      "currentCountries": ["NGA", "BEN", "TGO", "GHA", "CIV", "BFA", "NER"]
     },
-    "ethnicities": ["Yoruba / Nago"],
+    "ethnicities": [
+      "Yoruba",
+      "Nago / Anago",
+      "Egba",
+      "Ekiti",
+      "Ijebu",
+      "Ijesha",
+      "Oyo",
+      "Ondo",
+      "Ketu",
+      "Awori"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria"
+      "ancientOrigins": "Les Yoruba sont issus de populations mésolithiques Volta-Niger sur place, vers le 1er millénaire avant notre ère. Selon la tradition orale, ils tracent leur origine commune a Ile-Ife, lieu de creation de l'humanité selon la cosmogonie yoruba, fondée par le demi-dieu Oduduwa. Des fouilles archéologiques attestent d'une urbanisation avancée a Ile-Ife des le 8e siècle de notre ère.",
+      "formationPeriod": "Formation progressive entre le 1er millénaire avant J.-C. et le 8e siècle de notre ère. L'Empire d'Ife fleurit entre 1200 et 1420. L'Empire d'Oyo atteint son apogée entre 1650 et 1750.",
+      "migrationRoutes": [
+        "Dispersion dynastique depuis Ile-Ife vers les capitales secondaires",
+        "Expansion de l'Empire d'Oyo vers le nord et l'est",
+        "Migrations post-guerres du 19e siècle vers Ibadan et Lagos",
+        "Déportation d'esclaves vers les Amériques du 16e au 19e siècle"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Ile-Ife (Osun, Nigeria)",
+        "Oyo-Ile (nord Nigeria)",
+        "Ibadan (Oyo, Nigeria)",
+        "Lagos / Eko (Nigeria)",
+        "Porto-Novo / Ajasè (Bénin)",
+        "Kétou (Bénin)",
+        "Abeokuta (Ogun, Nigeria)"
+      ],
+      "unificationsOrDivisions": "L'Empire d'Oyo (15e-19e siècle) constitua la principale unification politique yoruba, regroupant la majeure partie du Yorubaland sous l'autorite de l'Alaafin. Sa chute au 19e siècle engendra de nombreuses guerres civiles (Egba, Ekiti, Ijebu) et la fondation d'Ibadan comme république militaire.",
+      "externalInfluences": "Contact avec l'Empire du Dahomey (Fon), traite transatlantique des esclaves (18e-19e siècle), colonisation britannique du Nigeria (fin 19e-20e siècle), influence islamique via le Soudan (Haoussa, Fulani) depuis le 14e siècle.",
+      "majorHistoricalEvents": "Apogée de l'Empire d'Ife (12e-14e siècle) ; montée en puissance de l'Empire d'Oyo (15e-19e siècle) ; guerres jihadistes du 19e siècle et chute d'Oyo ; annexion britannique de Lagos en 1861 ; wars civiles yoruba du 19e siècle ; indépendance du Nigeria en 1960."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchies urbaines multiples, chaque cite-état gouvernée par un Oba (roi) assisté d'un conseil d'oloye (nobles et chefs de guildes). Le pouvoir de l'Oba varie : quasi absolu a Oyo (checks par l'Oyomesi et le Bashorun), limité par des conseils sénatoriaux a Ijebu et Egba. La royauté n'est pas héréditaire au sens strictement primogénitural : un collège de chefs de lignages choisit parmi plusieurs familles royales, avec validation de l'oracle Ifa.",
+      "clanOrganization": "Organisation en sous-groupes ethniques régionaux (Egba, Ekiti, Ijebu, Ijesha, Igbonmina, Okun, Ondo, Oyo, Ketu) qui se considèrent comme frères issus d'Oduduwa. Chaque groupe est subdivise en lignages (ebi) patrilinéaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (ebi) constituent la base de l'organisation sociale, politique et economique. Ils déterminent l'appartenance royale, la residence, la succession au titre et l'affiliation aux sociétés secrètes (Ogboni, Oro).",
+      "religiousAuthority": "L'Ooni d'Ife est le chef spirituel supreme de tous les Yoruba. Les Babalawos (devins-prêtres de l'oracle Ifa) détiennent l'autorité religieuse locale. Les chefs de culte (oloricha) gèrent les sanctuaires des Orisha."
     },
     "languages": {
-      "mainLanguage": "Yoruba / Nago (yor)",
+      "mainLanguage": "Yoruba",
       "isoCodes": ["yor"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Oyo (base du yoruba littéraire)",
+        "Egba",
+        "Ijebu",
+        "Ekiti",
+        "Ijesha",
+        "Ondo",
+        "Okun",
+        "Ketu (Bénin)",
+        "Anago / Nago (Bénin-Togo)",
+        "Ife"
+      ],
+      "vehicularRole": "Le yoruba est langue officielle de facto dans les États yoruba du Nigeria (Ekiti, Lagos, Ogun, Ondo, Osun, Oyo) et langue d'enseignement primaire. Il est la 3e langue d'Afrique subsaharienne par nombre de locuteurs natifs. En 2022 aux États-Unis, c'est la langue Niger-Congo la plus parlée en premiere langue dans 10 États. Il joue le rôle de langue vehiculaire dans le Yorubaland et pour les communautés diasporiques."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Egungun (culte des ancêtres masqués) ; Gelede (mascarades féminines contre les sorcières) ; Oro (justice et purification) ; Osun-Osogbo (festival annuel de la déesse de la rivière Osun, patrimoine de l'UNESCO) ; Eyo (festival de Lagos) ; rites de naissance (Isomolóruko) ; mariages (Igbeyawo) ; funérailles (Isinku) ; Nouvelle igname (Ilesu).",
+      "symbols": "Les Oba portent des perles (Ileke), des couronnes perlées (Ade) et des emblèmes de cour (batons Ase, Irukere). Les sculptures de bronze et de terre cuite d'Ile-Ife (12e-14e siècle) sont un symbole artistique mondial. Les tambours parlants Dundun et Bata sont des symboles musicaux identitaires. Les vetements Aso-oke (Alaari rouge, Sanyan brun, Etu bleu) constituent l'habit de prestige.",
+      "artsAndMusic": "Art figuratif realiste en bronze, terre cuite, ivoire et bois (Ile-Ife, Owo). Masques Egungun et Gelede en bois sculpte. Musique polyryhthmique : tambours parlants Dundun et Gangan, Bata (culte de Shango), Sakara, Gbedu. Chants de louanges Oriki. Tissage Aso-oke. Poterie, broderie, teinture a l'indigo (Adire). Art culinaire : pâte d'igname (Iyan), Moin moin, Akara, Egusi, Ewedu.",
+      "spiritualities": "Religion traditionnelle yoruba : culte des Orisha (divinités médiatrices entre les humains et Olodumare, le dieu supreme) ; divination Ifa par les Babalawos (corpus de 256 odu) ; ancêtres divinisés (Egungun). Principaux Orisha : Obatala (création), Ogun (guerre/fer), Shango (tonnerre), Oshun (eaux/fertilité), Yemoja (maternité/eau), Eshu (carrefours), Oya (tempetes). Exporté dans les Amériques via la traite : Santeria/Lucumi (Cuba), Candomblé/Umbanda (Brésil), Trinidad Orisha. Aujourd'hui : islam sunnite malékite et christianisme (anglican, pentecôtiste) très répandus."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Empire d'Ife (1200-1420) ; Empire d'Oyo (15e-19e siècle, capitale Oyo-Ile de plus de 100 000 habitants a son apogée) ; Royaume de Ketu ; Royaume d'Ijebu ; Cité-état d'Abeokuta (Egba) ; Cité-état d'Ibadan (république militaire post-Oyo) ; Lagos / Eko. L'Alaafin d'Oyo, le Ooni d'Ife et l'Awujale d'Ijebu restent les titres royaux les plus prestigious.",
+      "relationsWithNeighbors": "Guerres et alliances avec le Dahomey (Fon) : Oyo domina le Dahomey au 18e siècle et imposa un tribut annuel. Relations complexes avec les Edo (Bénin), Igbo, Haoussa, Nupe et Bariba. Alliance Ekiti Parapo contre Ibadan au 19e siècle.",
+      "conflictsOrAlliances": "Guerres d'Oyo contre Ashanti, Dahomey, Borgu, Nupe, Igala (16e-19e siècles). Guerres civiles yoruba du 19e siècle (Egba, Owu, Ekiti, Ijesha, Ijebu). Résistance a la domination britannique (guerre Kiriji/Ekitiparapo 1878-1893). Participation active dans la traite atlantique des esclaves (18e siècle).",
+      "diaspora": "Plus d'un million de Yoruba hors d'Afrique. Brésil (Bahia) : les Nagos representerent 69% des esclaves venus du Bight of Benin entre 1816 et 1850 ; fondements du Candomblé. Cuba : Lucumi/Santeria. Trinidad et Tobago, Jamaïque, Puerto Rico. Royaume-Uni (forte communauté). États-Unis : plus de 207 000 locuteurs en 2022, première langue Niger-Congo dans 10 États. Migration économique post-1960 vers Europe et Amérique du Nord."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 51000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ethnologue 2024 ; Wikipedia Yoruba people ; Joshua Project",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 47000000,
+          "note": "20,7% de la population nigériane, principalement dans les États de Lagos, Oyo, Ogun, Osun, Ekiti, Ondo, Kwara"
+        },
+        {
+          "country": "BEN",
+          "population": 1300000,
+          "note": "Bénin, dont les Nago/Anago de Porto-Novo, Kétou, Savè"
+        },
+        {
+          "country": "TGO",
+          "population": 550000,
+          "note": "Togo, région des Plateaux et Centrale"
+        },
+        {
+          "country": "CIV",
+          "population": 135000,
+          "note": "Côte d'Ivoire, principalement Abidjan"
+        },
+        { "country": "GHA", "population": 110000, "note": "Ghana" },
+        { "country": "NER", "population": 80000, "note": "Niger" },
+        { "country": "BFA", "population": 77000, "note": "Burkina Faso" }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Yoruba people – Wikipedia EN (https://en.wikipedia.org/wiki/Yoruba_people)",
+      "Anago people – Wikipedia EN (https://en.wikipedia.org/wiki/Anago_people)",
+      "Yoruba – Wikipedia FR (https://fr.wikipedia.org/wiki/Yoruba)",
+      "Ethnologue : Yoruba language [yor] (https://www.ethnologue.com/language/yor/)",
+      "Johnson S., The History of the Yorubas, 1921, CSS Bookshops Lagos",
+      "Joshua Project – Yoruba (https://joshuaproject.net/people_groups/12337)",
+      "Peel J.D.Y., Religious Encounter and the Making of the Yoruba, 2000, Indiana University Press"
+    ]
   }
 }

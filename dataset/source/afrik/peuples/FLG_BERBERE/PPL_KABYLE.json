@@ -6,10 +6,10 @@
   "content": {
     "appellations": {
       "mainName": "Kabyle",
-      "selfAppellation": "",
-      "originOfExonyms": "",
-      "whyProblematic": "",
-      "contemporaryUsage": "",
+      "selfAppellation": "Izwawen / Iqbayliyen",
+      "originOfExonyms": "Le terme Kabyle est un exonyme, déformation de l'arabe qaba'il (قبائل) signifiant tribus ou ceux qui ont accepté (l'islam), utilisé par les Arabes après la conquête musulmane pour désigner les populations montagnardes qui acceptèrent le Coran. Le terme Zwawa (Izwawen) est l'autre appellation historique, encore en usage en Algérie occidentale.",
+      "whyProblematic": "L'ethnonymie kabyle est complexe : le terme Kabyle, d'origine exonyme arabe, a été repris et instrumentalisé par l'administration coloniale française dans le cadre du mythe kabyle (19e siècle), qui affirmait que les Kabyles étaient plus aptes à assimiler la civilisation française que les Arabes. Cela a politisé l'identité kabyle.",
+      "contemporaryUsage": "Le terme Kabyle est couramment utilisé en français, arabe et kabyle. Les locuteurs se désignent eux-mêmes comme Iqbayliyen ou Izwawen. Depuis le Printemps berbère de 1980, les Kabyles sont au premier plan de la revendication des langues et de l'identité berbères en Algérie.",
       "linguisticFamily": "FLG_BERBERE",
       "ethnoLinguisticGroup": "Berbère septentrional (kabyle)",
       "historicalRegion": "Kabylie (Tamurt n Leqvayel) — massifs montagneux du Djurdjura et de Babor (Atlas tellien)",
@@ -28,81 +28,70 @@
       "habitants historiques du massif du Djurdjura",
       "confédération de Petite Kabylie, région de Collo Note : Les Kabyles sont organisés en confédérations tribales (archs) portant le préfixe « At » (ou « Aït »), signifiant « les gens de » ou « fils de », suivi du nom d'un ancêtre éponyme ou d'un lieu."
     ],
-    "origins": {},
-    "organization": {},
+    "origins": {
+      "ancientOrigins": "Les Kabyles descendent des Berbères autochtones de l'Afrique du Nord, dont les langues amazighes se sont répandues depuis la vallée du Nil vers le Maghreb à partir d'environ 2000 av. J.-C. Leurs ancêtres les plus documentés sont les Koutama (Kutama), tribu berbère de la Petite Kabylie actuelle. Ils font partie de la grande famille berbère (Imazighen) qui peuplait la vaste région de la Numidie et de la Maurétanie, rencontrée par les Grecs, les Carthaginois et les Romains. Les Kabyles furent l'un des rares peuples d'Afrique du Nord à rester indépendants sous les Carthaginois, les Romains, les Vandales, les Byzantins et les Turcs ottomans, leurs massifs montagneux constituant un refuge naturel imprenable.",
+      "formationPeriod": "L'identité kabyle distincte s'est consolidée au cours du premier millénaire de l'ère commune. Les Kabyles résistèrent à la conquête arabe du 7e siècle et maintinrent leur langue et leurs structures sociales au sein de leurs montagnes. La période médiévale vit l'émergence de royaumes locaux (Hammadides, Zirids, Kuku, Ait Abbas). La dénomination Kabyle, dans son sens moderne précis, s'est fixée sous la colonisation française au 19e siècle.",
+      "migrationRoutes": [
+        "Populations autochtones du Maghreb, sans migration fondatrice documentée vers la Kabylie",
+        "Repli historique vers les massifs du Djurdjura et de Babor face aux pressions arabes et ottomanes dans les plaines"
+      ],
+      "historicalSettlementZones": [
+        "Massif du Djurdjura (Grande Kabylie — Tizi Ouzou, Béjaïa, Bouira)",
+        "Massif du Babor (Petite Kabylie — Jijel, Sétif, Bordj Bou Arreridj)",
+        "Vallée de la Soummam",
+        "Littoral méditerranéen entre Béjaïa et Jijel",
+        "Diaspora à Alger (plus de la moitié de la population de la capitale) et en France"
+      ],
+      "unificationsOrDivisions": "Les Kabyles sont organisés en confédérations tribales (archs) autonomes. Les archs At Zouaoua (Grande Kabylie) et Koutama (Petite Kabylie) ont des histoires distinctes. Les royaumes de Kuku et d'Ait Abbas maintinrent une indépendance relative face aux Ottomans aux 15e-16e siècles. La colonisation française (1857) et la guerre d'indépendance (1954-1962) ont produit une conscience kabyle unifiée sans effacer les divisions internes.",
+      "externalInfluences": "Conquête arabe et islamisation (7e-8e siècle). Dynasties berbères médiévales : Zirides, Hammadides, Hafsides de Béjaïa. Influence ottomane indirecte via les tribus makhzen. Colonisation française (1830-1962) : dernier pays de l'Algérie à tomber (1857). Arabisation forcée après l'indépendance (1962). Printemps berbère (1980) : renaissance culturelle et politique.",
+      "majorHistoricalEvents": "Entre 902 et 909, les Koutama de Petite Kabylie contribuèrent à fonder le califat fatimide. La dynastie ziride, originaire des montagnes kabyles, étendit son règne sur tout le Maghreb. Les royaumes de Kuku et d'Ait Abbas maintinrent leur indépendance face aux Ottomans (15e-17e siècles). La bataille d'Icheriden (1857) marqua la conquête définitive de la Kabylie par la France. Le soulèvement de Mokrani (1871) fut la dernière grande résistance. La conférence de la Soummam (1956) — première grande réunion du FLN — se tint en Kabylie, soulignant son rôle central dans la guerre d'indépendance. Le Printemps berbère (1980) lança la revendication contemporaine de la langue et de l'identité kabyles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le tajmaat (assemblée villageoise, en tifinagh : ⵜⴰⵊⵎⴰⵄⵜ) est l'institution politique fondamentale de la société kabyle. Composé des hommes adultes (traditionnellement ceux qui jeûnent le Ramadan), il exerce des fonctions législatives, exécutives et judiciaires au niveau villageois. Il adopte des règles coutumières contraignantes (qanun ou izref) régissant la propriété foncière, la distribution de l'eau, la résolution des conflits, l'héritage et les obligations communautaires. Les sanctions sont des amendes (leghram) et des sanctions sociales plutôt que des peines corporelles. Le système est fondé sur la délibération collective et le consensus.",
+      "clanOrganization": "Les villages kabyles sont divisés en clans rivaux (adhrum, pluriel idherman). La société est organisée en castes fonctionnelles : les forgerons et les bouchers sont maintenus à distance sociale. Il existait historiquement une classe de serfs (anciennement d'esclaves). Chaque famille reconnaît un ancêtre masculin commun et constitue une unité revendiquant des droits sur le patrimoine familial.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le foyer (axxam) est l'unité de base, généralement centré sur la famille patrilinéaire nucléaire. La structure familiale est une démocratie autoritaire : le chef de famille contrôle et administre toutes les affaires du ménage, mais doit parvenir à un accord avec le reste de la famille. Le bannissement familial est la punition ultime. Les lignages (adhrum) structurent l'organisation sociale et foncière.",
+      "religiousAuthority": "Le tajmaat intègre souvent un imam marabout comme secrétaire, chargé d'enregistrer les décisions et d'assumer des fonctions religieuses et éducatives. Le culte des saints (maraboutisme, ziara) joue un rôle social important. Les confréries soufies (Rahmaniyya, Qadriyya) ont une influence significative. La Rahmaniyya, fondée au 18e siècle, est particulièrement enracinée en Kabylie et a joué un rôle dans les résistances anticoloniales."
+    },
     "languages": {
       "mainLanguage": "Kabyle (taqbaylit / ⵜⴰⵇⴱⴰⵢⵍⵉⵜ en tifinagh)",
-      "vehicularRole": ""
+      "isoCodes": ["kab"],
+      "dialects": [
+        "Grande Kabylie (taqbaylit n tmurt n leqvayel) — dialecte de Tizi Ouzou et du Djurdjura",
+        "Soummam (taqbaylit n temdint n lbejaïa) — dialecte de la vallée de la Soummam",
+        "Petite Kabylie (taqbaylit n lgharb) — dialecte de Jijel et Sétif",
+        "Kabyle des Beni Mançour — variété distincte"
+      ],
+      "vehicularRole": "Le kabyle est la première langue berbère d'Algérie par nombre de locuteurs, avec environ 7 à 10 millions de locuteurs. Il est langue officielle depuis 2016 (Constitution algérienne) conjointement avec l'arabe, sous le nom de tamazight. Le kabyle est enseigné dans les écoles des wilayas de Tizi Ouzou, Béjaïa, Bouira et Boumerdès. En France, la diaspora kabyle maintient la langue (environ 1,5 million de personnes d'origine kabyle)."
     },
     "culture": {
-      "divinitiesAndSpirits": {
-        "supremeDeity": {
-          "endonym": "Rebbi / Yakuc (Dieu en kabyle)",
-          "attributes": "Dieu unique, créateur, tout-puissant (conception islamique adoptée après l'islamisation). Les croyances pré-islamiques concernant une divinité suprême berbère sont peu documentées."
-        },
-        "intermediateDivinities": [{}],
-        "natureSpirits": {
-          "earthSpirits": "Larbâa n leǧnun (les sept djinns) : esprits invisibles pouvant causer maladies et malheurs. Croyance en des esprits gardiens de lieux (grottes, ruines).",
-          "otherSpirits": "Thislith (ogresse mythique des contes), esprits malveillants nocturnes."
-        },
-        "ancestors": {
-          "roleOfAncestors": "Les ancêtres (lejdud) sont respectés et invoqués pour leur bénédiction et protection. Ils veillent sur les vivants depuis l'au-delà."
-        }
-      },
-      "cosmology": {
-        "worldStructure": {},
-        "spiritualConcepts": {}
-      },
-      "personAndNature": {
-        "bodyAndSpirit": {
-          "physicalBody": "Enveloppe matérielle (lǧesed), temporaire, vouée à la dégradation.",
-          "spiritualEssence": "Rruh (âme), part divine, immortelle, retournant à Dieu."
-        }
-      },
-      "ritesAndPractices": {
-        "initiationRites": {
-          "maleInitiation": "Circoncision (laεadda, tahara), rituel de passage vers l'âge adulte, généralement entre 5 et 10 ans. Fête familiale, dons, repas collectif.",
-          "femaleInitiation": "Pas de rite formel comparable, mais puberté marquée par port du foulard et participation aux tâches féminines. Mariage comme rite de passage majeur."
-        },
-        "funeraryRites": {
-          "burial": "Inhumation rapide (dans les 24h) dans cimetière (lmaqbara), tête orientée vers La Mecque. Prière funéraire (ṣalat lǧenaza) à la mosquée ou au cimetière. Cortège funèbre (ljnaza) accompagne le défunt.",
-          "postFuneraryCeremonies": "Condoléances (taεzit) pendant trois jours. Repas collectifs offerts aux visiteurs. Commémoration au 3e, 7e et 40e jour, puis anniversaire annuel."
-        },
-        "agriculturalRites": {
-          "landBlessing": "Avant les semailles, prières et invocations pour demander la baraka. Visite aux tombeaux de saints pour solliciter protection des récoltes."
-        },
-        "purificationRites": {
-          "ritualBaths": "Lγusal (ablution majeure) après souillure (menstrues, rapports sexuels, accouchement). Sources thermales (hammams naturels) réputées purificatrices.",
-          "fumigation": "Brûler du benjoin (ljawi), rue (fiǧel), ou encens pour purifier maison, protéger contre mauvais œil (tiṭ).",
-          "exorcism": "Ruqya (exorcisme coranique) par taleb ou imam pour chasser djinns possesseurs. Sacrifices expiatoires (asfel)."
-        },
-        "divination": {}
-      },
-      "symbolsAndArts": {
-        "artsAndMusic": {
-          "sculpture": "Poterie traditionnelle féminine (ikufan, plats, jarres décorées), peu de sculpture figurative (islam).",
-          "masks": "Masques de fêtes (Yennayer, carnavals villageois), personnages comiques ou effrayants (Aïssaoua).",
-          "musicalInstruments": "- Bendir (tambourin), derbouka (percussion) - Gasba (flûte en roseau) - Mandole kabyle (luth à long manche) - Guitare moderne (depuis 20e siècle)",
-          "dances": "Danse collective en cercle (ahellil, aḥidus), danses de mariage (lεalwat), danse du foulard (tbal).",
-          "songs": "- Isefra (poésie chantée), tradition des troubadours (imusnawen) - Ahellil (chants polyphoniques collectifs) - Chanson kabyle moderne (musique engagée, identitaire)",
-          "weaving": "Tapis et couvertures (aḥenbel, thilħawin), tissés par femmes, motifs géométriques colorés, laine locale."
-        },
-        "gastronomy": {}
-      },
-      "contemporarySpirituality": {
-        "christianity": {},
-        "islam": {
-          "specificPractices": "- Islam sunnite malékite (école juridique dominante) - Forte influence du soufisme (confréries Rahmaniyya, Qadriyya) - Culte des saints (maraboutisme, ziara) - Célébrations populaires (mawlid, Achoura)"
-        },
-        "traditionalReligions": {},
-        "religiousSyncretism": {}
-      }
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Circoncision (laεadda, tahara), rituel de passage vers l'âge adulte, généralement entre 5 et 10 ans. Fête familiale, dons, repas collectif.\", \"femaleInitiation\": \"Pas de rite formel comparable, mais puberté marquée par port du foulard et participation aux tâches féminines. Mariage comme rite de passage majeur.\"}, \"funeraryRites\": {\"burial\": \"Inhumation rapide (dans les 24h) dans cimetière (lmaqbara), tête orientée vers La Mecque. Prière funéraire (ṣalat lǧenaza) à la mosquée ou au cimetière. Cortège funèbre (ljnaza) accompagne le défunt.\", \"postFuneraryCeremonies\": \"Condoléances (taεzit) pendant trois jours. Repas collectifs offerts aux visiteurs. Commémoration au 3e, 7e et 40e jour, puis anniversaire annuel.\"}, \"agriculturalRites\": {\"landBlessing\": \"Avant les semailles, prières et invocations pour demander la baraka. Visite aux tombeaux de saints pour solliciter protection des récoltes.\"}, \"purificationRites\": {\"ritualBaths\": \"Lγusal (ablution majeure) après souillure (menstrues, rapports sexuels, accouchement). Sources thermales (hammams naturels) réputées purificatrices.\", \"fumigation\": \"Brûler du benjoin (ljawi), rue (fiǧel), ou encens pour purifier maison, protéger contre mauvais œil (tiṭ).\", \"exorcism\": \"Ruqya (exorcisme coranique) par taleb ou imam pour chasser djinns possesseurs. Sacrifices expiatoires (asfel).\"}, \"divination\": {}}",
+      "artsAndMusic": "{\"artsAndMusic\": {\"sculpture\": \"Poterie traditionnelle féminine (ikufan, plats, jarres décorées), peu de sculpture figurative (islam).\", \"masks\": \"Masques de fêtes (Yennayer, carnavals villageois), personnages comiques ou effrayants (Aïssaoua).\", \"musicalInstruments\": \"- Bendir (tambourin), derbouka (percussion) - Gasba (flûte en roseau) - Mandole kabyle (luth à long manche) - Guitare moderne (depuis 20e siècle)\", \"dances\": \"Danse collective en cercle (ahellil, aḥidus), danses de mariage (lεalwat), danse du foulard (tbal).\", \"songs\": \"- Isefra (poésie chantée), tradition des troubadours (imusnawen) - Ahellil (chants polyphoniques collectifs) - Chanson kabyle moderne (musique engagée, identitaire)\", \"weaving\": \"Tapis et couvertures (aḥenbel, thilħawin), tissés par femmes, motifs géométriques colorés, laine locale.\"}, \"gastronomy\": {}}",
+      "symbols": "",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Rebbi / Yakuc (Dieu en kabyle)\", \"attributes\": \"Dieu unique, créateur, tout-puissant (conception islamique adoptée après l'islamisation). Les croyances pré-islamiques concernant une divinité suprême berbère sont peu documentées.\"}, \"intermediateDivinities\": [{}], \"natureSpirits\": {\"earthSpirits\": \"Larbâa n leǧnun (les sept djinns) : esprits invisibles pouvant causer maladies et malheurs. Croyance en des esprits gardiens de lieux (grottes, ruines).\", \"otherSpirits\": \"Thislith (ogresse mythique des contes), esprits malveillants nocturnes.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les ancêtres (lejdud) sont respectés et invoqués pour leur bénédiction et protection. Ils veillent sur les vivants depuis l'au-delà.\"}} {\"worldStructure\": {}, \"spiritualConcepts\": {}} {\"bodyAndSpirit\": {\"physicalBody\": \"Enveloppe matérielle (lǧesed), temporaire, vouée à la dégradation.\", \"spiritualEssence\": \"Rruh (âme), part divine, immortelle, retournant à Dieu.\"}} {\"christianity\": {}, \"islam\": {\"specificPractices\": \"- Islam sunnite malékite (école juridique dominante) - Forte influence du soufisme (confréries Rahmaniyya, Qadriyya) - Culte des saints (maraboutisme, ziara) - Célébrations populaires (mawlid, Achoura)\"}, \"traditionalReligions\": {}, \"religiousSyncretism\": {}}"
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Plusieurs royaumes et dynasties kabyles ont marqué l'histoire du Maghreb. La dynasty ziride (10e-11e siècles), originaire des montagnes kabyles (famille sanhadja), étendit son pouvoir sur l'ensemble du Maghreb, la Sicile et une partie d'Al-Andalus. Les Hammadides (11e-12e siècles) contrôlaient la plupart de l'Algérie actuelle avec des capitales à Béjaïa et Constantine. À l'époque ottomane, le Royaume de Kuku (15e-17e siècles) et le Royaume d'Ait Abbas maintinrent leur indépendance, participant à des batailles notables aux côtés de la Régence d'Alger. Les Koutama de Petite Kabylie contribuèrent à fonder le califat fatimide (902-909).",
+      "relationsWithNeighbors": "Les Kabyles ont entretenu des relations complexes avec les Arabes des plaines (conflits de l'Antiquité à la période moderne), les Ottomans (relative indépendance préservée), et la France coloniale (résistance farouche, mais aussi instrumentalisation du mythe kabyle par les Français). Relations commerciales avec les villes côtières de Béjaïa et Jijel. La voisine Tunisie accueillit des refugiés kabyles lors des répressions coloniales.",
+      "conflictsOrAlliances": "Résistance à la conquête arabe (7e-8e siècle). Alliance des Koutama avec les Ismaïliens fatimides (902-909). Résistance aux Ottomans : plusieurs conflits au 16e siècle. Résistance à la conquête française — les batailles de Fadhma n Soumer et du cheikh Mokrani (1871). La Kabylie fut le dernier bastion de la résistance anticoloniale, conquise définitivement en 1857. Rôle central dans la guerre d'indépendance (1954-1962) : la conférence de la Soummam (1956) se tint en Kabylie. Après l'indépendance : révolte de 1963-1964 (FFS d'Hocine Aït Ahmed), Printemps berbère (1980), Printemps noir (2001).",
+      "diaspora": "La diaspora kabyle est l'une des plus importantes d'Algérie. La France accueille entre 1,5 et 2 millions de personnes d'origine kabyle, principalement en région parisienne, à Lyon et Marseille. Une émigration économique massive a commencé sous la colonisation française (années 1920-1930). Les migrants kabyles ont joué un rôle fondamental dans la création du nationalisme algérien à Paris (Messali Hadj, Imache Amar). Des communautés kabyles existent en Belgique, en Suisse, au Canada et dans d'autres pays."
+    },
     "demography": {
       "totalPopulation": 10000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur Ethnologue (SIL International, 2024), CIA World Factbook, ONS Algérie (projections 2025), UNFPA Algérie, travaux de Salem Chaker (INALCO), peuple_demographie_globale.csv Note : Les chiffres exacts sont difficiles à obtenir car l'Algérie ne distingue pas officiellement les groupes ethnolinguistiques dans ses recensements. Les estimations reposent sur le nombre de locuteurs du kabyle."
+      "source": "Estimations basées sur Ethnologue (SIL International, 2024), CIA World Factbook, ONS Algérie (projections 2025), UNFPA Algérie, travaux de Salem Chaker (INALCO), peuple_demographie_globale.csv Note : Les chiffres exacts sont difficiles à obtenir car l'Algérie ne distingue pas officiellement les groupes ethnolinguistiques dans ses recensements. Les estimations reposent sur le nombre de locuteurs du kabyle.",
+      "distributionByCountry": [
+        {
+          "country": "DZA",
+          "population": 8500000,
+          "note": "Kabylie (wilayas de Tizi Ouzou, Béjaïa, Bouira, Boumerdès, Sétif, Jijel, Bordj Bou Arreridj) et Alger"
+        },
+        {
+          "country": "FRA",
+          "population": 1500000,
+          "note": "Diaspora kabyle en France, principalement en région parisienne, Lyon, Marseille"
+        }
+      ]
     },
     "sources": [
       "L'Harmattan, 1995.",
@@ -129,7 +118,10 @@
       "Weidenfeld & Nicolson, 1969.",
       "Algérie 1954-1962*. Paris : Séguier, 2002.",
       "La Découverte / Awal, 1989.",
-      "des illusions de l'émigré aux souffrances de l'immigré*. Paris : Seuil, 1999."
+      "des illusions de l'émigré aux souffrances de l'immigré*. Paris : Seuil, 1999.",
+      "Wikipedia EN — Kabyle people. https://en.wikipedia.org/wiki/Kabyle_people",
+      "Wikipedia EN — Tajmaat. https://en.wikipedia.org/wiki/Tajm%C3%A2at",
+      "Wikipedia EN — Kabylia. https://en.wikipedia.org/wiki/Kabylia"
     ]
   }
 }

@@ -2,59 +2,106 @@
   "id": "PPL_TEKE",
   "nameMain": "Teke",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["GAB"],
+  "currentCountries": ["COG", "COD", "GAB"],
   "content": {
     "appellations": {
       "mainName": "Teke",
-      "selfAppellation": "",
-      "exonyms": ["Teke (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Bateke",
+      "exonyms": ["Bateke", "Tyo", "Tio", "Teke", "Bateke", "Anziku"],
+      "originOfExonyms": "Le mot teke signifie vendre ou acheter dans leur langue, referant a leur identite historique de commercants. Tyo et Tio sont des variantes regionales. Anziku etait le nom donne au royaume Teke par les Portugais et les premiers Europeens. Les Europeens ont adopte la forme Teke ou Bateke.",
+      "whyProblematic": "Le terme Bateke recouvre plusieurs sous-groupes distincts (Teke de l'Est ou Tio, Teke du Nord en Gabon, Teke de l'Ouest) qui ont des dialectes et des histoires differentes.",
+      "contemporaryUsage": "Bateke est l'appellation usuelle au Congo-Brazzaville, en RDC et au Gabon. Le groupe est reconnu officiellement dans les trois pays. Omar Bongo, ancien president du Gabon (1967-2009), etait Teke.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est du Gabon",
-      "currentCountries": ["GAB"]
+      "ethnoLinguisticGroup": "Bantu du Nord-Ouest (Bantu Central Africain)",
+      "historicalRegion": "Plateau Bateke (Congo-Brazzaville), Pool Malebo (frontiere COG-COD), Sud-Est du Gabon",
+      "currentCountries": ["COG", "COD", "GAB"]
     },
-    "ethnicities": ["Teke"],
+    "ethnicities": [
+      "Teke de l'Est (Tio)",
+      "Teke du Nord (Gabon)",
+      "Teke de l'Ouest",
+      "Tsaye",
+      "Laali",
+      "Yaa"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est du Gabon"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Dans le cadre de l'expansion bantoue, les Teke se sont etablis dans le Bassin du Congo au premier millenaire de notre ere. La tradition orale tio affirme qu'ils ont toujours habite les plaines de savane du Plateau Bateke. Les sources voisines confirment leur presence certaine des le XIIIe siecle au moins. L'historien Didier Gongola date la fondation du royaume du XIVe siecle par la fusion de royaumes plus petits.",
+      "formationPeriod": "XIIe-XIVe siecles: florissant royaume Tio (Anziku) etabli autour du Pool Malebo et du Plateau Bateke",
+      "migrationRoutes": [
+        "Expansion depuis la region du Pool Malebo vers le nord sur le Plateau Bateke sous la pression des raids kongolais aux XVe-XVIe siecles"
+      ],
+      "historicalSettlementZones": [
+        "Plateau Bateke (COG)",
+        "Pool Malebo et ses environs (COG/COD)",
+        "Rives du Congo entre Manyanga et le Pool Malebo",
+        "Sud-Est du Gabon (region de l'Ogooue)"
+      ],
+      "unificationsOrDivisions": "Le Royaume Tio (Anziku) fut fonde au XIVe siecle et rivalisa avec le Royaume Kongo. Au XVe siecle il devint vassal du Kongo. Les Jaga (Yaka) envahirent les Teke de l'Ouest au XVIIe siecle. Des tensions internes entre le roi (Okoo) et les seigneurs locaux a partir du XVIIIe siecle affaiblirent le pouvoir royal. En 1880, le traite avec Brazza signa la fin de la souverainete Teke.",
+      "externalInfluences": "Vassalite au Royaume Kongo (XVe-XVIe siecles). Pression des Bobangi (rivaux commerciaux). Traite avec l'explorateur Pierre Savorgnan de Brazza le 10 septembre 1880: le roi Iloo I ceda la souverainete teke a la France. Brazzaville fut fondee en mai 1884 sur le territoire teke. Exploitation coloniale francaise severe sous l'Afrique Equatoriale Francaise.",
+      "majorHistoricalEvents": "XIIe-XIIIe siecles: apogee du Royaume Tio/Anziku. 1568: le roi Tio tue Henrique Ier du Kongo. 10 septembre 1880: traite Makoko-Brazza, le roi Iloo I cede la souverainete a la France. 1884: fondation de Brazzaville sur territoire Teke. 1885: Conference de Berlin neutralise la rivalite franco-belge. 1899: mort de Mbandieele (roi Teke) a Brazzaville apres une confrontation avec l'administration francaise. Annees 1960: independances du Congo et du Gabon, renaissance culturelle teke."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie sacree dirigee par le Makoko (ou Okoo), roi divin considere comme a la fois humain et divin, garant de la fertilite et de l'ordre cosmique. Le roi tire son autorite du controle sur l'esprit national Nkwe Mbali (la cour du lion). Il est assiste de douze seigneurs de la couronne. Le rituel d'intronisation (lisee) durait deux ans. Le forgeron (mfumu) etait souvent choisi comme chef de village, son titre etant hereditaire.",
+      "clanOrganization": "Organisation lignagere patrilineaire. Le mfumu est le chef de famille; son prestige grandissait avec le nombre de membres de sa famille. Les forgerons constituaient une elite hereditaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'acces aux terres et aux fonctions rituelles. La transmission du metier de forgeron est strictement patrilineaire.",
+      "religiousAuthority": "Le chef du village est le leader religieux (Mpugu), gardien des potions et os spirituels. Son pouvoir est marque par la figure Tara-Mantsie (pere de la terre). Le Nganga (devin-guerisseur) est payeur pour animer les statues protectrices et officie lors des deces ou maladies. Le Lipie est le grand pretre de l'Etat, gardien du culte de Nkwe Mbali aux cascades de la Lefini."
     },
     "languages": {
-      "mainLanguage": "Teke (teg)",
-      "isoCodes": ["teg"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Langues Teke (groupe de langues bantoues)",
+      "isoCodes": ["teg", "tek", "tyi", "lli", "iyx"],
+      "dialects": [
+        "Teke-Tege (Gabon du Nord, teg)",
+        "Teke de l'Est / Ibali (tek)",
+        "Tsaayi (tyi)",
+        "Laali (lli)",
+        "Yaa (iyx)"
+      ],
+      "vehicularRole": "Les langues teke sont parlees par environ 2 millions de personnes entre le Congo-Brazzaville, la RDC et le Gabon. Les Teke parlent aussi le lingala et le francais comme langues vehiculaires nationales. Au Congo-Brazzaville, les Teke representent le deuxieme groupe ethnique (16,9% de la population)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation masculine Kidumu: sequestration, danses de masques et circoncision, marquant le passage a l'age adulte. Funerailles avec textiles en raphia (3 textiles servent de cartes guidant le defunt vers le village des morts: ciel, terre, eau). Ceremonies de nomination des enfants. Culte des Ancetres (Ancestor Cult) et Culte des Esprits (Spirit Cult) avec leurs rituels distincts. Sacrifices animaux (anciennement humains jusqu'au XIXe siecle).",
+      "symbols": "Masques plats ronds en bois avec motifs geometriques abstraits et ligne horizontale mediane, peints en bleu fonce, noir, brun et ocre; utilises lors de mariages, funerailles et initiations. Statues nkisi contenant du Bilongo (materiau fetiche): butti (ancetres), mutinu bmamba (fertilite), matomba (protection), iteo (bonheur). Peaux de leopard ou guepard pour les elites. Argile blanche (kaolin) pour la peinture corporelle ceremonielle.",
+      "artsAndMusic": "Sculpture sur bois avec statues a forme humaine abstraite (grandes tetes, cou cylindrique, genoux et coudes fleches). Fabrication de textiles en raphia teints. Instrument likembe (sanza/lamellophone). Elevage traditionnel du chien Bateke (petit chien de chasse au pelage gris) et du chat Bateke. Griots conservant les histoires orales. Les Teke fermentent l'ananas en vin depuis les annees 1950.",
+      "spiritualities": "Religion traditionnelle monotheotheiste: le dieu supreme Nzambi a cree l'univers mais ne s'implique pas dans les affaires humaines. Intermediaires: esprits ancestraux (Ancestor Cult) et esprits naturels (Cult of Spirits). Nkwimbali habite les cascades. Toutes les choses vivantes ont une ame (liberee a la mort comme esprit) et un souffle de vie (transmis a une nouvelle vie). Chaque citoyen Teke possede ses propres esprits ancestraux. Christianisme present depuis la colonisation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume Tio (Anziku): fonde au XIVe siecle, il controlait le Bas-Congo et le Pool Malebo sur plus de 320 km nord-sud et 240 km est-ouest. Ce royaume rivalisa avec le Kongo pour la domination de l'Afrique Centrale jusqu'au XVIe siecle. Capital historique: plaines de Mbe.",
+      "relationsWithNeighbors": "Rivalite historique avec le Royaume Kongo (vassal au XVe siecle). Conflits avec les Bobangi pour le monopole commercial sur le Congo. Relations commerciales avec les Boma, les Humbu. Alliance avec les Francais contre les Belges/Association internationale du Congo apres 1880.",
+      "conflictsOrAlliances": "Traite du 10 septembre 1880 entre le roi Iloo Ier et Brazza (protectorat francais). Ratification du traite en avril 1884 par Iloo Ier. Resistance a la colonisation: en 1899, confrontation avec l'administrateur de Brazzaville, mort du roi Mbandieele. La Conference de Berlin (1885) fixa les frontieres coloniales sur territoire teke.",
+      "diaspora": "Presence teke notable a Brazzaville et Kinshasa (extensions urbaines). Omar Bongo (1935-2009), president du Gabon pendant 42 ans, etait d'origine Teke."
     },
     "demography": {
-      "totalPopulation": 120,
+      "totalPopulation": 2000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur StudyGuides.com (environ 2 millions); Teke du Nord Gabon: 129 000 (Joshua Project); Teke = 16,9% de la population du Congo-Brazzaville (~1 million)",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 1000000,
+          "note": "Congo-Brazzaville - 16,9% de la population, Plateau Bateke et Brazzaville"
+        },
+        {
+          "country": "COD",
+          "population": 750000,
+          "note": "RDC - region ouest de Kinshasa et Pool Malebo"
+        },
+        {
+          "country": "GAB",
+          "population": 250000,
+          "note": "Gabon - Sud-Est, dont Teke du Nord (129 000)"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Teke people – Wikipedia EN (https://en.wikipedia.org/wiki/Teke_people)",
+      "Tio Kingdom – Wikipedia EN (https://en.wikipedia.org/wiki/Tio_Kingdom)",
+      "Teke – Encyclopaedia Britannica (https://www.britannica.com/topic/Teke)",
+      "Teke, Northern in Gabon – Joshua Project 2025 (https://joshuaproject.net/people_groups/14033/GB)",
+      "Bateke (People) Overview – StudyGuides.com, 2026 (https://studyguides.com/study-methods/overview/cmfxr5pvx3u4m016q52tfad7b)",
+      "Bateke people, Likembe – Metropolitan Museum of Art (https://www.metmuseum.org/art/collection/search/501099)",
+      "Republic of the Congo – Wikipedia EN, section ethnicites (https://en.wikipedia.org/wiki/Republic_of_the_Congo)",
+      "Jan Vansina, The Tio Kingdom of the Middle Congo 1880-1892, Oxford University Press, 1973"
+    ]
   }
 }

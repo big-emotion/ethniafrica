@@ -2,63 +2,109 @@
   "id": "PPL_PAPELO",
   "nameMain": "Papelo",
   "languageFamilyId": "FLG_CREOLE",
-  "currentCountries": ["GIN"],
+  "currentCountries": ["GNB"],
   "content": {
     "appellations": {
       "mainName": "Papelo",
       "selfAppellation": "Papelo",
-      "exonyms": ["Papelo (terme utilisé pour les créoles de Guinée-Bissau)"],
+      "exonyms": [
+        "Kriol (terme courant pour les locuteurs du creole de Guinee-Bissau)",
+        "Purtuguis (terme local designant ceux qui ont adopte les habitudes europeennes et sont catholiques)",
+        "Fijus di Terra (Filhos da Terra, Enfants de la Terre : designation des metis nee sur place)",
+        "Fijus di Fidalgu (Filhos de Fidalgo, Enfants de Nobles : descendants de Portugais et femmes africaines)"
+      ],
+      "originOfExonyms": "Papelo est l'endonymie locale d'origine incertaine. Kriol derive du portugais Crioulo (creole). Purtuguis signifie Portugais en creole guineens et designe ceux qui ont adopte les moeurs europeennes, la foi catholique et parlent le creole portugais, independamment de leur ascendance. Fijus di Terra (Filhos da Terra) et Fijus di Fidalgu (Filhos de Fidalgo) sont des categories sociales distinctives definies par l'administration portugaise.",
+      "whyProblematic": "La denomination Papelo recoupe en partie celle de Papel (peuple indigene de Guinee-Bissau, distinct), ce qui cree une confusion documentaire. Le terme Kriol est souvent employe pour designer la langue (creole pov) et non le groupe ethnique, rendant les estimations demographiques difficiles.",
+      "contemporaryUsage": "Le terme Kriol ou Creole de Guinee-Bissau est le plus courant dans la litterature academique. Papelo est utilise localement pour identifier la communaute d'ascendance mixte luso-africaine. Le kriyol est aujourd'hui la lingua franca de la Guinee-Bissau, parle par plus de 90 % de la population.",
       "linguisticFamily": "FLG_CREOLE",
-      "ethnoLinguisticGroup": "Créole afro-portugais",
-      "historicalRegion": "Guinée-Bissau",
-      "currentCountries": ["GIN"]
+      "ethnoLinguisticGroup": "Creole afro-portugais de Guinee-Bissau",
+      "historicalRegion": "Guinee-Bissau (ancienne Guinee portugaise), Casamance (Senegal meridional)",
+      "currentCountries": ["GNB"]
     },
-    "ethnicities": ["Papelo de Guinée-Bissau", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Fijus di Terra (Filhos da Terra) : metis nes en Guinee-Bissau, d'ascendance mixte luso-africaine, catholiques",
+      "Fijus di Fidalgu (Filhos de Fidalgo) : descendants de Portugais nobles et femmes africaines, portant des noms de famille portugais (da Silva, Carvalho, Fonseca)",
+      "Lancados et Tangomaus : marchands portugais ou metis installes hors des factoreries coloniales, ayant epouse des femmes locales (Mandingue, Bainuk, Papel, Manjaco) aux 15e-17e siecles",
+      "Kriol de Ziguinchor : variante de la communaute creole en Casamance senegalaise"
+    ],
     "origins": {
-      "ancientOrigins": "Les Papelo sont un peuple créole formé à partir du contact entre les populations africaines locales et les colons portugais à partir du XVe siècle. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.",
-      "externalInfluences": "Contacts avec les populations africaines locales (Mandé, Atlantique), influence du christianisme catholique et des croyances traditionnelles."
+      "ancientOrigins": "Les Papelo / Creoles de Guinee-Bissau sont issus du contact entre les premiers Portugais et les populations africaines locales (Mandingue, Papel, Manjaco, Bainuk, Biafada) a partir du 15e siecle. Les Portugais ont etabli des comptoirs commerciaux (feitorias) sur la cote et les iles (Bissau, Bolama, Cacheu) des 1446. Les Lancados, marchands portugais ou creoles installes en marge des comptoirs officiels, ont noue des alliances matrimoniales avec des elites locales, produisant les premiers metis luso-africains.",
+      "formationPeriod": "La communaute creole de Guinee-Bissau se forme entre le 15e et le 17e siecle, avec un ancrage fort dans l'ile de Santiago au Cap-Vert comme berceau linguistique. Le creole guineens derive du creole cap-verdien initial, puis evolue de facon autonome au contact des langues locales (Mandingue, Papel, Manjaco, Biafada, Bainuk). La consolidation de l'identite Papelo / Kriol s'accelere aux 18e-19e siecles avec l'expansion du commerce et la formation d'une bourgeoisie creole.",
+      "migrationRoutes": [
+        "Portugal et Cap-Vert vers Guinee-Bissau (15e-17e siecles) : marchands, administrateurs, missionnaires",
+        "Diffusion du creole cap-verdien vers les comptoirs de la cote (Cacheu, Bissau, Bolama)",
+        "Extension vers la Casamance (Senegal) : les Creoles de Ziguinchor forment une communaute distincte au 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Bissau (capitale, ile de Bissau)",
+        "Cacheu (nord de la Guinee-Bissau, ancien premier centre portugais)",
+        "Bolama (ile de Bolama, ancienne capitale coloniale)",
+        "Bafata (region orientale)",
+        "Ziguinchor et Casamance (Senegal meridional)"
+      ],
+      "unificationsOrDivisions": "La communaute papelo / creole n'a pas constitue d'entite politique unifiee mais a forme une classe sociale intermediaire entre l'administration coloniale portugaise et les peuples africains autochtones. La distinction entre Fijus di Terra et Fijus di Fidalgu refletait une hierarchie interne fondee sur le degre d'ascendance portugaise et le statut social.",
+      "externalInfluences": "Colonisation portugaise (1446-1974) : langue, religion catholique, droit, architecture. Influences africaines multiples (Mandingue, Papel, Manjaco, Biafada) dans la langue et la culture. Independance de la Guinee-Bissau (1974) apres la guerre de liberation du PAIGC (1963-1974) : le kriol a joue un role cle comme langue de la resistance. L'influence du Senegal (Casamance) a enrichi la variante casamancaise.",
+      "majorHistoricalEvents": "1446 : premier contact portugais documentee avec la cote de la Guinee actuelle. 15e-17e siecles : formation des communautes de lancados et des premiers creoles guineens. 1632 : fondation de Cacheu comme premier etablissement permanent. 1879 : separation administrative de la Guinee portugaise du Cap-Vert. 1963-1974 : guerre d'independance sous le PAIGC (Amilcar Cabral) ; le creole guineens sert de langue de la liberation. 1974 : independance de la Guinee-Bissau ; le portugais reste officiel mais le kriol s'impose comme langue nationale reelle."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
-      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.",
-      "religiousAuthority": "Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en familles notables et reseaux commerciaux ; pas de systeme politique independant traditionnel. Les Papelo s'inseraient dans la structure coloniale portugaise comme intermediaires (interpretes, commis, commis de factorerie, administrateurs locaux). Apres l'independance (1974), integration dans les structures politiques guineennes-bissauennes dominées par le PAIGC.",
+      "clanOrganization": "Families patrilineaires portant des noms de famille portugais (da Silva, Carvalho, Fonseca, Gomes, Lopes, Pereira). Ces families occupent un reseau de prestige social et commercial. Les alliances matrimoniales avec des families africaines locales restent importantes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages a noms portugais conferent un statut social superieur (acces a l'education catholique, a l'administration coloniale). La transmission du nom de famille paternel portugais est cruciale pour l'identite Papelo. L'endogamie au sein de la communaute creole est frequente.",
+      "religiousAuthority": "Autorite des pretres catholiques : l'Eglise catholique est centrale dans la vie des Papelo. Les missions catholiques ont assure l'education et la formation des elites creoles. Certains membres de la communaute pratiquent un syncretisme entre catholicisme et croyances animistes locales."
     },
     "languages": {
-      "mainLanguage": "Papelo (créole de Guinée-Bissau)",
-      "vehicularRole": "Le papelo est parlé par la majorité des Papelo. Le portugais est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Kreol / Kriyol (creole guineens a base portugaise)",
+      "isoCodes": ["pov"],
+      "dialects": [
+        "Variete de Bissau-Bolama : forme urbaine prestige, plus proche du portugais",
+        "Variete de Bafata : variante orientale avec influences mandingues",
+        "Variete de Cacheu-Ziguinchor : variante nordique avec influences de langues atlantiques (Jola, Manjaco) et du francais"
+      ],
+      "vehicularRole": "Le kriyol est la veritable lingua franca de la Guinee-Bissau, parle par plus de 90 % de la population (plus de 2 millions de personnes). Langue maternelle d'environ 250 000 Guineen-Bissauens (environ 15 % de la population). Le portugais est officiellement la langue d'Etat et d'education, mais le kriyol est dominant dans la vie quotidienne, le commerce et les services publics. Extension au Senegal (Casamance, Ziguinchor) avec au moins 46 500 locuteurs natifs."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses catholiques",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels créoles",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels créoles, symboles catholiques.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle créole",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat",
-      "Spiritualités": "Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés."
+      "majorRites": "Rites catholiques : bapteme, premiere communion, mariage religieux, funerailles avec messe. Rites de passage syncrétiques : certaines familles Papelo maintiennent des pratiques initiatiques ancestrales heritees des peuples africains voisins (Papel, Manjaco, Mandingue), notamment pour les garcons. Festivites de Carnaval (Carnaval de Bissau) : celebration majeure de la culture creole avec defile de groupes costumes et musiques de gumbe et funaná. Fetes patronales catholiques : celebrations de la Saint-Jean, de l'Assomption et d'autres saints tutulaires des paroisses.",
+      "symbols": "La langue kriyol elle-meme, symbole d'identite nationale guineenne-bissauenne et creole. L'ancre et la mer : heritage de la connexion maritime et commerciale portugaise. Les noms de famille portugais (da Silva, Carvalho) comme marqueurs identitaires. La croix catholique. L'architecture coloniale portugaise a Bissau et Cacheu (maisons a verandas, eglises coloniales).",
+      "artsAndMusic": "Gumbe : genre musical creole de Guinee-Bissau, rythme percussif festif joue lors des ceremonies et fetes ; instrument principal le tambour gumbe. Funaná : genre musical d'origine cap-verdienne largement adopte en Guinee-Bissau, base sur la gaita (accordeon) et le ferro (raclement metallique). Gumbe de Bissau : melange de percussions africaines et de rythmes latins. Poesie et litterature en kriyol : en developpement depuis l'independance. Artisanat : poterie, sculpture sur bois (influences Papel et Manjaco), broderie de tissus locaux. Architecture coloniale creole : habitations a facade en couleurs vives, verandas coloniales, eglises en pierre.",
+      "spiritualities": "Catholicisme dominant parmi les Papelo : pratique reguliere, prestige social lie a l'appartenance ecclesiale. Syncretisme courant : incorporation de croyances animistes locales (irã : esprits protecteurs des groupes ethniques voisins comme les Papel, Bijago, Diola) dans la pratique catholique. Certaines familles Papelo participent a des rituels de propitiation des ancetres. Presence de l'islam : certains membres de la communaute creole ont adopte l'islam via les contacts mandingues, mais la majorite reste catholique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques guinéennes-bissauennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora papelo dans les grandes villes guinéennes-bissauennes et dans les pays occidentaux (Portugal)."
+      "kingdomsOrChiefdoms": "Les Papelo n'ont pas forme de royaume propre : ils constituaient la classe intermediaire de l'empire commercial portugais en Afrique de l'Ouest (lancados, grumetes, intermediaires commerciaux). Ils ont joue un role decisive dans le commerce atlantique (or, ivoire, esclaves, noix de cola) entre le 15e et le 19e siecle. Le royaume de Casamance avait fait alliance avec les Portugais, et son roi avait adopte les habitudes europeennes et integre des Portugais a sa cour.",
+      "relationsWithNeighbors": "Relations commerciales et matrimoniales etroites avec les Mandingue, Papel, Manjaco, Biafada, Balante et Fulani de Guinee-Bissau. Les lancados servaient d'intermediaires entre les societes africaines et l'administration coloniale. Relations de rivalite avec d'autres groupes coloniaux (Français en Casamance). Apres l'independance, marginalisation politique progressive au profit des groupes ethniques numeriquement dominants (Balante, Fulani, Mandingue).",
+      "conflictsOrAlliances": "Alliance seculaire avec la puissance coloniale portugaise : les Papelo ont ete les principaux intermediaires de la colonisation portugaise. Rupture de 1963-1974 : la guerre de liberation du PAIGC (menée par Amilcar Cabral, lui-meme d'origine cap-verdienne creole) a divise la communaute entre partisans de l'independance et fideles au Portugal. Apres l'independance : integration dans l'Etat guineens-bissauen, tension recurrente entre Cap-Verdiens d'ascendance creole et Guineens d'ethnicites africaines.",
+      "diaspora": "Diaspora Papelo importante au Portugal (Lisbonne, Porto) : plusieurs dizaines de milliers de Guineen-Bissauens d'ascendance creole ont emigre avant et apres l'independance. Communautes en Casamance (Senegal) : les Creoles de Ziguinchor constituent une minorite distinctive. Presence en France et dans d'autres pays europeens via la diaspora guineenne-bissauenne."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 250000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements guinéens-bissauens, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur SIL Ethnologue (langue pov : 250 000 locuteurs natifs en Guinee-Bissau) ; APiCS Online (environ 100 000 locuteurs natifs historiques) ; population Guinee-Bissau 2024 : 2 201 351 (PopulationPyramid.net). La population Papelo / Creole ethnique est estimee a environ 10-15 % de la population comme locuteurs natifs.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 200000,
+          "note": "Principalement a Bissau, Cacheu, Bolama et Bafata"
+        },
+        {
+          "country": "SEN",
+          "population": 46500,
+          "note": "Creoles de Casamance, principalement a Ziguinchor et dans les villes de la Casamance"
+        },
+        {
+          "country": "PRT",
+          "population": 20000,
+          "note": "Diaspora guineenne-bissauenne d'ascendance creole en Portugal (Lisbonne, Porto)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Papelo language",
-      "CIA World Factbook – Guinea-Bissau",
-      "Recensements guinéens-bissauens",
-      "Études anthropologiques sur les peuples créoles"
+      "Wikipedia EN — Guinea-Bissau Creole. https://en.wikipedia.org/wiki/Guinea-Bissau_Creole",
+      "SIL Ethnologue — Guinea-Bissau Creole (pov). https://www.ethnologue.com/language/pov/",
+      "APiCS Online — Guinea-Bissau Kriyol (survey chapter). https://apics-online.info/surveys/33",
+      "Wikipedia EN — Languages of Guinea-Bissau. https://en.wikipedia.org/wiki/Languages_of_Guinea-Bissau",
+      "Revista Africa e Africanidades — Guinee-Bissau et la langue guineenne. https://africaeafricanidades.com.br/documentos/ARTLIVRE071025.pdf",
+      "CIA World Factbook — Guinea-Bissau. https://www.cia.gov/the-world-factbook/countries/guinea-bissau/",
+      "PopulationPyramid.net — Guinea-Bissau 2024. https://www.populationpyramid.net/guinea-bissau/2024/"
     ]
   }
 }

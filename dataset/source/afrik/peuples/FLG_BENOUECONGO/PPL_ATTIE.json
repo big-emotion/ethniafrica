@@ -6,83 +6,95 @@
   "content": {
     "appellations": {
       "mainName": "Attié",
-      "selfAppellation": "",
-      "exonyms": ["Akyé (variante Ghana/Togo/Bénin)"],
-      "originOfExonyms": "Variantes dialectales du même ethnonyme selon les régions (Ghana, Togo, Bénin, Côte d'Ivoire)",
-      "whyProblematic": "Aucun terme péjoratif identifié. Les variantes sont toutes respectueuses et reflètent des différences phonétiques régionales.",
-      "contemporaryUsage": "\"Attié\" est la forme standard en Côte d'Ivoire, \"Akyé\" au Ghana",
+      "selfAppellation": "Akyé (nom propre utilisé par les locuteurs de la langue)",
+      "exonyms": ["Akyé", "Akié", "Atyé", "Atché", "Atshe", "Ci"],
+      "originOfExonyms": "Variantes phonétiques et orthographiques d'un même ethnonyme selon les régions. Le terme Akyé est la forme la plus répandue en Côte d'Ivoire et au Ghana, tandis qu'Attié est la forme francisée adoptée officiellement. Le mot Akyé proviendrait du terme tui (langue akan) signifiant attrapé, utilisé par les Achantis pour désigner ces guerriers-cousins.",
+      "whyProblematic": "Aucun terme péjoratif identifié. Les variantes reflètent uniquement des différences phonétiques régionales et de translittération. Le terme Attié est la forme standard administrative en Côte d'Ivoire.",
+      "contemporaryUsage": "Attié est la forme officielle en Côte d'Ivoire. Akyé est utilisé dans les milieux académiques et dans la diaspora au Ghana, au Togo et au Bénin. Les locuteurs se désignent eux-mêmes comme Akyé dans leur langue.",
       "linguisticFamily": "FLG_KWA",
-      "ethnoLinguisticGroup": "Akan",
-      "historicalRegion": "Sud-Est de la Côte d'Ivoire (région des Lagunes, nord d'Abidjan)",
+      "ethnoLinguisticGroup": "Akan (branche des peuples akan de la forêt côtière)",
+      "historicalRegion": "Sud-Est de la Côte d'Ivoire : région des Lagunes (Anyama, Akoupé, Adzopé, Alépé, Yakassé-Attobrou), au nord immédiat d'Abidjan",
       "currentCountries": ["CIV"]
     },
     "ethnicities": [
-      "Nindins (région Anyama-Alépé), Bodins (région Adzopé-Yakassé-Attobrou), Kétins (région Akoupé)",
-      "Ketin, N'gadié (N'kadzun), Attobrou, Attié Lepin, Andokoi, Annapun, Tchoya",
-      "Les Attié forment un peuple akan relativement homogène avec des sous-divisions territoriales plutôt qu'ethniques"
+      "Nindins : groupe concentré autour d'Anyama et Alépé, proches d'Abidjan",
+      "Bodins : groupe de la région d'Adzopé, Yakassé-Attobrou et Kodioussou",
+      "Kétins : groupe établi autour d'Akoupé",
+      "Andokoi : sous-groupe de la zone forestière orientale",
+      "Annapun : sous-groupe de la région d'Alépé",
+      "Attobrou : sous-groupe méridional",
+      "N'gadié (N'kadzun) : lignage de la forêt centrale"
     ],
     "origins": {
-      "ancientOrigins": "Origines au Ghana actuel, empire Ashanti. Migrations akan vers l'ouest liées aux dynamiques politiques et militaires ashanti. Linguistiquement, les Attié appartiennent aux langues kwa (Niger-Congo), confirmant l'origine akan.",
-      "formationPeriod": "XVIIe-XVIIIe siècles (période des grandes migrations akan vers la Côte d'Ivoire)",
+      "ancientOrigins": "Les Attié (Akyé) sont originaires du Ghana actuel, au sein de la constellation politique et militaire ashanti. Selon la tradition orale, leurs ancêtres faisaient partie de la branche armée d'élite des Achantis, surnommée les porcs-épics (guerriers d'avant-garde). Ils étaient les enfants du côté féminin de l'aristocratie achanti (Chaué), cousins maternels des Ashanti proprement dits, et à ce titre liés à l'empire par des droits successoraux spécifiques. La rupture intervint lors d'un conflit de succession : à la mort d'Opoku Ware Ier (vers 1750), les Akyé disputèrent aux Ashanti la possession du sabre royal symbolisant le pouvoir suprême. Selon la légende, les Akyé s'emparèrent de la lame tandis que les Ashanti conservaient le manche. Ce conflit déclencha la migration vers l'ouest.",
+      "formationPeriod": "XVIIe-XVIIIe siècles, dans le cadre des grandes migrations akan depuis le Ghana vers la Côte d'Ivoire actuelle",
       "migrationRoutes": [
-        "Ghana (empire Ashanti) → Traversée du fleuve Comoé → Installation sud-est Côte d'Ivoire"
+        "Ghana (territoire ashanti) → migration vers l'ouest en compagnie des futurs Baoulé et Agni",
+        "Traversée du fleuve Comoé en crue : selon la légende, la reine Abla Pokou sacrifia son fils nouveau-né pour que le génie des eaux permette le passage",
+        "Séparation du groupe baoulé-agni après la traversée : les Akyé s'installent à l'ouest et au sud du Comoé",
+        "Fondation du premier village Akyé : Bouapé, point de départ de l'expansion dans la région des Lagunes"
       ],
       "historicalSettlementZones": [
-        "Premier village fondé : Bouapé. Expansion dans la région des Lagunes (Anyama, Akoupé, Adzopé, Alépé, Yakassé-Attobrou), sud-préfectures d'Agou, Assikoi, Bécédi-Brignan, Yakassé-Mé, Bieby"
+        "Bouapé : premier village fondé (zone de dispersion initiale)",
+        "Région des Lagunes : Anyama, Akoupé, Adzopé, Alépé, Yakassé-Attobrou",
+        "Sous-préfectures d'Agou, Assikoi, Bécédi-Brignan, Yakassé-Mé, Bieby",
+        "Zone péri-urbaine d'Abidjan : sous-préfecture d'Anyama (devenue banlieue nord d'Abidjan)"
       ],
-      "unificationsOrDivisions": "Séparation d'avec les Baoulé et Agni après la traversée du Comoé. Maintien d'une identité akan commune avec fragmentation en sous-groupes territoriaux (Nindins, Bodins, Kétins)",
-      "externalInfluences": "Contact avec peuples lagunaires (partage savoir-faire attiéké), influence Ashanti (structures akan), colonisation française (christianisation, scolarisation), proximité d'Abidjan (urbanisation)",
-      "majorHistoricalEvents": "Migration légendaire d'Abla Pokou (mythe fondateur commun akan), fondation de Bouapé, résistance à la colonisation française, inscription de l'attiéké au patrimoine UNESCO (2024)"
+      "unificationsOrDivisions": "Séparation définitive d'avec les Baoulé et Agni après la traversée du fleuve Comoé. Maintien d'une identité akan commune mais fragmentation en trois grands sous-groupes territoriaux (Nindins, Bodins, Kétins), sans centralisation politique supérieure. Chaque groupe maintient une autonomie villageoise tout en partageant la langue et les traditions.",
+      "externalInfluences": "Influence achanti (structure matrilinéaire, système Abusua, sacralité du chef). Contact avec peuples lagunaires voisins (Abouré, Ebrié) : diffusion des techniques de fabrication de l'attiéké (couscous de manioc). Colonisation française à partir de la fin du XIXe siècle : christianisation, alphabétisation, administration indirecte. Proximité d'Abidjan : urbanisation accélérée et mutation socio-économique profonde depuis l'indépendance (1960).",
+      "majorHistoricalEvents": "Conflit de succession ashanti et migration fondatrice (vers 1750). Traversée du Comoé et sacrifice de la reine Abla Pokou (mythe fondateur commun akan). Fondation de Bouapé. Résistance à la colonisation française (fin XIXe-début XXe siècle). Inscription de l'attiéké au patrimoine culturel immatériel de l'UNESCO en 2024 en reconnaissance du savoir-faire culinaire attié."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Chefferies villageoises autonomes, confédérations temporaires en cas de menace. Chef de village (Agni Sran) assisté de conseils d'anciens et notables. Pas de royaume centralisé, mais réseau de villages liés par alliance et parenté.",
-      "clanOrganization": "Système matrilinéaire (héritage akan), filiation tracée par la lignée maternelle (Abusua = clan maternel)",
-      "roleOfLineages": "Lignages matrilinéaires déterminent héritage matériel et social. Lignage paternel (Ntoro) transmet aspects spirituels et caractère.",
-      "religiousAuthority": "Anciens, prêtres des cultes ancestraux, détenteurs de statues sacrées, devins"
+      "traditionalPoliticalSystem": "Système de chefferies villageoises autonomes. Chaque village est dirigé par un chef (Agni Sran) assisté d'un conseil d'anciens et de notables. Pas de royaume centralisé : l'unité politique de base est le village, avec des confédérations temporaires pour la défense commune. Le pouvoir suit la règle de succession matrilinéaire akan : le chef est issu du lignage maternel dominant.",
+      "clanOrganization": "Système matrilinéaire (Abusua) hérité de la tradition akan : filiation et héritage matériels tracés par la lignée maternelle. Chaque clan maternel (Abusua) constitue l'unité fondamentale de solidarité, de propriété foncière et d'héritage. Parallèlement, le lignage paternel (Ntoro) transmet certains attributs spirituels et traits de caractère.",
+      "ageClassSystems": "Système original à trois classes d'âges (générations) : la génération Gnando (aînés au pouvoir), la génération Djigbô (adultes actifs) et la génération M'brechoué (jeunes). La fête des générations marque le passage de la responsabilité de la classe dirigeante à la suivante, symbolisant le renouveau du pouvoir et la transmission intergénérationnelle des savoirs.",
+      "roleOfLineages": "Les lignages matrilinéaires déterminent l'héritage matériel et social (terres, titres). Le lignage paternel (Ntoro) transmet les aspects spirituels et le caractère moral. Les anciens des lignages sont consultés pour les mariages, les funérailles et les décisions politiques.",
+      "religiousAuthority": "Prêtres des cultes ancestraux (détenteurs de l'accès aux statues sacrées et aux autels d'ancêtres), devins-guérisseurs, chefs de village en tant que représentants du sacré. Les Komians (prêtresses animistes des communautés akan du sud-est de la Côte d'Ivoire) entrent en transe pour communiquer avec les esprits de la forêt et des eaux."
     },
     "languages": {
-      "mainLanguage": "Attié (ou Akyé, Ci)",
+      "mainLanguage": "Attié (Akyé, Ci)",
+      "isoCodes": ["ati"],
       "dialects": [
-        "Variations entre Nindins, Bodins, Kétins (différences mineures)"
+        "Dialecte Nindin (région Anyama-Alépé) : variante du groupe nord-occidental",
+        "Dialecte Bodin (région Adzopé-Yakassé-Attobrou) : variante centrale, base de référence",
+        "Dialecte Kétin (région Akoupé) : variante orientale"
       ],
-      "vehicularRole": "Langue locale, usage du français comme lingua franca régionale"
+      "vehicularRole": "Langue locale et identitaire, utilisée dans la sphère familiale et villageoise. Le français est la lingua franca administrative et éducative. L'attié compte environ 500 000 locuteurs selon Ethnologue (SIL International, 2017), avec une présence attestée aussi au Ghana, au Togo et au Bénin."
     },
     "culture": {
-      "divinitiesAndSpirits": {
-        "supremeDeity": {},
-        "intermediateDivinities": [{}],
-        "ancestors": {}
-      },
-      "cosmology": {
-        "worldStructure": {},
-        "spiritualConcepts": {}
-      }
+      "majorRites": "Fête des générations : rituel de transmission du pouvoir entre classes d'âge (Gnando, Djigbô, M'brechoué), marquant le passage à la responsabilité communautaire. Rites funéraires akan : cérémonies de plusieurs jours avec deuil collectif, libations aux ancêtres, danses rituelles. Rite du mariage : processus négocié entre familles matrilinéaires avec dot. Circoncision masculine pratiquée dans certains groupes. Rituels agricoles (igname, manioc) liés aux cycles saisonniers. Festival de l'attiéké : célébration du patrimoine culinaire inscrit à l'UNESCO en 2024.",
+      "symbols": "Masques rituels en bois sculpté utilisés lors des cérémonies funéraires et d'initiation. Symboles d'autorité en ivoire (défenses sculptées portées par les chefs). Grand tambour (instrument royal symbolisant le pouvoir du chef et convoquant la communauté). Statues d'ancêtres gardant les autels familiaux. Le sabre royal (mémoire du conflit fondateur avec les Ashanti).",
+      "artsAndMusic": "Riche tradition de sculpture sur bois (masques, statuettes ancestrales). Poterie traditionnelle féminine. Tissage artisanal. Musique rythmique à base de percussions (tambours, djembé). Danse collective comme langage social et rituel. Tradition orale forte : contes (anansem), proverbes, généalogies orales transmises par les anciens. Artistes comme Abenan Louis et Le Super Disco d'Anyama-Adjamé (années 1980) et Anoman Brou Felix (années 1960) ont acquis une renommée régionale en Côte d'Ivoire.",
+      "spiritualities": "Religion traditionnelle akan : croyance en un dieu créateur suprême (Nyame, appelé aussi Nyankopon ou Onyankopong), qui délègue ses pouvoirs à des divinités intermédiaires (Abosom) habitant rivières, arbres, montagnes. La déesse de la Terre Asase Yaa est la seconde divinité en importance, vénérée les jeudis par les agriculteurs. Les esprits ancestraux (Samanfo) sont au cœur de la spiritualité quotidienne : ils protègent le lignage, sont consultés par libations et offrandes de nourriture et de boisson. Les sorciers (Obayifo) sont redoutés. Les prêtres (Akomfo) servent de médiateurs entre humains et Abosom, pratiquent la divination et dispensent soins rituels. Influence croissante du christianisme (catholicisme, protestantisme évangélique) depuis la colonisation. Syncrétisme fréquent entre croyances traditionnelles et pratiques chrétiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Réseau chefferies autonomes, pas de royaume centralisé. Système confédération temporaire pour défense commune. Influence lointaine empire Ashanti (Ghana).",
-      "relationsWithNeighbors": "Baoulé et Agni (migration commune, séparation après Comoé, relations fraternelles akan). Peuples lagunaires (Abouré, Ebrié : échanges culturels, attiéké). Contacts commerciaux avec Abidjan (proximité).",
-      "conflictsOrAlliances": "Conflit originel avec Ashanti (sabre royal, légende fondatrice). Alliances ponctuelles avec autres Akan face menaces communes. Résistance colonisation française (fin XIXe-début XXe siècle).",
-      "diaspora": "Urbanisation massive vers Abidjan (Anyama devenue banlieue abidjanaise). Migration économique vers autres villes ivoiriennes. Petites communautés Ghana, Togo, Bénin (continuité linguistique kwa)."
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé. Réseau de chefferies villageoises autonomes fonctionnant en confédération temporaire lors de menaces extérieures. Influence lointaine mais structurante de l'empire Ashanti du Ghana, dont les Akyé conservent l'héritage politique matrilinéaire, les structures claniques (Abusua) et certains rituels de cour. Le premier village Bouapé a joué le rôle de centre fondateur.",
+      "relationsWithNeighbors": "Baoulé et Agni : migration fondatrice commune, séparation après la traversée du Comoé, mais maintien de relations fraternelles de type akan. Peuples lagunaires (Abouré, Ebrié) : échanges culturels intenses, notamment autour de la fabrication de l'attiéké. Dida et autres peuples du sud : relations commerciales. Abidjan : la proximité de la métropole a profondément transformé les Attié, dont la zone traditionnelle a été en partie urbanisée.",
+      "conflictsOrAlliances": "Conflit originel avec les Ashanti du Ghana (dispute du sabre royal, légitimation fondatrice). Alliances ponctuelles avec d'autres groupes akan face aux menaces communes. Résistance à la pénétration coloniale française (fin XIXe-début XXe siècle). Tensions foncières périodiques autour d'Abidjan avec populations allochtones installées sur terres attié.",
+      "diaspora": "Urbanisation massive vers Abidjan : Anyama est devenue une commune de la métropole abidjanaise. Migration économique vers d'autres villes ivoiriennes (San-Pédro, Yamoussoukro). Petites communautés au Ghana, au Togo et au Bénin, maintenant la continuité linguistique kwa. Diaspora ivoirienne en France (région parisienne) incluant des ressortissants attié."
     },
     "demography": {
       "totalPopulation": 838000,
       "referenceYear": 2025,
-      "source": "Joshua Project (2025), Ethnologue/SIL (2017 : 500 000 locuteurs), PeopleGroups.org (839 000)"
+      "source": "Joshua Project (2025) : 838 000 à 839 000 individus. Ethnologue/SIL International (2017) : environ 500 000 locuteurs de la langue attié. PeopleGroups.org : 839 000. Recoupement avec données INS Côte d'Ivoire (RGPH 2014).",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 835000 },
+        { "country": "GHA", "population": 3000 }
+      ]
     },
     "sources": [
-      "Article \"Attiéké\" https://fr.wikipedia.org/wiki/Attiéké",
-      "\"Les savoir-faire liés à la fabrication de l'attiéké en Côte d'Ivoire\" (2024) https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",
-      "\"Attie in Côte d'Ivoire\" https://joshuaproject.net/people_groups/10483/IV",
-      "\"Attie language\" https://peoplegroups.org/language/ati/",
-      "\"Attie people\" https://www.spiritlandofafrica.com/products/list/attie/",
-      "\"Akye\" https://www.101lasttribes.com/tribes/akye.html",
-      "\"Le peuple Attié\" https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html",
-      "Sculptures Attié https://www.bruno-mignot.com/galeries/statues-sculptures/",
-      "\"Attie language and culture\" https://accentnetwork.com/attie/",
-      "\"Attie ethnic group\" https://www.friendlyborders.org/world-ethnic-groups/",
-      "Recherche web académique sur cosmologie akan (Nyame, Asase Yaa, Abosom, Kra, Sunsum, Ntoro)",
-      "\"Art and authority among the Akye of the Ivory Coast\" (référence académique)",
-      "\"Parlons Akye bodin\" (référence linguistique)"
+      "Wikipedia FR : Attié (peuple) https://fr.wikipedia.org/wiki/Atti%C3%A9_(peuple)",
+      "Wikipedia EN : Akan religion https://en.wikipedia.org/wiki/Akan_religion",
+      "Wikipedia EN : Religion in Ivory Coast https://en.wikipedia.org/wiki/Religion_in_Ivory_Coast",
+      "Wikipedia EN : Attié language https://en.wikipedia.org/wiki/Atti%C3%A9_language",
+      "Ethnologue : Attié language (ATI) https://www.ethnologue.com/language/ati/",
+      "Joshua Project : Attie in Côte d'Ivoire https://joshuaproject.net/people_groups/10483/IV",
+      "UNESCO : Les savoir-faire liés à la fabrication de l'attiéké (2024) https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",
+      "Spirit Land of Africa : Attié culture https://spiritlandofafrica.com/products/list/attie/",
+      "Rezo Ivoire : Le peuple Attié https://www.rezoivoire.net/ivoire/patrimoine/2826/le-peuple-attie.html",
+      "101 Last Tribes : Akye https://www.101lasttribes.com/tribes/akye.html",
+      "Santé Tropicale : Approche anthropologique en pays Akyé https://www.santetropicale.com/Resume/14803.pdf",
+      "YouTube : Le peuple Akié, comment est-il arrivé en Côte d'Ivoire ? https://www.youtube.com/watch?v=Qpqx8Biibg4"
     ]
   }
 }

@@ -2,58 +2,92 @@
   "id": "PPL_NZIMA",
   "nameMain": "Nzima",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["CIV"],
+  "currentCountries": ["GHA", "CIV"],
   "content": {
     "appellations": {
       "mainName": "Nzima",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nzema",
+      "exonyms": ["Nzema", "Appolo", "Apollo", "Nzima"],
+      "originOfExonyms": "Le nom Appolo ou Apollo fut attribue par les Portugais qui atteignirent les cotes nzema un jour de fete d'Apollon ; le terme est reste dans la litterature coloniale. Nzima est la variante orthographique la plus repandue en Cote d'Ivoire.",
+      "whyProblematic": "La graphie Nzima est courante en Cote d'Ivoire tandis que Nzema est utilisee au Ghana. Ces deux formes designent le meme peuple et la meme langue ; PPL_NZIMA et PPL_NZEMA constituent donc un doublon dans la base de donnees.",
+      "contemporaryUsage": "Le terme Nzema est officiel au Ghana et reconnu comme langue d'Etat. En Cote d'Ivoire le nom Nzima est employe localement. Appolo est desormais considere comme un exonyme colonial et peu utilise.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Est",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Akan (branche Bia / Tano central)",
+      "historicalRegion": "Nzemaland, Sud-Ouest Ghana et Sud-Est Cote d'Ivoire",
+      "currentCountries": ["GHA", "CIV"]
     },
-    "ethnicities": ["Nzima"],
+    "ethnicities": ["Nzema", "Nzima"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nzema sont un peuple Akan appartenant au groupe linguistique Bia. Leurs traditions orales les rattachent a l'ensemble Akan ayant migre depuis le Sahel et le nord de l'Afrique vers le 11e siecle. Ils se seraient d'abord etablis dans le Bonoland, puis dans la region d'Adanse avant de poursuivre vers le sud-ouest pour atteindre la cote atlantique. Le royaume de Nzema-Apollonia est documente des le 15e siecle.",
+      "formationPeriod": "15e-17e siecles, consolidation du Royaume de Nzema-Apollonia avec ses deux entites : Nzema occidental (capitale Beyin) et Nzema oriental (capitale Atuabo puis Axim).",
+      "migrationRoutes": [
+        "Sahel / nord Afrique vers region du Bonoland (vers le 11e siecle)",
+        "Bonoland vers Adanse (14e siecle)",
+        "Adanse vers le littoral du Sud-Ouest Ghana et du Sud-Est Cote d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Jomoro District (Nzema occidental, Ghana)",
+        "Ellembelle District (Nzema oriental, Ghana)",
+        "Nzema East Municipal / Evalue Gwira (Ghana)",
+        "District de Comoe, Aboisso (Cote d'Ivoire)"
+      ],
+      "unificationsOrDivisions": "Le pays nzema est historiquement divise entre Nzema occidental (Jomoro, capitale Beyin) et Nzema oriental (Ellembele, capitale Atuabo/Axim). Les Evaloe se considerent nzema mais ont un dialecte distinct. Des guerres civiles interieures ont periodiquement affaibli l'unite politique.",
+      "externalInfluences": "Les Nzema ont subi la domination asante depuis le 18e siecle. Les Portugais puis les Hollandais et Britanniques ont installe des comptoirs sur leur littoral (Axim, Half Assini). La rivalite entre Denkyira et Aowin a aussi impacte leurs territoires.",
+      "majorHistoricalEvents": "Etablissement du Royaume de Nzema-Apollonia avant le 15e siecle. Premier contact avec les Portugais (nommes Appolo). Incorporation progressive dans la sphere d'influence asante au 18e siecle. Le premier president du Ghana, Kwame Nkrumah (1909-1972), est originaire du pays nzema (Nkroful)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie de type akan : le chef suprême (Omanhene) dirige chacune des deux entites traditionnelles (Nzema occidental et oriental). La gouvernance suit quatre niveaux hierarchiques : lignage (abusua), village, sous-chef, Omanhene. Un linguiste royal (kpomavoli) porte la parole du chef.",
+      "clanOrganization": "Organisation matrilineaire en huit clans principaux : Twea (Aduana), Ezohile (Asona), Alonwoba (Oyoko), Nvavile (Agona), et quatre autres. Chaque clan a un totem et des attributs specifiques. La descendance, l'heritage et la succession passent par la ligne maternelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages matrilineaires (abusua) constituent l'unite de base de l'organisation sociale et economique. Le doyen masculin (abusua kpanyinli) preside les affaires du lignage. Bones (mbowule) et chair (nwonane) viennent de la mere ; le sang (mogya) et la personnalite (sunsum) du pere.",
+      "religiousAuthority": "L'autorite religieuse traditionnelle est liee aux ancetres et au dieu supreme Nyamele (equivalent akan de Nyame). Des pretres-feticheurs (komfo) president aux rituels. Majorite chretienne aujourd'hui au Ghana."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nzema (Nzima, Appolo)",
+      "isoCodes": ["nzi"],
+      "dialects": [
+        "Nzema occidental (Jomoro)",
+        "Nzema oriental (Ellembele)",
+        "Evaloe (variante legere)"
+      ],
+      "vehicularRole": "Le nzema est l'une des onze langues d'Etat du Ghana et beneficie du soutien du Bureau of Ghana Languages. Il est enseigne et publie par ce bureau. La langue est partiellement intelligible avec le Jwira-Pepesa et etroitement apparentee au Baoulé. Environ 330 000 locuteurs en 2004, 658 000 selon les estimations 2023."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Kundum : celebration annuelle la plus importante, liee a la recolte. Elle commence dans la partie est du pays Ahanta et avance vers le sud-ouest. Dure quatre semaines de tambours rituels, chants et danses pour chasser les mauvais esprits et proteger la bonne fortune. Origine folklorique : un chasseur nomme Akpoley observa des nains danser en cercle et introduisit ces danses dans sa communaute au 16e siecle.",
+      "symbols": "Le calendrier traditionnel nzema est base sur des cycles de sept jours forment une semaine de trois cycles (21 jours). Les tabourets de chef (nnua) symbolisent la royaute. Les poids en or et la poudre d'or (sika futuro) etaient la monnaie traditionnelle.",
+      "artsAndMusic": "Chants satiriques avudewene interpretes par les jeunes hommes lors du festival Kundum. Tambours rituels (fontomfrom). Sculpture sur bois, tissage et orfevrerie dans la tradition akan. Agriculture (predominance des plantations de palmiers) et peche cotiere.",
+      "spiritualities": "Religion traditionnelle centree sur Nyamele (dieu supreme), les ancetres et les forces naturelles. Pretres-feticheurs (komfo) assurent la mediation avec le monde spirituel. Forte christianisation depuis la periode coloniale britannique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Nzema-Apollonia (ou Nzema-Apollonie), documente avant le 15e siecle, divise en Nzema occidental (capitale Beyin, dans l'actuel Jomoro District) et Nzema oriental (capitale Atuabo/Axim, dans l'actuel Ellembelle District). La chefferie de Nzema East Municipal regroupe cinq zones traditionnelles : Upper et Lower Axim, Apateim, Edwira et Nsein.",
+      "relationsWithNeighbors": "Relations commerciales et conflictuelles avec les Ahanta (voisins a l'est), les Aowin, les Denkyira. Les Nzema ont ouvert leurs voies commerciales cotieres a d'autres peuples Akan moyennant un tribut annuel au roi. L'expansion asante au 18e siecle a soumis le pays nzema a une influence exterieure marquee.",
+      "conflictsOrAlliances": "Guerres avec les Denkyira et les Aowin pour le controle des routes commercieres cotieres. Guerres civiles interieures entre Nzema Ellembele (avec les Asante) et Nzema Jomoro. Soumission progressive a l'influence asante a partir du 18e siecle, puis integration dans le protectorat britannique de la Gold Coast.",
+      "diaspora": "Presente principalement dans les grandes villes ghaneeennes (Accra, Takoradi) et en Cote d'Ivoire (region d'Aboisso). Kwame Nkrumah, premier president du Ghana et figure du panafricanisme, est le Nzema le plus celebre a l'echelle internationale."
     },
     "demography": {
-      "totalPopulation": 0,
-      "referenceYear": 2025,
-      "source": "N/A"
+      "totalPopulation": 658000,
+      "referenceYear": 2023,
+      "source": "Peoplegroups.org, 2023 ; Wikipedia (Nzema people) : 328 700 (Ghana : 262 000, Cote d'Ivoire : 66 700) ; 101lasttribes.com : 658 000 (estimation globale 2023)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 299000,
+          "note": "Ethnologue : 299 000 locuteurs (Ghana Languages of Ghana)"
+        },
+        {
+          "country": "CIV",
+          "population": 66700,
+          "note": "Sud-est, district de Comoe"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nzema people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Nzema_people)",
+      "Nzema language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Nzema_language)",
+      "Nzema / Ndenye – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/nzema.html)",
+      "Languages of Ghana – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Languages_of_Ghana)",
+      "Nzema language, alphabet and pronunciation – Omniglot, 2024 (https://www.omniglot.com/writing/nzema.htm)",
+      "Akan Heritage – History of Nzema (https://akanheritage.com.gh/history.html)"
+    ]
   }
 }

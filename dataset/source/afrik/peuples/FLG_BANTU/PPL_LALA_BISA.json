@@ -2,58 +2,84 @@
   "id": "PPL_LALA_BISA",
   "nameMain": "Lala-Bisa",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "COD"],
   "content": {
     "appellations": {
       "mainName": "Lala-Bisa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Bisa",
+      "exonyms": ["Bisa", "Wiza", "Muiza", "Bissa", "Vaviza"],
+      "originOfExonyms": "Wiza ou Muiza est l'appellation ancienne documentee dans les sources portugaises du 18e siecle (voyage de Lacerda, 1798). Vaviza est une autre forme attestee. Dans les classifications linguistiques modernes, Lala-Bisa designe l'ensemble du continuum dialectal Lala-Bisa (code ISO leb). Joshua Project distingue les Bisa (436 000) des Lala-Bisa (864 000) comme deux entrees separees.",
+      "whyProblematic": "Le terme Lala-Bisa est une denomination linguistique englobant plusieurs groupes ethniques distincts (Lala, Bisa, Ambo, Luano, Swaka). Les Bisa proprement dits se distinguent des Lala par leur territoire, leur histoire et certaines pratiques culturelles, meme s'ils partagent une langue commune.",
+      "contemporaryUsage": "Bisa est l'appellation locale et academique courante pour ce peuple. Lala-Bisa est utilise principalement dans les classifications linguistiques (Ethnologue, Glottolog). La langue est designee par le code ISO leb.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu du Centre, groupe Bemba-Lala",
+      "historicalRegion": "Province de la Muchinga, Province du Nord, Province de l'Est, Zambie",
+      "currentCountries": ["ZMB", "COD"]
     },
-    "ethnicities": ["Lala-Bisa"],
+    "ethnicities": ["Bisa", "Wiza", "Lala-Bisa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Bisa, comme la plupart des peuples du nord de la Zambie, ont leur origine dans l'ancien empire Luba-Lunda du bassin du Congo. Ils sont estimes avoir quitte l'empire Luba vers la meme periode que les Bemba, autour de 1650. Selon la tradition orale, leur separation des Bemba lors de la migration depuis le Congo aurait ete causee par une querelle entre princes royaux autour d'un champignon refuse a un enfant affame.",
+      "formationPeriod": "Les Bisa se sont constitues comme groupe distinct autour du debut du 18e siecle, s'installant sur le plateau entre les escarpements et le lac Bangweulu. Ils sont l'un des premiers peuples mentionnes dans les sources historiques ecrites (Lacerda, 1798).",
+      "migrationRoutes": [
+        "Depart de l'empire Luba-Lunda (RDC actuelle)",
+        "Migration vers l'est, arrivee sur le plateau entre les escarpements et le lac Bangweulu",
+        "Extension vers Mpika et Chinsali (Province de la Muchinga)",
+        "Expansion vers Lundazi et Chama (Province de l'Est)",
+        "Installation dans la vallee du Luangwa apres la conquete Bemba des annees 1820"
+      ],
+      "historicalSettlementZones": [
+        "Rives orientales du lac Bangweulu (Province du Nord)",
+        "District de Mpika et Chinsali, Province de la Muchinga",
+        "Districts de Lundazi et Chama, Province de l'Est",
+        "Vallee du Luangwa"
+      ],
+      "unificationsOrDivisions": "Contrairement aux Bemba, les Bisa n'ont jamais eu de chef supreme (paramount chief). Ils ont constitue une confederation lache de chefferies liees par la langue et les coutumes. Cette absence d'unite politique a permis aux Bemba de conquérir leurs terres dans les annees 1820.",
+      "externalInfluences": "Au 19e siecle, les Bisa etaient d'importants intermediaires commerciaux entre la Lunda de Kazembe (lac Mweru) et les Portugais du Zambeze, ainsi qu'avec les Yao du Malawi. La conquete Bemba des annees 1820 a force de nombreux Bisa a se refugier vers les marecages de Bangweulu et la vallee du Luangwa. L'administration coloniale britannique (BSAC, puis Northern Rhodesia) a mis fin au commerce Bisa vers 1890-1900.",
+      "majorHistoricalEvents": "1798 : Le voyageur portugais Dionizio Rebello Curvo (expedition Lacerda) mentionne les Vaviza (Muizas/Bisa) sur la route vers Kazembe. 1831 : Gamitto observe des marchands Bisa actifs parmi leurs voisins est de la Luangwa. 1873 : Burton decrit les Bisa comme de fins commerçants actifs jusqu'en Afrique de l'Est. Annees 1820 : Conquete des terres Bisa par les Bemba, qui prennent le controle des mines de sel de Chibwe. Fin 19e siecle : Fin du commerce des esclaves, retour des Bisa a l'agriculture et a la peche."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Bisa sont organises en chefferies independantes sans chef supreme unificateur. Chaque chef gere son territoire de maniere autonome. Ce systeme decentralise a caracterise les Bisa tout au long de leur histoire. La succession est matrilineaire : le chef est succede par son frere, puis son neveu uterin, puis son petit-fils uterin.",
+      "clanOrganization": "Les Bisa sont matrilineaires. Chaque individu appartient a un groupe de descendance matrilineaire dont les membres descendent d'une ancetresse fondatrice commune tracee jusqu'au membre vivant le plus age. Le clan royal originel est le clan Ngona (champignon/Bena Ng'ona), dont les chefs Bisa sont issues. Les villages sont percus comme appartenant a des clans particuliers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance, le statut social, l'heritage et la succession sont matrilineaires. Les villages sont organises autour du chef de village (headman) et de son groupe de descendance matrilineaire. La succession au poste de headman depend du sexe, de l'age et de la residence, pas uniquement de la genealogie.",
+      "religiousAuthority": "Les Bisa pratiquent traditionnellement le culte des ancetres. Les esprits ancestraux sont invoques lors des ceremonies agricoles, funeraires et de guerison. La sorcellerie (ubwanga) joue un role important dans les croyances traditionnelles. Le christianisme est aujourd'hui dominant mais coexiste avec les pratiques ancestrales."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (Bisa / Wiza)",
+      "isoCodes": ["leb"],
+      "dialects": ["Bisa (Wiza)", "Lala", "Ambo", "Luano", "Swaka"],
+      "vehicularRole": "Le Bisa/Lala-Bisa (ISO leb) est une langue bantoue de Zambie etroitement apparentee au Bemba. Il est parle aussi bien en Zambie qu'en Republique Democratique du Congo. Le dialecte Swaka est divergent et parfois classe comme langue separee. Le Bemba sert de langue vehiculaire regionale en Province du Nord et Province de la Muchinga."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les Bisa pratiquent des ceremonies liees au cycle agricole et aux rites de passage. Les ceremonies funeraires incluent des rites de separation (rupture avec le milieu social), de transition et d'incorporation. Les van Gennep (1960) a analyse ces rites tripartites chez les Bisa. La Ichibwela Mushi est une fete des recoltes partagee avec les Lala et les Swaka.",
+      "symbols": "Le clan Bena Ng'ona (champignon) est le symbole de l'identite Bisa et de l'autorite des chefs. Les insignes de chefferie et les offrandes aux ancetres sont des elements centraux de la vie symbolique. L'ivoire et le cuivre etaient historiquement des symboles de richesse et de prestige.",
+      "artsAndMusic": "Les Bisa pratiquent le chant, la danse et la narration orale. L'artisanat traditionnel comprend le tissage, la poterie et la fabrication d'outils en fer (les Bisa etaient historiquement producteurs de sel et de fer). La harpe et les tambours sont des instruments traditionnels.",
+      "spiritualities": "Les Bisa ont une forte croyance dans les pouvoirs des ancetres (bazimu) et dans la sorcellerie. Beaucoup de Bisa se disent chretiens mais maintiennent la sorcellerie comme dernier recours en cas de malheur, selon les sources ethnographiques. Les sanctuaires ancestraux (musumba) du chef etaient autrefois des lieux de culte importants."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Bisa n'ont jamais forme de royaume centralise. Ils ont existe comme une confederation de chefferies independantes liees par la langue et les coutumes mais sans chef supreme. Parmi les chefferies, on note celles proches du lac Bangweulu (pecheuses) et celles des plateaux de la Muchinga (chasseuses et agricultrices).",
+      "relationsWithNeighbors": "Les Bisa ont ete des intermediaires commerciaux clefs entre la Lunda de Kazembe, les Portugais du Zambeze et les Yao du Malawi au 18e-19e siecle. Ils ont eu des relations tendues avec les Bemba, qui ont conquis leurs terres dans les annees 1820. Apres la colonisation, les Bisa de la vallee du Luangwa sont devenus culturellement et linguistiquement plus proches de leurs voisins orientaux.",
+      "conflictsOrAlliances": "Les Bemba ont conquis les terres Bisa sur le plateau dans les annees 1820, motivés par le lucratif commerce oriental et le controle des mines de sel de Chibwe. La plupart des Bisa ont fui vers les marecages de Bangweulu. Ceux qui se sont installes dans la vallee du Luangwa ont ete exposes a d'autres groupes. La rivalite commerciale entre Bisa et Bemba pour le controle des routes d'echange avec les Swahili est documentee.",
+      "diaspora": "Des Bisa se sont installes dans les centres urbains de Zambie depuis l'epoque coloniale. Certains se trouvent egalement dans la province du Katanga (RDC) en raison de proximites frontalières."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 864000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025) – Lala-Bisa in Zambia (864 000) ; Bisa in Zambia : 436 000 (categories distinctes selon Joshua Project)",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 864000, "percentage": 88 },
+        { "country": "COD", "population": 113000, "percentage": 12 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lala-Bisa language – Wikipedia (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
+      "Joshua Project – Lala-Bisa in Zambia (https://joshuaproject.net/people_groups/19057/ZA)",
+      "Joshua Project – Bisa in Zambia (https://joshuaproject.net/people_groups/10875)",
+      "Bisa – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/bisa/)",
+      "Bisa people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/bisa.html)",
+      "Ethnologue – Lala-Bisa Language LEB (https://www.ethnologue.com/language/leb/)",
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)"
+    ]
   }
 }

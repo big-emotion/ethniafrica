@@ -1,32 +1,111 @@
 {
   "id": "PPL_TIGRAY",
-  "nameMain": "Tigrayans",
+  "nameMain": "Tigray",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH", "ERI"],
   "content": {
     "appellations": {
-      "mainName": "Tigrayans",
-      "selfAppellation": "ትግራይ (Təgray)",
+      "mainName": "Tigray",
+      "selfAppellation": "ትግራዋይ (Tigrawayt — singulier masculin) / ትግራወይቲ (Tigraweyt — singulier feminin) / ትግሮም (Tigrom — pluriel)",
+      "exonyms": [
+        "Tigrayens (terme francais)",
+        "Tigrean (terme anglais)",
+        "Tigrigna speakers (designation linguistique utilisee en Erythree pour distinguer des Tigrinya eritreens)"
+      ],
+      "originOfExonyms": "Le nom Tigray (ትግራይ) derive probablement du terme ge'ez ancien Tigri ou Tigriti, dessinant la region et ses habitants. Le geographe arabe Ibn al-Faqih (vers 903 apr. J.-C.) est l'un des premiers a mentionner Tigri comme region distincte. Hiob Ludolf au 17e siecle decrit la region comme Regio Tigrensis ou Tigraia. L'appellation Tigrigna ou Tigrinya est parfois utilisee pour designer les locuteurs du tigrinya d'Erythree, a distinguer des Tigrayens d'Ethiopie.",
+      "whyProblematic": "La distinction entre Tigrayens d'Ethiopie et Tigrinya d'Erythree (aussi Tigrigna) est source de confusion : les deux groupes parlent le tigrinya mais sont separes par la frontiere nationale depuis 1993. En Erythree, le terme Tigrinya designe le groupe specifiquement eritreen. Le conflit du Tigray (2020-2022) a politise et tensifie les enjeux identitaires liees au terme Tigray.",
+      "contemporaryUsage": "Le terme Tigray designe a la fois le peuple, la region federale du nord de l'Ethiopie (Region Tigray) et la langue (tigrinya). L'identite tigraye est forte et etroitement liee au patrimoine aksumite et a l'Eglise orthodoxe ethiopienne. Le Tigray People's Liberation Front (TPLF) a domine la politique ethiopienne de 1991 a 2019 avant le conflit.",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "ethnoLinguisticGroup": "Sémitique du Nord",
-      "historicalRegion": "Hautes terres du Tigray (Éthiopie) et d’Érythrée",
+      "ethnoLinguisticGroup": "Semitique ethiopien septentrional (Ethio-semitique du Nord, groupe Tigrinya-Ge'ez)",
+      "historicalRegion": "Hautes terres du Tigray (nord de l'Ethiopie) — berceau de la civilisation aksumite, incluant les villes historiques d'Aksum, Adwa, Mekelle, Adigrat",
       "currentCountries": ["ETH", "ERI"]
     },
-    "ethnicities": ["Akele Guzay", "Enderta"],
-    "origins": {},
-    "organization": {},
+    "ethnicities": [
+      "Enderta — clan du sud du Tigray, region de Mekelle",
+      "Agame — clan du nord-est, region de Wukro et Adigrat",
+      "Tembien — clan du centre-ouest du Tigray",
+      "Kilite Awlalo — clan de la zone orientale du Tigray",
+      "Adwa — sous-groupe de la region d'Adwa, ville de la celebre victoire de 1896",
+      "Axum (Aksum) — centre historique et spirituel, gardiens du patrimoine aksumite",
+      "Akele Guzay — population des hauts plateaux du sud de l'Erythree, parlant tigrinya, historiquement liee aux Tigrayens"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tigrayens descendent directement des Aksumites — peuple semitique qui a fonde l'un des empires les plus puissants de l'Antiquite. L'ethnogenese tigraye est enracinee dans l'interaction entre les Semitiques parlant le ge'ez (langue des inscriptions royales aksumites) et les populations cushitiques (notamment les Agaw) habitant les hauts plateaux du nord-est de la Corne de l'Afrique. Les inscriptions sabaeennes dans la region de l'Erythree et du nord du Tigray attestent d'apports de l'Arabie du Sud meridionale. Le royaume de D'mt (8e-5e siecles av. J.-C.) est l'entite politique documentee precedant immediatement Aksum dans la region.",
+      "formationPeriod": "L'identite tigraye distincte s'est consolidee apres le declin du ge'ez comme langue vernaculaire (vers le 10e siecle), donnant naissance au tigrinya comme langue parlee dans les hauts plateaux de la region. La constitution d'institutions politiques locales (Bahr negash, Tigray Mekonnen) entre le 12e et le 17e siecle a renforce la coherence identitaire. Les Tigrayens se considerent comme les gardiens de la civilisation aksumite et les depositaires du patrimoine chretien le plus ancien d'Afrique.",
+      "migrationRoutes": [
+        "Apports semitiques depuis l'Arabie du Sud meridionale via la mer Rouge (vers 800 av. J.-C.) — attestes par des inscriptions en vieux sudarabique a Yeha",
+        "Extension vers le sud depuis les hauts plateaux eritreens vers le Tigray actuel au cours du premier millenaire",
+        "Migrations internes entre les zones de plaine et les hautes terres au sein du Tigray selon les pressions climatiques et politiques"
+      ],
+      "historicalSettlementZones": [
+        "Aksum (Axoum) — ancienne capitale du royaume aksumite, lieu de couronnement des empereurs ethiopiens",
+        "Yeha — site pre-aksumite du royaume de D'mt, temple de la Lune",
+        "Adwa — ville symbolique de la victoire contre l'Italie (1896)",
+        "Mekelle — capitale administrative actuelle de la region Tigray",
+        "Adigrat, Wukro — centres importants de la zone est du Tigray",
+        "Zalambessa, Shire, Axum — zones frontaliere et historiques"
+      ],
+      "unificationsOrDivisions": "Les Tigrayens ont maintenu une coherence identitaire forte grace a leur heritage aksumite et a l'Eglise orthodoxe ethiopienne. Des tensions historiques existent avec les Amhara pour le controle du pouvoir imperial ethiopien. Les Tigrayens ont gouverne l'Ethiopie sous Yohannes IV (1872-1889) et ont retrouve une influence politique dominante avec le TPLF (1991-2019). La creation de la region federale du Tigray en 1991 a renforce l'identite administrative tigraye. Le conflit du Tigray (2020-2022) a profondement divise la societe tigraye entre partisans et opposants du TPLF.",
+      "externalInfluences": "Apports sabaeens et arabes du sud (1er millenaire av. J.-C.). Adoption du christianisme (340 apr. J.-C.) sous le roi Ezana — premiere monarchie africaine chretienne. Arrivee des Neuf Saints syriaques (5e-6e siecles) qui renforcent le christianisme et fondent des monasteres (Debre Damo). Islam (7e siecle) : Negash en Tigray est le premier lieu d'implantation islamique en Ethiopie selon la tradition (Hijra de 615). Declin d'Aksum et pression des peuples des basses terres (7e-12e siecles). Invasion d'Ahmed Gragn (16e siecle). Colonisation italienne de l'Erythree (1890) separant les Tigrayens des Tigrigna eritreens. Guerre Ethiopie-Erythree (1998-2000) aux consequences devastatrices pour les zones frontalires.",
+      "majorHistoricalEvents": "Fondation du royaume de D'mt a Yeha (8e siecle av. J.-C.). Essor de l'empire aksumite (1er-7e siecles apr. J.-C.) : obelisques, palais, monnaies, relations avec Rome et la Perse. Conversion au christianisme du roi Ezana (vers 340 apr. J.-C.). Declin d'Aksum (7e-10e siecles). Victoire d'Adwa contre l'Italie (1er mars 1896) — premiere victoire africaine contre une puissance coloniale, decisivement tigraye sous Yohannes IV et Ras Mangasha. Occupation italienne du Tigray (1936-1941). Guerre civile ethiopienne — le TPLF fonde en 1975 prend le pouvoir en 1991. Guerre Ethiopie-Erythree (1998-2000) : devastation des zones frontalires du Tigray. Conflit du Tigray (novembre 2020 - novembre 2022) : l'un des conflits les plus meurtriers du 21e siecle, avec entre 162 000 et 600 000 morts selon les estimations."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Historiquement, le Tigray etait gouverne par un Ras (prince regional) sous l'autorite nominale de l'Empereur ethiopien. Le Bahr negash (gouverneur de la cote) controlait les zones eritreennes liees au Tigray. L'organisation locale est fondee sur les villages (tabia), regroupes en weredas (districts). Le systeme foncier rist (droits hereditaires collectifs sur la terre) est une institution centrale dans la societe rurale tigraye, comparable au systeme amhara. Le TPLF (Tigray People's Liberation Front), fonde en 1975 et au pouvoir en Ethiopie de 1991 a 2019, a constitue l'organisation politique dominante des Tigrayens pendant trois decennies.",
+      "clanOrganization": "Les Tigrayens sont organises en clans regionaux distincts : Enderta (sud), Agame (nord-est), Tembien (centre-ouest), Kilite Awlalo (est), Adwa (nord-ouest). Ces identites regionales influencent les alliances politiques et les mariages. Le systeme de lignage patrilineaire determine les droits fonciers (rist) et les identites familiales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (tsenat) structurent la societe tigraye. Les droits fonciers collectifs (rist) sont transmis de generation en generation et necessitent la preuve d'ascendance commune. L'honneur de la famille et du lignage (cheqna) est une valeur centrale dans la societe tigraye. Les nobles (mekwanint) revendiquent des genealogies remontant aux empereurs aksumites et salomonides.",
+      "religiousAuthority": "L'Eglise orthodoxe ethiopienne Tewahedo est l'institution spirituelle centrale du Tigray. Aksum est le lieu le plus sacre de l'Eglise : l'eglise Sainte-Marie de Sion (construite au 4e siecle, reconstruite au 17e siecle) abrite selon la tradition l'Arche de l'Alliance. Les monasteres anciens du Tigray (Debre Damo — 6e siecle ; Abreha wa Atsbeha — 4e siecle, eglise rupestre) sont des centres spirituels et patrimoniaux majeurs. Les eglises rupestres de Wukro et Tigray sont parmi les plus anciennes en Ethiopie. L'islam est une minorite (environ 5-10% de la population tigraye)."
+    },
     "languages": {
-      "mainLanguage": "Tigrinya"
+      "mainLanguage": "Tigrinya (ትግርኛ)",
+      "isoCodes": ["tir"],
+      "dialects": [
+        "Tigrinya du Tigray (Ethiopie) — dialecte central, parle par la majorite des Tigrayens d'Ethiopie",
+        "Tigrinya du nord (zone frontaliere Erythree-Ethiopie) — variete de transition entre le tigrinya eritreen et ethiopien",
+        "Tigrinya de Mekelle — dialecte urbain, fortement influence par l'amharique et l'arabe"
+      ],
+      "vehicularRole": "Le tigrinya est une langue nord-ethiosemitique, descendante directe du ge'ez classique. Il est la langue officielle de la region Tigray en Ethiopie et l'une des deux langues officielles de l'Erythree (avec l'arabe). Environ 9-10 millions de locuteurs en Ethiopie (Tigray) et 3-4 millions en Erythree. L'ecriture fidel (ge'ez) est utilisee pour le tigrinya, script commun avec l'amharique. Le ge'ez reste la langue liturgique de l'Eglise orthodoxe ethiopienne Tewahedo. La lingua franca entre Tigrayens et les autres Ethiopiens est l'amharique, langue officielle nationale."
     },
     "culture": {
-      "source_0": "Liturgie orthodoxe.",
-      "source_1": "Manuscrits, poésies religieuses.",
-      "source_2": "Architecture rupestre (Wukro, Abreha Atsbeha)."
+      "majorRites": "Le calendrier liturgique de l'Eglise Tewahedo structure la vie rituelle tigraye : Timkat (Epiphanie, janvier), Meskel (Fete de la Croix, septembre), Gena (Noel ethiopien, janvier), et de nombreuses fetes de saints (notamment le festival d'Axum au Maryam Zion le 21 novembre, jour de la Presentation de Marie). Les pelerinages aux monasteres anciens (Debre Damo, Abreha wa Atsbeha) sont des rites majeurs. Le mariage (qurban) implique des ceremonies religieuses et communautaires de plusieurs jours. La circoncision est pratiquee. Les funerailles incluent des veillees de 3 jours avec chants liturgiques. Le jeune de 40 jours de Tsome Abiy (Grand Careme) est observe strictement. La commemorationdu Saint-Sacrement (Qeddase) est hebdomadaire.",
+      "symbols": "Les obelisques (steles) d'Aksum sont le symbole civilisationnel le plus puissant du Tigray — notamment la Grande Stele d'Aksum (33 metres, 500 tonnes), la plus haute jamais erigee. L'Arche de l'Alliance (Tabot), reputee conservee a l'eglise Sainte-Marie de Sion d'Aksum, est le symbole spirituel supreme. L'eglise rupestre (bete meskel — maison de la croix) est un symbole architectural unique. La croix processionnelle tigraye (mesqal) aux motifs entrelaces est un objet liturgique et artisanal emblematique. Le manuscrit enluminee en ge'ez (peau de chevre) est un symbole du patrimoine intellectuel.",
+      "artsAndMusic": "La liturgie orthodoxe chantee (zema) en ge'ez, codifiee par le moine Yared (6e siecle), est la grande tradition musicale du Tigray. Les eglises rupestres (Tigray abrite environ 120 eglises rupestres, dont Abreha wa Atsbeha et Wukro Chirkos) sont un patrimoine architectural exceptionnel. La peinture religieuse sur parchemin et les manuscrits enlumines sont des arts visuels anciens. La poesie epique (qine) est une forme litteraire hautement estimee. La danse tigraye est similaire a l'eskista amhara mais avec des rythmes propres. L'artisanat inclut le tissage de tissus colores, la poterie et le travail des metaux. La cuisine tigraye partage les bases de la cuisine habesha (injera, tibsi, genfo) avec des specialites locales comme le tsebhi (ragoout tigrinya).",
+      "spiritualities": "Le christianisme orthodoxe ethiopien Tewahedo est la religion de la grande majorite des Tigrayens. La specificite tigray-Tewahedo inclut : la veneration de l'Arche de l'Alliance conservee a Aksum ; les Neuf Saints syriaques (Abba Aregawi fondateur de Debre Damo, Abba Garimaw, etc.) comme figures fondatrices du christianisme tigrayen ; les monasteres anciens comme lieux de pelerinage ; l'usage liturgique exclusif du ge'ez. Des pratiques pre-chretiennes persistent : cultes des esprits zar (possessions spirituelles) traites par des guerisseurs speciaux (balazar), croyance aux tabots comme objets sacres de protection. L'islam est present dans certaines zones basses et frontalires du Tigray (environ 5-10% de la population)."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Tigray est le berceau de deux des entites politiques les plus importantes de l'histoire africaine : le royaume de D'mt (8e-5e siecles av. J.-C.) a Yeha, et surtout le royaume d'Aksum (1er-12e siecles apr. J.-C.), qui a ete l'une des quatre grandes civilisations de l'Antiquite tardive. Aksum a frappe sa propre monnaie, erige des obelisques monumentaux, controle le commerce de la mer Rouge, converti au christianisme au 4e siecle et etendu son pouvoir jusqu'au Yemen. Les Tigrayens ont gouverne l'empire ethiopien sous Yohannes IV (1872-1889), qui a resiste aux invasions islamique et coloniale. Le TPLF (1975-2019) a ete la force politique dominante de l'Ethiopie post-Derg.",
+      "relationsWithNeighbors": "Relations commerciales et dynastiques anciennes avec les royaumes de l'Arabie du Sud (Saba, Himyar) via la mer Rouge. Relations complexes avec les Amhara : alliances dynastiques, rivalites pour le pouvoir imperial, fracture lors du conflit du Tigray (2020-2022). Relations avec les Afar (voisins a l'est) : echanges commerciaux et tensions occasionnelles. Relations avec les Agaw, population cushitique partiellement tigriynisee. Liens historiques avec les Tigrinya d'Erythree, separes par la guerre d'independance eritreenne (1961-1991) et par la guerre Ethiopie-Erythree (1998-2000). Relations avec l'Erythree restees tendues apres le conflit du Tigray, durant lequel les forces eritreennes ont combat aux cotes de l'armee ethiopienne.",
+      "conflictsOrAlliances": "Victoire de Yohannes IV contre l'invasion egyptienne a Gundet (1875) et Gura (1876). Victoire d'Adwa contre l'Italie (1er mars 1896) — tournant de l'histoire africaine. Resistance a l'occupation italienne (1936-1941). Rebellion du TPLF contre Haile Selassie puis le Derg (1975-1991). Prise du pouvoir par le TPLF-EPRDF (1991). Guerre Ethiopie-Erythree (1998-2000). Conflit du Tigray (novembre 2020 - novembre 2022) : declenche le 4 novembre 2020, opposant les forces federales ethiopiennes, l'armee eritreenne et les milices amhara au TPLF et aux Forces de defense du Tigray (TDF). Accord de Pretoria (2 novembre 2022) mettant fin aux hostilites. Bilan : entre 162 000 et 600 000 morts selon les estimations (University of London : 102 000 ; Universite de Gand : 162 000-378 000 ; mediateur UA Olusegun Obasanjo : environ 600 000), des millions de deplaces, crimes de guerre documentes par de nombreuses organisations internationales.",
+      "diaspora": "La diaspora tigraye est presente dans plusieurs pays. Les Etats-Unis (Washington D.C., Dallas, Atlanta), le Canada, les pays nordiques (Suede, Norvege), l'Australie et d'autres pays europeens accueillent des communautes tigraye. La diaspora a joue un role actif pendant le conflit du Tigray (2020-2022) : mobilisation internationale, levee de fonds humanitaires et pressions diplomatiques. Les refugies tigrayens en Soudan (environ 60 000-80 000 a la fin du conflit) constituent une diaspora de crise. Les deplaces internes au Tigray ont ete evalues a plusieurs centaines de milliers."
+    },
     "demography": {
-      "source": "peuple_demographie_globale.csv"
+      "totalPopulation": 8500000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur le recensement ethiopien CSA 2007 (Tigrayens : 4,3 millions soit 6,1% de la population ethiopienne), projections de croissance demographique, et ajustements post-conflit. Le conflit du Tigray (2020-2022) a cause entre 162 000 et 600 000 morts et des millions de deplaces, affectant significativement la population. Les projections CSA 2025 suggerent une population tigraye d'environ 6,5-8 millions en Ethiopie. Ethnologue (SIL 2024) estime 9,7 millions de locuteurs du tigrinya en Ethiopie.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 8000000,
+          "note": "Region Tigray (nord de l'Ethiopie) — chef-lieu Mekelle. La population a ete affectee par le conflit 2020-2022 causant des centaines de milliers de morts et plusieurs millions de deplaces."
+        },
+        {
+          "country": "ERI",
+          "population": 500000,
+          "note": "Tigrayens proches de la frontiere eritreenne, distinct des Tigrinya eritreens (dont la population est estimee a 2-3 millions)"
+        }
+      ]
     },
-    "sources": ["Encyclopaedia Aethiopica", "Ethiopian CSA", "Ethnologue (tir)"]
+    "sources": [
+      "Wikipedia EN — Tigrayans. https://en.wikipedia.org/wiki/Tigrayans",
+      "Wikipedia EN — Tigray war. https://en.wikipedia.org/wiki/Tigray_war",
+      "Wikipedia EN — Casualties of the Tigray war. https://en.wikipedia.org/wiki/Casualties_of_the_Tigray_war",
+      "Council on Foreign Relations — Conflict in Ethiopia. https://www.cfr.org/global-conflict-tracker/conflict/conflict-ethiopia",
+      "Ethnologue — Tigrinya (tir). https://www.ethnologue.com/language/tir",
+      "EthnoMed — Tigrean Cultural Profile. https://ethnomed.org/resource/tigrean-cultural-profile/",
+      "PMC Population Health Metrics — Civilian death and injury from airstrikes in Tigray. https://pmc.ncbi.nlm.nih.gov/articles/PMC11909939/",
+      "Martin Plaut — Tigray, evidence of the death toll. https://martinplaut.com/2025/05/30/tigray-evidence-of-the-death-toll-in-the-2020-2020-war/",
+      "Encyclopaedia Aethiopica, vol. 4 (Uhlig ed.), Harrassowitz Verlag, 2010",
+      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et"
+    ]
   }
 }

@@ -2,59 +2,95 @@
   "id": "PPL_MINA",
   "nameMain": "Mina",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["TGO"],
+  "currentCountries": ["TGO", "BEN"],
   "content": {
     "appellations": {
       "mainName": "Mina",
-      "selfAppellation": "",
-      "exonyms": ["\"Mina\" (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Gen",
+      "exonyms": [
+        "Gen",
+        "Guin",
+        "Guen",
+        "Gen-Mina",
+        "Guin-Mina",
+        "Popo",
+        "Ane",
+        "Anecho"
+      ],
+      "originOfExonyms": "Le terme Mina vient de la ville d'Elmina (au Ghana actuel), d'ou les ancetres Ane ont emigre. Les Europeens ont adopte ce terme a partir du 17e siecle pour designer les habitants d'Aneho et de Glidji. Gen (ou Guin) est l'autonymo utilise par le peuple lui-meme dans sa propre langue ; il derive du terme Ga qui designait les Ga d'Accra dont les Gen sont issus. Popo est un autre exonyme europeen ancien. Ane et Adjigo designent plus specifiquement les Mina d'Aneho (issus d'Elmina). Anecho est synonyme utilise dans les recensements togolais.",
+      "whyProblematic": "La denomination Gen-Mina combine deux groupes distincts : les Gen (issus des Ga d'Accra) et les Mina stricto sensu (issus des Ane d'Elmina). Localement, les habitants d'Aneho preferent Mina tandis que ceux de Glidji preferent Gen. En francais colonial, Mina fut utilise de maniere elargie pour designer l'ensemble des peuples de la cote ouest-africaine du golfe de Guinee, ce qui cree des confusions. Les recensements utilisent tantot Mina, tantot Guen ou Anecho comme synonymes.",
+      "contemporaryUsage": "Mina est le terme le plus repandu dans les sources francophones et les recensements togolais et beninois. Gen-Mina (Guin-Mina) est l'appellation academique preferred pour designer l'ensemble du groupe. Les membres du groupe utilisent Gen dans leur propre langue. Les recensements du Togo de 1960, 1970 et 2010 utilisent Mina, Guen et Anecho comme synonymes. Les recensements du Benin de 1979 a 2013 utilisent uniquement Mina.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud du Togo (zones côtières)",
-      "currentCountries": ["TGO"]
+      "ethnoLinguisticGroup": "Kwa, sous-famille Gbe (apparentes aux Ewe, Fon, Adja)",
+      "historicalRegion": "Cote sud du Togo (cantons d'Aneho et Glidji) et sud-ouest du Benin (Agboue)",
+      "currentCountries": ["TGO", "BEN"]
     },
-    "ethnicities": ["Mina"],
+    "ethnicities": ["Mina", "Gen", "Ane (Adjigo)", "Gen-Mina"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud du Togo (zones côtières)"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Gen-Mina sont constitues de deux groupes distincts ayant fusionne. Les Gen descendent des Ga du royaume d'Accra (Ghana actuel) qui se refugierent sur la cote togolaise apres la conquete Akwamu d'Accra en 1677. Les Mina (Ane) descendent des habitants d'Elmina (Ghana actuel) qui migrerent vers l'est, probablement apres les guerres Denkyira et la pression Akwamu a la fin du 17e siecle. Une source europeenne des annees 1650 mentionne Aneho comme 'un etablissement de canoiers d'Elmina'.",
+      "formationPeriod": "Les Gen s'installerent a Glidji entre 1683 et 1687 sous la direction des princes Foli Bebe et Foli Hemadzro apres la mort du roi d'Accra Okai Koi (1677). Les Ane (Mina) etaient deja etablis a Aneho avant l'installation des Gen a Glidji. Les deux groupes fusionnerent progressivement, developpant une identite commune Gen-Mina entre la fin du 17e et le debut du 18e siecle. Dans la premiere moitie du 19e siecle, des emigrations d'Aneho etablirent des communautes Mina a Agbodrafo (Togo) et Agoue (Benin).",
+      "migrationRoutes": [
+        "Gen : du royaume d'Accra (Ghana) vers le littoral togolais via la cote atlantique (1677-1687)",
+        "Mina (Ane) : d'Elmina (Ghana) vers Aneho (Togo), probablement des la premiere moitie du 17e siecle",
+        "Expansions secondaires vers Agbodrafo (Togo) et Agoue (Benin) au 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Canton de Glidji (capitale du Royaume Gen), Togo meridional",
+        "Canton d'Aneho (ville fondee par les Ane), Togo meridional",
+        "Agbodrafo, Togo",
+        "Agoue, Benin"
+      ],
+      "unificationsOrDivisions": "La fusion progressive des Gen (de Glidji) et des Mina/Ane (d'Aneho) a donne naissance a l'identite collective Gen-Mina. La langue Gen s'est developpee par assimilation linguistique avec les locuteurs Gbe environnants, les Ga de Glidji abandonnant progressivement leur langue originelle Ga au profit du Gen, une forme de Gbe integrant des emprunts Fanti, Ga-Adangme et europeens. Le Ga etait encore parle a Glidji jusqu'a la fin du 19e siecle.",
+      "externalInfluences": "Commerce florissant avec l'Europe (commerce atlantique, traite negriere) et l'interieur de l'Afrique de l'Ouest depuis le 17e siecle. Colonisation allemande puis francaise (Togo). Contact avec les Ewe, Adja, Fon et autres peuples Gbe environnants qui ont influence la langue et la culture. Influence du catholicisme romain (missionnaire Francesco Borghero, 1860s). Traite negriere : les ancetres esclaves et marchands d'esclaves font partie de la memoire collective (vodun Tchamba).",
+      "majorHistoricalEvents": "1650s : premiere mention d'Aneho comme etablissement de canoiers d'Elmina. 1677 : conquete Akwamu d'Accra, fuite des Gen vers l'ouest. 1683-1687 : fondation de Glidji par les Gen sous les princes Foli Bebe et Foli Hemadzro. 1687 : premiere description detaillee d'Aneho et Glidji par John Carter, factor de la Royal African Company. 19e siecle : expansion vers Agbodrafo et Agoue, developpement du commerce cotinier. 1934 : redaction de l'Histoire de Petit-Popo et du Royaume Guin par le roi Agbanon II. 1960 : independance du Togo."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Royaume Gen de Glidji avec un roi (le roi de Glidji), dont l'Histoire de Petit-Popo et du Royaume Guin fut redigee en 1934 par le roi Agbanon II. Les Mina d'Aneho ont leur propre structure de chefferie. Les Gen-Mina constituent une partie importante de l'elite politique, commerciale et administrative du Togo et du Benin.",
+      "clanOrganization": "Organisation clanique : les Ane (Mina d'Aneho) appartiennent au clan Adjigo. Les prenoms comme Ayite, Late ou Mate fonctionnent comme des codes d'identification claniques. Les mariages entre hommes Ga et femmes locales (Adja, Phla) ont contribue au developpement de l'identite composite Gen-Mina.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques (dont le clan royal Adjigo chez les Ane) structurent l'acces au pouvoir et l'identite sociale. Les ancetres fondateurs (Foli Bebe, Foli Hemadzro, Quam Desu) restent des references identitaires essentielles.",
+      "religiousAuthority": "Chefs spirituels lies aux cultes Vodun. Le Vodun Tchamba (lie a la memoire de l'esclavage) est une forme de spiritualite specifique aux Gen-Mina. La pierre sacree de Glidji, revelee lors de la fete Epe-Ekpe, est gardee par les autorites spirituelles traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Mina (gej)",
+      "mainLanguage": "Gen (Mina)",
       "isoCodes": ["gej"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "dialecte d'Aneho",
+        "dialecte de Glidji",
+        "dialecte de Togoville"
+      ],
+      "vehicularRole": "Le Gen (aussi appele Genge, Gebe, Guin, Mina ou Popo) est une langue Gbe tonale de la famille Niger-Congo. Mutuelle intelligibilite avec l'Ewe dont il est considere comme un dialecte par certains linguistes. En 2019, 476 000 locuteurs au Togo et 144 000 au Benin en 2021. Le Gen est utilise dans l'enseignement religieux chretien et dans les emissions culturelles. Le francais est la langue officielle au Togo et au Benin. En milieu urbain, l'ewe sert de langue vehiculaire regionale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Epe-Ekpe : fete annuelle celebree en septembre, marquant le Nouvel An lunaire des Mina. Sur quatre jours, la fete inclut musique et danse, et culmine avec le kpesoso (revelation de la pierre sacree de Glidji). La couleur de la pierre predit le destin de Glidji pour l'annee a venir. Fete de l'igname (yam festival) celebrant les recoltes avec ceremonies elaborees et rassemblements communautaires. Ceremonies du Vodun Tchamba pour honorer la memoire des ancetres esclaves et marchands d'esclaves.",
+      "symbols": "La pierre sacree de Glidji (revelee lors du kpesoso a l'Epe-Ekpe) est le principal symbole spirituel et identitaire du royaume Gen. Le canoe (pirogue) est un symbole historique fondamental : les Ane d'Aneho etaient initialement des 'canoiers d'Elmina' selon les sources europeennes du 17e siecle.",
+      "artsAndMusic": "Musique traditionnelle avec tambours, instruments a percussion et chant. Danse ceremonielle lors des fetes Epe-Ekpe et des evenements sociaux. Ensembles de percussions et chorales. Les troupes folkloriques (comme la Troupe Folklorique d'Aneho) maintiennent les traditions musicales Gen-Mina. Les Gen-Mina ont developpe une culture commerciale et maritime liee a leur position cotiere.",
+      "spiritualities": "Vodun (Voodoo) central dans la vie spirituelle : croyance en diverses divinites et esprits habitant le monde naturel. Culte des ancetres. Vodun Tchamba : variete specifique de Vodun mettant en evidence les experiences des ancetres esclaves et des marchands d'esclaves ; pratique distinctive chez les Mina du Togo. Certains Gen-Mina pratiquent aussi le christianisme catholique ou protestant, heritage des missions du 19e siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume Gen de Glidji (Genigan, Genny), fonde entre 1683 et 1687 par les princes Foli Bebe et Foli Hemadzro. A son apogee, le royaume s'etendait du fleuve Mono au fleuve Volta (selon certaines traditions). La ville d'Aneho a une structure de chefferie Ane (clan Adjigo) distincte. Ces deux entites forment ensemble la base historique de l'identite Gen-Mina.",
+      "relationsWithNeighbors": "Commerce maritime et terrestre avec les Ewe, Adja, Fon et autres peuples du golfe de Guinee. Negotiation de terres avec le roi Adja Kadomabou lors de l'installation a Glidji (avec mariages diplomatiques : les princesses Dan et Zafi donnees en mariage aux princes Foli). Commerce avec les marchands europeens (Royale African Company, compagnies franchaises et portugaises). Les Gen-Mina constituent une partie importante de l'elite politique et commerciale du Togo et du Benin.",
+      "conflictsOrAlliances": "Fuite des Gen d'Accra suite a la conquete Akwamu (1677). Alliance avec le roi Adja de Glidji lors de l'installation (negociation de terres et alliances matrimoniales). Participation au commerce atlantique (traite negriere) : les ancetres Gen-Mina furent a la fois victimes et acteurs du commerce d'esclaves, memoire conservee dans le Vodun Tchamba.",
+      "diaspora": "Communautes Gen-Mina etablies a Agbodrafo (Togo) et Agoue (Benin) au 19e siecle. La cote Lomé-Ouidah concentre la majorite des Gen-Mina. Migrations internes vers Lomé (capitale togolaise) et autres centres urbains. Les Gen-Mina constituent une partie de l'elite politique, commerciale et administrative du Togo et du Benin."
     },
     "demography": {
-      "totalPopulation": 800,
+      "totalPopulation": 740000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 : 581 000 au Togo et 159 000 au Benin, total mondial 740 000. 101 Last Tribes / Peoplegroups.org 2023 estime 676 000 dans 2 pays. Recensement Togo 2010 (IPUMS) : 25 937. Recensement Benin 2013 (IPUMS) : 11 686. En 1996 : plus de 150 000 dont 60 000 Ane.",
+      "distributionByCountry": [
+        { "country": "TGO", "population": 581000 },
+        { "country": "BEN", "population": 159000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia – Gen-Mina people (https://en.wikipedia.org/wiki/Gen-Mina_people)",
+      "Wikipedia – Gen language (https://en.wikipedia.org/wiki/Gen_language)",
+      "Wikipedia – Mina (peuple) (https://fr.wikipedia.org/wiki/Mina_(peuple))",
+      "Joshua Project – Gen, Mina in Togo, 2025 (https://joshuaproject.net/people_groups/print/19053/TO)",
+      "Joshua Project – Gen, Mina in Benin, 2025 (https://joshuaproject.net/people_groups/19053/BN)",
+      "101 Last Tribes – Mina people (https://www.101lasttribes.com/tribes/mina.html)",
+      "Gradhiva / Musee du quai Branly – Nos grands-peres achetaient des esclaves : le vodun Tchamba chez les Mina (https://journals.openedition.org/gradhiva/1188)",
+      "ALMA – The Language of African Music: Gen-Mina (https://alma.matrix.msu.edu/the-language-of-african-music-gen-mina)"
+    ]
   }
 }

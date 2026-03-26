@@ -1,70 +1,98 @@
 {
-  "id": "PPL_LUBA_KASAI",
-  "nameMain": "Luba (Kasaï 2)",
+  "id": "PPL_LUBA_KASAI2",
+  "nameMain": "Luba (Kasai) — Variante Lulua",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["COD"],
   "content": {
     "appellations": {
-      "mainName": "Luba (Kasaï 2)",
-      "selfAppellation": "Baluba",
-      "exonyms": ["« Luba » (terme utilisé par les Européens)"],
+      "mainName": "Luba-Kasai (variante Lulua)",
+      "selfAppellation": "Bena-Lulua / Luluwa",
+      "exonyms": [
+        "Lulua (terme geographique tire de la riviere Lulua)",
+        "Luluwa (variante orthographique)",
+        "Bena-Lulua (litteralement 'gens de la Lulua')",
+        "Luba-Lulua (designation ISO 639)",
+        "Luba (Kasai 2) (designation de base de donnees EthniAfrica)"
+      ],
+      "originOfExonyms": "Le nom Bena-Lulua (ou Luluwa) fait reference a la riviere Lulua, affluent du Kasai, dans la vallee de laquelle vit principalement ce groupe. Le terme Lulua fut adopte par les administrateurs coloniaux belges pour distinguer ce sous-groupe luba occidental des Baluba orientaux du Kasai-Oriental. Dans la classification ISO 639, le terme officiel est Luba-Lulua (L31b), variant occidental du Tshiluba.",
+      "contemporaryUsage": "Les membres de ce groupe se designent comme Bena-Lulua ou Luluwa, distincts des Baluba du Kasai-Oriental. Ils partagent la langue tshiluba mais avec un dialecte distinct (Cena-Luluwa/L31b). Dans le contexte politique congolais post-independence, les Lulua et les Luba formerent deux factions distinctes lors des violences de 1959-1960. Aujourd'hui, cette distinction est toujours reconnue socialement et politiquement.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone L)",
-      "historicalRegion": "RDC (Kasaï)",
+      "ethnoLinguisticGroup": "Bantou (Zone L, L31b — dialecte occidental du groupe luban)",
+      "historicalRegion": "Vallee de la riviere Lulua, Kasai-Occidental (actuel Kasai-Central) — Province de Kananga, RDC",
       "currentCountries": ["COD"]
     },
     "ethnicities": [
-      "Luba du Kasaï central",
-      "Luba du Kasaï oriental",
-      "Luba du Kasaï occidental",
-      "Sous-groupes régionaux"
+      "Bena-Lulua proprement dits — groupe central de la vallee de la Lulua (Kasai-Central)",
+      "Bena-Mpukaa — sous-groupe du Kasai-Central dont le dialecte fut base du tshiluba standard",
+      "Bena-Cimbala — sous-groupe de la region de Kananga",
+      "Bena-Tshibala — groupe apparente du sud Kasai-Central",
+      "Populations de transition Lulua-Kuba — en bordure du royaume Kuba au nord"
     ],
     "origins": {
-      "ancientOrigins": "Les Luba du Kasaï sont originaires de la région du Kasaï en RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone L). Ancien royaume Luba.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Luba). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Luba du Katanga.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Bena-Lulua sont une branche du grand ensemble Luba-Kasai etablie dans la vallee de la riviere Lulua, dans l'actuel Kasai-Central. Comme l'ensemble des Luba-Kasai, ils descendent des populations bantoues luban qui migrerrent depuis le Katanga-Upemba vers le Kasai a partir du 15e siecle. La riviere Lulua constitue leur axe geographique et identitaire principal. Leur dialecte (Cena-Luluwa, L31b) se distingue du dialecte oriental (Buluba, L31a) principalement par les tons, l'intonation et certaines voyelles finales.",
+      "formationPeriod": "L'identite Lulua distincte se consolida progressivement entre le 17e et le 19e siecle, sous l'influence des contacts avec les peuples voisins (Kuba, Pende, Chokwe) et de l'organisation en chefferies autonomes. L'arrivee des missions catholiques et protestantes dans le Kasai des les annees 1880-1890 differencia les trajectoires des Lulua et des Baluba orientaux. Lors de la decolonisation (1959-1960), les Lulua s'opposerent violemment aux Baluba du Kasai-Oriental, percus comme concurrents pour les postes administratifs.",
+      "migrationRoutes": [
+        "Migration depuis le Katanga-Upemba vers le bassin du Kasai (15e-17e siecles)",
+        "Etablissement dans la vallee de la Lulua comme territoire principal",
+        "Migrations de travail vers Kananga (chef-lieu du Kasai-Central) aux 20e-21e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Vallee de la riviere Lulua, Kasai-Central — territoire historique core",
+        "Region de Kananga — principal centre urbain",
+        "Secteurs ruraux du Kasai-Central (Dimbelenge, Tshikapa vers l'ouest)"
+      ],
+      "unificationsOrDivisions": "Les Lulua ne formerent jamais un etat centralise mais s'organiserent en chefferies. Leur conflit avec les Baluba du Kasai-Oriental (1959-1960) resulta en une segregation residuelle persistante entre les deux communautes. Des violences inter-ethniques recurrirent lors du conflit du Kasai (2016-2018). Les deux communautes partagent la langue tshiluba mais maintiennent des identites sociales distinctes.",
+      "externalInfluences": "Contacts avec le Royaume Kuba (Bushong) au nord. Relations commerciales avec les Chokwe et Pende a l'ouest. Influence des missions catholiques (Peres Oblats de Marie Immaculee) et protestantes (American Presbyterian Congo Mission). Colonisation belge et administration centralisee de Kananga (Luluabourg). Independence du Congo (1960) et conflits politiques lies a la representation des groupes dans les institutions."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Luba). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies (chefferie dirigee par un mfumu). Chaque chefferie est autonome et gouvernee par un conseil de notables. L'organisation est moins centralisee que chez les Luba-Katanga. Les notables (bafulumuka) assistent le chef dans les decisions importantes. Le systeme de gouvernance traditionnel coexiste avec les structures administratives de l'Etat congolais.",
+      "clanOrganization": "Les Bena-Lulua sont organises en clans (bena) patrilineaires, chacun nomme d'apres un ancetre commun ou un lieu fondateur. L'exogamie clanique est la regle : le mariage au sein du meme clan est interdit. Les solidarites claniques jouent un role central dans la vie economique, sociale et en cas de conflits.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (dikanda) structurent les droits fonciers, les obligations matrimoniales et les responsabilites rituelles. Le chef de lignage (mfumu wa dikanda) est responsable de la mediation interne et de la representation du groupe dans les affaires publiques. Les relations de parenté par alliance matrimoniale tissent un reseau d'obligations reciproques entre lignages.",
+      "religiousAuthority": "Les devins-guerisseurs (Nganga) detiennent une autorite spirituelle dans la tradition. Le culte des ancetres (Bankambo) est central. Le christianisme catholique (via les Oblats) et protestant est predominant. Des mouvements synchretiques afro-chretiens et eglises de reveil sont presents dans la region de Kananga."
     },
     "languages": {
-      "mainLanguage": "Luba-Kasaï",
-      "vehicularRole": "Le luba-kasaï est parlé par la majorité des Luba du Kasaï. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Tshiluba — dialecte Cena-Luluwa (variante occidentale)",
+      "isoCodes": ["lua"],
+      "dialects": [
+        "Cena-Luluwa (L31b) — dialecte occidental, specifique aux Bena-Lulua du Kasai-Central",
+        "Cena-Kananga — sous-variante de la region de Kananga",
+        "Tshiluba standard (base Cikwa-diishi + Cena-Mpuka) — koine utilisee dans les medias et l'education"
+      ],
+      "vehicularRole": "Les Bena-Lulua parlent le dialecte Cena-Luluwa du tshiluba (L31b), qui se distingue du dialecte oriental L31a par les tons, l'intonation et certaines voyelles finales, mais les deux variantes sont mutuellement intelligibles. Le tshiluba standardise (base sur les deux dialectes) est la langue nationale des provinces du Kasai. Dans les zones rurales du Kasai-Central, le dialecte Lulua est dominant."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels luba, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites d'initiation masculine et feminine. Ceremonies de mariage avec dot en nature (betail, biens). Consultations de divination (Lubuko) par le Nganga. Funerailles avec periodes de deuil communautaire. Rites de protection et de benediction du territoire. Ceremonies de premiere recolte et de premier labour. Rites d'investiture des chefs de chefferie.",
+      "symbols": "La riviere Lulua comme symbole geographique identitaire. La ville de Kananga (ex-Luluabourg), capitale du Kasai-Central, comme centre politique et demographique. Les instruments de forge en fer comme symboles d'autorite traditionnelle. Les tissus traditionnels et la poterie.",
+      "artsAndMusic": "Sculpture sur bois (statues, masques, appuie-tetes). Poterie traditionnelle. Chants et danses lors des ceremonies de mariage, d'investiture et de deuil. Tissage de nattes et paniers. Tradition orale de contes (bisamba), proverbes et chants epiques. La Missa Luba (chef-d'oeuvre choral de 1958 compose avec des chanteurs luba-kasai) illustre la creativite musicale de l'ensemble du groupe luba-kasai.",
+      "spiritualities": "Religion traditionnelle : venerations des ancetres (Bankambo), croyance en Shakapanga (Createur) et Leza (Etre supreme). La divination (Lubuko) par le Nganga est pratiquee couramment. Le christianisme catholique est tres ancre depuis la periode coloniale. Des Eglises protestantes (presbyteriennes) sont actives. Un syncretisme entre traditions ancestrales et pratiques chretiennes est courant dans la vie quotidienne."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora luba dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bena-Lulua s'organiserent en chefferies independantes sans former d'empire. La chefferie est l'unite politique de base. Sous la colonisation belge, Kananga (Luluabourg) devint le principal centre administratif du Kasai et polarisa la rivalite Lulua-Luba. La denomination Luluabourg fait directement reference au fleuve Lulua et symbolise la presence lulua dans cette ville.",
+      "relationsWithNeighbors": "Relations etroites avec les Luba-Kasai orientaux (langue commune, mais tensions identitaires). Contacts avec le Royaume Kuba (Bushong) au nord. Relations commerciales avec les Pende et Chokwe a l'ouest. Tensions recurrentes avec les Baluba de Kasai-Oriental autour des ressources administratives et economiques.",
+      "conflictsOrAlliances": "Conflit Luba-Lulua (1959-1960) : violences inter-ethniques majeures au moment de l'independance du Congo, causees par des tensions autour des postes administratifs et de la representation politique. Des dizaines de milliers de personnes furent deplacees. Ce conflit contribua a l'instabilite de la premiere republique congolaise. Nouvelles tensions lors du conflit du Kasai (2016-2018) qui impliqua egalement les communautes lulua.",
+      "diaspora": "Presence lulua a Kananga, Mbuji-Mayi et Kinshasa. La diaspora internationale est concentree principalement en Belgique et en France, issue des migrations academiques et des vagues de refugies des crises successives. Des communautes lulua sont presentes dans plusieurs pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 3000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue — Tshiluba (lua) : total de 6,3 millions incluant les deux dialectes. Estimation de la part Lulua (dialecte L31b) : environ 3 millions en 2025, principalement dans le Kasai-Central. CIA World Factbook — RDC.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 3000000,
+          "note": "Province du Kasai-Central (Kananga et environs), vallee de la riviere Lulua ; diaspora interne a Kinshasa et autres centres urbains de RDC"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Luba-Kasaï language (lua)",
-      "CIA World Factbook – RDC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Luba-Kasai language. https://en.wikipedia.org/wiki/Luba-Kasai_language",
+      "Wikipedia FR — Bena-Lulua. https://fr.wikipedia.org/wiki/Bena-Lulua",
+      "SIL Ethnologue — Luba-Kasai (lua). https://www.ethnologue.com/language/lua/",
+      "IJREHC — Luba People and Politeness in their Everyday Speeches. https://ijrehc.com/uploads2024/ijrehc05_55.pdf",
+      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
+      "Minority Rights Group — Kasaians of Luba origin. https://minorityrights.org/communities/kasaians-of-luba-origin/",
+      "Wikimedia Commons — Tshiluba language. https://commons.wikimedia.org/wiki/Category:Tshiluba_language"
     ]
   }
 }

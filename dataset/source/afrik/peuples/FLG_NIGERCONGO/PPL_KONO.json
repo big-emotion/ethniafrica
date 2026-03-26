@@ -7,62 +7,92 @@
     "appellations": {
       "mainName": "Kono",
       "selfAppellation": "Kono",
-      "exonyms": ["Kono (terme utilisé par les Européens)"],
+      "exonyms": ["Konnoh", "Konoho"],
+      "originOfExonyms": "Le terme Kono est utilise a la fois comme auto-denomination et comme designation externe. La variante Konnoh est utilisee dans certaines sources coloniales britanniques. Certains ethnolinguistes classent les Kono comme un groupe Mande de frange (Fringe Manding). La tradition orale kono affirme qu'ils seraient le meme peuple que les Vai (Gallinas), un groupe coastal de Sierra Leone et du Liberia.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kono est l'appellation standardisee en anglais et dans les recensements de Sierra Leone. Les Kono representent 4,4 a 7,6% de la population totale de Sierra Leone selon les sources. Leur identite est fortement liee au district diamantifere de Kono dans l'est du pays.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Mandé (sous-groupe du Mandé occidental)",
-      "historicalRegion": "SLE, GIN",
+      "ethnoLinguisticGroup": "Mande occidental (groupe de frange Manding)",
+      "historicalRegion": "District de Kono, province de l'Est, Sierra Leone ; zones frontalieres de la Guinee",
       "currentCountries": ["SLE", "GIN"]
     },
     "ethnicities": [
-      "Kono de Sierra Leone",
-      "Kono de Guinée",
-      "Sous-groupes régionaux"
+      "Kono du district de Kono (Sierra Leone, chiefdom de Lei)",
+      "Kono du chiefdom de Sandor (Sierra Leone)",
+      "Kono du chiefdom de Soa (Sierra Leone)",
+      "Kono de Guinee (zone frontaliere)",
+      "Kono associes aux Vai (groupe frere cotier de Sierra Leone et du Liberia)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kono sont originaires de la région de la Sierra Leone et de la Guinée. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Kono sont les descendants de migrants du Mali et de la Guinee qui se sont installes dans ce qui est aujourd'hui le district de Kono au milieu du 16e siecle, bien que des preuves archeologiques attestent d'une occupation du district de Kono aussi loin qu'en 2200 av. J.-C. La tradition kono affirme que leur peuple etait autrefois puissant au Mali et en Guinee. Ils ont migre vers la Sierra Leone en tant que chasseurs pacifiques.",
+      "formationPeriod": "L'identite kono distincte s'est consolidee apres leur migration vers le district de Kono au 16e siecle. Les trois premiers chiefdoms fondes par les Kono en Sierra Leone — Lei, Sandor et Soa — sont les plus grands et constituent la racine identitaire du groupe. Le 20e siecle a vu l'emergence du militantisme kono face a l'exploitation des ressources diamantiferes de leur territoire.",
+      "migrationRoutes": [
+        "Mali et Guinee (origine ancestrale) vers le district de Kono en Sierra Leone (milieu du 16e siecle)",
+        "Branche cotiere ayant continue jusqu'a la cote atlantique pour devenir les Vai (Gallinas) de Sierra Leone meridionale et du Liberia",
+        "Refuges temporaires dans le territoire Koranko au nord lors des attaques mende"
+      ],
+      "historicalSettlementZones": [
+        "District de Kono, province de l'Est, Sierra Leone (territoire ancestral principal)",
+        "Zones frontalieres de la Guinee (nord et nord-est du district de Kono)",
+        "Territoire Koranko (refuge temporaire lors des conflits avec les Mende)"
+      ],
+      "unificationsOrDivisions": "Le peuple kono a ete divise lors du partage de l'Afrique par les puissances coloniales europeennes, une partie restant en Guinee tandis que la majorite s'etablissait en Sierra Leone. Des sources temoins signalent egalement des locuteurs d'une langue quasi-identique jusqu'au Burkina Faso et en Cote d'Ivoire. Le district de Kono comprend 14 chiefdoms divises en 70 sections.",
+      "externalInfluences": "Attaques repetes des Mende, un peuple apparente, ont contraint les Kono a se refugier chez les Koranko. L'etablissement de la domination coloniale britannique a mis fin aux violences mende. La partition coloniale de l'Afrique a divise le peuple kono entre Sierra Leone et Guinee. La decouverte et l'exploitation des diamants du district de Kono a partir de 1930 a transforme profondement la region et suscite des revendications politiques kono.",
+      "majorHistoricalEvents": "En 1955, Tamba S. Mbriwa a fonde le Kono Progressive Movement pour protester contre l'alienation des terres kono au profit des compagnies minieres de diamants. Foamansa Matturi, stratege militaire kono de l'epoque coloniale, est un personnage historique notable. La guerre civile de Sierra Leone (1991-2002) a touche profondement le district de Kono, particulierement riche en diamants, qui fut une zone de combats intenses."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies (chiefdoms) dirigees par des chefs paramontains (paramount chiefs) assistes de conseils d'anciens. Le district de Kono comprend 14 chiefdoms divises en 70 sections, 9 circonscriptions electorales et 24 quartiers. La chefferie est l'institution centrale de la vie politique kono.",
+      "clanOrganization": "Systeme de descendance patrilineaire. La societe kono est organisee en lignages patrilineaires qui determinent l'appartenance clanique et les droits coutumiers. Les trois chiefdoms fondateurs (Lei, Sandor, Soa) constituent les racines generalogiques de la plupart des Kono de Sierra Leone.",
+      "ageClassSystems": "Les societes secretes Poro (hommes) et Bondo/Sande (femmes) constituent le systeme d'initiation et de classes d'age. Le Poro initie les jeunes hommes pendant la saison seche (octobre a mai) dans la brousse, ou ils apprennent la culture, les responsabilites adultes et les secrets de la societe. Le Bondo etablit les attitudes liees a l'age adulte chez les filles, abordant fertilite, moralite et comportement sexuel.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, les droits fonciers et les alliances. Le systeme de descendance patrilineaire regit l'heritage et les obligations communautaires.",
+      "religiousAuthority": "Autorite des chefs traditionnels et des chefs des societes secretes (Poro, Bondo). Presence croissante d'autorites religieuses islamiques et chretiennes depuis le 20e siecle. Les ancetres sont invoques comme mediateurs spirituels."
     },
     "languages": {
-      "mainLanguage": "Kono",
-      "vehicularRole": "Le kono est parlé par la majorité des Kono. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Kono (Sierra Leone)",
+      "isoCodes": ["kno"],
+      "dialects": [
+        "Kono de Sierra Leone (kno — variete principale)",
+        "Kono de Guinee (knu — variete de Guinee, proche du Kpelle)"
+      ],
+      "vehicularRole": "Le kono est la premiere langue et la plus parlee dans de nombreuses parties du district de Kono. Beaucoup de jeunes kono utilisent le krio (creole anglais) comme langue de communication avec les autres groupes ethniques de Sierra Leone. L'anglais est la langue officielle de Sierra Leone. Contrairement a d'autres groupes sierraleonais, les Kono voyagent rarement en dehors de la Sierra Leone orientale."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles culturels kono, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (tambours, flûtes)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation masculine dans la societe secrete Poro : les jeunes hommes sont enfermes dans la brousse pendant la saison seche, subissant une transformation symbolique vers l'age adulte. Initiation feminine dans la societe Bondo (ou Sande) : les filles apprennent les attitudes liees a la feminite adulte, la fertilite, la moralite et le comportement. Ces societes enseignent la culture kono et servent de passerelle entre l'enfance et la vie adulte. Des rites de passage marquent la naissance, le mariage et la mort. La recolte du riz donne lieu a des celebrations communautaires.",
+      "symbols": "Le masque de la societe Bondo (Sande society mask, ou Sowei) symbolise la feminite ideale et la puissance spirituelle feminine. Les symboles et insignes de la societe Poro sont secrets, connus uniquement des inities. Les diamants du district de Kono sont devenus un symbole ambigu de richesse naturelle et de conflit.",
+      "artsAndMusic": "Danses collectives en cercle pratiquees lors des rassemblements communautaires, accompagnees de percussions (tambours). La musique est fournie par des tambours rythmiques. Au coucher du soleil, les membres de la communaute se rassemblent dans la cour commune pour chanter et danser en file indienne, chacun improvisant ses pas. Litterature orale incluant contes, proverbes et traditions historiques. Artisanat comprenant le tissage et la fabrication de masques rituels pour les societes secretes.",
+      "spiritualities": "La plupart des Kono pratiquent l'islam ou le christianisme, mais maintiennent egalement leur religion ancestrale. Le culte des ancetres est fondamental : les Kono invoquent et prient leurs ancetres et d'autres esprits pour protection, sante, guidance et fortune. Ils croient que les ancetres sont presents lors de toutes les activites quotidiennes, y compris le repas, le sommeil et les evenements importants. Des croyances superstitieuses incluent l'usage de malefices, d'augures, d'amulettes et de magie. Les societes secretes Poro et Bondo maintiennent un lien entre le monde des vivants et celui des esprits."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kono dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kono se sont organises en chiefdoms depuis leur installation en Sierra Leone au 16e siecle. Les trois premiers chiefdoms fondes — Lei, Sandor et Soa — sont les plus importants et les plus grands du district de Kono. Le district de Kono comprend aujourd'hui 14 chiefdoms. Foamansa Matturi, chef et stratege militaire kono, est un personnage notable de l'epoque coloniale.",
+      "relationsWithNeighbors": "Relations historiquement difficiles avec les Mende, qui ont attaque les Kono et les ont contraints a se refugier chez les Koranko. Les Koranko, peuple apparente, ont accueilli les Kono et leur ont permis de cultiver leurs terres lors de ces periodes de refuge. Les Mende se sont finalement deplaces vers le sud, permettant aux Kono de retourner sur leurs terres de l'est. Les Kissi et les Kuranko partagent certaines zones frontalieres du district.",
+      "conflictsOrAlliances": "Conflits recurrents avec les Mende avant et pendant la periode coloniale britannique. La partition coloniale de l'Afrique a divise le peuple kono entre Sierra Leone et Guinee. La guerre civile de Sierra Leone (1991-2002) a ete particulierement destructrice pour le district de Kono, zone de combats acharnees pour le controle des diamants. En 1955, Tamba S. Mbriwa a fonde le Kono Progressive Movement pour protester contre l'alienation des terres kono au profit de societes minieres etrangeres.",
+      "diaspora": "Les Kono voyagent rarement en dehors de la Sierra Leone orientale ; seuls quelques Kono se trouvent dans la capitale Freetown et dans le nord du pays. Une diaspora kono existe en Guinee (groupe historiquement separe) et dans les pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 370000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "PeopleGroups.org estime 358 500 locuteurs kno. Joshua Project estime 353 000 Kono en Sierra Leone. Recensements Sierra Leone : 4,4 a 7,6% de la population totale selon les sources. Estimation 2025 integrant la croissance demographique de la Sierra Leone.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 350000,
+          "note": "Principalement dans le district de Kono, province de l'Est (Sierra Leone)"
+        },
+        {
+          "country": "GIN",
+          "population": 20000,
+          "note": "Zone frontaliere nord et nord-est du district de Kono, Guinee"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kono language (kno)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Kono people. https://en.wikipedia.org/wiki/Kono_people",
+      "SIL Ethnologue — Kono language (kno). https://www.ethnologue.com/language/kno/",
+      "KDDA UK — History of the Kono People. https://www.kdda.co.uk/index-aboutus-history.html",
+      "101 Last Tribes — Kono people. https://www.101lasttribes.com/tribes/kono.html",
+      "Joshua Project — Kono in Sierra Leone. https://joshuaproject.net/people_groups/18920",
+      "PeopleGroups.org — Kono (Sierra Leone). https://peoplegroups.org/language/kno/",
+      "Wikipedia EN — Demographics of Sierra Leone. https://en.wikipedia.org/wiki/Demographics_of_Sierra_Leone"
     ]
   }
 }

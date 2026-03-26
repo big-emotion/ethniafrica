@@ -1,0 +1,68 @@
+{
+  "id": "PPL_MANJAK",
+  "nameMain": "Manjak",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GNB", "SEN", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Manjak",
+      "selfAppellation": "Manjak",
+      "exonyms": ["Manjak (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (sous-groupe du Niger-Congo)",
+      "historicalRegion": "GNB, SEN",
+      "currentCountries": ["GNB", "SEN", "GIN"]
+    },
+    "ethnicities": [
+      "Manjak de Guinée-Bissau",
+      "Manjak du Sénégal",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Manjak sont originaires de la région de la Guinée-Bissau et du Sénégal. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Manjak",
+      "vehicularRole": "Le manjak est parlé par la majorité des Manjak. Le portugais, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles culturels manjak, symboles islamiques et chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (tambours, flûtes)",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Artisanat (tissage, poterie)",
+      "source_7": "Littérature orale",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora manjak dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Manjak language (mfv)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples atlantiques"
+    ]
+  }
+}

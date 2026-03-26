@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Mosiye",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Mosiya",
+      "exonyms": [
+        "Bussa",
+        "Mossiya",
+        "Mossittaata",
+        "Dobase",
+        "Lohu",
+        "Muusiye",
+        "Musiye",
+        "Gobeze",
+        "North Bussa"
+      ],
+      "originOfExonyms": "Le nom Bussa est l'appellation donnee par les voisins et utilisee dans les bases de donnees linguistiques (code ISO dox). Les membres du groupe se designent eux-memes Mosiya (le peuple) et appellent leur langue Mositacha. Le terme Dobase est utilise dans certains contextes administratifs. Lohu est une appellation regionale.",
+      "whyProblematic": "La multiplicite des noms (Bussa, Dobase, Mosiye, Mossiya) reflete la diversite des appellations exterieures et la confusion qui peut en resulter dans les recensements et les sources academiques.",
+      "contemporaryUsage": "Dans les bases de donnees internationales (Ethnologue, Joshua Project), le groupe est souvent reference sous Mosiye ou Bussa. Le nom Mosiye est l'appellation administrative retenue par les autorites ethiopiennes dans certains contextes. Le code ISO dox est attribue a la langue Bussa/Mositacha.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Couchitique oriental, branche Konso-Gidole",
+      "historicalRegion": "Zone Nord Omo (Dirashe woreda), region des Nations Nationalites et Peuples du Sud, Ethiopie",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Mosiye"],
+    "ethnicities": ["Mosiye", "Bussa", "Dobase"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "La tradition orale mosiye indique que leurs ancetres ont migre depuis le pays borana au sud vers la montagne Puso (nom mosiye du mont Gardula). Ils se seraient meles aux populations dullay indigenes de la region lors de leur installation. Les Mosiye sont consideres comme un groupe cushitique autochtone de la zone Nord Omo, dans le sud de l'Ethiopie.",
+      "formationPeriod": "L'identite mosiye est solidement ancree avant le XIXe siecle. Leur soumission a l'armee imperiale ethiopienne a eu lieu en 1897, apres de violentes guerres au cours du XIXe siecle.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis le pays borana (sud) vers la montagne Puso/Gardula"
+      ],
+      "historicalSettlementZones": [
+        "Flancs est de la montagne Puso (Gardula), au nord-ouest de la ville de Gidole, a l'ouest du lac Chamo",
+        "Dirashe woreda, zone Nord Omo, region SNNPR, Ethiopie"
+      ],
+      "unificationsOrDivisions": "Les Mosiye sont organises en deux kebeles: Bussakila (villages Moro, Kila, Toysala, Balko, Karfikela) et Bussabaso (Dubaysho, Loola, Otsa, Makio, Docha, Hoda).",
+      "externalInfluences": "Influence des peuples voisins Dirashe (Gidole) au sud, Ale (Gobeze) a l'ouest, Zayse et Zergulla au nord-est. Le multilinguisme est frequent: de nombreux Mosiye parlent le zayse, l'oromo, le gamo et l'amharique.",
+      "majorHistoricalEvents": "Au XIXe siecle, les Mosiye ont participe a de violentes guerres contre leurs voisins et l'armee imperiale. Selon la tradition orale, ils n'ont ete definitivement soumis qu'en 1897. Recemment, la construction d'une route reliant leur communaute centrale a une ville du sud ethiopien a amene l'electricite et facilite l'acces aux marches."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation politique basee sur des anciens et des conseils de clans. Historiquement connus pour leur organisation militaire et leur forte cavalerie. Le systeme politique traditionnel reposait sur des autorites claniques et une capacite de defense collective.",
+      "clanOrganization": "Les Mosiye sont organises en neuf clans patrilineaires. Cette structure clanique regit la gestion des terres, les mariages, la resolution des conflits et les ceremonies rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires sont centraux dans la gestion des ressources, la transmission du patrimoine et l'organisation sociale. Les chefs de lignage jouent un role de mediateurs dans les conflits.",
+      "religiousAuthority": "Le mont Puso est considere comme sacre: c'est le lieu historique ou etaient enterres les chefs religieux. Le protestantisme est la religion dominante; la plupart des villages ont au moins une eglise protestante. Le village de Toysala possede aussi une eglise catholique. Les villages les plus eloignes (Hoda, Otsa) pratiquent encore principalement l'animisme."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Mositacha (Bussa)",
+      "isoCodes": ["dox"],
+      "dialects": [
+        "Bussa du Nord (en declin, glissement vers l'oromo)",
+        "Bussa de l'Ouest (glissement vers les langues omotic: zargulla, zayse, gamo)"
+      ],
+      "vehicularRole": "La langue mositacha est la langue maternelle, mais elle est en declin rapide en raison du glissement linguistique vers le zayse au nord, le gamo au sud et l'amharique (langue d'education). Ethnologue estime a plus de 6 000 le nombre de locuteurs actifs (2013). Des portions des Evangiles de Marc et Luc ont ete traduits en mositacha par une equipe Wycliffe."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies liees aux recoltes et aux cycles agricoles. Le mont Puso est un lieu sacre pour les ceremonies religieuses traditionnelles. Les villages se rassemblent pour des festivites communautaires autour du plat traditionnel pambe (boulettes de farine vapeur servies avec des legumes et des haricots).",
+      "symbols": "La montagne Puso (Gardula) est le symbole identitaire et sacre des Mosiye. Les maisons rondes a toit de chaume sont caracteristiques de l'habitat traditionnel.",
+      "artsAndMusic": "Traditions musicales et de chant pratiquees lors des ceremonies communautaires. La culture materielle comprend la poterie, le tissage et les outils agricoles traditionnels.",
+      "spiritualities": "Le protestantisme est la religion dominante (majorite des villages ont une eglise). Practiques animistes maintenues dans les villages les plus isoles. Le mont Puso est un lieu de veneration ancestrale en lien avec les traditions pre-chretiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise, mais une entite politique clanique autonome avec une forte organisation militaire et une cavalerie reconnue. Les Mosiye ont resiste aux tentatives de soumission imperiale jusqu'en 1897.",
+      "relationsWithNeighbors": "Relations commerciales et conflictuelles avec les peuples voisins: les Dirashe (Gidole) au sud, les Ale (Gobeze) a l'ouest, les Zayse et Zergulla. La proximite avec Gidole (5 km) facilite les echanges au marche hebdomadaire.",
+      "conflictsOrAlliances": "Au XIXe siecle, les Mosiye ont mene des guerres violentes contre leurs voisins et contre l'armee imperiale ethiopienne. Ils ont ete soumis en 1897. Dans la periode contemporaine, la pression demographique et linguistique des peuples voisins entraine un glissement culturel et linguistique.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 38000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025): 38 000; recensement ethiopien 2007 (CSA): 19 698 Mossiye; Wycliffe Bible Translators profile: 21 000 locuteurs (2020-2023)",
+      "distributionByCountry": [{ "country": "ETH", "population": 38000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Harlow, Erika – Phonology of Mosiye (these, Trinity Western University / Arca), 2013 (https://arcabc.ca/islandora/object/twu:319)",
+      "Bussa language – Wikipedia (https://en.wikipedia.org/wiki/Bussa_language)",
+      "Mosiye in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11581)",
+      "Mosiye 2 Profile – Wycliffe Bible Translators, 2020-2023 (https://www.wycliffe.org/Main%20Uploads/Projects/PDF/Mosiye%202%20Profile%20WEB.pdf)",
+      "Dobase of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011570/)",
+      "List of ethnic groups in Ethiopia – Wikipedia (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia)",
+      "ISO 639-3: dox (Bussa/Mositacha) – SIL International / Ethnologue",
+      "Appendix: ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+    ]
   }
 }

@@ -2,69 +2,115 @@
   "id": "PPL_TUU_MACRO",
   "nameMain": "Peuples Tuu (macro-groupe)",
   "languageFamilyId": "FLG_TUU",
-  "currentCountries": ["BWA", "NAM"],
+  "currentCountries": ["BWA", "NAM", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Peuples Tuu (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (ǃXóõ, Nǀuu, ǀXam, etc.)",
+      "selfAppellation": "Tuu (mot commun aux deux branches signifiant 'personne')",
+      "exonyms": ["Southern Khoisan", "Taa-!Kwi", "Taa-!Ui", "!Ui-Taa", "Kwi"],
+      "originOfExonyms": "Le terme Southern Khoisan fut employe par les linguistes du 20e siecle pour designer ce groupe au sein de la classification Khoisan desormais obsolete. Le terme Tuu, adopte par Westphal (1971) depuis le mot signifiant 'personne' commun aux deux branches, est aujourd'hui prefere par les specialistes.",
+      "whyProblematic": "Le terme Khoisan est un terme parapluie desormais rejete car il regroupe des familles linguistiques non apparentees (Tuu, Kx'a, Khoe-Kwadi). Chaque branche et chaque peuple possede son propre endonymen et son histoire distincte.",
+      "contemporaryUsage": "Le terme Tuu est employe par les linguistes et anthropologues pour designer la famille linguistique. Les communautes vivantes se designent surtout par leurs appellations propres: !Xoon, 'N|ohan, Nǁng-e. L'appellation San est utilisee dans les contextes institutionnels et de droits des peuples autochtones.",
       "linguisticFamily": "FLG_TUU",
-      "ethnoLinguisticGroup": "Tuu (macro-groupe)",
-      "historicalRegion": "Désert du Kalahari (BWA, Afrique du Sud, NAM)",
-      "currentCountries": ["BWA", "NAM"]
+      "ethnoLinguisticGroup": "Tuu (macro-groupe, anciennement Southern Khoisan)",
+      "historicalRegion": "Desert du Kalahari et plateaux semi-arides d'Afrique du Sud (Karoo, Cap-du-Nord, provinces orientales)",
+      "currentCountries": ["BWA", "NAM", "ZAF"]
     },
     "ethnicities": [
-      "ǃXóõ (Taa) - vivant",
-      "Nǀuu - en danger critique",
-      "ǀXam - éteint",
-      "Autres groupes Tuu"
+      "!Xoon (ǃXóõ) - branche Taa, Botswana et Namibie, vivants (~2 500 locuteurs)",
+      "'N|ohan - branche Taa orientale, Botswana, vivants",
+      "Nǁng (N|uu, ǂKhomani) - branche !Kwi, Afrique du Sud, en danger critique (une locutrice en 2025)",
+      "|Xam - branche !Kwi, Afrique du Sud, eteint (dernier locuteur vers 1910)",
+      "||Xegwi - branche !Kwi, Afrique du Sud, eteint",
+      "Lower Nossob (|'Auni, |Haasi) - branche Taa, eteint",
+      "ǂUngkue - branche !Kwi, Afrique du Sud, eteint",
+      "Seroa - branche !Kwi, eteint"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples Tuu sont parmi les peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Diversité linguistique et culturelle importante. Certains groupes éteints.",
-      "externalInfluences": "Contacts limités avec les peuples bantous. Influence croissante de la modernisation et de la sédentarisation forcée. Extermination par les colons européens pour certains groupes."
+      "ancientOrigins": "Les peuples Tuu sont parmi les plus anciens habitants d'Afrique australe, dont les ancetres chasseurs-cueilleurs occupaient le Kalahari et les plateaux semi-arides depuis des dizaines de milliers d'annees. L'ancetre commun Proto-Tuu etait probablement parle dans la region du Kalahari; un mot reconstituable pour le gemsbok (*!hai) temoigne de cette origine geographique. Les donnees genomiques placent les peuples parlant les langues Tuu parmi les populations humaines les plus genetiquement divergentes, temoignant d'une anciennete et d'un isolement relatif tres importants.",
+      "formationPeriod": "La divergence entre les deux branches principales (Taa et !Kwi) est ancienne, probablement de plusieurs millenaires. Chaque groupe vivait en bandes de chasseurs-cueilleurs mobiles sur un vaste territoire s'etendant du Kalahari aux confins du Cap. La colonisation europeenne (17e-19e siecles) a precipite l'extinction de nombreux groupes !Kwi en Afrique du Sud.",
+      "migrationRoutes": [
+        "Presence autochtone attestee dans le Kalahari depuis le Paleolithique recent",
+        "Extension vers le sud et l'est (branches !Kwi) jusqu'aux provinces du Cap, au Karoo et au Drakensberg",
+        "Repli progressif vers des zones plus arides sous la pression des peuples bantous et des colons europeens"
+      ],
+      "historicalSettlementZones": [
+        "Desert du Kalahari central et meridional (Botswana, Namibie du Sud)",
+        "Karoo, Cap-du-Nord, cap Oriental (groupes |Xam et !Kwi, Afrique du Sud)",
+        "Vallees du fleuve Orange et Vaal (groupes !Kwi extincts)",
+        "Region de Langeberg et Kalahari Gemsbok (Nǁng/N|uu)"
+      ],
+      "unificationsOrDivisions": "La famille Tuu comprend deux branches distantes: Taa (Taa-Lower Nossob) et !Kwi (!Ui). Ces branches sont apparentees mais leur relation est lointaine. Au sein de chaque branche, des dialectes et groupes distincts coexistaient sans unite politique. La plupart des langues !Kwi d'Afrique du Sud sont eteintes a la suite des genocides coloniaux du 18e et 19e siecles.",
+      "externalInfluences": "Emprunts lexicaux bidirectionnels avec les langues Khoe-Kwadi (notamment Khoekhoe) et Kx'a, attestant de contacts anciens et d'un sprachbund kalaharien. Pression croissante des peuples bantous aux 17e-18e siecles. Devastation par les colons neerlandais et britanniques (18e-19e siecles): massacres systematiques, depossession des terres, travail force. Modernisation et salarisation au 20e siecle.",
+      "majorHistoricalEvents": "Extermination quasi-totale des peuples |Xam et autres groupes !Kwi du Cap entre 1700 et 1900 par les commandos boers (environ 30 000 San reduits a quelques centaines en 25 ans selon les historiens). Declairement d'extinction du Nǁng en 1973. Redecouverte de locuteurs Nǁng dans les annees 1990. Restitution de terres Nǁng (ǂKhomani) dans le parc Kalahari Gemsbok par Thabo Mbeki en 1999 et 2002. Inscription de l'archive Bleek et Lloyd au registre Memoire du Monde de l'UNESCO en 1997."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation egalitaire sans hierarchie formelle ni chefs hereditaires permanents. Decisions prises par consensus au sein des bandes. Chaque bande comptait generalement 10 a 50 individus lies par la parente et la reciprocite. L'autorite des guerisseurs (chamanes) etait fondee sur leurs capacites rituelles et non sur un pouvoir coercitif.",
+      "clanOrganization": "Structure fondee sur des bandes de chasseurs-cueilleurs mobiles, unies par la parente bilaterale et les liens de reciprocite. Propriete collective des territoires de chasse et des ressources en eau. Systemes de classification de la parente documentes: types generationnels et lineaires selon les groupes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatEraux sans primaute systematique de la ligne paternelle ou maternelle. L'appartenance a un groupe repose sur la descendance, le mariage et les alliances de reciprocite (partage de nourriture, visite). Les regles de nomination (nom transmis par les grands-parents) structuraient les identites.",
+      "religiousAuthority": "Autorite des guerisseurs-chamanes (!gi:xa en taa) qui entrent en transe lors des ceremonies de danse pour acceder au monde spirituel, chasser les maladies et attirer la pluie. Pas d'autorite religieuse institutionnalisee. Connaissance du repertoire mythologique et des pratiques rituelles transmise oralement."
     },
     "languages": {
-      "mainLanguage": "Langues Tuu (Taa/ǃXóõ, Nǀuu, ǀXam éteinte)",
-      "vehicularRole": "Les langues Tuu sont parlées par les peuples Tuu survivants. L'afrikaans, l'anglais et le tswana sont également utilisés. La langue ǀXam est éteinte."
+      "mainLanguage": "Langues Tuu (famille): Taa/!Xóõ (vivante, ISO: nmn), Nǁng/N|uu (moribonde, ISO: ngh), |Xam (eteinte, ISO: xam)",
+      "isoCodes": ["nmn", "ngh", "xam"],
+      "dialects": [
+        "West !Xoon (Taa occidental, Botswana et Namibie)",
+        "'N|ohan (Taa oriental, Botswana)",
+        "East !Xoon/Lone Tree (Taa, Namibie)",
+        "Tshasi et ǂHuan (dialectes Taa, Botswana)",
+        "N|uu/ǂKhomani (Nǁng, Cap-du-Nord, Afrique du Sud, en danger critique)",
+        "|Xam (dialecte principal eteint, Karoo, Cap-du-Nord)",
+        "Lower Nossob/|'Auni (eteint)"
+      ],
+      "vehicularRole": "La seule langue Tuu encore parlée avec vitalite est le Taa (!Xóõ), avec environ 2 500 locuteurs en 2011 selon l'Ethnologue. Le Nǁng (N|uu) n'a plus qu'une seule locutrice native (Katrina Esau, nee vers 1933, enseigne la langue a des enfants). Toutes les autres langues Tuu sont eteintes. L'afrikaans, l'anglais, le tswana et le setswana sont desormais les langues du quotidien pour la plupart des descendants."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures, patrimoine mondial pour ǀXam)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux (documentés pour ǀXam par Bleek et Lloyd)",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "Danse de transe (!Xoon: grande danse ou Groote Dans): ceremonie centrale de guerison et de contact avec le monde spirituel, pratiquee collectivement toute la nuit. Les guerisseurs entrent en transe (halfdeaths), saignent parfois du nez, et partent en voyage spirituel pour chasser les maladies. Rites de puberte feminins (premiere menstruation: isolement, interdits alimentaires, ceremonies de benediction). Ceremonies de chasse (priere avant le depart, rituel de premiere mise a mort). Rituels de partage de la viande (distribution reglementee selon le rang de parente).",
+      "symbols": "Le gemsbok (oryx): animal totémique reconstituable au Proto-Tuu (*!hai). L'eland: animal le plus sacre des San, figure centrale de la cosmologie et de l'art rupestre. Le praying mantis (mante religieuse): forme principale du demiurge |Kaggen. Les peintures et gravures rupestres: expression visuelle du monde spirituel, concentrees dans le Drakensberg, le Cederberg et le Karoo.",
+      "artsAndMusic": "Art rupestre: peintures (pigments naturels: ocre, charbon, graisse animale) et gravures (petroglyphes sur dolerite noire) representant animaux, guerisseurs en transe, therianthropes (mi-homme mi-animal), et scenes de chasse. Instruments de musique: arc musical (guimbardes a archet), hochets en cocons d'insectes ou coquilles d'autruche, percussion corporelle. Chants polyphoniques collectifs lors des danses de transe. Tradition orale riche: mythes, contes, poesie chantee, documentes pour les |Xam par Bleek et Lloyd (plus de 13 000 pages de transcriptions, 1870-1910).",
+      "spiritualities": "Cosmologie a deux mondes: monde ordinaire et monde spirituel (sous terre et dans le ciel), accessibles par les guerisseurs en transe. Demiurge principal |Kaggen (Mantis): createur-farceur qui prend la forme d'une mante religieuse, d'un eland ou d'autres animaux; ses mythes sont documentes dans l'archive Bleek-Lloyd. Entite !Khwa (taureau de pluie): esprit des eaux et des orages, important dans la cosmologie |Xam. Esprits des morts (//gauwasi): presents apres la mort, pouvant apporter maladie ou guerison. Pouvoir (n/om en Taa): energie spirituelle activee par la danse, concentree dans le ventre des guerisseurs."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises, sud-africaines et namibiennes. Peuple ǀXam éteint."
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique ni de royaumes. Structure sociale egalitaire de chasseurs-cueilleurs sans hierarchie politique formalisee. Les bandes vivaient en autonomie sur leurs territoires, avec des alliances informelles par le mariage et la reciprocite.",
+      "relationsWithNeighbors": "Relations d'echange avec les peuples Khoekhoe (pasteurs), incluant commerce de peaux, viande et objets contre lait et betail. Contact avec les peuples bantous (Tswana, Sotho, Nguni) aux frontieres de leurs territoires, generalement marque par la distance sociale et parfois la servitude des San. Emprunts linguistiques mutuels attestant de contacts longs.",
+      "conflictsOrAlliances": "Resistance acharnee aux raids boers du 18e siecle (Kommandos neerlandais). Periode de genocide systematique entre 1770 et 1900 dans le Cap, ou environ 30 000 San furent tues, captures ou reduits en servitude. Les groupes Taa du Kalahari, plus isoles, echapperent en partie a cette destruction directe.",
+      "diaspora": "Les survivants des groupes !Kwi d'Afrique du Sud furent disperses dans les fermes comme travailleurs serviles, dans les villages et les villes. La communaute Nǁng (ǂKhomani) fut expulsee du parc Kalahari Gemsbok en 1973 avant d'obtenir une restitution partielle en 1999-2002. Les !Xoon du Kalahari ont ete sedentarises de force dans des villages en Botswana et en Namibie au cours du 20e siecle."
     },
     "demography": {
-      "totalPopulation": 2000,
+      "totalPopulation": 2500,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International, 2024): ~2 500 locuteurs Taa (Botswana, Namibie). Nǁng: 1 locutrice native (2025). Toutes les autres langues Tuu sont eteintes. Estimation totale des descendants biologiques non disponible.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2000,
+          "note": "Majorite des locuteurs Taa (!Xoon, 'N|ohan), Kalahari central et meridional"
+        },
+        {
+          "country": "NAM",
+          "population": 400,
+          "note": "Locuteurs Taa (West !Xoon, reserve d'Aminius et region d'Omaheke-Hardap)"
+        },
+        {
+          "country": "ZAF",
+          "population": 100,
+          "note": "Derniers locuteurs Nǁng (N|uu/ǂKhomani), Cap-du-Nord; descendants |Xam assimiles"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tuu languages",
-      "Traill, Anthony – *Phonetic and Phonological Studies of ǃXóõ Bushman*",
-      "Güldemann, Tom – *Studies in Tuu (Southern Khoisan) Linguistics*",
-      "Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa"
+      "Wikipedia EN — Tuu languages. https://en.wikipedia.org/wiki/Tuu_languages",
+      "Ethnologue (SIL International) — Taa language (nmn). https://www.ethnologue.com/language/nmn/",
+      "Glottolog — West !Xoon. https://glottolog.org/resource/languoid/id/xooo1239",
+      "Sorosoro — Tuu languages. https://www.sorosoro.org/en/tuu-languages/",
+      "Güldemann, Tom — Studies in Tuu (Southern Khoisan) Linguistics. Various publications.",
+      "Traill, Anthony — Phonetic and Phonological Studies of !Xóõ Bushman. Hamburg: Helmut Buske, 1985.",
+      "Bleek, Wilhelm H.I. & Lloyd, Lucy — Specimens of Bushman Folklore. London: George Allen, 1911.",
+      "Adhikari, Mohamed — The Destruction of Cape San Society under Dutch Colonial Rule. South African Historical Journal, 2010.",
+      "Boden, Gertrud — Khoisan Kinship Terminologies in Diachronic Perspective. University of Edinburgh / Kalahari Basin Area project.",
+      "IWGIA — Indigenous Peoples in Africa. https://www.iwgia.org/en/africa.html",
+      "UNESCO Memory of the World — Bleek and Lloyd Collection, 1997."
     ]
   }
 }

@@ -1,63 +1,103 @@
 {
   "id": "PPL_SAN",
-  "nameMain": "Khoisan",
+  "nameMain": "San et Khoikhoi",
   "languageFamilyId": "FLG_KHOE",
-  "currentCountries": ["AGO"],
+  "currentCountries": ["ZAF", "NAM", "BWA", "AGO", "ZMB", "ZWE"],
   "content": {
     "appellations": {
-      "mainName": "Khoisan",
-      "selfAppellation": "",
+      "mainName": "San et Khoikhoi",
+      "selfAppellation": "San (endonyme collectif des chasseurs-cueilleurs) ; Khoikhoi ou Khoekhoe (endonyme des pasteurs, signifiant litteralement hommes des hommes ou vrais hommes)",
       "exonyms": [
-        "\"Bushmen\" (terme colonial péjoratif, à éviter), \"Hottentots\" (terme colonial péjoratif, à éviter), Khoisan (terme académique)"
+        "Bushmen (terme colonial britannique designant les San, considere pejoratif)",
+        "Hottentots (terme colonial designant les Khoikhoi, considere pejoratif)",
+        "Khoisan (terme academique regroupant San et Khoikhoi)",
+        "Basarwa (terme botswanais pour les San)",
+        "Bosjesmans (forme afrikaans de Bushmen)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le terme Bushmen fut introduit par les colons neerlandais et britanniques au XVIIe siecle pour designer les chasseurs-cueilleurs vivant dans le bush. Hottentots fut employe par les Europeens pour imiter les sons cliquetants des langues khoikhoi. Khoisan est un terme scientifique forge au XXe siecle par l'ethnologue Leonhard Schultze pour regrouper les deux groupes sur la base de traits linguistiques et culturels communs.",
+      "whyProblematic": "Bushmen et Hottentots sont des termes coloniaux charges de connotations de primitivisme et d'inferiorite. Une decision de la Cour d'Egalite sud-africaine en 2008 a precise que le terme boesman reste offensant en contexte negatif. Les communautes preferent leurs noms nationaux ou endonymes specifiques (Juuhoansi, Nama, Khwe, etc.).",
+      "contemporaryUsage": "Le terme San est prefere dans les contextes academiques et militants. Khoisan est employe en linguistique et anthropologie. Les communautes d'Afrique du Sud se regroupent sous le terme Khoe-San dans les discussions politiques et juridiques, notamment depuis la loi sur le leadership traditionnel et Khoisan de 2021.",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud de l'AGO, zones arides et semi-arides",
-      "currentCountries": ["AGO"]
+      "ethnoLinguisticGroup": "Khoisan",
+      "historicalRegion": "Afrique australe : Kalahari, Cap occidental, Namaqualand, cotes namibiennes et botswanaises",
+      "currentCountries": ["ZAF", "NAM", "BWA", "AGO", "ZMB", "ZWE"]
     },
-    "ethnicities": ["Khoisan"],
+    "ethnicities": [
+      "San (sous-groupes : Juuhoansi, Khomani, Khwe, Xun, Gana, Gwi, Haiom, Ncoakhoe)",
+      "Khoikhoi (sous-groupes : Nama, Damara, Griqua, Rehoboth Basters, Koranna, Oorlam)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Sud de l'AGO, zones arides et semi-arides"
+      "ancientOrigins": "Les San representent l'une des lignees humaines les plus anciennes genetiquement documentees. Des etudes ADN menees en 2016 indiquent que leurs ancetres ont commence a diverger des autres populations humaines il y a environ 200 000 ans, avec une isolation complete vers 100 000 ans. Des outils identiques a ceux des San modernes ont ete dates de 42 000 avant notre ere au site de Border Cave (KwaZulu-Natal). Les Khoikhoi, pasteurs, se sont differencies des San vers 2 000 ans avant notre ere, apres avoir adopte l'elevage du betail au contact de communautes d'Afrique orientale dans la region du Zimbabwe meridional et du nord du Botswana.",
+      "formationPeriod": "Les proto-Khoikhoi se sont constitues entre 400 avant notre ere et 100 de notre ere, par metissage de San (groupes Tshua et Khwe) et d'eleveurs est-africains dans la region du bassin du Limpopo et du nord de l'Afrique du Sud. Les San eux-memes representent la continuite d'une population de chasseurs-cueilleurs presente en Afrique australe depuis au moins 20 000 ans.",
+      "migrationRoutes": [
+        "San : expansion depuis l'Afrique de l'Est (Tanzanie, Zambie, Angola) vers le Cap Agulhas il y a environ 10 000 ans",
+        "Khoikhoi : migration vers le sud depuis le Zimbabwe meridional a travers le Botswana et le Namaqualand a partir de 500 de notre ere",
+        "Replois successifs vers l'interieur des terres sous la pression des agriculteurs bantous (a partir du IIIe siecle) puis des colons europeens (a partir du XVIIe siecle)"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Cap occidental et meridional (San et Khoikhoi des plaines cotieres)",
+        "Desert du Kalahari : Botswana, Namibie, Afrique du Sud",
+        "Namaqualand : Namibie et Northern Cape (Khoikhoi Nama)",
+        "Plateau de l'Okavango et regions adjacentes en Angola et Zambie"
+      ],
+      "unificationsOrDivisions": "San et Khoikhoi ne forment pas un groupe politique unifie. Les San sont organises en groupes de chasse autonomes de 25 a 50 personnes. Les Khoikhoi forment des clans et des nations distinctes (Nama, Griqua, Damara, etc.) qui ont developpe des alliances et des conflits internes. La pression coloniale a fragmente davantage ces groupes, certains (Griqua, Basters) formant des Etats mixtes au XIXe siecle.",
+      "externalInfluences": "Contact avec les agriculteurs bantous (Nguni, Sotho) a partir du IIIe siecle, entrainant emprunts linguistiques et parfois intermariage. Arrivee des Portugais au XVe siecle puis des colons neerlandais en 1652 au Cap, debut d'une spoliation terrestre et de violences qui reduiront drastiquement les populations. Les Khoikhoi ont absorbe des influences bantous et, plus tard, europeennes (Afrikaner, Malais du Cap), donnant naissance aux Griqua et Rehoboth Basters.",
+      "majorHistoricalEvents": "1652 : installation permanente europeenne au Cap ; 1714 : systeme des fermes VOC qui enclot les terres khoikhoi ; 1777 : la VOC endosse une politique d'eradication des San ; fin XVIIIe : milliers de San tues ou reduits en servitude ; 1829-1856 : Kat River Settlement, colonie khoikhoi autonome ; 1904-1907 : genocide des Herero et Nama en Afrique du Sud-Ouest allemande ; 2001 : creation du South African San Council ; 2021 : loi sud-africaine sur le leadership traditionnel et Khoisan"
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les San pratiquent une organisation egalitaire sans chefs hereditaires avec pouvoir coercitif. Les decisions sont prises par consensus entre anciens. Les Khoikhoi ont une organisation par nations et sous-tribus dirigees par un chef (kaptein ou gaob) dont le pouvoir est hereditaire mais limite par les conseils de notables. Les Griqua ont fonde deux Etats au XIXe siecle : Griqualand West et Griqualand East.",
+      "clanOrganization": "Chez les San : groupes de parentele mobiliers d'une vingtaine a cinquante personnes, nomades saisonniers autour de ressources en eau. Chez les Khoikhoi : clans patrilineaires identifies par des noms propres (Khaikhoen, Kwowesen, Bondelswarts, Nama, Topnaars, etc.) formant des nations distinctes avec loyautes claniques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chez les San, la filiation est cognatique ; les droits d'acces aux ressources hydriques et alimentaires sont transmis par la mere ou le pere. Une regle de nomination complexe (name rule, age rule) structure les relations sociales : les enfants portent les noms de leurs grands-parents. Chez les Khoikhoi, la filiation est davantage patrilineaire, avec des clans assumant la gestion des troupeaux et des terres de paturage.",
+      "religiousAuthority": "Chez les San, le guerisseur-chamane (n!om-kxao ou sangoma) joue un role central : il entre en transe lors de danses rituelles pour soigner, chasser les esprits malefiques et faire venir la pluie. Chez les Khoikhoi, le culte du dieu createur Tsui'goab (ou Thiloab) est assure par des pratiques communautaires ; de nombreux Khoikhoi sont aujourd'hui chretiens ou musulmans (notamment les Nama de Namibie)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Langues khoisan a clics (familles Khoe, Tuu et Kxa)",
+      "isoCodes": ["naq", "ktz", "gnk", "gwj", "xuu", "khw", "nmn", "hgm"],
+      "dialects": [
+        "Nama / Khoekhoe (naq) : parle par les Nama et Damara de Namibie et d'Afrique du Sud",
+        "Juuhoansi / !Kung (ktz) : parle par les San du Botswana et de Namibie",
+        "Gana / G|ana (gnk) : San du Kalahari central (Botswana)",
+        "G|wi (gwj) : San du Kalahari central (Botswana)",
+        "Xuu / !Xun (xuu) : San du nord de la Namibie et du sud de l'Angola",
+        "Khwe (khw) : San de la region de l'Okavango (Namibie, Angola, Botswana)"
+      ],
+      "vehicularRole": "Les langues khoisan ne jouent pas de role vehiculaire regional. L'afrikaans et l'anglais sont les langues de communication inter-ethnique en Afrique du Sud et en Namibie. Le sesotho et le tswana dominent au Botswana. La langue nama est la plus documentee et dispose de materiel didactique en Namibie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Danse de guerison et de transe (Great Dance ou Trance Dance) : rite central chez les San, au cours duquel des chamanes entrent en etat modifie de conscience pour soigner et communiquer avec les esprits. Rites de puberite feminins marques par un isolement rituel et des chants. Rites de premiere chasse pour les jeunes hommes. Chez les Khoikhoi, ceremonies autour du calendrier lunaire (la Lune est une manifestation physique du dieu createur).",
+      "symbols": "Art rupestre : les San ont produit un corpus exceptionnel de peintures et gravures rupestres sur l'ensemble de l'Afrique australe (Drakensberg, Cederberg, Namibie), representant des scenes de chasse, des etres hybrides et des visions chamaniques. L'arc et les fleches empoisonnees (avec du venin de larves de Diamphidia) symbolisent l'identite et la survie. L'autruche et son oeuf servent de recipient a eau.",
+      "artsAndMusic": "Musique : arc musical (umrhubhe ou segankuru), instrument a une corde joue avec la bouche comme caisse de resonance ; percussions corporelles ; chants polyphoniques avec clics integres. Danse : danse circulaire prolongee induisant la transe. Art figuratif : peintures rupestres aux pigments ocre et blanc representant des eland, des girafes, des figures humaines en transformation. Frédéric Bruly Bouabré, artiste Bete, a documente l'art rupestre de la region.",
+      "spiritualities": "Les San croient en une divinite superieure associee au ciel et en des esprits de la nature accessibles par la transe. Le Grand Dieu (Kaang, Huse, Gao!na selon les groupes) est createur et garant de l'ordre moral. Un dieu inferieur est associe au mal et a la mort. Les eland ont une valeur spirituelle particuliere. Les Khoikhoi venèrent Tsui'goab comme createur et protecteur de la sante, et Gaunab comme entite malefique causant maladie et mort."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les San n'ont pas forme de royaumes. Les Khoikhoi ont developpe des chefferies et des nations (Nation rouge / Khaikhoen, Witbooi, Bondelswarts, etc.). Au XIXe siecle, les Griqua (Khoikhoi metisses) ont fonde les Etats de Griqualand West et Griqualand East sous la dynastie Kok avant d'etre annexes par la colonie du Cap.",
+      "relationsWithNeighbors": "Les San ont coexiste pacifiquement avec les Nguni (Xhosa, Zulu) pendant des siecles ; les langues nguni ont integre des sons clics en heritage de cet contact. Les Khoikhoi ont commerce avec les Bantous (betail, produits agricoles) et, des le XVe siecle, avec les marchands europeens (tabac, cuivre, fer contre viande). Des conflits periodiques ont oppose San et agriculteurs pour les terres de chasse.",
+      "conflictsOrAlliances": "Resistance violente des San aux commandos trekboers au XVIIIe siecle (raids mutuels, massacres). La VOC endosse en 1777 une politique d'extermination. En 1856, les Khoikhoi (Khoekhoe) se joignent aux Xhosa lors de la septieme guerre des frontieres. En 1904-1907, les Nama participent a la resistance contre l'armee allemande ; plus de 10 000 Nama meurent, soit la moitie de leur population.",
+      "diaspora": "Des communautes San et Khoikhoi vivent en zones urbaines en Afrique du Sud (notamment a Kimberley et au Northern Cape), au Botswana et en Namibie. La diaspora Griqua (Khoikhoi metisses) est dispersee entre le Western Cape, l'Eastern Cape, le Free State et le KwaZulu-Natal. De nombreux descendants Khoikhoi se sont fondus dans la categorie administrative Coloured sous l'apartheid et revendiquent aujourd'hui leur heritage khoe-san."
     },
     "demography": {
-      "totalPopulation": 350,
+      "totalPopulation": 400000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "IWGIA (2025) ; San peoples Wikipedia ; Botswana 2017 census (63 500 San) ; Namibia 2023 census (71 201 San) ; estimations Namibie, Afrique du Sud et Botswana regroupees. Khoikhoi : environ 260 000 Nama (Joshua Project) et autres groupes.",
+      "distributionByCountry": [
+        { "country": "BWA", "population": 65000 },
+        { "country": "NAM", "population": 110000 },
+        { "country": "ZAF", "population": 150000 },
+        { "country": "AGO", "population": 50000 },
+        { "country": "ZMB", "population": 15000 },
+        { "country": "ZWE", "population": 10000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "San peoples – Wikipedia (https://en.wikipedia.org/wiki/San_peoples)",
+      "Khoekhoe – Wikipedia (https://en.wikipedia.org/wiki/Khoekhoe)",
+      "Khoisan – Wikipedia (https://en.wikipedia.org/wiki/Khoisan)",
+      "IWGIA – The Indigenous World 2025: South Africa (https://iwgia.org/en/south-africa/5636-iw-2025-south-africa.html)",
+      "Indigenous Navigator – South Africa (https://indigenousnavigator.org/indigenous-data/countries/south-africa)",
+      "Qiraat Africa – The Khoikhoi people of southern Africa (https://qiraatafrican.com/en/19887/the-khoikhoi-people-of-southern-africa/)",
+      "African Budget Safaris – Who Are the Khoisan People? (https://www.africanbudgetsafaris.com/blog/south-africa-people-culture-the-khoisan-people/)",
+      "Joshua Project – Nama, Khoekhoe in South Africa (https://joshuaproject.net/people_groups/13931/SF)"
+    ]
   }
 }

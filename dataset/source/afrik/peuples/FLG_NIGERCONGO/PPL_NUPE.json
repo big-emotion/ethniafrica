@@ -6,59 +6,101 @@
   "content": {
     "appellations": {
       "mainName": "Nupe",
-      "selfAppellation": "Nupe",
-      "exonyms": ["Nupe (terme utilisé par les Européens)"],
+      "selfAppellation": "Nupe (auto-denomination); Nupenci (designation de la langue)",
+      "exonyms": [
+        "Tapa (denomination yoruba, utilisee par les peuples voisins)",
+        "Nufawa (terme haoussa)",
+        "Anufe (variante ancienne)"
+      ],
+      "originOfExonyms": "Tapa est le terme par lequel les Yoruba et les Europeens designaient les Nupe; il derive probablement de la langue yoruba. Ce terme fut largement employe dans la litterature coloniale britannique. Nufawa est l'appellation haoussa courante.",
+      "whyProblematic": "L'emirat de Bida, installe apres le jihad peul du 19e siecle, a mis en place une direction fulani sur un peuple nupe, creant une distinction entre le pouvoir politique (Etsu Nupe de lignage peul-nupe) et l'identite ethnique nupe profonde.",
+      "contemporaryUsage": "Le terme Nupe est universellement utilise aujourd'hui. Les Nupe se designent eux-memes comme Nupe et leur langue comme Nupenci. Niger State (Nigeria) est le coeur demographique et culturel du peuple Nupe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Nupoïde",
-      "historicalRegion": "Nigeria",
+      "ethnoLinguisticGroup": "Nupoide (branche Volta-Niger, Benue-Congo)",
+      "historicalRegion": "Bassin du Niger central, entre le fleuve Niger et la riviere Kaduna (actuel Niger State, Nigeria); royaume centre a Bida",
       "currentCountries": ["NGA"]
     },
-    "ethnicities": ["Nupe du Nord", "Nupe du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Nupe centraux (Bida et environs) — sous-groupe majoritaire, gardiens des traditions royales",
+      "Nupe-Tako (Bassa Nge) — au sud, parlant le dialect Nupe Tako, le long de la Benue",
+      "Kupa — sous-groupe distinct dans la region de Kupa",
+      "Kakanda — sous-groupe lie aux Nupe, region du confluent Niger-Benue",
+      "Dibo (Abawa/Gana-Gana) — sous-groupe meridional",
+      "Bini de Nupeland — premiere communaute nupe (Nuku) fondee par Tsoede selon la tradition",
+      "Gbari (Gwari) assimiles — populations Gbagyi de Lemu absorbees dans la communaute nupe"
+    ],
     "origins": {
-      "ancientOrigins": "Les Nupe sont originaires de la région du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nupoïde. Ancien royaume Nupe.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Nupe). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples haoussa et yoruba, influence de l'islam."
+      "ancientOrigins": "Les Nupe sont l'un des peuples les plus anciens du Nigeria central. Selon la tradition orale, leur royaume fut fonde par Tsoede (egalement appele Edegi ou Tsuedigi, vers 1496-1591), un prince igala de pere et nupe de mere, qui quitta la cour d'Idah muni de regalia royaux symboliques et uni les peuples nupe par la conquete. Le royaume s'etablit dans le bassin du Niger, entre les confluents Kontagora et Guara, au nord du fleuve Niger.",
+      "formationPeriod": "Le royaume Nupe emerge entre le 14e et le 15e siecle. Tsoede consolide l'Etat nupe au debut du 16e siecle a partir de la capitale Rabba. L'Etat atteignit son apogee sous les Etsu successifs avant d'etre fragilise par des rivalites dynastiques au 18e siecle. Le jihad peul de Usman dan Fodio (1804-1808) penetra en Nupeland, et Usman Zaki devint premier Etsu Nupe peul en 1833. Bida remplaça Rabba comme capitale en 1857.",
+      "migrationRoutes": [
+        "Tradition orale : Tsoede descend le fleuve Niger depuis Idah (pays igala) vers le Nupeland avec des pirogues et regalia royaux",
+        "Expansion du royaume vers le nord jusqu'au confluent Kaduna-Niger et vers le sud en territoire yoruba et igbomina",
+        "Migrations liees au jihad peul (19e siecle) : deplacements de population nupe vers les regions de Lafiagi, Pategi, Agaie"
+      ],
+      "historicalSettlementZones": [
+        "Bida — capitale de l'emirat de Bida depuis 1857, centre artisanal et culturel",
+        "Rabba — ancienne capitale du royaume Nupe, region de Mokwa (Niger State)",
+        "Niger State (Bida, Minna, Agaie, Lapai, Mokwa, Jebba) — coeur du territoire nupe",
+        "Kwara State (Lafiagi, Pategi) — emirats Nupe dans l'ouest",
+        "Kogi State — populations nupe meridionales pres du confluent Niger-Benue",
+        "FCT Abuja — communautes nupe dans la region de la capitale federale"
+      ],
+      "unificationsOrDivisions": "Le royaume Nupe connut des periodes d'unite sous les grands Etsu et de division lors des guerres de succession (rivalite Gemada/Majiya au 18e siecle). Le jihad peul (1804-1833) fragmenta l'autorite nupe et la reorganisa sous l'emirat de Bida avec trois maisons royales alternant au pouvoir : maison d'Usman Zaki, maison de Masaba et maison d'Umaru Bahaushe (ce dernier elimine). Bida, Lafiagi, Tsonga, Agaie et Lapai emergerent comme emirats distincts.",
+      "externalInfluences": "Influences culturelles et artistiques du royaume de Benin et d'Ife. Contact avec les Haoussa (commerce, islamisation) et les Yoruba Igbomina (echanges commerciaux et conflits). Conquete peule et islamisation via le jihad de Sokoto (1804-1833). Conquete britannique par la Royal Niger Company (1897). Integration dans le Nigeria colonial puis independant (1960). Commerce traditionnel avec l'Egypte postule par W.E.B. Du Bois.",
+      "majorHistoricalEvents": "Fondation du royaume par Tsoede (debut 16e s.). Jihad peul et creation de l'emirat de Bida (1833-1857). Guerre civile nupe (1847-1856) : Usman Zaki bat Umar Bahaushe, Bida devient capitale (1857). Defaite de la cavalerie nupe par l'armee britannique a Ogidi (26 juin 1896, celebre comme Nupe Cultural Day). Conquete britannique de Bida (1897) et integration dans le protectorat du Nigeria. Independence du Nigeria (1960); Niger State cree en 1976."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Nupe). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans et des chefs religieux. Rôle important de l'islam."
+      "traditionalPoliticalSystem": "L'Etsu Nupe est le chef supreme de tous les Nupe, resida a Bida (emirat de Bida). En dessous de lui se trouvent les emirs de Lafiagi, Pategi, Agaie et Lapai. Chaque ville (ezi) est gouvernee par un chef de village assiste d'anciens. Les villages (tunga ou kangi) forment des groupes de cours (wards). Le Etsu Nupe actuel preside egalement le Conseil des dirigeants traditionnels du Niger State.",
+      "clanOrganization": "Societe patrilineaire. Les Nupe vivent en grands regroupements de cours formant des quartiers (wards). Les chefs de families etendues exercent l'autorite domestique. L'identite est marquee par des scarifications faciales (marques tribales identifiant la famille et le prestige), pratique aujourd'hui en declin. La coutume du dzana (echanges de dons, benedictions et objets symboliques lors de voyages ou transitions) cimente les relations sociales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'heritage et le statut. Les mariages sont generalement arranges par les familles; la polygynie est courante. Les enfants sont eleves par les parents, grands-parents et freres et soeurs aines. Le respect envers les aines et le partage communautaire sont des valeurs fondamentales.",
+      "religiousAuthority": "Islam sunnite majoritaire depuis la conversion de l'Etsu Jibiri vers 1770 et le jihad peul. Les oulemas et imams locaux exercent une grande influence. Avant l'islamisation, les Nupe veneraient Gounu, esprit gardien de la terre, et pratiquaient des cultes d'ancetres. Des ceremonies annuelles de sacrifices pour la terre subsistent dans certaines communautes. Certaines populations nupe meridionales pratiquent le christianisme."
     },
     "languages": {
-      "mainLanguage": "Nupe",
-      "vehicularRole": "Le nupe est parlé par la majorité des Nupe. L'anglais, le haoussa et d'autres langues sont également utilisés."
+      "mainLanguage": "Nupe (Nupenci)",
+      "isoCodes": ["nup"],
+      "dialects": [
+        "Nupe central (parle a Bida et dans la majorite du Niger State) — dialect de reference",
+        "Nupe-Tako (Bassa Nge) — parle par les Bassa Nge, le long de la Benue pres d'Ibi",
+        "Kupa — variete distincte",
+        "Kakanda — variete proche du Nupe central",
+        "Dibo/Abawa/Gana-Gana — varietes meridionales"
+      ],
+      "vehicularRole": "Le nupe est la principale langue du Niger State et est egalement parle en Kwara, Kogi et dans le FCT d'Abuja. Il appartient a la branche Nupoide du groupe Benue-Congo. Le haoussa est utilise comme langue vehiculaire dans les echanges commerciaux interethniques; l'anglais est la langue officielle du Nigeria. Le nupe s'est ecrit historiquement en caracteres arabes (ajami) puis en alphabet latin."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles culturels nupe, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (tambours, flûtes)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Islam majoritaire. Rôle important des croyances traditionnelles."
+      "majorRites": "{\"mariageTraditonnel\": \"Le mariage nupe suit un rituel elabore : negociations familiales, port du tissu Ede Kpasa (tissu ceremonial aux trois couleurs du drapeau nupe), festivites musicales avec la danse Kakati. Les mariages polygyniques sont courants.\", \"naissanceEtNomination\": \"La naissance est celebree par des prieres islamiques (appel a la priere a l'oreille du nouveau-ne), un repas communautaire et attribution du nom au septieme jour.\", \"ceremonieGounu\": \"Avant l'islamisation, ceremonie annuelle (tous les 11 mois) d'offrandes a Gounu, esprit gardien de la terre, pour la fertilite et la protection. Survivances dans certaines communautes rurales.\", \"funerailles\": \"Rites islamiques predominants : inhumation rapide, prieres collectives, ceremonies de condoleances. Chez certains groupes, rites complementaires d'honoration des ancetres.\", \"eidsEtDurbar\": \"Les deux fetes de l'Aid sont les celebrations majeures du calendrier nupe. La fete de Baraki (Eid el-Kebir) est marquee par le Durbar equestre : l'Etsu Nupe, vetu de robes royales, defiles a cheval suivi de nobles, de tambourinaires et de chanteurs de louanges.\"}",
+      "symbols": "Tissu Ede Kpasa — tissu ceremonial aux trois couleurs du drapeau Nupe, utilise dans les mariages. Cavalerie royale et robes brodees de l'Etsu Nupe lors du Durbar. Perles de verre de Bida — symboles d'identite culturelle et de statut. Pirogues decorees pour la Pategi Regatta. Masque Burtu en bois (masque de chasse aux oiseaux, Museum of Ethnology de Vienne). Scarifications faciales ancestrales.",
+      "artsAndMusic": "{\"laitonEtMetallurgie\": \"Bida est le grand centre artisanal du Nigeria central : les orfevres de Tswatako et Gbongbofu produisent des objets en laiton, argent et aluminium d'une finesse remarquable (bracelets, vases, plateaux). La metallurgie du fer (forges de Dokodza) produit outils agricoles et armes. Ces traditions artisanales ont ete transmises de generation en generation depuis l'epoque d'Usman Zaki (18e siecle).\", \"verrerieEtPerles\": \"L'industrie du verre de Bida est unique en Afrique occidentale : des artisans fondent des bouteilles et debris de verre pour creer des perles et bijoux dores et argentes, dont la qualite est comparee aux perles egyptiennes. Ces perles sont des symboles de statut et sont exportees dans tout le Nigeria.\", \"danseMusiqueKakati\": \"La danse Kakati est la danse ceremoniale la plus importante des Nupe, executee lors du Durbar, des mariages et des ceremonies de chefferie. Elle est accompagnee de tambours (tambour en argile, tambour d'epaule), de cloches et de rattles. Les chanteurs (Nimba) dirigent les ensembles vocaux.\", \"masqueEndakBoya\": \"Mascarade traditionnelle pre-islamique : un homme masque peut accuser publiquement les membres de la communaute de violations morales, fonctionnant comme mecanisme de controle social.\", \"litteratureOrale\": \"Riche tradition de contes (sur Sod, tricksters animaux, heros villageois), proverbes et chants de louanges (encore transmis par les anciens).\", \"cinema\": \"Nupewood — industrie cinematographique en langue nupe fondee dans les annees 2000, ayant produit plus de mille films.\"}",
+      "spiritualities": "{\"islamSunnite\": \"La grande majorite des Nupe sont musulmans sunnites malekites depuis la conversion de l'Etsu Jibiri (vers 1770) et le jihad peul. Les pratiques islamiques structurent la vie quotidienne : prieres, fetes de l'Aid, mariage et funerailles selon la loi islamique.\", \"croyancesPreislamiques\": \"Avant l'islam, le culte de Gounu (esprit gardien de la terre) organisait la vie spirituelle communautaire. Des ceremonies de sacrifice annuelles imploraient la fertilite et la protection. Les familles honoraient leurs ancetres. Des rituels de mascarades (Endak Boya) regulaient la morale sociale.\", \"syncretisme\": \"Certaines pratiques preislamiques (respect des ancetres, ceremonies agricoles) coexistent avec l'islam dans les milieux ruraux. Les chretiens nupe sont minoritaires mais presents notamment dans les zones meridionales.\"}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora nupe dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume Nupe fonde par Tsoede (vers 1500), capitale initiale Rabba, puis Bida a partir de 1857 sous l'emirat peul-nupe. L'Emirat de Bida fut l'Etat le plus puissant du Nigeria central au 19e siecle, sous l'Emir Masaba (1859-1873). Trois emirats supplementaires emergerent : Lafiagi, Agaie (1822) et Lapai (1825). L'Emirat de Bida est toujours reconnu par le gouvernement nigerien contemporain; son chef, l'Etsu Nupe, preside le Conseil des chefs traditionnels du Niger State.",
+      "relationsWithNeighbors": "Les Nupe entretinrent des relations commerciales et diplomatiques avec les Haoussa du nord et les Yoruba Igbomina du sud. Leur commerce s'etendait peut-etre jusqu'a Sofala et l'Empire byzantin (selon W.E.B. Du Bois). La proximite des Yoruba Oyo au sud-ouest engendra des echanges culturels et des conflits commerciaux. Les guerres d'expansion de Bida sous Masaba atteignirent la region d'Afemai (Edo North) et les pays igbira, leur imposant tributs et islamisation.",
+      "conflictsOrAlliances": "Jihad peul penetrant en Nupeland (1804-1833) : profitant des rivalites dynastiques entre Gemada et Majiya, Usman Zaki prend Rabba (1833). Guerre civile nupe (1847-1856) : deux Etsu rivaux peuls, Usman Zaki a Bida, Masaba a Lale. Victoire de la cavalerie nupe contre l'armee britannique a Ogidi (26 juin 1896). Conquete britannique de Bida (1897) par la Royal Niger Company, mettant fin a l'independance de l'emirat.",
+      "diaspora": "Les Nupe sont principalement concentres dans leur territoire d'origine au Nigeria (Niger State, Kwara State, Kogi State, FCT Abuja). Une diaspora nigeriane plus large compte des Nupe dans les grandes villes comme Lagos, Abuja et Kano. La communaute nupe de la diaspora internationale maintient son identite a travers des associations culturelles et la production cinematographique Nupewood."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 5500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Nupe people (estimation 4,5 millions au Niger State); Joshua Project 2025 (Nupe in Nigeria); Facebook/source Nupe 2019 : 5 519 302 au Nigeria; estimation 2025 tenant compte de la croissance demographique",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 5500000,
+          "note": "Principalement Niger State (Bida, Minna, Agaie, Lapai, Mokwa, Jebba), Kwara State (Lafiagi, Pategi), Kogi State et FCT Abuja"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Nupe language (nup)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nupoïdes"
+      "Wikipedia EN — Nupe people. https://en.wikipedia.org/wiki/Nupe_people",
+      "Wikipedia EN — Tsoede. https://en.wikipedia.org/wiki/Tsoede",
+      "Wikipedia EN — Nupe language. https://en.wikipedia.org/wiki/Nupe_language",
+      "Ethnologue SIL — Nupe (nup). https://www.ethnologue.com/language/nup/",
+      "Joshua Project — Nupe in Nigeria. https://joshuaproject.net/people_groups/14069/NI",
+      "Blueprint Newspapers — Bida Emirate/Nupe land. https://blueprint.ng/bida-emirate-nupe-land-an-evolution-of-inter-connectivity/",
+      "Crafts & Folk Art Network — Bida. https://craftsfolkart.org/bida/",
+      "Wikipedia EN — Nupe Cultural Day. https://en.wikipedia.org/wiki/Nupe_Cultural_Day"
     ]
   }
 }

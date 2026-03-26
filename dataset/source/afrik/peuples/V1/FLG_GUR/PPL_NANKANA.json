@@ -1,0 +1,23 @@
+{
+  "id": "PPL_NANKANA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Nankana",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "Ghana (Upper East)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ghana Northern Heritage", "Ethnographic Nankana Reports"]
+  }
+}

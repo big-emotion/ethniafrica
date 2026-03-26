@@ -2,67 +2,108 @@
   "id": "PPL_TOPOSA",
   "nameMain": "Toposa",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["SDN", "ETH"],
+  "currentCountries": ["SSD"],
   "content": {
     "appellations": {
       "mainName": "Toposa",
       "selfAppellation": "Toposa",
-      "exonyms": ["Toposa (terme utilisé par les Européens)"],
+      "exonyms": ["Taposa", "Topotha", "Akara", "Kare", "Kumi"],
+      "originOfExonyms": "Le terme Toposa (ou Taposa) est à la fois l'endonyme et l'exonyme. Les variantes Topotha, Akara, Kare et Kumi sont des appellations utilisées par des voisins ou des administrations coloniales. Le terme Topotha a été utilisé par certains administrateurs britanniques de l'Équatoria oriental. Dans les sources anciennes, les Toposa sont parfois confondus avec les Turkana ou d'autres groupes du cluster Karamoja.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Toposa est utilisé de manière cohérente par les Toposa eux-mêmes, par l'administration du Soudan du Sud et dans la littérature scientifique. Depuis l'indépendance du Soudan du Sud en 2011, les Toposa sont un groupe ethno-politique actif dans l'État de l'Équatoria oriental (Greater Kapoeta). L'ancien gouverneur de l'Équatoria oriental, le général Louis Lobong Lojore (en poste depuis mai 2010), est lui-même Toposa.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique méridional",
-      "historicalRegion": "Sud-SDN, ETH",
-      "currentCountries": ["SDN", "ETH"]
+      "ethnoLinguisticGroup": "Nilotique oriental, cluster Ateker (Karamoja)",
+      "historicalRegion": "Grand Kapoeta (Greater Kapoeta) — Équatoria oriental, Soudan du Sud, bordures de l'Éthiopie, du Kenya et de l'Ouganda",
+      "currentCountries": ["SSD"]
     },
     "ethnicities": [
-      "Toposa du Soudan du Sud",
-      "Toposa d'Éthiopie",
-      "Sous-groupes régionaux"
+      "Section Mosingo — l'une des deux grandes sections territoriales des Toposa",
+      "Section Kor (Ngikor) — gardiens du rituel nyasapán et de la pierre sacrée de Karamoja",
+      "Nyangatom (Dongiro) — groupe issu d'une séparation toposa à Loyoro, aujourd'hui ethnie distincte",
+      "Classe de génération Ngikaléso (Autruches) — génération senior de référence",
+      "Classe de génération Ngingoletyáng (Gazelles) — génération cadette des fils des Ngikaléso"
     ],
     "origins": {
-      "ancientOrigins": "Les Toposa sont originaires du Soudan du Sud et de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme."
+      "ancientOrigins": "Les Toposa appartiennent au cluster Ateker (Karamoja), qui regroupe des peuples nilotiques orientaux étroitement apparentés : les Karamojong d'Ouganda, les Jie, les Dodos, les Jiye, les Nyangatom (Dongiro) et les Turkana du Kenya. Selon leur tradition orale, les ancêtres Toposa vivaient avec Nakwuge (être suprême) dans le ciel et descendirent sur terre par une corde, qui se rompit, les séparant définitivement du paradis céleste. Les Toposa (et leurs ancêtres, les Ngibokorá) sont originaires des montagnes Losolia dans l'actuel Karamoja (Ouganda). Une querelle mortelle entre les Lwo et les Tap (ancêtres des Taposa) perturba l'harmonie de la vie en Ouganda du nord, provoquant une grande famine en 1587-1623.",
+      "formationPeriod": "Les survivants de la famine de 1587-1623 se déplacèrent sur de grandes distances. Les ancêtres Toposa s'installèrent à Losilang, puis dérivèrent vers le nord. À Loyoro, les Nyangatom/Dongiro partirent vers l'est, tandis que les sections Mosingo et Kor s'installèrent à Kapoeta vers 1830, sous la pression des Turkana. Le processus de migration a duré environ trois générations (150 ans). L'identité toposa distincte s'est ainsi consolidée dans la région de l'actuel Grand Kapoeta.",
+      "migrationRoutes": [
+        "Montagnes Losolia (Karamoja, Ouganda) — origine ancestrale commune au cluster Ateker",
+        "Losilang (point d'étape intermédiaire) — après la grande famine de 1587-1623",
+        "Loyoro (point de séparation) — les Nyangatom partent vers l'est ; les sections Mosingo et Kor continuent vers l'ouest",
+        "Kapoeta (installation définitive vers 1830) — sous la pression des Turkana"
+      ],
+      "historicalSettlementZones": [
+        "Grand Kapoeta (Greater Kapoeta) : comtés de Kapoeta Est, Kapoeta Nord et Kapoeta Sud (Équatoria oriental, Soudan du Sud)",
+        "Rives des rivières Singaita (Zingietta) et Lokalyen — principale zone d'habitat",
+        "Centre rituel de la rivière Loyoro — lieu du rituel nyasapán",
+        "Collines Didinga (pâturages de saison sèche) — territoire partagé historiquement",
+        "Triangle d'Ilemi (pâturages saisonniers) — zone de transhumance transfrontalière (Kenya/Soudan du Sud)"
+      ],
+      "unificationsOrDivisions": "Les Toposa sont divisés en deux sections principales (Mosingo et Kor), elles-mêmes composées de clans et de groupes de génération. La société est gérontocratique : les anciens des générations les plus élevées exercent l'autorité rituelle, sociale et politique. Le système de générations (nganaketá/nyasapán) organise l'ensemble de la vie collective. La séparation des Nyangatom (Dongiro) à Loyoro a créé une ethnie distincte mais linguistiquement proche. Les Toposa ont parfois soutenu des factions opposées lors des guerres civiles soudanaises (1955-2005), selon les avantages matériels offerts.",
+      "externalInfluences": "Commerce de l'ivoire avec des marchands swahili au 19e siècle (armes, marchandises en échange). Pacification anglo-égyptienne en 1926-1927. Distribution de plus de 50 000 armes légères par le gouvernement soudanais dans les années 1990 (aggravation des raids sur les Suri, Nuer, Dinka). Aide humanitaire lors des famines. Programmes de développement de la Toposa Development Association. Présence catholique (diocèse de Torit) et évangélique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société toposa ne connaît pas de chef héréditaire doté de pouvoirs exécutifs. L'autorité est exercée collectivement par les anciens (elders). Les décisions concernant la guerre, la paix, la gestion des ressources naturelles (pâturages, eau) sont prises lors de réunions nocturnes d'anciens, traditionnellement tenues avant l'aube, à l'écart des femmes et des jeunes. Les hommes doués d'un charisme exceptionnel (comme Tuliabong ou Lotukol dans le passé) pouvaient exercer une influence personnelle considérable, mais sans transmission héréditaire. Les anciens des générations les plus hautes ont une autorité sacrée (sacral power) sur la pluie et la sécheresse. La Toposa Development Association a été créée pour coordonner le développement communautaire et la consolidation de la paix.",
+      "clanOrganization": "Les Toposa sont organisés en clans patrilinéaires au sein des deux grandes sections (Mosingo et Kor). Chaque clan possède des noms, des tabous et des droits spécifiques sur les pâturages. Les familles étendues (ngiereá, sg. nyeré) constituent les unités résidentielles de base, parfois isolées, parfois regroupées en hameaux. Les camps de bétail (ngawiyéi, sg. nyawí) sont distincts des zones d'habitation et occupés saisonnièrement.",
+      "ageClassSystems": "Le système de générations et de classes d'âge est au coeur de l'organisation sociale toposa. Chaque homme naît dans la classe de génération (nyanakét) inférieure à celle de son père. Plusieurs nganaketá consécutifs (regroupements de garçons contemporains, sur environ 3 ans) forment une classe d'âge. Plusieurs classes d'âge forment un ensemble de génération. Les ensembles de génération portent des noms d'animaux sauvages (Ngikaléso/Autruches, Ngingoletyáng/Gazelles, Ngibokói, Ngipyéi, Ngitukoí, Ngidongo). Le nyasapán est la cérémonie de promotion collective d'un ensemble de génération au rang supérieur (statut d'aîné) : elle se tient à la rivière Loyoro, lieu rituel gardé par la section Kor. La viande d'un boeuf sacrifié (nyakiriket, festin de viande) cimente la cohésion de chaque groupe de génération. Les deux alternances transversales, Ngimór (Pierres) et Ngirisáe (Léopards), structurent les relations grand-père/petit-fils.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et pastoraux, les obligations matrimoniales (dot en bétail) et les alliances politiques. Le mariage est polygyne. La pratique du lévirat (remariage des veuves avec les frères du défunt) est courante. Les enfants nés d'une union léviratique sont considérés comme les enfants du mari décédé. Les jeunes garçons sont d'abord confiés à la garde des chèvres et moutons, puis, en grandissant, à celle du bétail.",
+      "religiousAuthority": "Les anciens des générations les plus élevées possèdent une autorité sacrée sur la pluie et la sécheresse. Les rituels au bord de la rivière Loyoro, gardés par la section Kor, sont les cérémonies les plus importantes du cycle rituel toposa. L'Église catholique (diocèse de Torit) et des missions évangéliques sont présentes. La religion traditionnelle coexiste avec le christianisme dans une forme de syncrétisme."
     },
     "languages": {
-      "mainLanguage": "Toposa",
-      "vehicularRole": "Le toposa est parlé par la majorité des Toposa. L'anglais, l'amharique et d'autres langues sont également utilisés."
+      "mainLanguage": "Toposa (Taposa, Topotha)",
+      "isoCodes": ["toq"],
+      "dialects": [
+        "Variété de Kapoeta Est (section Mosingo)",
+        "Variété de Kapoeta Nord et Loyoro (section Kor)",
+        "Dialectes mutellement intelligibles avec le Jiye (Soudan du Sud), le Nyangatom (Éthiopie), le Karamojong, le Jie et le Dodos (Ouganda) et le Turkana (Kenya)"
+      ],
+      "vehicularRole": "Le toposa est parlé par environ 320 000 personnes (Ethnologue 2017). La langue fait partie du cluster Ateker (langues nilotiques orientales). Elle est proche du turkana, du karamojong et du nyangatom. Le toposa a historiquement servi de langue véhiculaire à l'ouest du lac Turkana, dans l'Équatoria oriental. L'arabe juba et l'anglais sont utilisés dans les contextes officiels au Soudan du Sud."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels toposa (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "{\"generationalRites\": {\"nyasapán\": \"La nyasapán est la cérémonie de succession et de promotion des générations (ensembles de génération). Les représentants de l'ensemble de génération concerné se rendent à la rivière Loyoro, territoire de la section Kor, gardiens de la pierre sacrée et du rituel hérité du Karamoja. Des bœufs sont sacrifiés, et les initiés sont enduits de nyakujít (contenu purificateur de l'estomac des bœufs) par les anciens. Le nyasapán confère l'autorité rituelle, sociale et politique aux membres de la génération promue.\", \"nyakiriket\": \"Le nyakiriket est le festin de viande d'un ensemble de génération : des chèvres, des moutons et surtout des bœufs sont tués. Ce repas rituel cimente la solidarité au sein du groupe de génération et réaffirme les hiérarchies entre anciens et cadets.\"}, \"marriageRites\": {\"bridewealth\": \"Le mariage est polygyne. La dot en bétail est négociée entre familles. Lors du mariage d'une femme, ses amies du même ensemble d'âge célèbrent avec elle lors d'un festin où un bœuf sacrifié par le futur mari est consommé. Les enfants nés hors mariage formel (lors de périodes de sécheresse ou de guerre, où le mariage ritualisé est impossible) sont rattachés au groupe du père de la mère.\"}, \"funeraryRites\": {\"burial\": \"Les rites funéraires impliquent des sacrifices d'animaux et des prières aux esprits ancestraux. Les anciens supervisent les cérémonies. Le deuil est observé par la famille et l'ensemble du clan.\"}, \"cattleRites\": {\"herding\": \"Les garçons commencent par garder les chèvres et moutons avant d'accéder à la garde du bétail bovins à l'âge adulte. L'accès au bétail marque un rite de passage informel mais socialement décisif.\"}}",
+      "symbols": "{\"cattle\": \"Le bétail (bovins et caprins) est le symbole central de richesse, de prestige et d'identité toposa. La possession de bétail et d'armes à feu constitue les deux principales mesures de statut social. La concurrence pour l'eau et les pâturages, et les raids de bétail, sont des composantes constitutives de la culture guerrière.\", \"spear\": \"La longue lance de jet (utilisée dans les raids en zigzaguant pour projeter la lance puis battre en retraite) est l'arme traditionnelle emblématique.\", \"beads\": \"Les femmes portent des colliers et des ornements de perles élaborés, ainsi que des coiffes représentant le symbole de leur clan (par exemple, une pintade). Les jupes en peau sont entièrement recouvertes de perles.\", \"tree\": \"L'arbre ombrageux (shade tree) est un espace social et politique fondamental : chaque ensemble de génération a son propre arbre de rassemblement, où les hommes discutent des affaires de la communauté.\"}",
+      "artsAndMusic": "{\"oralCulture\": \"La culture est transmise oralement par des chants, des danses, de la musique, de la poésie et des récits. Les chants incluent des hymnes de génération, des chants de guerre et des chants de bétail.\", \"music\": \"La musique traditionnelle accompagne les cérémonies de génération (nyasapán), les rites funéraires, les mariages et les rassemblements communautaires. Les instruments comprennent des tambours et des flûtes.\", \"dance\": \"Les danses collectives ont lieu lors des cérémonies de génération, des mariages et des fêtes. Les hommes et les femmes dansent séparément selon les ensembles d'âge.\", \"crafts\": \"Les femmes confectionnent des ornements de perles élaborés (colliers, coiffes, bracelets, ceintures, pièces dorsales), des jupes en peau décorées et des coiffes représentant le symbole clanique. Les greniers surélevés (pour protéger les récoltes des animaux) sont construits selon une technique architecturale spécifique.\", \"beer\": \"La bière traditionnelle (à base de sorgho) est consommée lors des rassemblements d'hommes sous les arbres, jouant un rôle social important dans les discussions communautaires.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Nakwuge\", \"attributes\": \"Nakwuge est l'être suprême qui vit dans le ciel et qui, selon la tradition toposa, avait initialement permis aux hommes de vivre avec lui dans les hauteurs célestes. Lorsque la corde reliant la terre au ciel se brisa, les hommes furent séparés définitivement de Nakwuge. Ce dernier est souvent décrit comme peu préoccupé des affaires humaines, mais il peut être invoqué lors de grandes calamités.\"}, \"ancestralSpirits\": {\"description\": \"Les esprits ancestraux (nganikin) sont invoqués lors de sécheresses, d'épidémies ou de crises affectant les troupeaux. Des prières et des sacrifices d'animaux leur sont adressés par les anciens, qui possèdent un pouvoir sacré sur la pluie et la sécheresse.\"}, \"elders\": {\"sacralPower\": \"Les anciens des générations les plus élevées sont les détenteurs de l'autorité rituelle sur la pluie et la sécheresse. Leur rôle de médiateurs entre les vivants et les esprits ancestraux est fondamental dans la gestion des ressources naturelles.\"}, \"christianity\": {\"specificPractices\": \"Une présence catholique (diocèse de Torit, avec des initiatives de paix inter-ethniques depuis les années 1990) et des missions évangéliques existent dans la communauté toposa. Le christianisme coexiste avec les pratiques animistes traditionnelles dans un syncrétisme courant.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora toposa dans les grandes villes soudanaises et éthiopiennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Toposa n'ont pas développé de royauté ou de chefferie centralisée. Leur organisation politique traditionnelle repose sur l'autorité collective des anciens (elders) et le système de générations. Un épisode historique notable est la destruction du Royaume Imatari (selon la tradition Lotuho, vers le début du 19e siècle) par les Toposa, qui encerclèrent la ville et renversèrent les murs du palais. Les Toposa ont également exercé un rôle commercial important comme marchands d'ivoire aux 19e et début 20e siècles, en relation avec des commerçants swahili.",
+      "relationsWithNeighbors": "Les Toposa entretiennent des relations complexes avec leurs voisins du cluster Ateker : relations linguistiquement proches mais politiquement compétitives avec les Turkana (Kenya), les Nyangatom (Éthiopie), les Karamojong et les Jie (Ouganda). Raids réciproques de bétail avec tous ces groupes. Relations historiquement violentes avec les Didinga (droits de pâturage dans les collines Didinga autrefois soumis à un tribut symbolique, devenus ensuite conflictuels). Raids violents contre les Suri (Éthiopie) depuis les années 1980-2000. Relations tendues avec les Dinka lors des guerres civiles soudanaises.",
+      "conflictsOrAlliances": "19e siècle : commerce de l'ivoire avec des marchands swahili via l'Éthiopie et Maji. 1926-1927 : pacification anglo-égyptienne du territoire toposa. 25 février 1988 : capture de Kapoeta par la SPLA. 28 mai 1992 : reprise de Kapoeta par le gouvernement soudanais avec l'aide de milices toposa ; exode de plus de 20 000 personnes vers le Kenya (dont 12 500 mineurs non accompagnés vers Lokichokio). Années 1990 : distribution gouvernementale de plus de 50 000 armes légères aux Toposa, servant à la fois d'armes et de monnaie d'échange (AK-47 contre 10 vaches en 1992). Mars 1992 : attaque des convois humanitaires à destination de Kapoeta par des milices toposa. Mai 2007 : raid de la tribu Namorunyang sur Ngauro Payam (comté de Budi) : 49 femmes, 4 enfants et 5 hommes tués, 300 bovins et 400 caprins volés. Post-2010 : clashes avec les Turkana au Kenya (plus de 40 morts, 4 000 animaux volés).",
+      "diaspora": "Il n'existe pas de diaspora toposa significative à l'international. Lors des guerres civiles soudanaises, des réfugiés toposa se sont installés temporairement dans le camp de Nadapal (Kenya). Des retours ont eu lieu après la signature des accords de paix (2005) et l'indépendance du Soudan du Sud (2011). Les Toposa restent essentiellement une société rurale et pastorale dans la région du Grand Kapoeta."
     },
     "demography": {
-      "totalPopulation": 300000,
+      "totalPopulation": 800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur : rapport SIL 1982 (105 000 locuteurs dont 95 000 en Soudan du Sud et 10 000 en Éthiopie), Ethnologue 2017 (320 000 locuteurs de la langue toq), 101 Last Tribes (environ 800 000 Toposa). Projection 2025 tenant compte du fort taux de croissance démographique du Soudan du Sud.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 780000,
+          "note": "Grand Kapoeta (Équatoria oriental) : comtés de Kapoeta Est, Kapoeta Nord, Kapoeta Sud. Villes de Kapoeta, Riwoto, Narus. Zone semi-aride avec des collines et des plaines parsemées de cours d'eau saisonniers."
+        },
+        {
+          "country": "ETH",
+          "population": 15000,
+          "note": "Zone frontalière avec l'Éthiopie (Gambela et zones adjacentes), essentiellement des pasteurs saisonniers transfrontaliers."
+        },
+        {
+          "country": "KEN",
+          "population": 5000,
+          "note": "Réfugiés et communautés périphériques près de la frontière kényane (Lokichokio, Nadapal)."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Toposa language (toq)",
-      "CIA World Factbook – South Sudan, Ethiopia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Toposa people. https://en.wikipedia.org/wiki/Toposa_people",
+      "Wikipedia EN — Toposa language. https://en.wikipedia.org/wiki/Toposa_language",
+      "101 Last Tribes — Toposa. https://www.101lasttribes.com/tribes/toposa2.html",
+      "Joshua Project — Toposa in South Sudan. https://joshuaproject.net/people_groups/15563/OD",
+      "Tornay, Serge. 1981. Générations, classes d'âge et structures de parenté. Systèmes de Pensée en Afrique Noire.",
+      "France Leclerc — The Toposa People of South Sudan. https://franceleclerc.com/2022/05/15/the-toposa-people-of-south-sudan/",
+      "Ethnologue — Toposa (TOQ). https://www.ethnologue.com/language/toq/",
+      "Gulliver, P.H. 1958. The Turkana age organization. American Anthropologist 60:900-922.",
+      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+      "JSTOR — Generation- and age-set systems with special reference to Toposa and Turkana. https://www.jstor.org/stable/619062"
     ]
   }
 }

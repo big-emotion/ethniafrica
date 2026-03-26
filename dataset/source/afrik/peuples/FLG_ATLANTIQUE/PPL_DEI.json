@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Dei",
-      "selfAppellation": "",
-      "exonyms": ["Dei (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Dei (ou Dey)",
+      "exonyms": ["Dei", "Dey", "Dewoin (nom de la langue)"],
+      "originOfExonyms": "Le terme Dei est utilise tant par le peuple lui-meme que par les sources exterieures. Le nom Dewoin designe plus specifiquement la langue et est utilise dans les classifications linguistiques (code ISO dee). Le terme Dey est une variante orthographique anglaise courante dans la litterature anglophone.",
+      "whyProblematic": "La confusion entre le nom du peuple (Dei/Dey) et le nom de la langue (Dewoin) peut preter a ambiguite dans les sources. Le groupe est tres petit et peu documente dans la litterature ethnographique.",
+      "contemporaryUsage": "Dei ou Dey est utilise dans les documents officiels liberiens et les recensements nationaux. Dewoin est utilise par Joshua Project et les references linguistiques. Le groupe est l'un des 17 groupes ethniques indigenes officiellement reconnus au Liberia.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte du Libéria",
+      "ethnoLinguisticGroup": "Groupe linguistique Kru (famille Niger-Congo, sous-groupe Kwa). Les Dei appartiennent au groupe Kruan avec les Kru, Bassa, Krahn et Kuwaa.",
+      "historicalRegion": "Comte de Montserrado, cote du Liberia, principalement entre les fleuves Lofa et Saint-Paul, pres de Monrovia",
       "currentCountries": ["LBR"]
     },
-    "ethnicities": ["Dei"],
+    "ethnicities": ["Dei (Dey)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte du Libéria"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Dei appartiennent au groupe Kruan (Kru, Kuwaa, Bassa, Krahn, Dei) qui a migre du nord et de l'est vers la foret cotiere du Liberia actuel. Avec les Gola et les Kissi, ils comptent parmi les premiers peuples a s'etablir dans la region de l'actuel Liberia. L'anthropologue Warren d'Azevedo note que les Dei, avec les Bassa et les Kru (de langue Kwa), ainsi que les Gola et les Kissi (de langue West Atlantic/Mel), etaient parmi les premiers arrivants dans la region.",
+      "formationPeriod": "Migration vers le Liberia cotier estimee entre le XIIe et le XVIe siecle. L'expansion des peuples de langue Mande depuis le nord et l'est a pousse les petits groupes Kru comme les Dei vers le sud et la cote. La decadence de l'empire du Mali (1375) et de l'empire Songhai (1591) a accelere ces mouvements.",
+      "migrationRoutes": [
+        "Migration depuis le nord et l'est (probablement depuis le nord-est africain) vers la foret cotiere",
+        "Pression migratoire des locuteurs Mande (Kpelle, Gio, Mano) depuis le XIVe siecle poussant les petits groupes Kru vers le littoral",
+        "Etablissement definitif dans le comté de Montserrado pres de l'actuel site de Monrovia"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Montserrado (Liberia), zone cotiece entre les fleuves Lofa et Saint-Paul",
+        "Zones periurbaines de Monrovia"
+      ],
+      "unificationsOrDivisions": "Le groupe Dei est tres petit et n'a pas forme d'entite politique elargie. L'organisation traditionnelle est decentralisee, basee sur des chefferies villageoises autonomes. Lors de la fondation de Monrovia par les colons americains-liberiens (1820-1865), les Dei furent parmi les premiers peuples indigenes a entrer en contact avec les immigrants et a s'assimiler progressivement a l'economie urbaine.",
+      "externalInfluences": "Arrivee des colons americains-liberiens a partir de 1820. Les Dei etaient parmi les premiers groupes a s'etablir a Monrovia et a s'integrer dans l'economie des colons (artisans, commis, domestiques). Politique de domination et de marginalisation menee par les Americo-Liberiens envers les peuples indigenes. Les deux guerres civiles liberiennes (1989-1997 et 1999-2003) ont fortement affecte toutes les communautes du comte de Montserrado.",
+      "majorHistoricalEvents": "Contacts avec les premiers colons americains-liberiens a Monrovia (1820s). Integration precoce dans l'economie coloniale de Monrovia, devenant artisans, commis et domestiques (avec les Bassa). Recensement de 2008 enumerant 11783 Dei (0.3% de la population liberienne). Impact des guerres civiles liberienne (1989-2003) sur les communautes de Montserrado."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation traditionnelle decentralisee en chefferies villageoises. Les villages sont l'unite politique de base. L'integration precoce dans l'economie de Monrovia a modifie les structures traditionnelles. Le Poro (societe secrete masculine) et le Sande (societe secrete feminine) - institutions presentes chez de nombreux groupes liberiens - jouent un role d'organisation sociale et de transmission des normes.",
+      "clanOrganization": "Organisation clanique patrilineaire ou bilaterale typique des peuples Kru du Liberia. Les liens de clan determinent les droits d'acces a la terre et les obligations sociales.",
+      "roleOfLineages": "Les lignages jouent un role important dans la regulation des mariages, des successions et de l'acces aux ressources. La residence patrilocale est la norme traditionelle.",
+      "religiousAuthority": "Religion chretienne majoritaire (adoptee par contact avec les Americo-Liberiens). Maintien de pratiques religieuses indigenes (animisme, culte des ancetres). Les societes secretes Poro et Sande servent d'autorites religieuses et de cours de justice coutumiere."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Dewoin (Dei)",
+      "isoCodes": ["dee"],
+      "dialects": [],
+      "vehicularRole": "L'anglais liberien est la langue officielle et vehiculaire du Liberia. Le Dewoin est une langue maternelle locale. L'integration precoce dans Monrovia a favorise l'adoption de l'anglais liberien comme langue dominante chez les Dei contemporains."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites d'initiation via les societes secretes Poro (hommes) et Sande (femmes), communes a de nombreux groupes de la foret liberienne. Ces societes organisent des ecoles d'initiation, transmettent les normes sociales et servent de cours coutumières. Rites agricoles et de transition de vie. L'integration precoce a l'economie de Monrovia a transforme certaines pratiques culturelles.",
+      "symbols": "Masques et objets rituels des societes secretes Poro et Sande. L'architecture traditionnelle de la foret tropicale humide. Les techniques de peche et d'agriculture dans la zone cotiere.",
+      "artsAndMusic": "Artisanat de la foret cotiere : sculpture sur bois, tissage. Musique ceremonielle liee aux rites du Poro et du Sande. Echanges culturels avec les Americo-Liberiens et les autres groupes de Montserrado (Bassa, Kru).",
+      "spiritualities": "Majorite chretienne (protestantisme, methodisme et baptisme). Maintien de croyances animistes : culte des ancetres, intermediaires spirituels, utilisation d'objets rituels. La cosmologie indigene liberienne est centree sur un etre supreme et ses intermediaires spirituels (ancetres et divinites)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas d'Etat ou de royaume centralise. Chefferies villageoises autonomes. Les Dei n'ont pas d'histoire d'entite politique supra-villageoise connue, contrairement aux grands royaumes de l'Afrique de l'Ouest.",
+      "relationsWithNeighbors": "Relations avec les Bassa (groupe Kru voisin, avec qui ils ont partage l'experience d'integration a Monrovia). Relations avec les Gola (groupe Mel) et les immigres Mande. Assimilation culturelle partielle aux normes des Americo-Liberiens dès le XIXe siecle. Les Dei et les Bassa furent les premiers groupes indigenes a s'etablir a Monrovia et a s'integrer dans l'economie coloniale.",
+      "conflictsOrAlliances": "Les guerres civiles liberiennes (1989-1997 et 1999-2003) ont affecte le comte de Montserrado, territoire principal des Dei. La proximite de Monrovia a expose les Dei a la violence des factions armees. La politique de divide and rule des Americo-Liberiens au XIXe-XXe siecle ciblait tous les groupes indigenes, y compris les Dei.",
+      "diaspora": "Migrations internes au Liberia vers Monrovia et autres centres urbains pour raisons economiques et educatives. La guerre civile a genere des deplacements internes et une diaspora liberienne en Afrique de l'Ouest et aux Etats-Unis (notamment dans le Minnesota et le Rhode Island)."
     },
     "demography": {
-      "totalPopulation": 105,
+      "totalPopulation": 15000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Recensement national liberien 2008 : 11783 Dei (0.3%) ; Joshua Project 2025 : 19000 Dewoin ; estimation 2025 d'apres croissance demographique",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 15000,
+          "note": "Exclusivement au Liberia. Concentres dans le comte de Montserrado pres de Monrovia, entre les fleuves Lofa et Saint-Paul. L'un des plus petits groupes ethniques indigenes du Liberia (0.3% de la population nationale en 2008 selon le recensement)."
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Minority Rights Group – Liberia country profile, 2024 (https://minorityrights.org/country/liberia/)",
+      "Wikipedia – Liberia (https://en.wikipedia.org/wiki/Liberia)",
+      "Wikipedia – Demographics of Liberia (https://en.wikipedia.org/wiki/Demographics_of_Liberia)",
+      "Joshua Project – Dewoin in Liberia (https://joshuaproject.net/people_groups/11541)",
+      "Joshua Project – Liberia people groups (https://joshuaproject.net/countries/li)",
+      "Modern Ghana – Historicity of Liberia Before the Arrival of the Settlers, 2019 (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)",
+      "HartfordInfo – Liberians: An Introduction to their History and Culture (http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf)",
+      "Encyclopaedia Britannica – Liberia: People (https://www.britannica.com/place/Liberia/People)"
+    ]
   }
 }

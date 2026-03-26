@@ -6,59 +6,85 @@
   "content": {
     "appellations": {
       "mainName": "Jie",
-      "selfAppellation": "Jie",
-      "exonyms": ["Jie (terme utilisé par les Européens)"],
+      "selfAppellation": "Jie (Ngijie)",
+      "exonyms": ["Jie", "Najie (nom de leur territoire)"],
+      "originOfExonyms": "Le nom Jie est à la fois l'ethnonyme et le nom de leur territoire (Najie, le pays des Jie, dans le district de Kotido). Selon la tradition, les Jie sont les ancêtres directs des Karamojong ; le nom Karamojong dérive d'une formule jie ekara ngimojong signifiant les vieux hommes ne peuvent plus marcher, désignant ceux qui décidèrent de ne pas poursuivre la migration vers le sud.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Jie est utilisé en anglais et en ougandais. En langue jie, le peuple se désigne Ngijie et leur pays Najie.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique oriental",
-      "historicalRegion": "Nord-est de l'Ouganda",
+      "ethnoLinguisticGroup": "Nilotique oriental — cluster Ateker (ou cluster Karamojong), sous-groupe Teso-Turkana",
+      "historicalRegion": "Najie (pays jie), district de Kotido, sous-région de Karamoja, nord-est de l'Ouganda",
       "currentCountries": ["UGA"]
     },
-    "ethnicities": ["Jie du Nord", "Jie du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Rengen (section territoriale nord de Najie)",
+      "Lokatap (section territoriale centrale de Najie)",
+      "Panyangara (section territoriale sud de Najie)",
+      "Kotido (groupe centré autour du centre urbain de Kotido)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Jie sont originaires du nord-est de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Jie font partie du cluster Ateker (ou cluster Karamojong), ensemble de peuples nilotiques orientaux apparentés, incluant les Karamojong, les Dodoth, les Turkana, les Toposa, les Donyiro, les Iteso et les Kumam. Selon la tradition orale et les recherches ethnographiques de P.H. Gulliver (1952-1954), ce groupe migra d'Abyssinie (Ethiopie actuelle) vers 1600-1700 apr. J.-C. Les Jie se séparèrent du groupe principal Ateker lors de la fragmentation près de la frontière kenya-éthiopienne, et s'établirent dans le district actuel de Kotido, entre les Dodoth au nord et les Karamojong au sud. La tradition jie situe leur foyer d'origine mythique à Timu, dans le nord de la Karamoja.",
+      "formationPeriod": "Identité jie distincte consolidée entre le 17e et le 19e siècle. Les travaux de P.H. Gulliver (1952) et les recherches sur la tradition orale jie (thèse de la SOAS) permettent une reconstruction historique depuis environ 1720. Le système de classes de génération jie fournit un cadre chronologique interne. Au début du 19e siècle, les Jie comptaient environ 18 000 personnes selon Gulliver.",
+      "migrationRoutes": [
+        "Migration depuis l'Abyssinie (Ethiopie) vers le sud-ouest, vers 1600-1700, avec le groupe proto-Ateker",
+        "Séparation d'avec les Turkana (qui partirent vers le Kenya) et établissement dans le district de Kotido (Najie), Ouganda nord-est"
+      ],
+      "historicalSettlementZones": [
+        "Najie (district de Kotido), Karamoja, nord-est de l'Ouganda",
+        "Pâturages saisonniers dans les districts voisins de Kaabong, Abim et Moroto lors de la transhumance"
+      ],
+      "unificationsOrDivisions": "Les Jie sont organisés en sections territoriales (Rengen, Lokatap, Panyangara) partageant une identité commune mais maintenant une certaine autonomie. Une scission importante s'est produite au 18e siècle environ, lorsqu'un groupe jie migra vers le Soudan du Sud pour former les Jiye (Jie du Sud, voir PPL_JIE_SUD). Les tensions avec les Karamojong au sud et les Dodoth au nord ont marqué l'histoire jie.",
+      "externalInfluences": "Contacts et conflits anciens avec les Turkana (Kenya), les Toposa (Soudan du Sud), les Dodoth et les Karamojong. Influence de l'administration coloniale britannique au 20e siècle (tentatives de sédentarisation et de collecte d'impôts). Christianisme introduit par les missions catholiques et protestantes. Campagnes de désarmement du gouvernement ougandais (2001-2011). Influence des ONG et des programmes de développement.",
+      "majorHistoricalEvents": "17e-18e siècles : migration depuis l'Ethiopie et établissement à Najie. 18e siècle : séparation d'un groupe qui formera les Jiye du Soudan du Sud. 1952-1954 : études ethnographiques fondamentales de P.H. Gulliver publiées dans le Journal of the Royal Anthropological Institute. 2001-2011 : campagnes de désarmement du gouvernement ougandais affectant les Jie. 2009 : heurts entre guerriers jie et forces de police dans le district de Kaabong. 2014 : recensement ougandais : 165 242 personnes se déclarant Jie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Société acéphale fondée sur un système de classes de génération (asapan). L'autorité politique repose sur le conseil des anciens (les hommes initiés de la génération aînée) qui se réunissent sur les sites cérémoniels sacrés appelés akiriket. Les décisions concernant la guerre, la paix, les pâturages et les alliances sont prises collectivement par les anciens initiés. Des functionnaires héréditaires exercent des rôles rituels : les fire-makers (allumeurs du feu nouveau, Ngimuryan) et les war-leaders jouent un rôle cérémoniel distinct du pouvoir des anciens.",
+      "clanOrganization": "Organisation en clans exogames (groupes de personnes apparentées en ligne patrilinéaire) comptant souvent plus d'une centaine de membres. Les familles qui se croient distantes dans la ligne mâle maintiennent leurs homesteads proches. Les hommes ne doivent généralement pas se marier dans le clan de leur mère.",
+      "ageClassSystems": "Système de classes de génération alternées (asapan) : les Ngikosowua (Buffles) et les Ngikoria (Blaireaux du miel). Ces deux classes de génération alternent à chaque cycle d'initiation. Les hommes sont initiés vers l'âge de 30 ans lors de la cérémonie asapan, au cours de laquelle chaque initié doit tuer un taureau sacrificiel d'un coup de lance au cœur. L'initiation marque le passage au statut d'homme adulte et l'accès aux responsabilités communautaires. Le cycle de génération dure environ 50 ans, avec un transfert de pouvoir de la génération aînée à la génération cadette.",
+      "roleOfLineages": "Lignages patrilinéaires (ekitela) structurant l'identité sociale, les droits sur les troupeaux et les terres de pâturage, et les alliances matrimoniales. Les homesteads de familles distantes mais patrilinéairement liées sont maintenus proches pour solidarité.",
+      "religiousAuthority": "Les fire-makers (Ngimuryan) sont des fonctionnaires rituels héréditaires qui allument le feu nouveau lors des cérémonies, symbolisant la continuité du groupe. Les anciens initiés de la génération aînée détiennent l'autorité religieuse collective lors des assemblées akiriket. Présence de guérisseurs et de devins traditionnels. Influence croissante des pasteurs chrétiens (catholiques et protestants) depuis le 20e siècle."
     },
     "languages": {
-      "mainLanguage": "Jie",
-      "vehicularRole": "Le jie est parlé par la majorité des Jie. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Ngajie (dialecte du ngakarimojong, famille nilotique orientale)",
+      "isoCodes": ["kdj"],
+      "dialects": [
+        "Ngajie (dialecte jie, mutuellement intelligible avec le karamojong, le dodoth, le turkana et le toposa)"
+      ],
+      "vehicularRole": "La langue jie (ngajie) est un dialecte du ngakarimojong (ISO 639-3 : kdj), langue nilotique orientale de la famille nilo-saharienne, mutuellement intelligible avec le karamojong, le dodoth, le turkana, le toposa et l'iteso. L'anglais est la langue officielle de scolarisation et d'administration. Le swahili est peu utilisé dans cette région du nord-est ougandais."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels jie (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "Cérémonie asapan (initiation des hommes adultes) : rite de passage central au cours duquel chaque initié tue un taureau sacrificiel d'un coup de lance au cœur, marquant l'entrée dans la classe de génération adulte (Ngikoria ou Ngikosowua). La cérémonie se déroule dans l'enceinte sacrée akiriket. Rites de mariage (séquence rituelle documentée : Ewori, Eloto, Atukokin, Akirirar, Ebilani, Apudor, Akiram ngatuk, Akumun). Rites funéraires et cérémonies liées aux troupeaux de bétail. Le mariage jie est fondé sur l'échange de dot en bétail (lobola) et comprend plusieurs étapes cérémonielles s'étalant sur des années.",
+      "symbols": "Le bétail (vaches et bœufs) est le symbole central de la richesse, du prestige et de l'identité jie. La lance (utilisée lors de la cérémonie asapan) est symbole de virilité et de statut de guerrier. Les scarifications corporelles (sur le torse et le visage) sont des marques identitaires importantes. Les coiffures élaborées des jeunes hommes (ochre et graisse) signalent le statut de guerrier non encore initié.",
+      "artsAndMusic": "Chants rituels et poésie orale (txapolon) transmis lors des cérémonies et des assemblées. Danses traditionnelles liées aux cérémonies d'initiation et aux célébrations de victoire. Artisanat : fabrication d'armes (lances, arcs, massues), de bijoux (bracelets en ivoire et en métal), de récipients en céramique et en cuir. Les femmes fabriquent des nattes et des récipients en fibres végétales. La tradition orale (contes, récits généalogiques, chants de louange des troupeaux) est un art central de la culture jie.",
+      "spiritualities": "Croyance en Akuj (ou Ngakuj), divinité suprême du ciel et de la pluie, commune aux peuples du cluster Ateker. Les ancêtres (les ngimamuro) sont invoqués lors des cérémonies pour leur protection et leurs bénédictions. Les fire-makers héréditaires (Ngimuryan) ont un rôle rituel fondamental lié au feu sacré symbolisant la continuité du groupe. Croyances en esprits de la nature liés aux arbres sacrés et aux sites akiriket. Influence du christianisme (catholique et protestant) depuis le 20e siècle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora jie dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Jie n'ont jamais développé de structure politique centralisée sous forme de royaume ou de chefferie. Leur système acéphale de classes de génération constitue le cadre politique fondamental. Ils font partie du cluster Karamojong (Ateker), l'un des sept groupes de ce cluster dans la région de Karamoja. Les Jie sont les ancêtres historiques des Karamojong selon la tradition locale.",
+      "relationsWithNeighbors": "Selon P.H. Gulliver (1952), les Turkana faisaient la guerre à tous leurs voisins sauf aux Jie, avec lesquels ils s'alliaient parfois contre les Karamojong et les Dodoth. Les Karamojong faisaient de même, s'alliant avec les Dodoth contre les Jie. Les Toposa (Soudan du Sud) étaient ennemis des Jie malgré les liens de parenté. Les Jie entretiennent des tensions persistantes avec le gouvernement ougandais qui cherche à les sédentariser.",
+      "conflictsOrAlliances": "Conflits récurrents avec les Karamojong au sud et les Dodoth au nord pour le contrôle des pâturages et les raids de bétail. Alliance occasionnelle avec les Turkana contre les Karamojong. Résistance aux campagnes de désarmement du gouvernement ougandais (2001-2011) : les Jie, comme les Karamojong, ont résisté à la reddition des armes, considérant les fusils comme indispensables à la protection de leurs troupeaux. Juin 2009 : heurts avec la police dans le district de Kaabong à la suite d'une tentative de raids sur des enclos protégés.",
+      "diaspora": "Migration limitée de jeunes Jie vers les centres urbains ougandais (Kampala, Kotido) pour l'éducation et l'emploi. La communauté reste essentiellement rurale et pastorale dans la région de Karamoja."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 180000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Recensement ougandais 2014 (165 242 Jie) ; estimations 2025 basées sur un taux de croissance de la population de la région de Karamoja. Gulliver (1953) estimait la population jie à environ 18 000 personnes dans les années 1950 ; le recensement 1986 donnait 50 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 180000,
+          "note": "Concentrés dans le district de Kotido (Najie), sous-région de Karamoja, nord-est de l'Ouganda"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Jie language (jie)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Jie (Uganda). https://en.wikipedia.org/wiki/Jie_(Uganda)",
+      "Gulliver, P.H. (1953). The Age-Set Organization of the Jie Tribe. Journal of the Royal Anthropological Institute, 83. https://www.semanticscholar.org/paper/The-Age-Set-Organization-of-the-Jie-Tribe-Gulliver/848ca133307012084047e26a165f36f395504282",
+      "Gulliver, P.H. (1953). The Family Herds: A Study of Two Pastoral Tribes in East Africa, the Jie and Turkana.",
+      "SOAS Research Online — The traditional history of the Jie of Uganda (thesis). https://soas-repository.worktribe.com/output/418348",
+      "Kyu Space — Rites of passage of the Jie community of Kotido District. https://kyuspace.kyu.ac.ug/bitstreams/e023ad71-0771-485c-ba59-ec4f0e6d1a68/download",
+      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/",
+      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj. https://map.swordshare.com/kdj",
+      "Uganda Bureau of Statistics — National Population and Housing Census 2014."
     ]
   }
 }

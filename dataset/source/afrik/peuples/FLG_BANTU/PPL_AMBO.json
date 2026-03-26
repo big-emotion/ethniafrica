@@ -6,54 +6,72 @@
   "content": {
     "appellations": {
       "mainName": "Ambo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ba-Ambo",
+      "exonyms": ["Waambo", "Aambo"],
+      "originOfExonyms": "Le nom 'Ambo' designe le peuple et leur territoire (Amboland), situe de part et d'autre de la riviere Luangwa en Zambie orientale. Il est distinct du peuple Ovambo (Ambo) de Namibie et d'Angola, avec lequel il ne doit pas etre confondu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme 'Ambo' est utilise en Zambie pour designer ce groupe bantou de la province orientale, distinct du peuple Ovambo d'Afrique australe portant le meme nom.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantou central-meridional (branche Lala-Bisa)",
+      "historicalRegion": "Province orientale de la Zambie, region de la riviere Luangwa",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Ambo"],
+    "ethnicities": ["Ambo", "Ba-Ambo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Ambo sont originaires de l'Empire Luba (actuel Katanga, RDC). Vers 1600, ils quitterent la region du Katanga a l'ouest de la riviere Luapula, faisant alors partie du peuple Aushi. Deux fils d'un chef Aushi traverserent la Luapula et s'etablirent sur la riviere Mulembo, a l'est de la Luangwa, fondant ainsi un groupe distinct. Le systeme d'heritage matrilineaire (de pere a fils de sa soeur) avait rendu impossible leur succession dans le groupe Aushi, les poussant a fonder leur propre territoire.",
+      "formationPeriod": "Vers 1600, separation de l'Aushi et fondation du groupe Ambo sous deux clans fondateurs : le clan Mpande et le clan Nyendwa.",
+      "migrationRoutes": [
+        "Depuis l'Empire Luba (Katanga) vers la region de la Luapula",
+        "Traversee de la riviere Luapula vers l'est",
+        "Installation sur la riviere Mulembo, a l'est de la riviere Luangwa",
+        "Expansion de part et d'autre de la riviere Luangwa"
+      ],
+      "historicalSettlementZones": [
+        "Region de la riviere Luangwa (province orientale, Zambie)",
+        "Deux rives de la Luangwa : cote est (Nsengaland) et cote ouest (Lalaland)"
+      ],
+      "unificationsOrDivisions": "La fondation du groupe repose sur l'union de deux clans fondateurs (Mpande et Nyendwa). Des guerres furent menees contre les Nsenga voisins. Le clan Mpande devint gardien du site royal funeraire de Mpande village. L'arrivee des Ngoni (1835) puis des Chikunda (vers 1870) perturba profondement la cohesion du groupe.",
+      "externalInfluences": "En 1835, les Ngoni du chef Zwangendaba envahirent la region depuis le sud et resterent quatre ans, impactant fortement la vie des Ambo. A partir de 1870, les Chikunda venus du Mozambique via la Zambezi introduisirent la traite des esclaves, capturant des Ambo pendant dix ans. L'Anglais Harrison Clark (Changa Changa) s'installa ensuite parmi les Nsenga voisins et etendit son influence sur Amboland jusqu'en 1902.",
+      "majorHistoricalEvents": "Vers 1600 : separation de l'Aushi et fondation du groupe Ambo. Guerres Ambo-Nsenga (XVIIe-XVIIIe siecles) ; mort de Kunda Mpanda, fondation du site royal funeraire. 1835 : invasion des Ngoni de Zwangendaba. Vers 1870-1880 : razzia esclavagiste des Chikunda. Fin XIXe siecle : influence de Harrison Clark (Changa Changa). 1902 : arrivee de l'administration coloniale britannique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferies claniques. Les chefs heredit aires gouvernaient leur territoire. L'autorite politique etait liee au clan Mpande (gardiens du tombeau royal) et au clan Nyendwa (clan detenteur de la chefferie principale). La chefferie pouvait etre exercee par une femme comme en temoigne la cheftaine Mwape II.",
+      "clanOrganization": "Organisation matrilineaire : l'heritage passe du pere au fils de sa soeur (neveu uterine). Deux clans fondateurs principaux : le clan Mpande (gardiens du site royal funeraire) et le clan Nyendwa (clan dirigeant). Les noms de clans etaient plus importants que le nom tribal dans l'identite individuelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La matrilinearite regit la succession et l'heritage. Le site funeraire de Mpande village constitue le lieu sacre central du groupe, confie au clan Mpande.",
+      "religiousAuthority": "Pratiques animistes liees aux ancetres. Le site funeraire royal a une dimension sacree. Des rites funeraires avec abattage de bovins marque l'importance sociale du defunt."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (dialecte Ambo)",
+      "isoCodes": ["leb"],
+      "dialects": ["Ambo (dialecte du Lala-Bisa)"],
+      "vehicularRole": "L'Ambo est un dialecte du Lala-Bisa (code ISO 639-3 : leb), appartenant a la famille bantoue. La langue partage des affinites avec le Tonga, le Lenje, le Bisa et d'autres langues bantous le long d'un axe allant du Subia sur le Zambeze au Bemba sur le lac Tanganyika. L'anglais est la langue officielle de la Zambie et sert de lingua franca nationale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies funeraires importantes : abattage de bovins le jour apres l'enterrement, croyant que plus de bovins tues, plus grand est le statut du defunt. Rites de passage marques par l'integration dans le systeme clanique. Rites d'intronisation des chefs.",
+      "symbols": "La coquille Mpande (coquillage cotier servant de monnaie d'echange a travers l'Afrique centrale) est le symbole identitaire du clan fondateur Mpande. Les bovins constituent un symbole de statut social et de richesse.",
+      "artsAndMusic": "Tradition orale importante, incluant les mythes d'origine des clans. Artisanat local lie a l'agriculture et a l'elevage.",
+      "spiritualities": "Animisme avec culte des ancetres. Site funeraire royal de Mpande village comme espace sacre. Croyances en la protection des ancetres fondateurs."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies claniques organisees autour des clans Mpande et Nyendwa. Pas de royaume centralise, mais un systeme de chefferies reparties de part et d'autre de la riviere Luangwa.",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Nsenga (trois guerres ; mort du fondateur Kunda Mpanda). Absorption partielle dans les aires culturelles Nsenga (a l'est) et Lala (a l'ouest) avec le temps. Relations commerciales avec les peuples voisins bantous.",
+      "conflictsOrAlliances": "Guerres avec les Nsenga (XVIIe-XVIIIe siecles). Invasion ngoni (1835). Traite des esclaves par les Chikunda (vers 1870-1880).",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 4000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project – Ambo in Zambia (estimation), PeopleGroups.org",
+      "distributionByCountry": [{ "country": "ZMB", "population": 4000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Zambia's Traditional History – Ambo (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/ambo/)",
+      "Joshua Project – Ambo in Zambia (https://joshuaproject.net/people_groups/18917)",
+      "PeopleGroups.org – Ambo of Zambia (https://peoplegroups.org/people_groups/pg015563/)",
+      "Ethnologue – Lala-Bisa language (leb) (https://www.ethnologue.com/language/leb/)",
+      "Wikipedia EN – Languages of Zambia (https://en.wikipedia.org/wiki/Languages_of_Zambia)",
+      "Britannica – Ambo people (https://www.britannica.com/topic/Ambo-people)"
+    ]
   }
 }

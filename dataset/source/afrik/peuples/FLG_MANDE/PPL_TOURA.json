@@ -2,58 +2,93 @@
   "id": "PPL_TOURA",
   "nameMain": "Toura",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["CIV"],
+  "currentCountries": ["CIV", "GIN"],
   "content": {
     "appellations": {
       "mainName": "Toura",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wen (ou Wenmebo)",
+      "exonyms": [
+        "Toura",
+        "Tura",
+        "Turas",
+        "Wen",
+        "Wenmebo",
+        "Weingme",
+        "Digwale",
+        "Gwane",
+        "Gweole",
+        "Lenguedougou",
+        "Nebou",
+        "Yaramassa",
+        "Yiriguele"
+      ],
+      "originOfExonyms": "Toura est le terme francophone adopte par l'administration coloniale et reste en usage officiel en Cote d'Ivoire. Tura est la forme anglophone. Wen (ou Wenmebo) est l'endonyme prefere par le peuple lui-meme. Les autres variantes correspondent a des noms de sous-groupes ou de dialectes regionaux. La langue toura appartient au groupe Dan-Toura (Glottolog : dant1235).",
+      "whyProblematic": "Les Toura sont parfois confondus avec les Mahou (Mahouka), leurs voisins proches avec qui ils partagent de nombreuses pratiques culturelles et des masques similaires. Wikipedia (FR) note explicitement ce lien : 'les Toura ont un lien avec les Mahous : ces deux ethnies ont presque les memes fetes villageoises, coutumes et masques'. La classification de la langue toura oscille entre le sous-groupe Dan-Toura (Mande du Sud) et un positionnement autonome.",
+      "contemporaryUsage": "Toura est le terme officiel utilise par l'Etat ivoirien, les medias et la recherche academique. Wen/Wenmebo reste en usage dans la communaute et dans les etudes linguistiques. La langue Tura (ou Toura) est identifiee sous le code ISO 639-3 neb dans certaines classifications.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Mande du Sud (groupe Dan-Toura)",
+      "historicalRegion": "Region de Man et Biankouma (ouest de la Cote d'Ivoire), contreforts du massif du Mont Nimba et montagnes de l'ouest ivoirien",
+      "currentCountries": ["CIV", "GIN"]
     },
-    "ethnicities": ["Toura"],
+    "ethnicities": ["Toura", "Wen"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Toura font partie du grand ensemble Mande du Sud etabli dans la zone forestiere et de montagne de l'ouest ivoirien. Leur installation dans la region de Biankouma et Man est anterieure au 16e siecle. Ils sont classifies dans le sous-groupe Dan-Toura, proche des Dan (Yacouba/Gio). Leurs origines remontent aux migrations mande vers le sud depuis les steppes sahelo-soudaniennes.",
+      "formationPeriod": "Les Toura sont etablis dans la region de Man et Biankouma avant les grands mouvements migratoires du 16e siecle qui ont restructure l'ouest ivoirien. Leur identite s'est consolidee en interaction avec les Dan, les Mahou et d'autres peuples du massif de Man.",
+      "migrationRoutes": [
+        "Migrations mande vers le sud depuis le Sahel (avant le 16e siecle)",
+        "Etablissement dans les montagnes de l'ouest ivoirien (region de Man, Biankouma)",
+        "Extension vers la Guinee forestiere (minorite)"
+      ],
+      "historicalSettlementZones": [
+        "Departement de Biankouma (ouest de la Cote d'Ivoire, region des Montagnes)",
+        "Region de Man (Cote d'Ivoire occidentale, zone montagneuse)",
+        "Touba et ses environs (Cote d'Ivoire)"
+      ],
+      "unificationsOrDivisions": "Les Toura maintiennent une identite distincte des Dan/Yacouba malgre leur proximite linguistique et culturelle. Ils ont developpe une identite propre fondee sur leurs masques, leurs fetes villageoises et leurs pratiques religieuses, distincte de celle des Mahou avec qui ils partagent pourtant de nombreuses traditions.",
+      "externalInfluences": "Influence mandingue et malinke via les reseaux commerciaux de Cote d'Ivoire occidentale. Presence coloniale francaise (19e-20e siecle). Les Toura portent souvent des patronymes mande (Dosso, Soumahoro, Diabate, Diomande, Doumbouya, Haidara) sans presenter les traits physiques typiques des Malinke, signe d'une integration linguistique par le biais du commerce.",
+      "majorHistoricalEvents": "Integration dans la colonie de Cote d'Ivoire (fin 19e siecle). Independence de la Cote d'Ivoire (1960). Crise politico-militaire ivoirienne (2002-2011) : la region de l'Ouest, ou vivent les Toura, a ete affectee par les conflits inter-communautaires. Deplacements de population vers Abidjan et Yamoussoukro."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe organisee en villages autonomes avec un conseil d'anciens et un chef de village. L'organisation politique est decentralisee, typique des peuples forestiers de montagne de l'ouest ivoirien. Pas de royaute ou de chefferie supra-villageoise documentee a grande echelle.",
+      "clanOrganization": "Organisation patrilineaire avec des clans exogames. Les patronymes (Dosso, Soumahoro, Diabate, Diomande, Doumbouya, Haidara) suggerent une stratification sociale influencee par les voisins mandingues mais sans adoption complete du systeme de castes mande.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires controlent l'acces aux terres et les decisions communautaires. Les anciens jouent un role central dans la resolution des conflits et l'organisation des ceremonies.",
+      "religiousAuthority": "Religion traditionnelle animiste majoritaire, avec une minorite musulmane. Les Toura sont decrits comme 'en majorite animistes et musulmans' selon Wikipedia (FR). Les masques coutumiers jouent un role religieux et social central, similaire aux pratiques Mahou."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Toura (Tura / Wen)",
+      "isoCodes": ["neb"],
+      "dialects": ["Nao", "Boo", "Yiligele", "Gweò", "Waadu", "Guse"],
+      "vehicularRole": "Langue vernaculaire locale de la region de Biankouma. Le toura n'est pas une langue vehiculaire regionale ; le dioula (mandingue de commerce) et le francais jouent ce role dans l'ouest ivoirien. Environ 38 500 locuteurs en Cote d'Ivoire (estimation 1993, Wikipedia FR). Certains locuteurs toura ont migre vers Abidjan et Yamoussoukro, elargissant la zone de dispersion. La langue est classee dans le groupe Dan-Toura (Mande du Sud) par Glottolog."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Fetes villageoises traditionnelles partagees avec les Mahou (memes coutumes et masques). Ceremonies masquees pour les initiations, les recoltes et les evenements communautaires. Rites funeraires. Festival des arts et cultures de Man (festival annuel de la region montagneuse ouest ivoirienne, lieu de demonstration des danses et masques Toura).",
+      "symbols": "Masques coutumiers similaires a ceux des Mahou : masques en bois representant des esprits protecteurs. Le Kpene (ou Kpènê) est une forme musicale/dansante propre aux Toura, visible lors du Festival des Arts de Man 2024. Le massif montagneux de l'ouest ivoirien (region de Biankouma) comme territoire identitaire.",
+      "artsAndMusic": "Tradition de masques en bois lies aux ceremonies villageoises et aux societes secretes. Musique et danse Toura (Kpene) preservees lors des festivals culturels regionaux. Artisanat (tissage, sculpture). Agriculture vivriere (riz, igname, mais) et culture du cafe-cacao dans la region de Man.",
+      "spiritualities": "Animisme traditionnel dominant (croyance aux esprits de la nature, aux ancetres et aux pouvoirs des masques). Presence de l'islam chez une partie de la population (influence mandingue). Christianisme present mais minoritaire. Les pratiques spirituelles sont etroitement liees aux masques et aux societes d'initiation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation en chefferies villageoises decentralisees. Pas de grand royaume toura documente. Participation aux reseaux d'echange de l'ouest ivoirien (or, kola, sel) avec les peuples mande voisins.",
+      "relationsWithNeighbors": "Relations tres proches avec les Mahou (pratiques culturelles quasi identiques). Voisinage avec les Dan/Yacouba (meme sous-groupe linguistique Dan-Toura). Contact avec les Malinke et Dioula via les reseaux commerciaux. Appartenance au grand ensemble Mande du Sud de l'ouest ivoirien.",
+      "conflictsOrAlliances": "Pas de conflits majeurs documentes specifiques aux Toura. Region de l'Ouest ivoirien touchee par les tensions inter-communautaires lors de la crise de 2002-2011. Alliances traditionnelles avec les Mahou.",
+      "diaspora": "Migration vers Abidjan et Yamoussoukro (villes principales de Cote d'Ivoire) depuis les decennies recentes. Communaute toura dans la diaspora ivoirienne en Europe (France principalement)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 50000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia (FR) cite environ 26 000 Toura au recensement ivoirien de 2001. Estimation de 38 500 locuteurs de la langue toura en Cote d'Ivoire (1993). Avec la croissance demographique (environ 2,5% annuel en CIV), estimation 2025 : 50 000 personnes.",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 48000 },
+        { "country": "GIN", "population": 2000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia – Toura (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Toura_(peuple))",
+      "Wikipedia – Tura language (EN), 2024 (https://en.wikipedia.org/wiki/Tura_language)",
+      "Glottolog – Dan-Toura (dant1235), 2024 (https://glottolog.org/resource/languoid/id/dant1235)",
+      "Omniglot – Dan language and alphabet, 2024 (https://www.omniglot.com/writing/dan.htm)",
+      "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirite and Conflict, 2006 (https://www.landinfo.no/asset/514/1/514_1.pdf)",
+      "RTI Officiel – 2mn pour comprendre les Toura, 2021 (https://www.facebook.com/RTIOfficiel/videos/2mn-pour-comprendre-les-toura/452107626511263/)"
+    ]
   }
 }

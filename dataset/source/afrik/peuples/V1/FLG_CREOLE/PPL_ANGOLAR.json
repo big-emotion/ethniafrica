@@ -1,0 +1,66 @@
+{
+  "id": "PPL_ANGOLAR",
+  "nameMain": "Angolar",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "Angolar",
+      "selfAppellation": "Angolar",
+      "exonyms": [
+        "Angolar (terme utilisé pour les créoles de São Tomé-et-Príncipe)"
+      ],
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-portugais",
+      "historicalRegion": "São Tomé-et-Príncipe",
+      "currentCountries": []
+    },
+    "ethnicities": ["Angolar de São Tomé", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Angolar sont un peuple créole formé à partir du contact entre les populations africaines (notamment d'Angola) et les colons portugais à partir du XVe siècle. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.",
+      "externalInfluences": "Contacts avec les populations africaines locales, influence du christianisme catholique et des croyances traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
+      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.",
+      "religiousAuthority": "Autorité des prêtres catholiques et des chefs religieux. Influence du catholicisme et des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Angolar (créole de São Tomé)",
+      "vehicularRole": "L'angolar est parlé par la majorité des Angolar. Le portugais est utilisé dans l'éducation et l'administration."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses catholiques",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels créoles",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels créoles, symboles catholiques.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle créole",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat",
+      "Spiritualités": "Catholicisme majoritaire. Croyances traditionnelles préservées dans certaines communautés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques santoméennes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora angolar dans les grandes villes santoméennes et dans les pays occidentaux (Portugal)."
+    },
+    "demography": {
+      "totalPopulation": 5000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements santoméens, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Angolar language (aoa)",
+      "CIA World Factbook – São Tomé and Príncipe",
+      "Recensements santoméens",
+      "Études anthropologiques sur les peuples créoles"
+    ]
+  }
+}

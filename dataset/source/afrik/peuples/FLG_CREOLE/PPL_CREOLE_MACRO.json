@@ -2,71 +2,126 @@
   "id": "PPL_CREOLE_MACRO",
   "nameMain": "Peuples Créoles (macro-groupe)",
   "languageFamilyId": "FLG_CREOLE",
-  "currentCountries": ["GIN", "CPV", "SLE", "MUS", "SYC"],
+  "currentCountries": ["GIN", "CPV", "SLE", "STP", "MUS", "SYC", "REU"],
   "content": {
     "appellations": {
       "mainName": "Peuples Créoles (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (Crioulo, Krio, etc.)",
+      "selfAppellation": "Variées selon les groupes : Kreol, Krio, Crioulo, Seselwa",
+      "exonyms": ["Creoles", "Crioulos", "Créoles africains"],
+      "originOfExonyms": "Le terme créole vient du portugais crioulo, désignant à l'origine une personne née dans la colonie par opposition à celle venue de la métropole. Il s'est ensuite appliqué aux langues et aux peuples issus des contacts entre Européens, Africains et autres populations dans les territoires coloniaux.",
+      "whyProblematic": "Le terme est polysémique et varie selon les régions : à la Réunion il désigne tout habitant né sur l'île, à Maurice il identifie les descendants d'esclaves africains chrétiens, en Sierra Leone il désigne un groupe ethnique précis. Cette variabilité peut créer des confusions identitaires et politiques.",
+      "contemporaryUsage": "Le terme est aujourd'hui revendiqué comme marqueur identitaire positif dans les communautés créoles de l'océan Indien et d'Afrique de l'Ouest. Des festivals comme le Festival Kreol aux Seychelles et le Carnaval mauricien valorisent la culture créole contemporaine.",
       "linguisticFamily": "FLG_CREOLE",
-      "ethnoLinguisticGroup": "Créole (macro-groupe)",
-      "historicalRegion": "Zones côtières d'Afrique de l'Ouest, îles de l'océan Indien",
-      "currentCountries": ["GIN", "CPV", "SLE", "MUS", "SYC"]
+      "ethnoLinguisticGroup": "Créole (macro-groupe : afro-français, afro-portugais, afro-anglais)",
+      "historicalRegion": "Zones côtières d'Afrique de l'Ouest, îles atlantiques (Cap-Vert, São Tomé-et-Príncipe), îles de l'océan Indien (Maurice, Seychelles, Réunion)",
+      "currentCountries": ["GIN", "CPV", "SLE", "STP", "MUS", "SYC", "REU"]
     },
     "ethnicities": [
-      "Créoles cap-verdiens",
-      "Crioulo de Guinée-Bissau",
-      "Krio de Sierra Leone",
-      "Créoles de São Tomé-et-Príncipe",
-      "Créoles de Maurice",
-      "Créoles des Seychelles",
-      "Créoles de la Réunion",
-      "Autres groupes créoles"
+      "Créoles cap-verdiens (Kriols ou Kabuverdianu)",
+      "Crioulos de Guinée-Bissau (créole afro-portugais)",
+      "Krio de Sierra Leone (créole afro-anglais, issus d'esclaves libérés)",
+      "Forros de São Tomé-et-Príncipe (descendants d'esclaves affranchis)",
+      "Angolares de São Tomé (descendants de naufragés angolais)",
+      "Créoles mauriciens (descendants d'esclaves africains et malgaches sous colonisation française)",
+      "Créoles seychellois (descendants d'esclaves africains et malgaches)",
+      "Créoles réunionnais (nés à la Réunion, de toutes origines ethniques)"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples créoles sont formés à partir du contact entre les populations africaines locales et les colons européens (portugais, français, britanniques) à partir du XVe siècle. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune. Diversité linguistique importante.",
-      "externalInfluences": "Contacts avec les populations africaines locales, influence du christianisme (catholicisme, protestantisme) et des croyances traditionnelles."
+      "ancientOrigins": "Les peuples créoles d'Afrique sont issus des grandes vagues de colonisation européenne à partir du XVe siècle. Les Portugais furent les premiers à établir des communautés créoles sur les îles atlantiques (Cap-Vert, São Tomé-et-Príncipe) dès les années 1460-1490, en mélangeant des colons européens, des esclaves africains (principalement d'Angola, du Congo, du Bénin) et des communautés locales. Les créoles afro-français des îles de l'océan Indien (Maurice, Réunion, Seychelles) se formèrent aux XVIIe et XVIIIe siècles, à partir d'esclaves bantoues d'Afrique de l'Est, de Madagascar, et de colons français. Les Krio de Sierra Leone se formèrent quant à eux au XIXe siècle à partir d'esclaves libérés venant des Antilles (Jamaïcains marrons), d'Amérique du Nord et d'Afrique subsaharienne.",
+      "formationPeriod": "XVe-XIXe siècles selon les groupes. La créolisation fut un processus progressif : pidginisation linguistique d'abord, puis stabilisation d'une langue créole comme langue maternelle des enfants issus de couples mixtes ou d'esclaves de langues différentes.",
+      "migrationRoutes": [
+        "Traite négrière atlantique : Afrique de l'Ouest et du Centre vers les îles atlantiques (Cap-Vert, São Tomé, Sierra Leone)",
+        "Traite négrière de l'océan Indien : Mozambique, Madagascar, Afrique de l'Est vers Maurice, Réunion et Seychelles",
+        "Retour et diffusion : missionnaires et commerçants Krio vers le Nigeria, le Ghana, le Cameroun au XIXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Archipel du Cap-Vert (Crioulos, depuis 1460)",
+        "São Tomé-et-Príncipe (Forros, depuis 1485)",
+        "Freetown, Sierra Leone (Krio, depuis 1787)",
+        "Mauritius (Créoles mauriciens, depuis 1715)",
+        "Réunion (Créoles réunionnais, depuis 1663)",
+        "Seychelles (Créoles seychellois, depuis 1770)"
+      ],
+      "unificationsOrDivisions": "Malgré une origine commune dans la créolisation coloniale, les peuples créoles africains restent profondément différenciés selon leurs substrats linguistiques (portugais, anglais, français), leurs traditions religieuses et leurs contextes nationaux. Certains groupes (Krio de Sierra Leone) ont une identité ethnique très distincte, d'autres (Réunionnais) appliquent le terme créole à toute la population née sur l'île.",
+      "externalInfluences": "Influences européennes (portugais, français, britanniques) via la colonisation. Influences africaines via les substrats linguistiques bantoues, kwa et malgaches. Influences indiennes et chinoises à Maurice et aux Seychelles via le travail sous contrat. Christianisme (catholicisme romain, protestantisme) comme vecteur d'intégration culturelle dans la plupart des communautés."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
-      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.",
-      "religiousAuthority": "Autorité des prêtres et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Absence de système politique centralisé commun à l'ensemble du macro-groupe. Chaque communauté créole s'est intégrée dans les structures politiques coloniales puis nationales. Les Forros de São Tomé formèrent une élite foncière (filhos da terra) disposant d'une autorité locale. Les Krio de Sierra Leone développèrent une bourgeoisie urbaine particulièrement influente sous la colonisation britannique.",
+      "clanOrganization": "Organisation en familles étendues et réseaux de solidarité communautaire. Les lignées créoles sont souvent définies par des patronymes d'origine portugaise, française ou anglaise, adoptés lors de l'affranchissement ou de la naissance.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages créoles structurent l'identité sociale et la transmission du patrimoine. Être reconnu comme membre d'une famille créole ancienne confère un statut social particulier dans des sociétés comme celle de Sierra Leone (Krio) ou de São Tomé (Forros filhos da terra).",
+      "religiousAuthority": "Le christianisme (catholicisme romain pour les créoles afro-portugais et afro-français, protestantisme pour les Krio) constitue le principal vecteur d'autorité religieuse. Des pratiques syncrétiques mêlant christianisme et croyances africaines (service Kaf, servis kabaré, zar) persistent dans plusieurs communautés."
     },
     "languages": {
-      "mainLanguage": "Langues créoles (Créole cap-verdien, Crioulo, Krio, Créole mauricien, etc.)",
-      "vehicularRole": "Les langues créoles sont parlées par les peuples créoles. Les langues européennes (portugais, anglais, français) sont utilisées dans l'éducation et l'administration."
+      "mainLanguage": "Langues créoles (Kreol Morisien, Kréol Rényoné, Kreol Seselwa, Forro, Krio, Kabuverdianu, Crioulo)",
+      "isoCodes": ["mfe", "rcf", "crs", "cri", "kri", "kea", "pov"],
+      "dialects": [
+        "Kreol Morisien (mfe) — créole à base française de Maurice",
+        "Kréol Rényoné (rcf) — créole à base française de la Réunion",
+        "Kreol Seselwa (crs) — créole à base française des Seychelles",
+        "Forro ou Sãotomense (cri) — créole à base portugaise de São Tomé",
+        "Krio (kri) — créole à base anglaise de Sierra Leone",
+        "Kabuverdianu (kea) — créole à base portugaise du Cap-Vert"
+      ],
+      "vehicularRole": "Les langues créoles constituent dans la plupart des cas la lingua franca principale des pays concernés. Le Krio est parlé par 96% de la population sierra-léonaise. Le Kreol Morisien est la première langue parlée à domicile à Maurice. Le Kreol Seselwa est langue officielle des Seychelles aux côtés du français et de l'anglais. Les langues européennes (portugais, anglais, français) sont utilisées dans l'éducation et l'administration."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses chrétiennes",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels créoles",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels créoles, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle créole (morna, coladeira, séga, maloya, etc.)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat",
-      "Spiritualités": "Christianisme majoritaire (catholicisme, protestantisme). Croyances traditionnelles préservées dans certaines communautés."
+      "majorRites": "Rites de passage chrétiens (baptême, confirmation, mariage religieux, funérailles) communs à l'ensemble du macro-groupe. Rites funéraires étendus avec veillées communautaires (wake en Sierra Leone, lelavé à Maurice). Cérémonies syncrétiques afro-malgaches : servis kabaré (cérémonie malgache de propitiation des ancêtres) pratiquée à la Réunion et à Maurice. Service Kaf (cérémonie de propitiation des esprits africains) à la Réunion. Commémorations de l'abolition de l'esclavage marquant l'identité créole dans l'ensemble des communautés.",
+      "symbols": "La pirogue et la mer comme symboles de la traversée et de l'identité insulaire. La canne à sucre et la plantation comme mémoire de l'esclavage. Le tambour (ravane, roulér, tam-tam) comme instrument central de la culture musicale créole. Le foulard coloré porté par les danseuses de séga. La langue créole elle-même comme marqueur identitaire revendiqué face aux langues coloniales.",
+      "artsAndMusic": "Musique : le séga est le genre musical créole dominant dans l'océan Indien (Maurice, Réunion, Seychelles), né dans les plantations esclavagistes au XVIIIe siècle. Le maloya (Réunion) est inscrit au patrimoine immatériel de l'UNESCO (2009). La moutia (Seychelles) a été inscrite à l'UNESCO en 2021. Le krio music (Sierra Leone) et le morna (Cap-Vert) complètent le panorama musical créole africain. Instruments traditionnels : ravane (tambour mauricien), roulér (tambour réunionnais), kayamb (hochet en canne à sucre), maravanne, bob (arc musical). Danse : le séga se danse en couple ou en groupe, avec des mouvements de hanches caractéristiques. Artisanat : vannerie, poterie et tissage d'inspiration afro-malgache. Littérature orale et poésie en langue créole valorisées depuis les années 1980.",
+      "spiritualities": "Catholicisme romain majoritaire dans les communautés créoles afro-françaises et afro-portugaises (Maurice, Réunion, Seychelles, São Tomé). Protestantisme et anglicanisme chez les Krio de Sierra Leone. Syncrétisme afro-chrétien : pratiques de propitiation des ancêtres, culte des esprits (zar, service Kaf, servis kabaré) coexistant avec le christianisme. Hindouisme et islam présents chez les communautés indiennes intégrées dans la société créole mauricienne et seychelloise."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques nationales.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora créole importante dans les grandes villes et dans les pays occidentaux (États-Unis, Portugal, France, Royaume-Uni, Pays-Bas)."
+      "kingdomsOrChiefdoms": "Pas de royaumes créoles au sens traditionnel. Les Forros de São Tomé formèrent une élite foncière coloniale (filhos da terra) dotée d'une autorité locale aux XVIIe-XVIIIe siècles. Les Krio de Sierra Leone développèrent une aristocratie urbaine et commerçante influente sous la colonisation britannique au XIXe siècle, jouant un rôle clé dans la diffusion de l'éducation et du christianisme en Afrique de l'Ouest.",
+      "relationsWithNeighbors": "Les communautés créoles ont entretenu des relations complexes avec les populations non-créoles : relations de domination sociale (Krio et populations de l'hinterland en Sierra Leone, Forros et Angolares à São Tomé) ou de coexistence tendue (Créoles et Indo-Mauriciens à Maurice). Les Krio ont été des intermédiaires commerciaux et missionnaires en Afrique de l'Ouest tout au long du XIXe siècle.",
+      "conflictsOrAlliances": "Résistances à l'esclavage : marronnage (fuite dans les forêts ou les montagnes), révoltes d'esclaves. Le massacre de Batepá (1953) à São Tomé, au cours duquel le pouvoir colonial portugais massacra des centaines de Forros, constitue un événement traumatique majeur. En Sierra Leone, tensions persistantes entre Krio et groupes de l'hinterland au XIXe et XXe siècles, exacerbées par la guerre civile (1991-2002).",
+      "diaspora": "Diaspora créole significative dans les métropoles européennes : diaspora cap-verdienne (Portugal, Pays-Bas, États-Unis), diaspora mauricienne (France, Royaume-Uni, Australie), diaspora krio (Royaume-Uni). La diaspora de São Tomé-et-Príncipe est principalement localisée au Portugal et aux Pays-Bas."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 4000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques"
+      "source": "Estimations composites basées sur CIA World Factbook 2024, SIL Ethnologue (25e éd.), recensements nationaux du Cap-Vert, de Sierra Leone, de São Tomé-et-Príncipe, de Maurice, des Seychelles et de la Réunion (INSEE 2024). Note : la définition variable du terme créole selon les pays rend les estimations globales difficiles.",
+      "distributionByCountry": [
+        {
+          "country": "REU",
+          "population": 880000,
+          "note": "Population totale de la Réunion (le terme créole s'applique à tous les natifs de l'île, INSEE 2024)"
+        },
+        {
+          "country": "MUS",
+          "population": 360000,
+          "note": "Environ 28% de la population mauricienne de 1,3 million (créoles afro-mauriciens)"
+        },
+        {
+          "country": "CPV",
+          "population": 570000,
+          "note": "Population totale du Cap-Vert, majoritairement créole (Kabuverdianu)"
+        },
+        {
+          "country": "SLE",
+          "population": 104000,
+          "note": "Krio de Sierra Leone, groupe ethnique distinct (CIA World Factbook 2022)"
+        },
+        {
+          "country": "SYC",
+          "population": 90000,
+          "note": "Environ 90% de la population seychelloise de 100 600 habitants (2022)"
+        },
+        {
+          "country": "STP",
+          "population": 180000,
+          "note": "Population totale de São Tomé-et-Príncipe, majoritairement créole (Forros, Angolares, Mestiços)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Creole languages",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples créoles"
+      "Wikipedia EN — Creole peoples. https://en.wikipedia.org/wiki/Creole_peoples",
+      "Newitt, Malyn. Africa and the wider world: creole communities in the Atlantic and Indian Oceans. Revista Tempo, vol. 23, n.3, 2017. https://www.scielo.br/j/tem/a/J9bCFkBXm7rw4B8RcTj9zWS/",
+      "SIL Ethnologue — Creole languages subgroup. https://www.ethnologue.com/subgroup/70/",
+      "African American Registry — The Creole Communities of Africa. https://aaregistry.org/story/the-creole-communities-of-africa-a-brief-article/",
+      "Wikipedia EN — Krio language. https://en.wikipedia.org/wiki/Krio_language",
+      "Wiktionary — ISO 639-3 codes (Creole languages). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Others",
+      "CIA World Factbook — Country profiles (Mauritius, Seychelles, São Tomé, Sierra Leone, Cape Verde, Réunion). https://www.cia.gov/the-world-factbook/"
     ]
   }
 }

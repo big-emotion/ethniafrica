@@ -6,54 +6,76 @@
   "content": {
     "appellations": {
       "mainName": "Mocha",
-      "selfAppellation": "",
-      "exonyms": ["Shekkacho"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Shekkacho",
+      "exonyms": [
+        "Shekkacho",
+        "Shekacho",
+        "Shakacho",
+        "Shekicho",
+        "Shekecho",
+        "Shekka",
+        "Sheka"
+      ],
+      "originOfExonyms": "Le nom Mocha est une appellation externe ancienne, utilisee notamment par le linguiste Wolf Leslau dans ses travaux des annees 1958-1959. Ce terme est aujourd'hui considere comme pejoratif par les locuteurs qui se designent eux-memes comme Shekkacho. Le terme Sheka designe aussi la zone administrative ou vit la majorite du peuple.",
+      "whyProblematic": "Le nom Mocha est percu comme un exonyme pejoratif par la communaute. Les membres du groupe preferent l'appellation Shekkacho ou Sheka.",
+      "contemporaryUsage": "Le nom officiel retenu par les autorites ethiopiennes et les bases de donnees linguistiques internationales est Shekkacho (code ISO moy). Le terme Mocha subsiste dans les anciennes sources academiques (Leslau 1958, 1959). La zone administrative est appelee Sheka Zone.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Omotic septentrional, branche Gonga-Gimojan (Gonga meridional), etroitement apparentee au kafa et a l'anfillo",
+      "historicalRegion": "Zone de Sheka, sud-ouest ethiopien (anciennement partie de la zone Keficho Shekicho)",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Mocha"],
+    "ethnicities": ["Shekkacho", "Sheka", "Mocha"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Shekkacho (Mocha) sont un peuple omotic du groupe Gonga etabli dans la zone de Sheka, au sud-ouest de l'Ethiopie. Leurs traditions orales les rattachent aux ancetres des peuples Gonga, famille incluant les Kaffa, les Anfillo et les Boro. La region etait anciennement connue sous le nom de pays Mocha et constituait une entite politique autonome avant sa soumission au royaume de Kaffa.",
+      "formationPeriod": "L'identite shekkacho s'est maintenue malgre l'influence politique et culturelle du puissant royaume de Kaffa au XIXe siecle, et l'integration ulterieure dans l'empire ethiopien.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Zone de Sheka, region Southwest Ethiopia Peoples (SWEP), Ethiopie"
+      ],
+      "unificationsOrDivisions": "La zone Sheka est l'entite administrative reconnue depuis la reorganisation federale ethiopienne de 1991. La majorite des Shekkacho (68 768 individus ruraux selon le recensement de 2007) vit en zone rurale.",
+      "externalInfluences": "L'influence du royaume de Kaffa a marque la langue et la culture shekkacho. Depuis la conquete ethiopienne de la fin du XIXe siecle, l'amharisation a affecte la structure sociale. Le protestantisme et l'orthodoxie ethiopienne sont tous deux representes dans la region.",
+      "majorHistoricalEvents": "Soumission au royaume de Kaffa, puis integration a l'empire ethiopien sous Menilek II (fin XIXe siecle). Creation de la zone de Sheka comme entite administrative distincte apres 1991."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation politique traditionnelle de type hierarchique sous l'autorite de chefs locaux. La zone de Sheka etait anciennement un territoire independant (pays Mocha) avant d'etre soumis au royaume de Kaffa.",
+      "clanOrganization": "Organisation clanique caracteristique des peuples Gonga du sud-ouest ethiopien. Les clans sont structures autour de lignages patrilineaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans la transmission des droits fonciers, l'organisation des mariages et la gestion des conflits intercomm unautaires.",
+      "religiousAuthority": "Coexistence de pratiques rituelles traditionnelles avec le christianisme (protestantisme et orthodoxie ethiopienne). Selon le recensement de 2007, dans la zone de Sheka, 39,93 % sont protestants et 39,39 % sont orthodoxes ethiopiens."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Shekkacho (Mocha)",
+      "isoCodes": ["moy"],
+      "dialects": [],
+      "vehicularRole": "Le shekkacho est la langue maternelle des Shekkacho. L'amharique et le kafa sont utilises comme langues vehiculaires dans la region. Le shekkacho est enseigne dans certaines ecoles primaires et diffuse a la radio. Il dispose d'un Nouveau Testament traduit."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies rituelles liees aux cycles agricoles. La culture shekkacho est notamment associee a la culture du cafe sauvage dans les forets de la zone de Sheka, qui est une zone de biodiversite exceptionnelle reconnue par l'UNESCO.",
+      "symbols": "La foret de cafe sauvage de Sheka est un symbole identitaire fort. La zone est classee reserve de biosphere par l'UNESCO. Les techniques traditionnelles de cueillette et de preparation du cafe constituent un patrimoine culturel majeur.",
+      "artsAndMusic": "Traditions musicales et de chant pratiquees lors des ceremonies communautaires et rituelles, caracteristiques des peuples omotic du sud-ouest ethiopien.",
+      "spiritualities": "Pratiques animistes traditionnelles coexistant avec le christianisme protestant majoritaire et l'orthodoxie ethiopienne. Les forets sacrees jouent un role dans les pratiques religieuses traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le pays Mocha (Sheka) constituait une entite politique distincte, sous influence progressive du royaume de Kaffa avant la conquete ethiopienne. La zone de Sheka est reconnue comme unite administrative depuis la federation ethiopienne de 1991.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Kaffa a l'est, les peuples de la zone Bench Maji au sud, les Majang et les Sheko. Le recensement de 2007 montre une importante presence d'Amhara (22,17 %) et de Kaffa (20,16 %) dans la zone.",
+      "conflictsOrAlliances": "Sous influence historique du royaume de Kaffa. Soumis a l'empire ethiopien sous Menilek II. Dans la periode contemporaine, tensions liees a la gestion des ressources forestieres et a l'exploitation de la biodiversite.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 149000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025), base sur le recensement ethiopien 2007 (77 561 Shekacho) et projections demographiques",
+      "distributionByCountry": [{ "country": "ETH", "population": 149000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Shakacho language – Wikipedia (https://en.wikipedia.org/wiki/Shakacho_language)",
+      "Shekka in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14887)",
+      "Shekkacho – EthiopiaScripture.org, 2023 (https://www.ethiopiascripture.org/en/languages/s/shekkacho)",
+      "Sheka Zone – Wikipedia (https://en.wikipedia.org/wiki/Sheka_Zone)",
+      "Situation of the Shekha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2015 (https://www.ecoi.net/en/document/1297530.html)",
+      "Statistical Data on Sheka and Keffa Zones – MTU Sociology / CSA Ethiopia, 2007 (https://mtusociology.github.io)",
+      "Leslau, Wolf – Mocha, A Tone Language of The Kafa Group in South-Western Ethiopia, Africa, 1958",
+      "ISO 639-3: moy (Shekkacho) – SIL International / Ethnologue"
+    ]
   }
 }

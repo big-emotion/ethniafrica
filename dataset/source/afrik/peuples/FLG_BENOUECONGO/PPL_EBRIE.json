@@ -6,54 +6,73 @@
   "content": {
     "appellations": {
       "mainName": "Ebrié",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tchaman",
+      "exonyms": ["Ébriés", "Kyaman", "Cama"],
+      "originOfExonyms": "Le nom Ebrié, signifiant les guerriers méchants, fut donné par leurs voisins Abourés de Moossou à la suite d'une guerre perdue par ces derniers. Le nom Tchaman (peuple élu, peuple choisi) est l'auto-désignation. Kyaman est une variante usitée en littérature scientifique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ebrié reste dominant dans les usages administratifs et médiatiques ivoiriens. Tchaman est préféré par les membres du peuple eux-mêmes et de plus en plus utilisé dans la littérature académique récente.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Akan lagunaires (Potou-Tano)",
+      "historicalRegion": "Lagune Ebrié, Sud de la Côte d'Ivoire",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Ebrié"],
+    "ethnicities": ["Ebrié", "Tchaman"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tchaman font partie du groupe des Akan et plus précisément du sous-groupe des Akan lagunaires. Leur tradition orale enseigne qu'ils viennent de l'est de la Côte d'Ivoire. Ils sont considérés comme l'un des peuples les plus anciennement établis autour de la lagune Ebrié. En 1901, leur population était estimée à 25 000 personnes réparties dans 55 villages.",
+      "formationPeriod": "Avant le XVe siècle ; présence attestée autour de la lagune Ebrié bien avant la colonisation européenne.",
+      "migrationRoutes": [
+        "Migration depuis l'est de la Côte d'Ivoire vers le bassin de la lagune Ebrié"
+      ],
+      "historicalSettlementZones": [
+        "Lagune Ebrié (de Grand-Bassam à l'est jusqu'au canal d'Azagni à l'ouest)",
+        "Rives de la lagune sur lesquelles est construite Abidjan"
+      ],
+      "unificationsOrDivisions": "Les Tchaman sont regroupés en neuf phratries (goto) : Kwè, Bidjan, Yopougon, Nonkwa, Songon, Bobo, Dyapo, Bya et Gnangon, formant un ensemble de 63 villages. Depuis 1896, l'administration coloniale a instauré le système des chefferies dans la région des lagunes.",
+      "externalInfluences": "La colonisation française a instauré le système des chefferies en 1896 et revendiqué les terres autour de la lagune Ebrié au milieu du XIXe siècle, entraînant l'expulsion de nombreux Tchaman. Le développement d'Abidjan a transformé les Ebrié en minorité sur leur propre territoire.",
+      "majorHistoricalEvents": "L'étymologie du nom Abidjan est liée à la langue atchan : l'expression Min djan m'bi (je coupe des feuilles) a donné MBidjan nin (les coupeurs de feuilles), déformé en Abidjan. Les Tchaman sont les propriétaires traditionnels des terres sur lesquelles est bâtie la capitale économique de la Côte d'Ivoire."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Société égalitaire et démocratique fondée sur le système des générations. Chaque quinze ans, une nouvelle génération prend la tête du village. Les quatre générations (Blessoué, Gnando, Dougbo, Tchagba) se succèdent en cycle de 60 ans. Le village (akubè) est organisé le long d'une artère centrale divisée en quartiers (akrobu).",
+      "clanOrganization": "Neuf phratries (goto) : Kwè, Bidjan, Yopougon, Nonkwa, Songon, Bobo, Dyapo, Bya et Gnangon. Chaque village comprend huit familles : Kouèdoman, Tchadoman, Abromando, Gbadoman, Godouman, Fiédoman, Locomman et Djoumando.",
+      "ageClassSystems": "Quatre générations subdivisées chacune en quatre classes d'âge : Djehou (aînés), Dogba (puînés), Agban (cadets) et Assoukrou (benjamins). Une génération regroupe tous ceux nés dans un intervalle d'au moins 15 ans. Les membres d'une même génération se considèrent comme frères et soeurs, incluant les deux sexes.",
+      "roleOfLineages": "Système matrilinéaire : un enfant naît dans la famille de son père qui lui donne un nom, puis intègre sa famille maternelle. La transmission des droits et du patrimoine suit la ligne maternelle.",
+      "religiousAuthority": "Chaque village possède au moins deux édifices religieux (église catholique, temple protestant ou temple harriste), témoignant de la forte christianisation. L'ancienne autorité religieuse reposait sur des figures liées aux rites de génération (fatchué)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Atchan (ébrié)",
+      "isoCodes": ["ebr"],
+      "dialects": [
+        "Kyaman de Bidjan",
+        "Kyaman de Yopougon",
+        "Kyaman de Songon"
+      ],
+      "vehicularRole": "Langue vernaculaire des Tchaman autour d'Abidjan. Environ 150 000 locuteurs en 2017. Appartient au groupe Potou-Tano, branche Kwa du Niger-Congo. La langue française est utilisée comme langue officielle nationale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Fête de génération Fatchué (danse guerrière) : tous les 15 ans, une nouvelle génération prend la tête du village lors d'une cérémonie initiatique marquant le passage de l'adolescence à l'âge adulte. La classe dirigeante passe le flambeau et les jeunes accèdent au droit de parole aux assemblées. Danse guerrière taprognan bi également pratiquée.",
+      "symbols": "Le tambour à fente polychrome Djidji ayôwké (noir, blanc, rouge) aux bords mâle et femelle pour notes variées est un instrument emblématique. Les trompes en ivoire et les cornes de buffle nain (afémé) sont des insignes de prestige.",
+      "artsAndMusic": "Riche patrimoine musical avec de nombreux instruments : N'kpakpa (bâtons entrechoqués), cloche kanko, Gomé (carapace de tortue et corne de bovidé), Lémlé (lamelles de bois sec), hochets variés, tambours Atégbré, Bogogbrô, arc Abè, trompes traversières en ivoire, trompes en défenses d'éléphant (djonsin), trompes en cornes de buffle. Danse guerrière taprognan bi.",
+      "spiritualities": "Animisme traditionnel coexistant avec le christianisme (catholicisme, protestantisme, harriste). Chaque village possède au moins deux édifices religieux. Le système des générations a une dimension spirituelle forte : les ancêtres et les dieux du terroir sont invoqués lors des fatchué."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation en phratries (goto) plutôt qu'en royaumes centralisés. Neuf phratries formant 63 villages. Les chefferies ont été institutionnalisées par l'administration coloniale à partir de 1896.",
+      "relationsWithNeighbors": "Les Ebrié ont eu des relations conflictuelles avec les Abourés de Moossou (d'où le surnom Ebrié). Ils ont coexisté avec les autres peuples lagunaires (Aïzi, Avikam, Adioukrou). Les Ebrié Akouè ont attaqué les Bétibé (Ehotilé) à Okobledji.",
+      "conflictsOrAlliances": "Guerre ayant opposé Ebrié aux Abourés de Moossou. Conflits avec les Ehotilé (Bétibé) sur la lagune Ebrié. La colonisation française a exproprié une grande partie de leurs terres.",
+      "diaspora": "La majorité des Ebrié (environ 96 %) vit dans la métropole abidjanaise. Malgré leur présence sur le territoire ancestral, ils représentent moins de 2 % de la population totale d'Abidjan en raison de l'afflux massif de migrants internes et étrangers."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basée sur 150 000 locuteurs de l'atchan (2017, Wikipedia Ebrié language) et données INSEE/INS Côte d'Ivoire (98 285 autochtones en 1998, représentant environ 0,5 % de la population nationale)",
+      "distributionByCountry": [{ "country": "CIV", "population": 150000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ébriés – Wikipédia (https://fr.wikipedia.org/wiki/%C3%89bri%C3%A9s)",
+      "Ebrié language – Wikipedia (https://en.wikipedia.org/wiki/Ebri%C3%A9_language)",
+      "Urbanisation de la métropole abidjanaise et la mise en minorité des autochtones Ebrié – Oura, Revue de Cinq Continents, 2013 (https://www.ssoar.info/ssoar/bitstream/handle/document/38292/ssoar-cinqcon-2013-8-oura-Urbanisation_de_la_metropole_abidjanaise.pdf)",
+      "Tchaman society – Katherine R. Russell, 2025 (https://www.krrussell.com/research/fieldwork/tchaman-society)",
+      "Kyama, Ebrie in Côte d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/12930)",
+      "Les Bidjan, un peuple Kyaman peu connu – Revue Akofena, 2023 (https://www.revue-akofena.com/wp-content/uploads/2023/09/03-T09v03-62-Fabrice-ALIMAN_029-040.pdf)"
+    ]
   }
 }

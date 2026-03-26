@@ -6,54 +6,76 @@
   "content": {
     "appellations": {
       "mainName": "Timbaro",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tambaaro",
+      "exonyms": ["Tembaro", "Timbaaro", "Xambaaro", "Lamala Molla"],
+      "originOfExonyms": "Tembaro est la graphie amharisee couramment utilisee dans les documents administratifs ethiopiens. Lamala Molla signifie les sept fils de Molla et designe l'ancetre fondateur legendaire du peuple. Xambaaro est la designation linguistique utilisee dans la classification Kambaata.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Tembaro est utilise dans les documents officiels ethiopiens depuis la creation du woreda special de Tembaro en 2023. Les membres du groupe se designent eux-memes sous le nom de Tambaaro.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Highland East Cushitic",
+      "historicalRegion": "Region de Kembata-Tembaro, Ethiopie du Sud-Centre",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Timbaro"],
+    "ethnicities": ["Timbaro", "Lamala Molla"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Timbaro tracent leur origine ancestrale au pays Sidama. Selon la tradition orale, Molla serait l'ancetre commun, dont les sept fils (Lamalla Molla) formerent les sept groupes claniaux fondateurs. Des groupes Sabbolla, Kontama et Erasha vinrent rejoindre ces clans fondateurs en provenance de Yemerera en pays sidama.",
+      "formationPeriod": "La formation de l'identite Timbaro remonte probablement au Ier millenaire avant l'ere commune, avec une consolidation progressive des clans autour du massif de Hambaricho. Leur territoire actuel est occupe depuis plusieurs siecles.",
+      "migrationRoutes": [
+        "Depuis le pays Sidama vers le nord, en traversant les hauts plateaux du sud-ouest ethiopien",
+        "Installation progressive dans la region de Kembata-Tembaro au sud de l'Ethiopie centrale"
+      ],
+      "historicalSettlementZones": [
+        "Woreda special de Tembaro, region Ethiopie centrale",
+        "Massif de Hambaricho et ses alentours",
+        "Hauts plateaux entre les zones Hadiya et Dawuro"
+      ],
+      "unificationsOrDivisions": "Le groupe comprend 66 clans reunis sous une identite commune Timbaro. La division principale est entre les sous-groupes ethniques distincts qui ont revendique des origines et regions geographiques differentes, tout en partageant une identite Timbaro unifiee.",
+      "externalInfluences": "Contacts historiques avec les Kembata, les Hadiya, les Dawuro et les Wolayta voisins. Incorporation dans l'empire ethiopien sous Menelik II a la fin du XIXe siecle. Influence des missionnaires protestants au debut du XXe siecle.",
+      "majorHistoricalEvents": "Incorporation dans l'empire ethiopien sous Menelik II vers 1891. Introduction de l'eglise orthodoxe puis de l'islam par les contacts commerciaux. Arrivee des missionnaires protestants au debut du XXe siecle. Creation du woreda special de Tembaro le 19 aout 2023 lors de la reorganisation de l'Ethiopie du Sud en region Ethiopie centrale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation clanique avec un systeme de 66 clans regroupes en une entite politique unifiee. Avant l'incorporation ethiopienne, la societe etait organisee autour de chefs de clans exer cant une autorite locale. Des cultes religieux traditionnels specifiques a chaque clan (Adama, Jennoina, Hawzula, Buruya, Yafaro, Yejjo, Hambaza, Mazoga, Wambo, Qayyidara, Woreqa, Fandanano) structuraient la vie sociale et politique.",
+      "clanOrganization": "66 clans distincts reconnus, dont les sept groupes fondateurs issus des fils de Molla : Addecho, Wajacho, Qunecho, Tassacho, Ajorecho, Sanbatecho et Yageecho. Chaque clan maintient sa propre genealogie et ses propres pratiques claniques.",
+      "roleOfLineages": "Les lignages patrilineaires organisent l'acces a la terre, les alliances matrimoniales et la transmission des droits religieux. Le chef de lignage joue un role central dans la resolution des conflits au sein du clan.",
+      "religiousAuthority": "Avant la christianisation, l'autorite religieuse etait exercee par des specialistes des cultes traditionnels propres a chaque clan. L'arbre sacre Dagale constituait le centre de culte traditionnel principal. Aujourd'hui, les eglises protestantes (77 % de la population) exercent une forte influence sociale."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Tembaro (dialecte du Kambaata)",
+      "isoCodes": ["ktb"],
+      "dialects": [
+        "Tembaro (Tambaaro, Xambaaro)",
+        "Kambaatissa",
+        "Alaba",
+        "Qabeena"
+      ],
+      "vehicularRole": "L'amharique est la langue vehiculaire nationale utilisee dans l'administration et l'education secondaire. Le Tembaro est un dialecte du Kambaata (ISO 639-3 : ktb), langue cushitique Highland East parlée par environ 740 000 personnes au recensement de 2007. Le Tembaro est parle comme premiere langue par environ 26 % des habitants de la zone Kembata."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies funéraires elaborees avec chants traditionnels. Rituels de purification lies aux cycles agricoles. Cultes traditionnels autour de l'arbre sacre Dagale. Le mariage traditionnel implique une dot en betail. La religion protestante a profondement transforme les pratiques rituelles depuis le XXe siecle, notamment les ceremonies de mariage et les funerailles.",
+      "symbols": "L'arbre Dagale est le symbole religieux traditionnel central, lieu de culte et de rassemblement communautaire. Les chants traditionnels (notamment de la religion Fandanano) constituent un patrimoine culturel distinct.",
+      "artsAndMusic": "Traditions musicales vocales et instrumentales liees aux ceremonies claniques. Artisanat textile et poterie. Les eglises protestantes ont integre certains elements musicaux traditionnels dans leurs pratiques liturgiques.",
+      "spiritualities": "Systeme religieux traditionnel complexe comprenant plusieurs cultes claniaux (Adama, Jennoina, Hawzula, Buruya, Yafaro, Yejjo, Hambaza, Mazoga, Wambo, Qayyidara, Woreqa, Fandanano, Gambala Magano). Aujourd'hui, 77 % sont protestants, 14 % orthodoxes, 2 % musulmans et 1 % pratiquent les religions traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation en chefferies claniques avant l'incorporation ethiopienne. Appartenance historique a la sphere d'influence des royaumes Sidama et Kembata. Pas de royaume centralise propre identifie comme distinct.",
+      "relationsWithNeighbors": "Relations etroites avec les Kembata, peuple frere partageant une langue proche. Contacts commerciaux et matrimoniaux avec les Hadiya au nord, les Dawuro et les Wolayta au sud. L'acces aux marches regionaux se faisait par l'amharique comme langue vehiculaire.",
+      "conflictsOrAlliances": "Incorporation dans l'empire ethiopien de Menelik II vers 1891, marquant la fin de l'autonomie clanique. Le systeme balabat (chefferies locales) fut maintenu comme intermediaire avec l'administration imperiale.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 190000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2024 ; recensement ethiopien 2007 : 480 573 habitants dans le woreda special de Tembaro (toutes ethnies confondues)",
+      "distributionByCountry": [{ "country": "ETH", "population": 190000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Tembaro special woreda – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tembaro_special_woreda)",
+      "Kambaata people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kambaata_people)",
+      "Kambaata language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kambaata_language)",
+      "Tembaro in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/20201)",
+      "Andashe, Abayneh – A History of Religions and Religious Processes Among the Tembaro People, Southern Ethiopia 1891-1974, Jimma University, 2014 (https://repository.ju.edu.et/bitstream/handle/123456789/5233/)",
+      "Ethnohistory and Culture of Tambaro of Southwest Ethiopia – Academia.edu, 2014 (https://www.academia.edu/7866560/Ethnohistory_and_Culture_of_Tambaro_of_Southwest_Ethiopia)",
+      "Kembata Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kembata_Zone)"
+    ]
   }
 }

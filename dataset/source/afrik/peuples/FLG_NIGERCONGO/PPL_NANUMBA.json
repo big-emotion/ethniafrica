@@ -6,54 +6,73 @@
   "content": {
     "appellations": {
       "mainName": "Nanumba",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Naanumma (forme endogene attestee dans les sources orales en langue Mampruli)",
+      "exonyms": ["Nanumba", "Nanunba", "Naanumma"],
+      "originOfExonyms": "Nanumba est la denomination anglophone standardisee, issue de l'administration coloniale britannique. Naanumma est la forme endogene telle qu'elle apparait dans des enonces Mampruli comme 'Ti ŋmampurisi, Yooba, Naanumma ni Moosi piiligu nyɛ la Kyama maa' (L'origine des Mamprusi, Dagomba, Nanumba et Mossi etait en Chama). Nanunba est une variante orthographique documentee.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nanumba est la denomination officielle dans l'administration ghanéenne. Le territoire est designe Nanung et la chefferie supreme est le Bimbilla Naa, dont le palais (Gmantambo Palace) est situe a Bimbilla, capitale du Nanumba North Municipal dans la region Nord du Ghana.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Gur (Mole-Dagbane), branche Niger-Congo",
+      "historicalRegion": "Nanung, Northern Region du Ghana (entre la Volta Blanche et la riviere Oti)",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Nanumba"],
+    "ethnicities": ["Nanumba", "Naanumma"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nanumba descendent de Gmantambo, fils de Naa Gbewaa, ancetre mythique commun aux Nanumba, Dagomba et Mamprusi. La tradition orale affirme que ces trois peuples, ainsi que les Mossi du Burkina Faso, partagent la meme origine en Chama (Kyama). L'enonce mampruli 'Ti zaa nyɛ la yimmu' (Nous sommes tous un) exprime cette fraternite originelle entre Mamprusi, Dagomba et Nanumba.",
+      "formationPeriod": "Le royaume de Nanung fut fonde par Gmantambo, fils de Naa Gbewaa. Cette fondation est situee dans le contexte de l'expansion des chefferies Mole-Dagbane dans le nord du Ghana, probablement entre le XVe et le XVIIe siecle. Les Nanumba constituent depuis lors un groupe homogene sur le plan culturel et linguistique.",
+      "migrationRoutes": [
+        "Descendance et migration depuis la region de Chama (Kyama), localite d'origine commune avec Dagomba et Mamprusi",
+        "Etablissement dans la region de Nanung, entre la Volta Blanche et la riviere Oti, nord-est du Ghana"
+      ],
+      "historicalSettlementZones": [
+        "Nanung (Nanumba North Municipal et Nanumba South District, Northern Region, Ghana)",
+        "Capitale : Bimbilla ; autres localites : Nakpayili, Wulensi, Lungni, Chichahi, Chamba, Chifili, Bunach, Puduya"
+      ],
+      "unificationsOrDivisions": "Les Nanumba constituent un groupe ethnique homogene sous l'autorite du Bimbilla Naa, mais ils ont ete l'objet de violents conflits fonciers avec les Konkomba (guerres Konkomba-Nanumba de 1981 et 1994), marquant une division territoriale majeure dans le nord du Ghana.",
+      "externalInfluences": "Influence de l'Islam, dominant chez les Nanumba plus que dans certains groupes voisins mais moins que chez les Dagomba. Influence coloniale britannique ayant integre les chefferies traditionnelles dans une structure administrative nationale. La presence Konkomba dans les zones peripheriques de Nanung a genere des tensions recurrentes sur la propriete fonciere.",
+      "majorHistoricalEvents": "Fondation du royaume de Nanung par Gmantambo (fils de Naa Gbewaa). Guerre Konkomba-Nanumba de 1981 (conflit foncier). Guerre Konkomba-Nanumba de 1994 (surnommee la guerre de la pintade, Guinea Fowl War) : 1 000 a 2 300 morts et 150 000 deplacés; le gouvernement Rawlings a intervenu pour contenir le conflit, definitvement resolu vers 2015."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie chiefly hierarchique. Au sommet se trouve le Bimbilla Naa (Paramount Chief ou roi des Nanumba), dont le palais (Gmantambo Palace) est situe a Bimbilla. Le Bimbilla Naa est la derniere instance d'appel pour tous les litiges infra-regionaux. Les chefs paramonts representent les ethnies dans la House of Chiefs du Ghana moderne.",
+      "clanOrganization": "Organisation clanique patrilineaire. L'appartenance au clan determine la succession, les alliances matrimoniales et les droits fonciers. La chefferie supreme descend en ligne directe de Gmantambo.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages detiennent les titres chiefly et les droits fonciers coutumiers. La contestation de ces droits par les Konkomba (qui se consideraient sans chef et sans terre propre) est a l'origine des guerres foncières recurrentes.",
+      "religiousAuthority": "L'Islam est la religion principale, exercant une influence sur la vie sociale et les pratiques rituelles. Cependant, les pratiques religieuses non-islamiques (consultation de devins non-muslmans, offrandes aux sanctuaires des ancetres) sont courantes en parallele. Une minorite chretienne, essentiellement catholique, est presente."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nanungli (Nanungsili)",
+      "isoCodes": ["dag"],
+      "dialects": [
+        "Nanungli (forme principale, aussi appelee Nanungsili) – dialecte du Dagbani"
+      ],
+      "vehicularRole": "Le Nanungli est un dialecte du Dagbani (ISO 639-3 : dag), langue Gur du groupe Mole-Dagbane, apparentee au Mampruli. Selon Ethnologue, le Nanungli est considere comme une variete dialectale du Dagbani. Le dagbani, l'hausa et l'anglais servent de langues vehiculaires avec les groupes voisins et dans l'administration. Les Nanumba partagent une intelligibilite elevee avec les Dagomba, leur groupe frere le plus proche."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festivals principaux : Eid al-Fitr, Eid al-Adha (marques par la religion islamique), Bugum Chugu (fete du feu), Damba (fete du Prophete), Naa Jigli (festival royal). Ces festivals combinent celebrations islamiques et traditions royales Nanumba, creant un syncretisme culturel specifique.",
+      "symbols": "Le leopard est l'embleme de la region de Nanung et symbole du pouvoir chiefly Nanumba. Le palais Gmantambo a Bimbilla est le symbole de l'autorite politique supreme.",
+      "artsAndMusic": "Traditions musicales liees aux ceremonies royales et aux festivals islamiques. La musique de cour (tambours royaux, flutes) accompagne les ceremonies du Bimbilla Naa. Les traditions artisanales incluent la poterie, le tissage et la fabrication de cuir, caracteristiques des groupes Gur du nord du Ghana.",
+      "spiritualities": "L'Islam sunnite est la religion principale et la plus caracteristique des Nanumba, bien que moins repandue que chez les Dagomba. Les pratiques spirituelles non-islamiques persistent : consultation de devins, offrandes aux sanctuaires ancestraux et aux autres lieux de culte. Une minorite pratique le christianisme, principalement de rite catholique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le royaume de Nanung est gouverne par le Bimbilla Naa, dont le siege est le Gmantambo Palace a Bimbilla. C'est l'un des royaumes Gur du nord du Ghana, frere du Dagbon (Dagomba) et du royaume Mamprugu (Mamprusi). Bimbilla est la capitale du Nanumba North Municipal et du royaume de Nanung.",
+      "relationsWithNeighbors": "Relations historiquement etroites avec les Dagomba (Dagbon), leur groupe le plus proche, avec lesquels ils partagent une origine commune (Naa Gbewaa). Les Mamprusi sont plus au nord. Les Mossi du Burkina Faso sont des cousins eloignes par la ligne maternelle du lignage fondateur. Les Konkomba, voisins du sud, sont a l'origine de conflits recurrents sur la propriete fonciere.",
+      "conflictsOrAlliances": "Alliance ancestrale avec Dagomba et Mamprusi (origine commune Naa Gbewaa). Conflit majeur avec les Konkomba (1981 et 1994) sur la propriete fonciere : la guerre de 1994 (Guinea Fowl War) fit 1 000 a 2 300 morts et 150 000 deplacés. Alliance tactique avec les Dagomba et les Gonja contre les Konkomba pendant ces conflits.",
+      "diaspora": "Les Nanumba sont principalement concentres dans les districts de Nanumba North et Nanumba South (Northern Region). Une diaspora est presente dans les centres urbains du Ghana (Tamale, Accra). Lors de la guerre de 1994, environ 150 000 personnes furent deplacees, certaines fuyant vers le Togo."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 250000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement ghaneen de 2021 (Nanumba North Municipal : 188 680 hab., Nanumba South District : 112 000 hab. env., Ghana Statistical Service) et la population Joshua Project 2024 (83 000). Compte tenu du fait que les deux districts sont multi-ethniques, estimation conservatrice de la population specifiquement Nanumba projetee en 2025.",
+      "distributionByCountry": [{ "country": "GHA", "population": 250000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nanumba people – Wikipedia EN (https://en.wikipedia.org/wiki/Nanumba_people)",
+      "Konkomba-Nanumba conflict – Wikipedia EN (https://en.wikipedia.org/wiki/Konkomba%E2%80%93Nanumba_conflict)",
+      "Nanumba in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13950)",
+      "Nanumba North Municipal – City Population 2021 (https://www.citypopulation.de/en/ghana/admin/northern/0803__nanumba_north_municipal/)",
+      "Political Anthropology of History: The Case of Nanun, Northern Ghana – Sociostudies.org (https://www.sociostudies.org/journal/articles/250568/)",
+      "Ghana Statistical Service – Population and Housing Census 2021 (https://www.statsghana.gov.gh)",
+      "Immigration and Refugee Board of Canada – Primary language of the Nanumba, 1996 (https://www.ecoi.net/en/document/1209225.html)"
+    ]
   }
 }

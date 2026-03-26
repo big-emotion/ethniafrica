@@ -1,22 +1,130 @@
 {
   "id": "PPL_JAHANKA",
-  "nameMain": "",
+  "nameMain": "Jahanka",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["MLI", "GIN"],
+  "currentCountries": ["GIN", "SEN", "GMB", "MLI", "GNB"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Jahanka",
       "selfAppellation": "Jahanka",
+      "exonyms": [
+        "Jakhanke",
+        "Jahanke",
+        "Jahanque",
+        "Jahonque",
+        "Diakkanke",
+        "Diakhanga",
+        "Diakhango",
+        "Dyakanke",
+        "Diakhanké",
+        "Diakanké",
+        "Diakhankesare"
+      ],
+      "originOfExonyms": "Le nom Jahanka ou Jakhanke derive de Jakha (ou Ja), ville au bord du fleuve Bafing (affluent du Senegal) que leurs ancetres habitaient avant leurs migrations. Le terme Diakhanke est la graphie française coloniale du même nom. Les variantes refletent des translitterations en differentes langues europeeennes et africaines voisines.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Jahanka est utilise dans la litterature academique (Manding Studies, islamologie africaine). Le terme Jakhanke est frequent dans les sources anglophones. En Guinée, les termes locaux comme Diakhanka sont courants. Le groupe est parfois compte avec les Mandinka dans les recensements gambiens.",
       "linguisticFamily": "FLG_MANDE",
-      "currentCountries": ["MLI", "GIN"]
+      "ethnoLinguisticGroup": "Mandingue occidental (Manding de l'Ouest), proches des Soninke et Mandinka",
+      "historicalRegion": "Fouta Djalon (Guinée), Bundu (Senegal oriental), Fouta Bundu, Dentilia, Bambuk, Gambie orientale",
+      "currentCountries": ["GIN", "SEN", "GMB", "MLI", "GNB"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Manding Studies", "Ethnographic Islamic Networks (Sahel)"]
+    "ethnicities": [
+      "Jahanka de Guinee (groupe principal, autour de Touba et Fouta Djalon)",
+      "Jahanka de Gambie orientale (region de Janjanbureh)",
+      "Jahanka du Senegal (Casamance et Senegal oriental)",
+      "Jahanka du Mali (pres de la frontiere guinéenne)",
+      "Jahanka de Guinée-Bissau"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Jahanka sont consideres comme une branche des Soninke (Sarakolle), issus de l'empire de Wagadu (Ghana ancien). Leur tradition genealogique remonte a Dinga, ancetre mythique de la dynasty regnante de Wagadu. Ils se reclament d'une filiation spirituelle avec Al-Hajj Salim Suwari, grand clerc islamique soninke du 15e siecle. Ils se rappellent Dia (en Massina, sur le Niger) comme la ville de leur ancetre Suware, et Diakaba (Bambuk) comme autre lieu fondateur.",
+      "formationPeriod": "L'identite jahanka comme caste clerical distincte s'est formee au 15e siecle avec la systematisation de leur role de clercs islamiques professionnels. L'islamisation de leurs ancetres soninke a debute au contact des marchands almoravides nord-africains a Takrur (sur le Senegal) vers 1065. Depuis le 15e siecle, les communautes jahanka ont constitue une caste clericate endogame reconnue dans toute la Senegambie.",
+      "migrationRoutes": [
+        "Wagadu (Ghana ancien) vers Massina (fleuve Niger)",
+        "Massina vers Jakha (fleuve Bafing) et Diakaba (Bambuk)",
+        "Expansion vers Bundu, Fouta Jallon (Guinee) et Fouta Bundu (Senegal) du 15e au 18e siecle",
+        "Etablissement dans la Gambie orientale, la Casamance et le Mali frontier guineen"
+      ],
+      "historicalSettlementZones": [
+        "Fouta Djalon (Guinée) : centre principal de la communaute",
+        "Bundu et Fouta Bundu (Senegal oriental) : au moins 15 villages jahanka en 1725",
+        "Dentilia et Bambuk (Senegal-Guinee)",
+        "Gambie orientale (region de Janjanbureh)",
+        "Frontiere Mali-Guinee (region de Kankan)"
+      ],
+      "unificationsOrDivisions": "Les Jahanka sont organises en villages independants les uns des autres et des chefs locaux, chaque communaute jouissant d'une autonomie judiciaire et d'une exemption du service militaire. Ils n'ont jamais forme d'Etat centralise. Leur unite repose sur une tradition clericate commune, un curriculum d'enseignement islamique partage et une genealogie spirituelle commune remontant a Suwari.",
+      "externalInfluences": "Contact avec les marchands almoravides nord-africains (11e siecle) : islamisation initiale. Empire du Mali (13e-16e siecle) : cadre politique favorable au commerce islamique. Presence portugaise sur la Gambie (16e siecle) : les Jahanka etaient les interlocuteurs muslmans privilegies. Colonisation française et britannique (fin 19e-20e siecles) : transformation des structures sociales, abolition de l'esclavage privant les communautes de main-d'oeuvre agricole.",
+      "majorHistoricalEvents": "Formulation de la tradition Suwariante d'islam pacifiste par Al-Hajj Salim Suwari (mort vers 1525) : refus du jihad, coexistence avec les non-musulmans, retrait de la politique. Etablissement de centres islamiques dans toute la Senegambie (15e-18e siecles). Contact avec les marchands portugais sur la Gambie (16e siecle). Expansion du systeme educatif islamique Majalis dans les ecoles jahanka (karanta). Perturbation de leurs structures economiques par l'abolition de l'esclavage a la fin du 19e siecle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Villages independants entre eux et des chefs locaux. Chaque village a un chef clerical issu de la tradition. Les villages jahanka jouissaient historiquement du statut de sanctuaire (independance judiciaire, exemption militaire). Lorsque leur securite etait menacee, la strategie etait le deplacement pacifique vers de nouvelles terres.",
+      "clanOrganization": "Organisation clanique endogame issue de la structure soninke. La hierarchie soninke comprend : (1) fooro (hommes libres) : tunkalemmu (princes), mangu (conseillers), kuralemme (guerriers), modinu (pretres-jahanka) ; (2) nayamala (hommes dependants) : artisans (tago-forgerons, sakko-charpentiers, jaroo-griots, garanko-cordonniers) ; (3) komo (esclaves, endogames). Les Jahanka occupent la position de modinu (clercs-pretres) dans cette hierarchie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Filiation patrilineaire. L'endogamie preserve la caste clericate et transmet le savoir islamique de generation en generation. Le statut de clerc (karamogo, marabout) est hereditaire et confere prestige economique et social. Les jeunes garçons apprennent le Coran aupres de leur pere ou d'un maitre reconnu.",
+      "religiousAuthority": "Autorite centrale des clercs islamiques (modinu, karamogo, marabout) formes dans la tradition Majalis : curriculum de 28 livres a maitriser, copie a la main pour obtenir le cijaza (licence d'enseignement). Les maitres sont formes pendant 5 a 30 ans sous un sheikh et reçoivent un isnad (chaine de transmission). Les Jahanka sont des references en matiere d'enseignement coranique dans toute la Senegambie et au-dela."
+    },
+    "languages": {
+      "mainLanguage": "Jahanka (Jahanque)",
+      "isoCodes": ["jad"],
+      "dialects": [
+        "Jahanka de Guinee (dialecte principal)",
+        "Jahanka de Senegambie (variete de la Gambie et du Senegal)",
+        "Variante de Kassonke (Senegal et Guinee-Bissau)"
+      ],
+      "vehicularRole": "Le jahanka est une langue manding proche du mandinka, avec lequel il est partiellement intercomprehensible. Il est parle principalement en Guinee et dans la Senegambie. Le mandinka et le malinke sont utilises comme langues vehiculaires dans les echanges intercommunautaires. Le français (Guinee, Senegal) et l'anglais (Gambie) sont les langues d'administration."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques comme pilier central de la vie culturelle : Ramadan et Korité, Tabaski (Aïd el-Adha), Maouloud (anniversaire du Prophete, mawlid an-nabi). Ceremonies de nomination des enfants (bapteme islamique le 7e jour). Circoncision masculine comme rite de passage, suivie d'une periode d'enseignement. Pelerinage a La Mecque (Hajj) valorise comme acte de prestige et de piete. Ceremonies de remise des diplomes coraniques (cijaza ou sanad), marquant la fin d'un cycle d'etudes islamiques. Funerailles islamiques avec recitation du Coran.",
+      "symbols": "Le Coran comme objet sacre central. Amulettes coraniques (gris-gris, talisman) produites par les marabouts jahanka, tres prises dans toute la Senegambie et au-dela. Turban blanc des scholars islamiques. Tables de bois ou d'ardoise (lawha) utilisees pour les exercices d'ecriture coraniques. Les ecoles coraniques (karanta) sont des symboles de leur identite.",
+      "artsAndMusic": "La calligraphie arabe pratiquee dans les ecoles coraniques. Kani Dambakaté, musicienne guineenne d'origine jahanka, est une figure artistique notable. La poesie islamique et les nasheeds (chants pieux en arabe ou mandinka) sont pratiques lors des ceremonies religieuses. Artisanat de broderie et de couture islamique (tenues de priere). La tradition orale islamique (khutba, sermons, genealogies savantes) est soigneusement entretenue.",
+      "spiritualities": "Islam sunnite de rite malekite quasi-exclusif (99-100% selon Joshua Project). La tradition Suwariante est le coeur de la spiritualite jahanka : refus absolu du jihad (meme defensif en principe), coexistence pacifique avec les non-musulmans, non-interference dans les affaires politiques, retrait de la violence. Les Jahanka sont formes dans les sciences islamiques (tajwid, hadith, usul al-fiqh, grammaire arabe, tafsir). Ils maitrisent les sciences batiniyyah (esoteriques) : interpretation des reves, fabrication d'amulettes de protection (talisman) tres recherchees. Pratiques de dhikr (invocations) et celebration du mawlid."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Jahanka n'ont pas fonde de royaumes ou d'empires politiques. Leur influence est d'ordre religieux, educatif et commercial. Ils ont fonde de nombreux villages-sanctuaires independants (avec statut d'inviolabilite) dans toute la Senegambie. Leur figure tutellaire spirituelle est Al-Hajj Salim Suwari, dont les enseignements ont façonné l'islam ouest-africain pacifiste.",
+      "relationsWithNeighbors": "Relations de service spirituel avec les populations environnantes (Mandinka, Soninke, Bambara, Fula) pour qui ils assuraient l'enseignement islamique et les ceremonies religieuses. Villages jahanka jouissaient d'un statut de sanctuary respecte par tous les belligerants. Commerce de riz, sel, tissus, or et esclaves leur assurait une prosperite relative. Les marchands portugais sur la Gambie les utilisaient comme intermediaires commerciaux (16e siecle).",
+      "conflictsOrAlliances": "Principe fondamental de non-violence et de non-interference politique. En cas de menace, les Jahanka deplacaient leurs villages plutot que de combattre. Ils ont evite de prendre part aux guerres de jihad du 19e siecle (Umar Tall, etc.). Cette neutralite leur a permis de maintenir leurs ecoles et leurs reseaux a travers les periodes de troubles.",
+      "diaspora": "Communautes jahanka presentes dans environ 65 villages a travers la Senegambie et la Guinee. Population estimee a 60 000 personnes. Presence dans les villes de Conakry, Dakar et Banjul. Urbanisation acceleree depuis les annees 1990 a disperse la communaute et mis sous pression ses structures traditionnelles."
+    },
+    "demography": {
+      "totalPopulation": 60000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (profils par pays : Guinee, Senegal, Gambie, Mali, Guinee-Bissau), Wikipedia EN (Jakhanke), 101 Last Tribes. Estimation globale d'environ 60 000 personnes reparties dans environ 65 villages selon 101 Last Tribes.",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 35000,
+          "note": "Groupe principal, autour de Touba et dans le Fouta Djalon"
+        },
+        {
+          "country": "SEN",
+          "population": 12000,
+          "note": "Senegal oriental (Bundu), Casamance"
+        },
+        {
+          "country": "GMB",
+          "population": 6300,
+          "note": "Gambie orientale, region de Janjanbureh ; inclus dans le groupe Mandinka/Jahanka du recensement gambien"
+        },
+        {
+          "country": "MLI",
+          "population": 4000,
+          "note": "Pres de la frontiere guinéenne (region de Kankan)"
+        },
+        {
+          "country": "GNB",
+          "population": 2700,
+          "note": "Guinée-Bissau, petites communautes"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Jakhanke. https://en.wikipedia.org/wiki/Jakhanke",
+      "Wikipedia EN — Jahanka language. https://en.wikipedia.org/wiki/Jahanka_language",
+      "Ethnologue — Jahanka language (jad). https://www.ethnologue.com/language/jad/",
+      "Joshua Project — Jahanka in Guinea. https://joshuaproject.net/people_groups/12311/GV",
+      "Joshua Project — Jahanka in Gambia. https://joshuaproject.net/people_groups/12311/GA",
+      "Joshua Project — Jahanka in Mali. https://joshuaproject.net/people_groups/12311/ML",
+      "101 Last Tribes — Jakhanke people. https://www.101lasttribes.com/tribes/jakhanke.html",
+      "Levtzion, Nehemia & Hopkins, J.F.P. Corpus of Early Arabic Sources for West African History. Cambridge University Press, 1981."
+    ]
   }
 }

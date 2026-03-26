@@ -6,54 +6,69 @@
   "content": {
     "appellations": {
       "mainName": "Machinga",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Machinga",
+      "exonyms": [],
+      "originOfExonyms": "Le nom Machinga signifie litteralement montagnes en reference a leur territoire montagneux entre Lindi et Kilwa Kivinje.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Machinga est aujourd'hui employe sans ambiguite pour designer ce groupe ethnique de la region de Lindi. A noter que Machinga est aussi le nom d'un district au Malawi, sans lien avec ce peuple tanzanien.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Bantu du Sud-Est, groupe cotier de Tanzanie meridionale",
+      "historicalRegion": "District de Kilwa, region de Lindi, cote sud de la Tanzanie",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Machinga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Le groupe ethno-linguistique Machinga a pour origine supposee l'Afrique centrale occidentale (region du Cameroun), selon la tradition orale. Les migrations bantoues depuis l'Afrique centrale commencerent vers 2000 avant notre ere, avec plusieurs vagues successives sur des millenaires, permettant la diffusion et l'influence par assimilation d'autres cultures. La region de Kilwa fut aussi habitee par des groupes connus sous le nom de Mtakata, Mranga et Machinga avant les influences arabes et swahilies.",
+      "formationPeriod": "La presence des Machinga dans le district de Kilwa est attestee depuis les periodes pre-coloniales. Leur territoire montagneux entre Lindi et Kilwa Kivinje constitue leur assise historique.",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo/Afrique centrale vers l'Afrique de l'Est (migrations bantoues, circa 2000 av. J.-C.)",
+        "Etablissement sur la cote meridionale de Tanzanie dans la region de Lindi"
+      ],
+      "historicalSettlementZones": [
+        "District de Kilwa, region de Lindi, Tanzanie meridionale",
+        "Zone montagneuse entre Lindi et Kilwa Kivinje, a l'interieur des terres"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Forte influence de l'Islam, apporte par les marchands arabes et swahilis via la cote. Le port de Kilwa fut l'un des grands centres du commerce en Afrique de l'Est medievale. La colonisation allemande puis britannique affecta les structures sociales locales. L'independance tanzanienne en 1963 mit fin a l'ere coloniale.",
+      "majorHistoricalEvents": "La ville de Kilwa fut un centre commercial majeur de l'Afrique orientale medievale, inhabitee successivement par les Mtakata, Mranga et Machinga avant les dynasties swahilies arabes. Les Machinga furent parmi les groupes de la region lors de cette expansion commerciale cotiere."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation villageoise avec elders respectes et chefs de village. La societe est regie par des anciens honores dont l'autorite s'exerce sur les decisions communautaires, les mariages et les litiges.",
+      "clanOrganization": null,
+      "ageClassSystems": "Des ceremonies de pubertes existent : circoncision pour les garcons dans certains groupes, et des rites feminins (avec risques sanitaires signales). Les enfants restent en contact avec les femmes de la famille jusqu'a environ 5 ans pour les garcons et l'adolescence pour les filles.",
+      "roleOfLineages": "Les negotiations matrimoniales impliquent les familles des deux cotes via un intermediaire neutre. Le beau-pere paie une dot (bride wealth) negociee sur plusieurs annees. La polygamie est pratiquee pour assurer les travailleurs familiaux.",
+      "religiousAuthority": "La religion est dominee par l'Islam. Des chefs religieux (imams) dirigent les mosquees et les madrassa (ecoles coraniques). Les croyances animistes persistent : les ancetres jouent un role dans la vie quotidienne, avec libations et sacrifices d'animaux lors des evenements importants."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Machinga",
+      "isoCodes": ["mvw"],
+      "dialects": [],
+      "vehicularRole": "Le machinga (ISO 639-3 : mvw) est une langue bantoue stable de Tanzanie, appartenant a la famille Niger-Congo. Il est utilise comme premiere langue par tous les membres de la communaute ethnique. Le swahili est la langue nationale et vehiculaire de Tanzanie et sert de langue d'enseignement et d'administration."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La musique traditionnelle est l'art le plus repandu : elle est fonctionnelle (ceremonielle, religieuse, politique, incidente). Elle est executee aux funerailles (pour louer le defunt, consoler les endeuilles, exprimer la douleur), pour chasser les mauvais esprits, lors des fetes de biere, pour accueillir les guerriers, lors des luttes, du courtage et des jeux. Les chants de travail accompagnent les activites communautaires (construction, desherbage) et individuelles (piler le grain). Des rites de pubertes pour filles et garcons existent.",
+      "symbols": "Le territoire montagneux (d'ou le nom Machinga, signifiant montagnes) est un element identitaire fort. Les animaux d'elevage, particulierement le betail, ont une valeur symbolique importante (bride wealth).",
+      "artsAndMusic": "La musique est caracterisee par : des melodies lyriques avec ornements vocaux, des rythmes syncopation a debut acrusique, un style solo-reponse, des chants (recitatives aux rythmes irreguliers avec messages graves). Au milieu des performances, le chant s'arrete, les instruments descendent en tonalite, la danse ralentit et un individu se loue lui-meme.",
+      "spiritualities": "L'islam est dominant : la majorite se dit musulmane de naissance, la frequentation de la mosquee est importante, et les madrassa forment les enfants au Coran. Toutefois, les croyances animistes coexistent : les ancetres influencent la vie quotidienne. Des libations de biere sur le sol et des sacrifices (poulet ou chevre selon le groupe) honorent les ancetres lors des occasions importantes. Des pratiques de chasse aux mauvais esprits et de divination/guerison traditionnelles sont documentees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise connu. Les Machinga vivaient en communautes villageoises autonomes sous l'autorite d'anciens. La region de Kilwa eut une importance historique majeure comme centre commercial swahili-arabe, mais les Machinga eux-memes etaient un groupe peripherique a ces structures de pouvoir.",
+      "relationsWithNeighbors": "Les Machinga sont voisins des Matumbi au nord, des Mwera a l'ouest et des Makonde au sud. Ils entretiennent des relations d'echanges commerciaux et de mariages, notamment avec les Mwera (mariages intertribaux courants). La proximite de la cote les a mis en contact avec les marchands arabes et swahilis, d'ou la forte islamisation.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 55000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur 36 000 personnes en 1987 (Wikipedia Machinga people) avec croissance demographique tanzanienne moyenne.",
+      "distributionByCountry": [{ "country": "TZA", "population": 55000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Machinga people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Machinga_people)",
+      "Machinga Language (MVW) – Ethnologue, SIL International (https://www.ethnologue.com/language/mvw/)",
+      "Machinga People and their Culture in Tanzania – My Free School Tanzania, 2014 (http://myfreeschooltanzania.blogspot.com/2014/10/machinga-people-and-their-culture-in.html)",
+      "Machinga in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13190)",
+      "Machinga – Glottolog 5.3, mach1265 (https://glottolog.org/resource/languoid/id/mach1265)"
+    ]
   }
 }

@@ -2,66 +2,114 @@
   "id": "PPL_BUGAKWE",
   "nameMain": "Bugakwe",
   "languageFamilyId": "FLG_KXA",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["BWA", "NAM", "AGO"],
   "content": {
     "appellations": {
       "mainName": "Bugakwe",
-      "selfAppellation": "Bugakwe",
+      "selfAppellation": "Bugakhoe",
+      "exonyms": [
+        "Kxoe",
+        "Kwengo",
+        "Barakwena",
+        "Mbarakwena",
+        "Mbarakwengo",
+        "G/anda",
+        "/anda",
+        "River Bushmen"
+      ],
+      "originOfExonyms": "Le terme Barakwena ou Mbarakwena est d'origine bantoue et considere comme pejoratif par les membres du groupe. Kwengo est un exonyme courant utilise par les Tswana et les administrateurs coloniaux. Kxoe est un terme linguistique couvrant un continuum dialectal de la famille Khoe-Kwadi.",
+      "whyProblematic": "Le terme Barakwena est percu comme devalorisant car il fut utilise par les populations bantoues voisines pour designer ces chasseurs-cueilleurs de maniere stigmatisante. Le terme Bushmen, bien que prefere par certains membres des communautes elles-memes, reste sensible en contexte officiel.",
+      "contemporaryUsage": "Bugakwe ou Bugakhoe est l'appellation preferee et utilisee par les communautes dans le delta de l'Okavango au Botswana. Le terme Kxoe est retenu par les linguistes pour designer la langue du groupe.",
       "linguisticFamily": "FLG_KXA",
-      "ethnoLinguisticGroup": "Kx'a (Juu)",
-      "historicalRegion": "Désert du Kalahari (Botswana)",
-      "currentCountries": ["BWA"]
+      "ethnoLinguisticGroup": "San (Bushmen) du delta de l'Okavango",
+      "historicalRegion": "Delta de l'Okavango et rive est du fleuve Okavango (Botswana septentrional, Namibie, Angola meridional)",
+      "currentCountries": ["BWA", "NAM", "AGO"]
     },
     "ethnicities": [
-      "Bugakwe du Nord",
-      "Bugakwe du Sud",
-      "Sous-groupes régionaux"
+      "Bugakwe du Botswana (delta de l'Okavango, Panhandle)",
+      "Bugakwe de Namibie (Caprivi occidental)",
+      "Bugakwe d'Angola (zones frontalieres meridionales)",
+      "Buga (sous-groupe dialectal reconnu dans la classification Kxoe)",
+      "Communautes refugiees de Dukwe (Botswana)"
     ],
     "origins": {
-      "ancientOrigins": "Les Bugakwe sont un peuple ancien du désert du Kalahari au Botswana. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les Bugakwe sont un peuple San (Bushmen) parmi les plus anciens habitants du delta de l'Okavango et des rives du fleuve Okavango au nord du Botswana. Comme l'ensemble des peuples San, ils descendent de populations de chasseurs-cueilleurs dont la presence en Afrique australe est attestee depuis des dizaines de milliers d'annees. Les donnees genetiques placent les San parmi les populations humaines les plus divergentes genetiquement, avec une histoire evoluant de facon independante depuis au moins 100 000 ans selon certaines etudes.",
+      "formationPeriod": "La specificite culturelle et linguistique des Bugakwe s'est consolidee autour du delta de l'Okavango, zone riche en ressources aquatiques et terrestres, leur permettant de developper une expertise unique de chasse et de collecte combinant milieux marecageux et savane seche. A la fin du 18e siecle, l'expansion du pouvoir tswana sous le chef Batawana commenca a modifier leurs structures politiques traditionnelles.",
+      "migrationRoutes": [
+        "Populations autochtones sedentaires du delta de l'Okavango, sans migration fondatrice documentee recente",
+        "Dispersement force vers des camps de refugies (Dukwe, Botswana) en raison des conflits en Angola et en Namibie a partir des annees 1970",
+        "Presence historique attestee en Angola meridional et dans le Caprivi occidental, avec contacts reduits depuis les guerres d'independance"
+      ],
+      "historicalSettlementZones": [
+        "Panhandle de l'Okavango (nord-ouest du Botswana)",
+        "Rive est du delta de l'Okavango",
+        "Caprivi occidental (Namibie)",
+        "Zones frontalieres du sud de l'Angola"
+      ],
+      "unificationsOrDivisions": "Les guerres d'independance namibienne (1966-1990) et la guerre civile angolaise (1975-2002) ont profondement divise les communautes Bugakwe selon les frontieres nationales. Les Bugakwe de Namibie developperent sous l'administration sud-africaine une structure de chef formel que les Bugakwe du Botswana ne reconnaissent pas. Cette division politique persiste.",
+      "externalInfluences": "Depuis la fin du 18e siecle, les Batawana (Tswana) exercent une influence politique croissante, ayant remplace les coutumes matrilineaires Bugakwe par des traditions patrilineaires tswana. L'administration britannique coloniale formalisa ces changements au debut du 20e siecle. La participation au commerce d'ivoire (fin 19e siecle) et aux migrations vers les mines d'Afrique du Sud (annees 1930) integrerent les Bugakwe dans l'economie regionale. Depuis les annees 1960, plusieurs travaillent comme guides dans les lodges de safari.",
+      "majorHistoricalEvents": "Participation au commerce d'ivoire le long du fleuve Okavango a la fin du 19e siecle. Incorporation progressive dans le systeme politique tswana (Batawana) a partir de la fin du 18e siecle. Migration de travail vers les mines d'Afrique du Sud depuis les annees 1930. Deplacement force de plusieurs centaines de Bugakwe vers le camp de refugies de Dukwe (Botswana) suite aux violences dans le Caprivi occidental lies a la guerre civile angolaise. Redemarrage progressif des liens trans-frontaliers avec la Namibie apres 1990."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation traditionnelle egalisatrice sans autorite centrale permanente. Les decisions communautaires sont prises par consensus au sein de groupes de parenté etendus. Sous l'influence batawana depuis la fin du 18e siecle, une structure de chef local (headman) fut introduite. Aujourd'hui les headmen sont des employes du gouvernement botswanais, assistes par la police, les tribunaux et des comites de citoyens. Le systeme de kgotla (assemblee publique tswana) est universellement adopte dans les communautes du Botswana.",
+      "clanOrganization": "Organisation en groupes de parenté etendus se deplacant en bandes. Adoption au cours du 20e siecle de clans totemiques matrilineaires (elephant, crocodile, lion) empruntes aux peuples Dxeriku/Hambukushu voisins. La regle est de ne pas chasser ni consommer son animal totemique, et de ne pas se marier a l'interieur du clan.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux dans la tradition originelle, avec tendance à la patrilinearite sous influence tswana. Les liens de reciprocite et d'entraide entre families elargiées restent fondamentaux pour l'acces aux ressources et la survie dans des environnements difficiles.",
+      "religiousAuthority": "Les chamans et herbalistes jouent un role important comme intermediaires avec le monde surnaturel et pour la guerison. Ils sont consultes par des membres de groupes voisins. La majorite pratique des religions traditionnelles animistes. L'Eglise chretienne Sion (Zion Christian Church) est devenue dominante dans de nombreuses communautes a partir de la fin du 20e siecle."
     },
     "languages": {
-      "mainLanguage": "Bugakwe (variété Juu)",
-      "vehicularRole": "Le bugakwe est parlé par la majorité des Bugakwe. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "Kxoe (Bugakhoe, Khwe)",
+      "isoCodes": ["xuu"],
+      "dialects": [
+        "Buga (dialecte reconnu dans la classification Khoe-Kwadi occidentale)",
+        "Kwengo (variete parlee le long de la riviere Kwando)",
+        "Varietes du Caprivi occidental (Namibie)"
+      ],
+      "vehicularRole": "Le kxoe est la langue maternelle des Bugakwe. Le setswana et l'anglais sont utilises dans les contextes officiels au Botswana. Des linguistes de l'Universite de Cologne travaillent a la documentation et a l'elaboration d'orthographes standardisees pour cette langue menacee."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "Ceremonies de guerison par transe (trance dances) constituant le coeur de la vie rituelle : le guerisseur entre en etat de transe, mobilise une force spirituelle medicale (analogue au n/um des autres San), et soigne les malades en posant les mains. Rites de passage marques a la naissance (rituel d'accueil des nouveau-nes par les femmes agees), a la puberte des filles (isolation et instructions sur les responsabilites feminines), au mariage et a la mort. Ceremonies de chasse precedant les grandes parties de chasse pour s'assurer la faveur des esprits et la protection contre les animaux dangereux. Rituels de partage codifies assurant la redistribution equitable du gibier et des produits de collecte entre les membres de la communaute.",
+      "symbols": "Art rupestre du bassin de l'Okavango (peintures et gravures representant animaux, humains et figures geometriques). Motifs de chasse sur les armes et ustensiles. Symboles d'animaux totemiques (elephant, crocodile, lion) suite a l'adoption de clans totemiques bantoues. Arcs de chasse finement travailles et carquois decores comme symboles de competence masculine.",
+      "artsAndMusic": "Art rupestre constitue le patrimoine artistique le plus ancien, avec des representations d'animaux de savane et de marais. Musique traditionnelle utilisant des instruments a cordes (arc musical), des instruments a percussion (tambours) et des chants polyphoniques collectifs. Danse de transe collective pratiquee lors des ceremonies de guerison, avec postures caracteristiques et vocalisations rythmees. Vannerie et sparterie elaborees par les femmes utilisant les ressources du delta. Confection d'ornements corporels (perles, coquillages, plumes). Traditions narratives orales riches transmettant mythes d'origine, recits de chasse, connaissances ecologiques et normes sociales.",
+      "spiritualities": "Croyances animistes centrees sur l'existence d'un etre supreme createur et de forces spirituelles impersonnelles presentes dans la nature. Les chamans servent d'intermediaires entre le monde des vivants et le monde des esprits. Croyance forte dans les forces surnaturelles, avec une reverence profonde pour le monde naturel. La sante physique et emotionnelle est percue comme une facette de l'equilibre spirituel. Influence croissante du christianisme, notamment de l'Eglise chretienne Sion, qui coexiste frequemment avec les pratiques traditionnelles dans une forme de syncretisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises."
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique propre. Structure sociale egalisatrice de chasseurs-cueilleurs sans hierarchie formelle permanente. Sous l'influence des Batawana depuis la fin du 18e siecle, une structure de chef de village fut imposee, remplacant progressivement les mecanismes de prise de decision par consensus.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les peuples bantous voisins, notamment les Batawana (Tswana), les Dxeriku et les Hambukushu, qui exercerent une domination politique progressive depuis la fin du 18e siecle. Les chamans et herbalistes Bugakwe sont souvent consultes par d'autres groupes ethniques pour leurs connaissances medicinales. Les Bugakwe participent aujourd'hui a des communautes multi-ethniques dans le delta de l'Okavango, convergeant vers des modes de subsistance mixtes. Des organisations non gouvernementales (Kuru Development Trust, IWGIA, Survival International) les appuient dans la defense de leurs droits.",
+      "conflictsOrAlliances": "Incorporation forcee dans le systeme politique tswana (Batawana) a partir de la fin du 18e siecle avec remplacement des coutumes matrilineaires. Tensions liees aux conflits armes au Caprivi et en Angola qui ont fragmente les communautes trans-frontalieres. Plusieurs centaines de Bugakwe ont fui vers le camp de refugies de Dukwe au Botswana suite a ces violences. Lutte pour le droit a la terre et a la chasse dans le cadre des politiques de conservation de la faune sauvage.",
+      "diaspora": "Communautes dispersees entre Botswana (delta de l'Okavango, camp de refugies de Dukwe), Namibie (Caprivi occidental) et Angola meridional. Les conflits armes des annees 1970-2000 ont coupe les liens entre ces trois branches communautaires. La reprise des contacts transfrontaliers avec la Namibie s'est amorcee apres 1990 suite a l'independance namibienne."
     },
     "demography": {
-      "totalPopulation": 500,
+      "totalPopulation": 3500,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur les recensements du Botswana (Statistics Botswana 2022), les donnees de SIL Ethnologue pour la langue Kxoe (xuu), les rapports de l'IWGIA sur les peuples autochtones d'Afrique, et les etudes de terrain de l'Universite de Cologne sur les langues de l'Okavango",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2500,
+          "note": "Delta de l'Okavango, Panhandle, et camp de refugies de Dukwe"
+        },
+        {
+          "country": "NAM",
+          "population": 700,
+          "note": "Caprivi occidental, principalement autour de la riviere Kwando"
+        },
+        {
+          "country": "AGO",
+          "population": 300,
+          "note": "Zones frontalieres du sud de l'Angola, communautes relativement isolees"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bugakwe language",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa",
-      "Études anthropologiques sur les peuples San du Kalahari"
+      "Hitchcock, Robert K. & Babchuk, Wayne A. The Okavango Delta Peoples of Botswana. 101 Last Tribes / Africa Research Project. https://www.101lasttribes.com/tribes/okavango.pdf",
+      "Wikipedia EN — Khwe language. https://en.wikipedia.org/wiki/Khwe_language",
+      "Wikipedia EN — Okavango Delta (section peoples). https://en.wikipedia.org/wiki/Okavango_Delta",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples",
+      "SIL Ethnologue — Kxoe language (xuu). https://www.ethnologue.com/language/xuu/",
+      "Glottolog — Kxoe language entry. https://glottolog.org/resource/languoid/id/kxoe1243",
+      "IWGIA — Indigenous Peoples in Africa: Botswana. https://www.iwgia.org/en/botswana.html",
+      "Statistics Botswana — Population & Housing Census 2022. https://www.statsbots.org.bw"
     ]
   }
 }

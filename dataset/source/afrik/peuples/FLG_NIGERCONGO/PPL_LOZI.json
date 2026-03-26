@@ -2,71 +2,121 @@
   "id": "PPL_LOZI",
   "nameMain": "Lozi",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["ZMB", "ZWE", "NAM", "AGO"],
+  "currentCountries": ["ZMB", "NAM", "BWA", "ZWE", "AGO"],
   "content": {
     "appellations": {
       "mainName": "Lozi",
-      "selfAppellation": "Lozi",
+      "selfAppellation": "Malozi / Balozi",
       "exonyms": [
-        "Lozi (terme utilisé par les Européens), parfois appelés « Barotse » (terme historique)"
+        "Barotse (terme colonial et historique, désignant les sujets du roi Lozi)",
+        "Rozi",
+        "Aluyi / Luyi / Luyana (ancien nom avant la conquête kololo du 19e siecle)"
       ],
+      "originOfExonyms": "Le terme Barotse est une déformation du nom Aluyi en langue kololo : les Makololo envahisseurs (1838-1864) transformerent Aluyi en Barotse, signifiant 'peuples des plaines'. Mu-rotse (singulier) et Ba-rotse (pluriel) signifient 'personne des plaines' en silozi. Lozi, nom moderne, viendrait du mot makololo pour 'plaine'. L'autoglottonyme officiel selon l'ONU est Silozi.",
+      "contemporaryUsage": "Le terme Lozi ou Malozi est l'appellation courante et preferee par les locuteurs. Barotse reste utilise dans les contextes historiques et institutionnels (ex. Barotseland Agreement de 1964). Le terme Balozi est parfois utilise pour le peuple, Malozi pour la langue.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone K)",
-      "historicalRegion": "ZMB, ZWE, NAM, AGO",
-      "currentCountries": ["ZMB", "ZWE", "NAM", "AGO"]
+      "ethnoLinguisticGroup": "Bantou (Zone S, groupe S.30, branche sotho)",
+      "historicalRegion": "Barotseland (Bulozi) — plaines de la haute Zambezi, Province occidentale de la Zambie",
+      "currentCountries": ["ZMB", "NAM", "BWA", "ZWE", "AGO"]
     },
     "ethnicities": [
-      "Lozi de Zambie",
-      "Lozi du Zimbabwe",
-      "Lozi de Namibie",
-      "Lozi d'Angola",
-      "Sous-groupes régionaux"
+      "Bamakoma — sous-groupe fondateur de Barotseland",
+      "Kwanda — groupe etabli dans la region de la Zambezi superieure",
+      "Bayeyi — groupe au sud-est de Barotseland, present aussi au Botswana et Namibie",
+      "Mbowe (Mamboe) — groupe occidental de Barotseland",
+      "Bambukushu — sous-groupe etabli pres du delta de l'Okavango",
+      "Basubia — groupe meridional, present en Namibie (region du Zambezi) et Botswana",
+      "Mishulundu, Ndundulu, Mwanga — sous-groupes regionaux interieurs de Barotseland"
     ],
     "origins": {
-      "ancientOrigins": "Les Lozi sont originaires de la région de la ZMB, du ZWE, de la Namibie et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone K). Ancien royaume Barotse.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Barotse). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les ancetres des Lozi, appeles Luyana ou Aluyi, descendent d'un groupe bantou qui migra depuis la region du Congo-Katanga (empire luba-lunda) vers la fin du 17e siecle ou le debut du 18e siecle. Ils s'etablirent sur les plaines inondables de la haute Zambezi (Bulozi), ou ils developperent un royaume prospere tire de la peche, de l'elevage et de l'agriculture adaptee aux crues annuelles. La langue luyana, proche du luba et du lunda, fut la base linguistique initiale.",
+      "formationPeriod": "Le royaume de Barotseland (Bulozi) se consolida progressivement au 18e siecle sous des rois successifs. En 1838, les Makololo, un peuple sotho fuyant le Mfecane de Shaka Zulu, sous la direction du guerrier Sebetwane, envahirent Barotseland et soumirent les Luyana. Ils imposerent leur langue kololo, donnant naissance a un dialecte hybride. En 1864, les Luyana se revolterent et renverserent les Makololo ; la nouvelle langue mixte, devenue le silozi (lozi), fut conservee. L'identite lozi moderne naquit de cette synthese.",
+      "migrationRoutes": [
+        "Migration depuis la region Congo-Katanga vers le sud-ouest, traversant les bassins versants du Kasai vers la haute Zambezi (fin 17e - debut 18e siecle)",
+        "Expansion du royaume le long des plaines inondables de la Zambezi vers l'est (Kafue) et le sud (Linyanti-Chobe)",
+        "Migrations de travail vers les mines d'Afrique du Sud et du Copperbelt sous la periode coloniale (20e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Plaines de Barotse (Barotse Floodplain), Province occidentale de la Zambie — capitale Lealui et Limulunga",
+        "Region du Zambezi (ancien Caprivi), Namibie",
+        "Nord-ouest du Botswana (region de l'Okavango)",
+        "Ouest du Zimbabwe (region de Hwange-Victoria Falls)",
+        "Province de Moxico, Angola (frontiere est)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Barotseland regroupait une vingtaine de groupes ethniques sous l'autorite du Litunga (roi). Le Barotseland Agreement de 1964, signe lors de l'independance de la Zambie, garantissait une autonomie speciale a Barotseland qui ne fut pas pleinement respectee, generant des tensions persistantes. Un mouvement pour la restauration de cette autonomie (Barotseland Agreement 64 Campaign) reste actif.",
+      "externalInfluences": "Conquete makololo (1838-1864) : domination sotho ayant transforme la langue. Protectorat britannique de la British South Africa Company de Cecil Rhodes (1890-1924). Incorporation dans la Rhodesie du Nord (1924) puis la Zambie independante (1964). Missions chretiennes : presence des freres de Plymouth (Francois Coillard depuis 1884) ayant introduit le christianisme et la scolarisation. Accord de Barotseland de 1964.",
+      "majorHistoricalEvents": "Fondation du royaume luyana (18e siecle). Conquete makololo de Sebetwane (1838). Revolte et liberation (1864) : renversement des Makololo par les Luyana sous Sipopa, adoption du nom Lozi. Regne du Litunga Lewanika (1878-1916) : negociations avec les Britanniques, traite avec la BSAC (1890), acceptation d'un protectorat. Incorporation dans la Rhodesie du Nord (1924). Barotseland Agreement (1964) : Zambie independante reconnait le statut special de Barotseland. Tensions politiques recurrentes autour de l'autonomie regionale depuis 1964."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Barotse). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le royaume de Barotseland est dirige par le Litunga (litteralement 'gardien de la terre'), monarque supreme ayant autorite politique et spirituelle. Le Litunga est assiste du Ngambela (Premier ministre traditionnel) et d'un conseil d'indunas (chefs/conseillers). Le systeme comprend deux capitales royales : Lealui (residence d'ete dans les plaines) et Limulunga (residence d'hiver sur les hauteurs). La societe est hierarchisee en aristocrates (royaux), hommes libres (commoners) et, historiquement, en serfs.",
+      "clanOrganization": "La societe lozi est organisee en unites familiales (lapa) patrilineaires dirigees par l'aine masculin, souvent le grand-pere. Chaque homme adulte est responsable d'etablir son homestead independant, d'avoir un emploi et de prendre epouse. La polygamie etait traditionnellement pratiquee mais est en declin. Les groupes de parentele se definissent par filiation patrilineaire, mais l'organisation en clans formels est moins rigide que chez d'autres groupes bantous.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'affiliation clanique, les droits fonciers et les alliances matrimoniales. L'epouse rejoint le homestead du mari et adopte le patronyme de son mari. Les lignages royaux (descendants des Litunga) occupent les positions superieures de la hierarchie sociale.",
+      "religiousAuthority": "Le Litunga detient une autorite spirituelle en plus de son pouvoir politique. La religion traditionnelle reconnait Nyambe comme divinite supreme creatrice. Les ancetres (bakwenyi) jouent un role important comme intermediaires. Le christianisme, introduit par les missionnaires Coillard et les Freres de Plymouth depuis 1884, est aujourd'hui la religion dominante au sein de la communaute lozi. Un syncretisme entre croyances traditionnelles et christianisme est repandu."
     },
     "languages": {
-      "mainLanguage": "Lozi",
-      "vehicularRole": "Le lozi est parlé par la majorité des Lozi. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Silozi (Lozi)",
+      "isoCodes": ["loz"],
+      "dialects": [
+        "Silozi standard — parle dans les plaines de Barotse, Province occidentale de la Zambie",
+        "Silozi de la region du Zambezi (Namibie) — variante namibienne",
+        "Silozi du Botswana (region de l'Okavango-Chobe) — variante botswanaise",
+        "Luyana — ancienne langue ancestre, aujourd'hui pratiquement eteinte"
+      ],
+      "vehicularRole": "Le silozi est l'une des huit langues officiellement reconnues de la Zambie et la principale langue vehiculaire de la Province occidentale. Il est parle par environ 6% de la population zambienne, soit plus de 1,2 million de locuteurs en Zambie. Il sert de lingua franca pour de nombreux groupes ethniques de la region (Basubia, Bayeyi, Bambukushu). Le silozi est enseigne dans les ecoles primaires de la Province occidentale. La langue est classee en Zone S (S.30) des langues bantoues, plus proche du sotho que des langues luba dont elle est historiquement issue en raison de la superposition kololo."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels lozi, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Ceremonie du Kuomboka (litt. 'sortir de l'eau') : evenement royal et culturel central, celebre en fevrier-mars lors de la montee des eaux de la Zambezi. Le Litunga quitte sa residence de Lealui sur la grande pirogue royale Nalikwanda (peinte en noir et blanc, surmontee d'une statue d'elephant) avec 180 rameurs en tenue rouge de guerrier, pour rejoindre Limulunga sur les hauteurs. La veille, les Maoma (tambours royaux) sont frappes et s'entendent jusqu'a 15 km. A l'arrivee, hommes et femmes pratiquent le Kushowelala (hommage royal). Le voyage retour en aout s'appelle Kufuluhela. Ceremonies de mariage traditionnelles (lobola/dot). Rites de passage a l'adolescence. Ceremonies liees aux crues de la Zambezi.",
+      "symbols": "La pirogue royale Nalikwanda (peinte en noir pour le peuple lozi et blanc pour la spiritualite, surmontee d'un elephant symbole de puissance royale). Les tambours Maoma (symboles de l'autorite royale). Le titre Litunga (litteralement 'gardien de la terre'). L'elephant, embleme de la nation lozi. Le musisi (jupe satinee des femmes lozi) et le cali (chale assorti). La plaine inondable de Barotse comme territoire sacre.",
+      "artsAndMusic": "Musique traditionnelle rythmee par les tambours (Maoma pour les ceremonies royales). Danse Sipelu : danse mixte de jeunes hommes et femmes executee lors des visites royales, mariages et celebrations communautaires (jamais lors des funerailles). Chants collectifs d'hommage (Kushowelala). Artisanat : vannerie fine, poterie, sculpture sur bois, tissage de nattes. Cuisine traditionnelle : buhobe (bouillie de mais), poisson du Zambezi (bream), mabisi (lait fermente). Tradition orale riche en contes et legendes sur les origines du peuple luyana et le Litunga.",
+      "spiritualities": "Religion traditionnelle centrée sur Nyambe, divinite supreme creatrice consideree comme inaccessible directement. Les ancetres (bakwenyi) servent d'intermediaires entre les vivants et le divin. Les esprits des Litunga defunts conservent une presence sacree dans les sites royaux. Croyance aux forces naturelles liees a la Zambezi. Depuis le 19e siecle, le christianisme (surtout evangelique, anglican et catholique) est predominant. Un syncretisme prononce caracterise la pratique religieuse contemporaine."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lozi dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Royaume de Barotseland (Bulozi), fonde au 18e siecle, etait au faite de sa puissance au 19e siecle, couvrant environ 390 000 km2. Son autorite s'etendait au Kwito (Angola), au Linyanti-Chobe (Botswana), a la Kafue (Zambie) et a la Luena (Angola). Le Litunga Lewanika (1878-1916) modernisa le royaume et negocia avec les Britanniques. Barotseland fut incorpore a la Rhodesie du Nord en 1924 mais conserva une large autonomie.",
+      "relationsWithNeighbors": "Les Lozi maintinrent des relations complexes avec les Tonga, Nkoya, Ila et Mbunda, peuples qu'ils subordonnerent comme sujets ou incorporerent dans le royaume. Ils euterent des contacts commerciaux avec les Portugais via l'Angola et les marchands swahili. Relations avec les missionnaires francais (Francois Coillard, Societe des Missions Evangeliques de Paris). Tensions historiques avec les Ndebele du Zimbabwe. Cooperations avec les Ngoni lors des periodes de pression coloniale.",
+      "conflictsOrAlliances": "Conquete kololo (1838) : invasion des Makololo sous Sebetwane, soumission des Luyana. Revolte victorieuse contre les Makololo (1864) sous Sipopa. Negociations de Lewanika avec la BSAC (1890) et le gouvernement britannique pour un protectorat — le Litunga realisa plus tard avoir ete trompe. Rivalites internes du Litunga Lewanika (insurrection de 1884-85). Barotseland Agreement de 1964 : accord constitutionnel avec le nouveau gouvernement zambien de Kenneth Kaunda. Tensions recurrentes sur le non-respect de cet accord depuis l'independance.",
+      "diaspora": "Une importante migration economique vers les mines d'Afrique du Sud et le Copperbelt zambien debuta des la periode coloniale. Des communautes lozi sont presentes a Lusaka, Livingstone et d'autres villes zambiennes. La diaspora internationale, plus limitee, se trouve principalement au Royaume-Uni et en Afrique du Sud. Le mouvement pour la restauration de l'autonomie de Barotseland maintient une conscience identitaire forte dans la diaspora."
     },
     "demography": {
-      "totalPopulation": 600000,
+      "totalPopulation": 1562000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia — Lozi people (estimation 2025 : 1 562 000 toutes regions confondues). SIL Ethnologue — Silozi (loz). Recensement de la Zambie (CSO Zambia). CIA World Factbook.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 1200000,
+          "note": "Province occidentale de la Zambie (Barotse Floodplain) — principale concentration. Environ 6% de la population zambienne."
+        },
+        {
+          "country": "NAM",
+          "population": 180000,
+          "note": "Region du Zambezi (ex-Caprivi Strip) — importante communaute lozi/basubia"
+        },
+        {
+          "country": "BWA",
+          "population": 80000,
+          "note": "Nord-ouest du Botswana (region Okavango-Chobe)"
+        },
+        {
+          "country": "ZWE",
+          "population": 70000,
+          "note": "Ouest du Zimbabwe (region Hwange — Victoria Falls)"
+        },
+        {
+          "country": "AGO",
+          "population": 32000,
+          "note": "Province de Moxico, est de l'Angola"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lozi language (loz)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Lozi people. https://en.wikipedia.org/wiki/Lozi_people",
+      "Wikipedia EN — Lozi Kingdom (Barotseland). https://en.wikipedia.org/wiki/Lozi_Kingdom",
+      "Wikipedia EN — Kuomboka. https://en.wikipedia.org/wiki/Kuomboka",
+      "SIL Ethnologue — Silozi language (loz). https://www.ethnologue.com/language/loz/",
+      "Encyclopedia Britannica — Lozi. https://www.britannica.com/topic/Lozi",
+      "Chalo Chatu — Lozi language. http://www.chalochatu.org/Lozi_language",
+      "Time + Tide Africa — Return of the Kuomboka Ceremony. https://www.timeandtideafrica.com/blog/return-of-the-kuomboka-ceremony/"
     ]
   }
 }

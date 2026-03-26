@@ -1,0 +1,27 @@
+{
+  "id": "PPL_LOBI",
+  "nameMain": "Lobi",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lobi",
+      "selfAppellation": "Lobiri / Lobi",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "BFA, Côte d’Ivoire, GHA",
+      "currentCountries": ["BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Lobi du Burkina Faso",
+      "Lobi de Côte d’Ivoire",
+      "Lobi du Ghana"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (lob)", "Burkina Faso Ethnographic Studies"]
+  }
+}

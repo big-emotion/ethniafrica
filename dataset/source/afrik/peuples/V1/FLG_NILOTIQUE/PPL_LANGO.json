@@ -1,0 +1,64 @@
+{
+  "id": "PPL_LANGO",
+  "nameMain": "Lango",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lango",
+      "selfAppellation": "Lango",
+      "exonyms": ["Lango (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental",
+      "historicalRegion": "Centre-nord de l'Ouganda",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": ["Lango du Nord", "Lango du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Lango sont originaires du centre-nord de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Acholi et les Luo.",
+      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Lango",
+      "vehicularRole": "Le lango est parlé par la majorité des Lango. L'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels lango, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora lango dans les grandes villes ougandaises et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Lango language (laj)",
+      "CIA World Factbook – Uganda",
+      "Recensements ougandais",
+      "Études anthropologiques sur les peuples nilotiques"
+    ]
+  }
+}

@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Zinza",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Zinza",
+      "exonyms": ["Wazinza", "Echizinza", "Dzinda", "Dzindza", "Kizinza"],
+      "originOfExonyms": "Wazinza est la forme swahili plurielle designant le peuple. Echizinza ou Kizinza designe leur langue selon la convention bantoue (le prefixe ki/echi indique la langue). Dzinda et Dzindza sont des variantes attestees dans Glottolog.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Zinza est le plus repandu dans la litterature academique et les bases de donnees linguistiques. Echizinza est le terme utilise par les Zinza eux-memes pour designer leur langue.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Ouest",
+      "ethnoLinguisticGroup": "Bantu de l'Afrique orientale, region du lac Victoria",
+      "historicalRegion": "Rives sud-ouest et iles du lac Victoria, district de Geita, nord-ouest de la Tanzanie",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Zinza"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Zinza sont un peuple bantu etabli de longue date sur les rives sud-ouest et les iles du lac Victoria. Ils sont distantement apparentes aux autres peuples bantous de la region et semblent les plus proches des peuples du nord du lac en Ouganda (Nyankore, Nyoro). Leur langue Echizinza est etroitement liee au nyankore et au nyoro d'Ouganda.",
+      "formationPeriod": "Etablissement ancien dans la region du lac Victoria, anterieur au XIXe siecle. Apres l'eradication de la mouche tsé-tsé par le gouvernement tanzanien dans les annees 1940, d'autres peuples (Sukuma, Haya, Kerewe, Jita) migrerent sur leurs terres, transformant profondement leur environnement demographique.",
+      "migrationRoutes": [
+        "Etablissement sur les rives sud-ouest du lac Victoria",
+        "Occupation des iles du lac Victoria (dont Maisome)"
+      ],
+      "historicalSettlementZones": [
+        "Rives sud-ouest du lac Victoria",
+        "Iles du lac Victoria (dont Maisome)",
+        "District de Geita (region de Geita)",
+        "District de Chato (region de Geita)",
+        "Region de Mwanza"
+      ],
+      "unificationsOrDivisions": "Les conflits avec les groupes voisins, notamment les Sukuma (le plus grand groupe ethnique de Tanzanie), ont marque l'histoire des Zinza. L'arrivee de populations etrangeres apres les annees 1940 a entraine une cohabitation heterogene.",
+      "externalInfluences": "Presence de pretres catholiques europeens (majoritairement allemands) durant la colonisation. Mission de l'Africa Inland Church (AIC) depuis les annees 1980. Influence sukuma croissante avec la cohabitation posterieure a 1940.",
+      "majorHistoricalEvents": "Nombreuses batailles avec les groupes voisins, en particulier les Sukuma. Colonisation europeenne : les Zinza furent assignes aux catholiques, les Sukuma a l'Africa Inland Mission. Traduction partielle des Ecritures en Echizinza (Genese en 2009, Luc en cours dans un cluster de 9 groupes linguistiques)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation sociale basee sur des clans et des esprits claniques. Les decisions collectives s'appuient sur les anciens et les structures claniques traditionnelles.",
+      "clanOrganization": "Organisation clanique traditionnelle ; les esprits ancestraux et claniques jouent un role central dans la vie sociale et religieuse. Les Zinza croient que ces esprits peuvent capricieusement causer maladies et malheurs.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques structurent les relations sociales et la transmission des droits sur les terres et ressources lacustres.",
+      "religiousAuthority": "Devin et guerisseurs traditionnels coexistent avec des pasteurs chretiens. Utilisation repandue de fetiches et de potions traditionnelles ainsi que de devins."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Echizinza (Zinza)",
+      "isoCodes": ["zin"],
+      "dialects": ["Kizinza", "Dzinda"],
+      "vehicularRole": "Echizinza est la langue maternelle et identitaire des Zinza. Le swahili est utilise comme langue vehiculaire entre groupes ethniques differents. La langue est classee comme menacee (AES 6b, threatened) selon Glottolog/Ethnologue. Taux d'alphabetisation en Echizinza historiquement faible (5% selon Ethnologue), bien que les Zinza eux-memes se disent fiers de leur langue maternelle."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques religieuses traditionnelles combinees au christianisme : acceptation syncretique de la foi chretienne aux cotes des esprits ancestraux et claniques. Utilisation de fetiches et de potions traditionnelles, recours aux devins. Celebrations communautaires liees au calendrier agricole et a la peche.",
+      "symbols": "Le lac Victoria occupe une place centrale dans l'identite zinza : ressource nourriciere, espace de peche et element identitaire fondamental. La biere de banane traditionelle est un element culturel important.",
+      "artsAndMusic": "Traditions musicales et de conte oral associees a la vie lacustre et aux cycles agricoles. Artisanat lie a la peche (pirogues, filets). Production de biere de banane traditionnelle.",
+      "spiritualities": "Animisme traditionnel : croyance en des esprits ancestraux et claniques pouvant causer maladies et malheurs de facon capricieuse. Presence chretienne depuis environ 100 ans (Africa Inland Church, catholiques), avec reponse mitigee : seuls environ 0,5% seraient des croyants evangeliques actifs selon Joshua Project. Recours frequent aux fetiches et a la divination traditionnelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation traditionnelle en groupes claniques sans royaume unifie documente. Les Zinza se sont maintenus sur leurs terres du lac Victoria malgre les pressions exterieures.",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles avec les Sukuma (leur principal rival et le plus grand groupe ethnique de Tanzanie). Voisinage avec Haya, Kerewe, Jita. Cohabitation heterogene imposee apres les annees 1940 suite a l'eradication de la tsé-tsé.",
+      "conflictsOrAlliances": "Nombreuses batailles avec les groupes voisins, surtout les Sukuma. La colonisation europeenne a divise les spheres d'influence missionnaire : Zinza assignes aux catholiques, Sukuma a l'Africa Inland Mission.",
+      "diaspora": "Environ 30 000 Zinza vivent en zones urbaines selon les estimations. La dispersion reste limitee, l'identite zinza etant fortement ancree dans la region du lac Victoria."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 453000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2024 (453 000 locuteurs) ; 213 972 au recensement CPPI 1999 ; 138 000 estimation 1987",
+      "distributionByCountry": [{ "country": "TZA", "population": 453000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Zinza people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zinza_people)",
+      "Zinza language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zinza_language)",
+      "Zinza in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16108)",
+      "Zinza of Tanzania – People Profile, Dr. Orville Jenkins, 2006 (http://orvillejenkins.com/profiles/zinza.html)",
+      "Zinza – Glottolog 5.3, zinz1238 (https://glottolog.org/resource/languoid/id/zinz1238)",
+      "The High God among the Zinza of Northwestern Tanzania – JSTOR (https://www.jstor.org/stable/3269748)",
+      "Zinza – TanzaniaScripture.com (https://tanzaniascripture.com/languages/zinza/)"
+    ]
   }
 }

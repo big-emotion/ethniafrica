@@ -6,65 +6,96 @@
   "content": {
     "appellations": {
       "mainName": "Kwanyama",
-      "selfAppellation": "Kwanyama",
+      "selfAppellation": "Ovakwanyama",
       "exonyms": [
-        "Kwanyama (terme utilisé par les Européens), parfois appelés « Ovambo » (terme générique)"
+        "Kwanyama (transcription anglaise du nom propre)",
+        "Cuanhama (transcription portugaise, utilisée en Angola)",
+        "Ovawambo (terme générique désignant l'ensemble du peuple ovambo, utilisé aussi pour les Kwanyama)",
+        "Oukwanyama (nom du royaume traditionnel)"
       ],
+      "originOfExonyms": "Ovakwanyama est le nom propre en oshikwanyama, ova- étant le préfixe de pluralité de la classe humaine. Cuanhama est la transcription portugaise du terme utilisée dans la documentation coloniale angolaise. Kwanyama est une simplification anglophone adoptée en Namibie coloniale et postcoloniale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kwanyama est le terme officiel en Namibie, où la langue oshikwanyama est reconnue comme langue nationale. Cuanhama est encore utilisé en Angola. Ovakwanyama est l'auto-désignation préférée dans les contextes traditionnels. Le recensement namibien de 2021 indique que le groupe Aakwanyama représente 21,3 % de la population, en faisant le groupe ethnique le plus nombreux de Namibie.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "NAM, AGO",
+      "ethnoLinguisticGroup": "Bantou (Zone R — sous-groupe Ovambo/Oshiwambo)",
+      "historicalRegion": "Ovamboland — frontière septentrionale de la Namibie actuelle et province du Cunene (Angola)",
       "currentCountries": ["NAM", "AGO"]
     },
     "ethnicities": [
-      "Kwanyama de Namibie",
-      "Kwanyama d'Angola",
-      "Sous-groupes régionaux"
+      "Ovakwanyama de Namibie — groupe principal, nord de la Namibie (régions d'Ohangwena et Omusati)",
+      "Ovakwanyama d'Angola — groupe présent dans la province du Cunene (Ondjiva et environs)",
+      "AaNdonga — sous-groupe ovambo voisin, distinct des Kwanyama (Ovamboland oriental)",
+      "Aakwambi — sous-groupe ovambo du centre de l'Ovamboland (région d'Oshakati)",
+      "Aangandjera — sous-groupe ovambo du centre de l'Ovamboland",
+      "Aambalantu — sous-groupe ovambo de l'Ovamboland occidental"
     ],
     "origins": {
-      "ancientOrigins": "Les Kwanyama sont originaires de la région de la Namibie et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R) et sont liés aux Ovambo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Ovambo.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les Ovakwanyama font partie du peuple ovambo (Aawambo), un groupe bantou ayant migré depuis la région de la Zambie actuelle vers le nord-est à partir du 14e siècle. Ils se sont installés près de la frontière Angola-Namibie, avec une expansion vers le sud en Namibie au 17e siècle. Ils entretiennent une relation culturelle et linguistique étroite avec les Herero (Namibie méridionale) et les Kavango (est, région de l'Okavango). Les Ovakwanyama sont le plus grand sous-groupe ovambo et ont fondé le plus puissant royaume précolonial de l'Ovamboland.",
+      "formationPeriod": "Le royaume Oukwanyama s'est constitué en entité politique distincte à partir du 17e siècle. La liste des rois documentés commence vers 1600 (Kambungu ka Muheya). Le royaume a atteint son apogée aux 18e et 19e siècles, devenant la plus grande chefferie ovambo précoloniale. Il a été fragmenté entre les pouvoirs coloniaux portugais (Angola) et sud-africain (Namibie) au 20e siècle ; la royauté a pris fin avec l'assassinat du dernier roi, Mandume ya Ndemufayo, en 1917.",
+      "migrationRoutes": [
+        "Migration des ancêtres ovambo depuis la région de la Zambie actuelle vers le nord-est à partir du 14e siècle",
+        "Installation initiale près de la frontière Angola-Namibie, puis expansion vers le sud en Namibie au 17e siècle",
+        "Migration forcée de 40 000 Ovakwanyama d'Angola vers la Namibie en 1926 pour fuir la domination portugaise"
+      ],
+      "historicalSettlementZones": [
+        "Province du Cunene (Angola) — Ondjiva et région d'Oihole (capitale traditionnelle du royaume)",
+        "Régions d'Ohangwena et Omusati (nord de la Namibie)",
+        "Ovamboland — zone frontalière entre la Namibie et l'Angola"
+      ],
+      "majorHistoricalEvents": "Victoire des Ovakwanyama contre les Portugais lors de la bataille du Cunene en 1904 — l'une des plus grandes défaites militaires portugaises en Afrique. Règne du roi Mandume ya Ndemufayo (1911-1917), dernier roi kwanyama, résistant à la fois aux Portugais et aux Sud-Africains pendant la Première Guerre mondiale. Assassinat de Mandume en 1917, fin de la royauté. Migration massive de 40 000 Ovakwanyama d'Angola vers la Namibie en 1926. Rôle des Ovakwanyama dans la lutte pour l'indépendance de la Namibie au sein de la SWAPO. Indépendance de la Namibie en 1990. Rétablissement de la monarchie traditionnelle : depuis 2005, Martha Mwadinomho ya Kristian ya Nelumbu est cheffe traditionnelle."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie traditionnelle avec un roi (omukwaniilwa) à sa tête, assisté d'un conseil de chefs de village (omatala) et de dignitaires. Le système politique est organisé en chefferies avec des chefs héréditaires pour chaque clan. Après 1917, le système colonial de l'administration indirecte sud-africaine remplaça la royauté par des groupes de chefs de village conseillés par des fonctionnaires coloniaux. En 1973, l'Ovamboland fut déclaré province indépendante. La monarchie traditionnelle a été restaurée en 1998.",
+      "clanOrganization": "Système de clans matrilinéaires (eanda) structurant la filiation, l'héritage et la succession. Les clans royaux (aakwanekamba, ovakwaluvala, ovakwamalanga, ovakwaanime, aakwanyoka) revendiquent la chefferie par la ligne maternelle. Le mariage est préférentiellement exogame par rapport au clan (on épouse hors de son clan) mais endogame par rapport au royaume (on épouse à l'intérieur des Ovakwanyama).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Système matrilinéaire fondamental : la descendance, l'héritage et la succession au trône s'effectuent par la lignée maternelle — les chefs héréditaires descendent des enfants de la fille, non du fils. La polygamie est acceptée, la première épouse étant reconnue comme épouse principale. L'économie domestique est organisée autour de l'agriculture (domaine des femmes) et du pastoralisme (domaine des hommes).",
+      "religiousAuthority": "Croyance traditionnelle en Kalunga, être suprême créateur invoqué dans les cérémonies rituelles. Le feu sacré (okurova okalunga) occupe une place centrale : des cérémonies élaborées de fabrication du feu, des danses pour la pluie, des herbes et de la fumée rituelles sont pratiquées. Le chef traditionnel assumait également la fonction de grand prêtre. Christianisme largement répandu depuis les missions luthériennes finlandaises (Société missionnaire finlandaise, active depuis la fin du 19e siècle) et catholiques : la Bible entière a été traduite en oshikwanyama en 1974."
     },
     "languages": {
-      "mainLanguage": "Kwanyama",
-      "vehicularRole": "Le kwanyama est parlé par la majorité des Kwanyama. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Oshikwanyama (Kwanyama)",
+      "isoCodes": ["kua"],
+      "dialects": [
+        "Oshikwanyama — dialecte standardisé de la Namibie et de l'Angola, langue nationale des deux pays",
+        "Oshindonga — autre dialecte ovambo standardisé, mutuellement intelligible avec l'oshikwanyama",
+        "Oshikwambi, Oshingandjera, Oshikwaluudhi, Oshinbalanhu — autres dialectes ovambo"
+      ],
+      "vehicularRole": "L'oshikwanyama (kua) est l'une des deux langues ovambo standardisées et est reconnue comme langue nationale en Namibie et en Angola. Il est utilisé comme langue d'enseignement dans l'éducation et comme langue de communication régionale dans le nord de la Namibie. Il est mutuellement intelligible avec l'oshindonga. L'anglais est la langue officielle de la Namibie ; le portugais est la langue officielle de l'Angola."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kwanyama, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le feu sacré (okurova okalunga) est la cérémonie rituelle la plus importante : il symbolise le lien entre les vivants, les ancêtres et Kalunga. Rites d'initiation masculine comprenant la circoncision et l'intégration à la communauté adulte. Cérémonies de mariage combinant traditions ovambo et croyances chrétiennes : la première épouse est distinguée. Danses pour la pluie (okambulumbumbwa) impliquant des chants et des rythmes collectifs. Rites funéraires avec invocation de Kalunga et des ancêtres pour le passage du défunt.",
+      "symbols": "Le feu sacré est le symbole le plus important de la continuité entre les vivants et les ancêtres. Le bâton du chef (symbole d'autorité), les bracelets traditionnels et les coiffures élaborées des femmes sont des marqueurs d'identité. Le bétail (bovins) constitue un symbole de richesse, de prestige social et de dot.",
+      "artsAndMusic": "Musique folklorique oshiwambo (Oshiwambo folk music) avec tambours et instruments à cordes accompagnant les danses cérémonielles. Danses collectives lors des cérémonies de mariage, d'initiation et des fêtes agricoles. Artisanat : poterie féminine, vannerie, travail du bois (sculptures de récipients, mobilier), travail du cuir pour les vêtements et les ceintures. Broderie et décoration des vêtements féminins (onyeka, robe traditionnelle). Tradition de chants narratifs et de poésie orale transmettant l'histoire du royaume.",
+      "spiritualities": "Croyance en Kalunga, être suprême créateur et maître de la vie et de la mort — le terme kalunga désigne aussi l'océan (frontière entre le monde des vivants et celui des morts) dans plusieurs langues bantoues. Culte des ancêtres : les esprits des défunts (ovakwahepa) veillent sur les vivants et sont invoqués lors des cérémonies du feu sacré. Syncrétisme avec le christianisme luthérien, dominant depuis les missions finlandaises du 19e siècle : la majorité des Ovakwanyama se déclarent chrétiens luthériens tout en maintenant des pratiques traditionnelles liées au feu sacré et à Kalunga."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kwanyama dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume Oukwanyama (Uukwanyama) était le plus grand État précolonial ovambo, avec une capitale à Oihole. Sa liste de rois documentés remonte à environ 1600. Le royaume a résisté aux deux puissances coloniales (Portugais en Angola, Allemands puis Sud-Africains en Namibie) jusqu'à la mort du roi Mandume ya Ndemufayo en 1917. La monarchie traditionnelle a été rétablie en 1998 et est depuis 2005 exercée par une femme, Martha Mwadinomho ya Kristian ya Nelumbu.",
+      "relationsWithNeighbors": "Relations étroites avec les autres sous-groupes ovambo (Ndonga, Kwambi, Ngandjera). Relations commerciales et de compétition avec les Herero au sud et les Kavango à l'est. Contacts avec les peuples khoïsan (San/Bochimans) qui précédaient les Ovambo dans la région. Tensions avec les commerçants swahili-arabes et européens au 19e siècle. Résistance armée aux Portugais (bataille du Cunene, 1904) et aux Allemands, puis aux Sud-Africains.",
+      "conflictsOrAlliances": "Bataille du Cunene (1904) : défaite majeure infligée aux Portugais, l'une des plus importantes de l'histoire coloniale portugaise en Afrique. Résistance du roi Mandume ya Ndemufayo aux forces portugaises et sud-africaines (1911-1917). Assassinat de Mandume en 1917 par les forces sud-africaines, marquant la fin de la royauté. Participation des Ovakwanyama à la lutte anticoloniale dans le cadre de la SWAPO pour l'indépendance de la Namibie (1960-1990).",
+      "diaspora": "Diaspora interne limitée : migrations économiques vers Windhoek (Namibie) et Luanda (Angola). Les Ovakwanyama représentent le groupe ethnique le plus nombreux de Namibie (21,3 % de la population selon le recensement 2021) et constituent environ 2 % de la population angolaise."
     },
     "demography": {
-      "totalPopulation": 400000,
+      "totalPopulation": 700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement de la Namibie (2021) : les Aakwanyama représentent 21,3 % de la population namibienne (environ 590 000 personnes sur 2,77 millions). Population ovambo totale estimée à 2 millions en Namibie début 21e siècle (Wikipedia). Ovakwanyama d'Angola : environ 2 % de la population angolaise de 37 millions, soit environ 740 000. Estimation totale tenant compte de la répartition des Kwanyama au sens strict : environ 700 000 en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 590000,
+          "note": "Régions d'Ohangwena, Omusati, Oshana — nord de la Namibie (Ovamboland)"
+        },
+        {
+          "country": "AGO",
+          "population": 110000,
+          "note": "Province du Cunene — Ondjiva et région de l'Oihole (frontière namibio-angolaise)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kwanyama language (kua)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ovambo people. https://en.wikipedia.org/wiki/Ovambo_people",
+      "Wikipedia EN — Oukwanyama. https://en.wikipedia.org/wiki/Oukwanyama",
+      "Wikipedia EN — Kwanyama language. https://en.wikipedia.org/wiki/Kwanyama",
+      "Koeppe Verlag — Kaulinge's History of Kwanyama. https://www.koeppe.de/titel_print_healing-the-land-kaulinge-s-history-of-kwanyama",
+      "eHRAF World Cultures — Ovambo summary. https://ehrafworldcultures.yale.edu/cultures/fx08/summary"
     ]
   }
 }

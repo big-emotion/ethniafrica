@@ -6,54 +6,92 @@
   "content": {
     "appellations": {
       "mainName": "Lala-Lenje",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Lenje",
+      "exonyms": [
+        "Lenje",
+        "Bene Mukuni",
+        "Balenje",
+        "Balenge",
+        "Benimukuni",
+        "Ciina mukuna",
+        "Lenge",
+        "Lengi"
+      ],
+      "originOfExonyms": "Le terme Bene Mukuni ou Balenje est l'appellation traditionnelle du peuple Lenje. Ciina Mukuni (aussi Chiina) designe la langue et le peuple dans les usages locaux. La designation Lala-Lenje est utilisee dans certaines classifications pour souligner la proximite geographique et les contacts entre Lala et Lenje, deux groupes bantous de la Province Centrale de Zambie, bien que les Lenje soient linguistiquement distincts (groupe Botatwe).",
+      "whyProblematic": "La denomination Lala-Lenje est potentiellement confusante car les Lenje ne sont pas un sous-groupe des Lala. Les Lenje appartiennent au groupe linguistique Botatwe (avec les Tonga et les Ila), tandis que les Lala appartiennent au groupe Bemba-Lala. Leur proximite geographique en Province Centrale explique l'association, mais leur appartenance linguistique et culturelle est distincte.",
+      "contemporaryUsage": "Lenje ou Bene Mukuni sont les appellations locales et academiques courantes. Balenje est le pluriel bantou. Le terme Lala-Lenje apparait surtout dans les classifications ethnographiques et les repertoires de peuples africains.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu du Centre-Sud, groupe Botatwe (Tonga-Ila-Lenje)",
+      "historicalRegion": "Province Centrale, Zambie",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Lala-Lenje"],
+    "ethnicities": ["Lenje", "Bene Mukuni", "Balenje"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Lenje sont consideres parmi les premiers peuples a s'etre installes dans la region du plateau central de Zambie, qui constitue l'actuelle Province Centrale et partie de la Province de Lusaka. Leurs origines sont attribuees a des migrations depuis la region du Cameroun, avec une influence possible des royaumes Luba-Lunda. Ils sont apparentes aux Tonga et ont peut-etre des liens avec les Twa (Batwa/Awatwa) des marecages de Lukanga.",
+      "formationPeriod": "Les Lenje sont presumes etablis dans leur territoire actuel depuis au moins le 17e siecle. La tradition orale fait remonter leur fondation a une femme qui les a menes de la region du Cameroun, et dont cinq enfants et un petit-enfant sont devenus les chefs fondateurs des chefferies Lenje actuelles.",
+      "migrationRoutes": [
+        "Origine probable dans la region du Cameroun (migrations bantoues anciennes)",
+        "Migration vers le sud-est a travers le bassin du Congo",
+        "Installation sur le plateau central de Zambie (Province Centrale)",
+        "Presence dans la region de Chibombo et Kabwe",
+        "Extension vers les provinces de Lusaka et du Copperbelt"
+      ],
+      "historicalSettlementZones": [
+        "District de Chibombo, Province Centrale (zone principale)",
+        "District de Kabwe, Province Centrale",
+        "Province de Lusaka (frange nord)",
+        "Province du Copperbelt (frange sud)"
+      ],
+      "unificationsOrDivisions": "Les Lenje sont une communaute ethnolinguistique aux frontieres spatiales et culturelles fluctuantes. Ils sont gouvernes par un senior chief et sept chefs subordonnes repartis sur trois provinces (Province Centrale, Province de Lusaka, Province du Copperbelt). Les chefs principaux sont : Mukuni Ng'ombe (senior chief), Liteta, Mungule, Chitanda, Mukubwe, Ng'abwe et Chamuka.",
+      "externalInfluences": "Les Lenje ont eu des relations etroites avec les Tonga, apparentes linguistiques, et avec les Soli avec qui ils partagent des elements culturels (langue du groupe Botatwe, ceremonies de recoltes et de pluies). L'influence des Lala voisins s'est exercee par le partage du territoire en Province Centrale. L'administration coloniale britannique et les missionnaires ont transforme la societe Lenje. Les Lamba bordent les Lenje au nord selon les traditions orales Lamba.",
+      "majorHistoricalEvents": "La grande femme fondatrice des Lenje est enterree a Likonde Lyabankanga dans le district de Chibombo. Les Lenje sont parmi les premiers peuples a avoir habite la region de ce qui est aujourd'hui Lusaka, avant la fondation coloniale de la ville. Les voyageurs europeens du debut du 20e siecle decrivent les Lenje principalement comme des agriculteurs pratiquant aussi la chasse et la peche."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Lenje sont organises en patrilineal clans sous un senior chief (Mukuni Ng'ombe) et sept chefs subordonnes. Les sept chefferies Lenje s'etendent sur trois provinces : Province Centrale, Province de Lusaka et Province du Copperbelt. Les chefs subordonnes sont Liteta, Mungule, Chitanda, Mukubwe, Ng'abwe et Chamuka. Ng'abwe et Chamuka ont recu leurs chefferies en recompense de leur loyaute envers l'expansion de la chefferie Lenje.",
+      "clanOrganization": "Les Lenje sont organises en clans patrilineaires, a la difference des Lala et Bisa qui sont matrilineaires. Cette organisation patrilineaire est caracteristique du groupe Botatwe (Tonga, Ila, Lenje). Les joking relationships entre clans complementaires existent, avec une possible extension vers les Ila selon la litterature ethnographique (Chipimpi, vulgar clans).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance et la succession sont patrilineaires chez les Lenje, contrairement a la majorite des peuples du nord de la Zambie. Les lignees patrilineaires determinent l'appartenance clanique et la succession aux postes de chef. Les anciens des villages jouent un role important dans la gouvernance locale.",
+      "religiousAuthority": "Les Lenje pratiquent traditionnellement la veneration des ancetres et les pouvoirs ancestraux. La ceremonie Kulamba Kubwalo celebree annuellement dans le district de Chibombo honore le leadership traditionnel et celebre la cohesion communautaire. La danse Mooba est associee a la possession spirituelle et a la guerison. Le christianisme est aujourd'hui dominant mais les pratiques traditionnelles persistent."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lenje (Chilenje / Ciina Mukuni)",
+      "isoCodes": ["leh"],
+      "dialects": [
+        "Chilenje",
+        "Ciina Mukuni",
+        "Lukanga (parle par les Twa du lac Lukanga)"
+      ],
+      "vehicularRole": "Le Lenje (ISO leh, Glottolog lenj1248) est une langue bantoue du groupe Botatwe parlee dans la Province Centrale de Zambie. Ses noms alternatifs sont Chilenje, Chinamukuni, Ciina, Ciina Mukuni, Lengi, Lenji et Mukuni. Le dialecte Lukanga est parle par les Twa Pygmees peche des marecages de Lukanga. La langue est etroitement apparentee au Soli. Statut de developpement : niveau 5 (en developpement) selon Glottolog. Le Nyanja et le Bemba servent de langues vehiculaires regionales."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La danse Mooba est l'expression culturelle la plus iconique des Lenje, un puissant rituel associe a la possession spirituelle et a la guerison. La ceremonie Kulamba Kubwalo est celebree annuellement dans le district de Chibombo pour honorer le leadership traditionnel et celebrer la cohesion communautaire. Les Lenje pratiquent aussi des ceremonies de mariage avec lobola (dot) et des rites d'initiation pour les jeunes filles. La ceremonie Cibitiko est partagee avec les Soli voisins.",
+      "symbols": "Le senior chief Mukuni Ng'ombe est le symbole central de l'autorite Lenje. La grande femme fondatrice enterree a Likonde Lyabankanga est un lieu de memoire ancestrale. Les Lenje sont fiers de leur tradition d'elevage de betail, qui les distingue de nombreux peuples voisins. Le lac Lukanga et ses marecages constituent un element du territoire Lenje.",
+      "artsAndMusic": "Les Lenje pratiquent le chant, la danse (notamment le Mooba) et la narration orale. L'artisanat traditionnel comprend la vannerie, la poterie et les outils agricoles. La production de charbon de bois est une activite economique importante. Les Lenje partagent la danse Cibitiko avec les Soli.",
+      "spiritualities": "Les Lenje ont cru traditionnellement aux pouvoirs ancestraux et craignent la colere des ancetres en cas de mauvais traitement d'autrui. La danse Mooba est un rite de possession spirituelle et de guerison. Ils ont ete croyants dans les pouvoirs ancestraux jusqu'a recemment, quand beaucoup sont devenus chretiens. Le christianisme est majoritaire aujourd'hui, avec persistance des ceremonies traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Lenje forment une confederation de sept chefferies sous l'autorite du Senior Chief Mukuni Ng'ombe (Bene Mukuni). Les sept chefferies s'etendent sur les provinces Centrale, de Lusaka et du Copperbelt. Ng'abwe et Chamuka ont ete crees en recompense de services rendus a la chefferie principale.",
+      "relationsWithNeighbors": "Les Lenje sont apparentes aux Tonga (groupe Botatwe) et ont des relations culturelles avec les Soli (meme groupe linguistique, ceremonies partagees). Ils sont en contact avec les Lala au nord-est et les Lamba au nord dans la Province Centrale. La tradition Lamba place les Lenje comme voisins au nord de leur territoire (Kumaushi au nord, Lala au nord-ouest, Lenje au nord-sud). Les Lenje etaient parmi les premiers habitants de la region de Lusaka avant la fondation coloniale.",
+      "conflictsOrAlliances": "Les Lenje ont maintenu leur identite distincte malgre la pression des groupes voisins. Leur organisation patrilineaire (contrairement aux matrilineaires Lala et Bemba) les a distingues culturellement dans la region. L'etablissement colonial britannique de Lusaka dans leur territoire ancestral a eu des implications importantes pour leur integration dans l'Etat colonial et post-colonial.",
+      "diaspora": "Des Lenje se sont installes dans les centres urbains de Lusaka et du Copperbelt depuis le 20e siecle, etant donne la proximite de leur territoire avec ces zones. Une partie importante de la population Lenje est urbaine, notamment a Lusaka et Kabwe."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 275000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia Lenje people (240 000-310 000) ; Zambia 2010 census : Lenje 1,6% de la population zambienne",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 275000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lenje people – Wikipedia (https://en.wikipedia.org/wiki/Lenje_people)",
+      "Lenje language – Wikipedia (https://en.wikipedia.org/wiki/Lenje_language)",
+      "Glottolog – Lenje (lenj1248) (https://glottolog.org/resource/languoid/id/lenj1248)",
+      "Joshua Project – Lenje in Zambia (https://joshuaproject.net/people_groups/13039)",
+      "PeopleGroups.org – Lenje of Zambia PG015590 (https://peoplegroups.org/people_groups/pg015590/)",
+      "Explore Lusaka – Before Lusaka: A Brief History of the Soli and Lenje Peoples (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory (reference aux Lenje), 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)"
+    ]
   }
 }

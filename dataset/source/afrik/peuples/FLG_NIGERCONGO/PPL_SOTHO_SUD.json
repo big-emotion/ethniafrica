@@ -2,69 +2,111 @@
   "id": "PPL_SOTHO_SUD",
   "nameMain": "Sotho (Sud)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["LSO"],
+  "currentCountries": ["LSO", "ZAF"],
   "content": {
     "appellations": {
-      "mainName": "Sotho (Sud)",
-      "selfAppellation": "Sotho",
+      "mainName": "Sotho du Sud",
+      "selfAppellation": "Basotho (pluriel) / Mosotho (singulier)",
       "exonyms": [
-        "Sotho (terme utilisé par les Européens), parfois appelés « Basotho » (terme alternatif)"
+        "Southern Sotho (en anglais)",
+        "Sesotho speakers (terme générique)",
+        "Basutoland people (terme colonial)"
       ],
+      "originOfExonyms": "Le terme Basotho est l'auto-désignation du peuple. Le terme colonial Basutoland fut imposé par la Grande-Bretagne lors de la création du protectorat en 1868. Le terme Southern Sotho est utilisé par les linguistes pour distinguer ce groupe du Sotho du Nord (Pedi) et du Tswana (Sotho occidental).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Basotho est couramment utilisé au Lesotho et en Afrique du Sud. Le Sesotho est l'une des douze langues officielles d'Afrique du Sud et l'une des deux langues officielles du Lesotho (avec l'anglais).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "LSO, Afrique du Sud",
-      "currentCountries": ["LSO"]
+      "ethnoLinguisticGroup": "Bantou Sotho-Tswana (Zone S, S.33)",
+      "historicalRegion": "Hautes terres du Lesotho et province du Free State (Afrique du Sud) ; plateau du Highveld",
+      "currentCountries": ["LSO", "ZAF"]
     },
     "ethnicities": [
-      "Sotho du Sud (Lesotho)",
-      "Sotho du Sud (Afrique du Sud)",
-      "Sous-groupes régionaux du Sud"
+      "Bakwena (clan du crocodile, tribu d'origine de Moshoeshoe I)",
+      "Bataung (clan du lion, sud du Lesotho)",
+      "Baphuthi (Lesotho oriental et zone frontalière)",
+      "Bakoena (variante Kwena, plateau central)",
+      "Batlokwa (proches des Basotho septentrionaux, migration historique)",
+      "Bafokeng (présents en Lesotho et dans le Free State)",
+      "Sotho du Free State (Afrique du Sud, province centrale)"
     ],
     "origins": {
-      "ancientOrigins": "Les Sotho du Sud sont originaires de la région du Lesotho et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Sotho du Nord.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Basotho descendent de peuples bantous qui migrèrent vers le sud à partir de l'Afrique du Nord-Est vers le Ve siècle de l'ère commune. Ils se sont séparés des Batswana (Sotho occidental) vers le XIVe siècle. Par le XVIe siècle, des communautés de forgerons sotho s'étaient établies sur le plateau du Highveld de l'actuelle province du Free State. Au XVIIe siècle, plusieurs royaumes basotho couvraient le plateau méridional de l'Afrique.",
+      "formationPeriod": "La nation basotho moderne fut unifiée par Moshoeshoe I (vers 1786-1870) dans les années 1820-1830. Lors du Difaqane (période de guerres et migrations liées à l'expansion zouloue de Shaka), Moshoeshoe rassembla des réfugiés de nombreux clans et tribus sur la montagne fortifiée de Thaba Bosiu. Sa capitale initiale fut établie à Butha-Buthe en 1822, puis déplacée à Thaba Bosiu, forteresse imprenable au Lesotho actuel. En 1868, après la Troisième guerre des Basotho contre les Boers, Moshoeshoe demanda la protection britannique, créant le protectorat de Basutoland, qui devint le Royaume du Lesotho à l'indépendance en 1966.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique du Nord-Est vers le sud (Ve siècle apr. J.-C.)",
+        "Établissement sur le plateau du Highveld en Afrique du Sud (XVIe-XVIIe siècle)",
+        "Repli vers les montagnes du Lesotho lors du Difaqane (années 1820-1830)",
+        "Migration de main-d'oeuvre vers les mines d'Afrique du Sud (XIXe-XXe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Highveld (actuelle province du Free State, Afrique du Sud)",
+        "Montagnes du Lesotho (Drakensberg, Maluti Mountains)",
+        "Thaba Bosiu (capitale historique forteresse de Moshoeshoe I)",
+        "Vallée basse du Lesotho (Maseru et environs)",
+        "Province du Free State (Afrique du Sud) : 64% des locuteurs sesotho en Afrique du Sud",
+        "Gauteng (Johannesburg, Soweto) : 13% des locuteurs sesotho en Afrique du Sud"
+      ],
+      "unificationsOrDivisions": "Moshoeshoe I unifia des dizaines de clans et de réfugiés disparates des guerres du Difaqane en une nation cohérente dans les années 1820. Son clan d'origine était celui des Bakwena. Il adopta une politique d'inclusion, accueillant des groupes nguni et sotho fuyant les guerres. La Convention d'Aliwal North (1869) traça les frontières de Basutoland, laissant de nombreux locuteurs sesotho en dehors dans l'Orange Free State. La séparation géographique entre les Basotho du Lesotho et ceux d'Afrique du Sud persiste.",
+      "externalInfluences": "Contacts avec les Zoulous et les guerres du Difaqane (années 1820-1830). Voortrekkers boers et guerres des Free State-Basotho. Protectorat britannique à partir de 1868. Influence des missionnaires de la Société des Missions Évangéliques de Paris (SMEP/PEMS) dès 1833 : Casalis, Arbousset et Gosselin codifièrent l'orthographe sesotho et imprimèrent les premiers textes en 1837-1855 ; la première Bible en sesotho parut en 1878. Le travail migrant vers les mines d'or et de diamants d'Afrique du Sud marqua profondément la société basotho.",
+      "majorHistoricalEvents": "XVIIe siècle : royaumes basotho sur le plateau. 1822 : Moshoeshoe établit sa capitale à Butha-Buthe. 1824 : déplacement à Thaba Bosiu. 1833 : arrivée des missionnaires protestants français (PEMS). 1843 : traité de Napier entre Moshoeshoe et les Britanniques. 1858 et 1865-1868 : guerres des Free State-Basotho. 1868 : protectorat britannique de Basutoland. 1870 : mort de Moshoeshoe I, inhumé sur la montagne Thaba Bosiu. 1966 : indépendance du Lesotho sous le roi Moshoeshoe II."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société basotho est organisée en chefferies héréditaires (marena, singulier morena). Au sommet se trouve le roi (Morena e Moholo), entouré de chefs principaux (mamorena) et de chefs de village (dimorena tse nyenyane). Le roi règne par consensus, conseillé par le Conseil national (Lekhotla la Mapha). Les chefs administrent la distribution des terres agricoles selon le système de tenure traditionnelle (metse). La chefferie traditionnelle reste officiellement reconnue au Lesotho.",
+      "clanOrganization": "Structure clanique patrilinéaire organisée autour de totems animaux. Les clans principaux incluent les Bakwena (totem : crocodile), Bataung (lion), Baphuthi, Bafokeng et Batlokwa. Chaque clan descend d'un ancêtre éponyme. Les mariages exogames sont préférés, évitant les unions au sein du même clan.",
+      "ageClassSystems": "Le lebollo (initiation) organise les jeunes en classes d'âge (mephato, singulier phato). Tous les initiés de la même session forment une classe d'âge permanente qui leur confère une identité sociale collective durable, des obligations mutuelles et un rang dans la hiérarchie sociale.",
+      "roleOfLineages": "Les lignages patrilinéaires (leloko) déterminent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Le lévirat (ho kenela) est pratiqué. La bridewealth (bohali, paiement en bétail) scelle les alliances entre familles. Les femmes rejoignent le groupe familial du mari.",
+      "religiousAuthority": "Les chefs traditionnels (marena) exercent une autorité religieuse sur les cérémonies ancestrales (balimo). Les pasteurs chrétiens (pasteurs protestants PEMS/LESF et prêtres catholiques) ont une influence considérable depuis le XIXe siècle. Le syncrétisme entre traditions ancestrales et christianisme est très répandu."
     },
     "languages": {
-      "mainLanguage": "Sesotho / Sotho du Sud",
-      "vehicularRole": "Le sesotho est parlé par la majorité des Sotho du Sud. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Sesotho (Sotho du Sud)",
+      "isoCodes": ["sot"],
+      "dialects": [
+        "Dialecte du Lesotho (norme officielle, variété de Moshoeshoe basée sur le sekwena)",
+        "Sesotho du Free State (variété parlée à Johannesburg et dans les townships d'Afrique du Sud)",
+        "Sephuthi (variété fortement influencée par le nguni, souvent classée séparément)",
+        "Serolong (dialecte de transition vers le tswana)"
+      ],
+      "vehicularRole": "Le sesotho est la langue maternelle de la majorité des Basotho au Lesotho (environ 85% de la population, soit 1,5 million) et de près de 4 millions de locuteurs en Afrique du Sud (2011, Free State 64%, Gauteng 13%). C'est l'une des douze langues officielles d'Afrique du Sud et l'une des deux langues officielles du Lesotho. Il est aussi reconnu comme langue officielle du Zimbabwe. Le sesotho sert de lingua franca dans les provinces du Free State et de Gauteng."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sotho, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Lebollo la banna (initiation masculine) : rite de passage fondamental marquant le passage de l'adolescence à l'âge adulte. Les jeunes hommes (maqhekoane) passent plusieurs semaines dans un camp d'initiation (seboka) éloigné du village, sous la direction d'instructeurs (mophatisi). Ils subissent la circoncision, apprennent les responsabilités d'adulte, les traditions, les valeurs morales et les chants du lebollo. Les initiés reçoivent un nouveau nom et rejoignent une classe d'âge (phato). Lebollo la basadi (initiation féminine) : les jeunes filles (lichache) sont instruites par des femmes âgées sur les responsabilités féminines, le mariage, la vie conjugale. Rites funéraires : la famille se réunit, les voisins apportent de la nourriture. Inhumation dans les 24 heures. Période de deuil de plusieurs jours avec interdits alimentaires. Cérémonie du bohali (dot) : le marié verse du bétail ou sa valeur en espèces à la famille de la mariée. Les cérémonies de première récolte et de bénédiction des champs sont pratiquées.",
+      "symbols": "Le mokorotlo (chapeau basotho conique en paille, symbole national figurant sur le drapeau du Lesotho), la couverture de laine (kobo, portée par hommes et femmes comme vêtement d'identité nationale), le cheval basotho (race équine adaptée aux montagnes, liée à la mobilité guerrière historique), le boeuf (symbole de richesse et monnaie sociale du bohali), la montagne Thaba Bosiu (lieu sacré fondateur de la nation).",
+      "artsAndMusic": "Musique chorale : tradition chorale chrétienne très développée depuis les missionnaires du XIXe siècle ; compositeurs célèbres Joshua Pulumo Mohapeloa et Michael Mosoeu Moerane. Lithoko (poésie de louange orale) : genre poétique récité en l'honneur des chefs et des guerriers. Famo : genre musical populaire issu des camps de mineurs, pratiqué avec accordéon, basse et percussion ; genre contestataire et identitaire des travailleurs migrants. Mokhibo : danse féminine des épaules pratiquée en position assoutie, spécifique aux Basotho. Mokibi : danse traditionnelle masculine. Artisanat : nattes et paniers tressés (likhibo), poterie (letsoa), broderie et peinture sur murs d'argile, tissage de couvertures kobo.",
+      "spiritualities": "Le culte des ancêtres (balimo) est central dans la spiritualité traditionnelle : les ancêtres veillent sur les vivants, peuvent causer maladies et malheurs si négligés, et sont invoqués lors des rituels. Le thobela (divination) est pratiqué par des spécialistes (dingaka). Syncrétisme très répandu entre croyances traditionnelles et christianisme. Les Églises évangéliques et catholiques (introduites dès 1833 par la PEMS et 1862 par les Oblats de Marie Immaculée) représentent la majorité des pratiques religieuses au Lesotho (environ 90% de chrétiens). L'Église Apostolique du Sion (Zioniste) pratique un syncrétisme islamo-chrétien-traditionnel répandu en Afrique australe."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sotho du Sud dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Royaume du Lesotho (anciennement Basutoland) fut fondé par Moshoeshoe I dans les années 1820. Il est l'un des rares États africains précoloniaux à avoir maintenu son indépendance (sous forme de protectorat britannique) pendant l'ère coloniale, évitant ainsi l'incorporation dans l'Union d'Afrique du Sud. La monarchie constitutionnelle héréditaire est maintenue à ce jour, avec le roi Letsie III (couronné 1996). Le Royaume est enclavé dans l'Afrique du Sud.",
+      "relationsWithNeighbors": "Relations complexes avec les Voortrekkers boers et l'État libre d'Orange (guerres Free State-Basotho 1858, 1865-1868 ; perte des terres du Caledon). Protectorat britannique de 1868 à 1966. Relations avec l'Afrique du Sud : dépendance économique (travailleurs migrants dans les mines, accès à la mer via l'Afrique du Sud, accords SACU). Relations avec les Nguni voisins (Zoulous, Xhosa) : contacts lors du Difaqane ; assimilation de certains groupes nguni par Moshoeshoe I.",
+      "conflictsOrAlliances": "Guerres du Difaqane (années 1820-1830) : Moshoeshoe résista aux raiders (dont les Batlokwa de Mmanthatisi et les Matabele) en unissant les réfugiés. Guerres des Free State-Basotho (1858, 1865-1868) : défaite militaire conduisant à la perte des terres du Caledon (donnant le Conquérant's Country à l'Orange Free State). 1868 : alliance avec la Grande-Bretagne (demande de protection de Moshoeshoe). 1879-1881 : rébellion des armes (Gun War) contre la confiscation britannique des fusils. Lesotho indépendant 1966 ; coups d'État militaires en 1986 et 1991 ; tensions politiques récurrentes.",
+      "diaspora": "Forte diaspora basotho en Afrique du Sud, notamment dans la province du Free State (zones limitrophes du Lesotho), à Johannesburg et dans les townships de Soweto et de l'East Rand, due au travail migrant dans les mines depuis le XIXe siècle. Communautés basotho également présentes en Europe (Royaume-Uni, Pays-Bas) et en Amérique du Nord."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 7254315,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation 2023 d'après Wikipedia (Sotho people, 2023 est.). Recensement Lesotho 2016 (2 007 201 hab. totaux, Basotho 99,7%). Recensement Afrique du Sud 2011 (3 797 326 locuteurs sesotho en 1ère langue). Projections OMS Lesotho 2023 (2 311 472 hab.). Ethnologue SIL (2024).",
+      "distributionByCountry": [
+        {
+          "country": "LSO",
+          "population": 2300000,
+          "note": "Basotho représentent 99,7% de la population du Lesotho ; langue officielle nationale"
+        },
+        {
+          "country": "ZAF",
+          "population": 4900000,
+          "note": "Principalement dans le Free State (64% des locuteurs), Gauteng (13%), KwaZulu-Natal occidental et Cap-Oriental septentrional"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sesotho / Sotho du Sud language (sot)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Sotho people. https://en.wikipedia.org/wiki/Sotho_people",
+      "Wikipedia EN — Sotho language. https://en.wikipedia.org/wiki/Sotho_language",
+      "Wikipedia EN — Moshoeshoe I. https://en.wikipedia.org/wiki/Moshoeshoe_I",
+      "SIL Ethnologue — Sesotho (sot). https://www.ethnologue.com/language/sot/",
+      "South Africa Census 2011 — Home language distribution. Stats SA.",
+      "Demographics of Lesotho — Wikipedia. https://en.wikipedia.org/wiki/Demographics_of_Lesotho",
+      "Study.com — Sotho History, Culture and People. https://study.com/academy/lesson/sotho-history-culture-facts-people.html",
+      "southafrica.net — The culture of Basotho. https://www.southafrica.net/za/en/travel/article/the-culture-of-basotho-history-people-clothing-and-food",
+      "PeopleGroups.org — Southern Sotho of Lesotho. https://peoplegroups.org/people_groups/pg015283/"
     ]
   }
 }

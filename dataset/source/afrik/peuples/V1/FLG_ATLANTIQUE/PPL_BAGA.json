@@ -1,0 +1,29 @@
+{
+  "id": "PPL_BAGA",
+  "nameMain": "Baga",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Baga",
+      "selfAppellation": "Baga",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "historicalRegion": "Littoral de Guinée (Basse Guinée), îles et mangroves",
+      "currentCountries": ["GIN"]
+    },
+    "ethnicities": ["Baga Sitemu", "Baga Kalum", "Baga Koba", "Baga Mandori"],
+    "origins": {},
+    "organization": {},
+    "languages": {},
+    "culture": {
+      "source_0": "Célèbres masques **Nimba**, symboles de fertilité.",
+      "source_1": "Cérémonies liées à la mer et à l’agriculture.",
+      "source_2": "Architecture traditionnelle en matériaux locaux."
+    },
+    "historicalRole": {},
+    "demography": {
+      "source": "peuple_demographie_globale.csv (2025)"
+    },
+    "sources": ["Ethnologue", "Côte Ouest–Guinée ethnographic records"]
+  }
+}

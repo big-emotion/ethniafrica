@@ -1,22 +1,142 @@
 {
   "id": "PPL_GUR_MACRO",
-  "nameMain": "",
+  "nameMain": "Peuples Gur",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": ["BFA", "GHA", "TGO", "BEN"],
+  "currentCountries": ["BFA", "GHA", "TGO", "BEN", "CIV", "MLI", "NER"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Peuples Gur",
       "selfAppellation": "Diverses selon les sous-groupes",
+      "exonyms": ["Voltaiques", "Gur", "Mabia", "Central Gur"],
+      "originOfExonyms": "Le terme Gur (ou Voltaique) est une appellation académique forgée par les linguistes pour désigner l'ensemble des peuples parlant des langues de la famille Gur (Niger-Congo). Le terme Voltaique (en français : langues voltaiques) est l'ancienne dénomination, issue du nom du fleuve Volta autour duquel se concentrent ces peuples. Cette appellation a été utilisée par Sigismund Wilhelm Koelle dès 1854 (Polyglotta Africana) sous la forme North-Eastern High Sudan. Le terme Mabia (du proto-gur ma- mère + bia enfant) est une appellation alternative proposée par le linguiste Adams Bodomo (2017) pour désigner l'ensemble Central Gur.",
+      "whyProblematic": "L'appellation Gur est une catégorie linguistique et non une identité ethnique partagée. Les peuples Gur n'ont pas de sentiment d'appartenance commune a priori. Leur regroupement sous ce label est le produit du travail des linguistes et anthropologues, et ne correspond pas à un auto-désignation collective.",
+      "contemporaryUsage": "Gur (ou langues gur) est couramment utilisé en linguistique et en sciences sociales. Dans les contextes nationaux (Burkina Faso, Ghana), les peuples sont désignés par leurs ethnonymes propres (Mossi, Dagomba, Gurma, etc.). L'usage du terme Voltaique persiste dans les publications francophones antérieures aux années 1980.",
       "linguisticFamily": "FLG_GUR",
-      "currentCountries": ["BFA", "GHA", "TGO", "BEN"]
+      "ethnoLinguisticGroup": "Macrofamille Gur (Niger-Congo, Atlantique-Congo, Savannes)",
+      "historicalRegion": "Sahel et savanes d'Afrique de l'Ouest : du Mali au Niger, du Sénégal au Nigeria, avec une concentration maximale au Burkina Faso, au nord du Ghana, du Togo et du Bénin, et au nord de la Côte d'Ivoire",
+      "currentCountries": ["BFA", "GHA", "TGO", "BEN", "CIV", "MLI", "NER"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Synthèse AFRIK 2025"]
+    "ethnicities": [
+      "Mossi (Moore) — le groupe le plus nombreux, dominant au Burkina Faso, environ 10 millions de personnes",
+      "Dagomba (Dagbamba) — nord du Ghana, plus de 3 millions, fondateurs du royaume de Dagbon",
+      "Gurma (Gourmantché) — est du Burkina Faso, nord du Togo et Bénin, environ 3,5 millions",
+      "Dagara (Dagaaba) — nord-ouest du Ghana et sud-ouest du Burkina Faso, environ 1,85 million",
+      "Frafra (Farefare, Gurunsi) — nord-est du Ghana et sud Burkina Faso, environ 1 million",
+      "Mamprusi (Mampruli) — nord du Ghana et sud du Burkina Faso, apparentés aux Dagomba",
+      "Nanumba — nord du Ghana, apparentés aux Dagomba et Mamprusi",
+      "Kabiye — nord du Togo, langue gur la plus parlée au Togo (environ 550 000 locuteurs)",
+      "Konkomba — nord du Ghana, apparentés aux Gurma",
+      "Buli (Builsa) — nord du Ghana, groupe Gur acéphale",
+      "Lobi — nord du Burkina Faso et nord-est de la Côte d'Ivoire",
+      "Senufo — Côte d'Ivoire, Mali, Burkina Faso (appartenance au Gur parfois contestée par les linguistes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les proto-locuteurs des langues Gur sont supposés avoir cultivé le sorgho (guinea corn) et le mil dans un environnement de savane boisée, selon les travaux de Kleinewillinghöfer (2014) qui identifie les proches parents du Gur dans certaines branches de la famille Adamawa. La première mention de douze langues Gur dans la littérature académique date de 1854 (Koelle, Polyglotta Africana). Les langues Gur occupent le Sahel et les savanes d'Afrique de l'Ouest depuis des millénaires, avec des traditions orales qui font remonter les origines de leurs royaumes les plus célèbres (Mossi, Dagbon) au XIIIe-XIVe siècle.",
+      "formationPeriod": "En tant que macro-groupe, les peuples Gur ne constituent pas une entité politique historique. Leurs royaumes les plus documentés se sont formés entre le XIVe et le XVIe siècle (Mossi, Dagbon). L'identification académique du groupe remonte au XIXe siècle. La dénomination Voltaique s'est imposée dans la recherche francophone depuis les années 1950 (Westermann et Bryan). La classification Gur/Mabia pour l'ensemble Central Gur est standardisée par Bodomo (2017) et Naden (2021).",
+      "migrationRoutes": [
+        "Présence ancienne dans les savanes ouest-africaines avant la formation des royaumes documentés",
+        "Migrations nord-sud depuis l'escarpement de Gambaga (nord-est Ghana) fondant les royaumes Mossi, Dagomba et Gurma (XIVe-XVIe siècle)",
+        "Expansions commerciales le long des réseaux de savane, notamment avec les Dioula et les Haoussa"
+      ],
+      "historicalSettlementZones": [
+        "Burkina Faso (quasi-totalité du territoire)",
+        "Nord du Ghana (régions Upper East, Upper West, North, North East, Savannah)",
+        "Nord du Togo (régions Savanes et Kara)",
+        "Nord du Bénin (départements Alibori, Atacora, Borgou)",
+        "Nord de la Côte d'Ivoire (zones Korhogo, Odienné)",
+        "Sud du Mali (régions Sikasso, Mopti)",
+        "Sud-ouest du Niger (régions Dosso, Niamey)"
+      ],
+      "unificationsOrDivisions": "Les peuples Gur ne forment pas un ensemble politique unifié. La division principale est entre les sociétés à chefferies centralisées (Mossi, Dagomba, Mamprusi, Nanumba) et les sociétés acéphales organisées par lignage (Dagara, Frafra, Lobi, Buli). Les tensions et alliances entre ces sous-groupes ont structuré l'histoire politique de l'Afrique de l'Ouest précoloniale. La colonisation française (Haute-Volta) et britannique (Gold Coast) a fractionnée ces peuples entre différentes administrations.",
+      "externalInfluences": "Islam (XIIe-XVe siècle via réseaux Soninke, Wangara, Haoussa). Empires du Mali et Songhai (contacts et conflits XIVe-XVIe siècle). Colonisation européenne (française et britannique, fin XIXe siècle). Indépendances nationales (Burkina Faso 1960, Ghana 1957, Togo 1960, Bénin 1960). Christianity missionnaire (XXe siècle). Mondialisation et migrations vers les zones côtières et l'Europe.",
+      "majorHistoricalEvents": "Fondation des royaumes Mossi à Tenkodogo, Ouagadougou et Yatenga (XIVe-XVe siècle). Fondation du royaume de Dagbon (XIVe-XVe siècle). Expansion Mossi-Dagomba vers l'est jusqu'au lac Débo (vers 1400). Résistances aux empires du Mali et de Songhai (XIVe-XVIe siècle). Colonisation française et britannique (1880s-1900s). Indépendances et formation des États modernes (1957-1960). Inscription du parc du W (zone Gurma) au patrimoine mondial UNESCO (2002). Invention de l'alphabet Goulsse pour l'écriture des langues Gur (2022)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les peuples Gur se divisent en deux modèles d'organisation politique : d'une part les sociétés à chefferies centralisées hiérarchisées (Mossi avec le Moro Naba, Dagomba avec le Yaa Naa, Gurma avec le Morho Naba) ; d'autre part les sociétés acéphales organisées par lignage, conseils d'anciens et chefs de terre (tendaana ou tindana) comme les Dagara, Frafra, Lobi. Ces deux modèles coexistent dans l'espace géographique Gur et se distinguent par leur capacité à résister aux conquêtes extérieures.",
+      "clanOrganization": "La parenté patrilinéaire est dominante dans la majorité des groupes Gur, avec reconnaissance complémentaire de la filiation matrilinéaire pour certains attributs spirituels (notamment chez les Dagomba). Le lignage est l'unité sociale de base dans la plupart des groupes. Les lignages héréditaires spécialisés (griots, forgerons, bouchers) sont caractéristiques des sociétés à chefferies centralisées comme les Dagomba.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage structure l'accès à la terre, les obligations rituelles et la transmission du savoir. Dans les sociétés acéphales, les anciens du lignage exercent l'autorité collective. Dans les sociétés à chefferies, les lignages royaux (Nanima chez les Dagomba) et les lignages professionnels héréditaires (Lunsi, Pelbas, Nakohi) organisent la société selon une hiérarchie fonctionnelle.",
+      "religiousAuthority": "L'autorité religieuse est exercée par les chefs de terre (tendaana, tindana) dans les sociétés acéphales, et par des lignages spécialisés dans les sociétés à chefferies. Les devins (baɣa chez les Dagomba, tengan sob chez les Dagara) assurent la médiation avec le monde spirituel. L'islam est la religion dominante dans les sociétés à chefferies centralisées (Dagomba, partiellement Mossi, Gurma). Les pratiques animistes et le culte des ancêtres restent prépondérants dans les sociétés acéphales."
+    },
+    "languages": {
+      "mainLanguage": "Langues Gur (famille Niger-Congo, environ 85 langues)",
+      "isoCodes": ["mos", "dag", "gux", "dga", "gur", "kbp", "biv", "dgi"],
+      "dialects": [
+        "Moore (mos) — langue Gur la plus parlée, environ 5 millions de locuteurs, Burkina Faso",
+        "Dagbanli (dag) — langue véhiculaire du nord du Ghana",
+        "Gourmanchéma (gux) — est du Burkina Faso et extensions régionales",
+        "Dagaare Southern (dga) — nord-ouest du Ghana",
+        "Farefare-Gurene (gur) — nord-est du Ghana",
+        "Kabiye (kbp) — nord du Togo, langue vehiculaire",
+        "Birifor (biv) — nord du Ghana et Burkina Faso",
+        "Dagara du nord (dgi) — sud-ouest du Burkina Faso"
+      ],
+      "vehicularRole": "Les langues Gur sont parlées par environ 20 millions de personnes selon Britannica (environ 30 millions selon des estimations plus récentes). Elles constituent le groupe linguistique dominant en Burkina Faso et dans le nord du Ghana. Le Moore est la principale langue vehiculaire d'Afrique de l'Ouest sahelienne. Le Dagbanli est la principale langue du nord du Ghana. Ces langues partagent des caracteristiques typologiques communes : systèmes de classes nominales, aspect verbal, système tonal, nasales syllabiques."
+    },
+    "culture": {
+      "majorRites": "Les rites des peuples Gur varient selon les sous-groupes mais partagent des themes communs. Le culte des ancêtres est universel : des offrandes et sacrifices sont adressés aux ancêtres dans des autels familiaux (jingili chez les Gurma, Tengan-shrines chez les Dagara). Les initiations marquent le passage à l'âge adulte (Bagr chez les Dagara, rites similaires dans d'autres groupes). Les funérailles sont des événements communautaires majeurs dans tous les groupes, parfois étendus sur plusieurs jours (wuure chez les Frafra) et impliquant musique, danses et repas collectifs. Les festivals agricoles rythment le calendrier cérémoniel selon les cultures du mil, du sorgho et des tubercules.",
+      "symbols": "Le tambour parlant (lunga des Dagomba, kuor des Dagara) est un symbole commun à plusieurs peuples Gur pour la transmission de l'histoire et de l'identité collective. Le xylophone (gyil des Dagara, balafon dans d'autres groupes) symbolise la tradition musicale et rituelle. Les autels de terre (pierres semi-circulaires, Tengan-shrines) symbolisent le lien ancestral avec la terre nourricière. L'habitat circulaire en banco (argile) est un trait architectural commun dans la région savane-sahel.",
+      "artsAndMusic": "Les traditions musicales et artistiques Gur sont extrêmement diverses. Le xylophone (gyil chez les Dagara, balafon dans d'autres groupes) et le tambour parlant (lunga des Dagomba) sont les instruments centraux. Les griots-tambourinaires héréditaires (Lunsi des Dagomba) sont gardiens de la mémoire collective. La poterie est un art féminin valorisé dans presque tous les groupes. Le tissage et la teinture sont des artisanats importants (notamment chez les Gurma). L'architecture décorée en banco (peintures murales, bas-reliefs géométriques) est exemplifiée par les maisons de Tiébélé (style gurunsi/kassena). La tradition orale (contes, proverbes, épopées) est un vecteur culturel fondamental.",
+      "spiritualities": "Les cosmologies Gur partagent des structures communes : reconnaissance d'un dieu créateur suprême (Naawuni chez les Dagomba, Otienu chez les Gurma), médiation des ancêtres et des esprits naturels, relation étroite avec la terre considérée comme divinité. Les autels familiaux et villageois sont les lieux de culte centraux. L'islam s'est diffusé depuis le XIIe siècle dans les sociétés à chefferies centralisées (Dagomba, partiellement Mossi, Gurma) via les réseaux commerciaux. Les religions traditionnelles restent très présentes dans les sociétés acéphales. Le christianisme missionnaire (catholique et protestant) a progressé depuis le XXe siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les peuples Gur ont fondé certains des royaumes les plus importants d'Afrique de l'Ouest médiévale. Les royaumes Mossi (Ouagadougou, Yatenga, Tenkodogo) ont dominé le Burkina Faso actuel du XIVe au XIXe siècle. Le Royaume de Dagbon (fondé par Naa Gbewaa, XIVe-XVe siècle) a exercé une hégémonie sur le nord du Ghana et influencé l'ensemble du bassin de la Volta. Le Royaume des Gurma, centré sur Fada N'Gourma, contrôle l'est du Burkina Faso depuis plusieurs siècles. Ces royaumes représentent la tradition politique Gur la plus connue, aux côtés des sociétés acéphales (Dagara, Frafra, Lobi).",
+      "relationsWithNeighbors": "Les peuples Gur ont maintenu des relations complexes avec les peuples Mande (Mali, empire Songhai) au nord et à l'ouest, les peuples Kwa (Ashanti, Ewe) au sud, et entre eux (alliances, rivalités, guerres). Les routes commerciales trans-sahéliennes ont favorisé l'islamisation progressive des sociétés à chefferies. Les empires du Mali et de Songhai ont exercé une pression politique sur les royaumes Gur sans parvenir à les vassaliser durablement.",
+      "conflictsOrAlliances": "Résistances aux empires du Mali et de Songhai (XIVe-XVIe siècle). Extension Mossi-Dagomba vers l'est jusqu'au lac Débo (vers 1400). Conflits frontaliers Mossi-Gurma (jusqu'à la colonisation française). Razzias esclavagistes mutuelles entre groupes voisins. Résistances à la colonisation européenne (notamment les guerres anti-coloniales de la fin du XIXe siècle). Post-indépendance : tensions intercommunautaires foncières et pastorales en lien avec la pression démographique.",
+      "diaspora": "Les peuples Gur constituent une diaspora importante dans les villes côtières d'Afrique de l'Ouest (Abidjan, Accra, Lagos, Lomé, Cotonou). Des migrations économiques vers la France (notamment depuis le Burkina Faso) et vers le Royaume-Uni (depuis le Ghana) ont créé des communautés diasporiques en Europe. Des étudiants et universitaires Gur sont présents en Europe et en Amérique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 30000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Britannica (environ 20 millions de locuteurs de langues Gur), World Population Review Ghana 2025, statistiques Joshua Project par groupe, INSEE Burkina Faso projections 2025. Population totale projetée 2025 incluant tous les sous-groupes majeurs (Mossi environ 10 M, Dagomba 3,2 M, Gurma 3,5 M, Kabiye 1,2 M, Dagara 1,85 M, Frafra 1 M, Mamprusi, Nanumba, Lobi et autres groupes Gur).",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 18000000,
+          "note": "Majorité de la population du Burkina Faso est Gur (Mossi dominant, puis Gurma, Bwa, Lobi et autres groupes Gur)"
+        },
+        {
+          "country": "GHA",
+          "population": 7000000,
+          "note": "Peuples Gur du nord du Ghana : Dagomba (3,2 M), Dagara (1,4 M), Frafra (1 M), Mamprusi, Nanumba, Buli, Konkomba et autres"
+        },
+        {
+          "country": "TGO",
+          "population": 2000000,
+          "note": "Nord du Togo : Kabiye (principale), Gurma du Togo, Konkomba, Bimoba et autres groupes Gur"
+        },
+        {
+          "country": "BEN",
+          "population": 1000000,
+          "note": "Nord du Bénin : Gurma, Baatonum (Bariba, langue Gur) et autres groupes du nord"
+        },
+        {
+          "country": "CIV",
+          "population": 1000000,
+          "note": "Nord de la Côte d'Ivoire : Lobi, Senufo et peuples gur apparentés"
+        },
+        {
+          "country": "MLI",
+          "population": 500000,
+          "note": "Sud du Mali : quelques groupes Gur (régions Sikasso, Mopti)"
+        },
+        {
+          "country": "NER",
+          "population": 500000,
+          "note": "Sud-ouest du Niger : Gurma, Zarma (peuples en contact avec les Gur)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gur languages. https://en.wikipedia.org/wiki/Gur_languages",
+      "Britannica — Gur languages. https://www.britannica.com/topic/Gur-languages",
+      "Wikipedia EN — Gurma people. https://en.wikipedia.org/wiki/Gurma_people",
+      "Wikipedia EN — Dagomba people. https://en.wikipedia.org/wiki/Dagomba_people",
+      "Wikipedia EN — Dagaaba people. https://en.wikipedia.org/wiki/Dagaaba_people",
+      "Bodomo, Adams (2017) — Mabia classification of Central Gur languages.",
+      "Kleinewillinghöfer, Ulrich (2014) — Gur-Adamawa relationship. In: Journal of West African Languages.",
+      "Koelle, Sigismund Wilhelm (1854) — Polyglotta Africana. London.",
+      "kids.kiddle.co — Gur languages Facts for Kids. https://kids.kiddle.co/Gur_languages"
+    ]
   }
 }

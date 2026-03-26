@@ -2,65 +2,112 @@
   "id": "PPL_LUO_BANTU",
   "nameMain": "Luo (Bantou)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": [],
+  "currentCountries": ["UGA", "KEN", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Luo (Bantou)",
-      "selfAppellation": "Luo",
-      "exonyms": ["Luo (terme utilisé par les Européens)"],
+      "selfAppellation": "Joluo / Abaluo (groupes bantouisés) ; Banyoro (groupe Babiito de Bunyoro)",
+      "exonyms": [
+        "Luo bantouise",
+        "Luo-Bantu",
+        "Nilotes bantouises",
+        "Nilotic Kavirondo (terme colonial britannique, obsolete)"
+      ],
+      "originOfExonyms": "L'appellation Luo (Bantou) ou Luo-Bantu désigne dans la classification ethno-linguistique les groupes d'origine nilotique (Luo) qui ont été assimilés culturellement et/ou linguistiquement par les populations bantoues environnantes, ou qui ont fusionné avec des populations bantoues pour former de nouveaux groupes. Le cas le plus documenté est celui des Babiito de Bunyoro (Ouganda), issus de l'union entre des Luo nilotiques (Biito-Luo/Paluo) et des Bantu. En revanche, les Joluo du Kenya et de Tanzanie sont restés nilotiques dans leur langue (Dholuo), mais présentent un fort métissage génétique et culturel avec les Bantou voisins.",
+      "whyProblematic": "La catégorie Luo (Bantou) est ambivalente car les Luo proprement dits sont des Nilotiques occidentaux (famille Nilo-Saharienne), non-Bantou. Le fichier FLG_NIGERCONGO/PPL_LUO_BANTU désigne donc des groupes luo ayant basculé dans l'orbite bantoue : soit des communautés nilotiques assimilées par les Bantou (Suba du Kenya, Paluo de Bunyoro), soit des dynasties luo régnant sur des royaumes bantous (Babiito de Bunyoro et Toro, en Ouganda).",
+      "contemporaryUsage": "Le terme Luo (Bantou) est principalement académique. Les groupes concernés se désignent avant tout par leur identité locale : Banyoro (Bunyoro), Batooro (Toro), Suba (Kenya). La majorité des Luo du Kenya et de Tanzanie parlent Dholuo, une langue nilotique, bien qu'ils aient absorbé des éléments bantou.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou",
-      "historicalRegion": "Afrique de l'Est",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Groupes de contact Nilotique-Bantou (Zone J, Grands Lacs d'Afrique orientale)",
+      "historicalRegion": "Région des Grands Lacs d'Afrique orientale — Bunyoro (Ouganda occidental), rive ouest du lac Victoria (Kenya, Tanzanie)",
+      "currentCountries": ["UGA", "KEN", "TZA"]
     },
     "ethnicities": [
-      "Luo bantou (sous-groupes à déterminer)",
-      "Sous-groupes régionaux"
+      "Babiito de Bunyoro-Kitara (Ouganda) : dynasties luo-bantouisées fondatrices du royaume de Bunyoro (16e siècle)",
+      "Babiito de Toro (Ouganda) : branche luo-bantoue fondant le Royaume de Toro au 19e siècle",
+      "Paluo / Chope (Ouganda, district de Kiryandongo) : communauté luo-parlante en zone bantoue de Bunyoro",
+      "Suba (Kenya, île de Rusinga et Mfangano sur le lac Victoria) : Bantou originellement qui ont adopte la langue et la culture luo",
+      "Padhola / Jopadhola (Ouganda oriental, Budama) : Luo etablis en milieu bantou depuis le 16e siecle"
     ],
     "origins": {
-      "ancientOrigins": "Les Luo bantou sont originaires de l'Afrique de l'Est. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Luo sont des Nilotiques occidentaux originaires de la région du Bahr el-Ghazal (Soudan du Sud). Leurs migrations vers l'Afrique orientale commencèrent vers 1000 ap. J.-C. et se poursuivirent jusqu'au 20e siècle. La composante Luo-Bantu résulte de rencontres entre ces migrants nilotiques et les populations bantoues déjà installées dans les Grands Lacs. L'exemple le plus important est celui des Biito-Luo (Paluo), conduits par Labongo, qui envahirent le Bunyoro-Kitara au 15e-16e siècle et établirent la dynastie Babiito, s'assimilant progressivement aux Bantou.",
+      "formationPeriod": "Les groupes Luo-Bantou se formèrent entre le 15e et le 18e siècle. En Ouganda, la dynastie Babiito de Bunyoro fut fondée vers la fin du 16e siècle par Rukidi Mpuga (né d'un père Chwezi/Bantou et d'une mère Luo), remplaçant la dynastie Bachwezi. Les Babiito adoptèrent le Nyoro (bantu) comme langue, abandonnant le luo. Les Suba du Kenya ont suivi le chemin inverse : Bantou qui ont adopté le luo comme langue maternelle après avoir fui le Buganda au 18e siècle. Les Padhola d'Ouganda oriental sont des Luo qui vivent en territoire bantou depuis le 16e siècle.",
+      "migrationRoutes": [
+        "Migration des Biito-Luo depuis le nord de l'Ouganda (Bukidi) vers Bunyoro-Kitara (15e-16e siecles)",
+        "Migration des Padhola depuis l'Ouganda septentrional vers Budama (Ouganda oriental, 16e siecle)",
+        "Fuite des ancêtres Suba depuis le Buganda vers les îles du lac Victoria (18e siecle)",
+        "Migrations successives des Luo du Kenya depuis l'Ouganda (4 vagues entre 1490 et 1800 environ)"
+      ],
+      "historicalSettlementZones": [
+        "Bunyoro (Ouganda occidental) : coeur de la dynastique Babiito luo-bantoue",
+        "Toro (Ouganda occidental) : royaume Babiito separé de Bunyoro au 19e siecle",
+        "Budama (Ouganda oriental) : territoire Padhola",
+        "Iles du lac Victoria (Kenya) : Rusinga, Mfangano — territoire Suba",
+        "Region du lac Victoria (Province de Nyanza, Kenya) : rive orientale, Joluo (Dholuo)"
+      ],
+      "unificationsOrDivisions": "Les groupes Luo-Bantou ne forment pas une unité politique mais partagent un héritage historique commun : l'interpénétration entre l'expansion nilotique luo et les royaumes bantou des Grands Lacs. La dynasty Babiito de Bunyoro unifia les Banyoro sous une monarchie bantoue à direction luo (16e-19e siècles). Les Suba et les Padhola restèrent des entités séparées. Les Joluo du Kenya formèrent progressivement une communauté de 27 tribus unifiées culturellement autour du lac Victoria.",
+      "externalInfluences": "Influence bantoue déterminante sur les dynasties Babiito (adoption de la langue nyoro, de la culture bantoue lacustre). Influence luo sur les Suba (adoption du Dholuo). Colonisation britannique (fin 19e-20e siècle) : modification des structures politiques dans tous ces groupes. Christianisation par les missions anglicanes et catholiques.",
+      "majorHistoricalEvents": "15e-16e siecle : invasion des Biito-Luo au Bunyoro, etablissement de la dynastique Babiito par Rukidi Mpuga. Fin 16e siecle : Rukidi envoie son frère Kato fonder le Buganda. 19e siecle : création du Royaume de Toro par les Babiito. 18e siecle : Suba bantou fuient le Buganda vers les îles du lac Victoria et adoptent le luo. 1894 : Bunyoro devient protectorat britannique. 1967 : abolition du royaume de Bunyoro par Obote. 1993 : restauration du royaume avec l'Omukama Solomon Iguru I."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Au Bunyoro, la monarchie Babiito (Omukama = roi) est le système politique traditionnel, assisté d'un conseil de chefs. L'Omukama était entouré des chefs Babiito (de lignage royal luo-bantoue) et des chefs Iru (bantou). Les chefferies Padhola sont organisées autour de chefs de clans (rwoth). Les Suba ont adopté les structures politiques luo du lac Victoria. Les Joluo du Kenya sont organisés en 27 tribus (jo-), chacune subdivisée en clans (gweng) et sous-clans.",
+      "clanOrganization": "Les Babiito de Bunyoro ont une organisation patrilinéaire comme les Banyoro bantou. Les Suba ont progressivement adopté l'organisation clanique luo. Les Padhola maintiennent une organisation clanique nilotique. Les Joluo du Kenya sont organisés en clans (Ororo, pluriel : Jororo) transmis patrilinéairement.",
+      "ageClassSystems": "Certains groupes luo (notamment Acholi, Padhola) ont maintenu des classes d'âge (rwodi) structurant les responsabilités militaires et communautaires. Les Joluo du Kenya avaient des classes d'âge d'hommes non circumcis (Luo ne pratiquant pas la circoncision, contrairement aux Bantou voisins).",
+      "roleOfLineages": "Les lignages patrilinéaires (en milieu bantoue) ou matrilinéaires (dans certains groupes) déterminent l'appartenance clanique, l'héritage et les alliances matrimoniales. Dans les groupes bantouisés comme les Babiito, les lignages royaux luo ont fusionné avec les systèmes bantou de filiation.",
+      "religiousAuthority": "Les Babiito de Bunyoro ont une religion bantoue (culte du dieu Ruhanga, ancêtres). Les Joluo et Padhola vénèrent le dieu suprême Jok. Les ancêtres (juogi) jouent un rôle central. L'islam et surtout le christianisme (anglicanisme, catholicisme) sont dominants depuis le 20e siècle dans tous ces groupes, en syncrétisme avec les croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Luo (bantou)",
-      "vehicularRole": "Le luo (bantou) est parlé par la majorité des Luo bantou. Les langues des pays d'accueil sont également utilisées."
+      "mainLanguage": "Dholuo (Joluo du Kenya/Tanzanie) ; Nyoro-Tooro (Babiito bantouisés) ; Luo-Adhola (Padhola d'Ouganda)",
+      "isoCodes": ["luo", "nyo", "adh"],
+      "dialects": [
+        "Dholuo (luo) : langue des Joluo du Kenya et Tanzanie, nilotique occidentale avec nombreux emprunt bantou",
+        "Luo-Adhola (adh) : parler des Padhola de l'Ouganda oriental",
+        "Nyoro (nyo) : langue bantoue parlée par les Babiito de Bunyoro (ayant abandonne le luo)",
+        "Suba (sxb) : langue des Suba du Kenya, bantou qui ont adopte le Dholuo"
+      ],
+      "vehicularRole": "Dholuo est la langue principale des Joluo (4e groupe ethnique du Kenya, environ 10% de la population, soit plus de 5 millions de locuteurs). Il est parlé aussi dans le nord-ouest de la Tanzanie (environ 1,9 million). Le Nyoro est la langue des Banyoro en Ouganda. Ces langues reflètent la trajectoire d'intégration des Luo dans l'espace bantou des Grands Lacs."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels luo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites de passage : les Joluo (Kenya-Tanzanie) pratiquent l'extraction des dents du bas (likholo), le marquage du corps et les rites de puberté sans circoncision (contrairement aux Bantou voisins). Ce refus de la circoncision fut un marqueur identitaire fort lors de la progression luo en territoire bantou. Rites funéraires Luo : le mort est inhumé dans la maison ou près de la maison familiale, avec veillée longue et deuil élaboré. Rite du mariage : versement d'une dot (le prix de la fiancée en bétail) est central. Les Babiito de Bunyoro ont adopté les rites bantou, incluant les cérémonies d'intronisation de l'Omukama.",
+      "symbols": "La pirogue de pêche est un symbole central des Joluo du lac Victoria. Le tambour royal (bul ker) symbolise l'autorité dynastique des chefs Luo-Bantou. Le lac Victoria (Nam Lolwe en luo) est le symbole géographique et spirituel de l'identité luo. Les cités fortifiées en pierre (ohingni) et les fortifications terreuses (gunda bur) symbolisent la capacité défensive luo en milieu bantou.",
+      "artsAndMusic": "Instruments : nyatiti (luth à 8 cordes, instrument emblématique des Luo du Kenya), orutu (violon monocorde), gogo (flûte), tambours de toutes tailles. Chants : thum (chants narratifs à la nyatiti), ohangla (musique festive de danse). Danse : ohangla, nyatiti. Artisanat : poterie, vannerie, fabrication de pirogues (wath). La musique benga (fusion musique luo et pop moderne, années 1960) est une contribution culturelle des Joluo au patrimoine kenyan.",
+      "spiritualities": "Jok est le nom du dieu suprême dans la cosmologie luo, associé à la puissance spirituelle et aux esprits. Les esprits des ancêtres (juogi) peuvent habiter les descendants ou causer des maladies. Les devins (ajuoga) diagnostiquent les afflictions spirituelles et prescrivent les remèdes. Les Babiito de Bunyoro ont adopté la cosmologie bantoue (Ruhanga créateur suprême, ancêtres mizimu). Le christianisme est aujourd'hui dominant chez tous ces groupes, en syncrétisme avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora luo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Babiito de Bunyoro-Kitara constituent l'exemple le plus important d'une dynastique luo ayant bâti un grand royaume bantou. Fondé au 16e siècle par Rukidi Mpuga, Bunyoro fut la puissance dominante de l'Afrique orientale jusqu'au 18e siècle, avant d'être eclipsé par le Buganda. Le Royaume de Toro, séparé de Bunyoro au 19e siècle sous les princes Babiito, est encore reconnu en Ouganda contemporain. La dynastique Babiito régnante (Omukama) reste en place avec Solomon Iguru I.",
+      "relationsWithNeighbors": "Les Babiito de Bunyoro eurent des relations complexes avec le Buganda (rivalité séculaire pour la domination de l'Ouganda), avec les Banyankole et les Basoga. Les Joluo du Kenya entretinrent des relations de conflit, de mariage et d'assimilation avec les Bantou voisins (Luhya, Kuria, Gusii). L'expansion luo vers le sud provoqua le déplacement des Bantou Luhya vers le nord-est et des Kuria vers la frontière Kenya-Tanzanie.",
+      "conflictsOrAlliances": "Invasion et établissement des Biito-Luo au Bunyoro (15e-16e siecles). Rivalité séculaire Buganda-Bunyoro (17e-19e siecles). Alliance Bunyoro-britanniques contre le Buganda (fin 19e siecle, avant le renversement). Conflits d'expansion Joluo contre les Bantou de Nyanza (17e-18e siecles). Résistance des Luo du Kenya aux Britanniques (1896 : expéditions punitives). Marginalisation politique des Luo kenyans après l'indépendance (1963-2000s).",
+      "diaspora": "Les Joluo constituent une diaspora importante dans les villes kenyanes (Nairobi, Mombasa, Kisumu). Diaspora dans les pays d'Afrique de l'Est (Tanzanie, Ouganda) et dans les pays anglophones (Royaume-Uni, États-Unis). Des personnalités d'ascendance Luo ont une renommée internationale, dont Barack Obama dont le père était Joluo du Kenya."
     },
     "demography": {
+      "totalPopulation": 8000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Population combinée estimée pour l'ensemble Luo-Bantou : Joluo du Kenya (plus de 5 millions selon recensement 2019, projection 2025), Joluo de Tanzanie (environ 1,9 millions en 2010, projection 2025), Banyoro-Babiito d'Ouganda, Padhola, Suba. Estimation 2025 basée sur CIA World Factbook, recensements nationaux Kenya 2019, Tanzanie 2012, Ouganda 2024, SIL Ethnologue.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 5500000,
+          "note": "Joluo du Kenya, Province de Nyanza (Kisumu, Siaya, Homa Bay, Migori), 4e groupe ethnique du Kenya (environ 10%)"
+        },
+        {
+          "country": "TZA",
+          "population": 2000000,
+          "note": "Luo de Tanzanie, region du Mara (Musoma), rive orientale du lac Victoria"
+        },
+        {
+          "country": "UGA",
+          "population": 500000,
+          "note": "Padhola (Budama, Ouganda oriental), Paluo/Chope (Kiryandongo, Bunyoro), Babiito (Bunyoro, Toro)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Luo language",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Luo peoples. https://en.wikipedia.org/wiki/Luo_peoples",
+      "Wikipedia EN — Luo people (Kenya). https://en.wikipedia.org/wiki/Luo_people",
+      "Wikipedia EN — Bunyoro. https://en.wikipedia.org/wiki/Bunyoro",
+      "Britannica — Luo people. https://www.britannica.com/topic/Luo-people",
+      "SIL Ethnologue — Dholuo (luo). https://www.ethnologue.com/language/luo/",
+      "SIL Ethnologue — Adhola (adh). https://www.ethnologue.com/language/adh/",
+      "CIA World Factbook — Kenya, Uganda, Tanzania. https://www.cia.gov/the-world-factbook/"
     ]
   }
 }

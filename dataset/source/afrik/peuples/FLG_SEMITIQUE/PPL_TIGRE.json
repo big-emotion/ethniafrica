@@ -1,73 +1,114 @@
 {
   "id": "PPL_TIGRE",
-  "nameMain": "Tigré",
+  "nameMain": "Tigre",
   "languageFamilyId": "FLG_SEMITIQUE",
-  "currentCountries": ["ERI", "SDN", "ETH"],
+  "currentCountries": ["ERI", "SDN"],
   "content": {
     "appellations": {
-      "mainName": "Tigré",
-      "selfAppellation": "Tigré (ትግረ) / Tigrayit",
+      "mainName": "Tigre",
+      "selfAppellation": "Tigre (ትግረ) / Tigrayit",
       "exonyms": [
-        "Tigré (terme utilisé par les Européens), parfois confondu avec Tigréens (Tigray)"
+        "Tigre (terme européen)",
+        "Hasa / Xasa / Khasa (terme utilisé par les locuteurs Tigre au Soudan, considéré péjoratif par certains)",
+        "Mensai (terme utilisé pour désigner les chrétiens tigre, en Érythrée)"
       ],
+      "originOfExonyms": "Le terme Tigre est à la fois l'endonyme et l'exonyme principal. Il ne doit pas être confondu avec Tigrinya (langue des Tigréens des hauts plateaux érythréens et du Tigray éthiopien). Le terme Hasa ou Xasa est utilisé au Soudan pour désigner la langue et le peuple, mais est perçu comme péjoratif par une partie de la communauté. Le terme Mensai désigne spécifiquement les chrétiens tigre membres de l'Église orthodoxe érythréenne Tewahedo.",
+      "whyProblematic": "La confusion entre Tigre et Tigrinya (ou Tigréens/Tigray) est fréquente dans la littérature occidentale et même dans certains contextes politiques. Ce sont deux peuples, deux langues et deux contextes géographiques distincts : les Tigre sont des lowlanders majoritairement musulmans des plaines occidentales et côtières de l'Érythrée, tandis que les Tigrinya-speaking Biher-Tigrinya occupent les hauts plateaux centraux et sont majoritairement chrétiens.",
+      "contemporaryUsage": "Le terme Tigre est universellement utilisé en érythréen, anglais et arabe pour désigner ce groupe ethno-linguistique. Ils constituent le deuxième groupe ethnique d'Érythrée (environ 30 % de la population). Leur langue, le tigre (ISO : tig), est utilisée par le gouvernement érythréen dans les communications officielles et dans les écoles des régions qu'ils habitent.",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "ethnoLinguisticGroup": "Sémitiques méridionaux (éthiosémitiques)",
-      "historicalRegion": "Érythrée (régions côtières et basses terres)",
-      "currentCountries": ["ERI", "SDN", "ETH"]
+      "ethnoLinguisticGroup": "Sémitique éthio-sémitique septentrional",
+      "historicalRegion": "Basses terres occidentales, septentrionales et côtières de l'Érythrée (régions Gash-Barka, Anseba, mer Rouge Nord) ; est du Soudan",
+      "currentCountries": ["ERI", "SDN"]
     },
     "ethnicities": [
-      "Tigré du Nord (région de Sahel)",
-      "Tigré du Sud (région de Semhar)",
-      "Tigré de l'Est (région côtière)",
-      "Tigré de l'Ouest (régions frontalières)"
+      "Beni-Amer (Beni Amer) — grande confédération tribale des basses terres occidentales, au nord de la rivière Gash ; bilingues tigre et beja (arabe aussi) ; les plus nombreux des groupes tigre",
+      "Beit Asgede (Bet Asgede) — nord de l'Érythrée, plateau de Halhal ; partiellement migrés vers les basses terres occidentales",
+      "Ad Shaikh — basses terres orientales autour de Massawa ; rôle historique central dans l'islamisation des autres groupes tigre",
+      "Mensa (Mansa') — zone de l'Anseba, highlands du nord ; certains chrétiens connus sous le nom de Mensai",
+      "Beit Juk (Bet Juk) — vallée de l'Anseba, au nord et à l'est de Keren ; historiquement liés aux Bilen",
+      "Marya — région de Senhit ; sous-groupes Marya Kayah et Maria Tselam",
+      "Semhar et Adi Shuma — basses terres orientales autour de Massawa ; origines partiellement saho assimilées",
+      "Bet Ma'ala — extrême nord de l'Érythrée, près de la frontière soudanaise"
     ],
     "origins": {
-      "ancientOrigins": "Les Tigré sont originaires de l'ERI, descendants des populations sémitiques qui se sont installées dans la région. Leur langue est proche du tigrinya mais distincte.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux. Distinction importante avec les Tigréens (Tigray) qui parlent le tigrinya et habitent les hauts plateaux.",
-      "externalInfluences": "Influences arabes, turques, et égyptiennes. Islam majoritaire contrairement aux Tigréens chrétiens."
+      "ancientOrigins": "Les Tigre sont un peuple sémitique autochtone d'Érythrée, descendants des populations habesha (éthio-sémitiques) qui ont peuplé la région depuis l'Antiquité, notamment sous l'influence de l'empire d'Aksoum (1er-7e siècles de notre ère). Ils sont étroitement apparentés aux Biher-Tigrinya d'Érythrée ainsi qu'aux Beja du Soudan (en particulier les Hadendoa), avec lesquels ils ont longuement coexisté et parfois fusionné. La langue tigre (tig) est un descendant du guèze (géez), langue liturgique sémitique ancienne, tout comme le tigrinya et l'amharique. Les locuteurs originels du tigre étaient principalement chrétiens orthodoxes, reflétant l'héritage aksoumate.",
+      "formationPeriod": "L'identité tigre distincte des hauts plateaux tigrinya s'est consolidée après la chute de l'empire d'Aksoum (7e-10e siècles). Durant le Zemene Mesafint (ère des princes, 18e-19e siècles), la faible présence impériale éthiopienne a permis à l'empire ottoman puis à l'Eyalet d'Égypte d'étendre leur influence sur les basses terres érythréennes, entraînant l'islamisation progressive des Tigre, qui étaient auparavant majoritairement orthodoxes. Les derniers clans chrétiens ont été convertis à l'islam aussi tardivement qu'au 19e siècle. Certains clans comme les Mensa ont reçu l'évangélisation catholique par des missionnaires français à la même époque.",
+      "migrationRoutes": [
+        "Populations autochtones des hauts plateaux aksoumates, avec repli progressif vers les basses terres sous pression arabe et ottomane",
+        "Déplacements saisonniers des pasteurs nomades entre les zones de pâturage des basses terres occidentales (saison sèche) et les zones plus élevées (saison des pluies)",
+        "Migrations de réfugiés vers le Soudan durant les conflits érythréo-éthiopiens (1961-1991) et après l'indépendance"
+      ],
+      "historicalSettlementZones": [
+        "Basses terres occidentales de l'Érythrée (région Gash-Barka) — principale zone de pâturage nomade",
+        "Hauts plateaux septentrionaux de l'Érythrée (région Anseba) — zones de Keren, Hagaz, Naqfa, Halhal",
+        "Côte nord de la mer Rouge et archipel de Dahlak (région Mer Rouge Nord)",
+        "Est du Soudan — zones frontalières du Kassala et Gedaref, suite aux migrations liées aux conflits"
+      ],
+      "unificationsOrDivisions": "Les Tigre ne constituent pas un groupe ethniquement homogène ; leur diversité est principalement organisée selon des lignes claniques et familiales. Les différents groupes (Beni-Amer, Beit Asgede, Ad Shaikh, Mensa, Beit Juk, Marya, etc.) ont des histoires, des territoires et des structures sociales distincts, mais partagent la langue tigre comme lien commun. L'identité tigre a été renforcée par les luttes pour l'indépendance érythréenne (1961-1991) dans lesquelles les Tigre ont joué un rôle majeur (Hamid Idris Awate, pionnier du mouvement armé, était tigre).",
+      "externalInfluences": "Islamisation progressive par les sultanats arabes de la côte, l'empire ottoman et l'Eyalet d'Égypte (15e-19e siècles), qui a transformé une population majoritairement chrétienne orthodoxe en groupe à 95 % musulman sunnite. Colonisation italienne (1890-1941) : les Tigre ont servi dans l'armée coloniale italienne et ont été profondément affectés par la politique de travail forcé et de réorganisation territoriale. Domination éthiopienne (1952-1991) : les Tigre ont été en première ligne de la résistance armée, notamment via le Front de libération de l'Érythrée (FLE), fondé par Hamid Idris Awate en 1961.",
+      "majorHistoricalEvents": "Les premiers Tigre convertis à l'islam au 7e siècle vivaient sur les îles de la mer Rouge. Islamisation progressive des Tigre de l'intérieur entre le 15e et le 19e siècle sous influence ottomane et égyptienne. Le 1er septembre 1961, Hamid Idris Awate, un Tigre du clan Beni-Amer, a tiré les premiers coups de feu de la guerre d'indépendance érythréenne. Lors de la Seconde Guerre mondiale (1940-1941), de nombreux Tigre ont servi dans l'armée coloniale italienne face aux forces britanniques. L'indépendance de l'Érythrée en 1993 a mis fin à 30 ans de conflit armé dans lequel les Tigre ont fourni une contribution disproportionnée."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation tribale traditionnelle avec cheikhs et conseils tribaux. Intégration dans les structures étatiques érythréennes modernes.",
-      "clanOrganization": "Structure tribale et clanique importante. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance de la généalogie tribale.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux musulmans. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation tribale patrilinéaire avec conseils de chefs (cheikhs) et d'anciens. Chaque clan est dirigé par un chef héréditaire (naib ou cheikh) assisté d'un conseil d'anciens. En cas de litige non résolu par le conseil local, l'affaire est portée devant un cheikh de rang supérieur. Le système de règlement des conflits repose sur la médiation, l'arbitrage et les amendes de bétail (diya), plutôt que sur des sanctions corporelles.",
+      "clanOrganization": "Structure strictement clanique (qabila) ; les clans principaux sont les Beni-Amer (confédération, la plus grande), Beit Asgede, Ad Shaikh, Mensa, Beit Juk, Marya. Certains clans Tigre sont bilinguues (tigre et beja). Historiquement, une institution distinctive des Tigre était la possession d'esclaves héréditaires (tigre au sens servile du terme), qui constituaient une classe sociale inférieure distincte des hommes libres (seyum). Cette institution a officiellement disparu au 20e siècle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (nisba) déterminent l'appartenance clanique, les droits sur les pâturages et les points d'eau, les alliances matrimoniales et l'identité sociale. L'héritage suit la ligne patrilinéaire. Les marriages sont arrangés par les pères ; parmi certains clans, le dernier-né hérite des droits spéciaux (terres les plus fertiles, outils agricoles, veau de son choix). En cas de partage de l'héritage, un conseil de trois anciens, parfois augmenté d'un cheikh, arbitre la décision.",
+      "religiousAuthority": "L'islam sunnite malékite structure la vie sociale et spirituelle à environ 95 %. Les oulémas et les cheikhs exercent une autorité religieuse et parfois juridique dans les litiges familiaux et successoraux. Les descendants de savants islamiques sont désignés comme al-Kabiri et jouissent d'un prestige particulier. Un syncrétisme avec des croyances animistes préislamiques persiste : croyance au mauvais esprit Zar qui possède les personnes, sacrifices expiatoires de bétail, chamanes (prêtres) intervenant pour guérir les malades et exorciser les démons."
     },
     "languages": {
-      "mainLanguage": "Tigré (Tigrayit)",
-      "vehicularRole": "Le tigré est parlé par la majorité des Tigré en Érythrée. L'arabe et le tigrinya sont également utilisés comme langues véhiculaires. L'anglais est utilisé dans l'éducation."
+      "mainLanguage": "Tigre (Tigrayit / ትግረ)",
+      "isoCodes": ["tig"],
+      "dialects": [
+        "Mansa' (Mensa) — dialecte du plateau d'Anseba, certains locuteurs chrétiens",
+        "Habab — dialecte du nord-ouest de l'Érythrée",
+        "Barka — dialecte de la région de Gash-Barka",
+        "Semhar — dialecte des basses terres côtières orientales",
+        "Algeden — dialecte du nord de l'Érythrée",
+        "Senhit (Ad-Tekleis, Ad-Temariam, Bet-Juk, Marya Kayah, Maria Tselam) — groupe de dialectes de la région de Senhit",
+        "Dahalik — parlé dans l'archipel de Dahlak ; intelligibilité de seulement 24-51 % avec les autres dialectes, parfois considéré comme langue distincte"
+      ],
+      "vehicularRole": "Le tigre est parlé par environ 30 à 35 % de la population érythréenne (1 à 1,5 million de locuteurs en Érythrée, plus environ 126 000 au Soudan selon Joshua Project 2025). Il sert de lingua franca dans les basses terres occidentales et septentrionales de l'Érythrée, où plusieurs minorités ethniques l'utilisent comme langue de communication. Le gouvernement érythréen utilise le script guèze (éthiopique, abugida) pour les publications officielles en tigre depuis 1889 environ ; les locuteurs musulmans utilisent couramment le script arabe. L'arabe et le tigrinya sont également utilisés comme langues véhiculaires en Érythrée."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, motifs culturels érythréens, drapeau érythréen.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle tigré",
-      "source_5": "Poésie orale",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "Spiritualités": "Islam sunnite majoritaire. Minorités chrétiennes. Rôle central de l'islam dans la culture tigré."
+      "majorRites": "Circoncision masculine (tahara / khitan) : rite de passage central, généralement pratiqué dans la petite enfance, accompagné de célébrations communautaires, de chants et de festins. Mariage : arrangé par les pères des deux familles ; le père du garçon demande formellement la main de la fille ; la date est fixée en consultant des prêtres ou des devins ; l'ensemble de la communauté du village participe aux préparatifs. Aucun mariage ne doit avoir lieu en juin, mois du décès du prophète Mohammed selon la tradition locale. La semaine précédant le festin nuptial, des chants et célébrations animent le village. Rites funéraires islamiques : inhumation rapide, prières funéraires, condoléances. Achèvement de l'école coranique pour un enfant (fête du Coran). Fêtes des Pagomen (jours intercalaires du calendrier éthiopien), fête de Rab'at, et rituels liés aux épidémies et à la sécheresse selon les clans Marya, Mensa et Beni-Amer respectivement. Pratiques syncrétiques : sacrifices de bétail lorsque les péchés s'accumulent (le sacrifice devient bouc émissaire) ; rituels de purification et de guérison liés au Zar (esprit malveillant).",
+      "symbols": "Le bétail (chameaux, bovins, chèvres, moutons) constitue le symbole premier de richesse, de prestige et d'identité pastorale chez les Tigre. L'usage du chameau comme bête de somme et du boeuf pour les tâches agricoles illustre la transition entre nomadisme et semi-sédentarité. Le scripte guèze (éthiopique) symbolise l'héritage sémitique ancien partagé avec la civilisation aksoumate. Les bijoux en argent, notamment les bracelets portés par les femmes, et les perles, sont des marqueurs identitaires importants. Les tentes et huttes rondes recouvertes de nattes tressées en poils de chèvre ou de chameau sont l'architecture traditionnelle nomade des Tigre.",
+      "artsAndMusic": "Riche tradition de littérature orale : contes de fées (hakakito), fables, devinettes, poésie (mim, reb'at, tieno, hebo, zar, kunbob, tltel, tiernie), chants de louange et de satire sociale. La poésie orale est introduite dès la petite enfance par les mères. Les chants satiriques sont composés pour condamner les comportements socialement répréhensibles et prévenir leur imitation. Les chants de louange célèbrent les exploits notables. Le tiernie est une conversation poétique conventionnelle entre époux lors de la nuit de noces. Instruments de musique : le tambour (accompagnement omniprésent lors des fêtes et mariages) et le mesenko (instrument à cordes pincé comme une guitare). Danses traditionnelles lors des mariages et des fêtes communautaires. Artisanat : tissage de nattes en fibres végétales, confection de tentes et de récipients en cuir et poils de chameau. Les femmes portent des vêtements en tissu coloré acquis sur les marchés.",
+      "spiritualities": "Islam sunnite malékite (95 % des Tigre) : pratiques incluant les cinq piliers (shahada, prière quotidienne, jeûne du Ramadan, aumône obligatoire, pèlerinage à La Mecque). Les communautés disposent de mosquées, d'imams et d'écoles coraniques. Minorité chrétienne (5 %) : membres de l'Église orthodoxe Tewahedo érythréenne, de l'Église catholique romaine et de l'Église évangélique luthérienne d'Érythrée (Mensai). Syncrétisme animiste préislamique persistant : croyance au Zar, esprit malveillant qui possède les individus et cause accidents, maladies et décès ; guérisseurs-chamanes (prêtres) consultés pour les soins, la communication avec les esprits et le contrôle des événements ; exorcismes par transe ; sacrifices expiatoires de bétail ; rituels de fabrication de pluie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies et sultanats historiques. Intégration dans les structures politiques érythréennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tigré dans les pays voisins (SDN, ETH) et dans les pays occidentaux, particulièrement suite aux conflits."
+      "kingdomsOrChiefdoms": "Les Tigre ont vécu sous différentes entités politiques tout au long de leur histoire. Sous l'empire aksoumate, leurs ancêtres étaient intégrés à l'ordre sémitique chrétien. Après la chute d'Aksoum, les sultanats arabes côtiers (notamment le sultanat de Dahlak, 9e-16e siècles) ont exercé une influence sur les Tigre côtiers. Le sultanat de Massawa, sous autorité ottomane (16e-19e siècles), a renforcé l'islamisation. Les confédérations tribales tigre, notamment les Beni-Amer, ont maintenu une autonomie relative sous la domination ottomane puis égyptienne. Durant la colonisation italienne (1890-1941), les Tigre ont été regroupés administrativement sous la gouvernance de l'Erythrée italienne.",
+      "relationsWithNeighbors": "Les Tigre entretiennent des relations étroites et parfois tendues avec plusieurs groupes voisins. Avec les Beja (Hadendoa, Hedareb) du Soudan : relations historiques complexes mêlant parenté, compétition pour les pâturages et échanges commerciaux ; les Beni-Amer forment une confédération à cheval entre Tigre et Beja bilingues. Avec les Biher-Tigrinya des hauts plateaux : une division religieuse (Islam/Christianisme) et géographique (basses terres/hauts plateaux) structure leurs relations tout en maintenant des liens linguistiques anciens. Avec les Saho et les Afar de la côte orientale : contacts commerciaux et conflits occasionnels pour les zones de pâturage.",
+      "conflictsOrAlliances": "Le 1er septembre 1961, Hamid Idris Awate, un Tigre du clan Beni-Amer, a lancé la guerre d'indépendance érythréenne en tirant les premiers coups de feu contre les forces éthiopiennes. Les Tigre ont fourni un nombre disproportionné de combattants au Front de libération de l'Érythrée (FLE) et plus tard au Front populaire de libération de l'Érythrée (FPLE). Ibrahim Sultan, dirigeant tigre, a fondé le Mouvement de libération de l'Érythrée dans les années 1940. Les Tigre ont également participé à la résistance à la colonisation italienne, notamment lors des campagnes de l'armée coloniale en Afrique de l'Est. Des tensions internes ont opposé certains clans Tigre aux autorités érythréennes post-indépendance.",
+      "diaspora": "La diaspora tigre est significative en raison des décennies de conflits. On compte environ 126 000 Tigre au Soudan (Joshua Project 2025), historiquement réfugiés des zones de combat et des famines. Des communautés plus petites existent en Norvège (31 000), en Égypte (20 000), au Royaume-Uni (15 000), aux Pays-Bas (3 400) et dans d'autres pays occidentaux. Des organisations diasporiques, notamment le groupe May Tigrat en ligne, travaillent à la préservation et à la promotion de la langue et de la culture tigre, notamment via le développement d'un Wikipédia en tigre et l'intégration à Google Translate."
     },
     "demography": {
       "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, recensements érythréens, et études démographiques régionales"
+      "source": "Joshua Project 2025 (990 300 total mondial documenté, dont 781 000 en Érythrée, 126 000 au Soudan, 31 000 en Norvège) ; Demographics of Eritrea, Wikipedia ; Crystal Clear Translation 2024 (entre 250 000 et 1 050 000 locuteurs) ; estimation à 30-35 % de la population érythréenne selon Ethnologue et Britannica. Note : L'Érythrée n'a pas effectué de recensement depuis les années 1990 ; les chiffres sont des estimations.",
+      "distributionByCountry": [
+        {
+          "country": "ERI",
+          "population": 1000000,
+          "note": "Environ 30 % de la population érythréenne estimée ; régions Gash-Barka, Anseba, Mer Rouge Nord"
+        },
+        {
+          "country": "SDN",
+          "population": 130000,
+          "note": "Est du Soudan (Kassala, Gedaref) ; réfugiés et descendants de migrations liées aux conflits érythréo-éthiopiens"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tigre language (tig)",
-      "CIA World Factbook – Eritrea",
-      "A Chronicle of the Eritrean Revolution*",
-      "The Eritrean People's Liberation Front*",
-      "The Making of a Nation*",
-      "Recensements érythréens"
+      "Wikipedia EN — Tigre people. https://en.wikipedia.org/wiki/Tigre_people",
+      "Wikipedia EN — Tigre language. https://en.wikipedia.org/wiki/Tigre_language",
+      "Wikipedia EN — Demographics of Eritrea. https://en.wikipedia.org/wiki/Demographics_of_Eritrea",
+      "Joshua Project 2025 — Tigre, Eritrean. https://joshuaproject.net/people_groups/15482/er",
+      "Ethnologue — Tigre language (tig). https://www.ethnologue.com/language/tig/",
+      "101 Last Tribes — Tigre. http://www.101lasttribes.com/tribes/tigre.html",
+      "Britannica — Tigre people. https://www.britannica.com/topic/Tigre-northwestern-Eritrean-people",
+      "Shabait (Ministère de l'information érythréen) — Oral Tradition in Tigre Language, 2022. https://shabait.com/2022/04/16/presentation-on-the-oral-tradition-of-tigre/",
+      "Upplitt Magasin — Tigre, A Language Betrayed From Within, 2025. https://www.upplittmagasin.se/artikel/tigre---a-language-betrayed-from-within",
+      "Crystal Clear Translation — The Tigre and Tigrinya Languages, 2024. https://crystalcleartranslation.com/the-tigre-and-tigrinya-languages-what-is-the-difference/"
     ]
   }
 }

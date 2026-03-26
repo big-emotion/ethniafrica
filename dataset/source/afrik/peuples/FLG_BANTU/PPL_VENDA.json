@@ -6,63 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Venda",
-      "selfAppellation": "Venda",
-      "exonyms": ["Venda (terme utilisé par les Européens)"],
+      "selfAppellation": "VhaVenda (pl.), MuVenda (sg.) ; egalement Vhangona (nom des clans originels)",
+      "exonyms": [
+        "Venda (terme europeen standardise)",
+        "Bawenda (forme bantou ancienne)"
+      ],
+      "originOfExonyms": "Le terme Venda fut utilise par les colonisateurs europeens et les administrateurs sud-africains. Le nom interne VhaVenda signifie les gens de Venda. Vhangona designe les clans les plus anciens, considerés comme les habitants originels de la terre de Venda.",
+      "whyProblematic": "Les Venda sont souvent confondus avec des groupes Shona ou Sotho-Tswana. Leur langue Tshivenda est unique et non mutuellement intelligible avec les langues voisines, malgre des influences Sotho-Tswana et Kalanga.",
+      "contemporaryUsage": "VhaVenda est l'autodesignation preferee. Le bantoustan de Venda (1979-1994) portait le nom du peuple mais etait un instrument de la politique d'apartheid. Depuis 1994, les VhaVenda font partie de la province de Limpopo (Afrique du Sud).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Nord de l'Afrique du Sud, Sud du Zimbabwe",
+      "ethnoLinguisticGroup": "Bantous de la zone S (Shona-Venda), groupe distinct avec influences Sotho-Tswana et Kalanga",
+      "historicalRegion": "Soutpansberg (nord de l'Afrique du Sud, Limpopo Province) et sud du Zimbabwe ; ancien royaume de Venda avec capitale D'zata",
       "currentCountries": ["ZAF", "ZWE"]
     },
     "ethnicities": [
-      "Venda d'Afrique du Sud",
-      "Venda du Zimbabwe",
-      "Sous-groupes régionaux"
+      "Vhangona (clans originels : Vhadau, Vhakwevho, Vhafamadi, Vhania, Vhalea, Vhaluvhu — premiers habitants de Venda)",
+      "Vhambedzi (autres premiers habitants, originaires du centre et est africain)",
+      "Vhatwanamba (clans Karanga-Rodzvi arrives du Zimbabwe)",
+      "Vhanyai (clans Karanga-Rodzvi arrives du Zimbabwe)",
+      "Vhatavhatsindi (clans Karanga-Rodzvi)",
+      "Vhanzhelele / Vhalembethu (clans Karanga-Rodzvi)",
+      "Masingo (arrivees tardives en Venda)",
+      "Vhalaudzi (arrivees tardives)",
+      "Ndou (grand clan avec sous-divisions)",
+      "Takalani / Ungani (groupe present depuis la formation du Venda actuel)"
     ],
     "origins": {
-      "ancientOrigins": "Les Venda sont originaires du nord de l'Afrique du Sud et du sud du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les VhaVenda sont associes au royaume de Mapungubwe (XIIIe s.), l'un des premiers etats complexes d'Afrique australe. Le roi Shiriyadenga est considere par la tradition orale comme le premier roi de Venda et de Mapungubwe. Les Vhangona (clans originels) et les Vhambedzi etaient les premiers habitants de la region. Leur langue Tshivenda emerge du croisement avec des groupes Sotho-Tswana et Kalanga (Karanga-Rodzvi venus du Zimbabwe) a partir du XVe siecle.",
+      "formationPeriod": "Royaume de Mapungubwe : 1220-1300 CE, centre commercial et politique de ~5 000 habitants au confluent du Limpopo et du Shashe. Mining et fusion du cuivre, du fer et de l'or ; fabrication de ceramiques et de cotonnades. Le royaume declin vers 1300 (changement climatique) et le pouvoir se deplaça vers le Grand Zimbabwe. Formation du royaume de Venda dans le Soutpansberg : etablissement de la capitale D'zata par le chef legendaire Thoho-ya-Ndou (Tete d'elephant). Au XIXe s., le roi Makhado consolida le royaume de Venda.",
+      "migrationRoutes": [
+        "Migration bantoue ancienne depuis le centre et l'est africain vers le Limpopo",
+        "Arrivee des clans Karanga-Rodzvi depuis le Zimbabwe central apres le declin de Mapungubwe (~XIVe-XVe s.)",
+        "Traversee du Limpopo depuis le Zimbabwe pour les clans Vha Ha-Madavha (Grands Phacococheres de Luondewho)"
+      ],
+      "historicalSettlementZones": [
+        "Soutpansberg et environs de Thohoyandou (Province de Limpopo, Afrique du Sud)",
+        "District de Louis Trichardt / Makhado (Province de Limpopo)",
+        "Sud-est du Zimbabwe (Chimanimani, Chipinge)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Venda unifiait les clans sous l'autorite du roi (khosikhulu). Tension historique entre les clans Vhangona (anciens) et les clans Karanga-Rodzvi (nouveaux arrivants du Zimbabwe). Au XIXe s., le roi Makhado resista avec succes aux Boers (Afrikaners). Sous l'apartheid, le bantoustan de Venda (1979-1994) perpetua artificiellement la separation de ce groupe.",
+      "externalInfluences": "Contacts avec les Sotho-Tswana et les Lobedu (voisins du sud). Influences Shona et Karanga depuis le Zimbabwe. Resistance au colonialisme boer (XIXe s.). Politique d'apartheid : creation du bantoustan de Venda (1979), declare independant par l'Afrique du Sud en 1979 mais non reconnu internationalement. Reintegration en 1994.",
+      "majorHistoricalEvents": "XIIIe siecle : apogee de Mapungubwe. XIVe-XVe siecle : declin de Mapungubwe, depart vers le Grand Zimbabwe et Thulamela. XIXe siecle : reign du roi Makhado, resistance aux Boers. 1979 : creation du bantoustan de Venda sous Patrick Mphephu. 1994 : reintegration dans la province de Limpopo. 2010 : reconnaissance officielle de la maison royale Venda. 2019 : litige de succession royale (cour d'appel declare l'intronisation de Toni Mphephu Ramabulana illegale)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie traditionnelle dirigee par un khosikhulu (roi supreme). En dessous, les vhamusanda (chefs) et khosi (sous-chefs) administrent les villages. Le khosikhulu a une autorite politique et spirituelle. La maison royale Venda est officiellement reconnue depuis 2010 mais traverse un litige de succession (Toni Mphephu Ramabulana vs princesse Masindi Mphephu, affaire devant la Cour constitutionnelle en 2019-2020).",
+      "clanOrganization": "Organisation en clans patrilineaires nombreux (plus de 30 identifies : Lubimbi, Dzindou Dza Hakhomunala, Vhafamadi, Vhadau, Rambuda, Vhakwevho, Vhambedzi, Ndou, Masingo, Vhalaudzi, etc.). Les Vhangona (Vhadau, Vhakwevho, Vhafamadi, Vhania, Vhalea, Vhaluvhu) sont consideres comme les habitants originels.",
+      "ageClassSystems": "Les jeunes femmes suivent une initiation (tshikanda) avant la ceremonie du Domba (danse de l'initiation feminine). Initiation masculine traditionnelle egalement pratiquee. Le musangwe (pugilat a mains nues) est une pratique de rite de passage masculin, encadree par les anciens.",
+      "roleOfLineages": "Lignages patrilineaires pour la succession et l'heritage. L'appartenance clanique determine les droits fonciers et les alliances matrimoniales. La genealogie royale est une memoire collective fondamentale.",
+      "religiousAuthority": "Le khosikhulu et les vhamusanda ont une autorite spirituelle en plus de leur pouvoir politique. Devins (zwivhandameli) et guerisseurs traditionnels. Le lac Fundudzi est considere comme sacre et habite par l'esprit du python blanc (Tshilapitsi). Fort presence chretienne (eglises de toutes denominations) depuis le XIXe s., en syncrétisme avec les croyances ancestrales."
     },
     "languages": {
-      "mainLanguage": "Venda",
-      "vehicularRole": "Le venda est parlé par la majorité des Venda. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Tshivenda (venda)",
+      "isoCodes": ["ven"],
+      "dialects": [
+        "Tshivenda du Soutpansberg (variante principale, Province de Limpopo)",
+        "Tshilembethu (proche du Tshivenda, limite Zimbabwe)",
+        "Khoekhoegowab influence dans certaines localites frontalieres"
+      ],
+      "vehicularRole": "L'une des 11 langues officielles d'Afrique du Sud. Parlee par environ 875 000 personnes en Afrique du Sud (Limpopo Province principalement). Langue officielle au Zimbabwe egalement. Deuxieme plus petite minorite linguistique noire d'Afrique du Sud. Tshivenda est unique et n'est pas mutuellement intelligible avec les langues Sotho-Tswana ou Shona voisines."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels venda, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Domba (danse du python) : ceremonie d'initiation des jeunes femmes au lac Fundudzi, consideree comme la danse la plus sacree du Venda. Les futures mariees dansent en file indienne en imitant les mouvements du python, symbolisant la fertilite, la purete et la transition vers l'age adulte. Organisee annuellement. Tshikanda : initiation feminine preliminaire. Musangwe : combat de pugilat a mains nues, pratique de rite de passage et de resolution de conflits sous la supervision des anciens. Ceremonies de demande de pluie (tshifhefhe) au lac Fundudzi.",
+      "symbols": "Lac Fundudzi (situe entre Thohoyandou et Louis Trichardt) : lac sacre habite par le dieu python blanc (Tshilapitsi), objet de veneration spirituelle centrale et lieu des ceremonies Domba. Le python blanc comme symbole de fertilite, puissance et connexion ancestrale. Mapungubwe (UNESCO patrimoine mondial) comme heritage ancestral de la royaute Venda.",
+      "artsAndMusic": "Instruments de musique : tshikona (flute nationale, un instrument emblematique joue en ensembles collectifs), ngoma (tambours), tshifhasi (xylophone traditionnel), vuvuzela (origine probable dans la tradition Venda). Danse Domba comme patrimoine majeur. Danse tshigombela pour les femmes adultes. Artisanat : poterie aux motifs geometriques complexes (tradition feminine), sculpture de bois, broderie et perles. Chants rituels polyphoniques lors des ceremonies de passage. Le musangwe comme tradition combative rituelle.",
+      "spiritualities": "Veneration du lac Fundudzi et du python blanc comme forces spirituelles centrales. Culte des ancetres (midzimu) : les esprits ancestraux protegent les vivants et peuvent causer des maladies si negliges. Thikoloshi (esprit malveillant) dans les croyances populaires. Syncrétisme chretien-animiste tres repandu : les eglises zionistes et apostoliques integrent des elements de la spiritualite Venda. Environ 875 000 locuteurs de Tshivenda pratiquent diverses formes de christianisme syncrétique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora venda dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume de Mapungubwe (XIIIe s.) : premier etat complexe de l'Afrique du Sud actuelle, site classe patrimoine mondial UNESCO. Royaume de Venda dans le Soutpansberg : etabli apres le declin de Mapungubwe, capitale D'zata (declaree monument national). Roi Shiriyadenga (tradition orale, premier roi de Venda). Roi Thoho-ya-Ndou (etablit la capitale D'zata). Roi Makhado (XIXe s., resistant aux Boers). Bantoustan de Venda (1979-1994) sous Patrick Mphephu (premier president) et Frank Ravele (deuxieme president).",
+      "relationsWithNeighbors": "Contacts et echanges avec les Lobedu (peuple apparente, Province de Limpopo), les Tsonga (voisins immediats, Limpopo). Relations ancestrales avec les Shona et Kalanga du Zimbabwe. Contacts avec les Sotho-Tswana meridionaux (influences linguistiques mutuelles). Resistance aux Boers au XIXe siecle (roi Makhado).",
+      "conflictsOrAlliances": "Resistance au colonialisme boer sous le roi Makhado (XIXe s.) : le Venda fut l'un des derniers territoires d'Afrique du Sud a tomber sous le joug colonial. Annexion britannique en 1898. Politique d'apartheid et creation du bantoustan de Venda (1979-1994). Litige de succession royale en cours (2019-2020, Cour constitutionnelle d'Afrique du Sud).",
+      "diaspora": "Venda presents dans les grandes villes de la Province de Limpopo (Thohoyandou, Polokwane) et a Johannesburg, Pretoria et dans le Gauteng. Communautes mineures au Zimbabwe (Chimanimani, Chipinge). Diaspora economique dans les centres miniers de Gauteng et Mpumalanga."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Kruger Park Africa : ~875 000 locuteurs de Tshivenda en Afrique du Sud. Minority Rights Group : ~1,5 million de VhaVenda en Afrique du Sud. Nomad Africa Magazine : 700 000 en Limpopo Province. Estimations 2025 (projection) toutes zones : environ 1,2 million.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 1150000,
+          "notes": "Province de Limpopo (Thohoyandou, Soutpansberg); deuxieme plus petite minorite linguistique noire"
+        },
+        {
+          "country": "ZWE",
+          "population": 50000,
+          "notes": "Sud-est du Zimbabwe (Chimanimani, Chipinge, regions frontalieres)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Venda language (ven)",
-      "CIA World Factbook – South Africa, ZWE",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Venda people : https://en.wikipedia.org/wiki/Venda_people",
+      "Wikipedia EN — Venda language : https://en.wikipedia.org/wiki/Venda_language",
+      "Kruger Park Africa — Venda Culture : https://www.krugerpark.co.za/africa_venda.html",
+      "Nomad Africa Magazine — The traditional Domba dance of Venda (2018) : https://www.nomadafricamag.com/the-traditional-domba-dance-of-magical-venda-in-south-africa/",
+      "Minority Rights Group — Vhavenda in South Africa : https://minorityrights.org/communities/vhavenda-in-south-africa/",
+      "Statistics South Africa — Mid-Year Population Estimates 2025 : https://www.statssa.gov.za/?p=18613",
+      "SIL Ethnologue — Venda (ven) : https://www.ethnologue.com/language/ven/"
     ]
   }
 }

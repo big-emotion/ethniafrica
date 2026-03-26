@@ -6,59 +6,104 @@
   "content": {
     "appellations": {
       "mainName": "Me'en",
-      "selfAppellation": "Me'en",
-      "exonyms": ["Me'en (terme utilisé par les Européens)"],
+      "selfAppellation": "Me'en (signifie littéralement personnes ou êtres humains dans la langue)",
+      "exonyms": [
+        "Mekan",
+        "Meen",
+        "Men",
+        "Meqan",
+        "Mie'en",
+        "Mieken",
+        "Tishena (terme amhara à éviter)",
+        "Bodi (pour le sous-groupe pasteur)"
+      ],
+      "originOfExonyms": "Le terme Tishena (ou Tishana, Teshina) est un nom donné par les colons amhara : il signifie bonjour en me'en et était utilisé pour désigner les populations de hautes terres. SIL International recommande d'éviter ce terme. Le terme Bodi désigne spécifiquement le sous-groupe pasteur des basses terres. Mekan est la variante orthographique officielle dans certains contextes éthiopiens.",
+      "whyProblematic": "Les Me'en ne sont PAS un peuple omotique : leur langue appartient à la branche surmique (Surmic) de la famille nilo-saharienne, et non à la famille afro-asiatique. Le fichier JSON original les classait incorrectement dans l'Omotique du Sud. Les Me'en font partie du groupe Surma (avec les Suri et les Mursi), désignation utilisée par l'administration éthiopienne pour ces trois peuples surmiques. La classification dans FLG_OMOTIQUE est une erreur de catégorisation héritée, maintenue pour la cohérence de la base de données.",
+      "contemporaryUsage": "Le terme Me'en est le nom endonymique et est utilisé dans la littérature académique (Abbink, SIL International). Le terme Mekan est courant dans les textes administratifs éthiopiens. Le sous-groupe Bodi est parfois traité comme un peuple distinct dans la littérature touristique.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique du Sud",
-      "historicalRegion": "Sud-ouest de l'Éthiopie",
+      "ethnoLinguisticGroup": "Surmique (Surmic) — branche nilo-saharienne (Eastern Sudanic, South Surmic, Southeast Surmic, Pastoral Surmic, Me'en)",
+      "historicalRegion": "Zone Bench Sheko (ex-Bench Maji), Etat régional du Sud-Ouest de l'Ethiopie — hautes terres (Tishena/Banio) et basses terres du fleuve Omo (Bodi/Koruwo)",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Me'en du Nord", "Me'en du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Banio (Tishena) : agriculteurs des hautes terres, zone de Bachuma",
+      "Bodi (Podi) : pasteurs des basses terres, rives de l'Omo",
+      "Koruwo : agriculteurs des basses terres",
+      "Me'en du Soudan : environ 1 500 personnes vivant au-delà de la frontière soudanaise"
+    ],
     "origins": {
-      "ancientOrigins": "Les Me'en sont originaires du sud-ouest de l'ETH, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples couchitiques et sémitiques voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Me'en sont un peuple surmique originaire d'Ethiopie du Sud-Ouest, appartenant à la branche Surmic de la famille nilo-saharienne — et non à la famille omotique. Selon leur tradition orale, ils croient être apparus près du fleuve Omo, leurs ancêtres étant sortis d'un trou dans la terre. Les linguistes et anthropologues estiment cependant qu'ils ont probablement migré depuis le Soudan du Sud vers l'Ethiopie du Sud-Ouest. Ils sont étroitement apparentés aux Mursi et aux Suri, formant avec eux le groupe Surma (nom administratif éthiopien). Le terme Me'en signifie personnes dans leur langue.",
+      "formationPeriod": "La présence des Me'en dans la zone de Bench Maji (actuelle zone Bench Sheko) est attestée depuis plusieurs siècles. L'ethnie Me'en englobe plusieurs sous-groupes avec des modes de subsistance complémentaires : les Banio (agriculteurs des hautes terres), les Bodi (pasteurs nomades des basses terres de l'Omo), et les Koruwo (agriculteurs des basses terres). Ces sous-groupes partagent la même langue mais ont des pratiques culturelles adaptées à leurs écologies respectives.",
+      "migrationRoutes": [
+        "Origine probable dans le Soudan du Sud (selon les anthropologues), migration progressive vers le sud-ouest éthiopien",
+        "Les Me'en affirment être autochtones de la region du fleuve Omo en Ethiopie du Sud",
+        "Environ 1 500 Me'en résident au-delà de la frontière éthio-soudanaise"
+      ],
+      "historicalSettlementZones": [
+        "Hautes terres de la zone Bench Sheko (ex-Bench Maji) — agriculteurs Banio/Tishena dans la region de Bachuma",
+        "Basses terres du fleuve Omo — pasteurs Bodi nomades",
+        "Basses terres : Koruwo, agriculteurs sédentaires",
+        "Frontière éthio-soudanaise (population réduite)"
+      ],
+      "unificationsOrDivisions": "Le groupe Me'en est divisé en sous-groupes selon l'altitude et le mode de subsistance. Les Banio (hauts plateaux) sont agriculteurs et pratiquent les systèmes à houe. Les Bodi (basses terres) sont pasteurs nomades qui se déplacent pour éviter la dégradation des pâturages et trouver de nouveaux espaces pour leurs troupeaux. Les Koruwo sont agriculteurs des basses terres. Ces sous-groupes entretiennent des relations sociales et économiques entre eux malgré leurs différences de mode de vie.",
+      "externalInfluences": "Relations hostiles historiques entre les Tishena (hautes terres) et les peuples Tirma et Chai voisins. Contacts avec les Dizi (Omotic), voisins au nord, avec qui ils partagent des échanges commerciaux. Pression de l'administration éthiopienne et des missions chrétiennes protestantes depuis le 20e siècle. L'amharisation progressive affecte l'accès à l'éducation et l'administration.",
+      "majorHistoricalEvents": "Incorporation dans l'empire éthiopien au tournant du 20e siècle. Etudes linguistiques et anthropologiques de Jon Abbink (1990-1992) et de SIL International (1997, 2005). Les enquêtes SIL de 2005 ont documenté 80 000 Me'en dont 51 446 monolingues. La construction du barrage de Gibe III sur le fleuve Omo (2016) a eu un impact sur les populations riveraines dont les Me'en Bodi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Les Me'en vivent dans de petits hameaux dispersés et des compounds ruraux. Leurs maisons sont faites de murs en bois et de toits en herbe. L'organisation politique est segmentaire, sans chefferie centralisée : les décisions sont prises par consensus des anciens au niveau du hameau et du clan. Les Bodi pratiquent l'élevage nomade et se déplacent en groupes familiaux élargis.",
+      "clanOrganization": "Organisation clanique patrilinéaire. Les sous-groupes (Banio, Bodi, Koruwo) ont chacun leur propre territoire et leur réseau de clans. L'identité clanique détermine les droits fonciers, les alliances matrimoniales et la participation aux rituels collectifs.",
+      "ageClassSystems": "Les Me'en pratiquent la scarification (hommes et femmes) comme marqueur social de beauté, de courage et de statut. Le festival Ka'el (ou Kael) est une cérémonie centrale chez les Bodi : les femmes encouragent et assistent les hommes à grossir le plus possible pendant plusieurs mois ; le plus gros est proclamé vainqueur, célébré comme un héros et très recherché comme partenaire. Ce festival a lieu annuellement.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent les droits fonciers, les alliances et la résolution des conflits. La polygamie est pratiquée. Les hommes riches en bétail jouissent d'un statut social élevé chez les Bodi.",
+      "religiousAuthority": "Les Me'en croient en un monde peuplé d'esprits qui habitent les gens et influencent leur vie, ainsi qu'aux esprits des ancêtres morts. Ces croyances orientent les pratiques de soins, les rituels de protection et les cérémonies funéraires. Influence croissante des missions protestantes évangéliques depuis la fin du 20e siècle."
     },
     "languages": {
-      "mainLanguage": "Me'en",
-      "vehicularRole": "Le me'en est parlé par la majorité des Me'en. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Me'en (Mekan)",
+      "isoCodes": ["mym"],
+      "dialects": [
+        "Banio (Tishena) : dialecte des hautes terres, agriculteurs de Bachuma",
+        "Bodi (Podi / Mela) : dialecte des pasteurs des basses terres de l'Omo",
+        "Koruwo : dialecte des agriculteurs des basses terres"
+      ],
+      "vehicularRole": "Le me'en (ISO mym) est classé comme langue nilo-saharienne (Surmic, Eastern Sudanic), non omotique. Selon SIL International (2005), environ 80 000 locuteurs, dont 51 446 monolingues. Glottolog (glottocode meen1242) confirme le code ISO 639-3 mym. Les langues secondes parlées par les Me'en incluent l'arabe soudanais (pour ceux vivant près de la frontière) et l'amharique (pour l'administration et l'éducation). Le me'en est phonologiquement notable pour ses consonnes éjectives, caractéristique partagée avec le Kwegu au sein du groupe Surmic."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels me'en, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam."
+      "majorRites": "Festival Ka'el (Kael) : cérémonie annuelle distinctive chez les Me'en Bodi, dans laquelle des hommes sont encouragés par les femmes à prendre du poids pendant plusieurs mois. Chaque concurrent se couvre de boue et de cendres avant de marcher autour d'un arbre sacré sous le regard de toute la communauté. Le plus gros est désigné vainqueur et reçoit gloire et statut de héros ; les femmes utilisent cette occasion pour choisir leurs futurs partenaires. Scarification : pratiquée par hommes et femmes comme symbole de beauté et de courage. Rites funéraires : les Me'en craignent les esprits des morts et accomplissent des cérémonies pour les apaiser. Rites de passage (naissance, puberté, mariage) liés aux cycles de l'élevage chez les Bodi.",
+      "symbols": "Le bétail est le principal symbole de richesse et de statut social chez les Bodi : leur alimentation est fondée sur le mélange de lait et de sang de bétail (obtenu par incision du cou de l'animal sans le tuer). Les vêtements des Bodi hommes sont des jupes en tissu ; les femmes portent des vêtements en peau de chèvre. La scarification est un symbole de beauté et d'appartenance identitaire. La graisse corporelle est un symbole de prospérité et de statut dans le festival Ka'el.",
+      "artsAndMusic": "Musique et danse spécifiques appelées gulay, pratiquées lors des cérémonies collectives. Poésie orale transmettant les généalogies et l'histoire du peuple. La chasse (antilopes, buffles, léopards) fournit des peaux pour l'habillement et le commerce. Artisanat limité (vannerie, objets en bois). Les Bodi pratiquent la pêche — cependant seuls les jeunes hommes non mariés pêchent, et ils doivent accomplir un rituel de purification après chaque session car la pêche était jadis considérée comme un tabou.",
+      "spiritualities": "Croyances animistes : les Me'en vivent dans la crainte des esprits qui habitent les personnes vivantes et des esprits des ancêtres morts. Ces entités peuvent causer maladies et malheurs. Les chamanes et guérisseurs traditionnels jouent un rôle de médiation entre le monde des vivants et celui des esprits. Le système de croyances oriente les pratiques thérapeutiques et les rites de protection. Influence progressive du protestantisme évangélique depuis la seconde moitié du 20e siècle, sans remplacement complet des croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora me'en dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation segmentaire sans chefferie centralisée. Les Me'en sont reconnus par l'administration éthiopienne comme faisant partie du groupe Surma avec les Suri et les Mursi. Le sous-groupe Bodi est parfois documenté comme quasi-autonome dans sa gestion pastorale. Les relations entre hauts plateaux (Banio) et basses terres (Bodi, Koruwo) sont structurées par des échanges économiques complémentaires.",
+      "relationsWithNeighbors": "Relations hostiles historiques entre les Tishena et les peuples Tirma et Chai (Surmic). Relations commerciales avec les Dizi (peuple omotique) au nord. Les Bodi entretiennent des échanges avec les Mursi et Suri voisins, tous membres du groupe Surma. La proximité avec les Dizi a généré des contacts culturels et économiques importants malgré la différence linguistique (le dizin est omotique, le me'en est surmique).",
+      "conflictsOrAlliances": "Conflits historiques des Tishena avec les Tirma et Chai. Incorporation dans l'empire éthiopien au tournant du 20e siècle. Les Me'en ont peu accès aux services de transport moderne et aux services agricoles — leur principal moyen de transport traditionnel est le cheval et le mulet. La construction du barrage de Gibe III a perturbé les cycles d'inondation du fleuve Omo dont dépendent les Bodi pour leur agriculture de décrue.",
+      "diaspora": "Migration interne vers les villes éthiopiennes (Mizan Teferi, Jimma) pour des raisons d'éducation et d'accès aux services. Présence de quelque 1 500 Me'en au Soudan. Très faible diaspora internationale."
     },
     "demography": {
-      "totalPopulation": 150000,
+      "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+      "source": "Recensement éthiopien 2007 : 151 489 Me'en (classés Nilo-Sahariens). SIL International (2005) : 80 000 locuteurs du me'en. Ethnologue (mym) : langue stable. Projection 2025 estimée à 200 000 en appliquant le taux de croissance démographique de l'Ethiopie du Sud-Ouest (~2% par an). La zone Bench Sheko (ex-Bench Maji) comptait les Me'en comme deuxième groupe ethnique (21,36% de la zone).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 198500,
+          "note": "Zone Bench Sheko (ex-Bench Maji), Etat régional du Sud-Ouest de l'Ethiopie; hautes terres Banio et basses terres Bodi"
+        },
+        {
+          "country": "SDN",
+          "population": 1500,
+          "note": "Me'en vivant au-delà de la frontière éthio-soudanaise"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Me'en language (mym)",
-      "CIA World Factbook – Ethiopia",
-      "Recensements éthiopiens",
-      "Études anthropologiques sur les peuples omotiques"
+      "Wikipedia EN — Mekan people. https://en.wikipedia.org/wiki/Me%27en_people",
+      "Glottolog — Me'en, glottocode meen1242, ISO 639-3: mym. https://glottolog.org/resource/languoid/id/meen1242",
+      "Surmic languages — Wikipedia. https://en.wikipedia.org/wiki/Surmic_languages",
+      "Jenkins, Orville. Meen People Profile. http://orvillejenkins.com/profiles/meen.html",
+      "Abbink, Jon G. An Ethno-Historical Perspective on Me'en Territorial Organization (Southwest Ethiopia). Anthropos, 87(4/6), 1992.",
+      "Wikipedia EN — Bench Sheko Zone. https://en.wikipedia.org/wiki/Bench_Sheko",
+      "Brilliant Ethiopia — Omo Valley Tribes (Bodi/Me'en section). https://www.brilliant-ethiopia.com/omo-valley-tribes",
+      "Recensement éthiopien 2007 — Me'en : 151 489 individus (Nilo-Sahariens)."
     ]
   }
 }

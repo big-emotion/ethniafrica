@@ -6,59 +6,94 @@
   "content": {
     "appellations": {
       "mainName": "Lomwe (Mozambique)",
-      "selfAppellation": "Lomwe",
-      "exonyms": ["Lomwe (terme utilisé par les Européens)"],
+      "selfAppellation": "Alomwe / Elomwe",
+      "exonyms": [
+        "Ngulu (variante orthographique utilisee dans la litterature coloniale)",
+        "Lomwe (usage europeen et officiel)"
+      ],
+      "originOfExonyms": "Le terme Elomwe designe a la fois le peuple et sa langue au Mozambique. Les administrateurs portugais utilisaient parfois Ngulu ou Nguru. L'appellation Alomwe (avec prefixe bantou de pluriel) est la forme exacte dans la langue locale.",
+      "whyProblematic": "Les Lomwe du Mozambique font partie du super-groupe Makhuwa-Lomwe, souvent designe collectivement sous le terme Makua ou Macua par les Portugais. Les frontieres ethniques entre Lomwe et Makhua (Makua) sont poreuses : ils partagent les memes lignages (mahimo), une organisation sociale matrilineaire similaire et des traditions culturelles proches. Les deux langues (Elomwe ngl et Emakhuwa emk) sont apparentees mais distinctes.",
+      "contemporaryUsage": "Au Mozambique, les Lomwe font partie du groupe Makhuwa-Lomwe qui constitue le premier ensemble ethnique du pays (environ 40% de la population totale). L'Elomwe est parle principalement dans la Province de Zambezia. Les Lomwe s'identifient avant tout comme Alomwe ou comme membres du groupe Makhuwa-Lomwe elargi. Le Portugal est la langue officielle du Mozambique.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "Mozambique",
+      "ethnoLinguisticGroup": "Bantou (Zone P, sous-groupe Makhuwa-Lomwe)",
+      "historicalRegion": "Province de Zambezia (Mozambique) — principalement les districts d'Ile, Milange, Pebane, Morrumbala, Mocuba et les zones meridionales de la Province de Nampula",
       "currentCountries": ["MOZ"]
     },
-    "ethnicities": ["Lomwe du Nord", "Lomwe du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Lomwe de Zambezia centrale — etablis dans les districts d'Ile, Pebane et Morrumbala",
+      "Lomwe de Milange — sous-groupe frontalier avec le Malawi, dans le district de Milange (Zambezia)",
+      "Lomwe de Gurue — communautes des Monts Namuli et du district de Gurue (Zambezia)",
+      "Lomwe d'Ile — sous-groupe du district d'Ile (coeur historique), l'un des districts les plus denses de Zambezia",
+      "Lomwe de Nampula meridional — communautes des zones meridionales de la Province de Nampula proches de Zambezia"
+    ],
     "origins": {
-      "ancientOrigins": "Les Lomwe du Mozambique sont originaires de la région du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Lomwe du Malawi.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Lomwe du Mozambique sont un peuple bantou de la Zone P dont l'origine est ancree dans les plaines cotieres et les contreforts montagneux entre la Province de Zambezia et de Nampula. Certaines etudes les considerent comme l'une des plus anciennes populations bantoues de cette region de l'Afrique australe. Ils partagent avec les Makhua (Makua) un ancetre mythique commun selon la tradition orale, et des lignages familiaux (mahimo) identiques sur l'ensemble de leur territoire. Le Mozambique precolonial etait le berceau de l'ensemble du groupe Makhuwa-Lomwe.",
+      "formationPeriod": "L'identite lomwe distincte de l'identite makhua s'est progressivement affirmee au cours du premier millenaire de notre ere dans la region de Zambezia. Les Lomwe sont restes principalement dans leur territoire d'origine au Mozambique, contrairement aux branches qui ont migre vers le Malawi. Leur presence dans la Province de Zambezia est ancienne et profondement enracinee.",
+      "migrationRoutes": [
+        "Populations autochtones de la Province de Zambezia, sans migration fondatrice documentee vers un territoire etranger majeur",
+        "Migrations internes entre districts de Zambezia et vers les zones meridionales de Nampula",
+        "Des migrations secondaires vers le Malawi eurent lieu au 19e siecle et dans les annees 1930-1990 (mais concerne les branches du Malawi)"
+      ],
+      "historicalSettlementZones": [
+        "Province de Zambezia — ensemble de la province, surtout les districts d'Ile, Milange, Pebane, Morrumbala, Mocuba, Gurue, Namacurra",
+        "Zones meridionales de la Province de Nampula — frontiere avec Zambezia",
+        "Contreforts des Monts Namuli (Gurue, Zambezia)"
+      ],
+      "unificationsOrDivisions": "Les Lomwe du Mozambique font partie d'un ensemble plus large, le groupe Makhuwa-Lomwe, qui inclut plusieurs sous-groupes (Makhua proprement dits, Lomwe, Meto, Koti, etc.). Ensemble, ils constituent le premier groupe ethnique du Mozambique avec environ 40% de la population. Les Lomwe du Mozambique n'ont pas forme de structure politique centralisee au-dela des chefferies locales. L'independence du Mozambique (1975) et le systeme FRELIMO ont transforme les structures politiques traditionnelles.",
+      "externalInfluences": "Traite des esclaves : les cotes du Mozambique etaient actives dans la traite des esclaves aux 18e et 19e siecles, affectant les populations de Zambezia. Colonisation portugaise (1498-1975) : systeme du chibalo (travail force), evangelisation catholique, imposition du portugais. Independance du Mozambique (1975) sous FRELIMO : systeme socialiste, collectivisation, suppression des chefferies traditionnelles. Guerre civile FRELIMO-RENAMO (1977-1992) : devastations dans les zones rurales de Zambezia, deplacements massifs. Stabilisation post-1992 : reconstruction et renaissance culturelle.",
+      "majorHistoricalEvents": "Avant 1500 : presence etablie des Lomwe dans la Province de Zambezia et du nord du Mozambique. Fin 18e-debut 19e siecle : traite des esclaves et depopulation partielle des zones cotieres. 1975 : independance du Mozambique — FRELIMO abolit officiellement les chefferies traditionnelles. 1977-1992 : guerre civile FRELIMO-RENAMO — province de Zambezia fortement touchee ; deplacements massifs. 1992 : Accords de Paix de Rome — fin de la guerre civile et debut de la reconstruction. 2017 : recensement national du Mozambique (28,8 millions d'habitants) — les Lomwe font partie du groupe Makhuwa-Lomwe dominant (40% de la population nationale)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation traditionnelle en chefferies (regulos) dirigees par des chefs hereditaires (mfumu, anseremani) dont la legitimite repose sur la descendance matrilineaire. Les chefferies etaient autonomes et de taille modeste. Sous la colonisation portugaise, les regulos furent integres comme intermediaires administratifs. Apres l'independance (1975), le FRELIMO supprima officiellement les chefferies, mais elles persistent sous des formes informelles dans les zones rurales.",
+      "clanOrganization": "Organisation matrilineaire fondee sur les clans (mahimo) identiques a ceux des Makhua voisins. Les mahimo traversent les frontieres intra-ethniques et attestent de la parente commune Makhuwa-Lomwe. L'appartenance clanique determine l'heritage, les droits fonciers et les alliances matrimoniales. La residence post-maritale peut etre virilocale ou uxorilocale selon les localites.",
+      "ageClassSystems": "Ceremonies d'initiation pour les garçons et les filles, marquant le passage a l'age adulte. L'initiation feminine comprend des enseignements sur les roles feminins, la vie conjugale et les valeurs communautaires. L'initiation masculine peut inclure la circoncision selon les communautes. Ces ceremonies sont annuelles et regroupent des classes d'age.",
+      "roleOfLineages": "Le groupe matrilineaire (mbumba) est l'unite fondamentale : il determine l'heritage, les droits fonciers et les obligations rituelles envers les ancetres. Le neveu matrilineaire (fils de la soeur) est l'heritier principal. La solidarite de lignage se manifeste dans le travail collectif, les contributions aux ceremonies et la prise en charge des funerailles. Les femmes jouent un role social central en tant que garantes de la continuite du lignage.",
+      "religiousAuthority": "Les guerisseurs-divinateurs (nyanga ou nganga) sont les intermediaires entre les vivants et les esprits ancestraux (mizimu). Le culte du createur Muluku est pratique. Le christianisme est present (surtout catholique, avec influence de l'Union Baptiste du Mozambique). L'islam touche une minorite des Lomwe du Mozambique. Le syncretisme est repandu : les croyances et pratiques ancestrales coexistent avec les religions abrahamiques."
     },
     "languages": {
-      "mainLanguage": "Lomwe",
-      "vehicularRole": "Le lomwe est parlé par la majorité des Lomwe du Mozambique. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "Elomwe",
+      "isoCodes": ["ngl"],
+      "dialects": [
+        "Elomwe de la Zambezia centrale (districts d'Ile, Pebane, Morrumbala) — variete principale",
+        "Elomwe de Milange — sous-dialecte frontalier avec le Malawi, presentant des influences du Chilomwe malawite",
+        "Elomwe de Gurue — variete des hauts plateaux des Monts Namuli",
+        "Elomwe de Nampula meridional — variete proche des parlers Makhua voisins"
+      ],
+      "vehicularRole": "L'Elomwe (ngl) est la langue maternelle de la communaute lomwe dans la Province de Zambezia. C'est la langue du coeur (heart language) des Lomwe mozambicains, ecrite en alphabet romain. Le portugais est la langue officielle du Mozambique et le vehiculaire administratif, scolaire et urbain. L'Elomwe n'est pas mutuellement intelligible avec le Chilomwe du Malawi (lon) selon l'Ethnologue (2005). La Bible Society of South Africa indique environ 2 millions de locuteurs d'Elomwe au Mozambique. Le NT a ete traduit en lomwe ; l'AT etait a environ 2/3 termine selon les sources disponibles."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels lomwe, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation feminine : ceremonies d'enseignement multijours au cours desquelles les jeunes filles apprennent leurs responsabilites d'epouses et de meres, transmises par les femmes agees avec chants, danses et conseils. Initiation masculine : rites de passage pouvant inclure la circoncision. Ceremonies de mariage : negociation de la dot entre families, celebrations collectives avec biere, nourriture, musique et danse. Funerailles : veillees mortuaires communautaires avec chants et danses ; redistribution des biens du defunt au sein du lignage. Ceremonies agricoles : invocations des ancetres au debut de la saison des pluies et actions de graces apres les recoltes pour assurer la fertilite de la terre.",
+      "symbols": "La scarification faciale feminine (marques distinctives sur les joues) : symbole traditionnel d'identite lomwe au Mozambique, de plus en plus rare. La natte tissee (luwende) : symbole de l'artisanat et de la vie domestique. La jarre en argile (pot traditionnel) : fabriquee par les femmes, signe de la culture materielle. Les greniers a grain construits par les hommes : signe de prosperite et de prevoyance.",
+      "artsAndMusic": "Musique et danse : percussions (ngoma), hochets, chants polyphoniques lors des ceremonies d'initiation, mariages et funerailles. Artisanat : fabrication de nattes et paniers tisses, poterie feminine en argile, construction de greniers en roseau (par les hommes). Hommes : confection de nattes en herbe ou en roseau, construction d'habitations traditionnelles. Femmes : poterie, cuisine et artisanat textiles. Litterature orale : contes (nthano), proverbes, recits mythologiques transmis par les aieux. Chants de travail collectif lors des cultures communautaires. Presence de la musique moderne mozambicaine (marrabenta, mapiko, gospel) dans les zones urbaines de Zambezia.",
+      "spiritualities": "Le culte du dieu createur Muluku est fondamental : Muluku agit par l'intermediaire des esprits ancestraux (mizimu). Les ancetres sont consultes via les rituels de divination pratiques par le nganga pour determiner la cause des malheurs, maladies ou deces. Les sacrifices (animaux, biere de sorgho, farine de mais) maintiennent l'harmonie avec les esprits. Selon les estimations, environ 60% des Lomwe du Mozambique pratiquent les religions traditionnelles africaines, 30% se declarent chretiens (catholiques, protestants) et 10% sont musulmans. Le syncretisme est tres repandu. L'influence du FRELIMO marxiste-leniniste apres 1975 chercha a supprimer les pratiques religieuses traditionnelles, mais celles-ci ont periste et resurgi apres les Accords de Paix de 1992."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lomwe dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Lomwe du Mozambique s'organisaient en petites chefferies dirigees par des regulos (chefs), intermediaires entre la population et les autorites coloniales portugaises. Ces chefferies n'atteignirent jamais la taille de royaumes centralises. Les Lomwe faisaient partie du plus vaste ensemble Makhuwa-Lomwe qui, malgre son importance demographique, ne forma pas de structure politique pan-ethnique. Les Portugais s'appuyerent sur les regulos comme auxiliaires administratifs.",
+      "relationsWithNeighbors": "Les Lomwe partagent avec les Makhua des lignages communs (mahimo), attestant d'une origine et de relations tres etroites. Ils ont eu des contacts avec les Yao (traders musulmans), les Sena du bas-Zambeze, les Chuabo et d'autres groupes de Zambezia. La traite des esclaves aux 18e-19e siecles crea des tensions et des recompositions demographiques dans la region. Les Lomwe de Milange maintiennent des liens familiaux et culturels forts avec leurs cousins du Malawi, la frontiere internationale n'ayant ete etablie qu'a la periode coloniale.",
+      "conflictsOrAlliances": "Periode coloniale portugaise : systeme du chibalo (travail force) qui genera des fuites vers le Malawi britanique. Guerre de liberation mozambicaine (FRELIMO, 1964-1974) : les Lomwe de Zambezia participerent a la lutte anti-coloniale. Independance 1975 et systeme FRELIMO : collectivisation et aldeamentos (villages communaux) perturberent les structures traditionnelles. Guerre civile FRELIMO-RENAMO (1977-1992) : la Province de Zambezia fut l'une des plus touchees, avec des massacres, deplacements et destructions massifs. Accords de Paix de Rome (1992) : fin du conflit et amorce de la reconstruction.",
+      "diaspora": "Des communautes lomwe du Mozambique vivent en Afrique du Sud (travailleurs migrants), dans d'autres provinces du Mozambique (Maputo, Beira) et au Malawi (liens transfrontaliers familiaux). La diaspora internationale mozambicaine est limitee et concentree au Portugal, en France et au Royaume-Uni. Les liens transfrontaliers avec les Lomwe du Malawi (district de Mulanje et Milange) restent actifs, les familles maintenant des relations a travers la frontiere."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur SIL Ethnologue (1,3 million de locuteurs en 2005), Bible Society of South Africa ('pres de 2 millions' en Mozambique), et le recensement mozambicain 2017 (population totale 27,9 millions). Le groupe Makhuwa-Lomwe total represente environ 40% de la population nationale (11,2 millions). La part specifique des Lomwe (vs Makhua stricto sensu) est estimee entre 1,5 et 2 millions. Sources : SIL Ethnologue (ngl), INE Mozambique (IV RGPH 2017), Orville Jenkins Cultural Profile.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1900000,
+          "note": "Principalement dans la Province de Zambezia (districts d'Ile, Milange, Pebane, Morrumbala, Gurue, Mocuba, Namacurra) et les zones meridionales de la Province de Nampula. Estimation 2025 basee sur les donnees SIL Ethnologue et le recensement 2017 projete au taux de croissance national de 2,8% par an."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lomwe language (ngl)",
-      "CIA World Factbook – Mozambique",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Orville Boyd Jenkins — The Lomwe of Mozambique and Malawi: A Cultural Profile. http://orvillejenkins.com/profiles/lomwe.html",
+      "SIL Ethnologue — Lomwe (ngl). https://www.ethnologue.com/language/ngl/",
+      "INE Mozambique — IV Recensement General de la Population et de l'Habitat 2017. https://www.ine.gov.mz/en/censo-2017/",
+      "GHDx — Mozambique Population and Housing Census 2017. https://ghdx.healthdata.org/record/mozambique-population-and-housing-census-2017",
+      "Maputo Essential Tours — Mozambique Ethnic Groups (Macua-Lomwe section). https://www.maputoessentialtours.com/general-4",
+      "Public Intelligence — Mozambique Country Handbook (MCIA). https://info.publicintelligence.net/MCIA-MozambiqueHandbook.pdf",
+      "Wikipedia EN — Lomwe people. https://en.wikipedia.org/wiki/Lomwe_people",
+      "101 Last Tribes — Lomwe people. https://www.101lasttribes.com/tribes/lomwe.html"
     ]
   }
 }

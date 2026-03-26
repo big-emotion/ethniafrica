@@ -7,63 +7,93 @@
     "appellations": {
       "mainName": "Antakarana",
       "selfAppellation": "Antakarana",
-      "exonyms": ["Antakarana (terme signifiant \"ceux des rochers\")"],
+      "exonyms": ["Antankarana"],
+      "originOfExonyms": "Le nom Antakarana signifie ceux des rochers en malgache, en reference aux formations calcaires de tsingy qui caracterisent leur territoire traditionnel dans la reserve d'Ankarana. Ce nom a ete adopte au XVIIe siecle lorsque le roi Andriantsirotso a mene son peuple se refugier dans ces formations rocheuses pour echapper aux armees sakalava.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Antakarana est la forme la plus repandue dans la litterature anthropologique et les sources malgaches modernes. Antankarana, avec insertion de n, est aussi frequente dans les sources anglophones et francophones.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Nord de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien (Austronesien occidental, groupe malgache nord)",
+      "historicalRegion": "Extreme nord de Madagascar : peninsule d'Antsiranana (Diego-Suarez), Reserve d'Ankarana, ile de Nosy Mitsio et cote occidentale nord jusqu'a la riviere Bemarivo",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Antakarana du Nord",
-      "Antakarana du Sud",
-      "Sous-groupes régionaux"
+      "Zafin'i'fotsy (enfants de l'argent) : lignage royal fondateur, branche dissidente des Sakalava Zafin'i'mena",
+      "Antakarana du Nord (peninsule d'Antsiranana) : groupe le plus urbanise, autour de la ville de Diego-Suarez",
+      "Antakarana de l'Ouest (cote de Nosy Mitsio) : groupe cotiier influence par le commerce arabe",
+      "Antakarana de l'interieur (reserve d'Ankarana) : gardiens des sites sacres royaux"
     ],
     "origins": {
-      "ancientOrigins": "Les Antakarana sont originaires du nord de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Formation d'un royaume indépendant.",
-      "unificationsOrDivisions": "Formation d'un royaume Antakarana. Organisation en groupes territoriaux distincts.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence de l'islam et du christianisme."
+      "ancientOrigins": "Les Antakarana descendent d'une branche de la famille royale Sakalava appelee Zafin'i'fotsy (enfants de l'argent). Ce groupe s'est separe des Sakalava Zafin'i'mena (enfants de l'or) au debut du XVIIe siecle, a la suite d'une dispute de succession qui a prive les Zafin'i'fotsy du droit au trone. Refusant cette exclusion, ils ont quitte le territoire sakalava sur la cote sud-ouest pour s'etablir dans l'extreme nord de Madagascar. Comme tous les Malgaches, ils descendent d'une combinaison de colons austronesiens venus des iles de la Sonde (Indonesie) et de migrants bantous d'Afrique de l'Est. Ils revendiquent egalement une ancestralite arabe, liee aux contacts historiques avec les marchands swahilis et arabes.",
+      "formationPeriod": "XVIIe siecle : separation des Sakalava et fondation du royaume Antakarana sous Kozobe (1614-1639), premier roi. Consolidation du royaume sous Andriantsirotso (1692-1710).",
+      "migrationRoutes": [
+        "Depuis la cote sud-ouest de Madagascar (territoire Sakalava) vers l'extreme nord de l'ile au debut du XVIIe siecle",
+        "Refuge temporaire a Maroantsetra (nord-est) lors des guerres contre les Sakalava fin XVIIe siecle",
+        "Exil a Nosy Mitsio au XIXe siecle lors du conflit avec le royaume Merina (1838)"
+      ],
+      "historicalSettlementZones": [
+        "Extreme nord de Madagascar (autour d'Antsiranana)",
+        "Reserve d'Ankarana (grottes et formations de tsingy, lieu sacre)",
+        "Ile de Nosy Mitsio (refuge royal au XIXe siecle)",
+        "Cote occidentale nord jusqu'au village de Tetezambato"
+      ],
+      "unificationsOrDivisions": "Le premier roi Kozobe a divise son territoire en cinq provinces gouvernees par ses fils. Andriantsirotso (1692-1710) a refonde le royaume en unifiant les populations locales sous le nom Antakarana, apres les guerres contre les Sakalava. La succession royale a connu des disputes aux XXe-XXIe siecles entre Tsimiaro III et Lamboeny III, le premier etant reconnu comme roi de facto.",
+      "externalInfluences": "Contacts avec les marchands arabes et swahilis depuis le Moyen Age, menant a l'adoption partielle de l'islam (engagement du roi lors de l'exil a Nosy Mitsio au XIXe siecle). Alliance avec les Francais a partir des annees 1830 : traite avec des envoyes francais de La Reunion, soldats francais depechees pour expulser les Merina du territoire antakarana. Collaboration avec la France lors de l'expedition de 1883-1885 et de celle de 1895 qui a conduit a la colonisation de Madagascar.",
+      "majorHistoricalEvents": "1614-1639 : regne de Kozobe, premier roi antakarana. 1692-1710 : Andriantsirotso fonde officiellement le royaume Antakarana. XVIIe-XVIIIe siecles : guerres contre les Sakalava du royaume d'Iboina. 1835-1838 : resistance au royaume Merina ; fuite dans les grottes d'Ankarana ; exil a Nosy Mitsio ; conversion collective a l'islam. XIXe siecle : alliance avec la France contre les Merina. 1895-1896 : colonisation française de Madagascar. Aujourd'hui : Tsimiaro III est le roi traditionnel reconnu."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel. Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins), des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie traditionnelle unique a Madagascar : les Antakarana sont l'un des rares peuples malgaches a maintenir un roi sacre (mpanjaka) vivant, dont le role ancestral est reaffirme par des ceremonies traditionnelles. Le roi preside les ceremonies royales et represente le peuple antakarana au niveau national et international. Le systeme du fokonolona (assemblee communautaire villageoise) coexiste avec l'autorite royale pour la gestion des affaires locales.",
+      "clanOrganization": "Structure patrilineaire organisee en lignages (foko). Les Zafin'i'fotsy constituent la classe royale et noble. Les communautes prealables, integrees lors de la fondation du royaume par Andriantsirotso, forment des lignages distincts avec leurs propres identites.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, les droits fonciers et les alliances. Le culte des ancetres (razana) est central : les ancetres interviennent dans les affaires des vivants et doivent etre honores par des ceremonies regulieres. Le roi defunt Tsimiaro I est enterre selon sa volonte dans la grotte d'Ankarana ou il s'etait refugie, ce lieu etant devenu sacre.",
+      "religiousAuthority": "Autorite duelle : le roi sacre (mpanjaka) pour les affaires traditionnelles et le culte ancestral ; les oulémas musulmans (imams) pour les affaires religieuses islamiques. Les mpisikidy (devins-guerisseurs) jouent un role important dans la medecine traditionnelle et la divination. Syncretisme marque entre islam, traditions ancestrales et elements chretiens introduits par les missionnaires."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte antakarana)",
-      "vehicularRole": "Le malgache antakarana est parlé par la majorité des Antakarana. Le français est également utilisé."
+      "mainLanguage": "Malgache antakarana (xmv)",
+      "isoCodes": ["xmv"],
+      "dialects": [
+        "Malgache antakarana (xmv) : dialecte distinct du malgache officiel (plt), classe Vigorous (6a) par Ethnologue ; tres different du dialecte merina standard",
+        "Malgache officiel (plt) : utilise dans l'administration, l'education et les medias",
+        "Francais : langue administrative et d'enseignement superieur"
+      ],
+      "vehicularRole": "Le dialecte antakarana est la langue maternelle de la communaute et est perçu comme un marqueur fort d'identite ethnique, distinct du malgache officiel base sur le dialecte merina. Les Antakarana eduques parlent egalement le malgache officiel et le français. La proximite linguistique avec le dialecte sakalava est notable. La resistance au christianisme est en partie liee au fait que les eglises utilisent le dialecte merina, considere comme la langue de l'ennemi historique."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies royales",
-      "Symboles": "Symboles royaux antakarana, symboles liés aux rochers, symboles islamiques et chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Culte des ancêtres (razana)."
+      "majorRites": "Ceremonies royales (fanompoa) : rites de reaffirmation du role sacre du roi, ouverts a l'ensemble de la communaute et datant de plusieurs siecles. Famadihana (retournement des morts) : pratique malgache commune de reensevelissement des ancetres, marquant le respect du aux razana. Circoncision (famorana) : rite de passage masculin important. Ceremonies de mariage traditionnelles. Ziara (visite aux tombeaux) : pelerinage islamique aux lieux saints locaux. Fetes islamiques (Aid el-Fitr, Aid el-Adha) integrees aux pratiques locales.",
+      "symbols": "Les formations de tsingy (calcaires karstiques) de la reserve d'Ankarana : territoire sacre et symbole identitaire fondamental. Le roi sacre (mpanjaka) et les insignes royaux. Les grottes d'Ankarana ou s'est refugie le peuple avec son roi au XIXe siecle, devenues lieux de memoire et de sepulture royale. L'ile de Nosy Mitsio, lieu d'exil et de conversion collective a l'islam.",
+      "artsAndMusic": "Musique traditionnelle malgache : chants collectifs (hiragasy), accompagnement de valiha (cithare en bambou) et de sodina (flute). Poesie orale (hainteny) : tradition ancestrale de chants poetiques transmis oralement. Danse traditionnelle lors des ceremonies royales et des fetes communautaires. Artisanat : tissage de lamba (grandes etoles de soie ou coton), vannerie, sculpture sur bois. Architecture traditionnelle : maisons sur pilotis, toits a deux pentes.",
+      "spiritualities": "Syncrétisme entre islam, croyances traditionnelles malgaches et elements chretiens. L'islam est predominant depuis la conversion royale du XIXe siecle : pratiques islamiques (prieres, Ramadan, sacrifice), certaines adaptees localement. Culte des ancetres (razana) : croyance en la presence et l'intervention des morts dans les affaires des vivants ; rites de propitiation. Croyance en des esprits de la nature. Les mpisikidy (devins) pratiquent la divination par les graines (sikidy). Resistance historique au christianisme, lie a l'association des eglises avec les Merina."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora antakarana dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume Antakarana : fonde au XVIIe siecle par les Zafin'i'fotsy dissidents des Sakalava. Premier roi Kozobe (1614-1639), fondateur de cinq provinces. Andriantsirotso (1692-1710) : consolidation du royaume. Succession de rois jusqu'a Tsimiaro III (1982-aujourd'hui, Issa), qui maintient le titre royal et preside les ceremonies traditionnelles.",
+      "relationsWithNeighbors": "Relations originellement conflictuelles avec les Sakalava (territoire voisin au sud) qui ont tente d'envahir le jeune royaume. Alliance avec les Français à partir des années 1830 contre les Merina. Animosite persistante envers les Merina due aux conflits du XIXe siecle et aux differences linguistiques et culturelles contemporaines. Coexistence avec les communautes arabes et swahilies de la cote nord.",
+      "conflictsOrAlliances": "XVIIe siecle : guerres contre les Sakalava du royaume d'Iboina, avec refuge dans les grottes d'Ankarana. 1835-1838 : guerres contre le royaume Merina ; fuite et exile a Nosy Mitsio. Alliance avec la France (traite debut XIXe siecle) : les Français expulsent les Merina en echange du controle de petites iles de la cote occidentale. 1883-1885 et 1895 : collaboration active avec les expeditions françaises contre les Merina, contribuant a la colonisation de Madagascar en 1896.",
+      "diaspora": "Presence antakarana dans les grandes villes malgaches (Antananarivo, Mahajanga, Toamasina) resultant de migrations economiques depuis les annees 1960. Quelques membres de la diaspora en France et dans d'autres pays occidentaux. Les communautes de la diaspora maintiennent des liens avec le roi et les ceremonies traditionnelles."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 420000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Estimations basees sur : Wikipedia Antankarana (50 000 en 2013) et Madagascar Missions (400 000 en 2012 – les deux chiffres refletent des definitions differentes du groupe). La population malgache a cru de 2,5% par an. Projection 2025 basee sur la tendance demographique nationale (Worldometer 2024 : population totale Madagascar 32,7 millions). Les 50 000 de Wikipedia semblent sous-estimer le groupe ; la source madmissions.com citant 400 000 est plus coherente avec les proportions demographiques malgaches.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 420000,
+          "note": "Extreme nord de Madagascar, region Diana ; sous-zones : peninsule d'Antsiranana, cote occidentale jusqu'a Tetezambato, ile de Nosy Mitsio et petites iles environnantes"
+        }
+      ]
+    },
+    "additionalNotes": {
+      "sacredSites": "La reserve d'Ankarana (protection nationale depuis 1956) est le territoire sacre fondamental des Antakarana : ses grottes ont servi de refuge royal au XIXe siecle et abritent la tombe du roi Tsimiaro I. La reserve est aujourd'hui un site de biodiversite exceptionnel (lémuriens, fossas) et un lieu de pelerinage culturel.",
+      "contemporaryRoyalty": "Le roi Tsimiaro III (Issa), regnant depuis 1982, est le chef traditionnel reconnu de facto. Il preside les ceremonies ancestrales, represente les Antakarana aux niveaux national et international, et maintient les liens entre les communautes dispersees. Des disputes de succession entre Tsimiaro III et Lamboeny III ont marque les annees 2000-2010, mais Tsimiaro III reste le roi principal.",
+      "islamAndIdentity": "L'islam adopte collectivement au XIXe siecle (suite au voeu du roi lors de l'exil a Nosy Mitsio) est profondement lie a l'identite antakarana et a sa distinction vis-a-vis des Merina chretiens. Les Antakarana sont l'un des rares peuples malgaches majoritairement musulmans, avec des mosquees dans les principales communautes du nord."
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches",
-      "Études historiques sur le royaume Antakarana"
+      "Wikipedia EN – Antankarana : https://en.wikipedia.org/wiki/Antankarana",
+      "Madagascar Missions – Antakarana People : https://madmissions.com/madagascar-facts/antakarana-people/",
+      "Glottolog – Antankarana Malagasy (xmv) : https://glottolog.org/resource/languoid/id/anta1255",
+      "Ethnologue – Malagasy subgroup : https://www.ethnologue.com/subgroup/1795/",
+      "Wikipedia EN – History of Madagascar : https://en.wikipedia.org/wiki/History_of_Madagascar",
+      "101 Last Tribes – Antankarana : http://www.101lasttribes.com/tribes/antankarana.html",
+      "CIA World Factbook – Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/"
     ]
   }
 }

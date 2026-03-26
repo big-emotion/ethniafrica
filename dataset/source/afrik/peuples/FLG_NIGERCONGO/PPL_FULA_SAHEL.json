@@ -6,10 +6,20 @@
   "content": {
     "appellations": {
       "mainName": "Fula (Sahel)",
-      "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+      "selfAppellation": "Fulbe (pluriel), Pullo (singulier)",
+      "exonyms": [
+        "Peul (terme francophone, issu du wolof peul, usage courant en Afrique de l'Ouest francophone)",
+        "Fulani (terme anglophone utilise au Nigeria et au Ghana, d'origine haoussa)",
+        "Fula (terme utilise dans les pays anglophones de la region)",
+        "Toucouleur / Haalpulaar (pour les Fula sedentarises de la vallee du Senegal)",
+        "Torodbe (designation des clans clericaux islamiques fula)"
+      ],
+      "originOfExonyms": "Le terme Peul est derive du wolof peul, adopte par les Francais au Senegal et etendu a toute l'Afrique de l'Ouest francophone. Fulani est un terme d'origine haoussa designe les Fula de l'espace haoussa et adopte par les colonisateurs britanniques. Les Fula eux-memes preferent le terme Fulbe (pluriel) ou Pullo (singulier). Torodbe designe specifiquement les clans clericaux et lettrés, auteurs des jihads islamiques des 18e-19e siecles.",
+      "whyProblematic": "L'ethnonymie fula est complexifiee par la diversite interne du groupe (nomades vs sedentaires, clans pastoraux vs clans clericaux) et par les multiples appellations imposees par les colonisateurs et les voisins. La distinction entre Peul, Fulani, Toucouleur et Haalpulaar est socialement et politiquement sensible dans plusieurs pays du Sahel.",
+      "contemporaryUsage": "Le terme Fula ou Peul est couramment utilise dans les contextes officiels et academiques. Au Sahel, les Fula sedentarises se designent selon leur pays et region d'appartenance (Torodbe du Senegal, Fulbe du Sahel central, Fulbe Jellgooji du Burkina Faso). L'identite fula est aujourd'hui fortement liee a l'islam et aux traditions savantes islamiques.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Atlantique (branche sénégambienne)",
-      "historicalRegion": "Bande sahélienne de l'Atlantique au Tchad",
+      "ethnoLinguisticGroup": "Atlantique-Congo (branche senegambienne, sous-groupe Fulbe sedentarises et semi-sedentarises du Sahel)",
+      "historicalRegion": "Sahel occidental et central : du Senegal au Tchad, des rives du fleuve Senegal au lac Tchad",
       "currentCountries": [
         "SEN",
         "MLI",
@@ -22,57 +32,124 @@
       ]
     },
     "ethnicities": [
-      "Fulɓe Toroɓe (Fouta Toro, SEN/Mauritanie)",
-      "Fulɓe du Sahel central",
-      "Fulɓe du Sahel oriental"
+      "Fulbe Torodbe (clans clericaux lettrés; Futa Toro, Senegal/Mauritanie; leaders des jihads islamiques)",
+      "Fulbe Futa Jallon (Guinee; fondateurs de l'Imamat de Futa Jallon, 1725-1896)",
+      "Fulbe Futa Toro / Haalpulaar'en (vallee du Senegal; createurs de l'Almamat de Futa Toro, 1769-1776)",
+      "Fulbe Jelgooji (Burkina Faso; Niger meridional; Mali oriental)",
+      "Fulbe Massina / Massinakoore (Mali central; fondateurs de l'Empire de Massina, 1818-1862)",
+      "Fulbe Sokoto / Woylaare (nord Nigeria; Niger; fondateurs du Califat de Sokoto, 1804)",
+      "Fulbe du Sahel central (Niger, Tchad occidental; sedentarises ou semi-sedentarises)",
+      "Fulbe Adamawa sedentarises (Cameroun, Nigeria; emirat d'Adamawa)"
     ],
     "origins": {
-      "ancientOrigins": "Les Fula du Sahel sont originaires de la bande sahélienne. Leur présence dans cette région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Adaptation aux environnements sahéliens.",
-      "externalInfluences": "Influence profonde de l'islam, rôle majeur dans les réseaux islamiques du Sahel. Contacts avec les peuples mandé, haoussa, et autres groupes sahéliens."
+      "ancientOrigins": "Les Fula sont un groupe d'origine debattue. Les hypotheses incluent : une origine berbere ou cushitique avec integration subsequente de populations ouest-africaines (tradition orale selon laquelle Oukba, un Arabe, et Bajjo Mango, une Sarakoule, seraient les ancetres); une origine dans la vallee du Senegal (Futa Toro), avec expansion vers l'est depuis le 14e siecle. Linguistiquement, le fulfude appartient a la branche atlantique de la famille Niger-Congo, ce qui indique une longue presence en Afrique de l'Ouest. La Encyclopedie Britannica note que les Fula se sont etablis a Macina (Mali) au 16e siecle apres avoir quitte Futa Toro.",
+      "formationPeriod": "L'identite distincte des Fula du Sahel s'est consolidee entre le 14e et le 19e siecle. Les jihads islamiques fula des 18e-19e siecles (Futa Jallon 1725, Futa Toro 1776, Sokoto 1804, Massina 1818) ont profondement redefini l'identite fula autour de l'islam sunnite et de la tradition savante islamique, creant des etats theocratiques. Le Califat de Sokoto (1804) devient le plus grand Etat independant d'Afrique de l'Ouest de l'epoque.",
+      "migrationRoutes": [
+        "Depuis Futa Toro (vallee du Senegal) vers l'est : Macina (14e s.), puis Hausaland (16e s.), puis Adamawa (18e-19e s.)",
+        "Migration vers la Guinee et fondation du Futa Jallon (18e siecle)",
+        "Expansion vers le Bornou et le Tchad (17e-19e siecles)",
+        "Presence historique en Mauritanie (Trarza, Gorgol, Guidimaka)"
+      ],
+      "historicalSettlementZones": [
+        "Futa Toro (rive gauche du fleuve Senegal; Senegal/Mauritanie)",
+        "Futa Jallon (massif montagneux de Guinee)",
+        "Macina (delta interieur du Niger, Mali)",
+        "Sahel central (Nigeria du Nord, Niger meridional, Burkina Faso)",
+        "Adamawa (nord Cameroun, Nigeria oriental)"
+      ],
+      "unificationsOrDivisions": "Les jihads islamiques fula (18e-19e siecles) ont constitue le plus puissant moment d'unification politique des Fula du Sahel. Le Califat de Sokoto (fonde par Usman dan Fodio en 1804) regroupait plus de 30 emirats et 10 a 20 millions de personnes. Les etats islamiques fula (Futa Jallon, Futa Toro, Massina, Sokoto, Toucouleur) ont cependant ete des entites separees et souvent rivales. La colonisation europeenne a dissous ces etats et impose des frontieres traversant les zones fula.",
+      "externalInfluences": "L'islam (adopte massivement entre le 16e et le 18e siecle) est l'influence externe la plus decisive sur l'identite des Fula du Sahel. Les contacts avec les royaumes Bambara, Mande, Haoussa et Tuareg ont structure les alliances et les conflits siecle apres siecle. La colonisation francaise et britannique (19e-20e siecles) a mis fin aux etats islamiques fula et restructure les identites politiques. Les secheresses du Sahel (1970s-1980s) ont pousse de nombreux Fula vers les villes et vers le sud.",
+      "majorHistoricalEvents": "1690 : fondation du Bundu par Malick Sy, premier etat fula islamique. 1725 : jihad de Futa Jallon (Guinee); creation de l'Imamat de Futa Jallon. 1769-1776 : jihad de Futa Toro (Senegal); creation de l'Almamat sous Sulayman Bal et Abd al-Qadir. 1804 : jihad d'Usman dan Fodio au Hausaland; fondation du Califat de Sokoto (le plus grand Etat ouest-africain de l'epoque). 1818 : jihad de Seku Amadu; fondation de l'Empire de Massina (capitale Hamdullahi). 1862 : chute de Massina devant El Hadj Umar Tall. 1903 : destruction du Califat de Sokoto par les Britanniques."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels (Ardo). Systèmes étatiques historiques (émirats, sultanats). Organisation en classes d'âge.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie lignagère importante.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas (savants religieux) et des chefs religieux. L'islam sunnite (majoritairement malékite) structure la vie sociale. Grande tradition islamique savante."
+      "traditionalPoliticalSystem": "Les Fula du Sahel ont developpe deux types d'organisation politique : les chefferies pastorales menees par des Ardo (chefs de communaute pastorale), et les etats islamiques centralises (Imamat, Califat, Sultanat) issus des jihads des 18e-19e siecles. Le Califat de Sokoto fonctionnait comme une confederation lache d'emirats reconnaissant l'autorite spirituelle du Sultan de Sokoto. Le systeme de justice islamique (sharia) encadrait l'administration. Dans les zones rurales, les conseils d'anciens et les imams locaux exercent encore une autorite morale forte.",
+      "clanOrganization": "Structure clanique patrilineaire, avec hierarchie entre clans nobles (rimbe / dimo), clans d'artisans (nyenybe), clans clericaux (torodbe) et anciens captifs (rimayBe / maccuBe). Les Torodbe, clans clericaux lettrés, ont joue un role central dans les jihads islamiques. Le mariage preferentiel est endogame (cousins croises ou paralleles) pour preserver la purete lignagere et les alliances claniques.",
+      "ageClassSystems": "Classes d'age informelles dans les communautes rurales. Systeme generationnel important lors des ceremonies de mariage (sharo : epreuve de flagellation pour tester le courage du marie). Les jeunes hommes sont inities au code pulaaku par les anciens.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, le statut social, l'heritage et les alliances matrimoniales. Chez les Haalpulaar du Senegal, les lignages Torodbe ont fourni les dirigeants religieux et politiques. Les lignages determinent l'acces aux terres de paturage et aux champs agricoles.",
+      "religiousAuthority": "Islam sunnite malekite. Les oulemas (savants islamiques) et les imams exercent une autorite religieuse et sociale preponderante. Les confréries soufies Tijaniyya et Qadiriyya ont une forte implantation chez les Fula du Sahel. La tradition savante islamique (maktaba) est particulierement developpee : le Califat de Sokoto, qualifie par l'historien John Iliffe de region la plus prospere d'Afrique tropicale, etait aussi un centre de production intellectuelle islamique."
     },
     "languages": {
-      "mainLanguage": "Fulfulde / Pulaar / Pular",
-      "vehicularRole": "Le fulfulde/pulaar est parlé par la majorité des Fula du Sahel. Il sert de langue véhiculaire dans certaines régions du Sahel. L'arabe, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Fulfude (Fulfulde) et ses variantes occidentales (Pulaar, Pular)",
+      "isoCodes": ["ful", "fuc", "fuf", "ffm", "fuq", "fuv"],
+      "dialects": [
+        "Pulaar de Futa Toro (Senegal, Mauritanie) - code fuc",
+        "Pular de Futa Jallon (Guinee, Guinee-Bissau) - code fuf",
+        "Fulfude Massinakoore (Mali central) - code ffm",
+        "Fulfude Central-Est Niger (Niger, Tchad) - code fuq",
+        "Fulfude Nigerian / Woylaare (nord Nigeria, Niger meridional) - code fuv",
+        "Fulfude du Burkina Faso / Jelgoore (variete centrale)"
+      ],
+      "vehicularRole": "Le fulfude/pulaar est l'une des langues les plus repandues en Afrique de l'Ouest, servant de langue vehi culaire dans de nombreuses regions du Sahel. Au Senegal, le pulaar est reconnu comme langue nationale. En Guinee, le pular est parle par plus de 40% de la population. Dans certaines regions du Mali, du Burkina Faso et du Niger, le fulfude sert de langue de communication interethnique. L'arabe coranique est maitrise par les oulemas et les lettrés. Le francais et l'anglais sont utilises dans les contextes officiels selon les pays."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_2": "Cérémonies pastorales liées au bétail",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Bétail (bovins) comme symbole de richesse et de statut. Poésie élogieuse (ɗiogal). Calligraphie arabe. Architecture islamique.",
-      "Arts et musique": "",
-      "source_4": "Poésie élogieuse traditionnelle (ɗiogal)",
-      "source_5": "Musique traditionnelle (tambours, flûtes)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat lié au pastoralisme",
-      "source_8": "Littérature islamique en arabe et en fulfulde",
-      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture fula. Grande tradition islamique savante."
+      "majorRites": "Fetes islamiques : Ramadan (Tabaski/Aid el-Kebir et Korité/Aid el-Fitr sont les celebrations les plus importantes), Mawlid (naissance du Prophete), Hajj (pelerinage a La Mecque, tres valorise comme marqueur de statut social). Mariage : ceremonie en trois phases (Kabbal/fiancailles islamiques, Koowgal/cortège, Sharo ou epreuve de courage pour certains groupes). Circoncision male comme rite de passage obligatoire. Dewgal : festival annuel de transhumance a Diafarabé (Mali) en novembre-decembre; les troupeaux traversent le fleuve Niger sous les acclamations; reconnu au patrimoine culturel par l'UNESCO. Funerailles : suivant les prescriptions islamiques (enterrement dans les 24h, lectures coraniques, condoleances sur trois jours).",
+      "symbols": "Le betail (bovins, ovins) comme symbole de richesse et de statut. La calligraphie arabe et les manuscrits islamiques comme symboles de prestige intellectuel. Le code pulaaku (valeurs morales de patience-munyal, modestie-semteende, sagesse-hakkilo, courage-sagata) est le symbole identitaire central. La poesie elogieuse en fulfude (diogal), composee et recitee par les griots Awlube, celebre les exploits des lignages nobles.",
+      "artsAndMusic": "Musique : instruments hoddu (luth a peau pince, similaire au banjo), riiti (violon monocorde), flutes, tambours (buuba, bawdi). Les griots Awlube recitent l'histoire des lignages et chantent des louanges. Chants collectifs lors des ceremonies de mariage et de transhumance. Influence de la kora et du balafon dans les zones de contact mande. Artisanat : calebasses gravees et decorees, tapis et couvertures tisses par les femmes, broderies sur robes et bonnets (noppiire). Bijoux en or et en argent (boucles d'oreilles, bracelets, colliers). Architecture islamique : mosquees en pisé et minarets sahéliens, particulièrement au Mali et au Niger. Litterature islamique manuscrite en arabe et en fulfude (collections de Tombouctou et de Sokoto).",
+      "spiritualities": "Islam sunnite malekite, predominant depuis les jihads du 18e-19e siecle. Les confréries soufies Tijaniyya (plus repandue) et Qadiriyya structurent la vie spirituelle et sociale. Les Torodbe sont les gardiens de la tradition islamique savante. Des pratiques de maraboutisme (amulettes, charmes de protection) persistent en marge de l'orthodoxie. Les traditions pre-islamiques de protection des troupeaux et certaines croyances en esprits naturels subsistent chez certains groupes ruraux, bien que l'islam les condamne officiellement."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Migration vers les grandes villes et la diaspora."
+      "kingdomsOrChiefdoms": "Les Fula du Sahel ont fonde certains des etats les plus puissants d'Afrique de l'Ouest : l'Imamat de Futa Jallon (1725-1896, Guinee; constitution ecrite et alternance gouvernementale entre deux partis, Soriya et Alphaya), l'Almamat de Futa Toro (1769-1776, Senegal), l'Empire de Massina (1818-1862, Mali; capitale Hamdullahi; Djenné et Tombouctou inclus), le Califat de Sokoto (1804-1903, Nigeria; plus de 30 emirats, 10-20 millions d'habitants, plus grand etat d'Afrique de l'Ouest), et l'Empire Toucouleur d'El Hadj Umar Tall (1848-1897; de Segou a Tombouctou). Le premier etat fula, le Bundu, est fonde en 1690 par Malick Sy.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les royaumes Bambara (Mali), Haoussa (Nigeria), Kanuri (Borno), Tuareg et Manding. Les jihads fula ont souvent renverse des royaumes voisins (conquete des etats haoussa par Usman dan Fodio, 1804-1808; conquete du Royaume de Segou par El Hadj Umar Tall, 1861). Des alliances commerciales et matrimoniales ont aussi existe avec les populations Soninke, Wolof et Mandingues. Aujourd'hui, les relations intercommunautaires au Sahel sont marquees par des tensions recurrentes autour des droits fonciers et pastoraux.",
+      "conflictsOrAlliances": "Les jihads islamiques fula (18e-19e siecles) sont les evenements historiques les plus marquants : jihad de Futa Jallon (1725), jihad de Futa Toro (1776), jihad de Dan Fodio (1804-1808), jihad de Seku Amadu (1818). Ces mouvements ont transforme la carte politique de l'Afrique de l'Ouest et diffuse l'islam et la culture fula a travers le Sahel. La resistance aux colonisateurs francais et britanniques (fin 19e - debut 20e siecle) a ete forte mais finalement vaine. Depuis les annees 2000, les conflits entre eleveurs fula et agriculteurs sedentaires au Sahel ont pris une ampleur nouvelle, exacerbes par le changement climatique et la proliferation des armes.",
+      "diaspora": "Forte diaspora fula en Europe (France, Pays-Bas, Portugal, Espagne, Grande-Bretagne), notamment originaire du Senegal, de Guinee et du Mali. Communautes importantes dans les capitales ouest-africaines (Dakar, Bamako, Abidjan, Niamey, Ouagadougou). La diaspora maintient des liens etroits avec les communautes d'origine et participe au financement des mosquees et des ecoles islamiques."
     },
     "demography": {
-      "totalPopulation": 15000000,
+      "totalPopulation": 30000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, UNFPA, recensements nationaux, et études démographiques régionales"
+      "source": "SIL Ethnologue (2024) : 25-40 millions de Fula dans le monde; Wikipedia EN cite 25 millions. Estimations combinees pour les Fula du Sahel (Senegal, Mali, Burkina Faso, Niger, Nigeria, Cameroun, Tchad, Mauritanie) : environ 25-35 millions. Recensements nationaux des pays du Sahel (pas toujours disagreges par groupe ethnique). Projection 2025 basee sur les donnees Ethnologue, CIA World Factbook, UNFPA Sahel.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 15000000,
+          "note": "Nigeria du Nord; Fulbe Sokoto, Adamawa, Gombe; groupe numeriquement le plus important"
+        },
+        {
+          "country": "SEN",
+          "population": 3500000,
+          "note": "Haalpulaar/Toucouleur de Futa Toro; Fulbe Fuladu"
+        },
+        {
+          "country": "MLI",
+          "population": 3000000,
+          "note": "Fulbe Massina (Mopti, Ségou), Fulbe Jelgooji"
+        },
+        {
+          "country": "BFA",
+          "population": 2500000,
+          "note": "Fulbe Jelgooji (Sahel, Est, Centre-Nord)"
+        },
+        {
+          "country": "NER",
+          "population": 2500000,
+          "note": "Fulbe Woylaare (Tahoua, Maradi, Dosso, Zinder)"
+        },
+        {
+          "country": "CMR",
+          "population": 1500000,
+          "note": "Fulbe Adamawa sedentarises (Adamaoua, Nord)"
+        },
+        {
+          "country": "TCD",
+          "population": 1000000,
+          "note": "Fulbe du Sahel central tchadien"
+        },
+        {
+          "country": "MRT",
+          "population": 500000,
+          "note": "Haalpulaar de la region du Gorgol, Guidimaka, Trarza"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Fulfulde language (ful)",
-      "CIA World Factbook – Country profiles",
-      "UNFPA – Sahel population data",
-      "Last, Murray – *The Sokoto Caliphate*",
-      "Recensements nationaux"
+      "Wikipedia EN - Fula people. https://en.wikipedia.org/wiki/Fula_people",
+      "Wikipedia EN - Fula jihads. https://en.wikipedia.org/wiki/Fula_jihads",
+      "Wikipedia EN - Sokoto Caliphate. https://en.wikipedia.org/wiki/Sokoto_Caliphate",
+      "Britannica - Fulani empire. https://www.britannica.com/place/Fulani-Empire",
+      "Britannica - Western Africa, jihad of Usman dan Fodio. https://www.britannica.com/place/western-Africa/The-jihad-of-Usman-dan-Fodio",
+      "SIL Ethnologue - Fulah macrolanguage (ful). https://www.ethnologue.com/language/ful/",
+      "Last, Murray. The Sokoto Caliphate. London : Longman, 1967.",
+      "UNFPA Sahel - population data. https://www.unfpa.org/",
+      "ISO 639-3 Fulah variant codes. https://en.wikipedia.org/wiki/ISO_639:f"
     ]
   }
 }

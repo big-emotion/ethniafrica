@@ -6,54 +6,68 @@
   "content": {
     "appellations": {
       "mainName": "Isanzu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Anyihanzu",
+      "exonyms": ["Isanzu", "Kinyisanzu", "Kinyihanzu"],
+      "originOfExonyms": "Le nom Anyihanzu est l'auto-denomination du peuple. Isanzu est la forme exonymique utilisee dans l'administration tanzanienne et dans la litterature ethnographique. Kinyisanzu (ou Kinyihanzu) designe la langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Isanzu designe officiellement le district administratif de Mkalama (anciennement district d'Isanzu) de la region de Singida en Tanzanie. La denomination Anyihanzu est preferee dans les contextes communautaires.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu de Tanzanie centrale",
+      "historicalRegion": "District de Mkalama, region de Singida, Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Isanzu"],
+    "ethnicities": ["Isanzu", "Anyihanzu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Isanzu sont un groupe ethnolinguistique bantou etabli depuis des siecles dans le district de Mkalama (region de Singida) en Tanzanie centrale. Leur territoire montagneux, parseme de grands rochers et de formations rocheuses, a conditionne leur mode de vie agricole et leur organisation sociale.",
+      "formationPeriod": "La presence des Isanzu dans leur territoire actuel est attestee au moins depuis plusieurs siecles avant la colonisation europeenne. Leur identite distincte est reconnue dans les sources ethnographiques du XIXe siecle.",
+      "migrationRoutes": [
+        "Partie du sous-groupe Iramba au sens large, avec des liens historiques vers l'ouest du lac Victoria"
+      ],
+      "historicalSettlementZones": [
+        "District de Mkalama (ancien district d'Isanzu), region de Singida, Tanzanie centrale"
+      ],
+      "unificationsOrDivisions": "Les Isanzu sont parfois classes comme un sous-groupe du cluster Iramba plus large. Ils sont organises en plusieurs clans majeurs (Kitunga, Msindai, Mpeku, Manzawa, Mpinga, Mahumi, Malalika, Gang'ai, Mpanda, Mkilanya, Mzengi, Holela, Mtiko, Ibobo, Saenda, Giisi, Pyuza, etc.).",
+      "externalInfluences": "En 1894, les Isanzu, menes par leur chef Kitentemi, organisent des campagnes de resistance contre l'occupation militaire allemande. En 1899, les forces militaires allemandes etablissent des postes a Kilimatinde, Iramba et Isanzu. Colonisation britannique du Tanganyika apres la Premiere Guerre mondiale, avec une politique d'administration indirecte (Indirect Rule).",
+      "majorHistoricalEvents": "Resistance contre l'occupation allemande en 1894 sous la direction du chef Kitentemi. Collecte de restes humains des ancetres Isanzu par des expeditions allemandes (fin XIXe siecle), conserves a l'universite de Gottingen. Independance de la Tanzanie en 1961. Campagnes de restitution des restes ancestraux en cours depuis les annees 2010."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Sous l'epoque coloniale britannique, les Isanzu etaient administres par le biais d'une politique d'administration indirecte jusqu'a l'independance en 1961. Traditionnellement, l'organisation politique se fait au niveau des clans et des conseils d'anciens.",
+      "clanOrganization": "La societe Isanzu comprend de nombreux clans majeurs : Kitunga, Msindai, Mpeku, Manzawa, Mpinga, Mahumi, Malalika, Gang'ai, Mpanda, Mkilanya, Mzengi, Holela, Mtiko, Ibobo, Saenda, Giisi (Yagisi), Pyuza (d'origine Nyiramba). Chaque clan a sa propre identite et ses regles d'exogamie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les Isanzu ont des groupes de descendance matrilineaire. La transmission des droits, des terres et des responsabilites rituelles suit la ligne maternelle.",
+      "religiousAuthority": "Les ancetres jouent un role central dans la vie spirituelle. Les rites de fabrication de la pluie (rainmaking) sont des ceremonies importantes. Les anciens et specialistes rituels supervisent les ceremonies. Presence chretienne lutherienne predominante depuis 1930."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Isanzu (Kinyihanzu)",
+      "isoCodes": ["isn"],
+      "dialects": ["Kinyihanzu", "Kinyisanzu"],
+      "vehicularRole": "L'isanzu (ISO isn, glottocode isan1243) est parle exclusivement dans le district de Mkalama. Presque tous les locuteurs parlent egalement le swahili, lingua franca nationale tanzanienne. Des interactions avec les peuples Nyaturu, Iramba et Iraq ont conduit au multilinguisme frequent."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de fabrication de la pluie (rainmaking) particulierement importants pour cette communaute d'agriculteurs dependant des pluies saisonnieres. Rites funeraires : nettoyage du corps du defunt, habillage, prieres et inhumation immediate pour permettre au mort de transiter vers le domaine ancestral avec honneur. Pelerinages aux tombes des ancetres pour partager les problemes et recevoir leur guidance.",
+      "symbols": "Les rochers et formations rocheuses du territoire Isanzu sont sacres et servent de lieux de pelerinage et de rituel. Les ancetres sont les garants de la prosperite de la terre.",
+      "artsAndMusic": "Les Isanzu sont principalement agriculteurs (sorgho, mil, mais). La tradition orale preserve les genealogies, histoires et savoirs. Les chants et danses accompagnent les ceremonies communautaires.",
+      "spiritualities": "La religion traditionnelle est pratiquee par environ la moitie de la population : culte des ancetres, rites de pluie, veneration des lieux sacres. L'eglise lutherienne est presente depuis 1930 et dirige aujourd'hui entierement par des pasteurs locaux. Petites communautes pentecotiste, anglicane et catholique romaine. Tres faible presence musulmane."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le chef Kitentemi a mene la resistance contre l'occupation militaire allemande en 1894. L'organisation traditionnelle repose sur des chefferies claniques independantes plutot que sur un royaume unifie.",
+      "relationsWithNeighbors": "Relations historiques avec les Nyiramba (Iramba), Nyaturu (Iraqw), dont les Isanzu empruntent des elements culturels et linguistiques. Le clan Pyuza est d'origine Nyiramba. Coexistence avec les peuples du district de Mkalama.",
+      "conflictsOrAlliances": "Resistance militaire contre les Allemands en 1894 sous le chef Kitentemi. Saisie des restes ancestraux par les expeditions coloniales allemandes et conserves a l'universite de Gottingen (Allemagne). Campagnes de restitution en cours, avec une restitution partielle envisagee dans le cadre d'un projet de recherche commune (2020s).",
+      "diaspora": "Migration de travail vers d'autres parties de la Tanzanie, principalement vers Arusha."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 106000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)",
+      "distributionByCountry": [{ "country": "TZA", "population": 106000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Isanzu people – Wikipedia (https://en.wikipedia.org/wiki/Isanzu_people)",
+      "Isanzu in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12260)",
+      "Isanzu Language – Ethnologue (https://www.ethnologue.com/language/isn/)",
+      "Isanzu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/isan1243)",
+      "Isanzu Community Perspectives on Ancestral Human Remains – Open Restitution Africa, 2025 (https://openrestitution.africa/case-study/isanzu-community-perspectives-on-ancestral-human-remains-restitution-to-tanzania/)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025 (https://www.joshuaproject.net/clusters/341)"
+    ]
   }
 }

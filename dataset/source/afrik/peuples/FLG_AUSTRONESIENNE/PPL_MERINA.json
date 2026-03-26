@@ -8,64 +8,96 @@
       "mainName": "Merina",
       "selfAppellation": "Merina",
       "exonyms": [
-        "Hova (terme historique, parfois utilisé de manière péjorative), Imerina"
+        "Hova (terme historique désignant la caste libre, parfois utilisé abusivement pour l'ensemble du groupe)",
+        "Imerina (nom du territoire, parfois appliqué au peuple)",
+        "Ambaniandro (ceux qui vivent sous le ciel, appellation traditionnelle)",
+        "Borizany (autre appellation ancienne)",
+        "Antimerina (ceux de l'Imerina)"
       ],
+      "originOfExonyms": "Hova designe strictement la caste des hommes libres dans le systeme social merina, mais a ete utilise par les Europeens pour designer l'ensemble du groupe. Ambaniandro et Borizany sont des appellations internes anciennes.",
+      "whyProblematic": "Le terme Hova applique a l'ensemble des Merina est inexact et peut etre vecu comme pejoratif, car il efface la distinction entre les castes andriana (nobles) et hova (hommes libres).",
+      "contemporaryUsage": "Merina est l'appellation officielle et courante. Le malgache officiel (base sur le dialecte merina) est appele fiteny malagasy.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Hautes terres centrales de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien, sous-groupe Barito (originaire de Bornee meridionale)",
+      "historicalRegion": "Hautes terres centrales de Madagascar, plateau de l'Imerina, autour de l'actuelle Antananarivo (ancienne province d'Antananarivo)",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Merina des hautes terres",
-      "Sous-groupes régionaux",
-      "Communautés urbaines"
+      "Andriana (caste noble, subdivisee en six sous-castes hereditaires)",
+      "Hova (caste des hommes libres, constituant la majorite de la population merina)",
+      "Mainty (vassaux lies aux nobles, anciennement serviteurs des Andriana, associes aux Sakalava)",
+      "Andevo (descendants des anciens esclaves, toujours soumis a une stigmatisation sociale selon un rapport de l'ONU de 2012)",
+      "Merina des hautes terres de l'Imerina (region centrale autour d'Antananarivo)",
+      "Merina de la diaspora urbaine (Tamatave, Mahajanga, Toliara)"
     ],
     "origins": {
-      "ancientOrigins": "Les Merina sont originaires des hautes terres centrales de Madagascar. Leur présence remonte aux migrations austronésiennes vers Madagascar (500-700 ap. J.-C.) et à la fusion avec les populations bantoues.",
-      "unificationsOrDivisions": "Formation du royaume Merina (XVIe-XIXe siècles). Unification de Madagascar sous le règne de Radama I et Ranavalona I.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Merina descendent de la fusion entre les premiers colons austronesiens venus d'Asie du Sud-Est maritime (entre 200 et 500 av. J.-C.) et des migrants bantous d'Afrique centrale et orientale arrivant a partir du IXe siecle. Cette population mixte, les Vazimba, constitue le substrat originel des Merina. Des vagues ulterieures d'Arabes, d'Indiens et de Swahilis ont enrichi le melange genetique et culturel.",
+      "formationPeriod": "Implantation sur les hautes terres centrales vers le XVe siecle, apres des guerres et des pressions migratoires depuis la cote. Formation d'un etat organise sous le roi Andriamanelo au debut du XVIe siecle, marque par l'introduction de la metallurgie et d'une organisation politique structuree.",
+      "migrationRoutes": [
+        "Migration austronesienne depuis Bornee meridionale via l'ocean Indien (avant le VIe siecle)",
+        "Arrivee de Bantous depuis l'Afrique centrale et orientale a partir du IXe siecle",
+        "Etablissement sur les hautes terres depuis la cote est au XVe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de l'Imerina (autour d'Antananarivo, ancienne Analamanga)",
+        "Region d'Ambohimanga (colline sacree, berceau du royaume)",
+        "Zones irrigues des hautes terres (rizicultures en terrasses)"
+      ],
+      "unificationsOrDivisions": "Le royaume de l'Imerina emerge sous Andriamanelo (XVIe siecle) et est unifie sous Andrianampoinimerina (vers 1785-1810), qui reunit les quatre royaumes merina en guerre. Son fils Radama I (1792-1828) etend la domination sur presque toute Madagascar d'ici 1824. La Grande-Bretagne reconnait la souverainete merina en 1817. Le royaume est abolie par la France en 1897 apres deux guerres franco-merina (1883-1885 et 1895).",
+      "externalInfluences": "Contacts precoces avec les marchands arabes et swahilis apportant l'islam et les technologies. Introduction du christianisme par les missionnaires protestants britanniques (LMS) sous Radama I (1820s), avec la reine Ranavalona II se convertissant officiellement au protestantisme en 1869. Influence francaise massive a partir du protectorat (1894) et de la colonisation (1896-1960), avec l'introduction du systeme educatif francais.",
+      "majorHistoricalEvents": "Unification sous Andrianampoinimerina et Radama I (1785-1828). Persecution des chretiens sous Ranavalona I (1828-1861). Premiere guerre franco-merina (1883-1885) : cession de Diego-Suarez. Deuxieme guerre franco-merina (1895) : prise d'Antananarivo. Annexion francaise et abolition de la monarchie (1896-1897). Mouvement nationaliste Vy Vato Sakelika (1913), reprime en 1915-1916. Independance de Madagascar en 1960."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Royaume Merina avec système de castes (andriana, hova, andevo). Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie absolue avec systeme de castes rigide : Andriana (nobles en six sous-castes hereditaires), Hova (hommes libres), Mainty (vassaux), Andevo (esclaves). Le roi (mpanjaka) detient a la fois l'autorite politique et religieuse. Le systeme du fokonolona (assemblee villageoise) assure la gouvernance locale. Le fanompoana (travail force au service du roi) est une institution cle du systeme royal.",
+      "clanOrganization": "Organisation patrilineaire en lignages (fianakaviana) et en groupes de descendance. Les Andriana sont organises en six sous-castes endogames hereditaires. L'appartenance clanique determine le statut social, les alliances matrimoniales et le droit a l'inhumation dans le tombeau familial.",
+      "ageClassSystems": "Pas de classes d'age formalisees, mais importance des rites de passage : circoncision des garcons dans les sept premieres annees (avec invocation des ancetres), mariage, funerailles. Le famadihana marque aussi un passage dans le cycle des ancetres.",
+      "roleOfLineages": "Les lignages patrilineaires (razana) sont fondamentaux : ils determinent l'identite sociale, le droit aux terres ancestrales (tanin'drazana) et l'acces au tombeau familial. Le culte des ancetres (razana) est central : les defunts continuent d'intervenir dans les affaires des vivants et doivent etre honores regulierement.",
+      "religiousAuthority": "Autorite des ombiasy et mpisikidy (devins-guerisseurs pratiquant la divination sikidy), des pasteurs protestants (influence britannique dominante depuis le XIXe siecle), des pretres catholiques romains, et, dans certaines regions, des oulemas musulmans. Syncretisme prononce entre pratiques traditionnelles et christianisme."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte merina)",
-      "vehicularRole": "Le malgache merina est la base de la langue officielle malgache. Le français est également utilisé."
+      "mainLanguage": "Malgache merina (dialecte Plateau, base du malgache officiel)",
+      "isoCodes": ["plt", "mlg"],
+      "dialects": [
+        "Merina standard (plt - Plateau Malagasy, base de la langue nationale officielle)",
+        "Parlers de l'Imerina du Nord (region de Mangoro)",
+        "Parlers urbains d'Antananarivo (influence du francais)"
+      ],
+      "vehicularRole": "Le dialecte merina (plt) constitue la base du malgache standard, l'une des deux langues officielles de Madagascar avec le francais (Constitution de 2010). Il est utilise par le gouvernement, les medias nationaux et l'enseignement public jusqu'en cinquieme annee. Il est compris et parle comme seconde langue par la plupart des autres groupes malgaches. Le francais reste la langue des affaires, de l'enseignement superieur et de l'administration."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées au riz",
-      "Symboles": "Symboles royaux merina, symboles liés au riz, symboles chrétiens et musulmans.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (valiha, sodina)",
-      "source_5": "Danse traditionnelle (hira gasy)",
-      "source_6": "Poésie orale (hainteny)",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+      "majorRites": "Famadihana (retournement des morts) : ceremonie organisee tous les cinq a sept ans, consistant a exhumer les restes des ancetres, a les enrouler dans des linceuls neufs, a inscrire leurs noms sur le tissu et a danser en portant les corps au-dessus des tetes avant de les replacer dans le tombeau familial. Circoncision (famorana) : rite de passage masculin dans les sept premieres annees, accompagne d'invocations aux ancetres et de festins. Mariage traditionnel (fampakaram-bady) : rituel d'alliance entre familles avec echanges de cadeaux et kabarimba (discours oraux formalises). Ceremonies liees au riz (rituel masina) : le riz est sacre, symbole de morale et de prosperite.",
+      "symbols": "Tombeau familial (fasana) comme symbole d'appartenance au lignage et a la terre ancestrale. Le lamba (etoffe de soie traditionnelle) comme signe d'identite culturelle et de statut. La colline d'Ambohimanga (patrimoine mondial UNESCO) comme berceau sacre du royaume. Le zebo (zebu) comme richesse et signe de prestige lors des ceremonies. Le riz (vary) comme aliment sacre et embleme de l'identite merina.",
+      "artsAndMusic": "Hira gasy : spectacle musical d'une journee entiere combinant chants en harmonie (renihira), danses acrobatiques (dihy), kabary (discours oraux uses des proverbes, ohabolana) et musique a base de violons, trompettes et tambours. Origine a la cour d'Andrianampoinimerina (fin XVIIIe siecle). Hainteny : tradition de poesie orale en joutes verbales metaphoriques. Valiha : cithare tubulaire en bambou, instrument national malgache. Sodina : flute traversiere en bambou. Artisanat : tissage de la soie (lamba mena), broderie, tressage de paniers et de nattes (vanona).",
+      "spiritualities": "Syncretisme entre le culte des ancetres (razana) traditionnel, le christianisme protestant (majoritaire chez les Merina depuis le XIXe siecle, avec influence de la London Missionary Society) et des elements de l'islam. Le hasina designe la force sacree et morale emanant des ancetres et du roi. La pratique du sikidy (geomancie par graines) reste vivace parmi les ombiasy. Croyance en les esprits des premiers habitants Vazimba, dotes de pouvoirs magiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora merina dans les grandes villes malgaches et dans les pays occidentaux (France, Canada, États-Unis)."
+      "kingdomsOrChiefdoms": "Royaume de l'Imerina (XVIe-XIXe siecles) : fonde par Andriamanelo, centralise et developpe par Andrianampoinimerina (vers 1785-1810) qui reunifie les quatre royaumes en guerre. Radama I (1792-1828) etend la domination merina sur presque toute l'ile par des strategies militaires, des traites et des alliances. La capitale Antananarivo reste la capitale nationale. Le royaume inclut un systeme d'irrigation avance et une administration bureaucratique. La monarchie merina est l'un des trois grands royaumes de l'ile avec ceux des Sakalava (ouest) et des Betsimisaraka (est).",
+      "relationsWithNeighbors": "Relations complexes avec les autres groupes : raids d'esclaves subis par les Sakalava et les Bezanozano au XVIIIe siecle. Alliance avec les Britanniques (reconnaissance de la souverainete en 1817, missionaries LMS). Commerce et tensions avec les marchands arabes et swahilis. Apres la conquete de Radama I, imposition du systeme de fanompoana (travail force) aux peuples soumis. Les Tsimihety restent difficiles a controler. Post-independence : les Merina constituent l'elite educative et economique, ce qui genere des tensions intercommunautaires.",
+      "conflictsOrAlliances": "Guerres civiles merina du XVIIIe siecle fournissant des esclaves aux marches arabes et mascarenais. Raids contre les Sakalava et les Bezanozano. Deux guerres franco-merina : 1883-1885 (cession de Diego-Suarez, indemnite de 560 000 francs or) et 1895 (prise d'Antananarivo, protectorat puis annexion 1896). Insurrection nationaliste Vy Vato Sakelika (1913-1915). Famine de 1943-1944 entrainant une rebellion sous occupation japonaise. Rebellion de 1947 contre la France.",
+      "diaspora": "Diaspora merina concentree dans les grandes villes malgaches (Tamatave, Mahajanga, Toliara, Fianarantsoa) ou ils occupent souvent des postes dans le commerce, l'administration et l'enseignement. Diaspora internationale en France, au Canada, aux Etats-Unis et a la Reunion, principalement composee de personnes educuees et de la classe moyenne."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 7000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Ethnologue (SIL International, 2024) : 10 893 000 locuteurs du dialecte Plateau Malagasy (plt), incluant des non-Merina. Estimation ethnique Merina stricte : 5-7 millions. CIA World Factbook : les Merina et Betsileo apparentees representent la composante malayo-indonesienne dominante de Madagascar. Population totale Madagascar 2025 : environ 30 millions (Banque mondiale).",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 7000000,
+          "notes": "Concentres sur les hautes terres centrales (province d'Antananarivo) et dans les grandes villes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches",
-      "Études historiques sur le royaume Merina"
+      "Wikipedia EN - Merina people : https://en.wikipedia.org/wiki/Merina_people",
+      "Wikipedia EN - Famadihana : https://en.wikipedia.org/wiki/Famadihana",
+      "Wikipedia EN - Hira gasy : https://en.wikipedia.org/wiki/Hira_gasy",
+      "Wikipedia EN - Malagasy language : https://en.wikipedia.org/wiki/Malagasy_language",
+      "SIL Ethnologue - Plateau Malagasy (plt) : https://www.ethnologue.com/language/plt/",
+      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
+      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "UNESCO - Colline d'Ambohimanga, patrimoine mondial : https://whc.unesco.org/fr/list/950/",
+      "Banque mondiale - Madagascar : https://data.worldbank.org/country/madagascar"
     ]
   }
 }

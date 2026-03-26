@@ -6,63 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Sukuma",
-      "selfAppellation": "Sukuma",
-      "exonyms": ["Sukuma (terme utilisé par les Européens)"],
+      "selfAppellation": "Basukuma (pluriel) / Musukuma (singulier)",
+      "exonyms": [
+        "Wanyamwezi du Nord (terme parfois utilisé pour l'ensemble Nyamwezi-Sukuma)",
+        "People of the North (traduction littérale)"
+      ],
+      "originOfExonyms": "Le nom Sukuma signifie littéralement nord en kisukuma. C'est un terme de localisation géographique utilisé pour se distinguer des Nyamwezi (peuple du sud). Lorsqu'ils s'adressent aux étrangers, les Sukuma s'identifient parfois comme Wanyamwezi, réservant le terme Sukuma aux relations intragroupes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Sukuma est aujourd'hui universellement utilisé en Tanzanie pour désigner ce groupe. Le terme Basukuma est l'auto-désignation officielle. Leur territoire est appelé Sukumaland ou Busukuma.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone F)",
-      "historicalRegion": "Tanzanie",
+      "ethnoLinguisticGroup": "Bantou (Zone F, branche Nyamwezi-Sukuma)",
+      "historicalRegion": "Sukumaland (régions de Mwanza, Shinyanga et Simiyu, sud du lac Victoria, Tanzanie nord-occidentale)",
       "currentCountries": ["TZA"]
     },
     "ethnicities": [
-      "Sukuma du Nord",
-      "Sukuma du Sud",
-      "Sous-groupes régionaux"
+      "Sukuma du Mwanza (noyau principal, autour du lac Victoria)",
+      "Sukuma du Shinyanga (secteur est, région cotonnière)",
+      "Sukuma du Simiyu (région méridionale)",
+      "Sukuma du Geita (expansion coloniale vers l'ouest)",
+      "Sukuma de Nzega et Igunga (expansion vers le sud, région de Tabora)",
+      "Communautés Sukuma en Zambie (migration récente)"
     ],
     "origins": {
-      "ancientOrigins": "Les Sukuma sont originaires de la région de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone F).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Sukuma font partie du complexe ethno-culturel Nyamwezi-Sukuma de la Tanzanie nord-occidentale. Ils sont des agriculteurs et éleveurs bantous installés au sud du lac Victoria depuis plusieurs siècles. La tradition orale et les sources coloniales les présentent comme une branche des Nyamwezi qui se serait déplacée vers le nord-ouest pour fuir les raids de Mirambo, chef nyamwezi du XIXe siècle. Ils exploitaient des gisements de fer locaux, re-exportant des houes en fer vers Tabora. Au XIXe siècle, le royaume de Unyanyembe (capital Tabora), principal royaume nyamwezi, s'approvisionnait en viande bovine auprès des Sukuma.",
+      "formationPeriod": "L'identité sukuma s'est consolidée comme identité distincte des Nyamwezi avant la période coloniale allemande (fin XIXe siècle). L'organisation en multiples chefferies (ntemi) fut la forme politique dominante. La colonisation allemande (1890-1918) puis britannique (1918-1961) imposa des structures administratives qui codifièrent les identités ethniques. L'abolition des chefferies sukuma par le gouvernement tanzanien après l'indépendance (1961) entraîna une dispersion de regalia royaux qui furent collectés pour le Musée Sukuma.",
+      "migrationRoutes": [
+        "Expansion bantoue vers la région du lac Victoria (premier millénaire apr. J.-C.)",
+        "Fuite possible vers le nord-ouest pour échapper aux raids de Mirambo (XIXe siècle)",
+        "Prise de contrôle de la région de Geita dans la province de Mwanza (époque coloniale)",
+        "Migration vers le sud (district de Nzega et Igunga) et les hautes terres méridionales"
+      ],
+      "historicalSettlementZones": [
+        "Rives méridionales du lac Victoria (Mwanza)",
+        "Région de Shinyanga (est du Sukumaland)",
+        "Région de Simiyu (centre du Sukumaland)",
+        "Région de Geita (expansion vers l'ouest)",
+        "Districts de Nzega et Igunga (expansion vers le sud)"
+      ],
+      "unificationsOrDivisions": "Les Sukuma n'ont jamais formé un État unifié. Ils étaient organisés en de nombreuses chefferies (ntemi) indépendantes, parfois en confédérations lâches. Cette décentralisation politique explique leur identité fragmentée. Le gouvernement tanzanien post-indépendance abolit les chefferies natales en 1963, marquant une rupture institutionnelle. Le Musée Sukuma de Bujora est devenu un espace de réunification culturelle.",
+      "externalInfluences": "Commerce caravanier arabe et swahili (XIXe siècle). Colonisation allemande (1890-1918) : imposition du coton comme culture de rente. Administration britannique (1918-1961) : culling (abattage) de bétail par les autorités coloniales. Missionnaires catholiques (Pères Blancs, MCCJ) depuis les années 1880. Influence du swahili comme lingua franca nationale après l'indépendance. Islam présent dans les zones commerciales.",
+      "majorHistoricalEvents": "XIXe siècle : raids de Mirambo (roi nyamwezi) affectant les Sukuma. 1892 : épidémie de rinderpest décimant les troupeaux bovins. Années 1890 : colonisation allemande. 1918 : mandat britannique sur le Tanganyika. 1954 : fondation de la paroisse de Bujora par le père David Clement, début du travail de collecte culturelle. 1961 : indépendance de la Tanzanie ; abolition des chefferies sukuma en 1963. 1968 : ouverture du premier bâtiment du Musée Sukuma (Homestead) à Bujora. 1981 : création du système de vigilance communautaire Sungusungu par les Sukuma et Nyamwezi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation traditionnelle en multiples chefferies héréditaires (ntemi, pluriel : batemi). Chaque ntemi était un chef spirituel et politique à la fois, contrôlant la pluie, la fertilité des terres et la protection contre les maladies. Les chefs maintenaient des objets rituels de pouvoir (dawa, médecines, tambours royaux). En 1963, le gouvernement tanzanien abolit les chefferies pour des raisons idéologiques, transférant le pouvoir aux structures du parti TANU/CCM.",
+      "clanOrganization": "Organisation en clans patrilinéaires avec des totems. Les Sukuma sont divisés en de nombreux clans, chacun associé à une chefferie particulière. Le système de clans réglemente les alliances matrimoniales (exogamie clanique). Les familles étendues forment des unités résidentielles.",
+      "ageClassSystems": "Les sociétés de danse (Bagika et Bagalu) jouent un rôle similaire aux systèmes de classes d'âge, organisant les jeunes hommes en groupes compétitifs avec des rôles cérémoniels et sociaux définis.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent la succession, les droits fonciers et l'organisation sociale. Les ancêtres du lignage (mizimu) sont honorés par des sacrifices et des cérémonies régulières.",
+      "religiousAuthority": "Les chefs (batemi) exerçaient une autorité religieuse sur les rituels agraires et les cérémonies de pluie. Les guérisseurs traditionnels (waganga) restent des figures d'autorité spirituelle. L'Église catholique est présente depuis la fin du XIXe siècle. Le syncrétisme entre animisme sukuma (croyance en la possession par les esprits) et christianisme est commun."
     },
     "languages": {
-      "mainLanguage": "Sukuma",
-      "vehicularRole": "Le sukuma est parlé par la majorité des Sukuma. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kisukuma (Sukuma)",
+      "isoCodes": ["suk"],
+      "dialects": [
+        "KimunaSukuma (dialecte occidental, Mwanza)",
+        "GimunaNtuzu / GinaNtuzu (dialecte nord-est)",
+        "JinaKiiya / JimunaKiiya (dialecte sud-est)",
+        "Dialectes de transition vers le kisukuma central"
+      ],
+      "vehicularRole": "Le kisukuma est parlé par environ 8 à 10 millions de personnes (2016, Ethnologue SIL), soit environ 16% de la population tanzanienne, faisant des Sukuma le groupe ethnique le plus nombreux de Tanzanie. Les dialectes sont mutuellement intelligibles. Le swahili est la langue nationale et véhiculaire utilisée dans l'éducation, l'administration et les échanges interethniques. Le kisukuma est étroitement apparenté au kinyamwezi mais les locuteurs maintiennent des identités linguistiques distinctes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sukuma, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Danses d'initiation des Bagika (société du python, danses avec pythons sacrés) et des Bagalu (société rivale des Bagika) : ces deux sociétés de danse sont des institutions centrales de la vie culturelle sukuma. Le Bulabo (Corpus Christi sukuma) est un festival annuel de danse maintenu par le Musée de Bujora réunissant les deux sociétés. Rituels de divination et de guérison (ngoma) pratiqués par les waganga (médecins traditionnels). Rituels de pluie et de fertilité agricole conduits par les chefs ntemi. Cérémonies funéraires incluant chants, danses et libations pour honorer les ancêtres du lignage (mizimu).",
+      "symbols": "Python (emblème de la société Bagika, symbole de fertilité et de puissance ancestrale). Tambours royaux (ngoma ya ntemi, symboles du pouvoir chiefly, conservés au Musée Sukuma de Bujora). Lupingu (amulette ancestrale pour la lignée maternelle, motif traduit dans l'architecture de l'église de Bujora). Kafula (objet de pouvoir de la société Bagalu). Houe en fer (symbole d'agriculture et d'industrie ferronnière historique).",
+      "artsAndMusic": "Danse du python (bazwilili bayeye) : cérémonie de la société Bagika consistant à danser avec des pythons sacrés, symbole de bravoure et de connexion ancestrale ; filmée par des chercheurs et visiteurs depuis Bujora. Danse des Bagalu : société rivale avec costumes, chants et tambours distinctifs. Nyegere : danse traditionnelle sukuma accompagnée de tambours. Compétitions de danse annuelles entre les sociétés Bagika et Bagalu (Bulabo). Chants ngoma (chants cérémoniels accompagnant rituels de guérison et funérailles). Artisanat : poterie, sculpture sur bois, travail du fer, tressage. Le Musée Sukuma de Bujora (fondé 1968 par le père David Clement, MCCJ, avec le soutien du Dartington Hall Trust) conserve des costumes, tambours, regalia royaux et objets rituels.",
+      "spiritualities": "Les Sukuma croient en la possession par les esprits (mizimu, esprits ancestraux) et ont une vision holistique du monde interconnectant le visible et l'invisible, les vivants et les morts. Les sacrifices aux ancêtres sont pratiqués pour obtenir protection et fertilité. Les waganga (médecins-devins) diagnostiquent et traitent les maladies en communiquant avec les esprits. Le christianisme (majoritairement catholique, introduit par les Pères Blancs à la fin du XIXe siècle) coexiste avec ces croyances dans un syncrétisme vivant. L'islam est présent dans les zones commerciales de Mwanza."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sukuma dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Sukuma étaient organisés en dizaines de petites chefferies (ntemi) indépendantes, sans état centralisé. Les chefferies de Ntuzu, Sima et Busumabu sont documentées. Les chefs ntemi conservaient des regalia royaux (tambours sacrés, médecines, costumes) symbolisant leur autorité spirituelle et politique. Après l'abolition des chefferies en 1963, le Musée de Bujora récupéra une partie de ces regalia.",
+      "relationsWithNeighbors": "Relations commerciales et parfois conflictuelles avec les Nyamwezi voisins (complexe Nyamwezi-Sukuma). Relations commerciales avec les caravaniers swahili et arabes (XIXe siècle). Contacts avec les Haya, Zinza, Sumbwa et Kerewe autour du lac Victoria. Les Sukuma et Nyamwezi co-fondèrent le système Sungusungu en 1981.",
+      "conflictsOrAlliances": "XIXe siècle : raids de Mirambo (roi nyamwezi) provoquant des déplacements sukuma. Résistance à la colonisation allemande. 1981 : fondation du Sungusungu (Sungu Sungu) : système de vigilance villageoise communautaire créé par les Sukuma et les Nyamwezi pour lutter contre les vols de bétail. Organisé en milice locale avec plus de 6 000 membres recensés en 1983, ce système autogéré s'est étendu à d'autres régions de Tanzanie et fut reconnu par l'État tanzanien dans les années 1980-1990.",
+      "diaspora": "Migrations internes en Tanzanie vers Dar es Salaam et d'autres villes. Migrations vers le sud en Zambie et dans les hautes terres méridionales tanzaniennes. Pas de diaspora internationale significative documentée."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 10000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue SIL (2016 : 8,1 millions de locuteurs kisukuma). Estimation 2025 : environ 10 millions soit 16% de la population tanzanienne. WorldAtlas — Ethnic Groups of Tanzania. Joshua Project — Sukuma in Tanzania.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 10000000,
+          "note": "Sukumaland (régions de Mwanza, Shinyanga, Simiyu, Geita) ; plus grande ethnie de Tanzanie, environ 16% de la population nationale"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sukuma language (suk)",
-      "CIA World Factbook – Tanzania",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Sukuma people. https://en.wikipedia.org/wiki/Sukuma_people",
+      "Wikipedia EN — Sukuma language. https://en.wikipedia.org/wiki/Sukuma_language",
+      "Sukuma Museum — History, Context and Identity. https://sukumamuseum.org/the-history-context-and-identity-of-the-sukuma-museum/",
+      "SIL Ethnologue — Sukuma (suk). https://www.ethnologue.com/language/suk/",
+      "Glottolog — Sukuma. https://glottolog.org/resource/languoid/id/suku1261",
+      "WorldAtlas — Ethnic Groups of Tanzania. https://www.worldatlas.com/articles/ethnic-groups-of-tanzania.html",
+      "Joshua Project — Sukuma in Tanzania. https://joshuaproject.net/people_groups/15112",
+      "Abrahams, R.G. (1987) — Sungusungu : State-Sponsored Village Vigilante Groups among the Nyamwezi and Sukuma. http://utamaduni.dk/arkiv/wp-content/uploads/2014/03/Sungusung.pdf",
+      "African Spice Safaris — Bujora Sukuma Museum tour. https://africanspicesafaris.com/tour/mwanza-historical-cultural-day-tour-sukuma-museum-bujora/"
     ]
   }
 }

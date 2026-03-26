@@ -6,59 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Ronga (Mozambique)",
-      "selfAppellation": "Ronga",
-      "exonyms": ["Ronga (terme utilisé par les Européens)"],
+      "selfAppellation": "Varhonga",
+      "exonyms": [
+        "Ronga (terme des administrateurs et linguistes europeens, notamment Henri-Alexandre Junod)",
+        "XiRonga (nom de la langue parfois utilise pour designer le peuple)",
+        "Thonga / Rhonga (formes anciennes utilisees dans les sources portugaises et missionnaires)",
+        "Maputo people (designation informelle liee a la capitale)"
+      ],
+      "originOfExonyms": "Henri-Alexandre Junod (1863-1934), philologue suisse de la Mission romande, a ete le premier linguiste a etudier la langue et le peuple ronga en profondeur a la fin du 19e siecle, fixant le terme 'Ronga' dans la litterature scientifique. Les sources portugaises du 16e siecle mentionnaient deja la chefferie Mpfumo et ses voisines autour de la baie de Delagoa sous des designations diverses. L'ethnonyme 'Varhonga' (peuple ronga) est l'appellation endogene.",
+      "whyProblematic": "Les Ronga du Mozambique ont souvent ete engloutis dans la categorie administrative 'Tsonga' lors des recensements coloniaux et post-independance, effacant leur specificite. Leur proximite linguistique avec le Xitsonga (Shangaan) a conduit certains a les traiter comme un sous-groupe shangaan plutot que comme un peuple distinct. Les Ronga eux-memes insistent sur leur identite distincte et leur anteriorite dans la region de Maputo par rapport aux groupes Shangaan arrives avec Soshangane au 19e siecle.",
+      "contemporaryUsage": "Au Mozambique, les Varhonga sont generalement reconnus comme groupe distinct de la province de Maputo. La langue XiRonga beneficie d'une reconnaissance dans les programmes educatifs mozambicains. La ville de Maputo s'appelait originellement Lourenco Marques (nom portugais de l'explorateur) et son nom actuel (Maputo) derive du nom de la riviere Maputo, liee au territoire historique ronga. Les noms de famille Mpfumo, Hon'wana, Tembe, Livombo et Maxava sont des marqueurs identitaires ronga reconnus.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Mozambique",
+      "ethnoLinguisticGroup": "Bantou Tsonga-Ronga (Zone S, S.53), branche mozambicaine du sous-groupe ronga de la famille tsonga",
+      "historicalRegion": "Province de Maputo (Mozambique) et son arriere-pays immediat : baie de Maputo (Delagoa Bay), fleuves Maputo, Incomati et Umbeluzi. Les chefferies Mpfumo, Tembe, Nyaka et Manyisa sont documentees dans cette region des le 16e siecle. La ville de Maputo (ex-Lourenco Marques) se situe sur le territoire ancestral de la chefferie Mpfumo.",
       "currentCountries": ["MOZ"]
     },
-    "ethnicities": ["Ronga du Nord", "Ronga du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Varhonga de Maputo — groupe central de la capitale et de sa peripherie (Matola, Boane)",
+      "Clan Mpfumo — chefferie fondatrice de Maputo, dont les membres portent le patronyme Mpfumo",
+      "Clan Tembe — chefferie des rives meridionales, donnant naissance au Royaume Tembe",
+      "Clan Nyaka — chefferie documentee dans les sources portugaises du 16e siecle",
+      "Clan Manyisa — chefferie historique de la region de Maputo",
+      "Clan Ngomane — chefferie de la region de Maputo",
+      "Varhonga de Gaza (district de Xai-Xai) — ronga du sud de la province de Gaza"
+    ],
     "origins": {
-      "ancientOrigins": "Les Ronga du Mozambique sont originaires de la région du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Ronga d'Afrique du Sud.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Varhonga du Mozambique sont les habitants bantous autochtones de la region de la baie de Maputo (Delagoa Bay), dont la presence est documentee des les premieres descriptions europeennes de la region (Vasco de Gama, 1498 ; explorateurs portugais du 16e siecle). Ils font partie du grand ensemble Vatsonga (peuples tsonga) qui s'est developpe dans la region au cours du premier millenaire de l'ere commune. Les chefferies Mpfumo, Tembe, Nyaka et Lebombo, mentionnees dans les sources portugaises du 16e siecle, etaient deja des entites politiques etablies de taille considerable. La chefferie Mpfumo, situee exactement sur le site de l'actuelle Maputo, est l'une des mieux documentees.",
+      "formationPeriod": "L'identite Ronga du Mozambique s'est developpee sur plusieurs siecles, ancree dans la region de Delagoa Bay. L'intensification des contacts avec les Portugais a partir de 1544 (fondation du premier comptoir a Lourenco Marques) a contribue a fixer l'identite ronga par opposition aux autres groupes tsonga. La periode 1820-1895 (Empire de Gaza sous Soshangane puis Ngungunyane) a marque une rupture : les Ronga ont ete soumis a l'autorite nguni-tsonga de Gaza avant la defaite de Ngungunyane face aux Portugais en 1895.",
+      "migrationRoutes": [
+        "Migrations proto-Tsonga depuis l'Afrique de l'Est (Grands Lacs) — etablissement dans la region de Delagoa Bay en plusieurs vagues",
+        "Installation definitive des principales chefferies ronga dans la region de Maputo avant le 15e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Ville de Maputo (ex-Lourenco Marques) et peripherie — territoire ancestral de la chefferie Mpfumo",
+        "Province de Maputo : districts de Maputo, Matola, Boane, Moamba, Namaacha, Matutuine",
+        "Cote nord de la baie de Maputo — territoire Tembe et Nyaka",
+        "Sud de la province de Gaza — frange ronga meridionale"
+      ],
+      "unificationsOrDivisions": "Les chefferies ronga du Mozambique ont fonctionne de maniere autonome sans former d'Etat centralise. La pression de l'Empire de Gaza (1820-1895) a amene certaines chefferies a collaborer pour resister ou a payer tribut. Apres 1895 (defaite de Ngungunyane), les Portugais ont reorganise les structures politiques dans le cadre de l'administration coloniale. L'independance du Mozambique (1975) et la nouvelle constitution ont reconnu les autorites traditionnelles dans un cadre legal modernise.",
+      "externalInfluences": "La colonisation portugaise a ete l'influence externe la plus profonde : Lourenco Marques (Maputo) est devenu le principal port et capitale de la colonie. La langue XiRonga a absorbe plus de termes portugais que tout autre dialecte tsonga. La Mission romande suisse (a partir de 1887) a produit les premieres traductions bibliques en xironga (Evangile de Jean, 1896 ; Bible complete, 1923). L'independance du Mozambique (1975) a introduit l'ideologie socialiste du FRELIMO qui a decourage les structures traditionnelles. La guerre civile (RENAMO vs FRELIMO, 1977-1992) a profondement desorganise les communautes rurales.",
+      "majorHistoricalEvents": "1498 : Vasco de Gama mouille dans la baie de Delagoa et entre en contact avec les populations ronga. 16e-18e siecles : chefferies ronga (Mpfumo, Tembe, Nyaka) commercent avec les Portugais en ivoire. 1787 : fondation formelle du comptoir de Lourenco Marques par les Portugais. 1820s : invasion de Soshangane, soumission partielle des chefferies ronga a l'Empire de Gaza. 1895 : Combat de Marracuene et campagne portugaise contre Ngungunyane — defaite de l'Empire de Gaza, retablissement de l'autorite portuguaise. 1975 : Independance du Mozambique, Lourenco Marques rebaptisee Maputo. 1977-1992 : Guerre civile mozambicaine avec impacts devastateurs sur les provinces de Maputo et Gaza."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe Ronga du Mozambique est organisee en chefferies (vukanyi) dirigees par un hosi (chef traditionnel). La chefferie Mpfumo est la plus importante historiquement, ses chefs etant les dirigeants traditionnels de la region de Maputo. Les indunas (conseillers et chefs de villages) assistent le hosi. La justice coutumiere est rendue par le hosi en conseil d'anciens. L'Etat mozambicain reconnait formellement les autorites traditionnelles (hosi et indunas) depuis la loi de 2000 sur les autorites communautaires.",
+      "clanOrganization": "La societe est organisee en clans patrilineaires identifies par des noms de famille : Mpfumo, Hon'wana, Tembe, Livombo (Lebombo), Maxava, Ngomane, Nyaka. Chaque clan a ses obligations rituelles, ses totems et ses regles matrimoniales. L'exogamie clanique est la regle : on ne peut epouser quelqu'un du meme clan. Les mariages sont scelles par le lobola (dot).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (vana va nuna = enfants du male) regissent l'acces a la terre, la transmission des biens et les obligations rituelles. Les vadzimu (ancetres) du lignage sont veneres lors de ceremonies de propitiation. La lobola (dot en betail ou en equivalents) cree des liens formels entre lignages a l'occasion des mariages. En milieu urbain (Maputo, Matola), les structures de lignage subsistent sous des formes adaptees.",
+      "religiousAuthority": "L'autorite religieuse traditionnelle appartient aux nganga (guerisseurs-devins, aussi appeles curandeiros en portugais mozambicain). Ils pratiquent la divination (ku bula) et les ceremonies de propitiation pour les ancetres (vadzimu). Le Mozambique reconnait officiellement le role des curandeiros dans le systeme de sante depuis 1992. Les Eglises chretiennes — protestante (mission suisse romande, igleja presbyteriana de Mocambique) et catholique — ont une forte presence. Les Eglises prophetiques africaines independantes sont egalement tres actives a Maputo."
     },
     "languages": {
-      "mainLanguage": "Ronga",
-      "vehicularRole": "Le ronga est parlé par la majorité des Ronga du Mozambique. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "XiRonga / Xizronga",
+      "isoCodes": ["rng"],
+      "dialects": [
+        "Xinondzrwana — dialecte de la zone nord de la province de Maputo",
+        "Xizingili — dialecte du groupe Zingili, cote occidentale de la baie de Maputo",
+        "Xihlanganu — dialecte de transition vers le Xitsonga, province de Gaza",
+        "Xilwandle — dialecte cotier de la baie de Maputo"
+      ],
+      "vehicularRole": "Le XiRonga est parle dans la province de Maputo (capitale nationale et sa region). Il se distingue du Xitsonga par une plus grande integration de termes portugais, consequence de la presence portugaise au coeur du territoire ronga depuis le 16e siecle. Le philologue Henri-Alexandre Junod (Mission romande) a ete le premier a en produire une etude grammaticale. La Bible complete en XiRonga a ete publiee en 1923 par la British and Foreign Bible Society. Aujourd'hui, le Portugais est la langue officielle et d'enseignement au Mozambique ; le XiRonga est enseigne dans certaines ecoles primaires de la province de Maputo dans le cadre du programme d'education bilingue mozambicain. Le nombre de locuteurs est estime entre 700 000 et 800 000."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ronga, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le lobola (dot matrimoniale traditionnelle, en xironga : teka) est le rite social fondamental, scellant les alliances entre familles et garantissant le statut de la femme dans le lignage de son mari. Les ceremonies funeraires (ntsamelo = enterrement) comprennent des veillees, des chants rituels et des sacrifices d'animaux pour les ancetres vadzimu. Le ku phahla (offrande et invocation aux ancetres) est accompli par le chef de famille lors des moments cles : debut de plantation, mariage, maladie, voyage. Les rites de pubertes existent pour les filles (marquant leur entree dans le monde des femmes adultes). La divination (ku bula) par un nganga est consultee lors de maladies, de conflits ou de decisions importantes. Les ceremonies de fin de deuil (un an apres le deces) impliquent un repas collectif et des rituels de liberation de l'esprit du defunt.",
+      "symbols": "La riviere Maputo et la baie de Delagoa sont des references geographiques identitaires centrales pour les Ronga du Mozambique. Les masques et statuettes ancestrales sont utilises dans les ceremonies des nganga. Le betail (ngombe) reste le symbole traditionnel de richesse pour le lobola, bien que les equivalents monetaires soient devenus courants. La capulana (piece de tissu a motifs colores) est le vetement traditionnel feminin par excellence, portee lors des ceremonies et evenements sociaux. Les perles (mikhonto) sont portees lors des rites.",
+      "artsAndMusic": "La musique ronga du Mozambique comprend le chant choral (swikwembu = chants ancestraux), les percussions (tambours ngoma), et les instruments a lames (mbila / timbila, xylophone a resonateurs de calebasse, technique proche de celle des Chopi voisins). Les danses collectives (ku bina) sont pratiquees lors des ceremonies importantes. La timbila est inscrite au Patrimoine immatériel de l'UNESCO (2005). La poesie orale (mahungu = proverbes, ntlango = contes) transmet les valeurs et l'histoire. L'artisanat traditionnel comprend la vannerie (paniers, nattes en feuilles de palmier), la poterie, et le travail du metal (bijoux). La capulana est aussi un support d'expression artistique (motifs imprimes identifies au groupe ou a l'occasion).",
+      "spiritualities": "La cosmologie Ronga du Mozambique est fondee sur le lien avec les ancetres (vadzimu) qui protegent ou punissent les vivants selon leurs comportements. Les maladies inexpliquees et les malheurs sont souvent interpretes comme un signal des ancetres ou l'oeuvre de sorciers (baloyi). Les nganga (curandeiros) diagnostiquent par la divination et prescrivent des remedes traditionnels et des ceremonies. Le christianisme (protestante presbyterienne — heritiere de la Mission romande — et catholique) est tres repandu, souvent combine aux pratiques ancestrales. Les Eglises prophetiques africaines independantes (Zion, apostoliques) ont une implantation forte a Maputo et integrent des elements de guerison spirituelle ancestrale dans un cadre chretien."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ronga dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "La chefferie Mpfumo est la plus emblematique : elle occupait le site de l'actuelle Maputo et a interagi avec les Portugais depuis le 16e siecle. Son influence s'etendait sur la baie de Delagoa et ses alentours immediats. La chefferie Tembe au sud de la baie a donne naissance au Royaume Tembe, l'une des principales puissances de la region. Ces chefferies constituaient les interlocuteurs ronga des Portugais pour le commerce de l'ivoire et l'administration coloniale. Sous l'Empire de Gaza (1820-1895), les Ronga ont ete progressivement assujettis a l'autorite nguni de Soshangane puis de Ngungunyane, tout en maintenant leurs structures claniques.",
+      "relationsWithNeighbors": "Les Ronga du Mozambique ont entretenu des relations avec les groupes tsonga voisins (Tswa, Hlengwe, Shangaan) par le commerce et les mariages interethniques. Les contacts avec les Portugais de Lourenco Marques etaient commerciaux et diplomatiques depuis le 16e siecle. Les Zulu du Natal entretenaient des liens commerciaux via la route de la baie de Delagoa. La chefferie ronga de Maputo etait entouree d'autres chefferies apparentees — Matutuine, Inhaca, Capela — avec lesquelles elle partageait autorite et obligations rituelles.",
+      "conflictsOrAlliances": "Combat de Marracuene (1894-1895) : affrontement entre des soldats ronga allies aux Portugais et les guerriers de l'Empire de Gaza de Ngungunyane. La defaite de Ngungunyane lors de la campagne portugaise de 1895 (operations d'Ennes) a mis fin a la domination de Gaza sur les chefferies ronga. Des chefs ronga (comme Mahazule Mbayaya de la region de Maputo) ont resiste a l'autorite portugaise jusqu'aux dernieres phases de la 'pacification'. La guerre d'independance du Mozambique (1964-1974) et la guerre civile (1977-1992) ont des impacts directs sur les Ronga de la province de Maputo.",
+      "diaspora": "La ville de Maputo est elle-meme le territoire ancestral des Ronga, de sorte que la migration interne n'est pas constitute de diaspora au sens strict. La migration de travail vers les mines de l'Afrique du Sud a concerne de nombreux hommes ronga au 20e siecle. La guerre civile (1977-1992) a provoque des deplacements vers Maputo (exode rural), le Swaziland et l'Afrique du Sud. Des communautes mozambicaines en diaspora (France, Portugal, Afrique du Sud) comprennent des membres d'origine ronga."
     },
     "demography": {
       "totalPopulation": 800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (langue rng) ; Instituto Nacional de Estatistica de Mocambique (INE) — recensements 1997, 2007, 2017. Les Ronga du Mozambique sont principalement concentres dans la province de Maputo (Maputo ville et province de Maputo). Estimation 2025 basee sur la croissance demographique du Mozambique.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 800000,
+          "note": "Province de Maputo (Maputo ville, Matola, Boane, Moamba, Namaacha, Matutuine) et sud de la province de Gaza. La ville de Maputo elle-meme concentre une grande partie de la communaute ronga urbaine."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ronga language (rng)",
-      "CIA World Factbook – Mozambique",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ronga language. https://en.wikipedia.org/wiki/Ronga_language",
+      "SIL Ethnologue — Ronga (rng). https://www.ethnologue.com/language/rng/",
+      "Junod, Henri-Alexandre — The Life of a South African Tribe (2 volumes, 1912-1913). https://archive.org/",
+      "Wikipedia EN — Tembe Kingdom. https://en.wikipedia.org/wiki/Tembe_Kingdom",
+      "Kronos — Photographic Narrations and the Visual Struggle for Mozambique. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-01902020000100009",
+      "British and Foreign Bible Society — Ronga Bible (1923)",
+      "Instituto Nacional de Estatistica de Mocambique — www.ine.gov.mz",
+      "Maputo Essential Tours — Ethnic Groups of Mozambique. https://www.maputoessentialtours.com/general-4",
+      "Wikipedia EN — Tsonga people. https://en.wikipedia.org/wiki/Tsonga_people"
     ]
   }
 }

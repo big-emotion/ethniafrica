@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Alagwa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Alagwa (Alaagwa'isa pour leur propre langue)",
+      "exonyms": ["Wasi", "Waasi", "Chasi", "Asi", "Alawa"],
+      "originOfExonyms": "Wasi et Waasi sont des exonymes swahilis (préfixe pluriel Wa-). Chasi est le nom swahili de leur langue (préfixe de classe 7 Ch-). Alawa est la forme utilisée par les Iraqw voisins. Asi résulte de la suppression des préfixes swahilis en anglais.",
+      "whyProblematic": "Le terme Wasi/Waasi est couramment utilise en Tanzanie mais n'est pas l'auto-désignation du peuple. Durant la période coloniale et post-coloniale, les Alagwa ont souvent été confondus avec les Rangi, ce qui a contribue a effacer leur identité ethnique distincte.",
+      "contemporaryUsage": "Alagwa est le terme académique et de plus en plus utilise par le peuple lui-meme. En Tanzanie, ils restent souvent désignés comme Wasi ou Waasi dans les communications officielles. Le swahili est la langue véhiculaire dominante dans la région.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Couchitique méridional (Southern Cushitic), sous-groupe West-Rift",
+      "historicalRegion": "District de Kondoa, Région de Dodoma, Tanzanie centrale",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Alagwa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Alagwa descendent du groupe Iraqw des peuples couchitiques méridionaux. Selon les traditions orales, leurs ancêtres venaient de La Mecque (Maaka) et de régions de l'actuel Soudan du Sud. Selon les recherches linguistiques, les locuteurs couchitiques du sud ont migré depuis l'Éthiopie du sud-ouest vers le lac Turkana puis vers la Tanzanie vers 2000 avant J.-C., précédant les peuples bantous comme les Rangi et Nyaturu. Ils sont considérés par les Rangi comme les habitants originels de la région de Kondoa.",
+      "formationPeriod": "Migration vers la Tanzanie estimée autour de 2000 avant J.-C. pour les ancêtres couchitiques méridionaux. La communauté Alagwa spécifique s'est constituée dans la région de Kondoa au cours du 1er millénaire de notre ère.",
+      "migrationRoutes": [
+        "Migration depuis l'Éthiopie du sud-ouest vers le lac Turkana",
+        "Descente vers la Tanzanie centrale le long de la rivière Bubu (Duuduu)",
+        "Établissement autour du mont Hanang (district de Hanang, Manyara)"
+      ],
+      "historicalSettlementZones": [
+        "District de Kondoa (Ulaa), Région de Dodoma, Tanzanie",
+        "District de Hanang, Région de Manyara, Tanzanie",
+        "Région rocheuse entre la route Kondoa-Babati et la rivière Bubu"
+      ],
+      "unificationsOrDivisions": "Les Alagwa ont maintenu une identité distincte malgré une pression croissante d'assimilation par les Rangi depuis l'époque coloniale. De nombreux Alagwa ont été incorporés aux communautés Sandawe (comme faiseurs de pluie) et aux Rangi (clan Vaasinduu). La frontière ethnique avec les Rangi s'est progressivement brouillée, aboutissant a une situation de quasi-fusion perçue de l'extérieur.",
+      "externalInfluences": "Attaques des Datooga (peuple nilotique) qui ont provoqué des vagues de réfugiés alagwa vers les Sandawe. Contacts avec les commerçants swahilis et arabes dans la ville de Kondoa au 19e siècle, menant a la conversion a l'islam. Influence coloniale allemande puis britannique dans le district de Kondoa.",
+      "majorHistoricalEvents": "Attaques des Datooga et exode de réfugiés alagwa vers les Sandawe. Arrivée des commerçants arabes et swahilis a Kondoa dans la seconde moitié du 19e siècle. Période coloniale : les Alagwa ne figurent meme pas sur les cartes ethnographiques du Tanganyika (carte de Moffett 1958), témoignant de leur absorption perçue dans l'identité rangi. Indépendance de la Tanzanie (1961) : l'identité alagwa reste marginalisée dans la politique linguistique nationale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation patrilinéaire. Les Alagwa ont transmis aux Sandawe des réfugiés des pratiques de rainmaking (fabrication de pluie) et de transmission de lignages. Pas de chefferie centralisée documentée ; autorité dévolue aux chefs de lignages.",
+      "clanOrganization": "Système clanique patrilinéaire. Les descendants alagwa assimilés chez les Rangi forment principalement le clan Vaasinduu. Les descendants assimiles aux Sandawe détiennent des noms de clans de faiseurs de pluie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires régissent la filiation, le mariage et la transmission des terres. Les mariages mixtes alagwa-rangi ont historiquement conduit a l'assimilation dans l'identité rangi, le père déterminant l'appartenance ethnique.",
+      "religiousAuthority": "Pratiques de rainmaking (rituel de la pluie) héritées des ancêtres ; transmises aux communautés voisines comme les Sandawe. Les faiseurs de pluie occupent une position rituelle importante."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Alagwa",
+      "isoCodes": ["wbj"],
+      "dialects": [],
+      "vehicularRole": "La langue alagwa (Alaagwa'isa) est utilisée dans les villages et au foyer. Le swahili est la langue véhiculaire régionale et nationale. De nombreux Alagwa parlent aussi le rangi. La langue est classée comme menacée (endangered) par Ethnologue. Mous (2016) estime a un peu plus de 10 000 le nombre de locuteurs de langue maternelle."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituels de fabrication de pluie (rainmaking) transmis aux Sandawe voisins. Cérémonies funéraires et de naissance selon les traditions couchitiques méridionales. Mélange culturel avec les Gorowa, Sandawe, Datooga et Rangi.",
+      "symbols": null,
+      "artsAndMusic": "La région de Kondoa est célèbre pour ses peintures rupestres (rock art), patrimoine préhistorique partagé avec les communautés de la région. L'art vocal et les traditions orales constituent le patrimoine culturel principal.",
+      "spiritualities": "Majoritairement musulmans (islam sunnite), résultat des contacts avec les commerçants swahilis et arabes au 19e siècle. Selon le Joshua Project, environ 99,98% sont musulmans. Des pratiques religieuses traditionnelles persistent, notamment les rituels de pluie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documenté. Les Alagwa sont considérés comme les habitants originels du district de Kondoa, antérieurs a l'arrivée des Rangi.",
+      "relationsWithNeighbors": "Relations complexes avec les Rangi (assimilation progressive par mariage mixte), les Sandawe (transmission de pratiques de rainmaking et de clans), les Datooga (conflits et déplacements), les Gorowa et Burunge (cousins linguistiques couchitiques méridionaux). Swahili comme langue de contact commercial.",
+      "conflictsOrAlliances": "Conflits avec les Datooga ayant provoqué des déplacements de populations. Assimilation progressive dans la société rangi par le biais des mariages mixtes et de la domination économique et culturelle rangi.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 66000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 ; estimation Wikipedia 2022 : 52 816 ; Mous 2016 : environ 10 000 locuteurs de langue maternelle",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 66000,
+          "note": "Principalement district de Kondoa (Dodoma) et district de Hanang (Manyara)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Alagwa people – Wikipedia EN (https://en.wikipedia.org/wiki/Alagwa_people)",
+      "Joshua Project – Alagwa in Tanzania (https://joshuaproject.net/people_groups/10242)",
+      "Mous M., Alagwa : a South Cushitic language of Tanzania, 2016, Rüdiger Köppe Verlag (https://www.koeppe.de/titel_alagwa-a-south-cushitic-language-of-tanzania)",
+      "Gibson H. & Mous M., Exploring contact in Rangi- and Alagwa-speaking communities, 2024, LHEAF (https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf)",
+      "Ethnologue – Alagwa [wbj] (https://www.ethnologue.com/language/wbj/)",
+      "TanzaniaScripture.com – Alagwa History, Culture & Religion (https://tanzaniascripture.com/languages/alagwa/alagwa-history-culture-religion/)"
+    ]
   }
 }

@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Lala-Ambo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ambo",
+      "exonyms": ["Ambo", "Kambonsenga", "Bena Nyendwa Ambo"],
+      "originOfExonyms": "Le terme Ambo (aussi ecrit Hambo) est l'appellation propre du groupe. Kambonsenga est un nom regional alternatif mentionne dans la litterature ethnographique. Le terme Lala-Ambo est utilise dans les classifications linguistiques et ethnographiques pour souligner l'appartenance au groupe Lala-Bisa elargi.",
+      "whyProblematic": "Il ne faut pas confondre les Ambo de Zambie avec les Ambo (Ovambo) de Namibie et d'Angola, qui sont des peuples totalement differents. Les Ambo de Zambie sont un sous-groupe Lala de la Province de l'Est.",
+      "contemporaryUsage": "Ambo est l'appellation courante utilisee localement dans le district de Petauke. Lala-Ambo est prefere dans les contextes administratifs et academiques pour distinguer ce groupe des Ambo d'Afrique australe.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu du Centre, sous-groupe Lala",
+      "historicalRegion": "Province de l'Est, Zambie",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Lala-Ambo"],
+    "ethnicities": ["Ambo", "Lala-Ambo", "Kambonsenga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Ambo de Zambie sont un sous-groupe des Lala partageant les memes origines Luba-Lunda du Congo. Ils font partie du groupe matrilineaire de peuples d'Afrique centrale orientale qui inclut les Ambo, Aushi, Bemba, Bisa, Kaonde, Lala, Lamba, Seba, Swaka, Tabwa et d'autres.",
+      "formationPeriod": "Le groupe Ambo s'est constitue en entite distincte a partir du moment ou la lignee Mushili (clan Bena Nyendwa des chefs Lala) a etendu son controle vers le district de Petauke dans la Province de l'Est. Cette expansion remonte au 18e-19e siecle.",
+      "migrationRoutes": [
+        "Origine Luba-Lunda (Kola, RDC actuelle)",
+        "Migration vers le sud-est suivant les routes Lala",
+        "Installation dans le district de Mkushi (Lala de l'Ouest)",
+        "Extension vers le district de Petauke, Province de l'Est"
+      ],
+      "historicalSettlementZones": [
+        "District de Petauke, Province de l'Est, Zambie"
+      ],
+      "unificationsOrDivisions": "Les Ambo de Petauke sont gouvernes par la meme lignee Mushili qui dirige les Lala de l'Ouest (Mkushi). Cette relation dynastique lie les deux communautes sur le plan politique, bien qu'elles soient geographiquement distinctes.",
+      "externalInfluences": "Les Ambo ont ete influences par les Nsenga et autres peuples de la Province de l'Est avec qui ils vivent en proximite. L'influence de la lignee Mushili Lala sur leur organisation politique est determinante. Les missionnaires chretiens et l'administration coloniale britannique ont egalement transforme leur societe.",
+      "majorHistoricalEvents": "Mention des Ambo dans les sources portugaises de 1798 (voyage de Lacerda), sous le nom voisin des Muiza (Bisa). La lignee Mushili, qui gouverne les chefferies Ambo de Petauke, est la meme que celle qui dirige les Lala de l'Ouest (Mkushi), temoignant d'une expansion historique vers l'est."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Ambo sont gouvernes par des chefs issus de la lignee Mushili (clan Bena Nyendwa/Vulva), la meme lignee dynastique que les Lala de l'Ouest (Mkushi). Le Senior Chief reside dans le district de Petauke. L'organisation hierarchique suit le modele Lala : chef, Chilolos, Sulutani (chefs de village) et anciens.",
+      "clanOrganization": "Les Ambo partagent le systeme de clans matrilineaires du groupe Lala elargi. Leur clan royal est le Bena Nyendwa (clan du Vagin), specifique aux Lala et leurs sous-groupes Ambo. Le clan Bean (Bena Nyangu) est un clan-soeur du Bena Nyendwa chez les Ambo, les haricots symbolisant le pubis/clitoris dans les metaphores claniques. Les joking relationships (balwani) existent entre clans complementaires des peuples voisins.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance est matrilineaire, comme chez tous les peuples du groupe Lala-Bisa. L'appartenance clanique, le statut social, l'heritage et la succession passent par la ligne maternelle. La lignee Mushili (Bena Nyendwa) detient le pouvoir politique hereditaire.",
+      "religiousAuthority": "Comme chez les autres sous-groupes Lala, les Ambo pratiquent traditionnellement le culte des ancetres. Le chef joue un role de mediateur entre les vivants et les ancetres. Le christianisme est aujourd'hui dominant dans la communaute."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (Ambo/Lala-Ambo)",
+      "isoCodes": ["leb"],
+      "dialects": ["Ambo (dialecte Lala)", "Cilala", "Lala-Bisa"],
+      "vehicularRole": "Le dialecte Ambo est classe par Maho (2009) parmi les langues proches du Lala dans le continuum Lala-Bisa (code ISO leb). Il est mutuellement intelligible avec le Lala, le Bisa et le Bemba. Selon Joshua Project, la langue primaire des Ambo de Zambie est le Lala-Bisa. Le Bemba sert de lingua franca regionale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les Ambo partagent les ceremonies du groupe Lala elargi, notamment l'Ichibwela Mushi (fete des recoltes en septembre). Les rites de passage (initiation des jeunes filles) et les ceremonies funèbres avec rites ancestraux sont pratiques. L'etude de Stefaniszyn (1964) sur la vie materielle, sociale et rituelle des Ambo constitue la principale reference ethnographique.",
+      "symbols": "Le clan Bena Nyendwa (Vulva) est le symbole de l'autorite politique Ambo. Les Ambo partagent les symboles culturels du groupe Lala, dont l'ubulungu (collier feminin d'appartenance ethnique) et les insignes de chefferie.",
+      "artsAndMusic": "Les Ambo pratiquent les formes d'art et de musique propres au groupe Lala : chants traditionnels, narrations et contes au feu, danses ceremoniales. Leur artisanat comprend la poterie, le tissage et les outils agricoles traditionnels.",
+      "spiritualities": "Les Ambo pratiquent un syncretsme entre le culte des ancetres traditionnel et le christianisme, qui est devenu la religion predominante. Les rites funeraires comportent des elements de veneration des ancetres. Les sacrifices et offrandes aux esprits ancestraux persistent dans les ceremonies traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Ambo forment une chefferie sous la lignee Mushili dans le district de Petauke, Province de l'Est. Leur Senior Chief reside a Petauke. La relation dynastique avec les Lala de l'Ouest (Mkushi) est une caracteristique historique distinctive.",
+      "relationsWithNeighbors": "Les Ambo vivent en proximite des Nsenga dans la Province de l'Est et partagent des relations historiques avec les Lala de l'Ouest (Mkushi), les Bisa et d'autres peuples du groupe Bemba elargi. Des joking relationships claniques existent avec les peuples voisins partageant le meme systeme de clans.",
+      "conflictsOrAlliances": "La lignee Mushili qui gouverne les Ambo est la meme qui a etendu son pouvoir sur les Lamba de Bukanda (Lala de l'Ouest) au 19e siecle. Les Ambo ont ete mentionnes dans les sources portugaises de 1798, temoignant de leur presence etablie dans la region a cette epoque.",
+      "diaspora": "Des Ambo se sont installes dans les centres urbains zambiens (Lusaka, Copperbelt) depuis l'epoque coloniale pour des raisons economiques."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 5400,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025) – Ambo in Zambia",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 5400, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Joshua Project – Ambo in Zambia (https://joshuaproject.net/people_groups/18917)",
+      "Joshua Project – Zambia People Groups (https://joshuaproject.net/countries/ZA)",
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Lala-Bisa language – Wikipedia (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
+      "Ethnologue – Lala-Bisa Language (LEB) (https://www.ethnologue.com/language/leb/)",
+      "Stefaniszyn, B. – Social and Ritual Life of the Ambo of Northern Rhodesia, 1964",
+      "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory (https://www.africabib.org/rec.php?RID=326712321)"
+    ]
   }
 }

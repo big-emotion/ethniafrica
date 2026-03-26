@@ -2,69 +2,113 @@
   "id": "PPL_ISOKO",
   "nameMain": "Isoko",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["NER", "NGA"],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
       "mainName": "Isoko",
       "selfAppellation": "Isoko",
-      "exonyms": ["Isoko (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Sobo (terme pejoratif colonial britannique applique indistinctement aux Isoko et aux Urhobo, fortement rejete par les deux groupes)",
+        "Isoko (terme adopte par les Europeens, identique a l'endonyme)"
+      ],
+      "originOfExonyms": "Le terme Sobo fut employe par l'administration coloniale britannique pour designer sans distinction les Isoko et les Urhobo en raison de leurs affinites linguistiques et culturelles. Les deux peuples ont vigoureusement refuse cette appellation, qu'ils considèrent comme une negation de leurs identites distinctes. Le nom Isoko est l'appellation propre du peuple, sans origine exonyme problematique documentee.",
+      "whyProblematic": "La confusion avec les Urhobo persiste dans certaines litteratures coloniales et demographiques. Les Isoko et les Urhobo partagent une famille linguistique (Southwestern Edoid) mais maintiennent des identites, dialectes et traditions politiques distincts.",
+      "contemporaryUsage": "Isoko est l'appellation standard dans les contextes officiels nigerians, academiques et communautaires. Le territoire Isoko est aujourd'hui decoupage en deux collectivites locales : Isoko North (chef-lieu Ozoro) et Isoko South (chef-lieu Oleh) dans l'etat de Delta.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Edoid (sous-groupe du Bénoué-Congo)",
-      "historicalRegion": "Delta du NER, sud du Nigeria",
-      "currentCountries": ["NER", "NGA"]
+      "ethnoLinguisticGroup": "Edoid (sous-groupe Southwestern Edoid, branche Benue-Congo du Niger-Congo)",
+      "historicalRegion": "Region Isoko dans le delta occidental du Niger, nord-ouest du delta du Niger, actuels etats de Delta et Bayelsa (Nigeria meridional)",
+      "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Isoko central",
-      "Isoko du Nord",
-      "Isoko du Sud",
-      "Sous-groupes régionaux"
+      "Clan Uzere — premier clan, dialecte de reference (Aviara-Uzere)",
+      "Clan Ozoro — centre administratif de l'Isoko Nord",
+      "Clan Erowha",
+      "Clan Owhe",
+      "Clan Iyede — tradition d'origine de Benin (Bini)",
+      "Clan Okpe",
+      "Clan Emede — tradition d'origine Bini, migration sous le règne de l'Oba Ozolua (1483-1514)",
+      "Clan Igbide — tradition d'origine distincte non binie",
+      "Clan Emevor",
+      "Clan Ofagbe",
+      "Clan Ellu",
+      "Clan Oyede",
+      "Clan Umeh",
+      "Clan Irri",
+      "Clan Aviara — dialecte standard de la langue isoko",
+      "Clan Olomoro — seul clan sans tradition d'origine beninoise documentee",
+      "Clan Enwhe",
+      "Clan Okpolo",
+      "Clan Oleh — chef-lieu de l'Isoko Sud"
     ],
     "origins": {
-      "ancientOrigins": "Les Isoko sont originaires de la région du delta du Niger dans le sud du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe edoid.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les peuples voisins (Urhobo, Ijaw).",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme, et plus récemment de l'islam et de la modernisation."
+      "ancientOrigins": "La grande majorite des clans isoko conserve des traditions orales d'origine qui font remonter leurs ancetres au royaume du Benin (actuel etat d'Edo). La migration la plus documentee situe le depart de Benin City durant le règne de l'Oba Ozolua (1483-1514), a une epoque d'expansion du Benin Empire. Les ancetres isoko se seraient deplaces vers l'est et le sud, longeant le Niger, avant de s'etablir dans les terres du delta occidental. Le clan Olomoro constitue une exception, sa tradition d'origine etant independante du Benin. Les Isoko partagent des affinites linguistiques et culturelles avec les Urhobo (groupe frere) et entretiennent des liens avec les Ijaw et les Anioma voisins.",
+      "formationPeriod": "La formation de l'identite isoko distincte s'est consolidee apres les migrations fondatrices du XVe-XVIe siecle. L'organisation en dix-neuf clans territoriaux independants, chacun dirige par un chef (Ovie), a caracterise la societe isoko jusqu'a l'epoque coloniale. L'incorporation dans le Bendel State puis la creation de l'etat de Delta en 1991 ont renforce les structures administratives modernes.",
+      "migrationRoutes": [
+        "Migration principale depuis Benin City (Edo State) vers l'est et le sud, le long du fleuve Niger, probable XVe-XVIe siecles",
+        "Certains clans (Igbide, Olomoro) revendiquent des voies migratoires independantes, possiblement depuis le nord ou l'est"
+      ],
+      "historicalSettlementZones": [
+        "Region Isoko : les LGA de l'Isoko Nord (Ozoro) et de l'Isoko Sud (Oleh) dans le Delta State",
+        "Parties adjacentes du Bayelsa State",
+        "Quelques communautes dans les zones periurbaines de Warri et Sapele"
+      ],
+      "unificationsOrDivisions": "Les Isoko n'ont jamais forme de royaume centralise ; ils sont organises en confederations de clans independants, chacun gouverne par un chef (Ovie) et un conseil d'anciens. Cette structure decentralisee a favorise la preservation de l'autonomie locale mais a limite la constitution d'une autorite politique unifiee. Les liens culturels, linguistiques et commerciaux entre clans constituent la base de l'identite collective isoko.",
+      "externalInfluences": "Influence politique et culturelle du royaume du Benin lors des migrations fondatrices et des periodes de suzerainete. Contact avec les commerçants europeens (XVIIe-XIXe siecles) via le delta du Niger. Colonisation britannique (integration au Protectorat du Niger Meridional, puis au Nigeria). Christianisation intensive au XXe siecle (la region est surnommee Race of Reverends and Teachers). Exploitation petroliere dans le delta depuis les annees 1960.",
+      "majorHistoricalEvents": "Migration depuis Benin durant le règne de l'Oba Ozolua (1483-1514). Contacts avec les negociants europeens au XVIIe siecle. Incorporation dans le Protectorat du Niger Meridional britannique au XIXe siecle. Creation de l'etat de Bendel regroupant Isoko et Urhobo (1963), puis scission et creation du Delta State (1991). Developpement communautaire lie a la presence des industries petrolieres (Shell, Chevron)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+      "traditionalPoliticalSystem": "La gouvernance traditionnelle isoko repose sur le titre d'Ovie (chef de clan, terme derive du beninois Ogie), qui est le dirigeant hereditaire de chaque clan. L'Ovie est assiste par un conseil d'anciens (ufuoma) et par les associations de classe d'age (egwele). Chaque clan forme une entite politique semi-independante. La structure reflete l'influence du Benin Empire tout en conservant des specificites locales.",
+      "clanOrganization": "La societe isoko est organise autour de l'oviri, la famille etendue qui constitue l'unite sociale de base. L'oviri regroupe plusieurs generations vivant ensemble, partageant responsabilites et ressources. Les hommes ages de l'oviri detiennent l'autorite familiale et transmettent les traditions culturelles. Au niveau supraclaniques, les dix-neuf clans constituent autant de territoires politiques distincts.",
+      "ageClassSystems": "Les Isoko organisent hommes et femmes en classes d'age (egwele). Chaque classe a des responsabilites communautaires specifiques : les jeunes hommes effectuent les travaux de force et d'entretien collectif, les adultes gèrent les affaires politiques et commerciales, les anciens forment les conseils de decision et de transmission des savoirs. Les femmes des classes d'age controlent les marches locaux et supervisent les ceremonies liees a la fertilite et a l'accouchement.",
+      "roleOfLineages": "Les lignages patrilineaires (oviri) determinent l'acces a la terre, les droits d'heritage et les alliances matrimoniales. La cote nuptiale (bride price fixee a 500 nairas pour un epoux isoko, 1 000 pour un non-Isoko) est acquittee en trois visites cerimoniales successives (knocking, presentation des cadeaux, paiement de la cote). Toutes les ceremonies matrimoniales se deroulent exclusivement en langue isoko.",
+      "religiousAuthority": "La religion traditionnelle isoko reconnait un dieu createur supreme, des esprits ancestraux (eguono) et des forces naturelles protectrices. Des pretres et pretresses traditionnels officient dans des bocages sacres et aupres de points d'eau. Aujourd'hui, le christianisme domine (env. 98% de la population selon Joshua Project), mais des elements de religion traditionnelle coexistent dans les ceremonies familiales et les rites agraires."
     },
     "languages": {
       "mainLanguage": "Isoko",
-      "vehicularRole": "L'isoko est parlé par la majorité des Isoko. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé."
+      "isoCodes": ["iso"],
+      "dialects": [
+        "Aviara-Uzere : dialecte standard officiel, base des publications et de l'enseignement",
+        "Dialect d'Ozoro (Isoko Nord)",
+        "Dialect d'Oleh (Isoko Sud)",
+        "Variantes locales d'Irri, Iyede, Emede et Igbide"
+      ],
+      "vehicularRole": "L'isoko compte environ 500 000 a 700 000 locuteurs et est enseigne dans les ecoles primaires de la region isoko. C'est une langue Edoid du groupe Southwestern Edoid, apparentee a l'urhobo. Il existe une Bible complete et des livres d'hymnes chretiens en isoko, ce qui a contribue a la standardisation de la variete Aviara-Uzere. L'anglais est la langue d'education superieure et d'administration, le pidgin nigerien etant utilise comme vehiculaire dans le delta."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Masques traditionnels, symboles culturels isoko, art isoko",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle (tambours, flûtes)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "source_8": "Littérature orale",
-      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+      "majorRites": "Mariage en trois etapes (Knocking : visite de declaration avec echange de noix de kola et double remboursement symbolique ; Presentation des cadeaux et consentement explicite de la mariee devant les deux familles ; Paiement de la cote nuptiale), ceremonie entierement en langue isoko avec porte-parole (Otota) pour les epoux non-isoko. Rites funeraires : ceremonies chretiennes et ancestrales combinant prieres et offrandes aux esprits des ancetres pour guider l'ame vers le repos. Rites agricoles : invocations et offrandes avant les semailles pour attirer la barka sur les recoltes. Fete annuelle de la culture isoko : performances de danses traditionnelles, mascarades et chants.",
+      "symbols": "Masques cerimonials employes dans les festivals culturels et rites ancestraux. Noix de kola (toujours accompagnee d'argent) : symbole de bienvenue et de respect dans toutes les ceremonies formelles. Le baton de chef (Ovie) : insigne de l'autorite clanaire. Le bocage sacre (igbe) : espace de communication avec les esprits ancestraux et les divinites locales.",
+      "artsAndMusic": "Sculpture sur bois : masques et figures ritualles, styles influencies par la tradition beninoise et ijaw. Poterie traditionnelle feminine. Tissage de paniers et nattes. Musique de tambours et percussions : rythmes speciaux pour les mariages, funérailles et festivals. Danse : performances collectives lors des festivals culturels annuels. Tradition orale riche : proverbes (erivwin), contes (esiri) et genealogies claniques transmis par les anciens.",
+      "spiritualities": "La religion traditionnelle isoko reconnait un dieu createur supreme (Oghenekaro ou Oghene, Seigneur de l'univers) assiste par des divinites et des esprits mediateurs. Les esprits ancestraux (eguono) intercedent entre le monde des vivants et le divin. Des pretres specialises (efa) officient dans des bocages sacres (igbe) et des points d'eau consideres comme habites par des esprits protecteurs. Le christianisme (protestantisme dominant, avec de nombreux pasteurs et enseignants — la region est surnommee Race of Reverends and Teachers) est la religion de la vaste majorite des Isoko aujourd'hui, mais le syncretisme avec les croyances ancestrales persiste dans les ceremonies familiales et agraires."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora isoko dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt) et dans les pays occidentaux (États-Unis, Royaume-Uni)."
+      "kingdomsOrChiefdoms": "Les Isoko n'ont pas developpe de royaume centralise mais ont maintenu dix-neuf chefferies clanaires independantes, chacune sous un Ovie hereditaire. Ces chefferies ont preserve leur autonomie face au Benin Empire dont elles reconnaissaient parfois la suzerainete nominale. Sous la colonisation britannique, elles furent integrees aux Native Courts du Protectorat du Niger Meridional.",
+      "relationsWithNeighbors": "Relations historiquement pacifiques avec les Urhobo (groupe frere), les Ijaw (voisins au sud) et les Anioma (au nord). Aucune tradition de guerre avec les peuples voisins n'est documentee dans l'historiographie isoko. Les echanges commerciaux (poisson, igname, huile de palme) etaient courants avec les marchands des berges du Niger.",
+      "conflictsOrAlliances": "Les Isoko sont connus comme un peuple pacifique sans tradition militaire expansionniste documentee. L'integration coloniale au Nigeria et la creation du Bendel State puis du Delta State se firent sans resistance notable. Les tensions contemporaines sont liees a la pollution petroliere et aux revendications de developpement communautaire face aux compagnies petrolieres.",
+      "diaspora": "Communautes isoko dans les grandes villes nigeriannes : Lagos, Abuja, Port Harcourt, Benin City. Professionnels et etudiants isoko aux Etats-Unis et au Royaume-Uni. L'emigration economique a accelere depuis les annees 1980 dans le contexte de crise du delta petrolier."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques"
+      "source": "Nigeria National Population Commission : recensements de l'Isoko North LGA (196 700 en 2022) et Isoko South LGA (322 300 en 2022) donnent environ 519 000 dans le coeur du territoire. La population totale incluant la diaspora interne et les isoko hors territoire est estimee a 700 000. Sources : CityPopulation.de (Nigeria Delta State 2022), isoko.com.ng (estimation 700 000), Joshua Project, SIL Ethnologue.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 700000,
+          "note": "Principalement dans les LGA d'Isoko North (Ozoro) et Isoko South (Oleh), Delta State ; minorites dans le Bayelsa State et les grandes villes nigeriannes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Isoko language (iso)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples edoid"
+      "Wikipedia EN — Isoko people. https://en.wikipedia.org/wiki/Isoko_people",
+      "Wikipedia EN — Southwestern Edoid languages. https://en.wikipedia.org/wiki/Southwestern_Edoid_languages",
+      "Ethnologue SIL — Isoko (iso). https://www.ethnologue.com/language/iso/",
+      "WALS Online — Isoko language. https://wals.info/languoid/lect/wals_code_iso",
+      "Joshua Project — Isoko in Nigeria. https://joshuaproject.net/people_groups/print/12266/NI",
+      "isoko.com.ng — Isoko History. https://isoko.com.ng/isoko-history/",
+      "isokovibe.com.ng — 6 Isoko Traditions. https://isokovibe.com.ng/blog/6-isoko-traditions-outsiders-always-find-strange/",
+      "CityPopulation.de — Delta State, Nigeria. https://www.citypopulation.de/en/nigeria/admin/NGA010__delta/",
+      "Nigeria National Population Commission — Census 2006 and projections 2022.",
+      "Ugboh, Isi — Isoko Nation: Her Origins, Culture and Tradition. 2017."
     ]
   }
 }

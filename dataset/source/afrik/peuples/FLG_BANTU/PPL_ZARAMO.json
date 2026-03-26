@@ -6,54 +6,81 @@
   "content": {
     "appellations": {
       "mainName": "Zaramo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wazaramo",
+      "exonyms": ["Dzalamo", "Saramo", "Zalamo", "Wazaramo"],
+      "originOfExonyms": "Wazaramo est la forme swahilie plurielle (Wa- prefixe = peuple). Mzaramo designe un individu, Kizaramo la langue. Dzalamo et Zaramo sont des formes variant selon les sources coloniales et linguistiques. Le nom Zaramo designe le territoire historique Uzaramo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Zaramo est le nom courant en anglais. En Tanzanie, Wazaramo (forme swahilie) est universellement utilise. Le terme est aussi celui d'un macro-groupe ethnique incluant des peuples apparentes : Kaguru, Kwere, Kutu, Kami, Sagara, Luguru, Ngulu et Vidunda.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Bantu zone G, branche Ruvu (Northeast Coast Bantu), groupe Zaramo-Ruvu",
+      "historicalRegion": "Cote est de la Tanzanie, plaines cotieres autour de Dar es Salaam et region de Pwani",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Zaramo"],
+    "ethnicities": ["Zaramo", "Wazaramo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les ancetres bantoues des Zaramo ont migre vers l'Afrique de l'Est au cours du premier millenaire de l'ere chretienne. Les Zaramo modernes sont issus de clans ayant migre depuis les peuples Kutu et Luguru (montagnes Uluguru) vers la cote vers 1700. Selon la tradition orale, ils descendent des Shomvi (clan marchand cotier) avec l'apport du guerrier Pazi, venu de l'arriere-pays au debut du XIXe siecle pour repousser une attaque Kamba.",
+      "formationPeriod": "Formation du groupe Zaramo tel qu'il est connu aujourd'hui aux XVIIe-XIXe siecles, avec une migration cle vers la cote autour de 1700 et la constitution du leadership autour de Pazi.",
+      "migrationRoutes": [
+        "Montagnes Uluguru (region de Morogoro, arriere-pays) vers les plaines cotieres de Dar es Salaam",
+        "Migration vers l'est depuis les zones Kutu/Luguru vers l'actuelle region de Dar es Salaam et de Pwani"
+      ],
+      "historicalSettlementZones": [
+        "Plaines cotieres et collines basses autour de Dar es Salaam (Uzaramo)",
+        "Districts de Temeke, Ilala, Ubungo, Kinondoni et Kigamboni (region de Dar es Salaam)",
+        "Region de Pwani (Tanzanie orientale)",
+        "Zone comprise approximativement entre 6°20' S et 7°25' S, de Kisiju au nord jusqu'a la bouche du Ruvu pres de Bagamoyo"
+      ],
+      "unificationsOrDivisions": "Les Zaramo sont organises en 200 a 300 clans matrilineaires. Malgre l'absence de structures politiques centralisees dans la periode precoloniale (notee dans les rapports coloniaux), ils ont ete capables de mobiliser entre 4 000 et 5 000 personnes pour marcher sur Bagamoyo en 1875 en protestation contre le Sultan.",
+      "externalInfluences": "Influence arabo-persane depuis le VIIIe siecle via le commerce cotier. Influence swahilie importante. Islamisation entre 1890-1900 et 1910-1925. Colonisation allemande puis britannique. Elles ont favorise l'expansion de Dar es Salaam et l'integration des Zaramo au milieu urbain. Les raids esclavagistes des negociants arabo-swahilis de Zanzibar ont oblige les Zaramo a developper des villages fortifies (palissades).",
+      "majorHistoricalEvents": "XIXe siecle : participation active au commerce de longue distance (ivoire, sel, copal, peaux de rhinoceros). Implication dans le commerce d'esclaves (comme chasseurs et comme victimes). 1875 : mobilisation de masse contre le Sultan de Zanzibar. Periode coloniale allemande : gouvernance via le liwali. Periode coloniale britannique : emergence de leaders Zaramo dans l'Association Africaine (Ramadhani Ali, Ali Saidi). 1955 : Union Wazaramo comptant 3 500 membres. 1961 : independance de la Tanzanie. 1963 : suppression de 132 chefferies. Musique singeli : genre musical originaire de Kinondoni, cree par la communaute Zaramo."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Pas de chefferie centralisee forte dans la periode precoloniale. Organisation en unites lignageres avec un chef de lignage (maître de la terre) responsable de la distribution des terres et des rites. Des chefs etaient occasionnellement des femmes. Ces chefs etaient parfois attribues de pouvoirs spirituels (pluie, communication avec les esprits). Periode coloniale : Zaramo headman nomme chef du canton de Dar es Salaam, conseil de six anciens. 1963 : suppression officielle des chefferies.",
+      "clanOrganization": "200 a 300 clans matrilineaires. Les clans principaux incluent les Shomvi (clan ancestral, peche). Le systeme de clans structure l'heritage, les droits fonciers et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La matrilinaite est centrale dans la societe Zaramo, maintenue meme apres l'islamisation. L'heritage des terres et l'organisation familiale suivent la ligne maternelle. Les lignages sont responsables des rites et des sanctions.",
+      "religiousAuthority": "Historiquement, le mganga (medecin-sorcier) jouait un role de guerisseur-divin central. La chefferie Kolelo (cult de fertilite) et les societes Kubandwa et Uwuxala etaient des organisations religieuses resistantes. Depuis l'islamisation, les oustazes (mwalimu, enseignants coraniques) ont repris en partie le role du mganga."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kizaramo (Zaramo)",
+      "isoCodes": ["zaj"],
+      "dialects": [
+        "Le Kizaramo est mutuellement intelligible avec les langues Luguru, Kwere, Kutu et Kami. Ces langues constituent le sous-groupe Ruvu du Bantu de la cote nord-est."
+      ],
+      "vehicularRole": "En Tanzanie moderne, la grande majorite des Zaramo parlent le swahili comme premiere langue, le swahili etant la langue nationale et de commerce. Le Kizaramo est encore utilise dans certains rituels (rites mwali) et dans les communautes rurales. La langue Zaramo est utilisee dans des contextes tres limites selon les sources contemporaines."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation masculine (jando/nhulu) : se deroule en saison seche, environ tous les trois ans. Chaque novice (mwali) est guide par un instructeur (mhunga) a travers la circoncision et l'enseignement des savoirs et pratiques Zaramo. Secluded en hutte d'initiation (kumbi) deux semaines sans bain. Les meres organisent une danse villageoise (mbiga). Apres huit jours, les mwali retournent au village, on brule la kumbi, et une danse d'emergence (mlao) celebre leur passage a l'age adulte. Initiation feminine : commence aux premieres menstrues. La mwali est secludee dans la maison de sa mere (de deux semaines a plusieurs annees selon les epoques). La tante paternelle (shangazi) enseigne les responsabilites domestiques et sociales. La mwali est portee jusqu'a un arbre mkole pour la circoncision par une mnhunga. Elle est ensuite celebree par une danse mbwelo. Doll mwana hiti : figurine de bois carree (mwana hiti, 'enfant de bois') remise aux initiees feminines. Traitee comme un nourrisson (baignee, huillee, cheveux coiffes). Echec des soins risque l'infertilite. Transmise dans les familles sur 40-50 ans, utilisee aussi comme offrande (tambiko).",
+      "symbols": "La figurine mwana hiti est le symbole artistique et rituel le plus connu des Zaramo dans le monde entier. Le baton de prestige (kifimbo pour l'autorite militaire; kome en bois mpingo avec des sculptures d'animaux et de femmes pour l'autorite de chef). La couleur noire est un symbole de benediction liee a la pluie et aux esprits. Le culte Kolelo (cave dans les monts Uluguru) etait le symbole spirituel central preislamique.",
+      "artsAndMusic": "Sculpture sur bois : mwana hiti (figurines d'initiation), batons de prestige, totems funeraires. Poterie faite par les femmes (chungu, kaango, mtungi) avec techniques de cuisson au bois et decors incises ou peints. Vannerie elaborate avec de la palme de date et du bambou : paniers pakacha, tenga, ungo, kawa (decores de proverbes et motifs), nattes mkeka, msala. Le genre musical singeli est ne dans le quartier Kinondoni a Dar es Salaam, cree et developpe par les Zaramo.",
+      "spiritualities": "Islam sunnite de rite Shafi'i majoritaire (plus de 98% de musulmans). Cette islamisation s'est faite principalement entre 1890 et 1925. En parallele, de nombreuses traditions preislamiques perdurent : matrilinaite, culte Kolelo, veneration de Mulungu (dieu supreme de la pluie), pratiques du mganga (guerisseur). Les esprits ancestraux (mizimu) provoquent des maladies, deces, infertilite et mauvaises recoltes. Les rites tambiko (rites funeraires) nettoient la tombe et offrent nourriture et boisson aux defunts."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise majeur, mais une autorite distribuee entre chefs de lignage et leaders de communaute. Durant la periode coloniale britannique, un headman Zaramo a ete nomme chef du canton de Dar es Salaam. L'Union Wazaramo (fondee dans les annees 1920-1930, 3 500 membres en 1955) a joue un role quasi-politique de promotion du Zaramo rural.",
+      "relationsWithNeighbors": "Relations intenses avec les Swahili, les marchands arabes et persans sur la cote depuis le VIIIe siecle. Relations avec les Luguru, Kutu, Kwere, Kami (peuples du cluster Ruvu apparentes). Au XIXe siecle, participation aux caravanes commerciales et au commerce d'esclaves en direction du lac Tanganyika. Conflits avec les Kamba du Kenya (raison de l'arrivee de Pazi). Resistance aux raids esclavagistes des negociants de Zanzibar.",
+      "conflictsOrAlliances": "Raids esclavagistes subis de la part des Arabo-Swahilis de Zanzibar, conduisant a la construction de villages fortifies. Participation au commerce d'esclaves (en tant qu'organisateurs et comme victimes lors de famines). Mobilisation de 4 000-5 000 personnes contre le Sultan de Zanzibar en 1875. Participation au mouvement Maji Maji (1905-1907) contre la colonisation allemande.",
+      "diaspora": "Les Zaramo sont devenus le principal groupe ethnique de Dar es Salaam, la 7e plus grande ville d'Afrique. Migration vers les quartiers urbains (Buguruni, Magomeni, Kinondoni, Kigamboni). Les Zaramo revendiquent symboliquement la propriete de Dar es Salaam (avec les Shomvi), bien que la croissance urbaine ait submerge leurs anciennes terres."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1290000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org (2025) : 1 290 000; Joshua Project : 1 475 000; Wikipedia : environ 700 000 (definition etroite). La difference tient a l'inclusion ou non des groupes apparentes (Kwere, Kutu, etc.) dans le macro-groupe Zaramo.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1290000,
+          "notes": "Region de Dar es Salaam (districts de Temeke, Ilala, Ubungo, Kinondoni, Kigamboni) et region de Pwani; plus grand groupe ethnique de Dar es Salaam"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia – Zaramo people (https://en.wikipedia.org/wiki/Zaramo_people)",
+      "Encyclopaedia Britannica – Zaramo (https://www.britannica.com/topic/Zaramo)",
+      "Encyclopedia.com – Zaramo (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/zaramo)",
+      "Africa 101 Last Tribes – Zaramo people (http://www.101lasttribes.com/tribes/zaramo.html)",
+      "Joshua Project – Zaramo in Tanzania (https://joshuaproject.net/people_groups/16090)",
+      "PeopleGroups.org – Zaramo of Tanzania PG015064 (https://peoplegroups.org/people_groups/pg015064/)",
+      "Gateway Africa Safaris – Zaramo Tribe (https://www.gateway-africa.com/tribe/zaramo_tribe.html)"
+    ]
   }
 }

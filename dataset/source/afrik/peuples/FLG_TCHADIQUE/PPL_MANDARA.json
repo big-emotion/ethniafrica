@@ -1,23 +1,103 @@
 {
   "id": "PPL_MANDARA",
-  "nameMain": "",
+  "nameMain": "Mandara",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Mandara",
       "selfAppellation": "Wandala",
+      "exonyms": [
+        "Mandwara",
+        "Ndara",
+        "Kirdi-Mora (designation par les voisins)"
+      ],
+      "originOfExonyms": "Les Kanouri appellent ce peuple Mandara, tandis que les Mandara se designent eux-memes Wandala. Les deux noms designent la meme realite selon les sources linguistiques (R. Lukas 1973), sans etymologie connue. La premiere mention du nom Mandera apparait chez Fra Mauro (1459) et Leo Africanus (1526, forme Medra). Kirdi-Mora est une designation exterieure utilisant le terme pejoratif kirdi (non-musulmans) et le nom de la ville de Mora.",
+      "whyProblematic": "La denomination Kirdi (terme pejoratif Fulani pour les non-musulmans) a ete appliquee aux Mandara de maniere abusive dans certaines sources coloniales, alors que les Wandala etaient en realite islamises depuis le XVIIIe siecle.",
+      "contemporaryUsage": "Mandara est la denomination internationale en usage courant dans la litterature historique et ethnographique. Wandala est prefere dans les sources linguistiques (SIL Ethnologue). Le sultan de Mandara reside a Mora (Cameroun), capitale actuelle du sultanat.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "historicalRegion": "Montagnes du Mandara (Cameroun / Nigeria)",
+      "ethnoLinguisticGroup": "Tchadique biu-mandara, groupe Mandara proprement dit (Biu-Mandara A.4, Mandara Proper, Wandala cluster)",
+      "historicalRegion": "Montagnes du Mandara, nord du Cameroun et nord-est du Nigeria; entre le fleuve Benoue et Mora (Cameroun); capitales historiques : Dulo (Duolo), puis Mora",
       "currentCountries": ["CMR", "NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (mfi)", "Historical Mandara Studies"]
+    "ethnicities": [
+      "Wandala proprement dits (groupe central du sultanat)",
+      "Mura (forme archaique du wandala, populations non islamisees autour de Mora)",
+      "Malgwa (Gamergu, Gamargu) : dialecte apparente, Etat du Borno, Nigeria",
+      "Communautes Mandara de Kerawa (nord-ouest des collines de Gwoza)",
+      "Communautes Mandara de Mora (nord-est), de Mozogo et Koza (melanges avec les Mafa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les origines des Mandara-Wandala sont incertaines. Une tradition orale les fait remonter a un roi nomme Agamakiya au XIIIe siecle, qui aurait dirige le peuple lors des invasions du Sahel. Une autre tradition evoque Wandala Mbra, fils de Mbra de Turu et de Katala (fille de Vaya), adopte l'islam et a fonde la lignee patrilineaire musulmane actuelle. Les historiens islamiques mentionnent les Mandara mais donnent des recits contradictoires. Leo Africanus (1526) decrit le Royaume de Medra (Mandara) comme peuple de gens riches et industrieux, amants de la justice.",
+      "formationPeriod": "L'identite politique wandala se consolide a partir du milieu du XVe siecle. La premiere mention europeenne date de Fra Mauro (1459). Le royaume est constitue en sultanat vers 1715 sous Mai Bukar Aji, qui se convertit a l'islam. L'islamisation de l'elite politique et militaire transforme profondement la structure sociale et politique du royaume.",
+      "migrationRoutes": [
+        "Implantation ancienne dans les vallees et montagnes du Mandara, au nord de la Benoue",
+        "Extension du controle politique sur les plaines du bassin du lac Tchad meridional (XVe-XVIIIe siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes du Mandara (nord Cameroun) : zone entre Mora et Mokolo, Kerawa, Ashigashia",
+        "Plaines de Mora (capitale du sultanat actuel)",
+        "Etat de Borno, Nigeria : zones de Bama et Gwoza (Malgwa, Wandala)"
+      ],
+      "unificationsOrDivisions": "La fondation du royaume se fait sous Soukda (vers 1500). La conquete de Dulo (Duolo) vers 1580 etablit la capitale dynast de Sankre. L'installation de Nanda par l'empereur Idris Alaoma du Bornou (1614) cree une dependance vis-a-vis du Bornou. L'islamisation complete sous Mai Bukar Aji (vers 1715) consolide l'unite politique sous le sultanat. La grande periode de gloire s'etend sous Bukar D'Gjiama (1773-1828), culminant avec la defaite du Bornou vers 1781.",
+      "externalInfluences": "Bornou : influence decisivequi installe Nanda (1614) et soutient le sultanat face aux Fulani. Conversions a l'islam par des visiteurs marocains ayant converti le roi Bukar Aji (vers 1715). Jihad fulani (1809, Modibo Adama): assaut repousse mais affaiblissement progressif du sultanat. Forces de Muhammad Ahmad (annees 1880-1895). Colonisation : allemande (1902), puis francaise (1918). Integration dans le Cameroun independant (1960).",
+      "majorHistoricalEvents": "Vers 1459-1526 : premices mentions europeennes du Royaume de Mandara (Fra Mauro, Leo Africanus). Vers 1500 : fondation par Soukda. Vers 1580 : dynaste de Sankre, capitale a Dulo. 1614 : Bornou installe Nanda. Vers 1715 : islamisation sous Mai Bukar Aji, creation du sultanat. Vers 1781 : victoire sur le Bornou. 1809 : jihad fulani (Modibo Adama), repousse. Vers 1850 : attaque du Bornou affaibli. Annees 1880 : invasion de Muhammad Ahmad. 1902 : conquete allemande. 1918 : transfert a la France. 1960 : integration dans le Cameroun independant."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Sultanat hereditaire avec le sultan (resid a Mora, Cameroun) comme chef supreme de l'Etat traditionnel. Structure politique fortement centralisee pour une societe sub-saharienne : le sultan et la noblesse occupent le sommet de la hierarchie. Un homme de tete (headman) reside au centre de chaque village et supervise la communaute, assiste du chef religieux (imam) dans la prise de decisions.",
+      "clanOrganization": "Societe patrilineaire : heritages transmis du pere au fils aine. Les couples nouvellement maries s'installent pres de la famille du mari. Structure de castes endogames occupant des fonctions specifiques : sultan et noblesse, agriculteurs, eleveurs de chevaux, artisans, forgerons et travailleurs du fer.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent les fonctions dynastiques et les castes professionnelles. Le systeme de castes endogames integre le concept de pollution inherente aux differents niveaux sociaux, bien que cette notion n'ait pas ete sanctionnee religieusement par l'islam.",
+      "religiousAuthority": "Islam sunnite malekite quasi-universel depuis le XVIIIe siecle. Le sultan exerce une autorite a la fois politique et religieuse. Chaque village possede une mosquee au centre. L'imam assiste le headman dans les decisions communautaires. Les Mandara portent des amulettes en cuir contenant des versets coraniques. Les pratiques islamiques : prieres cinq fois par jour, jeune du Ramadan, aumone, pelerinage."
+    },
+    "languages": {
+      "mainLanguage": "Wandala",
+      "isoCodes": ["mfi"],
+      "dialects": [
+        "Wandala proprement dit (langue standard du sultanat)",
+        "Mura (forme archaique du wandala, populations non islamisees de Mora)",
+        "Malgwa (Gamergu, Gamargu) : dialecte du Borno nigerien apparente"
+      ],
+      "vehicularRole": "Le wandala (ISO 639-3 : mfi) est une langue tchadique biu-mandara (Mandara Proper, A.4) parlee au Cameroun et au Nigeria. Il est classe dans le cluster Wandala avec le Mura et le Malgwa. Historiquement, le wandala a servi de langue vehiculaire dans la zone frontaliere camerounoigeriane. Le french et l'anglais sont les langues officielles dans les pays respectifs. L'arabe et le fulfulde sont des langues vehiculaires regionales importantes. Environ 95 500 locuteurs au total (73 500 au Cameroun, reste au Nigeria)."
+    },
+    "culture": {
+      "majorRites": "Pratiques islamiques sunnites malekites : prieres cinq fois par jour (salat), jeune du Ramadan, aumone (zakat), pelerinage a La Mecque (hajj), celebration de l'Aïd el-Kebir et l'Aïd el-Fitr. Circumcision masculine obligatoire comme marque de l'appartenance islamique. Mariage patriarcal : la premiere epouse est chef des autres epouses, avec versement d'une dot en betail ou en argent. Ceremonies de naissance et rites funeraires islamiques.",
+      "symbols": "Les amulettes en cuir contenant des versets coraniques sont emblematiques de l'identite islamique wandala. Les chevaux, eleves et commerces par les Mandara, sont un symbole de prestige et de noblesse. Les outils en fer produits par les forgerons mandara etaient recherches par les marchands et autres groupes ethniques de la region. La ville de Mora est le symbole du pouvoir sultanal contemporain. Le sultanat historique de Dulo representait le coeur de la puissance mandara.",
+      "artsAndMusic": "Elevage chevalin : les Mandara sont reputes pour leurs chevaux, celebres dans la region comme animaux de guerre et de prestige. Travail du fer : les forgerons mandara produisaient des outils en fer reconnus dans toute la region et recherches par les marchands des caravanes transahariennes. Tissage et confection de robes islamiques typiques de l'Afrique du Nord. Poterie et artisanat traditionnel. Marches locaux hors des villages pour le commerce d'objets artisanaux. Culture de sorgho, mil, mais comme cultures vivrieres principales. Jardins irrigues : connaissances en irrigation, fumure au fumier, culture de l'ail, oignons, melons et ble, acquises par des contacts avec des traditions agricoles anciennes.",
+      "spiritualities": "Islam sunnite malekite quasi-universel, adopte progressivement depuis le XVIIe-XVIIIe siecle. La conversion a l'islam sous Bukar Aji (vers 1715) a ete suivie d'une islamisation progressive des elites et du peuple. Pratiques islamiques populaires : port d'amulettes coraniques en cuir, recitation de versets coraniques comme protection. Les Mandara ont adopte le vetement musulman traditionnel d'Afrique du Nord. Les temoignages historiques (Ibn Fartuwa) evoquent les Mandara comme non-croyants avant le XVIIe siecle; d'autres sources attribuent la conversion au XVIIIe siecle via des visiteurs marocains."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le sultanat de Mandara (ou Wandala) est l'un des royaumes les plus documentes de la region des montagnes du Mandara. Fonde vers 1500 par Soukda, il devient sultanat vers 1715 sous Mai Bukar Aji. A son apogee (fin XVIIIe siecle), il percoit des tributs de quelque 15 chefferies vassal. Les sultans ont leur residence a Mora (Cameroun). La liste des souverains s'etend de Sukda (vers 1500) a Hamidu Umar (depuis 1942). Le sultanat a survecu jusqu'a la periode coloniale, maintenant une presence symbolique jusqu'a l'independance du Cameroun (1960).",
+      "relationsWithNeighbors": "Relations complexes avec le Bornou (vassalite periodique, alliances contre les Fulani, mais aussi conflits). Victoire notable sur le Bornou vers 1781. Alliance avec le Bornou contre les Fulani apres 1809. Relations tributaires avec jusqu'a 15 chefferies voisines a l'apogee. Commerce caravanier transaharien passant par le territoire mandara. Relations avec les peuples non-islamises des montagnes environnantes (Mafa, Mofu, Mada) qui etaient parfois sources d'esclaves via les razzias.",
+      "conflictsOrAlliances": "Conquete de Dulo (Duolo) vers 1580, fondation de la dynaste de Sankre. Soutien du Bornou a Nanda contre Dulo (1614, Idris Alaoma). Victoire sur le Bornou vers 1781. Jihad fulani de Modibo Adama (1809) : assaut repousse. Nouvelles attaques fulani apres la mort de Bukar D'Gjiama; Borno attaque le sultanat affaibli vers 1850. Invasion de Muhammad Ahmad (annees 1880). Conquete allemande (1902). Transfert a la France (1918). Expedition britannique de Dixon Denham (1823) : l'un des premiers recits europeens du sultanat.",
+      "diaspora": "Presence de communautes mandara dans l'Etat de Borno (Nigeria). Migrations vers les villes camerounaises et nigerianes. Minorites mandara dans le Tchad meridional."
+    },
+    "demography": {
+      "totalPopulation": 95500,
+      "referenceYear": 2025,
+      "source": "101 Last Tribes / Peoplegroups.org 2024 : environ 95 500 au total (73 500 au Cameroun, reste au Nigeria). Joshua Project : environ 78 000 au Cameroun et 24 000 au Nigeria. Estimation 2025 : environ 95 500 a 100 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 73500,
+          "note": "Mora (capitale du sultanat), Kerawa, Mozogo, Koza et zone frontaliere au nord du Cameroun"
+        },
+        {
+          "country": "NGA",
+          "population": 22000,
+          "note": "Etat de Borno, zones de Bama et Gwoza (Malgwa, Wandala)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mandara Kingdom. https://en.wikipedia.org/wiki/Mandara_Kingdom",
+      "Wikipedia EN — Mandara people. https://en.wikipedia.org/wiki/Mandara_people",
+      "Joshua Project — Mandara, Wandala in Cameroon. https://joshuaproject.net/people_groups/13487/CM",
+      "Joshua Project — Mandara, Wandala in Nigeria. https://joshuaproject.net/people_groups/13487/NI",
+      "101 Last Tribes — Mandara people. https://www.101lasttribes.com/tribes/mandara.html",
+      "SIL Ethnologue — Wandala (mfi). https://www.ethnologue.com/language/mfi",
+      "MacEachern, Scott — What was the Wandala state, and who are the Wandala? Academia.edu. https://www.academia.edu/12092979/",
+      "Biu-Mandara languages — Wikipedia EN. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages"
+    ]
   }
 }

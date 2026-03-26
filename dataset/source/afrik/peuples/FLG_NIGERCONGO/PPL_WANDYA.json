@@ -7,62 +7,93 @@
     "appellations": {
       "mainName": "Wandya",
       "selfAppellation": "Wandya",
-      "exonyms": ["Wandya (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Bawandya (forme bantou au pluriel)",
+        "Abawandya (forme ougandaise)",
+        "Wandi (variante orthographique)"
+      ],
+      "originOfExonyms": "Le prefixe Ba- ou Aba- est le pluriel typique des groupes ethniques bantous de la region des Grands Lacs (DRC et Ouganda). Le terme Wandya designe probablement un lieu d'origine ou un ancetre eponyme, conformement a l'onomastique bantou de la zone frontaliere Congo-Ouganda.",
+      "whyProblematic": "Le peuple Wandya est peu documente dans les sources academiques accessibles. Les frontieres avec les groupes voisins (Nande/Yira, Konjo, Amba) sont parfois floues dans les classifications ethnographiques coloniales et postcoloniales.",
+      "contemporaryUsage": "Le terme Wandya est utilise localement dans les regions frontalieres de la RDC (province du Nord-Kivu ou Ituri) et de l'Ouganda occidental. Ces populations se referent generalement a leur appartenance clanique ou territoriale plutot qu'a une identite ethnique supra-locale.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "COD, UGA",
+      "ethnoLinguisticGroup": "Bantou (Zone J/D, Grand Lacs Bantu, region frontaliere DRC-Ouganda)",
+      "historicalRegion": "Region frontaliere entre la RDC (Nord-Kivu ou Ituri) et l'ouest de l'Ouganda, proche des Monts Ruwenzori ou du rift albertin",
       "currentCountries": ["COD", "UGA"]
     },
     "ethnicities": [
-      "Wandya de RDC",
-      "Wandya d'Ouganda",
-      "Sous-groupes régionaux"
+      "Wandya de RDC (province du Nord-Kivu ou Ituri, groupe principal)",
+      "Wandya d'Ouganda occidental (zone frontaliere avec la RDC)",
+      "Communautes apparentees aux Nande/Yira et Konjo (groupes voisins du Ruwenzori)"
     ],
     "origins": {
-      "ancientOrigins": "Les Wandya sont originaires de la région de la RDC et de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Wandya sont un peuple bantou de la zone frontaliere entre la RDC et l'Ouganda, appartenant au grand ensemble des Bantous des Grands Lacs (zone J selon la classification de Guthrie, egalement appelee Great Lakes Bantu ou Lacustrine Bantu). Les peuples de cette zone partagent une origine commune liee aux migrations bantous depuis les environs du lac Kivu et du Rwanda vers 500 avant notre ere, suivies d'expansions progressives vers le nord-ouest et l'ouest des Grands Lacs. Les Wandya sont probablement apparentes aux groupes Nande/Yira et Konjo de la region des Ruwenzori.",
+      "formationPeriod": "La formation de l'identite distincte des Wandya remonte vraisemblablement a plusieurs siecles, dans le cadre des recompositions ethniques liees aux migrations bantous dans la region du rift albertin et des Monts Ruwenzori. Les interactions avec les peuples voisins (Nande, Konjo, Amba, Hunde) ont facon leur identite specifique.",
+      "migrationRoutes": [
+        "Migration bantou depuis le nord-ouest (region du Rwanda-Burundi proto-bantou) vers l'ouest de l'Ouganda et le Nord-Kivu congolais",
+        "Installations dans les zones de foret et de montagne entre les Ruwenzori et le rift albertin"
+      ],
+      "historicalSettlementZones": [
+        "Zones de foret et de montagne de la region frontaliere DRC-Ouganda (Ruwenzori, rift albertin)",
+        "Province du Nord-Kivu ou d'Ituri (RDC)",
+        "Ouganda occidental (districts frontaliers avec la RDC)"
+      ],
+      "unificationsOrDivisions": "Comme la plupart des petits peuples bantous de la region, les Wandya sont organises en chefferies claniques sans etat centralise. La colonisation belge (RDC) et britannique (Ouganda) imposa des frontieres nationales qui coupeèrent des communautes partageant la meme culture et la meme langue, creant des populations wandya de part et d'autre de la frontiere internationale.",
+      "externalInfluences": "Contacts avec les populations pygmees (Efe, Baka) qui vivent dans les forets voisines en relations de clientelisme avec les agriculteurs bantous. Christianisation intensive par les missions catholiques et protestantes belges et britanniques au 20e siecle. Influence des guerres et conflits armes dans le Nord-Kivu (depuis les annees 1990) sur les populations locales.",
+      "majorHistoricalEvents": "La colonisation belge du Congo (1885-1960) et britannique de l'Ouganda (1894-1962) fragmenta les communautes frontalières des Grands Lacs. Les conflits armes recurrents dans le Nord-Kivu (depuis 1993, avec les guerres du Congo, la presence de groupes armes et le deplacement de populations) ont profondement affecte les petites communautes ethniques de la region comme les Wandya."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies claniques, avec un chef local (mwami ou titre equivalant selon la terminologie locale) a la tete de chaque communaute territoriale. Les decisions importantes sont prises en conseil d'anciens. L'autorite est fondee sur la descendance et la legitimite ancestrale.",
+      "clanOrganization": "Structure patrilineaire typique des Bantous des Grands Lacs. Les clans sont bases sur la descendance d'un ancetre commun et determinent l'appartenance sociale, les droits fonciers et les alliances matrimoniales. L'exogamie clanique est la regle.",
+      "ageClassSystems": "Des rites d'initiation marquent les passages entre les classes d'age, notamment la puberté masculine et feminine. Ces rites sont similaires a ceux des peuples voisins Nande et Konjo.",
+      "roleOfLineages": "Les lignages patrilineaires sont les unites fondamentales de l'organisation sociale, economique et territoriale. La succession aux titres et l'heritage foncier se transmettent par la ligne masculine.",
+      "religiousAuthority": "Les guerisseurs-devins (traditionellement appeles nganga ou equivalent local) detiennent une autorite spirituelle importante, servant d'intermediaires entre les vivants et les ancetres. Le culte des ancetres est central. Depuis la colonisation, les eglises catholiques, protestantes et evangeliques sont tres presentes et la majorite des Wandya se declare chretienne."
     },
     "languages": {
       "mainLanguage": "Wandya",
-      "vehicularRole": "Le wandya est parlé par la majorité des Wandya. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": [],
+      "dialects": ["Variantes de part et d'autre de la frontiere DRC-Ouganda"],
+      "vehicularRole": "La langue wandya est une langue bantou de la zone des Grands Lacs (Zone J/D). Elle est parlee au sein de la communaute. Le swahili est utilise comme langue vehiculaire au Nord-Kivu (RDC). Le francais est la langue officielle de la RDC, l'anglais celle de l'Ouganda. La langue wandya est peu documentee dans les corpus linguistiques disponibles; le code ISO 639-3 attribue dans les bases de donnees reste a confirmer officiellement."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels wandya, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites d'initiation masculins et feminins marquant le passage a l'age adulte. Ceremonies funeraires impliquant des rites d'apaisement des ancetres. Ceremonies agricoles liees au cycle des saisons (debut des semailles, recoltes). Mariages traditionnels avec dot (lobola ou equivalent local). Ces rites sont conformes aux pratiques des Bantous des Grands Lacs.",
+      "symbols": "Comme pour les peuples bantous de la region, les ancetres du lignage sont les principales figures symboliques. Les tambours sont utilises lors des ceremonies. Les instruments a cordes et les chants polyphones sont presents dans les ceremonies rituelles.",
+      "artsAndMusic": "Musique traditionnelle avec percussions (tambours, hochets), chants collectifs et danses lors des ceremonies. Artisanat comprenant la poterie, le tressage de paniers, la sculpture sur bois et le travail du fer. L'oraliture (contes, proverbes, genealogies) est le principal mode de transmission culturelle.",
+      "spiritualities": "Religion traditionnelle bantou fondee sur le culte des ancetres (mizimu ou equivalent local): les esprits des defunts protegent les vivants et peuvent etre invoques par des rituels. Les guerisseurs (nganga) servent d'intermediaires avec le monde invisible. Croyance en des forces naturelles et spirituelles incarnees dans des objets ou des lieux sacres. La christianisation est dominante depuis le 20e siecle (syncrétisme avec les pratiques traditionnelles)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora wandya dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Wandya etaient probablement organises en petites chefferies claniques sans royaume centralise, a l'instar des peuples voisins Amba et de nombreux petits groupes de la region du Ruwenzori et du rift albertin. Ces chefferies etaient autonomes mais entretenaient des relations de voisinage et d'echanges avec les groupes proches.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Nande (Yira) de la region de Beni-Lubero (Nord-Kivu), les Konjo d'Ouganda, les Amba du Ruwenzori et les peuples Efe (pygmees). Des relations de clientelisme et d'echange avec les chasseurs-cueilleurs pygmees sont documentees pour les peuples agriculteurs bantous de la region.",
+      "conflictsOrAlliances": "Les conflits armes recurrents dans le Nord-Kivu depuis les annees 1990 (guerres du Congo, presence de groupes rebelles dont les FDLR, M23, et d'autres milices) ont affecte les populations locales. Les Wandya, comme beaucoup de petites communautes de la region, ont subi des deplacements forces et des violences liees a ces conflits.",
+      "diaspora": "Des refugies et deplaces internes originaires des zones de conflit du Nord-Kivu se trouvent dans les grandes villes congolaises (Kinshasa, Goma, Butembo) et en Ouganda. Une diaspora congolaise plus large est presente en Afrique du Sud, en Europe et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation approximative basee sur les donnees de l'Ethnologue (SIL International) et les recensements de la RDC et de l'Ouganda. Les Wandya sont un groupe peu documente et les chiffres precis ne sont pas disponibles dans les bases de donnees standard. La population totale estimee a environ 100 000 personnes en 2025 est prudente et sujette a revision.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 80000,
+          "note": "Principalement dans le Nord-Kivu ou Ituri (RDC), region frontaliere avec l'Ouganda"
+        },
+        {
+          "country": "UGA",
+          "population": 20000,
+          "note": "Ouganda occidental, districts frontaliers avec la RDC"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Wandya language (wdy)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "SIL Ethnologue — recherche sur les langues bantous des Grands Lacs. https://www.ethnologue.com/subgroup/53/",
+      "Wikipedia EN — Great Lakes Bantu languages. https://en.wikipedia.org/wiki/Great_Lakes_Bantu_languages",
+      "Wikipedia EN — Bantu peoples. https://en.wikipedia.org/wiki/Bantu_peoples",
+      "Wikipedia EN — Nande people (peuples voisins apparentes). https://en.wikipedia.org/wiki/Nande_people",
+      "101 Last Tribes — Nande people (contexte regional). https://www.101lasttribes.com/tribes/nande.html",
+      "Minority Rights Group — Democratic Republic of the Congo. https://minorityrights.org/country/democratic-republic-of-the-congo/",
+      "Britannica — People of the Democratic Republic of the Congo. https://www.britannica.com/place/Democratic-Republic-of-the-Congo/People",
+      "Guthrie classification of Bantu languages — Zone J (Great Lakes Bantu). https://en.wikipedia.org/wiki/Guthrie_classification_of_Bantu_languages",
+      "Joshua Project — Congo, Democratic Republic of people groups. https://joshuaproject.net/countries/cg",
+      "Gorilla Highlands — The Bantu (contexte DRC-Ouganda). https://gorillahighlands.com/bantu/"
     ]
   }
 }

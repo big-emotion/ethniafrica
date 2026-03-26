@@ -1,0 +1,44 @@
+{
+  "id": "PPL_COMORIEN",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COM", "MYT"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "",
+      "exonyms": ["\"Comorians\" (anglais), \"Comoriens\" (français)"],
+      "originOfExonyms": "\"Comores\" provient de l'arabe \"Juzur al-Qamar\" (جزر القمر, \"îles de la lune\"), transcrit en français comme \"Comores\"",
+      "whyProblematic": "Les termes exonymes ne reflètent pas la diversité interne des Comoriens (Ngazidja, Ndzuani, Mwali, Maorais), ni les identités insulaires spécifiques",
+      "contemporaryUsage": "\"Comorien\" est largement accepté, mais les identités insulaires restent fortes (Ngazidja pour Grande Comore, etc.)",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous de l'océan Indien, groupe swahili",
+      "historicalRegion": "Archipel des Comores (océan Indien occidental)",
+      "currentCountries": ["COM", "MYT"]
+    },
+    "ethnicities": [
+      "**Ngazidja (Grande Comore)** – habitants de la Grande Comore (Ngazidja), langue shingazidja (zdj)",
+      "**Ndzuani (Anjouan)** – habitants d'Anjouan (Ndzuani), langue shindzuani (wni)",
+      "**Mwali (Mohéli)** – habitants de Mohéli (Mwali), langue shimwali (wlc)",
+      "**Maorais (Mayotte)** – habitants de Mayotte (Maore), langue shimaore (swb)",
+      "**Diaspora comorienne** – communautés comoriennes en France, à Madagascar, en Tanzanie, à Zanzibar"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Langues comoriennes (shikomori)",
+      "dialects": [
+        "* Chaque île a sa propre langue comorienne, mutuellement intelligibles à des degrés variables * Variations régionales au sein de chaque île"
+      ],
+      "vehicularRole": "* Langues comoriennes : langues nationales de l'Union des Comores * Arabe : langue religieuse, enseignement coranique * Français : langue officielle (héritage colonial), administration, éducation * Swahili : langue de communication avec la côte est-africaine"
+    },
+    "culture": {},
+    "historicalRole": {},
+    "demography": {
+      "totalPopulation": 1150000,
+      "referenceYear": 2025,
+      "source": "estimations AFRIK, recensements Comores/Mayotte, Ethnologue"
+    },
+    "sources": []
+  }
+}

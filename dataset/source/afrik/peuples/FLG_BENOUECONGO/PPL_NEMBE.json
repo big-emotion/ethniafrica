@@ -1,22 +1,90 @@
 {
   "id": "PPL_NEMBE",
-  "nameMain": "",
+  "nameMain": "Nembe",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Nembe",
       "selfAppellation": "Nembe",
+      "exonyms": ["Brass", "Nimbe", "Izon"],
+      "originOfExonyms": "Le nom Brass est un nom colonial britannique derive de la ville de Twon-Brass sur la cote, devenu le principal port d'exportation de l'huile de palme au XIXe siecle. Ce nom est utilise pour la ville et le Local Government Area (Nembe et Brass LGA). Le terme Izon (ou Ijo/Ijaw) designe le groupe ethnolinguistique plus large auquel appartiennent les Nembe. Nimbe est une variante orthographique du meme nom.",
+      "whyProblematic": "La denomination Brass est d'origine coloniale et ne reflete pas l'identite autochtone du peuple. Elle peut etre confondue avec la ville de Brass (Twon-Brass), qui est une localite distincte au sein du territoire nembe. Le terme Ijaw designe un ensemble plus vaste de peuples dont les Nembe constituent un sous-groupe.",
+      "contemporaryUsage": "Le terme Nembe est la designation oficielle et preferee dans les contextes contemporains. Le Nembe et Brass Local Government Area de l'Etat de Bayelsa constitue la zone administrative principale. Les Nembe sont reconnus comme un sous-groupe distinct des Ijaw (Izon) orientaux.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Ijaw du Sud-Est (Southeast Ijo)",
+      "historicalRegion": "Delta du Niger — region de Nembe et Brass (Bayelsa State, Nigeria)",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Bayelsa State Historical Records", "Ethnologue (nvm)"]
+    "ethnicities": [
+      "Ogbolomabiri — faction principale issue du royaume originel, dirigee par les rois de la dynastieMingi",
+      "Bassambiri — faction issue de la guerre civile, dirigee par les rois de la lignee Ogbodo",
+      "Okpoama — communaute sous son propre Amanyanabo",
+      "Odioama — communaute sous son propre Amanyanabo",
+      "Twon-Brass — communaute cotiere sous son propre Amanyanabo, principale ville commerciale au XIXe siecle",
+      "Communautes de l'Edumanom Forest Reserve — habitants de la foret protegee situee dans le territoire nembe"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nembe sont un peuple Izon (Ijaw) du delta du Niger. La date de fondation de l'ancien royaume de Nembe est inconnue. La tradition orale indique que le dixieme roi portait le nom d'Ogio et regnait vers 1639, etant considere comme l'ancetre de tous les souverains subsequents. Les Nembe sont installes dans la region qui comprend aujourd'hui la reserve forestiere d'Edumanom, sur les rives des bras du delta inferieur du Niger.",
+      "formationPeriod": "Avant le XVIIe siecle selon la tradition orale (le dixieme roi Ogio regna vers 1639, impliquant une fondation anterieurement). Le royaume de Nembe se constitua progressivement comme cite-Etat commercante a la faveur de sa position strategique sur la riviere Brass (Bras du delta du Niger).",
+      "migrationRoutes": [
+        "Origines dans l'interieur du delta du Niger (milieu ijaw)",
+        "Installation sur les rives des bras du delta de la riviere Brass",
+        "Expansion vers Twon-Brass sur la cote (XIXe siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Nembe city — capitale historique du royaume",
+        "Bassimibiri (Bassambiri) — fondee apres la guerre civile par le roi Ogbodo",
+        "Twon-Brass — principal centre commercial cotier depuis le milieu du XIXe siecle",
+        "Territoire de la reserve forestiere d'Edumanom",
+        "LGA de Nembe et LGA de Brass (Bayelsa State)"
+      ],
+      "unificationsOrDivisions": "Une guerre civile divisa le royaume de Nembe en deux factions. Au debut du XIXe siecle, le roi Ogbodo et ses partisans fonderent un nouveau site a Bassimibiri (Bassambiri), tandis que le roi Mingi demeura a la cite de Nembe. Cette division aboutit a deux dynasties distinctes : la lignee Mingi a Ogbolomabiri et la lignee Ogbodo a Bassambiri. Les deux factions ont maintenu des Amanyanabo distincts jusqu'a aujourd'hui.",
+      "externalInfluences": "L'arrivee des Europeens sur la cote transforma le commerce nembe, integrant le royaume dans la traite atlantique des esclaves puis dans le commerce de l'huile de palme. Les missionnaires chretiens britanniques debarquerent a Ogbolomabiri en 1867, creant de nouvelles tensions factionnelles (Bassambiri refusa la mission jusqu'a une date ulterieure). En 1884, la region fut incorporee dans l'Oil Rivers Protectorate britannique. En 1895, une expedition punitive britannique saccagea la cite de Nembe.",
+      "majorHistoricalEvents": "Vers 1639 : regne du dixieme roi Ogio. Debut XIXe siecle : guerre civile et division entre Ogbolomabiri et Bassambiri. 1856 : le commerce de l'huile de palme devient predominant et le centre commercial se deplace vers Twon-Brass. 1867 : premiere mission chretienne a Ogbolomabiri. 1884 : incorporation dans l'Oil Rivers Protectorate. Janvier 1895 : le roi William Koko (Mingi VIII) mena plus de mille guerriers a l'attaque du quartier general de la Royal Niger Company a Akassa. En reponse, une expedition britannique commandee par Sir Frederick Bedford saccagea Nembe, concurrent avec une epidemie de variole devastatrice."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle divisee en plusieurs entites. Le titre royal est Amanyanabo (maitre ou seigneur des gens). La chefferie est aujourd'hui partagee entre les Amanyanabo d'Ogbolomabiri, de Bassambiri, d'Okpoama, d'Odioama et de Twon-Brass. La succession est dynastique au sein de chaque lignee royale. Les dirigeants traditionnels furent reinstalles dans les annees 1920 apres la periode coloniale mais avec un role essentiellement symbolique.",
+      "clanOrganization": "Les Nembe sont organises en deux grandes factions historiques (Ogbolomabiri et Bassambiri) plus trois entites autonomes (Okpoama, Odioama, Twon-Brass), chacune avec son propre Amanyanabo. Au sein de ces entites, les familles etendues et les maisons de commerce (canoe houses) structurent la societe. Chaque maison de commerce regroupait le chef, ses dependants et ses travailleurs sous une autorite patriarcale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee Mingi est la dynastie royale d'Ogbolomabiri, la plus importante historiquement. La lignee Ogbodo est celle de Bassambiri. L'appartenance familiale determine les droits dans les maisons de commerce et les chefferies locales. Les femmes jouent un role dans les reseaux d'alliance intercommunitaire a travers les mariages dynastiques.",
+      "religiousAuthority": "Tradition religieuse ancienne centree sur les esprits des eaux et les ancetres. Bassambiri etait consideree comme paienne (heathen) dans les sources coloniales jusqu'a l'evangelisation tardive. Ogbolomabiri adopta la mission chretienne anglicane en 1867. Aujourd'hui, la majorite des Nembe sont chretiens (protestants, anglicans et pentecotistes), avec persistence de pratiques religieuses traditionnelles liees aux esprits aquatiques."
+    },
+    "languages": {
+      "mainLanguage": "Nembe (dialecte du Southeast Ijo)",
+      "isoCodes": ["nvm"],
+      "dialects": [
+        "Nembe (Nimbe) — dialecte principal",
+        "Akassa (Akaha) — dialecte apparente, parle dans la zone d'Akassa"
+      ],
+      "vehicularRole": "La langue nembe (ISO nvm) est un dialecte du Southeast Ijo, branche de la famille des langues Ijaw (Ijoid), elle-meme dans la famille Niger-Congo. Elle est parlee principalement dans les LGA de Nembe et Brass (Bayelsa State). Le pidgin nigerian (Nigeria Pidgin English) est la principale langue vehiculaire dans la region du delta du Niger. La professeure Kay Williamson a developpe l'orthographe standardisee du nembe."
+    },
+    "culture": {
+      "majorRites": "Les fetes des mascarades (esprits aquatiques Owu) sont centrales dans la vie ceremonielle nembe, comme dans toutes les communautes ijaw. Des ceremonies de propitiation des esprits des eaux sont organisees regulierement. Les rites funebres impliquent des ceremonies collectives elaborees et plusieurs jours de deuil communautaire. Les regates (courses de pirogues) constituent une fete culturelle importante dans le delta du Niger.",
+      "symbols": "La pirogue de guerre (war canoe) est le symbole central de la puissance et de l'identite nembe. Le titre Amanyanabo (maitre des gens) incarne la souverainete traditionnelle. La riviere Brass et le delta du Niger sont des espaces symboliques sacres lies aux esprits aquatiques. L'attaque d'Akassa en 1895 sous le roi William Koko est commemoree comme un acte de resistance contre l'imperialisme britannique.",
+      "artsAndMusic": "Les mascarades ijaw sont des performances artistiques complexes alliant sculpture de masques, costumes, danse et musique percussive. Les pirogues ornementees sont un art traditionnel. La musique de percussions (tambours, cloches) accompagne les ceremonies rituelles. La cuisine nembe est centree sur les produits de la peche et de la cueillette du delta : poisson frais, crabes, periwinkle, huitres, crevettes, et plantes comestibles du marais.",
+      "spiritualities": "Religion traditionnelle basee sur la veneration des esprits aquatiques (Owu, esprits du fleuve et de la mer), des ancetres et des divinites locales. Chaque communaute honore ses esprits protecteurs specifiques. Aujourd'hui, la majorite des Nembe pratiquent le christianisme (protestantisme, anglicanism, mouvements pentecotistes) souvent melange de pratiques traditionnelles (syncretisme)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Nembe (Nembe Kingdom) fut une cite-Etat du delta du Niger, reconnu comme Etat traditionnel dans le Bayelsa State actuel. Historiquement moins prospere que Bonny et Calabar, il profita de la repression britannique du commerce d'esclaves au debut du XIXe siecle (contournement du blocus de Bonny et Calabar via la riviere Brass) pour developper sa propre traite clandestine. Le commerce de l'huile de palme devint predominant a partir de 1856. Le royaume etait gouverne par la famille royale Mingi a Ogbolomabiri.",
+      "relationsWithNeighbors": "Les Nembe entretinrent des relations hostiles avec le royaume de Kalabari (a l'est) : victoire de Nembe lors de la guerre de juillet 1863. Rivalite commerciale avec le royaume de Bonny. Relations tendues avec la Royal Niger Company britanniqu, dont les Nembe rejetaient le monopole commercial. Negociations et puis affrontements avec les autorites coloniales britanniques.",
+      "conflictsOrAlliances": "Milieu XIXe siecle : participation a la traite des esclaves en contournant le blocus britannique. Juillet 1863 : guerre avec Kalabari (victoire de Nembe). 1884 : incorporation dans l'Oil Rivers Protectorate. 1880s-1890s : refus de signer un traite avec la Royal Niger Company et resistance a son monopole commercial. Janvier 1895 : attaque du roi William Koko (Mingi VIII) sur le quartier general de la Royal Niger Company a Akassa avec plus de 1000 guerriers. Represailles britanniques : sac de la cite de Nembe par l'expedition de Sir Frederick Bedford, simultanement a une epidemie de variole. 1926 : reinstallation des chefs traditionnels avec un role symbolique.",
+      "diaspora": "La diaspora nembe est principalement interne au Nigeria, avec des migrations vers Port Harcourt, Yenagoa (capitale de Bayelsa State), Lagos et Abuja. Le developpement petrolier dans le delta du Niger a genere des deplacements importants de populations, mais aussi l'installation de travailleurs nembe dans les compagnies petrolieres regionales."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Data Commons (population de Nembe LGA : 327,500 en 2024) et City-Facts (population de Nembe : 152,722 avec projections vers 170,777 en 2020). La population ethnique totale (incluant la diaspora interne) est estimee a environ 300,000 personnes en 2025, principalement dans les LGA de Nembe et Brass (Bayelsa State).",
+      "distributionByCountry": [{ "country": "NGA", "population": 300000 }]
+    },
+    "sources": [
+      "Wikipedia EN — Nembe Kingdom : https://en.wikipedia.org/wiki/Nembe_people",
+      "Data Commons — Nembe, Bayelsa State, Nigeria : https://datacommons.org/place/wikidataId/Q3510576",
+      "City-Facts — Nembe, Bayelsa, Nigeria (population) : https://www.city-facts.com/nembe/population",
+      "Alagoa, E.J. (2009). A History of the Niger Delta. Port Harcourt: Onyoma Research Publications.",
+      "Ethnologue (SIL) — Southeast Ijo (nvm) : https://www.ethnologue.com/language/nvm/",
+      "Wikipedia EN — Southeast Ijo (dialecte nembe) : https://en.wikipedia.org/wiki/Nembe_language",
+      "Guardian Nigeria — Modernising Ijaw language (mention de Kay Williamson et orthographe Nembe) : https://guardian.ng/art/modernising-ijaw-language/"
+    ]
   }
 }

@@ -6,54 +6,71 @@
   "content": {
     "appellations": {
       "mainName": "Kerewe",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wakerewe",
+      "exonyms": ["Kerebe", "Bukerebe"],
+      "originOfExonyms": "Wakerewe est la forme swahilie courante. Kerebe (ou Bukerebe) est le nom historique de l'ile et du peuple, utilise notamment dans la traduction du Nouveau Testament de 1946 (Omulago Muhya, Kikahindurwa mu Kikerewe). Le nom Ukerewe (ile) est a l'origine du nom arabe donne au lac Victoria avant sa denomination europeenne.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kerewe ou Kerebe designent indifferemment le peuple et sa langue dans les sources academiques. La forme Kikerewe ou Ekikerebe designe la langue. Le peuple se nomme Wakerewe.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Ouest",
+      "ethnoLinguisticGroup": "Bantu des Grands Lacs, groupe des lacs centraux de Tanzanie (Mwanza)",
+      "historicalRegion": "Ile d'Ukerewe (plus grande ile du lac Victoria et plus grande ile interieure d'Afrique), district d'Ukerewe, region de Mwanza, Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Kerewe"],
+    "ethnicities": ["Kerewe", "Wasilanga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kerewe (aussi nommes Wasilanga) sont arrives sur l'ile d'Ukerewe depuis la region de Bukoba, cote ouest du lac Victoria. Ils ont fonde une chefferie (abakama) sur l'ile et sont devenus le groupe dirigeant, imposant leur langue (Kikerebe) comme langue de l'administration locale et de l'eglise catholique.",
+      "formationPeriod": "L'etablissement des Kerewe comme groupe dirigeant sur Ukerewe remonte a plusieurs siecles. Le premier roi chretien Gabriel Ruhumbika (enterré a Kagunguli) marque le contact precoce avec les missions catholiques. La premiere eglise romaine date de 1895.",
+      "migrationRoutes": [
+        "Migration depuis la region de Bukoba (rive ouest du lac Victoria) vers l'ile d'Ukerewe"
+      ],
+      "historicalSettlementZones": [
+        "Ile d'Ukerewe (494 km carre), la plus grande ile du lac Victoria",
+        "Nansio (principal centre urbain, chef-lieu du district)"
+      ],
+      "unificationsOrDivisions": "Les Kerewe ont constitue une chefferie monarchique (abakama) sur l'ile d'Ukerewe, rassemblant sous leur autorite plusieurs groupes ethniques immigres (Wajita, Waruri, etc.). Le kikerebe est devenu la langue commune de toute l'ile. Apres l'independance tanzanienne, la chefferie a ete abolie ; le dernier roi Michael Lukumbuzya est devenu ambassadeur de Tanzanie au Canada.",
+      "externalInfluences": "Arrivee des missionnaires catholiques blancs (White Fathers) des 1895. Traduction du Nouveau Testament en kikerewe (1945, Padri Almas Simard). Colonisation allemande puis britannique. Introduction du poisson-Nil dans le lac Victoria impactant la peche traditionnelle. Stigmatisation des personnes albinos (sanctuaire pour albinos sur l'ile).",
+      "majorHistoricalEvents": "Construction de la premiere eglise catholique a Kagunguli (1895). Traduction du Nouveau Testament en kikerewe par le Padre Almas Simard (publiee 1946). Le palais du chef (construit 1928, style europeen) est encore debout a Nansio. L'ile d'Ukerewe est connue comme sanctuaire pour les personnes albinos persecutees dans le reste de la Tanzanie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie (abakama) hereditaire, avec un roi (mukama) a la tete de l'ile. Les magistrats des tribunaux natifs etaient nommes directement par le roi. La langue kikerebe servait de langue officielle des tribunaux natifs. La chefferie a ete abolie apres l'independance de la Tanzanie (1964).",
+      "clanOrganization": "Organisation clanique liee aux lignees royales Kerewe (Wasilanga) et aux groupes immigres integres. Les differents groupes ethniques de l'ile (Wajita, Waruri, etc.) conservaient leurs dialectes mais etaient administres en kikerebe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La succession au trone suivait les lignees royales. Les chefs de village etaient choisis dans les familles etablies, souvent des parents du roi.",
+      "religiousAuthority": "Le christianisme catholique est la religion predominante depuis 1895. Les chefs catholiques jouaient un role religieux et politique important (Gabriel Ruhumbika, premier roi chretien). La tradition des grandes tambours royaux (utilisees pour communiquer entre villages) constitue une autorite symbolique ancestrale."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kerewe (Kikerewe)",
+      "isoCodes": ["ked"],
+      "dialects": [],
+      "vehicularRole": "Le Kikerewe etait la langue de l'administration locale, des tribunaux natifs et de l'eglise catholique sur l'ile d'Ukerewe. Il est parle uniquement sur l'ile. Le swahili est la langue nationale enseignee a l'ecole. Un Nouveau Testament en kikerewe a ete publie en 1946 (Omulago Muhya). Environ 350 000 locuteurs natifs selon Lugha Yangu."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies religieuses catholiques centrales dans la vie communautaire. Traditions de danse kerewe (representees au village de Bwiru). Cuisine traditionnelle kerewe transmise oralement. Les grandes tambours royaux etaient utilisees pour envoyer des messages importants a travers l'ile.",
+      "symbols": "Le tambour royal est le symbole emblematique de l'ile d'Ukerewe. Les grandes figures sculptees en bois (environ 90 cm de haut), effigies de chefs defunts, sont une forme d'art caracteristique des Kerewe. Le palais du chef de 1928 et le cimetiere des rois a Kitare village sont des sites symboliques.",
+      "artsAndMusic": "Les Kerewe d'Ukerewe sont connus pour leurs figures en bois sculptees (environ 90 cm), representant des chefs defunts. D'autres sculptures incluent des figures et des masques, certains montrant des influences possibles des Luba de RDC. La danse traditionnelle kerewe est pratiquee lors des ceremonies. Peche artisanale traditionnelle sur le lac Victoria.",
+      "spiritualities": "Le christianisme catholique est dominant depuis 1895 (premiere eglise de Kagunguli). Des pratiques religieuses traditionnelles persistent dans certaines zones de l'ile. Les croyances ancestrales autour des chefs defunts (figures sculptees) temoignent d'un culte des ancetres. Des pratiques de guerison traditionnelle coexistent avec la medecine moderne."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie monarchique (abakama) sur l'ile d'Ukerewe, avec une succession royale documentee. Principaux rois : Gabriel Ruhumbika (premier roi chretien, enterre a Kagunguli), Michael Lukumbuzya (dernier roi, devenu ambassadeur de Tanzanie au Canada). Le palais de 1928 est encore debout a Nansio.",
+      "relationsWithNeighbors": "Relations avec les peuples voisins du lac Victoria : Kara d'Ukara, Jita, Sukuma, Zinza. L'ile d'Ukerewe accueillait des immigres de ces groupes (Wajita, Waruri) qui s'y sont integres linguistiquement. Commerce et echanges reguliers avec le continent via le ferry de Mwanza.",
+      "conflictsOrAlliances": "Des guerres tribales anciennes sont evoquees dans les traditions orales (grotte des guerriers a Ukerewe). La politique coloniale allemande puis britannique a impose des structures administratives nouvelles. L'ile a maintenu une relative autonomie grace a son insularite.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 241000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 241000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kerewe language – Wikipedia (https://en.wikipedia.org/wiki/Kerewe_language)",
+      "Kerewe people – Wikipedia (https://en.wikipedia.org/wiki/Kerewe_people)",
+      "Kerewe in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12637)",
+      "Kerewe – Encyclopaedia Britannica (https://www.britannica.com/topic/Kerewe)",
+      "Kerewe language – Lugha Yangu, 2023 (https://lughayangu.com/kerewe)",
+      "Ukerewe Island Cultural Tour (https://ukereweislandculturaltour.wordpress.com)",
+      "Omulago Muhya 1946 – Bible.com (https://www.bible.com/versions/3282-ked1946-omulago-muhya-1946-kikahindurwa-mu-kikerewe)",
+      "Mojola, Aloo Osotsi – See My Language: A History of Bible Translation in East Africa, 1999"
+    ]
   }
 }

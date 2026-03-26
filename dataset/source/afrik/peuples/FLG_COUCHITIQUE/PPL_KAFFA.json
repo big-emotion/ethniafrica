@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Kaffa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Kafficho",
+      "exonyms": ["Kafficho", "Kefa", "Kaffa", "Keffa"],
+      "originOfExonyms": "Le terme Kaffa désigne à la fois le peuple, leur royaume historique et la zone administrative actuelle (Keffa Zone). Le nom Kafficho est l'auto-désignation du peuple dans sa propre langue. Keffa est la translittération amharique du nom. La fameuse hypothèse selon laquelle le mot café (coffeea) dériverait du nom de la région Kaffa est évoquée dans la littérature, bien que considérée comme peu probable par les linguistes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kafficho est le terme officiel utilisé dans le recensement éthiopien de 2007. Kaffa désigne la zone administrative. Le peuple est reconnu comme groupe ethno-linguistique distinct dans la Constitution éthiopienne de 1995. En septembre 2021, les Kaffa ont participé à un référendum menant à la création de la région du Sud-Ouest Ethiopie."
     },
-    "ethnicities": ["Kaffa"],
+    "ethnicities": [
+      "Kafficho",
+      "Manjo (chasseurs, statut subordonné)",
+      "Manne (travailleurs du cuir)",
+      "Qemmo (forgerons)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Le peuple Kaffa (Kafficho) occupe les hauts plateaux boisés du sud-ouest de l'Ethiopie depuis au moins le XIVe siècle. Leur langue, le kafa (kbr), appartient à la branche omotique nord (groupe Gonga/Kefoid) de la famille afroasiatique. Les forêts de la région de Kaffa abritent les populations sauvages originelles de Coffea arabica, ce qui fait de la région le berceau génétique du café arabica.",
+      "formationPeriod": "Le Royaume de Kaffa fut fondé vers 1390 par le roi Minjo, qui renversa la dynastie Mato de 32 rois selon la tradition orale. Le royaume fut pleinement constitué aux XIVe-XVe siècles.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans les hauts plateaux boisés du sud-ouest éthiopien, au nord du Gojeb."
+      ],
+      "historicalSettlementZones": [
+        "Zone de Keffa (anciennement province de Kaffa), région des Nations, Nationalités et Peuples du Sud, puis région du Sud-Ouest Ethiopie (depuis 2021)",
+        "Bonga (première capitale), Anderaccha (capitale ultérieure)"
+      ],
+      "unificationsOrDivisions": "Le royaume était divisé en quatre sous-groupes parlant des dialectes du kefficho (groupe Gonga/Kefoid omotique). La société incluait des groupes à statut subordonné : les manjo (chasseurs), les manne (travailleurs du cuir) et les qemmo (forgerons). Les manjo possédaient leur propre roi nommé par le roi de Kaffa.",
+      "externalInfluences": "Au XVIe siècle, l'Empereur abyssin Sarsa Dengel convainquit le royaume d'adopter le christianisme comme religion d'Etat, bien que cette influence s'effaça progressivement au cours des siècles suivants. Le royaume subit une invasion des Oromo Mecha au XVIIIe siècle, qu'il repoussa grâce à son terrain difficile, mais perdit ses territoires au nord du Gojeb. En 1897, le royaume fut conquis par les armées de Welde Giyorgis et du roi Abba Jifar II de Jimma, sous l'autorité du négus Menelik II.",
+      "majorHistoricalEvents": "Fondation du royaume vers 1390 par Minjo. Expansion territoriale sous Gali Ginocho (1675-1710) et Tato Shagi Sherocho (1775-1795). Apogée sous Hoti Gaocho (1798-1821) qui conquit Wolleta et Kambaata. Résistance de deux invasions amhara en 1890 et 1893 par le dernier roi Gaki Sherocho. Capitulation et annexion le 11 septembre 1897. Reorganisation administrative en 1942 en province de Kaffa. Référendum d'autonomie régionale en septembre 2021, créant la région du Sud-Ouest Ethiopie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie héréditaire organisée sous un roi (Tato). Le roi était entouré de nobles et d'une administration palatiale. La première capitale fut Bonga, la seconde Anderaccha. L'économie royale reposait sur l'export d'or, d'esclaves, de café et d'huile de civette. La monnaie en usage jusqu'en 1905 était le thaler de Marie-Thérèse et le bloc de sel (amoleh).",
+      "clanOrganization": "La société était hiérarchisée avec des groupes nobles, une classe paysanne libre et des groupes à statut subordonné (manjo, manne, qemmo) occupant des niches économiques spécialisées et soumis à des restrictions matrimoniales et sociales strictes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages nobles déterminaient la succession royale et l'accès aux hautes fonctions administratives et militaires.",
+      "religiousAuthority": "Le christianisme fut adopté au XVIe siècle puis abandonnné ; réintroduit à la fin du XIXe siècle. L'Église de Saint-Georges à Baha constituait le centre religieux historique. Des pratiques religieuses traditionnelles persistèrent tout au long de l'histoire du royaume."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kafa / Kaffinono (kbr)",
+      "isoCodes": ["kbr"],
+      "dialects": ["Kefficho", "Bosha", "Caffino", "Garo", "Manjo"],
+      "vehicularRole": "Le kafa (kbr) est encore largement parlé parmi la population Kafficho. Il est classifié comme langue omoto-nord (groupe Gonga/Kefoid). Il a le statut de langue éducative (niveau 4 selon Glottolog). L'amharique est utilisé comme langue de l'administration et des échanges inter-ethniques."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La culture Kafficho est axée sur l'agriculture de hauts plateaux et l'exploitation des forêts. Le café sauvage occupe une place centrale dans les pratiques culturelles et économiques. Les Kafficho entretiennent des cérémonies liées aux cycles agricoles et à la récolte du café et du miel.",
+      "symbols": "Les forêts primaires de Kaffa, berceau du café arabica sauvage, constituent le symbole le plus connu de ce peuple à l'échelle mondiale. Le café est perçu comme l'arbre de la Terre Mère. Le mont Bonga et la ville de Bonga (ancienne capitale) sont des référents identitaires forts.",
+      "artsAndMusic": "Traditions musicales et artisanales liées à la vie de cour du royaume. Les Manjo, en tant que gardiens des palais royaux, participaient aux traditions cérémonielles. Artisanat du cuir et de la forge fortement codifiés socialement.",
+      "spiritualities": "Mélange de christianisme (orthodoxe et protestant, introduit tardivement) et de religiosités traditionnelles. Les forêts de Kaffa sont perçues comme des espaces sacrés par les communautés locales qui y pratiquent une forme de vénération liée au café sauvage."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le Royaume de Kaffa (1390-1897) fut l'un des royaumes les plus durables et les plus puissants du sud-ouest éthiopien. Il exportait or, café, civette et esclaves, et étendit sa domination sur des peuples voisins dont les Gimira, les Welayta et les Kambaata.",
+      "relationsWithNeighbors": "Relations commerciales et parfois militaires avec les royaumes du Gibe au nord, les peuples Konta et Kullo à l'est, les Gimira au sud et les Majangir à l'ouest. Résistance victorieuse aux Oromo Mecha au XVIIIe siècle.",
+      "conflictsOrAlliances": "Deux défaites des invasions amhara (1890, 1893), avant la capitulation de 1897 sous la pression des armes à feu (technologie supérieure). Alliance contrainte avec le négus Menelik II après la conquête. L'après-conquête fut marquée par des razzias esclavagistes d'Abba Jifar II qui faillirent dépeupler la région.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1293000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Kafa in Ethiopia : 1 293 000). Le recensement éthiopien de 2007 indiquait une proportion de 1,2% de la population nationale.",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 1293000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kafficho people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kafficho_people)",
+      "Kingdom of Kaffa – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Kaffa)",
+      "Kafa language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kafa_language)",
+      "Kafa – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kafa1242)",
+      "Kafa in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12408)",
+      "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025 (https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/)",
+      "Bulatovich, A. (1900) – With the Armies of Menelik II, emperor of Ethiopia.",
+      "Pankhurst, R. – The Ethiopian Borderlands, 1997."
+    ]
   }
 }

@@ -2,58 +2,81 @@
   "id": "PPL_ANLO",
   "nameMain": "Anlo",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": ["GHA", "TGO", "BEN"],
   "content": {
     "appellations": {
       "mainName": "Anlo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Anlogbe (nom de leur langue) ; Anlo designe le groupe, derives du terme ewe nlo ou anlo",
+      "exonyms": ["Anlo Ewe", "Anglo"],
+      "originOfExonyms": "Le terme Anlo derive du mot ewe nlo signifiant se replier ou se recroqueviller, en reference a la formule me nlo prononcee par le fondateur Torgbui Atsu Wenya exprimant sa reluctance a continuer la migration. L'exonyme Anlo Ewe est utilise pour distinguer ce sous-groupe des autres groupes ewe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Anlo est le nom standard pour designer ce sous-groupe ewe en litterature academique et dans le contexte politique ghaneen. La capitale spirituelle et administrative est Anloga (region Volta, Ghana).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Volta",
-      "currentCountries": ["GHA"]
+      "ethnoLinguisticGroup": "Ewe, famille Gbe, branche Kwa du Niger-Congo",
+      "historicalRegion": "Cote sud-est du Ghana (region Volta), partie meridionale du Togo et du Benin",
+      "currentCountries": ["GHA", "TGO", "BEN"]
     },
-    "ethnicities": ["Anlo"],
+    "ethnicities": ["Anlo Ewe"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Volta"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Anlo Ewe tracent leur origine a Ketu, dans l'actuel Benin. Selon la tradition orale, leurs ancetres ont migre vers Notsie, une cite fortifiee de l'actuel Togo, ou ils furent bien accueillis par le roi Adela Atogble. A la mort de ce roi, son successeur Togbe Agorkoli instaura un regime oppressif, ordonnant le meurtre des anciens. Le fondateur de l'etat Anlo, Torgbui Atsu Wenya, s'est separe d'autres groupes au niveau de Wheta pour s'etablir sur la cote.",
+      "formationPeriod": "Seconde moitie du XVIIe siecle (vers 1674 selon certaines traditions orales)",
+      "migrationRoutes": [
+        "Depuis Ketu (actuel Benin) vers Notsie (actuel Togo)",
+        "Depuis Notsie vers la cote sud-est de l'actuel Ghana apres l'evasion du mur sacre",
+        "Migration vers le nord sous la pression des razzias d'esclaves, diffusion vers le sud du Togo, du Benin et le sud-ouest du Nigeria"
+      ],
+      "historicalSettlementZones": [
+        "Cote sud-est de la region Volta (Ghana) ; capitale Anloga",
+        "Sud du Togo",
+        "Sud du Benin",
+        "Bight of Benin (eaux peu profondes et ilots servant de refuge contre les negriers)"
+      ],
+      "unificationsOrDivisions": "Confederation de 36 etats traditionnels semi-autonomes unis sous une identite commune et sous l'autorite du chef suzerain (Awoamefia). Division en trois ailes militaires : Lashibi (flanc gauche, ouest), Adotri (centre), Woe (flanc droit, est).",
+      "externalInfluences": "Adoption des methodes militaires des Akwamu, incluant le systeme d'aile. Construction du barrage d'Akosombo dans les annees 1960 ayant cause des deplacements et modifie les pratiques agricoles et de peche. Colonisation britannique ayant altere les structures de gouvernance traditionnelles.",
+      "majorHistoricalEvents": "Evasion dramatique de Notsie : les femmes ramollissaient le mur sacre pendant la lessive quotidienne ; Tegli (ancien cache) tira l'Epee de la Liberation, brecha le mur et le groupe s'echappa en marchant a reculons pour brouiller les pistes. Guerre avec les Asante (1869) avec soutien de l'alliance Akwamu-Anlo contre les Ewe voisins. Traite de colonisation et integration dans la Gold Coast britannique, puis dans le Ghana independant (1957)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie confederale. L'Awoamefia (chef suzerain) est a la fois chef spirituel et politique de l'etat Anlo, compose de 36 etats traditionnels. Le roi est choisi en alternance parmi deux clans royaux (Adzovia et Bate), sans succession primogeniture. Il vit en isolement sacre et ne traite directement qu'avec les trois chefs seniors des regions geographiques. Son pouvoir est rarement exerce, sauf en temps de guerre ou pour des affaires judiciaires graves.",
+      "clanOrganization": "Organisation en clans (hlowo) traces a un ancetre commun, divises en sous-lignages. Les clans sont exogames. Le chef de lignage est le membre survivant le plus age ; il a le dernier mot dans les decisions et les litiges, et regule les affaires foncieres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le chef de lignage joue aussi le role de grand pretre, conduisant les ceremonies et servant d'intermediaire entre les vivants et les morts. Toutes les offrandes religieuses lui sont presentees en premier.",
+      "religiousAuthority": "La classe sacerdotale (bokowo) mediate entre la communaute et les forces spirituelles, conduisant rites, divinations et pratiques de guerison. Les pretres Yewe et Afa occupent un role central."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Anlogbe (dialecte ewe)",
+      "isoCodes": ["ewe"],
+      "dialects": ["Anlogbe"],
+      "vehicularRole": "L'ewe est langue d'enseignement et vehiculaire regionale au Ghana et au Togo. L'anglais est la langue officielle du Ghana. Le francais est utilise au Togo. L'anlogbe est riche en idiomes, proverbes et metaphores vehiculant les valeurs et l'histoire anlo."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Hogbetsotso Za (festival annuel commemorant l'evasion de Notsie : ceremonies, recits, tambours, reaffirmation de l'identite anlo). Funerailles traditionnelles en plusieurs etapes : Amedigbe (enterrement du corps), Ndinamegbe (reception des pleureuses), Nudogbe (veille mortuaire), Yofogbe (rites de lignage), Akontawogbe (decompte des dons), Xomefewogbe (bilan final). Initiation Yewe (adeptes recoivent un nouveau nom ; l'ancien nom devient tabou). Rites Afa (divination astrologique ; les non-inities portent du blanc).",
+      "symbols": "Le mur de Notsie et l'evasion a reculons sont les symboles fondateurs de la resilience et de l'identite anlo. L'Epee de la Liberation de Tegli est un symbole spirituel majeur.",
+      "artsAndMusic": "Tissage du kente avec des motifs geometriques distinctifs et des couleurs symboliques propres aux Anlo Ewe (distincts du kente ashanti). Fabrication de filets de peche et construction de pirogues. Performances musicales de danse et de tambour lors des funerailles et des celebrations communautaires. Contes oraux transmis lors de sessions de narration accompagnees de tambours.",
+      "spiritualities": "Religion centree sur le Dieu supreme Mawu (Mawuga Kitikata), omnipresent et sans sanctuaire ni ceremonie dedies. Divinites intermediaires : Yewe (dieu du tonnerre et de l'eclair), Afa (dieu de la divination et du destin, frere cadet de Yewe), Eda, Nana, Mami Wata. Le Vodu (Vodun) est pratique par une minorite, surtout les plus ages. Le christianisme est present partout, coexistant avec les pratiques spirituelles traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Etat Anlo : confederation de 36 etats traditionnels sous la suzerainete de l'Awoamefia, capitale spirituelle et administrative Anloga. Structure semi-autonome ou chaque etat reconnait l'autorite commune tout en conservant son autonomie locale.",
+      "relationsWithNeighbors": "Adoption des methodes militaires Akwamu. Relations avec les Avenor Ewe (au nord, dans les districts d'Akatsi). Alliance temporaire avec Akwamu et Asante en 1869. Relations commerciales et culturelles avec les peuples de la Bight of Benin.",
+      "conflictsOrAlliances": "Alliance avec l'Akwamu et l'Asante contre les Ewe voisins en 1869 (Adu Bofour). Resistance aux razzias d'esclaves grace aux refuges dans les eaux peu profondes du golfe du Benin. Organisation militaire a trois ailes (Lashibi, Adotri, Woe) pour la defense du territoire.",
+      "diaspora": "Presence diasporique au Togo, au Benin, au sud-ouest du Nigeria et dans les communautes ewe de la diaspora mondiale (Etats-Unis, Canada, Italie notamment selon les donnees Joshua Project)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 900000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation : les Anlo constituent le principal sous-groupe ewe du Ghana ; l'ensemble des Ewe du Ghana est estime a 4 548 000 (Joshua Project 2025). La population Anlo Ewe est estimee entre 800 000 et 1 000 000 personnes.",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 800000 },
+        { "country": "TGO", "population": 80000 },
+        { "country": "BEN", "population": 20000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN - Anlo Ewe (https://en.wikipedia.org/wiki/Anlo_Ewe)",
+      "Art of the Motherland - The Anlo Ewe People of the Volta Region of Ghana, 2024 (https://artofthemotherland.com/the-anlo-ewe-people-of-the-volta-region-of-ghana-culture-society-and-history/)",
+      "Modern Ghana - The Anlo Kingdom: A Tapestry of Tradition, Unity, and Civic Wisdom (https://www.modernghana.com/news/1448953/the-anlo-kingdom-a-tapestry-of-tradition-unity.html)",
+      "Richard Hodges - Introduction to Anlo-Ewe Culture (https://www.richardhodges.com/ladzekpo/Intro.html)",
+      "Joshua Project - Ewe people group (https://joshuaproject.net/people_groups/11169)",
+      "Modern Ghana - The Rich History, Cultural Heritage, and Festivities of the Anlo People, 2025 (https://www.modernghana.com/news/1384172/the-rich-history-cultural-heritage-and-festiviti.html)"
+    ]
   }
 }

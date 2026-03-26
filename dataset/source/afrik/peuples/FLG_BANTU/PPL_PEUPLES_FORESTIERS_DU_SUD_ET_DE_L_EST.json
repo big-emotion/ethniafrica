@@ -2,60 +2,127 @@
   "id": "PPL_PEUPLES_FORESTIERS_DU_SUD_ET_DE_L_EST",
   "nameMain": "Peuples forestiers du Sud et de l'Est",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["CMR"],
+  "currentCountries": ["CMR", "COG", "GAB", "CAF"],
   "content": {
     "appellations": {
       "mainName": "Peuples forestiers du Sud et de l'Est",
-      "selfAppellation": "",
-      "exonyms": ["Maka, Kaka, Koonzime (termes utilisés par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud et Est du Cameroun (forêts équatoriales)",
-      "currentCountries": ["CMR"]
-    },
-    "ethnicities": ["Peuples forestiers du Sud et de l'Est"],
-    "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Sud et Est du Cameroun (forêts équatoriales)"
+      "selfAppellation": "Denominaisons propres a chaque peuple : Maka, Njem (Njyem), Koonzime, Nzime, Konabembe, Badjoue, Baka (pour les chasseurs-cueilleurs)",
+      "exonyms": [
+        "Maka",
+        "Kaka (Kako)",
+        "Koonzime",
+        "Nzime",
+        "Njem (Ndjem)",
+        "Makaa-Njem",
+        "Maka-Kozime"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "originOfExonyms": "Ces termes sont les noms de peuples specifiques appartenant au groupe linguistique Makaa-Njem (ou Maka-Kozime), etablis dans les forets equatoriales du Sud et de l'Est du Cameroun. Le terme collectif peuples forestiers du Sud et de l'Est est une denomination analytique regroupant ces groupes bantous forestiers ainsi que les peuples autochtones non-bantous (Baka, Bagyeli) vivant dans la meme zone.",
+      "whyProblematic": "La denomination peuples forestiers du Sud et de l'Est est une categorisation geographique et ecologique, non ethnique. Elle englobe des groupes tres differents : (1) des peuples bantous sedentaires agriculteurs (Maka, Njem, Koonzime, Nzime, Konabembe, Badjoue, Bikele, Djem) du groupe Makaa-Njem ; (2) des peuples autochtones chasseurs-cueilleurs semi-nomades (Baka, Bagyeli) parfois designes comme Pygmees, terme qu'ils rejettent. Ces deux ensembles ont des origines, cultures et langues differents.",
+      "contemporaryUsage": "Dans le contexte camerounais, cette designation regroupante est parfois utilisee dans les politiques de developpement et de conservation. Les classifications officielles distinguent l'Aire Maka-Kozime (bantous agriculteurs) et les Baka-Bagyeli (peuples autochtones forestiers).",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Makaa-Njem (bantous) et peuples autochtones forestiers (Baka, langues Ubangian/isolees)",
+      "historicalRegion": "Sud et Est du Cameroun (forets equatoriales) ; nord de la Republique du Congo ; sud-est de la Republique Centrafricaine",
+      "currentCountries": ["CMR", "COG", "GAB", "CAF"]
+    },
+    "ethnicities": [
+      "Maka (Makaa)",
+      "Njem (Njyem, Ndjem)",
+      "Koonzime",
+      "Nzime",
+      "Konabembe",
+      "Badjoue",
+      "Bikele",
+      "Djem (Njem)",
+      "Baka (chasseurs-cueilleurs)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples bantous Makaa-Njem sont entres dans le Cameroun actuel depuis le bassin du Congo ou le Tchad actuel entre le XIVe et le XVIIe siecle. Ils representent la premiere vague de bantous forestiers installes dans la zone. Leur expansion correspond a la phase de colonisation bantoue de la foret equatoriale centrale, facilitee par les variations climatiques du premier millenaire avant notre ere (ouverture de couloirs savanneux). Les Baka sont des peuples autochtones dont la presence dans les forets d'Afrique centrale est anterieure a l'expansion bantoue.",
+      "formationPeriod": "XIVe-XVIIe siecle pour les bantous Makaa-Njem ; presence des Baka dans les forets depuis plusieurs millenaires.",
+      "migrationRoutes": [
+        "Migration des Makaa-Njem depuis le bassin du Congo ou le Tchad vers le nord du fleuve Lom (frontiere Est-Adamaoua)",
+        "Deplacement force vers le sud suite a l'invasion Beti-Pahuin (eux-memes pousses par les Vute et Mbum fuyant les guerriers peuls)",
+        "Les Nzime et Njem ont continue leur migration jusqu'au fleuve Dja et au-dela vers le Congo-Brazzaville"
+      ],
+      "historicalSettlementZones": [
+        "Division du Haut-Nyong, province de l'Est, Cameroun (Maka principal)",
+        "Axe Abong-Mbang, Doume, Nguélemendouka (Maka)",
+        "Axe Lomie - Ngoyla - Djadom (Njem/Njyem)",
+        "Zone Mindourou - Lomie - Zoulabot (Nzime)",
+        "Corridor transfrontalier Cameroun-Congo-Brazzaville (Njem)",
+        "Forets de l'Est et du Sud camerounais (Baka)"
+      ],
+      "unificationsOrDivisions": "Ces peuples forment un ensemble linguistique coherent (Makaa-Njem, groupe A83-A84 de la classification de Guthrie) mais restent politiquement distincts. Les Njeme et les Njyem sont ethniquement uns mais separés par les Badwe'e et Nzime ; leurs dialectes sont distincts. Les Baka forment un groupe separé sans lien linguistique avec les bantous.",
+      "externalInfluences": "L'arrivee des Beti-Pahuin a force les Makaa-Njem vers le sud et le Dja. La colonisation allemande (depuis 1884) a impose le travail force pour construire des routes et des plantations. La France a remplace l'Allemagne en 1916. Depuis l'independance du Cameroun (1960), les tensions politiques et le delaissement des infrastructures dans la province de l'Est alimentent une frustration croissante. La creation des parcs nationaux (Lobeke, Boumba Bek, Nki) a progressivement exclu les Baka de leurs terres ancestrales.",
+      "majorHistoricalEvents": "L'invasion Beti-Pahuin (XIXe siecle) a force les Makaa-Njem vers les forets du Dja. La colonisation allemande (1884) a entraine le travail force. Le mandat francais (1916) a transforme les structures economiques. L'independance du Cameroun (1960) n'a pas fondamentalement ameliore la situation des peuples de l'Est. Les Baka ont ete progressivement depossedes de leurs territoires ancestraux par la creation de zones protegees depuis les annees 1990-2000."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les bantous Makaa-Njem ont des structures politiques decentralisees : villages lineaires le long des axes routiers, autorite exercee par les anciens de clan et les chefs de village. Pas de royaumes centralises. Les Baka sont organises en petits groupes sans chefs ni hierarchie formelle ; les decisions se prennent par consensus communautaire.",
+      "clanOrganization": "Organisation clanique basee sur la descendance ; les clans definissent les regles d'exogamie et les droits fonciers forestiers. Chez les bantous, les clans sont matrilineaires dans certains groupes du Centre-Sud camerounais. Chez les Baka, pas de clans au sens strict.",
+      "ageClassSystems": "Ceremonies d'initiation a l'age adulte chez les bantous. Chez les Baka, le rite de passage majeur implique l'esprit Ejengi (esprit de la foret) et la danse luma apres une chasse reussie.",
+      "roleOfLineages": "Chez les bantous : la lignee determine l'acces aux terres agricoles et aux territoires de chasse. Chez les Baka : les groupes familiaux extensifs definissent les zones d'exploitation forestiere.",
+      "religiousAuthority": "Chez les Maka-Njem : religion traditionnelle (animisme) et christianisme. Chez les Baka : culte du spirit Ejengi, mediateur entre Komba (etre supreme) et les Baka ; Ejengi est omnipresent et punit les transgresseurs dans la foret."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Groupe Makaa-Njem (Maka, Koonzime, Nzime, Njem) ; Baka (langue distincte non bantoue)",
+      "isoCodes": ["mcp", "ozm", "njo", "njy"],
+      "dialects": [
+        "Maka (mcp) / Byep ou Nord-Maka (parle au nord du territoire Maka)",
+        "Koonzime / Konzime (ozm) : parle dans la zone de Djaposten",
+        "Nzime (njo) : parle sur l'axe Abong-Mbang/Lomie/Mindourou",
+        "Njem/Njyem (njy) : parle au sud du Dja et dans le nord Congo-Brazzaville",
+        "Le dialecte Njeme est proche du Koonzime"
+      ],
+      "vehicularRole": "Le français est la langue officielle et vehiculaire au Cameroun. Le Bulu (langue beti) et le Gbaya servent aussi de vehiculaires regionaux dans certaines zones. Ces langues Makaa-Njem sont avant tout des langues maternelles locales. Les langues Baka sont propres a ce peuple."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Bantous Makaa-Njem : ceremonies d'initiation, rites de recolte, funerailles. La chasse et la culture sur brulis sont au coeur de la vie rituelle et economique. Baka : le rite Ejengi est le rituel central (danse luma apres une chasse reussie, invocant l'esprit Ejengi) ; rites de passage a l'age adulte impliquant Ejengi. La medecine traditionnelle baka (a base de plantes) est renommee bien au-dela de leur communaute et est recherchee par les bantous voisins.",
+      "symbols": "Chez les Baka : la foret est la mere spirituelle et la source de toute vie. Les huttes en branches entrouvertes recouvertes de feuillage (moungoulous) symbolisent le lien avec la foret. Chez les bantous forestiers : les espaces de foret primaire et les axes fluviaux (Lom, Nyong, Dja) constituent les references geographiques identitaires.",
+      "artsAndMusic": "La musique polyphonique baka est une caracteristique culturelle majeure ; elle accompagne les rituels quotidiens (likanos, histoires spirituelles), les chasses, les rites de passage. Une centaine d'instruments sont repertories chez les Baka. Chez les Maka et voisins : musique de percussion, chants collectifs et danses lors des ceremonies. L'artisanat comprend la fabrication de piegages, arcs, canoës, paniers et tissus.",
+      "spiritualities": "Baka : animisme centre sur l'esprit Ejengi (esprit de la foret, mediateur du supreme Komba) ; culte du totem protecteur de la communaute. Connaissance approfondie de la foret : les Baka utilisent pres de 500 plantes et ont plus d'une douzaine de mots pour l'elephant de foret. Bantous Makaa-Njem : animisme traditionnel, christianisme catholique et protestant. La foret est investie d'une dimension spirituelle par tous ces groupes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises pour les peuples Makaa-Njem ni pour les Baka. Organisation en chefferies de village independantes pour les bantous. Les Maka ont neanmoins une forte presence politique dans la province de l'Est depuis l'independance (1960), constituant une force politique locale non negligeable.",
+      "relationsWithNeighbors": "Les Baka entretiennent une relation de dependance mutuelle et de tensions avec les bantous voisins : ils echangent produits forestiers (viande, miel, plantes medicinales) contre produits agricoles. Les bantous Makaa-Njem sont en relation commerciale et culturelle avec les Beti-Pahuin au nord-ouest et les groupes du Congo-Brazzaville au sud.",
+      "conflictsOrAlliances": "Les Baka sont marginalises et subissent des violences de la part des eco-gardes dans les parcs nationaux (Lobeke, Boumba Bek, Nki). Un accord-cadre (MoU) entre l'Etat camerounais et l'association Baka Asbabuk a ete signe en 2019 pour faciliter leur acces aux parcs. Les Maka ont exprime une frustration croissante face au manque d'investissements dans la province de l'Est : lors de la presidentielle 2004, Paul Biya n'a pas recueilli la majorite a Abong-Mbang.",
+      "diaspora": "Migrations vers Yaounde et Douala pour les bantous de la province de l'Est. Les Baka tendent a sedentariser le long des axes routiers en raison des restrictions d'acces a la foret, avec des consequences graves sur leur sante et leur culture."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 300000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation globale pour l'ensemble des peuples Makaa-Njem du Cameroun : Maka 89 500 (1987-88 ; Ethnologue), plus les groupes Koonzime, Nzime, Njem, Konabembe, Badjoue et Baka (environ 30 000 au Cameroun seul selon UNESCO/SIL)",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 270000,
+          "notes": "Province de l'Est et du Sud principalement ; villes d'Abong-Mbang, Doume, Lomie, Ngoyla, Djadom"
+        },
+        {
+          "country": "COG",
+          "population": 20000,
+          "notes": "Nord du Congo-Brazzaville : Njem/Njyem et Souanke"
+        },
+        {
+          "country": "GAB",
+          "population": 5000,
+          "notes": "Groupes frontaliers dans le nord du Gabon"
+        },
+        {
+          "country": "CAF",
+          "population": 5000,
+          "notes": "Groupes Baka et apparentes dans le sud-ouest de la RCA"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Makaa people – Wikipedia (https://en.wikipedia.org/wiki/Makaa_people)",
+      "Nzime people – Wikipedia (https://en.wikipedia.org/wiki/Nzime_people)",
+      "Njem people – Wikipedia (https://en.wikipedia.org/wiki/Njem_people)",
+      "Groupes ethniques du Cameroun – Wikipedia (https://fr.wikipedia.org/wiki/Groupes_ethniques_du_Cameroun)",
+      "Guardians of the forest: the Baka and the living spirit of the Dja – UNESCO (https://www.unesco.org/en/articles/guardians-forest-baka-and-living-spirit-dja)",
+      "In Southeastern Cameroon, the Baka People Are Marginalized in the Name of Nature Conservation – Pulitzer Center (https://pulitzercenter.org/stories/southeastern-cameroon-baka-people-are-marginalized-name-nature-conservation)",
+      "Baka people of Cameroon – Last Places (https://lastplaces.com/en/travel-is-knowledge/baka-people-cameroon/)",
+      "SIL Cameroon – Koonzime (ozm) (https://www.silcam.org/resources/archives/3329)",
+      "Cameroon ethnic groups – Encyclopaedia Britannica (https://www.britannica.com/place/Cameroon/People)"
+    ]
   }
 }

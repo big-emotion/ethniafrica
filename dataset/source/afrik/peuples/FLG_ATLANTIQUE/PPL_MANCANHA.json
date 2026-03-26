@@ -2,59 +2,99 @@
   "id": "PPL_MANCANHA",
   "nameMain": "Mancanha",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GNB"],
+  "currentCountries": ["GNB", "SEN", "GMB"],
   "content": {
     "appellations": {
       "mainName": "Mancanha",
-      "selfAppellation": "",
-      "exonyms": ["Mancanha (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ba-hula (autoappellation; le peuple se désigne lui-même par ce terme)",
+      "exonyms": [
+        "Mancanha (terme portugais, dominant en Guinée-Bissau)",
+        "Mancagne (terme français, utilisé au Sénégal)",
+        "Mankanya / Mankagne / Mankague (variantes orthographiques anglophones)",
+        "Bola / Brame / Brama (autres désignations exogènes ancienness)",
+        "Bulama / Burama / Mankaya (variantes dialectales ou régionales)"
+      ],
+      "originOfExonyms": "Les diverses appellations exogènes sont issues des contacts avec les colonisateurs portugais (Guinée-Bissau), français (Sénégal) et britanniques (Gambie). Le terme portugais Mancanha s'est imposé comme appellation de référence internationale. L'autoappellation Ba-hula, liée au nom de leur langue (uhula), est utilisée par les locuteurs eux-mêmes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Mancanha est le terme officiel en Guinée-Bissau. Mancagne est utilisé au Sénégal dans les textes administratifs francophones. Mankanya est la forme standard dans la littérature anglophone. La langue Mankanya a été déclarée langue officielle du Sénégal.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Littoral et zones côtières",
-      "currentCountries": ["GNB"]
+      "ethnoLinguisticGroup": "Bak (sous-groupe de la famille Niger-Congo, branche atlantique; même groupe que les Manjak, Balanta et Papel)",
+      "historicalRegion": "Sénégambie (littoral et zones côtières entre le fleuve Gambie et le Cacheu), Guinée-Bissau nord-ouest",
+      "currentCountries": ["GNB", "SEN", "GMB"]
     },
-    "ethnicities": ["Mancanha"],
+    "ethnicities": ["Mancanha / Mankanya"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Littoral et zones côtières"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Mancanha sont originaires de la région sénégambienne, zone côtière d'Afrique de l'Ouest. Ils partagent une origine culturelle et linguistique avec les peuples Bak (Manjak, Balanta, Papel), qui constituent un ensemble ethno-linguistique ancien ancré dans les zones de mangroves et de riz entre le fleuve Gambie et le fleuve Cacheu.",
+      "formationPeriod": "La formation du groupe Mancanha comme entité distincte remonte à plusieurs siècles, liée à l'occupation des zones littorales et insulaires de la Sénégambie. Leur agriculture rizicole en zones de mangroves et leur pêche côtière témoignent d'une adaptation ancienne à l'environnement deltaïque.",
+      "migrationRoutes": [
+        "Occupation historique des zones côtières entre le fleuve Gambie et le Cacheu",
+        "Présence ancienne dans les régions de Cacheu (Guinée-Bissau) et de Ziguinchor (Sénégal)"
+      ],
+      "historicalSettlementZones": [
+        "Littoral et zones côtières du nord-ouest de la Guinée-Bissau (région de Cacheu)",
+        "Casamance méridionale, Sénégal (région de Ziguinchor)",
+        "West Coast Region de la Gambie"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "La colonisation portugaise en Guinée-Bissau et française en Sénégalie a influencé les pratiques agricoles, religieuses et administratives. L'influence catholique portugaise est forte, expliquant la prédominance du catholicisme romain. Les contacts avec les peuples Peul et Mandingue islamisés ont conduit certains groupes Mancanha à adopter des pratiques musulmanes.",
+      "majorHistoricalEvents": "La Guinée-Bissau est passée sous contrôle colonial portugais à partir du XVe siècle; les Mancanha, comme les peuples voisins Bak, ont maintenu une résistance semi-autonome dans les zones de mangroves. L'indépendance de la Guinée-Bissau (1974) et les ajustements territoriaux au Sénégal ont redistribué les communautés Mancanha entre trois États modernes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en communautés villageoises dirigées par des chefs de village et des conseils d'anciens. L'agriculture rizicole collective et la pêche côtière structurent la vie communautaire. Comme les autres peuples Bak, les Mancanha n'ont pas développé de grande entité étatique centralisée.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "La société Mancanha est structurée autour de lignages patrilinéaires. L'appartenance au clan et au lignage détermine l'accès aux terres rizicoles et les alliances matrimoniales.",
+      "religiousAuthority": "L'autorité religieuse traditionnelle est liée aux cérémonies animistes ancestrales, notamment les rituels propitiatoires agricoles. Le catholicisme romain, introduit par les missionnaires portugais, est pratiqué en parallèle avec les traditions animistes, selon un syncrétisme caractéristique des peuples Bak."
     },
     "languages": {
-      "mainLanguage": "Mancanha (mcs)",
+      "mainLanguage": "Mankanya / Mancanha (mcs)",
       "isoCodes": ["mcs"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Dialecte de Guinée-Bissau (zone de Cacheu)",
+        "Dialecte du Sénégal (Casamance, désigné uhula par les locuteurs)"
+      ],
+      "vehicularRole": "Le Mankanya est une langue communautaire de la famille Bak (Niger-Congo). Elle a acquis un statut officiel au Sénégal. En Guinée-Bissau, le créole portugais (Kriol) et le portugais sont utilisés pour les échanges extérieurs. En Sénégal, le français et le wolof servent de langues véhiculaires."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La religion Mancanha combine le catholicisme romain (prédominant) et un animisme traditionnel vigoureux. Les rites agraires liés à la culture du riz (bénédictions des semailles, cérémonies de récolte) sont centraux. Des rituels d'initiation et des cérémonies funéraires prolongées marquent les temps forts de la vie communautaire. Les pratiques animistes incluent des offrandes aux esprits ancestraux et des rites de protection des villages.",
+      "symbols": null,
+      "artsAndMusic": "Comme les peuples voisins Bak, les Mancanha pratiquent la culture du riz sur terrasses en mangroves, un savoir-faire technique remarquable. Les danses et chants collectifs accompagnent les cérémonies du calendrier agricole et les rites de passage. La production artisanale (tissage, poterie) s'inscrit dans la tradition sénégambienne.",
+      "spiritualities": "Le catholicisme romain est la religion majoritaire, héritage de la colonisation portugaise. Les pratiques animistes traditionnelles persistent, notamment les croyances aux esprits ancestraux et les rites de protection. Ce syncrétisme catholicisme-animisme est partagé avec les peuples Bak voisins (Manjak, Papel). Une minorité musulmane existe dans les communautés ayant des contacts étroits avec les Peul et Mandingue."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Mancanha n'ont pas développé de royaumes centralisés. Leur organisation politique reste fondée sur des chefferies villageoises autonomes. Ils ont coexisté avec les structures politiques Bak voisines (Papel, Manjak) dans la zone de la Guinée-Bissau actuelle.",
+      "relationsWithNeighbors": "Les Mancanha entretiennent des relations ethniques et linguistiques étroites avec les peuples Bak (Manjak, Balanta, Papel). Ils cohabitent avec les Peul (28,5% de la population de Guinée-Bissau), les Balanta et les Mandingue. Des influences culturelles mutuelles sont documentées avec les communautés Jola du Sénégal.",
+      "conflictsOrAlliances": null,
+      "diaspora": "Des communautés Mancanha sont présentes à Bissau (capitale de Guinée-Bissau) et à Ziguinchor (Sénégal). La diaspora sénégambienne comprend des représentants en France et au Portugal, dans le sillage des flux migratoires post-coloniaux."
     },
     "demography": {
-      "totalPopulation": 100,
+      "totalPopulation": 117000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025; 101lasttribes.com (population de 96 600 rapportée anterieurement)",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 64000,
+          "note": "3,1% de la population de Guinée-Bissau (recensement); région de Cacheu"
+        },
+        {
+          "country": "SEN",
+          "population": 45000,
+          "note": "Casamance, région de Ziguinchor"
+        },
+        {
+          "country": "GMB",
+          "population": 8000,
+          "note": "West Coast Region, Gambie"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Mankanya people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mankanya_people)",
+      "Mankanya in Guinea-Bissau – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13515/PU)",
+      "Guinea-Bissau ethnic groups census – BeingAfrican, 2024 (https://beingafrican.org/guinea-bissau/)",
+      "Mankanya people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/mankanya.html)",
+      "Ethnologue – Mankanya (mcs), SIL International, 2024 (https://www.ethnologue.com/language/mcs/)"
+    ]
   }
 }

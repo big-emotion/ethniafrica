@@ -2,67 +2,102 @@
   "id": "PPL_MABAN",
   "nameMain": "Maban",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["SSD", "TCD", "SDN"],
+  "currentCountries": ["SSD", "ETH"],
   "content": {
     "appellations": {
       "mainName": "Maban",
-      "selfAppellation": "Maban",
-      "exonyms": ["Maban (terme utilisé par les Européens)"],
+      "selfAppellation": "Maban (aussi Mabaan, Buruun ou Chai dans les sources anciennes)",
+      "exonyms": ["Maaban", "Burun", "Buruun", "Chai"],
+      "originOfExonyms": "Le terme Burun (ou Buruun) etait l'appellation historique utilisee dans les sources coloniales anglo-egyptiennes et par les anthropologues (Charles et Brenda Seligman, 1932). Le groupe a adopte le nom Maban depuis le nom de leur comite et territoire dans l'Etat du Nil superieur (Upper Nile), abandonnant progressivement le nom Burun. Chai etait utilise dans les sources ethiopiennes. L'appellation actuelle Maban est le nom officiel au Soudan du Sud.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Maban est l'appellation officielle au Soudan du Sud. Un comte entier (Maban County, Etat du Nil superieur) porte leur nom. La ville principale de Bunj (ou Maban-Bunj) est leur centre administratif.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique",
-      "historicalRegion": "SSD, TCD",
-      "currentCountries": ["SSD", "TCD", "SDN"]
+      "ethnoLinguisticGroup": "Nilotique occidental, sous-groupe Mabaan-Burun (apparente aux Shilluk et autres groupes Luo)",
+      "historicalRegion": "Plaines entre le Nil a l'est de Renk et les contreforts des hauts plateaux ethiopiens (Etat du Nil superieur, Soudan du Sud actuel)",
+      "currentCountries": ["SSD", "ETH"]
     },
     "ethnicities": [
-      "Maban du Soudan du Sud",
-      "Maban du Tchad",
-      "Sous-groupes régionaux"
+      "Mabano (groupe principal de Maban County, Etat du Nil superieur)",
+      "Buldid (sous-groupe de Maban County, district de Maiwut)",
+      "Jumjum (groupe apparente Burun, vivant le long du Nil Bleu au Soudan)",
+      "Ragreg (groupe Burun, Soudan du Nil Bleu meridional)",
+      "Ganza (groupe Burun, Kurmuk)",
+      "Mopo (groupe Burun)",
+      "Mayak (groupe Burun)"
     ],
     "origins": {
-      "ancientOrigins": "Les Maban sont originaires du Soudan du Sud et du Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Maban sont a l'origine des Nilotiques occidentaux (groupe Luo) et sont supposes avoir partage une origine commune avec les Shilluk, les Anuak et les Luo du Kenya actuel. Selon les theories de migration, leur point de depart commun se situait pres de la confluence du Nil et du Nil Bleu, aux environs de Khartoum (Soba). Lors de l'effondrement du dernier royaume chretien de Nubie (Makuria, autour du 15e siecle), ils se sont deplaces vers le sud, dans la region de la riviere Yabus. Le groupe Maban s'est ensuite separe des autres peuples Luo, a adopte le nom de leur territoire et a developpe une culture distincte.",
+      "formationPeriod": "Consolidation de l'identite maban distincte apres leur separation des autres peuples Luo entre le 15e et le 17e siecle. Ils ont abandonne progressivement le nom Burun et adopte le nom territorial Maban. Leur culture agraire et pastorale s'est developpee dans les plaines fertiles entre le Nil et les hautes terres ethiopiennes. La colonisation anglo-egyptienne (fin 19e-debut 20e siecle) a impose une structure administrative et des changements sociaux majeurs.",
+      "migrationRoutes": [
+        "Confluence Nil-Nil Bleu (Khartoum/Soba) — point de depart ancestral common avec les Shilluk",
+        "Deplacement vers le sud lors de l'effondrement de Makuria (vers le 15e siecle)",
+        "Installation dans la region de la riviere Yabus et les plaines du Nil superieur",
+        "Stabilisation dans les plaines entre Renk (Nil) et les contreforts ethiopiens"
+      ],
+      "historicalSettlementZones": [
+        "Plaines du Nil superieur entre Renk et la riviere Sobat",
+        "Region de la riviere Yabus (limite Soudan du Sud-Ethiopie)",
+        "Maban County (principale zone habituee, capitale Bunj)",
+        "Maiwut district (sous-groupe Buldid)",
+        "Zone de Yabus, Wedega, Kurmuk (Soudan, frontiere ethiopienne, pour le groupe Burun)"
+      ],
+      "unificationsOrDivisions": "La societe maban n'a jamais eu de systeme administratif centralise avant la colonisation. Les seules autorites reconnues etaient les leaders spirituels. Les differents groupes Maban (Mabano, Buldid) et les groupes Burun apparentes (Jumjum, Ragreg, Ganza, Mopo, Mayak) occupent des zones separees. La puissance des chefs locaux est limitee par la dispersion geographique de la communaute et le manque de legitimite formelle (rapport du Groupe de deminage danois, 2011). Le conflit au Soudan du Sud (depuis 2013) a genere de nombreux deplaces internes (IDP) maban, ainsi que des flux de refugies vers le camp de Bungo en Ethiopie occidentale.",
+      "externalInfluences": "Colonisation anglo-egyptienne (fin 19e siecle) : pillages et traite des esclaves avant l'organisation coloniale. Ameliorations coloniales : installations medicales, irrigation, routes et administration au 20e siecle. Pression des Nuer (voisins sud-ouest) qui ont profite de la nature pacifique des Maban pour s'emparer de terres et assimiler certaines populations. Creation du comte de Maban au Soudan du Sud apres l'independance (2011). Conflits post-independance : presence de refugies soudanais (Blue Nile/Kordofan) et de refugies ethio-soudanais dans la region.",
+      "majorHistoricalEvents": "Effondrement du royaume chretien de Makuria et migration vers le sud (15e siecle). Esclavage sous la Condominium anglo-egyptien (fin 19e siecle). Installation du systeme administratif colonial et ameliorations sociales au debut du 20e siecle. Independance du Soudan du Sud (2011) et creation du comte de Maban. Afflux de refugies soudanais fuyant les conflits du Nil Bleu (Soudan) vers la region de Maban (2011-present). Conflit interne au Soudan du Sud (depuis 2013) generant de nombreux deplaces internes maban dans les camps de Yabous, Wedega et en Ethiopie occidentale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe maban n'a pas de systeme d'administration traditionnel centralise. Les seuls detenteurs d'autorite sont les leaders spirituels, qui servent de mediateurs entre la communaute et le dieu supreme. Les chefs locaux ont une autorite limitee, en partie du fait de la dispersion geographique de la communaute (chaque hutte etant espacee d'environ 200 metres). Chaque lignage forme son propre clan autonome, dirige par un chef qui maintient la justice et l'ordre dans son etablissement.",
+      "clanOrganization": "La societe maban est organisee en clans bases sur les lignages matrilineaires (contrairement a la majorite des peuples nilotiques qui sont patrilineaires). Chaque lignage constitue un clan independant, dont le chef maintient la justice et l'ordre. Les clans vivent dans des etablissements lineaires, chaque hutte a toit de chaume espacee d'environ 200 metres de la suivante.",
+      "ageClassSystems": "Les jeunes hommes et femmes matures sont reunis lors de la ceremonie de Gatti (decembre) pour etre prepares au mariage selon les groupes d'age. Le mariage est strictement organise selon l'age : une personne peut rater definitivement le mariage si elle manque la fenetre d'age appropriee.",
+      "roleOfLineages": "Les lignages matrilineaires sont la base de l'organisation sociale maban. L'oncle maternel joue un role crucial dans les ceremonies de mariage (paiement de la dot au nom du neveu ou de la niece). Les enfants appartiennent au clan de leur pere, mais le lignage maternel est la reference identitaire centrale.",
+      "religiousAuthority": "Les leaders spirituels sont les seules veritables autorites dans la societe maban. Ils servent de mediateurs entre la communaute et le dieu supreme, lors des ceremonies de Kornga (confession annuelle d'octobre) notamment. Ces leaders spiritels organisent les purifications rituelles et les sacrifices."
     },
     "languages": {
-      "mainLanguage": "Maban",
-      "vehicularRole": "Le maban est parlé par la majorité des Maban. L'anglais, l'arabe, le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Mabaan",
+      "isoCodes": ["mfz"],
+      "dialects": [
+        "Mabaan de Maban County (dialecte central, Soudan du Sud)",
+        "Jumjum (dialecte apparente du groupe Burun, Soudan/Nil Bleu, code ISO : jum)"
+      ],
+      "vehicularRole": "Le mabaan (code ISO 639-3 : mfz) est parle par environ 103 000 a 113 900 personnes, principalement dans l'Etat du Nil superieur du Soudan du Sud. C'est une langue stable de la famille nilosaharienne. L'arabe soudanais est utilise comme langue vehiculaire dans les zones de contact avec le Soudan. L'anglais est la langue officielle du Soudan du Sud. Les differents dialectes Burun (Jumjum, code jum) sont des langues apparentees mais distinctes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes et islamiques",
-      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels maban, symboles chrétiens et islamiques.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres."
+      "majorRites": "Kornga (octobre) : ceremonie spirituelle annuelle de sacrifice, confession et benediction. La communaute se confesse de ses peches de l'annee et demande le pardon de Dieu, implore la bonne sante des humains et des animaux. Au petit matin, les membres se rendent au cours d'eau voisin pour se purifier rituellement. De retour au village, des animaux sont sacrifies, de la biere de sorgho est bue et la danse dukka-conkon est executee. Les participants portent leurs plus beaux habits et parures de perles (burngo). Gatti (decembre) : celebration de la recolte et ceremonie preparatoire au mariage. Les jeunes hommes et femmes en age de se marier se parent de leurs plus beaux ornements, avec des colliers (linyan). Des animaux sont sacrifies et de la biere de sorgho servie. Mariage : commence dans la foulée de Gatti. Comprend deux ceremonies : 4 mois dans la chambre nuptiale (chanyo), puis une grande ceremonie en mars ou la mariee rejoint la maison de son epoux, installee pres de la maison de l'oncle maternel. La dot maban : 5 porcs, 10 chevres, des houes et des haches, payees par l'oncle maternel. Naissance et nomination : les jumeaux recoivent des noms specifiques (Keta-Buto pour les garcons, Jote-Butta pour les filles). La cermonie de nomination a lieu 10 jours apres la naissance, avec sacrifice d'une chevre. Funérailles : enterrement dans une fosse d'environ 2 metres de profondeur apres rasage de la tete. Ceremonie pumko : les femmes preparent le corps, les hommes creusent la tombe, la communaute chante des chants de tristesse. Deuil d'un mois pour le veuf ou la veuve (port d'une plante tanyan sur les bras et le cou). Cermonie de purification muka duran apres le deuil.",
+      "symbols": "Le betail (bovins, ovins, caprins, porcins, poules) est le symbole de richesse et de statut social. Les perles (burngo) sont portees comme ornementation ceremonielle. Les colliers (linyan) sont des ornements portes par les jeunes en age de se marier. Les instruments agricoles (houes, haches) font partie de la dot matrimoniale, symbolisant le role agraire central de la culture maban.",
+      "artsAndMusic": "Danse dukka-conkon executee lors des ceremonies de Kornga. Chants de deuil lors des funérailles (pumko). Culture materielle oralement transmise a travers la fabrication d'instruments agricoles, les activites de chasse et de peche a la lance. Decoration du corps avec des perles (burngo) lors des grandes ceremonies. Poterie et tissage artisanal pour les usages domestiques.",
+      "spiritualities": "Croyance en un dieu supreme (sans nom documente dans les sources disponibles) avec lequel la communaute communique par l'intermediaire de leaders spirituels. La Kornga est la manifestation principale de cette relation : confession annuelle, demande de pardon et de benediction pour les humains et les animaux. Religion majoritairement animiste (environ 85% de la population). Minorite chretienne (environ 15%, dont 5% evangelique), qui constitue un trait distinctif par rapport aux peuples voisins a majorite chretienne ou musulmane plus importante."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora maban dans les grandes villes soudanaises et tchadiennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Maban n'ont jamais developpe de systeme d'administration politique centralise. Pas de royaumes ni de chefferies formelles. La seule autorite reconnue dans la tradition est spirituelle. Ce systeme decentralise a peut-etre contribue a leur vulnerabilite face aux raids esclavagistes et aux pressions territoriales des Nuer et Dinka voisins.",
+      "relationsWithNeighbors": "Les Maban voisinent les Dinka a l'ouest et les Nuer au sud. Relations inegales avec les Nuer, qui ont profite de la nature pacifique des Maban pour s'emparer de terres et assimiler certaines populations. La creation du comte de Maban au Soudan du Sud visait a proteger l'identite et les interets du peuple maban. Conflits limites avec le Soudan (flux de refugies du Nil Bleu). Relations commerciales avec les voisins dinka et nuer (troc de betail, produits agricoles).",
+      "conflictsOrAlliances": "Esclavage par les Turco-Egyptiens et les trafiquants d'ivoire pendant la periode coloniale (fin 19e siecle), avant que l'organisation des camps d'esclaves ne permette paradoxalement une certaine protection collective. Pression territoriale et assimilation par les Nuer (voisins du sud). Afflux de refugies soudanais dans la region de Maban (depuis 2011) a la suite des conflits dans le Nil Bleu et le Kordofan au Soudan. Deplacements internes maban dus aux conflits du Soudan du Sud (depuis 2013).",
+      "diaspora": "Diaspora maban dans les grandes villes du Soudan du Sud (Juba, Malakal). Camp de refugies de Bungo en Ethiopie occidentale : petite communaute maban deplacee. Les conflits successifs (Soudan du Sud post-independance) ont produit des deplaces internes dans les camps de Yabous, Wedega et d'autres localites de la region frontaliere avec le Soudan."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 115000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Maban people : 110 000 a 113 900 personnes dans l'Etat du Nil superieur du Soudan du Sud, avec 5 400 a 7 000 supplementaires en Ethiopie. PeopleGroups.org (Mabaan of South Sudan) et 101 Last Tribes (103 000 au Soudan du Sud). Estimation 2025 : environ 115 000 incluant les populations en Ethiopie.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 107000,
+          "note": "Principalement Maban County (Etat du Nil superieur), villes de Bunj, Kigale et Dago. Nombreux deplaces internes (IDP) dus aux conflits."
+        },
+        {
+          "country": "ETH",
+          "population": 7000,
+          "note": "Hauts plateaux ethiopiens (zone frontaliere avec le Soudan du Sud). Camp de refugies de Bungo en Ethiopie occidentale."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Maban language (mdy)",
-      "CIA World Factbook – South Sudan, Chad",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Maban people. https://en.wikipedia.org/wiki/Maban_people",
+      "SIL Ethnologue — Mabaan language (mfz). https://www.ethnologue.com/language/mfz/",
+      "101 Last Tribes — Maban people. https://www.101lasttribes.com/tribes/maban.html",
+      "PeopleGroups.org — Mabaan of South Sudan (PG012092). https://peoplegroups.org/people_groups/pg012092/",
+      "SCIRP — The Luo People of South Sudan: Theories of Origin, Separation and Migration. https://www.scirp.org/pdf/oalib_1113676.pdf",
+      "Seligman, Charles G. et Brenda Z. Pagan Tribes of the Nilotic Sudan. London: Routledge, 1932.",
+      "Danish Demining Group — South Sudan Assessment, 2011."
     ]
   }
 }

@@ -1,22 +1,98 @@
 {
   "id": "PPL_ESAN",
-  "nameMain": "",
+  "nameMain": "Esan",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Esan",
+      "mainName": "Esan",
+      "selfAppellation": "Esan (Ebho Esan)",
+      "exonyms": ["Ishan"],
+      "originOfExonyms": "Le terme Ishan est l'exonyme colonial britannique issu d'une deformation phonetique d'Esan. Les administrateurs britanniques l'utiliserent pour designer la division administrative (Ishan Division) et le peuple. L'orthographe Esan est aujourd'hui universellement preferee.",
+      "whyProblematic": "Ishan est desormais obsolete comme designation ethnique, bien qu'il subsiste dans des sources historiques et administratives coloniales.",
+      "contemporaryUsage": "Le nom Esan est l'appellation standard en usage academique, politique et communautaire. L'expression Ebho Esan (le peuple esan) est l'endonyme de langue esan.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Edoid (branche Benue-Congo, Niger-Congo)",
+      "historicalRegion": "Esanland — plateau du district senatorial central d'Edo (environ 136 m d'altitude), Edo State, sud du Nigeria",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ish)", "Esan Historical Archives"]
+    "ethnicities": [
+      "Royaume d'Uromi — l'un des plus importants royaumes esan, LGA d'Esan North-East",
+      "Royaume d'Irrua — centre du LGA d'Esan Central, avec Ugbegun, Opoji, Ewu",
+      "Royaume d'Ekpoma — chef-lieu du LGA d'Esan West, le plus peuple",
+      "Royaume d'Ubiaja — chef-lieu du LGA d'Esan South-East",
+      "Royaume d'Igueben — chef-lieu du LGA d'Igueben, avec Ebelle, Amahor, Ewossa",
+      "Royaumes de la plaine sudest — Ewohimi, Emu, Ohordua, Ewatto, Ugboha, Illushi",
+      "Royaumes du nord — Ukhun, Idoa, Amahor (influences emai et etsako)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les humains ont reside dans la zone de savane-foret d'Esanland depuis au moins 3 000 ans. Des premieres migrations depuis la zone culturelle de Nok (Nigeria central, confluence Niger-Benue, Jos Plateau) vers 500 apr. J.-C. peuplent la region, etablissant des mini-royaumes (Iyala). Des recherches archeologiques revelent des murs et fosses (3 a 5 km de diametre) construits entre 500 et 750 apr. J.-C., precurseurs des structures de l'Empire du Benin.",
+      "formationPeriod": "Trois vagues migratoires principales structurent la formation d'Esanland. Premiere vague : migrants de la zone de Nok vers 500 apr. J.-C. Deuxieme vague (Xe siecle) : retour de groupes esan depuis Igodomigodo (Benin primitif), dont les trois fils d'Ojiso Owodo (dernier souverain de la dynastie Ogiso), conduits par leur mere la reine Oakha, s'etablissant a Uromi, Uzea et Ekperi. Troisieme vague (XIVe-XVe s.) : exode depuis le Benin d'Ewuare Ier (vers 1440-1473), dont les lois restrictives pousserent de nombreux habitants a fuir vers Esanland, donnant naissance au terme Esan (refugie en edo).",
+      "migrationRoutes": [
+        "Zone de Nok (Taraba/Plateau) vers le plateau d'Esanland (vers 500 apr. J.-C.)",
+        "Igodomigodo (Benin primitif) vers Uromi, Uzea, Ekperi (Xe siecle)",
+        "Benin City vers Esanland lors de l'exode sous Ewuare Ier (XVe siecle)",
+        "Influences laterales : Igbo et Igala (depuis Ewohimi, Ewatto, Ekpon, Amahor), Emai (Ukhun, Idoa), Etsako (Irrua), Itsekiri (Ekpon), Urhobo (Ujiogba)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Esanland (136 m) — territoire principal dans Edo Central",
+        "Cinq LGA de l'Etat d'Edo : Esan North-East, Esan Central, Esan West, Esan South-East, Igueben",
+        "Villes principales : Uromi, Ekpoma, Irrua, Ubiaja, Igueben",
+        "Zones frontieres influencees par des peuples voisins (sud : Benin City, nord : Etsako, est : Igbo)"
+      ],
+      "unificationsOrDivisions": "Les 35 royaumes esan ne formerent jamais un Etat centralise. Leur organisation en confederation de royaumes independants (analogue aux cites-Etats grecques) leur permit de maintenir des identites distinctes tout en partageant langue et culture. Sous l'Empire de Benin, ils payaient tribut et les Oba approuvaient les enijie (rois). La colonisation britannique (1897-1906) les regroupa dans la Ishan Division. En 1960, ils devinrent partie integrante de la province mid-ouest, puis de l'Etat du Midwest, et enfin de l'Etat d'Edo (depuis 1991).",
+      "externalInfluences": "L'influence majeure fut celle de l'Empire de Benin : les Esan payaient tribut, et le terme meme Esan naquit de la relation avec Benin (refugies fuyant les lois d'Ewuare Ier). Au XIXe siecle, les attaques des Nupe musulmans (esclavage et conversion forcee) mobiliserent la resistance des royaumes esan meridionaux. La colonisation britannique (1897) et les batailles prolongees (notamment a Uromi) marquent profondement l'histoire moderne.",
+      "majorHistoricalEvents": "Construction de murs et fosses pre-historiques (500-750 apr. J.-C.). Retour de la lignee royale Ojiso depuis Igodomigodo (Xe siecle). Exode sous Ewuare Ier et naissance du terme Esan (XVe s.). Guerres intra-esan frequentes maintenant la culture homogene. Attaques nupes (XIXe s.). Colonisation britannique et division Ishan (1897-1906). Independance nigeriane (1960). Creation de l'Etat d'Edo (1991)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confederation de 35 royaumes independants, chacun gouverne par un Onojie (roi), souvent designe par son lignage et approuve par les elites du royaume. Ce systeme est compare aux cites-Etats grecques (poleis) : identite culturelle et linguistique commune, mais souverainetes et governance distinctes. Les Onojie rendaient la justice, presidaient aux rites religieux et dirigeaient les milices de defense. Sous l'Empire de Benin, ils devaient obtenir l'approbation de l'Oba.",
+      "clanOrganization": "Chaque royaume (Iyala ou Ishan) est compose de lignages (Oha) patrilineaires. Les conseils d'anciens et de chefs de lignage assistaient l'Onojie. Les communautes frontieres avec d'autres peuples (Igbo, Etsako) presentent des structures mixtes issues des migrations et alliances historiques.",
+      "ageClassSystems": "Les associations d'age masculin structurent les responsabilites sociales, militaires et ceremoniales. Les jeunes hommes participent aux danses acrobatiques Igbabonelimhin et aux mascarades Okpodu lors des festivals et ceremonies funebres.",
+      "roleOfLineages": "Les lignages patrilineaires (Oha) determinaient l'appartenance clanique, la succession aux titres et la propriete fonciere. Les fils aines assumaient les responsabilites rituelles et familiales. Les alliances inter-lignages par mariage cimentaient les relations entre royaumes.",
+      "religiousAuthority": "Les Onojie presidaient les rites religieux de leurs royaumes. Osanobua (dieu supreme, partage avec les Edo voisins) est la divinite centrale. D'autres divinites : Olokun (eau et prosperite), Esu (non diabolique dans la conception esan), Osun (dieu de la medecine, a l'origine du patronyme Okosun). Les trado-medecins (herbalists) jouaient un role crucial dans la vie spirituelle et sanitaire."
+    },
+    "languages": {
+      "mainLanguage": "Esan (Esan)",
+      "isoCodes": ["ish"],
+      "dialects": [
+        "Varietes dialectales entre les 35 royaumes (differences phonologiques et lexicales selon la distance par rapport au centre d'Esanland)",
+        "Dialectes des zones frontieres influencees : Ewohimi (influence igbo), Amahor (influence igala), Irrua (influence etsako)"
+      ],
+      "vehicularRole": "L'esan est enseigne dans les ecoles primaires d'Edo State et diffuse a la radio et a la television regionale. Il est reconnu dans le recensement du Royaume-Uni (indicateur de la diaspora esan). L'anglais et le pidgin nigerien servent de langues vehiculaires plus larges. La langue esan est etroitement apparentee a l'edo, l'urhobo, l'owan, l'isoko et l'etsako."
+    },
+    "culture": {
+      "majorRites": "La danse acrobatique Igbabonelimhin (Igbabonelinmwin) est la forme d'art ceremoniel la plus emblematique : jeunes hommes realisant pirouettes et sauts au rythme de percussions, performee tous les quinze jours (calendrier esan), lors des jours de marche, des festivals de fin d'annee, des fetes de la nouvelle igname, des ceremonies funebres et des evenements sociaux importants. Elle symbolise le lien entre le monde des ancetres et des vivants. Les mascarades Okpodu et les rites de la nouvelle igname marquent le calendrier agricole. Les rites de passage incluent les scarifications tribales (pied de corbeau sous les yeux, marqueur pre-colonial de l'identite esan).",
+      "symbols": "La danse Igbabonelimhin est le symbole identitaire majeur des Esan, reconnue dans tout l'Etat d'Edo. La plante Irvingia gabonensis (erhonhiele), le cerisier local (Otien) et le poivre cloche (akoh) sont des produits emblematiques de l'agriculture esan. La scarification tribale (pied de corbeau) etait le marqueur physique distinctif pre-colonial.",
+      "artsAndMusic": "La danse acrobatique Igbabonelimhin (males, tournant, faisant des sauts choreographies au son de tambours) est l'art performatif central. Elle varie selon les villages et royaumes, chacun ayant ses variantes propres. La musique utilise tambours (frappe rythme), chants collectifs et instruments a percussion. Les folkloriques Igbabonelimhin et Akhuẹ transmettent l'histoire et les valeurs culturelles. L'agriculture de plantation (palmiers, igname, manioc, riz, haricots, maïs, arachides, bananes, oranges, ananas, papaye) constitue le socle economique traditionnel.",
+      "spiritualities": "Religion traditionnelle centree sur Osanobua (dieu supreme, terme utilise aussi pour le Dieu chretien en esan), Olokun, Esu et Osun. Le culte des ancetres est central. La grande majorite des Esan est aujourd'hui chretienne (catholique en majorite, avec d'autres confessions). Dicton illustrant la relation historique avec Benin : Esan ii gbi Ẹdo (Esan ne blesse pas Ẹdo) ou Esan gbe Edo (Esan a vaincu Bini)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les 35 royaumes esan (Amahor, Ebelle, Egoro, Ewohimi, Ekpoma, Ekpon, Emu, Ewu, Ewato, Ewosa, Idoa, Ifeku, Igueben, Ilushi, Inyelen, Irrua, Ogwa, Ohordua, Okalo, Okhuesan, Onogholo, Opoji, Oria, Orowa, Uromi, Udo, Ugbegun, Ugboha, Ubiaja, Urhohi, Ugun, Ujiogba, Ukhun, Urho, Uzea) constituaient une civilisation originale de cites independantes. Uromi fut l'un des royaumes les plus puissants, ayant resiste farouchement a la colonisation britannique (resistance du prince Okojie, 1897-1906).",
+      "relationsWithNeighbors": "Relations complexes avec l'Empire de Benin : vassalite sous tribute, mais aussi refuge (Esan comme peuple de refugies fuyant Benin). Relations de mariage et de commerce avec les Igbo (via Ewohimi, Amahor), les Etsako (Irrua), les Itsekiri et Urhobo (frontieres sud-ouest). La maxime Esan ii gbi Ẹdo illustre une relation d'amitie et de retenue mutuelle avec les Edo voisins.",
+      "conflictsOrAlliances": "Guerres intra-esan frequentes entre royaumes, tout en maintenant une culture homogene. Alliance des royaumes meridionaux contre les raids des Nupe (XIXe siecle), apportant des captifs nupe et etsako dans les villes esan. Resistance prolongee a la colonisation britannique (1897-1906) : guerre de guerilla intensive a Uromi, villages incendies par les Britanniques. Soumission finale en 1906 avec la formation de la Ishan Division.",
+      "diaspora": "Forte diaspora esan dans les grandes villes nigerianes (Benin City, Lagos, Abuja, Port Harcourt). La diaspora esan est reconnue dans le recensement du Royaume-Uni, indiquant une presence significative en Grande-Bretagne. Des associations culturelles esan maintiennent les liens avec Esanland dans de nombreux pays."
+    },
+    "demography": {
+      "totalPopulation": 1400000,
+      "referenceYear": 2025,
+      "source": "Wikipedia — Esan people : entre 1 000 000 et 1 500 000 habitants en Esanland, avec une forte diaspora. 101 Last Tribes confirme cette fourchette. Les Esan representent 14,14 % de la population de l'Etat d'Edo (environ 5 250 000 en 2024), soit environ 740 000 dans l'Etat. En tenant compte de la diaspora intra-nigeriane et internationale, la population totale est estimee a 1 400 000 en 2025. Ethnologue (code ish) situe la population entre 10 000 et 1 million de locuteurs.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 1400000,
+          "note": "Principalement les cinq LGA d'Esanland (Edo State), avec forte diaspora a Benin City, Lagos, Abuja et autres Etats nigerians"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Esan people. https://en.wikipedia.org/wiki/Esan_people",
+      "101 Last Tribes — Esan people. http://www.101lasttribes.com/tribes/esan.html",
+      "Ethnologue (SIL International) — Esan language, code ish. https://www.ethnologue.com/language/ish/",
+      "Wikipedia — Edo State demographics. https://en.wikipedia.org/wiki/Edo_State",
+      "ScriptSource — Esan language (ISO ish). https://www.scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=ish",
+      "City Population — Edo State LGA data (2022). https://citypopulation.de/en/nigeria/admin/NGA012__edo/",
+      "Ajugo, U. B. The True History of Ekpeyeland: 3000 BC to 2005 AD (reference comparative sur l'organisation des peuples du Delta).",
+      "Recherches web 2025 — sources academiques et historiques diverses sur le peuple esan."
+    ]
   }
 }

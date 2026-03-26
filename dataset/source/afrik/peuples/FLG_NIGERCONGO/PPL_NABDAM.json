@@ -6,54 +6,83 @@
   "content": {
     "appellations": {
       "mainName": "Nabdam",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Namnam (terme par lequel les Nabdam se designent eux-memes)",
+      "exonyms": [
+        "Nabdam",
+        "Nabt",
+        "Nabde",
+        "Nabte",
+        "Nabdug",
+        "Nabrug",
+        "Nabnam",
+        "Namnam"
+      ],
+      "originOfExonyms": "Nabdam est le nom du district administratif et la designation la plus courante en anglais. Nabrug designe le territoire ancestral (la terre des Nabdam). Nabt est le nom de leur langue tel qu'il est standardise dans la litterature linguistique. Les variations orthographiques (Nabde, Nabte, Nabdug) refletent des transcriptions differentes d'un meme phoneme gur.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nabdam est la denomination officielle dans l'administration ghanéenne et designe a la fois le peuple et le district administratif (Nabdam District, Upper East Region). Namnam est la designation endogene utilisee en contexte communautaire.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Gur (Mole-Dagbane), branche Niger-Congo",
+      "historicalRegion": "Upper East Region, nord du Ghana (district de Nabdam, capitale Nangodi)",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Nabdam"],
+    "ethnicities": ["Nabdam", "Namnam"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nabdam sont un sous-groupe du peuple Frafra (Gurunsi) de la region nord-est du Ghana. Selon la tradition orale, ils descendent du royaume Mossi (Mugu) et partageaient une origine commune avec les Mossi du Burkina Faso avant de migrer vers leur localisation actuelle. Ils sont intimement lies aux Tallensi voisins, partageant des traditions culturelles et ancestrales communes.",
+      "formationPeriod": "La migration depuis Nalago (dans la sphere Mossi-Mugu) vers le site actuel de Nangodi est documentee dans la tradition orale comme remontant a une periode pre-coloniale. Une tradition situant la migration autour du XVIIIe ou XIXe siecle est coherente avec la formation des chefferies de la region. Le district de Nabdam-Talensi fut constitue sous administration coloniale britannique, le district de Nabdam etant separe de celui de Talensi le 28 juin 2012.",
+      "migrationRoutes": [
+        "Migration depuis Nalago (territoire Mossi-Mugu) vers Nangodi, capitale actuelle du district de Nabdam",
+        "Etablissement dans la region de l'Upper East en lien avec les groupes Tallensi et Frafra voisins"
+      ],
+      "historicalSettlementZones": [
+        "District de Nabdam, Upper East Region, Ghana (capitale : Nangodi)",
+        "Zone frontaliere avec le Burkina Faso au nord"
+      ],
+      "unificationsOrDivisions": "Les Nabdam forment un sous-groupe distinct au sein du continuum culturel Frafra-Gurunsi. Le district de Talensi-Nabdam fut scinde en 2012 : la partie nord devint le district de Nabdam, la partie sud le district de Tallensi. Cette division administrative reflete une identite ethnique distincte.",
+      "externalInfluences": "Les Nabdam partagent des caracteristiques culturelles et ancestrales avec les Mossi du Burkina Faso. La region de Nangodi fut historiquement engagee dans l'orpaillage artisanal, ce qui la relia aux economies coloniales et mondiales via les lois minieres coloniales britanniques. La presence de chercheurs d'or (galami) reste notable a Nangodi.",
+      "majorHistoricalEvents": "Sous la colonisation britannique, la region de Nangodi etait deja connue pour son orpaillage historique. Le district de Nabdam a ete cree le 28 juin 2012 par scission du district de Talensi-Nabdam. Les Nabdam sont reconnus comme un groupe ethnique distinct au sein de la region Upper East lors du recensement ghaneen de 2021."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme chiefly decentralise, comme chez la plupart des groupes Frafra-Gurunsi. Les autorites traditionnelles (chefs) coexistent avec les pretres de la terre (tindana ou tindamba), qui jouent un role central dans les rituels fonciers, funeraires et agricoles. Le tindana consulte les dieux (tindaana) et presid aux ceremonies de mise en valeur des terres et aux rites de deuil.",
+      "clanOrganization": "Organisation clanique patrilineaire, comme chez les groupes Gur de la region. Les clans determinent l'appartenance communautaire, les droits fonciers et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent la societe Nabdam. L'appartenance au lignage determine les droits sur la terre, la succession aux titres et les obligations rituelles. La chefferie Nabdam trace son lignage jusqu'au royaume Mugu via le personnage de Na Atavya.",
+      "religiousAuthority": "Les tindana (pretres de la terre, sing. tindana, plur. tindamba) sont les principales autorites religieuses. Ils president aux sacrifices propitiatoires, consultent les devins (soothsayers) lors des deces pour determiner les causes et presid aux ceremonies agricoles saisonnieres. Les croyances traditionnelles animistes coexistent avec des influences chretiennes et islamiques minoritaires."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nabt (Nabte, Nabdam)",
+      "isoCodes": [],
+      "dialects": [
+        "Nabt (forme standardisee dans la litterature linguistique)",
+        "Nabdem / Nabdam (denomination populaire de la langue)"
+      ],
+      "vehicularRole": "Le Nabt est une langue Gur appartenant au groupe Mole-Dagbane, qui comprend de nombreuses langues apparentees parlees dans le nord-est du Ghana. Une proposition de code ISO 639-3 pour le Nabt a ete rejetee en janvier 2017 ; la langue est souvent consideree comme une variete du groupe frafra-gurne. Le dagbani et l'anglais sont utilises comme langues vehiculaires avec les groupes voisins et dans l'administration."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festivals majeurs : Kuri, Gulp et Bolob (festival annuel celebre avant la saison des pluies pour promouvoir la paix, remercier pour la recolte precedente et invoquer les benedictions pour la saison suivante). Les rituels funeraires comportent le sacrifice d'une volaille avant l'ensevelissement comme declaration rituelle concernant la mort. Des rituels spirituels pour les personnes agees impliquent parfois un soothsayer (devin). Rites matrimoniaux incluant la remise d'animaux de ferme au beau-pere.",
+      "symbols": "La terre (nabrug) est un symbole identitaire fondamental. Les tindana sont les gardiens des sites sacres et des lieux de culte ancestral. L'orpaillage de Nangodi constitue un heritage symbolique liant les Nabdam aux ressources de leur territoire.",
+      "artsAndMusic": "Musique et danse constituent une part importante des celebrations culturelles, notamment lors des festivals Bolob, Kuri et Gulp. Les arts plastiques traditionnels incluent la poterie et la vannerie. La tradition orale est essentielle pour la transmission des genealogies et de l'histoire des migrations.",
+      "spiritualities": "Croyances animistes centrees sur le culte des ancetres, des forces naturelles et des dieux de la terre (tindaana). Les Nabdam adherent a des valeurs culturelles et des tabous traditionnels. La vie communautaire est organisee autour des pratiques traditionnelles et des sites sacres. L'Islam et le christianisme sont presents de maniere minoritaire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Nabdam n'ont pas developpe de royaume centralise mais s'inscrivent dans la sphere d'influence du royaume Mossi-Mugu. Leur chefferie trace son origine jusqu'a Na Atavya, figure de la lignee royale de Murugu. La capitale Nangodi abrite la chefferie traditionnelle Nabdam.",
+      "relationsWithNeighbors": "Les Nabdam partagent des caracteristiques culturelles et ancestrales avec les Tallensi (voisins immédiats), les Bolgatanga et les autres groupes Frafra de l'Upper East. Ils sont egalement proches des Mossi du Burkina Faso, dont ils se distinguent progressivement via leur migration vers Nangodi. L'Upper East Region regroupe une diversite de groupes ethniques avec lesquels les Nabdam entretiennent des relations historiques.",
+      "conflictsOrAlliances": "Les Nabdam, comme les groupes Frafra voisins, ont subi l'administration coloniale britannique qui a reorganise les chefferies locales. La division du district de Talensi-Nabdam en 2012 reflete une differenciation identitaire entre Nabdam et Tallensi.",
+      "diaspora": "Les Nabdam vivent principalement dans le district de Nabdam (Upper East Region). Une diaspora urbaine est presente a Accra, Kumasi et dans les villes du sud du Ghana, comme pour la plupart des groupes du nord ghaneen. Quelques locuteurs de Nabt se trouvent egalement au Burkina Faso voisin."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 55000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement ghaneen de 2021 (district de Nabdam : 51 861 habitants, Ghana Statistical Service). Population 2025 estimee avec croissance annuelle de 2,2%. Chiffre conservateur tenant compte que la population du district ne se compose pas uniquement d'ethnies Nabdam.",
+      "distributionByCountry": [{ "country": "GHA", "population": 55000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nabdam District – Wikipedia EN (https://en.wikipedia.org/wiki/Nabdam_(district))",
+      "Nabit language – Wikipedia EN (https://en.wikipedia.org/wiki/Nabit_language)",
+      "Blakk Rasta – Story of the Nabdam people, YouTube, 2025 (https://www.youtube.com/watch?v=h6GcSiCZkMA)",
+      "Mamprusi People – The Nangodi Traditional Area, Facebook, 2020 (https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area)",
+      "Ghana Statistical Service – Population and Housing Census 2021 (https://www.statsghana.gov.gh)",
+      "JSTOR – Sylvan Memories of People, Place, and Trees in Nangodi (https://www.jstor.org/stable/26795889)",
+      "NABT NKOR – Nabt language Upper East Ghana (https://www.nabtnkornccs.org/en/about-us/who-we-are)"
+    ]
   }
 }

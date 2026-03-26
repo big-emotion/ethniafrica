@@ -1,23 +1,104 @@
 {
   "id": "PPL_MAFA",
-  "nameMain": "",
+  "nameMain": "Mafa",
   "languageFamilyId": "FLG_TCHADIQUE",
   "currentCountries": ["CMR", "NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Mafa",
       "selfAppellation": "Mafahay",
+      "exonyms": [
+        "Mofa",
+        "Maf-Mafa",
+        "Matakam (denomination coloniale imprecise)"
+      ],
+      "originOfExonyms": "Le terme Matakam a ete utilise par l'administration coloniale francaise pour designer plusieurs peuples des montagnes Mandara, creant des confusions avec d'autres groupes voisins. Mofa est la denomination native la plus proche de l'endonyme. Mafahay est le nom que se donnent les Mafa proprement dits.",
+      "whyProblematic": "Le terme Matakam, utilise dans les sources coloniales, recouvre plusieurs peuples distincts des montagnes Mandara (Mafa, Mofu, Mada) et ne doit pas etre employe comme synonyme exclusif de Mafa.",
+      "contemporaryUsage": "Le terme Mafa est adopte dans la litterature linguistique et ethnographique internationale (Ethnologue, Wikipedia, CNRS). Mafahay est l'autodesignation des Mafa proprement dits dans leur langue.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "historicalRegion": "Montagnes du Mandara (Extrême-Nord Cameroun)",
+      "ethnoLinguisticGroup": "Tchadique biu-mandara, sous-groupe Mafa (Biu-Mandara A.5, Mafa-sud)",
+      "historicalRegion": "Montagnes du Mandara (partie nord du plateau de Mokolo), region de l'Extreme-Nord du Cameroun; zone de Moskota, Koza, Gaboua et Mokolo",
       "currentCountries": ["CMR", "NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (maf)", "Études du massif Mandara"]
+    "ethnicities": [
+      "Mafahay (Mafa proprement dits, section centrale, migres depuis Roua et Sulede vers le nord-ouest)",
+      "Bulahay (ou Bulahai, section ouest, migree le long des frontieres meridionales du territoire mafa puis vers le nord)",
+      "Mafa de Moskota (canton dans les montagnes)",
+      "Mafa de Koza (canton, district de Koza)",
+      "Mafa de Gaboua (canton, district de Koza)",
+      "Mafa de Mokolo (arrondissement de Mokolo)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mafa sont l'un des peuples les plus anciens des montagnes Mandara. Leurs ancetres ont fui les plaines vers les hauteurs il y a plusieurs siecles, principalement pour echapper aux razzias esclavagistes pratiquees par les empires voisins (Bornou, Baguirmi, Fulani). Les montagnes leur ont fourni une protection naturelle et ont facon leur mode de vie base sur l'agriculture en terrasses.",
+      "formationPeriod": "L'identite mafa actuelle resulte de la fusion progressive de deux groupes migratoires : les Mafahay, venus de Roua et Sulede (a l'ouest de Durum, territoire mofu), et les Bulahay, venus de l'ouest en longeant les frontieres meridionales, puis en remontant vers le nord. Les deux groupes se sont progressivement melanges pour constituer les Mafa contemporains.",
+      "migrationRoutes": [
+        "Les Mafahay : migration depuis Roua et Sulede (ouest de Durum) vers le nord-ouest",
+        "Les Bulahay : migration vers l'ouest le long des frontieres meridionales du territoire mafa, puis vers le nord",
+        "Refuge dans les montagnes du Mandara pour echapper aux razzias esclavagistes (Empire du Bornou, Baguirmi, jihad Fulani)"
+      ],
+      "historicalSettlementZones": [
+        "Partie centrale des Mandaras du Nord : nord du plateau de Mokolo et montagnes du nord de Mokolo (Cameroun)",
+        "Cantons de Moskota, Koza, Gaboua (district de Koza) et arrondissement de Mokolo",
+        "Region de Kughum, Etat du Nord, Nigeria (environ 1 million de Mafa)"
+      ],
+      "unificationsOrDivisions": "Les Mafa sont divises en deux grandes sections tribales (Mafahay et Bulahay) et en plusieurs cantons autonomes. Cette organisation en communautes villageoises independantes n'a pas produit de centralisation politique, chaque village etant dirige par un chef traditionnel (biy wudam) dont la fonction circule entre les lignees du clan cheffal.",
+      "externalInfluences": "Pression des empires esclavagistes (Bornou, Baguirmi) ayant pousse les ancetres mafa a se refugier dans les hauteurs. Influence partielle de l'islam via les contacts avec les voisins musulmans des plaines. Evangelisation catholique intense a partir des annees 1970 (environ 45% de chretiens aujourd'hui). L'oeuvre artistique Jesus Mafa, creee dans les annees 1970 par le pere Francois Vidil en collaboration avec la communaute mafa, a acquis une renommee internationale.",
+      "majorHistoricalEvents": "Implantation dans les montagnes du Mandara comme refuge contre l'esclavage (XVe-XVIIIe siecles). Resistance aux jihads fulani (XIXe siecle). Integration dans l'administration coloniale francaise. Dans les annees 1970, creation de la serie Jesus Mafa, representant des scenes bibliques avec des acteurs mafa noirs, aujourd'hui integree dans les collections de la Bibliotheque du Congres des Etats-Unis."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautes villageoises independantes. Chaque village est dirige par un chef traditionnel (biy wudam ou bay), dont la fonction circule entre les lignees du clan cheffal. Le chef annonce le calendrier des festivites et donne les directives a suivre par les chefs coutumiers (biy gorbay). Lors du festival du taureau (maray), le chef reste en retrait (sequestre) pendant que les ceremonies publiques ont lieu.",
+      "clanOrganization": "Division en clans (lignees), chacun occupant un quartier du village. La fonction de chef circule entre les trois lignees du clan cheffal. Le chef recu sa corde sacree (symbole de fertilite et de prosperite) du fils de l'ancien chef, transmettant ainsi la legitimite dynastique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'acces aux terres agricoles en terrasses, aux fonctions rituelles et politiques, et aux droits dans les ceremonies du maray. Le chef du foyer (bab giy hay) represente sa famille lors des ceremonies. Seuls les hommes ayant sacrifie un taureau acquierent un statut social superieur.",
+      "religiousAuthority": "Societe traditionnellement animiste avec un fort attachement aux esprits des rochers, des arbres et de la pluie, invoques lors des rites agraires. L'islam est presente mais minoritaire (30%). Le christianisme (catholique et protestant) est la religion majoritaire (45%). Le chef du village (bay) et les anciens jouent un role essentiel dans la mediation avec les ancetres lors du festival maray."
+    },
+    "languages": {
+      "mainLanguage": "Mafa",
+      "isoCodes": ["maf"],
+      "dialects": [
+        "Mafa central (variete de reference)",
+        "Mafa occidental (West Mafa)",
+        "Mafa oriental (East Mafa)"
+      ],
+      "vehicularRole": "Le mafa (ISO 639-3 : maf) est une langue tchadique biu-mandara (sous-groupe Mafa-sud A.5), parlee par environ 200 000 a 250 000 locuteurs au Cameroun et plus d'un million au Nigeria. Il forme partie du sous-groupe Mafa-sud avec le Mada, le Wuzlam (Uldeme), le Muyang et le Dugwor. Le francais est la langue officielle utilisee dans l'administration. L'arabe et le fulfulde servent de langues vehiculaires dans la region. Des ressources evangeliques chretiennes ont ete produites en mafa."
+    },
+    "culture": {
+      "majorRites": "Le festival du taureau (maray) est la ceremonie la plus importante de la culture mafa. Il se celebre tous les deux a trois ans (cycle triennal predominant). Un taureau est engraisse pendant un a deux ans en claustration, puis sacrifie lors du festival qui dure plusieurs jours. Le chef (biy wudam) reste sequestre pendant la fete publique. Les grands suiveurs (biy gwala) portent des costumes traditionnels pour liberer les taureaux sacres. Les bosses du taureau en farine, les cordes sacrees (symboles de fertilite et de protection contre les sorciers), les sacrifices de chevres sur la pierre sacrificielle (kwa veray) structurent le rituel. La fete du melebay, celebree l'annee precedant le maray, annonce la prochaine celebration. Les rites agricoles (semailles, recolte du sorgho et du mil) et les fetes de fin de recolte sont egalement centraux.",
+      "symbols": "Le taureau sacre (maray) est le symbole majeur du statut social masculin : un homme qui n'a pas sacrifie de taureau ne beneficie pas des honneurs funeraires dus a un homme accompli. La corde sacree du chef est percue comme un serpent protecteur de la communaute. Les terrasses agricoles construites sur les pentes des montagnes symbolisent la maîtrise de la nature et la resilience du peuple mafa. Les instruments de musique (ganga, dezlezlew, flutes, trompettes) sont emblematiques des ceremonies. La poterie feminine est un art traditionnel distinctif.",
+      "artsAndMusic": "Agriculture en terrasses sur les pentes des montagnes du Mandara, consideree comme ayant atteint un degre exceptionnel de perfection technique : irrigation a petite echelle, canalisation, systeme de drainage, rotation et mixite des cultures, agroforesterie, gestion des nutriments, utilisation des termites pour la decomposition des residus et l'alimentation des volailles. Poterie feminine caracterisee par des formes specifiques (jarres a bord court, levres epaissies exterieurement, presence de poignees en D). Musique : percussions (tambours ganga et dezlezlew), flutes, guitares et trompettes traditionnelles lors du maray. Danse collective intense lors des festivals. L'oeuvre Jesus Mafa (annees 1970) : serie de representations bibliques en contexte culturel mafa, celebre dans le monde entier comme iconographie catholique inculturee, conservee a la Bibliotheque du Congres des Etats-Unis. Mines artisanales de sable ferrifere (magnetite) par methodes alluviales.",
+      "spiritualities": "Animisme traditionnel fort : les Mafa croient aux esprits des rochers, des arbres et de la pluie, qui doivent etre nourris et propitiatoires par des offrandes et des sacrifices reguliers. Le festival du taureau a une dimension profondement religieuse : il est l'occasion de s'adresser aux ancetres pour obtenir prosperite, protection contre les maladies et les mauvais esprits, fecondite et bonnes recoltes. La brume apres le festival est interpretee comme un signe tres favorable lie aux rituels de purification communautaire. Christianisme (catholiques 60%, protestants 30%, autres 10%) dominant avec environ 45% de la population. Islam sunnite : environ 30%. Animisme traditionnel : environ 15%."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mafa n'ont pas developpe de royaume centralise. Leur organisation en villages autonomes dirigeants par des chefs (bay) a constitue leur structure politique traditionnelle, adaptee aux conditions topographiques des montagnes du Mandara. Cette organisation decentralisee leur a permis de resister aux pressions des empires esclavagistes voisins.",
+      "relationsWithNeighbors": "Les Mafa ont subi les pressions des empires du Bornou, du Baguirmi et des jihads fulani, qui ont pousse leurs ancetres dans les montagnes. Relations avec les Mofu, Mada, Wuzlam et Dugwor du groupe Mafa-sud. Voisinage avec les Mandara (Wandala) islamises. Commerce et echanges avec les populations des plaines environnantes. Contacts avec les missionnaires catholiques et protestants a partir du XXe siecle.",
+      "conflictsOrAlliances": "Resistance historique aux razzias esclavagistes pratiquees par le Bornou, le Baguirmi et les Fulani (XVIe-XIXe siecles). Refuge dans les hauteurs des montagnes du Mandara comme strategie de survie. Integration progressive dans l'Etat camerounais independant apres 1960.",
+      "diaspora": "Presence d'environ 1 million de Mafa dans l'Etat du Nord du Nigeria (region de Kughum). Migrations vers les villes de la region (Maroua, Garoua, Koza, Mokolo) et les grandes metropoles camerounaises. Presences documentees dans d'autres pays africains (Mali, Soudan, Burkina Faso, Sierra Leone) et moindrement en Europe."
+    },
+    "demography": {
+      "totalPopulation": 1300000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Mafa people) : estimations entre 2 000 000 et 3 000 000 (2010). Estimation 2025 : environ 1 000 000 au Nigeria (region de Kughum) et 250 000 a 300 000 au Cameroun. Total estime 2025 : environ 1 300 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 300000,
+          "note": "Montagnes du Mandara, cantons de Moskota, Koza, Gaboua et arrondissement de Mokolo, region Extreme-Nord"
+        },
+        {
+          "country": "NGA",
+          "population": 1000000,
+          "note": "Region de Kughum, Etat du Nord du Nigeria"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mafa people. https://en.wikipedia.org/wiki/Mafa_people",
+      "101 Last Tribes — Mafa people. http://www.101lasttribes.com/tribes/mafa.html",
+      "Gerhard Muller-Kosack — The Way of the Beer. Mandaras Publishing, London 2003. https://www.mandaras.info/MandarasPublishing/TheWayoftheBeer-MullerKosack2003.pdf",
+      "Mandaras.info — Mafa bull festival (maray) Zlama slideshow. https://www.mandaras.info/bull-festival/bull-festival-slides.htm",
+      "SIL Ethnologue — Mafa (maf). https://www.ethnologue.com/language/maf",
+      "Gbaya Art Blog — The Mafa community. https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/",
+      "Biu-Mandara languages — Wikipedia EN. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages"
+    ]
   }
 }

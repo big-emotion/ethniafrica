@@ -6,67 +6,108 @@
   "content": {
     "appellations": {
       "mainName": "Dagara",
-      "selfAppellation": "Dagara / Dagao",
-      "exonyms": ["Dagara (terme utilisé par les Européens), Dagaaba"],
+      "selfAppellation": "Dagaaba / Dagao",
+      "exonyms": [
+        "Dagaaba",
+        "Dagaari",
+        "Dagarti",
+        "Dagao",
+        "Dagara (Nord Burkina Faso)"
+      ],
+      "originOfExonyms": "Le terme Dagaaba designe le peuple (singulier : Dagao), Dagaare la langue, et Dagaw (Dagawie) le territoire. Dans les dialectes nordiques du Burkina Faso, la langue et le peuple sont indistinctement nommes Dagara. Le terme Dagarti, utilise notamment par les Britanniques en periode coloniale, est aujourd'hui considere pejoratif par certains membres de la communaute.",
+      "whyProblematic": "La denomination est complexe car elle englobe un continuum dialectal divise par les frontieres coloniales entre Ghana et Burkina Faso. Ethnologue distingue trois langues distinctes (dga, dgd, dgi) la ou les locuteurs se reconnaissent souvent sous une identite commune. Le terme Lobi, exonyme historique incorrect applique aux Birifor apparentes, a ete etendu abusivement aux Dagaaba.",
+      "contemporaryUsage": "Le terme Dagaaba est le plus utilise dans la litterature academique internationale. Au Burkina Faso, Dagara est l'appellation dominante. Au Ghana, Dagaaba ou Dagaare sont courants. Les locuteurs utilisent Dagao au singulier.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Gur",
-      "historicalRegion": "BFA, GHA",
+      "ethnoLinguisticGroup": "Gur (sous-groupe Mabia / Mole-Dagbani)",
+      "historicalRegion": "Coin nord-ouest du Ghana (Upper West Region), region Sud-Ouest du Burkina Faso (province du Noumbiel, Ioba et Poni)",
       "currentCountries": ["BFA", "GHA"]
     },
     "ethnicities": [
-      "Dagara du Burkina Faso",
-      "Dagaaba du Ghana",
-      "Sous-groupes régionaux"
+      "Dagaaba du Ghana (Upper West Region, locuteurs du dagaare meridional)",
+      "Dagara du Burkina Faso (region Sud-Ouest, locuteurs du dagara septentrional)",
+      "Dagaari Dioula du Burkina Faso (locuteurs du dialecte a influence dioula)",
+      "Birifor (peuple apparente, considere parfois comme sous-groupe)",
+      "Groupe de Nandom (Dagaaba du Ghana, traditions claniques distinctes)",
+      "Groupe de Jirapa (Dagaaba du Ghana, centre culturel important)"
     ],
     "origins": {
-      "ancientOrigins": "Parenté historique avec Lobi et Birifor. Culture voltaïque ancienne. Les Dagara sont originaires du Burkina Faso et du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Gur de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples gur voisins, influence de l'islam et du christianisme."
+      "ancientOrigins": "Les Dagaaba constituent un rameau du groupe Mole-Dagbani, lui-meme issu des migrations sudaniques qui atteignirent la zone semi-aride du Sahel au cours du 14e siecle. Une tradition orale soutient qu'ils se formerent comme faction dissidente du royaume de Dagbon sous le roi Na Nyagse, et s'installerent plus au sud au 17e siecle. Ils entretiennent une parente historique etroite avec les Lobi et les Birifor, et partagent une culture voltaique ancienne.",
+      "formationPeriod": "Formation de l'identite Dagaaba distincte au cours du 14e-17e siecle, lors des migrations depuis le Sahel vers les plaines plus fertiles du nord-ouest Ghana et sud-ouest Burkina Faso. Les communautes precoloniales vivaient en petits groupes agricoles autonomes, sans structure etatique centralisee.",
+      "migrationRoutes": [
+        "Migration des ancetres Mole-Dagbani depuis la zone du Lac Tchad vers la region semi-aride du Sahel (14e siecle)",
+        "Migration vers le nord-ouest Ghana et le sud-ouest Burkina Faso (17e siecle)",
+        "Migrations internes au Ghana vers le Brong Ahafo et le sud du pays (debut 20e siecle, demande de main-d'oeuvre dans les mines et les plantations de cacao)"
+      ],
+      "historicalSettlementZones": [
+        "Upper West Region du Ghana (Nandom, Jirapa, Lawra, Wa)",
+        "Region Sud-Ouest du Burkina Faso (Diebougou, Gaoua, Batie)",
+        "Brong Ahafo Region du Ghana (migrations economiques 20e siecle)",
+        "Petites communautes en Cote d'Ivoire (frontiere nord-est)"
+      ],
+      "unificationsOrDivisions": "Organisation traditionnelle en communautes agricoles independantes basees sur le Yir (sous-clan / groupe de menage) et le Tengan (zone de sanctuaire de la divinite terrestre). Pas de centralisation politique precoloniale. Les frontieres coloniales de la Scramble for Africa diviserent les communautes Dagaaba entre le nord-ouest du Ghana et le sud-ouest du Burkina Faso.",
+      "externalInfluences": "Resistance aux tentatives de conquete des royaumes de Dagbon, Mamprugu et Gonja. A la fin du 19e siecle, certains villages du sud furent places sous l'autorite du Royaume de Wala (rebellion en 1894, restauration par les Britanniques en 1933). Conquete partielle de la Dagawie par les Wala allies a l'Empire du Wassoulou de Samory Toure (annees 1890). Impact de l'administration coloniale britannique et française sur l'organisation sociale.",
+      "majorHistoricalEvents": "Resistance a la centralisation par les royaumes voisins du nord Ghana (Dagbon, Mamprugu, Gonja) tout au long de la periode precoloniale. Breve periode sous domination Wala (annees 1890). Imposition de la chefferie institutionnelle par l'administration coloniale. En 2006, le Conseil des Anciens de la communaute Dagaaba du Ghana nomma Naa Franklin Suantah chef de la communaute a Kumasi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Structures initiatiques. Lignages claniques. Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme des conseils d'anciens (institutionnalise plus tardivement que la chefferie imposee par la colonisation). Organisation centree sur le Tengan (zone de sanctuaire de la divinite terrestre, tendaalun) : le tengan sob (ancien et pretre de la communaute), le tengan dem (gardien rituel), le suo sob (sacrifices a la divinite terrestre), le zongmogre (rituels aux marches sacres) et le gara dana (chef des societes de chasseurs). Jusqu'a la fin du 19e siecle, le systeme fonctionnait sans chefferie centralisee.",
+      "clanOrganization": "Organisation en dix clans principaux qui, ensemble, comptent plus d'un million de personnes. Structure de base : le Yir (sous-clan ou groupe de menage), reuni autour du Tengan. Systeme de cousinage/plaisanterie (couzinage) avec les Frafra (Gurunsi). La terre est consideree comme sous la garde spirituelle de la communaute, differentes ressources sous la garde de differentes autorites, lignages et forces spirituelles.",
+      "ageClassSystems": "Classes d'age jouant des roles militaires, religieux et communautaires. Aujourd'hui encore, les classes d'age organisent des projets de travail collectif.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les droits fonciers et les alliances. Le Yir (groupe de menage) constitue l'unite de base, clustered autour des sanctuaires Tengan. Traditions orales en deux categories : seculieres (contes, proverbes) et sacrees (recits mythiques bagr lors des initiations et services religieux).",
+      "religiousAuthority": "Autorite des tengan sob (anciens-pretres des sanctuaires terrestres). Syncrétisme entre religions traditionnelles (culte de la divinite terrestre Tengane/Naamwin, role du gyil comme lien entre humains et esprits), islam et christianisme. Role des devin-guerisseurs dans la gestion des crises spirituelles."
     },
     "languages": {
       "mainLanguage": "Dagaare / Dagara",
-      "vehicularRole": "Le dagaare est parlé par la majorité des Dagara. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": ["dga", "dgi", "dgd"],
+      "dialects": [
+        "Dagaare meridional (dga) — parle principalement au Ghana, Upper West Region, environ 700 000 locuteurs",
+        "Dagara septentrional (dgi) — parle principalement au Burkina Faso, environ 388 000 locuteurs (2001)",
+        "Dagaari Dioula (dgd) — parle au Burkina Faso, environ 21 000 locuteurs, influence de la langue dioula",
+        "Waale (dialecte meridional du dagaare, parle a Wa et Kaleo)"
+      ],
+      "vehicularRole": "L'ensemble des varietes Dagaare comptent environ 1,3 million de locuteurs. Langue Gur de la branche Niger-Congo. Le français est langue officielle au Burkina Faso et l'anglais au Ghana. Le moore et le dioula sont des langues vehiculaires regionales supplementaires."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Rituels funéraires réputés",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "source_4": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels dagara, symboles islamiques et chrétiens.",
-      "Arts et musique": "",
-      "source_5": "Xylophone *gyil*",
-      "source_6": "Musique traditionnelle",
-      "source_7": "Danse traditionnelle",
-      "source_8": "Poésie orale",
-      "source_9": "Artisanat du fer",
-      "source_10": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rituels funeraires : le gyil (xylophone pentatonique) est indispensable — sans lui, selon les Dagara, il n'y a ni funerailles, ni deuil, ni mort. Le kuurbine (musique funeraire pour xylophones doubles daga-gyil 17 touches, tambour gourd kuor et chanteurs) constitue le coeur des ceremonies. Les lobri (tunes speciales) annoncent le deces de village en village. Le corps etait traditionnellement enterre par des individus spirituellement fortifies dans des tombes en forme de chambre. Rites d'initiation (Bagr) : recits mythiques complexes transmis lors des ceremonies initiatiques, vehicule de l'education et de l'acculturation. Circoncision pour les garcons. Rites agricoles lies a la divinite terrestre (Tengan) par le tengan sob.",
+      "symbols": "Le gyil (xylophone a 17 touches, daga-gyil) est l'instrument central et sacre, considere comme un don divin de Naamwin par le biais des kontombile (etres mystiques), et comme lien de communication entre les humains et les esprits. La houe (outil agricole) est le symbole de la femme, de sa force et de son expertise culinaire — une houe brisee signifie la mort d'une femme lors des rites funeraires. Les coquilles de cauris utilisees comme monnaie d'echange, element ornemental, ceremoniel et d'epargne communautaire.",
+      "artsAndMusic": "Xylophone gyil (pentatonique 17 touches) : instrument fondamental, joue en duo (gyil principal + gyilkpagre accompagnateur) avec tambour kuor ; deux types : lo-gyil (14 touches, musique recreative bewaa) et daga-gyil (17 touches, funerailles et occasions importantes). Le mot gyil signifie litteralement rassembler en dagaare, referant au contexte traditionnel ou les gens se retrouvaient autour des xylophones. Biere locale de millet (daa Dagadaa, appelee Pito). Artisanat du fer par les forgerons. Poterie et tissage. Litterature orale riche : contes, proverbes, recits mythiques bagr.",
+      "spiritualities": "Croyances traditionnelles centrees sur Naamwin (divinite celeste) et la divinite terrestre Tengane gardienne de la terre. Le gyil a une origine divine et une valeur sacree ; son son est un lien communicatif entre les humains et les mediums spirituels. Lors des funerailles, il aide l'ame du defunt (sie) a quitter son etat liminal de fantome (nyaakpiin) pour rejoindre le monde des ancetres (dapaarewie). Syncrétisme prononce entre traditions animistes, islam et christianisme. Le christianisme catholique s'est diffuse via les missions du 20e siecle ; certaines eglises catholiques incorporent le gyil dans leur liturgie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora dagara dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise precolonial ; organisation en communautes agricoles autonomes. Une tradition orale rattache l'origine Dagaaba a une scission du royaume de Dagbon. Resistance aux royaumes centralises voisins (Dagbon, Mamprugu, Gonja, Wala). La chefferie institutionnelle fut imposee par l'administration coloniale britannique et française.",
+      "relationsWithNeighbors": "Relation de cousinage et de plaisanterie (joking relationship) avec les Frafra (Gurunsi). Conflits periodiques avec les Sisala (particulierement dans les annees 1980) et avec les Wala pour des questions foncieres. Parente culturelle et linguistique avec les Birifor et les Dagaare Diola. Relations commerciales avec les villages voisins lors des marches de six jours.",
+      "conflictsOrAlliances": "Resistance aux conquetes de Dagbon, Mamprugu et Gonja (periode precoloniale). Conquete de la Dagawie par les Wala allies au Wassoulou de Samory Toure (fin 19e siecle), renversee par le kaleo naa. Villages du sud sous autorite du Royaume de Wala (debut 1890s), rébellion en 1894, restauration par les Britanniques en 1933. Conflits fonciers avec les Sisala (annees 1980).",
+      "diaspora": "Migrations economiques internes importantes vers le Brong Ahafo et le sud du Ghana (debut 20e siecle, travail dans les mines et plantations de cacao). Communaute Dagaaba etablie a Kumasi (chef nomme en 2006). Presence dans les grandes villes d'Afrique de l'Ouest et dans la diaspora occidentale (Europe, Amerique du Nord)."
     },
     "demography": {
       "totalPopulation": 2600000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Dagaare Wikimedia Community : environ 3 millions de locuteurs au total. Omniglot : 1,1 million de locuteurs pour le dagaare meridional et septentrional (2024). Wikipedia EN Dagaaba people : population estimee a plus d'un million en 2003. Estimation 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1500000,
+          "note": "Upper West Region (Nandom, Jirapa, Lawra, Wa) et migrations vers Brong Ahafo et le Sud"
+        },
+        {
+          "country": "BFA",
+          "population": 1050000,
+          "note": "Region Sud-Ouest (Diebougou, Gaoua, Batie, Noumbiel, Ioba, Poni)"
+        },
+        {
+          "country": "CIV",
+          "population": 50000,
+          "note": "Petites communautes en zone frontaliere nord-est"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Dagaare language (dga)",
-      "CIA World Factbook – BFA, GHA",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples gur",
-      "Upper West Ghana cultural studies"
+      "Wikipedia EN — Dagaaba people. https://en.wikipedia.org/wiki/Dagaaba_people",
+      "Wikipedia EN — Dagaare language. https://en.wikipedia.org/wiki/Dagaare_language",
+      "SIL Ethnologue — Dagaari-Birifor subgroup (dga, dgi, dgd). https://www.ethnologue.com/subgroup/466/",
+      "Dankwa, John Wesley — Sounding the Woods: The Significance of Gyil Music in Dagara Funeral Ceremonies. Wesleyan University, 2021. https://musc102.blogs.wesleyan.edu/files/2022/03/John-Wesley-Dankwa_Sounding-the-Woods_The-Significance-of-Gyil-Music-in-Dagara-Funeral-Ceremonies.pdf",
+      "Joshua Project — Dagara in Burkina Faso. https://joshuaproject.net/people_groups/11465",
+      "Omniglot — Dagaare language and alphabet. https://www.omniglot.com/writing/dagaare.htm",
+      "Dagaare Wikimedia Community — Dagaare language overview. https://meta.wikimedia.org/wiki/Dagaare_Wikimedia_Community"
     ]
   }
 }

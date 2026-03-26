@@ -1,6 +1,6 @@
 {
   "id": "PPL_FULA",
-  "nameMain": "Fula (Fulɓe / Peul)",
+  "nameMain": "Fula (Fulbe / Peul)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": [
     "SEN",
@@ -18,11 +18,23 @@
   ],
   "content": {
     "appellations": {
-      "mainName": "Fula (Fulɓe / Peul)",
-      "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+      "mainName": "Fula (Fulbe / Peul)",
+      "selfAppellation": "Fulbe (pluriel), Pullo (singulier)",
+      "exonyms": [
+        "Peul",
+        "Peulh",
+        "Fula",
+        "Fulani",
+        "Fulah",
+        "Fellata",
+        "Fallatah"
+      ],
+      "originOfExonyms": "Peul vient du wolof Pel, adopte par les colonisateurs français. Fula vient du mandingue. Fulani est la forme haoussa, courante au Nigeria et en anglais. Fellata est un terme arabe (Tchad, Soudan) parfois associe aux Peuls en pelerinage vers La Mecque.",
+      "whyProblematic": "Fellata est considere comme pejoratif dans certains contextes (Sudan, Tchad), associe a des stereotypes de migrants indesirables. Les exonymes ne reflètent pas l'auto-identification Fulbe. Fulani est parfois employe abusivement pour designer uniquement les pasteurs nomades.",
+      "contemporaryUsage": "Fulbe est prefere dans les contextes academiques et communautaires. Peul reste l'usage dominant en français. Fula et Fulani sont courants en anglais selon la region.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "ethnoLinguisticGroup": "Atlantique (branche sénégambienne)",
-      "historicalRegion": "Bande sahélienne de l'Atlantique au Tchad",
+      "ethnoLinguisticGroup": "Atlantique (branche senegambienne)",
+      "historicalRegion": "Bande sahelienne de l'Atlantique au Tchad",
       "currentCountries": [
         "SEN",
         "GIN",
@@ -39,64 +51,99 @@
       ]
     },
     "ethnicities": [
-      "Fulɓe Toroɓe (Fouta Toro, SEN/Mauritanie)",
-      "Fulɓe Wodaabe (NER, NGA, CMR)",
-      "Fulɓe Jalooɓe (Fouta Djallon, GIN)",
-      "Fulɓe Kuniari",
-      "Fulɓe Mbororo (pasteurs nomades, CMR, TCD, CAF)",
-      "Fulɓe Adamawa (NGA, CMR)",
-      "Fulɓe Sokoto (Nigeria)"
+      "Fulbe Torobe (Fouta Toro, SEN/Mauritanie) — classe clericale et erudits islamiques",
+      "Fulbe Wodaabe (NER, NGA, CMR) — pasteurs nomades, sous-groupe des Mbororo",
+      "Fulbe Jaloobe (Fouta Djallon, GIN) — sedentaires des hauts plateaux",
+      "Fulbe Kuniari — zone de transition senegalaise",
+      "Fulbe Mbororo (pasteurs nomades, CMR, TCD, CAF) — grands nomades de l'Afrique centrale",
+      "Fulbe Adamawa (NGA, CMR) — sedentaires de l'Adamaoua",
+      "Fulbe Sokoto (Nigeria) — heritiers du Califat de Sokoto",
+      "Fulbe Massina (MLI) — habitants du delta interieur du Niger",
+      "Fulbe Fuladu (SEN, GNB, GMB) — groupe de transition occidental"
     ],
     "origins": {
-      "ancientOrigins": "Les Fula sont originaires de la région sénégambienne. Leur présence dans cette région remonte à l'Antiquité, avec des origines probablement liées aux populations de la vallée du Sénégal.",
-      "unificationsOrDivisions": "Formation d'États peuls (Fouta Toro, Fouta Djallon, Sokoto, Macina). Diversification en groupes sédentaires et nomades (Mbororo). Maintien d'une identité culturelle et linguistique commune.",
-      "externalInfluences": "Influence profonde de l'islam, rôle majeur dans les réseaux islamiques du Sahel. Contacts avec les peuples mandé, haoussa, et autres groupes sahéliens."
+      "ancientOrigins": "Les origines des Fula demeurent debattues. Les traditions orales evoquent une ascendance egyptienne ou proche-orientale; les preuves linguistiques pointent vers le Fouta Toro (vallee du fleuve Senegal). Leurs ancetres auraient migre du Sahara occidental (plus humide vers le VIIe siecle av. J.-C.) vers la vallee du Senegal, pousses par les raids berberes et la desertification progressive.",
+      "formationPeriod": "La formation du peuple fula comme entite distincte se situe entre le IXe et le XIe siecle avec la fondation du royaume de Takrur en basse vallee du Senegal. L'adoption precoce de l'islam a partir du XIe siecle a renforce l'identite collective. Les trois Fuuta historiques structurent leur expansion : Fuuta Kingi (ancien, Sahel occidental), Fuuta Keyri (nouveau, Fouta Djallon, Massina, Sokoto, Adamaoua), Fuuta Jula (diaspora marchande).",
+      "migrationRoutes": [
+        "Du Sahara occidental vers la vallee du Senegal (Fouta Toro/Tekrur) — avant le Xe siecle",
+        "Du Fouta Toro vers l'est, Hausaland et Bornou — XIe au XIVe siecle",
+        "Vers le Fouta Djallon (Guinee) — a partir du XVIIe siecle",
+        "Vers le Hausaland et Bornou — XVe siecle, flux constant",
+        "Vers le Baghirmi — debut XVIe siecle",
+        "Vers la vallee de la Benoue et l'Adamaoua — fin XVIIIe siecle",
+        "Vers le Soudan oriental (Fellata en route vers La Mecque) — XVIIIe-XIXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Fouta Toro (Senegal/Mauritanie meridionale) — zone originelle",
+        "Fouta Djallon (Guinee centrale) — haute altitude, XIIe-XVIIIe siecle",
+        "Massina/Macina (delta interieur du Niger, Mali) — siecles XII-XIX",
+        "Hausaland (nord Nigeria/sud Niger) — emirats du Califat de Sokoto",
+        "Adamaoua (Nigeria nord-est, Cameroun) — XIX siecle",
+        "Bornou (Nigeria, Tchad, Niger) — a partir du XVe siecle",
+        "Kordofan et Darfour (Soudan) — Fellata, XIXe-XXe siecle"
+      ],
+      "unificationsOrDivisions": "Formation d'Etats theocratiques islamiques successifs : Bundu (1690), Fouta Djallon (XVIIIe siecle), Fouta Toro (1776), Califat de Sokoto (1804), Empire de Macina (1818), Empire toucouleur (El Hadj Oumar Tall). Diversification entre groupes sedentaires (Fulbe Wuro) et nomades (Mbororo). Maintien d'une identite culturelle et linguistique commune malgre la dispersion.",
+      "externalInfluences": "Influence profonde de l'islam depuis le XIe siecle, avec role majeur dans les reseaux islamiques saheliens. Contacts intensifs avec les peuples mandé, haoussa, wolof, touareg. Presence de composantes genetiques ouest-africaines et nord-africaines/iberiques (admixture eurasienne de ~21%)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels (Ardo). Systèmes étatiques historiques (émirats, sultanats). Organisation en classes d'âge.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie lignagère importante.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, le statut social et les alliances. Importance de la généalogie et des origines nobles (Torooɓe).",
-      "religiousAuthority": "Autorité des oulémas (savants religieux) et des chefs religieux. L'islam sunnite (majoritairement malékite) structure la vie sociale. Grande tradition islamique savante, particulièrement chez les Torooɓe."
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigees par des Ardo (chefs pastoraux) ou des Almami (chefs religieux-politiques). Les Etats theocratiques historiques (emirats, imamates, califats) sont structures selon la loi islamique malekite. Le code Pulaaku regle les comportements : Munyal (patience), Gacce (pudeur), Hakkille (sagesse et hospitalite), Sagata (courage).",
+      "clanOrganization": "Structure clanique patrilineaire. Hierarchie sociale en quatre categories : noblesse (Rimbe/Dimo, Fulbe de souche libre), artisans et griots (caste libre mais endogame), serviteurs et anciens captifs (Maccudo/Rimmayybe). Environ 50% des habitants de l'Adamaoua etaient de statut servile au XIXe siecle.",
+      "ageClassSystems": "Classes d'age structurant les activites pastorales et militaires. Rites de passage masculins incluant l'epreuve du Sharo (fouet) chez certains groupes (Wodaabe), testant l'endurance et la dignite du jeune homme.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, le statut social et les alliances matrimoniales. Endogamie privilegiee (cousins croises ou paralleles). La genealogie et les origines nobles (Torobe) sont centrales pour l'acces aux charges politiques et religieuses.",
+      "religiousAuthority": "Autorite des oulemas (savants religieux) et des chefs religieux (Almami, imam). L'islam sunnite (majorita irement malekite) structure l'ensemble de la vie sociale. Grande tradition islamique savante, particulierement chez les Torobe (fondateurs de plusieurs jihads réformateurs)."
     },
     "languages": {
       "mainLanguage": "Fulfulde / Pulaar / Pular",
-      "vehicularRole": "Le fulfulde/pulaar est parlé par la majorité des Fula. Il sert de langue véhiculaire dans certaines régions du Sahel. L'arabe, le français, l'anglais sont également utilisés selon les pays."
+      "isoCodes": ["ful", "fuc", "fuf", "fub", "fuv"],
+      "dialects": [
+        "Pulaar Fuuta Tooro — Senegal, Mauritanie",
+        "Pular Fuuta Jallon — Guinee, Sierra Leone",
+        "Fulfulde Massinakoore — Mali (delta du Niger)",
+        "Fulfulde Adamawa (Fombinaare) — Nigeria nord-est, Cameroun",
+        "Fulfulde Sokoto (Woylaare) — Nigeria nord-ouest, Niger",
+        "Fulfulde Jelgoore — Burkina Faso, Mali, Niger"
+      ],
+      "vehicularRole": "Le fulfulde/pulaar est parle par la majorite des Fula. Il sert de langue vehiculaire dans plusieurs regions du Sahel (notamment le Fulfulde Adamawa en Fombina). L'arabe (liturgique), le français, l'anglais et le haoussa sont egalement utilises selon les pays. L'ecriture Adlam (1989) a ete elaboree specifiquement pour noter le fulfulde."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de beauté (sharo) chez les Wodaabe",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies pastorales liées au bétail",
-      "source_4": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Bétail (bovins) comme symbole de richesse et de statut. Poésie élogieuse (ɗiogal). Calligraphie arabe. Architecture islamique.",
-      "Arts et musique": "",
-      "source_5": "Poésie élogieuse traditionnelle (ɗiogal)",
-      "source_6": "Musique traditionnelle (tambours, flûtes)",
-      "source_7": "Danse traditionnelle (notamment chez les Wodaabe)",
-      "source_8": "Artisanat lié au pastoralisme",
-      "source_9": "Littérature islamique en arabe et en fulfulde",
-      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture fula. Grande tradition islamique savante. Certaines pratiques traditionnelles pré-islamiques préservées dans certaines communautés."
+      "majorRites": "Ceremonies religieuses islamiques (Ramadan, Aid el-Fitr, Aid el-Adha, Hajj). Epreuve du Sharo ou Shadi (fouet initiatique) chez les Wodaabe et certains groupes : le jeune homme doit endurer les coups sans broncher pour prouver son courage. Ceremony de beaute Gerewol (Wodaabe) : concours masculin de beaute et de seduction. Rites de mariage en plusieurs etapes (Kabbal, Koowgal). Ceremonies pastorales liees au betail : Habbanaya (pret de vache), Dewgal (traversee du fleuve Niger, classe par l'UNESCO au patrimoine immatériel).",
+      "symbols": "Le betail bovin est le symbole majeur de richesse, de statut et d'identite. La calligraphie arabe et l'architecture islamique expriment l'identite spirituelle. La poesie elogieuse (diogal) et les tresses elaborees (chez les femmes Wodaabe) sont des marqueurs identitaires forts. L'ecriture Adlam symbolise la revitalisation culturelle contemporaine.",
+      "artsAndMusic": "Poesie elogieuse traditionnelle (diogal) portee par les griots (Awlube). Musique : hoddu (luth a 4-5 cordes), riti (violon monocorde), flutes, nianioru, tambours (buuba, bawdi), kora, balafon. Danse Gerewol des Wodaabe. Artisanat : calebasses gravees et peintes (femmes), tissage, paniers (mbeedu), broderie des boubous. Litterature islamique en arabe et en fulfulde (poesie religieuse). Habitat mobile traditionnel : Bukkaru ou suudu hudo (dome de paille).",
+      "spiritualities": "Islam sunnite majoritaire (ecole malekite). Role central de l'islam dans la culture fula depuis le XIe siecle. Grande tradition islamique savante, particulierement chez les Torobe (fondateurs des jihads du XVIIIe-XIXe siecle). Confreries soufies (Qadiriyya, Tijaniyya) influentes. Minorite chretienne et animiste subsistant dans certaines communautes peripheriques. Certaines pratiques pre-islamiques maintenues (rituels pastoraux, medecine traditionnelle)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora fula dans les grandes villes d'Afrique de l'Ouest et centrale, et dans les pays occidentaux (États-Unis, France, Royaume-Uni)."
+      "kingdomsOrChiefdoms": "Royaume de Tekrur (IXe siecle, vallee du Senegal). Grande Fulo de Koli Tenguella (XVIe siecle). Royaume du Bundu (1690, Malick Sy). Imamat du Fouta Djallon (XVIIIe siecle, Guinee). Almamat du Fouta Toro (1776, Sulayman Bal). Califat de Sokoto (1804, Usman dan Fodio) — plus grand empire d'Afrique de l'Ouest jusqu'en 1903. Empire de Macina (1818, Seku Amadu). Empire toucouleur (El Hadj Oumar Tall, milieu XIXe).",
+      "relationsWithNeighbors": "Relations complexes avec les peuples mandé, haoussa, wolof, serer, touareg et les populations sedentaires d'Afrique centrale. Conflits persistants entre eleveurs nomades fula et agriculteurs sedentaires (plateau de Jos, Nigeria; Burkina Faso; Mali; RCA). En Fouta Djallon : les Jalonke ont perdu leur statut noble, les Pulli non-islamises ont ete sedentarises de force. Alliance avec le Ghana medieval (partage du territoire).",
+      "conflictsOrAlliances": "Jihads reformateurs successifs aux XVIIIe-XIXe siecles : Bundu (1690), Fouta Toro (1769-1776), Sokoto (1804), Macina (1818), Toucouleur (1850s). Accord de 1785 avec la France (interdiction de la traite sur le fleuve Senegal). Resistance contre les Almohades (XIe siecle) et les puissances coloniales europeennes (French conquest du Fouta Toro 1893; British conquest de Sokoto 1903). Conflits eleveurs-agriculteurs contemporains (Nigeria, Mali, CAF, RDC, Cameroun).",
+      "diaspora": "Dispersion sur toute la bande sahelienne, de l'Atlantique a la mer Rouge. Fellata : communaute de plus de 2 millions de Fula installes au Soudan oriental lors des pelerins de retour de La Mecque (XIXe siecle). Diaspora dans les grandes metropoles africaines et occidentales (Paris, Londres, New York). Leaders politiques contemporains issus des Fula : Muhammadu Buhari (Nigeria), Macky Sall (Senegal), Adama Barrow (Gambie), Umaro Sissoco Embalo (Guinee-Bissau)."
     },
     "demography": {
-      "totalPopulation": 38000000,
+      "totalPopulation": 40000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, UNFPA, recensements nationaux, et études démographiques régionales"
+      "source": "Estimations agregees : Wikipedia (entre 25 et 40 millions), UNFPA Sahel, CIA World Factbook (profils nationaux), recensements nationaux. Projection 2025 estimee a 40 millions en incluant toutes les composantes (Torobe, Wodaabe, Mbororo, Toucouleur, etc.).",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 14000000 },
+        { "country": "GIN", "population": 5000000 },
+        { "country": "SEN", "population": 4000000 },
+        { "country": "MLI", "population": 3500000 },
+        { "country": "CMR", "population": 3000000 },
+        { "country": "NER", "population": 2500000 },
+        { "country": "BFA", "population": 2000000 },
+        { "country": "SDN", "population": 2000000 },
+        { "country": "TCD", "population": 1500000 },
+        { "country": "MRT", "population": 1000000 },
+        { "country": "CAF", "population": 700000 },
+        { "country": "SLE", "population": 800000 }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Fulfulde language (ful)",
-      "CIA World Factbook – Country profiles",
-      "UNFPA – Sahel population data",
-      "Last, Murray – *The Sokoto Caliphate*",
-      "A Study of the Wodaabe Pastoral Fulani*",
-      "Riesman, Paul – *Freedom in Fulani Social Life*",
-      "Diallo, Thierno – *Les institutions politiques du Fouta-Djallon au XIXe siècle*"
+      "Wikipedia EN — Fula people. https://en.wikipedia.org/wiki/Fula_people",
+      "SIL Ethnologue — Fulfulde language (ful). https://www.ethnologue.com/language/ful/",
+      "Last, Murray — The Sokoto Caliphate. Longman, 1967.",
+      "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977.",
+      "Diallo, Thierno — Les institutions politiques du Fouta-Djallon au XIXe siecle. IFAN, 1972.",
+      "UNFPA — Sahel population data. https://www.unfpa.org/",
+      "CIA World Factbook — Country profiles. https://www.cia.gov/the-world-factbook/"
     ]
   }
 }

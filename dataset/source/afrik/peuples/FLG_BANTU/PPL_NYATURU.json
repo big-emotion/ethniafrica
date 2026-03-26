@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Nyaturu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Arimi",
+      "exonyms": ["Turu", "Wanyaturu", "Rimi", "Arimi"],
+      "originOfExonyms": "Arimi (les gens de Rimi) est l'endonyme originel ; le mot arimi signifie litteralement agriculteurs. Wanyaturu est la forme swahilisee avec le prefixe wa- propre au swahili, qui a progressivement remplace l'endonyme traditionnel. Le terme Turu designe egalement la langue et le peuple dans la litterature academique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Wanyaturu est couramment utilise en Tanzanie pour designer ce peuple, tandis qu'Arimi reste l'appellation traditionnelle. Nyaturu designe aussi bien le peuple que sa langue dans les classifications linguistiques modernes.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantou de Tanzanie centrale",
+      "historicalRegion": "Region de Singida, Tanzanie centrale",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Nyaturu"],
+    "ethnicities": [
+      "Airwana (Wilwana)",
+      "Vahi (Wahi)",
+      "Anyinganyi (Wanyinganyi)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Arimi (Nyaturu) sont considered comme l'un des premiers groupes a s'etablir dans la region de Singida en Tanzanie centrale. Des indices suggerent des liens avec des groupes cushitiques anterieurs qui auraient migre vers la region avant l'expansion bantoue, bien que leur langue soit clairement bantoue.",
+      "formationPeriod": "L'identite nyaturu s'est consolidee progressivement au cours du 1er millenaire apres J.-C., avec l'installation durable dans les plateaux de la region de Singida.",
+      "migrationRoutes": [
+        "Migration en provenance du nord-est de la Tanzanie vers les plateaux de Singida",
+        "Mouvements secondaires vers les regions voisines de Manyara, Tabora et Morogoro pour des terres agricoles"
+      ],
+      "historicalSettlementZones": [
+        "Region de Singida (district d'Ikungi et district de Manyoni)",
+        "Plaines et plateaux du centre-nord de la Tanzanie"
+      ],
+      "unificationsOrDivisions": "Le peuple nyaturu est divise en trois groupes tribaux principaux : les Airwana (Wilwana), les plus nombreux, etablis pres de la ville de Singida ; les Vahi (Wahi) au sud et a l'ouest ; et les Anyinganyi (Wanyinganyi) a l'est. Chaque groupe est compose de plusieurs clans.",
+      "externalInfluences": "Le contact avec les commerçants et locuteurs swahilis a entraine l'adoption du prefixe wa- dans la denomination Wanyaturu. La penetration arabe et la colonisation allemande puis britannique ont transforme certaines pratiques culturelles.",
+      "majorHistoricalEvents": "La region de Singida a ete integree a l'Afrique-Orientale Allemande puis au Tanganyika britannique. La periode coloniale a introduit l'islam et le christianisme, modifiant les croyances traditionnelles. Depuis l'independance de la Tanzanie (1961), les Nyaturu ont ete integres a l'Etat tanzanien sous la politique ujamaa de Julius Nyerere."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation sociale basee sur la lignee et l'ancestralite (ukoo). Pas de chefferie centralisee ; les decisions etaient prises au niveau du clan et du village par les anciens.",
+      "clanOrganization": "Chaque groupe tribal est compose de plusieurs clans ; parmi les Wahi, on compte notamment les clans Anyahati et Akahe. L'appartenance clanique determine les regles d'exogamie matrimoniale.",
+      "ageClassSystems": "Systeme d'initiation elaborate comprenant la circoncision pour les garçons et l'excision pour les filles, marquant le passage a l'age adulte. La periode d'initiation peut durer de quelques jours a plus de deux ans et implique un apprentissage des valeurs culturelles en segregation.",
+      "roleOfLineages": "La lignee (ancestralite) est le fondement de l'organisation sociale nyaturu. Elle determine l'appartenance clanique, les droits fonciers, les regles de mariage et les obligations mutuelles. La filiation patrilineaire predomine.",
+      "religiousAuthority": "La religion dominante est desormais le christianisme, mais les pratiques animistes traditionnelles subsistent. Le soleil joue un role symbolique majeur : la Priere du Soleil (Sala ya Jua) est l'une des invocations traditionnelles les plus connues. Des guerisseurs traditionnels locaux maintiennent leur autorite dans les villages."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kinyaturu (Turu, Kirimi)",
+      "isoCodes": ["rim"],
+      "dialects": [
+        "Girwana (parle par les Airwana au nord)",
+        "Giahi (parle par les Vahi au sud et a l'ouest)",
+        "Ginyamunyinganyi (parle par les Anyinganyi a l'est)"
+      ],
+      "vehicularRole": "Le kinyaturu est la langue maternelle de plus d'un million de locuteurs dans la region de Singida. Le swahili est utilise comme langue vehiculaire avec les populations voisines (Wagogo, Nyiramba, Nyamwezi, Sukuma, Sandawe, Barabaig, Iraqw)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La circoncision masculine est pratiquee a partir de trois ans et plus ; elle est accompagnee de chants transmettant les responsabilites du mari (chasse, elevage). Un rituel de celebration marque la guerison du circoncis. L'excision feminine (FGM) est pratiquee dans les villages ruraux de Singida par des praticiennes traditionnelles. Le mariage est exogame avec preference pour les cousins croises ; la dot comprend des bovins. Les rites funeraires incluent le levirat (heritage de la femme du defunt par son frere).",
+      "symbols": "Le soleil est le symbole central de la cosmologie nyaturu, reglant les saisons agricoles et la vie sociale. Les bovins representent la richesse et le prestige social.",
+      "artsAndMusic": "La musique traditionnelle (ngoma) accompagne les ceremonies initiatiques et les rites de passage. Les chants initiatiques transmettent les valeurs culturelles et les roles sociaux. La poterie et le travail du cuir sont des artisanats traditionnels.",
+      "spiritualities": "Tradition animiste centrant sur le culte des ancetres et la veneration du soleil. La naissance d'un enfant est consideree comme une grande benediction consolidant le mariage. Certains tabous alimentaires sont associes a la grossesse (interdiction des oeufs pour les femmes enceintes). L'islam a ete adopte par une part significative de la population apres le contact avec les Arabes ; les ceremonies traditionnelles se melent parfois aux pratiques islamiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation decentralisee sans royaume unifie. Autorite exercee par les anciens de clan et de village.",
+      "relationsWithNeighbors": "Les Nyaturu cohabitent avec les Wagogo, Nyiramba, Nyamwezi, Sukuma, Hadza, Sandawe et Barabaig dans la region de Singida. Ces interactions ont favorise les echanges culturels et linguistiques, notamment l'adoption du swahili comme langue de contact.",
+      "conflictsOrAlliances": "La region de Singida, l'une des plus pauvres de Tanzanie, a connu des tensions liees a l'acces aux terres agricoles et aux paturages. Sous la colonisation, les Nyaturu ont ete affectes par les politiques de travail force et les reconfigurations territoriales.",
+      "diaspora": "Une partie des Nyaturu migre vers les regions voisines de Manyara, Tabora et Morogoro a la recherche de terres agricoles et de paturages plus fertiles."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1100000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement tanzanien de 2012 et les projections 2025 (population estimee a 556 000 en 1993, depassant 1 000 000 au debut des annees 2010)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1100000,
+          "notes": "Region de Singida principalement (districts d'Ikungi et Manyoni) ; migrations secondaires vers Manyara, Tabora, Morogoro"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Turu people (Tanzania) – Wikipedia (https://en.wikipedia.org/wiki/Turu_people_(Tanzania))",
+      "Turu language – Wikipedia (https://en.wikipedia.org/wiki/Turu_language)",
+      "A Collection of 100 Nyaturu Proverbs and Wise Sayings – Afriprov, Tangaza University College (https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_nyaturu.pdf)",
+      "Turu, Nyaturu in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/15657)",
+      "Nyaturu – Glottolog 5.3, code nyat1246, ISO 639-3: rim (https://glottolog.org/resource/languoid/id/nyat1246)",
+      "Omniglot – Turu language and alphabet (https://www.omniglot.com/writing/turu.htm)"
+    ]
   }
 }

@@ -6,59 +6,108 @@
   "content": {
     "appellations": {
       "mainName": "Hunde",
-      "selfAppellation": "Hunde",
-      "exonyms": ["Hunde (terme utilisé par les Européens)"],
+      "selfAppellation": "Bahunde",
+      "exonyms": [
+        "Hunde (designation coloniale et administrative)",
+        "Kobi (designation alternative)",
+        "Rukobi (autre denomination documentee)",
+        "BaHunde (forme plurielle de l'endonyme)"
+      ],
+      "originOfExonyms": "MuHunde designe un individu, BaHunde le collectif. Kobi et Rukobi sont des denominations alternatives utilisees dans certains documents coloniaux et ethnographiques belges. L'exonyme Hunde est la forme contractee de BaHunde utilisee en francais et en anglais.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bahunde est l'endonyme prefere. Hunde est utilise dans les documents administratifs et la litterature academique. Kihunde designe la langue.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Est de la RDC",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (Zone J, groupe JD, Grande Lacs Bantu)",
+      "historicalRegion": "Hundeland - hauts plateaux du Nord-Kivu (territoires de Masisi, Rutshuru, Walikale et Nyiragongo), est de la Republique Democratique du Congo",
       "currentCountries": ["COD"]
     },
-    "ethnicities": ["Hunde du Nord", "Hunde du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Bashali (sous-groupe du nord-est de Masisi : Bashali-Mokoto, Bashali-Kaembe, Bashali-Kamuronsa, Bapfuna)",
+      "Banyungu (sous-groupe du centre et du sud de Masisi)",
+      "Banya-Bwito (sous-groupe de l'est, territoire de Rutshuru ; variante dialectale)",
+      "Bukumu (sous-groupe occupant le territoire de Nyiragongo)",
+      "Batembo (sous-groupe de la chefferie d'Ufumandu, apparente aux Hunde)",
+      "Banyangole (groupe historiquement present a l'ile Ijwi sur le lac Kivu, contacts etroits avec les Hunde)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Hunde sont originaires de l'est de la COD, dans la région des Grands Lacs. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Selon les etudes ethnographiques et historiques orales documentees par l'anthropologue belge Daniel P. Biebuyck (notes de terrain 1957, publication The BaHunde of Masisi Territoire, 2019), les Hunde font remonter leur origine au royaume Bunyoro-Kitara de l'Ouganda actuel. Leur ancetre fondateur, Kinyungu, etait un prince royal de la dynstie Babiito, fils du roi Ruhaga (aussi connu sous le nom Ruhaga Kazana) de Bunyoro. Apres l'assassinat de Ruhaga par son frere Nihanika, Kinyungu s'enfuit vers l'ouest avec sept compagnons nobles : Balindi, Shamumbo, Kizizi, Bulolo, Musinga, Kiguruma et Morinda.",
+      "formationPeriod": "Kinyungu et ses compagnons traverserent la riviere Semliki, passerent pres du Ruwenzori et du territoire de Beni actuel pour s'etablir d'abord a Katwe. Apres des conflits avec les populations locales (Nguru et Nanga), ils s'etendirent et conquirent les regions de Luhofu, Bwito et Masisi. Ces migrations fonderent les premieres chefferies (chefferies) hunde, chacune gouvernee par des descendants de Kinyungu ou de ses compagnons. Cette histoire relie directement les Hunde a la lignee royale Babiito de Bunyoro et de Tooro.",
+      "migrationRoutes": [
+        "Bunyoro-Kitara (Ouganda nord-occidental) vers l'ouest via Katwe",
+        "Traversee de la riviere Semliki vers le Congo",
+        "Installation progressive dans les territoires de Masisi, Rutshuru, Walikale et Nyiragongo"
+      ],
+      "historicalSettlementZones": [
+        "Territoire de Masisi (coeur du Hundeland)",
+        "Territoire de Rutshuru (Banya-Bwito, est)",
+        "Territoire de Walikale (ouest)",
+        "Territoire de Nyiragongo (Bukumu)",
+        "Kalehe (entre Goma et Minova)"
+      ],
+      "unificationsOrDivisions": "Jusqu'en 1925, les Hunde etaient divises en de nombreux royaumes quasi-independants les uns des autres, mais presents des relations complexes d'interrelations. La colonisation belge fusionna plusieurs chefferies hunde dans le cadre de la reorganisation administrative generale du Congo en provinces, districts, secteurs, chefferies et groupements. Les Hunde furent ensuite progressivement marginalises par les vagues d'immigration rwandaise (Hutu et Tutsi) organisees par les Belges a partir de 1937, et subsequemment au cours du XXe siecle.",
+      "externalInfluences": "Origine culturelle du royaume Bunyoro-Kitara (Uganda). Contacts et conflits avec les Pygmees (Batamba, population pre-hunde dans la region des lacs Mokoto). Relations commerciales avec les Nyanga (echange de chevres et de sel contre de la monnaie nyanga, le butea). Colonisation arabe et commerce des esclaves (XIXe siecle). Colonisation belge (1885-1960). Migrations rwandaises organisees par les Belges depuis 1937. Conflits recurrents avec les Banyarwanda (Hutu et Tutsi). Guerres du Kivu depuis 1993.",
+      "majorHistoricalEvents": "1868 : raids des trafiquants d'esclaves de Rukundura dans la region des Grands Lacs. 1912 : repression militaire severe des troupes coloniales belges. 1937 : debut de l'immigration rwandaise organisee dans le Masisi. 1948 : coexistence de deux langues dans le Masisi (kihunde et kinyarwanda) apres les vagues d'immigration. 1993-1998 : massacres systematiques et deplacements forces des Hunde dans le Masisi. Depuis 2004 : conflits recurrents au Nord-Kivu impliquant les Hunde (marginalisation politique et violence des FDLR, M23 et autres groupes armes)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe organisee autour de chefferies hereditaires (bihuwo) dirigees par un mwami (roi ou chef), qui detient a la fois l'autorite politique et sacree. Le mwami est assiste d'un conseil des anciens (bakungu) et de porteurs de charges rituelles. Les regalia sacres (tambours, lances, bâtons rituels) symbolisent la continuite avec les anciens rois de Bunyoro. Hierarchie de statuts dans la chefferie : barutsi (nobles), batambo (chefs de terre), bakungu (conseillers), bapfuku (sujets), balembetsi. Les forgerous (bahisi) occupaient un role tres puissant.",
+      "clanOrganization": "La societe hunde est organisee en groupes de parente territoriaux (bisasa) tracant leur descendance aux premiers compagnons de Kinyungu. Chaque groupement village inclut des statuts specifiques : barutsi, batambo, bahunga, bakungu, bapfuku, bakekulu. Les groupes territoriaux sont associes a un ou plusieurs 'montagnes' (domaines) et ont leur propre structure d'autorite. Certains groupes ont le statut de barutsi (nobles), d'autres de batambo (chefs de terre) ou de bapfuku (sujets).",
+      "ageClassSystems": "Systeme d'initiation sacree complexe : le candidat a la chefferie sacree (mubake) doit passer par une initiation qui peut durer trois a quatre ans. La relation mumbo (lien rituel symbolique de paix et de legitimite) entre chefferies regulait les rapports d'autorite.",
+      "roleOfLineages": "Les lignages territoriaux hereditaires determinent l'appartenance au groupe, l'acces a la terre et la position dans la hierarchie politique. La succession au titre de mwami est strictement determinee par la genealogie. Le tribute (mutulo) en sorgho, eleusine, chevres et ivoire etait du par les groupes inferieurs aux chefs.",
+      "religiousAuthority": "Veneration des ancetres (bazimu) : les esprits des ancetres protegent la fertilite, la sante et la terre. Rituel ihema ngoma de consecration des chefs. Le porteur de l'autorite sur la terre (mubambi) controle l'acces rituel aux ressources. Les Hunde commercaient les limites de chasse et de peche avec les Nyanga via des autorisations rituelles du chef (mugomba wa mwami)."
     },
     "languages": {
-      "mainLanguage": "Hunde",
-      "vehicularRole": "Le hunde est parlé par la majorité des Hunde. Le français, le swahili et d'autres langues sont également utilisés."
+      "mainLanguage": "Kihunde",
+      "isoCodes": ["hke"],
+      "dialects": [
+        "Banya-Bwito (variante dialectale de l'est, territoire de Rutshuru)",
+        "Kihunde de Masisi (dialecte central et nord)",
+        "Kihunde de Walikale (dialecte ouest)"
+      ],
+      "vehicularRole": "Le kihunde est une langue bantou des Grands Lacs etroitement apparentee au runyoro, au kinande, au kinyanga, au rukonjo et au kitembo, refletant une origine ancestrale commune dans la sphere culturelle de Bunyoro-Kitara. Il etait la seule langue (avec le kitembo) parlee dans le Masisi jusqu'en 1948, date a laquelle les vagues d'immigration rwandaise imposerent le kinyarwanda. Aujourd'hui deux langues coexistent dans le Masisi : kihunde et kinyarwanda. Le swahili est la grande langue vehiculaire de l'est du Congo et de l'administration locale. Le francais est la langue officielle de la RDC."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels hunde, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation au titre de mwami (chef sacre) : processus pouvant durer 3 a 4 ans. Rite ihema ngoma : consecration des chefs de statut junior par le chef senior. Ceremonies de chasse : offrande d'une patte de l'animal abattu au chef (mutulo), d'une autre au controleur de la montagne (minakitwa) en echange d'une benediction (bwanga). Ceremonies de peche avec droits reserves aux Batamba sur le lac Ndalaga. Rites funeraires avec musique ceremonielle et coupe de cheveux. Ceremonies de mariage avec echanges de cadeaux (mubalamo entre amis). Veneration des ancetres (bazimu) pour proteger la fertilite, la famille et la terre.",
+      "symbols": "Les tambours sacres (regalia royaux symbolisant la continuite avec les rois de Bunyoro). Les lances et bâtons rituels (regalia du mwami). Le feu sacre comme lien aux ancetres. Les montagnes et lacs (Mokoto, Ndalaga, Mbita, Balukira, Lukulu) comme espaces sacres. L'ivoire (tribute offert aux chefs). La forge (les forgerous bahisi avaient un role de premier plan ; grande production de houes, haches, faucilles, couteaux, marteaux).",
+      "artsAndMusic": "Forgerons (bahisi) tres puissants, producteurs de houes, haches, faucilles, couteaux et marteaux. Musique ceremonielle aux tambours. Architecture de chefferie. Tradition de chasse a l'elephant et au grand gibier (avec chien-chasse/lance, filets, pieges a fil). Production agricole importante (haricots, sorgho, eleusine) et elevage (bovins, ovins, caprins). Echanges commerciaux avec les Nyanga (chevres et sel contre monnaie nyanga). Tradition orale riche de recits genealogiques et de legendes d'origine.",
+      "spiritualities": "Veneration intense des ancetres (bazimu) : les esprits ancestraux sont consultes pour la fertilite, la sante, la protection de la terre et les decisions importantes. Autorite spirituelle du mwami comme intermediaire avec les ancetres. Role des devins et guerisseurs dans la vie communautaire. Syncrétisme avec le christianisme (catholique majoritaire, protestantisme) depuis la colonisation belge. L'Eglise catholique joua un role important dans l'histoire de la region (les pretres catholiques tenterent d'evacuer les Hunde lors des massacres de 1993-1998)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora hunde dans les grandes villes congolaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Hunde constituaient de nombreux royaumes quasi-independants interrelies jusqu'en 1925. Principales chefferies coloniales : Banyungu (chef Andre Kalinda, la plus importante dans le Masisi), Bashali (nord-est de Masisi avec divisions Bashali-Mokoto, Bashali-Kaembe, Bashali-Kamuronsa), Bapfuna, Banya-Bwito (Rutshuru), Bugabo. La chefferie Banyungu fut consolidee sous le chef Andre Kalinda (qui savait lire et ecrire) au debut du XXe siecle. Ils se considerent comme la population autochtone (indigene) des hauts plateaux de Masisi, Rutshuru et Nyiragongo.",
+      "relationsWithNeighbors": "Relations commerciales et rituelles avec les Nyanga (Walikale). Conflicts historiques avec les Hutu et Tutsi du Rwanda, anterieurs a l'independance. Relations avec les Nande (groupe dominant du Nord-Kivu). Les Batamba (population pre-hunde dans la region des lacs Mokoto) furent absorbes et conservent des droits de peche exclusifs sur certains lacs. Echanges avec les Banyangole (ile Ijwi).",
+      "conflictsOrAlliances": "1937 : immigration rwandaise organisee par les Belges transforme les Hunde en minorite sur leurs propres terres. 1993-1998 : massacres systematiques ciblant les Hunde dans le Masisi ; evacuation par des pretres catholiques. Discrimination politique : les Hunde sont marginalises dans la representation politique (absence aux assemblees nationales malgre leur droit a la representation). Alienation identitaire : noms de villages changes en noms rwandais, interdiction du kihunde dans les espaces publics. Deplacements forces de Kitshanga (dernier grand agglomerat hunde dans le Masisi). La region de Nord-Kivu reste l'une des zones les plus instables d'Afrique depuis 1993.",
+      "diaspora": "Deplacements internes vers Goma (capitale du Nord-Kivu) ou les Hunde vivent comme deplaces internes (PDI). Exil dans d'autres provinces de la RDC. Emigration vers les pays voisins (Rwanda, Uganda) et les pays occidentaux pour les refugies politiques."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 950000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN - Hunde people : 'They number approximately 950 000 and speak the Hunde language' (2024). Joshua Project - Hunde, Kobi in DRC. SIL Ethnologue - Hunde language (hke). Estimation 2025.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 940000,
+          "note": "Principalement dans les territoires de Masisi, Rutshuru, Walikale et Nyiragongo (Nord-Kivu)"
+        },
+        {
+          "country": "RWA",
+          "population": 5000,
+          "note": "Refugies et migrants economiques"
+        },
+        {
+          "country": "UGA",
+          "population": 5000,
+          "note": "Refugies issus des conflits du Kivu"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Hunde language (hke)",
-      "CIA World Factbook – DRC",
-      "Recensements congolais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN - Hunde people : https://en.wikipedia.org/wiki/Hunde_people",
+      "Wikipedia EN - Hunde language : https://en.wikipedia.org/wiki/Hunde_language",
+      "Daniel P. Biebuyck, 'The BaHunde of Masisi Territoire' (field notes 1957, publie 2019) : https://danielbiebuyck.com/wp-content/uploads/2019/07/hunde-final-2.pdf",
+      "Joshua Project - Hunde, Kobi in DRC : https://joshuaproject.net/people_groups/12152",
+      "Minority Rights Group - The silent killings : https://minorityrights.org/the-silent-killings/",
+      "Rift Valley Institute - Background to conflict in North Kivu : https://riftvalley.net/wp-content/uploads/2018/06/RVI-Usalama-Project-2-North-Kivu.pdf",
+      "Hybrid Security Governance Observatory - RDC communautes ethno-linguistiques : https://africansecuritynetwork.org/HSGO4/index.php/rdc-differentes-communautes-ethno-linguistiques/",
+      "SIT Digital Collections - Young Adults in North Kivu : https://digitalcollections.sit.edu/cgi/viewcontent.cgi?article=3539&context=capstones"
     ]
   }
 }

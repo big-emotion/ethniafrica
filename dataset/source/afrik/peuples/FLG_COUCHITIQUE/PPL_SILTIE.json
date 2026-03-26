@@ -1,24 +1,101 @@
 {
   "id": "PPL_SILTIE",
-  "nameMain": "",
+  "nameMain": "Siltie",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Siltie",
       "selfAppellation": "Silte / Zayite (dans certains sous-groupes)",
+      "exonyms": [
+        "Adiyya",
+        "Hadiyya (appellation utilisée par les Sebat Bet Gurage)",
+        "East Gurage (appellation coloniale et académique)",
+        "Islam (appellation administrative)"
+      ],
+      "originOfExonyms": "Les Siltie furent longtemps désignés comme Adiyya ou Hadiyya par les Gurage voisins, et comme East Gurage ou Islam dans la littérature académique du XXe siècle, en référence à leur appartenance linguistique et religieuse. Ces appellations étaient imposées de l'extérieur et rejetées par les Siltie eux-mêmes.",
+      "whyProblematic": "L'ethniconyme Gurage, appliqué aux Siltie jusqu'en 2001, était considéré comme une imposition politique. Les Siltie ont voté à l'unanimité en 2000 pour s'en dissocier et obtenir leur propre zone administrative, revendiquant une identité distincte liée au sultanat de Hadiyya.",
+      "contemporaryUsage": "Le terme Siltie est l'ethnonyme moderne officiel depuis la création de la zone Siltie en 2001. Les locuteurs se désignent eux-mêmes comme Silte ou Siltie. L'ethnonyme est choisi en mémoire de l'ancêtre Gen Silt'i et en référence au sultanat islamique de Hadiyya.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "Couchitique oriental",
-      "historicalRegion": "Région Silt’e (Éthiopie)",
+      "ethnoLinguisticGroup": "Ethiopio-sémitique (Gurage oriental)",
+      "historicalRegion": "Zone Siltie, Etat régional d'Ethiopie centrale (anciennement SNNPR), au sud d'Addis-Abeba",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (stv)", "Silt’e Studies (Ethiopia)"]
+    "ethnicities": [
+      "Azernet",
+      "Berbere",
+      "Alichcho",
+      "Wuriro",
+      "Melga (ou Ulbareg)",
+      "Silt'i (ou Summusilt'i)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Siltie revendiquent une origine à Harar et se considèrent comme des descendants et progéniteurs du sultanat de Hadiyya. Ils sont considérés comme une extension des anciens Harari de la civilisation Harla, aux côtés des Wolane, avant les expansions oromo du XVIe siècle. Certains clans revendiquent une descendance de Kabir Hamid, résident de Harar, et du saint Aw Barkhadle.",
+      "formationPeriod": "Le pays des Siltie apparait pour la première fois dans des textes du XIVe siècle sous le nom de Silt'e-Ge. L'identité siltie distincte s'est consolidée autour du sultanat de Hadiyya. Au XVIe siècle, des clans revendiquent une ascendance de Hajji Aliye, compagnon d'armes d'Ahmed ibn Ibrahim al-Ghazi lors de la guerre éthio-adalie. Au XVIIe siècle, le Garad Sidi Mohammed de la dynastie Gan-Silte protégea le territoire pendant trois siècles contre l'annexion abyssinienne.",
+      "migrationRoutes": [
+        "Origine présumée dans la région de Harar, avec déplacement vers l'ouest et le sud avant les expansions oromo du XVIe siècle",
+        "Repli et consolidation dans la zone actuelle de Siltie suite aux pressions oromo et abyssiniennes"
+      ],
+      "historicalSettlementZones": [
+        "Zone Siltie (région actuelle), au sud d'Addis-Abeba, dans l'Etat régional d'Ethiopie centrale",
+        "Addis-Abeba, Adama et autres villes éthiopiennes pour la diaspora intérieure commerçante"
+      ],
+      "unificationsOrDivisions": "Les Siltie étaient administrativement rattachés à la zone Gurage jusqu'en 2001. Après le renversement du régime Derg en 1991, un mouvement politique s'est formé pour établir une identité ethnique distincte. En 2000, un référendum a vu les Siltie voter à l'unanimité pour créer leur propre zone administrative, la zone Siltie, au sein du SNNPR. Les six sous-groupes historiques (Azernet, Berbere, Alichcho, Wuriro, Melga, Silt'i) partagent une identité commune malgré leurs traditions distinctes.",
+      "externalInfluences": "Influence de l'islam depuis le sultanat de Hadiyya au Moyen Age. Pression abyssinienne croissante depuis le XVIIe siècle, culminant avec l'invasion de Ménélik II à la fin du XIXe siècle et la division des terres entre les Neftenya. Colonisation administrative éthiopienne ayant imposé l'ethnonyme Gurage jusqu'en 2001.",
+      "majorHistoricalEvents": "XIVe siècle : première mention écrite du pays Silt'e-Ge. XVIe siècle : participation aux guerres éthio-adalies. XVIIe siècle : le Garad Sidi Mohammed bat les troupes de l'empereur Susenyos I à la bataille de Hadiyya. XIXe siècle : invasion du commandant abyssinien Gobana Dacche qui ravage les terres siltie et les divise entre les Neftenya, après la défaite du leader hadiyya Hassan Enjamo. 1991 : chute du Derg, émergence d'un mouvement politique siltie. 2000 : référendum d'autodétermination ethnique voté à l'unanimité. 2001 : création officielle de la zone Siltie distincte de la zone Gurage."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système politique traditionnel fondé sur la structure clanique et les conseils d'anciens. Historiquement, le territoire était gouverné par des Garad (chefs suprêmes) de la dynastie Gan-Silte. Le dernier Garad connu avant la conquête de Ménélik fut Sediso K'albo. Aujourd'hui, les institutions locales éthiopiennes encadrent la gouvernance, mais les anciens et les leaders religieux conservent un rôle de médiation sociale.",
+      "clanOrganization": "Organisation en six sous-groupes historiques principaux : Azernet, Berbere, Alichcho, Wuriro, Melga (Ulbareg) et Silt'i (Summusilt'i). Chaque sous-groupe possède ses propres traditions et territoires dans la zone Siltie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'appartenance clanique et les alliances. Certains clans revendiquent une descendance de figures religieuses ou historiques comme Kabir Hamid, Aw Barkhadle ou Hajji Aliye, renforçant l'identité islamique et historique du groupe.",
+      "religiousAuthority": "Société majoritairement musulmane sunnite. Les imams et les chefs religieux jouent un rôle important dans la vie sociale et la transmission de l'identité islamique, héritage du sultanat de Hadiyya. Le saint Aw Barkhadle est vénéré comme ancêtre fondateur."
+    },
+    "languages": {
+      "mainLanguage": "Silte (stv)",
+      "isoCodes": ["stv", "wle"],
+      "dialects": [
+        "Azernet-Berbere",
+        "Silti (dialecte central)",
+        "Wuriro",
+        "Ulbareg (Melga)",
+        "Wolane (variété apparentée, parfois considérée distincte, ISO 639-3 : wle)"
+      ],
+      "vehicularRole": "Le silte est la langue maternelle des Siltie et est parlé par environ 940 000 locuteurs (recensement 2007). Le wolane, parlé par environ 125 000 personnes, est une variété étroitement apparentée. L'amharique est utilisé comme langue de l'administration et de l'éducation en Ethiopie. Le silte appartient à la famille ethiopio-sémitique et est proche du harari."
+    },
+    "culture": {
+      "majorRites": "Rites islamiques structurant le cycle de vie : circoncision masculine (rite d'entrée dans la communauté musulmane), mariage (célébration communautaire avec dot), funérailles (inhumation dans les 24 heures, lectures coraniques, condoléances de trois jours). Cérémonies agricoles liées à la culture de l'ensete (culture vivrière principale). Célébration des fêtes islamiques : Aid el-Fitr, Aid el-Adha, Mawlid. Pèlerinages aux tombeaux de saints locaux comme Aw Barkhadle.",
+      "symbols": "Le symbole identitaire central des Siltie est la référence au sultanat de Hadiyya et à l'ancêtre Gen Silt'i, dont le nom a été choisi pour l'ethnonyme officiel lors de l'autodétermination de 2000-2001. L'identité islamique est un marqueur culturel fort, héritage du sultanat médiéval.",
+      "artsAndMusic": "Tradition de poésie orale islamique et de chants rituels lors des cérémonies religieuses et des mariages. Musique de percussion traditionnelle lors des fêtes. Artisanat textile et poterie. Pratique du commerce comme trait culturel distinctif : les Siltie sont réputés commerçants dans toute l'Ethiopie du Sud, notamment à Addis-Abeba et Adama. Culture de l'ensete, plante alimentaire centrale dont la culture et la transformation sont codifiées socialement.",
+      "spiritualities": "Islam sunnite majoritaire, héritage du sultanat médiéval de Hadiyya. Vénération de saints locaux, notamment Aw Barkhadle, considéré comme ancêtre fondateur. Pratiques soufies présentes dans certaines communautés. Traces de croyances préislamiques dans certaines pratiques rurales. Des efforts d'évangélisation chrétienne récents ont conduit à la présence de quelques communautés chrétiennes dans la zone Siltie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Siltie sont liés au sultanat de Hadiyya, puissant Etat islamique médiéval du sud de l'Ethiopie actuelle. La dynastie Gan-Silte a gouverné le territoire siltie pendant plusieurs siècles. Au XVIIe siècle, le Garad Sidi Mohammed a maintenu l'indépendance face aux Abyssins. La résistance siltie a duré jusqu'à la conquête de Ménélik II à la fin du XIXe siècle.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Gurage voisins (intégration forcée dans la zone Gurage au XXe siècle, rejetée par les Siltie). Relations commerciales avec les populations urbaines d'Ethiopie. Tensions historiques avec les expansions oromo au XVIe siècle et les Abyssins aux XVIIe-XIXe siècles.",
+      "conflictsOrAlliances": "XVIe siècle : alliance avec Ahmed ibn Ibrahim al-Ghazi lors de la guerre éthio-adalie. XVIIe siècle : victoire du Garad Sidi Mohammed contre l'empereur Susenyos I, protégeant le territoire pendant trois siècles. XIXe siècle : défaite face aux forces de Ménélik II menées par Gobana Dacche, suivie de la division des terres. XXe siècle : résistance administrative contre l'inclusion dans la zone Gurage, aboutissant à l'autodétermination de 2001.",
+      "diaspora": "Diaspora intérieure importante : de nombreux Siltie migrent vers Addis-Abeba, Adama et d'autres villes éthiopiennes où ils s'établissent comme commerçants et marchands, maintenant un réseau économique actif tout en conservant des liens avec leur zone d'origine."
+    },
+    "demography": {
+      "totalPopulation": 1550000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 (940 000 locuteurs Silte), projection 2025 basée sur le taux de croissance éthiopien et les données CIA World Factbook (Silte : 1,3% de la population éthiopienne estimée à 135 millions en 2025). Horn of Africa Evangelical Mission (2019 : 1 155 000). Projection 2025 estimée à 1,5-1,6 million.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1550000,
+          "note": "Principalement dans la zone Siltie (Etat régional d'Ethiopie centrale, ex-SNNPR), ainsi qu'à Addis-Abeba, Adama et autres centres urbains du sud de l'Ethiopie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Silt'e people. https://en.wikipedia.org/wiki/Silt%CA%BCe_people",
+      "Wikipedia EN — Silt'e language. https://en.wikipedia.org/wiki/Silt%CA%BCe_language",
+      "Joshua Project — Silt'e in Ethiopia. https://joshuaproject.net/people_groups/11677",
+      "Horn of Africa Evangelical Mission — Silti people profile. https://hornofafrica.org/wp-content/uploads/2019/12/Silti.pdf",
+      "Glottolog — Silt'e language (stv). https://glottolog.org/resource/languoid/id/silt1240",
+      "CIA World Factbook — Ethiopia (Silte : 1,3% de la population). https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+      "Dirk Bustorf 2011 : Lebendige Überlieferung : Geschichte und Erinnerung der muslimischen Silt'e Äthiopiens. Wiesbaden : Harrassowitz.",
+      "Nishi Makoto 2005 : Making and Unmaking of the National-State and Ethnicity in Modern Ethiopia. African Study Monographs, Supplementary Issue 29."
+    ]
   }
 }

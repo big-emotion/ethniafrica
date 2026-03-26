@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Mahouka",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Mahou",
+      "exonyms": ["Maou", "Mahous", "Maouka"],
+      "originOfExonyms": "L'ethnonyme Mahouka derive de l'expression en langue mahouka qui cigui moka, signifiant envahisseurs, en reference a l'arrivee conquerante des Diomande dans le Nord-ouest ivoirien. Le pays Mahou designe simultanement un espace geographique, un peuple, une culture et une langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Mahouka est la forme usuelle pour designer la langue. Mahou (ou Mahous) est la forme la plus frequente pour designer le peuple dans la litterature francophone et sur Wikipedia. Les deux formes coexistent sans confusion.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Ouest",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Mande du Nord (Mande occidental, sous-groupe Odienneka/Mahouka)",
+      "historicalRegion": "Nord-ouest de la Cote d'Ivoire, region du Bafing (Mahou), de Touba a Seguéla, entre savane et foret"
     },
-    "ethnicities": ["Mahouka"],
+    "ethnicities": ["Mahouka", "Mahou"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Mahouka sont nes du brassage entre les guerriers Diomande (Mande du Nord, originaires du Mali) et les autochtones Yacouba (Dan) du Nord-ouest ivoirien. Les Diomande, apres la destruction de l'empire Songhai, ont transité par Beyla en Guinee avant de s'installer dans la region qui deviendra le pays Mahou. L'ancetre mythique Kofigamen est a l'origine des grandes lignees Diomande.",
+      "formationPeriod": "XVIe-XVIIIe siecle : arrivee des Diomande en fin de XVIe siecle (installation a Soba/Gbeka), vagues migratoires successives jusqu'au XIXe siecle, melting-pot progressif avec les Yacouba et adoption partielle de l'islam.",
+      "migrationRoutes": [
+        "De l'empire du Mali vers la Guinee (Beyla, Gbessoba)",
+        "De la Guinee (Konyan et Toron) vers le Nord-ouest ivoirien (Touba, Seguéla)",
+        "Dispersion des Yacouba autochtones vers le sud (Biankouma, Man)"
+      ],
+      "historicalSettlementZones": [
+        "Pays Mahou : departements de Touba, Koro, Ouaninou (368 villages, 8 720 km2)",
+        "Region du Bafing (Cote d'Ivoire), frontier avec la Guinee"
+      ],
+      "unificationsOrDivisions": "La region est organisee en kabla (grandes familles) Diomande reunissant plusieurs clans (Konsaba, Kandessi, Gbo, Famossi, Sessassi, Sakoulla). Rivalites entre factions animistes et factions islamisees au sein des Diomande. L'islamisation progressive a favorise l'emergence de djamou (patronymes) musulmans et de nouvelles alliances inter-claniques.",
+      "externalInfluences": "Adoption progressive de l'islam (probablement fin XVIIIe siecle pour certains lignages ; El Hadji Moussa Bakayoko de Koro aurait effectue sept pelerinages a La Mecque entre le XIVe et le XVIe siecle). Partage de certaines coutumes avec les Yacouba (usage des masques). Influence des Malinke voisins dans les dialectes.",
+      "majorHistoricalEvents": "Arrivee des Diomande au XVIe siecle et delogement des Yacouba. Construction de la capitale Touba (fondateur Karamoko Amara Fadiga). En 1971, la diaspora mahouka hors du terroir etait deja deux fois plus importante que la population du terroir. Implication politique contemporaine dans les partis ivoiriens (RDR, RHDP)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie traditionnelle par village, exercee par une lignee specifique en succession patrilineaire directe (priorite aux garcons, puis succession collaterale). Le chef de village (Sotii) est garant des traditions et coutumes, chef de terre (Loutii), assure sacrifices et rituels aux ancetres et reglement des litiges ; role a vie.",
+      "clanOrganization": "Organisation en kabla (grandes families avec meme patronyme djamou ou Sia) et en Boon-da (Portes, enfants d'un meme pere ou grand-pere). Seize kabla principaux : Bamba, Bakayoko, Cherif, Diabate, Diomande, Dosso, Doumbia, Fadiga, Fofana, Kallo, Kone, Sako, Sanogo, Soumahoro, Meite, Toure.",
+      "ageClassSystems": "Hierarchie par age et sexe clairement codifiee : hommes (Tchomba-lou, Tche-lou, Kawe-lou, Demou-lou) ; femmes (Moussoba-lou, Mousso-lou, Singbi-lou, Demou-lou). Systeme de respect par appellations specifiques (Ngotche, Ngosso, Moan, Meman).",
+      "roleOfLineages": "Societe patrilineaire : transmission du djamou, du Sia (nom de famille/identite) et de l'heritage (Tchiin) par le pere. L'aine est chef de famille. Les kabla jouent un role de premier plan aux funerailles et mariages. Prestige historique lie a l'anciennete et au role fondateur de chaque kabla.",
+      "religiousAuthority": "Les chefs de kabla et les imams (Sanogo a Ganhoe depuis ~1750) exercent l'autorite religieuse. La societe est majority musulmane. Le createur supreme est nomme Kolayeman Massa ou Dan-ni Massa dans la tradition animiste anterieure. Masque Sabge (propriete des Diomande) utilise pour chasser sorciers et mauvais esprits."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Mahouka (mxx - dialecte mandingue)",
+      "isoCodes": ["mxx"],
+      "dialects": [
+        "Baralaka (Booko, Mahandougou)",
+        "Finanka (Borotou, Niokosso, Touresso, Vafindougou)",
+        "Famocika (Gouanan, Fouénan)",
+        "Gbonikawaka (Ouaninou, Koonan)",
+        "Kandeessika (Touba, Tienko, Sokourala, Yala, Minbala)",
+        "Koroka (Koro, Gouake, Babouesso, Nigbila)",
+        "Saakoulaka (Gbelo, Goho, Mandougou, Ganhoe)",
+        "Sesassika (Dioman, Tienko)",
+        "Teneka (Guinteguéla, Guebasso, Kamolo)"
+      ],
+      "vehicularRole": "Le mahouka est un dialecte mandingue parlé dans le nord-ouest ivoirien. Il est intelligible par 88% des habitants de Mankono, 79,5% de ceux de Séguéla et 77% de ceux de Tiéningboué. Le dioula sert de langue de commerce (Taboussikan). La population était estimée à 192 493 habitants selon le recensement de 1998."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mariages traditionnels : processus structure incluant le Furtchila (temoin-messager), la demande aux oncles paternels, l'offrande de colas, la dot Furnanfou (bovins), le lavage des cheveux Koun-goo et les sacrifices aux ancetres. Initiation feminine par excision (en disparition). Lomba : fete de retrouvailles de la diaspora coïncidant avec le Maoulid, comprenant danses et ceremonies religieuses sur plusieurs jours. Sacrifices aux ancetres (coq, belier, boeuf) en invoquant le createur supreme.",
+      "symbols": "Masques echassiers (en voie de disparition par islamisation) ; masque Sabge des Diomande. Poissons sacres de Silakoro (silures veneres comme ancetres). Mausolee d'El Hadji Moussa Bakayoko a Koro. Grottes d'Ouaninou et Toutche (reliees a la Guinee). Adage Mahouka sur la valeur du voyage.",
+      "artsAndMusic": "Danses de rejouissances : Koukouba (Koro), Bou (Dioman/Biemasso). Chants traditionnels. Groupe Les Galliets (leader Alidou Diabate/Ali Galliet) : style Zouglou Mahouka fusionne avec Francais et Gnaoua, albums Samedi Soir et Elephants 92 (pour la CAN 1992). Forgerons de Yo (village specialise a 5 km de Touba).",
+      "spiritualities": "Societe a l'origine animiste, aujourd'hui majoritairement musulmane sunnite. Croyance au createur supreme (Kolayeman Massa/Dan-ni Massa), au pouvoir des ancetres et des masques. L'islamisation a favorise la creation de djamou musulmans et de nouvelles structures sociales. La pratique de la guerison traditionnelle (ex. Sogbeti Bamba pour les fractures) persiste."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise, mais une domination territoriale des Diomande sur la region de Touba a Séguéla (XVIe-XIXe siecle). Les Diomande, soutenus par les familles Bamba et Kone, ont impose leur suprematie sur tout le pays Mahou. La capitale historique et administrative est Touba.",
+      "relationsWithNeighbors": "Relations complexes avec les Yacouba (Dan) : conflits initiaux, delogement vers le sud, puis cohabitation et melting-pot progressif avec partage de coutumes (masques notamment). Relations avec les Malinke voisins (dialectes communs, alliances politiques). Sinangouya (parenté a plaisanterie) avec les Senoufo qui assimilent les Mahou aux Koya.",
+      "conflictsOrAlliances": "Invasions et guerres de conquete a l'arrivee des Diomande (XVIe siecle). Rivalites internes entre factions Diomande animistes et islamiques. Alliance Diomande-Bakayoko (soutien spirituel). Alliance Sanogo-Fadiga (gouvernance religieuse a Ganhoe). Esclavage de captifs Yacouba integres comme djamou malinke.",
+      "diaspora": "Diaspora importante : en 1971 deja deux fois plus de Mahouka hors terroir que dans le pays Mahou. Presence dans les grandes villes ivoiriennes (Abidjan, Bouake, Man, Daloa, Abengourou) et a l'international (France, Belgique, Grande-Bretagne, Canada, Italie, USA, Arabie saoudite)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 260000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement de 1998 (192 493 habitants) et le taux de croissance demographique ivoirien (~2,5% par an) pour projection 2025 ; Wikipedia FR (Mahous)",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 260000,
+          "note": "Nord-ouest de la Cote d'Ivoire, region Bafing, departements de Touba, Koro, Ouaninou (368 villages)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mahous – Wikipedia FR (https://fr.wikipedia.org/wiki/Mahous)",
+      "Mandes en Cote d'Ivoire – Wikipedia FR (https://fr.wikipedia.org/wiki/Mand%C3%A9s_en_C%C3%B4te_d%27Ivoire)",
+      "Bakayoko, Abou et Coulibaly, Yalamoussa – L'installation des Diomande dans le Nord-ouest ivoirien (XVIeme-XIXeme siecle), Revue ASTR-GHANA, 2025 (https://edition-efua.acaref.net/wp-content/uploads/sites/6/2025/11/2.-Abou-BAKAYOKO.pdf)",
+      "Ultimes Griots – Les Mahouka, Facebook, 2024 (https://www.facebook.com/Ultimesgriots/posts/994867092658418/)"
+    ]
   }
 }

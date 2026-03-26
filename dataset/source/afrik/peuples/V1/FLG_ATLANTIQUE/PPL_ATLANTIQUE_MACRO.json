@@ -1,0 +1,22 @@
+{
+  "id": "PPL_ATLANTIQUE_MACRO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["SEN", "GMB", "GIN", "SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Diverses selon les sous-groupes",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "currentCountries": ["SEN", "GMB", "GIN", "SLE"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Synthèse AFRIK 2025"]
+  }
+}

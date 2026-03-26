@@ -6,54 +6,69 @@
   "content": {
     "appellations": {
       "mainName": "Tutrugbu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Batrugbu (pluriel) ; Atrugbu (singulier)",
+      "exonyms": ["Nyangbo", "Nyagbo", "Nyangbo-Tafi", "Tutrugbu"],
+      "originOfExonyms": "Nyangbo (aussi orthographie Nyagbo ou Nyangbo) est le nom officiel utilise par les autorites ghanéennes et les organisations comme l'Ethnologue et l'ISO. Certains sous-groupes preferent Tutrugbu, qui est leur denomination propre. Nyangbo-Tafi associe deux communautes voisines (Nyangbo et Tafi) partageant une langue tres proche consideree par certains linguistes comme un dialecte commun.",
+      "whyProblematic": "Ce fichier pourrait etre considere comme doublon de PPL_NYANGBO, les deux entrees referant au meme peuple (Tutrugbu = nom propre, Nyangbo = nom officiel ISO). Il est recommande de fusionner les deux fiches ou d'en faire l'une une reference vers l'autre. L'ISO 639-3 nyb est attribue a la langue Nyangbo, qui correspond a la meme communaute que les Tutrugbu.",
+      "contemporaryUsage": "Les deux termes Tutrugbu et Nyangbo sont en usage contemporain. Tutrugbu est prefere par la communaute elle-meme (sauf l'un des sous-groupes qui accepte Nyangbo), tandis que Nyangbo reste le nom officiel administratif et linguistique (code ISO nyb).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Ghana-Togo Mountain (GTM), branche Kwa (Niger-Congo)",
+      "historicalRegion": "Region du Volta, Ghana (contreforts des Akuapem-Togo-Atakora)",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Tutrugbu"],
+    "ethnicities": ["Tutrugbu", "Nyangbo", "Batrugbu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tutrugbu (Nyangbo) appartiennent au groupe des langues Ghana-Togo Mountain (GTM), ensemble de quinze langues situees dans les collines de l'Akuapem-Togo-Atakora s'etendant du sud-est du Ghana a travers le Togo jusqu'au Benin. Ces communautes sont presumees avoir occupe leurs territoires montagnards depuis des siecles, possiblement refugiees dans les hauteurs pour echapper aux vagues de migration et de domination des grandes ethnies voisines (Akan, Ewe).",
+      "formationPeriod": "L'occupation des zones montagnardes de la region du Volta est ancienne et anterieure aux migrations ewe du XVIIe siecle. La communaute Tutrugbu est bordee par les Avatime, les Tafi et les Ewe.",
+      "migrationRoutes": [
+        "Occupation historique des contreforts des montagnes Akuapem-Togo (est du Ghana)"
+      ],
+      "historicalSettlementZones": [
+        "Region du Volta, Ghana (zone montagneuse de l'est, entre les communautes Avatime et Tafi)"
+      ],
+      "unificationsOrDivisions": "Les Tutrugbu sont divises en plusieurs sous-groupes dont certains preferent l'appellation Tutrugbu et d'autres acceptent Nyangbo. La communaute est liee aux Tafi voisins, avec qui elle partage une langue tres proche (certains linguistes les considerent comme dialectes d'une meme langue).",
+      "externalInfluences": "Influence des missions chretiennes (deux grandes denominations presents depuis environ 50 ans selon Joshua Project, puis d'autres groupes dans les deux dernieres decennies). Pression des grandes langues vehiculaires (ewe, twi, anglais) sur la langue Tutrugbu, qui connait un declin de son systeme de classes nominales chez les jeunes locuteurs.",
+      "majorHistoricalEvents": "Fin du XIXe-debut du XXe siecle : contacts avec les missions coloniales et chretiennes. 1968 : premiere description linguistique du systeme de classes nominales Tutrugbu (Heine). 1975 : etude de Ford. 2009 : publication sur le systeme de classes nominales (James Essegbey, Universite de Floride). 2019 : publication d'une grammaire complete du Tutrugbu (Essegbey, Language Science Press)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en petites chefferies villageoises, typique des petits groupes ethniques des montagnes du Ghana. La chefferie locale est la principale unite politique. Les Tutrugbu vivent dans un cadre montagnard decrit comme presque idyllique.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent les alliances et la transmission des droits fonciers au sein des villages des collines.",
+      "religiousAuthority": "Croyances animistes traditionnelles : les esprits habitants virtuellement chaque element de l'environnement naturel. Shrines ancestraux places devant les portes des maisons. Les ancetres sont consultes pour la protection. Presence chretienne significative depuis une cinquantaine d'annees."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Tutrugbu (Nyangbo)",
+      "isoCodes": ["nyb"],
+      "dialects": ["Tutrugbu", "Tafi (langue soeur tres proche)"],
+      "vehicularRole": "Le tutrugbu (nyb) est une langue locale de petite taille, parlee par une communaute d'environ 2 000 residents selon Essegbey (2021) et jusqu'a 11 000 selon Joshua Project (incluant la diaspora). La langue est en voie de declin partiel : les jeunes locuteurs utilisent de plus en plus des marqueurs d'accord generalises ou abandonnent le systeme de classes nominales. L'ewe et l'anglais sont les langues vehiculaires regionaux."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies et festivals avec costumes aux couleurs vives dans un cadre montagnard. Pratiques spiritualistes autour des shrines ancestraux. Les eglises chretiennes ont introduit des pratiques religieuses supplementaires coexistant avec les rites traditionnels.",
+      "symbols": "Le cadre montagnard des collines Akuapem-Togo est un element identitaire fort pour les Tutrugbu. Les shrines ancestraux devant les maisons sont un symbole visible de la spiritualite traditionnelle.",
+      "artsAndMusic": "Traditions orales et ceremonies culturelles avec costumes colores. La communaute partage avec ses voisins GTM un patrimoine culturel montagnard distinct des grandes cultures de plaine (Ewe, Akan).",
+      "spiritualities": "Religion traditionnelle animiste : croyance que les esprits habitent la nature, les objets et les ancetres. Peur des esprits malefiques, culte des ancetres pour protection. Christianisme introduit il y a environ 50 ans par deux grandes denominations, suivi d'autres groupes chretiens dans les vingt dernieres annees. Beaucoup de chretiens Nyangbo eprouvent des difficultes a pratiquer une foi distinctement chretienne faute de Parole de Dieu dans leur langue maternelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Petites chefferies villageoises independantes dans le cadre montagnard. Pas de royaumes etendus. Les Tutrugbu font partie du groupe GTM, communautes de taille modeste ayant resiste a l'assimilation par les grands groupes voisins.",
+      "relationsWithNeighbors": "Voisins directs : Avatime (langue apparentee), Tafi (langue soeur), Ewe (langue de contact principal). La langue Tutrugbu est bordee et influencee par l'ewe au plan vehiculaire et social. L'Avatime est aussi signale comme proche (comprehension ewe elevee selon enquete GILLBT 1987).",
+      "conflictsOrAlliances": null,
+      "diaspora": "Faible presence diasporique en dehors du Ghana. La majorite des 11 000 locuteurs de la langue reside dans la region du Volta."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 11000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project / Peoplegroups.org 2024 (11 000 pour le groupe Nyangbo, Tutrugbu au Ghana). Essegbey 2021 signale environ 2 000 residents dans les villages d'origine.",
+      "distributionByCountry": [{ "country": "GHA", "population": 11000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN – Nyangbo-Tafi language (https://en.wikipedia.org/wiki/Nyangbo-Tafi_language)",
+      "Glottolog – Nyangbo (nyb), 2024 (https://glottolog.org/resource/languoid/id/nyan1302)",
+      "Joshua Project – Nyangbo, Tutrugbu in Ghana (https://joshuaproject.net/people_groups/14089/GH)",
+      "James Essegbey – Tutrugbu (Nyangbo) language and culture, Language Science Press, 2019 ; recension in Linguistique et Langues Africaines, 2021 (https://journals.openedition.org/lla/729)",
+      "James Essegbey – Noun classes in Tutrugbu, Journal of West African Languages XXXVI.1-2, 2009 (https://journalofwestafricanlanguages.org/)",
+      "The Language Archive – Nyangbo / Tutrugbu (https://archive.mpi.nl/tla/islandora/object/tla:1839_00_0000_0000_000E_1930_2)",
+      "University of Florida CoLang 2018 – Tutrugbu Practicum (https://colang.lin.ufl.edu/home/practicafield-methods/tutrugbu-practicum/)"
+    ]
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "PPL_SONINKE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MRT", "MLI", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Soninke / Sooninke",
+      "linguisticFamily": "FLG_MANDE",
+      "historicalRegion": "MRT, MLI, SEN",
+      "currentCountries": ["MRT", "MLI", "SEN"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (snk)", "Soninke Diaspora Records"]
+  }
+}

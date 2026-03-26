@@ -1,23 +1,98 @@
 {
   "id": "PPL_TALENSI",
-  "nameMain": "",
+  "nameMain": "Talensi",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["GHA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Talensi",
       "selfAppellation": "Talensi",
+      "exonyms": ["Tallensi", "Talni", "Tale", "Frafra (terme generique)"],
+      "originOfExonyms": "Le terme Tallensi (ou Talensi) est l'auto-denomination du peuple. Tallensi signifie litteralement les habitants de Taleland, la region entre les deux Voltas et la limite occidentale du district. Le terme Talni designe leur langue dans la nomenclature de l'Ethnologue, en tant que dialecte du Farefare. Frafra est un terme generique parfois utilise pour l'ensemble du groupe ethnolinguistique.",
+      "whyProblematic": "Le terme Frafra est parfois utilise de facon imprecise pour designer l'ensemble des peuples de la region de Bolgatanga (Upper East Region), alors que les Talensi constituent un groupe distinct avec leur propre tradition orale et organisation ritualo-politique. Cette confusion peut effacer la specificite des Talensi.",
+      "contemporaryUsage": "Talensi (ou Tallensi) est le terme utilise dans les sources academiques, administratives ghanéennes et touristiques. Talni est employe dans la documentation linguistique. La communaute se designe elle-meme comme Talensi.",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "Ghana (Tongo Hills)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Gur, sous-groupe Frafra (Mabia / Oti-Volta), ensemble Mole-Dagbani",
+      "historicalRegion": "Taleland — collines de Tongo et bassin des deux Voltas, Upper East Region (Ghana)",
+      "currentCountries": ["GHA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue", "Tongo Hills Anthropological Studies"]
+    "ethnicities": [
+      "Namoos — migrants d'origine Mamprusi etablis a Tongo, associes a la chefferie (na'am)",
+      "Tallis — habitants autochtones des collines de Tongo, detenteurs de la tendaanaship (pretrise de la terre)",
+      "Clan de Tongo-Tengzug — gardiens du sanctuaire supreme Tonna'ab",
+      "Clan de Kpatari — pretres de la terre (tendaana) du sanctuaire Tonna'ab",
+      "Clan des Bogyar — adorateurs du dieu Golib, celebrants des festivals Gologo et Boaram",
+      "Communautes des sections de Tengzug (Sameed, Sakpiega, Tamboog, Gundari, Nanchieyir, Kpatari, Bonchiig)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Talensi sont un peuple autochtone de la region des collines de Tongo (Upper East Region du Ghana). Les traditions orales des habitants de Tongo-Tengzug affirment que leurs ancetres ont toujours ete la, ou sont sortis du sol (surgissement mythique), ou sont descendus du ciel. Ce lien ancestral au sol justifie leur role de tenants de l'autorite religieuse sur la terre. L'histoire de Tongo-Tengzug est considered comme un site de pouvoir sacre depuis des temps immemoriaux, reconnu comme tel meme par les groupes migrants (Namoos).",
+      "formationPeriod": "Communaute sedentaire agricole bien etablie avant l'arrivee des migrations Mamprusi (Namoos). L'integration des Namoos (migrants d'origine Mamprusi) et des Tallis (autochtones) a forme la structure duale (chefferie/pretrise de la terre) caracteristique des Talensi. Les collines de Tongo formaient une frontiere entre les etats centralises (Dagbon, Mamprugu) au sud et les royaumes Mossi au nord, permettant aux Talensi de maintenir une organisation acephale jusqu'a l'arrivee de la colonisation britannique.",
+      "migrationRoutes": [
+        "Population autochtone de Taleland sans migration fondatrice documentee pour les Tallis",
+        "Migration des Namoos depuis les terres Mamprusi (Ghana/Burkina Faso) vers Tongo"
+      ],
+      "historicalSettlementZones": [
+        "Collines de Tongo (Tong Hills) et village de Tongo-Tengzug, Upper East Region, Ghana",
+        "Bassin du Volta Rouge entre les deux Voltas, environ 300 miles carres",
+        "Region de Bolgatanga et environs",
+        "Zone frontaliere avec le sud du Burkina Faso"
+      ],
+      "unificationsOrDivisions": "Organisation acephale sans unite politique supra-villageoise. La societe est structuree par la dualite complementaire entre Namoos (chefferie, na'am) et Tallis (pretrise de la terre, tendaanaship). Le chef de Tongo est le plus eminent des chefs Talensi sur le plan rituel mais sans pouvoir politique sur les autres. Tous les chefs sont freres symboliques, descendants du Paramount Chief de Mampurugu; tous les tendaana sont freres partageant la meme fonction rituelle vis-a-vis de la Terre.",
+      "externalInfluences": "Pression des etats centralises environnants (Dagbon au sud, Mamprugu au sud, royaumes Mossi au nord) sans soumission. Expedition militaire britannique en 1911 (tempete les collines, eviction des habitants, interdiction d'acces). Deuxieme expedition britannique en 1915. Retour progressif des habitants grace au pouvoir sacre du sanctuaire de Tonga. Influence du christianisme (premiers contacts 1930s) et de l'islam chez les voisins. Integration dans la Gold Coast britannique puis dans le Ghana independant.",
+      "majorHistoricalEvents": "Resistance a l'integration dans les etats centralises environnants (siecles). Visite de l'anthropologue Meyer Fortes (1934-1937) qui a produit les etudes ethnographiques de reference. Expedition militaire britannique (1911, 1915). Retour clandestin des Talensi sur leurs terres sacrees. Reconnaissance du site de Tengzug comme patrimoine culturel important. Inscription du site de Tenzug sur la liste indicative de l'UNESCO (2000)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation acephale sans autorite politique centralisee au-dela du village. Deux types de leaders rituels complementaires: les tendaana (custodiens de la Terre, descendants des Tallis autochtones, autorité spirituelle sur la terre, les recoltes et les sanctions surnaturelles) et les na'am (chefs d'origine Namoo/Mamprusi, prestige limite au groupe de parente, pas d'autorite judiciaire/economique). Le chef de Tongo est le plus eminent rituellement mais sans pouvoir administratif sur les autres chefs.",
+      "clanOrganization": "Societe organisee par lignages maxicimaux (clans) patrilineaires. Chaque clan possede ses propres ancetres, ses autels et ses terres. La propriete fonciere est patrimoniale, transmise de pere en fils. Les sept sections de Tengzug ont chacune un pretre de la terre (tendaana). Les clans regulent les mariages par l'exogamie lignagere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires sont l'unite sociale, economique et religieuse fondamentale. Le chef de famille (compound head) organise l'agriculture, le stockage des grains, la distribution des ressources et les ceremonies ancestrales. La famille ideale reunit trois generations (grand-pere, fils adultes, petits-enfants) dans un meme compound. Les femmes conservent des droits propres sur leurs biens (elevage, commerce).",
+      "religiousAuthority": "Autorite religieuse double: les tendaana (pretres de la Terre) sont les mediateurs entre la communaute et les puissances de la Terre (tengban); les chefs de lignage sont responsables du culte des ancetres. Aucune hierarchie religieuse institutionnalisee, pas de clerge professionnel ni d'ecritures sacrees. Les devinateurs (diviners) jouent un role crucial pour identifier les ancetres qui frappent les vivants de malheurs."
+    },
+    "languages": {
+      "mainLanguage": "Talni (dialecte du Farefare / Frafra)",
+      "isoCodes": ["gur"],
+      "dialects": [
+        "Talni — variante Talensi du Farefare",
+        "Gurenne (Gurenε) — variante principale du Frafra au Ghana",
+        "Nankani (Nankanse) — variante des Nankana voisins",
+        "Boone — troisieme variante principale du Farefare"
+      ],
+      "vehicularRole": "Le Talni (Farefare/Frafra) est la langue maternelle des Talensi. Le Dagbani et le Moore sont employes pour la communication inter-ethnique dans la region. L'anglais est la langue officielle de l'education et de l'administration au Ghana. Le Frafra/Farefare est langue nationale du Ghana, enseignee dans les ecoles de l'Upper East Region."
+    },
+    "culture": {
+      "majorRites": "Culte des ancetres comme pratique religieuse centrale: chaque lignage possede ses propres autels ancestraux (ba'ar) dans le compound; les ancetres sont honores par des libations et des sacrifices animaux. Rites funeraires elabores avec participation du fils aine (porte la coiffe et les habits du defunt, conduit les rituels). Tabous stricts regulant les relations entre premiers-nes et leurs parents (interdictions alimentaires, de contact). Festival Golib (danse annuelle aux collines de Tongo). Festival Gologo (debut saison des pluies, sanctuaire Nnoo). Festival Boaram (automne). Rites agraires lies au sanctuaire de la Terre (tengban) pour la fertilite des sols et la protection contre les criquets.",
+      "symbols": "Crocodiles sacres des mares de Tongo, consideres comme des personnes (ni-saal), incarnations des ancetres clanique, intouchables sous peine de catastrophe clanique. Sanctuaire supreme de Tonna'ab aux falaises de Kpatari: pierre sacree benevolente et curative attirant des pelerins de toute la region (Guruni, Kusasi, Builsa, Dagomba, Mossi, historiquement Akan/Asante). Autels ancestraux (ba'ar) et autels de la Terre (tengban) dans chaque compound et village. Grottes et rochers sacres des collines de Tongo comme centres du pouvoir spirituel.",
+      "artsAndMusic": "Danse collective du Golib (Golob), pratiquee lors du festival annuel de Tongo Hills. Architecture traditionnelle en banco avec terrasses plates a Kpatari (interdit de toit de chaume par la divinite Golib qui abhorre le feu). Terrassement agricole traditionnel autour des collines pour retenir l'eau et prevenir l'erosion. Vannerie et poterie feminine. Chants rituels lors des ceremonies funeraires et festivalières.",
+      "spiritualities": "Religion traditionnelle fondee sur le culte des ancetres et le culte de la Terre. Pas de dieu supreme unique reconnu. Deux forces surnaturelles principales: les esprits ancestraux (accessibles aux autels dans les homesteads) et l'Esprit de la Terre (tengban, force non-humaine controlant la fertilite, punissant les peches contre la saintete de la terre). Communication avec les ancetres par la divination. Les ancetres veillent sur les vivants, recompensent (sante, bonnes recoltes, enfants) et punissent (maladies, mort, mauvaises recoltes). Syncretisme religieux progressif avec le christianisme et l'islam chez les jeunes generations."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Les collines de Tongo formaient un site de pouvoir sacre et de refuge reconnu dans toute la region. Le sanctuaire de Tonna'ab etait (et reste) un lieu de pelerinage inter-ethnique majeur, attirant des fideles de groupes voisins tres differents. Les Talensi ont maintenu leur independance politique face aux royaumes Mossi, Dagbon et Mamprugu grace a leur organisation acephale et a leur attachement defensif aux collines.",
+      "relationsWithNeighbors": "Pelerinage commun au sanctuaire de Tongo-Tengzug par les Guruni, Kusasi, Builsa, Dagomba, Mossi et historiquement les Akan/Asante, temoignant du rayonnement spirituel des Talensi. Relations commerciales avec les marches regionaux (boeuf, volaille, mil). Relations tensionees avec la puissance coloniale britannique (expeditions militaires 1911, 1915). Contacts progressifs avec les missions chretiennes des Peres Blancs de Bolgatanga (a partir de 1936).",
+      "conflictsOrAlliances": "Resistance a l'assimilation politique par les royaumes environnants (Dagbon, Mamprugu, Mossi). Resistance armee a l'expedition militaire britannique (1911). Retour clandestin sur les terres sacrees malgre l'interdiction britannique. Integration dans la Gold Coast britannique puis dans le Ghana independant (1957) sans conflit majeur.",
+      "diaspora": "Emigration economique saisonniere et permanente vers les villes du Ghana (Tamale, Accra, Kumasi) et vers la Cote d'Ivoire, tendance commune a toute l'Upper East Region."
+    },
+    "demography": {
+      "totalPopulation": 97000,
+      "referenceYear": 2025,
+      "source": "Ghana Statistical Service, recensement 2021 (district de Talensi: 87,021 hab.); projection 2024-2025 selon Ghana Statistical Service: environ 97,000. Ethnologue: population Farefare/Talni estimee dans l'ensemble Frafra.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 97000,
+          "note": "District de Talensi, Upper East Region, Ghana. Concentration autour des collines de Tongo et de la ville de Tongo."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Tallensi: https://en.wikipedia.org/wiki/Tallensi",
+      "Wikipedia EN – Farefare language: https://en.wikipedia.org/wiki/Farefare_language",
+      "UNESCO World Heritage Centre – Tenzug Tallensi settlements: https://whc.unesco.org/en/tentativelists/1392/",
+      "Kwekudee – Tallensi people, custodians of ancient Gurunshi culture: https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/tallensi-people-custodians-of-ancient.html",
+      "UBC Library – Tallensi ethnography (Fortes 1945, 1954): https://open.library.ubc.ca/media/stream/pdf/52387/1.0380228/5",
+      "Kanaga Africa Tours – The powerful Talensi fetishes in the Tongo Hills: https://www.kanaga-at.com/en/trip-info/ghana-en/the-powerful-talensi-fetishes-in-the-tongo-hills/",
+      "Citypopulation.de – Talensi District: https://www.citypopulation.de/en/ghana/admin/upper_east/0905__talensi/",
+      "Fortes, Meyer. The Dynamics of Clanship among the Tallensi. Oxford University Press, 1945.",
+      "Fortes, Meyer. The Web of Kinship among the Tallensi. Oxford University Press, 1949."
+    ]
   }
 }

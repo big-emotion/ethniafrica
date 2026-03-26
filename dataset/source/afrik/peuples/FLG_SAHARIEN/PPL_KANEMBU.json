@@ -2,68 +2,116 @@
   "id": "PPL_KANEMBU",
   "nameMain": "Kanembu",
   "languageFamilyId": "FLG_SAHARIEN",
-  "currentCountries": ["TCD"],
+  "currentCountries": ["TCD", "NER", "NGA"],
   "content": {
     "appellations": {
       "mainName": "Kanembu",
       "selfAppellation": "Kanembu",
-      "exonyms": ["Kanembu (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Kanembu",
+        "Kanemboue (transcription française coloniale)",
+        "Kanembou"
+      ],
+      "originOfExonyms": "Le terme Kanembu est à la fois l'endonyme et l'exonyme. Il désigne les habitants du Kanem, région nord-est du lac Tchad. Le suffixe -bu signifie peuple en langue kanembu. Les formes Kanembou et Kanemboue sont des adaptations françaises utilisées à l'époque coloniale.",
+      "whyProblematic": "La frontière entre Kanembu et Kanuri est souvent floue dans la littérature : les deux groupes partagent une origine commune dans l'empire du Kanem-Bornu, et leur langue forme un continuum dialectal. Certains auteurs traitent le kanembu comme un simple dialecte du kanuri, d'autres comme une langue distincte.",
+      "contemporaryUsage": "Le terme Kanembu est couramment utilisé au Tchad pour désigner ce groupe. Les locuteurs se distinguent des Kanuri du Nigeria, bien que les deux groupes partagent une histoire et une langue proches. Au Tchad, de nombreux Kanembu s'identifient à l'Alifa de Mao, chef traditionnel de la région du Kanem.",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien (Kanembu)",
-      "historicalRegion": "Tchad",
-      "currentCountries": ["TCD"]
+      "ethnoLinguisticGroup": "Saharien occidental (branche kanuri-kanembu)",
+      "historicalRegion": "Kanem (nord-est du lac Tchad, actuel Tchad), prefectures du Lac, Chari-Baguirmi et Kanem",
+      "currentCountries": ["TCD", "NER", "NGA"]
     },
     "ethnicities": [
-      "Kanembu du Nord",
-      "Kanembu du Sud",
-      "Sous-groupes régionaux"
+      "Kanembu du Kanem (nord-est du lac Tchad, préfecture de Kanem)",
+      "Kanembu du Lac (préfecture du Lac, rive nord-est du lac Tchad)",
+      "Kanembu de Chari-Baguirmi (préfecture de Chari-Baguirmi)",
+      "Tumari (sous-groupe nigérien distinct, région de N'Guigmi, parfois appelés Kanembu)",
+      "Sugurti (groupe dialectal occidental du lac Tchad)",
+      "Kuwuri (groupe dialectal occidental du lac Tchad)",
+      "Temageri (groupe dialectal occidental du lac Tchad)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kanembu sont originaires du TCD, dans la région du lac Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils sont historiquement liés au royaume du Kanem-Bornou.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Kanuri.",
-      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence profonde de l'islam."
+      "ancientOrigins": "Les Kanembu sont les descendants des populations nomades proto-sahariennes qui ont fondé l'empire du Kanem vers 700 de l'ère commune. L'empire serait né dans les terres comprises entre le lac Tchad et le fleuve Bahr el Ghazal, au nord-est du lac. Les ancêtres Kanembu appartenaient probablement aux peuples Zaghawa et Toubou qui peuplaient le plateau de l'Ennedi. Les différents groupes qui se sont fédérés autour du lac Tchad ont progressivement donné naissance au peuple kanembu, porteur de la langue nilo-saharienne kanembu. L'archéologie de Koro Toro montre un développement important de la production de fer entre 500 et 1000 de l'ère commune dans la région.",
+      "formationPeriod": "La formation de l'identité kanembu s'étale entre le 7e et le 12e siècle. Les Kanembu abandonnèrent progressivement leur mode de vie nomade pour s'établir dans la région du Kanem et fondèrent une capitale à Njimi (site non localisé avec certitude, à l'est du lac Tchad). Sous la dynasties duguwa puis sayfawa (à partir du 11e siècle), l'empire du Kanem s'islamisa et l'identité kanembu se consolida. À la fin du 14e siècle, la pression des Bulala força la dynastie sayfawa à se replier dans le Bornou (Nigeria actuel), où l'intermariage avec les populations Sao locales donna naissance au peuple kanuri. Les Kanembu demeurèrent dans le Kanem et conservèrent leur identité propre.",
+      "migrationRoutes": [
+        "Migration originelle depuis le plateau de l'Ennedi et le Bahr el Ghazal vers la région nord-est du lac Tchad (avant le 7e siècle)",
+        "Expansion vers l'ouest et le nord sous les mâïs de la dynasty sayfawa (11e-13e siècles)",
+        "Dispersion secondaire vers le Niger et le Nigeria lors des périodes de sécheresse et d'instabilité politique (14e-19e siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Kanem (nord-est du lac Tchad) : zone historique principale",
+        "Préfecture du Lac (Tchad) : rive nord du lac Tchad",
+        "Chari-Baguirmi (Tchad) : rive sud-ouest du lac Tchad",
+        "Nord-est du Nigeria (Borno State) : diaspora historique",
+        "Région de N'Guigmi (Niger) : sous-groupe Tumari"
+      ],
+      "unificationsOrDivisions": "Les Kanembu formèrent le coeur ethnique de l'empire du Kanem (c. 700-1380). L'affaiblissement de l'empire au 14e siècle sous les attaques des Bulala produisit la division entre les Kanembu (restés dans le Kanem) et les Kanuri (formés par métissage des Kanembu avec les Sao dans le Bornou). Les deux groupes maintiennent des liens familiaux étroits jusqu'à aujourd'hui. Sous le Bornou (15e-19e siècles), les Kanembu du Kanem étaient gouvernés par un représentant local (alifa de Mao) sous l'autorité nominale de Maiduguri.",
+      "externalInfluences": "Islamisation progressive à partir du 11e siècle sous les mâïs sayfawa. Influence arabe via les routes commerciales transsahariennes (échanges avec l'Egypte, la Libye, le Fezzan). Influences des Sao (peuple préexistant autour du lac Tchad). Contact avec les peuples haoussa à l'ouest. Colonisation française (1900-1960) et intégration au Tchad moderne. Influence des peuples arabes du Tchad (Arabes Choa) depuis plusieurs siècles.",
+      "majorHistoricalEvents": "Fondation de l'empire du Kanem vers 700 sous la dynasty duguwa. Islamisation de l'empire au 11e siècle ; le mâï Hummay fonde la dynasty sayfawa (sefuwa). Le mâï Dunama II Dibbalemi (1221-1259) porte l'empire à son apogée : 40 000 cavaliers, empire s'étendant jusqu'au Fezzan. Perte du Kanem face aux Bulala vers 1380 et repli de la dynasty sayfawa dans le Bornou. Reconquête du Kanem par le mâï Idris III Katagarmabe au début du 16e siècle. Conquête de la région par le Français en 1900. Indépendance du Tchad en 1960. Conflits liés aux guerres civiles tchadiennes (1960-2000)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition du royaume du Kanem-Bornou.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en sultanats et chefferies traditionnelles héritées de l'empire du Kanem-Bornu. Le chef traditionnel suprême des Kanembu au Tchad est l'Alifa de Mao (capitale du Kanem), dont l'autorité est reconnue par les communautés kanembu des préfectures du Kanem et du Lac. Le titre de mâï (roi) fut utilisé par les souverains de l'empire du Kanem. Le système politique traditionnel repose sur une hiérarchie de chefferies de village, de canton et de région, chacune avec son chef héréditaire. Les sultans et chefs traditionnels exercent encore une autorité morale et juridique plus forte que celle des administrations gouvernementales dans les zones rurales.",
+      "clanOrganization": "Structure clanique patrilinéaire organisée en lignages (usu) portant le nom d'un ancêtre commun. Les clans les plus importants sont liés aux lignages nobles de l'empire du Kanem. L'identité clanique détermine les alliances matrimoniales, les droits fonciers et l'accès aux ressources en eau. Les forgerons et autres artisans constituent des groupes endogames distincts à statut inférieur.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (usu) sont les unités fondamentales de la société kanembu. Ils déterminent l'appartenance sociale, les droits à la terre et aux puits, les obligations de solidarité et les alliances matrimoniales. La descendance en ligne masculine est la règle pour la transmission des biens et des titres. Les lignages nobles peuvent revendiquer une descendance directe des mâïs de l'empire du Kanem.",
+      "religiousAuthority": "L'islam sunnite malékite est la religion dominante depuis le 11e siècle. Les autorités religieuses (oulémas, imams, chefs de confréries soufies) jouent un rôle important dans la vie communautaire. Les confréries soufies Tijaniyya et Qadiriyya sont actives dans la région. Les chefs traditionnels cumulent souvent des fonctions politiques et religieuses, légitimées par leur descendance supposée de personnages islamiques illustres."
     },
     "languages": {
-      "mainLanguage": "Kanembu",
-      "vehicularRole": "Le kanembu est parlé par la majorité des Kanembu. L'arabe et le français sont également utilisés."
+      "mainLanguage": "Kanembu (kanembu)",
+      "isoCodes": ["kbl"],
+      "dialects": [
+        "Dialecte de Mao (le plus proche du kanuri selon Lukas)",
+        "Dialecte de Mando (préfecture du Kanem)",
+        "Dialecte de Nguri (préfecture du Kanem)",
+        "Dialecte Karkawu (rive sud-est du lac Tchad et îles)",
+        "Dialecte Kogono (Tchad)",
+        "Dialecte Kuburi Kura (Tchad)"
+      ],
+      "vehicularRole": "Le kanembu (ISO 639-3 : kbl) est une langue nilo-saharienne de la branche saharienne occidentale, proche du kanuri avec lequel il forme un continuum dialectal. Il est parlé par environ 500 000 à 600 000 locuteurs au Tchad principalement, et par une minorité au Niger et au Nigeria. Le kanembu a été standardisé par le gouvernement tchadien en 2009 avec adoption d'un alphabet latin officiel et d'une écriture ajami (arabe adaptée). Il sert de langue véhiculaire entre les communautés des préfectures du Kanem et du Lac. L'arabe tchadien et le français sont également utilisés comme langues secondes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels kanembu, symboles du royaume du Kanem-Bornou.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture kanembu."
+      "majorRites": "Rites islamiques : circoncision masculine (rite de passage obligatoire, célébré avec festivités communautaires), mariage selon les règles islamiques (dot en bétail ou argent, cérémonies de plusieurs jours), funérailles islamiques (inhumation rapide, deuil de trois jours, commémoration au 40e jour). Rites agraires : cérémonies de bénédiction des semailles (mil, sorgho) par les imams ou chefs religieux. Célébrations des fêtes islamiques majeures (Aïd el-Fitr, Aïd el-Adha) avec prières collectives, sacrifices et festins communautaires. Pèlerinage à La Mecque (hajj) très valorisé socialement.",
+      "symbols": "Le chameau (symbole de richesse, de prestige et de mobilité dans l'espace saharien). Le cheval (symbole du pouvoir noble et militaire, hérité de l'empire du Kanem-Bornu). La calligraphie arabe ajami (symbole de l'islam et de la culture savante). Les broderies et tissages colorés des vêtements traditionnels (tenues cérémonielles des chefs). Le lac Tchad comme espace identitaire central.",
+      "artsAndMusic": "Musique vocale et instrumentale : chants épiques relatant les exploits des mâïs de l'empire du Kanem, accompagnés de tambours (garaya), de flûtes en roseau et de luths. Les griots (maîtres de la parole) jouent un rôle central dans la transmission de la mémoire historique et des généalogies. Poésie orale en kanembu et en arabe. Artisanat : poterie traditionnelle (jarres, récipients), tissage de pagnes en coton, broderie des boubous et des bonnets de cérémonie, travail du cuir (selles, sandales, sacs). Architecture : cases rondes en banco (argile) à toit de chaume, ou maisons rectangulaires dans les zones plus sédentaires.",
+      "spiritualities": "Islam sunnite malékite pratiqué depuis le 11e siècle, profondément ancré dans la vie quotidienne et sociale. Influence des confréries soufies Tijaniyya et Qadiriyya, présentes depuis le 18e siècle. Pratiques syncrétiques persistantes : recours aux marabouts pour la protection (amulettes coraniques, talismans), interprétation des rêves, pratiques de divination par les feuilles de palmier doum. Croyances préislamiques résiduelles : esprits des lieux (djinns liés aux mares et aux arbres), rituels propitiatoires liés aux récoltes. Le Coran est étudié dans les écoles coraniques (khalwa) qui restent la première forme d'éducation formelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kanembu dans les grandes villes tchadiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kanembu sont les fondateurs de l'empire du Kanem, l'une des plus anciennes et des plus durables entités politiques d'Afrique centrale (c. 700-1893). Sous la dynasty duguwa puis sayfawa (sefuwa), cet empire domina le commerce transsaharien pendant plus d'un millénaire. Son influence s'étendait sur le Nigeria oriental, le Niger, le nord du Tchad, le Cameroun et la Libye. Le mâï Dunama II Dibbalemi (1221-1259) porta l'empire à son apogée avec 40 000 cavaliers. Les Kanembu sont également à l'origine du Bornou (fondé après leur repli du Kanem au 14e siècle), empire qui domina la région jusqu'en 1893. Aujourd'hui, les sultanats du Kanem et les chefferies kanembu du Tchad perpétuent cette tradition politique.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Bulala (qui les chassèrent du Kanem au 14e siècle), les Sao (peuple antérieur absorbé autour du lac Tchad), les Zaghawa (peuple cousin de l'est), les Arabes Choa du Tchad (relations de coexistence et d'échanges commerciaux), les Toubou du nord (alliés et partenaires commerciaux), et les Kanuri du Nigeria (groupe frère issu du même empire). Les Kanembu entretiennent traditionnellement des relations de complémentarité économique avec les pasteurs nomades (Arabes, Toubou) auxquels ils fournissent des produits agricoles et artisanaux.",
+      "conflictsOrAlliances": "Guerres contre les Bulala (13e-15e siècles) qui aboutirent à la perte du Kanem. Reconquête du Kanem par Idris III Katagarmabe (début 16e siècle). Alliance avec les Ottomans sous Idris IV Alooma (fin 16e siècle) pour moderniser l'armée. Résistance à la conquête de Rabih az-Zubayr (1893). Partition entre empires coloniaux français, britannique et allemand (1900-1902). Implication dans les guerres civiles tchadiennes (1965-2000), notamment via le soutien aux différentes factions politiques du nord du Tchad.",
+      "diaspora": "Communautés kanembu présentes dans les grandes villes tchadiennes (N'Djaména, Abéché, Faya-Largeau). Diaspora au Niger (région de N'Guigmi, sous-groupe Tumari). Petites communautés au Nigeria (Borno State) liées à l'histoire de l'empire du Kanem-Bornu. Migrations économiques récentes vers les pays du Golfe et l'Europe."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 1815270,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements tchadiens, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia (données Ethnologue SIL 2024) : estimation de 1 815 270 personnes. Principalement au Tchad (préfectures du Lac, Kanem et Chari-Baguirmi). Petites communautés au Niger et au Nigeria.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 1750000,
+          "note": "Préfectures du Lac (principal), Kanem et Chari-Baguirmi"
+        },
+        {
+          "country": "NER",
+          "population": 50000,
+          "note": "Région de N'Guigmi (sous-groupe Tumari), est du Niger"
+        },
+        {
+          "country": "NGA",
+          "population": 15270,
+          "note": "Borno State, frontière nord-est du Nigeria"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kanembu language (kbl)",
-      "CIA World Factbook – Chad",
-      "Recensements tchadiens",
-      "Études anthropologiques sur les peuples sahariens",
-      "Études historiques sur le royaume du Kanem-Bornou"
+      "Wikipedia EN — Kanembu people. https://en.wikipedia.org/wiki/Kanembu_people",
+      "Wikipedia EN — Kanem-Bornu Empire. https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire",
+      "Wikipedia EN — Kanembu language. https://en.wikipedia.org/wiki/Kanembu_language",
+      "SIL Ethnologue — Kanembu language (kbl). https://www.ethnologue.com/language/kbl/",
+      "Glottolog — Kanembu (kane1243). https://glottolog.org/resource/languoid/id/kane1243",
+      "Lumen Learning / SUNY — Bornu Empire. https://courses.lumenlearning.com/suny-hccc-worldcivilization/chapter/bornu-empire/",
+      "Joshua Project — Kanembu in Niger. https://joshuaproject.net/people_groups/12489/NG",
+      "Michigan State University — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
     ]
   }
 }

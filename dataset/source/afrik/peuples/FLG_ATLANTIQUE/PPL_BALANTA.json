@@ -1,23 +1,116 @@
 {
   "id": "PPL_BALANTA",
-  "nameMain": "",
+  "nameMain": "Balanta",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GIN", "GMB"],
+  "currentCountries": ["GNB", "SEN", "GMB", "GIN", "CPV"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Balanta",
       "selfAppellation": "Balanta",
+      "exonyms": ["Balante", "Balanta-Brassa", "Bulanda", "Balant"],
+      "originOfExonyms": "Le nom Balanta (portugais et creole de Guinee-Bissau : balanta ; francais : balante) signifie litteralement ceux qui resistentou ceux qui refusenten mandingue (du terme balanto). Ce nom fut donne par les Mandingues qui se heurtaient frequemment a leur resistance lors des tentatives d'expansion. Ce n'est pas un endonyme : les Balanta se nomment eux-memes Balanta sans connotation particuliere, ayant integre le terme.",
+      "whyProblematic": "Le terme balanta designe un ensemble de sous-groupes linguistiquement apparentes mais pas toujours mutuellement intelligibles. La classification des dialectes comme langues distinctes ou comme dialectes d'une meme langue varie selon les linguistes.",
+      "contemporaryUsage": "Terme officiel utilise au Senegal, en Gambie et en Guinee-Bissau. En Guinee-Bissau, les Balanta sont le deuxieme (voire premier selon certaines sources) groupe ethnique, representant environ 25 a 30% de la population.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Guinée-Bissau (littoral et intérieur)",
-      "currentCountries": ["GIN", "GMB"]
+      "ethnoLinguisticGroup": "Groupe bak des langues atlantiques nord, famille Niger-Congo",
+      "historicalRegion": "Oio (entre les rios Mansoa et Geba, Guinee-Bissau), cote centrale de Guinee-Bissau, Casamance meridionale",
+      "currentCountries": ["GNB", "SEN", "GMB", "GIN", "CPV"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ble)", "Guinée-Bissau cultural reviews"]
+    "ethnicities": [
+      "Balanta Kentohe — le sous-groupe le plus nombreux, rive droite de la riviere Mansoa, Guinee-Bissau centrale et occidentale (environ 423 000 locuteurs)",
+      "Balanta Ganja (Mane) — implantes dans la Casamance meridionale (Senegal) et le nord de la Guinee-Bissau (environ 86 000 locuteurs)",
+      "Balanta Nhacra — rive gauche de la Mansoa, migres vers le sud (region de Tombali)",
+      "Balanta Naga — sous-groupe distinct par son dialecte",
+      "Balanta Patch — probablement originaire du village Pache",
+      "Balanta Sofar — sous-groupe reconnu par les linguistes"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Balanta revendiquent le territoire entre les rios Mansoa et Geba (region de Nhacra, Oio) comme leur foyer originel. Leur tradition orale evoque une migration depuis l'est, selon certaines versions depuis le Soudan, l'Egypte ou l'Ethiopie (vallee du Nil) pour fuir des guerres et des secheresses. Des analyses genetiques de l'ADN mitochondrial (haplogroups M1 et U6, haplotypes matching des sequences soudanaises et marocaines) supportent une origine nord-africaine ou orientale via une migration il y a environ 2 000 ans.",
+      "formationPeriod": "Les archeologues estiment que les Balanta migrerent en petits groupes vers la Guinee-Bissau actuelle entre les Xe et XIVe siecles de notre ere. Au XIXe siecle, ils etendirent leur implantation dans toute la Guinee-Bissau et le sud du Senegal pour resister a l'expansion du royaume de Kaabu.",
+      "migrationRoutes": [
+        "Migration depuis l'est (traditions orales evoquant les regions du Nil, du Soudan ou du Sahel)",
+        "Etablissement dans la region de Nhacra (Oio) comme foyer historique",
+        "Extension vers le sud (region de Tombali) au profit de meilleures terres pour la riziculture",
+        "Migration vers le Casamance meridional (Senegal) et la Gambie au XIXe siecle pour echapper a Kaabu"
+      ],
+      "historicalSettlementZones": [
+        "Region de Nhacra et Oio (centre-nord de la Guinee-Bissau)",
+        "Region de Tombali et Cacine (sud de la Guinee-Bissau)",
+        "Casamance meridionale (Senegal, frontieres avec la Guinee-Bissau)",
+        "Gambie occidentale (minorite)"
+      ],
+      "unificationsOrDivisions": "Les Balanta forment une societe acephale : ils n'ont jamais constitue un etat centralise ni reconnu un roi ou chef unique. Toutes les decisions importantes sont prises par un Conseil des Anciens. Cet egalitarisme radical rendait la gouvernance portugaise extremement difficile. Les sous-groupes sont unis par des traits culturels communs (Fanado, riziculture, cuisine du riz) mais geres de maniere autonome au niveau du village (tabanca).",
+      "externalInfluences": "Les Mandingues/Kaabu exercerent une pression constante sur les Balanta (XVIIe-XIXe siecles), les poussant vers les zones cotieres. La traite atlantique des esclaves (XVIe-XIXe siecles) fit des Balanta a la fois victimes et acteurs de ce commerce. La colonisation portugaise (fin XIXe-1974) mena des campagnes de pacification forcee et tenta d'imposer des chefs fulbe aux Balanta. La guerre d'independance de Guinee-Bissau (1963-1974) mobilisa massivement les Balanta dans le PAIGC d'Amilcar Cabral.",
+      "majorHistoricalEvents": "1859 : traite signé entre la France et les chefs balanta de Cougnaro et Souna. 1963-1974 : les jeunes Balanta constituent l'avant-garde militaire du PAIGC dans la guerre d'independance. 1974 : independance de la Guinee-Bissau ; les Balanta reprochent d'etre sous-representes dans les instances dirigeantes. 1980s : tentatives de coup d'etat a tendance balanta. 2000-2003 : presidence de Kumba Ialà, membre des Balanta, portant le chapeau rouge du Fanado."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe strictement acephale et egalitaire. Toutes les decisions importantes sont prises collégialement par un Conseil des Anciens (hommes inities au Fanado). Il n'existe pas de chef central ni de roi. Les tabancas (villages) gèrent leurs affaires de maniere autonome. L'egalitarisme balanta etait si marque que les colons portugais trouvaient impossible de les administrer par des structures de commandement classiques.",
+      "clanOrganization": "Les clans portent le prefixe Na- signifiant maison de (ex : Na Sanyang = maison des Sanyang). Les maisons sont construites par les clans. Les noms personnels refletent les circonstances de naissance (Yabna = repos, Alamy = roi) ou la situation familiale (Nsimban = je les ai entendus, Boulonyi = je suis hai).",
+      "ageClassSystems": "Les classes d'age structurent rigideusement la vie sociale balanta. Elles progressent ainsi : Nwatch (enfance, jusqu'a 15 ans), Fuur (vers 18-20 ans), Nghaye (vers 25 ans), Kgness (vers 30 ans, rite autorisant l'homme a prendre une femme), puis Fanado (initiation supreme, pour les hommes qui sont devenus proprietaires terriens et peres de famille). Chaque classe a ses responsabilites sociales et rituelles specifiques.",
+      "roleOfLineages": "Le systeme de descendance est complexe, combinant des elements matrilineaires et patrilineaires (certains qualifient le systeme de bilineaire, analogue aux Sereer). L'oncle maternel joue un role determinant : c'est lui qui choisit le neveu pour participer au Fanado, et le neveu ne peut refuser. Les femmes ont herite d'un role important dans la transmission des identites lignageres.",
+      "religiousAuthority": "Les anciens inities au Fanado forment l'autorite spirituelle supreme. La divinite principale est appelee Nalli ou Niala, percue comme tres lointaine : la communication avec elle passe par des pratiques rituelles et des sacrifices. Ni le catholicisme ni l'islam ne dominent pleinement la spiritualite balanta, qui maintient un fort substrat animiste. Des sacrifices de betail scandent tous les moments importants de la vie (initiation, mariage, mort)."
+    },
+    "languages": {
+      "mainLanguage": "Balanta (Bulanda), groupe de langues bak des langues atlantiques nord. Deux langues principales : Balanta-Kentohe (la plus parlee) et Balanta-Ganja.",
+      "isoCodes": ["ble", "bjt"],
+      "dialects": [
+        "Balanta-Kentohe (ble) — dialecte principal (environ 423 000 locuteurs en Guinee-Bissau et Gambie selon Ethnologue, 27e ed. 2024)",
+        "Balanta-Ganja / Balanta-Mane (bjt) — dialecte du Casamance meridional et du nord Guinee-Bissau (environ 86 000 locuteurs en 2006)",
+        "Balanta-Nhacra — parle sur la rive gauche de la Mansoa",
+        "Balanta-Naga, Balanta-Patch, Balanta-Sofar — autres dialectes distincts"
+      ],
+      "vehicularRole": "Le creole de Guinee-Bissau (Kriol Guinensi) est la langue de communication interethnique principale en Guinee-Bissau. Les Balanta urbains parlent generalement le creole en ville et leur langue maternelle au village. En Casamance, le francais et le diola-fogny servent de langues de communication. La montee du creole parmi les jeunes affaiblit la transmission du balanta."
+    },
+    "culture": {
+      "majorRites": "Le Fanado est le rite supreme des Balanta. Il se deroule tous les quatre ans. Apres une premiere journee de fete pour tout le village, les inities (hommes devenus proprietaires et peres) sont emmenes dans les bois sacres par leurs oncles maternels. Ils y subissent la circoncision, deux mois d'epreuves d'endurance, l'apprentissage des codes culturels, de la gestion familiale et de la sagesse adulte. Le lieu est brule apres la retraite. Les survivants rentrent au village en hommes nouveaux (Lante Ndang : brave et sage) coiffes d'un chapeau rouge vif. Ils sont alors eligibles au Conseil des Anciens. D'autres rites de passage structurent la vie : Nwatch, Fuur, Nghaye, Kgness. Les sacrifices de betail (surtout bovins) sont indispensables a toutes les etapes de la vie (initiation, mariage, funerailles).",
+      "symbols": "Le chapeau rouge (signe d'initiation reussie au Fanado) est le symbole de la sagesse et du statut d'homme mur chez les Balanta. L'ex-president Kumba Ialà le portait publiquement. Le kebinde (outil agricole de preparation du sol, represente au dos du billet de 50 pesos de Guinee-Bissau) est un symbole de l'identite agricole balanta. Les masques de ceremonie de mariage (grand masque esprit a coquillages cauris, masque vieille femme, masque jeune fille, masque jeune homme) symbolisent les liens familiaux et spirituels.",
+      "artsAndMusic": "La musique balanta inclut la kusunde (luth-calebasse), instrument a cordes apparente a l'akonting diola et au kora mandingue, joue lors des celebrations post-recolte (Kussunde) et des ceremonies. Le balafon balanta possede 24 lames (contre 12 ou 14 pour le balafon mandingue). La danse de mariage (village de Mini-Ndame) met en scene des masques rituels et une competition de beaute. Le bolon (grand instrument a cordes a resonance grave) etait traditionellement utilise pour motiver les guerriers et les riziculteurs. L'art masque inclut les masques de coquillages cauris, de vieilles femmes, de jeunes filles, portes lors des ceremonies de mariage.",
+      "spiritualities": "La spiritualite balanta est centree sur un animisme ancestral : la divinite (Nalli / Niala) est lointaine et inaccessible directement ; la communication passe par des rituels, des sacrifices et des pratiques spirituelles. Un esprit Djon Cago est cite dans certaines sources. La necomancie et les sacrifices d'animaux (betail, volailles) encadrent les rites de passage. Le catholicisme est partiellement present (notamment en Casamance). L'islam est pratique par certains Balanta-Ganja (sous influence mandingue), mais la majorite maintient un animisme marque."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Balanta n'ont pas forme de royaumes centralises. Leur resistance a toute autorite supra-villageoise est un trait definitoire. Leur organisation par tabancas autonomes et conseils d'anciens leur a permis de resister successivement a l'empire de Kaabu, aux jihads peuls, et a la colonisation portugaise pendant des siecles.",
+      "relationsWithNeighbors": "Les Balanta ont entretenu des relations commerciales avec les communautes voisines tout en maintenant une forte mefiance envers les etrangers (mefiance historique si forte qu'elle decourageait les mariages mixtes, meme si les tabancas forgeaient des alliances inter-tabancas par le mariage). Au XVIIIe siecle, ils exportaient du coton, de l'indigo et de l'huile de palme. Ils ont ete a la fois victimes et acteurs de la traite atlantique des esclaves dans le cadre de conflits avec leurs voisins.",
+      "conflictsOrAlliances": "XVIIe-XIXe siecles : resistance constante a l'expansion du royaume de Kaabu (Mandingues). 1830 : destruction du dernier royaume bainouk voisin par les Balanta. Fin XIXe-debut XXe siecle : resistance aux campagnes de pacification portugaises. 1963-1974 : participation massive au PAIGC d'Amilcar Cabral (guerre d'independance), les jeunes Balanta constituant l'essentiel des forces combattantes. Post-1974 : tensions avec l'elite post-coloniale pour une meilleure representation politique.",
+      "diaspora": "La migration des Balanta reste principalement interne a la Guinee-Bissau (du nord vers le sud, notamment la region de Tombali, sous la pression de la recherche de terres agricoles). Une migration vers Bissau (capitale) et les centres urbains s'est developpee. Des communautes balanta sont presentes au Senegal (Casamance), en Gambie, au Cap-Vert et plus marginalement en Guinee."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Estimation fondee sur : Balanta-Kentohe (ble) : environ 423 000 locuteurs en Guinee-Bissau et Gambie (Ethnologue 27e ed., 2024) ; Balanta-Ganja (bjt) : environ 86 000 locuteurs en Casamance (2006) ; total via PeopleGroups.org : 598 090 personnes dans trois groupes. La proportion balanta en Guinee-Bissau est estimee a 25-30% de la population (environ 550 000 a 675 000 sur 2 250 000 habitants en 2025 selon Worldometer). La distribution par pays est approximative.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 520000,
+          "note": "Deuxieme groupe ethnique de Guinee-Bissau, environ 25-30% de la population, concentres dans les regions d'Oio, Biombo, Tombali"
+        },
+        {
+          "country": "SEN",
+          "population": 60000,
+          "note": "Principalement Balanta-Ganja en Casamance meridionale"
+        },
+        {
+          "country": "GMB",
+          "population": 12000,
+          "note": "Minorite settlee, principalement Balanta-Kentohe"
+        },
+        {
+          "country": "GIN",
+          "population": 5000,
+          "note": "Petite communaute de migrants"
+        },
+        {
+          "country": "CPV",
+          "population": 3000,
+          "note": "Diaspora de Guinee-Bissau"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN. Balanta people. https://en.wikipedia.org/wiki/Balanta_people",
+      "Wikipedia EN. Balanta languages. https://en.wikipedia.org/wiki/Balanta_languages",
+      "Qiraat Africa. The Balanta of Guinea-Bissau, Senegal and The Gambia. https://qiraatafrican.com/en/19891/the-balanta-of-guinea-bissau-senegal-and-the-gambia/",
+      "101 Last Tribes. Balanta people. https://www.101lasttribes.com/tribes/balanta.html",
+      "Ethnologue (SIL International). Balanta Language (BLE). https://www.ethnologue.com/language/ble/"
+    ]
   }
 }

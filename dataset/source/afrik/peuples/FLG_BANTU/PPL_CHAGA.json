@@ -1,23 +1,99 @@
 {
   "id": "PPL_CHAGA",
-  "nameMain": "",
+  "nameMain": "Chagga",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": [],
+  "currentCountries": ["TZA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Wachaga",
+      "mainName": "Chagga",
+      "selfAppellation": "Wachagga",
+      "exonyms": [
+        "Chaga (variante orthographique anglaise)",
+        "Dschagga (ancienne graphie allemande coloniale)"
+      ],
+      "originOfExonyms": "La graphie Dschagga est issue de la translittération allemande de l'époque coloniale. Chaga et Chagga sont des variantes anglaises du même ethnonyme.",
+      "whyProblematic": "Les anciennes graphies coloniales allemandes (Dschagga) reflètent le regard extérieur colonial et sont aujourd'hui abandonnées au profit de Chagga.",
+      "contemporaryUsage": "Chagga ou Wachagga sont les termes courants en swahili et en anglais. En kichagga, le peuple se désigne lui-même Wachagga.",
       "linguisticFamily": "FLG_BANTU",
-      "historicalRegion": "Pentes sud et est du Kilimandjaro",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (sous-groupe kilimanjarien)",
+      "historicalRegion": "Pentes sud et est du Kilimandjaro (région de Kilimanjaro, nord de la Tanzanie)",
+      "currentCountries": ["TZA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (jmc)", "Archives du Kilimandjaro"]
+    "ethnicities": [
+      "Kibongoto (pentes sud-ouest du Kilimandjaro)",
+      "Machame (clan historique, route homonyme vers le sommet)",
+      "Marangu (clan historique, pentes est)",
+      "Vunjo (pentes est)",
+      "Rombo (pentes est, près du Kenya)",
+      "Moshi (centre administratif Chagga)",
+      "Usseri (pentes nord-est)",
+      "Mwika",
+      "Kilema",
+      "Kibo (pentes centrales)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Chagga descendent de plusieurs groupes Bantous qui ont migré depuis la Zambie et le Malawi actuels vers les contreforts du Kilimandjaro. Cette migration aurait commencé vers le XIe siècle. Des traditions orales mentionnent aussi des apports des Kilindi d'Usambara, des Kamba du Kenya, et des Ongamo, un peuple Nilotique qui a fortement influencé la culture Chagga.",
+      "formationPeriod": "Formation progressive entre le XIe et le XVIIIe siècle. A la fin du XIXe siècle, les Chagga étaient organisés en 37 royaumes autonomes sur les pentes du Kilimandjaro. La réorganisation britannique de 1946 réduisit ce nombre.",
+      "migrationRoutes": [
+        "Zambie et Malawi vers les pentes du Kilimandjaro (debut XIe siècle)",
+        "Migrations depuis les monts Usambara (Kilindi)",
+        "Influences Kamba depuis le Kenya (nord-est)",
+        "Intégration progressive des Ongamo (Nilotiques locaux)"
+      ],
+      "historicalSettlementZones": [
+        "Pentes sud du Kilimandjaro (Machame, Marangu, Moshi)",
+        "Pentes est (Vunjo, Rombo, Usseri)",
+        "Pentes nord (ouvertes à la colonisation interne au XXe siècle)"
+      ],
+      "unificationsOrDivisions": "Les 37 royaumes autonomes étaient gouvernés par des Mangi (rois/chefs). Les clans se sont progressivement unifiés sous une identité Chagga commune au XXe siècle, notamment après la réorganisation coloniale britannique de 1946.",
+      "externalInfluences": "Contacts commerciaux avec les ports swahilis (Mombasa, Pangani) via les réseaux commerciaux de l'intérieur. Arrivée des missionnaires européens à partir du XIXe siècle. Colonisation allemande puis britannique. Adoption du christianisme.",
+      "majorHistoricalEvents": "Règne de Mangi Rindi de Moshi (XIXe siècle) et de Mangi Mkawa de Kibosho. Résistance aux guerres interclans. Colonisation allemande (1880s). Réorganisation britannique (1946). Indépendance tanzanienne (1961)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les états Chagga étaient gouvernés par des Mangi (rois). Le Mangi avait autorité sur son territoire (mtaa), collectait des tributs, menait des guerres et organisait des initiations. A la fin du XIXe siècle, 37 royaumes autonomes coexistaient sur les pentes du Kilimandjaro.",
+      "clanOrganization": "Descendance patrilinéaire. Les clans (mtaa, pl. mitaa) forment des unités territoriales et sociales. Les histoires orales des clans précisent leurs origines (locales ou migrantes depuis les plaines).",
+      "ageClassSystems": "Les classes d'âge (rika) structuraient la société. Les garçons étaient circoncis collectivement lors de l'annonce du Mangi, formant une cohorte (rika). Après la circoncision, une période de séclusion et d'instruction en forêt initiait les jeunes hommes.",
+      "roleOfLineages": "Les lignages gèrent les droits fonciers, organisent les mariages (dot mahari), les rituels sacrificiels aux ancêtres (mitambiko) et les fêtes de récolte (Nguvu).",
+      "religiousAuthority": "La divinité Ruwa réside au sommet du Kilimandjaro. Les ancêtres (wafu) sont invoqués lors des sacrifices rituels. Les guérisseurs-devins (waganga) et les faiseurs de pluie occupent une place centrale dans la vie religieuse traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Kichagga (groupe de langues Chagga)",
+      "isoCodes": ["jmc", "rwk"],
+      "dialects": [
+        "Machame (Kimashame, jmc)",
+        "Rwa (rwk)",
+        "Rombo (kir)",
+        "Moshi-Vunjo",
+        "Kibosho",
+        "Uru"
+      ],
+      "vehicularRole": "Le swahili est la langue nationale et vehiculaire en Tanzanie. Le kichagga est utilisé dans les contextes familiaux, rituels et communautaires sur les pentes du Kilimandjaro. Plusieurs variantes dialectales Chagga ont leur propre code ISO."
+    },
+    "culture": {
+      "majorRites": "Ngasi: rite de passage des garçons vers l'âge adulte, cérémonie en forêt avec épreuves physiques. Circoncision collective par cohortes d'âge (rika). Mitambiko: sacrifices rituels aux ancêtres lors de Noël et des grandes fêtes. Nguvu: fête des prémices offrant les premiers fruits aux ancêtres. Mwaka Kogwa: célébration du Nouvel An traditionnel avec chants, danses et brûlis symbolique. Mariage: dot mahari, danse avec clochettes, période de réclusion de la fiancée.",
+      "symbols": "Le Kilimandjaro (montagne sacrée, demeure de Ruwa), la plante masale (plante sacrée Chagga), les enclos à bétail (symbole de richesse), les canaux d'irrigation (kefala) héritage d'un génie agricole ancien.",
+      "artsAndMusic": "Chants polyphoniques collectifs lors des initiations, mariages et funérailles. Danses rituelles accompagnées de tambours. Artisanat en vannerie et poterie. Brassage de bière de banane (mbege), boisson rituelle et sociale. Architecture traditionnelle en matériaux végétaux, styles différents selon les clans.",
+      "spiritualities": "Croyance en Ruwa, divinité suprême résidant sur le Kilimandjaro. Culte des ancêtres (wafu) comme intercesseurs. Rôle majeur des devins, guérisseurs (waganga) et faiseurs de pluie dans la vie sociale. Superstitions et magie (wusari). Christianisme majoritaire depuis le XXe siècle (protestantisme et catholicisme). Syncrétisme entre christianisme et pratiques ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "37 royaumes autonomes à la fin du XIXe siècle, gouvernés par des Mangi. Parmi les plus puissants: Rindi de Moshi, Sina de Kibosho, Mkawa. Les Chagga constituaient un nœud commercial vital du réseau swahili de l'intérieur, ravitaillant les caravanes et les ports côtiers.",
+      "relationsWithNeighbors": "Relations commerciales avec les Kamba (Kenya) et les Swahilis côtiers. Conflits récurrents avec les Maasai, leur principal adversaire historique. Contacts avec les Pare et Shambaa.",
+      "conflictsOrAlliances": "Guerres interclans fréquentes avant le XXe siècle (Machame vs Marangu, etc.). Résistance à la colonisation allemande dans les années 1880-1900. Coopération avec les colonisateurs européens comme guides, porteurs et interprètes pour l'exploration du Kilimandjaro.",
+      "diaspora": "Migration importante des Chagga vers d'autres régions de Tanzanie (Dar es Salam, Arusha) au XXe siècle. Réputation de peuple instruit et économiquement actif. Forte représentation dans les professions libérales et l'administration tanzanienne."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur Wikipedia Chagga people (800 000 en 1988), PeopleGroups.org et Joshua Project (projections 2023-2025). Les Chagga sont le troisième groupe ethnique de Tanzanie.",
+      "distributionByCountry": [{ "country": "TZA", "population": 2000000 }]
+    },
+    "sources": [
+      "Wikipedia, Chaga people: https://en.wikipedia.org/wiki/Chaga_people",
+      "Climb Mount Kilimanjaro, Beliefs and Ceremonies of the Chagga: https://www.climbmountkilimanjaro.com/about-the-mountain/the-chagga/beliefs-and-ceremonies/",
+      "Thomson Treks, The People of Kilimanjaro: https://www.thomsontreks.com/blog/tribes-of-kilimanjaro/",
+      "Kilimanjaro Centre, Cultural Traditions of the Chagga: https://mt-kilimanjaro.com/cultural-traditions-of-the-chagga-tribe-near-kilimanjaro/",
+      "Ethnologue, Chaga subgroup (E.621): https://www.ethnologue.com/subgroup/4196/",
+      "Social Science Research, Rewriting Chagga History: https://socialscienceresearch.org/index.php/GJHSS/article/view/1401/1-Rewriting-Chagga-History-Focus_html"
+    ]
   }
 }

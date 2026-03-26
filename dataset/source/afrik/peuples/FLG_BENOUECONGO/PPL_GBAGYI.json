@@ -1,23 +1,88 @@
 {
   "id": "PPL_GBAGYI",
-  "nameMain": "",
+  "nameMain": "Gbagyi",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["NER"],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Gbagyi",
+      "mainName": "Gbagyi",
+      "selfAppellation": "Gbagyi (est) / Gbari (ouest)",
+      "exonyms": ["Gwari", "Agbagyi (pluriel)", "Agbari (pluriel)"],
+      "originOfExonyms": "Le terme Gwari est le nom exogène donné par les Haoussa, les Fula et les colonisateurs européens. Il est aujourd'hui perçu comme péjoratif par certains membres du groupe qui préfèrent les autoappellations Gbagyi (dialecte oriental) ou Gbari (dialecte occidental). Gwari pourrait signifier reclus ou personnes retirées en haoussa.",
+      "whyProblematic": "Gwari est considéré comme un terme imposé et potentiellement dégradant. Les associations culturelles du groupe revendiquent les noms Gbagyi ou Gbari selon leur dialecte.",
+      "contemporaryUsage": "Gbagyi est le terme officiel utilisé par les associations culturelles et dans la littérature académique récente. Gwari reste courant dans la presse nigériane généraliste.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Nigeria (FCT Abuja, NER State, Kaduna)",
-      "currentCountries": ["NER"]
+      "ethnoLinguisticGroup": "Nupoid (branche Bénoué-Congo du Niger-Congo)",
+      "historicalRegion": "Nigeria central (Middle Belt) : Territoire de la Capitale Fédérale (Abuja), État du Niger (sud), État de Kaduna, État de Nasarawa",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (gbr)", "Central Nigeria Cultural Documentation"]
+    "ethnicities": [
+      "Gbagyi (Gwari Matai / Gwarin Ngenge) — dialecte oriental, FCT Abuja et nord-est",
+      "Gbari (Gwari Yamma / Gbari Yama) — dialecte occidental, État du Niger (sud) et Kaduna",
+      "Agbagyi — terme collectif pour les communautés de l'est du FCT",
+      "Gbagyi de Nasarawa — communautés au sud-est de la zone"
+    ],
+    "origins": {
+      "ancientOrigins": "L'origine des Gbagyi est débattue. La connaissance traditionnelle de la pierre lapis-lazuli par les Gbagyi a conduit certains chercheurs à évoquer une origine nilotique ou égyptienne ancienne. D'autres théories soulignent une affinité linguistique avec les Nupe et une connexion des Koro (peuple apparenté) avec l'empire de Wukari et de Kwarafara (Cadman, 1913). Les Gbagyi sont reconnus comme les habitants originels (bona fide owners) du plateau sur lequel se dresse aujourd'hui la capitale fédérale Abuja.",
+      "formationPeriod": "Indéterminé — peuple parmi les plus anciens du Middle Belt nigérian. Leurs établissements agricoles sont attestés dans la région centrale du Nigeria depuis plusieurs siècles avant la période coloniale. La langue Gbagyi est classée parmi les langues Nupoid, famille présente dans la région depuis l'Antiquité.",
+      "migrationRoutes": [
+        "Origines débattues : hypothèse nilotique/égyptienne ou camerounaise-bénoué",
+        "Dispersion progressive dans le Middle Belt nigérian en suivant les zones agricoles",
+        "Déplacements internes lors du Jihad foulani (XIXe siècle) selon certains historiens locaux"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Abuja (actuel FCT, territoire ancestral)",
+        "Partie méridionale de l'État du Niger (sud du plateau)",
+        "Zone de Kujama et Chikun LGA (État de Kaduna)",
+        "Portions de l'État de Nasarawa (est)"
+      ],
+      "unificationsOrDivisions": "Les Gbagyi sont organisés en petites communautés agricoles décentralisées. L'accès aux terres agricoles est le principal facteur structurant leurs implantations, les villages restant petits pour que chaque famille dispose de terres suffisantes. Ils n'ont jamais formé un royaume centralisé unique.",
+      "externalInfluences": "Pression du Jihad foulani du XIXe siècle entraînant des déplacements selon certaines sources. Colonisation britannique et intégration au Nigeria. Création d'Abuja (1976) comme nouvelle capitale fédérale : expropriation massive des terres Gbagyi ancestrales, déplacement de dizaines de milliers de familles, destruction de sites spirituels dont Zuma Rock (symbole identitaire majeur).",
+      "majorHistoricalEvents": "Décision militaire nigériane (1976) de faire d'Abuja la nouvelle capitale fédérale : les terres Gbagyi furent déclarées terra nullius (no-man's land) malgré leur occupation ancestrale. Dépossession foncière et relégation à des camps de transit ou logements de substitution. Zuma Rock, site sacré ancestral, est aujourd'hui un emblème national nigérian sur le billet de 100 nairas."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système patrilinéaire à deux niveaux : la cellule de base est le compound familial élargi dirigé par le plus ancien homme du groupe ; au niveau supérieur, l'Osu (roi ou chef de village) gouverne avec l'assistance d'un conseil d'anciens chargé de maintenir la paix sociale. Les décisions communautaires sont prises par consensus après délibération des anciens.",
+      "clanOrganization": "Lignages patrilinéaires. Les familles élargies partagent un compound et des obligations rituelles communes. La poterie est un art transmis de mère en fille, révélant une organisation genrée complémentaire : les femmes gèrent la céramique (art sacré et utilitaire) tandis que les hommes s'occupent de l'agriculture et du leadership politique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages déterminent les droits fonciers, les alliances matrimoniales et l'appartenance aux groupes rituels. L'aîné du lignage (patrilinéaire) représente le compound dans les assemblées villageoises et intercède auprès des ancêtres lors des cérémonies.",
+      "religiousAuthority": "Religion traditionnelle centrée sur Shekwoyi (Celui qui était là avant les ancêtres, Dieu créateur). Des divinités secondaires comme Maigiro sont apaisées par des offrandes rituelles. Les prêtres et prêtresses traditionnels président aux cérémonies agricoles et de propitiation. Influence croissante du christianisme évangélique et de l'islam dans les zones urbaines."
+    },
+    "languages": {
+      "mainLanguage": "Gbagyi / Gbari (Gwari)",
+      "isoCodes": ["gbr"],
+      "dialects": [
+        "Gbagyi (Gwarin Ngenge / Gwari-Matai) — dialecte oriental, FCT et nord-est, compréhension difficile avec l'occidental",
+        "Gbari-Yama (Gwari Yamma) — dialecte occidental, État du Niger et Kaduna",
+        "Gbagye (Gwari-Matai) — terme de couverture pour les variétés orientales"
+      ],
+      "vehicularRole": "Le gbagyi/gbari est la langue maternelle des communautés Gbagyi du Middle Belt nigérian. Le haoussa est largement utilisé comme langue véhiculaire régionale dans les échanges interethniques. L'anglais est la langue officielle du Nigeria. La langue est classée comme menacée (Ethnologue, 2022) car de moins en moins transmise dans le contexte urbain d'Abuja. Elle n'est pas enseignée dans les écoles."
+    },
+    "culture": {
+      "majorRites": "Les rituels agricoles structurent le calendrier culturel Gbagyi. La récolte de l'argile pour la poterie suit des règles coutumières strictes : les femmes enceintes ou en période menstruelle ne peuvent accéder aux gisements ; une calebasse cassée ne peut servir à transporter l'argile. Les pots Tulu servent d'offrandes à Shekwoyi et aux juju (divinités secondaires) et de contenants pour la giya (bière de mil fermentée) gardée la nuit à l'abri des esprits mauvais. La première récolte de mil donne lieu à des cérémonies de partage et d'actions de grâces.",
+      "symbols": "Zuma Rock (rocher monolithique de 725m, État du Niger) — symbole identitaire majeur des Gbagyi, site spirituel ancestral, aujourd'hui gravé sur le billet de 100 nairas nigérians. Le tissu traditionnel bleu foncé (ancien costume) et noir et blanc (moderne, avec silhouettes de femmes portant des charges sur les épaules, inscrit Mizhin Gbagyizanu signifiant nous sommes les Gbagyi). Le port des charges sur les épaules (et non la tête) : la tête est le roi du corps entier — pratique qui distingue visuellement les Gbagyi.",
+      "artsAndMusic": "La poterie est l'art traditionnel le plus développé chez les Gbagyi, pratiqué exclusivement par les femmes. Trois types principaux de poteries : Randa (grande jarre à eau, 20-30 gallons, pour l'eau et les cérémonies de giya), Tulu (long col et ventre arrondi, pour la bière giya et les offrandes aux divinités), Kasko (formes variées pour stockage quotidien, cuisson et transport). Technique : pinçage et enroulage de colombins (sans tour de potier). Le Pottery Training Centre d'Abuja (fondé 1952 par le Britannique Michael Cardew) a formé des artisanes de renommée internationale : Lady Kwali (première élève féminine, 1954, devenue employée et artiste reconnue) et Magdalene Odundo (1974, sculptrice céramiste de réputation mondiale). Tissage traditionnel et confection des vêtements identitaires.",
+      "spiritualities": "Religion traditionnelle centrée sur Shekwoyi, Dieu créateur primordial. Croyance en la réincarnation. Propitiation des divinités secondaires (Maigiro) par des offrandes spécifiques et rituels. Règles de pureté rituelle strictes autour de la poterie (activité sacrée). Christianisme (protestantisme évangélique, catholicisme) largement répandu depuis la colonisation britannique. Islam minoritaire mais présent dans les communautés proches des Haoussa au nord."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gbagyi n'ont jamais formé un royaume centralisé unique. Ils sont organisés en chefferies villageoises indépendantes sous l'Osu. Ils sont néanmoins reconnus comme les propriétaires et premiers habitants du plateau d'Abuja et de ses environs, fondement du Nigeria contemporain. L'un des groupes les plus importants du Middle Belt nigérian, répartis sur 30 LGAs dans 4 États.",
+      "relationsWithNeighbors": "Affinités linguistiques et historiques avec les Nupe (langues apparentées). Les Koro, peuple proche, revendiquent une connexion avec les empires de Wukari et Kwarafara. Pression des Haoussa et des Fula depuis le nord, notamment lors du Jihad foulani (XIXe siècle) qui aurait contraint certaines communautés Gbagyi à se fragmenter et se disperser dans les zones boisées.",
+      "conflictsOrAlliances": "Résistance à l'expansion foulanie au XIXe siècle. Dépossession massive des terres ancestrales lors de la création d'Abuja comme capitale fédérale (à partir de 1976) : les terres Gbagyi furent classées sans propriétaire malgré leur occupation millénaire. Luttes juridiques contemporaines pour la reconnaissance des droits fonciers et culturels.",
+      "diaspora": "Les Gbagyi déplacés par la construction d'Abuja se trouvent dans des camps de transit et des zones périphériques du FCT. Présence dans les États voisins (Niger, Kaduna, Nasarawa, Kogi). Migration économique vers les centres urbains nigérians (Lagos, Kaduna). Des organisations comme Gbagyi Gone Global uvrent pour la préservation culturelle de la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Estimations très variables : Wikipedia EN (12 millions dans 4 États, 30 LGAs) ; Gbagyi Gone Global (15 millions) ; recensement nigérian 2016 (1,5 million, périmètre restreint au sens strict). L'écart reflète des définitions larges ou restrictives du groupe. Estimation 2025 consolidée (noyau Gbagyi-Gbari, 4 États : FCT, Niger, Kaduna, Nasarawa) : 4 millions.",
+      "distributionByCountry": [{ "country": "NGA", "population": 4000000 }]
+    },
+    "sources": [
+      "Wikipedia EN — Gbagyi people : https://en.wikipedia.org/wiki/Gbagyi_people",
+      "Wikipedia EN — Gwari language : https://en.wikipedia.org/wiki/Gwari_language",
+      "SIL Ethnologue — Gbagyi language (gbr) : https://www.ethnologue.com/language/gbr/",
+      "Qiraat Africa — The Gbagyi People of Nigeria (2025) : https://qiraatafrican.com/en/16334/the-gbagyi-people-of-nigeria/",
+      "CEDS — ISO 639-3 Language Codes (Gbagyi : gbr) : https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+      "Nkeyin TV — History, Culture and Tradition of the Gbagyi People (documentaire 2025) : https://www.youtube.com/watch?v=4IZ1VmvZDBc",
+      "Facebook Gbagyi Gone Global — population et distribution : https://www.facebook.com/story.php?story_fbid=326717266873790"
+    ]
   }
 }

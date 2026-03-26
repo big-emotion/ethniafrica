@@ -6,54 +6,83 @@
   "content": {
     "appellations": {
       "mainName": "Adioukrou",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Adjukru",
+      "exonyms": [
+        "Adjoukrou",
+        "Adyukru",
+        "Adyoukrou",
+        "Ajukru",
+        "Bubari",
+        "Odjukru",
+        "Boubouri",
+        "Lebutu"
+      ],
+      "originOfExonyms": "Les variantes orthographiques (Adjoukrou, Adioukrou, Adjukru) resultent de transcriptions differentes en francais et en anglais. Le terme Lebutu (ou Odjukru) est l'appellation que le peuple se donne a lui-meme. Bubari est un exonyme utilise par certaines sources exterieures.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Adioukrou est l'orthographe officielle en Cote d'Ivoire. Adjoukrou et Adjukru sont courants dans les publications anglophones et academiques.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Akan lagunaire (Kwa)",
+      "historicalRegion": "Region des Lagunes, sud de la Cote d'Ivoire (departement de Dabou)",
       "currentCountries": ["CIV"]
     },
     "ethnicities": ["Adioukrou"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Adioukrou sont un peuple d'origine composite. Selon les historiens, ils seraient originellement un peuple Krou venu de la region de Gagnoa-Divo (centre-ouest de la Cote d'Ivoire), qui a ete absorbe et transforme par des vagues de populations Akan venues du Ghana. Sous la pression des Bete, ils migrent vers les lagunes et se melent aux peuples Akan lagunaires (Ebrie, Attie). D'autres traditions ancestrales evoquent une origine du Benin, et des similitudes avec des peuples d'Afrique centrale ont ete notees. L'identite Adioukrou est nee de ce brassage culturel.",
+      "formationPeriod": "Formation progressive sur plusieurs siecles, essentiellement entre le 15e et le 18e siecle, par convergence de populations d'origines diverses vers le territoire lagunaire de Dabou.",
+      "migrationRoutes": [
+        "Region de Gagnoa-Divo (centre-ouest CIV) -> lagunes (sous pression des Bete)",
+        "Apports Akan venus de l'est (Ghana) par migrations successives"
+      ],
+      "historicalSettlementZones": [
+        "Region de Dabou (Grands-Ponts, CIV)",
+        "Rive occidentale de la lagune Ebrie",
+        "49 villages dans le departement de Dabou"
+      ],
+      "unificationsOrDivisions": "Le passage de la succession patrilineaire a la succession matrilineaire reflete l'integration progressive des traits culturels Akan. Les plus anciens villages Adioukrou sont Toupah, Akradio, Grand-Bouboury, Pkass, Mopoil et Debrimou.",
+      "externalInfluences": "Influence Akan majeure, en particulier les Ebrie et les Attie. Colonisation francaise a partir de la fin du 19e siecle. Christianisation massive (environ 90% de la population actuelle se declare chretienne). Proximite d'Abidjan (50 km) entrainant une integration economique et une pression d'urbanisation.",
+      "majorHistoricalEvents": "Contact avec les navigateurs europeens a partir du 15e-16e siecle ; colonisation francaise et travail force perturbant les structures sociales traditionnelles ; independence de la Cote d'Ivoire en 1960."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de classes d'age (sete) constituant l'organisation sociale fondamentale. La societe Adioukrou est structuree en 7 classes d'age : Sete, Ndjrouman, Abrouman, Mbedie, Mborman, Nigbessi et Bodjl. Chaque classe est subdivisee en 4 categories (Odjogba, Bago, Kata, Boman). Le pouvoir politique tourne tous les 8 ans lors de la ceremonie Ebeb, qui confie la direction du village aux Ebebu (gouvernants). Ce systeme assure une democratie rotative ou le commandement est collectif et limit dans le temps.",
+      "clanOrganization": "Organisation duale : a la naissance, l'enfant appartient au clan paternel (systeme patrilineaire initial) ; apres la ceremonie du Low pour les hommes, il integre le clan maternel (basculement vers le matrilineaire). Ce mecanisme unique combine filiation paternelle pour l'enfance et maternelle pour la vie adulte.",
+      "roleOfLineages": "Le referent social de l'adulte est l'oncle maternel. La transmission du pouvoir politique et des terres suit la lignee maternelle. Les Ebebu (anciens de la classe dirigeante) sont proprietaires terriens et garants des traditions.",
+      "religiousAuthority": "Croyance en un etre supreme createur appele Nyam (ou Nyambe), origine de l'univers (afrnunu). Culte des ancetres (esprits des defunts) maintenu par des offrandes. Existence de genies (petites divinites animant la nature). Pratiques de sorcellerie : sorciers noirs (sorciers mauvais) et sorciers blancs (agmann, protecteurs). Les cultes sont presides par les aines sociaux. Le christianisme est desormais dominant (90%)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Adioukrou (Adjukru)",
+      "isoCodes": ["adj"],
+      "dialects": [
+        "dialecte central de Dabou (forme standard)",
+        "variantes villageoises (Lopou, Debrimou, Kpass)"
+      ],
+      "vehicularRole": "Le francais est utilise comme langue officielle et d'enseignement. L'adioukrou est la langue de la vie communautaire locale, des ceremonies et de la transmission orale. La langue appartient au rameau Kwa de la famille Niger-Congo, avec une classification incertaine au sein du Kwa (position proche du Tano central ou Agneby selon les linguistes)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Fete du Low : initiation masculine durant 3 a 5 semaines pour les hommes de 18 a 25 ans, marquant le passage a l'age adulte ; confere une identite sociale et le droit de participer a la defense du village. Dediakp : ceremonie de puberte feminine vers 18-23 ans, marquant la disponibilite au mariage. Angbandji (ou Agbandji) : fete de noblesse, de partage et de solidarite, ou le candidat distribue de la nourriture et des boissons a toute la communaute. Ebeb : investiture politique transmettant le pouvoir tous les 8 ans aux Ebebu ; couronnement d'une vie accomplie. Fete de l'igname (Capul) : festival annuel de purification et de regeneration sociale.",
+      "symbols": "Le systeme des classes d'age est le symbole identitaire fondateur des Adioukrou. Le kaolin (Fefr) applique sur le front lors de l'Ebeb symbolise la consecration au pouvoir. Le bas traditionnel, le chapeau et la canne sont signes du statut d'ancien.",
+      "artsAndMusic": "Musique adjoukrou avec tambours et danses guerrieres (Yaye) lors de la fete de l'igname. Chants initiatiques du Low. Production artisanale d'attieke (semoule de manioc fermente), d'huile de palme, de palmier a raphia. Activites traditionnelles : agriculture (igname, manioc, plantain, mais), peche en lagune, chasse.",
+      "spiritualities": "Religion traditionnelle basee sur la cosmologie a trois niveaux : Nyam (etre supreme createur), genies de la nature, esprits des ancetres. Culte des ancetres materialise par des photos, offrandes de repas sur les tombes et ceremonies des classes d'age. Totems et tabous animaux specifiques par village (caiman, crocodile, varan, python en general ; cerf a Debrimou). Christianisme dominant (environ 90% de la population) avec coexistence des pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise majeur. Organisation en villages autonomes gouvernes par des chefferies villageoises et des conseils d'anciens selon le systeme des classes d'age. Le Pays Adioukrou (Lodjoukrou) forme une entite culturelle coherente sans Etat centralize.",
+      "relationsWithNeighbors": "Voisinage et melange avec les peuples lagunaires Ebrie (Tchaman) et Alladian. Relations avec les peuples Akan du Ghana via migrations. Competition historique avec les Bete, qui sont a l'origine de leur migration vers les lagunes. Integration dans l'ensemble des peuples lagunaires de Cote d'Ivoire.",
+      "conflictsOrAlliances": "Migration initiale sous pression Bete. Periode de travail force sous la colonisation francaise perturbant les structures sociales. Cohabitation generalement pacifique avec les voisins lagunaires.",
+      "diaspora": "Peu de presence significative hors de Cote d'Ivoire. Migration interne vers Abidjan importante pour des raisons economiques et educatives, ou les communautes Adioukrou maintiennent leurs pratiques culturelles."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 155000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ethnologue (ADJ) : 140 000 locuteurs en 2017 ; estimation 2025 environ 155 000.",
+      "distributionByCountry": [{ "country": "CIV", "population": 155000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN - Adjoukrou people (https://en.wikipedia.org/wiki/Adjoukrou_people)",
+      "Wikipedia FR - Adioukrou (peuple) (https://fr.wikipedia.org/wiki/Adioukrou_(peuple))",
+      "Wikipedia FR - Adioukrou (langue) (https://fr.wikipedia.org/wiki/Adioukrou_(langue))",
+      "Ethnologue - Adioukrou ADJ (https://www.ethnologue.com/language/adj/)",
+      "Joshua Project - Adjoukrou in Cote d'Ivoire (https://joshuaproject.net/people_groups/10162/IV)",
+      "Lebutu Socraf - Les Adjoukrou et la democratie (https://lebutusocraf.wordpress.com/2017/07/19/les-adjoukrou-et-la-democratie-lecon-dune-vie/)",
+      "Isrra Journal - Cultural Identities and Food Habits in Adjoukrou Country (https://ijsscfrtjournal.isrra.org/Social_Science_Journal/article/download/1115/86/917)"
+    ]
   }
 }

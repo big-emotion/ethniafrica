@@ -6,63 +6,100 @@
   "content": {
     "appellations": {
       "mainName": "Datoga",
-      "selfAppellation": "Datoga",
-      "exonyms": ["Datoga (terme utilisé par les Européens), Tatog"],
+      "selfAppellation": "Datooga (endonyme ; sing. Datog)",
+      "exonyms": [
+        "Tatog (variante orthographique)",
+        "Barabaig (nom du plus grand sous-groupe, parfois utilise pour l'ensemble)",
+        "Mang'ati (terme pejoratif utilise par les Maasai et les Bantous, signifiant 'ennemis')",
+        "Datog"
+      ],
+      "originOfExonyms": "Le terme Mang'ati (ennemi) est un exonyme negatif utilise par les Maasai et certains peuples bantous voisins. Barabaig est le nom du sous-groupe le plus nombreux et visible, parfois utilise par les etrangers pour designer l'ensemble du peuple. L'endonyme propre est Datooga.",
+      "whyProblematic": "L'utilisation du terme Barabaig pour designer l'ensemble du peuple est inexacte et reductrice, car les Datooga comprennent au moins dix sous-groupes. Le terme Mang'ati est offensant et ne doit pas etre utilise.",
+      "contemporaryUsage": "Datooga ou Datoga est le terme prefere dans les contextes academiques et de droits des peuples autochtones. Barabaig reste courant dans la litterature ethnographique ancienne. Les conflits fonciers avec l'Etat tanzanien et les agriculteurs ont fait des Datoga un cas emblematique dans les debats sur les droits des peuples pastoraux en Afrique de l'Est.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique méridional",
-      "historicalRegion": "Centre-nord de la Tanzanie",
+      "ethnoLinguisticGroup": "Nilotique meridional (sous-groupe Kalenjin-Datoga)",
+      "historicalRegion": "Centre-nord de la Tanzanie — bassin du lac Eyasi, Highlands de Mbulu, region de Manyara et nord de la region de Singida ; anciennement dans les plaines de Mara et de Loita (Kenya-Tanzanie)",
       "currentCountries": ["TZA"]
     },
     "ethnicities": [
-      "Datoga du Nord",
-      "Datoga du Sud",
-      "Sous-groupes régionaux"
+      "Barabayiiga (Barabaig) — le plus grand sous-groupe, region de Hanang et lac Eyasi",
+      "Gisamjanga (Kisamajeng) — tres proches linguistiquement des Barabaig",
+      "Bajuta",
+      "Asimjeeg (Tsimajeega, Isimijeega)",
+      "Rootigaanga (Rotigenga, Rotigeenga)",
+      "Buraadiiga (Buradiga, Bureadiga)",
+      "Bianjiida (Biyanjiida, Utatu)",
+      "Damarga",
+      "Darorarega",
+      "Gidang'odiga"
     ],
     "origins": {
-      "ancientOrigins": "Les Datoga sont originaires du centre-nord de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les preuves linguistiques situent le berceau des langues nilotiques dans le bassin du Nil moyen oriental, au sud de la riviere Abbai (au sud-est de l'actuel Khartoum). Les communautes proto-nilotiques commencerent a migrer vers le sud des le deuxieme millenaire av. J.-C., atteignant le nord-est de l'Ouganda actuel vers 1000 av. J.-C. Les Nilotiques meridionaux (dont les ancetres des Datooga) pousserent plus loin vers le sud.",
+      "formationPeriod": "Entre 1000 et 700 av. J.-C., les locuteurs nilotiques meridionaux cohabitaient avec des communautes cushitiques orientales pres de la frontiere commune entre le Soudan, l'Ouganda, le Kenya et l'Ethiopie. Cet echange culturel inclut des emprunts lexicaux, l'adoption de la circoncision et un systeme cyclique de classes d'age. Vers le 5e-6e siecle av. J.-C., les nilotiques meridionaux se diviserent en proto-Kalenjin (nord du Mau) et proto-Datooga (qui se deplacer vers les plaines de Mara et de Loita). Les Datooga atteignirent progressivement la Tanzanie centrale sous la pression des Maasai et des Bantous.",
+      "migrationRoutes": [
+        "Migration depuis le bassin du Nil moyen vers le nord-est de l'Ouganda (vers 1000 av. J.-C.)",
+        "Deplacement progressif vers les plaines de Mara et Loita (zone Kenya-Tanzanie) autour du 5e-6e siecle av. J.-C.",
+        "Migration vers le centre-nord de la Tanzanie (bassin du lac Eyasi, Highlands de Mbulu) sous la pression des Maasai et des Bantous, principalement aux 17e-19e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Bassin du lac Eyasi (district de Karatu, region d'Arusha)",
+        "Highlands de Mbulu (region de Manyara)",
+        "District de Hanang (nord de la region de Singida) — zone principale des Barabaig",
+        "Ngorongoro Highlands (region d'Arusha)",
+        "Anciennement : plaines de Mara et Loita (Kenya-Tanzanie)"
+      ],
+      "unificationsOrDivisions": "Les Datooga sont divises en au moins dix sous-groupes distincts, parlant des dialectes souvent divergents. Les Barabaig et les Gisamjanga sont linguistiquement tres proches. La dispersion geographique et la vie semi-nomade pastorale ont maintenu une fragmentation politique en unites autonomes. Il n'existe pas de structure politique supraclanique centralisee.",
+      "externalInfluences": "Conflits historiques avec les Maasai (qui les appelerent Mang'ati) et les poussaient progressivement vers le sud. Contacts avec les agriculteurs bantous (Iraqw, Sukuma). Colonisation allemande puis britannique ayant reduit les terres de parcours disponibles. Apres l'independance tanzanienne (1961), l'Etat tanzanien a cree des fermes d'Etat sur les terres pastorales Barabaig (surtout au Hanang), provoquant des conflits fonciers majeurs depuis les annees 1970-1990."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe pastorale sans chefferie centralisee. Le pouvoir est organise autour d'un systeme cyclique de classes d'age (age-sets) adopte depuis l'echange culturel avec les Cushites vers 1000-700 av. J.-C. Les anciens de chaque classe d'age (ghidabaid) ont autorite sur les decisions communautaires. Il n'existe pas de roi ni de chef hereditaire au niveau supraclanique.",
+      "clanOrganization": "Organisation patrilineaire en clans (ghaach). La polygamie est pratiquee ; le mariage est organise avec paiement d'une dot en betail. Les hommes s'occupent des troupeaux et de la defense de la communaute ; les femmes assument les taches domestiques, l'artisanat et l'entretien des habitations.",
+      "ageClassSystems": "Systeme cyclique de classes d'age (age-set organisation) : les hommes progressent collectivement a travers des classes d'age successives (jeunesse, guerriers, anciens), chaque transition etant marquee par des ceremonies collectives. Ce systeme, partage avec les Kalenjin et d'autres peuples nilotiques meridionaux, structure la vie politique, militaire et ceremonielle.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les droits de paturage et les alliances matrimoniales. Les droits d'usage des terres de parcours sont lies aux lignages claniques. La transmission du betail (principal bien) se fait de pere en fils.",
+      "religiousAuthority": "Autorite des anciens (ghidabaid) dans les rituels et ceremonies. Les guerisseurs traditionnels (diviners) jouent un role important dans la medecine et la communication avec les forces spirituelles. Syncrétisme progressif avec le christianisme."
     },
     "languages": {
-      "mainLanguage": "Datoga",
-      "vehicularRole": "Le datoga est parlé par la majorité des Datoga. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Datooga (Tatog)",
+      "isoCodes": ["tcc"],
+      "dialects": [
+        "Barabaig (dialecte le plus parle, district de Hanang et lac Eyasi)",
+        "Gisamjanga (Kisamajeng) — tres proche du Barabaig",
+        "Dialectes des autres sous-groupes (Bajuta, Asimjeeg, Rootigaanga, etc.) — comprehension mutuelle parfois difficile"
+      ],
+      "vehicularRole": "Le datooga (code ISO 639-3 : tcc) est une langue nilotique meridionale apparentee aux langues kalenjin du Kenya. Parlee par environ 87 000 a 150 000 personnes en Tanzanie (estimation 2000 : 87 978 ; projections 2025 : environ 150 000). Non enseignee a l'ecole ; le swahili est la langue d'enseignement. Vitalite linguistique stable mais menacee par la pression du swahili et l'urbanisation."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels datoga (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"La circoncision masculine est un rite de passage essentiel, adopte historiquement des communautes cushitiques voisines. Elle marque l'entree dans la classe d'age des guerriers (ghidabaid) et est accompagnee de ceremonies collectives, chants et rituels de virilite.\", \"femaleInitiation\": \"Les femmes ont leurs propres rites de passage lies a la puberte et au mariage. Les femmes mariees portent un vetement traditionnel en laniere de cuir fines.\"}, \"marriageRites\": {\"description\": \"Le mariage est organise par les familles et scelle par le paiement d'une dot en betail. La polygamie est pratiquee. Les ceremonies de mariage sont des occasions de celebration communautaire avec danses et chants.\"}, \"funeraryRites\": {\"description\": \"Ceremonies funeraires marquant le passage du defunt dans le monde des ancetres. Les anciens dirigent les rituels pour assurer la paix de l'ame du mort.\"}, \"ageSetCeremonies\": {\"description\": \"Transitions entre classes d'age marquees par des ceremonies collectives majeures impliquant tout le groupe. Ces ceremonies renforcent la solidarite inter-generationnelle.\"}}",
+      "symbols": "Les motifs circulaires de tatouages et cicatrices autour des yeux sont le symbole visuel le plus distinctif des Datooga, particulierement chez les femmes. La decoration corporelle avec de l'ocre rouge est caracteristique. Les bijoux en metal (laiton, cuivre) forges par les hommes Datoga sont tres reputes dans toute la region du lac Eyasi. Le betail est le symbole de la richesse, du statut et de la spiritualite.",
+      "artsAndMusic": "{\"bodyArt\": {\"tattoosAndScarification\": \"Les femmes datooga portent des tatouages et cicatrices en motifs circulaires autour des yeux, signature culturelle unique reconnaissable. La decoration corporelle a l'ocre rouge est pratiquee par les hommes et femmes.\"}, \"jewelry\": {\"description\": \"Les Datoga sont renommes pour leur forge artisanale : les hommes fabriquent des bijoux en metal (laiton, cuivre, aluminium) — bracelets, colliers, boucles d'oreilles — tres prisés par les Hadza voisins et les autres peuples de la region du lac Eyasi. L'echange de fleches Hadza contre des bijoux Datoga est une pratique commerciale traditionnelle.\"}, \"crafts\": \"Travail du cuir (vêtements feminins, courroies), vannerie, poterie. Les hommes sont forgerons et menuisiers ; les femmes confectionnent les vetements en cuir.\", \"music\": \"Chants polyphoniques lors des ceremonies d'age, de mariage et des celebrations pastorales. Instruments a percussion (tambours) et a vent (flutes).\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Aseeta (ou force divine supreme)\", \"attributes\": \"Croyances animistes centrees sur les forces de la nature et les esprits des ancetres. La Terre, le betail et les elements naturels sont perçus comme animes de forces spirituelles.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les ancetres protegent les vivants et sont invoques lors des ceremonies importantes (mariages, transitions de classes d'age, funerailles). Les anciens sont les mediateurs privilegies avec le monde des esprits.\"}, \"healers\": \"Les guerisseurs traditionnels (diviners) jouent un role central dans la medecine, la divination et la communication avec les esprits. Ils sont consultes en cas de maladie, de conflit ou de decision importante.\", \"syncretism\": \"Syncrétisme progressif avec le christianisme depuis le 20e siecle, sans remplacement total des croyances et pratiques ancestrales.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora datoga dans les grandes villes tanzaniennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Datooga n'ont jamais constitue de royaume centralise. Leur organisation est fondee sur des unites claniques independantes liees par le systeme de classes d'age partagees. Le chef Ng'utamida est un leader historique Datooga largement connu dans la region au 19e siecle. La resistance aux expansions maasai et la preservation de leur territoire pastoral constituent le coeur de leur histoire politique.",
+      "relationsWithNeighbors": "Conflits historiques avec les Maasai (qui nomment les Datoga Mang'ati — ennemis) : les Maasai expansionnistes repousserent progressivement les Datoga vers le sud, des plaines de Mara vers le lac Eyasi et le district de Hanang. Relations d'echange avec les Hadza (chasseurs-cueilleurs du lac Eyasi) : les Datoga fournissent des bijoux en metal aux Hadza en echange de fleches. Relations generalement tendues avec les agriculteurs sedentaires (Iraqw, Sukuma) en raison des conflits fonciers. Depuis les annees 1970, conflits avec l'Etat tanzanien autour des fermes d'Etat etablies sur les terres pastorales Barabaig au Hanang.",
+      "conflictsOrAlliances": "Les conflits fonciers avec l'Etat tanzanien constituent l'enjeu historique contemporain le plus important. Les fermes de ble d'Etat au district de Hanang (Canada-Tanzania Wheat Programme, 1970-1990) furent etablies sur des terres pastorales Barabaig, provoquant des decennies de resistance, de poursuites judiciaires (affaires LHRC) et de documentation par les ONG des droits des peuples autochtones. Les Barabaig denoncent la spoliation fonciere et la marginalisation economique.",
+      "diaspora": "Peu de diaspora datoga documentee a l'etranger. Migrations internes en Tanzanie vers les villes (Arusha, Dar es-Salaam) sous la pression des pertes foncieres et de la pauvrete. Le tourisme culturel autour du lac Eyasi a cree une nouvelle forme d'interaction avec l'exterieur."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements tanzaniens, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue — Datooga (tcc, 2024). Estimation 2000 : 87 978 (Karatu District, Arusha Region). Projections 2025 : environ 100 000 a 150 000. Sources : Ethnologue, Recensements tanzaniens, Nyamera Treks and Safaris cultural documentation.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 150000,
+          "note": "Bassin du lac Eyasi (district de Karatu, region d'Arusha), Highlands de Mbulu (region de Manyara), district de Hanang (nord de Singida)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Datoga language (tcc)",
-      "CIA World Factbook – Tanzania",
-      "Recensements tanzaniens",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Datooga people. https://en.wikipedia.org/wiki/Datoga",
+      "SIL Ethnologue — Datooga language (tcc). https://www.ethnologue.com/language/tcc/",
+      "Nyamera Treks and Safaris — The Datoga Tribe of Tanzania. https://nyameratreksandsafaris.com/the-datoga-tribe-of-tanzania/",
+      "Mawe Lodges — Exploring the Rich Culture of Lake Eyasi. https://mawelodges.com/lake-eyasi/",
+      "Lane, Charles — Barabaig: East African Cattle Herders in Jeopardy. San Francisco: Westview Press, 1996.",
+      "Glottolog — Datooga. https://glottolog.org/resource/languoid/id/dato1239",
+      "Joshua Project — Datoga people profile. https://joshuaproject.net/people_groups/11040/TZ"
     ]
   }
 }

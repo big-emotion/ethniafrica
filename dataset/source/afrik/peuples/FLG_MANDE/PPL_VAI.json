@@ -7,31 +7,96 @@
     "appellations": {
       "mainName": "Vai",
       "selfAppellation": "Vai / Vy",
+      "exonyms": [
+        "Gallinas (terme portugais, 15e-17e siecles)",
+        "Liberian (nom historique de la langue)"
+      ],
+      "originOfExonyms": "Le terme Gallinas fut utilise par les marchands portugais des le 15e siecle, probablement en reference a des oiseaux locaux associes au territoire. Le terme Vai s'est impose comme denomination principale a partir du 17e siecle, epoque des premiers contacts documentes avec les marchands neerlandais.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Vai est aujourd'hui universellement employe, tant par les locuteurs eux-memes que dans les sources academiques et administratives au Liberia et en Sierra Leone.",
       "linguisticFamily": "FLG_MANDE",
-      "historicalRegion": "Côte ouest du Liberia et Sierra Leone (région littorale)",
+      "ethnoLinguisticGroup": "Mande meridional (Southern Mande)",
+      "historicalRegion": "Cote atlantique du Liberia (Grand Cape Mount County) et sud-est de la Sierra Leone (district de Pujehun)",
       "currentCountries": ["LBR", "SLE"]
     },
     "ethnicities": [
-      "Vai de Liberia (Grand Cape Mount)",
-      "Vai de Sierra Leone (Pujehun / Zimmi)"
+      "Vai de Liberia — Grand Cape Mount County (groupe majoritaire)",
+      "Vai de Sierra Leone — district de Pujehun / Zimmi (minorite frontaliere)",
+      "Clan Camara — groupe fondateur d'origine mandinka",
+      "Lignage Massaquoi — famille royale historique des Vai"
     ],
-    "origins": {},
-    "organization": {},
-    "languages": {},
-    "culture": {
-      "source_0": "Tradition littéraire écrite (syllabaire vai).",
-      "source_1": "Masques et sociétés initiatiques.",
-      "source_2": "Cérémonies rituelles forestières.",
-      "source_3": "Artisanat du bois, tissage."
+    "origins": {
+      "ancientOrigins": "Les Vai descendent d'expeditions envoyees par un roi mandinka de la region du Manding, qui traverserent le continent vers le sud pour atteindre la mer et developper un commerce de sel. Ces expeditionnaires, conduits par le clan Camara, l'un des premiers groupes mandinka de la region du Manding, s'unirent aux populations gola locales et formerent le peuple vai. Les Portugais ont vraisemblablement rencontre les Vai des le milieu du 15e siecle sous le nom de Gallinas.",
+      "formationPeriod": "La formation du peuple vai comme entite distincte remonte au 15e-16e siecle, a la suite de la migration mandinka vers la cote atlantique et du metissage avec les Gola. La premiere mention documentee par des marchands neerlandais date de la premiere moitie du 17e siecle.",
+      "migrationRoutes": [
+        "Depuis la region du Manding (haute Guinee) vers le sud-ouest en direction de la cote atlantique",
+        "Etablissement le long de la cote liberienne (Grand Cape Mount) a partir du 15e siecle",
+        "Extension vers le district de Pujehun en Sierra Leone, le long de la frontiere"
+      ],
+      "historicalSettlementZones": [
+        "Grand Cape Mount County (Liberia) — territoire historique principal",
+        "District de Pujehun et environs de Zimmi (Sierra Leone)",
+        "Zone littorale entre lacs et marecages cotiers et forets interieures"
+      ],
+      "unificationsOrDivisions": "Les Vai furent a une epoque des negociants actifs dans la traite des esclaves. Sous la direction de la famille royale Massaquoi, ils constituerent un groupe politique coherent. Momulu Massaquoi (1870-1938) fut reconnu roi des Vai et diplomate liberien. La penetration coloniale britannique au Liberia et en Sierra Leone les integra progressivement dans ces Etats modernes.",
+      "externalInfluences": "Influence mandinka depuis les origines (langue, islam). Contacts avec les marchands europeens (portugais, neerlandais, britanniques) a partir du 15e siecle. Islamisation progressive a partir du 16e siecle via les marchands mandinka. Integration dans l'Etat liberien au 19e siecle.",
+      "majorHistoricalEvents": "Invention du syllabaire vai vers 1833 par Momolu Duwalu Bukele, l'un des rares systemes d'ecriture indigenes inventes en Afrique subsaharienne. En 1834, les missionnaires americains et le philologue Sigismund Wilhelm Koelle signalerent l'existence de ce systeme. En 1962, le Comite de standardisation de l'Universite du Liberia normalisa le syllabaire. En 2003, le Nouveau Testament fut publie en script vai."
     },
-    "historicalRole": {},
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigees par des chefs de clan (notamment le clan Camara et la famille Massaquoi). La famille Massaquoi detint le titre de roi des Vai jusqu'au 20e siecle. Governance par conseils d'anciens au niveau villageois.",
+      "clanOrganization": "Structure clanique organisee autour de lignes de descent. Le clan Camara constitue le groupe fondateur, la famille Massaquoi la lignee royale. Villages rectangulaires comptant generalement de deux a six pieces, avec cuisine et sanitaires separees.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et les droits fonciers. La structure familiale s'organise autour du menage patriarcal etendu.",
+      "religiousAuthority": "Autorite des imams (chefs religieux islamiques) dans les villages a tradition coranique. Presence simultanee de chefs de societes initiatiques (Poro pour les hommes, Sande pour les femmes) qui exercent une autorite religieuse et sociale parallele. Les imams president aux ceremonies de naissance, de mariage et de deces. La coexistence de l'islam et des pratiques traditionnelles (mediumship, culte des esprits) est caracteristique de la spiritualite vai."
+    },
+    "languages": {
+      "mainLanguage": "Vai (langue mande meridionale)",
+      "isoCodes": ["vai"],
+      "dialects": [
+        "Dialecte liberien — Grand Cape Mount County, variete principale",
+        "Dialecte sierra-leonais — district de Pujehun, variete minoritaire"
+      ],
+      "vehicularRole": "Le vai est parle par environ 104 000 personnes au Liberia et 15 500 en Sierra Leone (Ethnologue, 2024). Il est remarquable pour son systeme d'ecriture indigene — le syllabaire vai — invente vers 1833 par Momolu Duwalu Bukele, comptant 212 symboles representant chacun une syllabe. C'est l'un des rares systemes d'ecriture subsahariens indigenes non derive de l'alphabet latin ou arabe. Le syllabaire fut standardise par le Comite de standardisation de l'Universite du Liberia en 1962 et encode dans Unicode depuis 2009. L'anglais sert de langue officielle au Liberia et vehiculaire dans les contextes formels."
+    },
+    "culture": {
+      "majorRites": "Societe initiatique Poro (hommes) : certains chercheurs situent dans le territoire vai l'origine du Poro, societe secrete masculine repandue dans toute l'Afrique de l'Ouest. L'initiation au Poro constitue le rite de passage majeur vers l'age adulte masculin. Les Vai pratiquent egalement des ceremonies funeraires au cours desquelles des vetements et de la nourriture sont deposes pres des tombes des defunts, afin d'accompagner l'ame du mort. Trois types d'enseignement structurent l'entree dans l'age adulte : l'ecole buissonniere (apprentissage culturel vai et techniques de survie, duree de quatre a cinq ans), l'ecole anglophone, et l'ecole coranique (apprentissage de l'arabe classique sous la direction de l'imam du village).",
+      "symbols": "Le syllabaire vai (Vai script), systeme d'ecriture syllabique indigene compte 212 symboles uniques. Ce systeme, qui a connu une renaissance grace aux technologies numeriques contemporaines, constitue le symbole identitaire le plus distinctif du peuple vai en Afrique. L'arbre palmier occupe une place symbolique centrale dans la vie vai : il fournit noix, beurre, vin, carburant, savon et materiaux pour la vannerie, et n'est jamais abattu lors du defrichage des terres agricoles.",
+      "artsAndMusic": "Les Vai sont reputes pour leurs talents de charpentiers, tisserands et tailleurs. Ils fabriquent des objets artisanaux de valeur, bien que les biens importes tendent a les supplanter. La musique est partie integrante de la vie vai : ils jouent de nombreux instruments et executent des danses lors des occasions ceremoniales. Le tissage est une activite artisanale importante pour les deux sexes. Les Vai cultivent aussi le cacao, le cafe et le coton, dont les produits sont echanges dans des marches locaux.",
+      "spiritualities": "Les Vai sont majoritairement musulmans et pratiquent des traditions islamiques depuis des siecles, notamment l'etude du Coran, adoptee sous l'influence des marchands mandinka a partir du 16e siecle. Cette pratique islamique coexiste avec des croyances traditionnelles en des entites surnaturelles : un dieu supreme, createur et controleur de la Terre, manifeste a travers les esprits et la nature, considere trop distant pour etre adore directement, et dont l'acces se fait par l'intermediaire d'un medium spirituel. Les Vai croient etre entoures d'esprits capables de prendre la forme d'etres vivants ou d'objets, avec le pouvoir de causer du mal. Le caiman est associe aux esprits malveillants. Des pratiques chamaniques et de sorcellerie demeurent repandues."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Vai furent organises en une chefferie dirigee par la famille royale Massaquoi. Momulu Massaquoi (1870-1938) fut reconnu roi des Vai, diplomate liberien et figure politique. Sa fille Fatima Massaquoi (1912-1978) fut princesse des Vai. A une epoque, les Vai furent actifs dans la traite des esclaves, commercant or, noix de kola, ivoire et esclaves avec les marchands europeens sur la cote.",
+      "relationsWithNeighbors": "Les Vai entretenaient des relations commerciales et culturelles etroites avec les Mandinka de l'interieur, dont ils sont en partie issus. Ils etaient en contact avec les Gola, avec lesquels ils se sont historiquement melanges. Des relations de voisinage complexes existent avec les autres peuples de la cote liberienne.",
+      "conflictsOrAlliances": "Les Vai resisterent au controle colonial britannique et liberien mais furent progressivement integres a ces Etats a la fin du 19e siecle. Ils furent acteurs du commerce transsaharien et atlantique, d'abord via les reseaux mandinka, puis directement avec les marchands europeens.",
+      "diaspora": "La population vai est concentree dans ses territoires historiques du Liberia et de la Sierra Leone. Environ 1 200 Vai vivent en Sierra Leone, principalement dans le district de Pujehun pres de la frontiere liberienne. Une diaspora urbaine existe dans les grandes villes du Liberia, notamment Monrovia. Des communautes vai de la diaspora maintiennent le syllabaire et la culture vai via des associations culturelles et des ressources numeriques."
+    },
     "demography": {
-      "source": "peuple_demographie_globale.csv"
+      "totalPopulation": 235000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 235 000 toutes regions confondues. Ethnologue (SIL, 2024) : environ 104 000 locuteurs au Liberia, environ 15 500 en Sierra Leone. Estimation 2025 basee sur une projection a partir de ces sources.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 209000,
+          "note": "Grand Cape Mount County, principalement le long de la cote atlantique et en foret"
+        },
+        {
+          "country": "SLE",
+          "population": 26000,
+          "note": "District de Pujehun, villages frontaliers avec le Liberia (dont Zimmi)"
+        }
+      ]
     },
     "sources": [
-      "Ethnologue (vai)",
-      "Liberia National Cultural Archives",
-      "Studies on Vai Syllabary (1820–1900)"
+      "Wikipedia EN — Vai people. https://en.wikipedia.org/wiki/Vai_people",
+      "Wikipedia EN — Vai language. https://en.wikipedia.org/wiki/Vai_language",
+      "Joshua Project — Vai in Liberia. https://www.joshuaproject.net/people-profile.php?peo3=15762&rog3=LI",
+      "Joshua Project — Vai in Sierra Leone. https://joshuaproject.net/people_groups/15762/SL",
+      "Omniglot — Vai Syllabary. https://www.omniglot.com/writing/vaisyllabary.htm",
+      "SIL Ethnologue — Vai language (vai). https://www.ethnologue.com/language/vai/",
+      "Rosetta Panglossia — Vai Language (vai). https://rosettapanglossia.longnow.org/index.php?title=Vai_Language_%28vai%29",
+      "Massaquoi, Momolu. Vai History and Oral Traditions. Liberia National Archives.",
+      "Kelly, Piers. The Vai script — origin and development. Annual Review of Linguistics, 2018. https://www.annualreviews.org/doi/abs/10.1146/annurev-linguistics-011718-012348"
     ]
   }
 }

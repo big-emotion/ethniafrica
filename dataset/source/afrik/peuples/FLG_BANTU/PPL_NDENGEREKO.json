@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Ndengereko",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ndengereko",
+      "exonyms": ["Warufiji", "Kindengereko", "Ndengeleko", "Rufiji"],
+      "originOfExonyms": "Warufiji est le nom swahili donne au groupe d'apres le fleuve Rufiji qui traverse leur territoire. Kindengereko designe leur langue. La variante Rufiji est utilisee dans certaines classifications linguistiques (Ethnologue, code rui) pour designer une variete dialectale du ndengereko.",
+      "whyProblematic": "La frontiere entre le peuple Ndengereko et le peuple Rufiji est linguistiquement et ethniquement floue. Les linguistes debattent si le rufiji est un dialecte du ndengereko ou une langue distincte. La designation Warufiji dans le recensement tanzanien englobe parfois l'ensemble du groupe.",
+      "contemporaryUsage": "Ndengereko est le terme ethnique reconnu en Tanzanie. La langue maternelle est en declin au profit du swahili, notamment chez les jeunes generations.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Groupe Matumbi-Ndengereko, sous-famille Rufiji-Ruvuma (zone P bantou)",
+      "historicalRegion": "Region de Pwani (cote centrale), nord du fleuve Rufiji (Tanzanie)",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Ndengereko"],
+    "ethnicities": ["Ndengereko", "Warufiji"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Ndengereko sont issus d'un ancetre commun avec les Matumbi et les Rufiji, faisant partie d'un meme groupe migratoire bantou qui s'est fragmente lors de son installation dans la region cotiere du centre de la Tanzanie.",
+      "formationPeriod": "Periode precoloniale. La distinction entre Ndengereko, Rufiji et Matumbi s'est etablie lors de l'installation dans leurs zones respectives : les Rufiji se sont installes le long du fleuve et en ont pris le nom, les Matumbi se sont deplaces vers le sud dans les collines (matumbi = montagne), les Ndengereko sont restes au nord du fleuve Rufiji dans la plaine cotiere.",
+      "migrationRoutes": [
+        "Migration bantou vers la cote est-africaine",
+        "Installation au nord du fleuve Rufiji dans la region de Pwani"
+      ],
+      "historicalSettlementZones": [
+        "Pwani Region (region cotiere), au nord du fleuve Rufiji",
+        "Districts de Mkuranga, Kisarawe et Rufiji",
+        "Collines Matumbi, pres de Kibiti",
+        "Localites de Mchukivi et Bungu"
+      ],
+      "unificationsOrDivisions": "Appartenance au cluster Ndengereko au sens large qui inclut les Ndengereko, Rufiji, et potentiellement les Matumbi. Apres la guerre Maji Maji, des membres d'autres ethnies se sont integres au groupe en adoptant le Kindengereko comme langue commune.",
+      "externalInfluences": "Arrivee des marchands arabes et conversion a l'islam. Guerre Maji Maji (1905-1907) : de nombreux groupes se sont deplaces vers la region Ndengereko pour combattre aux cotes des Allemands, adoptant le Kindengereko comme langue de communication, puis s'y sont integres.",
+      "majorHistoricalEvents": "La guerre Maji Maji (1905-1907) a joue un role paradoxal pour les Ndengereko : des groupes tribaux venus aider les Allemands a communiquer ont adopte le Kindengereko et ont ete absorbes dans l'identite ndengereko apres la guerre. Cet evenement a contribue a l'expansion demographique du groupe."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferies locales. Societe tres orientee vers la communaute, vivant dans des habitations en pisé avec toits de chaume.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Islam integre dans la vie quotidienne, parfois mele de religion folk (croyances traditionnelles persistant sous la forme islamique). Les Ndengereko qui se convertissent au christianisme font souvent face a des persecutions communautaires."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kindengereko (Ndengereko)",
+      "isoCodes": ["ndg"],
+      "dialects": [
+        "Rufiji (variete dialectale proche, parfois codifiee separement sous rui)"
+      ],
+      "vehicularRole": "Le kindengereko est la langue maternelle du groupe mais est en declin face au swahili. Les locuteurs natifs adultes pratiquent encore la langue, mais les jeunes adoptent majoritairement le swahili. L'Ethnologue classe le ndengereko comme langue en danger (shifting, niveau 7 Glottolog)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies incluant des chants et ngoma (musique de tambours). Traditions specifiques : spoti et kinyamtindili (chants et danses cerimoniales). Pratiques islamiques populaires melees de croyances traditionnelles.",
+      "symbols": "Le riz et le poisson sont les aliments identitaires fondamentaux des Ndengereko.",
+      "artsAndMusic": "La musique est une partie intrinseque de la vie sociale et religieuse des Ndengereko, tissee dans tous les evenements sociaux et ceremonies. Chants ngoma caracteristiques.",
+      "spiritualities": "Islam majoritaire, parfois syncrétise avec des croyances animistes traditionnelles (religion folk). Presence chretienne tres minoritaire face a des obstacles communautaires."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Premier grand groupe cotier au sud de Dar es Salaam. Organisation en chefferies locales.",
+      "relationsWithNeighbors": "Au nord : Matumbi. Au sud : Rufiji. A l'est : ocean Indien. Relations avec les groupes Zigula-Zaramo plus au nord. Interactions historiques avec les Makonde au sud-est.",
+      "conflictsOrAlliances": "Implication dans la guerre Maji Maji (1905-1907). Absorption post-guerre de groupes d'autres ethnies ayant adopte le Kindengereko.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 290000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org (2024) : 290 000 ; IMB flyer (2020) : 285 000 ; Prayafrica.org : 250 000+",
+      "distributionByCountry": [{ "country": "TZA", "population": 290000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ndengereko language – Wikipedia EN, ISO 639-3: ndg (https://en.wikipedia.org/wiki/Ndengereko_language)",
+      "Ndengereko of Tanzania – Pray Africa (https://prayafrica.org/project/ndengereko-of-tanzania/)",
+      "Ndengereko – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndengereko.html)",
+      "Ndengereko in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13279)",
+      "Ndengereko – Glottolog 5.3, code nden1248 (https://glottolog.org/resource/languoid/id/nden1248)",
+      "Language, Tribe and Ethnic Clusters : Ndengereko – Orville Jenkins (http://orvillejenkins.com/ethnicity/langtribendengereko.html)",
+      "Ndengereko Language – Ethnologue (https://www.ethnologue.com/language/ndg/)"
+    ]
   }
 }

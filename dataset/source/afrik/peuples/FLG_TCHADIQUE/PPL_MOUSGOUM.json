@@ -2,58 +2,97 @@
   "id": "PPL_MOUSGOUM",
   "nameMain": "Mousgoum",
   "languageFamilyId": "FLG_TCHADIQUE",
-  "currentCountries": ["NGA"],
+  "currentCountries": ["CMR", "TCD", "NGA"],
   "content": {
     "appellations": {
       "mainName": "Mousgoum",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Mulwi",
+      "exonyms": [
+        "Musgum",
+        "Musgu",
+        "Munjuk",
+        "Mouloui",
+        "Muzuk",
+        "Musuk",
+        "Mousgoun",
+        "Mumwi"
+      ],
+      "originOfExonyms": "Le nom Mousgoum derive du village eponyme de Mousgoum. Les nombreuses variantes orthographiques (Musgum, Musgu, Munjuk, Muzuk) refletent les transcriptions coloniales francaises et allemandes ainsi que les differences dialectales internes. Le terme Mouloui est l'appellation utilisee par les Massa du Tchad pour designer les Mousgoum.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mousgoum est utilise en francais (Cameroun, Tchad) tandis que Musgum prevaut dans la litterature anglophone. L'auto-appellation Mulwi est privilegiee par les membres du groupe dans leurs interactions internes. Les deux formes coexistent dans les publications academiques et les documents officiels.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["NGA"]
+      "ethnoLinguisticGroup": "Groupe biu-mandara, branche tchadique de la famille afro-asiatique",
+      "historicalRegion": "Plaines du Logone et du Chari, region de l'Extreme-Nord du Cameroun et du Mayo-Kebbi au Tchad",
+      "currentCountries": ["CMR", "TCD", "NGA"]
     },
-    "ethnicities": ["Mousgoum"],
+    "ethnicities": ["Mousgoum", "Mulwi", "Munjuk"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Mousgoum sont un peuple afro-asiatique d'origine ancienne etabli dans les plaines alluviales entre le Chari et le Logone. Ils descendent des Sao, civilisation prechretienne et preislamique qui peupla le bassin du lac Tchad entre le Xe et le XVIe siecle. Leur identite ethnique s'est formee par la cohabitation et le melange progressif de plusieurs groupes : les Sao, les Baguirmiens, les Bornouans et les Massa. Leur morphologie physique est attribuee a la lignee Sao, tandis que leur appartenance a l'islam decoule de l'influence baguirmienne et bornouane.",
+      "formationPeriod": "XIe-XVIe siecle, avec une consolidation identitaire achevee vers le XVIIe siecle lors des confrontations avec le sultanat du Baguirmi.",
+      "migrationRoutes": [
+        "Depuis le bassin du lac Tchad vers les plaines du Logone et du Chari",
+        "Expansion progressive vers le nord en direction de Kousseri (Cameroun)",
+        "Presence minoritaire au Nigeria dans l'Etat de Borno, notamment a Bama, Banki et Gambaru"
+      ],
+      "historicalSettlementZones": [
+        "Plaines du Moyen-Logone (Cameroun-Tchad)",
+        "Subdivision de Maga, arrondissement du Mayo-Danay, Extreme-Nord Cameroun",
+        "Sous-prefecture de Bongor, Mayo-Kebbi (Tchad)",
+        "Region de Guelendeng et Katoa (Tchad)",
+        "Peripherie de N'Djamena (quartiers Ngueli, Sukkabir)",
+        "Territoire du parc national de Waza (dont le nom derive du mot mousgoum 'Waza' signifiant ma maison ou ma patrie)"
+      ],
+      "unificationsOrDivisions": "La communaute mousgoum s'est constituee par fusion de groupes divers (Sao, Baguirmiens, Bornouans, Massa). La cohabitation avec les Massa a cree une confusion identitaire documentee par des auteurs comme Andre Gide, qui ne les distinguait pas. Des Peuls ont ete integres par alliance matrimoniale : un Peul aisait deliberement donner sa fille a un Mousgoum influent pour heriter des chefferies par le sang.",
+      "externalInfluences": "L'islamisation par le biais des empires Baguirmi et Bornou constitue l'influence externe majeure. La pression militaire peule aux XIXe siecle (sous la direction du chef mahdiste cheikh Hayatu ibn Said) a redessine les frontieres du peuplement. La colonisation francaise a impose le travail force, favorise l'emigration et perturbe l'architecture traditionnelle des cases obus des les annees 1930.",
+      "majorHistoricalEvents": "XVIIe-XIXe siecles : batailles recurrentes avec le sultanat du Baguirmi ; les Mousgoum de l'est payaient tribut au Baguirmi tandis que ceux de l'ouest resistaient a la pression peule. Bataille decisive de Bogo (Diamare) : les chefs Zigla et Awersing repoussent les Peuls qui fuient vers l'Adamaoua. XIXe siecle : Peuls de retour a Bogo s'integrent par mariage. Colonisation francaise : declin des cases obus traditionnel. Depuis les annees 1990 : renaissance architecturale sous l'impulsion du tourisme et du soutien de l'USAID."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie traditionnelle : les territoires mousgoum sont gouvernes par des chefs autochtones mousgoum (non par des etrangers). Les principales unites politiques sont le Sultanat de Pouss, le Lamidat de Guirvidig, le Sultanat de Zina et le Lamidat de Bogo. Le royaume de Bogo illustre la fusion mousgoum-peule par alliance matrimoniale. L'autorite du chef (sultan ou lamido) est d'ordre politique et symbolique.",
+      "clanOrganization": "Organisation lignagere avec un systeme de maisons familiales (tolekakay) disposees en cercle, delimitees par une cloture de branchages indiquant l'appartenance clanique. La grande case centrale appartient au mari ; les cases peripheriques aux epouses. L'espace interieur est divise en zones fonctionnelles (betail, jeux, conseil de famille).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages definissent l'acces aux terres agricoles et aux droits de peche sur le Logone. Les mariages sont arranges par les parents ; les enfants ne choisissent pas leur conjoint. La polygamie est permise mais la plupart des hommes n'ont qu'une seule epouse.",
+      "religiousAuthority": "L'autorite religieuse islamique (imams locaux) coexiste avec les pratiques animistes traditionnelles. Les Mousgoum croient que la Terre est une 'mere deesse' ayant engendre d'autres etres surnaturels, notamment le tonnerre, la foudre, les serpents noirs, les crocodiles et certains objets inanimes. Ces croyances animistes sont maintenues parallelement a la pratique islamique officielle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Mousgoum (Musgu, Mulwi)",
+      "isoCodes": ["mug"],
+      "dialects": [
+        "Beege (parle dans le sud, regions de Djafga et Begue, plaines du Logone)",
+        "Mpus (parle dans le nord, region de Pouss, Cameroun)",
+        "Vulum (parle principalement au Tchad)"
+      ],
+      "vehicularRole": "Le mousgoum est une langue tchadique du sous-groupe biu-mandara de la famille afro-asiatique. C'est une langue a tons (quatre tons : haut, bas, moyen et descendant). Elle est parlee exclusivement au sein du groupe. Le francais joue le role de langue vehiculaire dans les interactions avec les autres groupes ethniques et l'administration, tant au Cameroun qu'au Tchad."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La Laba (ou Labana) est le rite traditionnel de combat initiatique specifique aux Mousgoum. Ce rite a une fonction sociale et identitaire forte : la vocation militaire reste un ideal pour les jeunes hommes mousgoum. La construction et l'entretien des cases obus (tolekakay) constituent un acte culturel majeur : les femmes sont traditionnellement responsables de la maintenance des parois exterieures, grimpant le long des reliefs decoratifs en nervures qui servent aussi de drainage pluvial.",
+      "symbols": "La case obus (tolek, pluriel tolekakay) est le symbole culturel le plus emblematique des Mousgoum. Ces domes en argile comprimee, appeles 'cases obus' en francais en raison de leur profil en ogive, sont connus en Occident depuis au moins les annees 1850 par les recits de l'explorateur allemand Heinrich Barth. Leur construction en terre crue sans fondation, avec des parois epaissies a la base et amincies au sommet, represente un chef-d'oeuvre d'architecture vernaculaire africaine reconnu internationalement.",
+      "artsAndMusic": "Musique vocale et instrumentale : flutes, sifflets, cornes, harpes et tambours sont les principaux instruments. La peche collective sur le Logone est une activite centrale, source de tensions avec les Kotoko voisins. L'agriculture (arachides, coton commercialise, mil, mais, melons, courges, haricots, indigo) structure la vie quotidienne. L'architecture des tolekakay, construite en terre plastique sans coffrage ni fondation selon une technique de ceramiste, est consideree comme un art a part entiere ; leur construction peut necessiter jusqu'a six mois de travail.",
+      "spiritualities": "Islam pratique par la grande majorite des Mousgoum, souvent syncretise avec des croyances animistes autochtones. Les Mousgoum croient en une mere-deesse terrestre qui a engendre des etres surnaturels (tonnerre, foudre, serpents noirs, crocodiles, objets inanimes). Une minorite chretienne existe, plus presente au Tchad qu'au Cameroun."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Sultanat de Pouss, Lamidat de Guirvidig, Sultanat de Zina, Lamidat de Bogo (chefferies autochtones maintenues jusqu'a nos jours). Le parc national de Waza est fonde sur le territoire mousgoum traditionnel. Le centre de Moulvoudaye (signifiant 'j'achete des gens' en mousgoum) etait un ancien centre de traite d'esclaves.",
+      "relationsWithNeighbors": "Relations complexes avec les Kotoko (parents ethniques partageant une origine Sao commune mais rivaux pour les droits de peche sur le Logone ; tensions documentees dont un affrontement meurtrier en janvier 2007). Integration progressive des Peuls par alliance matrimoniale apres leur defaite militaire a Bogo. Cohabitation avec les Kanuri au Nigeria (participation commune a l'empire du Bornou). Confusion identitaire historique avec les Massa, documentee par Andre Gide.",
+      "conflictsOrAlliances": "XVIIe-XIXe siecles : guerres repetees avec le Baguirmi ; tribut impose aux Mousgoum orientaux. XIXe siecle : resistance victorieuse des chefs Zigla et Awersing contre les forces peules du mahdiste cheikh Hayatu ibn Said ; victoire decisive a Bogo (Diamare). Alliance ulterieure avec les Peuls par mariage apres leur retour. Participation a l'empire du Bornou aux cotes des Kanuri.",
+      "diaspora": "Exode rural vers les villes camerounaises (Kousseri, Maroua) et tchadiennes (N'Djamena, quartiers Ngueli et Sukkabir). Pas de diaspora internationale significative documentee."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 164400,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia – Musgum people, 2024 (estimation basee sur 140 000 au Cameroun et 24 400 au Tchad) ; Joshua Project, 2025",
+      "distributionByCountry": [
+        { "country": "CMR", "population": 140000 },
+        { "country": "TCD", "population": 24400 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Musgum people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgum_people)",
+      "Mousgoum (peuple) – Wikipedia FR, 2024 (https://fr.wikipedia.org/wiki/Mousgoum_(peuple))",
+      "Musgu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgu_language)",
+      "Mousgoum (langue) – Wikipedia FR, 2024 (https://fr.wikipedia.org/wiki/Mousgoum_(langue))",
+      "Musgu Language (MUG) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/mug/)",
+      "Musgum, Mulwi in Chad – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13840/cd)",
+      "Adaptive Architecture: Mousgoum dwellings Pouss, Cameroon – Radio Future Africa, s.d. (https://radio-future-africa.org/adaptive-architecture-mousgoum-dwellings-pouss-cameroon/)",
+      "Musgum mud hut – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgum_mud_hut)"
+    ]
   }
 }

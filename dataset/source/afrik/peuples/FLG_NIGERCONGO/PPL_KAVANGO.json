@@ -6,63 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Kavango",
-      "selfAppellation": "Kavango",
-      "exonyms": ["Kavango (terme utilisé par les Européens)"],
+      "selfAppellation": "vaKavango / haKavango",
+      "exonyms": ["Kavango", "Okavango people"],
+      "originOfExonyms": "Le terme Kavango (ou Okavango) derive du nom de la riviere Kavango (Okavango) qui constitue la frontiere naturelle entre la Namibie et l'Angola dans la region. Le peuple est nomme d'apres son territoire riverain. vaKavango est le pluriel en rukwangali (prefixe va-). haKavango est l'auto-designation alternative. La region administrative namibienne Kavango (divisee en Kavango Est et Kavango Ouest en 2013) porte leur nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kavango designe collectivement les cinq sous-groupes tribaux du peuple. Chaque sous-groupe possede aussi son propre nom : Kwangali, Mbunza, Shambyu, Gciriku et Mbukushu. Le terme Kavango est utilise dans les documents officiels, les recensements namibiens et la designation des regions administratives.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "NAM, AGO",
+      "ethnoLinguisticGroup": "Bantou (Zone R, groupe Kavango)",
+      "historicalRegion": "Region du Kavango le long de la rive namibienne de la riviere Okavango (Kavango) ; anciennement presente dans le sud de l'Angola (Kwando River)",
       "currentCountries": ["NAM", "AGO"]
     },
     "ethnicities": [
-      "Kavango de Namibie",
-      "Kavango d'Angola",
-      "Sous-groupes régionaux"
+      "Kwangali (vaKwangali) — groupe le plus nombreux, etabli a l'ouest du Kavango namibien, parle Rukwangali",
+      "Mbunza (vaMbunza) — groupe associe aux Kwangali, partageant la meme langue (Rukwangali) et des pratiques sociales similaires",
+      "Shambyu (vaShambyu) — groupe etabli dans la zone centrale, parle Rushambyu (dialecte du Rumanyo)",
+      "Gciriku (vaGciriku / vaDiriku) — groupe etabli a l'est, parle Rugciriku (dialecte du Rumanyo)",
+      "Mbukushu (vaMbukushu / vaHambukushu) — groupe le plus oriental, socialement et ethnologiquement distinct des quatre autres, parle Thimbukushu"
     ],
     "origins": {
-      "ancientOrigins": "Les Kavango sont originaires de la région de la Namibie et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les Kavango sont etroitement apparentes aux Owambo et partagent avec eux une origine commune depuis les grands lacs de l'Afrique orientale. Les fouilles archeologiques placent l'arrivee des premiers colons kwangali dans la region vers le 17e siecle (vers 1600), bien que les vaGciriku, vaShambyu et Hambukushu soient arrives peut-etre plus tard. Ils se sont d'abord etablis pres de la riviere Kwando en Angola avant de migrer vers le sud de la riviere Okavango entre 1750 et 1800.",
+      "formationPeriod": "La formation de l'identite kavango comme ensemble de cinq groupes riverains se consolide entre le 17e et le 19e siecle avec l'installation sur les rives namibiennes de l'Okavango. Chaque groupe a maintenu une autonomie politique sous son propre roi (hompa ou fumu). La colonisation allemande puis sud-africaine du 20e siecle a impose une administration unifiee tout en maintenant les structures de chefferies.",
+      "migrationRoutes": [
+        "Depuis les grands lacs de l'Afrique orientale (origine lointaine commune aux Owambo)",
+        "Migration via l'Angola actuel, avec premier etablissement pres de la riviere Kwando en Angola",
+        "Migration vers le sud de la riviere Okavango entre 1750 et 1800, installation sur la rive namibienne",
+        "Les Kwangali : arrivee vers 1600 (dates archeologiques) dans la zone occidentale du Kavango namibien"
+      ],
+      "historicalSettlementZones": [
+        "Rive namibienne de la riviere Kavango (Okavango) — sur plus de 400 km, base de civilisation riveraine",
+        "Rundu — capitale administrative de la region Kavango Est, principal centre urbain",
+        "Zone de Kwangali (ouest) — territoire des Kwangali et Mbunza",
+        "Zone de Shambyu et Gciriku (centre-est) — territoire des deux groupes separés a 47 km a l'est de Rundu",
+        "Zone de Mbukushu (extreme est) — territoire le plus oriental, vers Divundu"
+      ],
+      "unificationsOrDivisions": "Les Kavango sont divises en cinq royaumes distincts (Kwangali, Mbunza, Shambyu, Gciriku, Mbukushu), chacun dirige par un roi (hompa ou fumu) hereditaire. Les Kwangali et Mbunza partagent la meme langue et des pratiques similaires. La separation entre Shambyu et Gciriku s'est produite lorsqu'ils se sont installes sur la rive sud de l'Okavango. Les Mbukushu se distinguent par leur organisation sociale et ethnologique differente. La constitution namibienne legitime le droit coutumier traditionnel.",
+      "externalInfluences": "Contacts avec les peuples khoisan de la region (San/Bochimans), adoptes partiellement dans les reseaux de parenté. Arrive des missionnaires evangeliques lutheriens en 1910. Colonisation allemande de la Namibie (1884-1915), puis administration sud-africaine jusqu'en 1990. Influence chretienne massive via les missions. Immigration angolaise significative pendant et apres la guerre civile angolaise (1975-2002), contribuant a la croissance demographique de la region.",
+      "majorHistoricalEvents": "Installation sur les rives de l'Okavango entre le 17e et le 19e siecle. Contact avec les premiers Europeens (19e siecle). Incorporation dans la colonie allemande de Namibie (1884). Administration par l'Afrique du Sud sous mandat de la Societe des Nations (1920-1966), puis occupation illegale jusqu'en 1990. Guerre d'independance namibienne (SWAPO, 1966-1990). Independance de la Namibie (21 mars 1990). Division de la region Kavango en Kavango Est et Kavango Ouest en 2013."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chacun des cinq sous-groupes est dirige par un roi hereditaire (hompa ou fumu, signifiant tous deux 'roi'). La transmission du pouvoir suit la ligne matrilineaire, l'oncle maternel ayant la priorite sur le pere biologique de l'enfant pour la succession. Le roi est assiste de chefs de village (headmen). La loi traditionnelle (droit coutumier) est toujours en vigueur et legitimee par la constitution namibienne. Le droit coutumier des Kavango est matrilineaire, affectant le droit de la famille, l'heritage, la succession, le mariage et la structure politique.",
+      "clanOrganization": "L'ekoro est la relation sociale fondamentale dans le systeme de parente kavango. Il peut etre decrit approximativement comme la famille etendue mais il est plus que cela : c'est une relation sociale ancree dans le clan qui n'est pas necessairement determinee par des liens sanguins. Les clans sont hierarchises selon leur seniorite : quiconque appartient a un clan junior est considere comme jeune par les membres du clan senior, quel que soit son age. Des personnes exterieures peuvent devenir membres d'un clan en demandant allegiance dans des circonstances unificatrices (inondations, guerre).",
+      "ageClassSystems": "Les Kwangali et les Mbunza pratiquent des ceremonies de preparation des garcons a l'age adulte et des filles aux taches menageres. Ces passages structures marquent les transitions dans le cycle de vie.",
+      "roleOfLineages": "La societe kavango est matrilineaire. Les droits d'heritage, de succession aux chefferies et les obligations familiales suivent la ligne maternelle. L'oncle maternel (frere de la mere) joue un role cle dans l'education et la protection des neveux et nieces.",
+      "religiousAuthority": "Les vadimu (esprits ancestraux) occupent une place centrale dans la vie spirituelle traditionnelle. Les rites d'initiation et les ceremonies d'esprits ancestraux sont conduits par des specialistes rituels. Les missionnaires lutheriens ont introduit le christianisme des 1910, fortement present aujourd'hui. Les ceremonies traditionnelles (initiations, respect des vadimu) ont ete combattues par les missionaries comme 'heretiques' mais ont periste."
     },
     "languages": {
-      "mainLanguage": "Kavango",
-      "vehicularRole": "Le kavango est parlé par la majorité des Kavango. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Rukwangali (langue la plus parlee, utilisee par les Kwangali et Mbunza)",
+      "isoCodes": ["kwn", "mhw", "diu"],
+      "dialects": [
+        "Rukwangali (kwn) — langue des Kwangali et Mbunza, ISO 639-3 : kwn ; parlee par environ 46% de la population de Kavango Est",
+        "Thimbukushu (mhw) — langue des Mbukushu, ISO 639-3 : mhw ; aussi parlee en Botswana et Angola",
+        "Rugciriku (diu) — langue des Gciriku, ISO 639-3 : diu ; consideree comme dialecte du Rumanyo",
+        "Rushambyu (sam) — langue des Shambyu ; consideree comme dialecte du Rumanyo ; pas de code ISO officiel distinct"
+      ],
+      "vehicularRole": "Le Rukwangali est la langue kavango la plus repandue et sert de lingua franca dans la region du Kavango. L'anglais est la langue officielle de la Namibie et de l'enseignement. L'afrikaans est largement compris. Les langues kavango sont enseignees dans les ecoles primaires de leurs zones respectives. Le groupe linguistique kavango est parle par environ 8,5% de la population namibienne."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kavango, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiations masculines (Kwangali et Mbunza) : ceremonies de preparation des garcons a l'age adulte incluant une periode de retraite, d'enseignement et de passage rituel. Ceremonies feминines de preparation des filles aux taches du menage et au mariage. Ceremonies funeraires : respect des vadimu (esprits ancestraux) lors des deuils, avec rites specifiques pour accompagner le defunt dans l'au-dela. Rites agricoles : ceremonies liees aux semailles (millet perlé mahangu) et aux recoltes, incluant la consommation rituelle de mafumpura (tubercule sauvage) lors de la saison des recoltes en avril par les vaKwangali. Celebrations de la biere traditionnelle fermentee de millet lors des assemblees communautaires.",
+      "symbols": "La riviere Kavango (Okavango) est le symbole geographique et culturel central du peuple. La pirogue de peche (barque traditionnelle) symbolise le mode de vie riverain. Le millet perlé (mahangu) est le symbole de subsistance et de richesse. Les masques et sculptures en bois (bols, ornements, mobilier) de l'artisanat kavango, notamment les sculptures sur bois de Rundu, sont reconnus comme formes d'art distinctives. La boutique artisanale Ncumcara (35 km au sud de Rundu) est un centre de diffusion de cet art.",
+      "artsAndMusic": "Sculpture sur bois : l'artisanat du bois est la forme d'art la plus caracteristique des Kavango. Les sculpteurs produisent des bols, masques, ornements, meubles et autres objets fonctionnels pour le marche touristique et local. Les sculptures vont des representations animales aux portes sculptees. Les sculptures sont vendues notamment a la boutique Ncumcara Craft Shop. Architecture : les cuisines sont construites a l'exterieur des maisons (masuga) avec des toits de chaume. Le Kavango Living Museum (ouvert en 2011 a Samsitu Lake, 14 km a l'ouest de Rundu) est un musee vivant du peuple Mbunza presentant la culture de peche et d'agriculture traditionnelle. Musique et danse : les chants et danses font partie des ceremonies d'initiation, des funerailles et des assemblees communautaires. Le Mbunza Living Museum preserve et transmet ces traditions.",
+      "spiritualities": "Religion principalement chretienne (lutherienne, catholique, autres confessions protestantes) depuis l'evangelisation missionnaire en 1910. Les traditions spirituelles animistes restent presentes : veneration des esprits ancestraux (vadimu), ceremonies de propitiation et de communication avec les ancetres. La societe matrilineaire kavango integre les croyances sur la vie apres la mort dans ses structures de parenté : les droits et obligations passent par les ancetres de la ligne maternelle. Les missionaries lutheriens (arrivant en 1910) ont combattu les initiations et les danses comme 'heretiques' mais ces pratiques ont persiste. Un syncretisme entre christianisme et pratiques traditionnelles caracterise la vie religieuse contemporaine."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kavango dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Cinq royaumes independants gouvernes chacun par un roi (hompa/fumu) : Kwangali (le plus important), Mbunza, Shambyu, Gciriku et Mbukushu. Ces royaumes occupent chacun une portion precise de la rive namibienne de l'Okavango d'ouest en est. La succession royale suit la ligne matrilineaire. Les rois disposent d'un pouvoir politique, judiciaire et ritual sur leurs territoires. Le droit coutumier des cinq royaumes est reconnue par la constitution namibienne (1990).",
+      "relationsWithNeighbors": "Relations historiques avec les peuples San (Bochimans) de la region, qui ont parfois ete absorbes dans les reseaux de clans kavango. Contacts avec les Owambo voisins au nord-ouest (langue et origines communes). Relations avec les peuples du Caprivi (Zambezi Region) a l'est. Contacts avec les peuples angolais de l'autre cote de la riviere Okavango. La region a connu une forte immigration angolaise pendant la guerre civile angolaise (1975-2002), modifiant la composition demographique.",
+      "conflictsOrAlliances": "Resistance a la colonisation allemande de Namibie (fin 19e siecle). Guerres de resistance contre l'administration sud-africaine du territoire (1920-1990). Plusieurs residents de Kavango ont soutenu le SWAPO dans la guerre d'independance namibienne (1966-1990). La region du Kavango etait une zone de conflict actif pendant la guerre de Bush namibienne. Independance de la Namibie le 21 mars 1990.",
+      "diaspora": "Emigration interne vers Rundu (capitale de Kavango Est) et d'autres centres urbains de Namibie (Windhoek, Walvis Bay). Immigration angolaise dans la region pendant et apres la guerre civile angolaise. Peu de diaspora internationale documentee."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 360000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement namibien 2023 (Kavango Est : 218 421 ; Kavango Ouest : environ 137 000 en 2024 selon projections) ; Namibia Statistics Agency 2023 ; SIL Ethnologue 2024 ; projections GlobalPopulations.com 2025",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 360000,
+          "note": "Regions Kavango Est (218 421 en 2023) et Kavango Ouest (env. 140 000 en 2025) ; capital Rundu"
+        },
+        {
+          "country": "AGO",
+          "population": 0,
+          "note": "Presence ancestrale en Angola meridional (Kwando River) ; population actuelle non quantifiee distinctement"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kavango language (kng)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Kavango people. https://en.wikipedia.org/wiki/Kavango_people",
+      "Wikipedia EN — Kavango East. https://en.wikipedia.org/wiki/Kavango_East",
+      "Travel News Namibia — The people of Kavango and Zambezi. https://travelnam.com/people-kavango-zambezi/",
+      "Namibia Biodiversity Database — Namibian Languages (ISO codes). https://biodiversity.org.na/NamLanguages.php",
+      "CityPopulation.de — Kavango East census 2023. https://www.citypopulation.de/en/namibia/admin/02__kavango_east/",
+      "GlobalPopulations.com — Kavango West 2025. https://globalpopulations.com/na/3278824-kavango-west-region/",
+      "University of Cape Town — Education in Kavango Region (pre-colonial to 1966). https://open.uct.ac.za/server/api/core/bitstreams/7c26adea-1094-4744-aca7-5376f0a05cd8/content",
+      "SIL Ethnologue — Kwangali language (kwn). https://www.ethnologue.com/language/kwn/"
     ]
   }
 }

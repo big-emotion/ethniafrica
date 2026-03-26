@@ -1,22 +1,95 @@
 {
   "id": "PPL_GEDEO",
-  "nameMain": "",
+  "nameMain": "Gedeo",
   "languageFamilyId": "FLG_OMOTIQUE",
-  "currentCountries": [],
+  "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Gedeo",
       "selfAppellation": "Gedeo",
+      "exonyms": ["Derasa", "Darasa", "Derashe"],
+      "originOfExonyms": "Le terme Derasa ou Darasa est utilise dans la litterature linguistique ancienne et designe la langue gedeo (code ISO drs). Ce nom derive de la tradition orale gedeo qui trace l'origine du peuple a un ancetre nomme Daraso. L'ethnonyme Gedeo, utilise par les locuteurs eux-memes, s'est impose dans l'usage officiel.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Gedeo est utilise dans les documents officiels ethiopiens et dans la denomination de la zone administrative Gedeo (Gedeo Zone). La langue est officiellement enseignee dans les ecoles de la zone depuis les annees 1990.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Cushitique des hautes terres de l'est (Highland East Cushitic), non Omotique",
+      "historicalRegion": "Zone Gedeo (Gedeo Zone), escarpement oriental des hauts plateaux ethiopiens, rift Ethiopian, Ethiopie du sud",
+      "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (drs)", "Gedeo Cultural Bureau"]
+    "ethnicities": [
+      "Doobba'a — l'un des sept clans fondateurs, appartenant a la maison ainee (shoole baxxe)",
+      "Darashsha — clan de la maison ainee, dont derive le nom Darasa/Derasa",
+      "Gorggorshsha — clan de la maison ainee",
+      "Hanuma — clan de la maison ainee",
+      "Bakarro — clan de la maison ainee, plus de vingt-cinq sous-tribus associees",
+      "Henbba'a — clan de la maison cadette (sase baxxe), fournit des Aba Gada",
+      "Logoda — clan de la maison cadette, fournit des Aba Gada"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gedeo sont un peuple cushitique indigene de l'Ethiopie meridionale dont les origines sont partiellement documentees. Une tradition orale trace leur ascendance a un ancetre Daraso, frere aine de Gujo (ancetre des Guji Oromo) et de Boro (ancetre des Borana Oromo). Une autre tradition les rattache au peuple autochtone appele Murgga-Gosallo, peut-etre les premiers occupants de la region. Les Gedeo sont associes a la culture de l'enset depuis au moins plusieurs millenaires, selon l'UNESCO.",
+      "formationPeriod": "L'identite gedeo s'est consolidee sur l'escarpement oriental des hauts plateaux ethiopiens. Daraso est dit avoir eu sept fils de deux femmes, fondateurs des sept clans gedeo. Les traditions orales indiquent un mouvement migratoire depuis le nord vers le sud-ouest au cours des deux derniers millenaires. Le systeme Baalle (classes d'age similaires au Gadaa oromo) aurait ete acquis aupres des Guji Oromo avec qui les Gedeo entretinrent des relations historiques etroites.",
+      "migrationRoutes": [
+        "Migration depuis le nord vers l'escarpement oriental des hauts plateaux ethiopiens au cours du premier ou deuxieme millenaire de l'ere commune",
+        "Expansion progressive vers les zones peripheriques du rift ethiopien a partir du 20e siecle, liee a la croissance demographique et aux pressions foncieres"
+      ],
+      "historicalSettlementZones": [
+        "Escarpement oriental des hauts plateaux ethiopiens, zone Gedeo (ville de Dilla et environs)",
+        "Parties adjacentes de la region Oromia (24,84% de la population gedeo en 2007)",
+        "Zones peripheriques du rift ethiopien"
+      ],
+      "unificationsOrDivisions": "Les Gedeo etaient organises en une federation de trois territoires (Sasserogo ou les trois Roga : Sobbho, Ributa, Rikuta), partageant un seul Aba Gada transmis tous les huit ans. L'incorporation dans l'Empire ethiopien en 1895 fragmenta cette organisation : certaines zones resterent sous administration locale, d'autres furent placees sous gouverneurs militaires devenus seigneurs feodaux. Les confiscations foncieres des annees 1920 et les pressions des bailleurs Amhara transformerent profondement la structure sociale.",
+      "externalInfluences": "Incorporation dans l'Empire ethiopien en 1895, avec imposition de rapports feodaux (gebbars, naftagna). Mesures de l'Empire dans les annees 1920 (mesure qallad) conduisant a l'alienation des terres forestieres. Arrivee des missions protestantes dans les annees 1950 (Eglise Kalehiywot, EECMY). Conflit Gedeo-Oromo de 2018 ayant provoque 45 000 deplacés.",
+      "majorHistoricalEvents": "En 1895, soumission pacifique ou militaire a l'Empire ethiopien selon les zones. En 1960, affrontement avec l'armee ethiopienne pres de Michille : 68 soldats et 86 Gedeo tues. Persecutions des protestants dans les annees 1960. En 1981, tensions lors de la partition administrative de la zone Amaro. En 2018, violences Gedeo-Oromo engendrant le plus grand nombre de deplaces internes en Ethiopie cette annee-la. En 2023, inscription du Paysage culturel gedeo sur la Liste du patrimoine mondial de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Gedeo etaient organises en federation de trois territoires (Sasserogo) avec a leur tete un Aba Gada choisi alternativement parmi les clans Logoda et Henbba'a, investi lors d'une grande ceremonie Baalle tous les huit ans. Le Songo (conseil des anciens) assure la gouvernance locale et la gestion des ressources. Certains clans et sous-clans avaient des roles specifiques : leadership, medecine traditionnelle, rituel.",
+      "clanOrganization": "La societe gedeo est organisee en deux maisons : la maison ainee (shoole baxxe, clans Doobba'a, Darashsha, Gorggorshsha, Hanuma, Bakarro, plus de vingt-cinq sous-tribus) et la maison cadette (sase baxxe, clans Henbba'a et Logoda, dix sous-tribus). Tous les clans sont exogames. Certains sous-clans sont specialises : c'est de Logoda et Henbba'a que sont choisis les Aba Gada.",
+      "ageClassSystems": "Le Baalle est un systeme de classes d'age similaire au Gadaa oromo, organise en sept grades couvrant des periodes de naissance de dix ans, soit un cycle de soixante-dix ans. Acquis aupres des Guji Oromo, ce systeme structure les roles sociaux, politiques et rituels des hommes gedeo. Toutes les positions, de l'Aba Gada au Hyiticha, sont assumees lors d'une ceremonie Baalle.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers (rist, maderia), les alliances matrimoniales et les roles rituels. Les ancetres de chaque clan fondent la legitimite de l'organisation sociale.",
+      "religiousAuthority": "Mageno est l'Etre Supreme dans la religion traditionnelle gedeo. Les anciens et les pretres traditionnels gerent les sites sacres (forets, steles megalithiques). Les missions protestantes ont substitue le Dieu chretien a Mageno a partir des annees 1950. L'Eglise ethiopienne Kalehiywot et l'EECMY (Mekaneyesus) sont aujourd'hui les principales confessions."
+    },
+    "languages": {
+      "mainLanguage": "Gedeo (drs)",
+      "isoCodes": ["drs"],
+      "dialects": [
+        "Derasa — nom alternatif de la langue, utilise dans la linguistique historique",
+        "Variantes selon les clans et zones geographiques de la zone Gedeo et de la zone Guji adjacente"
+      ],
+      "vehicularRole": "Le gedeo est parle par environ 1,4 million de locuteurs (Ethnologue 2018). C'est une langue cushitique des hautes terres de l'est (Highland East Cushitic), etroitement apparentee au sidama. Le gedeo est ecrit en alphabet gueze (ethiopique) et en caracteres latins. Il est utilise comme langue d'instruction dans l'education de base dans la zone Gedeo. L'amharique est utilise pour l'administration et les niveaux superieurs d'education."
+    },
+    "culture": {
+      "majorRites": "Le Baalle est la ceremonie centrale de la vie sociale gedeo : tous les huit ans, les classes d'age franchissent un nouveau grade lors d'une ceremonie collective, avec investiture de l'Aba Gada. Les rites funeraires comprennent des ceremonies successives pour apaiser l'esprit du defunt. Les sites sacres (forets reservees, steles megalithiques en grappe sur les crets) sont au coeur des pratiques rituelles : aucun arbre ne peut y etre abattu et les especes medicinales y sont preservees. Des offrandes agraires sont realisees pour proteger les cultures d'enset et de cafe. Le mariage est exogame (hors du clan), confirme par des ceremonies familiales.",
+      "symbols": "Les steles megalithiques (certaines en forme phallique) disposees en grappes sur les crets des montagnes sont les symboles identitaires les plus visibles du paysage gedeo et des pratiques rituelles. L'enset (fausse banane, Ensete ventricosum) est la plante-symbole de la subsistance et de l'identite gedeo. Le systeme d'agroforesterie en couches — grands arbres, cafe, enset, cultures vivrières — est a la fois un heritage culturel et un symbole de la relation harmonieuse entre les Gedeo et leur environnement.",
+      "artsAndMusic": "La tradition orale et poetique est centrale dans la culture gedeo, avec transmission de mythes, genealogies et savoirs a travers les anciens. Le paysage culturel agroforestier lui-meme est considere comme un chef-d'oeuvre collectif : la gestion multilayer des arbres, du cafe et de l'enset reflete un savoir-faire transmis de generation en generation. L'artisanat local comprend la vannerie et des poteries. Des chants et danses accompagnent les ceremonies du Baalle et les rites de passage. La stele megalithique constitue une forme d'art ancestral lithique unique.",
+      "spiritualities": "La croyance traditionnelle gedeo reconnait Mageno comme Etre Supreme, intercesseur supreme des affaires humaines. Les forets sacrees et les sites megalithiques sont des espaces ou la dimension spirituelle du monde s'exprime et ou les ancetres sont honores. Le systeme Ballee combine croyances spirituelles et regles coutumières de gestion de la nature. Depuis les annees 1950, les Eglises protestantes (notamment la Kalehiywot) ont converti la grande majorite des Gedeo, substituant progressivement le Dieu chretien a Mageno. Des pratiques synchretiques persistent dans les rituels agraires et funeraires."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gedeo etaient organises en une federation de trois territoires (Sasserogo) sous l'autorite partagee d'un Aba Gada. Ce systeme confederal non centralise leur permit de maintenir leur autonomie culturelle et territoriale jusqu'a la fin du 19e siecle. Il n'y avait pas de monarchie hereditaire, mais une gouvernance tournante fondee sur les classes d'age.",
+      "relationsWithNeighbors": "Les Gedeo entretenaient des relations historiques etroites avec les Guji Oromo, dont ils auraient adopte le systeme Baalle. La frontiere entre zone Gedeo et zone Oromo a ete source de tensions recurrentes, culminant en violences majeures en 2018. Leurs relations avec les Sidama voisins sont anciennes (langue apparentee). Des echanges commerciaux (cafe, enset) existent avec les zones adjacentes.",
+      "conflictsOrAlliances": "En 1895, incorporation dans l'Empire ethiopien. En 1960, affrontement armee-population pres de Michille. En 1995, violences avec les Guji Oromo dans le woreda de Hagere Mariam. En 2018, violences Gedeo-Oromo : Ethiopia avait le plus grand nombre de deplaces internes dans le monde cette annee-la, avec 45 000 nouveaux deplaces dans la zone Gedeo.",
+      "diaspora": "La mobilite gedeo est principalement interne a l'Ethiopie. Des migrations vers les zones Guji et Borana ont ete provoquees historiquement par les pressions foncieres (annees 1920) et les conflits recents (2018). Une petite diaspora existe dans les villes ethiopiennes (Dilla, Hawassa, Addis-Abeba) et a l'etranger."
+    },
+    "demography": {
+      "totalPopulation": 1400000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien 2007 : 986 977 membres du peuple gedeo. Ethnologue 2018 : 1,4 million de locuteurs de la langue gedeo. Projections 2025 basees sur le taux de croissance annuel ethiopien (2,6%). UNESCO 2023 : le Paysage culturel gedeo abrite un peu plus de 250 000 personnes sur la surface du bien classe.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1400000,
+          "note": "Zone Gedeo (SNNPR puis South Ethiopia State), principalement autour de Dilla. 75% dans la zone Gedeo, 25% dans les zones Oromia adjacentes (Guji et Borana)."
+        }
+      ]
+    },
+    "sources": [
+      "UNESCO World Heritage Centre — The Gedeo Cultural Landscape (inscrit en 2023). https://whc.unesco.org/en/list/1641/",
+      "Wikipedia EN — Gedeo people. https://en.wikipedia.org/wiki/Gedeo_people",
+      "Wikipedia EN — Gedeo language. https://en.wikipedia.org/wiki/Gedeo_language",
+      "SIL Ethnologue — Gedeo language [drs]. https://www.ethnologue.com/language/drs/",
+      "ICOMOS — The Gedeo Cultural Landscape in Ethiopia. https://landscapes.icomos.org/the-gedeo-cultural-landscape-in-ethiopia/",
+      "Ethiopian Central Statistical Agency — Summary and Statistical Report of the 2007 Population and Housing Census. Addis Ababa, 2008.",
+      "ScienceDirect / Heliyon — The Gedeo agroforestry: evolution, characteristics, and components. 2025. https://www.sciencedirect.com/science/article/pii/S2666719325002596",
+      "Visit Ethiopia — Gedeo Cultural Landscape. https://visitethiopia.et/space/gedeo-cultural-landscape"
+    ]
   }
 }

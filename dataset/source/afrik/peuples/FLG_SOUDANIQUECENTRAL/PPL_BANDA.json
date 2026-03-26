@@ -2,63 +2,118 @@
   "id": "PPL_BANDA",
   "nameMain": "Banda",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["CAF", "COD", "SDN", "COG"],
+  "currentCountries": ["CAF", "COD", "CMR", "SSD"],
   "content": {
     "appellations": {
       "mainName": "Banda",
       "selfAppellation": "Banda",
-      "exonyms": ["Banda (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Banda (terme europeen repris des sources arabes et coloniales)"
+      ],
+      "originOfExonyms": "Le nom Banda est utilise a la fois comme endonyme et exonyme. Il designe le peuple et ses langues dans les sources coloniales francaises (Oubangui-Chari) et les travaux anthropologiques posterieurs. Certaines sources du 19e siecle emploient des noms regionaux specifiques selon les sous-groupes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Banda est d'usage standard dans la litterature scientifique, les recensements de la RCA et les sources internationales (Ethnologue, Encyclopaedia Britannica). Il designe collectivement un ensemble de groupes partageant des langues ubangiennnes apparentees et une identite culturelle commune.",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central",
-      "historicalRegion": "CAF, COD, SDN du Sud",
-      "currentCountries": ["CAF", "COD", "SDN", "COG"]
+      "ethnoLinguisticGroup": "Ubangien (sous-groupe Adamawa-Ubangi du Niger-Congo)",
+      "historicalRegion": "Savanes de la RCA (prefectures de Basse-Kotto, Haute-Kotto, Kemo, Ouaka), nord-est de la RDC, zone de la crete Nil-Congo",
+      "currentCountries": ["CAF", "COD", "CMR", "SSD"]
     },
-    "ethnicities": ["Banda de RCA", "Banda de RDC", "Banda du Soudan du Sud"],
+    "ethnicities": [
+      "Banda-Linda (sous-groupe connu pour sa musique aux tuyaux de bois, langue liy, Bambari et region centrale de la RCA)",
+      "Banda-Yangere (sous-groupe celebre pour ses grands tambours en forme d'animaux)",
+      "Banda-Mbrès (sous-groupe nord de la RCA, langue bqk)",
+      "Banda-Ndele (sous-groupe du nord-est de la RCA, region de Ndele)",
+      "Banda-Banda (sous-groupe central, parle dans la RCA et au Soudan du Sud)",
+      "Govo (sous-groupe de la region de Banda-Ndele)",
+      "Ngbugu (sous-groupe du sudouest)",
+      "Mbanza (sous-groupe partage entre RCA et RDC)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Banda sont originaires de la CAF, de la RDC et du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Banda sont un peuple de la zone de savane de la RCA et des regions adjacentes. Ils appartiennent au groupe ubangien du Niger-Congo, apparentes linguistiquement aux Gbaya et aux Ngbandi voisins. Les Banda occupent la crete de la division des eaux Nil-Congo. Ils vivaient generalement en paix avant le 19e siecle, dans des hameaux disperses guides par un chef de hameau, sans structures politiques centralisees. Les langues banda comprennent au moins neuf vernaculaires geographiquement distribues.",
+      "formationPeriod": "Les Banda sont documentes comme peuple distinct des le debut de la periode coloniale francaise dans l'Oubangui-Chari (fin 19e siecle). Leur structure en groupes clans disperses sans royaumes hereditaires est ancienne. La periode de formation est difficile a dater avec precision en l'absence de traditions orales centralisees.",
+      "migrationRoutes": [
+        "Migrations vers le sud et l'ouest le long de la riviere Ubangi sous la pression des raids esclavagistes du nord (19e siecle)",
+        "Mouvements de population depuis le Bahr el Ghazal vers la RCA en vagues successives (traditions orales)",
+        "Dispersion dans les prefectures centrales et orientales de la RCA sous la colonisation francaise"
+      ],
+      "historicalSettlementZones": [
+        "Prefectures de Basse-Kotto, Haute-Kotto, Kemo et Ouaka (RCA centrale et orientale) — zone principale",
+        "Nord-est de la RCA (prefecture de Haute-Sangha et Vakaga)",
+        "Nord de la RDC (zones frontalières avec la RCA)",
+        "Zone de la crete Nil-Congo (region de Bambari)"
+      ],
+      "unificationsOrDivisions": "Les Banda n'ont jamais forme d'Etat centralise. Avant la periode coloniale, ils etaient divises en clans disperses sans dirigeants hereditaires permanents. En temps de crise (raids esclavagistes, guerre), ils desginaient temporairement des chefs de guerre (semali), dont les pouvoirs etaient restitues apres la crise. Les classes d'age (semali) assuraient la cohesion inter-clanique en temps de guerre.",
+      "externalInfluences": "Les Banda ont ete massivement victimes des raids esclavagistes du 19e siecle — des sultanats du Wadai et du Darfour au nord, des Khartoumers (al-Zubayr et ses reseaux), et meme des armees des etats Azande au sud. Ces raids provoquerent une depopulation severe et des migrations forcees. Les colonisateurs europeens aggraverent la situation en armant les etats esclavagistes. L'administration coloniale française dans l'Oubangui-Shari (1900-1960) supprima les raids esclavagistes mais promut le coton et le manioc comme cultures commerciales. Les missions chretiennes convertirent la majorite de la population.",
+      "majorHistoricalEvents": "Du 11e au 12e siecle : premiers raids esclavagistes depuis la Libye meridionale et la zone du lac Tchad s'etendent vers le territoire banda. 16e-18e siecles : commerce d'esclaves banda vers les etats islamiques soudanais. 19e siecle : raids intensifs de Wadai, Darfour et des Khartoumers (al-Zubayr), conduisant a la depopulation massive de la region banda. Les Banda organisent une resistance en designant des chefs de guerre temporaires. Fin 19e siecle : creation de la colonie française de l'Oubangui-Chari, suppression des raids esclavagistes. 1941-1946 : Barthelemy Boganda evangelise les populations banda dans la region de Grimari. 1949 : Boganda fonde le MESAN (Mouvement pour l'Evolution Sociale de l'Afrique Noire), premier parti politique oubanguien. 1er decembre 1958 : proclamation de la Republique centrafricaine par Boganda. 29 mars 1959 : mort de Boganda dans un crash aerien."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Banda sont un peuple stateless (sans Etat) : ils n'avaient pas de dirigeants hereditaires permanents lors de leur premier contact avec les Europeens. Les decisions sont prises au niveau du hameau sous l'autorite d'un chef de hameau. En cas de crise, des chefs de guerre (semali) etaient elus temporairement par les classes d'age, leurs pouvoirs etant deposes apres la resolution du conflit. Les pasteurs chretiens jouent aujourd'hui un role de leadership important dans de nombreuses communautes banda.",
+      "clanOrganization": "Structure patrilineaire. Les Banda vivent en hameaux de quelques familles d'un meme lignage. Les clans sont disperses geographiquement. Il n'existe pas de structure clanique centralisee ou de genealogie clanique panBanda documentee — chaque groupe local maintient ses propres genealogies.",
+      "ageClassSystems": "Les classes d'age (semali) jouaient un role crucial en temps de guerre et de crise en assurant la cohesion entre les differents groupes banda pour la defense collective contre les raids esclavagistes. Ces classes d'age garantissaient une mobilisation rapide en cas de menace.",
+      "roleOfLineages": "Les lignages patrilineaires determinent la residence, les droits fonciers et les regles matrimoniales. La dot (bridewealth) en objets de fer etait traditionnellement exigee pour les mariages — attestant de l'importance economique du fer dans la culture banda. La polygamie etait pratiquee mais a decline avec la monetarisation de l'economie et le christianisme.",
+      "religiousAuthority": "Avant la christianisation, les specialistes rituels locaux et les anciens clans avaient une autorite spirituelle. Aujourd'hui, les pasteurs protestants (52% de la population) et les pretres catholiques (38%) exercent une forte influence. Des croyances traditionnelles persistent en syncretisme avec le christianisme, notamment les offrandes aux esprits ancestraux pour les recoltes."
     },
     "languages": {
-      "mainLanguage": "Banda",
-      "vehicularRole": "Le banda est parlé par la majorité des Banda. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Langues banda (groupe de langues ubangiennnes apparentees)",
+      "isoCodes": ["liy", "bfl", "bqk"],
+      "dialects": [
+        "Banda-Linda (liy, Bambari, environ 183 000 locuteurs en RCA — le dialecte le plus documente, connu pour sa musique aux tuyaux de bois)",
+        "Banda-Ndele (bfl, nord-est de la RCA)",
+        "Banda-Mbrès (bqk, nord de la RCA)",
+        "Banda-Yangere (sous-groupe central, celebre pour ses tambours-fentes animaux)",
+        "Banda-Banda (sous-groupe du Soudan du Sud et de la RCA)"
+      ],
+      "vehicularRole": "Les langues banda appartiennent au groupe ubangien de la famille Niger-Congo. Il n'existe pas une langue banda unique mais un continuum dialectal de neuf varietes geographiques majeures. Le sango (langue vehiculaire nationale de la RCA) est utilise pour la communication inter-ethnique, et le francais comme langue officielle de la RCA. En RDC, le lingala et le francais sont vehiculaires."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels banda, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le semali est le rite de passage central reconnaissant le franchissement du seuil de l'age adulte (transition a la maturite). Les rites de passage feminins, notamment la transition vers la femme adulte, etaient des evenements importants. Les mariages donnaient lieu a des ceremonies avec bridewealth en objets de fer. Les offrandes sacrificielles aux esprits ancestraux sont realisees pour le succes des recoltes saisonnieres — pratique syncrétique preservee malgre la christianisation. Les funerailles mobilisent la communaute et donnent lieu a des commemorations.",
+      "symbols": "Les grands tambours-fentes en forme d'animaux (Banda-Yangere) sont le symbole culturel le plus reconnu des Banda — utilises pour les celebrations musicales et la transmission de messages a longue distance. Les objets en fer (outils aratoires, instruments de dot) symbolisent la richesse et le statut social. Les sculptures en bois rituelles (fetishes, objets utilitaires) temoignent de leur renommee artisanale.",
+      "artsAndMusic": "Les Banda sont reconnus pour leur artisanat exceptionnel : sculptures d'objets rituels et utilitaires en bois. Les grands tambours-fentes sculptes en formes animales (attribues notamment au sous-groupe Banda-Yangere) servent aux celebrations musicales et a la communication a distance. Le sous-groupe Banda-Linda est celebre pour sa musique aux tuyaux de bois (Banda-Linda Horns), chaque tuyau produisant une seule note — un style defini par le compositeur Luciano Berio comme hautement musical et etudie par l'ethnomusicologue Simha Arom. L'art de la poterie, du tissage de nattes et de paniers est pratique par les femmes. La tradition orale (contes, genealogies, chants) constitue un patrimoine vivant.",
+      "spiritualities": "Avant la colonisation, les Banda pratiquaient des religions traditionnelles centrees sur les esprits ancestraux et les forces naturelles, avec des specialistes rituels locaux. Sous la colonisation française, la majorite s'est convertie au christianisme tout en conservant des elements de leur systeme de valeurs traditionnel. Aujourd'hui, 52% des Banda sont protestants et 38% catholiques. Les pratiques syncretiques persistent : offrandes sacrificielles aux esprits ancestraux pour la sante des recoltes, croyances en la puissance des ancetres, recours a des guerisseurs traditionnels."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora banda dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Banda n'ont jamais developpe de royaumes ni de chefferies hereditaires permanentes. Leur systeme politique decentralise et stateless les a rendus vulnerables aux raids esclavagistes organises par des etats voisins centralises (sultanats du Wadai, du Darfour, armees azande). La resistance banda s'organisait de maniere ad hoc via les classes d'age (semali) qui desginaient temporairement des chefs de guerre.",
+      "relationsWithNeighbors": "Les Banda sont apparentes linguistiquement aux Gbaya et aux Ngbandi. Leurs voisins historiques incluent les Azande (qui raideren leurs territoires au 19e siecle), les Sara, les Zande et les peuples de la RDC septentrionale. Sous la colonisation francaise, les Banda furent evangelises par Barthelemy Boganda (lui-meme Mbaka, evangelisant les Banda dans la region de Grimari de 1941 a 1946), ce qui a cree un lien symbolique fort entre la figure fondatrice de la RCA et le peuple banda.",
+      "conflictsOrAlliances": "Les Banda ont subi des siecles de raids esclavagistes particulierement violents au 19e siecle : Wadai et Darfour au nord, Khartoumers (al-Zubayr) et leurs reseaux de zariba (centres commerciaux esclavagistes), ainsi que les armees azande au sud. La depopulation resultante etait severe. Les Banda developperent des strategies de resistance : villages refuges, chefs de guerre temporaires, retraites dans les zones difficiles d'acces. La suppression des raids par la France coloniale mit fin a cette menace directe. Barthelemy Boganda, fondateur de la RCA, bien que Mbaka et non Banda, evangelisa et politisa les Banda comme acteurs de l'Independance.",
+      "diaspora": "Les migrations forcees liees aux raids esclavagistes du 19e siecle ont produit des dispersions importantes vers le sud et l'ouest le long de la riviere Ubangi. Des communautes banda existent en RDC (zone frontaliere), au Cameroun et au Soudan du Sud. Les crises politiques de la RCA (depuis 2013) ont provoque des deplacements internes et des refugies banda en RDC et au Cameroun."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Encyclopaedia Britannica (circa 1,3 million au debut du 21e siecle). Joshua Project et SIL Ethnologue (diverses estimations par sous-groupe). Projection 2025 estimee entre 1,3 et 1,6 million compte tenu de la croissance demographique de la RCA (environ 2,5% par an). Les Banda constituent le plus grand groupe ethnique de la RCA (environ 27-33% de la population totale estimee a 5,5 millions en 2025).",
+      "distributionByCountry": [
+        {
+          "country": "CAF",
+          "population": 1400000,
+          "note": "Plus grand groupe ethnique de la RCA, concentre dans les prefectures de Basse-Kotto, Haute-Kotto, Kemo et Ouaka (centre et est du pays)"
+        },
+        {
+          "country": "COD",
+          "population": 70000,
+          "note": "Nord de la RDC, zones frontalières avec la RCA"
+        },
+        {
+          "country": "CMR",
+          "population": 20000,
+          "note": "Est du Cameroun, communautes proches de la frontiere RCA"
+        },
+        {
+          "country": "SSD",
+          "population": 10000,
+          "note": "Zone de la Dar Fertit et du Bahr el Ghazal"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Banda languages (bpd)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Banda people. https://en.wikipedia.org/wiki/Banda_people",
+      "Wikipedia EN — Banda languages. https://en.wikipedia.org/wiki/Banda_languages",
+      "Wikipedia EN — Banda Linda. https://en.wikipedia.org/wiki/Banda_Linda",
+      "Wikipedia EN — Barthelemy Boganda. https://en.wikipedia.org/wiki/Barth%C3%A9l%C3%A9my_Boganda",
+      "Encyclopaedia Britannica — Banda. https://www.britannica.com/topic/Banda-people",
+      "SIL Ethnologue — Banda-Linda (liy). https://www.ethnologue.com/language/liy/",
+      "Joshua Project — Banda, West Central in Central African Republic. https://joshuaproject.net/people_groups/10638/CT",
+      "101 Last Tribes — Banda. https://www.101lasttribes.com/tribes/banda.html",
+      "ICPhS 2019 — Reanalyzing the Banda-Linda Vowel System. https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2019/papers/ICPhS_2110.pdf"
     ]
   }
 }

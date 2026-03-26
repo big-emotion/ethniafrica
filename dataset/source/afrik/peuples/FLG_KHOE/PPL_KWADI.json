@@ -7,59 +7,86 @@
     "appellations": {
       "mainName": "Kwadi",
       "selfAppellation": "Kwadi",
-      "exonyms": ["Kwadi (terme utilisé par les Européens)"],
+      "exonyms": ["Kwepe", "Cuepe", "Kwepe-Kwadi"],
+      "originOfExonyms": "Le terme Kwepe (ou Cuepe en orthographe portugaise angolaise) est le nom donne par les peuples bantous voisins (Kuvale, Himba) aux anciens locuteurs du Kwadi. Kwadi est le nom que le groupe se donnait lui-meme. La denomination Kwepe-Kwadi est utilisee dans les publications genetiques recentes pour distinguer les descendants biologiques des anciens locuteurs de la langue Kwadi (Ernst Westphal 1965) identifies en 2014-2023.",
+      "whyProblematic": "La distinction entre le peuple Kwadi (ethnie) et la langue Kwadi (eteinte vers 1960) est delicate. Les descendants biologiques des locuteurs Kwadi, les Kwepe actuels, parlent desormais le Kuvale (langue bantoue) et s'identifient comme Kwepe plutot que comme Kwadi. La question de la continuite identitaire apres l'extinction linguistique est au coeur des debats.",
+      "contemporaryUsage": "Dans les publications academiques (genetique, linguistique), Kwadi designe la langue et le peuple historique. Kwepe est le terme prefere par la communaute actuelle. Les etudes genetiques de 2023 (Science Advances) ont localise des descendants Kwepe vivant toujours le long de la riviere Kuroka (Namibe, Angola).",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "Khoe",
-      "historicalRegion": "Angola",
+      "ethnoLinguisticGroup": "Khoe-Kwadi (branche Kwadi, isolee au sein de la famille Khoe-Kwadi)",
+      "historicalRegion": "Sud-ouest de l'Angola : region de Namibe (anciennement Mocamedes), embouchure du Coroca/Kuroka, desert du Namib angolais",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Kwadi d'Angola", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Kwepe de la riviere Kuroka (descendants biologiques des locuteurs Kwadi, toujours localises sur leur territoire ancestral, province de Namibe, identifies en 2014-2023)",
+      "Kwepe integres aux Kuvale (pasteurs bantous voisins, assimilation culturelle et linguistique complete depuis plusieurs generations)",
+      "Descendants Kwadi disperses dans la region de Namibe (ancienne Mocamedes) et assimiles a d'autres groupes bantous angolais"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kwadi sont originaires de l'AGO, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous et européens, influence du christianisme et des croyances traditionnelles."
+      "ancientOrigins": "Les Kwadi appartenaient a la branche la plus occidentale de la famille Khoe-Kwadi. Selon les modeles de migration proposes par Tom Guldemann et d'autres linguistes, les ancetres des Kwadi ont diverge du proto-Khoe-Kwadi avant la migration vers le Botswana, continuant vers le sud-ouest angolais plutot que vers le Kalahari. Les etudes genetiques de 2023 (Boivin et al., Science Advances) montrent que les Kwepe portent un profil genetique caracterise par des composantes 'Khoe-Kwadi', 'Afrique du Sud' et 'Namibie', indiquant un contact historique intense avec des populations de chasseurs-cueilleurs maintenant disparues du Namib angolais (composante 'KS-Namib').",
+      "formationPeriod": "La communaute Kwadi comme groupe distinct est attestee des les premieres explorations europeennes du 19e siecle sur la cote angolaise. La documentation linguistique commence avec les collectes du milieu du 20e siecle (Westphal, annees 1960). L'extinction fonctionnelle de la langue est datee vers 1960 ; trois locuteurs partiels etaient connus en 1965, aucun en 1981. En 2014, des chercheurs localisent deux 'rememberers' (personnes ayant des connaissances residuelles de la langue sans l'avoir pleinement acquise).",
+      "migrationRoutes": [
+        "Migration ancestrale depuis le proto-Khoe-Kwadi (Afrique de l'Est ?) vers l'Angola sud-occidental, divergeant avant la branche Kalahari Khoe",
+        "Etablissement dans le Namib angolais (embouchure du Coroca/Kuroka, cote de Namibe) il y a au moins 1 000 a 2 000 ans",
+        "Contacts progressifs avec les populations bantoues Kuvale et Himba, conduisant a l'assimilation linguistique"
+      ],
+      "historicalSettlementZones": [
+        "Embouchure et cours inferieur de la riviere Coroca (Kuroka), province de Namibe, Angola",
+        "Zone cotiere du desert du Namib angolais, entre Namibe et la frontiere namibienne",
+        "Zones d'extension possible vers l'est et le sud (contacts avec Cimba et Kwisi voisins)"
+      ],
+      "unificationsOrDivisions": "La communaute Kwadi n'a jamais ete nombreuse : dans les annees 1950, seulement 50 individus etaient recenses. Ils formerent une unique communaute sedentaire de pecheurs-chasseurs sur la cote namibienne angolaise. L'integration progressive aux Kuvale (pasteurs bantous) et la conversion au Kuvale comme langue vehiculaire ont conduit a l'absorption culturelle et linguistique.",
+      "externalInfluences": "Contact seculaire avec les Kuvale et Himba (pasteurs bantous de l'Angola meridional) : adoption du pastoralisme bovin et de la langue Kuvale. Contact avec les Cimba et Kwisi (peuples pecheurs/chasseurs non-bantous de la region). Colonisation portugaise de l'Angola (19e-20e siecles) : pression supplementaire sur les populations marginalisees. Guerre d'independance angolaise et guerre civile (1961-2002) : perturbation de toutes les communautes rurales du sud de l'Angola.",
+      "majorHistoricalEvents": "Annees 1950 : recensement de 50 Kwadi par les ethnographes, dont 4-5 locuteurs competents. 1961-1965 : enquetes linguistiques de Ernst Westphal documentant 3 locuteurs partiels. 1981 : aucun locuteur trouve lors d'une nouvelle enquete. 2014 : deux 'rememberers' localises par une equipe de recherche ; salvage linguistique partiel possible. 2022-2023 : etudes genomiques (Science Advances) confirment la presence de descendants Kwepe sur la riviere Kuroka, porteurs du patrimoine genetique Khoe-Kwadi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en petites communautes de pecheurs et chasseurs sans hierarchie centralisee. Les decisions collectives etaient prises par consensus des anciens. Suite a l'assimilation aux Kuvale, le systeme de chefferie kuvale (patriarcal et pastoral) s'est impose.",
+      "clanOrganization": "Structure clanique originelle non documentee en detail en raison du tres petit nombre de locuteurs restants lors des enquetes (Westphal 1960s). Les Kwepe actuels s'integrent dans les structures claniques Kuvale (patrilineaires, pastoraux). Les sources historiques suggerent une organisation communautaire autour des activites de peche sur le Coroca, avec des droits collectifs sur les zones de peche transmis au sein de groupes de parente. Par analogie avec les Kwisi voisins (pecheurs non-bantous d'Angola), les droits sur les zones de peche etaient probablement bilateraux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Transmission bilaterale ou matrilineaire probable des droits de peche et des territoires, conformement aux patterns observes chez d'autres groupes Khoe. Apres assimilation aux Kuvale (systeme patrilineaire), adaptation au systeme bantou.",
+      "religiousAuthority": "Chamanes ou guerisseurs traditionnels pratiquant probablement des formes de communication avec les esprits ancestraux, analogues aux pratiques des autres peuples Khoe-Kwadi. Les traditions orales partiellement preservees par les 'rememberers' lors des enquetes de 2014 et 2022-2023 suggerent une continuite de certaines connaissances rituelles. Influence de l'animisme Kuvale (culte des ancetres, divination, association d'esprits aux cours d'eau) et, plus recemment, du christianisme catholique portugais puis angolais."
     },
     "languages": {
-      "mainLanguage": "Kwadi (variété Khoe, éteinte ou en danger)",
-      "vehicularRole": "La langue kwadi est éteinte ou en danger critique. Le portugais est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Kwadi (langue Khoe-Kwadi, branche Kwadi, eteinte vers 1960)",
+      "isoCodes": ["kwz"],
+      "dialects": ["Kwadi proprement dit (aucun sous-dialecte documente)"],
+      "vehicularRole": "La langue Kwadi (kwz) est officiellement classee comme eteinte par Ethnologue, Glottolog (AES : extinct) et l'UNESCO (Atlas des langues en danger, Moseley 2010). Elle etait le seul representant de la branche Kwadi dans la famille Khoe-Kwadi. Les Kwepe parlent aujourd'hui le Kuvale (langue bantoue du groupe Herero). Linguistiquement, le Kwadi presente un profil unique : il conservait des elements proto-Khoe perdus dans les langues Khoekhoe occidentales sous l'influence Kxʼa (Kalahari), et d'autres elements perdus dans les langues Kalahari Khoe orientales. Cette position archaique en fait un element crucial pour la reconstruction du proto-Khoe-Kwadi. Sa documentation reste tres lacunaire : quelques listes de vocabulaire et paradigmes pronominaux collectes par Westphal (annees 1960) et des fragments supplementaires lors des etudes de 2014."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels kwadi, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Les rites des Kwadi sont peu documentes. D'apres les analogies avec les groupes Khoisan voisins et les donnees collectees par Westphal, les Kwadi pratiquaient des rites de passage lies a la puberté (seclusion, peinture corporelle a l'ocre), des ceremonies de peche rituelle au debut de la saison de peche sur la riviere Coroca, et des rites funeraires incluant inhumation rapide et periodes de deuil communautaire. Leur mode de vie de pecheurs sur la cote angolaise distinguait leurs rites de ceux des chasseurs-cueilleurs du Kalahari.",
+      "symbols": "La riviere Coroca (Kuroka) etait le centre symbolique et territorial de la communaute Kwadi. Les ressources halieutiques (poissons, mollusques, crustaces) structuraient leur economie et probablement leur symbolisme. La mer et le desert du Namib, leur environnement immediat, fondaient leur cosmologie.",
+      "artsAndMusic": "Traditions orales (contes, chants rituels de peche) : transmises oralement, partiellement documentees par Westphal. Musique : instruments non documentes en detail. Par analogie avec les Kwisi et Cimba voisins (peuples non-bantous de la region), ils utilisaient probablement des percussions (tambours de bois, hochets) et des chants collectifs lors des ceremonies. Artisanat : fabrication de pirogues et d'engins de peche, confection de vetements en peau, perles.",
+      "spiritualities": "Cosmologie Khoe-Kwadi adaptee au milieu cotier. Vraisemblablement une croyance en des esprits de la nature (riviere, mer, desert), des ancetres protecteurs, et des etres divins. Le contact avec les Kuvale (animisme pastoral bantou) et les missionnaires portugais a modifie les pratiques spirituelles sur plusieurs generations. La langue Kwadi contient des termes pronominaux partages avec le proto-Khoe, suggerant une cosmologie commune aux peuples Khoe."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques angolaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kwadi dans les grandes villes angolaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de chefferie ou de royaume documentes chez les Kwadi. Petite communaute de pecheurs-chasseurs sedentaires sur la cote angolaise, sans structures politiques elaborees. Leur marginalisation historique et numerique ne permettait pas le developpement d'entites politiques complexes. Ils vivaient dans l'orbite des structures politiques Kuvale (chefferies pastorales bantou) sans y etre pleinement integres. Leur statut de groupe distincts, ni Bantou ni San au sens strict, les placait dans une position intermediaire difficile dans le paysage politique regional.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Cimba et Kwisi (autres peuples non-bantous de l'Angola meridional, egalement pecheurs et chasseurs). Relations de clientelisme possible avec les Kuvale (pasteurs bantous), dont ils adoptèrent progressivement la langue et une partie du mode de vie pastoral. Contact avec les colons portugais qui installerent des comptoirs sur la cote namibienne angolaise.",
+      "conflictsOrAlliances": "Marginalisation progressive par les populations bantoues (Kuvale) dominant economiquement et demographiquement la region. Absence de documentation de conflits armes specifiques. La guerre civile angolaise (1975-2002) a perturbe toutes les communautes du sud de l'Angola et accentue la dispersion des Kwepe.",
+      "diaspora": "La communaute Kwadi originelle etait si reduite (50 personnes dans les annees 1950) qu'il n'existe pas de diaspora au sens classique. Les descendants Kwepe restent localises sur la riviere Kuroka (province de Namibe) et se sont assimiles aux Kuvale environnants. Quelques individus ont migre vers Namibe (ancienne Mocamedes) ou Lubango."
     },
     "demography": {
-      "totalPopulation": 1000,
+      "totalPopulation": 200,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements angolais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Kwadi language (50 personnes dans les annees 1950, langue eteinte depuis 1960) ; Science Advances 2023 — Genome-wide variation in the Angolan Namib Desert (groupe Kwepe localise sur la riviere Kuroka, porteurs du patrimoine genetique Kwadi, echantillon de quelques familles) ; Ethnologue SIL International (langue kwz : extinct) ; Glottolog 2020 (kwad1244 : AES extinct). L'estimation de 200 personnes est une fourchette haute : les 50 Kwadi recenses dans les annees 1950 correspondraient aujourd'hui a environ 150-250 descendants au maximum compte tenu des taux de croissance et d'absorption dans la population Kuvale. En l'absence de recensements ethniques specifiques en Angola, cette estimation reste tres incertaine.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 200,
+          "note": "Province de Namibe (Mocamedes), embouchure et cours inferieur de la riviere Kuroka (Coroca), desert du Namib angolais ; assimiles linguistiquement aux Kuvale"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kwadi language (kwz, éteinte)",
-      "CIA World Factbook – Angola",
-      "Recensements angolais",
-      "Études anthropologiques sur les peuples khoisan",
-      "UNESCO – Atlas des langues en danger"
+      "Wikipedia EN — Kwadi language. https://en.wikipedia.org/wiki/Kwadi_language",
+      "Ethnologue SIL International — Kwadi language (kwz, extinct). https://www.ethnologue.com/language/kwz/",
+      "Glottolog — Kwadi, code kwad1244. https://glottolog.org/resource/languoid/id/kwad1244",
+      "Science Advances 2023 — Genome-wide variation in the Angolan Namib Desert reveals unique pre-Bantu heritage. https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
+      "Human Molecular Genetics 2021 — The genomic prehistory of peoples speaking Khoisan languages. https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
+      "Britannica — Khoisan languages. https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
+      "Wikipedia EN — Khoe languages (migration Kwadi). https://en.wikipedia.org/wiki/Khoe_languages",
+      "UNESCO Atlas of the World's Languages in Danger — Kwadi. https://en.unesco.org/",
+      "Rosetta Panglossia — Kwadi language (kwz). https://rosettapanglossia.longnow.org/index.php?title=Kwadi_language_%28kwz%29",
+      "Cambridge Core — Tracing contact and migration in pre-Bantu Southern Africa. https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/tracing-contact-and-migration-in-prebantu-southern-africa-through-lexical-borrowing/",
+      "Wikipedia EN — Khoe languages (section Kwadi). https://en.wikipedia.org/wiki/Khoe_languages"
     ]
   }
 }

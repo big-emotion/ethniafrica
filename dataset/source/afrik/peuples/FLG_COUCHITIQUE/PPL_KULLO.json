@@ -6,54 +6,72 @@
   "content": {
     "appellations": {
       "mainName": "Kullo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Omete",
+      "exonyms": ["Dawro", "Dauro", "Dawuro", "Dawaro", "Omete"],
+      "originOfExonyms": "Kullo est l'ancien nom colonial et imperial par lequel ce peuple etait designe, notamment durant la periode de la province imperiale de Kaffa. Dawro est le nom actuel officiel du peuple et de sa zone administrative, issu du nom de leur territoire historique. Les variantes Dauro et Dawuro sont des transcriptions alternatives utilisees dans la litterature historique et ethnographique. Omete est l'auto-denomination traditionnelle du peuple.",
+      "whyProblematic": "La denomination Kullo est aujourd'hui consideree comme pejorative ou depassee par le peuple lui-meme, qui prefere Dawro. Dawaro est un autre nom historique qui designe une entite geographique distincte (un sultanat medieval islamique du Haut-Omo), ce qui cree une confusion dans la litterature historique. Le gouvernement ethiopien reconnait officiellement le nom Dawro depuis 1991.",
+      "contemporaryUsage": "Dawro est le nom officiel utilise dans l'administration, l'education et les medias en Ethiopie. Kullo reste mentionne dans les sources historiques et dans certains dialectes locaux comme designation ancienne.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Omotic septentrional, cluster Ometo central (Gamo-Gofa-Dawro)",
+      "historicalRegion": "Sud-ouest de l'Ethiopie, entre les fleuves Gojeb et Omo, actuellement zone Dawro de la region Etats du Sud-Ouest",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Kullo"],
+    "ethnicities": ["Dawro", "Omete"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Dawro (Kullo) sont l'un des peuples omotiques les plus anciennement attestes dans le sud-ouest de l'Ethiopie. Situe entre les fleuves Gojeb et Omo, leur territoire, parfois appele Omatiya (du nom du fleuve Omo), constitue l'un des foyers de la civilisation omotique. Les traditions orales et les recherches historiques attestent d'un etat organise des les premieres periodes de formation des royaumes omotiques.",
+      "formationPeriod": "Le Royaume de Dawro est atteste comme entite politique independante et centralisee au moins depuis le XVe siecle. Il atteint son apogee comme l'un des Etats omotiques les plus puissants avant son integration dans l'Empire ethiopien en 1891-1893.",
+      "migrationRoutes": [
+        "Etablissement de longue date dans le bassin entre les fleuves Gojeb et Omo, sud-ouest de l'Ethiopie",
+        "Accueil de nombreux refugies et commercants en provenance de Shewa, du Tigray, de Gondar, de Kambata, de Tambaro, de Yem, de Wolayita, de Gamo, de Gofa et de Kaffa"
+      ],
+      "historicalSettlementZones": [
+        "Zone Dawro, Region des Etats du Sud-Ouest de l'Ethiopie (anciennement SNNPR)",
+        "Woredas: Isara Tocha, Loma Bosa, Mareka Gena",
+        "Capitale: Tarcha (496 km au sud-ouest d'Addis-Abeba)"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Dawro, compose de trois grands clans (Malla, Dogallaa, Amaara), etait un Etat hautement centralise avec une royaute independante. Il fut incorpore a l'Empire ethiopien en 1891-1893 sous la direction du general de Menelik II, Dejazmach (puis Ras) Wolde Giorgis Aboye. La zone Dawro fut separee de l'ancienne zone Semien Omo en 2000.",
+      "externalInfluences": "L'islamisation partielle a commence au XVIIe siecle avec l'arrivee des marchands musulmans attires par le cafe, les epices, l'or, l'ivoire et les esclaves. La conquete par Menelik II en 1891-1893 a introduit l'amharique comme lingua franca pour les elites. Le christianisme orthodoxe s'est developpe apres la conquete. Depuis les annees 1990, le protestantisme evangelique s'est fortement implante.",
+      "majorHistoricalEvents": "Construction du mur defensif medieval (Halala Kela) acheve dans la seconde moitie du XVIIIe siecle, temoin de l'independance et de la puissance du Royaume de Dawro. Incorporation dans l'Empire ethiopien en 1891-1893. Creation de la zone Dawro en 2000 lors de la reorganisation administrative du SNNPR. Construction du barrage de Gibe III sur l'Omo, qui borde la zone Dawro."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie hautement centralisee avec un roi (titre non specifie dans les sources) a la tete d'un Etat puissant et independant. L'Etat de Dawro etait considere comme l'un des royaumes omotiques les plus organises, avec une administration territoriale et militaire elaboree.",
+      "clanOrganization": "La societe dawro est patrilineaire et organisee en trois grands clans: Malla, Dogallaa et Amaara, chacun subdivise en nombreuses tribus et sous-clans. Cinq categories sociales hierarchiques coexistent: Maallaa (strate superieure), Wogac-c-iya (forgerons), Degellaa (tanneurs), Manaa (potiers) et Manja (chasseurs-cueilleurs et travailleurs du bois).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'heritage, le mariage et l'appartenance politique. Le clan Amaara, malgre son nom similaire, n'a aucun lien avec les Amharas semitiques du nord et represente l'un des grands clans fondateurs de Dawro.",
+      "religiousAuthority": "Autorite spirituelle traditionnelle exercee par les anciens et les chefs de clan avant l'adoption du christianisme. Aujourd'hui, les eglises orthodoxes et protestantes jouent un role central dans la vie communautaire."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Dawro (Dawurotsuwa)",
+      "isoCodes": ["dwr"],
+      "dialects": ["Konta", "Kucha"],
+      "vehicularRole": "La langue dawro (ou dawurotsuwa) est parlee par plus de 97% de la population de la zone Dawro. Elle appartient au continuum dialectal Gamo-Gofa-Dawro du cluster Ometo central. L'amharique sert de langue administrative et de communication interethnique. La langue dawro possede son propre jeu de caracteres de l'ecriture syllabique ethiopienne (Ge'ez)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La fete du Nouvel An dawro, appelee Toki-bea, est la principale celebration culturelle annuelle. Les rites de mariage et les ceremonies associees aux cycles agricoles sont centraux dans la vie communautaire. Les traditions orales et la narration sont des elements fondamentaux de la transmission culturelle.",
+      "symbols": "Le Dinka (instrument a vent en bois, le plus long du monde selon la tradition locale, mesurant 4 a 5 metres, utilise en groupe de quatre) est le symbole culturel le plus remarquable des Dawro. Le mur defensif medieval Halala Kela symbolise la puissance et l'independance historique du Royaume de Dawro.",
+      "artsAndMusic": "Les Dawro sont renommes pour leurs traditions musicales, notamment le Dinka, un aerophone en bois de grande taille unique au monde. La danse, la narration orale et le tissage de paniers constituent des expressions artistiques majeures. La poterie est pratiquee par le clan specialise des Manaa.",
+      "spiritualities": "Les croyances traditionnelles animistes etaient universellement pratiquees avant la conquete de 1891. Aujourd'hui, la majorite de la population est chretienne orthodoxe ethiopienne ou protestante. Le catholicisme est egalement present. L'islam existe dans certaines communautes de marchands. Les pratiques rituelles traditionnelles persistent dans certains villages."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le Royaume de Dawro etait l'un des Etats omotiques independants les plus puissants et les mieux organises, avec une royaute centralisee et des limites territoriales etendues entre les fleuves Gojeb et Omo. Il est atteste comme souverain jusqu'a son integration dans l'Empire ethiopien en 1891-1893.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles avec les peuples voisins: Wolayita, Gamo, Gofa, Kambata, Kaffa et Konta. Les echanges commerciaux a longue distance incluaient le cafe, les epices, l'or et l'ivoire. Des refugies de nombreuses regions d'Ethiopie ont ete accueillis dans la zone Dawro au fil des siecles.",
+      "conflictsOrAlliances": "L'Etat de Dawro s'est maintenu independant des royaumes islamiques du Moyen Age (Dawaro/Dawaro ne doit pas etre confondu avec Dawro). La resistance a l'incorporation dans l'Empire ethiopien a echoue face aux troupes du general de Menelik II en 1891-1893.",
+      "diaspora": "Des migrations economiques vers les centres urbains ethiopiens (Addis-Abeba, Jimma, Hawassa) ont eu lieu depuis le XXe siecle. La construction du barrage de Gibe III a entraine des deplacements de populations riveraines."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1044000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/12839)",
+      "distributionByCountry": [{ "country": "ETH", "population": 1044000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Dawro people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dawro_people)",
+      "Dawro in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12839)",
+      "Dawro Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dawro_Zone)",
+      "Gamo-Gofa-Dawro language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
+      "The Case of the Dawro in Ethiopia – Jimma University Journals, 2021 (https://journals.ju.edu.et/index.php/ejssls/article/download/4751/1723/)",
+      "Overview of Dawuro Zone, Ethiopia – Scribd, 2025 (https://www.scribd.com/document/809814043/chapter1-4)",
+      "Dawro – Dawrotsuwa Language Info – Swordshare Map (https://map.swordshare.com/dwr)"
+    ]
   }
 }

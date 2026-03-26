@@ -1,23 +1,98 @@
 {
   "id": "PPL_ADJA",
-  "nameMain": "",
+  "nameMain": "Adja",
   "languageFamilyId": "FLG_BENOUECONGO",
   "currentCountries": ["TGO", "BEN"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Adja",
       "selfAppellation": "Adja / Adyá",
+      "exonyms": ["Aja", "Aja-Tado", "Adyá"],
+      "originOfExonyms": "Le nom Aja est la forme abrégée utilisée en anglais et dans la littérature scientifique; Adja est la graphie francophone. Le nom dérive de la ville ancestrale de Tado, sur le fleuve Mono, berceau du peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les deux formes Adja et Aja sont utilisées de façon interchangeable dans la littérature académique et les documents officiels du Bénin et du Togo.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "TGO, BEN",
+      "ethnoLinguisticGroup": "Gbe (sous-groupe Volta-Niger, famille Niger-Congo)",
+      "historicalRegion": "Royaume de Tado sur le fleuve Mono (sud du Togo actuel) — zone frontalière Togo-Bénin sur une bande d'environ 50 km de long et 30 km de large",
       "currentCountries": ["TGO", "BEN"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ajg)", "Archives du royaume de Tado"]
+    "ethnicities": [
+      "Alu — premiers habitants documentés de la région de Tado, ironforgerons traditionnels",
+      "Azanu (Za) — groupe d'origine soudanaise (royaume de Gao/Za) ayant rejoint les Alu à Azamé (Tado)",
+      "Aja-Ewe — migrants venus de l'est (rives ouest du Niger) ayant fusionné avec Alu et Azanu pour former le peuple Adja",
+      "Fon — branche issue des Adja ayant migré vers Abomey et créé le royaume du Dahomey",
+      "Ewe — branche issue des Adja ayant migré vers le sud-ouest, actuellement majoritaires au Togo et au Ghana",
+      "Allada — branche adja fondatrice du royaume d'Ardra (grande Ardra)",
+      "Gun (Porto-Novo) — branche adja fondatrice de la petite Ardra (Ajatché), actuelle Porto-Novo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancêtres des Adja ont migré depuis la confluence Niger-Bénoué, foyer originel des locuteurs Volta-Niger, avant le XIe siècle avant notre ère. Ils établirent vers l'an 1000 le royaume de Tado, considéré comme le berceau de tous les peuples Gbe. Des données archéologiques indiquent une occupation humaine de la région dès 3700 avant notre ère environ.",
+      "formationPeriod": "La formation du peuple Adja résulte de la fusion de trois groupes : les Alu (ironforgerons autochtones), les Azanu (migrants soudanais du royaume de Gao vers 1010 après J.-C.) et les Aja-Ewe (migrants venus de l'est vers le XIIIe siècle). Le processus de fusion s'achève au XIIIe siècle avec la transformation d'Azamé en Tado.",
+      "migrationRoutes": [
+        "Migration initiale depuis la confluence Niger-Bénoué vers le sud-ouest avant le XIe siècle avant J.-C.",
+        "Arrivée des Azanu (Za/Gao) depuis le Sahel soudanais vers 1010 après J.-C., traversant la forêt guinéenne",
+        "Arrivée des Aja-Ewe depuis les rives ouest du Niger (Nigeria actuel) vers le XIIIe siècle",
+        "Dispersion depuis Tado vers Abomey (Fon), Porto-Novo (Gun), Allada (c. 1600) et vers le sud-ouest (Ewe)"
+      ],
+      "historicalSettlementZones": [
+        "Tado (vallée du Mono, sud Togo) — capitale ancestrale",
+        "Zone frontalière Togo-Bénin, bande littorale de 50 km sur 30 km",
+        "Plaine côtière sud du Bénin (migrations récentes vers Cotonou)",
+        "Lomé et zones côtières du Togo",
+        "Présence diasporique à Lagos (Nigeria) et Libreville (Gabon)"
+      ],
+      "unificationsOrDivisions": "Vers 1600, trois frères se partagent le pouvoir sur le territoire adja : Kokpon fonde la grande Ardra (Allada), Do-Aklin crée Abomey (futur Dahomey), Te-Agbanlin fonde la petite Ardra (Porto-Novo). Cette tripartition marque la dispersion des élites adja et la naissance de peuples distincts. Le royaume d'Allada est conquis par le Dahomey en 1724.",
+      "externalInfluences": "Pression du royaume d'Oyo (voisin yoruba) provoquant la construction de remparts défensifs à Tado. Invasion française (1893) mettant fin à l'hégémonie adja-dahomeenne. Traite transatlantique des esclaves : environ 8 000 captifs adja vendus en Amérique après 1724, dont beaucoup débarqués à Haïti (parents de Toussaint Louverture selon certaines sources).",
+      "majorHistoricalEvents": "Fondation du royaume de Tado vers 1000 après J.-C.; apogée confédérale entre le XVe et le XVIIe siècle couvrant du fleuve Volta au Kouffo; épidémie de variole réduisant la population adja par rapport aux branches Ewe et Fon; conquête du royaume d'Allada par le Dahomey en 1724; conquête française du Dahomey en 1893."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie héréditaire avec le roi Anyigbãfio (roi de la Terre) à la tête du royaume de Tado. Le trône paramount (Awormezi) de Tado est l'ancêtre symbolique du trône Anlo du Ghana. Organisation en chefferies issues de la tripartition du XVIIe siècle. Les communautés adja actuelles sont gouvernées par des chefs de village (togbui) et des conseils d'anciens.",
+      "clanOrganization": "Organisation en trois grandes composantes historiques : les Alu, les Azanu et les Aja-Ewe, chacune reconnaissable à ses lignages fondateurs. Les lignages (afi) structurent l'accès à la terre et la succession au pouvoir.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires organisent la transmission de la chefferie et des droits fonciers. Le mariage est exogame au sein du lignage. La mémoire lignagère conserve les récits de migration depuis Tado.",
+      "religiousAuthority": "Les prêtres du Vodun constituent une autorité religieuse parallèle au pouvoir politique. Les cultes vodun locaux (Sakpata, Mami Wata, Legba) sont étroitement liés aux chefferies. Selon une source, le vodun trouve son origine chez les Adja, dont les pratiques rituelles se sont diffusées vers les Fon, les Ewe et jusque dans les Amériques via la traite."
+    },
+    "languages": {
+      "mainLanguage": "Adja-Gbe (Aja-Gbe)",
+      "isoCodes": ["ajg"],
+      "dialects": [
+        "Tàgóbé — dialecte du Togo uniquement",
+        "Dògóbè — dialecte du Bénin uniquement",
+        "Hwègbè — dialecte commun aux deux pays"
+      ],
+      "vehicularRole": "La langue adja est parlée en première langue par l'ensemble de la communauté. Beaucoup d'Adja sont trilingues, pratiquant aussi le français et le fon (lingua franca du Bénin meridional); les Adja vivant au Togo utilisent l'éwé comme seconde langue véhiculaire. Taux de alphabétisation en adja estimé à 1-5%."
+    },
+    "culture": {
+      "majorRites": "Rites vodun liés aux divinités locales (Sakpata, dieu de la terre et de la variole; Legba, dieu des carrefours; Mami Wata, déesse des eaux). Cérémonies funéraires élaborées associant deuil communautaire et invocations aux ancêtres. Rites agricoles de bénédiction des semailles et de thanksgiving après la récolte. Pratiques divinatoires traditionnelles (Fa/Ifa hérité des échanges avec les Yoruba via Kétou).",
+      "symbols": "Le tabouret royal à cinq pieds (symbole d'autorité royale, commun au trône de Tado et à celui des Anlo du Ghana); le serpent royal (Dan Ayido Houedo), associé à la prospérité et à la continuité du pouvoir dans la tradition Gbe.",
+      "artsAndMusic": "Chants et danses rituels vodun associant percussions (tambours acouvain et sato), flûtes et grelots. Broderies et tissages de pagnes traditionnels à motifs géométriques. Art de la poterie, notamment pour les offrandes rituelles. Tradition orale riche : proverbes, contes (hwanô) et chants épiques relatant la fondation de Tado et les migrations.",
+      "spiritualities": "Animisme-vodun syncrétique : croyance en un panthéon de divinités (vodun), en des esprits ancestraux (togbui) et en des forces naturelles. L'islam et le christianisme sont présents mais le vodun demeure central dans la vie rituelle. Les traditions adja ont profondément influencé les religions afro-américaines (vaudou haïtien, candomblé brésilien)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Tado (v. 1000-XIXe siècle) : confédération de cités-États couvrant à son apogée du fleuve Volta au Kouffo; décrit par le Jésuite Alonso de Sandoval en 1627 comme un puissant royaume. Royaume d'Allada (Grande Ardra), fondé v. 1600, conquis par le Dahomey en 1724. Petite Ardra (Ajatché, future Porto-Novo), fondée v. 1600 par Te-Agbanlin.",
+      "relationsWithNeighbors": "Relation matricielle avec les Ewe (qui se considèrent issus de Tado) et les Fon (dont le Dahomey fut fondé par une branche adja). Pression constante du royaume d'Oyo (Yoruba) nécessitant des fortifications défensives. Échanges culturels avec les Ga-Adangbe du Ghana. Coexistence avec les Mahi et les Gun.",
+      "conflictsOrAlliances": "Conquête du royaume d'Allada par le Dahomey (Fon) en 1724 avec massacre de milliers d'Adja et vente de 8 000 captifs dans le Nouveau Monde. Résistance prolongée à l'expansionnisme dahoméen. Conquête française du Dahomey en 1893 mettant fin à l'indépendance politique adja.",
+      "diaspora": "Présence adja significative dans les centres urbains côtiers (Cotonou, Lomé, Lagos, Libreville) due aux migrations récentes pour accès aux terres agricoles et emplois urbains. Héritage adja important dans les Amériques (vaudou haïtien, candomblé, Santería cubaine) transmis via les esclaves déportés aux XVIIe-XVIIIe siècles."
+    },
+    "demography": {
+      "totalPopulation": 1300000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur Ethnologue (SIL International, 2024, code ajg) signalant plus d'un million de locuteurs; Peoples Dispatch (2025) cite 1,3 million de locuteurs en Afrique de l'Ouest; Wikipedia Aja people (en) estime environ 500 000 Adja stricto sensu dans la zone frontalière Togo-Bénin, la population totale incluant la diaspora urbaine étant plus élevée.",
+      "distributionByCountry": [
+        { "country": "BEN", "population": 750000 },
+        { "country": "TGO", "population": 450000 },
+        { "country": "NGA", "population": 60000 },
+        { "country": "GAB", "population": 40000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia, Aja people (en). https://en.wikipedia.org/wiki/Aja_people (consulté 2025)",
+      "Wikipedia, Adja language (en). https://en.wikipedia.org/wiki/Adja_language (consulté 2025)",
+      "Ethnologue, Aja (AJG). https://www.ethnologue.com/language/ajg/ (consulté 2025)",
+      "Joshua Project, Aja in Togo. https://joshuaproject.net/people_groups/10158/TO (consulté 2025)",
+      "PeopleGroups.org, Adja of Togo (PGID: PG014304). https://peoplegroups.org/people_groups/pg014304/ (consulté 2025)",
+      "Peoples Dispatch, School in Benin recovers ancestral language (2025). https://peoplesdispatch.org/2025/08/29/school-in-benin-recovers-ancestral-language-in-the-classroom-to-combat-colonial-legacy/",
+      "Pazzi, Roberto. Introduction à l'histoire de l'aire culturelle ajatado. Lomé : INASL, 1976."
+    ]
   }
 }

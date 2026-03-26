@@ -6,65 +6,106 @@
   "content": {
     "appellations": {
       "mainName": "Kru",
-      "selfAppellation": "Kru",
+      "selfAppellation": "Klao",
       "exonyms": [
-        "« Kru » (terme utilisé par les Européens), parfois appelés « Krou » (terme générique)"
+        "Kru (anglicisation de Klao, terme utilisé par les Européens)",
+        "Krao, Kroo, Krou (variantes orthographiques européennes)",
+        "Krumen (terme utilisé pour les marins kru recrutés par les Européens)"
       ],
+      "originOfExonyms": "Le terme Kru est une anglicisation du nom propre Klao, auto-désignation de ce peuple. Les marins et commerçants européens rencontrés sur la côte ouest-africaine à partir du 15e siècle ont transcrit Klao en Kru. Le terme Krumen désignait spécifiquement les hommes kru engagés comme marins libres sur les navires européens.",
+      "whyProblematic": "Le terme Kru est un terme générique englobant plusieurs peuples distincts partageant une parenté linguistique. Il existe une ambiguïté entre les Klao/Kru au sens strict (groupe ethnique précis) et les peuples kru au sens large (branche linguistique incluant Bété, Grebo, Dida, Bassa, Krahn et d'autres). Chaque village était historiquement un État indépendant avec peu de communication intercommunautaire.",
+      "contemporaryUsage": "Le terme Kru est couramment utilisé en anglais et en français pour désigner ce peuple. Les locuteurs se désignent eux-mêmes comme Klao. Les Kru représentent environ 7 % de la population libérienne et constituent l'un des principaux groupes ethno-politiques du Libéria avec les Krahn et les Mano.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Krou occidental",
-      "historicalRegion": "Libéria, CIV",
+      "ethnoLinguisticGroup": "Krou occidental (branche Kru du Niger-Congo)",
+      "historicalRegion": "Côte du Kru (Kru Coast) — littoral sud du Libéria et sud-ouest de la Côte d'Ivoire",
       "currentCountries": ["CIV", "LBR"]
     },
     "ethnicities": [
-      "Kru du Libéria",
-      "Kru de Côte d'Ivoire",
-      "Sous-groupes régionaux"
+      "Klao (Kru proprement dit) — groupe côtier central du Libéria",
+      "Grebo (Glebo) — groupe côtier de l'est du Libéria et de la région de Tabou (CIV)",
+      "Bété — groupe de l'ouest de la Côte d'Ivoire, important sous-groupe culturel",
+      "Dida — groupe de la région de Lakota en Côte d'Ivoire",
+      "Krahn (Wee en CIV) — groupe de l'intérieur, frontière Libéria-CIV",
+      "Guéré (Wobé) — groupe de Côte d'Ivoire (ouest et centre-ouest)",
+      "Bassa — groupe côtier du centre du Libéria avec propre système d'écriture (script Vah)",
+      "Neyo, Bakwé, Sapo — sous-groupes côtiers et de forêt"
     ],
     "origins": {
-      "ancientOrigins": "Les Kru sont originaires de la région du Libéria et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe krou occidental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres peuples krou.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Kru sont originaires des régions de forêt du nord-est, d'où ils ont migré vers la côte ouest-africaine entre le 15e et le 17e siècle selon les traditions orales. Lors de leurs premiers contacts documentés avec les Portugais au 15e siècle, trois groupes distincts coexistaient sur la côte du Kru : les Grebo (Ceux qui ont traversé l'eau), les Sapo et les Kru proprement dits, formant des fédérations lâches de clans à ancêtres communs plutôt que des tribus au sens strict.",
+      "formationPeriod": "L'identité kru s'est structurée au cours des 15e-17e siècles lors de l'installation sur la côte libérienne. Selon les traditions orales du 19e siècle, les Klao descendent d'un groupe intérieur appelé Claho vivant près de la rivière Poor environ 100 à 150 ans avant leur migration vers la côte, où ils fondèrent les villes de Little Kroo, Setra Kroo, Kroo-Bar, Nana Kroo et King Will's Town.",
+      "migrationRoutes": [
+        "Migration du nord-est vers la côte libérienne entre le 15e et le 17e siècle",
+        "Dispersion côtière de Monrovia jusqu'à la rivière Bandama en Côte d'Ivoire",
+        "Établissement de colonies dans les ports de Sierra Leone jusqu'à l'embouchure du Congo"
+      ],
+      "historicalSettlementZones": [
+        "Côte du Kru (Kru Coast) — littoral sud-est du Libéria, de Sinoe à la frontière ivoirienne",
+        "Cap Palmas et région de Grand Cess (Grebo)",
+        "Région de Tabou et littoral sud-ouest de la Côte d'Ivoire",
+        "Régions intérieures : Nimba, Grand Gedeh (Krahn)",
+        "Communautés diasporiques dans les ports de Freetown, Dakar, Lagos, Simon's Town"
+      ],
+      "majorHistoricalEvents": "Premiers contacts avec les Portugais au 15e siècle sur la Kru Coast. Engagement massif comme marins libres (Krumen) sur les navires européens à partir de la fin du 18e siècle. Résistance aux colons du Maryland qui tentaient de contrôler le commerce en 1856, aux côtés des Grebo. Révolte Kru de 1915 contre les autorités libériennes, réprimée brutalement. Les Kru ont été parmi les seuls peuples d'Afrique de l'Ouest à résister avec succès à la traite des esclaves, se tatouant le front d'indigo pour se signaler comme hommes libres."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en petites républiques clananiques (commonwealths) décentralisées. Chaque village constituait un État indépendant gouverné par un chef héréditaire représentant la communauté dans ses relations avec l'extérieur. Le pouvoir réel reposait sur un conseil d'anciens portant des bracelets de fer aux jambes comme insigne de leur autorité. Un président (chef religieux) gardait les symboles nationaux et sa maison servait de sanctuaire.",
+      "clanOrganization": "Organisation en clans patrilinéaires avec 48 sous-sections recensées au Libéria. Les villages maintiennent leurs liens par présomption de descendance commune, renforcée par des échanges cérémoniels et des dons. La propriété personnelle est détenue collectivement par chaque famille ; les terres sont communautaires et les droits de culture cessent si la terre n'est pas travaillée.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires structurant l'identité sociale et les droits fonciers. Les ancêtres communs fondent l'appartenance clanique. Les familles forment des unités économiques de base avec propriété collective des biens.",
+      "religiousAuthority": "Le président (chef religieux) détient l'autorité spirituelle et garde les symboles sacrés de la communauté. Les Deya sont des spécialistes formés qui entrent en contact avec les entités spirituelles pour résoudre des problèmes médicaux et spirituels, utilisant des remèdes pharmaceutiques et rituels. La croyance en Nyesoa, dieu créateur suprême, coexiste avec le culte des esprits territoriaux et des gardiens familiaux."
     },
     "languages": {
-      "mainLanguage": "Kru",
-      "vehicularRole": "Le kru est parlé par la majorité des Kru. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Klao (Kru)",
+      "isoCodes": ["klu"],
+      "dialects": [
+        "Klao (Kru proprement dit) — dialecte côtier central du Libéria",
+        "Grebo — dialecte de l'est du Libéria et de la région de Tabou",
+        "Bété — dialecte principal de Côte d'Ivoire (plusieurs variétés : Bété de Daloa, de Soubré)",
+        "Dida — dialecte de la région de Lakota (CIV)",
+        "Krahn/Wee — dialecte de la frontière libéro-ivoirienne"
+      ],
+      "vehicularRole": "Le klao (klu) est la langue propre des Kru au sens strict, avec environ 429 000 locuteurs au Libéria et 34 000 en Côte d'Ivoire selon Joshua Project. Les langues kru (branche du Niger-Congo) sont parlées par l'ensemble de la famille linguistique kru. L'anglais est langue officielle au Libéria et langue d'éducation pour les Kru libériens ; le français remplit ce rôle en Côte d'Ivoire. Les Kru ont historiquement servi d'intermédiaires linguistiques sur la côte ouest-africaine."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à la pêche et à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à la pêche et à l'agriculture, symboles culturels kru, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites d'initiation à l'âge adulte marquant le passage de la jeunesse à la maturité sociale, organisés au niveau du village. Cérémonies de mariage impliquant des échanges de dons entre familles et consolidant les alliances claniques. Rites funéraires accompagnés de commémoration des ancêtres et de rituels de protection. Cérémonies liées à la pêche et à l'agriculture, activités économiques fondamentales des communautés côtières.",
+      "symbols": "Le tatouage facial à l'indigo (front et arête du nez) constituait le symbole identitaire fondamental des Kru, les distinguant comme hommes libres lors de la période de la traite atlantique. Les bracelets de fer portés par les anciens symbolisent l'autorité traditionnelle. La pirogue et les outils de pêche sont des symboles culturels centraux témoignant de la vocation maritime du peuple kru.",
+      "artsAndMusic": "Tradition de poésie orale et de proverbes, collectés notamment par Melville J. Herskovits auprès de Sie Tagbwe dans les années 1930. Artisanat de la pirogue (construction de canots de haute mer pour la navigation atlantique). Musique traditionnelle à percussions accompagnant les cérémonies claniques. Danse collective lors des cérémonies d'initiation et de mariage. Tissage et poterie traditionnels.",
+      "spiritualities": "Croyance en Nyesoa, dieu créateur suprême et distant. Culte des esprits de territoires (esprits de la terre et de la mer) et des gardiens familiaux (âmes des ancêtres défunts). Les Deya, spécialistes rituels formés, servent d'intermédiaires avec le monde spirituel pour soigner les maladies et résoudre les conflits. Syncrétisme contemporain avec le christianisme, largement répandu depuis la période coloniale et l'activité missionnaire au Libéria."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kru dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation traditionnelle en républiques villageoises décentralisées et non en royaumes centralisés. Chaque village était un État indépendant avec son propre chef héréditaire et son conseil d'anciens. Les trois groupes fondateurs de la Kru Coast (Grebo, Sapo, Kru) formaient des fédérations lâches sans autorité centrale unificatrice.",
+      "relationsWithNeighbors": "Relations commerciales et parfois conflictuelles avec les Mande de l'intérieur. Alliance avec les Grebo lors de la résistance aux colons du Maryland en 1856. Relations avec les peuples voisins (Bassa, Vai, Gola) structurées par le commerce côtier et les alliances matrimoniales. Tensions avec le gouvernement du Libéria lors de la révolte de 1915.",
+      "conflictsOrAlliances": "Résistance réussie à la traite des esclaves atlantique : les Kru refusaient d'être réduits en esclavage et se tatouaient pour se signaler comme hommes libres. Résistance aux colons du Maryland avec les Grebo (1856). Révolte Kru de 1915 contre l'administration libérienne, réprimée brutalement par des troupes libériennes et des représailles américaines. Engagement comme marins libres (Krumen) sur les navires britanniques, américains et hollandais du 18e au 20e siècle.",
+      "diaspora": "Vaste diaspora côtière établie historiquement dans les ports de Freetown (Sierra Leone), Lagos (Nigeria), Dakar (Sénégal) jusqu'à l'embouchure du Congo. Communautés de marins (Kroomen) dans les ports britanniques, notamment Kru Town à Liverpool. Kroomen actifs dans la Royal Navy britannique de 1820 à 1924. Vingt à trente Kroomen enterrés dans le cimetière de Seaforth à Simon's Town (Afrique du Sud). Migration vers les grandes villes de Monrovia et Abidjan aux 20e et 21e siècles."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 480000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025) : 429 000 au Libéria, 34 000 en Côte d'Ivoire, environ 16 000 en Sierra Leone. Recensement libérien : les Kru représentent 6 % de la population (209 993 personnes selon Minority Rights Group, 2024). Total estimé pour l'ensemble du groupe Kru au sens strict : environ 480 000.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 430000,
+          "note": "Comtés côtiers du sud-est : Sinoe, Grand Kru, Maryland, Rivercess, Grand Gedeh"
+        },
+        {
+          "country": "CIV",
+          "population": 45000,
+          "note": "Région de la Tabou et littoral sud-ouest (région du Bas-Sassandra)"
+        },
+        {
+          "country": "SLE",
+          "population": 5000,
+          "note": "Communauté diasporique historique à Freetown"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kru language (klu)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples krou"
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Minority Rights Group International — Liberia Country Profile (2024). https://minorityrights.org/country/liberia/",
+      "Joshua Project — Kru in Liberia. https://joshuaproject.net/people_groups/11251/LI",
+      "101 Last Tribes — Kru people. https://www.101lasttribes.com/tribes/kru.html"
     ]
   }
 }

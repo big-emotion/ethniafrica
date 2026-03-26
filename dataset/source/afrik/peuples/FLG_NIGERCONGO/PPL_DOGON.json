@@ -2,87 +2,110 @@
   "id": "PPL_DOGON",
   "nameMain": "Dogon",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MLI"],
+  "currentCountries": ["MLI", "BFA"],
   "content": {
     "appellations": {
       "mainName": "Dogon",
       "selfAppellation": "Dogon",
-      "exonyms": ["Dogon (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Habe (exonyme peul signifiant etranger ou paysan)",
+        "Kado (terme utilise par certains voisins)"
+      ],
+      "originOfExonyms": "Le terme Habe est un exonyme peul signifiant etranger ou non-musulman (paysan), utilise peiorativement par les Peuls pour designer les Dogon qui refuserent l'islamisation. Les references anciennes utilisent parfois Habe a la place de Dogon. Le terme Dogon est aujourd'hui universellement adopte dans la litterature scientifique et par la communaute elle-meme.",
+      "whyProblematic": "Les langues dogon constituent une famille independante avec environ 12 langues et 50 sous-dialectes tres divergents, dont beaucoup ne sont pas mutuellement intelligibles. L'unite ethnique Dogon est culturelle et territoriale plutot que strictement linguistique. Le terme Dogon recouvre donc des groupes dont les langues sont aussi eloignees que des langues differentes.",
+      "contemporaryUsage": "Dogon est le terme universellement utilise en français, anglais et dans les medias internationaux. C'est aussi le terme officiel utilise par les institutions maliennes. Le toro so (langue de la falaise) est la variete standardisee enseignee dans les ecoles depuis 2000, l'une des treize langues officielles du Mali.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Dogon (branche isolée du Niger-Congo)",
-      "historicalRegion": "Plateau de Bandiagara, MLI",
-      "currentCountries": ["MLI"]
+      "ethnoLinguisticGroup": "Dogon (branche independante de la famille Niger-Congo, sans relation proche avec d'autres langues)",
+      "historicalRegion": "Plateau de Bandiagara (Mali), falaise de Bandiagara (escarpement sandstone de 150 km, jusqu'a 500 m de haut), plaines sablonneuses de Seno-Gondo et Hauts-Plateaux de Bandiagara",
+      "currentCountries": ["MLI", "BFA"]
     },
     "ethnicities": [
-      "Dogon de Bandiagara",
-      "Dogon de Sangha",
-      "Dogon de Sanga",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Tintam",
-      "Dogon de Yougo",
-      "Dogon de Nombori",
-      "Dogon de Kani-Bonzon",
-      "Dogon de Tireli",
-      "Dogon de Banani",
-      "Dogon de Dourou",
-      "Dogon de Yendouma",
-      "Dogon de Bongo",
-      "Dogon de Kani-Kombole",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Kani-Kombolé",
-      "Dogon de Kani-Kombolé"
+      "Dogon de la falaise (escarpement de Bandiagara, villages troglodytes historiques)",
+      "Dogon du plateau (Bandiagara Highlands, nord-ouest de la falaise)",
+      "Dogon des plaines (Seno-Gondo, au sud-est de la falaise)",
+      "Dogon de Sangha (village haut de la falaise, bien etudie par Marcel Griaule)",
+      "Dogon de Sanga-Ogol (sous-groupe du plateau, tradition du Sigui bien documentee)",
+      "Dogon de Youga Dogorou (village de depart du pelerinage Sigui, extreme sud-ouest)",
+      "Groupe Bangime (environ 1 500 personnes dans 7 villages du sud Mali, langue isolat pre-Dogon)"
     ],
     "origins": {
-      "ancientOrigins": "Les Dogon sont originaires du plateau de Bandiagara au Mali. Leur présence dans la région remonte à plusieurs siècles. Peuple montagnard à forte tradition cosmologique. Ils font partie de la famille linguistique Niger-Congo (branche Dogon isolée).",
-      "unificationsOrDivisions": "Organisation en confédérations distinctes mais partageant une identité culturelle et linguistique commune. Formation de royaumes Dogon.",
-      "externalInfluences": "Contacts avec les peuples voisins (Peuls, Bambara), influence de l'islam et des traditions animistes."
+      "ancientOrigins": "Les Dogon ne sont pas les premiers habitants du plateau de Bandiagara. Les Toloy occupaient la region des le 3e siecle avant J.-C. Les Tellem (ceux que nous avons trouves en dogon) s'y installerent au 11e siecle, laissant des vestiges artistiques dans les grottes de la falaise. Les Dogon arrivent entre le 14e et le 16e siecle, probablement depuis la region de Mande (sud-ouest de l'escarpement, pres de Bamako), apres avoir fui les persecutions religieuses et les djihads islamiques qui les auraient conduit a etre captures comme esclaves (classified as dar al-harb, territoire de guerre). Certains historiens debattent d'une origine possible en Egypte ou en Libye avant une migration vers le Burkina Faso actuel.",
+      "formationPeriod": "Etablissement des villages Dogon sur la falaise et le plateau de Bandiagara entre le 14e et le 16e siecle, dates confirmees par les traditions orales. Le premier etablissement documente est a Kani-Na (extreme sud-ouest de la falaise). Les Dogon remonterent progressivement vers le nord, atteignant la region de Sanga au 15e siecle. L'isolement geographique du plateau contribua a la preservation de leur culture et de leur cosmologie unique.",
+      "migrationRoutes": [
+        "Origine probable dans la region de Mande (sud-ouest, pres de Bamako) ou plus loin a l'ouest via le fleuve Niger",
+        "Premier etablissement a Kani-Na (extreme sud-ouest de l'escarpement de Bandiagara)",
+        "Migration progressive vers le nord le long de la falaise (14e-16e siecle)",
+        "Arrivee dans la region de Sanga (15e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Escarpement de Bandiagara (falaise de 150 km, villages troglodytes et villages de la falaise)",
+        "Plateau de Bandiagara (Bandiagara Highlands, nord-ouest)",
+        "Plaines sablonneuses de Seno-Gondo (sud-est de la falaise)",
+        "Region de Sangha-Ogol et Youga Dogorou (centre-sud de la falaise)",
+        "Petites communautes au Burkina Faso (zone frontaliere)"
+      ],
+      "unificationsOrDivisions": "Pas de structure politique centralisee. Organisation en confederations de villages independants, chacun dirige par un Hogon (chef spirituel et politique). La culture et la cosmologie commune constituent le vecteur d'unite. Les langues dogon sont si divergentes que les groupes de la falaise ne comprennent parfois pas ceux des plaines. Les Dogon furent les derniers a perdre leur independance et a tomber sous domination française en Afrique de l'Ouest.",
+      "externalInfluences": "Persecutions islamiques (djihads, razzias d'esclaves) pendant environ 1 000 ans, forcant les Dogon a des positions defensives inaccessibles sur la falaise. Contacts pacifiques avec les Peuls, Bambara et Dyula (marches, commerce d'oignons, de grains, de coton et de tabac). Impact de l'anthropologue Marcel Griaule (sejour de 15 ans, enseignements d'Ogotemmeli en 1946) qui fit connaitre la cosmologie Dogon au monde entier. Tourisme contemporain important (les Dogon sont l'une des destinations ethnographiques les plus visitees d'Afrique).",
+      "majorHistoricalEvents": "Occupation du plateau de Bandiagara (14e-16e siecle). Resistance aux persecutions islamiques et aux razzias d'esclaves pendant des siecles. Dernier peuple d'Afrique de l'Ouest a perdre son independance et a etre place sous domination française. Travaux de Marcel Griaule (1931-1956) qui revelerent la cosmologie Dogon au monde scientifique. Inscription du pays Dogon sur la liste du patrimoine mondial de l'UNESCO (1989). Insecurite croissante (conflits lies aux groupes jihadistes du Sahel depuis 2018) avec destructions de villages et deplacement de populations."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaumes Dogon. Système de conseils d'anciens (Hogon) pour la gouvernance. Société très structurée.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Système de classes d'âge.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels (Hogon), des prêtres animistes, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme patrilineaire : chaque village ou famille elargie (guinna, jusqu'a 100 personnes) est dirige par un aine (fils le plus age du lignage local). Le Hogon est le chef politique et spirituel, elu parmi les hommes les plus ages du lignage dominant. Le Hogon suit une initiation de 6 mois (ne se lave pas, ne se rase pas, porte des vetements blancs, est soigne par une vierge). Apres l'initiation, il porte un bonnet rouge et un bracelet avec une perle sacree, vit seul, et est visite chaque nuit par le serpent sacre Lebe qui le nettoie et lui transmet la sagesse.",
+      "clanOrganization": "Structure en lignages patrilineaires, groupes en villages. Les castes incluent les forgerons et les travailleurs du cuir, maintenus a une distance sociale specifique. Les quatre grandes familles de clans fondatrices (Dyon, Ana, Ono, Domno) sont reconnues dans les traditions orales. Chaque village comprend environ 44 maisons autour de la ginna (maison du chef du lignage).",
+      "ageClassSystems": "Groupes de circumcision par tranches d'age : les garcons de 9 a 12 ans sont circoncis en groupes (par un forgeron), puis passes un mois dans une hutte d'isolation hors du village, nus (duñe vivant). Societe des Masques (Awa) : tous les hommes inities (sauf certaines castes) ; obligations, etiquette et apprentissage du sigi so (langue secrete).",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, les droits fonciers et les alliances. Le systeme de sects (Amma, Sigui, Binou, Lebe, Jumeaux, Mono) structure la vie religieuse au sein et a travers les lignages. Le chef de famille (responsable de la guinna) controle les ressources et les decisions collectives.",
+      "religiousAuthority": "Le Hogon est a la fois chef politique et spirituel. Il est le representant d'Amma (dieu createur) et le gardien de Lebe (premier ancetre mortel devenu serpent). Les chefs des societes de masques (Awa) exercent une autorite rituelle distincte. Les anciens des sects (Binou, Sigui) preservent les connaissances cosmologiques. Syncrétisme avec l'islam (environ 35 % de la population a adopte l'islam)."
     },
     "languages": {
-      "mainLanguage": "Dogon",
-      "vehicularRole": "Le dogon est parlé par la majorité des Dogon. Le français et le bambara sont également utilisés."
+      "mainLanguage": "Dogon (toro so — variete standardisee officielle du Mali)",
+      "isoCodes": ["dts", "djm", "dto", "dbu", "dgi"],
+      "dialects": [
+        "Toro So (dts) — variete standard officielle, enseignee dans les ecoles, parlee sur la falaise de Bandiagara ; Toro Tegu (dtt) et autres sous-varietes",
+        "Jamsay (djm) — variete de prestige, utilisee pour les emissions radio, parlee a l'est du plateau",
+        "Tommo So (dto) — dialecte conservateur parle entre Kasa et Bandiagara (40 000 a 60 000 locuteurs)",
+        "Bondum Dom / Najamba-Kindige (dbu) — langues de la falaise occidentale",
+        "Dogon septentrional (dgi) — langues du nord du plateau",
+        "Bangime — isolat linguistique pre-Dogon (environ 1 500 locuteurs dans 7 villages du sud Mali, non apparente)"
+      ],
+      "vehicularRole": "Environ 12 langues distinctes et 50 sous-dialectes, beaucoup non mutuellement intelligibles. Population totale Dogon estimee entre 400 000 et 800 000 personnes. Le toro so est la variete standardisee et enseignee dans les ecoles depuis 2000. C'est l'une des 13 langues nationales officielles du Mali. Le français est langue officielle du Mali. Le bambara est la lingua franca nationale."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Rituels cosmologiques complexes",
-      "source_1": "Cérémonies de masques (Sigui)",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "source_4": "Funérailles traditionnelles",
-      "Symboles": "Masques traditionnels, architecture troglodyte, symboles cosmologiques",
-      "Arts et musique": "",
-      "source_5": "Masques et sculptures traditionnelles",
-      "source_6": "Musique traditionnelle",
-      "source_7": "Danse traditionnelle",
-      "source_8": "Architecture troglodyte",
-      "source_9": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Traditions animistes fortes, syncrétisme avec l'islam. Cosmologie complexe."
+      "majorRites": "Sigui : grand rituel cyclique se deroulant tous les 60 ans (derniere session 1967-1973, prochaine vers 2027). Il symbolise la mort du premier ancetre jusqu'a ce que l'humanite acquit la parole. Grande procession de village en village (duree totale plusieurs annees) ; tous les hommes portent des masques et dansent ; la Societe du Sigui (Olubaru) se prepare en vivant cachee pendant 3 mois ; utilisation du sigi so (langue secrete ; les femmes interdites). Le Grand Masque (Mere des Masques) est nouvellement cree tous les 60 ans. Dama (funerailles) : deux ceremonies distinctes — la premiere immediatement apres le deces ; la seconde (plus rare, des annees plus tard) est une mascarade guidant les ames vers le repos. Masques specifiques : Yana Gulay (femme peule, coton et coquillages), Satimbe (ancetres feminins), Sirige (tres grand, pour les hommes vivants lors du Sigui), Kanaga (dance pres du bundukamba). Lebe : celebration annuelle de 3 jours en l'honneur de Lebe Serou (premier mortel devenu serpent sacre) ; le Hogon offre du mil cuit (8 + 1 grains) sur un autel conique ; les hommes visitent les autels Binou et dansent 3 fois autour de l'autel de Lebe avec biere de mil. Circoncision des garcons (9-12 ans) avec mois d'isolation post-ceremonielle.",
+      "symbols": "Le masque Sirige (grand masque de la Societe des Masques, plusieurs metres de haut) est le symbole identitaire le plus reconnaissable des Dogon. L'architecture troglodyte (greniers et maisons dans les fissures de la falaise, en banco) est un symbole de la resilience et du genie architectural Dogon. La cosmologie Nommo (esprits de l'eau, hermaphrodites, peau verte, corps mi-humain mi-serpent) est au centre du systeme symbolique. Les deux jumeaux Nommo symbolisent la dualite et la perfection perdue (twinness/androgyny). Les 266 signes du systeme cosomologique Dogon (astronomie, calendrier, anatomie) temoignent d'une sophistication intellectuelle remarquable.",
+      "artsAndMusic": "Sculpture sur bois : statuettes anthropomorphes et masques rituels (Awa, Sirige, Kanaga, Satimbe, Yana Gulay) d'une grande valeur artistique et internationale. Architecture : greniers cylindriques a toit conique en banco (argile), maisons dans les parois de la falaise, portes sculptees avec scenes mythologiques. Musique instrumentale : flutes, luths, percussions variees. Danses masquees de l'Awa : danseurs sur echasses, acrobaties. Chants rituels (sigi so, langue secrete du Sigui). Artisanat : poterie, forgeron (caste hereditaire), tissage. Onions de la falaise (maraiachage sur terrasses) comme production agricole emblematique.",
+      "spiritualities": "Amma (Ama) : dieu supreme createur qui crea la Terre en tant que femme dotee d'un principe divin feminin. La secte Amma offre chaque annee du mil cuit sur un autel conique colore en blanc. Les Nommo (Nummo) : esprits de l'eau ancestraux ; peau et cheveux verts, corps mi-humain mi-serpent, yeux rouges, langues fourchues, hermaphrodites ; symbolises par le Soleil, la couleur rouge et les symboles feminins. Mythologie de la perte de la dualite : le Chacal (male, sans ame) causa le desordre ; la circoncision et l'excision remedient a cette dualite perdue (enlever le prepuce feminin et le clitoris masculin symboliquement). Lebe Serou : premier mortel, devenu serpent sacre ; veneré dans les maisons du Hogon. Systeme de sects complementaires : Amma, Sigui, Binou (animaux totemiques), Lebe, Jumeaux (jumeaux sacres), Mono. Syncrétisme avec l'islam (environ 35 %) et le christianisme (minoritaire)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora dogon dans les grandes villes maliennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaumes ou de chefferies centralises. Les Dogon sont organises en villages independants diriges par des Hogon. L'absence de structure centralisee contribua a leur resilience face aux tentatives de domination externe. Les Tindaamba (dans certains villages Dogon) maintiennent les traditions pre-Dogon des Tellem.",
+      "relationsWithNeighbors": "Commerce pacifique depuis la fin du 20e siecle : marches tous les 4 jours avec les Peuls, Dyula ; vente d'oignons, grains, coton, tabac ; achat de sucre, sel, biens europeens, lait, beurre, poisson seche. Relations historiques tendues avec les voisins islamiques (Peuls, Mossi, Gurma, Bobo, Busa, Yoruba) qui menaient des razzias d'esclaves (dar al-harb) et persecutions religieuses. Le masque Yana Gulay parodie la femme peule, temoignant des tensions historiques.",
+      "conflictsOrAlliances": "Resistance aux persecutions islamiques et aux razzias d'esclaves pendant environ un millenaire, conduisant a l'installation sur des positions defensives inaccessibles (falaise de Bandiagara). Les Dogon furent les derniers en Afrique de l'Ouest a perdre leur independance face a la France. Depuis 2018, deterioration grave de la securite dans la region de Bandiagara en lien avec les groupes jihadistes du Sahel : attaques contre des villages, destructions et deplacements de populations.",
+      "diaspora": "Diaspora Dogon dans les grandes villes maliennes (Bamako, Mopti, Segou). Migrations economiques vers les pays voisins (Cote d'Ivoire, Senegal, Burkina Faso). Deplacement interne accelere depuis 2018 en raison de l'insecurite dans la region de Bandiagara. Presence dans la diaspora malienne en France et en Europe."
     },
     "demography": {
       "totalPopulation": 1380000,
       "referenceYear": 2025,
-      "source": "Anthropologie Dogon, INSTAT MLI, recensements nationaux"
+      "source": "Wikipedia EN Dogon people : entre 400 000 et 800 000. Britannica : environ 600 000. eHRAF World Cultures : environ 250 000 dans les districts de Bandiagara et Douentza. ObeisanceBaha : entre 400 000 et 800 000. Joshua Project (sous-groupe Tombo) : 139 000. INSTAT Mali (projections 2025). Estimation haute de 1 380 000 en comptant tous les sous-groupes Dogon y compris diaspora et Burkina Faso.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 1300000,
+          "note": "Plateau de Bandiagara (districts de Bandiagara et Douentza, regions de Mopti et Segou), avec diaspora a Bamako et autres villes"
+        },
+        {
+          "country": "BFA",
+          "population": 80000,
+          "note": "Zone frontaliere nord-est du Mali et nord du Burkina Faso, communautes migrantes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Dogon languages",
-      "Anthropologie Dogon (Marcel Griaule, Germaine Dieterlen)",
-      "INSTAT Mali",
-      "Recensements nationaux",
-      "Études sur les royaumes Dogon"
+      "Wikipedia EN — Dogon people. https://en.wikipedia.org/wiki/Dogon_people",
+      "Wikipedia EN — Dogon religion. https://en.wikipedia.org/wiki/Dogon_religion",
+      "Wikipedia EN — Escarpment Dogon (langues). https://en.wikipedia.org/wiki/Escarpment_Dogon",
+      "Focus on Geography — Living and Spiritual Worlds of Mali's Dogon People. http://www.focusongeography.org/publications/articles/mali/index.html",
+      "Dogon Languages — University of Michigan (Heath, J.). https://public.websites.umich.edu/~jheath/Dogon%20languages.html",
+      "Britannica — Dogon. https://www.britannica.com/topic/Dogon",
+      "eHRAF World Cultures — Dogon summary. https://ehrafworldcultures.yale.edu/cultures/fa16/summary",
+      "UNESCO — Pays Dogon (patrimoine mondial). https://whc.unesco.org/fr/list/516/"
     ]
   }
 }

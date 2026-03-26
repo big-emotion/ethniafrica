@@ -6,63 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Brong",
-      "selfAppellation": "Brong",
-      "exonyms": ["Brong (terme utilisé par les Européens), Abron"],
+      "selfAppellation": "Bono (Bonofoɔ)",
+      "exonyms": [
+        "Abron (utilise en Cote d'Ivoire et dans la litterature francophone)",
+        "Brong (terme utilise notamment par les Asante et les Gonja pour designer les peuples de la zone entre les Asante et le Niger)",
+        "Akan piesie (premiers Akan)"
+      ],
+      "originOfExonyms": "Le terme Abron est l'exonyme predominant en Cote d'Ivoire, derive d'une forme dialectale du nom Bono. Brong est un terme geographique et politique apparu au XIXe siecle, utilise par les Asante et les colonisateurs britanniques pour designer les populations de la region entre les Asante-Mampong et le Volta — region qui aurait ete le domaine des rois de Bono-Manso sans la conquete asante. Les Gonja ont aussi applique ce terme a des peuples voisins.",
+      "whyProblematic": "Le terme Brong recouvre a la fois un groupe ethnique specifique (les Bono) et une notion geographico-politique plus large. L'administration coloniale britannique a cree en 1959 la region Brong-Ahafo, amalgamant des peuples de differentes origines. Les Bono eux-memes preferent le terme Bono ou Bonofoɔ.",
+      "contemporaryUsage": "Bono est le nom prefere par le peuple lui-meme. Abron est courant dans la litterature francophone et en Cote d'Ivoire. Brong reste lie a la region administrative de Bono-Ahafo au Ghana (creee en 1959, renommee Bono Region en 2018). La langue est officiellement designee Abron (abr) dans la nomenclature ISO.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Kwa",
-      "historicalRegion": "GHA, CIV",
+      "ethnoLinguisticGroup": "Kwa central (sous-groupe Akan, branche Twi)",
+      "historicalRegion": "Bonoman (Bono-Manso et Begho) — zone de savane et de transition foret-savane au centre du Ghana actuel et nord-est de la Cote d'Ivoire",
       "currentCountries": ["GHA", "CIV"]
     },
     "ethnicities": [
-      "Brong du Ghana",
-      "Brong de Côte d'Ivoire",
-      "Sous-groupes régionaux"
+      "Techiman (Brong du Ghana, successeurs du royaume de Bono-Manso, capital spirituelle a Techiman)",
+      "Dormaa (Brong du Ghana occidental, Dormaahene)",
+      "Wenchi (Brong du Ghana central)",
+      "Berekum (Brong du Ghana)",
+      "Nkoranza (Brong du Ghana)",
+      "Drobo (Brong du Ghana)",
+      "Gyaman / Abron de Cote d'Ivoire (fondes par la branche partie vers 1690 fonder le royaume de Gyaman, actuellement dans l'Indenie et le Zanzan en CIV)",
+      "Sept ou huit abusua (clans matrlineaires), chacun avec ses propres totems, tabous et recits d'origine"
     ],
     "origins": {
-      "ancientOrigins": "Les Brong sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo. Relations étroites avec les Akan.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Akan.",
-      "externalInfluences": "Contacts avec les peuples akan, influence du christianisme."
+      "ancientOrigins": "Les Bono sont un peuple Akan de la branche Twi du sous-groupe Kwa (Niger-Congo). Selon les traditions orales de Takyiman, les Bono furent les premiers Akan a developper un Etat; les autres Etats akan emboiteraient le pas. L'evidence archeologique confirme une longue presence indigene dans la zone foret-savane avec une metallurgie du fer depuis au moins 300 ap. J.-C. a Amowi et Bono-Manso. Les traditions orales rapportent que le peuple emergea d'une grotte sacree appelee Amowi pres de l'actuelle Techiman sous la conduite d'un ancetre nomme Asaman, fondant le peuplement Yefiri (nous sortons). Ces traditions accentuent l'autochtonie et le developpement indigene dans la zone de transition foret-savane.",
+      "formationPeriod": "Le Bonoman (Etat de Bono) est atteste comme l'une des plus anciennes structures politiques akan, probablement fondee entre le XIe et le XIIe siecle. Au XIIe siecle, la decouverte de l'or dans les vallees du Twi et du Prabom (affluents du Tain) a propulse Bono-Manso et Begho au rang de metropoles commerciales. En 1471, Bono-Manso et Begho etaient de grandes villes. La conquete asante de 1722-23 a detruit Bono-Manso, forcant la relocalisation de la capitale a Techiman.",
+      "migrationRoutes": [
+        "Populations autochtones de la zone foret-savane de l'actuel Ghana central — pas de migration fondatrice externe documentee",
+        "Branche Abron : migration vers la Cote d'Ivoire vers 1690 sous la conduite de Tan Date pour fonder le royaume de Gyaman"
+      ],
+      "historicalSettlementZones": [
+        "Bono-Manso (capitale historique, pres de Techiman, Ghana)",
+        "Begho (grande cite commerciale, Ghana central)",
+        "Techiman (capitale post-conquete et centre spirituel, Ghana)",
+        "Region de Bono-Ahafo (Ghana central et occidental)",
+        "Nord-est de la Cote d'Ivoire : Bondoukou et region de l'Indenie-Djuablin (Gyaman/Abron)"
+      ],
+      "unificationsOrDivisions": "Le Bonoman etait une confederation de clans matrilineaires structures autour d'autels ancestraux et de sanctuaires. La conquete asante de 1722-23 par Opoku Ware Ier a fragmente l'unite politique bono. Une seconde invasion asante eut lieu en 1877. En 1952, plusieurs chefs bono (Techiman, Dormaa, Drobo, etc.) se retirerent de la Confederation asante. En 1959, la creation de la region Brong-Ahafo au Ghana a reuni administrativement les communautes bono sous une entite distincte des Asante.",
+      "externalInfluences": "Commerce transsaharien et liens avec Djenne, Tombouctou et l'Afrique du Nord via les marchands Wangara/Dyula mande (qui avaient leurs propres quartiers a Begho). Influence islamique introduite par les marchands mande (quartier Kramo a Begho). Conquete asante (1722-23 et 1877). Colonisation britannique (Ghana) et francaise (CIV). Independances du Ghana (1957) et de la Cote d'Ivoire (1960).",
+      "majorHistoricalEvents": "XIIe siecle : decouverte de l'or dans la region, fondation de Begho et montee en puissance de Bono-Manso. 1471 : Bono-Manso et Begho parmi les plus grandes villes d'Afrique de l'Ouest. Vers 1690 : fondation du royaume de Gyaman (Abron) en Cote d'Ivoire. 1722-23 : conquete asante de Bono-Manso par Opoku Ware Ier. 1877 : deuxieme invasion asante de Techiman. 1875 : independence de Gyaman grace a la defaite asante face aux Britanniques. 1959 : creation de la region Brong-Ahafo au Ghana. 2018 : demembrement en region Bono, Bono-Est et Ahafo au Ghana."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme matrilineaire : la reine-mere (ɔhemaa) nomme le roi (ɔhene), garantissant la continuite de la lignee royale (abusua) par la ligne maternelle. Le roi et la reine-mere sont les tetes spirituelles et administratives. Des officiers royaux soutiennent la cour : tambourineurs royaux, trompettistes, porteurs d'epees et d'ombrelles, ochamé (chefs parlants qui parlent au nom du roi). Sous le roi : chefs de cinq cantons (Penongo, Achedom, Anenefy, Fumasa, Ciagni). Au niveau de l'Etat de Gyaman en Cote d'Ivoire, le Gyamanhene (roi de Gyaman) reside a Bondoukou.",
+      "clanOrganization": "Sept ou huit abusua (clans matrilineaires), representant des corps celestes (Lune, Soleil, Mars, Mercure, Jupiter, Venus, Saturne). Chaque clan possede ses propres totems, tabous et recits d'origine. Les droits fonciers appartiennent traditionnellement aux villages ; les titres peuvent passer aux lineages selon l'usage. Les droits miniers sont detenus par les groupes Kolongo.",
+      "ageClassSystems": "Ceremonies de puberte pour les garcons et les filles marquant le passage a l'age adulte.",
+      "roleOfLineages": "Les lignages matrilineaires (abusua) determinent l'identite, l'heritage, la succession aux charges et les alliances. La lignee paternelle transmet le ntoro (heritage spirituel paternel). Le systeme d'abusua, les tambours fontomfrom et atumpan, la nomenclature, les ombrelles royales, les adinkra, le chasse-mouches, les trompettes en ivoire et les epees ceremoniales originent du Bonoman.",
+      "religiousAuthority": "Les pretres (Kparesogo) combattent les sorcières (Deresogo) et guerissent par le pouvoir de leur gbawkaw (dieu personnel). Le grand pretre porte un masque puissant. Le chef est aussi autorite religieuse. Libations, sanctuaires ancestraux et Adae (tribut aux ancetres) constituent les pratiques rituelles centrales."
     },
     "languages": {
-      "mainLanguage": "Brong",
-      "vehicularRole": "Le brong est parlé par la majorité des Brong. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Abron (Bono Twi)",
+      "isoCodes": ["abr"],
+      "dialects": [
+        "Bono Twi — dialecte principal parle au Ghana (region de Techiman, Dormaa, Wenchi, Berekum)",
+        "Abron — variete dialectale parlee en Cote d'Ivoire (region de Bondoukou, Indenie-Djuablin)",
+        "Le bono est mutellement intelligible avec les autres dialectes Akan (Asante Twi, Fante) mais en constitue une variete distincte"
+      ],
+      "vehicularRole": "L'abron (ISO abr) est une langue stable indigene du Ghana et de la Cote d'Ivoire, appartenant a la branche Kwa (Niger-Congo), sous-groupe Akan Twi. Il est parle comme premiere langue par l'ensemble de la communaute ethnique. L'anglais est utilise au Ghana dans l'education et l'administration ; le francais en Cote d'Ivoire."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels brong, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Funerailles : evenement social majeur, le plus important de la vie communautaire. Les proches en deuil portent de vieux habits sombres pendant 6 jours. Les pretres et la famille royale observent 7 jours de deuil; toute la nation se joint au deuil d'un roi. Ceremonies de puberte pour garcons et filles. Trois grandes ceremonies religieuses fixes annuelles : Odiwera (grand festival de l'igname en octobre), Adae (tribut aux ancetres), Fofye (tribut aux dieux locaux et aux esprits des pretres defunts). Mariage : ceremonies de 10 jours impliquant la mariee, le marie, leurs familles et le village. Ceremonies d'accueil du nouveau-ne par les femmes de la famille maternelle.",
+      "symbols": "Adinkra : symboles culturels et philosophiques originaires de la cour de Bono-Manso, rayonnant de la comme hub de la culture akan. Tabouret sacre royal (signe de l'autorite et de la continuite dynastique). Ombrelles royales (symbole de la dignite du roi). Trompettes en ivoire, chasse-mouches, epees ceremoniales. Or et poudre d'or (monnaie et symbole de richesse depuis le XIIe siecle). Kente : tissu ceremonialement tisse, dont les origines remontent au Bonoman.",
+      "artsAndMusic": "Tissage : gagawuga, kyenkyen et kente (tissage de coton et de soie avec motifs symboliques). Fonte du laiton (poids a or, figurines). Poterie et vases en argile pour le stockage alimentaire. Musique royale : tambours fontomfrom et atumpan (originaires du Bonoman), utilises dans les ceremonies, les funerailles et les evenements royaux. Danses : Kete, Adowa, fontomfrom. Trompettes royales en ivoire. Regalia royale elaborate.",
+      "spiritualities": "Nyame : Etre supreme et Createur qui a engendre l'univers en donnant naissance au soleil (Amowia) ; dieu supreme, ne se mele guere des affaires quotidiennes des hommes ; la reine-mere en symbolise les aspects feminins (fille de la lune). Tano : dieu-fleuve invoque en temps de besoin. Gbawkaw : dieux personnels des pretres, habitant des lieux naturels (montagnes, rivieres, arbres). Culte des ancetres (Adae : ceremonie de tribut reguliere). Syncrétisme contemporain avec le christianisme predominant."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora brong dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Bonoman (Etat de Bono) : premier grand etat akan, capitale Bono-Manso, cree entre le XIe et XIIe siecle ; hub de la culture et du commerce akan jusqu'a la conquete asante de 1722-23. Begho : grande cite commerciale multietnique (XIIe-XVIIIe siecles) sur les routes transsahariennes, avec des quartiers separes pour les marchands mande musulmans (Kramo), les metallurgistes (Dwinfuor) et les Bono. Gyaman (Abron) : royaume fonde vers 1690 par Tan Date dans l'ouest du Ghana actuel et l'est de la CIV ; annexe par les Asante en 1730 et maintenu pendant 135 ans ; independant en 1875 apres la defaite asante. Brong-Ahafo House of Chiefs : institution post-coloniale fondee en 1959 au Ghana.",
+      "relationsWithNeighbors": "Commerce et echanges avec les marchands Wangara/Dyula mande (qui avaient leurs quartiers a Begho) et les routes vers Djenne, Tombouctou, l'Afrique du Nord et le Hausaland. Domination et resistance vis-a-vis des Asante : conquetes de 1722-23 et 1877, rebellions de 1750, 1764, 1802-04, retrait de la Confederation en 1952. A l'ouest en CIV, les Abron ont developpe le royaume de Gyaman en interaction avec les peuples Dioula, Mandinka et Lobi.",
+      "conflictsOrAlliances": "Resistance repetes a la domination asante : revoltes de 1750, 1764 et 1802-04 (toutes reprimees). Independance de Gyaman en 1875 (avec aide britannique indirecte). Invasion de Gyaman par les forces de Samori Toure en 1895. Retrait de la Confederation asante par plusieurs chefs bono en 1952. En 1959, creation de la region administrative Brong-Ahafo separee de la region asante.",
+      "diaspora": "La diaspora bono est principalement intra-regionale : Abron en Cote d'Ivoire (region de Bondoukou) et Bono au Ghana. Migrations vers les grandes villes ghaneennes et ivoiriennes. Presence de la communaute bono dans les diasporas ghaneenne et ivoirienne en Europe et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (langue abr, stable, 1M-1B de locuteurs). Estimation 2025 : environ 1,3 million de personnes, dont environ 900 000 au Ghana (region Bono, Bono-Est, Ahafo) et 400 000 en Cote d'Ivoire (region Abron de l'Indenie-Djuablin, Bondoukou). Sources : recensement Ghana 2021, recensement CIV 2021, Ethnologue, Joshua Project.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 900000,
+          "note": "Regions Bono, Bono-Est et Ahafo (Ghana central) ; Techiman, Dormaa, Wenchi, Berekum, Nkoranza"
+        },
+        {
+          "country": "CIV",
+          "population": 400000,
+          "note": "Region de l'Indenie-Djuablin (Abron/Gyaman) ; autour de Bondoukou"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Brong language (abr)",
-      "CIA World Factbook – GHA, CIV",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples kwa"
+      "Wikipedia EN — Bono people. https://en.wikipedia.org/wiki/Bono_people",
+      "101 Last Tribes — Bono/Brong people. https://www.101lasttribes.com/tribes/bono.html",
+      "SIL Ethnologue — Abron language [abr]. https://www.ethnologue.com/language/abr/",
+      "Wikipedia EN — Akan people. https://en.wikipedia.org/wiki/Akan_people",
+      "Wikipedia EN — Bono dialect. https://en.wikipedia.org/wiki/Bono_dialect",
+      "Yengafrica — Bono cultural heritage. https://yengafrica.com/",
+      "Joshua Project — Brong people group profile"
     ]
   }
 }

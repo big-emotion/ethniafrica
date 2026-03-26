@@ -6,66 +6,115 @@
   "content": {
     "appellations": {
       "mainName": "Makua",
-      "selfAppellation": "Makua",
+      "selfAppellation": "WaMakua / Amakhua",
       "exonyms": [
-        "Makua (terme utilisé par les Européens), parfois appelés « Macua » (variante)"
+        "Makhuwa (graphie alternative courante)",
+        "Macua (graphie portugaise)",
+        "Wamakua (préfixe bantou du peuple)",
+        "Emakhua (désigne la langue)"
       ],
+      "originOfExonyms": "Le terme Makua (ou Makhuwa, Macua) est un exonyme dont l'étymologie exacte est incertaine. Le préfixe Wa- (WaMakua) suit la convention grammaticale bantou pour désigner le peuple. Emakhua ou Emakua désigne leur langue selon la même convention. La graphie Macua est la forme portugaise utilisée officiellement au Mozambique depuis l'époque coloniale.",
+      "whyProblematic": "La dénomination Makua couvre une grande diversité de sous-groupes linguistiques et régionaux (Makhuwa-Meetto, Makhuwa-Shirima, Makhuwa-Marrevone, Lomwe, etc.) qui sont parfois traités comme des peuples distincts par les linguistes. Le groupe Makua-Lomwe est souvent présenté ensemble dans les statistiques démographiques, rendant difficile l'isolement de la population strictement makua. Certaines sources incluent le Lomwe dans le compte global, portant le total à 40% de la population du Mozambique.",
+      "contemporaryUsage": "Le terme Makua est couramment utilisé en français, en anglais et en portugais. Les locuteurs se désignent eux-mêmes comme WaMakua ou Amakhua. Les Makua constituent le premier groupe ethnique du Mozambique par la taille, principalement concentrés au nord du fleuve Zambèze dans les provinces de Nampula, Cabo Delgado, Niassa et Zambezia.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "MOZ, TZA, MWI",
+      "ethnoLinguisticGroup": "Bantou (zone P, groupe P.30-P.31)",
+      "historicalRegion": "Mozambique septentrional (nord du fleuve Zambèze) : provinces de Nampula, Cabo Delgado, Niassa, Zambezia",
       "currentCountries": ["MOZ", "TZA", "MWI"]
     },
     "ethnicities": [
-      "Makua du Mozambique",
-      "Makua de Tanzanie",
-      "Makua du Malawi",
-      "Sous-groupes régionaux"
+      "Makhua-Makhuwana (Makua central, Nampula — dialecte de référence)",
+      "Makhua-Meetto / Meto (Cabo Delgado et Niassa — important sous-groupe)",
+      "Makhua-Shirima / Xirima (Niassa occidental — environ 900 000 locuteurs)",
+      "Makhua-Marrevone (côte de Nampula, district de Moma — dialecte côtier le plus distinct)",
+      "Makhua-Moniga / Emoniga (district de Pebane, Zambezia)",
+      "Makhua-Esaka / Saka (frontière Nampula-Cabo Delgado)",
+      "Makua de Tanzanie (district de Masasi, région de Mtwara)",
+      "Makua de la rivière Rovuma (zone frontalière Mozambique-Tanzanie)"
     ],
     "origins": {
-      "ancientOrigins": "Les Makua sont originaires de la région du MOZ, de la Tanzanie et du Malawi. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Makua sont l'un des peuples bantous les plus anciennement établis dans le nord du Mozambique. Selon la tradition orale makua, leur peuple est originaire de la montagne sacrée Namuli, dans la province de Zambezia : une caverne sur cette montagne est dite être le berceau de tous les animaux et des humains, et une empreinte de pied féminin à l'extérieur de la caverne expliquerait symboliquement leur structure matrilinéaire. Des études historiques suggèrent qu'une langue proto-makua unique était parlée il y a environ un millier d'années, depuis laquelle les dialectes actuels ont divergé. Les Makua sont des agriculteurs sédentaires de longue date, pratiquant la subsistance sur de petites parcelles allouées par les chefs de village.",
+      "formationPeriod": "L'identité makua distincte s'est consolidée au cours du second millénaire. Des contacts avec les commerçants arabes swahili de la côte indienne ont commencé tôt, introduisant progressivement l'islam dans les zones côtières. Les dialectes actuels reflètent une fragmentation de plusieurs siècles. La période coloniale portugaise (effective à partir du début du 20e siècle dans l'intérieur) a renforcé une identité commune face à l'oppression coloniale. La Compagnie du Niassa (1893-1938) administrait une grande partie du territoire makua.",
+      "migrationRoutes": [
+        "Etablissement ancien dans le nord du Mozambique, sans migration fondatrice unique documentée",
+        "Expansion progressive depuis la montagne Namuli (Zambezia) selon la tradition orale",
+        "Contacts et migrations côtières liées au commerce arabo-swahili (8e-19e siècle)",
+        "Migration vers l'Afrique du Sud (communauté Durban/Bluff, deportée vers Bayview, Chatsworth en 1960)",
+        "Migration vers Madagascar, Maurice, les Caraïbes et les Amériques (traite esclavagiste)"
+      ],
+      "historicalSettlementZones": [
+        "Province de Nampula (coeur historique : la province est quasi entièrement peuplée de Makua)",
+        "Province de Cabo Delgado (sud et centre de la province)",
+        "Province de Niassa (sous-groupe Xirima en particulier)",
+        "Province de Zambezia (nord de la province, sous-groupe Moniga)",
+        "District de Masasi, région de Mtwara, Tanzanie (au-delà de la rivière Rovuma)",
+        "Malawi (zones frontalières septentrionales)"
+      ],
+      "unificationsOrDivisions": "Les Makua ne constituent pas une entité politique unifiée mais un ensemble de communautés matrilinéaires partageant une langue et une culture. Les sous-groupes dialectaux (Makhuwana, Meetto, Shirima, Marrevone, etc.) ont développé des identités régionales distinctes. L'administration coloniale portugaise a traité le groupe Makua-Lomwe comme une entité, regroupant deux groupes linguistiquement proches mais distincts. Les Makua représentent environ 25 à 28% de la population totale du Mozambique, et le groupe Makua-Lomwe réuni environ 40%.",
+      "externalInfluences": "Contacts commerciaux avec les marchands arabes swahili de la côte indienne à partir du 8e-9e siècle (islamisation progressive des zones côtières). Esclavagiste intense aux 18e-19e siècles : le chef Mucuto-Muno de la confédération de Namarróis organisait des raids et imposait des taxes aux caravanes. Arrivée des Portugais à la fin du 15e siècle, mais l'occupation effective de l'intérieur ne date que du début du 20e siècle. Administration de la Compagnie du Niassa (1893-1938). Guerre d'indépendance mozambicaine (1964-1975) et guerre civile (1977-1992) ont fortement affecté les populations makua du nord du Mozambique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société makua est organisée en chefferies matrilinéaires sous l'autorité d'un mwene (chef). Le mwene administre les affaires communautaires avec l'aide d'un conseil d'anciens. Chaque village dispose d'un lieu de culte (shrine) sous un arbre msoro, entouré d'un tissu nakoto pour signaler la sainteté du lieu. Les conflits non résolus sont soumis à un administrateur d'oaths (mwaavi). L'organisation est fondamentalement décentralisée, chaque communauté gérant ses affaires locales.",
+      "clanOrganization": "La société makua est strictement matrilinéaire : la filiation, l'héritage et l'identité clanique passent par la lignée maternelle. Les clans (enikulo) regroupent les familles partageant une ancêtre maternelle. Chaque adulte reçoit une parcelle de terre (ematta) allouée par le chef de village. La résidence est matrilocale. Le travail collectif communautaire (ichiyao) est une valeur fondamentale : les voisins se rassemblent pour aider aux travaux agricoles importants, brasserie de bière locale (utheka) à l'appui.",
+      "ageClassSystems": "Les rites d'initiation structurent le passage vers l'âge adulte. La circoncision masculine est obligatoire : un homme non circoncis ne peut pas se marier dans la communauté makua. L'initiation féminine (chiputu) à partir de 12 ans réunit les adolescentes pour une période d'instruction par des femmes aînées sur les traditions makua.",
+      "roleOfLineages": "Les lignages matrilinéaires déterminent l'identité, les alliances matrimoniales, les droits fonciers et l'accès aux fonctions de chef. Le mariage est exogame (hors du clan maternel). Traditionnellement, aucun homme makua ne pouvait épouser une femme non-makua et vice versa, bien que ces règles se soient assouplies. Le mariage ne comporte pas de dot (lobola) : les Makua considèrent que payer une femme commercialise le mariage.",
+      "religiousAuthority": "L'autorité spirituelle traditionnelle repose sur les guérisseurs-médecins et les gardiens des shrines ancestraux. Le grand dieu créateur (Muluku) est omnipotent mais distant des affaires humaines quotidiennes. Chaque clan dispose d'un lieu de culte sous un arbre msoro. Les esprits ancestraux (malines) jouent un rôle d'intermédiaires. Environ 66-70% des Makua pratiquent les religions traditionnelles. Les populations côtières sont en majorité musulmanes (islam sunnite shafi'ite, introduction arabo-swahili). Une partie plus modeste pratique le christianisme (missionnaires protestants et catholiques depuis le 19e siècle)."
     },
     "languages": {
-      "mainLanguage": "Makua",
-      "vehicularRole": "Le makua est parlé par la majorité des Makua. Le portugais, le swahili, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Makua (Emakhua / Emakua)",
+      "isoCodes": ["vmw", "xsq", "mhm", "vmk", "vkl"],
+      "dialects": [
+        "Makhuwa central / Makhuwana (3,1 millions de locuteurs, Nampula — dialecte de référence)",
+        "Makhuwa-Meetto / Meto (1,3 million, Cabo Delgado et Niassa)",
+        "Makhuwa-Shirima / Xirima (1,5 million, Niassa)",
+        "Makhuwa-Marrevone (460 000, côte de Nampula, le plus distinct des dialectes côtiers)",
+        "Makhuwa-Moniga / Emoniga (Pebane, Zambezia)",
+        "Makhuwa-Esaka / Saka (frontière Nampula-Cabo Delgado)"
+      ],
+      "vehicularRole": "Le makua (emakhua) est la langue indigène la plus parlée du Mozambique et la première langue de l'ensemble de la communauté makua. Il est parlé dans un vaste territoire couvrant le nord du Mozambique. Selon les données ethnologue (2006), le total des locuteurs dépasse 5,8 millions rien pour le Mozambique. La langue s'est fragmentée en dialectes suffisamment distincts pour refléter plusieurs siècles de séparation. Le portugais est la langue officielle du Mozambique et est utilisé dans l'administration. Le swahili est parlé dans les zones frontalières avec la Tanzanie."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels makua, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les rites d'initiation sont fondamentaux dans la société makua. La circoncision masculine est obligatoire et marque l'entrée dans l'âge adulte. L'initiation féminine (chiputu) à la puberté rassemble les adolescentes pour une période de réclusion et d'instruction par les femmes aînées sur les traditions, les devoirs conjugaux et les responsabilités adultes. Les cérémonies de mariage sont des événements communautaires majeurs : la demande en mariage est formelle, soumise à l'accord du père et de la jeune femme elle-même. Le rite de protection de la grossesse (wiinanela iwei) implique des instructions aux couples attendant un enfant, avec chants et danses des femmes entourant les futurs parents. Les rites funéraires incluent des pratiques de commémoration des ancêtres. Le travail collectif communautaire (ichiyao) fait l'objet de rites d'organisation sociale.",
+      "symbols": "Le masque de boue blanche (musiro) appliqué sur le visage est le symbole culturel le plus distinctif des femmes makua. Cette pâte blanche préparée à base d'argile ou d'écorce de mpakala est appliquée pour purifier, protéger et embellir, et pour marquer les occasions cérémonielles. L'arbre msoro, sous lequel se trouvent les shrines ancestraux claniques, est un symbole sacré de la connexion entre vivants et ancêtres. La montagne Namuli (Zambezia) est le lieu d'origine mythique sacré du peuple makua.",
+      "artsAndMusic": "Les Makua pratiquent la danse sur échasses : des hommes masqués et costumés dansent sur des échasses de 60 cm lors de célébrations et cérémonies religieuses, sautillant pendant des heures dans des tenues colorées. La musique traditionnelle combine chants a cappella et instruments à percussion. La poterie est une activité féminine traditionnelle. Le tissage et la fabrication de paniers sont également pratiqués. La narration orale (ngano, contes et récits historiques) est importante dans une communauté à fort taux d'analphabétisme. Les pêcheurs makua de la côte nord du Mozambique sont réputés pour leurs filets et leurs techniques de pêche traditionnelles.",
+      "spiritualities": "Les Makua croient en un dieu créateur unique et omnipotent, Muluku, qui a créé le monde et les premiers humains à partir de deux trous dans la terre. Muluku est distant des affaires humaines quotidiennes : ce sont les esprits ancestraux (malines) qui interviennent dans la vie des vivants. Les noms traditionnels de Muluku reflètent ses attributs : celui qui paie chacun selon son mérite, le sauveur de l'humanité, le gardien et protecteur. Chaque clan dispose d'un shrine sous un arbre msoro. Environ 66-70% des Makua maintiennent les religions traditionnelles. Les Makua côtiers sont majoritairement musulmans (islam sunnite shafi'ite). Les Makua se distinguent des caractérisations coloniales de paganisme : ils affirment avoir toujours cru en un dieu unique avant l'arrivée des Arabes et des Européens."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora makua dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Makua n'ont pas développé de royaumes centralisés comparables aux empires voisins. Ils sont organisés en confédérations de chefferies (mwene) relativement autonomes. La confédération de Namarróis, dont le chef Mucuto-Muno devint célèbre au 18e siècle pour ses raids esclavagistes et ses taxes imposées aux caravanes de l'intérieur, est l'exemple le plus documenté de pouvoir makua étendu. Des états côtiers afro-asiatiques se sont formés sous l'influence du commerce arabe, attirant certains Makua dans des réseaux commerciaux plus vastes.",
+      "relationsWithNeighbors": "Les Makua ont entretenu des relations commerciales et parfois conflictuelles avec les commerçants arabes swahili de la côte (islamisation des Makua côtiers). Les contacts avec les Makonde voisins (Cabo Delgado) ont été marqués par des tensions historiques liées aux raids esclavagistes. Les Angoni (Ngoni), venus du Zoulouland via la Tanzanie, ont atteint la rivière Rovuma à la mi-19e siècle et guerroyé avec les groupes qu'ils rencontraient, dont les Makua. Les Makua ont coexisté avec les Yao et les Lomwe (groupe proche) dans la région.",
+      "conflictsOrAlliances": "La traite esclavagiste a fortement affecté les Makua aux 18e et 19e siècles. Des chefs makua eux-mêmes ont participé à la capture et à la vente d'esclaves (Mucuto-Muno). La résistance aux Portugais a été locale et décentralisée. La Compagnie du Niassa (1893-1938), concessionnaire britannique, a administré la région avec une autorité économique et juridique totale sur les populations makua de Niassa et Cabo Delgado. Pendant la guerre d'indépendance (1964-1975), les zones makua du nord ont été affectées par les combats. La guerre civile (1977-1992) a provoqué de importants déplacements de population makua.",
+      "diaspora": "Une diaspora makua s'est formée historiquement via la traite esclavagiste vers Madagascar, l'île Maurice (plantations, recensée en 1847), les Caraïbes et les Amériques. En Afrique du Sud, une communauté makua s'était établie dans le quartier de Bluff à Durban ; sous le Group Areas Act, elle a été déplacée de force vers Bayview et Chatsworth (Durban) en 1960. Cette communauté vit aussi à Wentworth, Marianhill, Umlazi, Pietermaritzburg, Cape Town et Johannesburg. Les Makua d'Afrique du Sud sont majoritairement musulmans."
     },
     "demography": {
-      "totalPopulation": 8000000,
+      "totalPopulation": 7000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue 2006 : 5,8 millions de locuteurs du makhuwa au Mozambique. Wikipedia EN (Makhuwa language) : 5,8 millions. Estimations du groupe Makua-Lomwe réuni : 40% de la population du Mozambique soit environ 12 millions (INE Mozambique 2017). Pour les seuls Makua stricts, estimation 2025 : 6-7 millions. Sources : SIL Ethnologue (vmw, xsq, mhm, vmk), CIA World Factbook – Mozambique, INE Mozambique.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 6700000,
+          "note": "Provinces de Nampula (coeur), Cabo Delgado, Niassa, Zambezia. Plus grand groupe ethnique du Mozambique (environ 25-28% de la population nationale)."
+        },
+        {
+          "country": "TZA",
+          "population": 250000,
+          "note": "District de Masasi, région de Mtwara (sud de la Tanzanie, zone frontalière)."
+        },
+        {
+          "country": "MWI",
+          "population": 50000,
+          "note": "Zones frontalières septentrionales du Malawi."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Makua language (vmw)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Makua people. https://en.wikipedia.org/wiki/Makua_people",
+      "Wikipedia EN — Makhuwa language. https://en.wikipedia.org/wiki/Makhuwa_language",
+      "SIL Ethnologue — Makhuwa (vmw). https://www.ethnologue.com/country/MZ/",
+      "Britannica — Makua. https://www.britannica.com/topic/Makua",
+      "Joshua Project — Makhuwa-Makhuwana in Mozambique. https://joshuaproject.net/people_groups/18875/MZ",
+      "Trip Down Memory Lane — Makua People: Mozambique's Largest Matriarchical Group. https://kwekudee-tripdownmemorylane.blogspot.com/2013/03/makua-people-mozambiques-larhest.html",
+      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
+      "INE Mozambique — Censo 2017. https://www.ine.gov.mz/"
     ]
   }
 }

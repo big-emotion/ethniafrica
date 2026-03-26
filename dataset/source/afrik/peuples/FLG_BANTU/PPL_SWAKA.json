@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Swaka",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Baswaka",
+      "exonyms": ["Swaka"],
+      "originOfExonyms": "Le nom Swaka est l'ethnonyme courant utilise dans les sources coloniales et postcoloniales zambiennes. Le prefixe bantou Ba- (pluriel) donne Baswaka pour designer le peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Swaka est utilise officiellement en Zambie. Le groupe est parfois classe dans le cluster Lamba-Lima-Swaka, reflectant ses affinites culturelles et linguistiques avec les Lamba.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu du Centre-Sud (cluster Lamba-Bisa)",
+      "historicalRegion": "Province du Centre, Zambie (environs de Kabwe)",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Swaka"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Swaka font partie des groupes bantous du Centre-Zambie apparentes aux Lamba. Selon l'historiographie zambienne, ils sont issus du courant migratoire bantou provenant du Bassin du Congo via le Royaume Luba. L'Association Lamba-Lima-Swaka de Zambie souligne que les Swaka sont des Lamba selon le principe Ilamba limo.",
+      "formationPeriod": "Formation en tant que groupe distinct au cours des migrations bantoues du premier millenaire. Presence etablie dans la region centrale de Zambie avant l'epoque coloniale.",
+      "migrationRoutes": [
+        "Migration depuis le Bassin du Congo via le plateau central zambien vers la region de Kabwe"
+      ],
+      "historicalSettlementZones": [
+        "Region de Kabwe (Province du Centre, Zambie)",
+        "Est de la Zambie le long de la riviere Luangwa (connexion Bisa)"
+      ],
+      "unificationsOrDivisions": "Les Swaka sont associes aux Lamba et aux Bisa dans les classifications ethnolinguistiques. L'Association Lamba-Lima-Swaka reunit plusieurs sous-groupes apparentes.",
+      "externalInfluences": "Influence du Royaume Luba sur l'organisation sociale et politique. Contacts avec les Bemba, les Bisa et les Lamba voisins. Influence coloniale britannique a partir du XIXe siecle.",
+      "majorHistoricalEvents": "Integration dans la sphere economique coloniale autour de Kabwe (anciennement Broken Hill), centre minier important. La ville de Kabwe est le foyer principal des locuteurs swaka."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en chefferies. Systeme politique comparable aux groupes Lamba et Bisa voisins avec des chefs locaux a la tete de communautes.",
+      "clanOrganization": "Organisation clanique matrilineaire caracteristique des groupes Lamba-Bisa de la Province du Centre de Zambie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans la transmission des droits fonciers et la regulation des mariages.",
+      "religiousAuthority": "Autorite religieuse traditionnelle exercee par les chefs et les guerisseurs. Pratiques de la religion traditionnelle africaine coexistant avec le christianisme."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (dialecte swaka)",
+      "isoCodes": ["leb"],
+      "dialects": ["Swaka (dialecte du Lala-Bisa)"],
+      "vehicularRole": "Le swaka est un dialecte du Lala-Bisa. L'anglais est la langue officielle nationale. Le bemba joue le role de langue vehiculaire dans la Province du Centre et le Copperbelt. Des etudes sur la vitalite linguistique signalent le swaka comme langue en danger face a la pression du bemba et de l'anglais."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites d'initiation masculins et feminins. Ceremonies liees aux cycles agricoles. Pratiques du culte des ancetres communes aux groupes bantous de la region.",
+      "symbols": null,
+      "artsAndMusic": "Artisanat traditionnel commun aux groupes Lamba-Bisa: vannerie, poterie et sculptures. Musique ceremonielle a base de tambours.",
+      "spiritualities": "Religion traditionnelle africaine combinant le culte des ancetres et la croyance en esprits naturels. Le christianisme (predominant a 84% selon Joshua Project) coexiste avec les pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies locales inserees dans le reseau politique des groupes Lamba de la Province du Centre. Pas de royaume centralise independant identifie.",
+      "relationsWithNeighbors": "Relations etroites avec les Lamba et les Lima (Bulima), avec lesquels ils partagent l'expression identitaire Ilamba limo (un seul Lamba). Proximite historique avec les Bisa le long de la riviere Luangwa.",
+      "conflictsOrAlliances": "Alliance culturelle et linguistique avec les Lamba et Lima. Tensions historiques liees a la colonisation britannique et a l'installation des mines a Kabwe.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 83000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 83000,
+          "note": "Zambie - Province du Centre, region de Kabwe"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Swaka in Zambia – Joshua Project 2025 (https://joshuaproject.net/people_groups/15146)",
+      "Swaka of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015635/)",
+      "Factors Contributing to Language Endangerment of Minority Languages – Science Publishing Group, 2018 (https://www.sciencepublishinggroup.com/article/10.11648/j.ijeedu.20180702.11)",
+      "History of Zambia – Wikipedia EN (https://en.wikipedia.org/wiki/History_of_Zambia)",
+      "Languages of Zambia – Wikipedia EN (https://en.wikipedia.org/wiki/Languages_of_Zambia)"
+    ]
   }
 }

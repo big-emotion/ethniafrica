@@ -6,54 +6,79 @@
   "content": {
     "appellations": {
       "mainName": "Gonja",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ngbanya",
+      "exonyms": ["Gonja", "Ghanjawiyyu", "Guang", "Ngbanyito"],
+      "originOfExonyms": "Le nom Gonja est une deformation de la phrase haoussa Kada Goro-Jaa signifiant terre du cola rouge. Ngbanya ou Ngbanye signifie hommes courageux en langue locale. Ghanjawiyyu est la forme arabisee du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Gonja est utilise administrativement au Ghana et dans la litterature anglophone. Les membres de ce peuple se designent eux-memes comme Ngbanya dans leur langue maternelle.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Guan (sous-groupe)",
+      "historicalRegion": "Nord du Ghana, vallee du Volta noir",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Gonja"],
+    "ethnicities": ["Gonja", "Ngbanya"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Gonja sont un sous-groupe des Guan et descendent du clan mande Ngbanya. Avec la chute de l'Empire songhai vers 1600, le clan Ngbanya migra vers le sud en traversant le Volta noir. Leur histoire est transmise par la tradition orale appelee epopee de Jakpa, dont la plus ancienne version ecrite est une chronique arabe des annees 1890.",
+      "formationPeriod": "16e-17e siecle. L'armee Ngbanya, partie de l'ancien Mali, traversa le Segou au Mali meridional, la Cote d'Ivoire, la region Sissala et Wa (actuel Upper West du Ghana) avant de s'etablir dans le nord du Ghana.",
+      "migrationRoutes": [
+        "Depuis le Mali (region Mande) vers le Segou au Mali meridional",
+        "Passage par la Cote d'Ivoire et la region Sissala",
+        "Arrivee dans la region de Wa (Upper West Ghana)",
+        "Etablissement dans le nord du Ghana apres traversee du Volta noir"
+      ],
+      "historicalSettlementZones": [
+        "Nord du Ghana (region de la Savane actuelle)",
+        "Vallee du Volta blanc et Volta noir",
+        "Capitale historique a Yagbum (Yabum)"
+      ],
+      "unificationsOrDivisions": "Fondation du royaume de Gonja en 1675 par Sumaila Ndewura Jakpa. Le royaume fut divise entre les freres males de Jakpa et leurs descendants. Une chefferie supremepara montait, le Yagbongwura, fut etablie pour gouverner l'ensemble. La succession aux chefferies suit la descendance patrilineaire et circule entre les differentes gates (portes) des villages.",
+      "externalInfluences": "Influences significatives des peuples Akan, Mande et Haoussa dans la culture et l'organisation politique. Les marchands et missionnaires musulmans contribuerent a l'islamisation progressive a partir du 18e siecle.",
+      "majorHistoricalEvents": "Fondation du royaume de Gonja en 1675 par Ndewura Jakpa. Expansion rapide par conquetes des voisins de la vallee du Volta blanc. Etablissement d'un commerce d'or rentable avec les Etats akan via Begho. Salaga, ville-marche gonja, surnommee Tombouctou du Sud, devint un centre commercial majeur d'Afrique de l'Ouest. Colonisation britannique au 19e siecle."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie a chef supreme appele Yagbongwura, residant a Yabum. Toutes les cheminies gonja reconnaissent l'autorite du Yagbongwura. La succession est patrilineaire et circule entre les descendants de Ndewura Jakpa selon un systeme de rotation entre les gates (portes). Societe precoloniale stratifiee en castes: classe dirigeante, classe marchande musulmane, classe des roturiers animistes et classe des esclaves.",
+      "clanOrganization": "Organisation clanique autour du clan Ngbanya fondateur. Societe non exclusivement patrilineaire: normes patrilatera et matrilaterales coexistent dans l'affiliation aux groupes de parente. La fostering (tutelle au sein de la parente) etait pratiquee.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les offices chietains sont herites patrilineairement parmi les descendants de Ndewura Jakpa. Les lignages controlent l'acces aux positions de pouvoir selon un systeme de rotation.",
+      "religiousAuthority": "Les chefs religieux musulmans (mallams) jouent un role important. La conversion a l'islam au 18e siecle fut favorisee par la reputation de pouvoirs guerisseurs des prières coraniques. L'histoire du royaume fut enregistree par des eruditiés musulmans integres a l'armee gonja."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ngbanya (Gonja)",
+      "isoCodes": ["gjn"],
+      "dialects": ["Gonja", "Choruba"],
+      "vehicularRole": "La langue Ngbanya (Gonja) est parlee par environ 300 000 personnes, presque toutes du groupe ethnique Gonja du nord du Ghana. Elle est parlee par environ un tiers de la population de la region nord. Langue apparentee aux langues Guan du sud du Ghana."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La chietaintete occupe une place centrale dans la vie sociale et rituelle. Pratiques islamiques melees de traditions animistes (folk islam). Rites de passage lies a la chietaintete et a la succession.",
+      "symbols": "La figure du Yagbongwura (chef supreme) est le principal symbole d'unite du peuple Gonja. Marques tribales individuelles sur la poitrine, les joues et les bras. Tatouages feminins elabores sur les joues, le cou, la poitrine et l'abdomen (motifs: etoiles, arcs, trois lignes paralleles, triangle sombre entre les yeux et les oreilles).",
+      "artsAndMusic": "Culture orale riche incluant l'epopee de Jakpa. Production et commerce du beurre de karite (exporte vers la cote, fa onne en cone de sucre enveloppe de feuilles par torrefaction, pilage et ebullition). Culture millet et mais. Chasse et peche pratiquees par les Gonja et les Nchumuru.",
+      "spiritualities": "Majorite musulmane (Islam populaire syncrétique melant elements traditionnels islamiques et pratiques animistes: protections contre les esprits par incantations et amulettes magiques, recitation de versets coraniques pour des guerisons miraculeuses). Societe precoloniale comportait une classe de roturiers animistes. Conversion progressive a l'islam a partir du 18e siecle grace a l'influence des marchands et missionnaires musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Gonja fonde en 1675 par Sumaila Ndewura Jakpa. L'un des royaumes les plus importants du nord du Ghana precolonial. Capitale a Yagbum. Le royaume controla le commerce de l'or, de la cola et des esclaves via la ville-marche de Salaga, centre commercial majeur surnomme Tombouctou du Sud.",
+      "relationsWithNeighbors": "Relations commerciales avec les Etats akan via la ville de Begho (or). Influences des peuples Dagbon, Akan, Mande et Haoussa. Conquetes de plusieurs voisins de la vallee du Volta blanc lors de la fondation du royaume.",
+      "conflictsOrAlliances": "Guerres de conquete menees par Ndewura Jakpa pour etablir le royaume au 17e siecle. Alliance avec des marchands haoussa et des mallams musulmans. Resistance a la colonisation britannique au 19e siecle. Les Gonja du groupe guan envahirent le Dagbon oriental dans les annees 1600, capturant Daboya et de nombreuses villes.",
+      "diaspora": "Association Gonja d'Amerique du Nord (documentee, archivee depuis 2009). La population Gonja est presque exclusivement localisee au Ghana."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 384000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org, 2023 (estime a 384 000); Ghana Statistical Service, recensement 2021 (Guan: 3,7% de 30,8 millions = env. 1,14 million; les Gonja en sont un sous-groupe majeur); estimation 2025 basee sur taux de croissance demographique du Ghana",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 384000,
+          "note": "Totalite de la population Gonja; region de la Savane, nord du Ghana"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Gonja people – Wikipedia, en.wikipedia.org/wiki/Gonja_people (consulte 2025)",
+      "Gonja language – Wikipedia, en.wikipedia.org/wiki/Gonja_language (consulte 2025)",
+      "Sumaila Ndewura Jakpa – Wikipedia, en.wikipedia.org/wiki/Sumaila_Ndewura_Jakpa (consulte 2025)",
+      "Gonja people – 101 Last Tribes, www.101lasttribes.com/tribes/gonja.html (consulte 2025)",
+      "Guan people – Wikipedia, en.wikipedia.org/wiki/Guan_people (consulte 2025)",
+      "Ghana Statistical Service – 2021 Population and Housing Census, census2021.statsghana.gov.gh (2022)"
+    ]
   }
 }

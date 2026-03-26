@@ -2,61 +2,91 @@
   "id": "PPL_MBUKUSHU",
   "nameMain": "Mbukushu",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["BWA", "NAM", "AGO", "ZMB"],
   "content": {
     "appellations": {
       "mainName": "Mbukushu",
-      "selfAppellation": "",
-      "exonyms": ["Mbukushu (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord du Botswana (Okavango), frontière avec la Namibie et l'Angola",
-      "currentCountries": ["BWA"]
-    },
-    "ethnicities": ["Mbukushu"],
-    "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Nord du Botswana (Okavango), frontière avec la Namibie et l'Angola"
+      "selfAppellation": "Hambukushu",
+      "exonyms": [
+        "Mbukushu",
+        "Hambukushu",
+        "Hakokuhu",
+        "Havamasiko",
+        "Haguva",
+        "Gova",
+        "Cusso",
+        "Mamakush",
+        "Mampakush"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "originOfExonyms": "Le nom Mbukushu est utilise par les Tswana du Botswana pour designer ce peuple. L'auto-designation Hambukushu signifie litteralement 'les gens'. Anciennement ils se designaient comme Haguva (les gens) puis Havamasiko avant leur arrivee sur l'Okavango.",
+      "whyProblematic": "La multiplicite des variantes orthographiques (Mbukushu, Hambukushu, Hakokuhu) cree des confusions dans les sources coloniales et contemporaines. Le terme Mbukushu est impose par les Tswana et non choisi par le peuple lui-meme.",
+      "contemporaryUsage": "Le terme Hambukushu est utilise dans les contextes officiels en Namibie ou il constitue l'un des cinq royaumes Kavango reconnus. Au Botswana le terme Mbukushu est le plus repandu dans les documents gouvernementaux.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Kavango",
+      "historicalRegion": "Region de l'Okavango, le long de la riviere Kavango (Namibie, Botswana, Angola) et region de Mashi/Kwando (Zambie)",
+      "currentCountries": ["BWA", "NAM", "AGO", "ZMB"]
+    },
+    "ethnicities": ["Hambukushu", "Hakokuhu"],
+    "origins": {
+      "ancientOrigins": "Les Hambukushu sont originaires du Barotseland (Zambie actuelle) et remontent selon leur tradition orale au Bassin du Congo. Leur mythologie affirme que le dieu supreme Nyembe crea les premiers hommes et les fit descendre par une corde depuis le ciel jusqu'aux collines Tsodilo au Botswana. Leur arrivee effective sur la riviere Okavango est situee au debut du XIXe siecle.",
+      "formationPeriod": "XVIe-XVIIIe siecles, lors de la migration des peuples Kavango depuis les Grands Lacs d'Afrique orientale vers le sud-ouest jusqu'au bassin de l'Okavango. Les Mbukushu se separerent politiquement des autres groupes Kavango (Mbunza, Kwangali, Shambyu, Gciriku) a une periode precoce.",
+      "migrationRoutes": [
+        "Grands Lacs d'Afrique orientale vers la region de Mashi/Kwando (Zambie superieure)",
+        "Region de Mashi vers le bassin de l'Okavango (Namibie et Botswana) entre le XVIe et le XVIIIe siecle",
+        "Fuite de l'Angola vers le Botswana en 1967 pour 3 300 refugies fuyant les attaques portugaises lors de la guerre d'independance angolaise"
+      ],
+      "historicalSettlementZones": [
+        "Barotseland (Zambie), region du Kwando",
+        "Kavango Oriental (Namibie), rives de l'Okavango d'Andara a la frontiere du Botswana",
+        "Ngamiland (nord-ouest Botswana), villages de Shakawe, Etsha, Gumare, Seronga, Mohembo",
+        "Angola meridional, rives de l'Okavango jusqu'a la jonction du Cuito"
+      ],
+      "unificationsOrDivisions": "Separation politique precoce des Mbukushu du reste des peuples Kavango. En 1967, arrivee massive de refugies hambukushu depuis l'Angola au Botswana, qui furent integres sous l'autorite du chef Batawana Letsholatebe.",
+      "externalInfluences": "Domination partielle par les Lozi (Barotse) qui reduisirent certains Hambukushu en servitude. Raids esclavagistes des Mambari pour les Portugais. Influence coloniale allemande puis sud-africaine en Namibie. Guerre d'independance angolaise causant le deplacement massif de 1967.",
+      "majorHistoricalEvents": "Reduction en esclavage partielle par les Lozi et les negriers mambari pour les Portugais (XIXe s.). Fuite massive de 3 300 refugies hambukushu depuis l'Angola vers le Botswana en decembre 1967 suite aux attaques portugaises. Reconnaissance des Mbukushu comme l'un des cinq royaumes Kavango en Namibie independante."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme cheffal hereditaire. A la tete se trouve un chef (Hompa) ou une reine (vaHompa) designe par heredite. Le chef est assiste d'un conseil de chefs de famille. Il percoit des tributs annuels en grain, peaux, betail et gibier, et detient l'allegiance militaire. Le chef dispose de serviteurs (harpika) et de gardes du corps speciaux (ngambera). Le chef-faiseur-de-pluie (rain-maker) joue un role ceremoniel agricole fondamental.",
+      "clanOrganization": "Organisation matrilineaire au sein de la societe Kavango plus large : la descendance reelle suit la ligne feminine, mais les enfants peuvent avoir des relations plus proches avec leur oncle maternel qu'avec leur pere. Les Hambukushu s'organisent en petits hameaux familiaux etendus disperses le long des rivieres.",
+      "roleOfLineages": "Les lignages matrilineaires constituent les vrais regroupements sociaux. La filiation feminine determine l'appartenance clanique et les droits.",
+      "religiousAuthority": "Le chef-faiseur-de-pluie (grand rain-maker) preside les activites agricoles et dirige les danses du festival des recoltes Rengo. Les medicine men (Ngana) et devins (Katemba) gèrent les questions de sante et de malheur en lien avec les esprits ancestraux."
     },
     "languages": {
-      "mainLanguage": "Mbukushu (mhw)",
+      "mainLanguage": "Mbukushu (Thimbukushu)",
       "isoCodes": ["mhw"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": ["Simbukushu", "Thimbukushu"],
+      "vehicularRole": "Langue nationale en Namibie (region de Kavango Oriental). En 2022 selectionnee pour l'enseignement dans les ecoles primaires du Botswana a partir de 2023. Langue a consonnes cliquees (trois clics : tenuis c, sonore gc, nasalise nc), particularite phonologique rare parmi les langues bantoues de la region."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival des recoltes Rengo, preside par le chef-faiseur-de-pluie avec danses rituelles. Rituels de sacrifice aux esprits ancestraux (hathimo). Danse seperu, pratiquee par hommes et femmes, anciennement rituelle (adoration ancestrale). Danse njangura, executee lors de ceremonies de guerison.",
+      "symbols": "Nyembe, dieu supreme createur. Collines Tsodilo au Botswana, site mythique de la creation selon la tradition orale hambukushu. Le fleuve Okavango comme element central de l'identite culturelle.",
+      "artsAndMusic": "Les femmes hambukushu sont reputees pour leur art du tissage de paniers (basketry), vendus a prix eleve dans les grandes villes. Sculptures sur bois traditionnelles. Pieges a poissons fabriques par les femmes. Musique traditionnelle lors des ceremonies avec la danse seperu (anciennement rituelle).",
+      "spiritualities": "Croyance en Nyembe, dieu supreme createur et justicier. Croyance en les hathimo, esprits des ancetres defunts qui reviennent visiter les vivants et faire des demandes. Les bons esprits montent au paradis (Diwiru) tandis que les mauvais servent Shadapinyi (messager de la mort de Nyembe). Animisme syncrethise avec le christianisme (55% de chretiens aujourd'hui). Les medicine men (Ngana) et devins (Katemba) medient avec le monde des esprits."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "L'un des cinq royaumes Kavango en Namibie. Chefferie traditionnelle hereditaire avec le Hompa (roi) ou vaHompa (reine). La chefferie hambukushu etait reconnue avant la colonisation europeenne.",
+      "relationsWithNeighbors": "Coexistence avec les Bayeye du Botswana qui leur ont fourni du travail lors de leur arrivee comme refugies en 1967. Relations historiques avec les Lozi (Barotse) dont ils etaient parfois tributaires ou asservis. Partage de la region Kavango avec les Mbunza, Kwangali, Shambyu et Gciriku, avec qui ils partagent des caracteristiques culturelles communes (peche, agriculture, sculpture).",
+      "conflictsOrAlliances": "Asservissement partiel par les Lozi et vente aux negriers mambari/portugais (XIXe s.). Attaques portugaises durant la guerre d'independance angolaise (1967) causant l'exode massif. Alliance avec le chef Batawana Letsholatebe lors de l'accueil des refugies en 1967.",
+      "diaspora": "Environ 3 300 refugies installes en 1967 dans 13 villages du nord-ouest du Botswana (region d'Etsha). Population totale estimee a 120 000 personnes (2025) repartie entre Namibie (~47 000), Botswana, Angola et Zambie."
     },
     "demography": {
-      "totalPopulation": 30,
+      "totalPopulation": 120000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project / PeopleGroups.org 2025",
+      "distributionByCountry": [
+        { "country": "NAM", "population": 47000 },
+        { "country": "BWA", "population": 40000 },
+        { "country": "AGO", "population": 20000 },
+        { "country": "ZMB", "population": 13000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Mbukushu – Wikipedia EN (https://en.wikipedia.org/wiki/Mbukushu)",
+      "Mbukushu language – Wikipedia EN (https://en.wikipedia.org/wiki/Mbukushu_language)",
+      "Mbukushu people – 101 Last Tribes (https://www.101lasttribes.com/tribes/mbukushu.html)",
+      "Mbukushu, Gova in Namibia – Joshua Project (https://joshuaproject.net/people_groups/print/13639/WA)",
+      "Ethnologie des Mbunza / histoire Kavango – LCFN Namibia (https://www.lcfn.info/mbunza/information/ethnology)",
+      "Fisch Maria, The Mbukushu in Angola (1730-2002): A History of Migration, Flight and Royal Rainmaking – Koeppe Verlag, 2005"
+    ]
   }
 }

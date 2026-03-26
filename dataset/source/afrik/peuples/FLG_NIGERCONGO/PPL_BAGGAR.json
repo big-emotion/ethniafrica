@@ -1,68 +1,143 @@
 {
   "id": "PPL_BAGGAR",
-  "nameMain": "Baggar",
+  "nameMain": "Baggara",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": [],
+  "currentCountries": ["SDN", "TCD", "NGA", "CMR", "CAF", "NER", "SSD"],
   "content": {
     "appellations": {
-      "mainName": "Baggar",
-      "selfAppellation": "Baggar",
-      "exonyms": ["Baggar (terme utilisé par les Européens)"],
+      "mainName": "Baggara",
+      "selfAppellation": "Baggara (du terme arabe al-baqqara, porteurs de bovins)",
+      "exonyms": [
+        "Shuwa Arabs (denomination utilisee au Tchad, Nigeria, Cameroun)",
+        "Chadian Arabs (terme academique pour le groupe linguistique)",
+        "Abbala (sous-groupe eleveurs de chameaux au Soudan)",
+        "Diffa Arabs (sous-groupe au Niger, region de Diffa)",
+        "Muraheleen (terme pour les cavaliers-raiders armes)"
+      ],
+      "originOfExonyms": "Le terme Baggara derive de l'arabe al-baqqara (au sens de eleveurs de vaches, de baqar : boeuf). Il est utilise principalement au Soudan pour designer ces tribus arabophones nomades du Darfour et du Kordofan. Au Nigeria, Cameroun et au Tchad occidental, les memes groupes sont designes comme Shuwa Arabs, terme d'origine kanouri devenu geographiquement et socialement restrictif selon les chercheurs. Le terme Diffa Arabs designe au Niger les groupes migres du Tchad.",
+      "whyProblematic": "Les Baggara ne se considerent pas tous comme un seul peuple ou une seule ethnie : chaque groupe s'identifie d'abord a sa tribu ancestrale (Rizeigat, Messiria, Hawazma, etc.). L'appellation collective Baggara est davantage une categorie administrative et politique soudanaise qu'une identite auto-proclamee. Par ailleurs, le terme Shuwa est percu comme geographiquement restrictif et socialement depreciateur dans certains contextes.",
+      "contemporaryUsage": "Baggara est utilise dans les contextes soudanais et academiques. Shuwa Arabs est le terme courant au Nigeria, Cameroun et Tchad occidental. Chadian Arabs est le terme prefere en linguistique pour designer leur dialecte arabe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou",
-      "historicalRegion": "Afrique centrale",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Arabes afro-asiatiques (groupe de contact afro-arabe du Sahel)",
+      "historicalRegion": "Bande du Baggara (Baggara Belt) : bande Sahelo-soudanienne de 2 500 km s'etendant du nord-est du Cameroun et du nord du Nigeria jusqu'au Soudan du Sud, traversant le Tchad central, le Darfour et le Kordofan",
+      "currentCountries": ["SDN", "TCD", "NGA", "CMR", "CAF", "NER", "SSD"]
     },
     "ethnicities": [
-      "Baggar du Nord",
-      "Baggar du Sud",
-      "Sous-groupes régionaux"
+      "Rizeigat (Darfour, Soudan ; parmi les plus nombreux, comprendsous-groupes Mahamid, Mahariyya, Nuwaiba, Irayqat, Atayfat)",
+      "Messiria (plus grande et plus importante tribu ; Kordofan et Tchad, sous-groupes Zurug et Humr, 515 000 personnes en 2012)",
+      "Hawazma (Kordofan, Soudan)",
+      "Ta'isha (Darfour, Soudan ; tribu de Khalifa Abdallahi, bras droit du Mahdi)",
+      "Habbaniya (Darfour et Kordofan)",
+      "Beni Halba (Darfour ; partage le nom avec une sous-tribu des Judham arabes)",
+      "Awlad Himayd (Kordofan)",
+      "Beni Selam (Nil Blanc, Soudan)",
+      "Salamat (Tchad)",
+      "Tarjam (Darfour)",
+      "Beni Hussein (Darfour)",
+      "Shuwa Arabs (Nigeria, nord-est ; Cameroun, region Far North ; Tchad occidental)",
+      "Diffa Arabs (Niger, region de Diffa ; descendant surtout du clan Mahamid)"
     ],
     "origins": {
-      "ancientOrigins": "Les Baggar sont originaires de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Baggara sont une confederation nomade de peuple d'ascendance mixte arabe et africaine arabisee. Ils revendiquent une ancestralite issue de la tribu arabe des Juhaynah, originaire de la peninsule arabique pres de la cote de la mer Rouge. Leurs ancetres seraient entres dans la region soudanienne entre le 12e et le 13e siecle. La premiere mention documentee d'une presence arabe dans la region date de 1391, quand le roi du Bornou se plaignit d'incursions arabes au sultan mamelouk.",
+      "formationPeriod": "La culture baggara telle qu'elle est connue se forma au 17e siecle au Wadai, entre le Bornou et le Darfour, lors de la rencontre entre des Arabes eleveurs de chameaux migrant vers l'est et des Peuls eleveurs de bovins migrant vers l'est. Cette synthese donna naissance a ce que Braukamper (1994) a denomme la baggaara (culture des eleveurs de bovins en arabe). Aux 15e-16e siecles, les groupes baggara se repandirent et s'etendirent. Au 18e siecle, ils etaient concentres au nord et a l'est du lac Tchad.",
+      "migrationRoutes": [
+        "Entree dans la region ouest-soudanaise entre le 12e et le 13e siecle via la vallee du Nil",
+        "Expansion vers l'ouest au 17e-18e siecle, atteignant le lac Tchad et le nord du Nigeria",
+        "Migration saisonniere annuelle nord-sud : vers les paturages du nord en saison des pluies, vers les cours d'eau du sud en saison seche",
+        "Migration des Diffa Arabs du Tchad vers le Niger lors de la secheresse de 1974 et des guerres des annees 1980"
+      ],
+      "historicalSettlementZones": [
+        "Darfour (Soudan) : zones rurales du Sud-Darfour, Darfour occidental",
+        "Kordofan (Soudan) : Est-Kordofan principalement",
+        "Tchad central et meridional : plaines soudaniennes",
+        "Nigeria du Nord-Est : Etat de Borno, Yobe, Adamawa",
+        "Cameroun : Region de l'Extreme-Nord (vicinity du lac Tchad)",
+        "Niger : Departement de Diffa, Region de Diffa"
+      ],
+      "unificationsOrDivisions": "Les Baggara ne forment pas un peuple unique mais une confederation tribale. Sous l'administration britannique indirecte au Soudan, chaque tribu etait dirigee par son propre chef paramount (nazir). Politiquement, la plupart des tribus etaient allegees au parti Umma (dirige par Sadiq el-Mahdi depuis les annees 1960). Les quatre plus grandes tribus du Darfour (Rizeigat, Habbaniya, Beni Halba, Ta'isha) ont recu des concessions foncieres (hawakir) des sultans Fur au 18e siecle.",
+      "externalInfluences": "Contacts intenses avec les peuples sedentaires non-arabes (Fur, Nuba, Peuls) generant une grande metissage biologique et culturel. Islamisation par les Juhaynah arabophones. Administration britannique au Soudan (indirect rule, nazir). Conflits politiques post-coloniaux au Soudan et au Tchad. Instrumentalisation par le gouvernement soudanais comme milices (1985 et suivants).",
+      "majorHistoricalEvents": "1391 : premiere mention documentee de presence arabe dans la region (plainte du roi du Bornou). 1883-1898 : role central des Baggara dans la revolte mahdiste contre la domination turco-egyptienne. La Ta'isha fournissait Khalifa Abdallahi, bras droit du Mahdi. 1898 : defaite a la bataille de Karari ; retour au Darfour et au Kordofan. 1985+ : le gouvernement soudanais arme les tribus baggara (Rizeigat, Messiria, Hawazma) comme milices proxy contre l'APLS (Armee populaire de liberation du Soudan) ; creation des Muraheleen (cavaliers-raiders) ; precurseurs des Janjawids. 1990-1991 : la milice Beni Halba defait la force de l'APLS menee par Daud Bolad au Darfour. Annees 2000 : implication marginale dans le conflit du Darfour."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chaque grande tribu baggara est dirigee par un chef paramount appele nazir (au Soudan) ou lawan (au Nigeria). Le nazir preside une hierarchie de chefs tribaux (omda, cheikh) administrant les sous-groupes. Sous la periode coloniale britannique, le systeme d'indirect rule renforcat l'autorite des nazir. En dehors du Soudan, les structures d'autorite varient selon les pays : au Nigeria, les Shuwa Arabs s'integrent souvent dans les structures emirales haussophones.",
+      "clanOrganization": "Organisation en tribus, sous-tribus et clans patrilineaires. Les Messiria comptent parmi les sous-groupes : Zurug, Humr, ainsi que des groupes proches comme Ta'alba, Sa'ada, Hotiyya et Nei'mat. Les Rizeigat comprennent cinq sections majeures (Mahamid, Mahariyya, Nuwaiba, Irayqat, Atayfat). Le mariage est souvent polygame, notamment chez les chefs. Les tentes appartiennent aux femmes mariees.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance tribale, l'acces aux paturages et les droits de passage. Le mode de vie nomade impose une organisation flexible : les tentes sont disposees en cercle la nuit, le betail rentre a l'interieur. Les garcons sont formes comme bouviers des leur jeune age. Les hommes construisent un abri solaire (sun shelter) commun pour manger, discuter et recevoir des invites.",
+      "religiousAuthority": "Islam sunnite sunnite malekite, pratique depuis le 13e siecle. Pratiques quotidiennes : prieres, jeune du Ramadan, enseignement coranique pour les enfants, respect des fetes islamiques (Aid el-Fitr, Aid el-Adha, Mawlid). La croyance aux esprits mauvais (djinns) coexiste avec l'Islam : chaque matin un homme eternue pour chasser l'esprit malin qui aurait dormi dans son nez. Les amulettes (taweez) sont portees."
     },
     "languages": {
-      "mainLanguage": "Baggar",
-      "vehicularRole": "Le baggar est parlé par la majorité des Baggar. Le français, le lingala et d'autres langues sont également utilisés."
+      "mainLanguage": "Arabe tchadien (Chadian Arabic / Shuwa Arabic)",
+      "isoCodes": ["shu"],
+      "dialects": [
+        "Arabe bagirmi (de l'est du Nigeria au Tchad, fringe meridionale de la zone, stress syllabique final typique : katab)",
+        "Varietes urbaines du Tchad (N'Djamena, Abeche, caracterisees par des tendances simplificatrices)",
+        "Arabe soudanais du Sud-Kordofan (sous influence de l'arabe soudanais sedentaire)",
+        "Mileri (parle par le sous-groupe Messiria du Jebel Mun, Darfour occidental ; langue nilo-saharienne apparentee au Tama, exception linguistique)"
+      ],
+      "vehicularRole": "L'arabe tchadien est la langue maternelle de 1,9 million de personnes au Tchad (12% de la population) et langue vehiculaire parlee par 40-60% des Tchadiens. Au Nigeria (Etat de Borno), il est localement appele Shuwa Arabic et compte 265 000 locuteurs natifs (2024). Il integre du vocabulaire haoussa, kanouri et fula. L'arabe tchadien sert de lingua franca dans une grande partie de la bande sahelo-soudanaise. Les Baggara sont generalement plurilingues, parlant l'arabe tchadien ainsi que les langues locales des sedentaires voisins."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels baggar, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Mariage : la mahr (dot) est payee en betail ou en especes. Les mariages sont souvent arranges entre familles. Les festivites incluent de la musique, des danses, des festins et des benedictions par des clercs islamiques. Funerailles islamiques : inhumation rapide, corps oriente vers La Mecque, prieres funeraires. Naissance : celebrations communautaires, attribution d'un nom islamique au septieme jour (aqiqa). Rites de passage masculins : garcons formes comme bouviers, apprentissage des techniques d'elevage et de survie en milieu nomade. Fetes islamiques : Aid el-Fitr et Aid el-Adha sont les grandes celebrations, accompagnees de prieres, de festins et dans certaines zones de danses, de musique et de courses de chevaux.",
+      "symbols": "Le betail (vaches, chameaux, chevres) est le symbole de richesse, de statut social et d'hospitalite. Le lait est a la fois aliment et symbole d'abondance. Les jallabiyas (longues robes) et turbans pour les hommes, les voiles et wrappers colores pour les femmes constituent des marqueurs identitaires. Les tentes en cuir et en tissu, propriete des femmes mariees, symbolisent l'autonomie feminine dans la sphere domestique. Les cornes d'animaux servent d'ornements et de medicaments traditionnels.",
+      "artsAndMusic": "Traditions orales riches : poesie et chants epiques celebrant les exploits guerriers, les mouvements de troupeaux et les grandes serees (hamasah, chants de vaillance). Musique de mariage avec percussions, chants et parfois luth. Danse et musique lors des rassemblements communautaires. Artisanat du cuir : fabrication de selles, couvertures de tentes, vetements, accessoires. Travail du cuir et des os pour ornements et armes. Les images religieuses (calligraphie arabe, amulettes) constituent une forme d'art sacre. Equitation et lutte traditionnelle lors des rassemblements.",
+      "spiritualities": "Islam sunnite malekite, pratique depuis le 13e siecle. Croyance forte aux esprits mauvais (djinns, shaytans) coexistant avec l'Islam. Port d'amulettes (taweez) contenant des versets coraniques pour protection. Observation rigoureuse des cinq piliers de l'Islam : shahada, priere cinq fois par jour, jeune du Ramadan, zakat (aumone), hajj pour les plus aises. Education coranique des enfants des le plus jeune age. Quelques pratiques pre-islamiques subsistent dans le cadre des traditions pastorales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora baggar dans les grandes villes congolaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Baggara n'ont pas fonde de royaumes centralises mais ont constitue des confederations tribales puissantes sous leurs nazir. Sous le Mahdisme (1883-1898), la Ta'isha fournirait le Khalifa Abdallahi ibn Muhammad, maitre de fait du Soudan mahdiste pendant pres de 15 ans. Les grandes tribus du Darfour ont recu des hawakir (concessions foncieres) des sultans Fur au 18e siecle, constituant une forme de souverainete territoriale reconnue.",
+      "relationsWithNeighbors": "Relations complexes et souvent conflictuelles avec les peuples sedentaires du Darfour (Fur) et du Kordofan (Nuba). Commerce de betail avec les marchands haoussa et arabes sedentaires. Alliances temporaires avec des groupes peuls lors de la formation de la culture baggara au 17e siecle. Relations tendues avec le SPLA (Armee populaire de liberation du Soudan) lors de la guerre civile soudanaise.",
+      "conflictsOrAlliances": "1883-1898 : backbone de la revolte mahdiste contre la domination turco-egyptienne. 1985 et suivants : armement par le gouvernement soudanais de tribus baggara (Rizeigat, Messiria, Hawazma) comme milices proxy contre l'APLS ; creation des Muraheleen. Enlèvements et esclavage de milliers de femmes et enfants dinka (Missiriya, Rezeigat) et nuba lors de la deuxieme guerre civile soudanaise. Conflit de Beni Halba contre l'APLS de Daud Bolad (1990-1991) au Darfour. Involvement marginal dans le conflit du Darfour (2003+).",
+      "diaspora": "Le mode de vie nomade implique une dispersion geographique saisonniere plutot qu'une diaspora au sens classique. Certains Baggara se sont sedentarises dans les villes soudanaises (Omdurman, Al-Ubayyid, Al-Fashir) et tchadiennes (N'Djamena). Des communautes de migrants baggara existent dans d'autres pays arabes (Egypte, Lybie, pays du Golfe) parmi la diaspora soudanaise."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 6500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Baggara people (plus de 6 millions). Estimation 2025 basee sur les chiffres disponibles : Messiria 515 000 (Soudan, 2012), Rezeigat 299 000 (Soudan, 2012), Shuwa Arabs Nigeria 265 000 locuteurs (2024), arabe tchadien 1,9 million au Tchad. Population totale multi-pays estimee a plus de 6 millions, dont la grande majorite au Soudan et au Tchad.",
+      "distributionByCountry": [
+        {
+          "country": "SDN",
+          "population": 3000000,
+          "note": "Principalement Darfour et Kordofan ; Messiria (515 000), Rizeigat (299 000), Hawazma, Ta'isha, Habbaniya et autres tribus"
+        },
+        {
+          "country": "TCD",
+          "population": 2500000,
+          "note": "Shuwa Arabs / Chadian Arabs, principalement dans le centre et le sud du Tchad ; langue vehiculaire nationale"
+        },
+        {
+          "country": "NGA",
+          "population": 600000,
+          "note": "Shuwa Arabs de l'Etat de Borno, Yobe et Adamawa (265 000 locuteurs natifs en 2024 selon Ethnologue)"
+        },
+        {
+          "country": "CMR",
+          "population": 200000,
+          "note": "Region de l'Extreme-Nord, environs du lac Tchad"
+        },
+        {
+          "country": "CAF",
+          "population": 50000,
+          "note": "Frange nord de la prefecture de Vakaga, adjacente au Tchad et au Soudan"
+        },
+        {
+          "country": "NER",
+          "population": 50000,
+          "note": "Diffa Arabs dans le departement de Diffa (Diffa Region) ; majoritairement emigres depuis le Tchad lors de la secheresse de 1974"
+        },
+        {
+          "country": "SSD",
+          "population": 100000,
+          "note": "Petite zone frontaliere avec le Soudan"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Baggar language",
-      "CIA World Factbook – DRC",
-      "Recensements congolais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Baggara Arabs. https://en.wikipedia.org/wiki/Baggara_people",
+      "Wikipedia EN — Chadian Arabic. https://en.wikipedia.org/wiki/Chadian_Arabic",
+      "Joshua Project — Baggara, Shuwa Arab in Central African Republic. https://joshuaproject.net/people_groups/14926/CT",
+      "Study.com — Baggara Arabs: History, Culture and Language. https://study.com/academy/lesson/baggara-arabs-history-culture-language.html",
+      "Kunzaar — Baggara Arabs (Shuwa Arabs): A Cultural Insight. https://kunzaar.com.ng/baggara-arabs-tribe/",
+      "Braukamper, Ulrich — baggaara culture formation, 1994. Cite dans Wikipedia Baggara Arabs.",
+      "Ethnologue — Chadian Arabic (shu). SIL International."
     ]
   }
 }

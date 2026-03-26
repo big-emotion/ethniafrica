@@ -1,23 +1,106 @@
 {
   "id": "PPL_AFEMAI",
-  "nameMain": "",
+  "nameMain": "Afemai",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Afemai",
       "selfAppellation": "Afenmai",
+      "exonyms": [
+        "Etsako",
+        "Kukuruku",
+        "Yekhee",
+        "Iyekhe",
+        "Ivbiosakon",
+        "Ivbiesakon"
+      ],
+      "originOfExonyms": "Kukuruku : nom donné par l'administration coloniale britannique, prétendument dérivé d'un cri de guerre; considéré aujourd'hui comme péjoratif et abandonné. Etsako signifie ceux qui se liment les dents, en référence à une ancienne pratique de scarification dentaire. Ivbiosakon / Ivbiesakon est le nom bini (edo) signifiant enfants de ceux qui se liment les dents.",
+      "whyProblematic": "Le nom Kukuruku, encore utilisé parfois en référence aux Kukuruku Hills, est rejeté par la communauté comme héritage colonial dévalorisant.",
+      "contemporaryUsage": "Afemai et Afenmai sont utilisés indifféremment dans la littérature et les documents officiels de l'État d'Edo. Etsako désigne plus précisément le sous-groupe principal et ses trois LGAs.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Nigeria (Edo State – Nord)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Edoid (branche nord-centrale, famille Niger-Congo)",
+      "historicalRegion": "Edo North Senatorial District, Etat d'Edo, Nigeria — région historiquement connue sous le nom de Division Kukuruku puis Division Afenmai pendant l'ère coloniale",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ets)", "Edo State Cultural Archives"]
+    "ethnicities": [
+      "Etsako — sous-groupe principal, occupant les LGAs Etsako West (Auchi), Etsako Central (Fugar) et Etsako East (Agenebode)",
+      "Owan — sous-groupe occupant Owan East (Afuze) et Owan West (Sabongida-Ora), avec les clans Ihievbe, Emai, Iuleha, Ora, Igue, Uokha, Otuo",
+      "Akoko-Edo — sous-groupe occupant le LGA Akoko-Edo (Igarra), avec les communautés Igarra, Ibillo, Ososo, Somorika",
+      "Avhianwu (Iviawu) — clan du LGA Etsako Central comprenant Unone, Arua, Ogbona, Iriakhor",
+      "Weppa-Wanno (Agenebode) — communauté du LGA Etsako East autour d'Agenebode",
+      "Okpella — communauté distincte du LGA Etsako East, à la frontière avec l'Etat de Kogi"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Afemai tracent leur origine au royaume de Bénin. Les traditions orales et les récits historiques indiquent qu'ils ont migré depuis Bénin-City au cours du règne d'Oba Ewuare le Grand (v. 1435-1440 après J.-C.), période de réconciliation et de reconstruction après des guerres civiles. Plusieurs vagues de migration ont eu lieu lors de crises internes du royaume de Bénin, notamment des guerres de succession. Des peuples autochtones occupaient la région avant ces migrations.",
+      "formationPeriod": "Formation entre le XIIIe et le XVe siècle, à mesure que des groupes migrent depuis Bénin-City et s'établissent d'abord à South Ibie, puis se dispersent vers Weppa-Wanno, Okpella, Uzairue et d'autres zones. La cohésion ethnique se consolide au fil des siècles sous les pressions extérieures, notamment la résistance à la colonisation britannique.",
+      "migrationRoutes": [
+        "Migration initiale depuis Bénin-City vers le nord lors des règnes d'Oba Ewuare (v. 1435-1480) et de ses successeurs",
+        "Premières installations à South Ibie comme point de départ",
+        "Dispersion progressive vers Weppa-Wanno, Okpella, Uzairue, Owan et Akoko-Edo",
+        "Migration d'Omorodion (fils d'Oba Eweka I) pour fonder Uwokha (Uokha) après une dispute de succession"
+      ],
+      "historicalSettlementZones": [
+        "Plaines et collines de l'Edo North (Kukuruku Hills)",
+        "Vallée du fleuve Niger à Agenebode (LGA Etsako East)",
+        "Zone montagneuse de l'Akoko-Edo (frontière Edo-Kogi-Ondo)",
+        "Région fluviale d'Owan (Owan East et West)"
+      ],
+      "unificationsOrDivisions": "La Division Afenmai coloniale fut regroupant les six LGAs actuels sous une administration unique. Après l'indépendance, la division fut scindée en six LGAs constituant le Edo North Senatorial District. Le nom fut officiellement changé de Kukuruku à Afenmai à la demande de la communauté.",
+      "externalInfluences": "Influence profonde du royaume de Bénin sur la culture matérielle, les titres traditionnels et la langue. Résistance à la colonisation britannique : guerres d'Ekperi, soulèvements dans l'Akoko-Edo et l'Owan. Intégration de l'islam depuis le XVIIIe siècle, notamment à Auchi et Agbede via les marchands haoussa et nupe.",
+      "majorHistoricalEvents": "Migration depuis Bénin durant le règne d'Oba Ewuare (v. 1435-1440); constitution de la Division Kukuruku sous l'administration coloniale britannique; résistance anticoloniale (guerre d'Ekperi et soulèvements d'Akoko-Edo et Owan); renommage officiel en Division Afenmai; indépendance du Nigeria (1960) et insertion dans l'État Midwest puis Bendel puis Edo (1991)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système décentralisé de royaumes et de chefferies autonomes, chacun avec son propre monarque traditionnel. Parmi les titres importants : Otaru d'Auchi, Oba d'Agbede, Okumagbe de Weppa-Wanno, Ogieneni d'Uzairue, Oliola d'Anegbette, Ukor d'Ihievbe, Okuopellagbe d'Okpella. Aucun chef suprême central ne coiffe l'ensemble des Afemai. Les décisions communautaires reviennent aux conseils d'anciens et aux chefs traditionnels.",
+      "clanOrganization": "Organisation en clans (large villages ou villes) disposant chacun de leur propre histoire orale, de leurs lignages et de leurs rites d'initiation. Les clans les plus importants incluent : Etsako (Auchi, Fugar, Agenebode), Owan (Afuze, Sabongida-Ora), Akoko-Edo (Igarra), Avhianwu (Fugar), Okpella.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires organisent la succession aux titres traditionnels, la propriété foncière et l'appartenance clanique. Les mascarades et les festivals renforcent la solidarité lignagère. Les femmes conservent leurs liens de lignage après le mariage.",
+      "religiousAuthority": "Prêtres et prêtresses des cultes traditionnels (Osinegba, Erinmwin, divinités locales et naturels). L'islam est pratiqué à Auchi, Agbede et Okpella, avec des imams disposant d'une autorité religieuse locale. Les Églises chrétiennes jouent un rôle croissant depuis les missionnaires du XIXe siècle à Agenebode."
+    },
+    "languages": {
+      "mainLanguage": "Afenmai (Yekhee / Etsako)",
+      "isoCodes": ["ets"],
+      "dialects": [
+        "Auchi (Yekhee) — dialecte principal",
+        "Avainwu (Fugar)",
+        "Aviele",
+        "Ekperi",
+        "Ivhiadaobi",
+        "South Ibie (South Ivbie)",
+        "Uwepa-Uwano (Weppa-Wano)",
+        "Uneme (Uzanu, Anegbette, Udochi, Imiava)",
+        "Uzairue",
+        "Owan",
+        "Okpella / Okpekpe / North Ibie (Ivie)"
+      ],
+      "vehicularRole": "L'afenmai (Etsako/Yekhee) sert de langue véhiculaire au sein de la communauté afemai. Le pidgin nigérian et l'anglais sont utilisés pour les communications interethniques. Un mouvement de préservation linguistique est en cours parmi les jeunes générations et la diaspora."
+    },
+    "culture": {
+      "majorRites": "Mascarades traditionnelles lors des festivals communautaires. Rites funéraires élaborés incluant veillées, sacrifices et danses rituelles. Cérémonies d'intronisation des chefs traditionnels (installation de l'Otaru, de l'Oba, etc.). Rites agricoles liés aux saisons de plantation et de récolte (igname, maïs, manioc). Le festival Igue (hérité de l'influence béninoise) est célébré dans certaines communautés.",
+      "symbols": "La tortue magique sifflante (Okhaku'roros) d'Avbiosi, utilisée comme signal d'alerte lors d'attaques ennemies — arbre sacré Akhuere planté sur le site du fétiche toujours debout. L'arbre Agbabo d'Avhianwu, sous lequel les ancêtres du clan se sont réfugiés lors de leur migration, est protégé et sert d'attraction touristique.",
+      "artsAndMusic": "Musique Etsako reconnue dans les États d'Edo, Delta, Lagos, Kaduna et Kano. Danse Ighede, pratiquée lors des cérémonies importantes. Fabrication artisanale de sculptures, poteries et textiles. Traditions de conte oral (proverbes, récits de migration et d'origine). Artisanat de forge (héritage de l'influence béninoise sur le travail du métal).",
+      "spiritualities": "Religion traditionnelle africaine centrant sur le dieu suprême Osinegba (aussi appelé Oghena, Osi ou Oshio selon les dialectes) et les esprits ancestraux (Erinmwin). Islam sunnite présent à Auchi, Agbede et Okpella. Christianisme majoritaire dans la plupart des communautés suite aux missions du XIXe siècle. Syncrétisme courant entre pratiques traditionnelles et religions abrahamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Multiples royaumes autonomes : Auchi (Otaru d'Auchi), Agbede (Oba d'Agbede, premier roi musulman de l'Etat d'Edo, qui régnait vers 1890-1912), Weppa-Wanno (Okumagbe), Uzairue (Ogieneni), Ihievbe (Ukor), Anegbette (Oliola), Okpella (Okuopellagbe). Ces royaumes ont maintenu leur autonomie face aux pressions de Bénin et des colons britanniques.",
+      "relationsWithNeighbors": "Relations historiques complexes avec le royaume de Bénin : origine commune mais résistance à l'autorité des Obas. Relations commerciales avec les Nupe et les Haoussa au nord. Coexistence avec les Igbo à l'est (frontière de l'Etat Delta/Edo). L'Otaru d'Auchi est reconnu comme le chef suprême de l'islam dans l'Edo North.",
+      "conflictsOrAlliances": "Résistance armée à la colonisation britannique : guerre d'Ekperi, soulèvements dans l'Akoko-Edo et l'Owan contre la taxation et le travail forcé. Plusieurs communautés ont résisté vigoureusement avant la pacification britannique et leur intégration dans la Division Kukuruku.",
+      "diaspora": "Présence afemai significative dans les grandes villes nigérianes (Lagos, Benin City, Abuja, Kano). Diaspora internationale dans les pays anglophones. Personnalités notables : Adams Oshiomhole (ancien gouverneur d'Edo et ancien président de l'APC), Mike Oghiadomhe (ancien vice-chef de cabinet du Président Jonathan)."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur Wikipedia Afemai people (~420 000 selon une estimation ancienne, population projetée en 2025); Edo State population totale d'environ 4,7 millions en 2022 (Presidency.gov.ng), les Afemai représentant environ un tiers à deux cinquièmes de la population de l'Edo North. Les données exactes ne sont pas disponibles car le Nigeria ne publie pas de statistiques ethniques détaillées dans ses recensements.",
+      "distributionByCountry": [{ "country": "NGA", "population": 2000000 }]
+    },
+    "sources": [
+      "Wikipedia, Afemai people (en). https://en.wikipedia.org/wiki/Afemai_people (consulté 2025)",
+      "Wikipedia, Afenmai language (en). https://en.wikipedia.org/wiki/Afenmai_language (consulté 2025)",
+      "Ethnologue, Etsako (ETS). https://www.ethnologue.com/language/ets/ (consulté 2025)",
+      "AFESANCOM, The Afemai People of Edo State Nigeria. https://www.afesancommunitymaroc.com/the-afemai-people-of-edo-state-nigeria/ (consulté 2025)",
+      "The African Archives, Afemai Culture. https://theafricanarchives.org/index?article=afemai-culture- (consulté 2025)",
+      "Presidency of Nigeria (Community Engagement South-South), Edo State. https://communityengagementss.presidency.gov.ng/portfolio/edo/ (consulté 2025)",
+      "Egharevba, Jacob U. A Short History of Benin. Ibadan University Press, 4e éd., 1968."
+    ]
   }
 }

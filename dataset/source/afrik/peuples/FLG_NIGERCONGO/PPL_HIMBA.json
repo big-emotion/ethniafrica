@@ -7,64 +7,93 @@
     "appellations": {
       "mainName": "Himba",
       "selfAppellation": "Ovahimba",
-      "exonyms": ["Himba (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Himba (terme européen et international)",
+        "Les nomades rouges de Namibie (surnom touristique)"
+      ],
+      "originOfExonyms": "Le terme Ovahimba signifie mendiant en langue ngambwe. Il fut attribué aux Herero du Kaokoveld par le peuple Ngambwe d'Angola lorsque ces derniers, fuyant les raids Nama au milieu du XIXe siècle, se réfugièrent en Angola démunis de tout bétail. Les réfugiés adoptèrent eux-mêmes ce nom et le conservent encore aujourd'hui.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ovahimba est l'appellation endonymique officielle. Himba est universellement utilisé dans les contextes touristiques, scientifiques et internationaux. Le singulier est Omuhimba.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "NAM, AGO",
+      "ethnoLinguisticGroup": "Bantou Zone R (groupe R30, sous-groupe herero)",
+      "historicalRegion": "Kaokoveld (nord-ouest de la Namibie) et province de Kunene (Angola méridional)",
       "currentCountries": ["NAM", "AGO"]
     },
     "ethnicities": [
-      "Himba de Namibie",
-      "Himba d'Angola",
-      "Sous-groupes régionaux"
+      "Ovahimba du Kaokoveld (Namibie, région de Kunene)",
+      "Ovahimba d'Angola (province de Cunene)",
+      "OvaTwa (chasseurs-cueilleurs associés aux Himba, considérés comme faisant partie du groupe)"
     ],
     "origins": {
-      "ancientOrigins": "Les Himba sont un sous-groupe des Herero, originaires de la Namibie et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R). Séparation des Herero au XIXe siècle.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Herero. Tradition pastorale nomade forte.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les Ovahimba sont les Herero originels qui traversèrent le fleuve Kunene depuis l'Angola vers la Namibie au milieu du XVIe siècle. Ils s'établirent dans le Kaokoveld et y développèrent un mode de vie semi-nomade pastoral. Leur séparation du groupe herero principal résulte des raids des Nama au milieu du XIXe siècle.",
+      "formationPeriod": "Vers 1850, les Nama envahirent le Kaokoveld depuis le sud, pillant les troupeaux herero. La perte de leur richesse (bétail) contraignit les Herero du Kaokoveld à fuir en Angola, où les Ngambwe les appelèrent Ovahimba (mendiants). Vers 1920, le guerrier Vita (Vito) mena la majorité des réfugiés de retour au Kaokoveld namibien, où ils retrouvèrent leurs terres et reconstituèrent leurs troupeaux.",
+      "migrationRoutes": [
+        "Migration ancestrale des Herero depuis l'Afrique de l'Est vers l'Angola, puis vers le Kaokoveld namibien (XVIe siècle)",
+        "Fuite en Angola face aux raids Nama (vers 1850)",
+        "Retour au Kaokoveld sous la conduite du guerrier Vita (vers 1920)"
+      ],
+      "historicalSettlementZones": [
+        "Kaokoveld (actuelle région de Kunene, nord-ouest de la Namibie)",
+        "Région de Opuwo (centre administratif du Kunene)",
+        "Province de Cunene (Angola méridional, rive nord du Kunene)"
+      ],
+      "unificationsOrDivisions": "Les Ovahimba constituent un sous-groupe distinct des Herero, avec qui ils partagent la langue (dialecte otjihimba de l'otjiherero), le système de double descente (eanda et oruzo), le culte du feu sacré okuruwo et la religion centrée sur Mukuru. Leur mode de vie semi-nomade pastoral et leurs pratiques culturelles distinctives (otjize, erembe) les différencient nettement des autres groupes herero.",
+      "externalInfluences": "Peu influencés par les missionnaires (contrairement aux Herero du centre), les Ovahimba ont préservé leur mode de vie traditionnel. La guerre de frontière south-africano-angolaise des années 1980 et une grave sécheresse ont détruit 90 % de leur bétail. Depuis les années 1990, le tourisme international génère des revenus mais aussi des tensions culturelles. En 2011-2012, les Ovahimba ont protesté contre le projet de barrage hydroélectrique d'Orokawe sur le Kunene auprès de l'ONU et de l'Union africaine.",
+      "majorHistoricalEvents": "Raids Nama et exil en Angola (vers 1850). Retour au Kaokoveld sous Vita (vers 1920). Sécheresse et guerre des années 1980 (destruction de 90 % du bétail). Indépendance de la Namibie (1990). Protestation internationale contre le barrage d'Orokawe (2011-2012). Pétition à l'ONU et à l'UA contre les violations de leurs droits (2012)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles au sein de grandes familles étendues (homesteads, onganda). Les clans sont dirigés par le membre masculin le plus âgé. Les décisions communautaires se prennent en conseil. Le gardien du feu sacré (okuruwo) joue un rôle religieux et politique central. Polygamie pratiquée (en moyenne deux épouses par homme).",
+      "clanOrganization": "Système de double descente (bilateral descent) : chaque individu appartient simultanément à son clan maternel (eanda) et à son clan paternel (oruzo). La richesse matérielle (bétail) est héritée en ligne matrilinéaire (de l'oncle maternel au neveu). Le statut social est transmis en ligne patrilinéaire. Les filles rejoignent le village de leur époux au mariage.",
+      "ageClassSystems": "Les différentes étapes de la vie sont marquées par des coiffures et ornements distincts : les jeunes garçons portent une tresse centrale, les filles deux tresses avant ; au mariage, les hommes portent un bonnet, les femmes mariées et mères portent l'erembe (coiffe en peau de mouton ornée de tresses). La circoncision des garçons avant la puberté est un rite de passage obligatoire.",
+      "roleOfLineages": "Le lignage maternel (eanda) détermine l'héritage de la richesse (bétail). Le lignage paternel (oruzo) détermine le statut et l'appartenance au groupe de parenté. Ce système bilatéral est adapté aux environnements difficiles car il permet de s'appuyer sur deux réseaux de solidarité distincts.",
+      "religiousAuthority": "Le gardien du feu sacré (okuruwo) de chaque homestead est l'intermédiaire religieux principal : il s'approche du feu tous les sept à huit jours pour communiquer avec Mukuru et les ancêtres au nom de sa famille. Les guérisseurs traditionnels détiennent le savoir de l'omiti (médecine et magie)."
     },
     "languages": {
-      "mainLanguage": "Herero (dialecte himba)",
-      "vehicularRole": "Le herero (dialecte himba) est parlé par la majorité des Himba. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Otjihimba (dialecte nord-ouest de l'otjiherero)",
+      "isoCodes": ["her"],
+      "dialects": [
+        "Otjihimba (dialecte des Ovahimba, Kaokoveld namibien et Angola)",
+        "Otjiherero standard (compris et parlé comme langue seconde)"
+      ],
+      "vehicularRole": "L'otjihimba est la langue maternelle des Ovahimba. Il n'a pas de forme écrite standardisée. L'otjiherero standard est utilisé comme langue de communication plus large. L'anglais est langue officielle de la Namibie et utilisé dans l'administration."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels himba (vêtements traditionnels, coiffures), symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "source_8": "Coiffures traditionnelles caractéristiques",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le feu sacré okuruwo brule en permanence au centre de chaque homestead entre la hutte principale et l'enclos à bétail : il est le lien sacré entre les ancêtres et les vivants. La circoncision des garçons avant la puberté constitue un rite de passage obligatoire. Les filles vivent une retraite rituelle au moment de la puberté (menarche) avant de réintégrer le foyer accompagnées de femmes expérimentées. Le mariage implique des transactions de bétail (bridewealth : au minimum un bœuf et deux moutons). La pratique du bain de fumée quotidien (inhalation de fumée d'herbes aromatiques placées sur des braises) remplace le lavage à l'eau, rare dans le Kaokoveld. Les cérémonies funèbres impliquent sacrifices et rituels de transition.",
+      "symbols": "L'otjize est le symbole visuel le plus distinctif : mélange de graisse animale et de pigment d'ocre (hématite pilée), parfumé à la résine d'omuzumba, appliqué quotidiennement sur le corps et les cheveux, donnant la teinte rouge-orange caractéristique. Il protège du soleil, des insectes et du dessèchement, et représente le sang (essence de la vie) et la beauté. L'erembe (coiffe en peau de mouton portée par les femmes mariées) indique le statut matrimonial. Le bétail est la mesure de la richesse et le lien entre vivants et ancêtres.",
+      "artsAndMusic": "L'artisanat ovahimba est réputé : bijoux complexes en coquilles d'autruche, cuivre, laiton (y compris des douilles de cartouche de la guerre de frontière), peau animale et coquillages ; colliers, bracelets (jusqu'à 40 kg de bijoux pour une femme). Les habitations (onganda) sont construites en branches de mopane recouvertes d'un enduit de terre rouge et de bouse de vache. La musique accompagne les rites de passage et les cérémonies. La tradition orale transmet l'histoire, les généalogies et les récits.",
+      "spiritualities": "Les Ovahimba sont monothéistes animistes. Mukuru est le dieu créateur omniscient, lointain et bienveillant. Les ancêtres (défunts) reçoivent des qualités surnaturelles de Mukuru et agissent comme ses représentants : ils peuvent bénir et maudire les vivants. Le feu sacré okuruwo est le lieu principal de communication entre les Ovahimba et Mukuru via les ancêtres. La croyance en l'omiti (magie, médecine traditionnelle) est répandue : certains morts seraient causés par l'omiti utilisé à mauvais escient. Les Ovahimba ont généralement résisté à la christianisation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora himba dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Ovahimba ne formèrent pas d'entité politique centralisée mais s'organisèrent en chefferies de homesteads. Leur histoire est liée à celle des Herero, dont ils constituent la branche originelle du Kaokoveld. Le guerrier Vita joua un rôle historique crucial en ramenant les réfugiés d'Angola au Kaokoveld vers 1920.",
+      "relationsWithNeighbors": "Relations tendues avec les Nama au XIXe siècle (raids). Interactions avec les peuples San (Bushmen) voisins. Coexistence avec d'autres groupes herero (OvaTjimba). Depuis l'indépendance namibienne, interactions croissantes avec l'État namibien, notamment autour des questions foncières, scolaires et du barrage d'Orokawe. Relations commerciales avec les villes de la région de Kunene (Opuwo).",
+      "conflictsOrAlliances": "Raids Nama (vers 1850) contraignant à l'exil en Angola. Guerre de frontière south-africano-angolaise des années 1980 (destruction du bétail, déplacements). Résistance au projet de barrage hydroélectrique d'Orokawe (2011-2012), conduisant à des pétitions internationales à l'ONU et à l'UA. Protestation contre des émissions de télé-réalité allemandes moquant leur culture.",
+      "diaspora": "Les Ovahimba vivent principalement dans leur territoire traditionnel (Kaokoveld namibien et province de Cunene en Angola). Une petite part réside dans les villes de la région (Opuwo). L'émigration vers des centres urbains est limitée mais croissante chez les jeunes générations."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 55000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (her, dialecte otjihimba, environ 50 000 locuteurs), Global Recordings Network (50 000), estimations combinées Namibie et Angola (Joshua Project 2024, Living Culture Foundation Namibia)",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 45000,
+          "note": "Region de Kunene (ancien Kaokoveld), principalement autour d'Opuwo"
+        },
+        {
+          "country": "AGO",
+          "population": 10000,
+          "note": "Province de Cunene, rive nord du fleuve Kunene"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Herero language (her)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous",
-      "Études sur les Himba"
+      "Wikipedia EN — Himba people. https://en.wikipedia.org/wiki/Himba_people",
+      "Living Culture Foundation Namibia — Ethnology of the Ovahimba. https://www.lcfn.info/ovahimba/information/ethnology",
+      "Global Recordings Network — Himba language. https://globalrecordings.net/en/language/23778",
+      "Rothschild Safaris — The Himba: Namibia's fascinating people. https://rothschildsafaris.com/blog/the-himba-namibias-fascinating-people",
+      "Culture and the Mind, University of Sheffield — Himba fieldsites. https://cultureandmind.sites.sheffield.ac.uk/fieldsites/himba",
+      "Africa Travel — Cultural Spotlight: The Himba of Namibia. https://www.africatravel.com/traveltips/cultural-spotlight-the-himba-of-namibia",
+      "SIL Ethnologue — Herero (her). https://www.ethnologue.com/language/her/"
     ]
   }
 }

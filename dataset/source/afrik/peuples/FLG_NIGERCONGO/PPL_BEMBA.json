@@ -6,63 +6,119 @@
   "content": {
     "appellations": {
       "mainName": "Bemba",
-      "selfAppellation": "Bemba",
-      "exonyms": ["Bemba (terme utilisé par les Européens)"],
+      "selfAppellation": "AbaBemba (le peuple bemba)",
+      "exonyms": [
+        "Bembe",
+        "Chibemba",
+        "Chisinga",
+        "Chiwemba",
+        "Ichibemba",
+        "Wemba"
+      ],
+      "originOfExonyms": "Le terme Bemba derive probablement du luba Pemba (signifiant grande etendue, comme la mer). Ichibemba ou Chibemba designe la langue. Chisinga et Chiwemba sont des variantes dialectales ou regionales. Wemba est une forme simplifiee utilisee anciennement.",
+      "whyProblematic": null,
+      "contemporaryUsage": "AbaBemba est l'appellation commune. Ichibemba est le nom de la langue. Le terme Bemba est utilise en anglais et dans les publications academiques. Les Bemba constituent le plus grand groupe ethnique de Zambie.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone M)",
-      "historicalRegion": "Nord de la Zambie",
+      "ethnoLinguisticGroup": "Bantou (Zone M, sous-groupe Sabi/Luba-Sabi)",
+      "historicalRegion": "Plateau nord-est de la Zambie (provinces du Nord, du Luapula, de Muchinga), lac Bangweulu, lac Mweru, lac Tanganyika",
       "currentCountries": ["ZMB", "COD"]
     },
     "ethnicities": [
-      "Bemba de Zambie",
-      "Bemba de RDC",
-      "Sous-groupes régionaux"
+      "Abena Ng'andu (clan royal, totem : crocodile ing'wena ou ing'andu)",
+      "Bemba proprement dits des provinces du Nord et de Muchinga (Zambie)",
+      "Bemba du Copperbelt (migres pour le travail minier)",
+      "Bemba du Luapula (groupe historiquement matrilineaire)",
+      "Lala (integres dans l'identite bemba elargie)",
+      "Bisa (assimiles dans la sphere d'influence bemba)",
+      "Twa de Bangweulu (parlant un dialecte bemba)"
     ],
     "origins": {
-      "ancientOrigins": "Les Bemba sont originaires du nord de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone M) de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Bemba appartiennent a la branche centre-ouest des peuples bantous occidentaux. Leurs ancetres remonterent les affluents du Congo et s'etablirent dans la region de la depression d'Upemba (source du Lualaba), foyer des Luba depuis le IVe siecle de notre ere. Au XVIIe siecle, une rebellion anti-portugaise dans le royaume luba conduite par Nkole et Chiti (fils du roi Mukulumpe et de Mumbi Lyulu Mukasa du clan Bena-Ng'andu) declencha une migration vers l'est. Les fondateurs Chiti et Nkole traverserent la riviere Luapula vers 1740 et s'installerent dans l'actuelle province du Nord de la Zambie.",
+      "formationPeriod": "Le royaume bemba emerge entre la fin du XVIIe et le debut du XVIIIe siecle. L'identite bemba moderne nait de la royaute luba s'etablissant sur les peuples Sabi locaux. L'ichibemba devient langue vehiculaire pour les peuples Sabi (Lala, Bisa, etc.). Expansion maximale sous les Chitimukulu des XVIIIe et XIXe siecles.",
+      "migrationRoutes": [
+        "Depuis le royaume luba (depression d'Upemba, RDC actuelle)",
+        "Traversee de la riviere Luapula depuis Kola (avant 1740)",
+        "Etablissements successifs : Isandulula (lac Mweru), Keleka (lac Bangweulu), Chulung'oma, Kashi-ka-Lwena",
+        "Traversee de la Chambeshi aux Rapides Safwa",
+        "Etablissements : Chitabata, Chibambo, Ipunga, Mungu, Mulambalala",
+        "Nouvelle traversee de la Chambeshi jusqu'a Chikulu",
+        "Fondation de Ng'wena (premiere capitale royale)"
+      ],
+      "historicalSettlementZones": [
+        "Ng'wena (premiere capitale royale)",
+        "Province du Nord de la Zambie (Kasama, Mungwi, Mpika, Chinsali)",
+        "Province du Luapula (Mansa, Kawambwa, Samfya)",
+        "Province de Muchinga (Chinsali, Isoka)",
+        "Nord de la Province Centrale (Serenje, Mkushi)",
+        "Copperbelt (migration economique, XIXe-XXe siecles)",
+        "Katanga meridional (RDC, province du Haut-Katanga)"
+      ],
+      "unificationsOrDivisions": "Le royaume bemba est dirige par le Chitimukulu (roi supreme, Mwine Lubemba). L'uluBemba est divise en plus de quinze chefferies semi-autonomes sous les freres, fils et neveux du Chitimukulu. Chefferies seniors : Nkula et Mwamba (heritiers potentiels au trone de Chitimukulu). Sous le 22e Chitimukulu Mukuka wa Malekano (fin XVIIIe siecle) : expansion maximale. Depuis le debut du XXe siecle, le trone a un role plus culturel/ceremoniel. 38e Chitimukulu Kanyanta-manga II intronise le 31 juillet 2015.",
+      "externalInfluences": "Origines luba et traditions des Lords of the Land (seigneurs de la terre) a role sacerdotal. Influence du commerce de l'ivoire et du sel. Contacts avec les missionnaires catholiques (reliques chretiennes du XVe siecle dans les archives royales). Colonisation britannique (fin XIXe siecle). Christianisme dominant depuis le XXe siecle.",
+      "majorHistoricalEvents": "XVIIe siecle : migration depuis le royaume luba sous Chiti et Nkole. Avant 1740 : traversee du Luapula et etablissement en Zambie. Fin XVIIIe siecle : expansion sous Mukuka wa Malekano (refoulement des Lungu, Mambwe, Tabwa, Bisa). XIXe siecle : guerres bemba-ngoni (au site de Ng'wena). 1899 : defaite et soumission au protectorat britannique. 1911 : le Chitimukulu Mutale Chikwanda (1911-1916) marque le debut du role culturel/ceremoniel. 2015 : intronisation du 38e Chitimukulu Kanyanta-manga II."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie dirigee par le Chitimukulu (roi supreme, Mwine Lubemba = proprietaire du royaume bemba). L'uluBemba est divise en chefferies semi-autonomes. Hierarchie : Chitimukulu (roi supreme), Nkula et Mwamba (chefferies seniors), Nkole Mfumu, Mpepo (chefferies juniors). Depuis debut XXe siecle, role principalement culturel et ceremoniel. Chitimukulu Kanyanta-manga II est le 38e, intronise le 31 juillet 2015.",
+      "clanOrganization": "Societe matrilineaire. Clan royal Abena Ng'andu (totem : crocodile). Subdivision en plus de 15 chefferies sous les proches parents du Chitimukulu. Identite bemba elargie pour inclure Lala, Bisa et autres peuples Sabi. Le groupe Luapula est historiquement matrilineaire (femmes cibinda wa ng'anda = chefs du foyer ; les hommes rejoignaient la famille de leur epouse apres le mariage).",
+      "ageClassSystems": "Insaka (centre d'education des garcons). Ifibwanse (centre d'education des filles, supplante par les ecoles occidentales). Imbusa : rite de passage des femmes avant le mariage (2 semaines a 3 mois d'enseignement).",
+      "roleOfLineages": "Filiation matrilineaire determinant l'identite, les droits a la terre et les alliances. La mere et la fille entretiennent des liens essentiels. Le matrilignage (clan de la mere) prime pour la succession et l'heritage. Les femmes occupaient trois positions communautaires importantes en periode precoloniale : cibinda wa ng'anda (chef du foyer), kabumba wa mapepo (creatrice et pretresse des prieres), nacimbusa wa chisunga (gardienne de la tradition, instructrice Imbusa).",
+      "religiousAuthority": "Les Lords of the Land (seigneurs ancestraux) avaient des fonctions sacerdotales en raison de leur relation avec les esprits de la terre. Lesa : concept de Dieu supreme bemba (distinct de Mulungu utilise pour le Dieu chretien). Imilungu : esprits ancestraux (distincts de Lesa). Imipashi : esprits des ancetres. Christianisme dominant depuis le XXe siecle (catholiques via les missionnaires du XVe siecle, puis toutes denominations). Archives royales du Chitimukulu contiennent quatre statues chretiennes provenant des missionnaires du royaume Kongo (vieilles de 600 ans environ)."
     },
     "languages": {
-      "mainLanguage": "Bemba",
-      "vehicularRole": "Le bemba est parlé par la majorité des Bemba et sert de langue véhiculaire en Zambie. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Ichibemba (Bemba, CiBemba, Chibemba)",
+      "isoCodes": ["bem"],
+      "dialects": [
+        "Chishinga",
+        "Lomotwa",
+        "Ngoma",
+        "Nwesi",
+        "Lala (dialecte assimile)",
+        "Luunda",
+        "Mukulu",
+        "Ng'umbo",
+        "Dialecte Twa de Bangweulu (parfois traite comme langue distincte)"
+      ],
+      "vehicularRole": "L'ichibemba est la langue la plus repandue de Zambie, servant de vehiculaire pour environ un tiers de la population zambienne. Il est parle dans les provinces du Nord, du Luapula, de Muchinga, du Copperbelt et d'une partie du nord de la Province Centrale. L'ichibemba s'est repandu comme vehiculaire parmi les peuples Sabi (Lala, Bisa, etc.) depuis le XVIIIe siecle. L'anglais est la langue officielle de la Zambie. L'ichibemba est l'une des sept langues regionales reconnues de Zambie."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels bemba, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Imbusa : rite de passage le plus important de la culture bemba, destine aux femmes se preparant au mariage. Duree de 2 semaines a 3 mois avant la ceremonie nuptiale. Enseigne par les banacimbusa (femmes mariees instructrices). Contenus : secrets de la vie conjugale, usage des perles (ubulungu/chisasa) comme outil de communication sexuelle et affective, symbolisme via chants, proverbes, poterie, peintures et danses. Philosophie de vie et vision du monde. Chisunga : rite de puberté féminin (complementaire de l'Imbusa). Ukulomba (demande de mariage, procedures d'alliance). Agriculture à l'essart (chitemene, brulis et cultures de manioc, eleusine, millet). Ceremonies liees aux recoltes.",
+      "symbols": "Crocodile (totem du clan royal Abena Ng'andu, ing'wena en bemba moderne ou ing'andu en vieux bemba). Perles de mariage (ubulungu/chisasa) : outil de communication sexuelle et affective dans l'Imbusa. Statues chretiennes dans les archives royales (heritage du royaume Kongo). Symboles Imbusa : poterie, peintures, emblemes specifiques enseignes lors du rite. Ilibwe (Pierre Percee/Bored Stone) ou icupo (mariage) : symboles du lien conjugal.",
+      "artsAndMusic": "Imbusa : enseignement par chants, proverbes, poterie, peintures et danses. Musique de chant ceremoniel pour les rites agricoles et de passage. Poterie rituelle fabriquee lors des Imbusa. Artisanat : tissage (elevage de chevres et moutons pour la laine), vannerie. Insaka et ifibwanse : espaces d'education musicale et culturelle. Elevage de betail (chevres, moutons) sans tradition de la vache (contrairement aux voisins pasteurs).",
+      "spiritualities": "Lesa : Dieu supreme bemba (distinct de Mulungu, nom adopte pour le Dieu chretien apres evangelisation). Imilungu : esprits ancestraux veneres. Imipashi : esprits des ancetres veillant sur les vivants. Les Lords of the Land ancestraux avaient des fonctions sacerdotales de relation avec les esprits de la terre. Culte des ancetres : les inscriptions de vivants dans le cercle des ancetres par les rites d'Imbusa. Obsession du statut et du rang ; politesse et courtoisie ritualisees. Syncrétisme avec le christianisme catholique (tres present depuis les missionnaires) et d'autres denominations protestantes et pentecotistes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bemba dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume bemba (uluBemba) dirige par le Chitimukulu depuis le XVIIIe siecle. A son apogee, le royaume s'etendait des rives du lac Tanganyika (nord) aux marecages du lac Bangweulu (sud-ouest), jusqu'a l'escarpement Muchinga et la vallee du Luangwa (est), et au lac Mweru (ouest), couvrant la zone des quatre Grands Lacs africains (Mweru, Bangweulu, Tanganyika, Nyasa). Royaumes vassaux : Mwamba, Mpanda, Kalundu. 38 Chitimukulu ont regne. Chitimukulu actuel : Kanyanta-manga II (intronise 2015).",
+      "relationsWithNeighbors": "Expansion aux depens des Tabwa, Bisa, Lungu et Mambwe (repousses vers le plateau Tanganyika). Langue ichibemba devenue vehiculaire des peuples Sabi. Arrogance traditionnelle envers les autres tribus (Richards 1939). Commerce et echanges culturels avec les Luba (RDC), Kaonde, Nsenga, Chewa (Malawi). Relations avec les missionnaires catholiques (archives royales avec statues du XVe siecle).",
+      "conflictsOrAlliances": "Guerres bemba-ngoni (XIXe siecle, premier site de Ng'wena). Expansions militaires sous Chitimukulu Mukuka wa Malekano (fin XVIIIe siecle) : refoulement des Lungu de la region de Kasama, expansion vers Ituna (frere Chitundu comme Mwamba I). Sous Chilyamafwa (jusqu'en 1808) : creation du royaume vassal de Mpanda (fils Nondo-mpya comme Makasa I). Sous Mwamba II Mubanga Kashampupo : creation du royaume vassal de Kalundu. Soumission au protectorat britannique (1899).",
+      "diaspora": "Migration massive vers le Copperbelt zambien (XXe siecle) pour le travail dans les mines de cuivre. Presence significative dans les provinces du Copperbelt, de Lusaka et de la Province Centrale. Bemba du Katanga meridional (RDC). Diaspora en Afrique du Sud, en Angleterre et dans les pays occidentaux depuis les independances."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 5864000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project 2025 : Bemba en Zambie 5 864 000. Estimations croissees : Facebook (4,1M), Qiraat Africa (3,7M locuteurs ichibemba en premiere langue, soit environ 1/3 de la population zambienne), Joshua Project Zambia. Population totale inclut Bemba proprement dits et peuples assimiles parlant l'ichibemba.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 5500000,
+          "note": "Provinces du Nord (Kasama), du Luapula (Mansa), de Muchinga, du Copperbelt, nord de la Province Centrale"
+        },
+        {
+          "country": "COD",
+          "population": 364000,
+          "note": "Province du Haut-Katanga, Katanga meridional (sud de la RDC)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bemba language (bem)",
-      "CIA World Factbook – Zambia, DRC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Bemba people. https://en.wikipedia.org/wiki/Bemba_people",
+      "Wikipedia EN — Bemba language. https://en.wikipedia.org/wiki/Bemba_language",
+      "Wikipedia EN — Chitimukulu. https://en.wikipedia.org/wiki/Chitimukulu",
+      "Joshua Project — Bemba in Zambia. https://joshuaproject.net/people_groups/10782/za",
+      "Qiraat Africa — The Bemba Tribe in Zambia. https://qiraatafrican.com/en/15210/the-bemba-tribe-in-zambia/",
+      "ISO 639-3 : code bem (Bemba, Zambia). https://detectlanguage.com/languages/bem",
+      "HTS Teologiese Studies — Beads of agency: Bemba women's imbusa and indigenous marital communication. https://hts.org.za/index.php/hts/article/view/8128/24873",
+      "Scribd — The Bemba Kingdom of Chitimukulu. https://www.scribd.com/document/488776185/THE-BEMBA-KINGDOM-OF-CHITIMUKULU",
+      "Audrey Richards — Chisungu: A Girl's Initiation Ceremony among the Bemba of Zambia. Faber, 1956."
     ]
   }
 }

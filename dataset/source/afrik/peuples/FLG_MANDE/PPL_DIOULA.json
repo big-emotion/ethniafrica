@@ -2,58 +2,103 @@
   "id": "PPL_DIOULA",
   "nameMain": "Dioula",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["CIV"],
+  "currentCountries": ["CIV", "BFA", "MLI", "GHA", "GNB"],
   "content": {
     "appellations": {
       "mainName": "Dioula",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Jula ou Dyula (le peuple se designe en langue dioula par Julakan, signifiant les gens du commerce ou les commerçants)",
+      "exonyms": [
+        "Dyula (graphie anglophone internationale)",
+        "Jula (graphie phonologique adoptee par les linguistes)",
+        "Juula",
+        "Wangara ou Wankara (terme utilise en Afrique de l'Ouest anglophone, notamment au Ghana)",
+        "Diula, Djula, Doula, Dualas, Dyoula, Dyulanke (variantes orthographiques regionales)"
+      ],
+      "originOfExonyms": "Le terme Dioula est lui-meme un nom commun mandingue signifiant commerçant ou marchand itinerant. Il a ete applique comme ethnonyme a la communaute des Mande islamises specialises dans le commerce longue distance. Wangara est le terme utilise au Ghana et en Afrique de l'Ouest anglophone pour designer les memes reseaux commerciaux mande. A ne pas confondre avec les Diola (ou Joola) du Senegal et de Gambie, peuple distinct de famille linguistique bak.",
+      "whyProblematic": "La confusion avec les Diola (Joola) du Senegal est frequente en raison de la proximite orthographique des noms. Les Diola sont un peuple distinct parlant une langue atlantique, sans lien avec les Dioula mande.",
+      "contemporaryUsage": "Dioula est l'appellation officielle en Cote d'Ivoire et au Burkina Faso. Dyula est courante dans la litterature academique anglophone. Jula est la forme phonologique standard adoptee par les linguistes. Le terme est utilise a la fois comme nom de peuple et comme nom de langue vehiculaire en Cote d'Ivoire.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Mande du Nord, groupe mandingue (proche du bambara et du malinke, avec intercomprehension partielle)",
+      "historicalRegion": "Zone sahelo-soudanienne et forestiere de l'Afrique de l'Ouest, de la region du Manden (actuel Mali/Guinee) jusqu'aux forets de Cote d'Ivoire ; centree sur les royaumes de Kong et de Bobo-Dioulasso",
+      "currentCountries": ["CIV", "BFA", "MLI", "GHA", "GNB"]
     },
-    "ethnicities": ["Dioula"],
+    "ethnicities": [
+      "Dioula de Kong (Cote d'Ivoire)",
+      "Koyaga Jula (district de Woroba, Cote d'Ivoire)",
+      "Odienne Jula (nord-ouest Cote d'Ivoire)",
+      "Jula de Bobo-Dioulasso (Burkina Faso)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Dioula sont des Mande islamises, formes au carrefour des reseaux commerciaux arabo-berberes trans-sahariens et de la noblesse mandee convertie a l'islam. Ils descendent des marchands mandingues qui controlaient deja les routes de l'or et du sel entre le Sahel et les forets d'Afrique de l'Ouest a partir du XIe siecle. L'empire du Mali (XIIIe-XIVe siecles) et l'empire Songhai (XVe-XVIe siecles) ont favorise l'expansion de ces reseaux.",
+      "formationPeriod": "Formation progressive entre le XIe et le XIVe siecle, avec une acceleration de l'identite commerciale distincte a partir du XIVe-XVe siecle. Le royaume de Kong, fonde en 1710 par Sekou Ouattara, constitue le point culminant de la puissance politique dioula.",
+      "migrationRoutes": [
+        "Routes commerciales trans-sahariennes depuis le Maghreb vers Djenne et Tombouctou (depuis le XIe siecle)",
+        "Expansion vers le sud depuis Djenne et le delta interieur du Niger vers les forets de Cote d'Ivoire",
+        "Axe Djenne-Grumanya (Cote d'Ivoire meridionale) sous la dynastie Ouattara (XVIIIe siecle)",
+        "Etablissement de comptoirs commerciaux dans l'empire de Bégho (Ghana), les royaumes du Gondja et du Gwirikô"
+      ],
+      "historicalSettlementZones": [
+        "Kong (Cote d'Ivoire centrale-nord) : capitale commerciale et religieuse dioula",
+        "Bobo-Dioulasso (Burkina Faso) : carrefour des routes kola, sel, chevaux et or",
+        "Odienne (nord-ouest Cote d'Ivoire) : centre commercial",
+        "Bégho et Gondjia (nord Ghana) : comptoirs historiques",
+        "Djenné et Tombouctou (Mali) : origines des reseaux"
+      ],
+      "unificationsOrDivisions": "La cohesion dioula est fondee sur l'islam et le commerce plutot que sur une unite politique. Le royaume de Kong (1710-1897) a represente la plus grande concentration de pouvoir politique dioula. Sa destruction par Samory Toure en 1897 a disperse la population de Kong. Les dynasties Ouattara (pouvoir coutumier), Baro et Saganogo (pouvoir religieux) structurent les families dominantes.",
+      "externalInfluences": "L'islam est indissociable de l'identite dioula depuis le debut : ils furent parmi les premiers Africains subsahariens a se convertir. Influence des confréries Qadiriyya (famille Saganogo) et Tijaniyya (famille Diane). La colonisation francaise (decret du 17 octobre 1899) a fragmente les territoires dioula et affaibli les dynasties Ouattara vers 1915. Au XXe siecle, la crise de l'ivoirité (1995) a vise notamment Alassane Ouattara, d'origine dioula.",
+      "majorHistoricalEvents": "Commerce dioula dans la region de Kong avec le Maghreb (depuis le XIe siecle) ; fondation du royaume de Kong par Sekou Ouattara (1710) ; extension du royaume a Bobo-Dioulasso par Famagan Ouattara (1737-1738) ; destruction de Kong par Samory Toure (1897) ; fragmentation coloniale (1899) ; crise de l'ivoirité et tensions politiques liees a l'identite dioula (1995-2011)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe hierarchique et de castes. A Kong, deux groupes sociaux principaux : les horon (citoyens libres) et les woloso (anciens captifs domestiques). La hierarchie est fondee sur l'âge (aine sur cadet), le sexe et la caste familiale. Les aînes ont le pouvoir de parole dominant.",
+      "clanOrganization": "Clans structures autour de grandes familles patronymiques partagees avec les Bambara et les Malinke (Ouattara/Wattara, Coulibaly, Traore, Diarra, Doumbia, Fofana, Kone, Keita, Kouyate, Bamba, Camara, etc.). Les Ouattara detiennent le pouvoir coutumier, les Baro et Saganogo le pouvoir religieux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La loyaute aux clans est tres forte chez les Jula. La transmission du pouvoir religieux suit les lignees Saganogo (Qadiriyya) et Diane (Tijaniyya). Le ko koro, manifestation coutumiere reservee aux hommes d'age mur et de rang eleve, illustre l'importance du statut lineager.",
+      "religiousAuthority": "Autorite religieuse exercee par des imams et des lettrés islamiques (marabouts). Les familles Saganogo et Diane detiennent historiquement l'autorite spirituelle a Kong. Des academies, mosquees et bibliotheques islamiques furent fondees a Kong sous la dynastie Ouattara."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Dioula (jula, julakan)",
+      "isoCodes": ["dyu"],
+      "dialects": [
+        "Dioula standard de Cote d'Ivoire (vehiculaire national)",
+        "Jula de Bobo-Dioulasso (Burkina Faso)",
+        "Koyaga-Jula (sous-dialecte du district de Woroba, Cote d'Ivoire)",
+        "Dioula d'Odienné (nord-ouest Cote d'Ivoire)"
+      ],
+      "vehicularRole": "Le dioula est la langue vehiculaire la plus largement parlee en Cote d'Ivoire (utilise par la majorite des Ivoiriens comme seconde langue dans les marches et la vie quotidienne). Il est langue d'enseignement au Burkina Faso. Derive du bambara et du malinke, il est mutuellement intelligible avec ces langues. Il s'ecrit en caracteres latins, arabes et en alphabet NKo."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques islamiques centrales : priere quotidienne, jeune du Ramadan, pelerinage a la Mecque. Manifestation coutumiere du ko koro reservee aux hommes de rang. Traditions orales de la parole et du pouvoir (Jean Derive, Parole et Pouvoir chez les Dioula de Kong, 1987). Le mariage est une institution sociale cle avec des arrangements familiaux.",
+      "symbols": "La noix de kola (commerce historique central) ; le boubou et les tissus (commerce historique) ; la mosquee de Kong (ancienne capitale spirituelle) ; la balance de commerçant.",
+      "artsAndMusic": "Tradition d'orature et de genealogie griots. Architecture islamique (mosquees de Kong et Bobo-Dioulasso). Ecriture en arabe et en NKo pour les documents religieux. Artisanat traditionnel (tissage, forge) pratique par des castes specialisees.",
+      "spiritualities": "Islam sunnite de rite malekite, pratique depuis le XIe siecle. Les Dioula sont parmi les principaux propagateurs de l'islam en Afrique occidentale (avec les Toucouleurs). La tradition de Salim Souari preconise le pluralisme religieux et la coexistence avec les societes animistes. Confréries Qadiriyya et Tijaniyya tres implantees. Un axe central de la spiritualite dioula : l'usage des amulettes et gris-gris islamiques combinent les savoirs coraniques aux pratiques ancestrales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Kong (1710-1897) : fonde par Sekou Ouattara, devenu un des plus importants centres commerciaux et islamiques d'Afrique de l'Ouest. Extension a Bobo-Dioulasso (1737-1738) par Famagan Ouattara. Declin du royaume apres les epidémies, la pression française, et sa destruction finale par Samory Toure en 1897.",
+      "relationsWithNeighbors": "Relations commerciales avec l'ensemble de l'Afrique de l'Ouest : empire de Bégho, royaumes du Gondja et Gwirikô (Ghana), Manden (Mali), reseaux maghrebins. Intermediaires entre les societies animistes du Sud et les reseaux islamiques du Nord. Tolerance religieuse strategique pour maintenir le monopole commercial.",
+      "conflictsOrAlliances": "Alliance avec les reseaux commerciaux arabo-berberes du Sahara. Confrontation avec Samory Toure (destruction de Kong en 1897). Resistance passive a la colonisation francaise. Tensions politiques en Cote d'Ivoire autour de la crise de l'ivoirité (1995-2011) visant la communaute dioula.",
+      "diaspora": "La nature meme des Dioula est diasporique : commerçants itinerants, ils ont fonde des comptoirs et des colonies marchandes dans toute l'Afrique de l'Ouest depuis le XIVe siecle. Communautes importantes en Cote d'Ivoire (2,2 millions), Burkina Faso (2,5 millions), Mali (143 000), Ghana (93 000) et Guinea-Bissau."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 4937000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Jula : Cote d'Ivoire 2 229 000, Burkina Faso 2 456 000, Mali 143 000, Ghana 93 000, Guinee-Bissau 16 000)",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 2229000 },
+        { "country": "BFA", "population": 2456000 },
+        { "country": "MLI", "population": 143000 },
+        { "country": "GHA", "population": 93000 },
+        { "country": "GNB", "population": 16000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Dioula (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Dioula_(peuple))",
+      "Dyula people – Wikipedia EN (https://en.wikipedia.org/wiki/Dyula_people)",
+      "Jula in Cote d'Ivoire – Joshua Project 2025 (https://joshuaproject.net/people_groups/12375/IV)",
+      "Jula people group in all countries – Joshua Project 2025 (https://joshuaproject.net/people_groups/12375)",
+      "Ethnologue, Jula [dyu] (https://www.ethnologue.com/language/dyu/)",
+      "Jean Derive, Parole et Pouvoir chez les Dioula de Kong, CNRS Editions, Paris, 1987",
+      "Georges Niamkey Kodjo, Le Royaume de Kong, Abidjan, NEA, 2006",
+      "Minority Rights Group – Cote d'Ivoire (https://minorityrights.org/country/cote-divoire/)"
+    ]
   }
 }

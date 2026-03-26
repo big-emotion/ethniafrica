@@ -6,54 +6,91 @@
   "content": {
     "appellations": {
       "mainName": "Bodi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Me'en (terme auto-designatoire signifiant litteralement \"personnes\" ou \"êtres humains\")",
+      "exonyms": [
+        "Me'en",
+        "Mekan",
+        "Mieʼen",
+        "Mieken",
+        "Meqan",
+        "Podi",
+        "Mela"
+      ],
+      "originOfExonyms": "Me'en est l'auto-désignation commune a l'ensemble du groupe. Bodi désigne spécifiquement le sous-groupe pastoral des basses terres (plaines de l'Omo). Mekan est un terme administratif éthiopien. Podi et Mela sont des variantes du terme Bodi dans les sources linguistiques. La distinction Bodi/Tishena sépare les pasteurs des basses terres des agriculteurs des hautes terres.",
+      "whyProblematic": "Le terme Bodi est parfois appliqué a l'ensemble du groupe Me'en alors qu'il ne désigne strictement que le sous-groupe pastoral. Certaines sources confondent les Bodi avec les groupes Surma (Suri, Mursi) auxquels ils ne sont pas directement apparentés.",
+      "contemporaryUsage": "Me'en est l'auto-désignation la plus precise et inclusive. Bodi est largement utilisé dans les medias et le tourisme pour désigner le sous-groupe pastoral reconnu pour le festival Ka'el. Le gouvernement éthiopien utilise le terme Mekan dans les registres officiels.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Surmic (branche du Nilo-Saharien), sous-groupe Surmic du Sud-Est",
+      "historicalRegion": "Vallée de l'Omo, Éthiopie du sud-ouest, a environ 140 km de la ville de Jinka",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Bodi"],
+    "ethnicities": ["Bodi (Me'en)", "Tishena"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Me'en (Bodi) sont un peuple surmic dont la langue appartient a la branche surmic du nilo-saharien (pas au couchitique, malgré leur classification dans ce dossier). Ils partagent des origines linguistiques avec les Didinga et les Murle du Soudan du Sud. Selon leur mythe de creation, leurs ancêtres ont émergé d'un trou dans le sol.",
+      "formationPeriod": "Presence documentée dans la vallée de l'Omo du sud-ouest éthiopien depuis plusieurs siècles. Population recensée a 56 585 individus en 1998.",
+      "migrationRoutes": [
+        "Établissement dans les hautes terres (sous-groupe Tishena) et les basses terres de la rivière Omo (sous-groupe Bodi)",
+        "Environ 1 500 individus vivent au-dela de la frontière éthio-soudanaise"
+      ],
+      "historicalSettlementZones": [
+        "Plaines de la rivière Omo, vallée de l'Omo, Éthiopie du sud-ouest",
+        "Hautes terres adjacentes (sous-groupe Tishena)",
+        "Zone Bench-Maji, région des Nations, Nationalités et Peuples du Sud"
+      ],
+      "unificationsOrDivisions": "Le groupe Me'en est divise en deux sous-groupes principaux : les Tishena (agriculteurs des hautes terres) et les Bodi (pasteurs des basses terres), ainsi qu'un groupe de basses terres agriculteurs appelé Koruwo. Les Tishena entretiennent des relations hostiles avec les Tirma et Chai voisins.",
+      "externalInfluences": "Intégration dans l'Empire éthiopien sous Menelik II. Administration dans le cadre de la zone Bench-Maji (région des Nations, Nationalités et Peuples du Sud). Pression sur les terres pastorales en raison des projets de développement éthiopiens dans la vallée de l'Omo (barrage Gibe III, plantations de canne a sucre).",
+      "majorHistoricalEvents": "Incorporation dans l'Empire éthiopien (fin 19e siècle). Recensement de 1998 (56 585 individus). Construction du barrage Gibe III et des plantations de l'Omo Sugar Project (années 2010) : déplacements forcés et restrictions sur les terres pastorales traditionnelles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation tribale semi-nomade sans chefferie centralisée formelle. Le pouvoir est distribué entre les anciens et les chefs de lignages. Le sous-groupe Bodi est principalement pastoral et organise sa vie autour du bétail.",
+      "clanOrganization": "Organisation clanique régissant les relations matrimoniales et les accès aux ressources pastorales (pâturages, points d'eau). Les clans sont la base de l'organisation sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires régissent l'héritage du bétail, l'accès aux terres et les alliances matrimoniales. Le bétail est l'unité fondamentale de la richesse et du prestige social.",
+      "religiousAuthority": "Pratiques animistes traditionnelles. Croyances en des forces spirituelles liées a la nature et au bétail. Peu de presence de religions importées signalée dans les sources."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Me'en (dialecte Bodi/Podi)",
+      "isoCodes": ["mym"],
+      "dialects": ["Bodi (Podi)", "Tishena (Teshina)", "Banio", "Koruwo"],
+      "vehicularRole": "La langue me'en (ISO 639-3 : mym) est la langue maternelle des Bodi/Me'en. Elle appartient a la branche surmic du nilo-saharien (et non au couchitique). SIL International (2005) estimait a 80 000 le total des locuteurs me'en, dont 51 446 monolingues et 4 553 Bodi. L'amharique est la langue nationale éthiopienne. Les Bodi maintiennent un fort degré de monolinguisme."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Ka'el (aussi orthographié Ka'a) : festival annuel du Nouvel An des Me'en, au cours duquel des jeunes hommes célibataires sont sélectionnés par leurs familles pour un régime d'engraissement de six mois (lait de vache et sang). La compétition se tient en juillet ou juin (au début des pluies). Les femmes jouent un rôle central en sélectionnant et en encourageant les participants ; elles choisissent souvent leurs partenaires parmi les hommes qu'elles ont aidés. Le vainqueur est considéré comme le plus beau et le plus vigoureux de l'année et reçoit un statut élevé dans la communauté.",
+      "symbols": "Le bétail (bovins) est le symbole central de la richesse, du statut social et de la fertilité. La corpulence masculine (promue par le festival Ka'el) est un signe de prosperite et de sante pour la communauté.",
+      "artsAndMusic": "Body painting (peinture corporelle) pratiqué lors des cérémonies et fêtes. Ornements corporels. Tissage de bijoux. Agriculture de subsistance (mais, sorgho, orge, teff, haricots, poivrons, canne a sucre). Le groupe Me'en refuse largement les modes de vie modernes et perpétue les traditions pastorales.",
+      "spiritualities": "Religion traditionnelle animiste. Mythe de creation : les ancêtres ont émergé d'un trou dans le sol. Rituels liés au bétail et a la fertilité. Pratiques chamaniques locales. Peu de conversions religieuses documentées."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de chefferie ou de royaume centralise. Organisation tribale semi-nomade avec leadership distribué entre anciens et chefs de clans.",
+      "relationsWithNeighbors": "Voisins au sud : le peuple Mursi (également pastoral et connu pour les plateaux labiaux). Relations de coexistence et de competition pour les ressources pastorales avec les Tirma, Chai et autres groupes surmic. Le sous-groupe Tishena a des relations hostiles avec les Tirma et Chai.",
+      "conflictsOrAlliances": "Conflits avec des peuples voisins pour l'accès aux pâturages et a l'eau. Tensions avec les autorités éthiopiennes concernant les droits fonciers et les déplacements liés aux projets de développement dans la vallée de l'Omo (barrage Gibe III, Omo Sugar Project).",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 222000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2023 : 222 000 (Me'en total) ; recensement éthiopien 1998 : 56 585 ; SIL International 2005 : 80 000 ; Bodi seuls : environ 4 553 (SIL 2005)",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 220000,
+          "note": "Principalement zone Bench-Maji et vallée de l'Omo, région des Nations, Nationalités et Peuples du Sud"
+        },
+        {
+          "country": "SDN",
+          "population": 1500,
+          "note": "Environ 1 500 individus au-dela de la frontière éthio-soudanaise"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mekan people – Wikipedia EN (https://en.wikipedia.org/wiki/Mekan_people)",
+      "Me'en language – Wikipedia EN (https://en.wikipedia.org/wiki/Me%CA%BCen_language)",
+      "Joshua Project – Bodi in Ethiopia (https://joshuaproject.net/people_groups/21546)",
+      "Joshua Project – Me'en in Ethiopia (https://joshuaproject.net/people_groups/13654/ET)",
+      "101 Last Tribes – Me'en people (https://www.101lasttribes.com/tribes/meen.html)",
+      "Orville Jenkins – Meen People Profile (http://orvillejenkins.com/profiles/meen.html)",
+      "Ayu Ethiopian Tribal Tours – Ka'el Festival (https://ayuethiopiantribaltours.com/the-bodi-tribes-kael-festival-ethiopias-remarkable-celebration-of-strength-and-prosperity/)"
+    ]
   }
 }

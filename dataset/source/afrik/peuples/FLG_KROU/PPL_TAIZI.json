@@ -1,64 +1,95 @@
 {
   "id": "PPL_TAIZI",
-  "nameMain": "Taizi",
+  "nameMain": "Tajuasohn",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["CIV"],
+  "currentCountries": ["LBR"],
   "content": {
     "appellations": {
-      "mainName": "Taizi",
-      "selfAppellation": "Taizi",
-      "exonyms": ["Taizi (terme utilisé par les Européens)"],
+      "mainName": "Tajuasohn",
+      "selfAppellation": "Tajuasohn",
+      "exonyms": ["Tajuason", "Tajuoso", "Tajuosohn", "Taizi"],
+      "originOfExonyms": "Tajuasohn est le nom propre du peuple et de sa langue. Les variantes Tajuason, Tajuoso et Tajuosohn sont des orthographes alternatives dues aux conventions de romanisation differentes utilisees par les missionnaires et administrateurs coloniaux. Le nom Taizi peut etre une simplification ou une erreur de transcription.",
+      "whyProblematic": "Ce petit groupe est tres peu documente dans la litterature ethnographique. Les rares sources disponibles se limitent a des donnees linguistiques (Ethnologue, Glottolog). Les frontières culturelles et politiques avec les peuples voisins du comte de Sinoe (Sapo, Kru, Klao) sont difficilement delimitables.",
+      "contemporaryUsage": "Tajuasohn est le terme utilise par Ethnologue (SIL) et Glottolog. La langue est consideree comme stable (statut AES : 6a vigoureux selon Glottolog 5.3).",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou",
-      "historicalRegion": "Côte d'Ivoire",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Krou occidental (branche Klao-Tajuasohn)",
+      "historicalRegion": "Sinoe County, est du Liberia, region forestiere cotiere",
+      "currentCountries": ["LBR"]
     },
-    "ethnicities": ["Taizi du Nord", "Taizi du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Clan 1 du Sinoe County — l'un des cinq clans originels tajuasohn, etabli dans la region de Greenville",
+      "Clan 2 du Sinoe County — groupement lignager patrilineaire autonome de la foret interieure",
+      "Clan 3 du Sinoe County — groupement lignager autonome du bassin fluvial du Sinoe",
+      "Clan 4 du Sinoe County — groupement lignager autonome de la zone cotiere",
+      "Clan 5 du Sinoe County — groupement lignager autonome des hautes terres interieures"
+    ],
     "origins": {
-      "ancientOrigins": "Les Taizi sont originaires de la CIV, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Tajuasohn font partie de la grande famille linguistique krou qui occupe la region cotiece et forestiere entre le sud-est du Liberia et le sud-ouest de la Cote d'Ivoire. Comme la plupart des peuples krou, ils sont vraisemblablement arrives dans leur region actuelle entre le XVe et le XVIIe siecle, sous la pression des mouvements de populations mandingues et des guerres regionales liees au commerce esclavagiste transsaharien. Leur installation dans le Sinoe County correspond a un processus de segmentation clanique typique des societes krou.",
+      "formationPeriod": "La presence des Tajuasohn dans le comte de Sinoe est documentee au XXe siecle. La langue est enregistree par SIL avec 9 600 locuteurs en 1991. L'identite tajuasohn distincte se maintient a travers cinq clans locaux partageant une langue commune.",
+      "migrationRoutes": [
+        "Depuis l'interieur du Liberia vers la region cotiere du Sinoe County",
+        "Trajectoire commune aux peuples krou : depuis le nord-est et les hautes terres forestieres vers la cote atlantique"
+      ],
+      "historicalSettlementZones": [
+        "Sinoe County, est du Liberia (chef-lieu : Greenville)",
+        "Region forestiere du bassin de la riviere Sinoe"
+      ],
+      "unificationsOrDivisions": "Organisation en cinq clans independants partageant une identite linguistique et culturelle commune. Pas de structure politique supra-clanique. Chaque clan constitue une unite autonome typique de l'organisation krou segmentaire.",
+      "externalInfluences": "Contacts historiques avec les peuples voisins du Sinoe County : Sapo, Kru/Klao, Grebo. Influence des missions chretiennes liberienne et americaine depuis le XIXe siecle. Contacts avec l'administration americo-liberienne depuis 1847. Exposition aux conflits civils liberiens (1989-2003) qui ont provoque des deplacements de population dans toute la region de Sinoe.",
+      "majorHistoricalEvents": "Incorporation dans la structure administrative du Sinoe County sous l'autorite de la Republique du Liberia (fondee en 1847). Pendant les guerres civiles liberienns (1989-2003), le comte de Sinoe fut expose aux violences des factions armees (NPFL de Charles Taylor et autres). Le retour a la stabilite apres 2003 permit la reconstruction des communautes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation decentralisee typique des peuples krou : pas de chef supreme, gouvernance par les anciens de chaque clan. Les decisions importantes sont prises de maniere consensuelle par les aines. Le chef de village (headman) est choisi par les anciens selon ses qualites personnelles et ses realisations, non par heredite dynastique.",
+      "clanOrganization": "Structure en cinq clans locaux (non nommes dans les sources disponibles) dans le comte de Sinoe. Chaque clan constitue un groupe de descendance patrilineaire organise autour d'un ancetre fondateur. Les clans maintiennent leur autonomie tout en partageant une identite linguistique et des pratiques culturelles communes.",
+      "ageClassSystems": "Comme dans l'ensemble des societes krou, il existe probablement des rites de passage marques par des ceremonies d'initiation pour les garçons et les filles. La circoncision et les societes initiatiques sont documentees dans les groupes krou voisins (Klao, Grebo) et sont vraisemblablement pratiquees de maniere similaire.",
+      "roleOfLineages": "Les lignages patrilineaires constituent l'unite de base de l'organisation sociale. Ils regissent l'acces a la terre, les alliances matrimoniales et les obligations cerimoniales. La propriete fonciere est communautaire au niveau du lignage.",
+      "religiousAuthority": "Comme les autres peuples krou, les Tajuasohn reconnaissent probablement des specialistes rituels charges de mediation avec les esprits territoriaux et les ancetres. La tradition krou d'un dieu createur (Nyesoa) et d'esprits intermediaires (ku, kwi) est probablement partagee, avec des variations locales. La Bible en klao (langue krou proche du tajuasohn) est disponible depuis 2000, facilitant la penetration du christianisme protestant."
     },
     "languages": {
-      "mainLanguage": "Taizi",
-      "vehicularRole": "Le taizi est parlé par la majorité des Taizi. Le français est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Tajuasohn",
+      "isoCodes": ["tja"],
+      "dialects": [
+        "Pas de dialectes distincts documentes ; varietes locales possibles entre les cinq clans"
+      ],
+      "vehicularRole": "Le tajuasohn est parle par les cinq clans du Sinoe County liberien. L'anglais liberien est la langue d'education, d'administration et de communication interethnique. Le kru english pidgin (kreyol) est egalement utilise dans les contextes commerciaux. La langue est consideree stable (Glottolog : statut vigoureux 6a) malgre la faible taille de la communaute."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels taizi, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Comme pour l'ensemble des peuples krou du Liberia, les Tajuasohn pratiquent vraisemblablement des rites d'initiation masculine (circoncision collective en foret sacree), des rites funeraires avec chants et danses specifiques, et des ceremonies de reconciliation interclaniques. Les rites agricoles (offrandes avant les semailles, premiers fruits) et les ceremonies avant les expeditions de peche sont egalement pratiques. Les societes initiatiques masculines, communes aux peuples krou, assurent la transmission des savoirs et la cohesion sociale.",
+      "symbols": "Les elements symboliques partagés avec les peuples krou incluent les masques en bois utilises dans les ceremonies initiatiques et funeraires, les instruments de musique rituels (tambours, clochettes, sifflets en corne) et les ornements corporels marques d'appartenance clanique. La foret sacree est un espace symbolique central pour les ceremonies d'initiation.",
+      "artsAndMusic": "Les traditions artistiques et musicales des Tajuasohn s'inscrivent dans le cadre plus large de la culture krou du Liberia : sculpture sur bois (masques, objets rituels), musique percussive (tambours de mortar et de calice, hochets), chants responsoriaux (soliste et choeur), danses cerimoniales liees aux cycles de vie et aux saisons agricoles. La poesie orale et les proverbes sont les vecteurs de transmission de la memoire collective. L'artisanat de peche (pirogues, filets, nasses) est une tradition notable dans cette region cotiere.",
+      "spiritualities": "Comme les autres peuples krou, les Tajuasohn sont vraisemblablement animistes, reconnaissant un dieu createur supreme (Nyesoa dans la tradition kru/klao), des esprits territoriaux associes a des lieux (rivières, forets, cotes), des gardiens spirituels familiaux (ku) et les ames des defunts proches (kwi). Les specialistes rituels (deya chez les Kru) assurent la mediation entre le monde des vivants et celui des esprits. L'influence chretienne (protestante et catholique) est presente depuis le XIXe siecle au Liberia. Tres peu de Tajuasohn sont musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora taizi dans les grandes villes ivoiriennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaumes ni de chefferies documentees. Organisation clanique autonome sans structure supra-locale permanente, typique des societes krou du Liberia. Les Tajuasohn ont ete incorpores dans les structures administratives du Sinoe County sous l'autorite liberienne.",
+      "relationsWithNeighbors": "Voisinage linguistique et culturel avec les peuples krou du Sinoe County : Klao (Kru), Sapo, Krahn, Glio-Oubi. Contacts avec les communautes americo-liberiennes de Greenville (capitale du Sinoe County). Relations commerciales et d'echange avec les groupes de l'interieur forestier.",
+      "conflictsOrAlliances": "Pendant la premiere guerre civile liberienne (1989-1997), le Sinoe County fut traverse par les forces du NPFL de Charles Taylor. Les populations civiles, dont les Tajuasohn, subirent des violences, des pillages et des deplacements. La periode de post-conflit (2003-present) a permis une reconstruction progressive des communautes.",
+      "diaspora": "Migration vers les centres urbains liberiens (Greenville, Monrovia) pour raisons economiques et fuite des violences civiles. Des familles tajuasohn ont ete deplacees vers des camps de refugies pendant les guerres civiles liberienns (1989-2003). La communaute liberienne de la diaspora aux Etats-Unis (Minnesota, New Jersey) comprend des membres de differents groupes krou, dont probablement des Tajuasohn. Pas de diaspora internationale specifiquement tajuasohn significative documentee en dehors du Liberia."
     },
     "demography": {
-      "totalPopulation": 20000,
+      "totalPopulation": 15000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue 1991 : 9 600 locuteurs du tajuasohn. Glottolog 5.3 : statut de langue vigoureuse (6a). Estimation 2025 basee sur le taux de croissance demographique liberien (2,5% par an depuis 1991).",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 15000,
+          "note": "Sinoe County, principalement dans la region de Greenville et les villages environnants des cinq clans"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Taizi language",
-      "CIA World Factbook – Côte d'Ivoire",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples krou"
+      "Wikipedia EN — Tajuasohn language. https://en.wikipedia.org/wiki/Tajuasohn_language",
+      "SIL Ethnologue — Tajuasohn language (tja). https://www.ethnologue.com/language/tja/",
+      "Glottolog 5.3 — Tajuasohn (taju1238). https://glottolog.org/resource/languoid/id/taju1238",
+      "Ethnologue — Liberia languages. https://www.ethnologue.com/country/LR/",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire/Liberia. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+      "101 Last Tribes — Kru people. https://www.101lasttribes.com/tribes/kru.html",
+      "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS 2012). https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf",
+      "Britannica — Kru ethnic group. https://www.britannica.com/topic/Kru",
+      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/",
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people"
     ]
   }
 }

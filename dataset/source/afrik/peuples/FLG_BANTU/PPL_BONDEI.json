@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Bondei",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "WaBondei",
+      "exonyms": ["Wabondei", "Bodei"],
+      "originOfExonyms": "Le nom Bondei fut attribue par la dynastie Kilindi apres la conquete du peuple par le royaume Shambaa sous le roi Kinyashi. Il signifie litteralement \"gens de la vallee\", decrivant ceux qui vivaient entre la vallee de Lwengera et la mer a l'est des monts Usambara.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Bondei est aujourd'hui universellement accepte et utilise en Tanzanie comme denomination officielle du groupe. Le swahili Wabondei est egalement courant.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Seuta (sous-groupe Bantu de la cote est)",
+      "historicalRegion": "Plaines cotieres entre les monts Usambara et l'ocean Indien, district de Muheza et Pangani, region de Tanga",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Bondei"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Bondei sont un peuple Bantu du sous-groupe Seuta, etroitement apparente aux Shambaa et aux Zigua. Deux theories principales expliquent leur origine : l'une les associe a des migrants venus du nord par la legendaire Singwaya (cote somalienne), l'autre les rattache aux migrations Bantu depuis la region du lac Nyasa-Tanganyika vers les cotes de l'actuelle Tanzanie. Ils etaient les premiers habitants des zones cotieres autour de l'actuelle municipalite de Tanga avant d'etre repousses vers l'interieur par les Digo.",
+      "formationPeriod": "La formation du groupe Bondei en tant qu'entite distincte remonte probablement au XVIIe et XVIIIe siecles, cristallisee par leur integration (forcee) dans le royaume Shambaa au debut du XIXe siecle. L'identite Bondei s'est renforcee en opposition a la domination Kilindi.",
+      "migrationRoutes": [
+        "Migration depuis les zones cotieres septentrionales (region de Tanga/Mkinga) vers les plaines de Muheza sous la pression des Digo",
+        "Deplacement vers le sud apres l'effondrement du royaume Kilindi en 1868, depuis Magila vers le district de Pangani et les terres au sud de la riviere Sigi"
+      ],
+      "historicalSettlementZones": [
+        "Plaines basses du district de Muheza, region de Tanga, nord-est de la Tanzanie",
+        "District de Pangani",
+        "Zone cotiere entre les monts Usambara et l'ocean Indien"
+      ],
+      "unificationsOrDivisions": "Les Bondei ont historiquement ete un peuple sans Etat centralise, incapables de reconnaitre un chef unique en raison de rivalites interclaniques. Sous la domination Shambaa (debut XIXe siecle), des chefs Kilindi furent imposes. Apres la revolte de Kiva (1868-1869), les Bondei recouvrerent une autonomie partielle. Durant l'epoque coloniale allemande puis britannique, des chefs elus (jumbe Mkuu) furent institues pour les administrer.",
+      "externalInfluences": "Le royaume Shambaa domina les Bondei a partir du debut du XIXe siecle, les soumettant au systeme tributaire et a l'esclavage. Les attaques zigua au milieu du XIXe siecle les affaiblirent davantage. L'arrivee des missions chretiennes (CMS) a Magila dans les annees 1860-1870 et la colonisation allemande (etablissement de plantations de sisal) puis britannique ont profondement transforme leur mode de vie. L'islam s'est repandu depuis la cote swahilie.",
+      "majorHistoricalEvents": "La conquete par le royaume Shambaa sous Kinyashi (debut XIXe siecle) marqua la soumission des Bondei. La guerre de Milonge opposa Bondei et Digo aux XVIIe-XVIIIe siecles pour le controle des terres cotieres. La revolte de Kiva (1868-1869) permit aux Bondei de se liberer partiellement de la tutelle Kilindi. La vente d'individus Bondei en esclavage par les chefs Kilindi declencha des resistances armees des 1852. Les plantations de sisal introduites par les Allemands transformerent l'economie locale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Peuple traditionnellement sans Etat centralise (acephale). L'autorite etait dispersee entre les chefs de clans et de familles. Tout chef potentiel suscitait l'opposition des autres families, rendant impossible l'emergence d'un leader unique. Sous la colonisation, des jumbe Mkuu (chefs superieurs elus) furent institues pour faciliter l'administration.",
+      "clanOrganization": "La societe Bondei est organisee en clans patrilineaires. Les clans principaux incluent notamment les Pozwe, Mkina Gembe, Msogee et Nkamba. Les relations entre clans etaient structurees par la pratique de l'Utani (joking relationship), notamment lors des mariages et enterrements.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation patrilineaire determine l'appartenance clanique et les droits sur la terre. L'identite clanique etait centrale lors des ceremonies funeraires, les membres d'autres clans venant soutenir le clan endeuille. Les anciens de chaque lignage jouaient un role cle dans la resolution des conflits et la prise de decision.",
+      "religiousAuthority": "La pratique religieuse traditionnelle incluait le chamanisme et le culte des ancetres. Avec l'arrivee de l'islam (via les contacts avec la cote swahilie) et du christianisme (missions CMS a Magila des les annees 1870), le paysage religieux devint pluriel. Aujourd'hui les Bondei sont majoritairement musulmans (islam populaire melant pratiques islamiques et traditions ancestrales) avec une minorite chretienne."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kibondei (Bondei)",
+      "isoCodes": ["bou"],
+      "dialects": [],
+      "vehicularRole": "Le Kibondei (code ISO 639-3 : bou) est une langue bantoue du sous-groupe Seuta, proche du Kishambala, du Kizigula et du Kingulu. Les locuteurs sont progressivement en transition vers le swahili, qui est utilise comme langue vehiculaire a l'echelle nationale. La langue Bondei a egalement influence ses voisines (Doe, Kwere) et en a ete influencee."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie funeraire (maziko) est l'evenement culturel central. Elle mobilise l'ensemble de la communaute pendant plusieurs jours. Quarante jours apres l'inhumation, la ceremonie de l'Arobaini rassemble a nouveau la communaute pour finaliser le deuil et permettre a l'ame du defunt de reposer en paix. L'Utani (relation a plaisanterie) est pratique intensement lors des enterrements : le Mtani (partenaire d'Utani) tient un role rituel specifique, conduisant les proches autour du feu.",
+      "symbols": "L'identite Bondei est symboliquement liee aux plaines basses (bonde en swahili) entre les Usambara et l'ocean. Le concept de 'pur Bondei' etait historiquement associe aux habitants des valles.",
+      "artsAndMusic": "La culture Bondei s'exprime notamment a travers les chants et danses lors des ceremonies de mariage, d'enterrement et des rites de passage. L'Utani, pratique sociale codifiee d'echanges de plaisanteries rituelles entre clans ou groupes ethniques, constitue une forme d'expression culturelle orale importante.",
+      "spiritualities": "La religion traditionnelle Bondei inclut la croyance aux ancetres et aux esprits. L'islam (majoritairement sunnite, sous forme d'islam populaire conservant des elements traditionnels) est aujourd'hui predominant. Une minorite pratique le christianisme, heritage des missions de la Church Missionary Society (CMS) presentes depuis les annees 1870 a Magila."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Bondei n'avaient pas de systeme de royaumes ou chefferies centralise avant leur conquete par le royaume Shambaa. Sous la domination Kilindi, des chefs furent imposes. Apres l'independance de la Tanzanie (1961), les chefferies traditionnelles furent abolies par le gouvernement.",
+      "relationsWithNeighbors": "Les Bondei entretenaient des relations d'Utani (joking relationship) avec les Digo, nees d'une guerre intercommunautaire au XVIIe-XVIIIe siecle. Ils etaient culturellement proches des Shambaa et des Zigua. Certains Zigua fuyant les razzias esclavagistes s'integrerent aux Bondei pour leur protection. Les Bondei etaient impliques dans les reseaux commerciaux de caravanes pre-coloniaux de l'Afrique de l'Est.",
+      "conflictsOrAlliances": "La guerre de Milonge opposa Bondei et Digo pour le controle des terres cotieres. Les Bondei subirent des razzias esclavagistes organisees par les chefs Kilindi (annees 1850). Des resistances armees contre la domination Kilindi eclaterent des 1852, culminant avec la revolte de Kiva (1868-1869). Durant la Premiere Guerre mondiale, les Bondei fournirent des travailleurs pour l'effort de guerre britannique contre l'Allemagne.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
-      "referenceYear": 2025,
-      "source": "N/A"
+      "totalPopulation": 183000,
+      "referenceYear": 2023,
+      "source": "PeopleGroups.org, 2023 (estimation)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 183000,
+          "note": "Concentres dans les districts de Muheza et Pangani, region de Tanga"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Bondei people – Wikipedia (https://en.wikipedia.org/wiki/Bondei_people)",
+      "Bondei in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/10930)",
+      "Bondei people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bondei.html)",
+      "Mhando, M.M. (2023). The History of Utani and Burial Traditions of the Bondei People. International Journal of Social and Humanities Sciences (https://dergipark.org.tr/tr/download/article-file/3486509)",
+      "Mhando, M.M. (2023). An outline of History and Cultural identity of the Bondei people. Journal of African Studies (https://journals.co.za/doi/abs/10.31920/2634-7644/2023/v4n1a6)",
+      "Willis, J. (1993). The Makings of a Tribe: Bondei Identities and Histories. Journal of African History, 33(2), 191-208 (https://www.jstor.org/stable/182998)",
+      "Bondei of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014913/)"
+    ]
   }
 }

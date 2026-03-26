@@ -6,54 +6,81 @@
   "content": {
     "appellations": {
       "mainName": "Kamir",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Amhara",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Xamir",
+      "exonyms": [
+        "Khamir",
+        "Xamir",
+        "Xamta",
+        "Khamta",
+        "Khamtanga",
+        "Simt'anga",
+        "Agawinya"
+      ],
+      "originOfExonyms": "Le nom Kamir/Khamir est la désignation externe la plus courante de ce groupe Agaw, employée dans les documents administratifs éthiopiens et la littérature anthropologique. Xamir est l'auto-désignation du peuple. Xamtanga désigne à la fois le peuple et sa langue. Agawinya signifie langue Agaw en amharique. Simt'anga est une variante dialectale du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Khamir et Xamir sont utilisés de manière interchangeable dans la littérature académique. Le groupe est officiellement reconnu dans les statistiques éthiopiennes comme composante du cluster Agew. Xamtanga (xan) est le nom ISO de la langue."
     },
-    "ethnicities": ["Kamir"],
+    "ethnicities": ["Kamir", "Xamir", "Agaw oriental"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Amhara"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kamir (Xamir) sont une branche de l'Agaw oriental (Eastern Agaw), l'un des plus anciens groupes cushitiques des hauts plateaux éthiopiens. Les Agaw sont considérés comme les habitants originels d'une grande partie des hauts plateaux du nord et du centre de l'Ethiopie, avant l'assimilation par les peuples sémitiques tigrinya et amhara qui s'est accentuée à partir du Ier millénaire de notre ère. Ils font partie du groupe Bilen-Xamtanga dans la classification des langues agaw (Central Cushitic).",
+      "formationPeriod": "La communauté Kamir/Xamir s'est constituée comme enclave cushitique distincte dans les hauts plateaux amhara, résistant à l'assimilation linguistique au profit du tigrigna et de l'amharique. Leur présence dans la région de Soqota, Lasta, Waag (Wag Hemra) et Abergele est attestée depuis plusieurs siècles.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans les hauts plateaux nord-éthiopiens. Les Agaw sont considérés comme des descendants des populations cushitiques pré-axoumites qui furent progressivement encerclées et assimilées par les peuples sémitiques."
+      ],
+      "historicalSettlementZones": [
+        "Soqota (Soqota woreda, zone Wag Hemra)",
+        "Lasta (zone North Wollo)",
+        "Waag (Wag Hemra, région Amhara)",
+        "Abergele (zone Waghimra)",
+        "Tembien (zone méridionale Tigray, minorité)"
+      ],
+      "unificationsOrDivisions": "Les Kamir/Xamir forment l'un des cinq groupes Agaw d'Ethiopie et d'Erythrée, avec les Awngi (Awi), les Bilen (Erythrée), les Qimant et les Kunfel. Ils constituent la branche orientale (Northeastern Agaw) du groupe Central Cushitic.",
+      "externalInfluences": "Pression historique des peuples amhara et tigrigna voisins, entraînant un bilinguisme généralisé. Influence de l'Eglise orthodoxe éthiopienne depuis la période axoumite. La majorité des Kamir/Xamir sont aujourd'hui chrétiens orthodoxes et bilingues xamtanga-amharique. Les femmes et les personnes âgées en zones rurales restent souvent monolingues en xamtanga.",
+      "majorHistoricalEvents": "Les Agaw ont dominé la Ethiopie lors de la Dynastie Zagwe (vers 900-1270 apr. J.-C.), pendant laquelle les rois agaw firent ériger les célèbres églises rupestres de Lalibela. Les Kamir/Xamir, comme les autres Agaw, furent progressivement encerclés et assimilés par les peuples sémitiques tigrinya et amhara à partir du XIIIe siècle. Ils constituent aujourd'hui des enclaves linguistiques survivantes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation communautaire à base lignagère, sans état centralisé. Les affaires communautaires sont gérées par un conseil des anciens. La région de Wag Hemra (Waag) a historiquement été gouvernée par des chefs locaux en relation avec l'empire éthiopien.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'appartenance communautaire, les droits fonciers et les alliances matrimoniales dans les villages Kamir.",
+      "religiousAuthority": "L'Eglise orthodoxe éthiopienne Tewahedo est l'institution religieuse dominante chez les Kamir. Certains groupes Agaw du nord pratiquaient historiquement une religion qualifiée d'hébraïque par les observateurs extérieurs, mais les Kamir sont majoritairement orthodoxes."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Xamtanga (xan)",
+      "isoCodes": ["xan"],
+      "dialects": ["Xamta", "Simt'anga", "Khamtanga"],
+      "vehicularRole": "Le xamtanga est parlé par environ 213 000 personnes en Ethiopie, principalement dans la région Amhara du nord (zone Wag Hemra, district d'Avergele, zones de Lasta et Waag). La langue est classée au niveau éducatif 4 (Educational) selon Glottolog. Elle utilise le script éthiopique (ge'ez). L'amharique est la lingua franca pour les échanges extérieurs. Le bilinguisme xamtanga-amharique est généralisé chez les hommes et les générations jeunes ; les femmes et personnes âgées en zones rurales restent souvent monolingues."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Culture agricole des hauts plateaux. Les Kamir pratiquent l'agriculture à la charrue comme tous les peuples Agaw. Les célébrations religieuses orthodoxes structurent le calendrier culturel. Les traditions de résolution des conflits et de gestion communautaire s'exercent par le biais d'assemblées d'anciens.",
+      "symbols": "Les églises rupestres de Lalibela, bien que construites par les rois Zagwe agaw, constituent un patrimoine identitaire fort pour les descendants Agaw de la région. La région de Wag Hemra et le massif de Lasta sont les territoires identitaires centraux des Kamir.",
+      "artsAndMusic": "Traditions musicales et littéraires orales propres à la communauté Xamir. L'Agawinya (langue agaw) a produit une littérature orale riche incluant chants, contes et proverbes. La presse écrite en xamtanga est inexistante ou très limitée.",
+      "spiritualities": "Christianisme orthodoxe éthiopien dominant. Des pratiques religieuses mixtes combinant orthodoxie et traditions locales ont été observées par les anthropologues. Certains Agaw du nord (notamment les Qemant) maintiennent des pratiques syncrétiques hébraico-chrétiennes-animistes, mais les Kamir sont généralement pleinement orthodoxes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Kamir/Xamir ne constituent pas un royaume indépendant mais sont les héritiers de la tradition politique agaw de la Dynastie Zagwe (900-1270), qui gouverna l'Ethiopie et fut à l'origine des célèbres églises rupestres de Lalibela. Après la chute de la Zagwe, les Agaw furent progressivement encerclés par les royaumes amhara et tigrigna.",
+      "relationsWithNeighbors": "Voisins des Amhara du sud et de l'ouest, des peuples Tigrigna du nord et de l'est. Relations historiques marquées par l'assimilation linguistique progressive aux dépens du xamtanga. La zone de Wag Hemra partage des frontières avec les régions du Tigray et de l'Afar.",
+      "conflictsOrAlliances": "Les Agaw furent soumis par les Axoumites sémitiques aux IXe-Xe siècles de notre ère. La Dynastie Zagwe (vers 900-1270) représente leur période de domination politique maximale, avant d'être renversée par Yekuno Amlak (fondateur de la lignée salomonide) en 1270.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 213000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Omniglot (Xamtanga, 2023) : environ 213 000 locuteurs. Agaw languages Wikipedia : 143 000 locuteurs (Agaw languages, 2024). Estimation 2025 retenue : 213 000 selon source Omniglot.",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 213000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Xamtanga language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Xamtanga_language)",
+      "Agaw people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Agaw_people)",
+      "Agaw languages – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Agaw_languages)",
+      "Xamtanga language, alphabet and pronunciation – Omniglot, 2023 (https://www.omniglot.com/writing/xamtanga.htm)",
+      "Xamtanga Language (XAN) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/xan/)",
+      "Xamtanga – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/xamt1239)",
+      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)",
+      "Sociolinguistic Survey Report of the Khamir Language of Ethiopia – Academia.edu, 2015 (https://www.academia.edu/10128423/Sociolinguistic_Survey_Report_of_the_Khamir_Language_of_Ethiopia)",
+      "Agew People: History and Culture – Horn of Africa Evangelical Mission (https://hornofafrica.org/wp-content/uploads/2019/12/Agew.pdf)"
+    ]
   }
 }

@@ -6,54 +6,68 @@
   "content": {
     "appellations": {
       "mainName": "Karo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Karo",
+      "exonyms": ["Kara", "Kere", "Kerre", "Cherre"],
+      "originOfExonyms": "Les exonymes Kara, Kere et Kerre sont des variantes orthographiques utilisees par les voyageurs, missionnaires et ethnologues etrangers au XIXe et XXe siecles pour transcrire le nom du peuple. Cherre est une forme dialectale ancienne.",
+      "whyProblematic": "La denomination Kara peut preter a confusion avec d'autres peuples d'Afrique portant ce nom. La graphie Karo est aujourd'hui privilegiee dans la litterature scientifique pour designer specifiquement ce groupe omovallien.",
+      "contemporaryUsage": "Le nom Karo est celui utilise dans les documents officiels ethiopiens et dans la litterature anthropologique contemporaine. Les habitants s'identifient eux-memes comme Karo.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Omotic meridional, sous-famille Hamer-Karo",
+      "historicalRegion": "Vallee de l'Omo, Sud de l'Ethiopie",
       "currentCountries": ["ETH"]
     },
     "ethnicities": ["Karo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Karo sont un peuple omovallien de tradition agro-pastorale dont les origines remontent aux migrations proto-omotiques dans la vallee inferieure de l'Omo. Ils sont etroitement apparentes aux Hamer-Banna, avec lesquels ils partagent 81% de vocabulaire de base, ce qui suggere une separation relativement recente d'un ancetre commun au sein du groupe Hamer-Karo.",
+      "formationPeriod": "Plusieurs siecles avant le contact europeen, probablement entre le XVe et le XVIIe siecle, lors des migrations et reorganisations des populations omotiques dans la vallee de l'Omo inferieure.",
+      "migrationRoutes": [
+        "Vallee de l'Omo inferieure, depuis les hauts plateaux omotiques vers les plaines alluviales du fleuve Omo"
+      ],
+      "historicalSettlementZones": [
+        "Rive gauche (est) du fleuve Omo, zone du Debub Omo, Region des Nations, Nationalites et Peuples du Sud (SNNPR), Ethiopie"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Les Karo entretiennent des relations historiques avec les Hamer, leurs voisins les plus proches avec lesquels ils partagent des pratiques culturelles comme la ceremonie du saut sur les boeufs. Des conflits periodiques avec les Mursi au nord ont egalement marque leur histoire recente.",
+      "majorHistoricalEvents": "L'integration de la region de l'Omo dans l'Empire ethiopien sous Menelik II a la fin du XIXe siecle a progressivement expose les Karo a l'administration centrale. La construction du barrage de Gibe III sur l'Omo a partir des annees 2000 a modifie les crues saisonnieres du fleuve, affectant l'agriculture de retrait de crue pratiquee par les Karo."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe egalitaire sans chefferie centralisee, organisee autour de conseils d'anciens. Les decisions collectives sont prises par consensus entre les hommes adultes du village.",
+      "clanOrganization": "La societe karo est organisee en clans patrilineaires. L'appartenance clanique determine les regles de mariage et les obligations de reciprocite.",
+      "ageClassSystems": "Systeme de classes d'age similaire a celui des Hamer voisins, scandant le passage de la jeunesse a l'age adulte notamment par la ceremonie du saut sur les boeufs.",
+      "roleOfLineages": "Les lignages patrilineaires regissent l'heritage du betail, de la terre et des droits d'acces aux ressources de la rive de l'Omo.",
+      "religiousAuthority": "Autorite spirituelle exercee par des anciens et des specialistes rituels charges des ceremonies propitiatoires liees aux crues du fleuve et aux cycles agricoles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Karo",
+      "isoCodes": ["kxh"],
+      "dialects": [],
+      "vehicularRole": "La langue karo est utilisee exclusivement au sein du groupe. L'amharique sert de langue de communication avec l'administration ethiopienne. Les contacts avec les Hamer permettent une intercomprehension partielle grace a la forte similitude lexicale (81%)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie du saut sur les boeufs (similaire au Hamar Jump) marque l'acces des jeunes hommes au statut adulte et leur permet de se marier. Le candidat doit traverser une file de boeufs alignes sans tomber. Les scarifications corporelles sont pratiquees comme marques d'identite et de beaute.",
+      "symbols": "Les peintures corporelles blanches et ocres a motifs geometriques constituent le symbole identitaire le plus visible des Karo. Les coiffures elaborees et les ornements de plumes d'autruche sont portes lors des ceremonies. Le betail symbolise la richesse et le statut social.",
+      "artsAndMusic": "Les Karo sont renommes pour leurs peintures corporelles et faciales hautement elaborees, realisees avec des pigments naturels (argile blanche, ocre rouge, charbon). Ces peintures sont creees a l'occasion des ceremonies et sont considerees comme une expression artistique et identitaire majeure. La danse et le chant collectif accompagnent les celebrations.",
+      "spiritualities": "Croyances animistes centrees sur les forces naturelles du fleuve Omo et les esprits des ancetres. Une part croissante de la population s'est convertie au christianisme evangelique depuis les annees 1980-1990, tout en maintenant certaines pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Karo entretiennent des relations generalement pacifiques avec leurs voisins les Hamer, avec lesquels ils partagent des pratiques culturelles et des echanges commerciaux. Des tensions et conflits periodiques existent avec les Mursi au nord, notamment pour le controle des ressources en eau et des terres de pacage.",
+      "conflictsOrAlliances": "Conflits recurrents avec les Mursi pour l'acces aux ressources de la vallee de l'Omo. Alliance culturelle et linguistique de longue date avec les Hamer.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 2800,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/12547)",
+      "distributionByCountry": [{ "country": "ETH", "population": 2800 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Karo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12547)",
+      "Karo language (Ethiopia) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Karo_language_(Ethiopia))",
+      "Karo people (Ethiopia) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Karo_people_(Ethiopia))",
+      "Karo (Ethiopia) – Glottolog 5.1, 2024 (https://glottolog.org/resource/languoid/id/karo1297)",
+      "A Look at the Kara Tribe, Ethiopia's Famous Body Painters – Absolute Ethiopia Tours, 2025 (https://absoluteethiopia.com/a-look-at-the-kara-tribe-ethiopias-famous-body-painters/)",
+      "Omotic languages – Encyclopaedia Britannica, 2024 (https://www.britannica.com/topic/Omotic-languages)"
+    ]
   }
 }

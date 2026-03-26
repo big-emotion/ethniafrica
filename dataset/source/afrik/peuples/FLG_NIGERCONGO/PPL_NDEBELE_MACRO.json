@@ -2,70 +2,118 @@
   "id": "PPL_NDEBELE_MACRO",
   "nameMain": "Ndebele (Macro)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["ZWE"],
+  "currentCountries": ["ZWE", "ZAF", "MOZ", "BWA"],
   "content": {
     "appellations": {
       "mainName": "Ndebele (Macro)",
-      "selfAppellation": "Ndebele",
+      "selfAppellation": "AmaNdebele",
       "exonyms": [
-        "Ndebele (terme utilisé par les Européens), parfois appelés « Matabele » (terme historique)"
+        "Ndebele",
+        "Matabele (terme historique britannique pour les Ndebele du Zimbabwe)",
+        "Transvaal Ndebele (pour les Ndebele d'Afrique du Sud)",
+        "isiNdebele"
       ],
+      "originOfExonyms": "Le terme Ndebele proviendrait d'un ancêtre éponyme nommé roi Ndebele (groupe Mbo-Nguni). 'Matabele' est la forme anglicisée utilisée par les Britanniques pour désigner les Ndebele du Zimbabwe (Matabeleland), dérivé du nom sotho-tswana 'Matebele' (avec le préfixe pluriel 'ma-'). L'ensemble des groupes Ndebele partage une origine Nguni commune (Bantu Zone S), bien que les différents sous-groupes aient des histoires et des cultures notablement divergentes.",
+      "whyProblematic": "Le terme 'Ndebele' recouvre en réalité plusieurs groupes distincts dont l'histoire et les cultures ont divergé depuis plusieurs siècles. Les Ndebele d'Afrique du Sud (Ndzundza/Manala) sont distincts des Ndebele du Zimbabwe (Matabele/Northern Ndebele, fondés par Mzilikazi au 19e siècle). Un petit groupe Ndebele existe également au Mozambique (descendants de l'expansion nguni du Mfecane). Les langues isiNdebele du Zimbabwe (proche du zoulou) et isiNdebele d'Afrique du Sud (influencé par le sotho) sont distinctes mais mutuellement partiellement intelligibles.",
+      "contemporaryUsage": "Le terme AmaNdebele est utilisé par tous les sous-groupes comme endonyme. Dans les contextes académiques, on distingue Northern Ndebele (Zimbabwe), Southern Ndebele (Afrique du Sud), et Ndebele du Mozambique. Cette fiche macro couvre l'ensemble des populations se réclamant de l'identité Ndebele à travers l'Afrique australe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "ZWE, Afrique du Sud",
-      "currentCountries": ["ZWE"]
+      "ethnoLinguisticGroup": "Bantou (Zone S) — groupe Nguni (sous-groupes Mbo et Khumalo)",
+      "historicalRegion": "Afrique australe — Zimbabwe (Matabeleland), Afrique du Sud (Gauteng, Mpumalanga, Limpopo), Mozambique (Sofala), Botswana",
+      "currentCountries": ["ZWE", "ZAF", "MOZ", "BWA"]
     },
     "ethnicities": [
-      "Ndebele du Zimbabwe",
-      "Ndebele d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Northern Ndebele / Matabele (Zimbabwe — descendants de Mzilikazi, branche Khumalo/Ntungwa)",
+      "Ndzundza Ndebele (Afrique du Sud — Mpumalanga et Gauteng, branche cadette de Musi)",
+      "Manala Ndebele (Afrique du Sud — Gauteng, branche aînée de Musi)",
+      "Northern Transvaal Ndebele / Sumayela Ndebele (Limpopo — très influencés par les Sotho, BagaLanga, BagaSeleka)",
+      "Ndebele du Mozambique (petite communauté Nguni-Ndebele dans la province de Sofala, descendants du Mfecane)"
     ],
     "origins": {
-      "ancientOrigins": "Les Ndebele sont originaires de la région du Zimbabwe et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Ancien royaume Ndebele.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Ndebele). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Tous les groupes Ndebele partagent une origine commune dans la grande famille Nguni du groupe Bantou (Zone S), issue des migrations bantoues depuis la région des Grands Lacs d'Afrique orientale. L'ancêtre légendaire commun le plus ancien est le roi Ndebele (fils du roi Mabhudu), dont descendent les Ndebele d'Afrique du Sud via le roi Musi (17e siècle). Les Ndebele du Zimbabwe ont une origine distincte : ils descendent des Khumalo (amaNtungwa) sous Mzilikazi, qui rompit avec le roi zoulou Shaka dans les années 1820 et migra vers le nord via l'Afrique du Sud actuelle avant de s'établir dans l'actuel Zimbabwe vers 1840.",
+      "formationPeriod": "Deux lignées distinctes se sont formées : (1) Ligne Musi (17e siècle, Afrique du Sud) : le roi Musi s'installe au Gauteng, ses fils Manala et Ndzundza fondent deux royaumes rivaux. (2) Ligne Mzilikazi (19e siècle, Zimbabwe) : Mzilikazi, chef Khumalo, refuse de payer tribut à Shaka (vers 1822), migre vers le nord-ouest en absorbant des Sotho, Swazi et autres groupes. S'installe dans le Matabeleland (Zimbabwe) vers 1840, créant le royaume Mthwakazi. Les deux lignées ont des parentés nguni communes mais des histoires de formation totalement différentes.",
+      "migrationRoutes": [
+        "Migrations bantoues depuis les Grands Lacs vers l'Afrique du Sud nord-orientale (ancêtres communs Nguni)",
+        "Ligne Musi (SA) : migration progressive depuis le KwaZulu-Natal vers le Gauteng via le Drakensberg et la rivière Vaal",
+        "Ligne Mzilikazi (ZWE) : migration depuis le KwaZulu-Natal vers le Transvaal (1822-1837), puis vers le Matabeleland Zimbabwe (1838-1840) via le Botswana",
+        "Ndebele du Mozambique : migration de groupes Nguni (dont des Ndebele) vers le Mozambique lors du Mfecane (années 1820)"
+      ],
+      "historicalSettlementZones": [
+        "Matabeleland (Zimbabwe sud-ouest) — Northern Ndebele, autour de Bulawayo",
+        "Mpumalanga et Gauteng (Afrique du Sud) — Ndzundza Ndebele",
+        "Pretoria et Gauteng nord (Afrique du Sud) — Manala Ndebele",
+        "Limpopo (Mokopane, Polokwane, Afrique du Sud) — Northern Transvaal Ndebele",
+        "Province de Sofala (Mozambique) — petit groupe Ndebele issu du Mfecane",
+        "Botswana (nord) — populations Ndebele issues des migrations de Mzilikazi"
+      ],
+      "unificationsOrDivisions": "Les groupes Ndebele n'ont jamais constitué une unité politique unifiée. Chaque sous-groupe a développé son propre système politique indépendant. Les Ndebele du Zimbabwe ont créé le royaume centralisé Mthwakazi (1823-1897) sous Mzilikazi puis Lobengula. Les Ndebele d'Afrique du Sud sont restés divisés entre Ndzundza et Manala depuis le 17e siècle. Le Mfecane a dispersé certains groupes Nguni/Ndebele au Mozambique et au Botswana. Une conscience identitaire panndebele existe mais sans structure politique commune.",
+      "externalInfluences": "Les Ndebele ont absorbé de nombreux groupes au cours de leurs migrations (Sotho-Tswana, Rozvi, Kalanga pour les Zimbabwéens ; Sotho, San pour les Sud-Africains). Le Mfecane (1820s) a été l'événement le plus transformateur pour tous les groupes. La colonisation britannique (BSAC au Zimbabwe, Boers puis Britanniques en Afrique du Sud) a radicalement restructuré leurs sociétés. L'apartheid a artificiellement délimité les Ndebele sud-africains dans le bantoustan KwaNdebele.",
+      "majorHistoricalEvents": "17e siècle : roi Musi s'installe au Gauteng, division Manala-Ndzundza. 1822-1840 : Mzilikazi fonde le royaume Mthwakazi au Zimbabwe. 1882-1883 : guerre de Mapoch (Ndzundza vs Boers). 1893 : Première guerre des Matabele, défaite des Ndebele du Zimbabwe. 1896-1897 : Deuxième guerre des Matabele. 1977 : bantoustan KwaNdebele. 1982-1987 : Gukurahundi au Zimbabwe (massacres des Ndebele sous Mugabe). 1994 : intégration post-apartheid. 1996 : isiNdebele reconnu comme langue officielle en Afrique du Sud."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Ndebele). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les structures politiques varient selon les sous-groupes. Ndebele du Zimbabwe : système monarchique centralisé hérité de Shaka, avec des villes régimentaires (amabutho), une hiérarchie sociale rigide (Zansi — Nguni purs ; Enhla — Sotho assimilés ; Lozwi/Holi — populations locales). Ndebele d'Afrique du Sud : double monarchie (Ndzundza/Manala) avec chef tribal (iKosi), conseil (iimphakathi) et organisation en quarters (izilindi). Toutes les branches reconnaissent l'autorité ancestrale et le rôle des anciens dans la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire commune à tous les groupes Ndebele. Chez les Zimbabwéens : clans Khumalo, Mthwakazi. Chez les Sud-Africains : clans Ndzundza (Mahlangu) et Manala (Mabhena), avec de nombreux sous-clans. Les izibongo (noms de clans, aussi utilisés comme louanges) structurent l'identité sociale.",
+      "ageClassSystems": "Système de régiments d'âge (amabutho) hérité du modèle zoulou, particulièrement développé chez les Ndebele du Zimbabwe. Initiation masculine (ukuwela/ingoma) tous les 4 ans chez les Ndebele d'Afrique du Sud, avec constitution de régiments (iintanga).",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et les obligations matrimoniales dans tous les groupes Ndebele. Le fils aîné de l'épouse principale est l'héritier principal. La pratique du lévirat (obligation d'un homme de soutenir la femme et les enfants de son frère décédé) est attestée chez les Ndebele du Zimbabwe.",
+      "religiousAuthority": "Guérisseurs traditionnels (izinyanga, izangoma) dans tous les groupes. Les ancêtres (amadlozi) sont vénérés comme intermédiaires. Chez les Ndebele du Zimbabwe, le Mlimo était le chef spirituel et oracle de la nation. Le christianisme (diverses confessions) est largement répandu dans tous les groupes, en syncrétisme avec les pratiques ancestrales."
     },
     "languages": {
-      "mainLanguage": "Ndebele",
-      "vehicularRole": "Le ndebele est parlé par la majorité des Ndebele. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "isiNdebele (Northern ou Southern selon le sous-groupe)",
+      "isoCodes": ["nde", "nbl"],
+      "dialects": [
+        "Northern Ndebele / isiNdebele du Zimbabwe (nde — proche du zoulou, quelques différences de prononciation et de vocabulaire)",
+        "Southern Ndebele / isiNdebele d'Afrique du Sud (nbl — influencé par les langues sotho, seule forme écrite)",
+        "Sumayela Ndebele / Northern Transvaal Ndebele (Limpopo, fortement influencé par le sotho, parfois classé à part)"
+      ],
+      "vehicularRole": "L'isiNdebele du Zimbabwe (nde) est l'une des 16 langues officielles du Zimbabwe. L'isiNdebele d'Afrique du Sud (nbl) est l'une des 11 langues officielles d'Afrique du Sud (1 044 377 locuteurs selon le recensement de 2022). Les deux variétés sont mutuellement partiellement intelligibles mais restent des langues distinctes : le Northern Ndebele zimbabwéen est généralement intelligible avec le zoulou, alors que le Southern Ndebele sud-africain est influencé par le sotho."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ndebele, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Peinture murale traditionnelle",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"commonRites\": {\"initiationRites\": \"Toutes les branches pratiquent des rites d'initiation pour les garçons (circoncision et retraite en brousse) et les filles (puberty rites). Chez les Ndebele d'Afrique du Sud : ukuwela/ingoma (garçons, tous les 4 ans) et ukuthombisa (filles, à la puberté). Chez les Ndebele du Zimbabwe : rites similaires d'entrée dans les régiments.\"}, \"southAfricanSpecific\": {\"murals\": \"Les femmes Ndzundza peignent les façades de leurs maisons de motifs géométriques multicolores (izimpunjwana) — pratique absente chez les Ndebele du Zimbabwe. Artistes célèbres : Esther Mahlangu, Francina Ndimande.\", \"beadwork\": \"Perles complexes indiquant le statut matrimonial et social : iinrholwani, isiphephetu, nyoga (traîne de mariée). Anneaux de cuivre/laiton (idzila) pour les femmes mariées.\"}, \"zimbabweanSpecific\": {\"regimental\": \"Organisation en villes régimentaires (amabutho), héritage de Shaka. Hiérarchie sociale Zansi/Enhla/Lozwi. Pratique du maïs comme culture principale et élevage de bétail comme source de prestige.\"}}",
+      "symbols": "Les peintures murales géométriques (symbole mondial de l'identité ndebele sud-africaine). Le bétail (symbole de prestige et de richesse dans toutes les branches). Les perles de couleurs et les anneaux de cuivre/laiton (identité féminine ndebele, Afrique du Sud). Le bull/taureau comme totem de force pour les Ndebele du Zimbabwe. La ville de Bulawayo (coeur historique du royaume Mthwakazi au Zimbabwe).",
+      "artsAndMusic": "{\"southAfricanArts\": {\"murals\": \"Peintures murales géométriques féminines (Ndzundza) — reconnues à l'échelle internationale depuis les années 1980, présentes dans des collections de musées du monde entier.\", \"beadwork\": \"Art des perles pour exprimer le statut social et les rites de passage.\"}, \"zimbabweanArts\": {\"music\": \"La musique ndebele du Zimbabwe est étroitement liée à la tradition zouloue. Chants de louange (izibongo), musique de régimental. La mbira (instrument à lamelles) est utilisée dans certaines cérémonies.\"}, \"commonArts\": {\"oralTraditions\": \"Poésie orale de louange (izibongo) commune à toutes les branches. Contes traditionnels et proverbes transmis oralement.\", \"crafts\": \"Poterie, vannerie, travail du cuir et du métal dans toutes les branches.\"}}",
+      "spiritualities": "{\"ancestorWorship\": {\"description\": \"Le culte des ancêtres (amadlozi) est central à toutes les branches. Les ancêtres interviennent dans les affaires des vivants via les guérisseurs traditionnels (izangoma).\"}, \"zimbabweanSpirit\": {\"mlimo\": \"Le Mlimo (oracle spirituel des Ndebele du Zimbabwe) a joué un rôle crucial dans la Deuxième guerre des Matabele (1896-1897) en incitant à la révolte contre la BSAC.\"}, \"syncretism\": {\"description\": \"Le christianisme (diverses confessions) est largement adopté dans toutes les branches tout en coexistant avec les pratiques ancestrales. Les Églises de Sion et les mouvements prophétiques africains sont très répandus.\"}, \"southAfricanTaboos\": {\"description\": \"Les imizila (tabous) régissent les comportements lors des rites de passage, notamment autour de la circoncision, du mariage et du deuil.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ndebele dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume Mthwakazi (Zimbabwe, 1823-1897) : fondé par Mzilikazi, capitale Bulawayo. Ses successeurs : Lobengula (1870-1894). Ce royaume contrôlait un vaste territoire entre le Limpopo et le Zambèze. Vaincu lors de la Première guerre des Matabele (1893) par la BSAC de Cecil Rhodes. Royaume Ndzundza (Afrique du Sud) : roi Mabhoko I (1840-1865) puis Nyabela (1879-1902) ; défait lors de la guerre de Mapoch (1882-1883). Royaume Manala (Afrique du Sud) : maintenu dans la region de Pretoria depuis le 17e siècle.",
+      "relationsWithNeighbors": "Les Ndebele du Zimbabwe ont subjugué les Rozvi, les Kalanga et les peuples shona (Mashonaland), imposant un tribut. Ils ont combattu les Boers (en Transvaal) avant de migrer au Zimbabwe. Les Ndebele d'Afrique du Sud ont commercé avec les BaKwena et BaKgatla, résisté aux Boers et aux Swazi. Les deux groupes ont entretenu des relations conflictuelles avec les colons européens au 19e siècle.",
+      "conflictsOrAlliances": "1882-1883 : guerre de Mapoch (Ndzundza vs Boers, défaite). 1893 : Première guerre des Matabele (Ndebele Zimbabwe vs BSAC, défaite). 1896-1897 : Deuxième guerre des Matabele (révolte, écrasée). 1980 : indépendance du Zimbabwe ; ZAPU (Ndebele, Joshua Nkomo) vs ZANU (Shona). 1982-1987 : Gukurahundi — massacres de Ndebele au Zimbabwe par la 5e Brigade (estimations : 2 800 à 20 000 morts). 1987 : Accord d'unité Zimbabwe. 1994 : intégration des Ndebele sud-africains dans la nouvelle Afrique du Sud démocratique.",
+      "diaspora": "Diaspora ndebele zimbabwéenne dans les grandes villes d'Afrique du Sud (Johannesburg, Pretoria), du Botswana et du Royaume-Uni. Diaspora ndebele sud-africaine concentrée dans les centres urbains (Johannesburg, Pretoria). Des artistes ndebele comme Esther Mahlangu ont diffusé l'art mural ndebele à l'échelle mondiale (BMW Art Cars, expositions internationales)."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 4400000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation macro combinant : Northern Ndebele Zimbabwe (environ 2 900 000 selon Wikipedia 2023 ; ~16% des 15 millions de Zimbabwéens), Southern Ndebele Afrique du Sud (1 348 000 Joshua Project 2024 ; 1 044 377 locuteurs Census 2022), Northern Transvaal Ndebele Afrique du Sud, et Ndebele du Mozambique/Botswana. Chiffre total approximatif.",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 2900000,
+          "note": "Northern Ndebele (Matabele) — Matabeleland (provinces de Bulawayo, Matabeleland Nord, Matabeleland Sud) et Midlands"
+        },
+        {
+          "country": "ZAF",
+          "population": 1350000,
+          "note": "Southern Ndebele (Ndzundza, Manala) — Mpumalanga, Gauteng ; Northern Transvaal Ndebele — Limpopo"
+        },
+        {
+          "country": "BWA",
+          "population": 100000,
+          "note": "Descendants des groupes absorbés par Mzilikazi lors de sa migration, nord du Botswana"
+        },
+        {
+          "country": "MOZ",
+          "population": 50000,
+          "note": "Petite communauté Ndebele dans la province de Sofala, descendants du Mfecane"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ndebele languages (nde, nbl)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Northern Ndebele people. https://en.wikipedia.org/wiki/Northern_Ndebele_people",
+      "Wikipedia EN — Southern Ndebele people. https://en.wikipedia.org/wiki/Southern_Ndebele_people",
+      "Wikipedia EN — Nguni peoples. https://en.wikipedia.org/wiki/Nguni_peoples",
+      "Encyclopaedia Britannica — Ndebele (Zimbabwean people). https://www.britannica.com/topic/Ndebele-Zimbabwean-people",
+      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
+      "Joshua Project — Ndebele, Southern in South Africa. https://joshuaproject.net/people_groups/15054",
+      "SIL Ethnologue — Northern Ndebele (nde). https://www.ethnologue.com/language/nde/",
+      "SIL Ethnologue — Southern Ndebele (nbl). https://www.ethnologue.com/language/nbl/"
     ]
   }
 }

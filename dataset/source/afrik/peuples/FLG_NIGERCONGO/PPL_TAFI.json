@@ -6,54 +6,73 @@
   "content": {
     "appellations": {
       "mainName": "Tafi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tegbo",
+      "exonyms": ["Tafi", "Bagbo", "Nyangbo-Tafi"],
+      "originOfExonyms": "Tegbo est l'endonyme utilise par le peuple lui-meme pour sa langue; Tafi designe le peuple et le territoire dans les sources exterieures. La denomination Nyangbo-Tafi regroupe parfois les Tafi avec le peuple Nyangbo voisin, dont la langue est proche mais distincte.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Tafi est la denomination standard dans les publications academiques, les listings de Joshua Project et Ethnologue. Tegbo est le nom de la langue tel que designe par les locuteurs eux-memes. Le sanctuaire aux singes de Tafi Atome constitue la principale visibilite touristique du peuple.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Kwa, Langues Ghana-Togo montagne",
+      "historicalRegion": "Region de la Volta, districts de Hohoe et Ho",
       "currentCountries": ["GHA"]
     },
     "ethnicities": ["Tafi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tafi sont un peuple Guan de la region montagneuse de la Volta orientale. Leurs traditions orales font etat d'une migration depuis Assini (centre du Ghana, region de Brong-Ahafo), avec une traversee marquante de la riviere Dayi. Les Guan sont parmi les premiers habitants de la region de la Volta.",
+      "formationPeriod": "La migration Guan vers la region de la Volta aurait eu lieu plusieurs siecles avant la colonisation europeenne. Les Tafi font partie du troisieme groupe d'immigrants Guan qui se sont etablis dans la region.",
+      "migrationRoutes": [
+        "Depuis Assini (Brong-Ahafo, Ghana central) vers l'est",
+        "Traversee de la riviere Dayi comme moment fondateur de leur histoire migratoire",
+        "Installation dans le terrain montagneux des districts de Hohoe et Ho"
+      ],
+      "historicalSettlementZones": [
+        "District de Hohoe, Volta Region",
+        "District de Ho, Volta Region",
+        "Village de Tafi Atome (connu pour son sanctuaire aux singes)"
+      ],
+      "unificationsOrDivisions": "Les Tafi constituent un sous-groupe du peuple Guan. Leur langue (Tegbo, code tcd) est distincte du Nyangbo voisin (nyb) bien que les deux soient regroupes parfois sous la designation Nyangbo-Tafi.",
+      "externalInfluences": "Influence des peuples Ewe dominants dans la region de la Volta. Arrivee du christianisme il y a environ 50 ans via deux grandes denominations chretiennes. Contacts avec les populations Akan et Guan voisines.",
+      "majorHistoricalEvents": "Migration depuis le Ghana central via Brong-Ahafo. Etablissement dans les montagnes de la Volta orientale. Arrivee du christianisme il y a environ 50 ans. Developpement du sanctuaire aux singes de Tafi Atome comme site touristique notoire."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation politique traditionnelle de type chefferie. Les montagnes ont historiquement servi de protection naturelle contre les envahisseurs. Aujourd'hui, la coexistence pacifique est la regle avec les peuples voisins malgre des disputes occasionnelles sur les ressources en eau et les terres.",
+      "clanOrganization": "Organisation en lignages patrilineaires. Les ancetres jouent un role central dans la prise de decisions communautaires, avec des sanctuaires ancestraux pres des entrees des maisons.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les hommes se reunissent aupres des sanctuaires ancestraux pour prendre des decisions importantes. Un petit os de l'ancetre est conserve dans le sanctuaire, dont on croit que l'esprit participe aux deliberations des vivants.",
+      "religiousAuthority": "Les ancetres sont vus comme des protecteurs contre les mauvais esprits, consideres comme presents dans tout l'environnement naturel. Le christianisme est present depuis 50 ans mais est enseigne dans la langue vehiculaire (ewe ou anglais), peu comprise des locuteurs natifs de tegbo."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Tafi (Tegbo)",
+      "isoCodes": ["tcd"],
+      "dialects": [],
+      "vehicularRole": "Le tegbo (tafi) est parle comme langue maternelle dans les districts de Hohoe et Ho. L'ewe est la langue vehiculaire regionale dominante; l'anglais est la langue officielle du Ghana. Les services religieux sont souvent en ewe, ce qui pose un probleme de comprehension pour les locuteurs natifs de tegbo. Le Nouveau Testament est disponible en tafi (code tcd, traduit par Wycliffe/SIL)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Sessions de contes (storytelling) ou le conteur reste assis au milieu du groupe, pratique distinctive des usages du reste du Ghana ou le conteur est debout. Pratiques ancestrales de divination et de protection contre les esprits.",
+      "symbols": "Sanctuaires ancestraux pres des entrees de maisons, contenant un petit os du defunt. Les collines et montagnes de la region sont des elements identitaires forts, historiquement associes a la protection du peuple contre les envahisseurs.",
+      "artsAndMusic": "Agriculture de subsistance (plantain, riz, mais, igname, manioc). Elevage de poulets et de chevres pour les marches locaux. Le sanctuaire aux singes de Tafi Atome (mone monkeys) constitue un heritage culturel singulier, melant conservation naturelle et tradition religieuse.",
+      "spiritualities": "Culte des ancetres: croyance que les esprits des ancetres habitent les sanctuaires du foyer et participent aux decisions. Croyance que les esprits mauvais habitent tout l'environnement naturel. Christianisme presente depuis environ 50 ans mais syncretique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Peuple Guan de montagne sans organisation imperiale. Utilisation des reliefs comme defense naturelle contre les invasions exterieures.",
+      "relationsWithNeighbors": "Voisins des peuples Ewe, Nyangbo, Sekpele (Likpe), Lolobi et Akpafu. Relations commerciales locales aux marches de Hohoe et Ho. Coexistence generalement pacifique avec les peuples voisins malgre des tensions ponctuelles sur les ressources.",
+      "conflictsOrAlliances": "Utilisation historique des montagnes comme refuge contre les envahisseurs. Des conflits occasionnels sur l'eau et les terres surviennent encore avec les voisins.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 8000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2024: Tafi, Tegbo in Ghana 7 800 locuteurs. Estimation 2025 arrondie a 8 000 sur base de croissance de 2,2% par an.",
+      "distributionByCountry": [{ "country": "GHA", "population": 8000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Joshua Project – Tafi, Tegbo in Ghana (https://joshuaproject.net/people_groups/15171)",
+      "Ethnologue – Tafi Language TCD (https://www.ethnologue.com/language/tcd/)",
+      "Wikipedia – Nyangbo-Tafi language (https://en.wikipedia.org/wiki/Nyangbo-Tafi_language)",
+      "Wikidata – Tafi Q36545 (https://www.wikidata.org/wiki/Q36545)",
+      "Facebook – Migration history of Tafi Guans in the Volta Region (https://www.facebook.com/groups/369358884478832/posts/1388990782515632/)",
+      "Ghana Volta Region – Modern Ghana demographics (https://www.modernghana.com/ghanahome/regions/volta.asp)",
+      "ISO 639-3 – code tcd: Tafi (https://iso639-3.sil.org/code/tcd)"
+    ]
   }
 }

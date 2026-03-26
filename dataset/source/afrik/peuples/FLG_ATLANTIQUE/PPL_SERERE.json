@@ -1,26 +1,121 @@
 {
   "id": "PPL_SERERE",
-  "nameMain": "",
+  "nameMain": "Serere",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["SLE", "GIN"],
+  "currentCountries": ["SEN", "GMB", "MRT"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Sape / Sapey",
+      "mainName": "Serere",
+      "selfAppellation": "Seereer / Sereer",
+      "exonyms": [
+        "Serere",
+        "Serer",
+        "Sérère",
+        "Serrere",
+        "Sarer",
+        "Kegueme",
+        "Seereer"
+      ],
+      "originOfExonyms": "Le terme Serere est la denomination usuelle en francais. L'endonyme seereer est utilise dans la langue serere-sine. Serere est un mot toucouleur signifiant les separes, temoignant de la migration des ancetres sereres depuis le Tekrur. Le terme Kegueme est utilise par certains groupes voisins. Le terme anglophone Serer est normalise en Gambie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Serere ou Serer est utilise officiellement au Senegal et en Gambie. L'appellation Seereer est privilegiee dans les contextes culturels et linguistiques sereres eux-memes. Le premier president du Senegal, Leopold Sedar Senghor (fils d'un pere serere), est la figure serere la plus connue mondialement.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "SLE, GIN forestière",
-      "currentCountries": ["SLE", "GIN"]
+      "ethnoLinguisticGroup": "Senegambien (branche atlantique Niger-Congo), groupe serere-cangin",
+      "historicalRegion": "Sine et Saloum (Senegal central et occidental), du bord meridional de Dakar a la frontiere gambienne ; anciennement aussi la vallee du fleuve Senegal (Fuuta Tooro) et le Tekrur",
+      "currentCountries": ["SEN", "GMB", "MRT"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
+    "ethnicities": [
+      "Seereer-Siin (Serere proprement dits, les plus nombreux), vallee du Sine et du Saloum, Kaolack, Diourbel, Dakar",
+      "Niominka (Sereres des deltas et des iles du Saloum, peche et navigation)",
+      "Serer-Ndut (N'doute), sud de Cayor et nord-ouest de l'ancien Thies, langue cangin ndut",
+      "Serer-Noon, ancienne region de Thies, langue cangin noon",
+      "Serer-Njeghen, ancien Baol, langue cangin saafi",
+      "Serer-Palor (Waro), ouest-central, sud-ouest de Thies, langue cangin palor",
+      "Serer-Laalaa (Lehar), ouest-central, nord de Thies, zone de Pambal, langue cangin laalaa"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sereres se considerent comme l'un des peuples les plus anciens de Senegambie. Les etudes genetiques et les sources historiques suggèrent qu'ils sont originaires de la vallee du fleuve Senegal, a la frontiere de l'actuel Senegal et de la Mauritanie. Selon l'economiste Etienne Van de Walle, la formation de l'ethnie serere remonte au XIIIe siecle, quand un groupe venu du nord (fuyant l'islam) rencontra dans la region de Niakhar un autre groupe d'origine mandingue, les Gelwar, venant du sud-est. Le groupe serere actuel est le produit de ce metissage. Leurs propres traditions orales les rattachent aux Toucouleurs du Fuuta Tooro.",
+      "formationPeriod": "XIe-XIIIe siecle : premieres migrations depuis le Fuuta Tooro vers le sud sous la pression de l'Almoravid et du dirigeant War Jabi vers 1030-1035. Installation dans les vallees du Sine et du Saloum au XIIIe siecle. Consolidation de l'identite serere entre le XIIIe et le XVe siecle.",
+      "migrationRoutes": [
+        "Migration initiale depuis la vallee du fleuve Senegal (Fuuta Tooro, frontier Senegal-Mauritanie) vers le sud, entre le XIe et le XIIIe siecle",
+        "Transit par les zones wolofs, avec influence mutuelle et partage de terminologies et structures politiques",
+        "Installation dans les vallees du Sine et du Saloum (Senegal central) vers le XIIIe siecle",
+        "Nouvelles migrations au XVe-XVIe siecle suite aux persecutions islamiques vers les forets de l'interieur et la cote"
+      ],
+      "historicalSettlementZones": [
+        "Sine et Saloum (Senegal central et occidental, regions de Fatick, Kaolack, Diourbel)",
+        "Petite Cote (Mbour, Joal-Fadiouth) et archipel des Bolongs du Saloum",
+        "Ancien Baol (region de Diourbel)",
+        "Region de Thies (Cayor meridional)",
+        "Gambie du nord (Nuimi, Baddibu, Kombo gambien)"
+      ],
+      "unificationsOrDivisions": "Les royaumes de Sine et de Saloum, dynasties sereres parmi les rares dynasties pre-coloniales a avoir survecu jusqu'au XXe siecle, representent le pole politique serere le plus connu. Le Sine etait decrit comme un bastion anti-islamique impregnable selon l'historien Iba Der Thiam. La distinction entre Sereres parlant le serere-sine et ceux parlant les langues cangin (Ndut, Noon, Palor, Laalaa, Saafi) cree des divisions internes, bien que tous se reconnaisent comme Sereres.",
+      "externalInfluences": "Pression islamique des Almoravides (XIe siecle), des jihads wolofs (XIXe siecle, notamment le jihad de 1861 de Ma Ba Jaxoo), des forces coloniales françaises. Influence mandingue via les Gelwar de Saloum. Au XIVe-XVIIe siecles, accueil de marchands juifs portugais dans le Sine. La colonisation française (apres 1887) accelera la conversion islamique. Leopold Sedar Senghor, premier president du Senegal, incarna la figure intellectuelle serere sur la scene mondiale.",
+      "majorHistoricalEvents": "Vers 1030-1035 : refus des Sereres de se convertir sous War Jabi, premier exode depuis le Tekrur. XIIIe siecle : installation dans le Sine-Saloum et rencontre avec les Gelwar. XVe-XVIe siecles : nouvelles persecutions islamiques, nouvelles migrations. 13 mai 1859 : victoire serere a la Bataille de Djilass contre les forces françaises. 1859 : defaite serere a la Bataille de Logandeme (vengeance française). 1861 : jihad de Ma Ba Jaxoo contre les Sereres. 1887 : conquete coloniale française du Senegal. 1960 : independance du Senegal avec Leopold Sedar Senghor comme president."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme monarchique avec succession bilineaire (a la fois matrilineaire et patrilineaire), reflet du metissage entre les populations du nord (matrilineaires) et les Gelwar du sud (patrilineaires). Les royaumes de Sine et de Saloum etaient gouvernes par des maad (rois) issus de la lignee des Gelwaar. Les Lamanes (anciens rois-pretres sereres) etaient les gardiens de la terre et des sanctuaires ancestraux (Pangool). La societe etait stratifiee en cinq classes : elite dirigeante, guerriers, artisans, hommes libres et esclaves.",
+      "clanOrganization": "Organisation en lignages patrilineaires et matrilineaires. Les Lamanes (fondateurs de villages) etaient a la fois pretres et gardiens des sanctuaires Pangool, jouant un role intermediaire entre la terre, le peuple et les esprits ancestraux. A leur mort, les membres de leur lignee etaient celebres par toute la communaute serere.",
+      "ageClassSystems": "Le Ndut est un rite de passage et d'education religieuse obligatoire pour tout Serere une fois dans sa vie. Rite initiatique lie a la religion serere, il prepare les jeunes a l'age adulte et les integre dans la communaute spirituelle. La ceremonie Xoy, organisee par les Saltigue (grands pretres et pretresses), permet de predire l'avenir devant la communaute.",
+      "roleOfLineages": "La bilinearite (matrilinearite et patrilinearite) est une caracteristique fondamentale de la societe serere, heritee du metissage historique entre populations du nord (pratiques matrilineaires) et Gelwar du sud (pratiques patrilineaires). L'inheritance et la succession dependent du contexte : la terre peut passer par la mere, d'autres biens par le pere.",
+      "religiousAuthority": "Les Saltigue (grands pretres et pretresses sereres) sont les gardiens du savoir initiatique et les organisateurs des ceremonies religieuses majeures (Xoy). Les Yaal Pangool (maitres du culte ancestral) servent d'intermediaires entre les vivants et les Pangool (esprits des ancetres). Le CEMETRA (Centre experimental de medecine traditionnelle de Fatick) regroupe plus de 550 guerisseurs sereres professionnels reconnus par le gouvernement senegalais."
+    },
+    "languages": {
+      "mainLanguage": "Serere-Sine (Seereer-Siin ; ISO 639-3 : srr), langue principale et de prestige du groupe",
+      "isoCodes": ["srr", "ndv", "snf", "pce", "laa"],
+      "dialects": [
+        "Serere-Sine (srr) : dialecte principal, 1 154 760 locuteurs au Senegal (2006), 31 900 en Gambie, 3 500 en Mauritanie",
+        "Ndut (ndv) : langue cangin, environ 38 600 locuteurs (Senegal, 2007)",
+        "Noon (snf) : langue cangin, ancienne region de Thies",
+        "Palor (pce) : langue cangin (Waro), ouest-central de Thies",
+        "Laalaa (laa) : langue cangin, zone de Pambal, environ 12 000 locuteurs (2007)",
+        "Saafi-Saafi : langue cangin, ancien Baol"
+      ],
+      "vehicularRole": "Le serere-sine est la langue maternelle de la majorite des Sereres et fait partie du curriculum scolaire national senegalais. Il est parle dans les medias (television, radio) et dans l'expression artistique contemporaine. Le wolof est la langue vehiculaire dominante du marche au Senegal, marginalisant historiquement le serere dans l'espace commercial. Les langues cangin (Ndut, Noon, Palor, Laalaa, Saafi) sont des langues distinctes du serere-sine mais parlees par des groupes se considerant ethniquement sereres."
+    },
+    "culture": {
+      "majorRites": "Le Ndut est le rite de passage et d'education religieuse central, obligatoire pour tout Serere une fois dans sa vie, liant initiation culturelle et spirituelle. La ceremonie annuelle Xoy rassemble des milliers de personnes a Sine : les Saltigue predisent l'avenir (meteo, politique, economie) et delivrent des sermons rituels. Daqaar Mboob : preparation des semis de mil ou d'arachide avec ceremonies pour assurer une bonne recolte. Le Laamb (lutte senegalaise) est une pratique culturelle ancienne : les Sereres pratiquaient le Njom ou Laamb pour preparer les guerriers, et Monday etant le jour de repos serere, les activites culturelles comme le Laamb sont interdites le jeudi.",
+      "symbols": "L'etoile Yoonir (Sirius, l'etoile la plus brillante du ciel nocturne) est le symbole cosmologique central des Sereres : elle annonce le debut des inondations, signale le moment des semailles, est representee sous forme de Pangool et est utilisee comme signature par les Sereres illetres (representant bonne fortune et destin). Le baobab est l'arbre sacre au pied duquel des offrandes sont faites a Roog. La riviere Sine est sacree. Les sanctuaires (Pangool) sont presents dans chaque village fondateur.",
+      "artsAndMusic": "La musique serere est un element fondateur du Mbalax, rythme populaire senegalais contemporain. Les tambours sereres sont des instruments centraux de la musique ceremonielle. Leopold Sedar Senghor, theoricien de la Negritude, a inscrit la culture serere dans la litterature mondiale. La ceramique, le tissage et la poterie sont des arts traditionnels. Les tumulus funeraires sereres du Sine-Saloum (construits avec des coquillages depuis le XVIe siecle au moins) sont un heritage archeologique notable, inscrits a l'UNESCO.",
+      "spiritualities": "La religion serere (A Fat Roog, la voie du Divin) croit en une divinite supreme universelle appelee Roog (ou Rog), ni dieu ni deesse mais au-dessus d'eux, createur et omniscient qui n'interfere pas dans les affaires quotidiennes. Les Pangool (esprits ancestraux saints) servent d'intermediaires entre les vivants et Roog. Les dieux secondaires incluent Tiurakh (dieu de la richesse), Takhar (dieu de la justice et de la vengeance) et Mendiss (protectrice feminine de Fatick). La croyance en la reincarnation (ciid) est centrale : les ames pures se reincarnent, les ames impures errent. Environ 85% des Sereres sont musulmans aujourd'hui (souvent par syncrétisme), environ 15% chretiens (influents, notamment leopard Senghor catholique) ; une minorite maintient la religion serere pure. Les Sereres et les Jola furent parmi les derniers peuples a se convertir a l'islam et au christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaumes pre-coloniaux de Sine et de Saloum, deux des rares dynasties africaines pre-coloniales dont la lignee royale a survecu jusqu'au XXe siecle. Le Sine etait gouverne par le Maad a Sinig (roi du Sine) et Saloum par le Maad Saloum. Ces royaumes resisterent vigoureusement a l'islamisation, le Sine etant qualifie de bastion anti-islamique impregnable par l'historien Iba Der Thiam. La Gambie du nord etait historiquement une colonie du royaume de Saloum.",
+      "relationsWithNeighbors": "Relations complexes avec les Wolofs (pressions d'islamisation, guerres, influence mutuelle avec partage de terminologies et institutions politiques). Relations anciennes avec les Diola (metissage). Accueil de marchands juifs portugais dans le Sine aux XIVe-XVIIe siecles. Le peuple Lebou, groupe distinct, maintient les pratiques religieuses sereres ancestrales. Les Sereres etaient membres de la confrerie mouride soufie dominee par les Wolofs pour les Sereres convertis a l'islam.",
+      "conflictsOrAlliances": "Resistance multi-seculaire a l'islam : refus des Sereres de se convertir sous War Jabi (vers 1030-1035), premier exode depuis le Tekrur. Resistance aux jihads du XIXe siecle, notamment le jihad de 1861 de Ma Ba Jaxoo (cleric mandingue). Bataille de Djilass (13 mai 1859) : victoire serere contre les forces françaises. Bataille de Logandeme (1859) : victoire française en represailles. Selon la tradition orale serere, le guerrier Amar Godomat aurait tue Abu-Bakr Ibn-Umar (leader almoravide) d'une fleche.",
+      "diaspora": "Les Sereres sont presents dans les grandes villes senegalaises (Dakar, Thies, Kaolack) en raison de migrations internes. Leur presence en Gambie (Nuimi, Baddibu, Kombo) et en Mauritanie meridionale est ancienne. La diaspora internationale est liee a la diaspora senegalaise plus large en Europe (France, Italie, Espagne) et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 3035000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia EN (Serer people) : 2 941 545 au Senegal (16% de la population, estimations 2023), 88 316 en Gambie (estimations 2019-2020), et environ 5 000 en Mauritanie. Le Senegal compte 18 931 966 habitants en 2025 (Worldometer). Les Sereres representent le 3e groupe ethnique du Senegal apres les Wolofs et les Peuls.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 2941546,
+          "note": "16% de la population, principalement dans les regions de Fatick, Kaolack, Diourbel, Thies et Dakar. Sine-Saloum est le foyer historique."
+        },
+        {
+          "country": "GMB",
+          "population": 88316,
+          "note": "Nord de la Gambie, anciennes regions de Nuimi, Baddibu et Kombo gambien (3,5% de la population gambienne)"
+        },
+        {
+          "country": "MRT",
+          "population": 5000,
+          "note": "Mauritanie meridionale, zone frontaliere avec le Senegal"
+        }
+      ]
+    },
     "sources": [
-      "Sierra Leone Coastal Ethnography",
-      "African Art Historical Corpus"
+      "Wikipedia EN, Serer people : https://en.wikipedia.org/wiki/Serer_people",
+      "Wikipedia FR, Religion serere : https://fr.wikipedia.org/wiki/Religion_s%C3%A9r%C3%A8re",
+      "Ethnologue, Serer-Sine (srr) : https://www.ethnologue.com/language/srr",
+      "Joshua Project, Serer-Sine in Gambia : https://joshuaproject.net/people_groups/14866/GA",
+      "101 Last Tribes, Serer people : https://www.101lasttribes.com/tribes/serer.html",
+      "Britannica, Serer : https://www.britannica.com/topic/Serer",
+      "US Public Intelligence, Senegal Cultural Field Guide (Ethnic Groups) : https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
+      "Qiraat Africa, The Serer people of West Africa (2026) : https://qiraatafrican.com/en/19893/the-serer-people-of-west-africa/"
     ]
   }
 }

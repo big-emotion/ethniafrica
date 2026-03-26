@@ -7,62 +7,99 @@
     "appellations": {
       "mainName": "Bamiléké",
       "selfAppellation": "Bamiléké",
-      "exonyms": ["Bamiléké (terme utilisé par les Européens)"],
+      "exonyms": ["Bamileke (orthographe francaise sans accent)", "Bamilekes"],
+      "originOfExonyms": "Le terme Bamiléké est un exonyme administratif introduit par l administration coloniale allemande (Kamerun, a partir de 1884) pour designer collectivement les populations des hauts plateaux de l Ouest. L etymologie est debattue : une interpretation en langue bamiléké signifierait les gens du bas (ba = gens, mi-leke = en bas), en reference a la position des nouveaux arrivaants des plaines du nord. Les Bamileke s auto-designent souvent par le nom de leur fondom d appartenance plutot que par ce terme generaliste.",
+      "whyProblematic": "Bamiléké est un terme-parapluie artificiel recouvrant une centaine de royaumes (fondoms) distincts avec leurs propres langues, chefs et histoires. Cette denomination coloniale a efface la diversite interne et a ete instrumentalisee dans les tensions ethniques post-independance au Cameroun.",
+      "contemporaryUsage": "Le terme Bamiléké est largement adopte par le groupe lui-meme comme identite collective, notamment au sein de la diaspora. Au Cameroun, il designe le premier groupe ethnique par la taille, avec une forte identite entrepreneur et une presence dans tous les secteurs economiques.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone A)",
-      "historicalRegion": "Ouest du Cameroun",
+      "ethnoLinguisticGroup": "Grassfields orientaux (Eastern Grassfields, sous-groupe bantoid meridional, Niger-Congo)",
+      "historicalRegion": "Hauts Plateaux de l Ouest du Cameroun (Plateaux de l Ouest, Grassfields), regions West et Nord-Ouest",
       "currentCountries": ["CMR"]
     },
     "ethnicities": [
-      "Bamiléké du Nord",
-      "Bamiléké du Sud",
-      "Sous-groupes régionaux"
+      "Fondom de Bafoussam (chef-lieu regional, groupe Ghomala-Ngiemboon, principal fondom des Hauts-Plateaux)",
+      "Fondom de Bandjoun (Grand fondom Ghomala, reputé pour la tradition royale et les masques Kuosi)",
+      "Fondom de Bangangté (Medumba, Nde division, environ 210 000 locuteurs)",
+      "Fondom de Bafang (Haut-Nkam)",
+      "Fondom de Dschang (Yemba, Menoua, environ 300 000 locuteurs)",
+      "Fondom de Baham",
+      "Fondom de Mbouda (Bamboutos)",
+      "Fondom de Bagangté",
+      "Fondom de Bawaju",
+      "Ensemble d environ 90 a 100 fondoms supplementaires dans les regions West et Nord-Ouest"
     ],
     "origins": {
-      "ancientOrigins": "Les Bamiléké sont originaires de l'ouest du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone A) de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "La majorite des traditions orales bamileke fait remonter les origines du peuple a la vallee du Nil et au Soudan actuel. Une enquete menee par Alexis Maxime Feyou de Happy et son fils Joseph suggerait une arrivee en plusieurs vagues : la premiere voie venait du nord (region du lac Tchad et vallee du Nil), la seconde du Nigeria par le bassin de la Cross River. Les anthropologues G. Spedini et C. Bailly ont theorisé que les Bamileke descendent des Ndobo, habitants des savanes soudanaises qui migrerent vers l ouest camerounais depuis le nord.",
+      "formationPeriod": "Selon la tradition orale, les Bamileke descendent d une princesse Mbum nommee Wouten (Betaka), expulsee de Ngan Ha (capitale Mbum) apres une querelle de succession au 13e siecle. Ces Mbum du nord du Cameroun sont consideres comme les ancetres de tous les peuples des Grassfields. Au 17e siecle, les Bamileke se deplacerent davantage vers le sud et l ouest sous la pression des Chamba et des Fula, cherchant a eviter l islamisation forcee. C est alors que s opera la separation avec les Bamoum (Bamun), dont le fondateur Nchare etait le frere cadet du fondateur de Bafoussam.",
+      "migrationRoutes": [
+        "Premier itineraire : depuis le nord (region lac Tchad et vallee du Nil), descente vers les Hauts Plateaux de l Ouest",
+        "Second itineraire : depuis le Nigeria (region de la Cross River), penetration par l est",
+        "Migration vers le sud et l ouest au 17e siecle pour echapper aux Chamba et aux Fula islamisants"
+      ],
+      "historicalSettlementZones": [
+        "Hauts Plateaux de l Ouest du Cameroun, Grassfields (regions West et Nord-Ouest)",
+        "Divisions administratives : Bamboutos, Haut-Nkam, Mifi, Menoua, Nde",
+        "Migration contemporaine massive vers Douala, Yaounde et toutes les grandes villes camerounaises",
+        "Diaspora internationale : France, Belgique, Suisse, Etats-Unis, Canada"
+      ],
+      "unificationsOrDivisions": "Les Bamileke ne formerent jamais d Etat centralise. Les environ 90 a 100 fondoms sont des royaumes independants de taille variable, chacun gouverne par un fon. La separation avec les Bamoum au 17e siecle est le dernier grand evenement de division. L administration coloniale allemande puis francaise regroupa ces royaumes sous le terme collectif Bamiléké. La division entre territories francais et anglais separa certains groupes parents.",
+      "externalInfluences": "Pression des Chamba et des Fula au 17e siecle (migration vers le sud). Colonisation allemande (1884-1916) : le terme Bamiléké fut impose. Colonisation francaise (1916-1960) : politique de suspicion envers les fons. Independance (1960) : genocide non reconnu contre les militants Bamiléké de l UPC par les forces franco-camerounaises (1959-1964). L entrepreneuriat bamileke a transforme l economie camerounaise mais a aussi engendre des ressentiments interethniques.",
+      "majorHistoricalEvents": "Au 13e siecle, les ancetres Mbum arrivent sur les hauts plateaux de l Ouest. Au 17e siecle, migration vers le sud-ouest sous pression des Fula, et separation avec les Bamoum. En 1884, l administration allemande impose le terme Bamiléké. En 1955, la France interdit l UPC (Union des Populations du Cameroun), parti independantiste a forte base bamiléké. En 1959-1964, des dizaines de milliers (certaines sources estiment entre 100 000 et 300 000 voire plus) de Bamiléké sont tues par les forces gouvernementales camerounaises appuyees par la France dans le cadre de la guerre de l UPC — evenement qualifie de genocide par certains historiens mais non reconnu officiellement."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chaque fondom est dirige par un fon (aussi appele fong ou fo), autorite spirituelle, politique, judiciaire et militaire. Le fon est considere comme le pere du fondom et son successeur est choisi parmi ses fils, mais son identite est tenue secrete jusqu a la mort du fon en exercice. Le fon dispose de 9 ministres et de plusieurs conseillers. Le Kamveu (Conseil des Notables ou Conseil des Ministres) assiste le fon. Des chefs de quartier (sous-chefs) gerent des portions du territoire. Certains fondoms reconnaissent des sous-chefs (fonte). Historiquement, on pense que le fon pouvait se transformer en elephant ou en leopard.",
+      "clanOrganization": "La filiation est patrilineaire et agnatic : l appartenance au fondom, les droits fonciers, la transmission des titres et des epouses heritees suivent la ligne paternelle. L heritier unique (l aine ou un fils choisi) recueille l ensemble des biens, titres, societes et epouses du pere. Les freres non-heritiers sont fortement incites a s emanciper economiquement, ce qui explique l esprit entrepreneurial bamileke. La polygynie est pratiquee (certains fons ont eu des centaines d epouses). La dot (bride price) est versee a la famille de la mariee.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent la legitimite et les droits au sein du fondom. La garde des cranes des ancetres par l aine male de la famille est une pratique centrale : les esprits ancestraux resident dans les cranes et continuent a veiller sur les vivants. La garde des cranes est conservee dans une maison familiale benie par un devin.",
+      "religiousAuthority": "Le fon est le chef spirituel supreme du fondom. Les societes secretes masculines (dont la Kuosi, societe de masques a rang, et d autres confréries) exercent une autorite religieuse et morale. Les devins (divinateurs) jouent un role important notamment lors des deces (examen de la cause de mort). L Eglise chretienne (catholique et protestante) est aujourd hui dominante dans la plupart des fondoms."
     },
     "languages": {
-      "mainLanguage": "Bamiléké",
-      "vehicularRole": "Le bamiléké est parlé par la majorité des Bamiléké. Le français, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Langues bamileke (groupe Eastern Grassfields)",
+      "isoCodes": ["bbj", "fmp", "nnz", "xmg", "byv"],
+      "dialects": [
+        "Ghomala (bbj) — parle dans les divisions Mifi, Koung-Khi, Hauts-Plateaux (environ 260 000 locuteurs, 1982)",
+        "Fe fe (fmp) — branche orientale des langues bamileke",
+        "Yemba (byv) — parle dans la Menoua, capital Dschang (environ 300 000 locuteurs, 1992)",
+        "Medumba (byv ou code distinct) — parle dans la division Nde, Bangangté (environ 210 000 locuteurs, 1991)",
+        "Ngiemboon — Bamboutos, autour de Balatchi et Batcham",
+        "Mengaka (xmg) — branche occidentale",
+        "Nda nda (nnz) — branche orientale"
+      ],
+      "vehicularRole": "Il n existe pas de langue bamileke unique : chaque fondom a sa propre langue de la famille Eastern Grassfields. Le francais (langue officielle) et le camfranglais (melange camerounais de francais, anglais et langues locales) servent de vehiculaires au niveau national. En diaspora, le francais est la langue de communication intra-communautaire."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels bamiléké, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le culte des ancetres est la pratique spirituelle fondamentale : les cranes des ancetres sont gardes par l aine de la famille dans une maison speciale benie par un devin. Lors du deces, la famille confie le corps a un examinateur pour determiner la cause de mort. Chaque membre de la famille se rend devant le totem pour jurer son innocence. Le coupable est contraint d accomplir un rituel de libation. Lors des funerailles, les masques de l elephant (mbap mteng) sont exhibes en dance pour souligner l importance du defunt. Un cercle de terre humide evoque symboliquement le crane. Les ceremonies de succession du fon sont des rituels elabores au cours desquels les ministres (Kamveu) couronnent le nouveau chef. Les purifications mensuelles du fon (pour hommes et femmes) impliquent des rituels dans la cour sacree de la chefferie. Les femmes qui ont accouche de jumeaux (Magne) et les peres de jumeaux (Tagne) recoivent un statut special.",
+      "symbols": "L elephant est le symbole supreme du fon et de la royaute. Le buffle et le leopard representent la puissance, la bravoure et l autorite guerriere. Les masques Kuosi (mbap mteng, en perlage sur bois) avec leurs motifs de triangles isoceles (symbole du leopard) sont les objets culturels les plus emblematiques. Le trone reserve aux femmes de la chefferie (seules autorisees a y toucher ou s asseoir) symbolise le role de la femme comme gardienne du pouvoir. Les perles (importees du Nigeria puis d Europe) sont des marqueurs de statut et de richesse.",
+      "artsAndMusic": "Le perlage est l art plastique le plus distinctif des Bamileke : applique sur les masques, les statues et les objets royaux, il est unique aux Grassfields du Cameroun. Les masques elephants (mbap mteng) sont parmi les oeuvres africaines les plus celebres dans les collections mondiales. Les sculptures en bois representent des forces vitales permanentes : les sculpteurs sont considered comme des intermediaires executant la vision divine. La poterie est pratiquee comme forme d art et comme therapie (etudes Djoukwo et Wang). La musique Tsamassi, style musical propre aux Bamileke, fut popularisee par le musicien Andre-Marie Tala. Sam Fan Thomas, Makossa (melange camerounais), est issu de la tradition bamileke. Les danses de masques (mascarades) sont interpretees par des hommes pour soutenir l autorite royale lors des funerailles et ceremonies palatiales.",
+      "spiritualities": "La veneration des ancetres est la forme de spiritualite dominante : les esprits des ancetres resident dans leurs cranes physiques et protegent les vivants. La mort est investie de mystere et fait l objet de rites complexes d examen de cause. Le christianisme (catholique et protestant) a ete adopte durant la periode coloniale et est aujourd hui pratique par la majorite des Bamileke, en syncrétisme avec les croyances ancestrales. L islam est pratique par une minorite. Les societes secretes masculines (Kuosi, autres confréries) maintiennent les pratiques rituelles precoloniales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bamiléké dans les grandes villes camerounaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bamileke sont constitues d une centaine de royaumes (fondoms) independants. Les fondoms les plus importants et les mieux documentes sont ceux de Bafoussam, Bandjoun, Bangangté, Bafang, Dschang (Yemba), Baham, Mbouda et Bagangté. Historiquement, les Bamileke et les Bamoum formaient un seul groupe avant que la pression fula ne les separe au 17e siecle. Le fondateur Nchare des Bamoum etait frere cadet du fondateur de Bafoussam. Chaque fondom conserve ses propres traditions royales et genealogies.",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Chamba et les Fula au 17e siecle (migrations forcees). Alliance et separations historiques avec les Bamoum (Bamun). Les Bamileke ont entretenu des relations commerciales avec les cites du littoral camerounais. Leur succes economique dans les regions d accueil (Douala, Yaounde) a genere des tensions avec les peuples d accueil (autochtones) qui les considerent comme des accapareurs.",
+      "conflictsOrAlliances": "Pression des Fula et Chamba au 17e siecle, entraînant la migration vers le sud-ouest. La politique coloniale française créa des conflits : en 1955, l UPC (a forte base bamileke) fut interdite. En 1959-1964, les operations militaires franco-camerounaises contre l UPC causerent des dizaines de milliers de morts parmi les populations bamileke (guerre non reconnu officiellement). Les Bamileke furent marginalises politiquement sous le regime de Biya mais dominent l economie camerounaise.",
+      "diaspora": "La diaspora bamileke est l une des plus dynamiques du Cameroun et d Afrique subsaharienne. On la trouve dans toutes les grandes villes camerounaises (Douala, Yaounde) et a l international : France, Belgique, Suisse, Etats-Unis, Canada. Des personnalites de la diaspora bamileke incluent le boxeur Francis Ngannou (MMA), l acteur Chris Tucker et SZA (par leur mere), l intellectuel Patrice Nganang. Des analyses genetiques ont revele une ascendance bamileke chez des personnalites afro-americaines comme Erykah Badu et Oprah Winfrey."
     },
     "demography": {
-      "totalPopulation": 3000000,
+      "totalPopulation": 3500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements camerounais, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur Britannica (2 120 000 a la fin du 20e siecle), 101LastTribes (plus grand groupe ethnique du Cameroun), Facebook/African Nomad (40% de la population camerounaise, ce qui donnerait plus de 11 millions — chiffre tres probablement exagere). Estimation raisonnable : 3 a 4 millions en 2025 en considerant un taux de croissance moderee depuis les chiffres Britannica.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 3500000,
+          "note": "Concentres dans les regions West et Nord-Ouest (Grassfields), avec une forte presence dans les grandes villes (Douala, Yaounde) et une diaspora internationale"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bamiléké languages",
-      "CIA World Factbook – Cameroon",
-      "Recensements camerounais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Bamileke people. https://en.wikipedia.org/wiki/Bamileke_people",
+      "Wikipedia EN — Bamileke languages. https://en.wikipedia.org/wiki/Bamileke_languages",
+      "Britannica — Bamileke. https://www.britannica.com/topic/Bamileke",
+      "101LastTribes — Bamileke people. https://www.101lasttribes.com/tribes/bamileke.html",
+      "SIL Ethnologue — Bamileke subgroup. https://www.ethnologue.com/subgroup/589/",
+      "Encyclopedia.com — Bamileke. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/bamileke",
+      "GoNOMAD Travel — Bamileke Region of Cameroon. https://www.gonomad.com/224249-bamileke-region-of-cameroon",
+      "Qiraat African — The Bamileke of western Cameroon. https://qiraatafrican.com/en/13421/the-bamileke-of-western-cameroon/"
     ]
   }
 }

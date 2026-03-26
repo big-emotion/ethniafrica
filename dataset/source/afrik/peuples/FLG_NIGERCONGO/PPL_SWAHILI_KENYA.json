@@ -5,64 +5,102 @@
   "currentCountries": ["KEN"],
   "content": {
     "appellations": {
-      "mainName": "Swahili (Kenya)",
-      "selfAppellation": "Swahili",
-      "exonyms": ["Swahili (terme utilisé par les Européens)"],
+      "mainName": "Swahili du Kenya",
+      "selfAppellation": "Waswahili (pluriel) / Mswahili (singulier)",
+      "exonyms": [
+        "Coastal people (terme anglophone informel)",
+        "Wangozi (terme historique pré-arabe pour les Bantu côtiers)",
+        "People of the Coast (traduction de Waswahili)"
+      ],
+      "originOfExonyms": "Le terme Swahili dérive de l'arabe sahil (ساحل), signifiant rivage ou côte. Le terme Waswahili (peuple de la côte) fut appliqué aux populations bantoues islamisées vivant sur la côte de l'Afrique de l'Est qui adoptèrent une culture syncrétique afro-arabe. Les Waswahili se distinguaient historiquement des autres Africains en se désignant comme Waungwana (les gens civilisés).",
+      "whyProblematic": "L'identité swahili est hybride et contestée : les uns l'associent à une identité culturelle et linguistique (quiconque parle swahili, est musulman et vit sur la côte peut se dire Mswahili), tandis que d'autres défendent une identité ethnique stricte liée à des lignages côtiers anciens. La distinction entre Swahili comme peuple ethnique et swahili comme lingua franca crée des confusions.",
+      "contemporaryUsage": "Au Kenya, Waswahili désigne une communauté côtière spécifique concentrée à Mombasa, Lamu, Malindi, Pate et dans les îles de l'archipel de Lamu. Cette communauté se distingue des Mijikenda et des autres peuples côtiers par son ancienneté dans les villes de pierre (miji mikuu ya pwani) et son héritage islamique.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone G)",
-      "historicalRegion": "Côte est de l'Afrique",
+      "ethnoLinguisticGroup": "Bantou côtier (Zone G, branche swahili, G.40)",
+      "historicalRegion": "Côte est-africaine : archipel de Lamu, Mombasa, Malindi, Pate, Zanzibar (Kenya et Tanzanie)",
       "currentCountries": ["KEN"]
     },
     "ethnicities": [
-      "Swahili du Nord",
-      "Swahili du Sud",
-      "Sous-groupes régionaux"
+      "Waswahili de Lamu (Amu : habitants historiques de Lamu, sous-groupe le plus ancien et le plus conservateur)",
+      "Waswahili de Mombasa (Mvita : habitants de la ville insulaire de Mombasa)",
+      "Waswahili de Pate (île de Pate, archipel de Lamu, ancienne cité-État)",
+      "Waswahili de Malindi (côte nord du Kenya)",
+      "Bajuni (archipel de Lamu et côte somalienne, sous-groupe swahili pêcheur)",
+      "Waswahili de Vanga et Shimoni (côte sud du Kenya)"
     ],
     "origins": {
-      "ancientOrigins": "Les Swahili du Kenya sont originaires de la côte est de l'Afrique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone G). Civilisation swahili ancienne.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Swahili de Tanzanie et du Mozambique.",
-      "externalInfluences": "Contacts avec les commerçants arabes, indiens et européens, influence de l'islam."
+      "ancientOrigins": "Les Waswahili descendent de populations bantou cultivatrices qui peuplèrent la côte est-africaine au début du premier millénaire de l'ère commune. Des fouilles archéologiques à Fukuchani (côte nord-ouest de Zanzibar) attestent d'une communauté agricole et pêcheure depuis le VIe siècle au moins, avec des preuves de commerce limité à longue distance avec le Golfe Persique. Entre le VIIIe et le XIe siècle, les échanges commerciaux dans l'Océan Indien s'intensifièrent considérablement, donnant naissance à des centres urbains côtiers. Des migrations de musulmans bantou depuis l'archipel de Lamu vers le sud aux Xe-XIe siècles diffusèrent une tradition monétaire et une forme d'islam localisée, développant le mythe d'origine shirazi.",
+      "formationPeriod": "L'identité swahili distincte se consolida entre le VIIIe et le XIIe siècle, lors de l'essor du commerce indianocéanique. Par 1200 apr. J.-C., les Waswahili avaient établi des sultanats et des réseaux marchands sur les îles de Kilwa, Mafia et Comores et le long de la côte swahili. En 2022, une étude ADN sur 80 inhumations (1250-1800 CE) de villes côtières au Kenya et en Tanzanie confirma que les élites swahili portaient avant 1500 une ascendance mixte africaine (plus de la moitié) et asiatique/proche-orientale (principalement perse). Après 1500, l'ascendance arabe (omanaise) devint plus dominante.",
+      "migrationRoutes": [
+        "Installation bantoue sur la côte est-africaine (premier millénaire apr. J.-C.)",
+        "Arrivée de commerçants et migrants arabes et persans (VIIe-XIe siècle)",
+        "Migration de musulmans bantou de l'archipel de Lamu vers Malindi et Mombasa (Xe-XIe siècle)",
+        "Domination omanaise et migrations depuis Oman (XVIIe-XIXe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Archipel de Lamu (Lamu, Pate, Siyu, Faza, Manda) : cœur historique du swahili kenyan",
+        "Mombasa (Mvita) : principal centre urbain de la côte kenyane",
+        "Malindi et Gedi (ruines de la cité médiévale à 15 km de Malindi)",
+        "Vanga et Shimoni (côte sud du Kenya, frontière tanzanienne)",
+        "Zanzibar (TZA, lien historique profond avec les Swahili du Kenya)"
+      ],
+      "unificationsOrDivisions": "Les Waswahili ne formèrent jamais un État unifié mais un réseau de cités-États indépendantes reliées par le commerce, la langue et l'islam. Les rivalités entre cités (notamment Lamu vs Pate) étaient fréquentes. La bataille de Shela (1812), dans laquelle Lamu repoussa une attaque de Pate avec l'aide d'Oman, est un événement fondateur de l'hégémonie de Lamu. La domination portugaise (1505-1698) puis omanaise (1698-XIXe siècle) réorganisa les allégeances côtières.",
+      "externalInfluences": "Commerce arabe et persan (VIIe-XIe siècle). Commerçants indiens (Gujarat, Kutch) : présence séculaire à Mombasa et Lamu. Conquête portugaise (1498-1505, Vasco de Gama ; 1505 prise de Mombasa). Domination omanaise du sultanat de Mascate-Oman (1698 expulsion des Portugais) puis sultanat de Zanzibar (1832-1964). Protectorat britannique sur la côte kenyane (1895-1963). Traite négrière de Zanzibar (XIXe siècle). Indépendance du Kenya (1963).",
+      "majorHistoricalEvents": "VIIIe-XIe siècle : essor du commerce indianocéanique et émergence des cités swahili. 1331 : visite d'Ibn Battuta à Mombasa et Kilwa. 1498-1505 : arrivée de Vasco de Gama, conquête portugaise de la côte. 1593 : construction du Fort Jésus à Mombasa par les Portugais. 1698 : expulsion des Portugais par Oman. 1832 : transfert de la capitale du sultanat de Zanzibar de Mascate à Zanzibar par Seyyid Said. 1812 : bataille de Shela (victoire de Lamu). 1895 : protectorat britannique sur l'Afrique orientale. 2001 : inscription de Lamu Old Town au patrimoine mondial de l'UNESCO."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en cités-États traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+      "traditionalPoliticalSystem": "Organisation en cités-États gouvernées par des sultans ou des conseils d'aristocrates. À Lamu, le pouvoir était partagé entre deux factions rivales (deux moitiés ou kambi). Les grandes familles nobiliaires (waungwana) gouvernaient par le biais de conseils. Les sultans omanais exercèrent leur suzeraineté sur Mombasa et Lamu dès la fin du XVIIe siècle. Les wali (gouverneurs) représentaient le Sultan de Zanzibar. Les maisons de commerce (suberbia) structuraient l'activité économique.",
+      "clanOrganization": "Société organisée en clans patrilinéaires avec une stratification sociale claire. Les waungwana (aristocratie libre, gens civilisés) occupaient le sommet de la hiérarchie sociale, suivis par les watumwa (anciens captifs libérés) et les wakultu (résidents non natifs). Les clans nobles revendiquaient souvent une ascendance shirazi (perse) ou arabe pour légitimer leur statut.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires des grandes familles nobiliaires déterminaient l'accès aux fonctions religieuses (imamats des mosquées), commerciales et politiques. Les mariages endogames au sein de la classe waungwana étaient privilégiés pour préserver le statut social. La résidence patrilocale était la norme.",
+      "religiousAuthority": "L'islam sunnite (école shaféite, dominante sur la côte est-africaine) est la religion quasi-exclusive des Waswahili. Les qadis (juges islamiques) réglaient les affaires civiles selon la sharia. Les imams des grandes mosquées avaient une autorité morale et sociale considérable. Lamu est un centre d'enseignement islamique de référence en Afrique orientale depuis le XIXe siècle, accueillant des mawlid (célébration de la naissance du Prophète) majeurs attirant des pèlerins de toute la région."
     },
     "languages": {
-      "mainLanguage": "Swahili",
-      "vehicularRole": "Le swahili est parlé par la majorité des Swahili du Kenya. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kiswahili (Swahili)",
+      "isoCodes": ["swh"],
+      "dialects": [
+        "Kiamu (dialecte de Lamu, considéré comme le swahili le plus pur et archaïque)",
+        "Kimvita (dialecte de Mombasa, riche en emprunts arabes et indiens)",
+        "Kipate (dialecte de l'île de Pate, archipel de Lamu)",
+        "Kibajuni (dialecte des Bajuni de l'archipel de Lamu et de la côte somalienne)",
+        "Kingozi (terme historique désignant le swahili pré-arabe des Bantu côtiers originels)"
+      ],
+      "vehicularRole": "Le swahili est la lingua franca de l'Afrique de l'Est, parlé par plus de 200 millions de personnes comme première ou deuxième langue. C'est la langue nationale du Kenya et de la Tanzanie, l'une des langues officielles de l'Union Africaine. Le swahili standard moderne (Kiunguja) est basé sur le dialecte de Zanzibar. Les dialectes côtiers kenyans (Kiamu, Kimvita) sont antérieurs à la standardisation mais distincts du swahili standard. Le swahili fut utilisé comme langue de commerce sur les routes caravanières d'Afrique de l'Est depuis le XIXe siècle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles culturels swahili, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Architecture swahili (maisons en pierre)",
-      "source_5": "Musique traditionnelle (taarab)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+      "majorRites": "Unyago (initiation féminine) : pratiqué dans certaines communautés swahili côtières, marquant le passage à l'âge adulte des filles. Jando (initiation masculine et circoncision) : rite de passage marquant l'entrée dans l'âge adulte pour les garçons. Rites islamiques : célébration du Mawlid (naissance du Prophète) : Lamu est réputée pour son grand festival annuel de Mawlid an-Nabawi attirant des pèlerins de toute l'Afrique de l'Est et du monde arabe. Eid al-Fitr et Eid al-Adha. Mariage swahili traditionnel (arusi) : cérémonie de plusieurs jours avec processions, taarab, henna (nne), danses, festins. Funérailles islamiques : lavage, linceul, prière et inhumation dans les 24 heures.",
+      "symbols": "Portes en bois sculpté (mlango wa kuchonga) : emblème de l'architecture swahili, chaque porte étant unique avec des motifs géométriques et coraniques symbolisant le statut et la richesse du propriétaire. Dhow (jahazi, ngalawa) : embarcations à voile traditionnelles symboles du commerce et de la navigation indianocéanique. Fort Jésus de Mombasa (bâti par les Portugais en 1593, classé UNESCO en 2011). Architecture en corail (nyumba ya mawe, maison de pierre). Lamu Old Town (classé au patrimoine mondial de l'UNESCO en 2001, plus ancienne ville swahili préservée). Kanzu (longue robe blanche masculine islamique) et buibui (voile noir féminin).",
+      "artsAndMusic": "Taarab : genre musical emblématique des Waswahili mêlant influences africaines, arabes, persanes et indiennes ; pratiqué à Mombasa, Lamu et Malindi au Kenya, ainsi qu'à Zanzibar. La taarab met en scène un chanteur principal (souvent une femme) accompagné d'un ensemble avec oud, qanun (cithare), violons, accordéon, derbouka, tambourin. Elle est centrale lors des mariages swahili. La première grande vedette en fut Siti binti Saad (Zanzibar, 1928). Goma et Chakacha : danses traditionnelles swahili pratiquées lors des mariages et festivités. Poésie orale swahili : tradition de composition poétique formelle (utenzi, mashairi) en vers métriques swahili. Architecture : les villes de pierre swahili (miji ya mawe) : Lamu, Mombasa vieille ville, ruines de Gedi constituent des chefs-d'oeuvre d'architecture afro-arabe en corail fossile et bois de mangrove. Artisanat : sculpture de portes, bijouterie dorée (urembo), confection de kanzu et kanga.",
+      "spiritualities": "Islam sunnite shaféite dominant : les Waswahili sont très majoritairement musulmans pratiquants. Pratiques soufies : confréries Qadiriyya et Shadhiliyya présentes sur la côte kenyane ; dhikr (invocations collectives). Croyance aux djinn : les Waswahili croient aux esprits (djinn) pouvant causer maladies et malheurs ; des pratiques de divination et d'exorcisme coraniques sont pratiquées par des spécialistes (waganga wa kiumbe). Utilisation d'amulettes coraniques (hirizi) pour la protection. Syncrétisme résiduel avec des croyances animistes bantoues pré-islamiques dans certains rituels de guérison."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora swahili dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les cités-États swahili kenyanes constituèrent les principaux sultanats et royaumes de la côte est-africaine. Sultanat de Lamu (archipel de Lamu) : l'une des plus anciennes villes swahili habitées en continu depuis plus de 700 ans. Sultanat de Mombasa : cité-État puissante, siège du Fort Jésus portugais (1593), reprise par les Omanis en 1698, devenue le principal port commercial du Kenya sous domination britannique. Sultanat de Pate (île de Pate, archipel de Lamu) : rival historique de Lamu. Ruines de Gedi (près de Malindi) : cité médiévale abandonnée au XVIIe siècle, témoignage d'un sultanat swahili florissant.",
+      "relationsWithNeighbors": "Relations commerciales avec les marchands arabes, persans et indiens (Gujarat) qui s'installèrent durablement sur la côte. Relations avec les Mijikenda (peuples de l'intérieur) : les Waswahili commerçaient avec eux mais maintinrent une distance sociale. Relations avec les sultans omanais de Zanzibar qui exercèrent leur suzeraineté sur la côte kenyane. Relations tendues avec les Oromo (Galla) qui menaçaient les villes côtières au XVIe-XVIIe siècle. Relations avec les Somali dans le nord de l'archipel de Lamu.",
+      "conflictsOrAlliances": "1498-1505 : résistance à la conquête portugaise. 1593 : construction du Fort Jésus par les Portugais comme forteresse de contrôle. 1631 : soulèvement de Mombasa sous Yusuf ibn al-Hassan (Sultan de Mombasa) contre les Portugais. 1698 : alliance de Lamu et d'Oman pour expulser les Portugais ; prise du Fort Jésus. 1812 : bataille de Shela ; Lamu repousse Pate avec l'aide d'Oman. 1895 : incorporation dans le protectorat britannique d'Afrique de l'Est. 1963 : indépendance du Kenya.",
+      "diaspora": "Présence diasporique swahili kenyane dans les grandes villes de l'intérieur du Kenya (Nairobi). Communautés swahili en Ouganda, en Tanzanie et dans les pays des Grands Lacs. Émigration récente vers les pays du Golfe (via les routes de l'Océan Indien historiques). Quelques communautés en Europe et en Amérique du Nord."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 70000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Stats Kenya (2024) : environ 68 000 Swahili ethniques au Kenya (côtés de Mombasa, Kilifi, Lamu). À distinguer des locuteurs swahili qui sont des millions. Il s'agit ici du groupe ethnique waswahili stricto sensu. Source: statskenya.co.ke — Tribe and Ethnicity in Kenya.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 70000,
+          "note": "Principalement dans les comtés de Mombasa (Mvita), Lamu (archipel), Kilifi (Malindi) et Kwale (Vanga-Shimoni) ; à distinguer des 40+ millions de locuteurs swahili au Kenya"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Swahili language (swa)",
-      "CIA World Factbook – Kenya",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Swahili people. https://en.wikipedia.org/wiki/Swahili_people",
+      "Wikipedia EN — Swahili coast. https://en.wikipedia.org/wiki/Swahili_coast",
+      "UNESCO World Heritage Centre — Lamu Old Town. https://whc.unesco.org/en/list/1055/",
+      "Africa Unfiltered — Stone Towns of the Swahili Coast. https://africaunfiltered.substack.com/p/stone-towns-of-the-swahili-coast",
+      "Wikipedia EN — Taarab. https://en.wikipedia.org/wiki/Taarab",
+      "Friends of Mombasa — The Swahili. https://www.friendsofmombasa.com/migration-rich-cultures/the-swahili/",
+      "African World Heritage Sites — Lamu Old Town. https://www.africanworldheritagesites.org/cultural-places/swahili-coast/lamu-old-town.html",
+      "Stats Kenya — Tribe and Ethnicity in Kenya. https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
+      "SIL Ethnologue — Swahili (swh). https://www.ethnologue.com/language/swh/"
     ]
   }
 }

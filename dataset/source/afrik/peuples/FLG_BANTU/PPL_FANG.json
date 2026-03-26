@@ -2,22 +2,101 @@
   "id": "PPL_FANG",
   "nameMain": "Fang",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["GAB", "GIN", "CMR"],
+  "currentCountries": ["GAB", "GNQ", "CMR"],
   "content": {
     "appellations": {
       "mainName": "Fang",
-      "selfAppellation": "Fan / Pahouin / Pangwe",
+      "selfAppellation": "Fan",
+      "exonyms": ["Pahouin", "Pangwe", "Pamue", "M'fang"],
+      "originOfExonyms": "Pahouin est le terme utilise par les colonisateurs français, derive d'un mot local. Pangwe est la denomination allemande utilisee au Cameroun colonial. Pamue est le terme employe en Guinée equatoriale sous domination espagnole. Ces appellations exterieures reflètent la diversite des contextes coloniaux dans lesquels le peuple Fang a ete decrit.",
+      "whyProblematic": "Le terme Pahouin est parfois considere comme pejoratif car associe aux stereotypes coloniaux de cannibalisme, accusations fondees sur la decouverte de boites reliquaires contenant des os ancestraux.",
+      "contemporaryUsage": "Fan ou Fang est le terme prefere par le peuple lui-meme. Il est d'usage officiel au Gabon et en Guinee equatoriale.",
       "linguisticFamily": "FLG_BANTU",
-      "historicalRegion": "Forêts équatoriales",
-      "currentCountries": ["GAB", "GIN", "CMR"]
+      "ethnoLinguisticGroup": "Bantou Beti-Fang (zone A70), sous-groupe Fang meridional",
+      "historicalRegion": "Forets equatoriales d'Afrique centrale (sud Cameroun, nord Gabon, Rio Muni - Guinee equatoriale)",
+      "currentCountries": ["GAB", "GNQ", "CMR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (fan)", "Études sur les Pahouin"]
+    "ethnicities": [
+      "Fang proprement dit (Fang meridional, Gabon nord et Guinee equatoriale)",
+      "Ntumu (Fang septentrional, frontier Cameroun-Gabon)",
+      "Mvae (sous-groupe frontalier)",
+      "Okak (Guinee equatoriale)",
+      "Nzaman (Nzaman-Betsi, vallee de l'Okano et de l'Ogooue, Gabon)",
+      "Meke (sous-groupe gabonais)",
+      "Atsi (Batsi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fang sont un peuple bantou dont les proto-locuteurs ont ete situes, par glottochronologie, dans la foret du sud du Cameroun il y a plus de 4 000 ans. Les etudes linguistiques les classent dans le groupe Beti-Fang (zone A70) de la famille Niger-Congo. Les traditions orales et les evidences historiques situent leur origine dans les savanes au nord de leur territoire actuel, possiblement associees a une fuite devant les razzias esclavagistes haoussa du nord.",
+      "formationPeriod": "Migration et expansion principale entre le XVIIe et le XIXe siecle, avec une penetration progressive dans les forets equatoriales depuis le plateau du Sanaga vers le sud-ouest.",
+      "migrationRoutes": [
+        "Depuis le plateau savane de la rive droite du Sanaga (Cameroun nord)",
+        "Migration vers le sud a travers les forets camerounaises",
+        "Penetration dans le nord du Gabon jusqu'a l'estuaire de l'Ogooue",
+        "Peuplement de la Guinee equatoriale continentale (Rio Muni) par l'est et le nord"
+      ],
+      "historicalSettlementZones": [
+        "Sud du Cameroun (au sud du Sanaga, frontieres avec Gabon et Guinee equatoriale)",
+        "Nord et centre du Gabon jusqu'a l'estuaire de l'Ogooue",
+        "Guinee equatoriale continentale (Rio Muni) - 85% de la population",
+        "Petites populations dans le Congo-Brazzaville et les iles de Sao Tome et Principe"
+      ],
+      "unificationsOrDivisions": "Organisation traditionnellement decentralisee: villages independants lies par la genealogie clanique (ayong). Pas de royaumes centralises. La migration bi-siecle a produit une societe fluide et segmentaire. Le mouvement Bwiti a constitue un facteur d'unite culturelle transnationale au XXe siecle.",
+      "externalInfluences": "Victimes des traites negriere atlantique et transsaharienne (XVIe-XIXe siecles). Colonisation française (Gabon, Cameroun), espagnole (Guinee equatoriale) et allemande (Cameroun). Evangelisation chretienne intensive: population quasi entierement christianisee avant 1939. Introduction de la culture du cacao comme culture de rente coloniale.",
+      "majorHistoricalEvents": "Resistance aux razzias esclavagistes en cultivant une reputation de guerriers redoutables. Participation au commerce ivoirier sous l'epoque coloniale. Developpement de la culture cacaoyere apres la Premiere Guerre mondiale. Emergence du Bwiti comme religion syncrétique majeure depuis les annees 1930-1950. Influence politique croissante au Gabon depuis l'independance."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation sociale patrilineaire et segmentaire. Les villages sont independants les uns des autres et lies uniquement par des genealogies communes. Il n'existe pas de chef politique supreme. Dans le nord (groupes Beti), certains chefs de clan ont une autorite reconnue sur plusieurs villages. Dans le sud (Fang proprement dit), l'autorite politique est tres peu developpee.",
+      "clanOrganization": "Organisation en clans patrilineaires exogames appeles ayong. Chaque clan tracé sa descendance par la ligne masculine a partir d'un ancetre commun. Les boites reliquaires (bieri/byeri) contenant les cranes et os des ancetres chefs de lignage sont l'element central de la cohesion clanique. Le mariage est obligatoirement exogame (en dehors de son ayong).",
+      "ageClassSystems": "Pas de systeme de classes d'age structure comme dans d'autres societes bantou. La distinction principale est entre hommes inities et non-inities, determinant l'acces aux rituels ancestraux et aux decisions communautaires.",
+      "roleOfLineages": "Les lignages patrilineaires (ayong) sont fondamentaux: ils determinent l'identite sociale, les droits fonciers, les obligations de solidarite et les interdits alimentaires. La veneration des reliques ancestrales renforce la coherence des lignages au-dela de la mort.",
+      "religiousAuthority": "Les anciens hommes inities gardiens des boites reliquaires (bieri) etaient les principales autorites religieuses traditionnelles. Depuis le XXe siecle, les officiant du Bwiti (nima) ont pris un role central. Presence significative d'autorites ecclesiastiques chretiennes (catholiques majoritairement en Guinee equatoriale du fait de la colonisation espagnole)."
+    },
+    "languages": {
+      "mainLanguage": "Fang (Fan)",
+      "isoCodes": ["fan"],
+      "dialects": [
+        "Ntumu (Fang nord, frontiere Cameroun-Gabon)",
+        "Okak (Guinee equatoriale nord)",
+        "Meke",
+        "Atsi (Batsi)",
+        "Nzaman (vallee de l'Okano, Gabon)",
+        "Mveny (Mvaie)",
+        "Southwest Fang"
+      ],
+      "vehicularRole": "Le fang est une langue transnationale importante d'Afrique equatoriale occidentale, parlee par plus d'un million de personnes. En Guinee equatoriale, c'est la langue majoritaire de la population; au Gabon, c'est la principale langue bantoue du nord. Le fang est mutellement intelligible avec les autres langues A70 (ewondo, bulu, eton). L'espagnol est la langue officielle de la Guinee equatoriale, le français l'est au Gabon et au Cameroun."
+    },
+    "culture": {
+      "majorRites": "Bwiti: religion syncretique combinant animisme, veneration des ancetres et elements chretiens; ceremonies de 4 jours avec danses, chants et consommation d'iboga (plante hallucinogene, Tabernanthe iboga); central a la vie spirituelle des Fang contemporains, notamment au Gabon. Byeri (Bieri): culte ancestral traditionnel base sur les reliques (crane et os des ancetres conserves dans des boites en ecorce surmontees de figurines sculptees); la possession de ces reliques assurait la protection du clan et orientait les grandes decisions. Initiations masculines: epreuves de virilite et d'acces aux savoirs ancestraux. Ceremonies de mariage avec dot. Rites funeraires complexes avec periode de veille.",
+      "symbols": "Les statues-reliquaires (nlo bieri, figures Byeri): scultures en bois representant les gardiens des boites ancestrales, chef-d'oeuvre de l'art africain repandu dans les grands musees mondiaux. Caracteristiques stylistiques: tete volumineuse d'enfant sur corps d'adulte muscle, nombril protuberant (symbolisant le cordon ombilical et le lien avec les ancetres), visage concave en forme de coeur, front bulbeux, membres cylindriques, patine noire. L'iboga (plante sacree) est le symbole du Bwiti. La foret equatoriale est espace sacre et source de vie.",
+      "artsAndMusic": "Le mvet: instrument a cordes emblematique (type harpe-cithare a resonateurs, 2 a 5 cordes), joue par les mbomo mvet (bardes itinerants) qui voyagent de village en village pour chanter les genealogies, les epopees et les louanges aux ancetres; classe au patrimoine culturel de l'UNESCO. Musique du Bwiti avec la ngombi (harpe a 8 cordes) et percussions rituelles. Sculpture sur bois (statues reliquaires, masques, objets cerimonials), travail du fer et de la steatite (aujourd'hui disparus). Tatouages traditionnels. Art de la parole et poesie orale. Cuisine: manioc, mais, plantains, gibier (pangolin, porc-epic, singe), poisson.",
+      "spiritualities": "Le Byeri (culte des ancetres par les reliques) est la religion traditionnelle centrale: les os des ancetres sont conserves dans des boites reliquaires surmontees de sculptures, crees a la fois comme dispositifs de memoire et comme sources de pouvoir protecteur pour le clan. Le Bwiti, syncrétisme alliant animisme ancestral, elements chretiens et rituel a l'iboga, s'est developpe a partir des annees 1930 parmi les Fang et d'autres peuples du Gabon. Aujourd'hui, la majorite des Fang se declare chretienne (catholique en Guinee equatoriale), tout en maintenant des pratiques spirituelles traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise en raison de l'organisation segmentaire. Les groupes Beti du nord avaient des chefs de clan avec une certaine autorite. Les Fang proprement dits du sud avaient une organisation encore plus decentralisee. L'unite culturelle transnationale s'est construite sur les genealogies communes et les pratiques religieuses partagees plutot que sur des structures politiques.",
+      "relationsWithNeighbors": "Les Fang sont intimement lies aux autres groupes Beti-Pahouin (Ewondo, Bulu, Eton) du Cameroun, avec qui ils partagent des langues mutellement intelligibles et une origine commune. Ils ont ete en contact commercial avec les Mpongwe et autres peuples cotieres gabonais. En Guinee equatoriale, ils coexistent avec les Bubi (ile de Bioko) et d'autres minorites ethniques.",
+      "conflictsOrAlliances": "Resistance aux razzias esclavagistes en cultivant une reputation de guerriers. Confrontations avec les colonisateurs europeens au XIXe siecle. Sous la colonisation, leur mobilisation comme main-d'oeuvre pour les plantations de cacao. Influence politique dominante au Gabon et en Guinee equatoriale depuis les independances (1960 et 1968): plusieurs presidents gabonais et equato-guineens sont d'origine fang.",
+      "diaspora": "Les Fang sont presents dans les grandes villes de leurs pays respectifs (Libreville, Malabo, Yaounde). Diaspora en France, Espagne et autres pays europeens, liee aux colonisations française et espagnole."
+    },
+    "demography": {
+      "totalPopulation": 2295900,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): population mondiale Fang estimee a 2 295 900. Distribution: Gabon 672 000 (Joshua Project), Guinee equatoriale environ 1 400 000 (85% de 1,65M d'habitants), Cameroun 111 000 locuteurs (Languages of Cameroon). Estimation Britannica fin XXe siecle: 3,32 millions (definition plus large incluant tous les Beti-Fang).",
+      "distributionByCountry": [
+        { "country": "GNQ", "population": 1400000 },
+        { "country": "GAB", "population": 672000 },
+        { "country": "CMR", "population": 130000 },
+        { "country": "COG", "population": 8500 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Fang people: https://en.wikipedia.org/wiki/Fang_people",
+      "Wikipedia EN – Fang language: https://en.wikipedia.org/wiki/Fang_language",
+      "Encyclopaedia Britannica – Fang: https://www.britannica.com/topic/Fang-people",
+      "Joshua Project – Fang in Gabon: https://joshuaproject.net/people_groups/print/11187/GB",
+      "Metropolitan Museum of Art – Male Reliquary Figure (Nlo Bieri): https://www.metmuseum.org/art/collection/search/312334",
+      "Sainsbury Centre – Reliquary guardian head Fang: https://sainsburycentre.ac.uk/art-and-objects/240-reliquary-guardian-head-angokh-nlo-byeri/",
+      "Smithsonian Folkways – Fang Bwiti Music from Gabon: https://folkways.si.edu/music-from-an-equatorial-microcosm-fang-bwiti-from-gabon-republic-africa-with-mbiri-selections/world/album/smithsonian",
+      "Qiraat Africa – The Fang people of Africa: https://qiraatafrican.com/en/14988/the-fang-people-of-africa/"
+    ]
   }
 }

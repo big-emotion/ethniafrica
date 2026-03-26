@@ -7,62 +7,94 @@
     "appellations": {
       "mainName": "Antambahoaka",
       "selfAppellation": "Antambahoaka",
-      "exonyms": ["Antambahoaka (terme signifiant \"ceux du peuple\")"],
+      "exonyms": ["Antembahôky", "Zafiraminia"],
+      "originOfExonyms": "Le terme Antambahoaka derive de Ratiambahoaka (aime de son peuple), surnom donne au fondateur Ravalarivo. Le groupe qui s'est constitue autour de lui a pris le nom Antambahoaka, deformation de ce titre. Le terme Zafiraminia (fils de Raminia) est utilise en interne pour designer les membres initiés du groupe apres la circoncision (sambatra).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Antambahoaka est la forme officielle et usuelle. Le dialecte est parfois transcrit Antembahôky dans les sources linguistiques.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Sud-est de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien (Austronesien, groupe malgache central-oriental, Plateau Malagasy)",
+      "historicalRegion": "Cote sud-est de Madagascar : region de Mananjary (Vatovavy), village historique d'Ambohitsara",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Antambahoaka du Nord",
-      "Antambahoaka du Sud",
-      "Sous-groupes régionaux"
+      "Onjatsy : sous-groupe noble, gardiens du savoir scientifique, de la magie et de la confection de charmes",
+      "Tsimaito : sous-groupe noble, maitres du sorabe (ecriture arabo-malgache) et des rituels",
+      "Commoners (vahoaka) : majorite de la population",
+      "Descendants d'esclaves (andevo) : categorie historique persistant dans la memoire sociale"
     ],
     "origins": {
-      "ancientOrigins": "Les Antambahoaka sont originaires du sud-est de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Groupe relativement petit avec des traditions uniques.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts. Traditions culturelles spécifiques.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Antambahoaka partagent leurs origines avec les Antaimoro, dont ils se croient descendants d'un Arabe nomme Raminia, emigre de La Mecque vers Madagascar entre le Xe et le XIIe siecle. La tradition orale propose deux explications de l'emigration de Raminia : soit une fuite devant une application trop rigide de la loi islamique, soit la recherche de terres fertiles a cultiver. Comme tous les Malgaches, ils ont une ascendance double : colons austronesiens venus des iles de la Sonde (Indonesie) et migrants bantous d'Afrique de l'Est ; les Antambahoaka ont en plus une composante arabe reconnaissable dans leurs traits physiques.",
+      "formationPeriod": "XVe siecle : separation d'avec les Antaimoro lorsque Ravalarivo (dit Ratiambahoaka) a fonde la communaute de Masindrano, devenue la ville de Mananjary.",
+      "migrationRoutes": [
+        "Migration de Raminia depuis la peninsule arabique (La Mecque) vers la cote sud-est de Madagascar entre le Xe et le XIIe siecle",
+        "Etablissement initial sur la cote sud-est, zone partagee avec les futurs Antaimoro",
+        "Separation et fondation de Masindrano (Mananjary) au XVe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Mananjary et ses environs (cote sud-est, region de Vatovavy)",
+        "Village historique d'Ambohitsara",
+        "Quartier de Masindrano a Mananjary"
+      ],
+      "unificationsOrDivisions": "La separation d'avec les Antaimoro au XVe siecle a constitue l'acte fondateur du peuple Antambahoaka. La communaute est restee depuis extremement homogene, avec peu d'immigration exterieure et de faibles taux d'emigration par rapport aux peuples voisins. Leur fort sentiment d'identite unifiee autour de la descendance commune de Raminia les maintient soudés.",
+      "externalInfluences": "Influence arabe ancienne : pratiques islamiques partiellement incorporees (interdiction du porc pour les chefs, saignement complet des animaux). Introduction du catholicisme par les missionnaires français durant la periode coloniale (1896-1960), avec un effet limite. Pression des droits humains contemporains contre la pratique du fady kamamba (tabou contre les jumeaux).",
+      "majorHistoricalEvents": "Xe-XIIe siecles : arrivee de Raminia sur la cote sud-est de Madagascar. XVe siecle : separation d'avec les Antaimoro et fondation de Masindrano par Ravalarivo. 1896-1960 : periode coloniale française, introduction limitee du catholicisme. Epoque contemporaine : pression nationale et internationale pour mettre fin au fady kamamba. La celebration du Sambatra se perpetue tous les sept ans, derniere edition du XXIe siecle documentee dans deux films courts (2008 et 2010)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en royaumes locaux : de nombreux rois locaux (mpanjaka) exercent leur autorite sur un ou plusieurs villages. La fete annuelle hosin'ny mpanjaka rassemble les villageois pour preparer le champ de paddy du roi local. La societe est fortement patrilineaire et patriarcale. Le lohatrano (tete de maison) dirige un groupe etendu de 8 a 10 menages et se soumet a l'autorite du mpanjaka local.",
+      "clanOrganization": "Deux clans nobles : Onjatsy et Tsimaito, gardiens du savoir ésotérique et du sorabe. La relation soman-drazana (relation plaisanterie entre clans) etablit une connexion equivalente a un lien de sang entre deux clans, reflete dans la familiarite du ton utilise lorsqu'ils s'adressent l'un a l'autre. Systeme de classes : nobles (andriana), roturiers et descendants d'esclaves.",
+      "ageClassSystems": "Le Sambatra marque la transition rituelle des garcons vers l'age adulte : apres la circoncision, ils sont integres au clan paternel en tant que vrais membres de la communaute antambahoaka et Zafiraminia (fils de Raminia).",
+      "roleOfLineages": "L'aine male est chef de menage. Le lohatrano dirige le groupe de menages etendus. La descendance patrilineaire depuis Raminia est le fondement de l'identite collective. Les tabous (fady) etablis par les ancetres doivent etre respectes par leurs descendants. Les ancetres sont croyances capables de surveiller leurs descendants vivants et d'intervenir positivement ou negativement selon que ceux-ci leur rendent un respect adequat.",
+      "religiousAuthority": "Autorite des rois locaux (mpanjaka) pour le culte ancestral : leur maison (tranobe ou grande maison) sert a la fois de lieu de reunion communautaire et de temple pour le culte des ancetres. Autorite des ombiasy (guerisseurs-devins) pratiquant un langage secret (melangeant arabe, malgache et creole) pour communiquer les rituels confidentiels. Influence limitee des pretres catholiques issus de la periode coloniale."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte antambahoaka)",
-      "vehicularRole": "Le malgache antambahoaka est parlé par la majorité des Antambahoaka. Le français est également utilisé."
+      "mainLanguage": "Malgache antambahoaka (dialecte)",
+      "isoCodes": ["plt"],
+      "dialects": [
+        "Antambahoaka (Antembahôky) : dialecte proche du betsimisaraka du sud et des dialectes du sud-est ; classe dans la branche Plateau Malagasy (plt) avec le merina, le sihanaka, l'antaimoro et l'antefasy",
+        "Sorabe : ancienne ecriture arabo-malgache, aujourd'hui maitrisee par un petit nombre d'Antambahoaka specialement formes",
+        "Langage secret des ombiasy : melange d'arabe, de malgache et de creole, utilise pour communiquer des connaissances et rituels confidentiels",
+        "Malgache officiel (plt/merina) et français : langues d'education et d'administration"
+      ],
+      "vehicularRole": "Le dialecte antambahoaka est la langue maternelle de la communaute, utilisee dans la vie quotidienne, les ceremonies et les echanges intra-communautaires. Le malgache officiel (base merina) est utilise dans l'administration et l'enseignement. Le français reste langue administrative. La forte homogeneite de la communaute maintient la vitalite du dialecte local."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies spécifiques aux Antambahoaka",
-      "Symboles": "Symboles culturels antambahoaka, symboles liés à la mer, symboles chrétiens et musulmans.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+      "majorRites": "Sambatra : festival de circoncision collective qui a lieu tous les sept ans, lors de l'annee du vendredi. Il culmine dans la circoncision de tous les garcons nes dans les sept annees precedentes, marquant leur integration au clan paternel et leur statut de Zafiraminia. Durant le mois de Sambatra : reconstitutions de batailles (guerre entre armees de clans), longue marche vers l'embouchure de la Mananjary rappelant l'exode de Raminia. Famadihana (retournement des morts) : reensevelissement des ancetres selon la tradition malgache commune. Hosin'ny mpanjaka : fete annuelle de preparation du champ de paddy du roi. Rites funeraires : veneration des ancetres defunts dans les tranobe (grandes maisons royales).",
+      "symbols": "Le tranobe (grande maison) : lieu de reunion communautaire et temple ancestral, construit en forme rectangulaire sans veranda, sur de bas pilotis avec toit a pignon en feuilles de ravinala. Il y en a dix a Mananjary et douze a Ambohitsara. Les amulettes pour la protection. La tenue vestimentaire traditionnelle du mpanjaka : fez rouge et vetement ample aux larges bandes rouges et noires, d'inspiration islamique. Le Sambatra et la circoncision comme marqueurs essentiels de l'identite collective.",
+      "artsAndMusic": "Artisanat textile : pour les hommes, pagne en ecorce battue sous une tunique ou veste tissee en jonc. Pour les femmes, tissage de vetements en fibres locales. Architecture distinctive : les tranobe (grandes maisons royales) sont construites avec un plancher en ravenala, des murs en feuilles de falafa tressee et un toit a pignon. Reconstitutions guerrieres lors du Sambatra : choreographies militaires avec drapeau de clan, costumes de soldats. Chants et musique traditionnels lors des ceremonies. Tradition orale : histoires de la fondation par Raminia, transmises de generation en generation.",
+      "spiritualities": "Veneration des ancetres (razana) : un defunt devient un ancetre capable de veiller sur ses descendants vivants et d'intervenir pour le bien ou le mal selon qu'il reçoit le respect qui lui est du. Les ancetres deviennent plus puissants avec le temps. Les tabous (fady) etablis par les ancetres s'imposent a leurs descendants. Fady kamamba : tabou contre l'elevage des jumeaux, consideres comme source de malheur pour la famille et la communaute ; le gouvernement malgache et des organisations de droits humains travaillent a mettre fin a cette pratique. Pratiques islamiques partielles : interdiction du porc pour les chefs, saignement complet des animaux a l'abattage. Catholicisme introduit avec un effet limite lors de la periode coloniale. Ombiasy : praticiens d'un savoir ésotérique combinant magie, medecine traditionnelle et divination."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora antambahoaka dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise unique : organisation en chefferies (mpanjaka) multiples exercant chacun l'autorite sur un ou plusieurs villages. Le fondateur Ravalarivo (Ratiambahoaka) a etabli la communaute de Masindrano au XVe siecle, aujourd'hui le quartier de Masindrano de Mananjary. La tradition de royautes locales multiples est maintenue jusqu'a nos jours.",
+      "relationsWithNeighbors": "Societe tres homogene avec peu d'immigration exterieure. Liens d'origine avec les Antaimoro (groupe frere dont ils se sont separes au XVe siecle). Relations commerciales avec les marchands arabes et swahilis depuis l'antiquite medievale. Influence limitee des peuples voisins (Betsimisaraka, Antanosy) sur l'identite antambahoaka.",
+      "conflictsOrAlliances": "Separation pacifique d'avec les Antaimoro au XVe siecle. Periode coloniale française (1896-1960) : integration forcee a l'administration coloniale. Tensions contemporaines avec les organisations de droits humains au sujet du fady kamamba. Alliance historique avec les reseaux commerciaux arabes de la cote est.",
+      "diaspora": "Faible diaspora en raison des taux d'emigration inferieurs aux peuples voisins. Quelques Antambahoaka dans les grandes villes malgaches (Antananarivo, Toamasina). Presence marginale hors de Madagascar."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 125000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Estimations basees sur Joshua Project 2025 : 125 000. Wikipedia (2013) : 50 000 – chiffre probablement sous-estime ou se referant uniquement a la zone centrale. Le groupe est considere comme le moins nombreux des 18 groupes ethniques de Madagascar. Projection 2025 en tenant compte d'un taux de croissance annuel de 2,5% de la population malgache (Worldometer 2024 : population totale Madagascar 32,7 millions).",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 125000,
+          "note": "Region de Vatovavy, cote sud-est : ville principale de Mananjary (env. 26 700 hab.), village historique d'Ambohitsara (12 tranobe), quartier Masindrano a Mananjary"
+        }
+      ]
+    },
+    "additionalNotes": {
+      "sambatrafestival": "Le Sambatra est le festival le plus important et le plus distinctif des Antambahoaka. Il a lieu l'annee du vendredi tous les sept ans (la prochaine occurrence etant calculee selon le calendrier lunaire). Le mot Sambatra signifie beni ou heureux. Tous les garcons nes dans les sept annees precedentes sont circoncis en une seule journee sacree. Des films documentaires courts ont ete consacres a cette celebration en 2008 et 2010.",
+      "fadyKamamba": "Le fady kamamba (tabou contre les jumeaux) est l'une des pratiques les plus controversees des Antambahoaka. Historiquement, les jumeaux etaient tues immediatement apres la naissance ou laisses a l'abandon dans la foret, leur naissance etant consideree comme source de malheur. Des pressions des ONG, du gouvernement malgache et d'organisations internationales ont progressivement pousse certaines familles a abandonner cette pratique, mais elle persiste dans les zones rurales autour de Mananjary.",
+      "sorabe": "Le sorabe est un systeme d'ecriture arabo-malgache utilise historiquement par les Antambahoaka et les peuples voisins (Antaimoro, Tanosy). Aujourd'hui maitrise par un petit nombre de specialistes (ombiasy), il constitue un heritage culturel unique en danger de disparition."
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches"
+      "Wikipedia EN – Antambahoaka : https://en.wikipedia.org/wiki/Antambahoaka",
+      "Wikipedia EN – Antambahoaka dialect : https://en.wikipedia.org/wiki/Antambahoaka_dialect",
+      "Wikipedia EN – Antaimoro dialect : https://en.wikipedia.org/wiki/Antaimoro_dialect",
+      "Joshua Project – Antambahoaka in Madagascar : https://joshuaproject.net/people_groups/10344",
+      "Ethnologue – Malagasy (mlg) macrolanguage : https://www.ethnologue.com/language/mlg/",
+      "Glottolog – Malagasy languages Madagascar : https://glottolog.org/glottolog?country=MG",
+      "Wikipedia EN – History of Madagascar : https://en.wikipedia.org/wiki/History_of_Madagascar",
+      "CIA World Factbook – Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/"
     ]
   }
 }

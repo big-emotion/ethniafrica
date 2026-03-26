@@ -6,58 +6,100 @@
   "content": {
     "appellations": {
       "mainName": "Batonga / Tonga",
-      "selfAppellation": "Batonga (sg. Mutonga)",
-      "exonyms": ["Tonga (forme générique) ; BaTonga (pluriel bantou)"],
+      "selfAppellation": "Batonga (sg. Mutonga) ; se disent aussi Basilwizi (les gens du grand fleuve)",
+      "exonyms": [
+        "Tonga (forme generique europeenne)",
+        "BaTonga (pluriel bantou)",
+        "Chitonga (langue)"
+      ],
+      "originOfExonyms": "Le terme Tonga est attribue par les peuples voisins et les colonisateurs britanniques. L'autodesignation Basilwizi signifie litteralement gens du grand fleuve, en reference au Zambeze.",
+      "whyProblematic": "A distinguer du peuple Tonga du Malawi, groupe distinct parlant un dialecte du Chitumbuka.",
+      "contemporaryUsage": "Batonga est le terme le plus utilise au Zimbabwe et en Zambie dans les contextes officiels et communautaires.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantous d’Afrique australe (ZMB, ZWE)",
-      "historicalRegion": "Vallée du Zambèze, rives nord et sud",
+      "ethnoLinguisticGroup": "Bantous d'Afrique australe, zone de la vallee du Zambeze",
+      "historicalRegion": "Vallee du Zambeze et ses berges nord (Zambie meridionale) et sud (Zimbabwe, district de Binga)",
       "currentCountries": ["ZMB", "ZWE"]
     },
     "ethnicities": [
-      "Tonga de Zambie (Southern Province)",
-      "Tonga de Zimbabwe (Binga, vallée du Zambèze)",
-      "À préciser (autres communautés rurales ou fluviales)"
+      "Tonga du Plateau (Southern Province, Zambie) — groupe le plus nombreux, agriculteurs du plateau",
+      "Tonga de la Vallee (Zambezi Valley Tonga, ZMB) — pecheurs et agriculteurs des rives du fleuve",
+      "BaTonga du Zimbabwe (district de Binga, Matabeleland Nord) — deplaces par le barrage de Kariba",
+      "Korekore / BaTonga du district de Nyami Nyami (Zimbabwe)",
+      "Tonga de Batoka (Tokaleya), groupe apparente de la meme zone du Plateau",
+      "Tonga de Gwembe (Gwembe Tonga), vallee du Gwembe en Zambie meridionale"
     ],
     "origins": {
-      "ancientOrigins": "Installation sur la vallée du Zambèze avant l’arrivée des Nguni et autres migrants du sud.",
+      "ancientOrigins": "Les Batonga s'installerent dans la vallee du Zambeze avant l'arrivee des groupes nguni et de la colonisation europeenne. Selon les sources orales et archeologiques, ils occupent la region depuis au moins le 1er millenaire de notre ere. Ils font partie du groupe bantou d'Afrique australe et sont l'un des plus anciens peuples sedentaires de la region.",
+      "formationPeriod": "Presence documentee dans la vallee du Zambeze avant le XVe siecle. Organisation en chefferies independantes sans pouvoir centralise jusqu'a la colonisation britannique du XIXe siecle.",
       "migrationRoutes": [
-        "Mobilité locale entre vallées, plateaux et rives du fleuve."
+        "Expansion depuis les hauts plateaux du centre-sud vers les rives du Zambeze",
+        "Mobilite locale entre plateaux, escarpements et rives du fleuve",
+        "Apres le deplacement du barrage de Kariba (1957-1962), migration forcee vers les regions arides de Binga, Gokwe Nord, Hwange et Nyami Nyami au Zimbabwe, et vers le Southern Province en Zambie"
       ],
-      "unificationsOrDivisions": "Groupes liés culturellement mais politiquement décentralisés.",
-      "externalInfluences": "Contacts avec Shona, Lozis, Nguni, puis avec les colons britanniques."
+      "historicalSettlementZones": [
+        "Rives du Zambeze entre Chirundu et Victoria Falls",
+        "Plateau de Kafue (Zambie meridionale)",
+        "Vallee de Gwembe",
+        "District de Binga (Zimbabwe)"
+      ],
+      "unificationsOrDivisions": "Groupes culturellement et linguistiquement apparentes mais politiquement decentralises. Pas de chefferie unifiee avant la colonisation. Les Britanniques imposerent une structure de chefs hereditaires a partir du XIXe siecle, creant progressivement une hierarchie de chefs.",
+      "externalInfluences": "Contacts historiques avec Shona, Lozi et Ila. Influence des colonisateurs britanniques qui nommerent des chefs villageois officiels. Le barrage de Kariba (1957-1962) est l'evenement le plus traumatisant de leur histoire recente.",
+      "majorHistoricalEvents": "Construction du barrage de Kariba entre 1956 et 1959 : environ 57 000 Batonga furent deplaces de force de la vallee fertile du Zambeze. Au Zimbabwe, 23 000 Batonga furent reinstalles dans quatre districts arides ; en Zambie, 34 000 furent deplaces. Les villageois zimbabweens ne reçurent aucune compensation monetaire. Les Zambiens reçurent 270 USD par personne. En 2023, les communautes Batonga demandaient encore des reparations via des organisations comme Basilwizi Trust."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Chefferies locales (chiefdoms) avec chefs héréditaires.",
-      "clanOrganization": "Clans totémiques ; structure familiale étendue.",
-      "roleOfLineages": "Héritage, accès aux terres, rôle cérémoniel.",
-      "religiousAuthority": "Devins et anciens ; syncrétisme avec christianisme."
+      "traditionalPoliticalSystem": "Organisation en chefferies locales (chiefdoms) avec des chefs hereditaires (chiefs). Avant la colonisation britannique, les Tonga etaient organises en clans matrilineaires sans chefs ni fonctions politiques definies. Les Britanniques nommerent des chefs villageois qui formerent progressivement une structure hierarchique. Les chefs de pluie (Rain Chiefs ou Shine Chiefs) comme le Chef Monze tiennent une autorite spirituelle et politique particuliere.",
+      "clanOrganization": "Organisation en clans matrilineaires totémiques. Parmi les clans historiques : Baanga, ainsi que de nombreux autres clans identifies par leur totem animal ou vegetal. Les lignages controlaient la propriete et arbitraient les conflits.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Heritage, acces aux terres et role ceremoniel determines par la lignee matrilineaire. Les lignages arbitraient les disputes au sein de la communaute.",
+      "religiousAuthority": "Devins (ng'anga) et anciens jouent un role central dans les ceremonies. Les chefs de pluie (notamment le Chef Monze) ont une autorite spirituelle comme intercesseurs aupres des ancetres et garants des pluies. Syncrétisme avec le christianisme depuis le XIXe siecle."
     },
     "languages": {
-      "mainLanguage": "Tonga (Zambie/ZW)",
-      "dialects": ["Variantes de plateau et variants fluviaux."],
-      "vehicularRole": "Langue majeure du sud de la Zambie."
+      "mainLanguage": "Chitonga (toi) — Tonga de Zambie et Zimbabwe",
+      "isoCodes": ["toi"],
+      "dialects": [
+        "Tonga du Plateau (variante principale en Zambie meridionale)",
+        "Tonga de la Vallee / Gwembe Tonga (variante fluviale)",
+        "Tchitonga (variante zimbabweenne, district de Binga)"
+      ],
+      "vehicularRole": "Langue majeure du sud de la Zambie (Southern Province). Parlee par environ 1,38 million de personnes en Zambie et 137 000 au Zimbabwe selon Ethnologue. Langue vehiculaire regionale dans les districts du sud zambien. A distinguer du Chitonga du Malawi qui est un dialecte du Chitumbuka."
     },
     "culture": {
-      "Rites majeurs": "Rituels agraires et pastoraux liés aux saisons.",
-      "Symboles": "Fleuve Zambèze ; bétail ; tambours rituels.",
-      "Arts et musique": "Danses traditionnelles ; polyrythmes.",
-      "Spiritualités": "Croyances aux esprits fluviaux et aux ancêtres."
+      "majorRites": "Lwiindi (ou Gonde Lwiindi) : ceremonie d'action de grace annuelle tenue en juillet pres de Monze (Zambie), dirigee par le Chef Monze en souvenir du premier chef Mukulukulu. Rituels agraires et pastoraux lies aux saisons. Ceremonies pour invoquer les pluies aupres des ancetres et des esprits du fleuve. Rites funeraires avec role central des ancetres.",
+      "symbols": "Le fleuve Zambeze comme axe identitaire et spirituel fondateur. Le dieu serpent Nyami Nyami, esprit tutélaire du Zambeze, symbolise la protection et la colere causee par le barrage de Kariba. Le betail et les tambours rituels sont egalement des symboles importants.",
+      "artsAndMusic": "Danses traditionnelles collectives et polyrythmiques. Musique jouee sur tambours (ng'oma), accompagnee de chants collectifs lors des ceremonies comme Lwiindi. Artisanat de poterie, vannerie et travail du bois. Sculpture de masques cérémoniels. Traditions orales riches incluant contes, proverbes et genealogies des clans.",
+      "spiritualities": "Croyances aux esprits du fleuve, notamment Nyami Nyami, esprit serpent du Zambeze venere comme divinite protectrice. Culte des ancetres (mizimu) comme intermediaires avec le monde spirituel. Les chefs de pluie ont un role spirituel fondamental. Syncretisme progressif avec le christianisme (eglises protestantes et catholiques presentes depuis le XIXe siecle)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Chefferies Tonga influentes dans le sud de la Zambie.",
-      "relationsWithNeighbors": "Interactions avec Shona, Lozi, Ila.",
-      "conflictsOrAlliances": "Déplacements forcés lors de la construction du barrage de Kariba (années 1950).",
-      "diaspora": "Présente à Lusaka, Harare, Livingstone."
+      "kingdomsOrChiefdoms": "Chefferies Tonga influentes dans le sud de la Zambie, notamment la chefferie du Chef Monze (Monze District), historiquement liee au pouvoir de faire la pluie. Absence de royaume centralise : les Batonga ont toujours prefere une organisation decentralisee en chefferies independantes. Au Zimbabwe, 17 chefs Batonga dans le district de Binga.",
+      "relationsWithNeighbors": "Interactions historiques avec les Shona, les Lozi (Barotse) et les Ila. Au XIXe siecle, les Tonga etaient consideres par les Ndebele (Matabele) sous Mzilikazi et Lobengula comme un peuple pacifique. Patrons des Kafue Twa en Zambie meridionale.",
+      "conflictsOrAlliances": "Deportation forcee lors de la construction du barrage de Kariba (1956-1962) : evenement traumatisant majeur. Environ 57 000 Batonga deplaces des deux cotes du Zambeze. Les terres inondees representaient 57% de terres arables dont ils etaient proprietaires. Revendications de reparations portees par des ONG comme Basilwizi Trust depuis les annees 2000.",
+      "diaspora": "Presence dans les villes de Lusaka, Harare, Livingstone et Bulawayo. Migration de travailleurs vers les centres miniers et urbains. Communautes de deplaces internes dans les districts arides de Binga, Hwange et Nyami Nyami au Zimbabwe."
     },
     "demography": {
       "totalPopulation": 1800000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv (PPL_BATONGA)"
+      "source": "Ethnologue (SIL International, 2024) : environ 1,38 million de locuteurs en Zambie, 137 000 au Zimbabwe (langue toi). Toward Freedom / Basilwizi Trust : ~300 000 Batonga au Zimbabwe, ~1,3 million en Zambie apres le deplacement de Kariba. Estimation totale 2025 basee sur projections demographiques.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 1500000,
+          "notes": "Southern Province principalement; deuxieme groupe ethnique de Zambie"
+        },
+        {
+          "country": "ZWE",
+          "population": 300000,
+          "notes": "District de Binga, Kariba, zones de Matabeleland Nord"
+        }
+      ]
     },
     "sources": [
-      "Ethnologue (toi/tzl)",
-      "Zambia Statistics Agency",
-      "Archives historiques du Zambèze"
+      "Wikipedia EN — Tonga people (Zambia and Zimbabwe) : https://en.wikipedia.org/wiki/Tonga_people_(Zambia_and_Zimbabwe)",
+      "Encyclopaedia Britannica — Tonga (African people) : https://www.britannica.com/topic/Tonga-African-people",
+      "Toward Freedom — Why Zimbabwe's People of the Great River Have No Water (2023) : https://towardfreedom.org/story/archives/africa-archives/why-zimbabwes-people-of-the-great-river-have-no-water/",
+      "Music In Africa — Lwiindi Ceremony : https://www.musicinafrica.net/directory/lwiindi-ceremony",
+      "SIL Ethnologue — Tonga (toi) : https://www.ethnologue.com/language/toi/",
+      "Matebeleland Pulse — 23 000 BaTonga displaced for Kariba Dam (2026) : https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
+      "ScienceDirect — Local knowledge among Tonga people in Zambia and Zimbabwe (2023) : https://www.sciencedirect.com/science/article/pii/S146290112300028X"
     ]
   }
 }

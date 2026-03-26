@@ -1,69 +1,117 @@
 {
   "id": "PPL_KINYARWANDA",
-  "nameMain": "Kinyarwanda (locuteurs)",
+  "nameMain": "Banyarwanda",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["RWA", "BDI", "UGA", "COD"],
   "content": {
     "appellations": {
-      "mainName": "Kinyarwanda (locuteurs)",
+      "mainName": "Banyarwanda",
       "selfAppellation": "Abanyarwanda",
-      "exonyms": ["Kinyarwanda (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Kinyarwanda speakers (denomination linguistique anglophone)",
+        "Banyarwanda (denomination panregionale, inclusive)",
+        "Banyamulenge (sous-groupe tutsi en RDC, province du Sud-Kivu)"
+      ],
+      "originOfExonyms": "Le terme Banyarwanda (singulier : Munyarwanda) signifie litteralement les gens du Rwanda en kinyarwanda. Ce nom derive de Rwanda, nom du pays et du royaume historique. En RDC, le terme Banyarwanda designe les locuteurs kinyarwanda establis dans les provinces du Nord et du Sud-Kivu, quelle que soit leur appartenance ethnique (Hutu, Tutsi ou Twa).",
+      "whyProblematic": "La denomination Kinyarwanda (locuteurs) utilisee dans l'intitule initial est une denomination linguistique, non ethnique. Elle recouvre plusieurs identites ethniques distinctes (Hutu, Tutsi, Twa) qui partagent une langue commune. Elle ne doit pas etre confondue avec l'identite ethnique ou nationale rwandaise. En RDC, les Banyarwanda font l'objet de controverses sur leur nationalite, certains etant consideres comme etrangers par d'autres groupes congolais.",
+      "contemporaryUsage": "Au Rwanda, depuis 1994, le gouvernement promeut une identite nationale unifiee Banyarwanda abolissant officiellement les distinctions ethniques Hutu-Tutsi-Twa. En RDC, Banyarwanda est le terme usuel pour les locuteurs kinyarwanda dans les Kivu. En Ouganda, les locuteurs kinyarwanda sont souvent appeles Bafumbira (originaires de la region de Bufumbira, partageant le kinyarwanda).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "RWA, BDI, UGA, COD",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (Zone J, sous-groupe Rwanda-Rundi)",
+      "historicalRegion": "Rwanda, Burundi, region des Grands Lacs africains (rift Albertin)",
       "currentCountries": ["RWA", "BDI", "UGA", "COD"]
     },
     "ethnicities": [
-      "Hutu (RWA, BDI)",
-      "Tutsi (RWA, BDI)",
-      "Twa (RWA, BDI)",
-      "Autres locuteurs kinyarwanda"
+      "Hutu (Abahutu) — majorite historique au Rwanda (~85 %) et au Burundi (~85 %)",
+      "Tutsi (Abatutsi) — minorite historique au Rwanda (~14 %) et au Burundi (~14 %)",
+      "Twa (Batwa) — minorite pygmee, moins de 1 % au Rwanda et au Burundi",
+      "Banyamulenge (Tutsi de la plaine de Mulenge, Sud-Kivu, RDC)",
+      "Bafumbira (locuteurs kinyarwanda en Ouganda, region de Kisoro/Bufumbira)"
     ],
     "origins": {
-      "ancientOrigins": "Les locuteurs kinyarwanda sont originaires du RWA, du BDI, de l'Ouganda et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).",
-      "unificationsOrDivisions": "Organisation en groupes ethniques distincts (Hutu, Tutsi, Twa) mais partageant une langue commune (kinyarwanda).",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les locuteurs kinyarwanda constituent un ensemble ethnolinguistique dont les composantes ont des origines distinctes. Les Twa, peuple pygmee, sont les plus anciens habitants de la region des Grands Lacs, chasseurs-cueilleurs de la foret. Les Hutu, d'origine bantou, arriverent dans la region lors de la grande migration bantou entre le 1er et le 5e siecle de l'ere commune. Les Tutsi, dont les origines sont debattues, presentent une forte ascendance couchitique meridionale (Tale South Cushitic) et sabelienne orientale (Nilo-Saharan), indiquant des migrations depuis la Corne d'Afrique et le Nil superieur avant 800 av. J.-C. Apres des siecles de cohabitation, les trois groupes partagerent la langue kinyarwanda-kirundi et une culture commune.",
+      "formationPeriod": "Le Royaume du Rwanda (Nyiginya) se forma progressivement entre le 12e et le 15e siecle sous la direction de dynasties tutsies (mwami). Le Royaume du Burundi se forma parallelement avec une structure similaire. La colonisation allemande (1884-1916) puis belge (1916-1962) consolida et radicalisa les distinctions ethniques via l'introduction des cartes d'identite ethniques (annees 1920) et la politique pro-tutsi. L'independance du Rwanda (1962) et du Burundi (1962) introduisit des basculements politiques inverses.",
+      "migrationRoutes": [
+        "Migration bantou (ancetres des Hutu) depuis l'Afrique centrale vers les Grands Lacs (1er-5e siecle)",
+        "Migration couchitique et nilotique (ancetres des Tutsi) depuis la Corne d'Afrique et le Nil superieur avant 800 av. J.-C.",
+        "Dispersion des Banyarwanda vers l'Ouganda, la RDC et la Tanzanie aux 18e-19e siecles (migrations de bergers tutsi)",
+        "Exodes massifs de refugies lors des crises de 1959, 1972, 1993-1994 vers les pays voisins"
+      ],
+      "historicalSettlementZones": [
+        "Rwanda (totalite du territoire national)",
+        "Burundi (totalite du territoire national)",
+        "Ouganda — region de Bufumbira (Kisoro), Ankole et Toro",
+        "RDC — provinces du Nord-Kivu et du Sud-Kivu (Banyarwanda, Banyamulenge)"
+      ],
+      "unificationsOrDivisions": "Le royaume du Rwanda unifia progressivement les Hutu, Tutsi et Twa sous une meme autorite politique et une meme langue. La colonisation belge exacerba les distinctions en institutionnalisant la suprematie tutsi. La revolution sociale rwandaise de 1959 renversa cette hierarchie. Les genocides de 1972 (Burundi) et de 1994 (Rwanda) constituerent les ruptures les plus traumatiques. Depuis 1994, le Rwanda promeut officiellement une identite Banyarwanda supra-ethnique.",
+      "externalInfluences": "Colonisation allemande (1884-1916) : premiere mise en place de structures d'administration indirecte via les chefs tutsis. Colonisation belge (1916-1962) : radicalisation des distinctions ethniques, cartes d'identite obligatoires, evangelisation massive (catholicisme dominant). Independance (1962) : Rwanda majoritairement hutu, Burundi d'abord controle par les Tutsi. Crise des refugies (1959, 1972, 1994) : dispersions massives dans les pays voisins. Influence de l'Eglise catholique romaine (predominante) et des Eglises protestantes.",
+      "majorHistoricalEvents": "12e-15e siecles : formation des royaumes du Rwanda et du Burundi. 1884 : rattachement a l'Afrique orientale allemande. 1916 : mandat belge sur le Ruanda-Urundi. 1926 : introduction des cartes d'identite ethniques par les Belges. 1959 : revolution sociale rwandaise, premiers exodes tutsis. 1962 : independances du Rwanda et du Burundi. 1972 : genocide des Hutu au Burundi (environ 100 000 morts). 1990 : invasion du Rwanda par le Front patriotique rwandais (FPR). 1994 : genocide des Tutsi au Rwanda (800 000 a 1 000 000 morts). 2000s : processus de reconciliation au Rwanda (gacaca)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaumes traditionnels (RWA, BDI). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le Royaume du Rwanda etait gouverne par un mwami (roi-dieu sacre) issu de la dynastie Nyiginya, assiste d'un conseil de chefs (biru) gardiens des rituels royaux. Le mwami etait considere comme l'intermediaire entre le monde des hommes et Imana (Dieu). Le Royaume du Burundi presentait une structure similaire avec un mwami, mais le pouvoir etait partage avec des princes du sang (ganwa) dont l'appartenance depassait la dichotomie Hutu-Tutsi. Les chefferies locales (inteko) etaient administrees par des chefs designes par le mwami.",
+      "clanOrganization": "La societe traditionnelle des Grands Lacs etait organisee en clans (ubwoko ou inzu). Les principaux clans agnatiques rwandais sont au nombre de 18 (dont les Banyiginya, clandes rois). Les clans traversent les frontieres ethniques : un meme clan peut compter des membres Hutu et Tutsi, ce qui atteste de l'imbrication historique des deux groupes. Les relations clientelistes (ubuhake) liaient les Hutu aux Tutsi proprietaires de betail.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (inzu) determinent l'heritage, la residence et les alliances matrimoniales. Le dot (inkwano) en betail et en argent scelle les mariages. L'appartenance clanique prime parfois sur l'appartenance ethnique dans les solidarites locales.",
+      "religiousAuthority": "Dans les royaumes traditionnels, les gardiens des rituels royaux (biru) exercaient une autorite religieuse specifique aupres du mwami. Les devins (abapfumu) et les guerisseurs traditionnels jouent un role important. Aujourd'hui, la grande majorite des Banyarwanda sont catholiques ou protestants, avec un syncretisme maintenant certaines pratiques ancestrales (culte des ancetres, rites de possession Kubandwa)."
     },
     "languages": {
       "mainLanguage": "Kinyarwanda",
-      "vehicularRole": "Le kinyarwanda est parlé par la majorité des locuteurs. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": ["kin"],
+      "dialects": [
+        "Kinyarwanda du Rwanda (standard officiel)",
+        "Kirundi du Burundi (dialecte considereparfois comme langue distincte, ISO 639-3 : run)",
+        "Kinyarwanda de l'Ouganda (Bufumbira, Bafumbira)",
+        "Kinyarwanda de la RDC (Banyarwanda du Nord-Kivu et Sud-Kivu)"
+      ],
+      "vehicularRole": "Le kinyarwanda est la langue nationale et officielle du Rwanda, parlee par la quasi-totalite des 14,6 millions de Rwandais. Il est egalement parle dans les zones frontalieres du Burundi (kirundi, dialecte proche), de l'Ouganda (region de Bufumbira) et de la RDC (provinces de Kivu). Le nombre total de locuteurs est estime a plus de 13 millions. Au Rwanda, le kinyarwanda coexiste avec le français (langue officielle jusqu'en 2008, remplace par l'anglais) et l'anglais. En RDC, le swahili est la lingua franca predominante dans les Kivu."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Umuganura (fete des premiers fruits) : fete nationale de gratitude celebree en aout au Rwanda, reinstauree en 2011, pendant laquelle les premices de la recolte sont offertes. Kwita izina (ceremonie de nomination) : denomination d'un enfant quelques jours apres la naissance en presence de la famille et des ancetres. Kubandwa : culte de possession en l'honneur de Ryangombe (heros-dieu) pratique historiquement dans toute la region des Grands Lacs. Mariages traditionnels : negociation de l'inkwano (dot en betail et argent), ceremonies de reception de la mariee, celebration communautaire. Gusaba : demande officielle de mariage aupres de la famille de la mariee.",
+      "symbols": "Les vaches Inyambo (a longues cornes gessinantes) sont le symbole royal par excellence du Rwanda, associees a la royaute depuis le 12e siecle (Nyiginya), dressees pour des ceremonies et ornees de perles et clochettes. Le tambour royal (ingoma) symbolisait le pouvoir du mwami et etait garde avec des rites speciaux. L'umuganura (gerbe de premices) symbolise la gratitude et la prosperite. Le Rwanda est surnomme Pays des Mille Collines (Pays aux mille collines), refletant sa geographie vallonnee caracteristique.",
+      "artsAndMusic": "Musique : chants polyphoniques (inanga), harpe en arc (inanga), tambours (ingoma), flutes. Danse : Intore (danse guerriere royale tutsi, choreographie codifiee avec mouvements acrobatiques et parures de perles, executee a la cour du mwami et aujourd'hui patrimoine culturel rwandais reconnu). Danse Umushagiriro (danse feminine elegante). Poesie orale (ibisigo) : genre litteraire tres developpe, recite a la cour du mwami. Sculpture : statuettes d'ivoire, poterie decoree. Tissage : nattes, paniers imigara (vannerie ornementale rwandaise) inscrits au patrimoine culturel imateriel de l'UNESCO.",
+      "spiritualities": "La cosmologie traditionnelle reconnait Imana comme Dieu supreme createur, bienveillant et omnipresent. Les ancetres (imitimanyi ou abazimu) occupent un role intermediaire entre les vivants et Imana. Le culte Kubandwa, centre sur Ryangombe (heros semi-divin, roi des esprits Imandwa), etait repandu dans toute la region des Grands Lacs. La possession rituelle par Ryangombe permettait de demander protection et guerison. Depuis la colonisation europeenne, le catholicisme romain est la religion majoritaire (~50 % des Rwandais), suivi des Eglises protestantes (~40 %). Islam est present (~2 %). Un syncretisme actif maintient des elements du culte des ancetres."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kinyarwanda dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Royaume du Rwanda (Ubwami bw'u Rwanda), fonde par la dynastie Nyiginya vers le 12e-15e siecle, etait l'un des royaumes les mieux organises d'Afrique centrale, avec un systeme administratif centralise, une armee royale (inzu), des chefs territoriaux nommes par le mwami, et un systeme d'administration des terres et du betail. A son apogee au 19e siecle, le Royaume du Rwanda s'etendait au-dela des frontieres actuelles. Le palais royal de Nyanza (reconstruit) est aujourd'hui un musee.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les royaumes voisins du Buganda, du Bunyoro (Ouganda) et de l'Empire azande (RDC). Relations avec le Burundi : royaumes jumeaux partageant langue et culture mais dynasties distinctes. Tensions recurrentes avec les Congolais non-kinyarwanda (Nande, Hunde) concernant les droits fonciers et la nationalite. Relations diplomatiques tendues entre le Rwanda et la RDC autour du soutien au M23 (2012-2013, 2022-2024).",
+      "conflictsOrAlliances": "1959 : revolution sociale au Rwanda, exodes tutsis vers l'Ouganda, le Burundi et la RDC. 1972 : genocide selectif des elites Hutu au Burundi. 1990 : invasion du Rwanda par le Front patriotique rwandais (FPR) depuis l'Ouganda. 4 avril-17 juillet 1994 : genocide contre les Tutsi et massacre des Hutu moderes au Rwanda (800 000 a 1 000 000 morts en 100 jours). Juillet 1994 : victoire du FPR, fin du genocide, debut de la reconstruction nationale. Guerres des Grands Lacs (1996-1997 et 1998-2003) en RDC. Processus de reconciliation via les tribunaux gacaca (2001-2012).",
+      "diaspora": "Des communautes banyarwanda importantes se trouvent en Ouganda (region de Bufumbira-Kisoro, historiquement installee), en RDC (Nord et Sud-Kivu, Banyamulenge), au Canada, en Belgique, en France, aux Etats-Unis et en Grande-Bretagne (refugies et diaspora post-1994). La diaspora rwandaise post-genocide contribue significativement a l'economie nationale via les transferts de fonds."
     },
     "demography": {
-      "totalPopulation": 12000000,
+      "totalPopulation": 14600000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "UNFPA — Rwanda Population 2025 (14,6 millions) ; PopulationPyramid.net 2025 ; Bilinguistics — Kinyarwanda speakers (plus de 13 millions, incluant Rwanda, Ouganda et RDC)",
+      "distributionByCountry": [
+        {
+          "country": "RWA",
+          "population": 14600000,
+          "note": "Quasi-totalite de la population rwandaise est locutrice kinyarwanda (Hutu ~85 %, Tutsi ~14 %, Twa ~1 % selon les donnees historiques avant suppression des categories ethniques)"
+        },
+        {
+          "country": "BDI",
+          "population": 500000,
+          "note": "Locuteurs kinyarwanda dans les zones frontalieres nord (Kirundi, dialecte proche, est la langue nationale du Burundi parlee par 14,4 millions de Burundais)"
+        },
+        {
+          "country": "UGA",
+          "population": 400000,
+          "note": "Bafumbira et autres locuteurs kinyarwanda dans la region de Bufumbira-Kisoro, Ankole et Toro"
+        },
+        {
+          "country": "COD",
+          "population": 1000000,
+          "note": "Banyarwanda (Hutu et Tutsi) dans les provinces du Nord-Kivu et du Sud-Kivu (Banyamulenge)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kinyarwanda language (kin)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Rwanda. https://en.wikipedia.org/wiki/Rwanda",
+      "Wikipedia FR — Banyarwanda. https://fr.wikipedia.org/wiki/Banyarwanda",
+      "UNFPA — Rwanda Population 2025. https://www.unfpa.org/data/world-population/RW",
+      "Minority Rights Group — Banyarwanda in the DRC. https://minorityrights.org/communities/banyarwanda/",
+      "Bilinguistics — Kinyarwanda Speech and Language Development. https://bilinguistics.com/languages/kinyarwanda-speech-and-language-development/",
+      "TrekRwandaGorillas — Rwanda Population 2025. https://trekrwandagorillas.com/rwanda-population/",
+      "SIL Ethnologue — Kinyarwanda (kin). https://www.ethnologue.com/language/kin",
+      "USHMM — Divided by Ethnicity : Rwanda. https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity"
     ]
   }
 }

@@ -7,18 +7,103 @@
     "appellations": {
       "mainName": "Aari",
       "selfAppellation": "Aari / Ari",
+      "exonyms": [
+        "Ari (variante orthographique commune)",
+        "Aare",
+        "Gayil (pour le sous-groupe Gayil)"
+      ],
+      "originOfExonyms": "Le terme Aari (ou Ari) est à la fois l'endonyme et l'exonyme. Il désigne le groupe et sa langue dans les sources éthiopiennes, les recensements nationaux et la littérature anthropologique. Les différentes variantes orthographiques (Aari, Ari, Aare) reflètent des transcriptions phonétiques divergentes de la même forme de base. Certains sous-groupes sont parfois désignés par des noms locaux tels que Gayil (Galila), Bako ou Seyki.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Aari est utilisé de manière cohérente dans les recensements officiels éthiopiens (2007 : 289 835 Aari ethniques), dans la littérature scientifique et par les membres du groupe. Depuis la réforme fédérale éthiopienne de 1991, les Aari bénéficient d'une certaine autonomie dans la région SNNPR (Southern Nations, Nationalities and Peoples' Region) et ont pu revendiquer leur identité culturelle avec davantage de liberté.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique sud",
-      "historicalRegion": "Vallées du sud-ouest éthiopien (South Omo Zone)",
+      "ethnoLinguisticGroup": "Omotique méridional (South Omotic)",
+      "historicalRegion": "Vallée de l'Omo et plateau de Mela — zone South Omo, Région des Nations, Nationalités et Peuples du Sud (SNNPR), Éthiopie",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": {},
-    "sources": ["Ethnologue (aiw)", "South Omo Studies"]
+    "ethnicities": [
+      "Kantsa — caste agricultrice privilégiée, majoritaire dans la société aari",
+      "Mana (groupe inférieur, composé de trois sous-castes artisanales)",
+      "Faka mana — sous-caste des forgerons-charpentiers (également ébénistes)",
+      "Tila mana — sous-caste des tanneurs et potiers",
+      "Sous-groupe Bako (Baco) — localisé dans la région de Bako",
+      "Sous-groupe Gayil (Galila) — dialecte et territoire distincts",
+      "Sous-groupe Seyki — une des variétés dialectales documentées"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Aari (ou Ari) sont un peuple omotique autochtone de la vallée de l'Omo en Éthiopie méridionale. Leur langue appartient à la famille omotique méridionale (South Omotic), une des sous-familles de l'omotique dans la famille afro-asiatique élargie selon certaines classifications (Nilo-saharienne selon d'autres). Ils font partie des anciens habitants de l'Omo, une région où la présence humaine est attestée depuis des centaines de milliers d'années (site de Kibish, fossiles Omo I et II). Les Aari ont développé une civilisation agro-pastorale avec une organisation en chefferies indépendantes dirigées par un chef divin appelé baabi.",
+      "formationPeriod": "Jusqu'au 19e siècle, les Aari vivaient sous des chefferies indépendantes organisées autour de la figure du baabi (chef divin). Cette organisation politique fondée sur la légitimité sacrée du chef reflète un modèle commun à plusieurs groupes omotiques du sud de l'Éthiopie. La conquête par l'Empire éthiopien sous Menelik II (fin des années 1800) a mis fin à ces structures politiques indépendantes et a profondément marqué l'identité et la culture aari.",
+      "migrationRoutes": [
+        "Populations autochtones de la vallée de l'Omo — pas de migration fondatrice documentée",
+        "Maintien dans le territoire ancestral de la zone South Omo malgré la conquête éthiopienne de la fin du 19e siècle"
+      ],
+      "historicalSettlementZones": [
+        "Zone South Omo (Omo Sud), région SNNPR, Éthiopie",
+        "Vallée de l'Omo River et plateaux environnants",
+        "Région de Bako (sous-groupe Bako/Baco)",
+        "Région de Gayil/Galila (sous-groupe Gayil)",
+        "Régions de Biyo, Laydo, Shangama, Sido, Wubahamer et Zeddo (zones de dialectes documentées)"
+      ],
+      "unificationsOrDivisions": "La société aari est stratifiée en castes fonctionnelles (Kantsa vs Mana). L'intermariage entre ces castes est tabou selon les normes traditionnelles, bien que cette division se soit atténuée après l'introduction du christianisme (1950s). La conquête éthiopienne de la fin du 19e siècle a brisé l'autonomie des chefferies aari et les a soumis au joug des administrateurs amhara, dont l'exploitation économique a fortement discrédit l'Église orthodoxe éthiopienne (associée aux envahisseurs). La réforme Derg (1974-1991) a mis fin au féodalisme et la réforme fédérale de 1991 a restitué une certaine souveraineté aux Aari sur leurs terres.",
+      "externalInfluences": "Conquête par l'Empire éthiopien sous l'Empereur Menelik II (fin des années 1880) : réduction en servage de nombreux Aari, déclin culturel, diffusion forcée de la langue amharique. Consolidation du contrôle amhara au début du 20e siècle. 1950s : évangélisation par des missions protestantes occidentales (notamment SIM — Sudan Interior Mission), entraînant des conversions massives et une réduction des divisions de castes parmi les chrétiens. 1974 : renversement de la monarchie par le Derg, fin du système féodal. 1991 : fédéralisme éthiopien accordant une autonomie accrue aux groupes ethniques. Depuis 2000 : essor de l'éducation et amélioration socio-économique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Jusqu'au 19e siècle, les Aari vivaient sous des chefferies indépendantes (plural) dirigées chacune par un baabi (chef divin). Le baabi exerçait une autorité à la fois politique et religieuse, légitimée par sa nature sacrée. La chefferie divine (baabi) est analogue à d'autres institutions similaires documentées chez des groupes omotiques voisins. Après la conquête éthiopienne de la fin du 19e siècle, ces structures ont été remplacées par l'administration amhara. Depuis 1991, le système fédéral éthiopien a accordé une certaine autonomie aux groupes ethniques, permettant aux Aari de gérer partiellement leurs affaires locales.",
+      "clanOrganization": "La société aari est structurée par un système de castes fonctionnelles. La caste Kantsa (agriculteurs) occupe la position sociale privilégiée. La caste Mana (collectif des artisans) est socialement inférieure et comprend les faka mana (forgerons-charpentiers, dont la position est la plus basse, inférieure même aux tanneurs et potiers) et les tila mana (tanneurs et potiers). L'intermariage entre Kantsa et Mana est traditionnellement tabou et considéré comme une violation grave des normes sociales. Après l'introduction du protestantisme dans les années 1950, les divisions de castes parmi les chrétiens sont devenues moins rigides.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent les droits fonciers, les alliances matrimoniales et l'appartenance aux castes. L'endogamie de caste (mariage au sein de la même caste) est la norme traditionnelle. La majorité de la population pratique l'agriculture mixte (cultures vivrières et élevage).",
+      "religiousAuthority": "Trois traditions religieuses coexistent : la religion traditionnelle animiste (minoritaire), l'Église orthodoxe éthiopienne (quelques fidèles, malgré sa stigmatisation due à l'association avec la conquête menelikienne et l'exploitation des prêtres), et le protestantisme (la grande majorité des chrétiens aari, convertis depuis les années 1950 via des missions SIM et d'autres organisations). Le baabi traditionnel, chef divin, a perdu son autorité politique après la conquête éthiopienne mais des pratiques religieuses traditionnelles subsistent."
+    },
+    "languages": {
+      "mainLanguage": "Aari (langue aari / Omotic méridional)",
+      "isoCodes": ["aiw"],
+      "dialects": [
+        "Bako (Baco) — dialecte de la région de Bako",
+        "Biyo (Bio, Biya) — dialecte distinctif",
+        "Gayil (Galila) — dialecte de la région Gayil",
+        "Laydo — dialecte documenté",
+        "Seyki — dialecte documenté",
+        "Shangama — dialecte documenté",
+        "Sido — dialecte documenté",
+        "Wubahamer (Ubamer) — dialecte documenté",
+        "Zeddo — dialecte documenté"
+      ],
+      "vehicularRole": "L'aari est parlé par environ 285 000 locuteurs de première langue (2007 ; population ethnique totale : 289 835 selon le recensement éthiopien 2007). Environ 129 350 locuteurs sont monolingues et plus de la moitié des Aari parlent également l'amharique (langue nationale de l'Éthiopie). La langue utilise l'alphabet latin et le script guèze (éthiopique). Elle est classée dans l'omotique méridional (South Omotic) au sein de la famille afro-asiatique. L'amharique est la langue d'enseignement et d'administration."
+    },
+    "culture": {
+      "majorRites": "{\"chieftainRites\": {\"baabi\": \"Le baabi (chef divin) était le centre des rituels politico-religieux des Aari jusqu'à la conquête éthiopienne. L'installation d'un nouveau baabi impliquait des cérémonies de légitimation religieuse, des sacrifices d'animaux et des rituels d'investiture communautaires. La nature divine du baabi fondait sa légitimité à la fois sur la tradition ancestrale et sur le contrôle des forces surnaturelles.\"}, \"marriageRites\": {\"endogamy\": \"L'endogamie de caste est la règle traditionnelle. Les mariages entre Kantsa et Mana sont interdits et considérés comme tabou. Les cérémonies de mariage impliquent des rites familiaux et claniques avec des échanges de dot.\", \"christianMarriage\": \"Les Aari protestants (la grande majorité des chrétiens) célèbrent le mariage selon des rites chrétiens, avec une réduction progressive des distinctions de castes.\"}, \"agriculturalRites\": {\"harvest\": \"En tant que communauté agro-pastorale, les Aari pratiquent des rites agricoles saisonniers liés aux semailles et aux récoltes, invoquant les esprits ancestraux et les forces de la nature pour la fertilité des terres.\"}, \"funeraryRites\": {\"burial\": \"Les rites funéraires impliquent des cérémonies familiales et communautaires. La nature des rites varie selon l'appartenance religieuse (tradition animiste, orthodoxe éthiopien, ou protestant).\"}}",
+      "symbols": "{\"baabi\": \"Le baabi (chef divin) est le symbole central de l'autorité et de l'identité politique aari traditionnelle. Sa légitimité divine fondait l'organisation sociale des chefferies indépendantes jusqu'à la conquête éthiopienne.\", \"caste\": \"La distinction entre Kantsa (agriculteurs) et Mana (artisans) est un symbole structurant de la société aari, bien que cette frontière s'estompe progressivement avec la christianisation et la modernisation.\", \"omovalley\": \"La vallée de l'Omo est le symbole territorial identitaire des Aari, territoire ancestral aux ressources agricoles et pastorales essentielles.\"}",
+      "artsAndMusic": "{\"crafts\": \"L'artisanat aari est structuré par le système de castes : les faka mana (forgerons-charpentiers) produisent des outils agricoles, des armes et des objets en bois sculptés. Les tila mana (tanneurs et potiers) produisent de la poterie fonctionnelle et décorative, ainsi que des articles en cuir. Ces productions artisanales sont essentielles à l'économie locale.\", \"music\": \"La musique traditionnelle aari comprend des chants cérémoniels liés aux rites agricoles, aux mariages et aux cérémonies royales du baabi. Les instruments à percussion et les instruments à cordes simples sont utilisés lors des rassemblements communautaires.\", \"dance\": \"Les danses collectives accompagnent les cérémonies importantes : installation du baabi (dans la tradition), mariages, récoltes et fêtes communautaires. Les danses des Aari se caractérisent par des mouvements rythmiques collectifs.\", \"oralLiterature\": \"La tradition orale aari comprend des récits mythologiques sur les origines du peuple, des contes moraux et des chants de louanges des chefs (baabi). La transmission orale a été le principal vecteur de la mémoire culturelle pendant les périodes de répression amhara.\", \"agriculture\": \"La culture agro-pastorale aari (sorgho, maïs, tubercules, légumineuses, café) constitue une forme de patrimoine matériel et culturel. Le café, cultivé dans les zones ombragées de la vallée de l'Omo, est un produit culturellement important.\"}",
+      "spiritualities": "{\"traditionalReligion\": {\"animism\": \"La religion traditionnelle aari est animiste. Les esprits des ancêtres jouent un rôle central dans la cosmologie et sont invoqués lors des crises (sécheresses, maladies, conflits). Le baabi était à la fois chef politique et médiateur entre le monde humain et le monde des esprits.\"}, \"orthodoxChristianity\": {\"description\": \"L'Église orthodoxe éthiopienne a pénétré dans la région aari lors de la conquête de Menelik II (fin des années 1880). Elle est restée associée dans la mémoire collective aux envahisseurs et à l'exploitation économique par les prêtres amhara. Quelques fidèles orthodoxes existent encore parmi les Aari, mais la stigmatisation de cette affiliation a limité son expansion.\", \"forcedConversion\": \"De nombreux Aari furent contraints de se convertir à l'orthodoxie éthiopienne comme condition de l'allégeance à l'Empire.\"}, \"protestantChristianity\": {\"specificPractices\": \"Depuis les années 1950, les missions protestantes occidentales (notamment la Sudan Interior Mission, SIM) ont converti une large majorité des Aari au protestantisme. La plupart des chrétiens aari contemporains sont protestants. Cette conversion a eu un effet de réduction des barrières de castes entre chrétiens Kantsa et Mana, bien que des distinctions sociales persistent.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Jusqu'au 19e siècle, les Aari étaient organisés en chefferies indépendantes dirigées par des chefs divins (baabi). Ces chefferies constituaient des unités politiques autonomes contrôlant la vallée de l'Omo et ses ressources agro-pastorales. La tradition orale conserve le souvenir d'une période d'indépendance et de prospérité sous les baabi. La conquête par l'Empire éthiopien sous Menelik II (fin des années 1880) mit fin à cette organisation politique, réduisant de nombreux Aari au statut de serfs sous l'autorité d'administrateurs amhara. Les premières décennies du 20e siècle virent la consolidation du contrôle amhara sur la région. La culture aari connut un déclin significatif, bien que la langue ait survécu.",
+      "relationsWithNeighbors": "Les Aari entretiennent des relations de coexistence et d'échanges avec les groupes omotiques voisins de la zone South Omo : Banna, Hamar, Karo, Mursi, Suri et d'autres peuples de la vallée de l'Omo. Des échanges commerciaux (artisanat, bétail, produits agricoles) existent entre ces communautés. Depuis la conquête éthiopienne, les Aari ont également eu des interactions forcées avec les populations amhara et tigréennes des hauts plateaux.",
+      "conflictsOrAlliances": "Fin des années 1880 : conquête de la région de l'Omo par les armées de Menelik II, destruction de l'autonomie des chefferies aari et asservissement d'une partie de la population. 1974 : renversement de la monarchie impériale par le Derg (junte militaire soviétique) ; fin du système féodal ; les communautés agro-pastorales aari purent conserver leurs récoltes et leur bétail, améliorant leur prospérité économique. 1991 : renversement du Derg ; adoption par l'Éthiopie d'un système fédéral accordant l'autodétermination aux groupes ethniques ; les Aari recouvrèrent une souveraineté partielle sur leurs terres. Depuis 2000 : amélioration notable des conditions socio-économiques, développement de l'éducation (chaque ville aari dispose d'au moins une école primaire).",
+      "diaspora": "La population aari est essentiellement rurale et concentrée dans la zone South Omo (Éthiopie méridionale). Il n'existe pas de diaspora significative à l'international. Une minorité d'Aari scolarisés s'est installée dans les villes éthiopiennes (Addis-Abeba, Jinka, Arba Minch) pour des raisons d'éducation et d'opportunités professionnelles."
+    },
+    "demography": {
+      "totalPopulation": 380000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 : 289 835 Aari ethniques (0,29 % de la population éthiopienne). Ethnologue 2007 : 285 000 locuteurs de première langue (code aiw), 129 350 monolingues, 13 300 locuteurs de seconde langue. Projection 2025 tenant compte du taux de croissance démographique éthiopien (environ 2,5 % par an).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 380000,
+          "note": "Zone South Omo (Omo Sud), région SNNPR, Éthiopie méridionale. Principalement dans les woredas de la zone South Omo autour de la vallée de l'Omo. Villes principales : Jinka (chef-lieu de la zone South Omo), ainsi que les localités des sous-groupes Bako, Gayil, Seyki, Shangama, Sido, Wubahamer, Zeddo et Biyo."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Aari people. https://en.wikipedia.org/wiki/Aari_people",
+      "Wikipedia EN — Aari language. https://en.wikipedia.org/wiki/Aari_language",
+      "Ethnologue — Aari (AIW). https://www.ethnologue.com/language/aiw/",
+      "PeopleGroups.org — Ari of Ethiopia (PGID: PG011548). https://peoplegroups.org/people_groups/pg011548/",
+      "Joshua Project — Aari in Ethiopia. https://joshuaproject.net/people_groups/10424",
+      "Recensement éthiopien 2007 — Central Statistical Agency of Ethiopia. https://www.csa.gov.et/",
+      "Glottolog — Aari. https://glottolog.org/resource/languoid/id/aari1239",
+      "Hayward, Richard J. (ed.) 1990. Omotic Language Studies. London: School of Oriental and African Studies.",
+      "Bender, M. Lionel (ed.) 1976. The Non-Semitic Languages of Ethiopia. East Lansing: African Studies Center, Michigan State University.",
+      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
+    ]
   }
 }

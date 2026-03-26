@@ -6,64 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "!Kung",
-      "selfAppellation": "!Kung (terme générique pour plusieurs groupes)",
+      "selfAppellation": "!Kung (terme generique pour plusieurs groupes Ju)",
+      "exonyms": [
+        "!Xun",
+        "Ju",
+        "Bushmen",
+        "San",
+        "!Xu",
+        "ǃXũũ",
+        "Kung-Tsumkwe",
+        "Ekoka !Kung",
+        "Northern !Kung"
+      ],
+      "originOfExonyms": "!Kung et !Xun sont deux variantes du meme mot signifiant gens ou personnes dans les differentes varietes dialectales de la langue. Le prefixe ! indique un clic alveolaire. Ju est la forme phonetiquement proche utilisee dans certains dialectes meridionaux (Ju|'hoansi). Bushmen est un exonyme europeen pejoratif datant de la colonisation. San est un terme khoekhoegowab signifiant foragers ou collecteurs, adopte officiellement dans les contextes politiques modernes.",
+      "whyProblematic": "Le terme !Kung designe un continuum dialectal de 11 a 15 varietes assez differentes pour que des locuteurs de dialectes distants ne se comprennent pas mutuellement. L'utiliser comme terme unique masque la diversite interne du groupe. De plus, les denominations !Kung et Ju coexistent dans la litterature avec des usages differents selon les chercheurs.",
+      "contemporaryUsage": "!Kung est couramment utilise en anthropologie anglophone. !Xun est prefere par les linguistes et dans les contextes namibiens officiels. Ju designe specifiquement la famille de langues. Certains sous-groupes preferent leurs appellations propres (Ju|'hoansi, Ekoka, etc.).",
       "linguisticFamily": "FLG_KXA",
-      "ethnoLinguisticGroup": "Kx'a (Juu)",
-      "historicalRegion": "Désert du Kalahari (NAM, BWA, AGO)",
+      "ethnoLinguisticGroup": "Kx'a (branche Ju / !Kung, ensemble dialectal)",
+      "historicalRegion": "Kalahari septentrional (Namibie, Botswana, Angola meridional), en particulier les regions de Nyae Nyae, du Kavango, d'Ovamboland et du Caprivi",
       "currentCountries": ["NAM", "BWA", "AGO"]
     },
     "ethnicities": [
-      "!Kung du Nord (AGO, NAM)",
-      "!Kung du Sud (BWA, NAM)",
-      "!Kung de l'Est",
-      "Sous-groupes régionaux"
+      "!Xun septentrional (AGO, NAM) — groupe nord angolais et namibien septentrional, le plus distinct dialectalement",
+      "Ekoka !Kung (NAM, region de Grootfontein) — dialecte central namibien, base d'importantes etudes linguistiques",
+      "Ju|'hoansi (NAM sud-est, BWA) — variete meridionale, la mieux documentee academiquement (voir PPL_JUHOANSI)",
+      "ǂKx'aoǁ'ein (NAM, BWA) — variete distinct du sud-est namibien et nord-ouest botswanais",
+      "Mpungu !Xun (NAM, region du Kavango) — dialecte de transition entre groupes septentrionaux et autres",
+      "Okongo !Xun (NAM, region d'Ohangwena) — variete nord-namibienne",
+      "Groupes refugies en Afrique du Sud (anciens soldats SADF reinstalles a Schmidtsdrift puis Platfontein)"
     ],
     "origins": {
-      "ancientOrigins": "Les !Kung sont l'un des peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Diversité dialectale importante.",
-      "externalInfluences": "Contacts limités avec les peuples bantous et khoekhoe. Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les !Kung sont parmi les populations humaines les plus anciennes genetiquement. Des etudes ADN mitochondrial et chromosomique Y placent les ancetres des San, dont les !Kung, parmi les lignees les plus divergentes de l'humanite, avec une histoire evolutive independante remontant a 100 000-200 000 ans. Leur presence dans le Kalahari septentrional est attestee depuis au moins 30 000 ans selon les donnees archeologiques. La population !Kung formait autrefois des communautes beaucoup plus nombreuses avant les persecutions coloniales : entre 1911 et 1913, plus de 400 patrouilles anti-Bushmen furent deployees en Namibie allemande, reduisant la population de 8 000-12 000 a 3 600 individus en une decennie.",
+      "formationPeriod": "Le continuum dialectal !Kung s'est forme et differencie au fil des millenaires d'occupation du Kalahari septentrional et des zones adjacentes. La diversite dialectale actuelle (11-15 varietes) reflete des siecles de separation entre groupes occupant des territoires distincts. La guerre d'independance namibienne (1966-1990) et la guerre civile angolaise (1975-2002) ont profondement fragmente les communautes, notamment les groupes angolais qui rejoignirent la Namibie en tant que refugies.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari septentrional sans migration fondatrice documentee",
+        "Flux de refugies des groupes angolais !Xun vers le Namibie pendant la guerre civile angolaise",
+        "Reinstallation forcee de plusieurs milliers de !Xun et Khwe d'Angola vers Schmidtsdrift (Afrique du Sud) puis Platfontein (Northern Cape) par l'armee sud-africaine apres 1990"
+      ],
+      "historicalSettlementZones": [
+        "Nyae Nyae et Tsumkwe (Namibie, Otjozondjupa) — territoire historique des Ju|'hoansi",
+        "Regions du Kavango et de l'Ohangwena (Namibie septentrionale) — territoire des !Xun",
+        "Angola meridional (provinces de Cuando Cubango, Cunene) — territoire historique des !Xun angolais",
+        "Nord-ouest du Botswana (districts de Ghanzi et de Ngamiland)",
+        "Schmidtsdrift et Platfontein (Afrique du Sud, Northern Cape) — installation post-1990 des ex-soldats"
+      ],
+      "unificationsOrDivisions": "Les !Kung ne constituent pas une unite politique unifiee mais un ensemble de groupes partageant une continuite linguistique. La guerre civile angolaise a profondement divise les !Xun du nord, dont une partie importante (estimee a plusieurs milliers) fut evacuee vers l'Afrique du Sud par l'armee sud-africaine pour laquelle ils servaient de combattants. Ces groupes sont aujourd'hui installes a Platfontein (Northern Cape, Afrique du Sud), completement isoles de leurs terres ancestrales angolaises.",
+      "externalInfluences": "Administration coloniale allemande (Namibie, 1884-1915) avec persecutions violentes et reduction massive de la population. Administration sud-africaine (Namibie, 1915-1990) incluant le recrutement comme trackers militaires (SADF). Guerre civile angolaise (1975-2002) avec deplacements massifs des groupes !Xun angolais. Missions chretiennes depuis le 20e siecle. Programmes gouvernementaux de sedentarisation et de developpement agropastoral en Namibie et Botswana depuis l'independance. ONG internationales (IWGIA, Survival International, First People of the Kalahari).",
+      "majorHistoricalEvents": "Persecutions sous l'administration coloniale allemande (1911-1913) : reduction de la population de San en Namibie de 8 000-12 000 a 3 600 en deux ans. Expeditions ethnographiques Marshall (1950s, Nyae Nyae) et Harvard Kalahari Project (1963+, Dobe) donnant aux !Kung une visibilite academique mondiale. Recrutement de !Xun comme trackers par la SADF pendant la guerre de libération namibienne. Independance namibienne (1990) suivie du rapatriement problematique des ex-combattants. Evacuation et reinstallation des !Xun angolais a Schmidtsdrift (1990) puis Platfontein (2003) en Afrique du Sud. Reconnaissance progressive des droits fonciers via les conservancies namibiennes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Structure egalisatrice fondee sur des bandes de 15 a 50 personnes liees par la parenté et occupant un territoire de chasse (n!ore). Aucune autorite coercitive permanente. Decisions par consensus. Les personnes respectees pour leur jugement, leur generosité ou leurs competences de chasseur ont une influence morale sans pouvoir de commandement. Les comportements de domination ou d'accumulation sont activement decourages par la critique sociale et l'humour.",
+      "clanOrganization": "Groupes de chasse fluides dont la composition change selon les saisons et les ressources. Les droits sur les territoires de chasse (n!ore) sont transmis bilateralement. Le systeme hxaro d'echange de cadeaux (non alimentaires) entre partenaires de differentes bandes constitue le principal reseau d'assurance sociale et de gestion des ressources en cas de disette.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux : chaque individu peut exercer des droits sur le territoire de son pere ou de sa mere. Un systeme complexe de denomination propre (ko) lie les individus partageant le meme prenom dans des relations rituelles particulieres, creant des liens sociaux trans-generationnels.",
+      "religiousAuthority": "Les guerisseurs (n/om kxao, maitres du n/um) exercent l'autorite religieuse et spirituelle. Environ la moitie des hommes et un tiers des femmes sont reconnus comme guerisseurs. L'acces au pouvoir de guerison est theoriquement ouvert a tous. La formation se fait par transmission directe lors de la danse de transe (ǃkia)."
     },
     "languages": {
-      "mainLanguage": "!Kung (plusieurs variétés)",
-      "vehicularRole": "Le !kung est parlé par la majorité des !Kung. L'afrikaans, l'anglais, le portugais, le tswana et d'autres langues sont également utilisés selon les régions."
+      "mainLanguage": "!Kung (!Xun, Ju) — continuum dialectal",
+      "isoCodes": ["ktz", "knw", "kxu"],
+      "dialects": [
+        "Ju|'hoan (ktz) — variete sud-orientale, Tsumkwe, Namibie et Botswana, la mieux documentee",
+        "Kung-Ekoka (knw) — variete centrale, region de Grootfontein, Namibie",
+        "!Xun (kxu) — varietes septentrionales angolaises et namibiennes",
+        "ǂKx'aoǁ'ein — variete de transition sud-est namibienne",
+        "Mpungu !Xun — dialecte du Kavango, Namibie"
+      ],
+      "vehicularRole": "Le !Kung est le troisieme dialecte-clic en nombre de locuteurs apres le Khoekhoe et le Sandawe. L'ensemble des varietes Ju compte environ 45 000 locuteurs (Khoisan languages, Wikipedia). Dans les zones namibiennes, l'afrikaans et l'anglais sont langues de contact avec l'administration. Dans les zones angolaises, le portugais. Au Botswana, le setswana et l'anglais. La langue Ju|'hoan (ktz) est utilisee comme langue d'instruction dans des ecoles communautaires du Nyae Nyae."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "La danse de transe (ǃkia ou n/um tchai) est le rite central de la vie !Kung, documentée dans le film N/um Tchai (John Marshall, 1969). Elle commence au coucher du soleil et dure toute la nuit : les femmes forment un cercle interieur, claquent des mains selon des rythmes complexes et chantent des chants de guerison (n/om songs). Les hommes dansent autour d'elles, stimulant leur energie n/um jusqu'a entrer en transe (ǃkia). En etat de transe, les guerisseurs voient les maladies et les esprits des morts, et soignent les malades en frictionnant leur corps avec de la sueur. Les femmes peuvent egalement entrer en transe via une ceremonie de tambour (Drum Dance). Rites de passage : rite de la premiere menstruation centré sur l'eland sacre (isolation, tabous alimentaires, chants feminins), ceremonie du premier gibier tué par un jeune chasseur (incisions rituelles, partage de viande), mariage (arrangements parentaux, cohabitation progressive avec la famille de l'epouse). Rites de chasse : humilite obligatoire du chasseur devant sa prise (feindre un echec), redistribution du gibier presidee par les anciens.",
+      "symbols": "L'eland (grande antilope) est l'animal sacre par excellence, associe au pouvoir de guerison et aux ceremonies de puberte. Le n/um (energie mystique de guerison) comme concept central de la cosmologie !Kung. Art rupestre du Kalahari (peintures et gravures representant des therianthropes et des scenes de transe) comme patrimoine symbolique ancestral. Arcs et fleches empoisonnees (venin de chrysalide Diamphidia) comme symboles de la virilite et de l'identite masculine. Colliers de disques d'oeuf d'autruche (ethe) comme ornements, cadeaux hxaro et marqueurs d'identite.",
+      "artsAndMusic": "Les chants n/om (songs of medicine) sont la forme musicale centrale : chaque guerisseur possede un ou plusieurs chants reveles en reve par les esprits, servant a activer le n/um. Le systeme musical !Kung se caracterise par une polyphonie vocale dense avec isorythmie, vocalisations complexes et integration des clicks phonemiques dans le tissu musical. L'arc musical (berimbau-like) est utilise pour la musique individuelle. La tradition narrative orale est tres riche : contes de Mantis (insecte divin, Kaggen, createur malicieux et trickster), recits de chasse, mythes cosmologiques. Les femmes transmettent les contes lors des veillees autour des feux de camp. L'artisanat comprend la confection de colliers de disques d'oeuf d'autruche, la taille d'arcs et de fleches, la tannerie de peaux d'animaux pour les karosses.",
+      "spiritualities": "Cosmologie duale : un dieu superieur (!Xu, Gao Na ou Erob selon les groupes) createur et bienfaisant vivant a l'est ; un dieu inferieur malveillant (Khaudum ou !Gara) responsable de la souffrance et de la mort, vivant a l'ouest. Les esprits des morts (!gangwasi) sont les principales forces hostiles : jaloux des vivants, ils causent les maladies. Les guerisseurs combattent ces esprits en transe. Le n/um (energie de guerison) est le lien entre les mondes humain et spirituel. Certaines plantes medicinales, l'eland et l'eau de pluie sont porteurs de n/um. L'influence du christianisme est variable selon les groupes et les regions."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves, les zones urbaines et les camps de réfugiés. Communautés dispersées dans les villes namibiennes, botswanaises et angolaises."
+      "kingdomsOrChiefdoms": "Aucune organisation etatique ou chefferie. Les !Kung representent le type-modele de la societe de chasseurs-cueilleurs immediatement mobilisable et fondamentalement egalisatrice decrit par Marshall Sahlins. Les tentatives d'imposer des structures de chef par les administrations coloniales (notamment sud-africaine) furent partiellement adoptees mais restent marginales dans la culture traditionnelle.",
+      "relationsWithNeighbors": "Relations historiques d'echange et de dependance asymetrique avec les peuples Bantu voisins (Herero, Ovambo, Mbukushu) et les colons europeens : travail comme trackers, guides de chasse et main-d'oeuvre agricole saisonniere contre acces a des produits metalliques, alimentaires et du betail. Relations commerciales le long des routes de l'ivoire au 19e siecle. Service militaire dans la SADF pendant la guerre d'independance namibienne comme trackers (1970-1990). Tensions persistantes avec les gouvernements namibien (SWAPO) et botswanais concernant les droits fonciers et d'usage des ressources naturelles.",
+      "conflictsOrAlliances": "Persecutions coloniales allemandes (1911-1913) : campagne d'extermination reduisant drastiquement la population San en Namibie. Service dans la SADF (1970s-1980s) suivi de tensions avec le gouvernement SWAPO post-independance. Evacuation forcee des !Xun angolais vers l'Afrique du Sud (1990) lors du desengagement sud-africain d'Angola. Luttes juridiques continuelles pour les droits fonciers (CKGR en Botswana, Nyae Nyae Conservancy en Namibie). Constitution du Nyae Nyae Conservancy (1998) comme reconnaissance partielle des droits territoriaux.",
+      "diaspora": "Plusieurs milliers de !Xun angolais furent reinstalles de force par la SADF a Schmidtsdrift (Northern Cape, Afrique du Sud) en 1990, puis transferes a Platfontein en 2003 : une diaspora unique, completement coupee de ses terres ancestrales angolaises. Des !Xun namibiens refugies s'installent dans des villes comme Windhoek, Rundu et Tsumkwe. Les ex-soldats San demobilises apres l'independance namibienne se retrouverent dans une situation de marginalisation dans les centres urbains."
     },
     "demography": {
-      "totalPopulation": 10000,
+      "totalPopulation": 45000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Khoisan languages Wikipedia (~45 000 locuteurs pour l'ensemble du continuum Ju/!Kung). Joshua Project (Kung-Tsumkwe ktz : 12 000 en Angola, 9 100 au Botswana, 51 000 en Namibie = 72 100 total, incluant toutes varietes). UNESCO Tentative List San (Namibie: 30 000-35 000 San totaux). !Kung languages Wikipedia (Brenzinger 2011: 9 000 en Namibie, 2 000 au Botswana, 3 700 en Afrique du Sud, 1 000 en Angola pour la langue ktz seule). L'estimation de 45 000 couvre l'ensemble du groupe ethnique, varietes dialectales incluses.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 30000,
+          "note": "Regions d'Otjozondjupa (Nyae Nyae, Tsumkwe), Omaheke (Epukiro), Ohangwena, Kavango (Rundu)"
+        },
+        {
+          "country": "BWA",
+          "population": 10000,
+          "note": "Districts de Ghanzi et de Ngamiland (nord-ouest du Botswana)"
+        },
+        {
+          "country": "AGO",
+          "population": 5000,
+          "note": "Province de Cuando Cubango et zones frontalieres meridionales; population reduite apres les deplacements de la guerre civile"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – !Kung languages",
-      "Men, Women, and Work in a Foraging Society*",
-      "Marshall, Lorna – *The !Kung of Nyae Nyae*",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa"
+      "Wikipedia EN — !Kung people. https://en.wikipedia.org/wiki/%C7%83Kung_people",
+      "Wikipedia EN — !Kung languages. https://en.wikipedia.org/wiki/%C7%83Kung_languages",
+      "Wikipedia EN — Khoisan languages (section Kx'a). https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Joshua Project — Ju'hoan language resources (ktz). https://joshuaproject.net/languages/ktz",
+      "UNESCO Tentative List — San Living Cultural Landscape. https://whc.unesco.org/en/tentativelists/6096/",
+      "Internet Archive — N/um tchai: The Ceremonial Dance of the !Kung Bushmen (Marshall, 1969). https://archive.org/details/numtchaitheceremonialdanceofthekungbushmen",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples",
+      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/"
     ]
   }
 }

@@ -2,58 +2,92 @@
   "id": "PPL_AOWIN",
   "nameMain": "Aowin",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": ["GHA", "CIV"],
   "content": {
     "appellations": {
       "mainName": "Aowin",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Aowin",
+      "exonyms": ["Agni", "Anyi", "Awina", "Brissa"],
+      "originOfExonyms": "La forme Agni est la transcription française du nom Aowin/Anyi, utilisee pour designer les groupes anyi migres en Cote d'Ivoire et consideree aujourd'hui comme un exonyme pejoratif par certains membres de la communaute. Aowin est la forme utilisee au Ghana pour le peuple et le territoire (district Aowin Municipal). Anyi/Agni designent les sous-groupes etablis en Cote d'Ivoire, directement issus de l'Etat Aowin apres sa defaite en 1715.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Au Ghana, le terme Aowin est officialise dans le nom du district Aowin Municipal (Western North Region). En Cote d'Ivoire, les descendants de l'Etat Aowin sont generalement appeles Anyi ou Agni. Le Wikipedia anglophone sur Kingdom of Aowin est la principale source historique, le peuple historique et l'Etat actuel du Ghana portant le même nom.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
-      "currentCountries": ["GHA"]
+      "ethnoLinguisticGroup": "Akan (branche Central Tano, sous-groupe Anyi-Aowin)",
+      "historicalRegion": "Forets du sud-ouest du Ghana (entre les rivieres Tano et Bia), et par extension le sud-est de la Cote d'Ivoire",
+      "currentCountries": ["GHA", "CIV"]
     },
-    "ethnicities": ["Aowin"],
+    "ethnicities": ["Aowin", "Anyi (descendants en Cote d'Ivoire)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les traditions orales des Aowin retracent leurs origines au nord, liees aux migrations de Bonoman (Bono) dans la zone de transition foret-savane. Ils sont l'un des premiers groupes akan producteurs d'or a s'etablir durablement dans les forets du sud-ouest. Leurs ancetres ont migre depuis Takyiman, notamment la region de Sessiman, en raison de l'instabilite politique et des menaces des Dagomba et Mamprussi. Ils se sont d'abord installes pres de la riviere Offin, puis ont migre vers le sud-ouest en direction du bassin du Bia, le long des couloirs des rivieres Tano et Bia.",
+      "formationPeriod": "Des le XVIe siecle, l'Etat Aowin est consolide en puissance regionale majeure, rivalisant avec Denkyira et Akwamu. Il est alors la principale force dans l'ouest avant la montee en puissance de Denkyira. Les groupes comme les Sahie (Sefwi) Wiawso partagent la meme origine (Assakyiri) que les Aowin.",
+      "migrationRoutes": [
+        "Migration depuis Takyiman (Sessiman) vers le sud-ouest, fuyant les pressions des Dagomba et Mamprussi",
+        "Premier etablissement pres de la riviere Offin",
+        "Migration vers le sud-ouest jusqu'au bassin du Bia, le long des rivieres Tano et Bia",
+        "Apres 1715 : migration westward des elites et populations aowin deplac??es vers le sud-est de la Cote d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Forets du sud-ouest du Ghana, entre les rivieres Tano et Bia (territoire central actuel)",
+        "Enchi (siege du chef paramount Omanhene)",
+        "Axes commerciaux vers Begho (nord) et Fort Apollonia et forts atlantiques (sud)",
+        "Sud-est de la Cote d'Ivoire (etats successeurs post-1715 : Moronou, Indenie, Sanwi, Djuablin)"
+      ],
+      "unificationsOrDivisions": "Avant 1677, l'Etat Aowin est unifie sous l'autorite de l'Omanhene a Enchi. Apres la defaite face a Denkyira (1677) et la conquete asante (1715), l'etat se fragmente. Les elites aowin et leurs partisans migrent vers l'ouest et fondent les etats successeurs en Cote d'Ivoire : Moronou (coalition de sept lignages), Sanwi (tres centralise avec gouvernance matrilineaire), Indenie (forte identite cheffale) et Djuablin.",
+      "externalInfluences": "Conquete par Denkyira (1677, general Agya Ananse Obooman pres de la riviere Offin), puis subjugation tributaire. Invasion asante (1715, general Amankwatia avec l'aide de Sefwi Wiawso) : pertes territoriales, fragmentation et migration de masse. Commerce avec les postes portugais et hollandais de la cote (Fort Apollonia). Accueil de populations deplac??es venues de Bono, Adansi et Denkyira. Puis, influence coloniale britannique au Ghana et française en Cote d'Ivoire.",
+      "majorHistoricalEvents": "XVIe siecle : consolidation en puissance regionale majeure. 1677 : defaite face a Denkyira, reduction en etat vassal. Entre 1680 et 1696 : conquete de polities voisins par Denkyira. 1715 : conquete par l'empire Asante (general Amankwatia), avec aide de Sefwi Wiawso, triggering une migration westward de masse. Apres 1721 : fondation des etats successeurs anyi en Cote d'Ivoire (Moronou, Indenie, Sanwi, Djuablin). Epoque coloniale : integration dans la Gold Coast britannique (Ghana actuel)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Structure decentralisee mais hautement coordonnee : les chefs locaux conservent leur autonomie tout en pledgeant allegeance rituelle au chef paramount (Omanhene) siege a Enchi. Le systeme accommode les populations entrantes et s'etend territorialement sans centralisation rigide a la maniere de Denkyira ou d'Asante. Des institutions militaires sont developpees pour defendre les couloirs commerciaux et les etablissements tributaires.",
+      "clanOrganization": "Organisation matrilineaire akan : la filiation, l'heritage et la succession passent par la ligne maternelle. Les etats successeurs en Cote d'Ivoire heritent de cette structure : Moronou est organise autour de sept lignages constitutifs avec roles territoriaux et defensifs ; Sanwi a une gouvernance matrilineaire centralisee avec roles militaires asafo (sahinnan).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages maternels (abusua) structurent l'organisation sociale et politique. Le tabouret royal d'Ano Assinman est le symbole sacre de l'identite et de la continuite de l'autorite aowin. L'Omanhene est investi par les lignages nobles reconnus.",
+      "religiousAuthority": "Pratiques spirituelles traditionnelles akan : charms de guerre (Amuan), defenses rituelles (momome), tabouret de commandement. Festival de l'igname Elulie, preservant les elements symboliques et calendaires de la tradition aowin. Ces pratiques sont transmises aux Sefwi qui adoptent une part des structures politiques et spirituelles aowin."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Aowin (Twi-Aowin)",
+      "isoCodes": ["any"],
+      "dialects": [
+        "Aowin",
+        "Dialectes anyi en Cote d'Ivoire (structurellement similaires a l'aowin, derives du twi)"
+      ],
+      "vehicularRole": "La langue aowin est une langue twi-derivee appartenant a la branche Central Tano des langues Niger-Congo (famille Kwa). Les dialectes anyi/agni parles en Cote d'Ivoire conservent des similitudes structurelles avec le twi-aowin d'origine. L'aowin/anyi est mutuellemet intelligible avec les autres varietes akan. L'anglais est la langue officielle du Ghana, le français en Cote d'Ivoire."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Elulie de l'igname : preserve les elements symboliques et calendaires de la tradition aowin, avec dimension ceremoniale communautaire. Rituels d'intronisation de l'Omanhene. Ceremonies de veneration des ancetres et de demande de protection. Festivals commemorant les liens ancestraux avec l'etat historique Aowin (dans le district Aowin Municipal du Ghana, celebration periodique selon Wikipedia EN Anyi).",
+      "symbols": "Regalia sacres aowin : tabouret royal d'Ano Assinman (symbole de l'autorite et de la continuite de l'etat), Amuan (charms de guerre), momome (defenses rituelles). Les rivieres Tano et Bia comme espaces symboliques du territoire ancestral. La tradition de l'or comme richesse fondatrice de l'identite aowin.",
+      "artsAndMusic": "Traditions artisanales akan (orfevrerie, tissage, sculpture). Heritage oral riche (genealogies, recits de fondation des royaumes). Production de cacao, huile de palme et exploitation forestiere dans le district Aowin (Ghana). Les peuples Sefwi ont adopte des elements des structures politiques, des coutumes spirituelles et de la langue aowin.",
+      "spiritualities": "Religion traditionnelle akan : veneration des ancetres, rituel cosmologique, pratiques magico-religieuses (Amuan, momome). Le christianisme est repandu au Ghana (protestantisme, presbyterianisme, pentecotisme). En Cote d'Ivoire, les descendants anyi/agni combinent animisme traditionnel et christianisme. Culture of Ivory Coast Wikipedia note une population anyi/aowin d'environ 40 000 personnes parlant aowin en Cote d'Ivoire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume d'Aowin (Etat Aowin), l'un des premiers et plus puissants etats akan, etabli dans les forets du sud-ouest du Ghana entre les rivieres Tano et Bia. L'Omanhene a Enchi est le chef paramount. Apres sa conquete en 1715, etats successeurs en Cote d'Ivoire : Moronou, Indenie, Sanwi (tres centralise, maintient des institutions royales symboliques a l'epoque moderne) et Djuablin.",
+      "relationsWithNeighbors": "Rivalite avec Denkyira et Akwamu pour la domination regionale. Interactions avec Nzema, Wassa et Sefwi (conflits et diffusion culturelle). Commerce avec les marches du nord (Gonja, Bouna) et les comptoirs cotieres portugais et hollandais. L'etat a ete un refuge pour les populations deplac??es de Bono, Adansi et Denkyira. Les Sefwi, migrants de Bono et Adansi, se sont installes et ont adopte les structures aowin. Le Sanwi a integre l'Asini conquis et developpe des relations diplomatiques avec les Français (a partir de 1701).",
+      "conflictsOrAlliances": "Rivalite et puis soumission a Denkyira (1677). Conquete par Asante (1715) avec aide de Sefwi Wiawso : pertes territoriales, fragmentation et migration forcee. Coalition Moronou : exiles aowin, Sefwi (Sahie) et auxiliaires ashanti. Relations diplomatiques du Sanwi avec les Français (1701). Retention d'une autonomie partielle apres l'invasion denkyira, devenant refuge pour populations deplac??es.",
+      "diaspora": "La diaspora principale est representee par les etats successeurs fondes en Cote d'Ivoire apres 1715-1721 : Moronou, Indenie, Sanwi, Djuablin. Ces royaumes sont consideres comme les heritiers directs de la tradition politique, linguistique et culturelle aowin. Le peuple anyi/agni de Cote d'Ivoire est la principale diaspora aowin."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 250000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation composite : Wikipedia Culture of Ivory Coast (environ 40 000 en CIV parlant aowin) ; district Aowin Municipal Ghana (157 159 en 2021 selon Wikipedia Anyi people) ; population globale Anyi/Aowin estimee par Joshua Project a 1 970 000 (englobant Anyi et Aowin). Estimation restreinte au sens strict d'Aowin Ghana : environ 250 000.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 210000,
+          "note": "District Aowin Municipal, Western North Region (157 159 en 2021 selon recensement, estimation 2025)"
+        },
+        {
+          "country": "CIV",
+          "population": 40000,
+          "note": "Principalement populations se reclamant directement de la tradition culturelle aowin, hors Anyi en general"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kingdom of Aowin – Wikipedia EN (https://en.wikipedia.org/wiki/Aowin)",
+      "Anyi people – Wikipedia EN (https://en.wikipedia.org/wiki/Anyi_people)",
+      "Culture of Ivory Coast – Wikipedia EN (https://en.wikipedia.org/wiki/Culture_of_Ivory_Coast)",
+      "Joshua Project – Anyi in Ghana (https://joshuaproject.net/people_groups/10362/GH)",
+      "Joshua Project – Ghana people groups (https://joshuaproject.net/countries/gh)",
+      "Agnis – Wikipedia FR (https://fr.wikipedia.org/wiki/Anyi_(peuple))"
+    ]
   }
 }

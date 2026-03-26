@@ -1,23 +1,102 @@
 {
   "id": "PPL_NALU",
-  "nameMain": "",
+  "nameMain": "Nalu",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GIN"],
+  "currentCountries": ["GIN", "GNB"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Nalu",
       "selfAppellation": "Nalou / Nalu",
+      "exonyms": ["Nalo", "Nanum", "Nanu", "Naloes", "Naloes du Rio Nunez"],
+      "originOfExonyms": "Le terme Nalu ou Nalou est la designation usuelle en francais colonial. Les variantes Nalo et Nanum proviennent de sources portugaises et anglaises du XVe au XIXe siecle. Le voyageur La Courbe (1685) les mentionne sous le nom de Naloes sur le Rio Nunez.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Nalu est utilise aujourd'hui en Guinee et en Guinee-Bissau. La langue nalu elle-meme est en danger critique, la majorite des jeunes adoptant le soussou comme langue principale.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Littoral Guinée–Guinée-Bissau",
-      "currentCountries": ["GIN"]
+      "ethnoLinguisticGroup": "Atlantique-Mel (groupe mbulungish-nalu), branche Senegambienne",
+      "historicalRegion": "Bas Rio Nunez, Rio Componi (Kogon) et iles Tristao (Guinee littorale), embouchure de la Cacine (Guinee-Bissau, region de Tombali)",
+      "currentCountries": ["GIN", "GNB"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (naj)", "West African Coastal Ethnography"]
+    "ethnicities": [
+      "Nalu du continent (bas Nunez et Rio Kogon), au teint plus clair en raison des metissages mande",
+      "Nalu des iles Tristao, au caractere physique plus negroide selon les observateurs du XIXe siecle",
+      "Nalu Kapken des iles Tristao, communaute encore vivante documentee en 2022",
+      "Nalu de Cacine (Guinee-Bissau, region de Tombali), locuteurs restants en Guinee-Bissau"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nalu se decrivent eux-memes comme originaires du Mali et du Fouta-Djallon. Ils sont consideres comme des pre-Mandingas, ayant peuple la region cotiere avant l'arrivee des peuples Mande aux XIVe-XVe siecles. Duarte Pacheco Pereira les localise au XVIe siecle le long du fleuve Nanuus (Cacine), temoignant de leur anciennete sur cette cote. Certains auteurs les rapprochent des Bidyogos des iles Bijagos.",
+      "formationPeriod": "XIVe-XVe siecle comme groupe distinct, anterieurement a l'arrivee mandingue. Leur identite s'est consolidee sur la cote guineo-bissau-guineeenne avant les grandes migrations mande.",
+      "migrationRoutes": [
+        "Migration presumee depuis le bassin du fleuve Senegal ou du Fouta-Djallon vers la cote atlantique",
+        "Implantation historique sur les deux rives du bas Rio Nunez et le Rio Componi (Kogon)",
+        "Presence documentee aux iles Tristao et dans la region de Cacine en Guinee-Bissau"
+      ],
+      "historicalSettlementZones": [
+        "Bas Rio Nunez (sous-prefecture de Kanfarande, prefecture de Boke, Guinee)",
+        "Iles Tristao (Guinee, archipel atlantique)",
+        "Estuaire de la Cacine, region de Tombali (Guinee-Bissau)",
+        "Rio Componi (Kogon), cote guineeenne"
+      ],
+      "unificationsOrDivisions": "Les Nalu ont ete fragmentes en plusieurs groupes distincts par les pressions successives des Mandingues, des Peuls du Fouta-Djallon et des Bagas. Au XIXe siecle, le voyageur Golberry note qu'ils etaient reputes pour leur agriculture et leur production de pagnes apprecies des Peuls.",
+      "externalInfluences": "Influence de l'islam adoptee partiellement a partir des annees 1950, en particulier chez les Nalu du continent. Les Nalu ont maintenu des relations commerciales avec les Peuls du Fouta-Djallon, echangeant riz, indigo, coton et sel. Les Landuma ont exerce une influence politique sur eux avant le XIXe siecle.",
+      "majorHistoricalEvents": "Contactes par les navigateurs portugais des le XVIe siecle via les intermediaires Biafada ; victimes d'enlevements pendant la traite negriere, apres lesquels ils refuserent de commercer directement avec les Portugais. Pression des Papel vers le sud mentionnee par Golberry (1802). Menace de disparition culturelle et linguistique au XXe siecle par assimilation soussou."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies locales autour de villages. Le chef (m-fem en langue nalu) dispose d'une autorite a la fois politique et rituelle. La societe Simo, societe secrete d'initiation active chez les Nalu et les groupes apparentes (Baga, Landuma), joue un role central dans la regulation sociale et la transmission des savoirs.",
+      "clanOrganization": "Organisation clanique liee aux lignages fondateurs des villages sur le bas Nunez et les iles. Les metissages mande ont modifie la structure clanique des Nalu du continent.",
+      "ageClassSystems": "Systeme d'initiation lie a la societe Simo, qui organise le passage des jeunes hommes vers l'age adulte et leur integration dans la communaute masculine.",
+      "roleOfLineages": "Les lignages determinant l'acces a la terre et aux droits de peche. La transmission est matrilineaire dans les structures traditionnelles les plus anciennes.",
+      "religiousAuthority": "Historiquement, croyance en un dieu supreme appele Kanu, assiste d'esprits males et femelles. Les guerisseurs (mi-let) et les chefs rituels de la societe Simo exercent l'autorite religieuse. Depuis les annees 1950, l'islam sunnite coexiste avec les pratiques animistes traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Nalu (nale, nul ; ISO 639-3 : naj)",
+      "isoCodes": ["naj"],
+      "dialects": [
+        "Dialecte du bas Nunez et de Kanfarande (Guinee, sous-prefecture de Kanfarande)",
+        "Dialecte des iles Tristao (Guinee)",
+        "Dialecte de la region de Boke (Guinee continentale)",
+        "Dialecte de Cacine (Guinee-Bissau, region de Tombali)",
+        "Dialecte du nord de la Guinee-Bissau",
+        "Dialecte du sud de la Guinee-Bissau"
+      ],
+      "vehicularRole": "Le nalu est une langue strictement communautaire, sans role vehiculaire regional. Il est en situation de danger critique : les locuteurs actifs sont principalement des adultes. La generation suivante adopte le soussou en Guinee. En 2007, Wilson estime environ 12 000 locuteurs ; les estimations recentes varient de 10 000 a 25 000 personnes (toutes generations confondues). La Glottolog classe le nalu comme langue isolee au sein du Niger-Congo."
+    },
+    "culture": {
+      "majorRites": "La societe Simo est le cadre principal des rites d'initiation masculine, organisant le passage vers l'age adulte et la transmission des savoirs rituels et agricoles. Les ceremonies agricoles marquent les cycles du riz, culture de base cultivee en zone marecageuse inondee six mois sur douze. Les femmes cultivent le riz tandis que les hommes peche et cultivent les noix de cola.",
+      "symbols": "Le dieu Kanu et les esprits masculins et femelles qui l'assistent constituent le coeur du systeme symbolique traditionnel. L'etoile Sirius (liee aux cycles agricoles) et les elements naturels de la zone cotiere (mangroves, marees, pirogues) sont des referents symboliques importants.",
+      "artsAndMusic": "Sculptures traditionnelles temoignant de l'existence du peuple, mentionnees dans la litterature ethnographique comme elements identitaires essentiels. Production artisanale de pagnes de coton et d'indigo reconnus par les Peuls du Fouta-Djallon pour leur qualite. Activites de fumage de poisson, extraction de sel et artisanat de coquillages caracteristiques de la zone des iles Tristao.",
+      "spiritualities": "Religion traditionnelle centree sur Kanu, divinite supreme unique assistee d'esprits intermediaires. Depuis les annees 1950, adoption partielle de l'islam par les Nalu du continent. Depuis les annees 2020, un retour a la religion terrestre traditionnelle est note en Guinee-Bissau, partiellement en reaction a la domination de l'islam et du christianisme percus comme imposes de l'exterieur."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales sur le bas Rio Nunez et les iles Tristao. Les Nalu etaient historiquement soumis a l'influence politique des Landuma, qui dominaient la region nord de la Guinee avant le XIXe siecle. La route commerciale biafada-sapi connectait les Nalu aux reseaux d'echange du Rio Cacheu jusqu'au cap Mont.",
+      "relationsWithNeighbors": "Relations etroites avec les Baga (langue proche au point que les Baga de certaines zones comprenaient les Nalu) et les Landuma. Rapports commerciaux avec les Peuls du Fouta-Djallon, auxquels ils vendaient riz, pagnes et produits de la cote. Les Papel les auraient repousses vers le sud selon Golberry. Relations avec les Biafada qui servaient d'intermediaires avec les Portugais.",
+      "conflictsOrAlliances": "Les Nalu, victimes d'enlevements par les trafiquants portugais au XVe siecle, refuserent ensuite tout commerce direct avec eux, passant par les Biafada. Pression des Peuls lors du djihad de 1727-1728 qui repoussa plusieurs populations animistes vers la cote.",
+      "diaspora": "Pas de diaspora structuree documentee. Exode rural partiel vers Conakry et les centres urbains de Guinee. La communaute Nalu Kapken des iles Tristao maintient une identite distincte documentee jusqu'en 2022."
+    },
+    "demography": {
+      "totalPopulation": 25000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Ethnologue (SIL International, 2024, code naj), Wilson (2007) rapportant environ 12 000 locuteurs, PeopleGroups.org (2023) estimant 25 000 personnes au total dans deux pays, et Joshua Project (2024). La langue est consideree en danger critique, les estimations de population etant difficiles a etablir precisement.",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 20000,
+          "note": "Sous-prefecture de Kanfarande (prefecture de Boke), iles Tristao, bas Rio Nunez et Rio Kogon"
+        },
+        {
+          "country": "GNB",
+          "population": 5000,
+          "note": "Region de Tombali, estuaire de la Cacine"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN, Nalu people : https://en.wikipedia.org/wiki/Nalu_people",
+      "Wikipedia EN, Nalu language : https://en.wikipedia.org/wiki/Nalu_language",
+      "Ethnologue, Nalu (naj) : https://www.ethnologue.com/language/naj",
+      "Joshua Project, Nalu in Guinea : https://joshuaproject.net/people_groups/13930/GV",
+      "Joshua Project, Nalu in Guinea-Bissau : https://joshuaproject.net/people_groups/13930/PU",
+      "Bouju, Stephane. Historique sur les populations cotieres de Guinee et de Sierra Leone. IRD Editions, OpenEdition Books, 2013 : https://books.openedition.org/irdeditions/3745",
+      "101 Last Tribes, Nalu people : https://www.101lasttribes.com/tribes/nalu.html"
+    ]
   }
 }

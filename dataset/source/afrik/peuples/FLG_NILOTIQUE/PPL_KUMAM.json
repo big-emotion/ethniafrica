@@ -6,59 +6,94 @@
   "content": {
     "appellations": {
       "mainName": "Kumam",
-      "selfAppellation": "Kumam",
-      "exonyms": ["Kumam (terme utilisé par les Européens)"],
+      "selfAppellation": "Kumam (ou Ikokolemu, Akokolemu)",
+      "exonyms": ["Kuman", "Kumum", "Akum", "Ikumama"],
+      "originOfExonyms": "Le terme Kumam est a la fois l'endonyme et l'exonyme le plus repandu. Les formes alternatives Kuman et Ikumama sont documentees dans les sources coloniales britanniques. Ikokolemu (ou Akokolemu) est le nom de leur langue selon la denomination interne.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kumam est universellement utilise en Ouganda pour designer ce peuple. L'autodesignation Ikokolemu fait reference a leur langue.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique occidental",
-      "historicalRegion": "Est de l'Ouganda",
+      "ethnoLinguisticGroup": "Nilotique occidental (groupe Luo-Ateker, sous-groupe Mabaan-Burun selon certaines classifications)",
+      "historicalRegion": "Region du lac Kyoga (Teso sub-region, est de l'Ouganda) et bordure sud de la region Lango",
       "currentCountries": ["UGA"]
     },
-    "ethnicities": ["Kumam du Nord", "Kumam du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Kumam de Kaberamaido (district principal, coeur du territoire kumam)",
+      "Kumam de Soroti et Kalaki (frontieres avec les Iteso)",
+      "Kumam de Dokolo (anciennement dans le district de Lira, aujourd'hui Dokolo, region Lango)",
+      "Kumam d'Amolatar (rive nord du lac Kyoga, Namasale)",
+      "Clan Ikarwok",
+      "Clan Atek",
+      "Clan Igamtok",
+      "Clan Igoria",
+      "Clan Irarak"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kumam sont originaires de l'est de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Luo.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Kumam descendent des communautes pastorales, agricoles et halieutiques d'Ethiopie, dont ils ont migre vers l'Ouganda vers le 17e siecle sous la pression demographique. Ils etaient a l'origine des Nilotiques des plaines (Plains Nilotes), apparentes aux Iteso et aux Karamojong, partageant le groupe Ateker (Nilo-Hamitique). A partir du 14e-15e siecle, le mouvement de migration des Luo (Lwoo) depuis le Soudan du Sud a profondement transforme leur identite linguistique : les Kumam, au contact des Lango et des Acholi, ont progressivement adopte le parler luo tout en conservant un substrat Ateker dans leur vocabulaire. Leur tradition orale affirme une filiation avec les Iteso (Teso).",
+      "formationPeriod": "La crystallisation de l'identite kumam distincte s'est produite entre le 16e et le 18e siecle, lors de la convergence entre leur heritage Ateker-Karamojong originel et l'adoption progressive du parler Luo (Lwoo). Leur territoire autour du lac Kyoga s'est consolide apres leur migration depuis l'Ethiopie orientale.",
+      "migrationRoutes": [
+        "Origine dans les communautes de l'Ethiopie nord-orientale (zone Karamoja-Ethiopie) vers le 16e siecle",
+        "Migration vers le sud-ouest en direction du lac Kyoga sous pression demographique et contact avec les Luo migrants",
+        "Installation progressive dans les districts actuels de Kaberamaido, Soroti et Dokolo (rive du lac Kyoga)"
+      ],
+      "historicalSettlementZones": [
+        "Lac Kyoga et ses rives (Kaberamaido, Namasale, Serere)",
+        "Teso sub-region (frontieres avec les Iteso)",
+        "Bordure sud de la region Lango (Dokolo, Amolatar)",
+        "Soroti district (cohabitation avec les Iteso)"
+      ],
+      "unificationsOrDivisions": "Les Kumam ont toujours ete organises en une federation souple de clans (ibukui ou ebuku) sans chef supreme centralise avant l'epoque coloniale. En 2024, ils se sont reunis officiellement lors d'une ceremonie gouvernementale ougandaise avec les peuples Ateker, reconnaissant leur appartenance a ce groupe ethnolinguistique. La chefferie culturelle contemporaine est dirigee par le Won Ateker (Papa Kumam), elargie par l'institution Etok Me Kumam.",
+      "externalInfluences": "Influence majeure des peuples Luo voisins (Lango, Acholi) : adoption progressive du parler luo entre le 14e et le 18e siecle. Contacts anciens avec les Iteso et Karamojong (heritage Ateker commun). Missions chretiennes protestantes (Eglise anglicane d'Ouganda) a partir de la fin du 19e siecle. Conflit LRA (Lord's Resistance Army) 1986-2006 : deplacements massifs, perte de betail, erosion des structures traditionnelles.",
+      "majorHistoricalEvents": "Migration depuis l'Ethiopie vers le lac Kyoga (16e-17e siecle). Adoption du parler Luo au contact des Lango (15e-18e siecle). Colonisation britannique et creation des districts administratifs (fin 19e-debut 20e siecle). Insurrection LRA (1986-2006) : deplacements, pertes humaines et materiales graves dans la sous-region. En novembre 2024, le gouvernement ougandais a officialise la reunification des Kumam avec les peuples Ateker lors d'une ceremonie historique a Mbale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe a structure decentralisee basee sur les clans (ibukui). Les leaders claniques, appeles Wegi Ibukui ou Wegi Atekerin, exercaient les fonctions legislatives, executives et judiciaires au niveau du clan. Les decisions collectives etaient prises lors d'assemblees (Auret) sous un grand arbre ou dans un espace ouvert (Ebar). Le chef de clan nouvellement elu s'asseyait sur un tabouret a trois pieds (Abanya), symbole de son autorite. L'institution contemporaine Etok Me Kumam, presidee par le Won Ateker Papa Kumam, constitue la chefferie culturelle unifiee.",
+      "clanOrganization": "Structure clanique patrilineaire organisee en ibukui (clans). Chaque clan trace sa descendance depuis un ancetre male commun et controle des droits sur les terres communales, les heritages et les alliances matrimoniales. Les principaux clans documentes incluent Ikarwok, Atek, Irarak, Igamtok et Igoria. L'exogamie clanique interdit les mariages intraclaniques. Les totems claniques, rites et histoires orales sont preserves par les anciens.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (Odonge ikekoros : tetes des sous-divisions d'un clan) determinent l'identite, l'acces a la terre et les alliances. Les Dogolan (chefs de la descendance d'un homme) administrent les affaires internes du lignage. La terre est possedee communalement par le clan, les decisions sur la terre, le betail et le mariage relevant de l'autorite clanique.",
+      "religiousAuthority": "Autorite des chefs spirituels traditionnels et des anciens. Croyance en des esprits des ancetres (les esprits des morts ne meurent pas selon la tradition kumam) et refus de la mort naturelle : toute mort est attribuee a la sorcellerie. Syncrétisme avec le christianisme (Eglise anglicane, Eglises baptistes) tres repandu depuis le debut du 20e siecle."
     },
     "languages": {
-      "mainLanguage": "Kumam",
-      "vehicularRole": "Le kumam est parlé par la majorité des Kumam. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kumam (Ikokolemu)",
+      "isoCodes": ["kdi"],
+      "dialects": [
+        "Kumam de Kaberamaido (dialecte central)",
+        "Kumam de Dokolo (influence lango plus marquee)",
+        "Kumam de Soroti (contact avec l'Ateso)"
+      ],
+      "vehicularRole": "Le kumam (code ISO 639-3 : kdi) est parle par environ 340 000 a 720 000 personnes en Ouganda (selon les sources). Il appartient au groupe Luo (Lwoo) occidental nilotique et est tres proche du Paluo et du Lango. Ecrit en alphabet latin. Des emissions radio existent en kumam. Le kumam n'a pas de traduction complete de la Bible. L'anglais, le lango et l'ateso sont utilises comme langues vehiculaires interethniques."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels kumam, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Mariage : autrefois arrange par les parents, avec fiancailles des la jeune enfance. La promise rejoignait parfois la maison du futur mari pour grandir. Deuil : enterrement differe jusqu'a la reunion de tous les proches du defunt, suivi d'une periode de deuil pouvant durer une semaine. Les Kumam ne croient pas a la mort naturelle : tout deces est attribue a la sorcellerie. Ceremonies agricoles liees aux semailles et aux recoltes. Celebrations de naissance et rites de passage marques par des reunions claniques.",
+      "symbols": "Le tabouret a trois pieds (Abanya) est le symbole du pouvoir du chef de clan. L'arbre de reunion (Ebar) et l'espace Auret sont des lieux sacres de gouvernance. Le betail (bovins, ovins, caprins, poulets) constitue la principale mesure de richesse et de statut social.",
+      "artsAndMusic": "Musique traditionnelle avec percussions et chants communautaires lors des ceremonies de mariage, funerailles et rassemblements claniques. Danse collective, dont les groupes de danse sont diriges par des leaders specifiques (wegi ikodeta Cel). Artisanat feminin : poterie (pots, plats en argile), tissage de paniers et de nattes. Poesie orale preservee par les anciens pour transmettre l'histoire clanique.",
+      "spiritualities": "Croyance en la persistance des esprits des morts (les esprits ne meurent pas). Tout deces est attribue a la sorcellerie, entrainent des investigations apres le deces pour identifier le responsable. Syncrétisme croissant avec le christianisme (notamment l'Eglise anglicane d'Ouganda et les Eglises baptistes). La foi chretienne a penetre la region suite aux missions de la fin du 19e siecle et a ete renforcee apres l'insurrection LRA."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kumam dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kumam n'ont pas developpe de royaume centralise. Leur systeme politique traditionnel etait une federation decentralisee de clans sous des chefs claniques (Wegi Atekerin). Ce modele, sans chef supreme, leur a permis de maintenir une coherence culturelle et sociale sans hierarchie rigide. L'institution contemporaine du Won Ateker Papa Kumam, creee recemment comme chefferie culturelle unifiee, est une evolution post-coloniale.",
+      "relationsWithNeighbors": "Relations etroites et souvent conflictuelles avec les Iteso (voisins est) pour les terres et le betail. Influences linguistiques et culturelles reciproques avec les Lango (voisins nord-ouest), menant a l'adoption du parler luo. Cohabitation avec les Acholi plus au nord. Les Kumam ont historiquement occupe une zone tampon entre les espaces Teso et Lango, absorbant des influences des deux groupes.",
+      "conflictsOrAlliances": "Periodes de raids inter-tribaux pour le betail avec les Iteso et les Lango avant la colonisation. Colonisation britannique (fin 19e-debut 20e siecle) : integration dans le systeme administratif colonial, creation de districts. Insurrection LRA (Lord's Resistance Army, 1986-2006) : deplacements massifs, vol de betail, pertes humaines importantes. La fin de ce conflit a entraine une crise de foi dans les systemes de croyances traditionnelles.",
+      "diaspora": "Diaspora kumam principalement dans les grandes villes ougandaises (Kampala, Soroti, Lira). Emigration economique moderee vers d'autres pays d'Afrique de l'Est et vers l'Europe et l'Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 720000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Recensement national ougandais 2024 (720 000 selon Wikipedia/Kumam people). Estimations anterieures : Joshua Project 173 000 (2006), Swordshare 360 000. La population 2025 est estimee a environ 720 000 en tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 720000,
+          "note": "Principalement dans les districts de Kaberamaido, Soroti, Kalaki, Dokolo, Amolatar et les rives du lac Kyoga"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kumam language (kdi)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Kumam people. https://en.wikipedia.org/wiki/Kumam_people",
+      "SIL Ethnologue — Kumam language (kdi). https://www.ethnologue.com/language/kdi/",
+      "101 Last Tribes — Kumam people. https://www.101lasttribes.com/tribes/kumam.html",
+      "Kumam Cultural Heritage — Clans. https://www.kumamculturalheritage.org/clans/",
+      "Orville Jenkins — The Kumam People of Uganda. http://orvillejenkins.com/profiles/kumam.html",
+      "Joshua Project — Kumam, Akokolemu in Uganda. https://joshuaproject.net/people_groups/12842",
+      "Swordshare Map — Kumam language. https://map.swordshare.com/kdi"
     ]
   }
 }

@@ -2,62 +2,102 @@
   "id": "PPL_GHOWA",
   "nameMain": "Gǀowa",
   "languageFamilyId": "FLG_TUU",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["ZAF", "BWA"],
   "content": {
     "appellations": {
       "mainName": "Gǀowa",
       "selfAppellation": "Gǀowa",
+      "exonyms": ["Ghowa", "!Gora", "San", "Bushmen (terme pejoratif)"],
+      "originOfExonyms": "Le nom Gǀowa contient le clic dental (ǀ), caracteristique des langues Tuu et Khoisan. Le terme San est un exonyme khoekhoe signifiant approximativement foragers ou personnes sans betail, utilise de maniere collective pour les chasseurs-cueilleurs d'Afrique australe. Bushmen est un terme colonial anglais, aujourd'hui considere pejoratif. La forme Ghowa est une transcription approximative sans notation phonetique de clic.",
+      "whyProblematic": "Le nom Gǀowa designe un groupe ou une variete linguistique peu documente de la branche Tuu (anciennement Khoisan meridional), qui a disparu sans laisser de documentation complete. La confusion entre les nombreux noms utilises pour les groupes !Kwi (ǀXam, Nǁng, etc.) rend l'identification precise difficile. Les sources sur ce groupe specifique sont extremement rares.",
+      "contemporaryUsage": "Le terme Gǀowa n'est plus en usage actif comme identifiant communautaire. Les descendants eventuels s'identifient a des communautes San plus larges ou ont adopte des identites Tswana, Afrikaner ou Coloured. La langue Gǀowa, si elle se distingue du grand ensemble Tuu (!Kwi ou Taa), est consideree eteinte.",
       "linguisticFamily": "FLG_TUU",
-      "ethnoLinguisticGroup": "Tuu (Taa)",
-      "historicalRegion": "Désert du Kalahari (Botswana)",
-      "currentCountries": ["BWA"]
+      "ethnoLinguisticGroup": "Tuu (anciennement Khoisan meridional), branche !Kwi ou Taa, Afrique australe",
+      "historicalRegion": "Afrique du Sud meridionale et Botswana meridional (bassin du Kalahari, region du Vaal et de l'Orange, Northern Cape)",
+      "currentCountries": ["ZAF", "BWA"]
     },
-    "ethnicities": ["Gǀowa du Nord", "Gǀowa du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Groupe Gǀowa (identite linguistique distincte au sein du complexe Tuu, peu documentee)",
+      "Relations de proximite avec les groupes ǀXam (Afrique du Sud, eteint vers 1910)",
+      "Relations avec les Nǁng (ǂKhomani, Northern Cape, quasi-eteint)",
+      "Relations avec les groupes Taa (!Xoon) du Botswana et de Namibie"
+    ],
     "origins": {
-      "ancientOrigins": "Les Gǀowa sont un peuple ancien du désert du Kalahari au Botswana. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les ancetres des groupes Tuu, dont les Gǀowa, font partie des populations humaines les plus anciennes d'Afrique australe, avec une presence attestee dans la region depuis plus de 25 000 ans selon les donnees genetiques et archeologiques. Les peuples Tuu sont les descendants des chasseurs-cueilleurs qui peuplaient le sous-continent africain bien avant l'expansion Bantou (il y a environ 2 000 ans) et la colonisation europeenne (XVIIe siecle). Leurs langues a clics sont parmi les plus complexes du monde et constituaient autrefois un continuum linguistique couvrant toute l'Afrique australe.",
+      "formationPeriod": "Les groupes !Kwi (incluant les varietes Tuu du sud de l'Afrique du Sud) ont prosper? jusqu'au XVIIIe siecle, avant que la colonisation neerlandaise puis britannique ne detruise progressivement leurs communautes par la violence, le deplacement et l'acculturation. Les groupes du nord (region du Kalahari) ont resiste plus longtemps grace a l'inaccessibilite de leurs territoires.",
+      "migrationRoutes": [
+        "Expansion vers le nord dans le Kalahari sous la pression des colons neerlandais (XVIIe-XVIIIe siecles)",
+        "Deplacement force vers les reserves gouvernementales (XIXe-XXe siecles)",
+        "Migration vers les villes du Northern Cape (Upington, Olifantshoek) a partir des annees 1930"
+      ],
+      "historicalSettlementZones": [
+        "Afrique du Sud meridionale : regions du Cap, du Vaal et de l'Orange (historique, avant le XVIIIe siecle)",
+        "Northern Cape, Afrique du Sud (communautes residuelles Nǁng/ǂKhomani au XXe siecle)",
+        "Kalahari meridional, Botswana (groupes Taa/!Xoon, encore presents)"
+      ],
+      "unificationsOrDivisions": "Les groupes Tuu n'ont jamais forme d'entite politique unifiee. Ils etaient organises en petites bandes de chasseurs-cueilleurs independantes de 15 a 50 personnes, avec des territoires de chasse et de cueillette definis par la coutume. Les liens de parente et de reciprocite organisaient les alliances entre bandes.",
+      "externalInfluences": "Arrivee des eleveurs Khoekhoe (Khoikhoi) il y a environ 2 000 ans avec leurs troupeaux, entrainant des echanges linguistiques et culturels. Expansion Bantou (Tswana, Sotho) a partir du Ier millenaire de notre ere. Colonisation neerlandaise (VOC) a partir de 1652 : chasseurs et massacres systematiques des groupes San du Cap par des commandos de fermiers. Systeme d'apartheid (1948-1994) : deplacement force des ǂKhomani du Kalahari Gemsbok National Park en 1973. Processus de restitution des terres post-apartheid depuis 1994.",
+      "majorHistoricalEvents": "Massacres systematiques des groupes !Kwi dans les plaines du Cap et du Karoo aux XVIIIe et XIXe siecles. Documentation partielle du ǀXam par Wilhelm Bleek et Lucy Lloyd (1870-1880), laissant un corpus linguistique precieux (source du motto national sud-africain). Expulsion des ǂKhomani du Kalahari Gemsbok National Park en 1973, langue declaree eteinte. Redecouverte d'une vingtaine de locuteurs Nǁng dans les annees 1990. Restitution partielle de terres aux ǂKhomani San en 2002. Katrina Esau (Ouma Katrina), derniere locutrice fluente du Nǁuu (dialecte Nǁng), agee de 92 ans en 2025, enseigne encore la langue dans le Northern Cape."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation egalitaire sans hierarchie politique formelle ni chefs permanents. Les decisions sont prises par consensus au sein de la bande. L'autorite morale appartient aux anciens et aux guerisseurs (chamanes). Pas de royaumes ni d'etats dans la tradition Tuu.",
+      "clanOrganization": "Organisation en bandes de chasseurs-cueilleurs de 15 a 50 individus, liees par la parente bilaterale et les obligations de reciprocite. Chaque bande occupe un territoire de chasse et de cueillette dont les limites sont connues et respectees par les groupes voisins. Le partage de la nourriture est une obligation sociale centrale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Filiation bilaterale (reconnaissance des liens maternels et paternels). L'identite de groupe repose sur l'appartenance a la bande et aux reseaux de reciprocite plutot que sur des lignages stricts. Les mariages entre bandes voisines renforcent les alliances et l'acces aux ressources.",
+      "religiousAuthority": "Autorite spirituelle des guerisseurs-chamanes (ou danseurs de transe), qui servent d'intermediaires entre le monde des vivants et celui des esprits. Lors des ceremonies de transe (rite de guerison collectif), le guerisseur entre en contact avec les forces spirituelles pour soigner les malades et proteger la communaute."
     },
     "languages": {
-      "mainLanguage": "Gǀowa (variante Tuu)",
-      "vehicularRole": "Le gǀowa est parlé par la majorité des Gǀowa. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "Gǀowa (variete Tuu, probablement eteinte ou quasi-eteinte ; appartenant soit a la branche !Kwi soit a la branche Taa de la famille Tuu)",
+      "isoCodes": [],
+      "dialects": [
+        "Gǀowa (variete non attribuee avec certitude a une branche Tuu specifique dans la litterature disponible)",
+        "Relations de proximite avec le Nǁng (ǀʼAuni, Nǀuu) de la branche !Kwi",
+        "Relations possibles avec le Taa (!Xoon) de la branche Taa"
+      ],
+      "vehicularRole": "La langue Gǀowa, comme la majorite des langues !Kwi, a ete remplacee par l'afrikaans, le tswana et le nama (khoekhoe) sous la pression coloniale et post-coloniale. Les eventuels derniers locuteurs ou semi-locuteurs sont des personnes agees. La langue n'est plus transmise aux generations suivantes. Le groupe linguistique Tuu le plus proche encore partiellement documente est le Nǁng (Nǀuu), dont Katrina Esau est la derniere locutrice fluente en 2025."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "Danse de transe (ou danse de guerison) : ceremonie centrale de la spiritualite San, dans laquelle des guerisseurs entrent en etat modifie de conscience pour contacter le monde spirituel, soigner les malades et renforcer la cohesion sociale. Rites de passage : ceremonies de puberté feminine (premiere menstruation), mariage par echange de cadeaux entre familles, preparation et partage du premier gibier chasse par un jeune homme. Ceremonies de chasse avant la chasse collective : prières et offrandes pour demander l'autorisation des esprits.",
+      "symbols": "Art rupestre (peintures et gravures sur parois rocheuses) constitue le principal heritage symbolique des peuples San d'Afrique du Sud, representant des animaux (eland, oryx), des figures anthropomorphes et des motifs geometriques lies aux visions de transe. L'eland (antilope) est l'animal spirituel le plus important dans la cosmologie San. Le miel sauvage a une signification symbolique et rituelle majeure.",
+      "artsAndMusic": "Art rupestre exceptionnel, present dans toute l'Afrique du Sud et dans le Kalahari, documente sur des millenniaires. Musique vocale complexe incluant des chants polyphoniques en canon (style hoquetus) lors des danses de transe. Instruments de musique : arc musical a bouche (!goura ou guguwe), percussions corporelles, hochets de cocons. Contes et recits oraux riches, transmettant la cosmologie, les recits de creation, et les valeurs du groupe. Fabrication d'arcs et de fleches, de bijoux en coquilles d'oeuf d'autruche, de sacs en peau tannee.",
+      "spiritualities": "Cosmologie animiste centree sur l'existence de deux mondes : le monde visible des vivants et le monde spirituel des esprits et des puissances de potence (n/om en !Kung, similaire dans les groupes Tuu). Le Grand Dieu createur (Kaggen ou entite equivalente selon les groupes) est une figure ambivalente, createur bienveillant mais aussi trickster. Des dieux secondaires et des esprits des ancetres peuplent le monde spirituel. Le guerisseur-chamane est la figure centrale : lors de la danse de transe, il entre dans un etat d'activation de la puissance spirituelle (kia) pour guerir et proteger. L'influence chretienne a progresse parmi les descendants des groupes San a partir du XIXe siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises."
+      "kingdomsOrChiefdoms": "Aucune organisation etatique ou chefferie formelle. Les peuples Tuu ont toujours maintenu une organisation egalitaire en bandes de chasseurs-cueilleurs. Cette structure n'a pas permis de resistance organisee face a la colonisation europeenne.",
+      "relationsWithNeighbors": "Relations d'echange et parfois de tension avec les Khoekhoe (Khoikhoi), eleveurs arrives il y a 2 000 ans, avec lesquels les Tuu ont partage des mots et des pratiques culturelles. Relations complexes avec les peuples Bantou (Tswana, Sotho, Xhosa) : commerce de plantes medicinales et de produits de chasse contre betail et metal, mais aussi servitude imposee aux San dans les societes Tswana. Relations de soumission et de resistance avec les colons neerlandais et britanniques du XVIIe au XIXe siecle.",
+      "conflictsOrAlliances": "Chasse systematique et massacres des groupes San du Cap et du Karoo par des commandos de fermiers neerlandais puis anglais au XVIIIe et XIXe siecles, constituant un genocide partiel. Utilisation des San comme serviteurs et chasseurs dans les fermes coloniales. Expulsion des ǂKhomani San du Kalahari Gemsbok National Park en 1973 par le gouvernement d'apartheid. Luttes juridiques pour la restitution des terres ancestrales depuis la fin de l'apartheid (1994), avec restitution partielle obtenue en 2002.",
+      "diaspora": "Les descendants des groupes Tuu du sud de l'Afrique du Sud sont disperses dans les villes du Northern Cape (Upington, Olifantshoek, Upington), souvent integres dans la population coloured sud-africaine. Les communautes ǂKhomani San du Northern Cape constituent le principal groupe de descendants identifies. Des groupes Taa (!Xoon) avec environ 2 500 a 4 200 locuteurs subsistent dans le Kalahari (Botswana et Namibie)."
     },
     "demography": {
-      "totalPopulation": 200,
+      "totalPopulation": 0,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "La langue Gǀowa est consideree eteinte ou quasi-eteinte. Aucun locuteur identifie en 2025. La population Nǁng (groupe Tuu !Kwi le plus proche encore partiellement atteste en Afrique du Sud) se reduit a une seule locutrice fluente en 2025 (Katrina Esau, Northern Cape). Les descendants ethniques s'identifient aux communautes ǂKhomani San et a la population coloured du Northern Cape. Sorosoro/UNESCO (2008) : 8 locuteurs de Nǁng. Source principale : Wikipedia EN, Nǁng language ; Sorosoro.org.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 0,
+          "note": "Langue eteinte. Descendants eventuels dans le Northern Cape (communautes ǂKhomani San de Upington et Olifantshoek)"
+        },
+        {
+          "country": "BWA",
+          "population": 0,
+          "note": "Langue eteinte ou non attestee au Botswana. Groupes Taa voisins (!Xoon) encore presents dans le Kalahari"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Gǀowa language",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa",
-      "Études anthropologiques sur les peuples San du Kalahari"
+      "Wikipedia EN – Tuu languages. https://en.wikipedia.org/wiki/Tuu_languages",
+      "Wikipedia EN – Nǁng language. https://en.wikipedia.org/wiki/N%C7%81ng_language",
+      "Wikipedia EN – ǀXam language. https://en.wikipedia.org/wiki/%C7%80Xam_language",
+      "Wikipedia EN – ǁXegwi language. https://en.wikipedia.org/wiki/%C7%81Xegwi_language",
+      "Wikipedia EN – Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Glottolog – Tuu family. https://glottolog.org/resource/languoid/id/tuuu1241",
+      "Sorosoro – Tuu languages. https://www.sorosoro.org/en/tuu-languages/",
+      "du Plessis, Menan. Kora: A Lost Khoisan Language of the Early Cape and the Gariep. South African History Online. https://sahistory.org.za/archive/kora-lost-khoisan-language-early-cape-and-gariep-menan-du-plessis-linguistic-classification",
+      "Guldemann, Tom. 2015. Kx'a, Tuu, and Khoe foragers in the Kalahari Basin core. Max Planck Institute for Evolutionary Anthropology. https://www.eva.mpg.de/fileadmin/content_files/linguistics/conferences/2015-speaking-of-Khoisan/P2_Linguistics_Gueldemann_Tuu__Kx_a__Khoe.pdf",
+      "South African History Online – The Khoisan. https://sahistory.org.za/article/khoisan",
+      "NSF – Documenting Endangered Languages: N|uu. https://www.nsf.gov/news/documenting-endangered-languages",
+      "Wikipedia EN – List of extinct languages of Africa. https://en.wikipedia.org/wiki/List_of_extinct_languages_of_Africa"
     ]
   }
 }

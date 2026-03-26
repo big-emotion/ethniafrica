@@ -2,67 +2,114 @@
   "id": "PPL_TSWA",
   "nameMain": "Tswa",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MOZ"],
+  "currentCountries": ["MOZ", "ZWE", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Tswa",
-      "selfAppellation": "Tswa",
-      "exonyms": ["Tswa (terme utilisé par les Européens)"],
+      "selfAppellation": "Vatswa (pluriel) / Mutswa (singulier)",
+      "exonyms": [
+        "Tshwa",
+        "Xitswa speakers",
+        "Kitshwa",
+        "Hlengwe (pour le dialecte zimbabween)"
+      ],
+      "originOfExonyms": "Tswa est le terme anglophone et portugais courant. Tshwa est une graphie alternative. Le nom Vatswa est l'appellation endonymique en xitswa. La langue est appelee xitswa ou xiTswa. Les locuteurs du dialecte Hlengwe au Zimbabwe sont parfois appeles Hlengwe ou Vatswa du Zimbabwe.",
+      "whyProblematic": "Les Tswa sont souvent consideres par les recenseurs mozambicains et par les peuples voisins comme un sous-dialecte des Tsonga plutot que comme un peuple distinct. Cette ambiguite rend les donnees demographiques difficiles a etablir. La Bible de reference ecrite est basee sur la grammaire tsonga; xitswa s'en distingue par des traits phonologiques et lexicaux propres.",
+      "contemporaryUsage": "Vatswa est l'appellation endonymique. Les recensements mozambicains classent souvent les Tswa avec les Tsonga. En contexte academique et missionnaire, Tswa est distingue comme langue separee (ISO 639-3: tsc). La denomination xitswa est utilisee dans les publications chretiennes et linguistiques.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "MOZ, Afrique du Sud",
-      "currentCountries": ["MOZ"]
+      "ethnoLinguisticGroup": "Bantou (Zone S) — famille Tswa-Ronga (S.50), langue Tswa S.51",
+      "historicalRegion": "Province d'Inhambane (Mozambique meridional), province de Gaza (Mozambique), zones frontieres du Zimbabwe meridional",
+      "currentCountries": ["MOZ", "ZWE", "ZAF"]
     },
     "ethnicities": [
-      "Tswa du Mozambique",
-      "Tswa d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Dzivi (Dzibi) — principal groupe tswa, province d'Inhambane (Mozambique)",
+      "Hlengwe — groupe s'etendant vers le Zimbabwe meridional; Maho (2009) le considere comme langue separee",
+      "Mhandla — troisieme groupe principal de la confedeartion tswa",
+      "Nwanati (Makwakwa) — sous-groupe place traditionnellement au sud des Hlengwe",
+      "Nzonge (Gwambe) — sous-groupe dans la region entre les Dzivi et les Chopi"
     ],
     "origins": {
-      "ancientOrigins": "Les Tswa sont originaires de la région du Mozambique et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les ancetres des Tswa, comme ceux des autres peuples du groupe Tswa-Ronga (Tsonga, Ronga, Tswa), sont des Bantous qui migrerent depuis l'Afrique centrale (autour de 200-500 apr. J.-C.) pour s'etablir dans le Mozambique meridional. Les Tswa constituent l'une des trois branches du macro-groupe Tsonga (Vatsonga), avec les Ronga et les Tsonga/Shangaan. Leurs ancetres etaient parmi les habitants primitifs du Mozambique meridional avant le 15e siecle. Le sous-groupe Hlengwe est lie au royaume de Nyaka (Nyaka kingdom), dont l'origine est datee du 14e siecle selon le Joshua Project.",
+      "formationPeriod": "L'identite tswa distincte s'est consolidee au sein du macro-groupe Tsonga au fil des siecles, en raison de la dispersion geographique dans des zones legerement differentes du Mozambique meridional. Les Tswa habitaient principalement l'arriere-pays de la province d'Inhambane, tandis que les Ronga etaient sur la cote autour de Maputo et les Tsonga/Shangaan plus au nord. Le premier dictionnaire anglais-tswa fut publie en 1928 par le rev. J. A. Persson de la Methodist Episcopal Mission.",
+      "migrationRoutes": [
+        "Depuis l'Afrique centrale vers le Mozambique meridional (200-500 apr. J.-C.)",
+        "Installation progressive dans l'arriere-pays de la province d'Inhambane (axe ouest)",
+        "Extension du groupe Hlengwe vers le Zimbabwe meridional (province de Masvingo/Matabeleland Sud)",
+        "Migrations economiques vers les mines d'Afrique du Sud (20e siecle) et vers Maputo"
+      ],
+      "historicalSettlementZones": [
+        "Province d'Inhambane (Mozambique): principales zones rurales a l'ouest d'Inhambane — concentration la plus forte de Vatswa",
+        "Province de Gaza (Mozambique): zone frontaliere, surtout le district de Chicualacuala",
+        "Province de Maputo (Mozambique): banlieues et zone rurale au sud de Maputo",
+        "Provinces de Manica et Sofala (Mozambique): minorites",
+        "Zimbabwe meridional: district de Chiredzi et zones de Save valley (Hlengwe)"
+      ],
+      "unificationsOrDivisions": "Les trois grands groupes tswa (Dzivi, Hlengwe, Mhandla) sont reconnus par les Vatswa eux-memes comme distincts mais partageant la meme langue et des coutumes tres similaires. Les frontieres coloniales ont separe les Hlengwe entre Mozambique et Zimbabwe, comme pour de nombreux peuples de la region. Les Tswa ont ete longtemps confondus avec les Tsonga dans les recensements, ce qui a affaibli leur reconnaissance politique specifique.",
+      "externalInfluences": "Influence de l'Empire de Gaza (Soshangane, 1820s): impact sur les Tswa du Mozambique meridional, similaire aux Tsonga. Colonisation portugaise du Mozambique. Missions chretiennes methodistes episcopales (Methodist Episcopal Mission): premiere grammaire et dictionnaire tswa par le rev. J. A. Persson (1928). Christianisme protestant dominant depuis le 20e siecle. Migration de main-d'oeuvre vers les mines sud-africaines.",
+      "majorHistoricalEvents": "1820s: impact de l'expansion de l'Empire de Gaza sur le Mozambique meridional, affectant les Tswa comme les Tsonga. 1928: publication du premier dictionnaire anglais-tswa par le rev. Persson. 1975: independance du Mozambique; tous les groupes ethniques integres dans une identite mozambicaine officielle. 1977-1992: guerre civile mozambicaine devastant les provinces meridionales."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles locales, similaire au modele tsonga: un chef (hosi) dirige chaque communaute dans son territoire propre. Pas de structure centrale pan-tswa. Les decisions communautaires sont prises en conseil par les anciens. La colonisation portugaise puis le gouvernement du FRELIMO ont superpose des structures administratives modernes.",
+      "clanOrganization": "Organisation patrilineaire en clans, similar aux autres groupes du macro-groupe Tsonga. Les noms de clan remontent a des ancetres fondateurs. Le mariage est exogame (interdit au sein du meme clan). Les Tswa du Mozambique partagent de nombreux noms de clan avec les Tsonga voisins.",
+      "ageClassSystems": "Initiations de passage a l'age adulte similaires au modele tsonga, avec ecole d'initiation masculine et feminine. La transmission du savoir traditionnel (agriculture, peche, artisanat) se fait par apprentissage inter-generationnel.",
+      "roleOfLineages": "Lignages patrilineaires determinant la succession, l'appartenance clanique et les alliances matrimoniales. Les ancetres jouent un role de protection et d'orientation pour les vivants; leur veneration est centrale dans la vie spirituelle.",
+      "religiousAuthority": "Autorite des guerisseurs-devins traditionnels (n'anga), similaires au modele tsonga. Veneration des ancetres comme mediateurs spirituels. Le christianisme (protestant et catholique) est aujourd'hui dominant, la plupart des Tswa etant chretiens (IMB/Joshua Project: religion principale: religion traditionnelle africaine combinee avec le christianisme). Presence missionnaire methodiste depuis la fin du 19e siecle."
     },
     "languages": {
-      "mainLanguage": "Tswa",
-      "vehicularRole": "Le tswa est parlé par la majorité des Tswa. Le portugais, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Xitswa (Tswa)",
+      "isoCodes": ["tsc"],
+      "dialects": [
+        "Hlengwe (Lengwe, Lhenge) — s'etend vers le Zimbabwe meridional; parfois classe comme langue separee",
+        "Dzibi (Dzivi, Dzonga) — dialecte principal d'Inhambane",
+        "Mhandla — dialecte du groupe Mhandla",
+        "Nwanati (Makwakwe-Khambani) — petit sous-dialecte",
+        "Ndxhonge (Nhayi, Nyai) — dialecte du groupe Nzonge"
+      ],
+      "vehicularRole": "Le xitswa (ISO 639-3: tsc) est une langue stable du Niger-Congo, parlee par environ 1,2 a 1,4 million de personnes, principalement au Mozambique (Joshua Project 2025: 1 383 000 au Mozambique). C'est la plus proche parente du xitsonga et du ronga, les trois etant mutuellement intelligibles. Classe en Zone S du bantou. Toutes les langues Tswa-Ronga sont reconnues au Mozambique. Le portugais est la langue officielle. Une grammaire et une traduction de la Bible existent en xitswa (standardisation par le rev. J. A. Persson et des missions subsequentes)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tswa, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites de passage a l'age adulte (initiation masculine et feminine) similaires au modele tsonga. Ceremonies de mariage avec rites de dot (lobola). Rites funeraires avec veneration des ancetres. Ceremonies agricoles et de peche pour les communautes cotieres d'Inhambane. Les Tswa de la cote d'Inhambane pratiquent la peche artisanale et ont des rites lies a la mer et aux cours d'eau. Ceremonies de propitiation aux ancetres lors des periodes de maladies ou de malheurs.",
+      "symbols": "Le fleuve Save et les cotes d'Inhambane sont des reperes geographiques identitaires majeurs. La jupe de danse (similaire au xibelani tsonga) est portee lors des ceremonies. Les instruments de musique traditionnels (tambours, xylophone de type mbila) sont des symboles de la culture partagee avec les Tsonga voisins.",
+      "artsAndMusic": "Musique et danse traditionnelles proches du modele tsonga: danses feminines avec jupes de danse caracteristiques. Pratique de la musique a percussion (tambours) et du xylophone (mbila). Artisanat: vannerie, poterie. Les Tswa des zones cotieres pratiquent la construction de pirogues et la peche. Tradition orale (contes, proverbes) transmise par les anciens. L'art tswa n'est pas documente comme distinctement separe de l'art tsonga/ronga.",
+      "spiritualities": "Religion traditionnelle africaine: veneration des ancetres comme forces protectrices et guidantes. Consultation des guerisseurs-devins (n'anga) pour diagnostiquer maladies et malheurs. Croyances en esprits de la nature (des eaux, des forets). Syncretsime avec le christianisme protestant (Methodist Episcopal Mission depuis la fin du 19e siecle, puis autres denominations). Selon les sources missionnaires (IMB), la religion principale des Tswa est aujourd'hui la religion traditionnelle africaine, souvent combinees avec des pratiques chretiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tswa dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documentee specifique aux Tswa. Organisation en chefferies locales. Le sous-groupe Hlengwe est associe au royaume de Nyaka (Nyaka kingdom), dont les origines remontent au 14e siecle selon le Joshua Project. L'Empire de Gaza (Soshangane, 1820s-1895) a eu une influence sur les Tswa meridionaux du Mozambique, mais les Tswa ne faisaient pas partie de son noyau.",
+      "relationsWithNeighbors": "Relations etroites avec les Tsonga/Shangaan et les Ronga, avec lesquels les Tswa partagent la langue, l'histoire et les traditions — les trois groupes sont souvent regroupes sous le terme Vatsonga. Relations avec les Chopi (Vacopi) voisins dans la province d'Inhambane. Les Hlengwe du Zimbabwe ont des relations avec les Shona (Karanga) de la province de Masvingo. Migrations economiques vers l'Afrique du Sud, surtout les mines du Rand.",
+      "conflictsOrAlliances": "1820s: impact de l'expansion de Soshangane sur le Mozambique meridional. 1977-1992: guerre civile mozambicaine (FRELIMO vs RENAMO) devastant les provinces d'Inhambane et de Gaza, forcant de nombreux Tswa a fuir vers Maputo ou l'Afrique du Sud. La guerre civile a profondement perturbe les structures sociales et les pratiques culturelles traditionnelles.",
+      "diaspora": "Migration economique importante vers les mines d'Afrique du Sud depuis le debut du 20e siecle (recrutement de main-d'oeuvre mozabicaine). Certains Tswa sont restes en Afrique du Sud (province du Limpopo, Mpumalanga). Migration vers Maputo et Matola (banlieue). Les Hlengwe du Zimbabwe forment une petite communaute dans les districts de Chiredzi et de Save Valley."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1414000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025): Mozambique 1 383 000, Zimbabwe + Afrique du Sud estimations incertaines — total global 1 414 000. Omniglot: environ 1,2 million de locuteurs principalement au Mozambique. Wikipedia: plus d'un million de Vatswa, mais tous ne communiquent pas en xitswa.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1383000,
+          "note": "Province d'Inhambane (zone rurale a l'ouest d'Inhambane): concentration principale. Also provinces de Gaza, Maputo, Manica, Sofala et capitale Maputo."
+        },
+        {
+          "country": "ZWE",
+          "population": 25000,
+          "note": "Zimbabwe meridional (district de Chiredzi, Save Valley) — surtout groupe Hlengwe; chiffres incertains"
+        },
+        {
+          "country": "ZAF",
+          "population": 6000,
+          "note": "Province du Limpopo et Mpumalanga — migrants economiques et leurs descendants; chiffres tres incertains"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tswa language (tsc)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tswa language. https://en.wikipedia.org/wiki/Tswa_language",
+      "Omniglot — Tswa language and alphabet. https://www.omniglot.com/writing/tswa.htm",
+      "101 Last Tribes — Tswa people. https://www.101lasttribes.com/tribes/tswa.html",
+      "Joshua Project — Tswa in Mozambique (MZ). https://joshuaproject.net/people_groups/15600/MZ",
+      "PeopleGroups.org — Tswa of Zimbabwe. https://peoplegroups.org/people_groups/pg015681/",
+      "SIL Ethnologue — Tswa (tsc). https://www.ethnologue.com/language/tsc/",
+      "IMB (International Mission Board) — Tswa of Zimbabwe Flyer. https://www.imb.org/wp-content/uploads/2020/08/Tswa-Zimbabwe-Flyer.pdf",
+      "Wikipedia EN — Tsonga language (Tswa-Ronga family). https://en.wikipedia.org/wiki/Tsonga_language"
     ]
   }
 }

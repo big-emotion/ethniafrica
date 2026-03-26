@@ -6,59 +6,90 @@
   "content": {
     "appellations": {
       "mainName": "Mikea",
-      "selfAppellation": "Mikea",
-      "exonyms": ["Mikea (terme signifiant \"ceux de la forêt\")"],
+      "selfAppellation": "Vezo-Mikea ou Masikoro-Mikea (selon l'origine du groupe)",
+      "exonyms": [
+        "Mikea (terme principalement employe par les communautes exterieures pour designer les habitants de la foret)",
+        "Gens de la foret (appellation descriptive utilisee par les groupes voisins Vezo et Masikoro)"
+      ],
+      "originOfExonyms": "Le terme Mikea est principalement utilise par les communautes exterieures (Vezo, Masikoro, autorites coloniales). Les Mikea eux-memes se definissent surtout par leur appartenance d'origine (Vezo-Mikea ou Masikoro-Mikea), indiquant que l'identite Mikea decrit davantage un mode de vie qu'une ethnie distincte.",
+      "whyProblematic": "Le terme Mikea peut etre stigmatisant : les populations urbaines et rurales voisines les associent parfois a un mode de vie primitif ou les assimilent aux Vazimba legendaires. Des recherches (Blench et Walsh, 2009) ont montre que cette assimilation aux Vazimba est sans fondement linguistique.",
+      "contemporaryUsage": "Mikea est utilise dans les documents administratifs et scientifiques pour designer les communautes de chasseurs-cueilleurs de la foret de Mikea dans le sud-ouest de Madagascar.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Sud-ouest de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien, sous-groupe des dialectes malgaches meridionaux",
+      "historicalRegion": "Foret de Mikea, sud-ouest de Madagascar, entre les rivieres Fiherenana (sud) et Mangoky (nord), le long de la cote de la region Atsimo-Andrefana",
       "currentCountries": ["MDG"]
     },
-    "ethnicities": ["Mikea du Nord", "Mikea du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Mikea d'origine Masikoro (descendants de bergers et cultivateurs Masikoro fuyant les armies Merina et Sakalava aux XVIIIe-XIXe siecles)",
+      "Mikea d'origine Vezo (descendants de pecheurs Vezo adoptes dans le mode de vie forestier)",
+      "Mikea du nord (environs du lac Ihotry et de Morombe)",
+      "Mikea du sud (environs de Toliara, riviere Fiherenana)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Mikea sont originaires du sud-ouest de MDG, dans la forêt. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Tradition de chasseurs-cueilleurs.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts. Tradition de chasseurs-cueilleurs.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme."
+      "ancientOrigins": "Les Mikea ne constituent pas un groupe ethnique au sens classique mais une communaute definie par un mode de vie de chasseurs-cueilleurs. Ils descendent principalement de villageois Masikoro (eleveurs-agriculteurs sakalava) qui ont fui dans la foret a partir du debut du XIXe siecle pour echapper aux conflits militaires, a la taxation excessive et a l'oppression des armees Merina et Sakalava. Des documents coloniaux francais de 1901 decrivent deja des chasseurs-cueilleurs nommes Mikea dans le sud-ouest de l'ile.",
+      "formationPeriod": "Formation progressive a partir du XIXe siecle, avec un afflux important lors du soulievement de 1947 contre la colonisation francaise, quand des familles malgaches ont fui dans les forets. L'exploration petroliere des annees 1950-1960 a aussi pousse des villageois vers la foret en coupant des chemins dans leur territoire.",
+      "migrationRoutes": [
+        "Fuite depuis les villages Masikoro de la region Menabe vers la foret de Mikea (XIXe siecle)",
+        "Refuge dans la foret lors du soulievement anti-colonial de 1947",
+        "Mouvements saisonniers entre la lisiere de la foret (saison des pluies) et l'interieur aride (saison seche)"
+      ],
+      "historicalSettlementZones": [
+        "Foret de Mikea (foret seche decidue mixte et foret epineuse cotiere, 2 500 km2 environ)",
+        "Region entre Morombe (nord) et Toliara (sud)",
+        "Environs du lac Ihotry"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes familiaux autonomes (campements) sans structure politique centralisee. Chaque campement reunit un couple ancien, ses fils maries et leurs enfants. Les groupes se deplacent saisonnellement et se fragmentent en saison seche.",
+      "externalInfluences": "Contacts reguliers avec les Vezo (pecheurs) et les Masikoro (eleveurs-agriculteurs) dont ils partagent la langue et les traditions culturelles. Impact negatif de la deforestation et de la croissance demographique sur leur territoire. Presence d'une seule clinique de sante, acces limite aux services sociaux."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins) et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation egalitaire et decentralisee : le membre male le plus age de chaque famille elargie detient l'autorite principale de decision au sein du campement. Il n'existe pas de chef de village au sens formel, ni de structure tribale hierarchique. Les decisions collectives reposent sur le consensus informel. En pratique, les lois nationales malgaches n'atteignent pas les campements forestiers.",
+      "clanOrganization": "Organisation en groupes familiaux elargis (campements de 30 a 50 personnes en saison des pluies, fragmentes en saison seche). Tragage de lignage vers les villages du nord, sud et centre de la foret de Mikea. Nombreux ont des parents dans les villages Vezo ou Masikoro. Relation ziva (plaisanteries rituelles) avec le clan Vohitse Vanovato des Masikoro.",
+      "ageClassSystems": "Pas de systeme de classes d'age formalise. Rites de passage : savatsy (circoncision) avec ceremonies musicales specifiques, mariage par fandeo (presentation de l'homme a la famille de la fiancee), funerailles (havoaza) avec chants rituels.",
+      "roleOfLineages": "Les lignages determinent l'identite d'origine (Masikoro ou Vezo) et l'acces aux campements et territoires de chasse. Les femmes adultes rejoignent la famille du mari mais les couples partagent leur temps entre les campements des deux familles. Les enfants non reconnus par le mari sont eleves par le frere de la mere (renilahy, « mere male »).",
+      "religiousAuthority": "Chaque campement est reuni autour du mpitoka hazomanga, pretre familial charge des grandes ceremonies ancestrales. L'ombiasy (sage du campement) interprete les messages des ancetres et des esprits, conseille sur la chasse, les plantations et les deplacements de campement. Il pratique la divination sikidy."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte mikea)",
-      "vehicularRole": "Le malgache mikea est parlé par la majorité des Mikea. Le français est également utilisé."
+      "mainLanguage": "Dialecte malgache proche du masikoro et du vezo (dialectes meridionaux)",
+      "isoCodes": ["msh", "mlg"],
+      "dialects": [
+        "Parler Mikea (proche du masikoro, dialecte meridional, ISO : msh)",
+        "Dialecte Vezo-Mikea (parle par les Mikea d'origine Vezo)",
+        "Malgache standard (compris comme langue de contact avec l'exterieur)"
+      ],
+      "vehicularRole": "Le dialecte Mikea est tres proche du masikoro (msh) et du vezo, tous deux appartenant au sous-groupe des dialectes sakalava meridionaux. Pas de variete standardisee distincte. Le malgache officiel (plateau, plt) et le francais sont utilises lors des contacts avec l'administration. Les Mikea sont generalement multilingues dans les dialectes de leurs voisins Vezo et Masikoro."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées à la chasse et à la cueillette",
-      "Symboles": "Symboles liés à la forêt, symboles liés à la chasse, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Culte des ancêtres (razana)."
+      "majorRites": "Havoaza (funerailles) : ceremonies accompagnees de chants et musiques rituelles specifiques. Savatsy (circoncision) : rite de passage masculin avec chants et danses d'accompagnement. Bilo (ceremonies de guerison) : seances rituelles pour traiter les maladies liees aux esprits, avec musique et possession. Tromba (possession par les esprits royaux) : pratique partagee avec les groupes voisins Vezo et Masikoro. Fandeo (mariage) : ceremonie de legitimation par la presentation de l'homme a la famille de la fiancee et remise de presents. Ceremonies de chasse et de recolte des tubercules : invocations aux esprits de la foret avant les grandes expeditions.",
+      "symbols": "Ndrianazo (grand esprit maitre de la foret) : divinite protectrice supreme de la foret. Koko (esprits de la foret) aux endroits naturels sacres. Babo et ovy (tubercules sauvages) : symboles de survie et d'adaptation au milieu forestier. Masques en dents et cheveux humains (rarissimes a Madagascar) utilises lors de ceremonies. Langoro (tambours tubulaires) et jejy lava (instrument a corde resonateur en courge, joue par les hommes).",
+      "artsAndMusic": "Musique vocale (sifflets, chants, cris) combinee aux percussions (frapper des mains, djembe, langoro). Jejy lava : instrument a corde, resonateur en calebasse, joue a l'archet par les hommes. Marovany : cithare de caisse (plus rare). Valiha : cithare tubulaire en bambou utilisee lors des rituels ancestraux (le joueur recoit un tribut fomba). Chants specifiques a chaque categorie de rituel : tromba, bilo, ringa (arts martiaux), savatsy, havoaza. Fabrication de masques avec dents et cheveux humains (pratique unique a Madagascar). Tissage de nattes vendues sur les marches Vezo et Masikoro.",
+      "spiritualities": "Croyance en Andrianajanahary (dieu createur). Culte des ancetres (razana) central. Esprits de la foret (koko) associes a des endroits sacres (grottes, arbres). Ndrianazo, seigneur de la foret, est l'esprit le plus venere. Ceremonies avec rhum (symbolique spirituelle). Divination sikidy pratiquee par l'ombiasy pour conseiller sur la chasse, les deplacements et les ceremonies. Sacrifice de zebus lors des grandes ceremonies ancestrales. Peu de conversions au christianisme en raison de l'eloignement geographique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mikea dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume ni de chefferie formelle. Organisation en groupes familiaux autonomes sans structure politique centralisee. Les Mikea relevent historiquement du territoire des royaumes Sakalava (Menabe) sans y etre integres politiquement. Leur existence est documentee par les autorites coloniales francaises des 1901.",
+      "relationsWithNeighbors": "Interdependance symbiotique avec les Vezo (pecheurs) et les Masikoro (eleveurs-agriculteurs sakalava) : echanges de produits forestiers (tubercules, miel, animaux) contre des vetements, des medicaments et des outils. Embauche pour garder les troupeaux de zebus ou travailler dans les champs de mais. Vente de nattes tressees et d'animaux de chasse sur les marches villageois. De nombreux Mikea ont des proches dans les villages Vezo et Masikoro. Stigmatisation sociale persistante : les habitants des villes et villages les considerent souvent comme primitifs.",
+      "conflictsOrAlliances": "Fuite des armees Merina et Sakalava au XIXe siecle : origine du peuplement de la foret. Population gonflant lors du soulievement anti-colonial de 1947. Impact negatif de l'exploration petroliere des annees 1950-1960 qui a ouvert des pistes dans leur territoire. Menace actuelle de la deforestation et des projets de conservation (flux d'ONG depuis les annees 1980).",
+      "diaspora": "Certains Mikea quittent periodiquement la foret pour travailler dans les villages ou les villes voisines (Toliara, Morombe) comme saisonniers agricoles ou vendeurs de produits forestiers, avant de retourner en foret."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 3000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Estimation de 1 500 individus s'identifiant comme Mikea en 1991 (source principale : etudes anthropologiques de l'Universite de Michigan). Plusieurs centaines dans les annees 1950 suggere une croissance modeste. Le nombre reel est difficile a etablir car l'identite Mikea est flexible et variable selon le degre de dependance a la foret. Estimation 2025 : 2 000 a 4 000 individus vivant principalement ou partiellement de la chasse-cueillette en foret.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 3000,
+          "notes": "Concentres dans et autour de la foret de Mikea, entre Morombe et Toliara, region Atsimo-Andrefana"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches"
+      "Wikipedia EN - Mikea people : https://en.wikipedia.org/wiki/Mikea_people",
+      "Wikipedia EN - Malagasy language : https://en.wikipedia.org/wiki/Malagasy_language",
+      "SIL Ethnologue - Masikoro Malagasy (msh) : https://www.ethnologue.com/language/msh/",
+      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
+      "Blench, R. et Walsh, M. (2009) - Faunal names in Malagasy : their etymology and implications for the prehistory of the East African coast, etude sur les substrats linguistiques Mikea",
+      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "Banque mondiale - Madagascar donnees demographiques : https://data.worldbank.org/country/madagascar"
     ]
   }
 }

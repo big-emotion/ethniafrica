@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_BURUNGE",
   "nameMain": "Burunge",
   "languageFamilyId": "FLG_COUCHITIQUE",
@@ -6,54 +11,69 @@
   "content": {
     "appellations": {
       "mainName": "Burunge",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
-      "currentCountries": ["TZA"]
+      "selfAppellation": "Burunge",
+      "exonyms": ["Burungi", "Bulunge", "Mbulungi", "Mbulungwe", "Waburungi"],
+      "originOfExonyms": "Waburungi est la forme swahilie du nom du peuple, préfixée par le préfixe de classe bantu Wa- désignant un groupe humain. Mbulungwe et Mbulungi sont des variantes dialectales utilisées dans les régions avoisinantes de Tanzanie. Bulunge est une forme raccourcie documentée dans certaines sources coloniales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Burunge ou Burungi est utilisé dans les documents administratifs tanzaniens et dans la littérature académique. Waburungi est la désignation swahilie standard. La langue est désignée Kiburunge en swahili."
     },
-    "ethnicities": ["Burunge"],
+    "ethnicities": ["Burunge", "Couchitiques du Sud de Tanzanie"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Burunge appartiennent au groupe des Couchitiques du Sud de Tanzanie, une grappe de peuples dont les ancêtres sont originaires du sud de l'Éthiopie. Les études linguistiques indiquent une longue période d'isolement et de différenciation linguistique depuis leur migration, suggérant une présence en Tanzanie depuis au moins 3 000 ans.",
+      "formationPeriod": "Vers 1000 avant notre ère, les ancêtres des Burunge ont migré depuis le sud de l'Éthiopie vers le nord-est de la Tanzanie. Après leur installation, l'ancienne culture burunge s'est organisée autour de l'agriculture de subsistance et de l'élevage bovin.",
+      "migrationRoutes": [
+        "Migration depuis le sud de l'Éthiopie vers le plateau central de Tanzanie, vers 1000 avant notre ère",
+        "Installation dans la région de Dodoma, district de Chemba, au nord-est de la Tanzanie"
+      ],
+      "historicalSettlementZones": [
+        "District de Chemba, région de Dodoma, Tanzanie centrale",
+        "Environs des villages de Langi, Goima, Chambalo et Mirambu",
+        "Région de la savane arbustive du centre-nord de la Tanzanie"
+      ],
+      "unificationsOrDivisions": "Les Burunge constituent un groupe relativement petit et homogène, sans divisions majeures documentées. Ils vivent à proximité de locuteurs d'autres langues comme les Rangi, les Gogo et les Sandawe. La pression des clans Rangi, plus nombreux, a conduit à l'absorption progressive de nombreux Burunge.",
+      "externalInfluences": "La domination du swahili en Tanzanie depuis l'indépendance en 1961, combinée à la pression des clans Rangi voisins, constitue la principale influence externe menaçant la survie culturelle et linguistique des Burunge. La création de Zones de Gestion de la Faune (Wildlife Management Areas) autour du Parc National de Tarangire a privé les Burunge d'une partie de leurs terres agricoles et de pâturage.",
+      "majorHistoricalEvents": "Migration ancestrale depuis le sud de l'Éthiopie vers la Tanzanie vers 1000 avant notre ère. Pratique ancienne de peintures rupestres, tradition partagée avec les Sandawe voisins. Intégration progressive dans l'État tanzanien post-indépendance avec perte graduelle de l'identité culturelle. Classement de leur langue comme en danger par le projet Endangered Languages."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Burunge sont organisés selon un système clanique traditionnel sans chefferie centralisée documentée. Les décisions communautaires sont prises par les anciens du clan. La structure sociale est menacée par l'absorption progressive des membres Burunge dans le clan Rangi plus nombreux.",
+      "clanOrganization": "Le clan burunge compte environ 13 000 membres selon certaines sources. Les Rangi ont des sous-groupes ouverts aux hommes Burunge qui, une fois intégrés, doivent abandonner leur identité burunge, épouser une femme Rangi et élever leurs enfants dans la culture Rangi. Ce processus d'absorption a réduit considérablement le nombre de Burunge s'identifiant comme tels.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages déterminent l'appartenance clanique et les droits fonciers traditionnels. Le maintien de l'identité Burunge est étroitement lié à la transmission de la langue et des pratiques culturelles au sein des familles.",
+      "religiousAuthority": null
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Burunge (bds)",
+      "isoCodes": ["bds"],
+      "dialects": [],
+      "vehicularRole": "La langue Burunge n'a pas de dialectes connus. Elle appartient à la branche couchitique du sud de la famille afro-asiatique et présente une grande similarité avec l'Alagwa, autre langue couchitique parlée dans la même région de Dodoma. La langue est classifiée comme en danger par le Endangered Languages Project (Glottolog: buru1320). Le swahili est la lingua franca utilisée pour les communications interethniques et avec l'administration tanzanienne."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": "Les Burunge et les Sandawe voisins partagent une tradition de peintures rupestres, témoignage d'une culture ancienne dans la région du centre-nord de la Tanzanie. Ces représentations sont parmi les rares traces artistiques documentées de ce peuple.",
+      "spiritualities": null
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Burunge vivent à proximité immédiate des Rangi, Gogo et Sandawe. Leurs relations avec les Rangi sont marquées par un processus d'absorption culturelle et linguistique : de nombreux Burunge ont rejoint les clans Rangi au fil des décennies. Avec les Sandawe, ils partagent des pratiques culturelles ancestrales, notamment la tradition de peintures rupestres.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 35000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia Burunge language (28 000 locuteurs en 2007) / Wikipedia Burunge people (30 000 en 2007) – estimation 2025 incluant croissance démographique modérée et absorption partielle",
+      "distributionByCountry": [
+        { "country": "TZA", "population": 35000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Burunge people – Wikipedia EN, 2006 (https://en.wikipedia.org/wiki/Burunge_people)",
+      "Burunge language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Burunge_language)",
+      "Burunge – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/buru1320)",
+      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Burunge – Encyclopedia Britannica (https://www.britannica.com/topic/Burunge)",
+      "Burunge tribe – Tanzania Cultural Tours (https://www.hadzabetribe.com/burunge-tribe/)"
+    ]
   }
 }

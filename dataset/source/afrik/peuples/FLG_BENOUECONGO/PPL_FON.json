@@ -1,22 +1,99 @@
 {
   "id": "PPL_FON",
-  "nameMain": "",
+  "nameMain": "Fon",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["TGO"],
+  "currentCountries": ["BEN", "TGO"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Fɔ̀ngbè / Fon",
+      "mainName": "Fon",
+      "selfAppellation": "Fɔ̀ngbè / Fon nu (les gens du Fon)",
+      "exonyms": [
+        "Dahomeans (littérature coloniale française)",
+        "Fon nu",
+        "Agadja (terme historique)"
+      ],
+      "originOfExonyms": "Le terme Dahomeans provient du royaume de Dahomey, nom de l'État fon dominant. Le terme Fon nu signifie simplement les gens fon en langue fon.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Fon est le terme courant utilisé au Bénin et dans la littérature académique contemporaine.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "currentCountries": ["TGO"]
+      "ethnoLinguisticGroup": "Gbe oriental (branche Kwa du Niger-Congo)",
+      "historicalRegion": "Sud et centre du Bénin (ancien Dahomey) ; région d'Abomey, Ouidah, Allada",
+      "currentCountries": ["BEN", "TGO"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (fon)", "Archives du Royaume d’Abomey"]
+    "ethnicities": [
+      "Fon proprement dits (Agbomenu) — région d'Abomey, plateau central du Bénin",
+      "Gouns (Goun) — autour de Porto-Novo, capitale du Bénin",
+      "Glexwe — région de Ouidah (côte atlantique)",
+      "Alada — région d'Allada, première implantation Aja-Fon",
+      "Agbome — cœur du plateau d'Abomey",
+      "Maxi (Mahi) — Fon du nord, résistants au royaume de Dahomey"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fon descendent des Aja de Tado (royaume aja sur la frontière Togo-Bénin actuelle). Leurs ancêtres les plus anciens, les Agassouvis, étaient la classe dirigeante de Tado. Une dispute de succession au sein de la royauté aja (ville d'Allada, début XVIIe siècle) poussa un groupe conduit par Do-Aklin, fils du roi Ajahouto, à migrer vers le nord jusqu'au plateau d'Abomey.",
+      "formationPeriod": "Vers 1620 de notre ère — fondation du royaume de Dahomey par Do-Aklin sur le plateau d'Abomey. Le groupe se fondit avec les populations Oyo-nu (Yoruba/Igede appelés Gedevi par les Aja) présentes sur le plateau, formant ainsi l'identité fon.",
+      "migrationRoutes": [
+        "Tado (Togo) vers Allada (Bénin côtier) — migration des ancêtres Aja",
+        "Allada vers le plateau d'Abomey (nord) — migration fondatrice du Dahomey (v. 1620)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Abomey (capitale historique)",
+        "Plaine côtière : Allada, Ouidah (Slave Coast)",
+        "Environs de Porto-Novo (Gouns)",
+        "Zones rurales du Bénin méridional"
+      ],
+      "unificationsOrDivisions": "Le royaume de Dahomey a progressivement conquis et unifié les populations fon et aja voisines (prise d'Allada années 1720, accès à l'Atlantique via Ouidah sous Agaja). Les Mahi (Fon du nord) ont longtemps résisté à l'autorité de Dahomey.",
+      "externalInfluences": "Relations commerciales intenses avec les Européens (Portugal, France, Angleterre) via la Côte des esclaves. Tribut versé à l'empire Oyo pendant plus d'un siècle. Colonisation française à partir de 1892. Influence islamique au nord et christianisme au sud depuis le XIXe siècle.",
+      "majorHistoricalEvents": "Règne d'Agaja (mort 1740) : expansion du Dahomey jusqu'à la mer. Règne de Ghezo (1818-1859) : apogée du royaume après défaite de l'Oyo. Guerre contre la France (1890) menée notamment par les Agojie (Amazones du Dahomey). Annexion française (1892) et création de la colonie du Dahomey. Indépendance en 1960 sous le nom de Dahomey, renommé Bénin en 1975."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie héréditaire centralisée : le roi (Houégbadja, Agaja, Ghezo...) exerce un pouvoir absolu sur le royaume de Dahomey. Les villages sont dirigés par des chefs héréditaires. L'aristocratie fon a su s'adapter à l'administration coloniale française en rejoignant les rangs des administrateurs.",
+      "clanOrganization": "Société patrilinéaire. Le foyer typique comprend un autel ancestral (Dexoxo) où sont vénérés les ancêtres du lignage. Les clans royaux d'Abomey (Agassouvis) constituent l'élite historique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le statut social, les droits fonciers et les obligations rituelles. La royauté du Dahomey est transmise par voie patrilinéaire dans la famille Agassouvi.",
+      "religiousAuthority": "Les prêtres Vodun (houngan, mambo) jouent un rôle central dans la vie communautaire. Le 10 janvier est déclaré fête officielle nationale du Bénin dédiée aux dieux Vodun. Les chefs religieux président aux grandes cérémonies, aux offrandes et à la possession par les esprits."
+    },
+    "languages": {
+      "mainLanguage": "Fon (Fɔ̀ngbè)",
+      "isoCodes": ["fon"],
+      "dialects": [
+        "Fongbe proprement dit (Abomey-Bohicon, standard)",
+        "Goun (Porto-Novo) — variante distincte",
+        "Gun (Guwn) — variante côtière",
+        "Maxi Gbe (Mahi) — variante septentrionale",
+        "Glexwe — dialecte de Ouidah"
+      ],
+      "vehicularRole": "Le fon est la principale langue véhiculaire du Bénin méridional et central, parlé par environ 40% de la population du Bénin. Utilisé dans les marchés, les cérémonies Vodun et l'enseignement primaire. L'alphabet Gbékoun a été inventé par Togbédji Adigbè pour transcrire les langues du Bénin."
+    },
+    "culture": {
+      "majorRites": "Le calendrier rituel Vodun structure la vie fon : cérémonies de possession (prêtres et médiums reçoivent les esprits lors des grands festivals), funérailles élaborées avec percussions et danses (peuvent durer plusieurs jours), anniversaires de décès. Chaque foyer possède un autel ancestral (Dexoxo). La fête nationale du Vodun (10 janvier) réunit des pèlerins du monde entier à Ouidah. Les Agojie (femmes soldats) avaient leurs propres rites d'initiation militaire et spirituelle.",
+      "symbols": "Le trône d'Abomey et les bas-reliefs polychromes du palais royal (UNESCO). Les statuettes en bois pour le culte ancestral. Le symbole de la royauté : le sceptre et les habits de soie de l'aristocratie. Le serpent arc-en-ciel Aïdo Hwedo (Aido Wedo), associé à la cosmologie Vodun.",
+      "artsAndMusic": "Sculpture sur bois (statuettes ancestrales, portes sculptées du palais d'Abomey, inscrites au patrimoine UNESCO). Tapisseries (appliqués d'Abomey) retraçant l'histoire des rois. Poterie, tissage, travail du métal (ustensiles, pas d'art décoratif métallique). Tambours sacrés pour induire la possession lors des cérémonies Vodun. Les rythmes fon ont influencé les traditions afro-diasporiques : Arará (Cuba), Yanvalou (Haïti). Danse rituelle de possession.",
+      "spiritualities": "Religion Vodun (aussi Vodoun, Vodzu, Vodu) : système polythéiste structuré. Divinité suprême féminine : Nana Buluku (créatrice de l'univers, mère de Mawu-Lisa). Mawu-Lisa (Lune-Soleil, couple féminin-masculin) : divinités créatrices de l'humanité. Légba : dieu trickster, gardien des carrefours et médiateur. Aïdo Hwedo : serpent cosmique primordial. Offrandes et rituels pour apaiser les divinités secondaires et changer le destin. Le Vodun fon a profondément influencé le Vodou haïtien, le Candomblé brésilien et d'autres religions afro-diasporiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Dahomey (v. 1620-1894) : l'un des États les mieux organisés d'Afrique de l'Ouest. Fondé par Do-Aklin sur le plateau d'Abomey, étendu jusqu'à l'Atlantique sous Agaja (v. 1724). Apogée sous Ghezo (1818-1859) après la défaite de l'empire Oyo. Capital : Abomey (aujourd'hui site du patrimoine mondial de l'UNESCO). Grandes villes : Allada (premier établissement), Ouidah (port négrier), Bohicon, Porto-Novo.",
+      "relationsWithNeighbors": "Conflits récurrents avec l'empire Oyo (paiement de tributs jusqu'à la chute d'Oyo v. 1820). Relations commerciales avec les Européens (Portugal, France, Angleterre). Expansion par conquête sur les peuples Aja, Mahi, Whydah et Allada voisins. Relations hostiles puis de coexistence avec les Yoruba de Porto-Novo.",
+      "conflictsOrAlliances": "Guerres contre l'Oyo (soumission puis renversement). Résistance aux Français : guerre de 1890 (Amazones Agojie contre les troupes françaises), capitulation et annexion en 1892. Participation active à la traite négrière transatlantique depuis Ouidah (vente des captifs de guerre yoruba, aja, ewe et mahi).",
+      "diaspora": "La diaspora fon-vodun est présente en Haïti (communauté Rada, rites Yanvalou), à Cuba (Arará), au Brésil (Candomblé Jeje), en Trinité-et-Tobago et dans les Antilles françaises. En France métropolitaine, les Fon font partie des communautés béninoises. Présence en Gabon, au Ghana et au Togo."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Wikipedia EN (3 500 000), Joshua Project (2 368 000 au Bénin, 2 523 000 toutes zones), The World of Info (Bénin : 40% des 14,7M hab. = env. 5,8M pour le groupe Fon-Aja élargi). Estimation 2025 pour les Fon stricto sensu : 4 millions.",
+      "distributionByCountry": [
+        { "country": "BEN", "population": 3700000 },
+        { "country": "TGO", "population": 200000 },
+        { "country": "Autres (NGA, GHA, FRA)", "population": 100000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Fon people : https://en.wikipedia.org/wiki/Fon_people",
+      "SIL Ethnologue — Fon language (fon) : https://www.ethnologue.com/language/fon/",
+      "Joshua Project — Fon in Benin : https://joshuaproject.net/people_groups/11222/BN",
+      "Encyclopaedia Britannica — Fon : https://www.britannica.com/topic/Fon-people",
+      "Kutubu Arts — The Fon People of Benin: History and Culture from the Dahomey Kingdom : https://kutubuarts.com/blogs/african-art-curated/fon-history-and-culture",
+      "African American Registry — The Fon People, a story : https://aaregistry.org/story/the-fon-people-a-brief-story/",
+      "UNESCO — Palais royaux d'Abomey (patrimoine mondial) : https://whc.unesco.org/fr/liste/323/"
+    ]
   }
 }

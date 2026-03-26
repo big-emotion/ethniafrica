@@ -2,63 +2,102 @@
   "id": "PPL_MANDINKA",
   "nameMain": "Mandinka",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["GMB"],
+  "currentCountries": ["GMB", "SEN", "GNB"],
   "content": {
     "appellations": {
       "mainName": "Mandinka",
-      "selfAppellation": "",
+      "selfAppellation": "Mandinka (endonyme en Senegambie)",
       "exonyms": [
-        "Mandinka (terme utilisé par les Européens), Mandingue (forme française), \"Mandingo\" (terme historique, parfois péjoratif)"
+        "Mandingue (forme française)",
+        "Mandingo (terme historique anglais, parfois pejoratif)",
+        "Malinke (forme utilisee en Guinee et au Mali pour le meme groupe)",
+        "Mandinko",
+        "Maninka"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Mandinka est le nom propre du peuple en Senegambie. Mandingue est la forme française derivee du meme radical. Mandingo est un exonyme europeen du XVe siecle introduit par les Portugais lors de leurs premiers contacts commerciaux sur la cote ouest-africaine.",
+      "whyProblematic": "DOUBLON PROBABLE : cette fiche (PPL_MANDINKA, PPL_MANDINGUE) decrit le meme peuple que PPL_MANDINKA, PPL_MALINKE.json. Les deux fichiers partagent le meme id PPL_MANDINKA et traitent du meme groupe ethno-linguistique Mandinka/Malinke. La difference reside uniquement dans la zone geographique de focus : cette fiche est centree sur la Gambie (currentCountries: [GMB]) tandis que l'autre fiche couvre l'ensemble de l'Afrique de l'Ouest (Liberia, Mali, Guinee, etc.). Il est recommande de fusionner ces deux fiches ou de renommer celle-ci en PPL_MANDINKA_GMB pour eviter la collision d'identifiants.",
+      "contemporaryUsage": "Mandinka est la denomination officielle en Gambie, ou ce peuple constitue le plus grand groupe ethnique. Mandingue est la forme utilisee en Afrique francophone. Les deux formes renvoient au meme continuum ethnolinguistique.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Toutes les régions de la GMB, majoritaires",
-      "currentCountries": ["GMB"]
+      "ethnoLinguisticGroup": "Mande du Nord, groupe Manding",
+      "historicalRegion": "Toutes les regions de la Gambie (majoritaires), Casamance (Senegal), Guinee-Bissau"
     },
-    "ethnicities": ["Mandinka"],
+    "ethnicities": ["Mandinka", "Mandingue"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Toutes les régions de la GMB, majoritaires"
+      "ancientOrigins": "Les Mandinka descendent des peuples fondateurs de l'empire du Mali. Leur berceau est le Manden, sur le haut Niger. Le clan Camara (Kamara) est considere comme le plus ancien. Selon la tradition orale recueillie en Guinee-Bissau : Nous venons de Tumbuktu en pays mandinka, les Arabes etaient nos voisins... Tous les Mandinka sont venus du Mali pour aller a Kaabu.",
+      "formationPeriod": "XIIIe siecle : unification sous Sundiata Keita (le roi-lion). Migration vers la Senegambie menee par le general Tiramakhan Traore dans la seconde moitie du XIIIe siecle pour creer le Kaabu (Gabou) en Guinee-Bissau. Implantation progressive le long du fleuve Gambie.",
+      "migrationRoutes": [
+        "Du Mali (Manden) vers la Senegambie par migration militaire sous Tiramakhan Traore (XIIIe siecle)",
+        "Installation le long du fleuve Gambie formant 14 royaumes au debut du XIXe siecle",
+        "Expansion vers la Guinee-Bissau (Kaabu/Gabou)"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Toutes les regions de la Gambie (majoritaires)",
+        "Casamance (sud du Senegal)",
+        "Guinee-Bissau"
+      ],
+      "unificationsOrDivisions": "Les Mandinka de Senegambie ont forme 14 royaumes autonomes le long du fleuve Gambie au debut du XIXe siecle. Le royaume du Kaabu (Gabou, en Guinee-Bissau) a ete le principal centre de pouvoir mandinka en Senegambie, avant sa destruction par les Peul en 1867.",
+      "externalInfluences": "Contact avec les Portugais depuis le XVe siecle (traite d'esclaves et d'ivoire). Influence islamique croissante depuis le XVIIIe siecle. Colonisation britannique (Gambie) et portugaise puis portugaise/francaise (Guinee-Bissau et Casamance). Jihad peul contre le Kaabu (1867).",
+      "majorHistoricalEvents": "Fondation du Kaabu/Gabou (XIIIe siecle). Commerce avec les Portugais (XVe siecle). Traite transatlantique : environ 33% des esclaves expedies depuis la Senegambie etaient Mandinka. Destruction du Kaabu par les Peul (1867). Independance de la Gambie (1965)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Villages organises sur la base de groupes claniques, avec un chef (headman) et un conseil d'anciens. La lu (famille etendue) est l'unite de base. Un dugu (village) est forme de plusieurs lu. Un kafu (confederation) regroupe plusieurs villages sous un kafu-tigi. Le patriarche le plus age dirige le lignage.",
+      "clanOrganization": "Trois divisions sociales : hommes libres (noblesse, paysans, marchands, clercs musulmans), artisans (forgerons, tisserands de cuir, griots ; reveres pour leur savoir-faire impliquant des rituels spirituels ; vus avec crainte et admiration), et descendants d'esclaves. Les griots (jalolu) transmettent les traditions orales et l'heritage culturel.",
+      "ageClassSystems": "Rite de passage Kuyangwoo pour les garcons et les filles (4-14 ans) : circoncision et excision (en voie d'abandon pour les filles sous pression des organisations de droits humains), sejour de 3-4 semaines en brousse, apprentissage des responsabilites adultes, celebration du retour.",
+      "roleOfLineages": "Societe patrilineaire. L'homme le plus age dirige le lignage mineur (homme et famille immediate). Le lignage majeur inclut les maisons des freres et de leurs families. Les hommes du meme nom de clan se regroupent dans les assemblees rituelles.",
+      "religiousAuthority": "Imams et marabouts (hommes saints) exercent l'autorite religieuse. Les marabouts ecrivent des versets coraniques dans des amulettes de cuir (talismans) pour la protection. Peu de Mandinka manquent d'une amulette ou d'un gris-gris. La religion melange islam malikite sunnite et croyances traditionnelles."
     },
     "languages": {
       "mainLanguage": "Mandinka (mnk)",
       "isoCodes": ["mnk"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Mandinka standard (Gambie)",
+        "Variantes en Casamance (Senegal)",
+        "Variantes en Guinee-Bissau"
+      ],
+      "vehicularRole": "Le mandinka est la lingua franca de la Gambie, ou il est parle par environ 41% de la population (premiere ethnie). Il appartient au continuum manding mutuellement intelligible avec le malinke, le dioula et le bambara. L'ajami (ecriture mandinka en caracteres arabes) est repandue. Le mandinka est enseigne a l'universite de Gambie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Kuyangwoo (rite de passage, 4-14 ans). Ceremonies de nomination de l'enfant (huitieme jour, nomme en hommage a un membre important de la famille). Mariages arranges avec noix de cola, service prematrimonial et dot. Polygamie (jusqu'a 4 epouses). Ceremonie annuelle du taureau noir pour les divinites ancestrales.",
+      "symbols": "La kora (harpe-luth a 21 cordes, faite d'une calebasse seche et de peau de vache ou de chevre) est le symbole culturel le plus emblematique. Elle accompagne le chant des griots et peut etre jouee seule. Les amulettes de cuir contenant des versets coraniques sont des symboles de protection.",
+      "artsAndMusic": "Riche tradition orale : epopees (Sunjata Keita), proverbes, contes preserves par les griots. Instruments : kora, balafon, ngoni, tam-tam. Hospitalite comme valeur supremum (l'egosme et le manque d'hospitalite sont les peches les plus graves). Petites maisons en boue avec toits coniques de chaume.",
+      "spiritualities": "Islam sunnite malikite majoritaire. En Gambie, prevalence tres elevee de l'islam. En Guinee-Bissau, 35% musulmans, plus de 20% chretiens, 15% croyances traditionnelles. Syncrétisme frequent : consultation des marabouts pour guerisons, decisions, protection. Croyances en esprits controles par les marabouts. L'hospitalite est un devoir religieux et social."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume du Kaabu/Gabou (XIIIe-1867) : centre de pouvoir mandinka en Senegambie, detruit par les Peul. 14 royaumes le long du fleuve Gambie (debut XIXe siecle). Contribution a l'empire du Mali (XIIIe-XVIe siecle).",
+      "relationsWithNeighbors": "Echanges commerciaux avec les Wolof, les Peul, les Sereres et les peuples de la foret. Conflits avec les Peul (jihads, destruction du Kaabu en 1867). Commerce avec les Portugais depuis le XVe siecle. Relations parfois conflictuelles avec les Joola (Diola) de Casamance.",
+      "conflictsOrAlliances": "Traite transatlantique (XVIe-XIXe siecle) : les Mandinka de Senegambie representaient environ 33% des esclaves expedies depuis cette region. Jihad peul : destruction du Kaabu (1867). Resistance a la colonisation britannique et portugaise.",
+      "diaspora": "Presence dans la diaspora africaine-americaine (descendants d'esclaves au Bresil, aux Caraibes, en Amerique du Nord). Migration contemporaine vers l'Europe (Espagne, Portugal, France, Angleterre) et l'Amerique du Nord. Les Mandinka forment des communautes importants en Espagne (Catalogne, Madrid) et en France."
     },
     "demography": {
-      "totalPopulation": 900,
+      "totalPopulation": 2000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (1 157 000 en Gambie seule, 2024) ; estimation pour la Senegambie (Gambie + Casamance + Guinee-Bissau). Note : cette fiche se concentre sur la zone senegambienne ; pour la population totale Mandinka/Malinke en Afrique de l'Ouest (15 millions), voir PPL_MANDINKA, PPL_MALINKE.json",
+      "distributionByCountry": [
+        {
+          "country": "GMB",
+          "population": 1157000,
+          "note": "Premier groupe ethnique de Gambie (~41% de la population) ; Joshua Project 2024"
+        },
+        {
+          "country": "SEN",
+          "population": 600000,
+          "note": "Principalement en Casamance et dans l'est senegalais"
+        },
+        {
+          "country": "GNB",
+          "population": 250000,
+          "note": "Mandinka en Guinee-Bissau, avec forte composante chretienne et animiste"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Mandinka people – Wikipedia EN (https://en.wikipedia.org/wiki/Mandinka_people)",
+      "Mandingues – Wikipedia FR (https://fr.wikipedia.org/wiki/Mandingues)",
+      "Mandinka in Gambia – Joshua Project (https://joshuaproject.net/people_groups/13491/ga)",
+      "Peoples of the World – The Indigenous Mandinka People (https://www.peoplesoftheworld.org/text?people=Mandinka)",
+      "Mali Empire – Wikipedia EN (https://en.wikipedia.org/wiki/Mali_Empire)",
+      "Malinke – Wikipedia FR (https://fr.wikipedia.org/wiki/Malink%C3%A9)",
+      "L'amenagement linguistique au Liberia – Universite Laval (https://www.axl.cefan.ulaval.ca/afrique/liberia.htm)"
+    ]
   }
 }

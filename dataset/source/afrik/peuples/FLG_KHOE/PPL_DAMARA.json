@@ -7,61 +7,104 @@
     "appellations": {
       "mainName": "Damara",
       "selfAppellation": "ǂNūkhoen",
+      "exonyms": ["Bergdamara", "Daman", "Damaqua", "ǂNūkhoen (khoekhoegowab)"],
+      "originOfExonyms": "Le terme Bergdamara (montagnards de Dama) est d'origine allemande, refletant leur longue residence dans les zones montagneuses de Namibie. Daman et Damaqua sont des variantes historiques europeennes. ǂNūkhoen signifie en khoekhoe les gens noirs, designation propre en khoekhoegowab.",
+      "whyProblematic": "Le terme Bergdamara (ou Berg Damara) a une connotation coloniale et etait utilise pour distinguer les Damara noirs des Khoekhoe (souvent vus comme plus clairs). Cette categorisation reflete les biais raciaux de la periode coloniale allemande et sud-africaine.",
+      "contemporaryUsage": "Damara est le terme officiel utilise en Namibie. ǂNūkhoen est l'auto-denomination traditionnelle en khoekhoegowab. Les Damara constituent un groupe constitutionnellement reconnu en Namibie.",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "Khoe central",
-      "historicalRegion": "Namibie",
+      "ethnoLinguisticGroup": "Khoe central, dialecte Nama-Damara du khoekhoegowab",
+      "historicalRegion": "Namibie centrale et nord-ouest (Damaraland actuel, Erongo, Khomas Hochland)",
       "currentCountries": ["NAM"]
     },
     "ethnicities": [
-      "Damara du Nord",
-      "Damara du Sud",
-      "Sous-groupes régionaux"
+      "ǀKhomanîn — Damara des hauts plateaux de Khomas Hochland, autour de Windhoek (>40,000 en 1854)",
+      "Dâuredaman — Damara de Brandberg (Dâureb), region de l'Erongo",
+      "ǀGowanîn — Damara des dunes du Kalahari (ǀGowas/ǀŪmâs)",
+      "ǁHûadaman — Damara de la riviere Huab",
+      "ǃNamidaman — Damara du Namib desert, entre Ugab et Kunene",
+      "ǃKhuisedaman — Damara de la riviere Kuiseb (embouchure a Walvis Bay)",
+      "ǂAodaman — Damara des marges (entre Kamanjab, Outjo et Otavi)",
+      "ǃOeǂgân — Damara de l'Erongo (Twyfelfontein, Usakos)",
+      "Aoguwun — Damara du Kaokoveld (sud de Sesfontein)",
+      "Animîn — Damara de la region d'Okahandja",
+      "ǃGarinîn — Damara de la riviere Orange (les plus meridionaux)",
+      "Tsoaxudaman — Damara de la vallee du Swakop",
+      "ǃHâuǁnain — Damara des rivieres Orange et Molopo, Namibie SE"
     ],
     "origins": {
-      "ancientOrigins": "Les Damara sont originaires de la Namibie. Leur présence dans la région remonte à plusieurs millénaires. Ils sont historiquement liés aux populations khoisan.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoekhoe, bantous et européens, influence du christianisme et des croyances traditionnelles."
+      "ancientOrigins": "Les Damara sont, avec les San, les plus anciens habitants de Namibie. Les ecrits font remonter leur presence documentee au 14e siecle (1390), confirmee par des donnees archeologiques et ethnologiques. Leur tradition orale affirme une origine depuis ǁKhaus (la Foret equatoriale pluviale) via ǃĀǂkhib. Ils s'etablirent initialement entre le Kunene (Huriǂnaub) et le Kavango (ǃGûǁōb), penetrerent l'Ovamboland (ǀNaweǃhūb), puis migrerent vers le sud jusqu'aux regions du Brandberg, des Paresis, du Waterberg, d'Otavi, Erongo et de l'Ugab. Les etudes genetiques indiquent une origine de locuteurs bantous qui ont adopte une langue et une culture differentes, ce qui explique leur profil genetique proche des Herero et Himba voisins.",
+      "formationPeriod": "En 1600, des envahisseurs menes par Mukumbi (Mûtsixubi) attaquerent les Damara. Le roi (Gaob) ǀNarimab mourut de ses blessures. Les Damara se disperserent en plusieurs groupes territoriaux. Une grande faction fuit vers le sud, atteignit la riviere Orange (ǃGarib), puis remonta vers le nord vers 1670. Vers 1640, la lignee royale documentee debuta avec le Gaob ǁAruseb. Cette dispersion a fonde les 34 clans territoriaux actuels.",
+      "migrationRoutes": [
+        "Origine presumee au nord (Foret equatoriale, ǁKhaus) via ǃĀǂkhib vers le Kunene et le Kavango",
+        "Migration vers le sud a travers l'Ovamboland jusqu'au Brandberg, Paresis, Waterberg",
+        "Fuite vers la riviere Orange (ǃGarib) vers 1600 suite a l'invasion de Mukumbi",
+        "Remontee vers le nord vers 1670 avec etablissement des groupes territoriaux autour du Waterberg"
+      ],
+      "historicalSettlementZones": [
+        "Damaraland (Khorixas, Twyfelfontein, Sesfontein, Kamanjab) — nord-ouest de la Namibie actuelle",
+        "Khomas Hochland et Windhoek — centre-est de la Namibie",
+        "Erongo (Okombahe, Usakos, Omaruru) — centre-ouest",
+        "Region du Waterberg et environs",
+        "Vallee du Swakop et cote (Walvis Bay)",
+        "Paresis Mountains et Outjo",
+        "Namibie meridionale jusqu'a la riviere Orange"
+      ],
+      "unificationsOrDivisions": "Les Damara sont organises en 34 clans territoriaux, chacun dirige par un chef (kapein). Un roi supreme (Gaob) exerce l'autorite sur l'ensemble. Les divisions en clans distincts resultent de la dispersion post-1600. Malgre ces divisions, une identite commune (langue, culture, roi) a ete maintenue. La periode coloniale (1884-1990) et le bantustan de Damaraland (1960) ont renforce l'identite commune en resposte aux politiques de separation.",
+      "externalInfluences": "Domination par les Nama et les Herero apres la dispersion de 1600 (beaucoup vivaient comme serviteurs). Colonisation allemande (1884-1915): les Damara furent forces dans la servitude. Mandat sud-africain (1915-1990): creation du bantustan de Damaraland (1960) sur des terres arides. Guerre de liberation namibienne (1966-1990). Independance de la Namibie (1990): reconnaissance constitutionnelle des droits des groupes ethniques.",
+      "majorHistoricalEvents": "Bataille et dispersion de 1600 (invasion de Mukumbi, mort du roi ǀNarimab). Lignee royale documentee depuis Gaob ǁAruseb (1640). Domination par Nama et Herero (17e-19e siecles). Colonisation allemande et soumission de la plupart des groupes. Guerre des Hereros (1904-1908): certains groupes Damara fuirent avec les Herero vers le Botswana (ǀGaiodaman). Creation du bantustan de Damaraland (1960). Independance namibienne (1990) et election de Justus ǁGaroëb comme premier roi constitutionnellement reconnu."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Monarchie clanique: chaque clan est dirige par un chef (kapein), avec un roi supreme (Gaob) au-dessus de tous. Succession royale documentee depuis Gaob ǁAruseb (1640) jusqu'a Gaob Justus ǀUruhe ǁGaroëb (1977-present). Les chefs ont des pouvoirs administratifs et judiciaires dans leur territoire. Le roi symbolise l'unite nationale Damara.",
+      "clanOrganization": "34 clans territoriaux identifies, chacun associe a une region geographique specifique. Les noms de clans refletent leur localisation historique (ex: Dâuredaman = Damara de Brandberg; ǃKhuisedaman = Damara de la riviere Kuiseb). Structure patrilineaire: l'identite clanique, les droits fonciers et les privileges sont transmis par le pere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires controlant les droits fonciers et l'identite. En milieu rural, les familles etendues (jusqu'a 100 personnes) vivent ensemble en villages familiaux. Les hommes gerent le betail et les terres, les femmes les taches domestiques, le jardinage et l'elevage laitier.",
+      "religiousAuthority": "Autorité religieuse des pretres traditionnels et shamans communautaires. Influence significative du christianisme (lutheranisme introduit par les missions rhenanes du 19e siecle). La tradition islamique est peu presente. Les chefs et le roi ont aussi un role de mediation spirituelle."
     },
     "languages": {
-      "mainLanguage": "Damara (Khoekhoe)",
-      "vehicularRole": "Le damara est parlé par la majorité des Damara. L'afrikaans et l'anglais sont également utilisés."
+      "mainLanguage": "Khoekhoe (khoekhoegowab, dialecte Nama-Damara)",
+      "isoCodes": ["naq"],
+      "dialects": [
+        "Nama-Damara — dialecte principal partage avec les Nama",
+        "ǁHuruben — dialecte distinct des Damara de la riviere Huab (Twyfelfontein)",
+        "Gaub Damara — sous-variante regionale",
+        "Sesfontein — sous-variante du nord-ouest",
+        "Namidama — sous-variante du Namib"
+      ],
+      "vehicularRole": "Le khoekhoegowab (Nama-Damara) est la langue maternelle des Damara et l'une des langues nationales officielles de la Namibie. Environ 200,000 locuteurs natifs (Namibia). L'afrikaans sert de lingua franca dans les zones rurales de Namibie. L'anglais est langue officielle de l'education et de l'administration. Beaucoup de Damara sont trilingues (khoekhoe, afrikaans, anglais)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels damara, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam."
+      "majorRites": "Rites de passage masculins sans circoncision: les garcons passent par une elaboree ceremonie de chasse en deux etapes (premiere pour devenir homme, deuxieme pour devenir ancien du clan). Pour les filles, reclusion lors de la premiere menstruation dans la maison familiale. Les enfants des deux sexes portent des ǃgaes (pagne-tablier couvrant les genitaux). Les filles subissent le rite ǂgaeǂnoas (percage des oreilles avec fil noir, puis insertion des ǃgamdi, boucles d'oreilles). Ceremonies funeraires avec rites communautaires. Ceremonies de reconciliation entre clans.",
+      "symbols": "Couleurs symboliques: vert, blanc et bleu (vert et bleu pour les sous-groupes; blanc pour la paix et l'unite). Tenue traditionnelle distinctive selon age, sexe et statut marital: ǁnaweb (pagne homme non-marie), sorab + danakhōb (homme marie), ǀgâubes + ǀawiǃgaes (femme mariee), ǃgūb (jupe femme agee). Parures: ǃgamdi (boucles d'oreilles), ǁnûib (collier d'oeufs d'autruche), ǃganudi (bracelets), ǃgoroǃkhuidi (chevilleres en fer, cuivre, perles). Cosmétiques traditionnels: ǃnau-i (fond de teint), boro (ocre rouge), ǀīǃnâ (parfum de bochu).",
+      "artsAndMusic": "Artisanat metallurgique: les Damara etaient historiquement des fondeurs de cuivre et forgerons (ornements, bijoux, couteaux, pointes de lances en fer et cuivre). Tenue contemporaine: Damarokoes (robe cheville a longues manches + chale ǃkhens), d'influence missionnaire (epouses des missionnaires, milieu 19e siecle). Musique de percussions et chants lors des ceremonies. Danse traditionnelle communautaire. Poterie et artisanat de peaux (vetements en peau de springbok, chevre; couvertures en peau de mouton/chacal). Living Museum of the Damara pres de Twyfelfontein: reconstitution de la culture traditionnelle.",
+      "spiritualities": "Dieu supreme ǁGamab (ǁGammāb, le donneur d'eau): vit dans le ciel superieur au-dessus des etoiles; associe aux nuages, au tonnerre, a la foudre, a l'eau, au renouveau saisonnier, aux animaux sauvages et a la croissance des recoltes; considere egalement comme le Dieu de la Mort (ses fleches causent maladies et mort). Apres la mort, les ames rejoignent son village, se rassemblent autour d'un feu rituel et boivent de la graisse liquide comme recompense. Croyance en la propriete communale de la terre (Dieu l'a donnee a tous). Influence croissante du lutheranisme depuis le 19e siecle, pratique par la majorite des Damara aujourd'hui."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques namibiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora damara dans les grandes villes namibiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Monarchie clanique avec 34 clans et un roi supreme (Gaob). Lignee royale documentee depuis 1640: Gaob ǁAruseb (1640), ǀNarimab (1665), ǃGariseb (1715), ǀNawabeb (1740), Xamseb (1790, resident a Windhoek), Kai Gaob ǃGausib ǁGuruseb (1812), Abraham ǁGuruseb (1865), Cornelius Goreseb (1880), Judas Goreseb (1910), David Goreseb (1953), Justus ǀUruhe ǁGaroëb (1977-present).",
+      "relationsWithNeighbors": "Relations de tension et de subordination avec les Nama et les Herero (17e-19e siecles), qui exploitaient les Damara comme serviteurs. Contacts avec les Ovambo au nord. Interactions avec les Herero et Nama lors de la colonisation allemande. Relations modernes de cooperation au sein de la Namibie independante.",
+      "conflictsOrAlliances": "Bataille de 1600 contre les envahisseurs de Mukumbi. Periode de domination par Nama et Herero (17e-19e siecles). Certains groupes Damara (ǀGaiodaman) fuirent avec les Herero vers le Botswana lors de la guerre de 1904. Bantustan de Damaraland sous l'apartheid namibien (1960-1990). Liberation et reconnaissance constitutionnelle apres 1990.",
+      "diaspora": "Migration massive vers les villes namibiennes (Windhoek, Swakopmund, Walvis Bay, Omaruru) au cours du 20e siecle. La majorite des Damara vivent desormais dans les petites villes de l'Erongo ou a Windhoek, plutot que dans les regions rurales de Damaraland."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 169254,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements namibiens, SIL Ethnologue, et études démographiques"
+      "source": "Recensement de la Namibie 2023 (NSA, publie octobre 2024): population totale 3,022,401; les Damara represented 5.6% = environ 169,254. The Namibian (novembre 2024): confirmation du pourcentage. Ancienne estimation 8.5% basee sur recensement 2011 (NSA).",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 169254,
+          "note": "Majoritairement dans les regions de Erongo (Okombahe, Omaruru), Kunene (Khorixas, Sesfontein, Kamanjab), Khomas (Windhoek) et Hardap. Environ la moitie encore dans l'ancien Damaraland."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Damara language (naq)",
-      "CIA World Factbook – Namibia",
-      "Recensements namibiens",
-      "Études anthropologiques sur les peuples khoisan"
+      "Wikipedia EN – Damara people: https://en.wikipedia.org/wiki/Damara_people",
+      "Wikipedia EN – Khoekhoe language: https://en.wikipedia.org/wiki/Khoekhoe_language",
+      "SIL Ethnologue – Khoekhoe language (naq): https://www.ethnologue.com/language/naq/",
+      "Namibia Statistics Agency – 2023 Population and Housing Census Main Report: https://nsa.org.na/census/wp-content/uploads/2024/10/2023-Population-and-Housing-Census-Main-Report-28-Oct-2024.pdf",
+      "The Namibian – Aakwanyama, Aandonga and Ovaherero named largest ethnic groups (2024): https://www.namibian.com.na/aakwanyama-aandonga-and-ovaherero-named-largest-ethnic-groups-in-namibia-2023-census/",
+      "Bradshaw Foundation – The Damara People: https://www.bradshawfoundation.com/africa/namibia/damara/index.php",
+      "Tsammalex – Khoekhoe/Damara language: https://tsammalex.clld.org/languages/naq-d",
+      "101 Last Tribes – Damara people: https://www.101lasttribes.com/tribes/damara.html"
     ]
   }
 }

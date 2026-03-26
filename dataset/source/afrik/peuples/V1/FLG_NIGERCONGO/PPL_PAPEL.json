@@ -1,0 +1,64 @@
+{
+  "id": "PPL_PAPEL",
+  "nameMain": "Papel",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Papel",
+      "selfAppellation": "Papel",
+      "exonyms": ["Papel (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (sous-groupe du Niger-Congo)",
+      "historicalRegion": "Guinée-Bissau",
+      "currentCountries": ["GIN"]
+    },
+    "ethnicities": ["Papel du Nord", "Papel du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Papel sont originaires de la région de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Papel",
+      "vehicularRole": "Le papel est parlé par la majorité des Papel. Le portugais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles culturels papel, symboles islamiques et chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (tambours, flûtes)",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Artisanat (tissage, poterie)",
+      "source_7": "Littérature orale",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora papel dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Papel language (pbo)",
+      "CIA World Factbook – Guinea-Bissau",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples atlantiques"
+    ]
+  }
+}

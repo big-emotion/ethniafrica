@@ -1,0 +1,68 @@
+{
+  "id": "PPL_SONGHAY_GURMA",
+  "nameMain": "Songhay Gurma",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["BFA", "BEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Songhay Gurma",
+      "selfAppellation": "Songhay Gurma",
+      "exonyms": ["Songhay Gurma (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay",
+      "historicalRegion": "BFA, BEN",
+      "currentCountries": ["BFA", "BEN"]
+    },
+    "ethnicities": [
+      "Songhay Gurma du Burkina Faso",
+      "Songhay Gurma du Bénin",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Songhay Gurma sont originaires du Burkina Faso et du BEN, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples songhay.",
+      "externalInfluences": "Contacts avec les peuples gur et autres groupes, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Songhay Gurma (variété songhay)",
+      "vehicularRole": "Le songhay gurma est parlé par la majorité des Songhay Gurma. Le français est utilisé dans l'éducation et l'administration."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Symboles islamiques, symboles culturels songhay.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture songhay gurma."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques burkinabé et béninoises.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora songhay gurma dans les grandes villes burkinabé et béninoises, et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Songhay Gurma language",
+      "CIA World Factbook – BFA, Benin",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples songhay"
+    ]
+  }
+}

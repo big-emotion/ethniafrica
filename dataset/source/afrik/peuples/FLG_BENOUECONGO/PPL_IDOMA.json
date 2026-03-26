@@ -7,68 +7,96 @@
     "appellations": {
       "mainName": "Idoma",
       "selfAppellation": "Idoma",
-      "exonyms": ["Idoma (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Idoma (terme adopte par l'administration coloniale britannique)"
+      ],
+      "originOfExonyms": "Le terme Idoma est d'usage courant depuis la periode coloniale britannique. Le nom signifie selon la tradition orale « nous sommes arrives » ou « nous nous sommes installes ».",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Idoma est universellement accepte et utilise tant par les Idoma eux-memes que par les institutions nigerianes.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "Idomoid (sous-groupe du Bénoué-Congo)",
-      "historicalRegion": "Centre du Nigeria (État de Benue)",
+      "ethnoLinguisticGroup": "Idomoid (sous-groupe Akweya du Benoue-Congo)",
+      "historicalRegion": "Centre-sud du Nigeria, bassin de la Benoue et de la Cross River (actuel etat de Benue)",
       "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Idoma central",
-      "Idoma du Nord",
-      "Idoma du Sud",
-      "Idoma de l'Est",
-      "Idoma de l'Ouest",
-      "Agatu",
-      "Otukpo"
+      "Otukpo — groupe central, berceau de l'Och'Idoma",
+      "Agatu — groupe septentrional, zone de transition avec les Tiv",
+      "Apa — groupe ancestral revendiquant l'origine du Kwararafa",
+      "Ogbadibo — groupe occidental",
+      "Ohimini — groupe central",
+      "Ado — groupe meridional",
+      "Okpokwu — groupe occidental",
+      "Obi — groupe oriental",
+      "Oju — groupe oriental frontalier avec la Cross River"
     ],
     "origins": {
-      "ancientOrigins": "Les Idoma sont originaires de la région du centre du NGA, dans l'actuel État de Benue. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Tiv et les Igala.",
-      "externalInfluences": "Contacts avec les peuples voisins (Tiv, Igala, Igbo), influence du christianisme, et plus récemment de l'islam et de la modernisation."
+      "ancientOrigins": "Les Idoma sont originaires du royaume de Kwararafa (Okolofa), une confederation multietnique situee dans l'actuel etat de Taraba. La tradition orale designe Iduh comme ancetre fondateur, dont les descendants ont fonde les principales communautes : Agabi a Otukpo, Eje a Oglewu, Edeh a Edumoga. Des traces de fonte du fer datant du Ve siecle ont ete retrouvees en Idomaland, temoignant d'une civilisation ancienne.",
+      "formationPeriod": "La formation identitaire idoma s'est consolidee entre le XVe et le XVIIe siecle, apres l'eclatement du Kwararafa sous la pression des envahisseurs du nord. Les migrations vers le sud de la Benoue ont fixe les groupes dans leurs territoires actuels entre 1600 et 1800.",
+      "migrationRoutes": [
+        "Depuis le Kwararafa (actuel Taraba) vers le sud, au-dela de la riviere Benoue",
+        "Certains groupes du Otukpo viennent d'Idah (Igalaland) et de la peripherie nord de l'Igboland",
+        "Etablissements dans les vallees de la Benoue et de la Cross River"
+      ],
+      "historicalSettlementZones": [
+        "Zone principale : ouest de l'etat de Benue (9 zones de gouvernement local : Ado, Agatu, Apa, Obi, Ohimini, Ogbadibo, Oju, Okpokwu, Otukpo)",
+        "Dispersions secondaires dans les etats de Nasarawa, Kogi, Enugu et Cross River"
+      ],
+      "unificationsOrDivisions": "Les Idoma n'ont jamais forme un Etat centralise. Ils etaient organises en 22 communautes independantes gouvernees par des chefs locaux (Oche). La chefferie supreme de l'Och'Idoma a ete instauree par l'administration coloniale britannique en 1948 pour coordonner les 22 groupes sous une autorite unifiee.",
+      "externalInfluences": "Contacts et liens linguistiques et culturels avec les Igala a l'ouest et les Igbo au sud-est. L'islam et le christianisme ont progressivement penetre la region depuis le XIXe siecle. La colonisation britannique (a partir des annees 1920) a introduit l'education occidentale et transforme les structures politiques.",
+      "majorHistoricalEvents": "Disintegration du Kwararafa (XVIIe siecle) et migrations vers le sud ; contacts et heurts avec les Jukun et les Hausa-Fulani ; integration dans le Nigeria colonial britannique (annees 1920) ; creation de l'etat de Benue en 1976 ; tensions intercommunautaires avec les Tiv dans la region de la Benoue (XXe-XXIe siecles)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels (och'Idoma). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Systeme de chefferies independantes gouvernees par un Oche (chef-pretre, garant de l'ordre et de la loi). Le Och'Idoma, institue en 1948 avec l'aide britannique, est le chef suprême de tout le peuple idoma ; il reside a Otukpo. Chaque communaute dispose d'un conseil d'anciens (igabo, titulaires hereditaires) qui conseille l'Oche.",
+      "clanOrganization": "Structure clanique patrilineaire. Les lignages (umunna patrilineaires) constituent l'unite de base. Les clans sont regroupes par zones geographiques correspondant aux neuf zones de gouvernement local en Idomaland.",
+      "ageClassSystems": "Organisation en classes d'age conferant des roles et responsabilites specifiques : les jeunes guerriers (hommes en age de combattre) assurent la protection de la communaute, des fermes et des forets, et font respecter la loi.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, les droits fonciers (l'Oche est Ond'aje, proprietaire de la terre) et les alliances matrimoniales. La solidarite lignagere est essentielle pour les rites funeraires, les mariages et la resolution des conflits.",
+      "religiousAuthority": "L'Oche est aussi chef spirituel et pretre de l'Aje (divinite de la terre). Les pretres traditionnels et les guerisseurs (dibia) jouent un role d'intermediaires avec les ancetres (Alekwu) et les esprits (Anjenu, esprits de l'eau ; Ejembi, esprit gardien)."
     },
     "languages": {
       "mainLanguage": "Idoma",
-      "vehicularRole": "L'idoma est parlé par la majorité des Idoma. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé."
+      "isoCodes": ["idu"],
+      "dialects": [
+        "Idoma central (Otukpo, Ohimini)",
+        "Idoma occidental (Okpokwu, Ogbadibo)",
+        "Idoma meridional (Ado)",
+        "Idoma septentrional (Agatu, Apa)",
+        "Akweya (Akpa — Otukpo)",
+        "Ufia (Utonkon — Ado)"
+      ],
+      "vehicularRole": "L'idoma est la langue maternelle de la grande majorite des Idoma. L'anglais est la langue d'enseignement et d'administration. Le pidgin english nigerien est largement utilise dans les echanges commerciaux interethniques."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels (Igede Festival, New Yam Festival)",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Masques traditionnels, symboles culturels idoma, art idoma.",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle (tambours, flûtes)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "source_8": "Littérature orale",
-      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam."
+      "majorRites": "Festival Alekwu (Eje Alekwu, 15-25 decembre) : mascarades incarnant les ancetres Alekwu, danses rituelles Okanga guidant les ancetres vers la maison, sacrifices (chevres, bovins, volailles), festins communaux. Rites de passage (naissance, puberte, mariage, mort). Festival de la recolte (Agila Festival, Owulo Festival, Okwojo Ngwo Festival). Festival alimentaire annuel celebrant les femmes et la cuisine traditionnelle (soupe Okoho).",
+      "symbols": "Masques traditionnels : Oglinye (masque de guerrier, bois et metal), Ichahoho (masque bicolore noir et blanc), masques ancestraux textiles (unaaloko royal, alekwuafia). Tenue traditionnelle a rayures rouges et noires symbolisant la royaute et la force. Chaise a trois pieds (ukonobo) reservee aux anciens. Baton de commandement de l'Oche (okwute).",
+      "artsAndMusic": "Sculpture sur bois (masques, statues, montants de portes, mortiers). Tissage et teinture (coton, indigo Etu, tissu opa pour les rites). Poterie et vannerie. Performances musicales Ode (5 cornes, 2 tambours, bois fendu, hochet) et Okpirigidi (flutes, tambours, hochets). Danse Ogirinya (saut energique sur les orteils). Chants Ijerije, Odugba, Eje Ete. Tradition orale : contes, proverbes, genealogies recitees sur quatre generations.",
+      "spiritualities": "Croyances traditionnelles centrees sur Owoicho (Dieu supreme), les ancetres Alekwu (garants de la morale, punissant les transgresseurs), les esprits Anjenu (esprits de l'eau), et Aje (divinite de la terre). Adoption massive du christianisme (catholicisme et protestantisme) depuis le XXe siecle. Presence plus limitee de l'islam dans les zones septentrionales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes. Système de chefferie traditionnel avec l'Och'Idoma comme chef suprême.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora idoma dans les grandes villes nigérianes (Lagos, Abuja, Makurdi) et dans les pays occidentaux (États-Unis, Royaume-Uni)."
+      "kingdomsOrChiefdoms": "Les Idoma etaient organises en 22 chefferies independantes, sans Etat centralise. Leur territoire ancestral de l'Apa faisait partie du Kwararafa, une confederation puissante qui resistait aux invasions Hausa-Fulani jusqu'au XVIIe siecle. La chefferie d'Otukpo (royaume d'Otukpo) emerge comme centre politique important au XVIIe siecle.",
+      "relationsWithNeighbors": "Relations complexes avec les Tiv voisins (alliances et tensions foncières), liens de parenté et d'échanges culturels avec les Igala à l'ouest, et contacts commerciaux et matrimoniaux avec les Igbo au sud-est. Conflits historiques avec les peuples du nord (Jukun, Hausa) ayant provoque les migrations ancestrales.",
+      "conflictsOrAlliances": "Participation au Kwararafa (confederation defensive contre les expansions Hausa et Jukun). Resistance a la colonisation britannique dans les annees 1920. Tensions intercommunautaires avec les Tiv sur les terres agricoles dans l'etat de Benue au XXe siecle.",
+      "diaspora": "Diaspora idoma presente dans les grandes villes nigerianes (Lagos, Abuja, Makurdi, Port Harcourt) et dans la diaspora internationale (Etats-Unis, Royaume-Uni, Europe). Les Idoma forment des associations culturelles actives pour preserver leur patrimoine."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 3500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigérians, CIA World Factbook, et études démographiques"
+      "source": "Estimation 2025 basee sur le recensement nigerien de 2006 (1 307 647 dans l'etat de Benue) et les projections demographiques. Sources : recensements nationaux du Nigeria, Wikipedia Idoma people, iambenue.com",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 3500000,
+          "note": "Principalement dans l'etat de Benue ; minorites dans les etats de Nasarawa, Kogi, Enugu et Cross River"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Idoma language (idu)",
-      "CIA World Factbook – Nigeria",
-      "Armstrong, Robert G. – *The Idoma-Speaking Peoples*",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples du centre du Nigeria"
+      "Wikipedia — Idoma people : https://en.wikipedia.org/wiki/Idoma_people",
+      "Ethnologue (SIL International) — Idoma language (idu) : https://www.ethnologue.com/language/idu/",
+      "Britannica — Idoma : https://www.britannica.com/topic/Idoma",
+      "iambenue.com — Idoma People of Benue State : http://www.iambenue.com/benue-state/ethnic-composition/idoma-people-of-benue-state/",
+      "Armstrong, Robert G. — The Idoma-Speaking Peoples, 1955",
+      "Joshua Project — Idoma in Nigeria : https://joshuaproject.net/people_groups/12182",
+      "Recensements nationaux du Nigeria (NPC), 2006"
     ]
   }
 }

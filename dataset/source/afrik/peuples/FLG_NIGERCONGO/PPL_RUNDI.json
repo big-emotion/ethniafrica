@@ -1,69 +1,124 @@
 {
   "id": "PPL_RUNDI",
-  "nameMain": "Rundi (locuteurs)",
+  "nameMain": "Rundi (Barundi)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["BDI", "COD", "TZA"],
+  "currentCountries": ["BDI", "COD", "TZA", "RWA"],
   "content": {
     "appellations": {
-      "mainName": "Rundi (locuteurs)",
-      "selfAppellation": "Rundi",
-      "exonyms": ["Rundi (terme utilisé par les Européens)"],
+      "mainName": "Rundi (Barundi)",
+      "selfAppellation": "Barundi (pluriel) / Murundi (singulier)",
+      "exonyms": [
+        "Barundi (terme bantou usuel : ba- prefixe de pluriel + Rundi, du nom du royaume d'Urundi)",
+        "Rundi (abreviation internationale courante)",
+        "Burundais (appellation francaise nationale)",
+        "Habitants du Burundi / peuple du Burundi"
+      ],
+      "originOfExonyms": "Le terme 'Rundi' derive du nom du royaume precolonial 'Urundi' (Ubwami bw'Urundi en kirundi : Royaume d'Urundi), dont le nom est lui-meme d'origine incertaine mais ancree dans la tradition orale du royaume. Le prefixe bantou 'ba-' forme 'Barundi' (peuple de l'Urundi). Le terme 'Burundi' (avec le prefixe bu- designant le pays) a ete adopte a l'independance en 1962. Les groupes Hutu, Tutsi et Twa qui composent la population partagent tous l'identite Barundi et parlent le Kirundi.",
+      "whyProblematic": "La denomination 'Rundi' peut etre interpretee soit comme designation linguistique (locuteurs du kirundi), soit comme designation ethnique (peuple du Burundi). La distinction entre Hutu, Tutsi et Twa a ete instrumentalisee par les colonisateurs allemands et belges qui ont durci des categories sociales autrefois plus fluides, contribuant aux tensions qui ont conduit aux genocides de 1972 et 1993. Il est scientifiquement errone de traiter Hutu et Tutsi comme des 'races' separees : tous deux parlent Kirundi, partagent la culture rundi et sont genetiquement tres proches. Les distinctions etaient historiquement socio-economiques (agriculteurs vs eleveurs de betail) et poreuses.",
+      "contemporaryUsage": "Le terme 'Barundi' est l'auto-designation collective. 'Murundi' designe un individu. 'Kirundi' est la langue. La constitution burundaise reconnait l'identite nationale 'burundaise' regroupant Hutu, Tutsi et Twa. Depuis les accords d'Arusha (2000) et la constitution de 2005, des quotas ethniques formels existent dans les institutions politiques et militaires pour garantir la representation des trois composantes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "BDI, COD, TZA",
-      "currentCountries": ["BDI", "COD", "TZA"]
+      "ethnoLinguisticGroup": "Bantou Rwanda-Rundi (Zone D / J, classification Guthrie D.62 / JD.62)",
+      "historicalRegion": "Burundi historique (Ubwami bw'Urundi / Royaume d'Urundi) — plateau central de l'Afrique des Grands Lacs, a l'est du Congo, entre le lac Tanganyika a l'ouest et la Tanzanie a l'est, au sud du Rwanda. Le royaume, forme au 16e siecle, constitue le territoire de reference. La region s'etend aussi sur les zones frontaliers du Congo (Sud-Kivu) et de la Tanzanie (region de Kigoma).",
+      "currentCountries": ["BDI", "COD", "TZA", "RWA"]
     },
     "ethnicities": [
-      "Locuteurs rundi du Burundi",
-      "Locuteurs rundi de RDC",
-      "Locuteurs rundi de Tanzanie",
-      "Autres locuteurs rundi"
+      "Hutu (Bahutu) — categorie sociale historiquement associee a l'agriculture ; environ 80-85% de la population du Burundi ; terme designe une position socio-economique et non une origine raciale distincte",
+      "Tutsi (Batutsi / Watutsi) — categorie sociale historiquement associee a l'elevage de betail et a l'aristocratie ; environ 14-18% de la population ; les Tutsi-Banyaruguru (nord) et les Tutsi-Bahima (sud) forment les deux sous-groupes principaux",
+      "Twa (Batwa) — categorie designant les populations de petite stature, historiquement chasseurs-cueilleurs et potiers ; moins de 1% de la population ; anciennement appeles Pygmees, terme aujourd'hui juge denigrant",
+      "Ganwa — aristocratie royale distincte des Tutsi ordinaires ; princes du sang mwami ; ne se consideraient pas comme Tutsi ni comme Hutu",
+      "Tutsi-Banyaruguru — sous-groupe tutsi du nord, dominant la cour royale precoloniale",
+      "Tutsi-Bahima (Tutsi-Hima) — sous-groupe tutsi du sud, dominant depuis l'independance"
     ],
     "origins": {
-      "ancientOrigins": "Les locuteurs rundi sont originaires de la région du BDI, de la RDC et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une langue commune (rundi).",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Barundi descendent des populations bantou de la region des Grands Lacs d'Afrique orientale. Les trois composantes — Hutu, Tutsi et Twa — cohabitent dans la region depuis au moins 500 ans, selon les sources historiques et archeologiques. Les Twa sont probablement les habitants les plus anciens de la region, chasseurs-cueilleurs qui se sont progressivement sedentarises au contact des agriculteurs bantou. Les Hutu agriculteurs bantou sont arrives en plusieurs vagues de migration. Les Tutsi, probablement d'origine pastorale et d'Afrique de l'Est, se sont integres a ces populations. Des etudes genetiques modernes (Tishkoff et al., 2009) montrent que la differentiation genetique entre Hutu et Tutsi est tres faible, confirmant leur origine commune et la nature essentiellement socio-economique de la distinction.",
+      "formationPeriod": "Le Royaume d'Urundi (Ubwami bw'Urundi) a emerge dans la seconde moitie du 16e siecle sur les hauts plateaux de l'est de la Rift Valley. Le premier mwami (roi) documente est Ntare I Rushatsi (vers 1675-1705), qui a etendu son autorite de la region centrale de Nkoma sur les territoires voisins. Sous Ntare II Rugaamba (vers 1795-1852), le royaume a connu sa plus grande expansion, atteignant le sud du Rwanda actuel et l'ouest de la Tanzanie. L'organisation politique etait decentralisee, avec des princes (ganwa) jouissant d'une semi-autonomie locale.",
+      "migrationRoutes": [
+        "Migrations proto-Bantou vers la region des Grands Lacs depuis le bassin du Congo — 1er millenaire de l'ere commune",
+        "Etablissement des populations Hutu agricoles sur le plateau burundais — avant le 15e siecle",
+        "Arrivee progressive de groupes pastoraux (ancetres des Tutsi) depuis le nord-est — 15e-16e siecles",
+        "Expansion du Royaume d'Urundi sous Ntare I (17e siecle) et Ntare II (debut 19e siecle) vers le Rwanda, la Tanzanie et le Congo"
+      ],
+      "historicalSettlementZones": [
+        "Plateau central burundais (altitudes 1500-2500 m) — coeur demographique historique",
+        "Region du Nkoma (Gitega) — berceau du Royaume d'Urundi",
+        "Rives du lac Tanganyika — zone cotiere peuplee de longue date",
+        "Plaines de l'Imbo (Bubanza, Bujumbura) — bassins agricoles",
+        "Zones frontalières : Sud-Kivu (COD), Kigoma (TZA), sud du Rwanda (RWA)"
+      ],
+      "unificationsOrDivisions": "Le Royaume d'Urundi a unifie les differentes communautes Hutu, Tutsi et Twa sous l'autorite du mwami (roi) et de sa cour. Le systeme d'ubugabire (relation de clientele patron-client, mi-18e siecle) a formalise les liens entre l'aristocratie Tutsi-Banyaruguru et les masses rurales Hutu et Tutsi ordinaires, en echange de protection royale et d'acces a la terre. La periode coloniale (alemande 1885-1919, belge 1919-1962) a transforme les categories sociales fluides en categories rigides, favorisant systematiquement les Tutsi sur les Hutu. L'independance (1962) et la republique (1966) ont inaugure des cycles de violences inter-composantes. Les accords d'Arusha (2000) et la constitution de 2005 ont instaure des quotas etniques dans les institutions.",
+      "externalInfluences": "Colonisation allemande (1885-1919) : integration au German East Africa, maintien de la monarchie comme instrument de gouvernance indirecte, rigidification des categories ethniques. Mandat belge (1919-1962) : administration conjointe Rwanda-Urundi, renforcement du systeme hierarchique, introduction de cartes d'identite mentionnant l'appartenance ethnique, christianisation massive. Independance (1962) : maintien de la monarchie jusqu'en 1966, puis republique. Influence de l'Eglise catholique (depuis les missionnaires Peres Blancs du 19e siecle) et des missions protestantes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le Royaume d'Urundi etait une monarchie hierarchique absolue dirigee par le mwami (roi sacre), considere comme de nature semi-divine. Entre le mwami et la population se trouvait la classe des ganwa (princes du sang royal), distincte des Tutsi ordinaires, qui gouvernaient les provinces avec une semi-autonomie. Le systeme economique etait fonde sur l'ubugabire : une relation de clientele entre un patron (generalement Tutsi superieur ou ganwa) et un client (Hutu ou Tutsi inferieur) qui recevait des vaches en usufruit en echange de services agricoles et militaires. La karyenda (tambour sacre) etait le symbole supreme du royaume et du mwami, dont les battements etaient interpretes comme des oracles royaux.",
+      "clanOrganization": "La societe rundi est organisee en clans (ubwoko, pluriel imibari) qui transcendent les categories Hutu/Tutsi/Twa. Un meme clan peut comprendre des membres de toutes les composantes, ce qui temoigne de l'ancienne fluidite des categories sociales. Les clans les plus importants comprennent les Abanyaruguru (clan tutsi royal), les Abahima (tutsi du sud), les Abasongore (clan de forgerons et fabricants de tambours). La vie sociale et les mariages sont organises en lien avec l'appartenance clanique.",
+      "ageClassSystems": "Les groupes d'age (imihigo) jouaient un role dans l'organisation sociale et militaire traditionnelle. Les ceremonies d'initiation marquaient le passage a l'age adulte. Le systeme de transmission orale des valeurs et de l'histoire (ubucurabwenge) assurait la formation des jeunes. Les Abatimbo (famille de batteurs de tambours royaux) constituaient un groupe specialise hereditaire.",
+      "roleOfLineages": "Les lignages agnatiques (inzu ya ba-) structurent l'identite, la propriete terrienne et les obligations ceremoniales. La patrilinearite domine dans la transmission des droits. Les ancetres (imizim) sont veneres comme protecteurs du lignage. La lobola (ubgabire en kirundi) — dot matrimoniale en betail — cree des liens formels entre lignages. L'appartenance clanique peut temperer ou renforcer les identites Hutu/Tutsi selon les contextes.",
+      "religiousAuthority": "La religion traditionnelle rundi (kubandwa) est centree sur le culte de Kiranga (divinite ou esprit supreme de la possession), qui communique avec les vivants par la transe des pretres-mediums (baandiwa). Le mwami avait un statut religieux : les battements de la karyenda etaient ses oracles. Imana est le terme pour le dieu supreme createur dans la cosmologie rundi. Les esprits des ancetres (imizim) jouent un role de protection ou de punition. L'Eglise catholique (Peres Blancs, implantee depuis la fin du 19e siecle) et les eglises protestantes sont aujourd'hui tres largement representees : plus de 80% des Burundais sont chretiens. Des pratiques syncrétiques integrant kubandwa et christianisme sont documentees."
     },
     "languages": {
-      "mainLanguage": "Rundi / Kirundi",
-      "vehicularRole": "Le rundi est parlé par de nombreux locuteurs au BDI, en RDC et en Tanzanie. Le français, le swahili et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Kirundi (Rundi)",
+      "isoCodes": ["run"],
+      "dialects": [
+        "Kirundi du Burundi — forme standard officielle",
+        "Ha — dialecte apparente parle en Tanzanie occidentale (region de Kigoma), mutuellement intelligible avec le Kirundi",
+        "Hangaza — dialecte de la region de Kagera (Tanzanie)",
+        "Vinaza — variante dialectale",
+        "Continuum Rwanda-Rundi — le Kirundi et le Kinyarwanda sont mutuellement intelligibles dans une large mesure"
+      ],
+      "vehicularRole": "Le Kirundi est la langue nationale et l'une des trois langues officielles du Burundi (avec le francais et l'anglais depuis 2014). Presque toute la population burundaise parle Kirundi comme langue maternelle ou secondaire. Il est la langue d'enseignement dans les ecoles primaires burundaises depuis 1972. Le Kirundi est aussi parle dans les zones frontalieres du Congo (Sud-Kivu) et de Tanzanie (Kigoma). La langue est reconnue par la constitution du Royaume du Burundi de 1962. Le Kirundi et le Kinyarwanda forment un continuum dialectal appele Rwanda-Rundi (ISO 639-1 : rn). En RDC et en Tanzanie, des communautes de locuteurs kirundi existent, issues de migrations historiques et de la diaspora."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "L'umuganuro (fete du sorgho) etait le principal rite agraire du Royaume d'Urundi : la sortie ceremonielle du tambour sacre karyenda etait associee aux semailles du sorgho, garantissant fertilite et prosperite. Le kubandwa est le rite central de possession spirituelle : des pretres-mediums (baandiwa) entrent en transe pour communiquer avec Kiranga et les esprits ancestraux, diagnostiquer des maladies ou prononcer des oracles. Les ceremonies funeraires (imfuro) impliquent des veillees, des chants rituels (imigani) et des sacrifices. Les mariages (ubukwe) comportent des ceremonies elaborees dont le paiement de la dot (inkwano) en betail. L'intronisation du mwami etait un rite d'Etat majeur impliquant les tambours royaux et une serie de ceremonies secrets. Les rites de pubertes existent pour les deux sexes. Les imigani (recits traditionnels oraux) sont recites lors des ceremonies.",
+      "symbols": "Le tambour sacre karyenda est le symbole supreme du Burundi : il representait le mwami, la fertilite et la regeneration, et figurait sur le drapeau national jusqu'en 1966. L'ingoma (tambour royal en general) designe aussi le pouvoir, le regne et le gouvernement. Les vaches (inka) sont le symbole ultime de richesse, de prestige et du lien social dans la culture rundi. Le sorgho (intama) est la plante symbolique du cycle agricole et de la fecondite. Les lances et boucliers sont des symboles guerriers royaux. Les paniers tresses (agaseke) aux motifs geometriques sont des symboles de l'artisanat burundais, offerts lors de ceremonies.",
+      "artsAndMusic": "La musique de tambour est l'expression artistique la plus celebre des Barundi. Les Tambourinaires royaux du Burundi (Royal Drummers of Burundi, inscrits au Patrimoine immatériel de l'UNESCO en 2014) utilisent les tambours karyenda, amashako, ibishikiso et inkiranya dans des formations semi-circulaires. Les batteurs entrent en scene en portant les lourds tambours sur la tete, dans une choreographie codifiee transmise de pere en fils. D'autres instruments traditionnels : la flute (umuduri), la cithare inanga (cordophone a cordes tendues), l'ikembe (lamellophone type mbira), le indonongo, l'inyagara. Les genres oraux (imigani = recits, indirimbo = chants, amazina = poesie elogieuse des bovins, ivyivugo = declamations heroiques) constituent un riche patrimoine litteraire. Les danses abatimbo (officielles et rituelles) et abanyagasimbo (rapides, festives) sont les formes les plus connues. La vannerie (agaseke) est l'artisanat feminin de prestige : paniers tresses en raphia aux motifs geometriques brun et blanc, offerts lors de mariages et celebrations.",
+      "spiritualities": "La cosmologie rundi reconnait Imana comme dieu supreme createur, bon mais distant. Les esprits des ancetres (imizim) influencent directement le monde des vivants — maladies, fortunes, naissances. Le culte kubandwa est centre sur Kiranga (parfois assimile a un esprit mediateur), dont les pretres-mediums (baandiwa) canalisent la puissance lors de seances de possession. La karyenda royale avait un statut semi-divin — ses battements interpretés comme des decrets divins. Les tradipraticiens (imvura ou abapfumu) pratiquent la guerison par les plantes et les rituels. Le christianisme catholique est largement dominant (environ 62% de la population, selon les sources recentes) ; le protestantisme est aussi repandu. Des syncrétismes integrant kubandwa et christianisme sont bien documentes. Une petite minorite (environ 10%) est musulmane, principalement dans les zones frontalieres."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora rundi dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Royaume d'Urundi (Ubwami bw'Urundi) est l'une des plus anciennes monarchies d'Afrique subsaharienne, forme au 16e siecle. Il est l'un des rares royaumes africains a avoir survecu comme entite territoriale directe jusqu'a l'ere post-coloniale. Le premier roi documente est Ntare I Rushatsi (vers 1675-1705). Ntare II Rugaamba (vers 1795-1852) a realise les plus grandes expansions territoriales, atteignant le Rwanda et la Tanzanie. Mwezi Kisabo, roi a la fin du 19e siecle, a du ceder une partie du territoire sous la pression coloniale allemande. La monarchie a survecu a la colonisation et a l'independance (1962) avant d'etre abolie par un coup d'Etat en 1966. Le Burundi est ainsi l'une des rares nations africaines a etre une continuation directe d'un etat precolonial.",
+      "relationsWithNeighbors": "Le Royaume d'Urundi a entretenu des relations complexes avec le Rwanda voisin (rivalite historique, frontiere linguistique poreuse, continuum dialectal Rwanda-Rundi). Les peuples Ha de Tanzanie sont des groupes apparentes parlant un dialecte proche. Les relations avec les groupes du Congo oriental (Bashi, Bavira) passaient par le commerce sur le lac Tanganyika. La colonisation belge a administre conjointement le Rwanda et l'Urundi (Rwanda-Urundi) de 1919 a 1962, approfondissant les similitudes institutionnelles mais aussi les tensions inter-groupes.",
+      "conflictsOrAlliances": "La colonisation allemande (1885) a incorpore l'Urundi au German East Africa en maintenant la monarchie comme instrument de gouvernance indirecte. Le mandat belge (1919-1962) a introduit des cartes d'identite ethniques et le systeme scolaire catholique favorisant les Tutsi. Independance en 1962, abolition de la monarchie en 1966. Genocide de 1972 : la rebellion hutu a ete suivie de represailles de l'armee a dominante tutsi faisant entre 80 000 et 210 000 morts (principalement hutu). Assassinat du premier president hutu Melchior Ndadaye en 1993 : debut de la guerre civile burundaise (1993-2005, environ 300 000 morts). Accords d'Arusha (2000) : accord de paix et partage du pouvoir. 2015 : crise politique liee au troisieme mandat de Nkurunziza. 2020 : election d'Evariste Ndayishimiye.",
+      "diaspora": "La diaspora rundi est considerable, produit des conflits successifs et de la pauvrete economique. Les refugies burundais ont massivement fui vers la Tanzanie (camps de Nyarugusu, Mtendeli), le Congo (Sud-Kivu) et le Rwanda. En 2015, plus de 100 000 personnes ont fui en quelques semaines lors de la crise politique. La communaute burundaise en Europe (Belgique, France, Pays-Bas) et aux Etats-Unis est significative. Des communautes de locuteurs kirundi existent en Tanzanie (region de Kigoma) et au Congo (Uvira) depuis les migrations precoloniales et coloniales."
     },
     "demography": {
-      "totalPopulation": 12000000,
+      "totalPopulation": 15000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur : Ethnologue SIL (langue run, Kirundi) — 9,5 millions de locuteurs au Burundi (2014), avec projection pour 2025 ; Wikipedia EN — Burundi (12,3 millions en 2021, croissance de 2,5% par an) ; Institut de Statistiques du Burundi (ISTEEBU) ; UNFPA Burundi. La population totale des locuteurs du kirundi (Burundi + COD + TZA + RWA) est estimee a 15 millions en 2025, dont environ 13,5 millions au Burundi.",
+      "distributionByCountry": [
+        {
+          "country": "BDI",
+          "population": 13500000,
+          "note": "Quasiment toute la population du Burundi parle kirundi. Hutu environ 80-85%, Tutsi environ 14-18%, Twa moins de 1%. Capitale : Bujumbura (374 809 h.) ; nouvelle capitale politique : Gitega."
+        },
+        {
+          "country": "COD",
+          "population": 900000,
+          "note": "Principalement en province du Sud-Kivu (Uvira, Fizi), locuteurs kirundi issus de migrations historiques et de refugies"
+        },
+        {
+          "country": "TZA",
+          "population": 500000,
+          "note": "Region de Kigoma et Kagera ; groupe Ha (dialecte kirundi proche) ; refugies burundais"
+        },
+        {
+          "country": "RWA",
+          "population": 100000,
+          "note": "Zone frontaliere ; continuum Rwanda-Rundi ; refugies et migrants"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Rundi / Kirundi language (run)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Burundi. https://en.wikipedia.org/wiki/Burundi",
+      "Wikipedia EN — Kirundi. https://en.wikipedia.org/wiki/Kirundi",
+      "Wikipedia EN — Kingdom of Burundi. https://en.wikipedia.org/wiki/Kingdom_of_Burundi",
+      "Wikipedia EN — Origins of Hutu, Tutsi and Twa. https://en.wikipedia.org/wiki/Origins_of_Hutu,_Tutsi_and_Twa",
+      "Britannica — Rundi people. https://www.britannica.com/topic/Rundi-people",
+      "Britannica — Kingdom of Burundi. https://www.britannica.com/place/Kingdom-of-Burundi",
+      "SIL Ethnologue — Rundi / Kirundi (run). https://www.ethnologue.com/language/run/",
+      "eHRAF World Cultures — Barundi. https://ehrafworldcultures.yale.edu/cultures/fo58/summary",
+      "Lugha Yangu — Karyenda and the Royal Burundi Drummers. https://lughayangu.com/post/karyenda-and-the-royal-burundi-drummers",
+      "UNESCO — Ritual dance of the royal drum of Burundi (inscription 2014). https://ich.unesco.org/",
+      "BBC News — Burundi country profile. https://www.bbc.com/news/world-africa-13085064",
+      "ISTEEBU — Institut de Statistiques et d'Etudes Economiques du Burundi. https://www.isteebu.bi/"
     ]
   }
 }

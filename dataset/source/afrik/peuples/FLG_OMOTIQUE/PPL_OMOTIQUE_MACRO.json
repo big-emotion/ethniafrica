@@ -6,68 +6,120 @@
   "content": {
     "appellations": {
       "mainName": "Peuples Omotiques (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (Bench, Dizi, Me'en, etc.)",
+      "selfAppellation": "Appellations multiples selon les groupes : Bench (Nao), Dizi (Maji), Me'en (Mekan), Kafa (Kafficho), Wolaita, Gamo, Dawro, Maale (Male), Sheko, Hamer-Banna, Aari, Dime, et autres",
+      "exonyms": [
+        "Langues omotiques",
+        "West Cushitic (dénomination obsolète de Greenberg)",
+        "Omotic (Fleming 1969, Bender 1971)"
+      ],
+      "originOfExonyms": "Le terme Omotic a été proposé par Harold C. Fleming en 1969, en remplacement de la désignation West Cushitic utilisée jusqu'à Greenberg (1963), pour désigner un groupe de langues d'Ethiopie du Sud-Ouest jugé suffisamment distinct pour constituer une branche indépendante de l'afro-asiatique. La dénomination Omotic fait référence au fleuve Omo, au bord duquel vivent la plupart de ces peuples. La proposition fut en grande partie acceptée après les travaux de Bender (1971).",
+      "whyProblematic": "Le terme Omotique est une construction linguistique et non une identité partagée par les peuples ainsi classés. L'homogénéité interne de la famille omotique est contestée : certains linguistes (Güldemann) estiment que les langues Mao et Aroid (Sud-Omotique) n'appartiennent pas à l'afro-asiatique et constituent des familles distinctes influencées par les contacts. L'inclusion de groupes comme les Me'en (Surmique, Nilo-Saharien) dans des listes omotiques est une erreur de classification fréquente.",
+      "contemporaryUsage": "Le terme Omotic est utilisé exclusivement dans la littérature académique et ne correspond à aucune identité collective partagée par les peuples concernés. Chaque groupe se désigne par son propre ethnonyme. L'administration éthiopienne reconnaît individuellement les groupes omotiques dans ses recensements.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique (macro-groupe)",
-      "historicalRegion": "Sud-ouest de l'Éthiopie",
+      "ethnoLinguisticGroup": "Famille afro-asiatique — branches Damotique (Nord-Omotique), Dizoïde (Majoid), Mao, et Aroïde (Sud-Omotique)",
+      "historicalRegion": "Ethiopie du Sud-Ouest — vallée de l'Omo, hautes terres du SNNPR (Southern Nations, Nationalities and Peoples' Region), zones Bench Sheko, South Omo (Debub Omo), Wolaita, Dawro, Gamo Gofa, Kefa et Sheka",
       "currentCountries": ["ETH"]
     },
     "ethnicities": [
-      "Bench",
-      "Dizi",
-      "Me'en",
-      "Dimme",
-      "Koyra",
-      "Maats",
-      "Malle",
-      "Autres groupes omotiques"
+      "Wolaita (Welayta) — ~1,7 million (2007), zone Wolaita",
+      "Gamo — ~1,1 million (2007), zone Gamo Gofa",
+      "Kafa (Kafficho) — ~870 000 (2007), zone Kefa",
+      "Dawro — ~543 000 (2007), zone Dawro",
+      "Bench — ~354 000 (2007), zone Bench Sheko",
+      "Aari — ~290 000 (2007), zone South Omo",
+      "Dizi — ~36 000 (2007), zone Bench Sheko",
+      "Maale (Male) — ~98 000 (2007), zone South Omo",
+      "Hamer — ~47 000 (2007), zone South Omo",
+      "Sheko — ~38 000 (2007), zone Bench Sheko",
+      "Karo — ~1 500 (2007), zone South Omo",
+      "Dime — moins de 1 000 (2007), zone South Omo",
+      "Nao, Nayi, Shinasha, Basketo, Chara, Mao, et dizaines d'autres groupes"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples omotiques sont originaires du sud-ouest de l'ETH, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.",
-      "externalInfluences": "Contacts avec les peuples couchitiques et sémitiques voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les peuples omotiques occupent le sud-ouest de l'Ethiopie depuis plusieurs millénaires. Les analyses de vocabulaire reconstruites montrent que les Proto-Omotiques cultivaient l'ensète (plante alimentaire endémique d'Ethiopie) depuis la periode Proto-Omotique, faisant d'eux l'un des premiers peuples agricoles d'Afrique orientale. Le lexique proto-omotique atteste également de termes pour la poterie, certaines plantes cultivées, et des outils. L'élevage bovin est apparu plus tardivement, après la fin de la période Proto-Nord-Omotique, par contact avec des peuples cushitiques des hautes terres.",
+      "formationPeriod": "La classification omotique comme branche distincte de l'afro-asiatique a été proposée par Fleming (1969) et acceptée par Bender (1971). Des études génétiques récentes confirment une différenciation linguistique réelle : les populations Damotiques (comme les Wolayta) montrent des clusters génétiques proches des Cushites avec une admixture ouest-eurasienne, tandis que les populations Aroïdes (comme les Aari) montrent une continuité avec l'ancêtre Mota (chasseur-cueilleur éthiopien ancien) et un signal eurasien plus faible — ce qui soutient la séparation linguistique.",
+      "migrationRoutes": [
+        "Peuplement autochtone de l'Ethiopie du Sud-Ouest depuis l'Antiquité",
+        "Expansion des Proto-Nord-Omotiques depuis un foyer probable dans la région Omo vers les hautes terres du SNNPR",
+        "Contacts et emprunts lexicaux avec les peuples Cushitiques des hautes terres éthiopiennes (premier millénaire av. J.-C.)"
+      ],
+      "historicalSettlementZones": [
+        "Vallée du fleuve Omo et ses affluents (zones South Omo, Bench Sheko)",
+        "Hautes terres du SNNPR (Wolaita, Gamo, Kefa, Dawro, Sheka)",
+        "Frontière éthio-soudanaise (peuples Mao)",
+        "Zone de Maji et Tepi (Dizi, Sheko, Nayi)"
+      ],
+      "unificationsOrDivisions": "La famille omotique est divisée en quatre grands groupes linguistiques : Damotique (Nord-Omotique, le plus peuplé, comprenant Wolaita, Gamo, Kefa, Bench, Maale et dizaines d'autres), Dizoïde ou Majoid (Dizi, Sheko, Nayi), Mao (langues mal documentées de la frontière éthio-soudanaise), et Aroïde ou Sud-Omotique (Hamer, Aari, Gayil, Dime). Ces groupes n'ont aucune unité politique ou identitaire commune : chaque peuple est historiquement autonome.",
+      "externalInfluences": "Contacts millenniaires avec les peuples Cushitiques (Oromo, Sidama) et Sémitiques (Amhara) voisins, générant des emprunts lexicaux documentés. Incorporation progressive dans les empires éthiopiens successifs (empire d'Axoum, empire salomonien, empire de Menelik II). Christianisation (Eglise orthodoxe éthiopienne) des peuples des hautes terres (Wolaita, Kefa, Bench) depuis le Moyen-Age. Islamisation partielle des zones frontalières. Missions protestantes évangéliques (20e siècle) ayant transformé les croyances traditionnelles dans de nombreuses communautés.",
+      "majorHistoricalEvents": "1270 : intégration partielle de certains royaumes omotiques (Wolaita, Dawro) dans la sphère d'influence de l'empire salomonien. 1894 : conquête des royaumes omotiques du sud par Menelik II — fin des royaumes de Wolaita (Tona), Kefa et autres. 1960-1970 : premières classifications linguistiques systématiques (Fleming 1969, Bender 1971). 1974-1991 : période du Derg, collectivisation et démantèlement des structures politiques traditionnelles. 1991 : création du SNNPR (Southern Nations, Nationalities and Peoples' Region) reconnaissant les droits culturels des peuples omotiques. 2000-2020 : mouvements revendicatifs de plusieurs peuples omotiques pour l'autonomie régionale (Wolaita, Dawro, Gamo devenant des régions distinctes)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Les systèmes politiques varient considérablement entre les groupes omotiques : royaumes sacrés (Maale, Wolaita, Kefa) avec des rois rituels garants de la fertilité ; chefferies locales et conseils d'anciens (Bench, Dizi, Sheko) ; organisation segmentaire sans chefferie centralisée (Hamer, Dime). Le modèle de la royauté sacrée (le roi comme garant de la fertilité agricole, entouré de tabous stricts et parfois soumis au régicide rituel) est documenté chez les Wolaita, le Kefa et les Maale.",
+      "clanOrganization": "Universellement patrilinéaire dans les sociétés omotiques documentées. Les lignages structurent les droits fonciers, les alliances matrimoniales et la résolution des conflits. Chez certains groupes (Dizi, Kefa), une organisation en castes héréditaires (nobles, artisans, forgerons) structure la société.",
+      "ageClassSystems": "Variable selon les groupes : les peuples des basses terres pratiquent souvent des systèmes de classes d'âge formels avec des rites d'initiation (Hamer, Banna : saut sur les boeufs). Les peuples des hautes terres ont des systèmes moins formalisés.",
+      "roleOfLineages": "Dans tous les groupes omotiques, les lignages patrilinéaires déterminent l'identité sociale, les droits d'accès aux ressources et les obligations rituelles. L'exogamie clanique est la règle générale.",
+      "religiousAuthority": "Diversité : rois sacrés aux fonctions cumulant pouvoir politique et religieux (Maale, Wolaita, Kefa) ; prêtres traditionnels distincts des chefs politiques (Bench, Dizi) ; anciens aux fonctions rituelles (Sheko, Hamer). Christianisme orthodoxe dominant dans les hautes terres. Protestantisme évangélique majoritaire chez de nombreux groupes. Pratiques animistes et cultes des ancêtres subsistant dans toutes les communautés."
     },
     "languages": {
-      "mainLanguage": "Langues omotiques (Bench, Dizi, Me'en, etc.)",
-      "vehicularRole": "Les langues omotiques sont parlées par les peuples omotiques. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Famille omotique — environ 28 langues distinctes",
+      "isoCodes": [
+        "wls",
+        "gmo",
+        "kbr",
+        "bcq",
+        "mdy",
+        "aar",
+        "diz",
+        "she",
+        "hmr",
+        "dim"
+      ],
+      "dialects": [
+        "Damotique (Nord-Omotique) : Wolaita, Gamo-Gofa-Dawro, Kefa (Kafficho), Bench, Chara, Maale, Yemsa, Basketo, et autres",
+        "Dizoïde (Majoid) : Dizi, Sheko, Nayi",
+        "Mao : Bambassi, Hozo, Seze, Ganza",
+        "Aroïde (Sud-Omotique) : Hamer, Aari, Gayil, Dime"
+      ],
+      "vehicularRole": "Les langues omotiques sont parlées par environ 7,9 millions de personnes (Ethnologue / Wikipedia). Aucune langue omotique ne sert de vehiculaire inter-omotique : l'amharique joue ce role dans toute l'Ethiopie. Certaines langues omotiques des hautes terres (Wolaita, Gamo) ont une diffusion régionale et sont parfois utilisées comme langues de marche entre groupes voisins. Le wolaita est la plus importante par le nombre de locuteurs (environ 1,7 million). Les langues omotiques sont généralement agglutinatives, tonales, et suivent l'ordre sujet-objet-verbe (SOV)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels omotiques, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+      "majorRites": "L'ensète (Ensete ventricosum) est la plante alimentaire centrale de nombreux peuples omotiques des hautes terres (Wolaita, Kefa, Bench, Gamo) — son traitement, sa fermentation et sa consommation structurent la vie sociale et cérémonielle. Rites de passage agricoles (semailles, récolte) avec invocations des ancêtres documentés chez la plupart des groupes. Saut sur les boeufs (peuples des basses terres, Hamer, Banna) : rite masculin d'initiation à l'âge adulte et au mariage. Royauté sacrée (Maale, Wolaita) avec rituels annuels de fertilité présidés par le roi. Festival Ka'el des Me'en Bodi (bien que surmiques) dans la même région géographique.",
+      "symbols": "L'ensète est le symbole culturel central des peuples omotiques des hautes terres. Le bétail (bovins) est le principal marqueur de richesse et de statut dans les sociétés pastorales et agropastorales. Les insignes royaux (regalia) distinguent les royaumes sacrés. La scarification, la coiffure et les ornements de perles signalent le statut social, matrimonial et l'appartenance clanique.",
+      "artsAndMusic": "Musiques vocales polyphoniques lors des cérémonies communautaires. Instruments : flutes, lyres (Wolaita), percussions variées. Poterie féminine à haute valeur d'usage et rituelle. Tissage et travail de l'écorce (Kefa). Peinture corporelle (Hamer, Banna, Karo). Scarification décorative. Artisanat du cuir et bijouterie en perles. Poésie orale et littérature orale (épopées, généalogies, proverbes) dans toutes les communautés.",
+      "spiritualities": "Croyances animistes ancestrales : esprits de la nature, esprits des ancêtres, divinités de la pluie et de la fertilité. Royauté sacrée : le roi incarne le lien entre le monde des humains et les forces cosmiques dans les societes a roi sacre. Christianisme orthodoxe ethiopien dominant dans les hautes terres (Wolaita, Kefa, Bench) depuis plusieurs siècles. Protestantisme évangélique majoritaire ou très influent dans la plupart des communautés omotiques depuis le 20e siècle. Syncrétisme généralisé entre pratiques chrétiennes et croyances animistes traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora omotique dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les peuples omotiques ont produit plusieurs royaumes historiques importants en Ethiopie meridionale : Royaume de Wolaita (Tona, jusqu'à 1894), l'un des plus peuplés du sud ethiopien ; Royaume de Kaffa (Kefa), centre de la culture du cafe arabica, conquis en 1897 ; Royaume de Dawro ; Royaumes de Gamo et Gofa. Ces royaumes ont maintenu leur independance jusqu'à la conquête de Menelik II à la fin du 19e siècle. Les institutions de royaute sacree (Maale, Wolaita) ont fait l'objet d'études anthropologiques classiques.",
+      "relationsWithNeighbors": "Contacts millénaires avec les peuples Cushitiques (Oromo, Sidama) ayant généré d'intenses échanges culturels, lexicaux et économiques documentés par la linguistique historique. Relations commerciales avec les negociants amhara (échanges de café, d'ivoire, de peaux). Tensions et alliances avec les peuples Surmiques des basses terres (Surma, Mursi, Me'en).",
+      "conflictsOrAlliances": "1894-1897 : conquête de l'ensemble des royaumes omotiques du sud par Menelik II, intégrés dans l'empire éthiopien moderne. Résistances armées documentées du royaume de Wolaita (1894) et de Kaffa (1897). Période du Derg (1974-1991) : réformes agraires et collectivisation transformant profondément les structures sociales traditionnelles. Depuis 1991 : mouvements politiques et culturels revendicatifs pour l'autonomie et la reconnaissance des identités omotiques dans le fédéralisme éthiopien.",
+      "diaspora": "Migrations internes vers Addis-Abeba et les grandes villes ethiopiennes depuis le 20e siècle (notamment Wolaita, Kefa). Forte représentation dans la diaspora éthiopienne mondiale (Etats-Unis, Europe, Australie). Mouvements de réfugiés liés aux conflits politiques éthiopiens (1974-1991, 2020-2022)."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 7900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue / Wikipedia EN — Omotic languages : environ 7,9 millions de locuteurs de langues omotiques. Recensement ethiopien 2007 (base de calcul) avec projection à 2025 selon le taux de croissance démographique éthiopien (~2,4% par an). Les principaux groupes : Wolaita ~2,4M, Gamo ~1,6M, Kefa ~1,3M, Dawro ~800K, Bench ~500K, Aari ~420K, et dizaines de petits groupes. Nota bene : les Me'en (PPL_MEEN, ISO mym) sont Surmiques (Nilo-Sahariens) et ne font pas strictement partie de la famille omotique.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 7850000,
+          "note": "Principalement dans le SNNPR (Wolaita, Gamo, Kefa, Dawro, Bench Sheko, South Omo), ainsi que dans les regions du Sud-Ouest et du Centre de l'Ethiopie"
+        },
+        {
+          "country": "SDN",
+          "population": 50000,
+          "note": "Peuples Mao vivant de part et d'autre de la frontiere ethiopio-soudanaise (Etat du Nil Bleu)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Omotic languages",
-      "CIA World Factbook – Ethiopia",
-      "Bender, M. Lionel – *The Omotic Languages*",
-      "Recensements éthiopiens",
-      "Études anthropologiques sur les peuples omotiques"
+      "Wikipedia EN — Omotic languages. https://en.wikipedia.org/wiki/Omotic_languages",
+      "Fleming, Harold C. Omotic Overview. In Bender (ed.), The Non-Semitic Languages of Ethiopia, 1976.",
+      "Bender, M. Lionel. Omotic: A New Afroasiatic Language Family. Occasional Papers, Southern Illinois University, 1975.",
+      "Cambridge Handbook of Linguistic Typology — The Omotic Language Family (chapter 26). https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA",
+      "Wikipedia EN — List of ethnic groups in Ethiopia (données recensement 2007). https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia",
+      "Donham, Donald L. & James, Wendy (eds.). The Southern Marches of Imperial Ethiopia. Cambridge University Press, 1986.",
+      "Eric ED549340 — Omotic Peoples and the Early History of Agriculture in Ethiopia (dissertation). https://eric.ed.gov/?id=ED549340",
+      "Ethnologue — Omotic language family. https://www.ethnologue.com"
     ]
   }
 }

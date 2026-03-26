@@ -6,59 +6,104 @@
   "content": {
     "appellations": {
       "mainName": "Bassa (Cameroun)",
-      "selfAppellation": "Bassa",
-      "exonyms": ["Bassa (terme utilisé par les Européens)"],
+      "selfAppellation": "Bassa (pluriel de nsa, signifiant partage ou retribution)",
+      "exonyms": [
+        "Basaa",
+        "Basaa",
+        "Bassa-Bakongo",
+        "Betjek",
+        "Bikyek",
+        "Mascha",
+        "Easha",
+        "Biafra",
+        "Biafare (textes portugais)",
+        "Umm usuda (textes egyptiens)"
+      ],
+      "originOfExonyms": "Le terme Bassa derive du mot bassa (pluriel de nsa = partage/retribution), lie a la legende des fils de Mban se disputant un serpent. L'appellation Umm usuda figure dans des textes de l'Egypte ancienne. Les Portugais utilisaient Mascha, Easha, Biafra et Biafare des le XVe siecle. Betjek et Bikyek sont des variantes locales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bassa (ou Basaa en ecriture indigene) est l'appellation courante en français. La distinction avec les Bassa du Liberia et de l'Afrique de l'Ouest est importante : le terme Bassa (Cameroun) ou Basaa designe exclusivement le peuple bantou du Cameroun centre-meridional.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone A)",
-      "historicalRegion": "Centre du Cameroun",
+      "ethnoLinguisticGroup": "Bantou (Zone A, sous-groupe Basaa-Bakoko)",
+      "historicalRegion": "Centre du Cameroun : Sanaga-Maritime, Nkam, pays d'Edea, Eseka, Douala, Ngog Lituba",
       "currentCountries": ["CMR"]
     },
-    "ethnicities": ["Bassa du Nord", "Bassa du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Ntomb : Lok Ntomb, Ndok Njee, Lok Basogog, Lok Hendel, Mangaa, Ndok Tindi",
+      "Baken : Lok Baken, Ndok Mben, Lok Heega, Ndok Njee, Ndok Ngond, Log Dikit, Lok Ngwang, Lok Hende",
+      "Jol : Lok Basangen-Oa, Ndok Nled, Lok Batjek, Lok Ngond, Ndok Kobe, Ndok Bea, Ndok Send",
+      "U : Lok Kat, Ndok Makumak-Lem, Nwamp-Dikum, Mangaa, Ndok Tindi, Lok Nwanak",
+      "Sop : Bakembe, Lo Ot, Lok Biem, Nti, Lok Sop",
+      "Familles migratrices depuis Ngog Lituba : Yabakalag, Balimba, Yassoukoum, Pongo, Bikôk, Ewodi, Bodiman, Abo, Mbo, Bambimbi, Basso Ba Likol"
+    ],
     "origins": {
-      "ancientOrigins": "Les Bassa du Cameroun sont originaires du centre du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone A) de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "La tradition orale bassa situe l'origine du peuple en Egypte ancienne ou en Nubie, pres du Nil. Apres des invasions (pharaoniques, ethiopiennes, arabes) et des inondations, les ancetres traverserent le Sahara vers le Kanem Bornou, longerent la vallee du Logone, traverserent les hauts-plateaux de l'Adamaoua, puis se replierent vers Guelingdeng et les monts Mandara. Ils descendirent ensuite le long des voies fluviales depuis le lac Tchad jusqu'a Ngog Lituba (affluent de la Sanaga), lieu saint fondateur. L'ethnonyme renvoie aux neuf ancetres communs : Ngog, Mbog, Njel, Mbang, Mban, Ngaa, Nsaa, Bias, Buwe — 167 fils males — issus de Nanga (ancetre partage avec les Eton, Bafia, Ewondo, Baya, Yambassa).",
+      "formationPeriod": "Trois grandes periodes : Kwan (origine jusqu'au XIXe siecle avant J.-C.), Koba (XIXe siecle avant J.-C. jusqu'au XVe siecle apres J.-C.), Len (XVe siecle a aujourd'hui). Au XVe siecle, arrivee a Ngog Lituba et dispersion vers les bords du Wouri, de la Sanaga et du Nkam. Contacts avec les Portugais en 1472 (introduction des fruits americains : avocat, papaye, cacao, canne a sucre).",
+      "migrationRoutes": [
+        "Egypte/Nubie — Sahara — Kanem Bornou — vallee du Logone — hauts-plateaux Adamawa — monts Mandara",
+        "Descente fluviale du lac Tchad jusqu'a Ngog Lituba (XVe siecle)",
+        "Dispersion depuis Ngog Lituba vers les bords du Wouri (Douala), de la Sanaga (Edea, Eseka), du Nkam (Yabassi)"
+      ],
+      "historicalSettlementZones": [
+        "Ngog Lituba (lieu saint fondateur, rocher perce, actuelle region du Littoral)",
+        "Vallee de la Sanaga (Edea, Makak, Eseka)",
+        "Bords du Wouri (region de Douala)",
+        "Rives du Nkam (Yabassi, Haut Nkam)",
+        "Regions Littoral, Centre et Sud du Cameroun (Sanaga-Maritime, Nkam, Wouri, Ocean, Nyong-et-Kelle)"
+      ],
+      "unificationsOrDivisions": "Organisation en cinq grandes sous-ethnies (Ndok ou Lok) et de nombreux clans. Pas de pouvoir centralise precolonial : chaque village est gouverne par un mbombok (chef). Les neuf ancetres communs constituent le fondement mythique de l'unite. Les trois periodes historiques (Kwan, Koba, Len) correspondent a des phases de migrations et d'implantations successives.",
+      "externalInfluences": "Contacts avec les Portugais (1472). Commerce avec les Duala, Malimba et Bakoko. Domination allemande (1884-1919) avec travaux forces sur le chemin de fer Douala-Yaounde et resistance (bataille de Kan). Mandat français (1919-1960) avec installation administrative. Independantisme radical du mouvement UPC (Union des Populations du Cameroun) avec Ruben Um Nyobe.",
+      "majorHistoricalEvents": "1472 : premiers contacts avec les Portugais. 1884-1919 : resistance a la colonisation allemande, notamment la bataille de Kan, travaux forces sur le chemin de fer. 1919-1960 : mandat français, poste administratif de Ngambe (1927), enrolement de Bassa dans l'armee française en WWII. 1948-1958 : Ruben Um Nyobe et le mouvement UPC (independantiste radical, base en pays bassa), assassinat d'Um Nyobe (1958). Independance du Cameroun (1960)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Structure patriarcale hierarchisee precoloniale a neuf classes sociales : bakaambock (chefs de clans/tribus), bambombok (assemblees/electeurs), bangenge (hommes religieux), dikoo di mbock (princes royaux), banjehjel (notables), bonge (enfants), boda (femmes), minkol (esclaves), minyon (captifs). Organe executif du village : nkaambock (chef) + 8 dikoo di mbock. Le mbombok (chef de village, issu de la famille la plus ancienne) detient un pouvoir absolu, garant de la coutume, de la justice et de la guerre. La famille nucleaire (san mbay = chef) inclut fils, filles, femmes, enfants, cousins et domestiques.",
+      "clanOrganization": "Cinq grandes sous-ethnies (Ntomb, Baken, Jol, U, Sop) subdivisees en clans (Ndok ou Lok). Chaque clan a un nom, des ancetres fondateurs et un territoire. Filiation patrilineaire. Le Ngambi (oracle, animal totemique) joue un role central dans la vie clanique.",
+      "ageClassSystems": "Initiation masculine (circoncision) vers l'age de 10 ans et plus, avec transmission de la genealogie, de l'histoire du clan et du village, et epreuves de bravoure. La date et le lieu sont fixes par les pretres du Ngambi.",
+      "roleOfLineages": "Les lignages patrilineaires (Ndok/Lok) determinent l'appartenance clanique, les droits fonciers et les alliances. L'ancetre commun (Hilolombi ou Ngue) est le fondement spirituel de la legitimite clanique. Les inhumations dans le village ancestral preservent la proximite avec les ancetres.",
+      "religiousAuthority": "Le Ngambi (oracle, animal totemique de l'ethnie) est le devin charge des ordres de l'au-dela. Les pretres du Ngambi fixent les dates et rituels des ceremonies. Les bangenge (hommes religieux) constituent une classe sociale specifique. Le systeme nyambeiste reconnait Hilolombi (Dieu eternel) comme createur supreme."
     },
     "languages": {
-      "mainLanguage": "Bassa (Cameroun)",
-      "vehicularRole": "Le bassa est parlé par la majorité des Bassa. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Basaa (Basaa, Bassa, Basa)",
+      "isoCodes": ["bas"],
+      "dialects": [
+        "Dialecte de Sanaga-Maritime (Edea, region principale)",
+        "Dialecte d'Eseka (region Centre)",
+        "Dialecte de Douala (Wouri)",
+        "Parlers des sous-ethnies Ntomb, Baken, Jol, U, Sop"
+      ],
+      "vehicularRole": "Le basaa est une langue bantoue parlée par environ 400 000 a 800 000 locuteurs dans les regions Littoral, Centre et Sud du Cameroun. Langue a classes nominales, consonne b implosive et systeme tonal (haut, bas, bas-haut, haut-bas, moyen). Alphabet latin adapte. Le français est la langue officielle et vehiculaire dominante. Le basaa est enseigne comme langue nationale dans certaines ecoles."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels bassa, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Naissance : le geniteur consulte le pretre du Ngambi avant l'accouchement. Sage-femme avec decoctions. Apres la naissance, la mere porte une tenue de guirlandes, feuilles et coquilles d'escargot (esprits des anciens et etres vivants) et fait le tour du village en dansant pour presenter le nouveau-ne. Le nom est prescrit par le pretre du Ngambi (rappelant un ancetre ou un ancien du clan). Allaitement jusqu'a deux ans. Circoncision (initiation) vers 10 ans et plus : transmission de la genealogie, de l'histoire du clan, du village, des enseignements necessaires a l'emancipation. Epreuve de bravoure et stoicisme. Funerailles : inhumation dans le village ancestral pres des ancetres. Enfant sans nom = pas de deuil formel. Ceremonies Yaa Man (attribution du nom) et Ndandi documentees par les chercheurs.",
+      "symbols": "Ngambi (animal totemique et oracle, figure divine centrale). Tenue Sanja/Sanja libato (hommes) et Kaba/Kaba ngondo (femmes). Cache-sexe hikubi/po, peaux de panthere, bracelets en ivoire dikom dimoo, colliers d'ambre bakola comme ornements traditionnels. Ngog Lituba (rocher perce) : lieu saint fondateur. Neuf lieux sacres : Ngog Lituba, Li Boi Li Ngog, Yum Nge, Son Nlolo, Sebe, Tun Likan, Si Ndongi, Bum Nyebel, Ngog Bason.",
+      "artsAndMusic": "Instruments : m'be (rythme), ndinga/hilun (cordes), mandjan (xylophone/balafon), ngom (tambour), nku (tam-tam), minken (gongs so/kon). Chants en trois categories : chants religieux (naissance, exorcisme, benediction, mariage, enterrement), chants magiques (seances de guerison), chants populaires (celebrations de victoires, poetes). Danses : bisoo/nje nku/lihpongo (hommes, expiation des guerres), ifon (danses magiques de guerison), koo/bikehen/minken (femmes), mban/makune/hikwe (jeunes). Musiques urbaines : Assiko, N'gola, Ma-Kune. Artisanat : forge (coutelas, lances), charpenterie (meubles), poterie (marmites), pirogues, filets, tambours, balafons. Scarification (dikep, femmes, bas-ventre/dos), chirurgie dentaire (njolo, espace entre les incisives).",
+      "spiritualities": "Nyambeisme : systeme de croyance centre sur Nyambe (terme bantou pour Dieu), aussi appele Hilolombi (celui qui vit de toute eternite) ou ngue (ancetre commun eternel). Religion non dogmatique, ouverte a toute personne appartenant a une famille. Pantheon celeste de 36 divinites dont 9 principales : isi (terre), ngi (ciel), Son (lune), nyum (arc-en-ciel), hianga (soleil), mbebi (harmattan), libu (biosphere), aakop (atmosphere), Hilolombi (createur). Pantheon terrestre de 9 dieux : Ngambi (oracle totemique), Nge (justice), Um (guerison), Koo (fecondite), Njeg (vengeance), Ngena (maladies), Kul (parjure), Hu (voyance), Lep-Liemb (connaissance de l'ame). Respect des ancetres, inhumation dans le village ancestral. Christianisme majoritaire depuis la colonisation."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bassa dans les grandes villes camerounaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation precoloniale en chefferies villageoises sous l'autorite du mbombok (chef de village). Chefs de la periode allemande : Mahop ma Mbom, Ikong Yap, Kumaya, Ngwem, Balema, Bimai, Toko Ngango, Mbome Pep, Hiak Nkonga, Bitjoka bi Tum, Matip ma Ndombol, et autres. L'organisation politique bassa est decentralisee, centree sur le village et le clan.",
+      "relationsWithNeighbors": "Commerce avec les Duala, Malimba et Bakoko (cote atlantique). Deplace de la cote par les Duala et les premiers marchands europeens. Echanges avec les peuples de la vallee de la Sanaga. Partage du mythe fondateur de Nanga avec les Eton, Bafia, Ewondo, Baya et Yambassa.",
+      "conflictsOrAlliances": "Resistance a la colonisation allemande (bataille de Kan, exploitation pour la construction du chemin de fer Douala-Yaounde, travaux forces). Mandat français (1919-1960) : marginalisation continue. Role de premier plan dans la decolonisation : la region Bassa-Bakongo est le foyer du mouvement UPC (Union des Populations du Cameroun) d'inspiration radicale nationaliste. Ruben Um Nyobe (leader de l'UPC) est bassa ; assassine en 1958. Apres l'independance : sentiment de marginalisation, croyance en une liberation nationale future (Nka kunde).",
+      "diaspora": "Presence bassa dans les grandes villes camerounaises (Douala, Yaounde, Edea). Diaspora au sein du Cameroun depuis les migrations coloniales et post-independance. Presence de Bassa dans d'autres pays africains (Benin, Gambie, Kenya, Liberia, RDC, Senegal, Afrique du Sud) issue des vagues migratoires historiques."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements camerounais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN estime 800 000 individus. Wikipedia FR indique 575 000 (2010). Joshua Project (Basaa, Cameroon) : 501 000. Projection 2025 en tenant compte du taux de croissance camerounais (environ 2,8% par an) depuis 2010 : estimation entre 800 000 et 950 000. Valeur retenue : 900 000 (estimation mediane). Regions : Littoral (Sanaga-Maritime, Nkam, Wouri), Centre, Sud (Nyong-et-Kelle).",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 900000,
+          "note": "Regions Littoral (Edea, Eseka, Douala), Centre et Sud du Cameroun ; pays d'origine Ngog Lituba"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bassa language (bas)",
-      "CIA World Factbook – Cameroon",
-      "Recensements camerounais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Bassa people (Cameroon). https://en.wikipedia.org/wiki/Bassa_people_(Cameroon)",
+      "Wikipedia FR — Bassa (peuple). https://fr.wikipedia.org/wiki/Bassa_(peuple)",
+      "Joshua Project — Basaa, Cameroon. https://joshuaproject.net/people_groups/19155",
+      "Wikipedia EN — Basaa language. https://en.wikipedia.org/wiki/Basaa_language",
+      "ISO 639-3 : code bas (Basa, Cameroun). https://localizely.com/iso-639-3-list/",
+      "DICAMES — Les rites du Yaa Man et Ndandi chez les Basaa de la Sanaga Maritime. https://dicames.online/jspui/bitstream/20.500.12177/4911/1/ENS_20_0438.pdf",
+      "Scribd — Les Bassa du Cameroun: Monographie historique d'apres la tradition orale (Jean-Marcel-Eugene Wognon). https://fr.scribd.com/doc/101740544/"
     ]
   }
 }

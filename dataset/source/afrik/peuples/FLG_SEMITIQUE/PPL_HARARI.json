@@ -1,24 +1,98 @@
 {
   "id": "PPL_HARARI",
-  "nameMain": "",
+  "nameMain": "Harari",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "ሐረሪ / Harari ; parfois Adare",
+      "mainName": "Harari",
+      "selfAppellation": "ጌ፞ይ ኡሱኣች (Gey Usuach) — les Gens de la Ville",
+      "exonyms": [
+        "Adare / Adere (terme utilise par les Oromo, Somali, Argobba et Amhara voisins)",
+        "Adarinya (nom de la langue en usage externe)"
+      ],
+      "originOfExonyms": "Les Harari se desinent eux-memes comme Gey Usuach (les Gens de la Ville) et nomment leur ville Gey (la Ville) et leur mode de vie ge'ada (l'etiquette de la ville). Le terme Adare ou Adere est un exonyme donne par les peuples voisins (Oromo, Somali, Argobba). La langue est appelee Gey Sinan ou Gey Ritma (Langue de la Ville) par ses locuteurs. Le terme Adarinya ou Aderinya est utilise comme nom de la langue dans les sources exterieures.",
+      "whyProblematic": "Les Harari sont aujourd'hui minoritaires dans leur propre region : la Harari People's National Regional State est dominee demographiquement par les Amhara et les Oromo installes dans la ville nouvelle de Harar. L'identite harari est definie de facon endogame et exclusive — le mariage avec des non-Harari est fortement deconseille, ce qui a maintenu une identite distincte mais reduit le nombre de membres. Les Harari ont historiquement limite l'acces a leur langue (Gey Sinan) aux membres de la communaute.",
+      "contemporaryUsage": "Le terme Harari est utilise en amharique, en anglais et dans la litterature academique. Les membres de la communaute se designent comme Gey Usuach. La Region Harari est la plus petite des regions federales ethiopiennes. Sous l'administration de Meles Zenawi, les Harari ont retrouve le controle de leur region et beneficient de droits speciaux.",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "ethnoLinguisticGroup": "Sémitique du Sud",
-      "historicalRegion": "Ville historique de Harar",
+      "ethnoLinguisticGroup": "Semitique ethiopien oriental (Ethio-semitique du Sud, groupe oriental avec le Silte et le Zay)",
+      "historicalRegion": "Ville historique fortifiee de Harar (Gey) — hauts plateaux de l'est ethiopien (Hararghe)",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["UNESCO Harar", "Ethnologue (har)", "Ethiopian CSA"]
+    "ethnicities": [
+      "Harari de l'interieur de la cite (Harar Jugol) — population historique vivant dans les murs de la cite fortifiee, detenteurs des maisons traditionnelles (ge dar) et des traditions artisanales",
+      "Harari de Harar nouvelle — Harari etablis hors des murs, dans la ville moderne fondee au 19e siecle lors de l'expansion sous domination ethiopienne",
+      "Harari d'Addis-Abeba — principale diaspora interne, environ 20 000 personnes selon le recensement de 1994, souvent commercants et entrepreneurs",
+      "Harari de Dire Dawa — communaute marchande etablie dans la deuxieme ville de l'Ethiopie orientale",
+      "Silte (Gurage de l'Est) — groupe considere issu du melange de milices hararies (malassay) et de populations locales lors de la guerre ethiopo-adalie au 16e siecle, revendique une parente avec les Harari"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Harari descendent probablement des Harla, peuple afroasiatique aujourd'hui eteint qui occupait la region du Hararghe avant l'arrivee des Semitiques. Des ancetres semitiques, possiblement de stock hadhramite (Arabie du Sud), ont traverse le Bab-el-Mandeb, se sont installes sur la cote somalienne puis se sont etendus vers l'interieur, islamisant les populations cushitiques locales. Le melange de ces migrants semitiques avec les Harla et les Argobba a produit le peuple harari. Selon la tradition, le cheikh Abadir, patriarche legendaire des Harari, est arrive sur le plateau de Harar au debut du 13e siecle et y a rencontre les Harla, les Gaturi et les Argobba.",
+      "formationPeriod": "L'identite harari distincte s'est formee entre le 13e et le 16e siecle, avec la consolidation de la cite de Harar comme centre islamique independant. Au 13e siecle, les Harari etaient parmi les administrateurs du sultanat d'Ifat. Au 14e siecle, l'Etat d'Ifat sous Haqq ad-Din II deplace sa base vers le plateau harari (Adal). En 1520, les murs fortifies de Harar (Jugol) sont construits sous l'emir Nur ibn Mujahid, preservant l'identite hararie des invasions oromo subsequentes.",
+      "migrationRoutes": [
+        "Migration de populations semitiques depuis la cote de Somalie vers les hauts plateaux du Hararghe, avant l'epoque islamique",
+        "Apports arabes et hadhramites via le port de Zeila (Somalie) a partir du 10e siecle",
+        "Mouvement des Harari depuis Harar vers Addis-Abeba, Dire Dawa et d'autres villes ethiopiennes au 20e siecle, notamment apres 1974"
+      ],
+      "historicalSettlementZones": [
+        "Harar Jugol (la Cite Fortifiee) — centre historique et symbolique, inscrit au patrimoine mondial UNESCO en 2006",
+        "Harar moderne (au-dela des murs) — expansion au 19e et 20e siecles",
+        "Addis-Abeba — principale communaute de la diaspora interne (environ 20 000 personnes selon le recensement de 1994)",
+        "Dire Dawa — communaute hararie significative dans la deuxieme ville de l'Ethiopie orientale"
+      ],
+      "unificationsOrDivisions": "Les Harari ont maintenu une unite culturelle forte grace a leur confinement dans la cite fortifiee et a leur politique endogame stricte. La dissidence majeure est la perte de controle de la ville au profit des Oromo et Amhara depuis le 20e siecle. L'integration a l'Ethiopie imperiale (1887) sous Menelik II et les politiques ethiopiennes successives (Haile Selassie, Derg, EPRDF) ont alterne entre marginalisation et reconnaissance speciale.",
+      "externalInfluences": "Islam apporte par des missionnaires et marchands arabes via Zeila (7e-10e siecles). Sultanat d'Adal (15e-16e siecles) : Harar devient capitale d'un Etat islamique regional. Ahmed ibn Ibrahim al-Ghazi (Ahmed Gragn, 16e siecle) utilise Harar comme base de son jihad contre l'Ethiopie chretienne. Migrations oromo (16e-19e siecles) : encerclement de Harar et pression demographique sur les Harari. Conquete egyptienne de Harar (1875-1885). Integration a l'Ethiopie de Menelik II (1887) apres la bataille de Chelenqo.",
+      "majorHistoricalEvents": "Arrivee du cheikh Abadir et fondation de la communaute hararie islamique (debut 13e siecle). Integration au sultanat d'Ifat (13e siecle). Construction des murs de Harar Jugol par l'emir Nur ibn Mujahid (vers 1520). Expansion de l'Emirat de Harar sous Ahmed Gragn (16e siecle). Depart du sultanat d'Adal de Harar vers Aussa (1577) apres la menace oromo — effondrement d'Adal. Periode de l'Emirat de Harar independant (17e-19e siecles). Visite du voyageur Richard Burton (1855), premier Europeen a entrer dans la ville. Occupation egyptienne (1875-1885). Bataille de Chelenqo et integration a l'Ethiopie de Menelik II (1887). Soutien harari a Lij Iyasu (1916) — persecution subsequente par Haile Selassie. Inscription de Harar Jugol au patrimoine mondial de l'UNESCO (2006)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'organisation politique traditionnelle de Harar etait l'Emirat de Harar (17e-19e siecles), gouverne par un emir avec l'appui des scholars islamiques (ulema) et des chefs de quartier. La ville etait divisee en plusieurs quartiers (aqabe) avec des responsables elus. La gestion de la communaute hararie reposait sur des assemblees de chefs de families (abbaa geys) et des anciens. Le systeme de gouvernance ge'ada (etiquette de la ville) regit toujours les relations sociales.",
+      "clanOrganization": "Les Harari ne sont pas organises en clans tribaux comme les groupes cushitiques voisins. Ils s'organisent en reseaux familiaux et en associations professionnelles. Les guildes de marchands et les associations de femmes (harari women's associations) jouent un role social important. Le mariage endogame (strictement entre Harari) est la norme traditionnelle, assurant la cohesion du groupe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les genealogies hararies remontent souvent aux compagnons du Prophete ou a des figures islamiques fondatrices, notamment le cheikh Abadir (Umar Rida), dont les descendants (sharifs) beneficient d'un prestige particulier. Les lignages paternels determinent le statut social, les droits sur la maison familiale et l'appartenance a la communaute. La femme hararie maintient une position sociale remarquablement forte : elle est proprietaire de la maison traditionnelle (ge dar), gestionnaire de l'economie domestique et principale custode de l'artisanat. Cette position feminine est soulignee par les chercheurs comme une specificite de la societe hararie par rapport aux societes islamiques environnantes.",
+      "religiousAuthority": "L'islam sunnite est la religion exclusive des Harari. La ville de Harar est consideree comme la quatrieme ville sainte de l'islam selon l'UNESCO. Les 82 mosquees (dont trois datant du 10e siecle) et les 102 sanctuaires (mazars) de saints islamiques structurent la vie spirituelle. Les ulema (scholars islamiques), les cheikhs et les qadis exercent une autorite religieuse et juridique importante. Le pelerinage aux mazars de saints locaux (dont le sanctuaire du cheikh Abadir) est une pratique specifique de la devotion hararie."
+    },
+    "languages": {
+      "mainLanguage": "Harari (Gey Sinan / Gey Ritma — Langue de la Ville)",
+      "isoCodes": ["har"],
+      "dialects": [
+        "Harari classique — langue des textes anciens et de la liturgie islamique locale, fortement influencee par l'arabe",
+        "Harari moderne — avec emprunts importants de l'oromo (langue dominante dans la region), de l'amharique et de l'arabe egyptien (apres l'occupation de 1875-1885)"
+      ],
+      "vehicularRole": "Le harari est une langue ethio-semitique orientale proche du zay et du siltie (Gurage de l'Est), tous lies a la langue harla disparue. C'est une langue gravement en danger : le recensement de 1994 comptait environ 21 757 locuteurs, dont environ 20 000 concentres hors de Harar (principalement a Addis-Abeba). Seulement 2 351 locuteurs monolingues ont ete recenses en 1994. La majorite des Harari sont bilingues en amharique et en oromo. La langue a historiquement ete ecrite en ecriture arabe puis, dans les annees 1990, en script ge'ez. Une ecriture secrete hararie d'origine inconnue existait egalement. Le premier dictionnaire harari-anglais a ete publie par le voyageur Henry Salt en 1814."
+    },
+    "culture": {
+      "majorRites": "L'islam structure l'integralite de la vie rituelle hararie. Les Harari celebrent le Mawlid (naissance du Prophete) avec des processions et des recitations coraniques dans les sanctuaires. Les pelerinages aux mazars des 102 saints locaux (notamment le sanctuaire du cheikh Abadir) sont specifiques a la devotion hararie et distinguent l'islam local de l'orthodoxie arabe. Le mariage harari est un evenement communautaire de plusieurs jours avec ceremonies distinctes pour les hommes et les femmes. La maison hararie traditionnelle joue un role ceremoniel : ses cinq espaces d'assise symbolisent les cinq piliers de l'islam, et les objets suspendus au-dessus de la porte d'entree signalent la disponibilite matrimoniale d'une fille. La coutume d'alimenter les hyenes sauvages la nuit (pratique remontant a plusieurs siecles, perpetuee par les familles de nourrisseurs de hyenes — Hyena Men) est une tradition unique a Harar.",
+      "symbols": "Les cinq portes historiques (Bab) de Harar Jugol (Bab al-Ful, Bab as-Salam, Bab al-Nasr, Bab Berber, Bab as-Sultan Nur) sont les symboles architecturaux de la cite. La maison hararie traditionnelle, avec ses cinq espaces d'assise symbolisant les cinq piliers de l'islam et ses murs interieurs couverts d'ustensiles en vannerie et plateaux colores, est un symbole culturel reconnu. Le khat (qat, Catha edulis) — plante stimulante dont les feuilles sont machees — est un symbole culturel et social majeur a Harar, qui est le principal centre de production de khat en Ethiopie orientale. La vannerie coloree (panier harari) est un artisanat emblematique et un symbole identitaire de la femme hararie.",
+      "artsAndMusic": "L'artisanat harari est reconnu pour sa qualite exceptionnelle : le tissage (robes en soie brodees), la vannerie (paniers colores a motifs geometriques), la reliure de manuscrits, la broderie et la maroquinerie. Les femmes hararies sont les gardiennes de cet artisanat. La musique religieuse islamique (nashid, zikr soufie, chants du Mawlid) est la forme musicale dominante. L'architecture hararie est unique : les maisons a cinq espaces rituels, les facades colorees, les ruelles etroites en pave constituent un ensemble urbain reconnu par l'UNESCO. Le khat est un element central de la sociabilite masculine : les sessions de mastication collective dans les maisons traditionnelles constituent un espace de sociabilite, de discussion et de negociation.",
+      "spiritualities": "Les Harari sont exclusivement musulmans sunnites de rite shafiite. La specificite de l'islam hararie reside dans la devotion aux saints locaux (wali) : les 102 sanctuaires (mazars) sont des lieux de pelerinage pour les benedictions, la guerison et la mediation avec Allah. Cette forme de soufisme et de devotion aux saints est proche des traditions qadriyya et shadhiliyya. Les Harari considerent leur ville comme la quatrieme ville sainte de l'islam. L'imam Ahmed ibn Ibrahim al-Ghazi (Ahmed Gragn) est une figure historique et spirituelle complexe : conqurant islamique et figure de resistance a l'Abyssinie chretienne. La culture khat est integree dans les pratiques religieuses et sociales locales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Harari ont joue un role central dans l'histoire des sultanats islamiques de la Corne de l'Afrique. Harar a ete inclus dans le sultanat d'Ifat (13e-15e siecles), puis a ete la capitale de facto du sultanat d'Adal (15e-16e siecles) sous Ahmed ibn Ibrahim al-Ghazi (Ahmed Gragn), qui a mene une conquete quasi-totale de l'Ethiopie (1529-1543). Apres le depart du sultanat d'Adal a Aussa (1577), Harar est devenu un emirat independant (17e-19e siecles) gouverne par une succession d'emirs, centre de commerce et de savoir islamique reconnu dans toute la Corne de l'Afrique.",
+      "relationsWithNeighbors": "Relations commerciales et religieuses intenses avec les marchands arabes, indiens et somalis via le port de Zeila. Relations conflictuelles avec l'Ethiopie chretienne (guerres entre l'Adal et l'Ethiopie, 15e-16e siecles). Relations complexes avec les Oromo, combines entre conflits et islamisation : les Harari ont envoye des missionnaires islamiques aux Oromo depuis le 16e siecle. Relations avec les Argobba (partage de la porte Bab al-Argobba), les Amhara et les Somalis dans les marches de la ville. Relations diplomatiques avec l'Egypte ottomane (16e-19e siecles) et avec les Britanniques.",
+      "conflictsOrAlliances": "Alliance entre Harari et Argobba dans le sultanat d'Adal (15e siecle). Conquete de l'Ethiopie par Ahmed Gragn (1529-1543) — utilisant Harar comme base. Depart du sultanat d'Adal a Aussa (1577) : les Harari, opposes a ce depart, restent a Harar. Conflits avec les Oromo (16e-19e siecles). Resistance a l'occupation egyptienne (1875-1885). Bataille de Chelenqo (1887) : defaite de l'emir Abdallahi face aux forces de Menelik II — fin de l'independance de Harar. Soutien au pretendant Lij Iyasu (1911-1916) — persecution par Haile Selassie. Mouvement nationaliste Kulub (20e siecle) tentant de rattacher Harar a la Somalie.",
+      "diaspora": "La diaspora hararie est principalement interne a l'Ethiopie. Addis-Abeba accueille la plus grande communaute hararie hors de Harar (environ 20 000 personnes selon le recensement de 1994). Dire Dawa et d'autres villes ethiopiennes ont des communautes hararies. Une diaspora hararie existe en Europe (principalement Suede, Allemagne), aux Etats-Unis, au Canada et dans les pays du Golfe, mais elle est de taille modeste. La diaspora maintient activement les traditions et la langue, notamment via des associations culturelles."
+    },
+    "demography": {
+      "totalPopulation": 60000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Ethnologue (SIL International, 2024, code har), recensement ethiopien CSA 2007 (locuteurs harari : environ 35 000-40 000 dans la Region Harari), Joshua Project, et estimations demographiques. La communaute hararie reste l'une des plus petites ethnies d'Ethiopie. Le chiffre inclut la diaspora interne d'Addis-Abeba.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 60000,
+          "note": "Region Harari (Harar Jugol et Harar moderne) — environ 35 000-40 000 ; Addis-Abeba — environ 20 000 ; Dire Dawa et autres villes. Les Harari sont minoritaires dans leur propre region, dominee demographiquement par Oromo et Amhara."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Harari people. https://en.wikipedia.org/wiki/Harari_people",
+      "Wikipedia EN — Harar. https://en.wikipedia.org/wiki/Harar",
+      "UNESCO — Harar Jugol, the Fortified Historic Town. https://whc.unesco.org/en/list/1189/",
+      "Ethnologue — Harari language (har). https://www.ethnologue.com/language/har",
+      "101 Last Tribes — Harari people. https://www.101lasttribes.com/tribes/harari.html",
+      "Beyond Photo Tours Africa — Harar, Ethiopia, UNESCO site and City of Peace. https://www.beyondphototoursafrica.com/blog/visit-harar-ethiopia-unesco-harari-culture-and-hyenas",
+      "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005",
+      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et"
+    ]
   }
 }

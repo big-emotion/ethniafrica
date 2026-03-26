@@ -2,60 +2,122 @@
   "id": "PPL_SAN",
   "nameMain": "San",
   "languageFamilyId": "FLG_KXA",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["BWA", "NAM", "ZAF", "AGO", "ZMB", "ZWE", "LSO"],
   "content": {
     "appellations": {
       "mainName": "San",
-      "selfAppellation": "",
+      "selfAppellation": "Chaque groupe se designe par son propre ethnonyme (ex. Ju/'hoansi, ǀXam, ǂKhomani). Il n'existe pas de nom collectif reconnu par tous les groupes.",
       "exonyms": [
-        "\"Bushmen\" (terme colonial péjoratif, à éviter), \"San\" (terme générique, parfois utilisé), \"Khoisan\" (terme académique)"
+        "Bushmen (terme colonial pejoratif, toujours utilise en Afrique du Sud et Namibie)",
+        "Basarwa (terme utilise au Botswana)",
+        "Khoisan (terme academique designant San et Khoikhoi reunis)",
+        "San (terme generique adopte par l'anthropologie occidentale dans les annees 1970)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le mot San est derive du terme khoikhoi Saa, signifiant ceux qui n'ont pas de betail ou etrangers. Bushmen vient de l'afrikaans Bosjesmans utilise par les colons neerlandais au XVIIe siecle. Basarwa est un terme tswana.",
+      "whyProblematic": "San est lui-meme considere pejoratif par certains groupes car impose de l'exterieur. Bushmen est clairement colonial et lie aux politiques de persecution. En 2003, des representants des peuples san ont exprime leur preference pour etre designes par les noms de leurs nations respectives.",
+      "contemporaryUsage": "San reste l'appellation academique standard internationale. Bushmen est encore largement utilise en Afrique du Sud et Namibie. Au Botswana, Basarwa est l'appellation officielle.",
       "linguisticFamily": "FLG_KXA",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Désert du Kalahari (Botswana)",
-      "currentCountries": ["BWA"]
+      "ethnoLinguisticGroup": "Peuples autochtones chasseurs-cueilleurs d'Afrique australe, repartis en de nombreux groupes distincts partageant des traits linguistiques a consonnes clics et un mode de vie traditionnel similaire.",
+      "historicalRegion": "Afrique australe dans son ensemble : deserts du Kalahari et du Namib, plaines d'Afrique du Sud, zones boisees de Zambie et Zimbabwe",
+      "currentCountries": ["BWA", "NAM", "ZAF", "AGO", "ZMB", "ZWE", "LSO"]
     },
-    "ethnicities": ["San"],
+    "ethnicities": [
+      "Ju/'hoansi (!Kung)",
+      "ǀXam",
+      "ǂKhomani",
+      "Nǀu",
+      "Gǀanda",
+      "Domkhoe",
+      "ǁXegwi",
+      "Tsoa",
+      "Kua",
+      "Shua",
+      "Kxoe"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Désert du Kalahari (Botswana)"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les San sont consideres comme les plus anciens habitants de l'Afrique australe et parmi les populations humaines dont l'ascendance est la plus ancienne. Des etudes genetiques indiquent que leurs ancetres ont diverge des autres lignees humaines il y a entre 100 000 et 200 000 ans. Des outils identiques a ceux utilises par les San modernes ont ete retrouves a Border Cave (KwaZulu-Natal) et dates a 42 000 avant l'ere commune. Une etude de 2009 les classe parmi les populations a la plus haute diversite genetique.",
+      "formationPeriod": "Presence attestee dans toute l'Afrique australe depuis au moins 44 000 ans. Vers 2000 avant notre ere, la progression des peuples bantous agriculteurs et des Khoikhoi pasteurs les a progressivement refoules vers les regions arides du Kalahari et du Namib.",
+      "migrationRoutes": [
+        "Occupation initiale de toute l'Afrique australe depuis des temps tres anciens",
+        "Repli progressif vers le desert du Kalahari sous la pression des peuples bantous a partir du premier millenaire de l'ere commune",
+        "Presence residuelle en Afrique du Sud (ǂKhomani dans le Kalahari du nord), en Namibie (Nyae Nyae) et au Zimbabwe"
+      ],
+      "historicalSettlementZones": [
+        "Desert du Kalahari central (Botswana)",
+        "Nyae Nyae et Tsumkwe (Namibie)",
+        "Kalahari du nord (Afrique du Sud, region ǂKhomani)",
+        "Cap occidental (anciens ǀXam, aujourd'hui disparus)"
+      ],
+      "unificationsOrDivisions": "Les San ne forment pas une unite politique. Ils se repartissent en de nombreux groupes distincts parlant des langues mutuellement inintelligibles et organises en bandes independantes. La classification en familles linguistiques KXA (Ju/'hoansi, ǂHoan), Tuu (ǃXoon, ǀXam) et Khoe (Kxoe, Tsoa) reflete cette diversite.",
+      "externalInfluences": "Contact avec les Khoikhoi pasteurs a partir du premier millenaire de l'ere commune. Confrontation violente avec les colons neerlandais (commandos boers) a partir du XVIIe siecle. Sous la VOC neerlandaise, une politique d'eradication fut endossee en 1777. Au XXe siecle, sedentarisation forcee par les gouvernements namibien, botswanais et sud-africain. Exploitation diamantaire dans la Reserve centrale du Kalahari (Botswana) ayant conduit aux expulsions de 1997 et 2002.",
+      "majorHistoricalEvents": "1652 : installation neerlandaise au Cap ; 1777 : politique VOC d'eradication des San ; 1817 : interdiction du troc des enfants san ; 1868-1879 : guerres Korana, disparition des derniers San du Cap ; 1950s : sedentarisation forcee en Namibie et Botswana ; 1997-2002 : expulsions de la Reserve centrale du Kalahari par le gouvernement botswanais ; 2006 : jugement de la Haute Cour botswanaise declarant les expulsions inconstitutionnelles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe egalitaire organisee en bandes semi-nomades de taille restreinte (15 a 50 personnes). Pas de chefs hereditaires ni de clans formels. Les decisions sont prises par les anciens ou par consensus du groupe. L'autorite est limitee et non coercitive.",
+      "clanOrganization": "Pas de systeme clanique formels. Les groupes sont constitues de familles etendues liees par la parente et l'alliance. Le systeme de parenté est similaire au systeme esquimau/inuit : un petit nombre de noms (environ 35 par sexe) circule au sein du groupe, chaque enfant etant nomme d'apres un aieul.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les femmes peuvent diriger des groupes familiaux, prendre des decisions importantes et revendiquer la propriete de points d'eau et de zones de cueillette. La societe est relativement non hierarchique. En 1994, environ 95 % des unions etaient monogames.",
+      "religiousAuthority": "Chamanes (hommes et femmes) jouant un role central dans les rites de guerison et de communication avec les esprits ancestraux. Ils entrent en transe par la danse et la musique pour acceder au monde spirituel."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Langues khoisan a consonnes clics, reparties en trois familles independantes : KXA (Ju/'hoansi, ǂHoan), Tuu (ǃXoon, ǀXam) et Khoe (Kxoe, Tsoa, Shua). Pas d'intercomprehension entre les familles.",
+      "isoCodes": [
+        "knw",
+        "ktz",
+        "kxu",
+        "nmn",
+        "xam",
+        "xeg",
+        "aue",
+        "gwj",
+        "tso",
+        "xuu"
+      ],
+      "dialects": [
+        "Ju/'hoansi (Tsumkwe San) : principal groupe KXA, Namibie et Botswana",
+        "ǂHoan : langue isolat rattachee a la famille KXA",
+        "ǃXoon : langue Tuu, Botswana meridional",
+        "ǀXam : langue Tuu, eteinte (Afrique du Sud)",
+        "Kxoe : langue Khoe, Angola, Namibie, Botswana",
+        "Tsoa et Kua : langues Khoe, Botswana"
+      ],
+      "vehicularRole": "Aucune langue san ne sert de vehiculaire entre les groupes. Le setswana (Botswana), l'afrikaans (Afrique du Sud) et le khoekhoegowab (Namibie) sont utilises comme langues de contact avec les populations voisines."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Danse de transe chamanique (rite de guerison central) : les participants dansent autour d'un feu jusqu'a l'etat de transe (num, energie spirituelle) ; les chamanes en transe visitent le monde des esprits pour soigner les malades, eloigner le malheur ou attirer la pluie. Rites de puberte pour les filles (premiere menstruation). Rituels de chasse (purification avant et apres la mise a mort d'un animal).",
+      "symbols": "Arc et fleche empoissonne (diamphotoxine extraite des larves de Diamphidia) ; peintures rupestres representant des eland, des chamanes en transe et des scenes de chasse ; perles de coquillage d'autruche.",
+      "artsAndMusic": "Art rupestre parmi les plus anciens du monde : peintures et gravures sur rochers representant chasses, batailles, scenes domestiques et evenements mythologiques, notamment dans les monts Cederberg (Afrique du Sud) et au Mapungubwe. Musique vocale polyphonique (moropa, chants de transe). Fabrication d'instruments a cordes (arc musical) et a vent. Litterature orale riche incluant contes d'animaux et recits mythologiques.",
+      "spiritualities": "Cosmologie fondee sur l'existence de deux mondes (visible et spirituel) en interaction permanente. Le Grand Dieu createur coexiste avec un Dieu inferieur associe a la maladie et au malheur. Les ancetres jouent un role actif dans la vie des vivants. Le chamanisme est la pratique spirituelle centrale : le chamane (n/om-kxao) detient l'energie sacree n/om qu'il active par la danse pour entrer en transe et guider le groupe. L'eland (grande antilope) est l'animal spirituel le plus important."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les San n'ont pas constitue de royaumes ni de chefferies formelles. Leur mode d'organisation egalitaire en bandes semi-nomades a perdure pendant des dizaines de millenaires.",
+      "relationsWithNeighbors": "Echanges commerciaux et culturels avec les peuples bantous et khoikhoi avant la colonisation europeenne. Relations souvent conflictuelles avec les Trekboers (commandos) depuis le XVIIe siecle. A partir du XIXe siecle, incorporation comme main-d'oeuvre servile dans les fermes boers et plus tard dans les exploitations minières.",
+      "conflictsOrAlliances": "Resistance armee aux commandos coloniaux neerlandais puis boers du XVIIe au XIXe siecle. Confrontations avec l'administration coloniale allemande en Namibie (plus de 400 patrols anti-San entre 1911 et 1913). Mobilisation juridique au Botswana depuis les annees 1990 contre les expulsions gouvernementales de la Reserve centrale du Kalahari.",
+      "diaspora": "Exode force des San du Kalahari central vers des camps de relogement (New Xade, Kaudwane) a la suite des expulsions de 1997 et 2002 au Botswana. Presence de communautes urbaines marginalisees en Afrique du Sud (Northern Cape) et en Namibie."
     },
     "demography": {
-      "totalPopulation": 50,
+      "totalPopulation": 160000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Survival International (2024) ; recensement Namibie 2023 (71 201 San) ; Botswana 2017 (63 500 San) ; estimations aggregees pour ZAF, AGO, ZWE, ZMB, LSO",
+      "distributionByCountry": [
+        { "country": "BWA", "population": 65000 },
+        { "country": "NAM", "population": 75000 },
+        { "country": "ZAF", "population": 10000 },
+        { "country": "AGO", "population": 4000 },
+        { "country": "ZMB", "population": 3000 },
+        { "country": "ZWE", "population": 2000 },
+        { "country": "LSO", "population": 500 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "San peoples – Wikipedia EN (https://en.wikipedia.org/wiki/San_peoples)",
+      "San (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/San_(peuple))",
+      "Khoisan languages – Wikipedia EN (https://en.wikipedia.org/wiki/Khoisan_languages)",
+      "Kxʼa languages – Wikipedia EN (https://en.wikipedia.org/wiki/Kx%CA%BCa_languages)",
+      "Survival International – Bushmen (https://www.survivalinternational.org/peoples/bushmen)",
+      "Namibia Population and Housing Census 2023 – NamStats (population san 71 201)",
+      "David Lewis-Williams, The Mind in the Cave, Thames & Hudson, 2002 (art rupestre san et chamanisme)",
+      "Brenna Henn et al., Hunter-gatherer genomic diversity suggests a southern African origin for modern humans, PNAS, 2011 (https://www.pnas.org/doi/10.1073/pnas.1017511108)"
+    ]
   }
 }

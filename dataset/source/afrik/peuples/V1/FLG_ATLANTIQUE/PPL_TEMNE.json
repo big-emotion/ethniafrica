@@ -1,0 +1,23 @@
+{
+  "id": "PPL_TEMNE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Themne / Timni",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "historicalRegion": "Sierra Leone (Nord et centre)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (tem)", "Sierra Leone Bureau of Statistics"]
+  }
+}

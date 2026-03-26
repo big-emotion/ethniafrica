@@ -2,67 +2,107 @@
   "id": "PPL_MENDE",
   "nameMain": "Mende",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["SLE"],
+  "currentCountries": ["SLE", "LBR"],
   "content": {
     "appellations": {
       "mainName": "Mende",
       "selfAppellation": "Mende",
-      "exonyms": ["Mende (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Boumpe",
+        "Hulo",
+        "Kossa",
+        "Kosso",
+        "Mendi (forme coloniale britannique)"
+      ],
+      "originOfExonyms": "La langue mende est aussi connue sous les noms Boumpe, Hulo, Kossa ou Kosso, qui désignent des parlers régionaux ou des dénominations utilisées par les groupes voisins. Le terme Mendi fut utilisé dans les écrits coloniaux britanniques. Les Mende eux-mêmes emploient le terme Mende comme ethnonyme principal.",
+      "whyProblematic": "Le terme Mende recouvre en réalité deux strates historiques : une population autochtone de chasseurs et pêcheurs, et des conquérants Mane venus de Guinée au 16e siècle qui se sont fusionnés avec les Bullom locaux pour former le peuple mende actuel. La société mende est à la fois patrilinéaire et matrilinéaire selon les contextes, reflet de cette double origine.",
+      "contemporaryUsage": "Le terme Mende est universellement utilisé en Sierra Leone pour désigner ce groupe, qui représente environ 31,2% de la population nationale. Les Mende dominent politiquement dans les provinces du Sud et de l'Est de Sierra Leone et soutiennent traditionnellement le Sierra Leone People's Party (SLPP). Environ 30 000 à 40 000 Mende vivent au Libéria voisin.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Mandé (Mandé méridional)",
-      "historicalRegion": "SLE, Libéria",
-      "currentCountries": ["SLE"]
+      "ethnoLinguisticGroup": "Mandé (Mandé méridional, branche Mende-Bandi)",
+      "historicalRegion": "Provinces du Sud et de l'Est de Sierra Leone — districts de Bo, Kenema, Kailahun, Moyamba, Pujehun ; forêt de Gola (entre Sierra Leone et Libéria)",
+      "currentCountries": ["SLE", "LBR"]
     },
     "ethnicities": [
-      "Mende de Sierra Leone",
-      "Mende du Libéria",
-      "Sous-groupes régionaux"
+      "Kpa-Mende — clan dominant du district de Moyamba (sud), Confédération Kpa Mende sous Madam Yoko",
+      "Golah-Mende (Gola-Mende) — forêt de Gola entre districts de Kenema et Pujehun, et Libéria",
+      "Sewa-Mende — établis le long de la rivière Sewa",
+      "Vai-Mende — présents au Libéria et dans le district de Pujehun (Sierra Leone)",
+      "Koh-Mende — clan dominant du district de Kailahun"
     ],
     "origins": {
-      "ancientOrigins": "Les Mende sont originaires de la région de la Sierra Leone et du Libéria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé (Mandé méridional).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Mende descendent de deux populations distinctes fusionnées. La première est une population autochtone de chasseurs et pêcheurs qui occupaient la région en petits établissements pacifiques depuis des temps anciens. La seconde est celle des Mane, guerriers conquérants venus du nord (probablement de la région de Moussadou en Guinée actuelle) au 16e siècle. Ces Mane conquirent et se mélangèrent aux Bullom autochtones du littoral pour former le peuple mende tel qu'il est connu aujourd'hui. L'analyse linguistique et culturelle révèle ce double héritage : la langue mende porte des traces des deux strates, et le système de parenté est à la fois matrilinéaire et patrilinéaire selon les contextes.",
+      "formationPeriod": "La formation du peuple mende distinct est datée du 16e siècle, lors des migrations et conquêtes mane depuis le nord. Au 19e siècle, de nombreux Mende-locuteurs furent capturés et vendus comme esclaves lors des guerres régionales — dont 52 individus dont la révolte à bord du navire Amistad en 1839 eut un retentissement international. L'identité politique mende se cristallise au 20e siècle autour du SLPP, parti indépendantiste fondé par Sir Milton Margai, premier Premier ministre de Sierra Leone (indépendance du 27 avril 1961).",
+      "migrationRoutes": [
+        "Migration des Mane depuis la région de Moussadou (Guinée actuelle) vers le sud, puis les zones côtières et forestières de Sierra Leone (16e siècle)",
+        "Expansion des clans mende vers l'est (districts de Kenema et Kailahun) et vers le Libéria voisin",
+        "Extension de la Confédération Kpa Mende dans le district de Moyamba sous Madam Yoko (19e siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sud de Sierra Leone — districts de Bo, Moyamba, Pujehun, Bonthe",
+        "Province de l'Est de Sierra Leone — districts de Kenema, Kailahun, Kono",
+        "Forêt de Gola (zone frontalière Sierra Leone-Libéria)",
+        "Comté de Lofa au Libéria — présence Golah-Mende"
+      ],
+      "unificationsOrDivisions": "Les cinq clans mende (Kpa, Golah, Sewa, Vai, Koh) maintiennent des identités distinctes ancrées dans des territoires spécifiques, mais partagent une culture, une langue et des institutions communes (Poro et Sande). Aucun royaume centralisé unique n'unifie les Mende, mais des confédérations locales existent, comme la Confédération Kpa Mende dirigée par Madam Yoko au 19e siècle, reconnue par les Britanniques comme paramountcy.",
+      "externalInfluences": "Colonisation britannique de Sierra Leone (protectorat de 1896) : imposition d'une administration de chefferies (chiefdoms), réorganisation territoriale et éducation missionnaire. La guerre des impôts (Hut Tax War) de 1898, à laquelle participèrent des Mende sous Bai Bureh et d'autres chefs. Traite atlantique des esclaves (18e-19e siècles) : nombreux Mende capturés et vendus. L'affaire Amistad (1839) donna une visibilité internationale au peuple mende. La guerre civile de Sierra Leone (1991-2002) a profondément affecté les zones mende.",
+      "majorHistoricalEvents": "Migration mane et formation du peuple mende (16e siècle). Guerre régionale et capture de 52 Mende à bord de l'Amistad (1839) — révolte menée par Sengbe Pieh (Joseph Cinqué) — jugement en leur faveur aux États-Unis, rapatriement en 1842. Confédération Kpa Mende sous Madam Yoko (1849-1906), reconnue Paramount Chief par les Britanniques en 1894. Fondation du SLPP par Sir Milton Margai, premier Premier ministre indépendant de Sierra Leone (27 avril 1961). Invention du syllabaire Kikakui par Kisimi Kamara (vers 1921) — système d'écriture pour la langue mende. Guerre civile sierra-léonaise (1991-2002) — impact dévastateur sur les communautés mende."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Mende sont organisés en chiefdoms (chefferies) à plusieurs niveaux. Des groupes de villes et villages forment des sections, et plusieurs sections constituent un chiefdom moderne. Chaque section est dirigée par un sous-chef (eldest suitable male descendant in the male line of the section founder) ; le chiefdom est gouverné par un Paramount Chief choisi sur la même base. Le chef est un leader séculier ; le pouvoir rituel appartient à la société secrète du Poro. L'adhésion au Poro est obligatoire pour toute personne en position d'autorité.",
+      "clanOrganization": "Société patrilinéaire, patrilocale et polygame. Le foyer est représenté par au moins un homme, ses frères, leurs femmes et enfants. L'aîné masculin exerce une autorité morale sur l'ensemble de la famille, notamment pour la négociation des dettes, dommages et prix de la fiancée (bride-wealth). Les clans (cinq au niveau macro) structurent l'identité territoriale.",
+      "ageClassSystems": "Le Poro (hommes) et le Sande (femmes) constituent des institutions d'initiation graduée fonctionnant comme des systèmes d'âge. L'initiation dans le Poro dure traditionnellement sept ans, avec différents grades allant de la découverte à l'exercice du leadership. Le grade le plus élevé dans le Sande est celui de Sowei, leaders rituelles portant les masques Bundu.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent les droits fonciers et l'héritage principal. Cependant, des héritages matrilinéaires coexistent dans certains contextes, témoignant de la double origine du peuple mende. Les chefs de kin group allouent les terres aux foyers individuels. La solidarité lignagère régit les obligations économiques et matrimoniales.",
+      "religiousAuthority": "Le chef est un leader séculier ; le pouvoir spirituel appartient aux sociétés secrètes. Le Poro détient l'autorité religieuse masculine : les hommes masqués représentent des esprits, appliquent la loi mende, éduquent les garçons et assurent la fertilité agricole. Le Sande détient l'autorité spirituelle féminine : les Sowei (leaders du Sande) sont prêtresses et juges pendant les trois ans où la société contrôle le calendrier rituel (en alternance avec le Poro). Islam et christianisme sont présents, souvent en syncrétisme avec les pratiques traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Mende",
-      "vehicularRole": "Le mende est parlé par la majorité des Mende. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Mende (Mende-kan)",
+      "isoCodes": ["men"],
+      "dialects": [
+        "Kpa-Mende — dialecte du district de Moyamba",
+        "Koh-Mende — dialecte du district de Kailahun",
+        "Sewa-Mende — dialecte de la vallée de la Sewa",
+        "Golah-Mende — dialecte de la forêt de Gola et du Libéria"
+      ],
+      "vehicularRole": "Le mende est une langue tonale du groupe mandé méridional, parlée par environ 2 millions de personnes en Sierra Leone (31,2% de la population), ce qui en fait la deuxième langue du pays après le temne. Elle est langue nationale de Sierra Leone aux côtés du krio et du temne. En 1930, le linguiste afro-américain Lorenzo Dow Turner découvrit qu'une famille gullah de Géorgie (États-Unis) avait préservé une chanson ancienne en langue mende ('A waka') depuis 200 ans, témoignage de la traite. Le syllabaire Kikakui (ou Mende script), inventé vers 1921 par Kisimi Kamara, est un système d'écriture propre à la langue mende, encore utilisé par certains locuteurs âgés."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles culturels mende, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (tambours, flûtes)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"femaleInitiation\": \"Initiation dans la société Sande : les jeunes filles sont retirées de leur vie quotidienne et emmenées dans un espace forestier isolé pour une période d'instruction sur les responsabilités de l'âge adulte (être de bonnes épouses, mères et membres de la communauté). L'initiation comprend la circoncision féminine (clitoridectomie), rite de passage central qui marque le passage de l'enfant neutre à la femme adulte. La clôture de l'initiation est célébrée par la danse du masque Sowei (Bundu) — grade Gani.\", \"maleInitiation\": \"Initiation dans la société Poro : les garçons sont initiés à l'âge adulte et à la préparation au leadership. Durée traditionnelle de sept ans, avec grades progressifs. Les initiés apprennent un langage secret et des mots de passe réservés aux membres du Poro. La cérémonie décrit symboliquement une mort et une renaissance ('régurgitation' lors de la mascarade finale).\"}, \"masqueradeRites\": {\"sandeMasquerade\": \"Les masques Bundu (ou Sowei) sont les seuls masques d'Afrique portés et utilisés exclusivement par et pour des femmes. Sculptés en bois de cotonnier (kpole) par un maître sculpteur après un rêve, ils représentent l'esprit gardien de l'eau du Sande. Les caractéristiques symboliques incluent : une coiffure élaborée (signe de féminité), un large front lisse (chance et intelligence), des yeux mi-clos (nature spirituelle), une petite bouche (humilité), des scarifications sur les joues (appartenance au Sande), et des bourrelets au cou (santé, fécondité, beauté). La marque hojo (argile blanche) est utilisée pour protéger le territoire et symboliser la pureté.\"}, \"funeraryRites\": {\"ceremonies\": \"Cérémonies funéraires avec participation des sociétés Poro et Sande selon le genre du défunt. Les masques des sociétés interviennent lors des funérailles de membres initiés.\"}}",
+      "symbols": "Le masque Bundu (Sowei) : symbole majeur de l'identité mende et de la puissance féminine, seul masque africain porté exclusivement par des femmes. Les cloches portées en colliers (une pour les chasseurs hommes, plusieurs pour les femmes) dont le son est entendu des esprits. L'argile blanche hojo symbolise la protection et la pureté du Sande. La rivière et l'eau sont des symboles du Sande et de l'esprit protecteur féminin. Le syllabaire Kikakui (écriture mende) symbolise la capacité d'innovation culturelle.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"masks\": \"Les masques Bundu/Sowei en bois sont le chef-d'oeuvre artistique mende, collectionnés par les plus grands musées mondiaux (Metropolitan Museum of Art, High Museum of Art). Ils sont sculptés par des maîtres sculpteurs masculins mais portés exclusivement par des femmes initiées du Sande. Chaque masque représente l'esprit gardien du Sande et ses traits symbolisent les idéaux féminins mende.\", \"jewelry\": \"Bijoux en or et argent (colliers, bracelets, boucles d'oreilles) ; artisanat de tissage de tissus (country cloths — tissus rayés traditionnels de coton indigo et blanc).\", \"dances\": \"Danse Ndoli jowei (danse du masque Sande) : formation rigoureuse, jusqu'à 48 heures de danse, discipline stricte. Danse Gonde (personnage comique, professeur de danse). Danses collectives lors des cérémonies Poro et Sande.\", \"songs\": \"Chants initiatiques des sociétés Sande et Poro ; épopées orales sur les fondateurs des clans ; hymnes à l'esprit du Sande lors des cérémonies du masque Bundu.\", \"crafts\": \"Sculpture sur bois, poterie, travail du raphia pour les costumes rituels.\"}, \"gastronomy\": {\"staple\": \"Riz comme culture vivrière principale — les Mende sont des riziculteurs par excellence. Igname et manioc en complément. Cultures de rente : café, cacao, gingembre, arachides, huile de palme.\"}}",
+      "spiritualities": "{\"traditionalReligion\": {\"secretSocieties\": \"Les sociétés Poro (masculine) et Sande (féminine) constituent le coeur de la vie spirituelle mende. Elles régulent les comportements sexuels, assurent la formation des jeunes, garantissent la fertilité agricole et appliquent la loi mende. Les hommes masqués du Poro représentent des esprits lors des cérémonies.\", \"sandeSpirit\": \"L'esprit gardien du Sande est associé à l'eau et aux rivières. Le masque Bundu/Sowei incarne cet esprit lors des cérémonies d'initiation, de funérailles et d'installation des chefs.\", \"ancestors\": \"Culte des ancêtres : les défunts veillent sur les vivants et peuvent être invoqués lors de cérémonies spécifiques.\"}, \"islam\": {\"note\": \"L'islam est présent chez une partie des Mende, souvent pratiqué en syncrétisme avec les traditions Poro et Sande. La décision d'affiliation politique (SLPP) transcende la division religieuse.\", \"mende_script_quran\": \"Certains érudits musulmans mende ont utilisé le syllabaire Kikakui pour transcrire des textes islamiques.\"}, \"christianity\": {\"note\": \"Le christianisme a progressé depuis la période coloniale britannique et les missions. Pratiqué en syncrétisme partiel avec les traditions des sociétés secrètes.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mende dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Mende s'organisèrent en confédérations de chiefdoms plutôt qu'en royaumes centralisés. La Confédération Kpa Mende, sous la direction de Madam Yoko (1849-1906), fut la plus importante, reconnue Paramount Chief par l'administration britannique en 1894. Sir Milton Margai, Premier ministre indépendant de Sierra Leone (1961), est le leader mende le plus éminent du 20e siècle. Les Mende ont fourni la majorité des premiers ministres et présidents de Sierra Leone, notamment via le SLPP.",
+      "relationsWithNeighbors": "Relations complexes avec les Temne (rivalité politique structurelle : Temne-APC vs Mende-SLPP), les Kono (co-résidents dans la province de l'Est), les Kissi, et les groupes libériens voisins. Commerce et alliances avec les Sherbro côtiers. Les masques Bundu du Sande sont partagés avec plusieurs groupes voisins (Sherbro, Temne, Vai, Kpelle du Libéria), illustrant l'influence culturelle mende dans la région.",
+      "conflictsOrAlliances": "Affaire Amistad (1839) : révolte des esclaves mende menée par Sengbe Pieh, jugement aux États-Unis établissant leur liberté. Hut Tax War (1898) contre la colonisation britannique. Guerre civile sierra-léonaise (1991-2002) : le Revolutionary United Front (RUF) commit d'horribles atrocités dans les zones mende, amputation de membres et enlèvement d'enfants-soldats. Le SLPP (parti mende) forma le gouvernement de résistance pendant une partie du conflit.",
+      "diaspora": "Diaspora sierra-léonaise mende principalement au Royaume-Uni, aux États-Unis et dans les pays voisins d'Afrique de l'Ouest. Depuis la guerre civile (1991-2002), des réfugiés mende se sont installés en Guinée, au Libéria et dans d'autres pays. La communauté sierra-léonaise de Grande-Bretagne compte parmi les plus grandes diasporas africaines au Royaume-Uni."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 2200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur Wikipedia — Mende people (31,2% de la population de Sierra Leone estimée à environ 8,6 millions en 2025 par la Banque mondiale), Ethnologue SIL — Mende language (men), CIA World Factbook Sierra Leone 2024, eHRAF World Cultures (Université Yale). En 2022, les Mende représentaient environ 2 millions de personnes en Sierra Leone selon diverses sources.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 2160000,
+          "note": "Province du Sud (Bo, Moyamba, Pujehun, Bonthe) et Province de l'Est (Kenema, Kailahun, Kono) — environ 31,2% de la population nationale"
+        },
+        {
+          "country": "LBR",
+          "population": 40000,
+          "note": "Golah-Mende et Vai-Mende dans les comtés de Lofa et Grand Cape Mount"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Mende language (men)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Mende people. https://en.wikipedia.org/wiki/Mende_people",
+      "Ethnologue — Mende language (men). https://www.ethnologue.com/language/men",
+      "Britannica — Mende. https://www.britannica.com/topic/Mende-people",
+      "Smarthistory — Bundu/Sowei Helmet Mask. https://smarthistory.org/bundu-sowei-helmet-mask/",
+      "Metropolitan Museum of Art — Helmet Mask (Bundu). https://www.metmuseum.org/art/collection/search/310439",
+      "eHRAF World Cultures — The Mende of Sierra Leone. https://ehrafworldcultures.yale.edu/cultures/fc07/summary",
+      "PVAMU Digital Commons — MENDE Culture of Arts from Sierra Leone and Liberia. https://digitalcommons.pvamu.edu/african-sculptures-and-masks/16/",
+      "CIA World Factbook — Sierra Leone. https://www.cia.gov/the-world-factbook/countries/sierra-leone/"
     ]
   }
 }

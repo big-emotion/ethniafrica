@@ -6,54 +6,77 @@
   "content": {
     "appellations": {
       "mainName": "Talensi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Talensi",
+      "exonyms": ["Tallensi", "Talense", "Tale"],
+      "originOfExonyms": "Tallensi est la variante orthographique la plus repandue dans la litterature anthropologique anglophone, notamment dans les travaux fondateurs de Meyer Fortes. Le terme Tale ou Talis designe specifiquement le sous-groupe habitant les Tongo Hills, par opposition aux Namoos, sous-groupe migrant.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Talensi et Tallensi sont utilises indifferemment; la premiere orthographe est retenue pour le district administratif ghaneeen (Talensi District) et la seconde predomine dans la litterature academique classique (Fortes 1945, 1949).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Gur (Voltaique), branche Farefare/Oti-Volta, famille Gurune/Grunshi",
+      "historicalRegion": "Tongo Hills, Upper East Region, Ghana",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Talensi"],
+    "ethnicities": [
+      "Talis (Talensi des collines)",
+      "Namoos (Talensi migrants d'origine mamprusi)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Talensi sont divises en deux grands groupes: les Talis, consideres comme les habitants originels des Tongo Hills (selon la tradition orale, ils ont toujours ete la ou sont sortis de la terre elle-meme), et les Namoos, arrives il y a environ 350-400 ans, reconnus comme des migrants Mamprusi ayant cohabite pacifiquement avec les Talis. Des datations OSL du sanctuaire de Nyoo placent une occupation rituelle des Tongo Hills entre le milieu du 3e et la fin du 8e siecle de l'ere chretienne.",
+      "formationPeriod": "L'ensemble de la societe Talensi telle qu'elle est connue s'est constituee il y a 350-400 ans avec l'arrivee des Namoos. Les Tongo Hills sont habites depuis au moins le debut de l'ere chretienne, voire l'epoque du Neolithique tardif.",
+      "migrationRoutes": [
+        "Les Namoos ont migre depuis les terres Mamprusi vers le sud, rejoignant les Talis dans les Tongo Hills"
+      ],
+      "historicalSettlementZones": [
+        "Tongo Hills (7 km x 3 km), Upper East Region",
+        "Village de Tengzug (Tongo-Tengzuk)",
+        "Environs de Tongo (10°43'N, 0°48'O)"
+      ],
+      "unificationsOrDivisions": "La societe Talensi est bicephale: les Talis fournissent les pretres de la terre (Tendaanas), gardiens des sanctuaires terrestres; les Namoos contribuent aux chefs politiques (na'am). Le chef de Tongo est le plus haut rang parmi les chefs Talensi.",
+      "externalInfluences": "Frontieres seculaires avec les Etats centralises de Dagbon et Mamprugu au sud, et les royaumes Mossi au nord. Resistance a la colonisation britannique: les Tongo Hills ont ete parmi les derniers territoires a se soumettre. Expeditions militaires britanniques en 1911 et 1915. Travaux anthropologiques intensifs de Meyer Fortes (1906-1983) qui ont rendu ce peuple celebre dans la discipline.",
+      "majorHistoricalEvents": "Construction supposee des premiers sanctuaires de Nyoo entre le 3e et le 8e siecle (datations OSL). Arrivee des Namoos il y a 350-400 ans. Resistance a la colonisation britannique: assaut militaire de 1911 suivi d'un second en 1915. Retour clandestin puis officiel dans les collines dans les annees 1920. Recherches de Meyer Fortes dans les annees 1930. Projet archeologique de l'Universite de Manchester depuis 2004. Inscription des etablissements de Tenzug-Tallensi sur la liste indicative du patrimoine mondial de l'UNESCO (2000)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme acephale (sans roi central) avec deux poles d'autorite complementaires: les pretres de la terre Tendaanas (Talis) qui controlent les sanctuaires terrestres et garantissent la fertilite de la terre, et les chefs politiques Namoos porteurs du na'am (autorite politique). Le chef de Tongo detient le rang le plus eleve symboliquement sans avoir d'autorite administrative sur les autres clans.",
+      "clanOrganization": "Organisation en clans patrilineaires. Chaque clan est lie a des offices politico-rituels specifiques. Les clans Talis detiennent les fonctions de pretrise de la terre; les clans Namoos detiennent les chefferies. L'ensemble est structure par des liens de solidarite et d'obligations rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation est patrilineaire stricte: le premier-ne est d'une importance capitale car seuls les individus ayant un premier-ne peuvent devenir des ancetres veneres apres la mort. Les lignages patrilineaires forment le noyau de chaque communaute et controlent la terre, le betail et les femmes.",
+      "religiousAuthority": "Systeme religieux complexe associant culte de la terre (tengban, sanctuaires terrestres garantissant la fertilite et les droits fonciers), culte ancestral (ba'ar, sanctuaires domestiques), totems claniques, et culte d'un dieu supreme. Les Tendaanas sont les pretres de la terre; les ancetres sont veneres dans des sanctuaires domestiques (piliers en terre, couronnes d'objets personnels). Le crocodile sacre est un totem dont le meurtre est tabou."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Talni (Tallensi)",
+      "isoCodes": ["faf"],
+      "dialects": ["Talni"],
+      "vehicularRole": "Le talni est le dialecte des Talensi, rattache par l'ISO 639-3 au farefare (faf, Fare Fare), langue du groupe Gurune/Grunshi. Des linguistes argumentent que le talni constitue une langue distincte du farefare dominant. Le moore (mos), le haoussa (hau) et l'anglais (eng) servent de vehiculaires au niveau regional et national."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Golib (ou Gologo): festival agricole precoce tenu avant les semailles de mil en mars, centre sur le sanctuaire de Nyoo dans les Tongo Hills. Il implique des danses circulaires (mouvement serpentin des danseurs, donnant le nom golib), des offrandes, des rites solennels des Talis et des activites rituelles. Les tambours Golib et les battons sikpatuure (battons directionnels des Tendaanas) sont des objets rituels centraux. Festival Boardaam: autre festival majeur du cycle annuel. Rituels d'initiation autour des naissances et mariages.",
+      "symbols": "Pierres dressees et arrangements de pierres aux sanctuaires (Nyoo). Pots rituels associes aux ancetres. Bracelets de fer portes selon les prescriptions des devins. Arbres et bosquets sacres soigneusement preserves (Bonab, Nnoo). Rochers et grottes dans les Tongo Hills comme sieges des puissances terrestres.",
+      "artsAndMusic": "Architecture vernaculaire distinctive: compounds integres dans le paysage rocheux, chemins pedestes, espaces ombres, graniers, enclos a betail et sanctuaires forment un paysage culturel coherent. Musique de tambours lors du Golib. Agriculture: mil, sorgho comme staples, mais aussi igname, bovins, ovins et caprins.",
+      "spiritualities": "Religion traditionnelle complexe: culte des ancetres (ba'ar), culte de la terre (tengban), observances totemiques dont le tabou de tuer le crocodile sacre, et croyance en un dieu supreme. Le sanctuaire de Tongnaab (Tonna'ab) est un site de pelerinage regional majeur attire des groupes voisins (Mossi, Bulsa, Dagomba, Guruni, Kusasi) et des Akan du sud du Ghana. Tongnaab a ete franchise dans d'autres regions, propageant sa puissance rituelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise: les Talensi sont des horticulteurs sedentaires a organisation politique lache (acephale). Le chef de Tongo est le premier en rang symbolique mais n'a pas d'autorite sur les autres clans.",
+      "relationsWithNeighbors": "Frontieres historiques avec les Etats centralises de Dagbon (sud) et Mamprugu (sud), et les royaumes Mossi (nord). Relations de pelerinage et d'influence religieuse avec Mossi, Bulsa, Dagomba, Guruni, Kusasi, et les Akan du sud. Le sanctuaire de Tongnaab est un point de contact regional majeur.",
+      "conflictsOrAlliances": "Resistance prolongee a la colonisation britannique. Assaut militaire de 1911 (dernier territoire du Ghana a se soumettre). Second assaut en 1915. Les Talensi ont ete expulses des Tongo Hills et l'acces interdit jusqu'aux annees 1920. Alliance symbolique entre Talis et Namoos structurant la societe depuis 350-400 ans.",
+      "diaspora": "Migration economique vers les villes du sud du Ghana, notamment Accra et Kumasi. Cependant, les Talensi maintiennent un fort attachement au territoire des Tongo Hills, lieu de leurs sanctuaires."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 93000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ghana Statistical Service, recensement 2021: District de Talensi 87 021 habitants. Population du district projetee a environ 93 000 pour 2025 sur base d'un taux de croissance de 2,1% par an. Note: le district inclut des populations non-Talensi; la population Talensi stricto sensu est estimee entre 43 000 et 87 000 selon les sources.",
+      "distributionByCountry": [{ "country": "GHA", "population": 93000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN – Tallensi (https://en.wikipedia.org/wiki/Tallensi)",
+      "Wikipedia EN – Talni language (https://en.wikipedia.org/wiki/Talni_language)",
+      "Britannica – Tallensi (https://www.britannica.com/topic/Tallensi)",
+      "eHRAF World Cultures – Tallensi description (https://ehrafworldcultures.yale.edu/cultures/fe11/description)",
+      "World Archaeology – Culture of the Tallensi people of Northern Ghana (https://www.world-archaeology.com/features/culture-of-the-tallensi-people-of-northern-ghana/)",
+      "PMC – Materializing Performance and Ritual: Decoding the Archaeology of the Tallensi (https://pmc.ncbi.nlm.nih.gov/articles/PMC3272432/)",
+      "UNESCO WHC – Tenzug, Tallensi settlements (https://whc.unesco.org/en/tentativelists/1392/)",
+      "Ghana Districts – Talensi District 2021 census (https://ghanadistricts.com/Home/District/158)",
+      "CityPopulation – Talensi District (https://www.citypopulation.de/en/ghana/admin/upper_east/0905__talensi/)",
+      "Meyer Fortes – The Web of Kinship among the Tallensi, 1949; The Dynamics of Clanship among the Tallensi, 1945"
+    ]
   }
 }

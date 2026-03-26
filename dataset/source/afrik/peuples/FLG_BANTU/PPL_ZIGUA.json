@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Zigua",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wazigua",
+      "exonyms": ["Zigula", "Chizigua"],
+      "originOfExonyms": "Zigula est la forme alternative utilisee dans certaines sources academiques et linguistiques ; Chizigua designe la langue elle-meme. Le terme Wazigua est l'appellation swahili pour le peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Zigua est le plus repandu dans la litterature ethnographique moderne ; Wazigua est utilise en swahili tanzanien.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Bantu matrilineaire de Tanzanie orientale",
+      "historicalRegion": "Region de Tanga, nord-est de la Tanzanie (district de Handeni, Kilindi, Pangani)",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Zigua"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Zigua se reclamaient d'une origine septentrionale, conduits selon la tradition orale par un heros eponyme nomme Seuta, renomme pour son arc. Certaines theories academiques, dont celle de Grottanelli, evoquent une parente avec les populations du nord, potentiellement des regions galla de Somalie. Les Zigua sont consideres comme le peuple-mere des Shambaa et des Bondei. Le roi Mbegha, fondateur de la royaute Shambaa, etait d'origine zigua.",
+      "formationPeriod": "Formation progressive entre le XVIe et le XIXe siecle ; acquisition d'armes a feu dans les annees 1830 et expansion dans la vallee du Pangani vers 1850.",
+      "migrationRoutes": [
+        "Migration vers le nord depuis les terres interieures au cours du XIXe siecle",
+        "Occupation de la vallee du Pangani apres 1830",
+        "Deplacement depuis les plaines cotières vers les collines de l'Uzigua"
+      ],
+      "historicalSettlementZones": [
+        "District de Handeni (region de Tanga)",
+        "District de Kilindi",
+        "District de Pangani (au sud du fleuve Pangani)",
+        "District de Chalinze (region de Pwani)",
+        "District de Korogwe (sud-est)",
+        "Plaine cotiere est (moins de 500 pieds d'altitude)",
+        "Collines de l'Uzigua central et occidental (plus de 1 000 pieds)"
+      ],
+      "unificationsOrDivisions": "En 1928, les Zigua de differents districts s'unirent en federation tribale. En 1938, la societe Moyo wa Uzigua na Nguu (Coeur de l'Uzigua et de l'Unguu) fut fondee pour defendre les interets tribaux face au colonisateur britannique, qui avait annexe les chefs zigua sous l'autorite du roi shambaa de Vugha.",
+      "externalInfluences": "Influence arabe et islamique majeure depuis la cote (voie commerciale cotiere, Qadiriyya) ; interactions avec Maasai et Baraguyu (raids, alliances) ; presence missionnaure catholique romaine a partir de la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Raids mutuels avec les Maasai au XIXe siecle ; incendie de Saadani (debut des annees 1850) ; resistance aux Allemands dans les annees 1880 sous Bwana Heri de Saadani ; revendications irridentistes sur la vallee du Pangani (Tambarare) dans les annees 1940-1950."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Absence de chef supreme unique sur l'ensemble des Zigua. Des chefs (zumbe) s'imposaient par la force des raids et le controle des ressources. Les communautes fournissaient travail et tributs ; les chefs forgeaient des alliances par dons, festins communautaires et pactes de sang avec Maasai, Baraguyu et Arabes. La royaute etait hereditaire de pere en fils. Les chefs tranchaient les conflits d'homicide et recevaient le paiement du prix du sang (bloodwealth).",
+      "clanOrganization": "Les regroupements matrilineaires claniques (matri-clans) constituaient l'unite de base des etablissements. Les clans possedaient les terres et maintenaient des relations sociales avec les clans voisins par l'institution de l'utani (cooperation plaisante).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee maternelle est centrale dans la structure sociale, la transmission des biens et l'identite culturelle. Les terres sont detenues collectivement par les clans.",
+      "religiousAuthority": "Les anciens et les magiciens (mgonzi) jouent un role cle dans la mediation avec les esprits ancestraux et les divinites. Les chefs islamiques (waalimu, Qadiri Khulafa) ont acquis une autorite spirituelle importante depuis le XIXe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Zigula (Chizigua)",
+      "isoCodes": ["ziw"],
+      "dialects": [],
+      "vehicularRole": "La langue zigua est la langue maternelle du groupe. Le swahili est utilise comme langue nationale et vehiculaire en Tanzanie. La langue est classee comme menacee (AES 6b) selon Ethnologue."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Circoncision masculine a la puberte (mwaliko wa kavu ou ngasu) : confinement de 3 a 4 mois, enseignement des enigmes et chants, marquage de scarifications (chanje) sur les mains, fete de reintegration (kwaluka). Initiation feminine : confinement pubertaire, labiadectomie (mnkinda), enseignement par la kungwe, rupture du van a grain, danse kisasi. Fete des premieres recoltes (mviko wa mlungu) : libations de biere et de grain autour de l'arbre mkongo. Funerailles : enterrement ou abandon en foret (Kwaluhombwa) ; purification post-deuil (mpoza) avec l'onction de plantes et de contenus d'estomac de betail.",
+      "symbols": "Arc (symbole du heros fondateur Seuta) ; arbres sacres mkongo associes aux libations ; maisons rituelles aux carrefours des forets pour les esprits ancestraux.",
+      "artsAndMusic": "Tissage de paniers et nattes ; sculpture sur bois (epees, massues, fleches, arcs, tambours, pipes a eau, arcs musicaux, tabourets) ; metallurgie du fer (soufflets a main) ; poison de fleches. Chants et danses rituels lors des initiations et ceremonies.",
+      "spiritualities": "Culte des ancetres (kutambika mzimu / mviko) : apaisement des esprits ancestraux (wazimu / pepo). Divinite supreme : Chohile ou Mlungu. Esprits de la foret : kinyamkira (malin, a un seul membre). Reputation de sorcellerie ; consultation de faiseurs de pluie shambaa ; divinateurs (mgonzi) pratiquant charmes et amulettes. Culte de guerison kisasa (feu, poulets, chants, cornes de koudou). Islam majoritaire depuis le XIXe siecle (Qadiriyya) ; christianisme minoritaire (principalement catholique romain)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Absence de royaume unifie ; organisation en chefferies locales (zumbe). Les Zigua sont le peuple-mere des Shambaa (le roi Mbegha etait d'origine zigua) et des Bondei. Federation tribale formee en 1928.",
+      "relationsWithNeighbors": "Raids reciproques avec Maasai et Baraguyu (bovins contre esclaves et animaux). Relations de parente avec Shambaa, Bondei et Ngulu. Alliances economiques avec Nyamwezi et Sukuma. Relations commerciales avec les Arabes de la cote. Institution d'utani (cooperation plaisante) avec les clans voisins.",
+      "conflictsOrAlliances": "Combats avec les Shambaa dans les annees 1850 ; alliance avec les Arabes puis luttes contre eux (Bwana Heri bat des forces arabes en 1882) ; resistance a la colonisation allemande dans les annees 1880 ; campagne irredentiste pour la vallee du Pangani (Tambarare) dans les annees 1940-1954.",
+      "diaspora": "Nombreux Zigua travaillent aujourd'hui comme ouvriers et commercants hors de leurs territoires ancestraux, notamment dans les centres urbains de Tanzanie."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 631000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia (estimation ~631 000 ; 355 000 en 1993 ; 134 406 au recensement 1957)",
+      "distributionByCountry": [{ "country": "TZA", "population": 631000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Zigua people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zigua_people)",
+      "Zigula Language (ZIW) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/ziw/)",
+      "Zigula language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zigula_language)",
+      "Grottanelli, V.L. – Peoples of Africa, 1963",
+      "Moyo wa Uzigua na Nguu – Historical Society Records, Tanzania, 1938"
+    ]
   }
 }

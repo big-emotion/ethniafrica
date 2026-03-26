@@ -1,64 +1,102 @@
 {
   "id": "PPL_CHOPE",
-  "nameMain": "Chope",
+  "nameMain": "Chopi",
   "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["MOZ"],
   "content": {
     "appellations": {
-      "mainName": "Chope",
-      "selfAppellation": "Chope",
-      "exonyms": ["Chope (terme utilisé par les Européens), Chopi"],
+      "mainName": "Chopi",
+      "selfAppellation": "Bacopi / Vacopi",
+      "exonyms": [
+        "Chope (graphie francisee utilisee dans les sources coloniales portugaises)",
+        "Copi (variante orthographique)",
+        "Tschopi (graphie germanique)",
+        "Txopi (graphie portugaise contemporaine)"
+      ],
+      "originOfExonyms": "Le nom Bacopi (forme plurielle en langue chopi, prefixe Ba-) ou Vacopi (avec prefixe Va-) est le nom propre que le peuple se donne. Il derive de l'usage de l'arc et des fleches, arme adoptee des Bochimans San lors des premieres interactions entre Bantous et San dans la region. Les Europeens ont progressivement deplace le Ba-/Va- pour ne retenir que Chopi ou Chope.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chopi est la denomination la plus repandue dans la litterature scientifique et les sources encyclopediques. Txopi est prefere dans les documents officiels mozambicains. Bacopi/Vacopi reste l'endonyme en usage dans les communautes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "Sud du Mozambique",
+      "ethnoLinguisticGroup": "Bantou (Zone S, code Guthrie S.61/S.611)",
+      "historicalRegion": "Sud du Mozambique — province d'Inhambane (district de Zavala, Quissico) et province de Gaza (Chidenguele)",
       "currentCountries": ["MOZ"]
     },
-    "ethnicities": ["Chope du Nord", "Chope du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Chopi du district de Zavala (Quissico) — noyau central de la culture timbila",
+      "Chopi de Bileni (Inhambane) — branche du nord",
+      "Chopi du district de Inharimme (frontiere sud d'Inhambane)",
+      "Chopi de Chidenguele (province de Gaza) — branche septentrionale",
+      "Chopi de Mapai (region du fleuve Limpopo) — ramification meridionale",
+      "Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda, Makwakwa — clans principaux attestes dans les sources historiques"
+    ],
     "origins": {
-      "ancientOrigins": "Les Chope sont originaires du sud du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P) de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Selon les traditions orales, les Chopi font partie des premieres vagues de migration bantoue depuis l'Afrique centrale, installee dans la region entre 100 et 200 apres J.-C. Ils sont reputes avoir ete les premiers Bantous a entrer en contact avec le peuple San (Bochimans) d'Afrique du Sud-Est, dont ils ont adopte l'arc et les fleches — origine presumee de leur nom. En realite, ils appartiennent au groupe Thonga (Tonga) qui a forme diverses colonies en Afrique meridionale, dont les ancetres communs sont partages avec les Tsonga du Mozambique et d'Afrique du Sud.",
+      "formationPeriod": "La presence chopi dans le sud du Mozambique est attestee avant l'arrivee des Portugais au 15e siecle. Les premiers contacts europeens ont lieu avec les marins portugais vers 1400. Entre le 16e et le 18e siecle, les Chopi developpent des chefferies stables dans la region de Zavala-Inhambane et commercent avec les royaumes du Zimbabwe.",
+      "migrationRoutes": [
+        "Migration bantoue originelle depuis l'Afrique centrale (bassin du Congo) vers le sud-est",
+        "Installation progressive sur la cote meridionale du Mozambique (Inhambane, Gaza)",
+        "Dissemination en 1640 vers l'Afrique du Sud (fondation du royaume N'wanati sous le chef Gunyule)"
+      ],
+      "historicalSettlementZones": [
+        "Province d'Inhambane, district de Zavala (centre : Quissico)",
+        "Province de Gaza, district de Chidenguele",
+        "Cote entre Chidenguele et Inharimme",
+        "Region du fleuve Limpopo (Mapai)"
+      ],
+      "unificationsOrDivisions": "Les Chopi ont maintenu une organisation en chefferies locales relativement autonomes. La chefferie superieure traditionnelle existe encore dans les regions d'Inhambane, de Bileni et du territoire de Mapai. En 1640, un groupe dissidant migra vers l'Afrique du Sud et fonda le royaume N'wanati. Au 19e siecle, les invasions Nguni (Shangaan/Mfecane) fragmenterent davantage le territoire.",
+      "externalInfluences": "Contacts avec les marins portugais des le 15e siecle (commerce, conscription dans l'armee portugaise). Invasion Nguni des guerriers de Manukosi Soshangane dans les annees 1820 (Mfecane). Guerre contre le chef Nguni Nghunghunyana (Gaza) de 1889 a 1895 (victoire Chopi-portugaise). Colonisation portugaise. Independance du Mozambique en 1975 suivie d'une guerre civile devastatrice jusqu'en 1992.",
+      "majorHistoricalEvents": "Dans les annees 1640, migration d'un groupe vers l'Afrique du Sud (fondation du royaume N'wanati). Commerce avec les royaumes du Zimbabwe au 18e siecle (don naissance a l'empire Rozwi-Kalanga). Invasion et subjugation partielle par les Shangaan/Nguni de Soshangane (annees 1820). Guerre contre Nghunghunyana (1889-1895) terminee par la defaite des Nguni face aux soldats chopi et portugais. L'ethnomusicologue Hugh Tracey documente les orchestres timbila dans les annees 1940-1970. Inscription du timbila au patrimoine immateriel de l'UNESCO en 2005 (confirme en 2008)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (sous la direction de chefs hereditaires). La chefferie superieure est maintenue dans les regions d'Inhambane et de Bileni. Malgre les invasions successives, les Chopi ont preserve leur leadership traditionnel. L'autorite coutumiere reste reconnue par l'Etat mozambicain comme institution de mediation locale.",
+      "clanOrganization": "Structure patrilineaire. Les clans principaux attestes incluent les Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda et Makwakwa. L'appartenance clanique determine les droits fonciers, les alliances matrimoniales et les responsabilites dans les ceremonies.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite sociale et les droits d'heritage. La residence est generalement patrilocale. Les hommes travaillent souvent dans les mines d'Afrique du Sud, creant des foyers a predominance feminine avec plusieurs generations de femmes qui gerent l'agriculture et la vie domestique.",
+      "religiousAuthority": "Sorciers-medecins (tradipraticiens locaux) et guerisseurs (curandeiros) exercent l'autorite spirituelle principale dans les communautes. Ils intercedent avec les ancetres et dirigent les sacrifices d'animaux. Les prophetes de l'eglise Zione (mazione) jouent aussi un role religieux important dans certaines communautes."
     },
     "languages": {
-      "mainLanguage": "Chope",
-      "vehicularRole": "Le chope est parlé par la majorité des Chope. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "Chichopi (Chopi)",
+      "isoCodes": ["cce"],
+      "dialects": [
+        "Lenge — dialecte potentiellement distinct (signale par Maho 2009 comme possiblement eteint ou en voie d'extinction)",
+        "Chopi du nord (Zavala) — dialecte de reference",
+        "Chopi du sud (Inharimme, Chidenguele) — variante meridionale"
+      ],
+      "vehicularRole": "Le chichopi est la langue maternelle des Chopi, parlee par environ 1,1 million de personnes (recensement 2017). Langue tonale de la famille bantoue (Zone S). Le portugais est la langue officielle du Mozambique et est maitrise par les jeunes generations. Le chiTonga est egalement utilise comme langue secondaire dans la region."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels chope, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (notamment timbila)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites d'initiation masculine (marque l'entree dans l'age adulte, transmission des savoirs culturels et des techniques de chasse et d'agriculture). Rites funeraires : ceremonies de deuil et de propitiation des ancetres pour assurer la paix de l'ame du defunt et proteger les vivants. Sacrifices d'animaux (poulets, chevres) pour obtenir la faveur des esprits ancestraux lors des grandes decisions, des semailles et des temps de maladie. Purification rituelle : cordes, ficelles et cordons portes sous les vetements (au cou, a la taille, aux poignets des nourrissons) comme protection spirituelle contre le mauvais sort.",
+      "symbols": "L'elephant est l'animal symbolique central des Chopi (ils s'y identifient culturellement et etaient chasseurs d'elephants). Le mbila/timbila (xylophone) est le symbole culturel le plus emblematique, inscrit dans le patrimoine mondial par l'UNESCO. La foret de mwenje (arbre a bois resonant dont le bois sert a fabriquer les timbila) est sacree. Les objets rituels des prophetes Zione (battons et cordes dits etre dotes de pouvoir spirituel) sont des symboles de protection.",
+      "artsAndMusic": "Musique timbila : les orchestres de timbila (xylophones en bois de mwenje) comptent de 5 a 30 instruments de tailles et tonalites variees. Les resonateurs sous chaque lamelle sont en calebasse, scelles a la cire d'abeille et huile de nkuso, produisant un son nasale caracteristique. Les orchestres reunissent maitres et apprentis de tous ages. Chaque annee, de nouvelles pieces sont composees. Les performances durent environ une heure, alternant themes solos et collectifs. La danse timbila implique 2 a 12 danseurs executant la danse m'zeno (solennel, lent) et des choreographies proches du style Tsonga (Xibelani). Autres instruments : panpipes, sifflets, cornes d'animaux, hochets, tambours, arcs musicaux, flute globulaire en coquille de nkuso. Artisanat : fabrication de bois, fonte du fer, poterie en argile. Henri-Alexandre Junod et Hugh Tracey ont documente cette tradition musicale aux 20e siecle.",
+      "spiritualities": "Animisme traditionnel : croyance en un monde habite par des esprits ancestraux (mizimu) qui influencent la vie quotidienne. Les ancetres sont veneres et propicies; leur mecontentement provoque maladies et malheurs. Les sorciers-medecins (curandeiros) et guerisseurs sont les intermediaires avec le monde des esprits. Sacrifices d'animaux essentiels pour s'assurer protection, bonnes recoltes, sante et succes. L'eglise Zione (mazione) est un mouvement religieux synchretique tres repandu, combinant Ancien Testament et rituels de purification traditionnels, pratique du bapteme et exorcisme. Une minorite est catholique ou protestante, mais beaucoup pratiquent simultanement les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora chope dans les grandes villes mozambicaines et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Chopi ont maintenu des chefferies autonomes dans la province d'Inhambane. En 1640, le chef Gunyule fonda le royaume N'wanati en Afrique du Sud apres la migration d'un groupe dissidant. La chefferie superieure chopi a resiste a plusieurs invasions (Nguni, Portugais) et existe encore aujourd'hui dans les regions d'Inhambane, Bileni et Mapai. A leur apogee, les Chopi commercaient avec les royaumes du Zimbabwe et contribuerent a l'essor de l'empire Rozwi-Kalanga au 18e siecle.",
+      "relationsWithNeighbors": "Relations de parenté et de tension avec les Tsonga/Shangaan du Mozambique et d'Afrique du Sud (parents culturellement proches mais historiquement rivaux). Commerce avec les royaumes du Zimbabwe (15e-18e siecles). Contacts et conflits avec les Portugais depuis le 15e siecle (certains Chopi furent recrutes de force dans l'armee coloniale). Voisinage avec les Tswa et Ronga au nord-ouest.",
+      "conflictsOrAlliances": "Invasion de Manukosi Soshangane dans les annees 1820 (guerriers Nguni du Natal, Mfecane) : subjugation partielle, les Chopi armes par les Portugais resisterent grace a leurs fusils et arcs empoisonnes. Guerre contre Nghunghunyana (chef de Gaza) 1889-1895 : les Chopi allierent leurs forces aux soldats portugais et vainquirent Nghunghunyana qui fut capture et exporte au Portugal. Cette victoire fut decisive pour la souverainete coloniale portugaise sur le sud du Mozambique. Pendant la guerre civile mozambicaine (1977-1992), de nombreux Chopi furent deplaces ou tues.",
+      "diaspora": "Migration de travail vers les mines d'Afrique du Sud (forte tradition depuis le 19e siecle, avec de nombreux foyers a predominance feminine en l'absence des hommes). Deplacements internes vers Maputo et d'autres villes mozambicaines suite a la guerre civile (1977-1992) et aux secheresses recurrentes. Un groupe historique migra en Afrique du Sud en 1640 (fondateurs du royaume N'wanati)."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 1521000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements mozambicains, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project 2024 : 1 521 000 Chopi au Mozambique. Wikipedia EN 2017 : 1,1 million de locuteurs de la langue chopi. Ethnologue (SIL) — code cce. Recensement national mozambicain 2017.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1521000,
+          "note": "Province d'Inhambane (district de Zavala, Quissico, Inharimme) et province de Gaza (Chidenguele, Mapai)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Chope language (cce)",
-      "CIA World Factbook – Mozambique",
-      "Recensements mozambicains",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Chopi people. https://en.wikipedia.org/wiki/Chopi_people",
+      "Wikipedia EN — Chopi language. https://en.wikipedia.org/wiki/Chopi_language",
+      "UNESCO / Programme Routes de la Soie — Chopi Timbila. https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/chopi-timbila",
+      "UNESCO — Chopi Timbila (patrimoine immateriel). https://ich.unesco.org/en/RL/chopi-timbila-00158",
+      "Joshua Project — Chopi in Mozambique. https://joshuaproject.net/people_groups/11368",
+      "Ethnologue (SIL) — Chopi language (cce). https://www.ethnologue.com/language/cce/",
+      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
+      "Henri-Alexandre Junod, The Life of a South African Tribe. Neuchatel, 1913."
     ]
   }
 }

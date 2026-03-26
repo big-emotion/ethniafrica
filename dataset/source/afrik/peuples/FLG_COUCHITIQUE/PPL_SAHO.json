@@ -2,59 +2,91 @@
   "id": "PPL_SAHO",
   "nameMain": "Saho",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": ["ERI"],
+  "currentCountries": ["ERI", "ETH"],
   "content": {
     "appellations": {
       "mainName": "Saho",
-      "selfAppellation": "",
-      "exonyms": ["Saho (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Saaho",
+      "exonyms": [
+        "Soho",
+        "Saho (terme europeen)",
+        "Irob (sous-groupe en Ethiopie)"
+      ],
+      "originOfExonyms": "Le terme Saho est utilise par les sources europeennes depuis le XIXe siecle. Le mot Saho signifie nomade en saho (saa = animaux, hoo = gardien), refletant leur mode de vie pastoral historique. Le sous-groupe Irob d'Ethiopie est parfois considere comme une entite distincte.",
+      "whyProblematic": "Le terme Saho est avant tout une categorie linguistique rassemblant des groupes d'origine diverse ayant adopte la meme langue et culture. L'Irob, sous-groupe en Ethiopie, se distingue par sa religion catholique.",
+      "contemporaryUsage": "Les Saho sont l'un des neuf groupes ethniques officiels de l'Erythree. En Ethiopie (region du Tigray), ils sont reconnus sous les appellations Saho et Irob. L'archive Saho (Saho Archive) est un projet de documentation en ligne de leur culture et histoire.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre-sud et côtes",
-      "currentCountries": ["ERI"]
+      "ethnoLinguisticGroup": "Cushitique de Basse Terre Orientale, sous-groupe Saho-Afar",
+      "historicalRegion": "Piedmonts orientaux de l'Akele Guzai et Semhar (Erythree), region du Tigray (Ethiopie)",
+      "currentCountries": ["ERI", "ETH"]
     },
-    "ethnicities": ["Saho"],
+    "ethnicities": ["Saho", "Irob"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre-sud et côtes"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Saho sont presents dans la Corne de l'Afrique depuis plus de 3 000 ans. En tant que descendants des Kushites anciens, ils ont laisse des traces archeologiques (peintures rupestres, monuments steles, poteries) dans leur territoire, notamment a Qohaito, Kaskase, Adulis et Matara. La separation de la langue saho des autres langues kushitiques de l'Est remonte a environ 4 000 ans selon Bender et d'autres linguistes.",
+      "formationPeriod": "Les Saho sont originellement une extension nordique des Afar, ayant migre le long du Golfe de Zula pour s'installer dans les piedmonts orientaux d'Akele Guzai et Semhar entre le IXe et le XIIe siecle. La premiere mention dans les chroniques ecrites date du regne de l'Empereur Susenyos Ier (XVIIe siecle).",
+      "migrationRoutes": [
+        "Golfe de Zula vers les piedmonts orientaux d'Akele Guzai",
+        "Extension vers le Semhar et les hautes terres d'Erythree",
+        "Presence dans la region Tigray d'Ethiopie (Irob)"
+      ],
+      "historicalSettlementZones": [
+        "Piedmonts orientaux d'Akele-Saho (Akele Guzai) et Semhar, Erythree",
+        "Regions de la Mer Rouge du Nord et du Sud, Erythree",
+        "Region du Tigray (woreda Irob), nord-est de l'Ethiopie"
+      ],
+      "unificationsOrDivisions": "Avant la colonisation italienne, les Saho etaient organises en clans federes en plusieurs grandes tribus. En 1933, les autorites coloniales italiennes ont regroupe les Saho en cinq tribus administrees par des chefs nommes, a l'exclusion des Irob d'Agame.",
+      "externalInfluences": "Influence islamique depuis le XIIIe siecle par des mystiques et marchands arabes. Colonisation italienne (1889-1941) ayant reorganise l'administration tribale. Guerre d'independance erythreenne avec raids ethiopiens. Influence tigrinya sur les hautes terres.",
+      "majorHistoricalEvents": "Controle des routes caravannieres de la region du Tigray vers les ports de Massawa et Hirgogo au XIXe siecle. Refus de payer tribut au Naib de Massawa. Description par l'explorateur britannique Walter Plowden en 1848. Reorganisation tribale italienne en 1933. Participation a l'EPLF (Front Populaire de Liberation de l'Erythree) pendant la guerre d'independance. Massacres de civils Irob par les forces erythreennes en 2021 lors de la guerre du Tigray."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme acephale egalitaire decentralise. Les affaires communautaires etaient gerees lors d'assemblees generales (rakhbe) d'anciens et d'hommes sages (ukal) elus pour une periode determinee. Les litiges etaient regles selon le droit coutumier par des mediateurs (shimagale).",
+      "clanOrganization": "Organisation patrilineaire et hierarchique structuree en tribus (meela, kisho ou qabila), sous-tribus (gaysha, harak ou are) et clans (dik ou are). La memoire genealogique est preservee sur 30 a 40 generations. Les tribus anciennes les plus connues sont Idda, Kabota, Asa-Bora et Gadafur.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descent patrilineaire determine l'appartenance tribale, les droits de paturage et l'acces aux ressources en eau. Les sous-clans indiquent l'origine personnelle ou la descent.",
+      "religiousAuthority": "Les imams et les chefs soufis jouent un role central dans la vie communautaire des Saho musulmans. L'ordre Khatmiyya est predominant depuis le XIXe siecle. Chez les Irob catholiques d'Ethiopie, l'autorite religieuse est liee a l'Eglise catholique, introduite en 1845."
     },
     "languages": {
-      "mainLanguage": "Saho (ssy)",
+      "mainLanguage": "Saho",
       "isoCodes": ["ssy"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Irob (dialecte saho parle en Ethiopie)",
+        "Hado",
+        "Asaworta",
+        "Minifere",
+        "Debri-Mela"
+      ],
+      "vehicularRole": "La langue saho (ISO 639-3 : ssy) est la langue maternelle du groupe. Elle appartient au sous-groupe Saho-Afar des langues cushitiques de basse terre orientale et est etroitement apparentee a l'afar. Le tigrigna et l'amharique sont utilises comme langues vehiculaires avec les populations voisines et l'administration. Les Irob sont generalement bilingues saho-tigrigna."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les ceremonies de mariage, les rites funeraires et les celebrations islamiques (Aid al-Fitr, Aid al-Adha) constituent les principaux evenements du calendrier communautaire. Chez les Irob catholiques, les fetes chretiennes et les rites lies a l'Eglise catholique sont centraux.",
+      "symbols": "Le dromadaire, les ovins et les bovins sont des symboles de richesse et de prestige pastoral. Les routes caravannieres historiques et la defense du territoire contre les envahisseurs sont des elements identitaires forts dans les traditions orales saho.",
+      "artsAndMusic": "La tradition poetique orale est particulierement developpee. Les poemes narrent les combats heroiques et les sacrifices des anciens. Une collection de 335 proverbes irob en langue saho a ete publiee avec traduction tigrigna. Les objets culturels saho conserves au Museo di Storia Naturale di Firenze (collection Mochi-Loria, 1933) temoignent de la richesse de leur culture materielle.",
+      "spiritualities": "Majorite musulmane sunnite (adoptee avant le XIIIe siecle). Presence de l'ordre soufi Khatmiyya. Sous-groupe Irob majoritairement catholique (catholicisme introduit en 1845 par les missionnaires) et une minorite orthodoxe Tewahido. Quelques groupes comme les Minifere et les Debri-Mela incluent des musulmans et des chretiens."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en tribus federees avec des chefs (ona) elus. Le titre Ona designe les chefs regionaux chez les Irob. Historiquement, les Saho controlaient les routes caravannieres reliant le Tigray aux ports de la mer Rouge.",
+      "relationsWithNeighbors": "Relations commerciales avec les Tigray et les marchands des ports de Massawa et Hirgogo. Interactions avec les Tigre dans les plaines basses et les Tigrinya dans les hautes terres. Les Jeberti (musulmans tigrinya) ont ete assimiles dans certains clans saho. Les Irob entretiennent des liens culturels forts avec les peuples d'Agame.",
+      "conflictsOrAlliances": "Opposition historique aux tentatives d'invasion des chefs abyssins (defaite des Ras Araia et Ras Alula). Resistance a la colonisation italienne en 1889. Pendant la guerre d'independance erythreenne, les Saho etaient bien representes dans l'EPLF. En 2021, au moins 52 civils Irob ont ete tues par des soldats erythreens lors de la guerre du Tigray.",
+      "diaspora": "Nombreux Saho ont fui vers le Soudan lors des raids ethiopiens pendant la guerre d'independance erythreenne. Presence diasporique en Europe et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 280,
+      "totalPopulation": 265000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation 2025 fondee sur Joshua Project (202 000 en Erythree, 62 000 en Ethiopie) et les donnees de l'Eritrean Saho Advocacy Group (206 000 en Erythree en 2016). Total consolide pour 2025.",
+      "distributionByCountry": [
+        { "country": "ERI", "population": 203000 },
+        { "country": "ETH", "population": 62000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Saho people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Saho_people)",
+      "Irob people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Irob_people)",
+      "Saho, Irob in Eritrea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/er)",
+      "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
+      "History of the Saho – Saho Archive, 2023 (https://www.sahoarchive.org/history/)",
+      "The Animal Caretakers : The Saho of Eritrea – Eritrea Ministry of Information / Shabait, 2016 (https://shabait.com/2016/08/26/the-animal-caretakers-the-saho-of-eritrea/)",
+      "Saho – Encyclopedia Britannica, 2008 (https://www.britannica.com/topic/Saho)",
+      "Saho in Ethiopia (PGID PG042732) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg042732/)"
+    ]
   }
 }

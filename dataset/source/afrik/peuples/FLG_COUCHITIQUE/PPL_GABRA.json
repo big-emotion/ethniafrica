@@ -1,23 +1,103 @@
 {
   "id": "PPL_GABRA",
-  "nameMain": "",
+  "nameMain": "Gabra",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": [],
+  "currentCountries": ["KEN", "ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Gabra",
       "selfAppellation": "Gabra / Gabara",
+      "exonyms": ["Gabbra", "Gebra", "Gabraa"],
+      "originOfExonyms": "Le terme Gabra pourrait etre derive du mot oromo gabaro signifiant 'vassal' ou 'tributaire', indiquant une association historique au sein de la federation borana. L'ethnonyme Gabraa est la forme en langue oromo.",
+      "whyProblematic": "L'identite gabra est complexe car le groupe a absorbe des membres d'autres ethnies (Borana, Rendille, Somali). La distinction entre Gabra Malbe (plaines, Kenya) et Gabra Miigo (hauts plateaux, Ethiopie) cree une identite duelle.",
+      "contemporaryUsage": "Le terme Gabra est generalement accepte et utilise dans les deux pays. Certains Gabra se designent aussi comme Dibbe Shanan (les Cinq Tambours), reference a leurs cinq fraternites clanique.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Nord Kenya – Sud Éthiopie",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Couchitique oriental (Oromo/Borana)",
+      "historicalRegion": "Desert de Chalbi (nord Kenya) et hauts plateaux du sud de l'Ethiopie (province de Sidamo)",
+      "currentCountries": ["KEN", "ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (orm)", "East African Pastoral Studies"]
+    "ethnicities": [
+      "Algana (phratrie, territoire principal autour des puits de Gus)",
+      "Sharbana (phratrie)",
+      "Gar (phratrie, annee du jeudi pour les ceremonies)",
+      "Galbo (phratrie)",
+      "Odola (phratrie, a perdu son tambour aux Rendille)",
+      "Gabra Malbe (Gabra des plaines, cote kenyan du lac Turkana)",
+      "Gabra Miigo (Gabra des hauts plateaux, cote ethiopien)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gabra sont probablement d'origine somali. Ils auraient ete a l'origine musulmans avant leur integration dans le monde oromo-borana. Des elements de leur priere traditionnelle font reference a des sites islamiques (La Mecque, Medine), et ils utilisent des noms a consonance islamique. La theorie anthropologique dominante (Robinson 1985 ; Tablino 1999) suggere qu'ils etaient initialement un groupe proto-Rendille-Somali qui a progressivement assimile la langue et la structure politique oromo-borana tout en preservant un cadre culturel antérieur.",
+      "formationPeriod": "La migration vers le nord Kenya aurait eu lieu autour du XVe siecle selon la tradition orale, en raison de leur mode de vie pastoral. L'identite gabra distincte s'est consolidee au contact des Borana dans le sud de l'Ethiopie, lors de l'adoption progressive du ki-borana comme langue principale en remplacement de leur langue somali-rendille originelle.",
+      "migrationRoutes": [
+        "Migration originelle vers le nord Kenya vers le XVe siecle depuis le sud de l'Ethiopie",
+        "Etablissement dans les regions de Moyale, Marsabit, North Horr et le desert de Chalbi",
+        "Extension vers la plaine de Bula Dera a l'est de la route Moyale-Marsabit",
+        "Presence sur le versant Mega dans le sud de l'Ethiopie"
+      ],
+      "historicalSettlementZones": [
+        "Desert de Chalbi (nord Kenya), entre le lac Turkana et Moyale-Marsabit",
+        "District de Marsabit (Kenya), oasis de Kalacha au centre du Chalbi",
+        "Region de Moyale (frontiere Kenya-Ethiopie)",
+        "Hauts plateaux de Mega (Ethiopie meridionale)",
+        "Zone de 350 000 km2 s'etendant du district de Marsabit (Kenya) a la province de Sidamo (Ethiopie)"
+      ],
+      "unificationsOrDivisions": "La societe gabra est organisee en cinq phratries principales (gos), chacune dotee de territoires de paturage, d'un centre religieux et politique (olla ya'a), d'un tambour sacre, d'une corne sacree et de batonnets de feu sacres. Les Gabra se designent eux-memes comme Dibbe Shanan (les Cinq Tambours). Une distinction fondamentale existe entre les Gabra Malbe des plaines kenyanes et les Gabra Miigo des hauts plateaux ethiopiens. Ce dernier groupe compose un sixieme 'tambour'.",
+      "externalInfluences": "Contact et assimilation progressive par les Borana et leur federation oromo. Influence islamique persistante depuis les origines somali (pratiques rituelles referençant La Mecque, noms islamiques, chants dikira d'inspiration soufie). Administration britannique au debut du XXe siecle qui a fixe les zones de paturage des 'cinq tambours' au Kenya. Activites missionnaires chretiennes au XXe siecle.",
+      "majorHistoricalEvents": "Migration depuis le sud de l'Ethiopie vers le nord Kenya vers le XVe siecle. Absorption progressive de la langue borana et d'elements culturels oromo tout en preservant des elements somali-rendille. Assignation coloniale britannique des zones de paturage au debut du XXe siecle. Massacres et conflits avec les Turkana et les Borana pour les terres de paturage et les points d'eau aux XXe-XXIe siecles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire organisee selon un systeme de classes generationnelles simplifie du gada borana, appele Luba. Ce systeme comporte six stades masculins : enfant, jeune homme circumcis et celibataire, homme marie (Kommicha, ancien junior), Ancien Politique (Yuba), Ancien Rituel (Dabela), Ancien retraite (Jarsa). Un ancien (abba-alla, pere du village) est designe democratiquement pour chaque village (ola). Une assemblee d'anciens (Jarsso) regit les conflits, les paturages et les ceremonies.",
+      "clanOrganization": "La societe comprend environ quarante clans (balbal) regroupes en cinq phratries (gos). Chaque clan possede une marque sur les oreilles du betail, un symbole de propriete. Les clans sont divises en moieties (Lossa et Jiblo) pour la priere et l'entraide. Les 'nouveaux clans' (galtu) issus de recrues d'autres groupes (Borana, Rendille, Somali) refletent la nature ouverte de l'identite gabra.",
+      "ageClassSystems": "Systeme Luba (version simplifiee du gada borana) avec changement de grade tous les sept ans. La ceremonie Jilla a lieu tous les sept ans : toutes les phratries (sauf Odola) se rendent en pelerinage vers les lieux sacres dans le sud de l'Ethiopie. Les filles subissent la clitoridectomie entre 13 et 14 ans ; les garcons sont circumcis entre 18 et 20 ans.",
+      "roleOfLineages": "La descent patrilineaire determine l'appartenance clanique. Les lignages (min) permettent de remonter jusqu'au fondateur, generalement sur sept a huit generations. Le betail appartient au chef de famille, mais les terres appartiennent collectivement a la tribu. La reunion Korra permet la gestion collective des paturages, des points d'eau et du betail.",
+      "religiousAuthority": "Les Kallu sont des hommes issus de clans Kallu, descendants d'ancetres celestes, detenant le pouvoir de benir et de maudire. Le Haut Kallu est l'autorite supreme pour les prieres collectives au Nabo (enclos sacre). Les Anciens Rituels (Dabela) sont gardiens des paraphernaux sacres (tambour, corne, batonnets de feu). Les rassemblements au Nabo, enclos sacre au centre du Yaa (village nomade sacre de chaque phratrie), permettent les prieres collectives, l'allumage du feu sacre et les batements de tambour."
+    },
+    "languages": {
+      "mainLanguage": "Borana (dialecte de l'oromo)",
+      "isoCodes": ["gax"],
+      "dialects": [
+        "Ki-Borana (dialecte parle par les Gabra Malbe des plaines kenyanes)",
+        "Variete ethiopienne (Gabra Miigo des hauts plateaux)"
+      ],
+      "vehicularRole": "Les Gabra parlent un dialecte du borana, classe dans le groupe linguistique oromo de la branche couchitique orientale (Whitely 1974 ; Gamta 1989). La langue borana a progressivement remplace leur langue proto-somali-rendille originelle. Le swahili est utilise dans les echanges commerciaux au Kenya. L'oromo standard et l'amharique sont utilises dans l'administration en Ethiopie."
+    },
+    "culture": {
+      "majorRites": "La ceremonie Jilla, qui se tient tous les sept ans, est le rituel collectif le plus important : toutes les phratries (sauf Odola) effectuent un pelerinage vers les sites sacres du territoire borana en Ethiopie meridionale pour marquer les changements de grade dans le systeme Luba. Le mariage est tres ritualise : il comprend l'echange de kutu (cafe et tabac), puis de huit marra (sacs de tabac et de cafe accompagnes de betail), puis le qorata (dot de trois jeunes chameaux). Le rite inclut le rasage de la coiffure gamme de la mariee, le passage sous le ventre du chameau et le premier repas rituel. La circumcision masculine et la clitoridectomie feminine sont des passages obligatoires vers l'age adulte et le mariage.",
+      "symbols": "Le chameau est le symbole central de la culture gabra : il determine le statut social, la richesse et l'identite pastorale. Les paraphernaux sacres de chaque phratrie (tambour Aba Dibbe, corne Aba Magalata, batonnets de feu Aba Uchuma) symbolisent l'autorite rituelle et politique. Les Anciens Rituels portent le turban hitu. Le ring d'ivoire arbora est porte par celui qui a tue un ennemi. Les maisons portatives (mandasse) sont des tentes en dome de racines d'acacia recouvertes de nattes en sisal, de textiles et de peaux de chameau.",
+      "artsAndMusic": "L'artisanat gabra se repartit selon le genre : les femmes confectionnent des contenants en fibres vegetales pour l'eau et le lait ; les hommes travaillent le bois et le cuir. Les chants dikira (du terme arabe dhikr, influence soufie) sont des chants religieux contenant des mots non-oromo, temoignage de l'heritage islamique. Les chants de mariage se repartissent : les femmes chantent l'amour et les enfants, les hommes chantent les raids et la guerre. Les chants celebrent la bravoure, la victoire et la vengeance. Des objets d'artisanat sont desormais produits pour les touristes.",
+      "spiritualities": "Les Gabra pratiquent une religion monotheiste traditionnelle oromo centree sur le culte de Waaqa, syncretisee avec des elements islamiques et soufis. Chaque jour au moment de conduire les chameaux au paturage, les Gabra prient Waaqa pour la paix (nagaya), la prosperite et la pluie. Ces prieres sont souvent dirigees par les Kallu. L'ada (loi traditionnelle) garantit la paix, la cohesion et la prosperite. La majorite des Gabra pratique aujourd'hui l'islam ou le christianisme tout en maintenant les pratiques culturelles traditionnelles obligatoires."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gabra n'ont pas developpe de royaumes centralises. Leur organisation repose sur les cinq phratries et le systeme Luba (gada). Chaque phratrie est dotee d'un Yaa (village sacre nomade) qui sert de centre religieux et politique itinerant.",
+      "relationsWithNeighbors": "Les Gabra entretiennent des relations etroites avec les Borana (freres linguistiques et culturels), avec lesquels ils partagent croyances et parfois liens matrimoniaux. Ils partagent aussi des similarites ceremoniales avec les Garre et les Rendille. Les Turkana et les Samburu sont leurs ennemis traditionnels ; les Daasanach (designes Galaba ou Shangilla) sont egalement en conflit intermittent avec eux. Les Somali leur vendent des chameaux. Avant les massacres recents, les Gabra soulignaient leur proximite avec les Borana et leur crainte de verser le sang somali en raison d'une parente commune.",
+      "conflictsOrAlliances": "Conflits recurrents avec les Turkana, les Samburu et les Daasanach pour les terres de paturage et les points d'eau. Episodes de violence interethnique avec les Borana pour des raisons politiques et de ressources. Tradition de razzia pour l'acquisition de betail. La valorisation culturelle du courage au combat est exprimee dans les chants glorifiant la victoire et la vengeance.",
+      "diaspora": "Pas de diaspora etablie hors de la region. Des Gabra se trouvent dans les villes kenyanes et ethiopiennes. La mobilite traditionnelle couvre une zone de 350 000 km2 entre le Kenya et l'Ethiopie, mais les contraintes administratives frontieres limitent ces deplacements."
+    },
+    "demography": {
+      "totalPopulation": 214000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 214 000 au total tous pays confondus, dont 154 000 au Kenya. Estimations basees sur les recensements kenyans et ethiopiens et les projections Joshua Project.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 154000,
+          "note": "Comté de Marsabit (Chalbi), regions de Moyale et North Horr (Gabra Malbe des plaines)"
+        },
+        {
+          "country": "ETH",
+          "population": 60000,
+          "note": "Hauts plateaux du sud de l'Ethiopie, region de Mega, province de Sidamo (Gabra Miigo des hauts plateaux)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gabra people. https://en.wikipedia.org/wiki/Gabra_people",
+      "101 Last Tribes — Gabra people. https://www.101lasttribes.com/tribes/gabra.html",
+      "Begin North Adventures — Gabra Tribe. https://beginnorthadventures.com/gabra-tribe/",
+      "Joshua Project — Oromo, Gabra in Kenya. https://joshuaproject.net/people_groups/19603/KE",
+      "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax). https://www.ethnologue.com/language/gax/",
+      "Ultimate Wild Safaris — The Gabbra people. https://ultimatewildsafaris.com/index.php/blog/the-journey-to-explore-the-gabbra-cultural-people-living-in-chalbi-desert-kenya",
+      "Robinson, P. W. (1985). Gabra Nomadic Pastoralism in Nineteenth and Twentieth Century Northern Kenya. Northwestern University dissertation."
+    ]
   }
 }

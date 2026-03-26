@@ -1,0 +1,23 @@
+{
+  "id": "PPL_ALABA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Halaba",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "historicalRegion": "Halaba Zone (Éthiopie Sud)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (alw)", "Halaba Zone Cultural Reports"]
+  }
+}

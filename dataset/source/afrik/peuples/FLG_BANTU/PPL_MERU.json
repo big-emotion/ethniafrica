@@ -6,59 +6,97 @@
   "content": {
     "appellations": {
       "mainName": "Meru",
-      "selfAppellation": "Meru",
-      "exonyms": ["Meru (terme utilisé par les Européens)"],
+      "selfAppellation": "Ameru",
+      "exonyms": [
+        "Meru (terme colonial et courant)",
+        "Wameru (pluriel swahili)",
+        "Kimeru (designant la langue et parfois le peuple)"
+      ],
+      "originOfExonyms": "Le terme Meru designe a la fois le peuple et la region du Mont Kenya ou il est etabli. Ameru est l'appellation endonymique (prefixe de classe a-/amu- au pluriel). Wameru est la forme swahili. Le terme Meru peut etre confondu avec les Wameru du nord de la Tanzanie, un groupe ethnique distinct.",
+      "whyProblematic": "Le terme Meru peut etre confondu avec les Wameru de Tanzanie (groupe sans lien genetique ou linguistique direct). La denomination collective Meru recouvre neuf sous-groupes (dont Tharaka) qui ont parfois des identites distinctes.",
+      "contemporaryUsage": "Ameru est l'appellation preferee dans la tradition orale et dans les cercles culturels. Meru est le terme courant dans les medias, l'administration et la litterature kenyane. Le comite de Meru (Kenya) porte ce nom.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone E)",
-      "historicalRegion": "Centre-est du Kenya",
+      "ethnoLinguisticGroup": "Bantou zone E (Thagicu), proche du Kikuyu, de l'Embu et du Kamba",
+      "historicalRegion": "Versants est et nord du Mont Kenya et Nyambeni Ranges, comtes de Meru et Tharaka-Nithi (Kenya central-est)",
       "currentCountries": ["KEN"]
     },
-    "ethnicities": ["Meru du Nord", "Meru du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Imenti — sous-groupe central, dialecte lingua franca de tous les Ameru, region de Meru Town, Nkubu, Timau",
+      "Tigania — sous-groupe nord, culture proche des communautes cushitiques et nilotiques voisines, region de Muthara, Kangeta",
+      "Igembe — sous-groupe nord-est, Nyambeni Ranges, principal producteur de miraa (khat)",
+      "Igoji — sous-groupe sud-ouest, region de Chogoria",
+      "Mwimbi — sous-groupe meridional, Tharaka-Nithi County",
+      "Muthambi — sous-groupe meridional, proche du Kikuyu et de l'Embu",
+      "Chuka (Gicuka) — sous-groupe le plus meridional, Tharaka-Nithi County",
+      "Tharaka — sous-groupe semi-aride, dialecte proche du Kamba et du Tigania",
+      "Mitine — sous-groupe mineur"
+    ],
     "origins": {
-      "ancientOrigins": "Les Meru sont originaires du centre-est du Kenya. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Selon la tradition orale meru, les ancetres des Ameru (appeles Ngaa ou proto-Meru) vivaient sur l'ile cotiere de Manda (cote nord du Kenya actuel) avant 1700. Des Arabes cotieres (Nguo Ntuni, designes comme venant possiblement de Perse) les soumirent, les astreignant a un systeme de tribut et a des taches humialiantes. Des specialistes rituels (Koome Njoe, Mururia) organiserent un plan d'evasion. Une migration legendaire les conduisit a traverser la riviere Tana (le « passage de la mer rouge »), a traverder les deserts (Ngaaruni/Maliankanga), des marais (Kirorero, Thingithu) et des zones arides, chassant le zebre de Grevy et la girafe reticulee en chemin.",
+      "formationPeriod": "Vers 1720-1730 : institution des premieres classes d'age (Nkuthuku vers 1720, Mukuruma vers 1730) lors de la colonisation progressive des versants du Mont Kenya. Les neuf sous-groupes actuels (Imenti, Tigania, Igembe, Igoji, Mwimbi, Muthambi, Chuka, Tharaka, Mitine) emergerent de fragmentation progressive apres l'etablissement sur les pentes du Mont Kenya.",
+      "migrationRoutes": [
+        "Migration depuis la cote nord du Kenya (Manda Island) vers l'interieur via la riviere Tana",
+        "Traversee des zones arides de Ngaaruni vers les pentes du Mont Kenya",
+        "Dispersion progressive depuis le point d'entree (Tula-Tula-Nthunguthu) vers le nord (Igembe, Tigania) et le sud (Muthambi, Chuka)"
+      ],
+      "historicalSettlementZones": [
+        "Versants est et nord du Mont Kenya (Ameru historiques)",
+        "Nyambeni Ranges (Igembe)",
+        "Plaines semi-arides de Tharaka (Tharaka)",
+        "Comtes de Meru et Tharaka-Nithi actuels"
+      ],
+      "unificationsOrDivisions": "Apres la migration vers le Mont Kenya, les proto-Meru se fragmenterent en sous-groupes distincts qui s'intermarierent avec les populations precedentes : Tharaka et Cuka integres, expulsion ou assimilation des populations cushitiques (Oromo/Galla/Boran/Mokogodo) et nilotiques (Kalenjin/Ogiek) precedentes. Le 19e siecle fut marque par des guerres intestines et des razzias de betail. La colonisation britannique (conquete de l'Embu 1906, soumission des Meru 1907 via le chef Kangangi) demantelela structure de la guerrerie et des anciens, imposant des chefs imposes (blanket chiefs).",
+      "externalInfluences": "Contacts et conflicts avec les Maasai (raids, adoption mutuelle, relations de parente gichiaro), les Embu et les Kikuyu (alliances GEMA post-coloniale : Gikuyu-Embu-Meru Association). Colonisation britannique (1907-1963) : imposition de chefs administratifs, prelevement d'impots, acces a l'education missionnaire. Crises ecologiques de la fin du 19e siecle : peste bovine (1887-1888), secheresse et invasion de criquets (annees 1890), variole (1892).",
+      "majorHistoricalEvents": "Vers 1700 : fuite de Manda Island. Vers 1720-1730 : installation sur le Mont Kenya, institution des classes d'age. 1800s : guerres intestines et razzias de betail avec ethique (pas d'atteinte aux femmes, enfants, vieillards, recoltes, huttes ou commerce). 1906 : conquete de l'Embu par les Britanniques. 1907 : soumission pacifique des Meru via le chef Kangangi. Avril 1956 : le Njuri-Ncheke abolit officiellement l'excision, remplacee par des alternatives basees sur l'instruction. 1983 : don de 641 acres pour le Meru College of Science and Technology (devenu Universite de Meru en 2013)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Gouvernance par des conseils d'anciens hierarchises depuis le niveau du clan jusqu'au conseil supreme Njuri-Ncheke, en place depuis le 17e siecle. Le Njuri-Ncheke (« conseil des anciens »), accessible aux hommes murs, composes, respectes et incorruptibles, constitue le systeme judiciaire supreme des Ameru : il cree et execute les lois, regle les litiges, fixe les normes sociales et gere les ressources naturelles (paturages, lichens, forets, sites sacres). Il fonctionne par precedents (droit coutumier). Les niveaux inferieurs sont le Kiama (disputes locales) et le Njuri (niveau intermediaire). Chaque sous-groupe a son propre Kama (conseil).",
+      "clanOrganization": "Organisation patrilineaire en clans (mugambo, sg. ngambu). Les clans determinent les alliances matrimoniales (exogamie clanique), les droits sur la terre et l'appartenance a la classe d'age. La circoncision est obligatoire pour les garcons et marque l'entree dans les responsabilites adultes.",
+      "ageClassSystems": "Les Ameru ont un systeme de classes d'age (rika) tres elabore : les garcons circoncis ensemble forment une classe qui progressent solidairement a travers les stades de la vie (jeune guerrier, guerrier confirme, ancien junior, ancien senior). Les premieres classes documentees remontent a Nkuthuku (vers 1720) et Mukuruma (vers 1730). Le passage de la classe guerriere a la classe des anciens (eta) se fait par une ceremonie formelle.",
+      "roleOfLineages": "Les lignages patrilineaires regissent l'heritage, la succession et les droits fonciers. Les relations inter-clans sont cimentees par les mariages (lolobola, dot) et les alliances formelles. Les Ameru pratiquent un systeme de parente etendue qui inclut des mecanismes d'adoption inter-ethnique (gichiaro avec les Maasai).",
+      "religiousAuthority": "La religion traditionnelle meru reconnait Murungu (Ngai) comme dieu supreme, associe aux sommets du Mont Kenya. Les ancetres jouent un role de mediateurs. Les guerisseurs-devins (mundu mugo) diagnostiquent les maladies et pratiquent des rites de guerison. Le Njuri-Ncheke exerce aussi une autorite religieuse : il gere les sites sacres (le sanctuaire Njuri Ncheke a Nchiru est un heritage gazetted). Aujourd'hui, le christianisme (protestantisme et catholicisme) est tres majoritaire, souvent en syncrctisme avec les croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Meru",
-      "vehicularRole": "Le meru est parlé par la majorité des Meru. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kimeru (Meru, Kimîîrú)",
+      "isoCodes": ["mer"],
+      "dialects": [
+        "Kiimenti — dialecte lingua franca de tous les Ameru, traduit dans la Bible, parle a Meru Town, Nkubu, Timau, Kibirichia",
+        "Tiania / Gitiania — dialecte tigania, proche des communautes nilotiques et cushitiques",
+        "Kiigembe — dialecte igembe, Nyambeni Ranges",
+        "Kimwimbi — dialecte mwimbi",
+        "Kimuthambi — dialecte muthambi, proche du Kikuyu et de l'Embu",
+        "Gicuka — dialecte chuka, parle dans la region de Chogoria",
+        "Kitharaka — dialecte tharaka, proche du Kamba et du Tigania"
+      ],
+      "vehicularRole": "Le kimeru est la langue maternelle de tous les Ameru et vehiculaire dans les comtes de Meru et Tharaka-Nithi. Le dialecte imenti sert de lingua franca inter-sous-groupe et est utilise dans les medias (Meru FM, Muuga FM, Weru FM, Weru TV, Baite TV, Thiiri FM) et dans les traductions de la Bible en kimeru. Le swahili et l'anglais sont les langues nationales officielles du Kenya."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels meru, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La circoncision masculine (kugeeta) est obligatoire et constitue le rite de passage fondamental des Ameru : les garcons entrent en reclusion jusqu'a un mois, apprennent les normes sociales (respect des anciens, protection des femmes et enfants), et minimisent le contact avec leur mere apres l'initiation. L'excision feminine a ete officiellement abolie par le Njuri-Ncheke en avril 1956, remplacee par des ceremonies d'instruction alternatives sans mutilation. Les mariages (ceremonial complexe avec negociation de dot, celebrations communautaires, chants et danses) sont des evenements sociaux majeurs. Les funerailles sont marquees par des ceremonies de deuil communautaire et des rites de guerison pour les proches. Les rites agricoles accompagnent les semailles et les recoltes (prieres a Murungu).",
+      "symbols": "Le Mont Kenya (Kirinyaga, « montagne blanche ») est le symbole sacre fondamental des Ameru, demeure de Murungu (dieu supreme). Le Njuri-Ncheke, ses robes et insigne d'anciens, est le symbole de la gouvernance traditionnelle. Le miraa (khat, Catha edulis) est un symbole identitaire fort des sous-groupes nord (Igembe, Tigania) et constitue la principale culture commerciale de la region. Le Njuri Ncheke Shrine a Nchiru est un site du patrimoine gazetted.",
+      "artsAndMusic": "Les danses de louange post-razzias (les guerriers dansent et chantent leurs exploits, recevant des noms honorifiques) sont une expression artistique traditionnelle. Les societes de clowns Mwaa portaient des costumes elabores (perles, jupes en peau de chevre ou feuilles de palmier, os de vaches, clochettes) et pratiquaient le chant, la danse, la narration et des actes sexualises lors des ceremonies. Les poteries, nattes tissees et objets en cuir completent l'artisanat traditionnel. Le Meru Museum a Meru Town preserve des artefacts et objets rituels ameru. Les chants communautaires accompagnent les ceremonies du Njuri-Ncheke et les rites de passage. Le groupe musical High Pitch Band Afrika (base au comte de Meru) est connu pour ses adaptations de chansons populaires en kimeru.",
+      "spiritualities": "La religion traditionnelle meru est centree sur Murungu (ou Ngai), dieu supreme residant sur le Mont Kenya, et sur le culte des ancetres. Les mundu mugo (guerisseurs-devins) pratiquent la divination et des rites de guerison. Le Njuri-Ncheke gere les sites sacres et les sanctions rituelles. Aujourd'hui, le christianisme (protestantisme majoritaire, issu des missions presbyteriennes et methodistes du debut du 20e siecle ; catholicisme) est tres dominant. Le syncrctisme est frequent : beaucoup de pratiques chretiennes coexistent avec des ceremonies traditionnelles (circoncision, rites funeraires, invocations ancestrales)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora meru dans les grandes villes kényanes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Ameru n'ont pas developpe de royaume centralise. Leur organisation politique repose sur les conseils d'anciens hierarchises (Kiama, Njuri, Njuri-Ncheke) qui ont joue un role equivalent a une structure etatique : legislation, justice, gestion des ressources, diplomatie. Le Njuri-Ncheke fut reconnu par l'administration coloniale britannique apres 1907 et garde une autorite morale et institutionnelle au Kenya actuel (il est represente au conseil de l'Universite de Meru).",
+      "relationsWithNeighbors": "Relations complexes avec les Maasai (Il-Tikirri, Mumunyot) : razzias de betail mutuelles mais aussi alliances et mecanismes d'adoption (gichiaro). Alliance avec les Kikuyu et les Embu (coalition GEMA — Gikuyu-Embu-Meru Association — apres l'independance). Integration progressive des populations cushitiques (Oromo, Boran, Mokogodo) et kalenjin (Ogiek/Agumba) precedemment installees sur les pentes du Mont Kenya. Absence de memoire d'interactions directes avec les Kamba.",
+      "conflictsOrAlliances": "Guerres intestines au 19e siecle entre sous-groupes avec un code d'honneur strict (pas d'atteinte aux non-combattants). Conflits et raids avec les Maasai. Conquete de l'Embu par les Britanniques en 1906, suivie de la pacification des Meru en 1907. Participation a la coalition GEMA dans la politique kenyane post-independance. Le Njuri-Ncheke a joue un role de gouvernance civile sous la colonisation britannique et apres l'independance.",
+      "diaspora": "Emigration economique et professionnelle vers Nairobi et autres grandes villes du Kenya. Diaspora meru aux Etats-Unis, en Grande-Bretagne, en Australie et dans d'autres pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 1900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements kényans, SIL Ethnologue, et études démographiques"
+      "source": "Recensement kenyan 2019 (Kenya National Bureau of Statistics) : comte de Meru 1 545 714 habitants ; Tharaka-Nithi (inclut Tharaka, Mwimbi, Muthambi, Chuka) environ 365 330 habitants. Population totale Ameru (tous sous-groupes, 2019) : environ 1 700 000-1 900 000. Estimations 2025 avec croissance demographique. Tsammalex / SIL : environ 2 millions de locuteurs du kimeru.",
+      "distributionByCountry": [{ "country": "KEN", "population": 1900000 }]
     },
     "sources": [
-      "SIL Ethnologue – Meru language (mer)",
-      "CIA World Factbook – Kenya",
-      "Recensements kényans",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Meru people : https://en.wikipedia.org/wiki/Meru_people",
+      "Wikipedia EN — Meru language : https://en.wikipedia.org/wiki/Meru_language",
+      "SIL Ethnologue — Meru (mer) : https://tsammalex.clld.org/languages/mer",
+      "Kenya National Bureau of Statistics — 2019 Kenya Population and Housing Census : https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+      "CityPopulation — Meru County Kenya : https://www.citypopulation.de/en/kenya/sub/admin/12__meru/",
+      "LocalePlanet — Meru (mer) ISO code : https://www.localeplanet.com/icu/mer-KE/index.html",
+      "Joshua Project — Meru in Kenya : https://joshuaproject.net/",
+      "Jeffrey Fadiman — When We Began There Were Witchmen: An Oral History from Mount Kenya. University of Washington Press, 1993."
     ]
   }
 }

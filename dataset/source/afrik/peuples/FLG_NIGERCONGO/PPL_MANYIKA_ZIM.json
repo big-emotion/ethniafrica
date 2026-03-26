@@ -5,64 +5,100 @@
   "currentCountries": ["ZWE"],
   "content": {
     "appellations": {
-      "mainName": "Manyika (Zimbabwe)",
-      "selfAppellation": "Manyika",
-      "exonyms": ["Manyika (terme utilisé par les Européens)"],
+      "mainName": "Manyika du Zimbabwe",
+      "selfAppellation": "VaManyika / WanaSaManyika",
+      "exonyms": ["Wanyika", "Manyika (Zimbabwe)", "ChiManyika speakers"],
+      "originOfExonyms": "VaManyika est la désignation propre en shona (Va- = préfixe humain pluriel). Le nom Manyika, dans le contexte zimbabwéen, désigne spécifiquement les habitants de la province du Manicaland, dont les royaumes historiques de Mutasa et Makoni constituent le noyau identitaire. Le terme Manicaland, qui désigne la province orientale du Zimbabwe, dérive directement de Manyika. Native Commissioner Umtali écrivait en 1904 : Umtassa's country and people are called Manyika. They do not speak the same dialect as the other Mashonas.",
+      "whyProblematic": "La construction coloniale de l'identité manyika au Zimbabwe fut délibérée et administrative : les Britanniques appliquèrent le terme à tous les habitants de Manicaland, y compris des sous-groupes comme les MaUngwe (Makoni, dialecte chiUngwe) qui ne partagent pas le même dialecte strict que les Manyika de Mutasa. Cette extension artificielle crée encore des tensions identitaires locales. Le ChiManyika est distinct du dialecte des Manyika du Mozambique, dont l'histoire coloniale (portugaise) et sociale est différente.",
+      "contemporaryUsage": "Au Zimbabwe, VaManyika est le terme courant pour désigner les habitants du Manicaland parlant le ChiManyika. La province du Manicaland est la deuxième plus peuplée du Zimbabwe (2 037 762 habitants, recensement 2022). Le ChiManyika est enseigné à l'école, diffusé à la radio et utilisé dans les médias locaux de Mutare. Le terme est employé dans les recensements du Zimbabwe National Statistics Agency (ZIMSTAT).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Zimbabwe",
+      "ethnoLinguisticGroup": "Bantou — Zone S — Shona (S.10), dialecte ChiManyika",
+      "historicalRegion": "Province du Manicaland, est du Zimbabwe — anciens royaumes de Mutasa (région de Mutare/Umtali, Honde Valley) et Makoni (région de Rusape)",
       "currentCountries": ["ZWE"]
     },
     "ethnicities": [
-      "Manyika du Nord",
-      "Manyika du Sud",
-      "Sous-groupes régionaux"
+      "VaMutasa (royaume de Mutasa, Mutasa District, zone de Mutare/Umtali et Honde Valley — Manyika au sens strict)",
+      "VaMakoni (royaume de Makoni, Makoni District, région de Rusape — intégré au Manyika large)",
+      "VaMaranke (Maranke District, est du Manicaland)",
+      "VaZimunya (région de Zimunya, district de Mutare)",
+      "VaNyamaropa / VaTangwena (région de Nyamaropa/Nyatate, nord du Manicaland — dialecte distinct)",
+      "VaBarwe (Barwe, nord-est du Manicaland, près de la frontière mozambicaine)",
+      "VaBocha (sud du Manicaland, Buhera — dialecte chiBocha/Jindwi)",
+      "VaWahwesa / VaKairezi (région de Kairezi)"
     ],
     "origins": {
-      "ancientOrigins": "Les Manyika du Zimbabwe sont originaires de la région du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Manyika du Mozambique.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Manyika du Zimbabwe descendent des populations shona qui habitèrent le plateau du Zimbabwe depuis environ 1000 ap. J.-C. Leurs ancêtres participèrent à la civilisation de Great Zimbabwe (grande enceinte de pierre, 10e-15e siècles), centre d'un État shona centralisé contrôlant le commerce de l'or. La région du Manicaland est riche en gisements d'or (chromite, tungstène aussi), exploités depuis le 17e siècle ou plus tôt, et commercés via les ports mozambicains (Sofala) vers l'Inde, l'Arabie et le Portugal. Selon la tradition orale, les Manyika furent parmi les immigrants shona qui trouvèrent leur chemin vers l'est du Zimbabwe à partir de 1000 ap. J.-C., avec des connexions avec le Tanganyika.",
+      "formationPeriod": "Les royaumes de Mutasa et Makoni constituent le fondement politique des Manyika du Zimbabwe, documentés depuis au moins le début du 17e siècle. L'identité ethnique unifiée Manyika s'est consolidée au cours de la période coloniale britannique (Rhodésie du Sud, fin 19e - début 20e siècles), sous l'effet combiné des missionnaires (anglicans, méthodistes, catholiques qui standardisèrent le ChiManyika écrit) et des administrateurs coloniaux. Le fait que les Manyika éduqués soient favorisés pour l'emploi colonial renforça l'attractivité de cette identité.",
+      "migrationRoutes": [
+        "Migrations bantoues ancestrales vers le plateau du Zimbabwe (vers 1000 ap. J.-C.)",
+        "Expansion des royaumes de Mutasa et Makoni dans le Manicaland oriental (17e-19e siècles)",
+        "Migration rurale-urbaine vers Mutare (Umtali), Harare, Bulawayo (20e siècle)",
+        "Migration vers l'Afrique du Sud (mines de Johannesburg, depuis le 19e siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Mutasa District (Mutare, Honde Valley, Penhalonga — noyau historique de l'identité manyika stricte)",
+        "Makoni District (Rusape, Headlands — royaume de Makoni)",
+        "Nyanga District (plateaux du nord du Manicaland, artisans et agriculteurs)",
+        "Buhera District (sud, dialecte chiBocha)",
+        "Mutare : principale ville du Manicaland (~150 000 hab.), quatrième ville du Zimbabwe"
+      ],
+      "unificationsOrDivisions": "La division entre Manyika du Manicaland (Zimbabwe) et Manyika du Mozambique résulte de la frontière coloniale tracée entre la Rhodésie britannique et le Mozambique portugais (fin 19e siècle). À l'intérieur du Zimbabwe, les tensions entre les VaMutasa (noyau strict du ChiManyika) et les VaMakoni (MaUngwe, intégrés par les administrateurs) persistent. Les Manyika du Zimbabwe eurent une trajectoire singulière : favorisés par les missionnaires pour l'éducation, ils produisirent de nombreux professionnels et leaders politiques, ce qui accentua leur conscience identitaire.",
+      "externalInfluences": "Conquête de Changamire Dombo (1695) : destruction du comptoir portugais de Masikwesi dans le Manyika. Traité British South Africa Company / Mutasa (14 septembre 1890) : début de la colonisation britannique. Dépossession foncière au profit des colons blancs (fin 19e - début 20e siècles). Standardisation linguistique et évangélisation par les missionnaires (anglicans d'Umtali, méthodistes, catholiques). Soulèvement shona (Première Chimurenga, 1896-1897). Rhodésie du Sud, Fédération de Rhodésie-Nyassaland, puis UDI (Déclaration unilatérale d'indépendance, 1965). Deuxième Chimurenga (1966-1979). Indépendance du Zimbabwe (18 avril 1980).",
+      "majorHistoricalEvents": "Fondation des royaumes de Mutasa et Makoni (au moins début 17e siècle). Invasion de Changamire Dombo (1695). Traité de Mutasa avec la BSA Company (1890) : cession des droits miniers. Soulèvement shona (1896-1897) : résistance à la colonisation. Standardisation du ChiManyika par les missionnaires (années 1920-1930). Rôle pionnier des Manyika éduqués dans la profession libérale rhodésienne. Martyrs nationalistes : Herbert Chitepo (premier avocat africain de Rhodésie, assassiné 1975), évêque Abel Muzorewa (leader UANC). Indépendance du Zimbabwe (1980). Opération Murambatsvina (2005) affectant les populations urbaines de Mutare."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société manyika du Zimbabwe est organisée en chefferies héréditaires. Le chef suprême (ishe mukuru) des royaumes de Mutasa et Makoni exerce une autorité ceremonielle et coutumière reconnue par l'État zimbabwéen. Les chefs de village (sadunhu) arbitrent les conflits, officient aux sacrifices ancestraux et gèrent les terres communautaires. L'autorité traditionnelle coexiste avec les structures de l'État zimbabwéen (assemblées locales, comités ruraux). Les anciens (vakuru) exercent une influence morale dans les villages.",
+      "clanOrganization": "Organisation patrilinéaire par totems (mitupo). Les totems courants des Manyika du Zimbabwe incluent Shumba (lion, clan royal de Mutasa et Makoni), Nzou (éléphant), Mbizi (zèbre), Chirandu, Hove (poisson), Nyamuzihwa. Le totem interdit le mariage intra-totémique et identifie l'appartenance clanique. Chaque totem a un praise-name (chidawo) récité lors des cérémonies. Les membres du même totem se reconnaissent comme frères même sans lien de sang direct.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage patrilinéaire détermine la succession aux chefferies, les droits fonciers (terres communautaires gérées par le chef), la dot (lobola en bétail et argent au père de la fiancée) et les obligations rituelles. Les vaches sont tabou pour les femmes (seuls les hommes les traient et les gardent). La migration rurale-urbaine a transformé l'organisation sociale dans les zones rurales, avec une nucléarisation progressive des foyers.",
+      "religiousAuthority": "Les médiums d'esprits (svikiro) communiquent avec les midzimu (esprits ancestraux) et avec Mwari (dieu suprême shona). Ils jouent un rôle central dans les cérémonies de pluie et de guérison. Les chefs héréditaires officient aux sacrifices collectifs. Les missionnaires anglicans (diocèse de Manicaland, Mutare), méthodistes et catholiques sont implantés dans la région depuis le 19e siècle. Le Zimbabwe Assemblies of God Africa (ZAOGA), l'une des plus grandes Églises pentecôtistes d'Afrique australe, est fondé par Ezekiel Guti, un Manyika du Manicaland."
     },
     "languages": {
-      "mainLanguage": "Manyika",
-      "vehicularRole": "Le manyika est parlé par la majorité des Manyika du Zimbabwe. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "ChiManyika (dialecte shona, Zimbabwe)",
+      "isoCodes": ["mxc", "sna"],
+      "dialects": [
+        "ChiManyika strict (Mutasa District, Honde Valley — dialecte de référence, Manyika language mxc)",
+        "ChiManyika de Nyanga (Nyamaropa, Nyatate — tons et prononciation distinctifs)",
+        "ChiBocha / Jindwi (Buhera/Bocha, sud du Manicaland — dialecte du sud, frontière avec chiKaranga)",
+        "ChiUngwe (Makoni District — incorporé au Manyika large par l'administration coloniale)",
+        "ChiNdau (Chimanimani/Chipinge — dialecte proche mais distinct, parfois classé séparément)"
+      ],
+      "vehicularRole": "Le ChiManyika (ISO 639-3 : mxc) est un dialecte du shona (ISO 639-3 : sna), la langue majoritaire au Zimbabwe (77% de la population). La province du Manicaland est le berceau du ChiManyika. La ville de Mutare dispose d'émissions radiophoniques en ChiManyika (Zimbabwe Broadcasting Corporation). Le ChiManyika est enseigné comme matière dans les écoles de Manicaland. Les Manyika de Harare utilisent souvent le shona standard (ChiZezuru de la capitale) au quotidien, tout en conservant le ChiManyika en famille. L'anglais est la langue officielle de l'éducation, du gouvernement et des affaires."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels manyika, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"ancestorCult\": \"La cérémonie bira est le rite central de communication avec les esprits ancestraux (midzimu) : de la bière de mil (doro remidzimu) est brassée, un animal est sacrifié, et le svikiro (médium) entre en transe pour transmettre les messages des ancêtres concernant la santé, les récoltes ou les décisions communautaires. La mbira (lamellophone) joue toute la nuit pour attirer les esprits.\", \"marriageRites\": \"La lobola est le rituel central du mariage : des négociations entre les familles fixent le montant de la dot (bétail et argent) versée au père de la fiancée. Le mariage est progressif : d'abord la lobola, puis la cohabitation, puis la cérémonie formelle. Les mariages polygyniques sont en fort recul. L'âge au premier mariage est le début de la vingtaine pour les deux sexes.\", \"burialRites\": \"Trois phases funéraires (Kuchema) : le corps est lavé, les membres liés. Les tambours battent. La danse Kupeta est pratiquée. Le mukwambo (gendre, non-parent par le sang) désigne et prépare la tombe avec un badza (houe). Une chèvre est sacrifiée (rôtie sans sel). Le nganga reçoit des présents colorés (gumbwa, perles) et prononce des serments contre la sorcellerie. Les dettes du défunt sont reconnues et réglées. Les héritages en nbaka (femmes héritées) sont distribués.\", \"rainCeremony\": \"Cérémonies de pluie (mukwerere) avant les semailles (novembre) : invocations à Mwari et aux esprits ancestraux, offrandes de bière de mil, participation des médiums. Ces cérémonies sont présidées par le chef héréditaire.\"}",
+      "symbols": "Le totem (mutupo) avec son praise-name (chidawo) est le symbole identitaire fondamental de chaque Manyika. La mbira dzavadzimu (lamellophone des ancêtres, instrument sacré shona) est le symbole musical central. Les enceintes de pierre (dzimbahwe, dont Great Zimbabwe est l'archétype) symbolisent l'héritage architectural ancestral. Les mines d'or de Manicaland (exploitées depuis le 17e siècle) sont un symbole de richesse et d'histoire. Les montagnes du Manicaland (mont Nyangani, point culminant du Zimbabwe à 2 592 m) définissent l'espace géographique identitaire.",
+      "artsAndMusic": "{\"mbira\": \"La mbira dzavadzimu (lamellophone à 22-28 lamelles en métal, dans une calebasse résonateur) est l'instrument sacré des Shona-Manyika, joué lors des cérémonies bira pour contacter les ancêtres. La musique mbira shona est inscrite au patrimoine immatériel culturel de l'UNESCO.\", \"dance\": \"La danse jerusarema (jeu mbende), danse traditionnelle shona pratiquée notamment en Manicaland, est inscrite au patrimoine immatériel de l'UNESCO (2008). La danse Kupeta accompagne les funérailles. Les danses de cour royale sont pratiquées lors des visites aux chefs.\", \"crafts\": \"Poterie féminine : jarres, assiettes, bols décorés de motifs géométriques (vendus sur les marchés locaux). Tressage de paniers (zvihute) avec motifs traditionnels. Sculpture sur bois (masques, figures) par les hommes. Forge (blacksmithing, valeur artisanale). L'industrie du bois (lumber) de Manicaland emploie de nombreux Manyika.\", \"pentecostalism\": \"Le Zimbabwe Assemblies of God Africa (ZAOGA), fondé par Ezekiel Guti (né dans le Manicaland, d'ascendance manyika), est l'une des plus grandes Églises pentecôtistes africaines, illustrant la capacité des Manyika à synthétiser christianisme et culture locale.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Mwari\", \"attributes\": \"Dieu créateur suprême des Shona-Manyika. Il réside dans les collines sacrées de Matonjeni (Matopos). Il s'exprime à travers les médiums et les oracles. Lié à dzivaguru (la grande mare primordiale) et à Mwedzi (le premier homme), dont les épouses enfantèrent herbes, arbres, animaux et humains selon le mythe de création shona.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les midzimu (esprits ancestraux) protègent les vivants s'ils sont proprement honorés. Les ancêtres non vivants font partie intégrante de la famille actuelle. Le mudzimumukuru (grand esprit ancestral, ancêtre suprême d'un lignage) est le plus vénéré. Les médiums svikiro servent d'intermédiaires.\"}, \"totemism\": \"Le mutupo (totem) est le marqueur sacré de l'appartenance clanique, associé à l'ancêtre fondateur. Les règles d'exogamie totémique préviennent les mariages consanguins et renforcent les alliances inter-claniques.\", \"sorcery\": \"L'uroi (sorcellerie) est la cause présumée des malheurs inexplicables (maladies, morts, échecs). Le nganga (devin-guérisseur traditionnel) identifie les sorciers et prescrit des remèdes rituels. Les serments anti-sorcellerie prononcés lors des funérailles protègent la communauté.\", \"christianity\": {\"specificPractices\": \"Syncrétisme omniprésent entre christianisme (anglicanisme, méthodisme, catholicisme, et depuis le 20e siècle pentecôtisme) et religion shona traditionnelle. Les Manyika éduqués furent pionniers dans l'adoption du christianisme missionnaire tout en maintenant les pratiques ancestrales. ZAOGA (Ezekiel Guti) est l'exemple le plus frappant de ce syncrétisme charismatique africain.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora manyika dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les deux royaumes historiques des Manyika du Zimbabwe sont Mutasa (centré sur l'actuel Mutare/Umtali, frontière avec le Mozambique) et Makoni (région de Rusape). D'autres chefferies importantes : Maranke, Zimunya, Saunyama, Tangwena (Nyamaropa), VaBarwe, Wahwesa (Kairezi). Le royaume de Mutasa était suffisamment puissant pour que la British South Africa Company cherche à lui imposer un traité dès 1890. Les Portugais avaient également traité avec les Makoni de Maungwe comme souverains indépendants. La chefferie suprême de Mutasa reste une institution reconnue au Zimbabwe contemporain.",
+      "relationsWithNeighbors": "Les Manyika du Zimbabwe commerçaient avec les Portugais et les marchands de la côte mozambicaine (or contre étoffes et perles). Les relations avec les Ndébélé (voisins de l'ouest, 19e siècle) furent marquées par des raids ndébélés. Les relations avec les autres groupes shona (Zezuru du centre, Karanga du sud) furent généralement pacifiques avec des mariages inter-claniques. Les Manyika de Mutasa avaient des liens forts avec les Manyika du Mozambique avant la colonisation.",
+      "conflictsOrAlliances": "Résistance à la BSA Company et à la colonisation (Première Chimurenga, 1896-1897 : soulèvement général shona). Participation à la Deuxième Chimurenga (guerre d'indépendance, 1966-1979) : la ZANU-PF opéra largement depuis les bases de Mozambique. Herbert Chitepo, premier avocat africain de Rhodésie et chef de la ZANU, fut assassiné à Lusaka (1975). L'évêque Abel Muzorewa, méthodiste du Manicaland, fut Premier ministre du Zimbabwe-Rhodésie (1979). Indépendance du Zimbabwe (18 avril 1980). Massacres du Gukurahundi (1983-1987) touchèrent principalement le Matabeleland, mais la violence politique post-indépendance marqua aussi le Manicaland.",
+      "diaspora": "La ville de Mutare (Umtali jusqu'en 1982), quatrième ville du Zimbabwe (~150 000 habitants), est le centre urbain manyika. Nombreux Manyika à Harare (capitale, environ 2 millions) et à Bulawayo. Migration vers l'Afrique du Sud (mines de Johannesburg) depuis le 19e siècle. Diaspora zimbabwéenne importante au Royaume-Uni, en Australie, aux États-Unis et en Afrique australe, comprenant une forte proportion de Manyika instruits (héritage de la priorité missionnaire pour l'éducation)."
     },
     "demography": {
-      "totalPopulation": 800000,
+      "totalPopulation": 501000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2024) : Manyika au Zimbabwe = 501 000 (sur 662 000 au total mondial). Manicaland Province (ZIMSTAT, recensement 2022) : 2 037 762 habitants totaux. Les Manyika au sens strict du ChiManyika (dialecte mxc, royaumes Mutasa/Makoni) représentent environ 25-30% de la province du Manicaland. Shona = 77% de la population zimbabwéenne totale (~17M en 2025); Manyika estimés à environ 14% des Shona par le DOJ (2014). Glottolog mxc / Ethnologue mxc.",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 501000,
+          "note": "Province du Manicaland (Mutasa, Makoni, Nyanga, Mutare, Buhera, Chimanimani, Chipinge), et diaspora interne à Harare, Bulawayo; diaspora en Afrique du Sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Manyika language (mxc)",
-      "CIA World Factbook – Zimbabwe",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Encyclopedia Britannica — Manyika. https://www.britannica.com/topic/Manyika",
+      "Joshua Project — Manyika in Zimbabwe. https://joshuaproject.net/people_groups/13520/ZW",
+      "Wikipedia EN — Manicaland Province. https://en.wikipedia.org/wiki/Manicaland_Province",
+      "101 Last Tribes — Manyika people. https://www.101lasttribes.com/tribes/manyika.html",
+      "University of Missouri — Manyika, Shona people of Zimbabwe (PDF). https://dice.missouri.edu/assets/docs/niger-congo/Manyinka.pdf",
+      "US Department of Justice EOIR — Manyika/Shona, Zimbabwe (PDF). https://www.justice.gov/sites/default/files/eoir/legacy/2014/01/06/manyika%20.pdf",
+      "Seed Gallery New York — Manyika glossary. https://www.seedgallerynewyork.com/glossary/manyika",
+      "Glottolog — Manyika (many1258). https://glottolog.org/resource/languoid/id/many1258",
+      "Facebook — Manyika people of Zimbabwe and Mozambique. https://www.facebook.com/groups/1055261108291845/posts/2305889616562315/"
     ]
   }
 }

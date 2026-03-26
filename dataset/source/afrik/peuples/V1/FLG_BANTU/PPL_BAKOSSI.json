@@ -1,0 +1,67 @@
+{
+  "id": "PPL_BAKOSSI",
+  "nameMain": "Bakossi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bakossi",
+      "selfAppellation": "Bakossi",
+      "exonyms": [
+        "« Akose people » (par la langue Akoose) ; variantes Akose/Akoose"
+      ],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des montagnes du Cameroun (région des Bakossi Mountains)",
+      "historicalRegion": "Pentes ouest et est du Mont Mwanenguba et du Mont Kupe",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Communautés bakossi des versants ouest (villages de montagne)",
+      "Communautés bakossi des versants est et des basses terres",
+      "À préciser (autres segments internes, lignages et sous-groupes locaux)"
+    ],
+    "origins": {
+      "ancientOrigins": "Tradition orale reliant l’origine à l’ancêtre Ngoe et à sa femme Sumediang, au cœur des montagnes de Mwanenguba.",
+      "migrationRoutes": [
+        "Mouvements internes entre hautes terres et basses terres dans les Bakossi Mountains ; contacts historiques avec d’autres peuples côtiers."
+      ],
+      "unificationsOrDivisions": "Groupes de clans structurés autour de villages de montagne, sans État centralisé mais avec une forte identité commune.",
+      "externalInfluences": "Contacts avec les missionnaires européens, les administrateurs coloniaux allemands puis français/britanniques, et avec les peuples voisins (Bafaw, Bakundu, Balong…)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies locales (chefs de village) et conseils d’anciens.",
+      "clanOrganization": "Clans issus des différents descendants de l’ancêtre mythique Ngoe ; chaque clan avec son histoire propre.",
+      "roleOfLineages": "Lignages patrilinéaires ou bilinéaires selon les localités, structurant héritage foncier et responsabilités rituelles.",
+      "religiousAuthority": "Autorités rituelles liées à la terre, aux forêts et aux ancêtres ; aujourd’hui coexistence avec christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Akoose (Akose)",
+      "dialects": [
+        "Variantes régionales (Northern, Western, Southern Bakossi, etc., selon les descriptions dialectales)."
+      ],
+      "vehicularRole": "Langue de communication locale, avec présence croissante de l’anglais et du français comme langues de scolarisation."
+    },
+    "culture": {
+      "Rites majeurs": "Rites agraires liés aux saisons, cérémonies de passage et de guérison.",
+      "Symboles": "Masques forestiers, éléments de faune et de relief montagneux comme repères identitaires.",
+      "Arts et musique": "Danses collectives, chants rituels, tam-tams ; artisanat du bois.",
+      "Spiritualités": "Croyances en des forces de la nature et en les ancêtres ; christianisme très implanté aujourd’hui."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume unifié, mais un ensemble de chefferies bakossi.",
+      "relationsWithNeighbors": "Relations étroites avec Bafaw, Bakundu, Balong, Mbo, etc. (alliances matrimoniales, échanges, parfois conflits fonciers).",
+      "conflictsOrAlliances": "Tensions liées aux terres agricoles et à l’exploitation forestière ; alliances locales face à l’emprise coloniale et postcoloniale.",
+      "diaspora": "Migration interne vers les villes camerounaises (Douala, Buea, Kumba) et diaspora en Europe/Amérique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 160000,
+      "referenceYear": 2025,
+      "source": "peuple_demographie_globale.csv (PPL_BAKOSSI) + estimations démographiques régionales"
+    },
+    "sources": [
+      "[Article] – « Bakossi people » (encyclopédies et ressources en ligne)",
+      "A Sociolinguistic Approach »",
+      "[Ressource] – Sites communautaires bakossi (Bakoswiss, BACDA)"
+    ]
+  }
+}

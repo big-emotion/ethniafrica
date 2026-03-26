@@ -7,62 +7,90 @@
     "appellations": {
       "mainName": "Kera",
       "selfAppellation": "Kera",
-      "exonyms": ["Kera (terme utilisé par les Européens)"],
+      "exonyms": ["Kera", "Tuburi (denomination erronee de Greenberg)"],
+      "originOfExonyms": "Le linguiste Joseph Greenberg avait employe le terme Tuburi pour designer la langue kera, un nom qui est en realite celui d'un peuple distinct (les Tupuri). Cette confusion a ete corrigee dans la classification actuelle des langues tchadiques orientales.",
+      "whyProblematic": "La confusion avec les Tupuri (parfois appeles Toupouri) a perturbe l'identification des Kera dans certaines litteratures. Les Kera sont souvent assimiles aux Toupouri dans les recensements administratifs, contribuant a l'erosion de leur identite distincte.",
+      "contemporaryUsage": "Le terme Kera est utilise de maniere standard dans la litterature linguistique et anthropologique. Les locuteurs se designent eux-memes par ce nom. Des initiatives communautaires de preservation de la langue et de la culture kera sont actives, notamment des forums sur la langue et la culture kera.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique",
-      "historicalRegion": "TCD, CMR",
+      "ethnoLinguisticGroup": "Tchadique oriental (East Chadic, branche A.3)",
+      "historicalRegion": "Mayo-Kebbi (region de Mayo-Kebbi Est, Tchad) et Extreme-Nord (Cameroun), pres du lac Tike et de Fianga",
       "currentCountries": ["TCD", "CMR"]
     },
     "ethnicities": [
-      "Kera du Tchad",
-      "Kera du Cameroun",
-      "Sous-groupes régionaux"
+      "Kera du Tchad (Mayo-Kebbi Est, region du Mont d'Illi, sud de Fianga, pres du lac Tike)",
+      "Kera du Cameroun (departements de Mayo-Danay et Diamare, region de l'Extreme-Nord, commune de Wina, district de Ndoukoula)",
+      "Groupes disperses et isoles dans le nord du Cameroun, pres de la frontiere, au sud de Viri"
     ],
     "origins": {
-      "ancientOrigins": "Les Kera sont originaires du Tchad et du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples sahariens et bantous, influence de l'islam."
+      "ancientOrigins": "Selon les traditions orales et les etudes linguistiques, les Kera auraient migre depuis la region du Chari, traversant le pays Mouzouk et le lac Guisey avant de s'etablir dans leur territoire actuel. Les mythes fondateurs evoquent notamment le meurtre d'un fils par ses demi-freres, qui contraint le groupe a fuir en quete de nouvelles terres. Ces recits de migration sont renforces par des pressions historiques des royaumes voisins, en particulier le Kanem et le Baguirmi.",
+      "formationPeriod": "L'identite kera s'est consolidee au fil des migrations et des contacts avec les peuples voisins (Tupuri, Massa, Moussey, Mundang). Le groupe a maintenu son identite propre malgre les assimilations administratives et les pressions culturelles exterieures.",
+      "migrationRoutes": [
+        "Migration depuis la region du Chari vers le nord-ouest",
+        "Traversee du pays Mouzouk et du lac Guisey",
+        "Installation dans la region de Mayo-Kebbi (Tchad) et l'Extreme-Nord (Cameroun)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Mayo-Kebbi Est (Tchad), pres du lac Tike et de Fianga",
+        "Departements de Mayo-Danay et Diamare (Cameroun), region Extreme-Nord",
+        "Zone frontaliere tchadocamerounaise"
+      ],
+      "unificationsOrDivisions": "Les Kera partagent leur territoire avec les Tupuri, les Massa et les Moussey, avec lesquels ils entretiennent des relations de voisinage. Des liens de parente sont attestes avec les Mundang du Tchad. La proximite avec les Tupuri a engendre des confusions identitaires dans les sources administratives.",
+      "externalInfluences": "Influence du royaume de Kanem et du sultanat de Baguirmi sur les dynamiques migratoires et politiques. Islamisation partielle par contact avec les royaumes soudaniques voisins. Colonisation francaise au XXe siecle et introduction de l'administration nationale tchadienne et camerounaise.",
+      "majorHistoricalEvents": "Migration fondatrice depuis le Chari, marquee par des mythes de rupture et de fondation. Pressions et influences du Kanem et du Baguirmi sur les populations du Mayo-Kebbi. Integration dans les structures administratives coloniales francaises. Aujourd'hui, initiatives communautaires de preservation culturelle et linguistique face a l'influence des langues nationales (francais, arabe tchadien)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises traditionnelles. Des conseils d'anciens participent a la gouvernance locale et a la resolution des conflits. Les chefs de village exercent une autorite sociale et symbolique reconnue par la communaute.",
+      "clanOrganization": "Structure clanique patrilineaire. Organisation en familles etendues et lignages partageant un ancetre commun masculin.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent les droits fonciers, les alliances matrimoniales et les obligations communautaires. L'organisation sociale maintient des distinctions identitaires face aux groupes voisins.",
+      "religiousAuthority": "Presence de leaders islamiques dans les communautes partiellement islamisees. Des pratiques traditionnelles animistes persistent. La vie ceremonielle est organisee autour de rites collectifs lies aux recoltes et aux cycles agricoles."
     },
     "languages": {
       "mainLanguage": "Kera",
-      "vehicularRole": "Le kera est parlé par la majorité des Kera. L'arabe, le français et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": ["ker"],
+      "dialects": [
+        "Kera du Tchad (variete principale, Mayo-Kebbi Est)",
+        "Kera du Cameroun (varietes isolees et dispersees, Extreme-Nord)"
+      ],
+      "vehicularRole": "Le kera (ISO 639-3 : ker) est une langue tchadique orientale (East Chadic, branche A.3) parlee par environ 45 000 locuteurs au Tchad et 6 000 au Cameroun. C'est une langue SOV (sujet-verbe-objet) utilisant des prepositions et un marquage casuel borderline exclusif. Elle possede un phoneme rare, la battue labiodentale /ⱱ/, attestee dans moins de 80 langues du monde. Le francais et l'arabe tchadien servent de langues vehiculaires. Un Nouveau Testament est disponible en kera."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels kera.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture kera."
+      "majorRites": "Ceremonies collectives et guerrieres frequemment liees aux recoltes et aux fetes de fin d'annee, constituent les moments rituels majeurs de l'identite kera. Rites de passage : circoncision masculine. Ceremonies de mariage impliquant le versement d'une dot. Rites agricoles marquant les semailles et la recolte du sorgho et du mil. Celebrations islamiques (Ramadan, Aïd) dans les communautes islamisees.",
+      "symbols": "Le mil et le sorgho comme cultures vivrieres centrales. Le lac Tike et les cours d'eau du Mayo-Kebbi comme reperes geographiques fondateurs. Les danses collectives et guerrieres comme expression de l'identite communautaire.",
+      "artsAndMusic": "La musique et la danse jouent un role significatif dans la vie culturelle kera, notamment lors des ceremonies de recolte et des fetes de fin d'annee. Danses collectives a caractere guerrier ou festif. Tradition orale riche : contes, mythes et recits transmettant l'histoire et les valeurs du groupe. Artisanat : poterie, tissage. Les traditions orales et musicales sont au coeur des initiatives contemporaines de preservation culturelle.",
+      "spiritualities": "Pratiques religieuses mixtes : islam (partiellement adopte), animisme traditionnel et pratiques synchretiques. Croyances en des esprits lies au territoire, aux recoltes et aux ancetres. Les Kera maintiennent des rites pre-islamiques malgre l'influence de l'islam voisin. Des initiatives communautaires cherchent a documenter et preserver ces traditions spirituelles face aux influences exterieures."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kera dans les grandes villes tchadiennes et camerounaises, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kera n'ont pas fonde de royaume centralise, mais ont maintenu une organisation en chefferies villageoises autonomes. Ils ont evolue dans la sphere d'influence des royaumes du Kanem et du Baguirmi, conservant toutefois leur identite distincte.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Tupuri (parfois source de confusion identitaire), les Massa, les Moussey et les Mundang du Tchad. Relations commerciales et culturelles avec ces peuples partageant les memes zones ecologiques du Mayo-Kebbi. Les Kera maintiennent des identites distinctes tout en partageant des territoires avec ces groupes.",
+      "conflictsOrAlliances": "Pressions historiques des royaumes voisins (Kanem, Baguirmi) ayant inflechi les migrations et installations kera. Relations generalement pacifiques avec les voisins Tupuri, Massa et Moussey dans le cadre d'une coexistence multietnique du Mayo-Kebbi.",
+      "diaspora": "Presence de groupes disperses et isoles au nord du Cameroun (Extreme-Nord). Migration vers les grandes villes tchadiennes et camerounaises."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 147000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue : 45 000 locuteurs au Tchad et 6 000 au Cameroun (edition 2024). Joshua Project 2025 : environ 138 000 au Tchad. Peoplegroups.org 2025 : 141 000 au Tchad. Estimation globale 2025 : environ 147 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 141000,
+          "note": "Mayo-Kebbi Est, region du Mont d'Illi, pres de Fianga et du lac Tike"
+        },
+        {
+          "country": "CMR",
+          "population": 6000,
+          "note": "Departements de Mayo-Danay et Diamare, region Extreme-Nord; groupes disperses pres de Wina et Ndoukoula"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kera language (ker)",
-      "CIA World Factbook – Chad, Cameroon",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples tchadiques"
+      "Wikipedia EN — Kera language. https://en.wikipedia.org/wiki/Kera_language",
+      "SIL Ethnologue — Kera (ker). https://www.ethnologue.com/language/ker",
+      "Joshua Project — Kera in Chad. https://joshuaproject.net/people_groups/12634/CD",
+      "Peoplegroups.org — Kera of Chad. https://peoplegroups.org/people_groups/pg011382/",
+      "Right for Education — The Kera People: A Rich and Unique Cultural Identity. https://rightforeducation.org/2025/09/26/the-kera-people-a-rich-and-unique-cultural-identity/",
+      "Wikipedia EN — Mayo-Kebbi Est. https://en.wikipedia.org/wiki/Mayo-Kebbi_Est",
+      "Wiktionary — ISO 639-3 codes Africa (ker classification). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
     ]
   }
 }

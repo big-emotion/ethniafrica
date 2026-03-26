@@ -1,0 +1,62 @@
+{
+  "id": "PPL_DAGOMBA",
+  "nameMain": "Dagomba / Dagbamba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Dagomba / Dagbamba",
+      "selfAppellation": "Dagbamba",
+      "exonyms": ["Dagomba (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur",
+      "historicalRegion": "Ghana (Nord)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Dagomba de Tamale",
+      "Dagbamba ruraux",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dagomba sont originaires du nord du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Gur de la famille Niger-Congo. Créateurs du royaume du Dagbon (État historique majeur).",
+      "unificationsOrDivisions": "Formation du royaume du Dagbon. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples gur voisins, influence de l'islam et du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie (Na Gbewaa → Yaa Naa). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Systèmes lignagers complexes. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Dagbani",
+      "vehicularRole": "Le dagbani est parlé par la majorité des Dagomba. L'anglais est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Funérailles traditionnelles",
+      "source_1": "Cérémonies royales",
+      "source_2": "Rites de passage",
+      "Symboles": "Musique royale, ensembles de tambours",
+      "Arts et musique": "Musique royale, ensembles de tambours, danses traditionnelles",
+      "Spiritualités": "Croyances traditionnelles, islam, christianisme"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Un des royaumes précoloniaux les plus importants du Ghana (Dagbon)",
+      "relationsWithNeighbors": "Relations avec les peuples gur voisins",
+      "conflictsOrAlliances": "Alliances et conflits historiques avec les peuples voisins",
+      "diaspora": "Présence dans les grandes villes du Ghana"
+    },
+    "demography": {
+      "totalPopulation": 3500000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (dag), Dagbon Kingdom Archives"
+    },
+    "sources": [
+      "Ethnologue (dag)",
+      "Dagbon Kingdom Archives",
+      "Ghana Statistical Service"
+    ]
+  }
+}

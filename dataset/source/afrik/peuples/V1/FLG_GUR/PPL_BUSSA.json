@@ -1,0 +1,23 @@
+{
+  "id": "PPL_BUSSA",
+  "nameMain": "Bissa / Bisa",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Bissa / Bisa",
+      "selfAppellation": "Bissa / Bisa",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "BFA, GHA, TGO",
+      "currentCountries": ["BFA", "GHA", "TGO"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue", "Burkina Faso Ethnic Studies"]
+  }
+}

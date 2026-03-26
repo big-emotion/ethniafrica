@@ -6,59 +6,91 @@
   "content": {
     "appellations": {
       "mainName": "Ndau (Mozambique)",
-      "selfAppellation": "Ndau",
-      "exonyms": ["Ndau (terme utilisé par les Européens)"],
+      "selfAppellation": "VaNdau / Ndau",
+      "exonyms": ["Sofala", "Chindau", "Ndzawu", "Shangaan-Ndau"],
+      "originOfExonyms": "Le nom Ndau est documenté pour la première fois au Mozambique par le missionnaire portugais João dos Santos dans les années 1500. Dans la littérature portugaise coloniale, les Ndau du Mozambique sont souvent désignés par le nom de la province côtière de Sofala (Sofala Ndau), qui était le principal centre d'échanges commerciaux. Le terme Shangaan-Ndau désigne les groupes résultant de la fusion avec les envahisseurs nguni de Soshangane lors des conquêtes des années 1820.",
+      "whyProblematic": "Les Ndau du Mozambique constituent un cas ethnographique complexe : leur langue et leur culture ont été profondément influencées par l'invasion nguni des années 1820 (mfecane), qui força l'assimilation de milliers de femmes et d'hommes ndau dans l'Empire Gaza. La frontière ethnique entre Ndau et Tsonga/Changane est floue dans le contexte mozambicain. De plus, la province de Sofala est une zone de contact entre plusieurs groupes.",
+      "contemporaryUsage": "Au Mozambique, le groupe est généralement désigné comme Ndau ou VaNdau. La langue est appelée ChiNdau ou simplement Ndau. Le ChiNdau est l'une des langues de référence pour les services religieux dans la ville de Beira. L'identité ndau mozambicaine est distincte mais liée à celle des Ndau du Zimbabwe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Mozambique",
+      "ethnoLinguisticGroup": "Bantou (zone S, Shona orientaux)",
+      "historicalRegion": "Province de Sofala (Mozambique central) : districts de Machanga, Chibabava, Machaze (Danda), Buzi, Nhamatanda, Dondo et Beira (Bangwe) ; province d'Inhambane : Mambone, Mossurize",
       "currentCountries": ["MOZ"]
     },
-    "ethnicities": ["Ndau du Nord", "Ndau du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Ndau de Sofala — groupe principal, dans les districts côtiers et riverains de la province de Sofala",
+      "Ndau de Machaze (Danda) — groupe des hautes terres, zone frontalière avec le Zimbabwe",
+      "Ndau de Buzi — groupe de la vallée de la rivière Buzi",
+      "Ndau de Beira (Bangwe) — groupe urbain de la deuxième ville du Mozambique",
+      "Ndau-Shangaan de Sofala — groupes issus de la fusion avec les envahisseurs nguni de l'Empire Gaza (19e siècle)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Ndau du Mozambique sont originaires de la région du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Ndau du Zimbabwe.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Ndau du Mozambique sont l'une des populations bantoues les plus anciennement établies dans le Mozambique central. Leur présence dans la province de Sofala est attestée par João dos Santos (missionnaire portugais) dans les années 1500. Ils faisaient partie des réseaux commerciaux anciens centrés sur le port de Sofala (comptoir commercial arabe puis portugais), par lequel transitait l'or des hautes terres du Zimbabwe. Les Ndau commerçaient des textiles distinctifs (mpalu, njeti, vukotlo), des herbes médicinales, des peaux et des perles d'or avec les marchands arabes et portugais.",
+      "formationPeriod": "L'identité ndau au Mozambique s'est formée dans le cadre des migrations bantoues Shona entre le 10e et le 15e siècle, avec une présence consolidée dans la province de Sofala avant l'arrivée des Portugais. L'événement le plus traumatique et transformateur fut la conquête par l'Empire Gaza de Soshangane dans les années 1820-1840, qui entraîna la mort de nombreux hommes ndau, la captivité de femmes et une profonde modification de la langue et de la culture par l'influence nguni. La décolonisation du Mozambique en 1975 et la guerre civile (1977-1992) affectèrent considérablement les communautés ndau de Sofala.",
+      "migrationRoutes": [
+        "Migration bantoue depuis les hautes terres du Zimbabwe actuel vers le littoral de la province de Sofala (Mozambique) entre le 10e et le 15e siècle",
+        "Déplacements liés aux conquêtes de l'Empire Gaza (années 1820-1840) : certains Ndau se réfugièrent chez les Chopi armés de fusils portugais",
+        "Migration vers la ville de Beira (créée par les Portugais à la fin du 19e siècle) pour l'emploi colonial puis post-colonial",
+        "Migrations de travail vers l'Afrique du Sud depuis le début du 20e siècle"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Machanga, Chibabava, Machaze (Danda) et Buzi — zones historiques de la province de Sofala",
+        "Nhamatanda, Dondo et Beira (Bangwe) — zones côtières et urbaines de Sofala",
+        "Mambone et Mossurize (province d'Inhambane) — zones périphériques",
+        "Beira — deuxième ville du Mozambique, importante communauté ndau urbaine"
+      ],
+      "unificationsOrDivisions": "Les Ndau du Mozambique n'ont jamais constitué une entité politique centralisée. Avant l'Empire Gaza, les chefferies ndau de Sofala étaient des entités indépendantes liées par la culture et la langue. La conquête de Soshangane (années 1820-1840) créa l'Empire Gaza qui soumit et réorganisa les groupes ndau en unités tributaires de la structure nguni-shangaan. La fin de l'Empire Gaza sous la pression portugaise (1895) libéra partiellement les Ndau mais l'administration coloniale portugaise maintint une structure administrative distincte pour la province de Sofala.",
+      "externalInfluences": "Commerce arabe via le port de Sofala (10e-15e siècles). Présence portugaise à Sofala depuis 1505 (l'un des premiers comptoirs portugais en Afrique orientale). Conquête de l'Empire Gaza (années 1820-1840) : intégration forcée dans la culture nguni-shangaan. Colonisation portugaise intensive à partir de 1895 (défaite de l'Empire Gaza). Évangélisation catholique portée par les missionnaires portugais. Indépendance du Mozambique en 1975. Guerre civile (FRELIMO vs RENAMO, 1977-1992) : la province de Sofala fut une zone de conflit majeur, le RENAMO puisant ses soutiens dans les communautés ndau."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies territoriales (régulos en portugais colonial) reconnues par l'administration coloniale portugaise. Chaque clan ou sous-groupe reconnaît un chef héréditaire (mfumu). Après l'indépendance de 1975, le gouvernement FRELIMO abolit formellement les chefferies traditionnelles, mais elles ont été réhabilitées dans les années 1990. Les régulos (chefs traditionnels) jouent à nouveau un rôle dans la médiation des conflits locaux et dans les cérémonies. Les n'anga (tradipraticiens-devins) maintiennent une autorité spirituelle parallèle importante.",
+      "clanOrganization": "Structure clanique patrilinéaire avec système de totems (mitupo) interdisant le mariage entre membres du même clan. Les noms de famille distinguent les clans ndau : les influences nguni sont visibles dans certains noms (Sithole, Sibanda, Dube, Moyo). Les clans organisent la transmission foncière, les obligations rituelles et les alliances matrimoniales. Le bridewealth (lobolo) est pratiqué, avec des négociations entre familles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (dzinza) transmettent l'appartenance clanique, les droits fonciers et l'identité spirituelle. Les esprits ancestraux (vadzimu) — esprits familiaux bienveillants — sont au centre de la vie rituelle. La filiation détermine quels esprits ancestraux accompagnent une personne tout au long de sa vie. Les obligations rituelles envers les ancêtres incluent des offrandes régulières de bière et de nourriture, particulièrement lors des cérémonies de passage.",
+      "religiousAuthority": "Les n'anga (tradipraticiens-devins) sont les autorités spirituelles centrales au Mozambique. Ils communiquent avec les esprits ancestraux et les esprits errants (mashavi), pratiquent la divination (par possession des madzvoka), diagnostiquent les maladies et leur cause spirituelle, prescrivent les remèdes (mushonga) et exécutent les rites d'exorcisme. Les femmes n'anga sont particulièrement importantes dans la tradition ndau. L'Église catholique (religion des colonisateurs portugais) domine parmi les chrétiens ndau du Mozambique, complétée par des Églises protestantes et des Églises africaines indépendantes."
     },
     "languages": {
-      "mainLanguage": "Ndau",
-      "vehicularRole": "Le ndau est parlé par la majorité des Ndau du Mozambique. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "ChiNdau (Ndau)",
+      "isoCodes": ["ndc"],
+      "dialects": [
+        "ChiNdau de Sofala — variété principale parlée dans les districts côtiers et fluviaux : Machanga, Chibabava, Buzi, Nhamatanda, Dondo et Beira",
+        "ChiNdau de Machaze (Danda) — variété des hautes terres, proche de la frontière Zimbabwe, plus proche du ChiNdau de Chipinge",
+        "ChiNdau de Mossurize — variété de transition entre les deux",
+        "ChiNdau de Beira — variété urbaine fortement influencée par le portugais et d'autres langues mozambicaines"
+      ],
+      "vehicularRole": "Au Mozambique, le ChiNdau est parlé dans la province de Sofala et partiellement en Inhambane. En 1997, on estimait à 581 000 le nombre de locuteurs en Mozambique. Avec la croissance démographique du Mozambique (environ 2,9%/an), la projection 2025 dépasse 1 million de locuteurs. Le ChiNdau est l'une des langues utilisées dans les services religieux à Beira. Le portugais est la langue officielle du Mozambique et domine dans l'éducation et l'administration. Le ChiNdau est mutuellement intelligible avec le shona du Zimbabwe mais constitue une variété linguistique distincte reconnue par Ethnologue et Glottolog (ISO 639-3 : ndc)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ndau, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La cérémonie ukufemba est le rite central du traitement de la possession spirituelle : l'esprit (souvent un esprit nguni-guerrier ou mashavi) se présente à travers le possédé en expliquant comment il s'est retrouvé dans la famille, cherchant justice. La danse chinyambera est pratiquée par les femmes possédées par des esprits dans la région ndau. Rites funèbres avec offrandes aux vadzimu (esprits ancestraux) : bière, nourriture, vêtements, et autrefois des jeunes femmes ou filles devenant des épouses spirituelles. Les rites agricoles font appel aux zvipunha (esprits de la pluie) pour assurer de bonnes récoltes. Les cérémonies de mariage incluent le paiement du lobolo (bridewealth) et des rituels de bénédiction par les ancêtres.",
+      "symbols": "Les totems claniques (mitupo) sont le marqueur identitaire central. Les textiles traditionnels mpalu, njeti et vukotlo (étoffes distinctives rouges, blanches et bleues) représentent le patrimoine commercial historique ndau. Les n'anga portent des tenues distinctives et des instruments de divination. Le port de Sofala — premier comptoir commercial de la région — est un symbole historique de la présence ndau dans les réseaux d'échange de l'océan Indien.",
+      "artsAndMusic": "La danse chinyambera (danse de possession féminine) est l'expression artistique-rituelle la plus distinctive. Les n'anga ndau du Mozambique sont réputés dans toute l'Afrique australe pour leur expertise en herboristerie médicinale. Poterie, vannerie et travail du métal constituent l'artisanat traditionnel. Chants rituels lors des cérémonies de possession et des funérailles. Musique de tambours. Récits oraux et mythes sur Musikavanthu (ancêtre créateur commun). Le ChiNdau est utilisé pour les proverbes, contes et traditions orales communautaires.",
+      "spiritualities": "Cosmologie ndau mozambicaine centrée sur Murungo (dieu suprême créateur). Les vadzimu (esprits ancestraux bienveillants) protègent leur famille et peuvent posséder un membre du lignage pour communiquer. Les mashavi sont les esprits errants d'étrangers décédés loin de chez eux (ou de jeunes sans funérailles correctes) qui possèdent des personnes sans lien de parenté. Les nzuzu sont des esprits des eaux (entités de type sirène) habitant les rivières et les lacs, invoqués par les n'anga lors des sécheresses. Les ngozi sont des esprits vengeurs exigeant réparation pour des meurtres ou injustices. Les Ndau du Mozambique sont réputés à travers tout le pays pour leur maîtrise des pratiques spirituelles et de la médecine traditionnelle ; leur réputation de puissants n'anga est reconnue même par les groupes non ndau. L'Église catholique est dominante parmi les chrétiens, avec un fort syncrétisme avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ndau dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Avant la conquête nguni, les Ndau de Sofala avaient des chefferies indépendantes tirant leur richesse du commerce avec les marchands arabes et portugais via le port de Sofala. La conquête de Soshangane (Nguni) dans les années 1820 transforma ces chefferies en unités tributaires de l'Empire Gaza. Après la défaite de l'Empire Gaza face aux Portugais en 1895, les chefferies ndau furent intégrées dans l'administration coloniale portugaise sous le système des régulos. Le régulo Musiwa et d'autres chefferies de la province de Sofala sont historiquement significatifs.",
+      "relationsWithNeighbors": "Relations commerciales historiques avec les marchands arabes via Sofala (10e-15e siècles). Relations conflictuelles avec les envahisseurs nguni de Soshangane dans les années 1820. Alliance défensive de certains Ndau avec les Chopi (armés de fusils portugais) pour résister à l'Empire Gaza. Relations avec les groupes tsonga/changane dans le sud de la province de Sofala. Relations avec le RENAMO : la province de Sofala fut le bastion du RENAMO pendant la guerre civile (1977-1992), le mouvement puisant ses soutiens dans les communautés ndau mécontentes du gouvernement FRELIMO dominé par les Maconde et Sena.",
+      "conflictsOrAlliances": "Conquête et intégration forcée dans l'Empire Gaza de Soshangane (années 1820-1840) : événement traumatique marquant profondément la culture et la généalogie ndau. Résistance de certains clans ndau via les Chopi, armés par les Portugais. Soumission à la colonisation portugaise après 1895 (défaite de l'Empire Gaza). La province de Sofala fut l'une des zones les plus affectées par la guerre civile mozambicaine (1977-1992) : les communautés ndau furent impliquées des deux côtés du conflit, avec une base sociale du RENAMO significative dans la région. Les accords de paix de Rome (1992) permirent la stabilisation progressive.",
+      "diaspora": "Migrations de travail vers les mines d'Afrique du Sud depuis le début du 20e siècle. Urbanisation vers Beira (deuxième ville du Mozambique) pour l'emploi et l'éducation. Migrations vers Maputo (capitale) et d'autres villes mozambicaines. Communautés ndau-shangaan en Afrique du Sud. Réfugiés de la guerre civile (1977-1992) dans les pays voisins (Zimbabwe, Malawi, Tanzanie), dont beaucoup sont rentrés après les accords de paix de 1992."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations 2025 basées sur : Wikipedia Ndau people — 581 000 locuteurs en 1997 au Mozambique (recensement) ; Joshua Project — Ndau, Shona in Mozambique ; projection de croissance démographique du Mozambique d'environ 2,9%/an depuis 1997 donne environ 1,1-1,3 million en 2025 ; Justapedia — 1,4 million locuteurs Ndau en 2022.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1200000,
+          "note": "Province de Sofala (principale zone) : districts de Machanga, Chibabava, Machaze (Danda), Buzi, Nhamatanda, Dondo et Beira ; province d'Inhambane : Mambone et Mossurize"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ndau language (ndc)",
-      "CIA World Factbook – Mozambique",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ndau people (section Language and Demographics). https://en.wikipedia.org/wiki/Ndau_people",
+      "Wikipedia EN — Ndau witchcraft and sorcery. https://en.wikipedia.org/wiki/Ndau_witchcraft_and_sorcery",
+      "Joshua Project — Ndau, Shona in Mozambique. https://joshuaproject.net/people_groups/13273/MZ",
+      "Ethnologue SIL — Ndau (ndc). https://www.ethnologue.com/language/ndc/",
+      "Glottolog — Ndau (ndau1241). https://glottolog.org/resource/languoid/id/ndau1241",
+      "University of Missouri — Ndau linguistic profile (DICE). https://dice.missouri.edu/assets/docs/niger-congo/Ndau.pdf",
+      "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007."
     ]
   }
 }

@@ -2,69 +2,287 @@
   "id": "PPL_BANTU",
   "nameMain": "Bantou",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": [],
+  "currentCountries": [
+    "COD",
+    "TZA",
+    "ZAF",
+    "KEN",
+    "MOZ",
+    "UGA",
+    "AGO",
+    "MWI",
+    "ZMB",
+    "ZWE",
+    "RWA",
+    "BDI",
+    "CMR",
+    "COG",
+    "BWA",
+    "GAB",
+    "NAM",
+    "SWZ",
+    "LSO",
+    "GNQ",
+    "COM",
+    "SOM"
+  ],
   "content": {
     "appellations": {
       "mainName": "Bantou",
       "selfAppellation": "Bantou",
       "exonyms": [
-        "Bantou (terme utilisé par les Européens), parfois utilisé de manière problématique"
+        "Bantu (anglais)",
+        "Bantu (sud-africain, contexte de l apartheid)"
       ],
+      "originOfExonyms": "Le terme Bantou (Bantu en anglais) est un terme linguistique academique forge au 19e siecle par le missionnaire et linguiste Wilhelm Bleek (1858) a partir de la racine *-ntu signifiant personne et du prefixe pluriel ba-. Il s applique initialement aux langues, puis par extension aux peuples qui les parlent. Ce terme n est pas un nom ethnique autochtone : aucun groupe ne se designe spontanement comme Bantou.",
+      "whyProblematic": "En Afrique du Sud, le terme Bantu a ete instrumentalise par le regime d apartheid (annees 1940-1990) pour designer les populations noires (Bantu Education Act, bantoustans). Cette utilisation politique pejorative a rendu le terme sensible. Les termes Bantu peoples et langues bantoues restent cependant utilises dans les milieux academiques, linguistiques et anthropologiques sans connotation negative.",
+      "contemporaryUsage": "Dans le contexte scientifique (linguistique, anthropologie, genetique), Bantou designe un groupe de 440 a 680 langues apparentees et les quelque 400 groupes ethniques qui les parlent. Le terme est aujourd hui repris positivement par certains mouvements panafricains. Dans la vie courante africaine, les individus se designent par leur appartenance ethnique specifique (Swahili, Zoulou, Shona, Kikuyu, Luba, etc.).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou",
-      "historicalRegion": "Afrique centrale, orientale et australe",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Bantou (sous-branche majeure de la famille Niger-Congo, Atlantique-Congo, Southern Bantoid)",
+      "historicalRegion": "Afrique centrale occidentale (Cameroun-Nigeria actuels), puis expansion vers l Afrique centrale, orientale et australe",
+      "currentCountries": [
+        "COD",
+        "TZA",
+        "ZAF",
+        "KEN",
+        "MOZ",
+        "UGA",
+        "AGO",
+        "MWI",
+        "ZMB",
+        "ZWE",
+        "RWA",
+        "BDI",
+        "CMR",
+        "COG",
+        "BWA",
+        "GAB",
+        "NAM",
+        "SWZ",
+        "LSO",
+        "GNQ",
+        "COM",
+        "SOM"
+      ]
     },
     "ethnicities": [
-      "Groupes bantous divers",
-      "Sous-groupes régionaux",
-      "Variantes linguistiques"
+      "Kongo (COD, AGO, COG) — Bakongo, anciens du royaume de Kongo",
+      "Luba (COD) — Baluba, l un des plus grands groupes du Congo",
+      "Mongo (COD) — foret equatoriale congolaise",
+      "Kikuyu (KEN) — highland Kenya, environ 8,1 millions",
+      "Luo (KEN, TZA) — groupe Nilotique-Bantou mixte",
+      "Zoulou (ZAF) — Nguni d Afrique du Sud, environ 14,2 millions",
+      "Xhosa (ZAF) — Nguni, environ 9,6 millions",
+      "Shona (ZWE) — Zimbabwe, environ 17,6 millions",
+      "Swahili (TZA, KEN) — culture cotiere mixte Bantou-Arabe",
+      "Ganda (Baganda, UGA) — environ 5,5 millions",
+      "Sukuma (TZA) — environ 10,2 millions",
+      "Ovimbundu (AGO) — plus grand groupe Angola",
+      "Hutu (RWA, BDI) — paysans agriculteurs bantous",
+      "Sotho-Tswana (ZAF, BWA, LSO) — Basotho, Batswana, Bapedi",
+      "Swazi (SWZ)",
+      "Bemba (ZMB)",
+      "Makua (MOZ)",
+      "Somali Bantu (SOM)",
+      "Comoriens (COM)"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples bantous sont originaires d'Afrique centrale, orientale et australe. Leur présence dans la région remonte à plusieurs millénaires. Ils font partie du groupe bantou de la famille Niger-Congo. Le terme \"bantou\" a été utilisé de manière problématique dans l'histoire coloniale.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, nilotiques, et autres groupes africains, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les ancetres proto-bantous provenaient d Afrique du Nord-Est (region du Sahara Vert) et migrérent vers l Afrique de l Ouest-Centre suite a la desertification du Sahara vers 3500 av. J.-C. La patrie proto-bantoue est localisee dans la zone correspondant a la frontiere Cameroun-Nigeria actuelle. Le proto-bantou, langue reconstituee, etait parle il y a environ 3000 a 4000 ans. Les Proto-Bantous etaient des agriculteurs qui maitrisaient la culture du sorgho, du millet, des ignames et du palmier ; la ceramique et la pêche. Le travail du fer (metallurgie) fut acquis vers 400 av. J.-C. au plus tard.",
+      "formationPeriod": "L expansion bantoue, serie de migrations millenniaires, commenca vers 1000 av. J.-C. depuis le noyau camerounais. Une branche meridionale suivit la cote et les rivieres du systeme du Congo vers l Angola (vers 500 av. J.-C.). Une branche orientale gagna les Grands Lacs d Afrique de l Est (vers 1000 av. J.-C.). Des groupes pionniers atteignirent le KwaZulu-Natal (Afrique du Sud) vers 300 de l ere commune et le Cap du Nord vers 500 de l ere commune. Les grandes etudes genetiques (Nature 2023, Institut Pasteur 2017) confirment un modele de serial founder effect : diversite genetique la plus haute a l ouest (Cameroun) et diminuant avec la distance vers le sud et l est.",
+      "migrationRoutes": [
+        "Branche meridionale : depuis le noyau camerounais, le long de la cote atlantique (Gabon, Congo, Angola), vers 500 av. J.-C.",
+        "Branche orientale : depuis le noyau camerounais vers les Grands Lacs d Afrique de l Est, vers 1000 av. J.-C.",
+        "Diffusion vers l Afrique australe depuis l ouest des Grands Lacs, vers 1 de l ere commune (the late split theory)",
+        "Penetration de la foret equatoriale congolaise par les deux branches",
+        "Contacts avec les populations khoïsan d Afrique australe (incorporation genetique partielle)"
+      ],
+      "historicalSettlementZones": [
+        "Noyau originel : frontiere Cameroun-Nigeria actuelle",
+        "Afrique centrale : bassin du Congo, foret equatoriale",
+        "Afrique de l Est : Grands Lacs, Rift Valley, cote swahilie",
+        "Afrique australe : Zimbabwe, Afrique du Sud, Zambie, Mozambique, Namibie, Botswana",
+        "Iles de l ocean Indien : Comores (avec contact madagache)"
+      ],
+      "unificationsOrDivisions": "Les peuples bantous ne forment pas une unite politique mais une communaute de langues et de cultures. Leur expansion a produit une immense diversite culturelle en contact avec des populations pre-bantoues (Khoisans, Pygmees, groupes Nilotiques, Cushitiques). Les grands royaumes bantous (Kongo, Luba, Monomotapa-Zimbabwe, Buganda, Zulu) constituèrent des poles de pouvoir regionaux sans jamais s'unifier.",
+      "externalInfluences": "Contacts avec les groupes Khoisan (Afrique australe) : acquisitions de certains phonemes (clics en Xhosa et Zulu). Contacts avec les groupes Nilotiques et Cushitiques (Afrique de l Est) : introduction de la culture bovine et de la traite du betail. Contacts avec les marchands arabes et persans sur la cote orientale : naissance de la culture swahilie, avec emprunts arabes massifs en kiswahili. Colonisation europeenne (16e-20e siecle) et traite atlantique des esclaves : deportation massive de locuteurs bantous (notamment de l Afrique centrale-occidentale) vers les Ameriques.",
+      "majorHistoricalEvents": "Entre le 9e et le 15e siecle, des Etats bantous emergerent autour des Grands Lacs et des savanes sud-equatoriales. Le complexe du Grand Zimbabwe fut construit par les ancetres des Shona (12e-15e siecle). Le Royaume de Kongo (14e-19e siecle) etait un Etat centralise puissant avant sa destruction par la traite negriere et la colonisation portugaise. L empire Luba (actuel COD) et l empire Lunda (15e-20e siecle) controlaient de vastes territoires. Le Royaume des Zoulous sous Shaka (19e siecle) fut l un des plus redoutables Etats guerriers d Afrique. La culture swahilie, hybride bantou-arabe, mit en place un reseau commercial majeur dans l ocean Indien. La colonisation europeenne du 19e siecle fragment a les royaumes bantous et redistribua les populations selon des frontieres arbitraires."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation variée (royaumes, chefferies, systèmes égalitaires). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique variée (patrilinéaire, matrilinéaire). Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages déterminant l'identité et les alliances selon les groupes.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "L organisation politique varie considerablement selon les groupes bantous : depuis les royaumes fortement centralises (Buganda, Kongo, Zoulou, Luba) jusqu aux societes egalitiares de chasseurs-cueilleurs (Pygmees bantouphones) et aux chefferies villageoises decentralisees. Le principe commun est l autorite du chef (roi, mwami, kabaka, inkosi, fon selon les groupes) comme lien entre vivants, ancetres et forces naturelles. Les conseils d anciens et les confréries initiatiques jouent des roles legislatifs et judiciaires.",
+      "clanOrganization": "Les systemes de descendance varient selon les zones : patrilineaires chez la plupart des Bantous d Afrique centrale et orientale (Kikuyu, Ganda, Zoulou), matrilineaires dans plusieurs groupes d Afrique centrale et meridionale (Luba, Bemba, Ovimbundu, Makua), bilineaires dans certains cas. L organisation clanique structure l acces a la terre, les alliances matrimoniales et les obligations rituelles.",
+      "ageClassSystems": "Plusieurs groupes bantous ont des systemes de classes d age : les Zoulou, les Xhosa, les Kikuyu (riika) et d autres societes d Afrique de l Est. Ces systemes organisent les responsabilites militaires, agricoles et rituelles par generations.",
+      "roleOfLineages": "Les lignages (patrilineaires ou matrilineaires selon les groupes) sont l unite fondamentale de l organisation sociale bantou. Ils determinent l appartenance tribale, les droits sur la terre, les obligations de dot (bride price, lobola) et les responsabilites rituelles envers les ancetres.",
+      "religiousAuthority": "L autorite religieuse est exercee par des specialistes : devinateurs (sangoma en Afrique du Sud), pretres du culte ancestral (abakundumbi, etc.), chefs de confréries. Le roi est souvent la figure rituelle supreme, mediateur entre le monde des vivants et celui des ancetres et des forces naturelles. Des chefs religieux islamiques (imams) et chretiens (pasteurs, pretres) exercent aussi une autorite importante dans les communautes contemporaines."
     },
     "languages": {
-      "mainLanguage": "Langues bantoues (plus de 500 langues)",
-      "vehicularRole": "Les langues bantoues sont parlées par des centaines de millions de personnes. Les langues coloniales et véhiculaires sont également utilisées."
+      "mainLanguage": "Langues bantoues (plus de 500 langues distinctes)",
+      "isoCodes": [
+        "swh",
+        "zul",
+        "xho",
+        "sna",
+        "nya",
+        "lug",
+        "lin",
+        "kon",
+        "kik",
+        "bem",
+        "run",
+        "bam"
+      ],
+      "dialects": [
+        "Zone A (Cameroun, Guinee equatoriale) : Duala, Beti, Bassa, Bakweri/Mokpwe",
+        "Zone B (Gabon, Congo occidental) : Myene, Teke, Kongo occidental",
+        "Zone C (Congo central, COD) : Lingala, Mongo, Ngala",
+        "Zone D (COD oriental) : Lega, Bira, Hunde",
+        "Zone E (Kenya) : Kikuyu, Embu, Meru",
+        "Zone F (Tanzanie occidentale) : Sukuma, Nyamwezi",
+        "Zone G (Tanzanie orientale, Comores) : Kiswahili, Luguru",
+        "Zone H (Angola, Congo) : Kongo, Kimbundu, Yaka",
+        "Zone J (Grands Lacs) : Ganda, Rwanda, Rundi, Haya, Nyoro, Chaga",
+        "Zone K (Angola oriental, Zambie) : Chokwe, Luvale, Lozi",
+        "Zone L (COD meridional, Zambie centrale) : Luba, Lunda",
+        "Zone M (Zambie orientale, Tanzanie meridionale) : Bemba, Tumbuka, Nyiha",
+        "Zone N (Malawi, Mozambique central) : Chewa, Tumbuka, Yao",
+        "Zone P (Tanzanie-Mozambique) : Makonde, Yao, Makua",
+        "Zone R (Angola du sud-ouest, Namibie, Botswana) : Umbundu, Herero, Ovambo",
+        "Zone S (Afrique australe) : Zulu, Xhosa, Ndebele, Sotho, Tswana, Venda, Tsonga, Swazi, Shona"
+      ],
+      "vehicularRole": "Plusieurs langues bantoues jouent un role vehiculaire de premier plan en Afrique subsaharienne. Le kiswahili (Swahili) est langue officielle de la Tanzanie, du Kenya, de l Ouganda, du Rwanda et du Congo (COD) et est parle par plus de 200 millions de personnes. Le lingala est vehiculaire en COD et au Congo-Brazzaville. Le kinyarwanda est vehiculaire au Rwanda. Le zoulou est la premiere langue d Afrique du Sud par nombre de locuteurs natifs. Le chichewa (Nyanja) est vehiculaire au Malawi. Ces langues sont parlees par un total d environ 500 a 600 millions de personnes (locuteurs natifs et vehiculaires combines)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes et islamiques",
-      "Symboles": "Symboles variés selon les groupes, symboles culturels bantous, symboles chrétiens et islamiques.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres."
+      "majorRites": "Les rites d initiation a l age adulte sont universels mais varies : circumcision masculine (umkhosi en zoulou, irua en kikuyu), isolement et education dans des espaces sacres (Fanado balanta, Ukwanda xhosa). Les rites funeraires accordent une place centrale au culte des ancetres : inhumation, ceremonies de levee de deuil, ceremonies commemotives. Le lobola (dot ou bride wealth) est une pratique matrimoniale commune a de nombreux groupes bantous (transfert de biens — betail, argent — de la famille du marie a la famille de la mariee). Les premiers fruits (premiere recolte) font l objet de ceremonies de reconnaissance aux ancetres et forces naturelles. Les rites de guérison impliquent des devinateurs (sangoma, nganga) qui diagnostiquent l origine spirituelle des maladies et prescrivent des remedes.",
+      "symbols": "L ubuntu (humanite, bienveillance mutuelle) est la valeur ethique pan-bantoue la plus connue (umuntu ngumuntu ngabantu en zoulou : une personne est une personne par les autres personnes). Le betail (bovins) est un symbole de richesse, de statut et de lien social dans la plupart des societes bantoues d Afrique de l Est et australe. Les masques (en bois sculpte et fibres naturelles) sont des interfaces entre le monde des vivants et celui des ancetres et des esprits. Les tambours (ngoma) sont des instruments rituels et de communication. Les tissus (kanga, lesotho blankets, bogolanfini) portent des significations identitaires.",
+      "artsAndMusic": "La sculpture sur bois est l art plastique le plus repandu : statuettes ancestrales, masques rituels (Luba, Kuba, Yaka, Bamileke), sceptres et instruments de pouvoir royal. La poterie feminine est une tradition commune. Le travail du metal (for, bronze) produit des objets royaux (Benin, Kongo, Luba). La musique bantoue s articule autour des tambours (ngoma), des xylophones (marimba, balafon), des lamellophones (mbira, kalimba), des luths et harpes. Les chants polyphoniques et le call-and-response sont des formes musicales communes. Les danses rituelles et sociales varient enormement selon les groupes. La litterature orale (contes, epopees, genealogies recitees par des griots) est une forme artistique essentielle de transmission culturelle.",
+      "spiritualities": "La veneration des ancetres est le fondement commun de la spiritualite bantoue : les morts continuent d agir dans le monde des vivants, transmettant benedictions ou maledictions selon la facon dont ils sont honores. Un Etre supreme est reconnu dans la plupart des cosmologies (Nzambi en kongo, Ngai en kikuyu, Unkulunkulu en zoulou, Mulungu en chewa), mais il est souvent trop distant pour etre approche directement. Les intermediaires spirituels (ancetres, esprits de la nature) jouent le role de mediateurs. Le syncrétisme est generalisé : le christianisme (implante depuis le 15e siecle sur les cotes et generalise par les missions europeennes au 19e-20e siecle) est aujourd hui la religion dominante, souvent pratique en parallele avec les croyances ancestrales. L islam est majoritaire dans certaines regions (Swahili, Comores, parties de Tanzanie et du Kenya)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bantoue dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les peuples bantous ont construit certains des plus grands royaumes d Afrique subsaharienne. Le Royaume de Kongo (14e-19e siecle, actuel Angola-Congo-COD) avait Sao Salvador (Mbanza-Kongo) comme capitale et une administration elaboree. Le Monomotapa (13e-17e siecle, Zimbabwe) construisit le Grand Zimbabwe. L empire Luba (actuel COD) avait une culture materielle et artistique exceptionnelle. L empire Lunda (15e-20e siecle) et l empire Kitara (Grandes Lacs, 13e siecle) controlerent de vastes espaces. Le Royaume du Buganda (actuel Ouganda) est l un des Etats africains les mieux preserves avec ses institutions royales. Le Royaume Zoulou sous Shaka (1816-1828) conquit un vaste territoire en Afrique du Sud (Mfecane). Les cites-Etats swahilies (Kilwa, Mombasa, Zanzibar, Malindi) controlaient le commerce de l ocean Indien.",
+      "relationsWithNeighbors": "Les peuples bantous ont assimile ou deplace les populations pre-bantoues lors de leur expansion : groupes San (Khoisan) d Afrique australe (declin demographique majeur il y a environ 4000 ans), groupes Pygmees (Baka, Aka, Mbuti) d Afrique centrale refoulés dans la foret equatoriale. Des echanges culturels importants se produisirent avec les Nilotiques (Masai, Nuer, Dinka) en Afrique de l Est — acquisition du betail, de pratiques pastorales, de phonemes clics chez les Nguni. Les contacts avec les marchands arabes et persans creerent la civilisation swahilie. La traite negriere transatlantique (16e-19e siecle) imposa des contacts violents avec les Europeens.",
+      "conflictsOrAlliances": "Les guerres de capture d esclaves entre royaumes bantous et entre bantous et non-bantous alimenterent la traite transatlantique. Le Mfecane (l ecrasement, 1810-1840) sous Shaka Zoulou provoqua des migrations en cascade et la destruction de nombreuses communautes. Les royaumes bantous forent progressivement colonises par les puissances europeennes au 19e siecle (colonisation de l Angola, du Congo, du Zimbabwe, etc.). Les guerres de liberation anticoloniale (Mau-Mau au Kenya, lutte de l ANC en Afrique du Sud, MPLA en Angola, ZANU en Zimbabwe) furent menees principalement par des peuples bantous au 20e siecle.",
+      "diaspora": "La traite atlantique des esclaves (16e-19e siecle) deporta entre 10 et 12 millions d Africains vers les Ameriques, la grande majorite etant bantouphone (regroupements Kongo, Angola, Bantu d Afrique centrale). Leurs descendants constituent les communautes afro-americaines de la cote est des Etats-Unis, des Caraibes, du Bresil et d autres Ameriques. Des etudes genetiques ont identifie les origines bantoues dans les populations afro-americaines (Bight of Benin, Afrique centrale-occidentale comme points d embarquement principaux). La diaspora contemporaine comprend des millions d Africains bantouphones en Europe, aux Etats-Unis, au Canada et en Asie."
     },
     "demography": {
-      "totalPopulation": 350000000,
+      "totalPopulation": 420000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur Wikipedia EN (environ 350 millions au milieu des annees 2010, 310 millions en 2023 selon Institut Pasteur), uvelaphi.africa (360 millions locuteurs en 2015), Nature 2023 (350 millions BSP), avec projection de croissance demographique africaine jusqu en 2025. Le total inclut les locuteurs bantouphones de tous les pays d Afrique subsaharienne.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 95000000,
+          "note": "Plus de 80% bantous, environ 400 groupes ethniques bantous"
+        },
+        {
+          "country": "TZA",
+          "population": 60000000,
+          "note": "Environ 95% bantous"
+        },
+        {
+          "country": "ZAF",
+          "population": 46000000,
+          "note": "Environ 80% bantous (Nguni, Sotho, Venda, Tsonga)"
+        },
+        {
+          "country": "KEN",
+          "population": 35000000,
+          "note": "Environ 65% bantous (Kikuyu, Luhya, Kamba, Meru, Gusii)"
+        },
+        {
+          "country": "MOZ",
+          "population": 33000000,
+          "note": "Environ 99% bantous"
+        },
+        {
+          "country": "UGA",
+          "population": 33000000,
+          "note": "Environ 80% bantous (Baganda, Basoga, Bakiga, Batooro)"
+        },
+        {
+          "country": "AGO",
+          "population": 33000000,
+          "note": "Environ 97% bantous (Ovimbundu, Ambundu, Bakongo)"
+        },
+        {
+          "country": "ZMB",
+          "population": 19000000,
+          "note": "Environ 99% bantous"
+        },
+        {
+          "country": "MWI",
+          "population": 19000000,
+          "note": "Environ 99% bantous (Chewa, Tumbuka, Yao)"
+        },
+        {
+          "country": "ZWE",
+          "population": 14000000,
+          "note": "Environ 99% bantous (Shona, Ndebele)"
+        },
+        {
+          "country": "RWA",
+          "population": 10000000,
+          "note": "Environ 76% bantous (Hutu, Tutsi)"
+        },
+        {
+          "country": "BDI",
+          "population": 10000000,
+          "note": "Environ 78% bantous (Hutu, Tutsi)"
+        },
+        {
+          "country": "COG",
+          "population": 5000000,
+          "note": "Environ 97% bantous (Bakongo, Mbochi, Bateke)"
+        },
+        {
+          "country": "CMR",
+          "population": 9000000,
+          "note": "Environ 30% bantous sur 29 millions (Beti, Bassa, Duala, Bamileke en partie)"
+        },
+        {
+          "country": "GAB",
+          "population": 2500000,
+          "note": "Environ 65% bantous (Fang, Nzebi, Myene)"
+        },
+        {
+          "country": "NAM",
+          "population": 1800000,
+          "note": "Environ 70% bantous (Ovambo, Herero, Kavango)"
+        },
+        {
+          "country": "BWA",
+          "population": 2200000,
+          "note": "Environ 90% bantous (Batswana, BaKalanga)"
+        },
+        {
+          "country": "SWZ",
+          "population": 1200000,
+          "note": "Environ 99% bantous (Swazi)"
+        },
+        {
+          "country": "LSO",
+          "population": 2100000,
+          "note": "Environ 99% bantous (Basotho)"
+        },
+        {
+          "country": "GNQ",
+          "population": 1800000,
+          "note": "Environ 15% bantous (Bubi, Ndowe)"
+        },
+        {
+          "country": "COM",
+          "population": 850000,
+          "note": "Environ 99% (Comoriens, culture bantou-arabe)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bantu languages",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Bantu peoples. https://en.wikipedia.org/wiki/Bantu_peoples",
+      "Wikipedia EN — Guthrie classification of Bantu languages. https://en.wikipedia.org/wiki/Guthrie_classification_of_Bantu_languages",
+      "Nature (2023) — The genetic legacy of the expansion of Bantu-speaking peoples in Africa. https://www.nature.com/articles/s41586-023-06770-6",
+      "Institut Pasteur (2017) — The migration history of Bantu-speaking people. https://www.pasteur.fr/en/home/research-journal/press-documents/migration-history-bantu-speaking-people-genomics-reveals-benefits-admixture-and-sheds-new-light",
+      "Britannica — Bantu peoples. https://www.britannica.com/topic/Bantu-peoples",
+      "History Guild — The Bantu Migration. https://historyguild.org/early-africa/",
+      "Bantu Cultures of Africa — uVelaphi. https://www.uvelaphi.africa/files/cultures.html",
+      "SIL Ethnologue — Niger-Congo subgroup (Bantu). https://www.ethnologue.com/subgroup/47/"
     ]
   }
 }

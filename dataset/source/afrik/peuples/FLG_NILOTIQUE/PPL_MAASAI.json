@@ -6,63 +6,104 @@
   "content": {
     "appellations": {
       "mainName": "Maasai",
-      "selfAppellation": "Maasai",
-      "exonyms": ["Maasai (terme utilisé par les Européens), Masai"],
+      "selfAppellation": "Maasai (ou Il Maasai ; aucun ne s'appelle Masai en langue maa)",
+      "exonyms": ["Masai", "Massai"],
+      "originOfExonyms": "La forme Masai est un exonyme colonial utilise par les administrateurs et explorateurs britanniques (Henry Morton Stanley, Joseph Thomson), simplifiant l'orthographe du nom interne Maasai. La forme Massai est utilisee en allemand et en francais. La denomination propre en maa est Il Maasai, signifiant litteralement les gens qui parlent maa.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Maasai est la graphie officielle au Kenya et en Tanzanie. Le terme Masai est encore repandu dans les medias et le tourisme. Les Maasai eux-memes preferent la graphie Maasai comme plus fidele a leur langue.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique oriental",
-      "historicalRegion": "KEN, TZA",
+      "ethnoLinguisticGroup": "Nilotique oriental (Eastern Nilotic), famille Nilo-Saharienne",
+      "historicalRegion": "Grande Vallee du Rift africain et savanes adjacentes (Kenya central, sud et Tanzanie du nord)",
       "currentCountries": ["KEN", "TZA"]
     },
     "ethnicities": [
-      "Maasai du Kenya",
-      "Maasai de Tanzanie",
-      "Sous-groupes régionaux"
+      "Purko (la section la plus nombreuse, Kenya central)",
+      "Keekonyokie (region de Kajiado, Kenya)",
+      "Matapato (Kenya, region d'Amboseli)",
+      "Ilkisonko (aussi appeles Kisongo, Tanzanie, secteur dominant)",
+      "Parakuyo (Tanzanie, anciennement nommes Kwavi ou Baraguyu, pasteurs semi-sedentaires)",
+      "Loitai (Kenya, region du Loita Hills)",
+      "Siria (Kenya-Tanzanie, region du Mara)",
+      "Laikipiak (Kenya, region du Laikipia, presque aneantis au 19e siecle lors des guerres civiles maasai)",
+      "Samburu (nord du Kenya, apparentes aux Maasai)",
+      "Ilchamus (Kenya, Baringo, semi-sedentaires)"
     ],
     "origins": {
-      "ancientOrigins": "Les Maasai sont originaires du Kenya et de la TZA, dans la région du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Maasai sont des Nilotiques orientaux dont les ancetres ont migre du nord vers l'Afrique de l'Est. Ils sont arrives dans la region du lac Turkana (nord du Kenya actuel) en venant du Soudan du Sud et du Nil Blanc probablement au cours du 15e siecle. Ils ont migre vers le sud, atteignant leur territoire actuel (Kenya central et Tanzanie du nord) entre le 17e et le 18e siecle. Leur ancetre fondateur legendaire est Maasinta. Au 19e siecle, leur territoire a atteint son extension maximale, de Mount Marsabit (nord) jusqu'a Dodoma (sud), incluant presque toute la Grande Vallee du Rift et les terres adjacentes, jusqu'a la cote de Tanganyika (aujourd'hui Tanzanie).",
+      "formationPeriod": "Consolidation de l'identite maasai en tant que confederation de sections (iloshon) entre le 17e et le 19e siecle. Expansion territoriale maximale vers 1860-1880. Catastrophe de l'Emutai (1883-1902) : epidemies bovines (pleuropneumonie, peste bovine), variole, secheresse devastent la population (perte de 90% du betail, deux tiers de la population selon certaines estimations). Cela ouvre la voie aux colonisations britannique et allemande.",
+      "migrationRoutes": [
+        "Soudan du Sud et Nil Blanc — origine ancestrale au 15e siecle",
+        "Lac Turkana (nord du Kenya) — relais migratoire",
+        "Grande Vallee du Rift (Kenya) — expansion du 17e au 18e siecle",
+        "Extension vers le sud jusqu'a Dodoma (Tanzanie) au 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Maasai Mara (Kenya sud-ouest, frontieres avec la Tanzanie)",
+        "Kajiado County et Narok County (Kenya)",
+        "Arusha Region et Manyara Region (Tanzanie du nord)",
+        "Ngorongoro Conservation Area et Serengeti (Tanzanie)",
+        "Amboseli et Tsavo (Kenya)",
+        "Loita Hills et Laikipia Plateau (Kenya)"
+      ],
+      "unificationsOrDivisions": "Les Maasai sont organises en 22 sections geographiques (iloshon : nations) qui forment une confederation sans chef unique. Chaque section est autonome mais partage la langue, la culture et le systeme d'age. Les guerres civiles maasai du 19e siecle (Iloikop Wars, vers 1830-1880) ont oppose les Maasai (Il-Maasai, pasteurs purs) aux Kwavi-Iloikop (agriculteurs-pasteurs), aboutissant a l'elimination de plusieurs sections (Laikipiak notamment). L'Emutai (1883-1902) a encore reduit la population. Les deplacements forces pour les parcs nationaux (Amboseli 1906, Serengeti 1951) ont fragmente le territoire.",
+      "externalInfluences": "Adoption de l'age-set system et de la circoncision depuis des groupes cushitiques voisins. Contacts avec les Kikuyu, Kamba, Turkana, Samburu. Colonisation britannique (Kenya) et allemande (Tanganyika) : confiscation de terres a partir de 1904 (Traite de 1904 puis 1911 deplacant les Maasai au sud du chemin de fer). Creation de parcs nationaux aux depens des terres maasai : Maasai Mara, Amboseli, Nairobi, Tsavo (Kenya), Serengeti, Ngorongoro, Tarangire, Lake Manyara (Tanzanie). Tentatives de sedentarisation et d'education formelle par les Etats kenyan et tanzanien.",
+      "majorHistoricalEvents": "Extension maximale du territoire maasai (milieu du 19e siecle). Iloikop Wars (1830-1880) : guerres civiles entre sections maasai, elimination des Laikipiak. Catastrophe Emutai (1883-1902) : epidemies et secheresse devastatrices. Traites coloniaux de 1904 et 1911 (Kenya) : deplacements massifs vers les reserves du sud. Expulsion du Serengeti National Park (1951). Interdiction de la culture au Ngorongoro (1975-1992). Evictions de Loliondo et Ngorongoro en Tanzanie (2022) pour un reserve de chasse de 1 500 km2. Inscription UNESCO (2018) : Enkipaata, Eunoto et Olng'esherr comme patrimoine immatériel en peril."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge (moran, laibon). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des laibon (chefs religieux traditionnels) et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Gouvernement decentralise base sur le systeme d'age (age-set system). Chaque section (iloshon) est administree par un conseil d'anciens (ilkiama). Les decisions collectives sont prises par consensus. Le laibon est le chef spirituel supremement important : il cumule les fonctions de guerisseur-chaman, devin, prophete, assure le succes a la guerre et la pluie. Il n'existe pas de chef politique centralise pour l'ensemble des Maasai.",
+      "clanOrganization": "Deux piliers totémiques de la societe maasai : Oodo Mongi (vache rouge) et Orok Kiteng (vache noire), avec cinq sous-clans (familles totémiques). Le clan determine les droits matrimoniaux (les Maasai pratiquent l'exogamie clanique). Le lion est l'animal totémique de la communaute dans son ensemble.",
+      "ageClassSystems": "Systeme d'age (ilkiama pour les anciens, ilmurran pour les guerriers). Les hommes progressent a travers des classes d'age successives : enfance (inkera), age des guerriers (ilmurran ou murran, la plus longue classe), age des jeunes anciens, age des anciens. Chaque generation d'age recoit un nom specifique (ex. Irmiponyi pour la derniere generation de guerriers). L'age-set est introduit par l'enkipaata, puis consolide par la circoncision (emuratare), puis transforme en anciennete par l'eunoto et finalise par l'olng'esherr.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'appartenance clanique et les droits matrimoniaux. La residence est patrilocale. Les femmes changent de residence au mariage. Le betail est l'unite centrale de richesse et de prestige ; les troupeaux sont herites selon les regles patrilineaires.",
+      "religiousAuthority": "Le laibon est la figure religieuse centrale, cumulant guerison chamanique, divination, prophetie et garantie du succes collectif (guerre, pluie, sante du betail). La famille des laibon Ol Le Batian a exerce cette autorite spirituelle de facon hereditaire depuis la fin du 18e siecle."
     },
     "languages": {
-      "mainLanguage": "Maasai",
-      "vehicularRole": "Le maasai est parlé par la majorité des Maasai. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Maa (aussi appele Maasai ou ol Maa)",
+      "isoCodes": ["mas"],
+      "dialects": [
+        "Maa du Kenya (parle par la majorite des Maasai du Kenya)",
+        "Maa de Tanzanie (Kisongo et autres sections tanzaniennes)",
+        "Samburu (dialecte apparente, Kenya du nord)",
+        "Ilchamus ou Njemps (dialecte apparente, Kenya, Baringo)"
+      ],
+      "vehicularRole": "Le maa (code ISO 639-3 : mas) est parle par environ 1,5 million de personnes au Kenya et en Tanzanie. Langue nilotique orientale, apparentee au dinka, kalenjin et nuer. Ecrit en alphabet latin avec des caracteres IPA supplementaires (e-ouvert, i-barre, ng, o-ouvert, u-barre). A cote du maa, la plupart des Maasai parlent aussi le swahili et l'anglais (langues officielles du Kenya et de Tanzanie)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation (Eunoto, Emuratare)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels maasai (shuka, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (chant, saut)",
-      "source_5": "Danse traditionnelle (adumu)",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "Enkipaata : rite d'induction des garcons preparant a l'initiation. Des groupes de garcons de 12-15 ans parcourent les bomas (villages) de leur section pour chanter, danser et etre purifies par les anciens pendant plusieurs jours avant la circoncision. Emuratare (circoncision) : rite de passage le plus important, transformant le garcon en guerrier (ilmurran). Le candidat doit rester impassible sous la douleur pour prouver son courage. Eunoto : graduation des guerriers (ilmurran) en jeunes anciens, apres 7 a 10 ans de vie en tant que guerriers. Ceremonie majeure durant 10 jours ou plus : chants, danses, adumu (saut rituel). Les dreadlocks du guerrier sont rases par sa mere. L'eunoto a ete inscrit au patrimoine culturel immatériel de l'UNESCO en 2018 (avec l'enkipaata et l'olng'esherr). Olng'esherr : ceremonie du festin de viande (ngejin), marquant la fin de l'age des guerriers et l'entree dans l'eldership. Un boeuf est sacrifie au centre du manyatta. Adumu : danse des guerriers avec des sauts verticaux remarquables, pratiquee lors des ceremonies.",
+      "symbols": "Le shuka (toge de coton rouge ou a carreaux rouge-bleu) est le vetement symbolique maasai. La parure de perles (beads, isiguret) est un marqueur de statut, d'age et de genre elabore par les femmes. La massue (rungu) et la lance (olmabo) sont les armes et symboles de virilite du guerrier. Le manyatta (campement de formation des guerriers) est un lieu symbolique majeur. Ol Doinyo Lengai (la Montagne de Dieu, Tanzanie) est le site sacre le plus important.",
+      "artsAndMusic": "Adumu (danse du saut) : competition collective de sauts verticaux entre guerriers lors des ceremonies. Chants polyphoniques sans instruments de musique (les Maasai traditionnels ne jouent pas d'instruments) : le chant est produit uniquement avec la voix et les percussions corporelles. Perles de rocaille et broderies confectionnees par les femmes : art decoratif et langage social codifie (couleur, motif = statut social, appartenance clanique, age). Sculpture de baton de marche et de massue par les hommes. Ornementation bovine et decoration des gourdes.",
+      "spiritualities": "Monothéisme : les Maasai venerent un seul dieu, Enkai (aussi Engai, Nkai). Enkai a une double nature : Enkai Narok (Dieu noir, benevolent, associe au nord, a la pluie, la fertilite et l'amour) et Enkai Na-nyokie (Dieu rouge, vengeur, associe au sud et aux punitions). Ol Doinyo Lengai (la Montagne de Dieu) en Tanzanie du nord est la demeure primordiale d'Enkai, visible depuis le lac Natron. Pas de veneration des ancetres (contrairement a la plupart des peuples africains). La plus grande forme d'immortalite est l'heritage familial : produire des fils et de la richesse en betail. Le laibon est le mediateur entre la communaute et Enkai."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora maasai dans les grandes villes kényanes et tanzaniennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Maasai n'ont pas developpe de royaume centralise. Leur organisation en 22 sections autonomes (iloshon) avec des conseils d'anciens est la structure politique traditionnelle. Le laibon Ol Le Batian et ses descendants ont exerce une autorite spirituelle centrale a partir de la fin du 18e siecle. Pendant le 19e siecle, les Maasai dominaient militairement une vaste zone de l'Afrique orientale, terrorisant les caravanes et repoussant les tentatives d'incursion des peuples voisins.",
+      "relationsWithNeighbors": "Les Maasai ont historiquement assimile des groupes cushitiques du sud (Kwavi, Arusha, Chamus), adoptant certaines de leurs pratiques (agriculture, systeme d'age). Ils ont deplacement de nombreux groupes ethniques (Kikuyu, Kamba, Nandi, Kipsigis) de leurs territoires par les raids. Ils ont evite la traite des esclaves en raison de leur reputation de guerriers, permettant a l'Afrique de l'Est de les contourner. La fin des Iloikop Wars (1880) et la catastrophe Emutai (1883-1902) ont radicalement affaibli leur puissance militaire.",
+      "conflictsOrAlliances": "Iloikop Wars (1830-1880) : guerres civiles entre sections maasai (Il-Maasai pasteurs purs vs Kwavi-Iloikop semi-agriculteurs). Catastrophe Emutai (1883-1902) : epidemies de pleuropneumonie bovine et de peste bovine, variole, secheresse devastatrice (90% du betail perdu, peut-etre deux tiers de la population). Traites coloniaux de 1904 et 1911 : deplacements vers les reserves du sud du Kenya. Disputes territoriales continues au Kenya et en Tanzanie avec les autorites etatiques pour les parcs nationaux. Evictions recentes en Tanzanie (Loliondo, Ngorongoro, 2022) pour la creation d'une reserve de chasse de 1 500 km2 (Otterlo Business Corporation).",
+      "diaspora": "Minorite maasai dans les capitales Nairobi et Dar es Salaam, souvent impliquee dans le tourisme et le commerce. Emigration internationale limitee. Des organisations de la diaspora militent pour les droits fonciers des Maasai au Kenya et en Tanzanie. Le Maasai International Solidarity Alliance (MISA) opere dans plusieurs pays occidentaux."
     },
     "demography": {
       "totalPopulation": 1500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement kenyan 2019 : 1 189 522 Maasai (Kenya National Bureau of Statistics). Tanzanie : estimations entre 500 000 et 800 000 (deplacement de plus de 150 000 du Loliondo et Ngorongoro selon l'ONU). SIL Ethnologue : environ 1,5 million de locuteurs du maa. Estimation 2025 incluant Kenya et Tanzanie : 1,5 a 2 millions.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 1200000,
+          "note": "Principalement Narok County, Kajiado County, Samburu County. Recensement 2019 : 1 189 522."
+        },
+        {
+          "country": "TZA",
+          "population": 300000,
+          "note": "Arusha Region, Manyara Region, Ngorongoro Conservation Area, region du Serengeti et Loliondo. Estimation basse apres deplacements recents."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Maasai language (mas)",
-      "CIA World Factbook – KEN, Tanzania",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Maasai people. https://en.wikipedia.org/wiki/Maasai_people",
+      "Wikipedia EN — Maasai language. https://en.wikipedia.org/wiki/Maasai_language",
+      "UNESCO ICH — Enkipaata, Eunoto et Olng'esherr (2018). https://ich.unesco.org/en/USL/enkipaata-eunoto-and-olng-esherr-three-male-rites-of-passage-of-the-maasai-community-01390",
+      "SIL Ethnologue — Maasai language (mas). https://www.ethnologue.com/language/mas/",
+      "University of Missouri — Maasai PDF profile. https://dice.missouri.edu/assets/docs/niger-saharan/maasai.pdf",
+      "Lion Guardians — Tradition in Motion: Welcoming Irmiponyi Age Set. https://lionguardians.org/tradition-in-motion-welcoming-irmiponyi-age-set/",
+      "Joshua Project — Maasai, Arusha in Tanzania. https://joshuaproject.net/people_groups/10441"
     ]
   }
 }

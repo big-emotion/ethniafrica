@@ -6,69 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "Igbo",
-      "selfAppellation": "Ǹdị́ Ìgbò",
-      "exonyms": ["« Ibo » (terme colonial réducteur)"],
+      "selfAppellation": "Ndi Igbo",
+      "exonyms": [
+        "Ibo (terme colonial réducteur, anciennement courant)",
+        "Heebo, Ebo, Eboe, Ibo, Igbo, Ebo (variantes historiques)"
+      ],
+      "originOfExonyms": "Le terme Ibo est la déformation phonétique coloniale britannique du nom Igbo. Il fut utilisé de manière péjorative par certains peuples voisins et par les colonisateurs. Les Igbo eux-mêmes se désignent comme Ndi Igbo (les gens igbo), Ndi Ibo dans certains dialectes.",
+      "whyProblematic": "Le terme Ibo est aujourd'hui considéré comme une réduction coloniale inexacte. Le terme Igbo est l'appellation correcte et officielle. L'identité igbo comme entité unifiée est relativement récente, s'étant formée principalement dans le contexte de la décolonisation et de la guerre du Biafra.",
+      "contemporaryUsage": "Igbo est l'appellation standard dans tous les contextes officiels nigérians et internationaux. Ndi Igbo ou Ndigbo est l'expression endonymique collective. L'identité igbo est fortement affirmée, notamment après la guerre du Biafra (1967-1970).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Volta-Congo → Igboïde",
-      "historicalRegion": "Forêt orientale du Nigeria",
+      "ethnoLinguisticGroup": "Volta-Niger, branche Igboide",
+      "historicalRegion": "Foret orientale et plateau d'Awka-Enugu, Nigeria du sud-est (bassins des fleuves Niger et Cross River)",
       "currentCountries": ["NGA", "CMR", "GIN"]
     },
     "ethnicities": [
-      "Onicha",
+      "Onicha (Onitsha)",
       "Ngwa",
-      "Aro",
-      "Autres sous-groupes claniques igbo"
+      "Aro (Arochukwu)",
+      "Nri (groupe sacré, ancienne cité-Etat theocratique)",
+      "Agbor",
+      "Ikwerre",
+      "Ekpeye",
+      "Owerri",
+      "Umuahia",
+      "Orlu",
+      "Awka",
+      "Afikpo"
     ],
     "origins": {
-      "ancientOrigins": "Histoire ancienne liée aux cités-États igbo. Réseaux Aro comme système marchand et religieux.",
-      "unificationsOrDivisions": "Organisation en sociétés lignagères segmentaires. Pas d'État centralisé traditionnel. Réseaux marchands Aro.",
-      "externalInfluences": "Contacts avec les peuples voisins (Ijaw, Ibibio), influence du christianisme, et plus récemment de l'islam et de la modernisation."
+      "ancientOrigins": "Les Igbo sont l'un des peuples les plus anciens d'Afrique de l'Ouest. La ville d'Igbo-Ukwu (État d'Anambra) a livré des objets en bronze datant du IXe siècle, dont plus de 600 pièces de prestige et 165 000 perles en verre et en cornaline, témoignant d'une civilisation métallurgique sophistiquée. Le royaume de Nri, entité théocratique fondée vers le Xe siècle, dont l'autorité spirituelle était reconnue dans tout l'Igboland, représente la formation politique la plus ancienne documentée. Selon la tradition orale, l'ancêtre divin Eri (descendant de Chukwu) s'établit dans la région de Nri-Aguleri vers le IXe siècle.",
+      "formationPeriod": "L'identité igbo comme entité unitaire est comparativement récente. Historiquement, les Igbo vivaient dans des communautés village-istes décentralisées, organisées en lignages (umunna). Le contexte colonial britannique et la guerre du Biafra (1967-1970) ont formé une conscience igbo unifiée. Les pyramides de Nsude (Enugu) témoignent d'une architecture cultuelle ancienne dédiée à la déesse Ala.",
+      "migrationRoutes": [
+        "Présence autochtone dans la foret orientale du Nigeria depuis des millénaires",
+        "Expansion depuis le noyau Nri-Awka vers les périphéries (Onitsha, Delta, Cross River)",
+        "Réseau commercial Aro depuis Arochukwu vers toute la région (XVIIe-XIXe siècles)",
+        "Diaspora atlantique involontaire via la traite esclavagiste (XVIIe-XIXe siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Etats d'Anambra, Imo, Abia, Ebonyi, Enugu (coeur de l'Igboland)",
+        "Partie orientale de l'Etat de Delta et ouest de l'Etat de Rivers",
+        "Communautés commerciales dans tout le Nigeria (Lagos, Abuja, Kano, Port Harcourt)"
+      ],
+      "unificationsOrDivisions": "La société igbo traditionnelle etait decentralisee : chaque village constituait l'unite politique maximale, gouvernee par une assemblee d'anciens. Les rares exceptions incluent les chefferies d'Onitsha (obis), le royaume de Nri (theocratique), la Confederation Aro (reseau commercial et religieux, XVIIe-XIXe siecles) et le royaume d'Aboh. L'identite igbo unifiee s'est construite sous la colonisation et lors de la guerre du Biafra.",
+      "externalInfluences": "Contacts anciens avec les Ijaw, Ibibio et Bini. Traite atlantique des esclaves via la Confederation Aro (XVIIe-XIXe siecles). Colonisation britannique (1900-1960) : imposition de chiefs, courts et administration directe. Christianisation intense (XIXe-XXe siecles). Guerre du Biafra (1967-1970). Mouvement independantiste IPOB contemporain.",
+      "majorHistoricalEvents": "IXe siecle : production de bronzes a Igbo-Ukwu. Xe siecle : fondation du royaume de Nri. XVIIe-XIXe siecles : essor de la Confederation Aro comme reseau esclavagiste. 1900 : fin de la guerre Aro (pacification britannique). 1929 : revolte des femmes ibibio-igbo contre la taxation (Women's War). 30 mai 1967 : proclamation de la Republique du Biafra par Emeka Odumegwu-Ojukwu. 1967-1970 : guerre civile nigeriane (millions de morts, dont des victimes de famine). 15 janvier 1970 : reintegration du Biafra au Nigeria."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Sociétés lignagères segmentaires. Organisation villageoise. Pas d'État centralisé traditionnel.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales. Titulature Ozo, Ndi Nze.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles. Panthéon Ala et Chukwu."
+      "traditionalPoliticalSystem": "La politique igbo traditionnelle est republicaine et deliberative : chaque village est gouverne par une assemblee des hommes adultes (oha), un conseil d'anciens et les detenteurs de titres (Ozo, Ndi Nze). Le titre Ozo peut etre acquis et herite. L'assemblee garantit l'egalite des citoyens, en opposition a un systeme feodal. L'autorite spirituelle (non politique) du roi de Nri etait reconnue dans tout l'Igboland. Les Oguta, Onitsha et Aboh avaient des chefs (Obi). Le systeme Umunna (lignage patrilineaire) est la base de l'organisation sociale.",
+      "clanOrganization": "L'Umunna est la forme de patrilineage centrale : groupe de descente masculine depuis un ancetre fondateur, constitue de groupes de maisons (ezi) contenant des familles proches, dirige par le membre masculin le plus age. L'Umunna est le pilier le plus important de la societe igbo. Les mariages sont exogames au sein de l'Umunna. La polygamie, historiquement repandue, est aujourd'hui remplacee par la monogamie sous l'influence chretienne.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'Umunna (lignage patrilineaire) determine l'identite, les droits fonciers, les alliances matrimoniales et les obligations communautaires. Les titulaires Ozo et Ndi Nze jouissent de privileges et de responsabilites specifiques. La titulature est partiellement hereditaire et partiellement meritocratique. Le Chi (gardien spirituel personnel) est attribue a la naissance et determine en partie le destin individuel.",
+      "religiousAuthority": "Les pretres des autels d'Ala (deesse de la terre) et des autres Arusi (divinites), les Eze Nri (roi-pretre de Nri), les Eze (chefs sacres) et les Dibia (guerisseurs-devins) exercent l'autorite religieuse. Les societes secretes Ekpe et Okonko maintiennent l'ordre moral. Le christianisme (catholique et protestant) est aujourd'hui dominant, souvent syncretise avec les pratiques traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Igbo",
-      "vehicularRole": "L'igbo est parlé par la majorité des Igbo. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé."
+      "mainLanguage": "Igbo (Ibo)",
+      "isoCodes": ["ibo"],
+      "dialects": [
+        "Igbo central (Owerri-Umuahia, base du standard depuis 1939)",
+        "Onitsha (influence importante dans l'est du Nigeria)",
+        "Nnewi",
+        "Ngwa",
+        "Ikwerre (parfois considere comme langue distincte)",
+        "Ekpeye (dialecte tres differencie)",
+        "Aro (dialect commercial)",
+        "Afikpo",
+        "Enuani (Igbo de la rive ouest du Niger)"
+      ],
+      "vehicularRole": "L'igbo est la troisieme langue par nombre de locuteurs au Nigeria. Il est enseigne dans les ecoles du sud-est du Nigeria et utilise dans les medias. L'igbo central standardise (Central Igbo) base sur les dialectes d'Owerri et Umuahia fut defini par l'expedition de recherche du Dr Ida Ward en 1939. L'anglais et le pidgin english nigerian sont les langues de communication inter-ethnique."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Masques mmanwu",
-      "source_1": "Festivals New Yam",
-      "source_2": "Cérémonies d'initiation",
-      "source_3": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_4": "Cérémonies de réconciliation",
-      "Symboles": "Masques mmanwu, symboles culturels igbo, art igbo",
-      "Arts et musique": "",
-      "source_5": "Masques mmanwu",
-      "source_6": "Sculpture sur bois (masques, statues)",
-      "source_7": "Musique traditionnelle (tambours, flûtes)",
-      "source_8": "Danse traditionnelle",
-      "source_9": "Artisanat (tissage, poterie)",
-      "source_10": "Littérature orale",
-      "Spiritualités": "Croyances traditionnelles centrées sur le panthéon Ala et Chukwu. Rôle important des ancêtres. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam."
+      "majorRites": "Les mascarades mmanwu sont l'institution rituelle la plus importante : les masques incarnent les esprits des ancetres defunts ou des forces surnaturelles, permettant aux morts de communiquer avec les vivants lors des funerailles, festivals et initiations. Les masques Ijele (12 pieds de haut, plateformes de 6 pieds de diametre) sont les plus imposants et n'apparaissent que lors du deces de personnalites eminentes. Les masques Agbogho Mmuo representent des esprits de jeunes filles decedees. Le New Yam Festival (Iwa Ji) celebre les premieres recoltes d'ignames : les ignames sont exhibees comme signe de richesse, des libations sont versees aux ancetres. Les funerailles igbo impliquent des sacrifices animaux selon le statut du defunt. Le mariage traditionnel inclut demande de consentement, presentation aux familles, examen du caractere, paiement de la dot (noix de kola, vin, chevres, poulets), et peut s'etaler sur plusieurs jours.",
+      "symbols": "Les masques mmanwu sont le symbole artistique et religieux majeur. L'igname (ji) est le symbole de la richesse, de la fertilite et de l'identite culturelle igbo. L'ikenga (statuette en bois representant la main droite, le chi, les ancetres et la puissance) est le symbole de la determination individuelle et de la reussite. La noix de kola (oji) est utilisee dans toutes les ceremonies religieuses et sociales, son partage symbolise l'hospitalite et l'accord. L'art Nsibidi (systeme de symboles ideographiques) est utilise par les societes secretes. Les bronzes d'Igbo-Ukwu symbolisent la sophistication ancienne de la civilisation igbo.",
+      "artsAndMusic": "Les Igbo ont developpe une tradition artistique multiple. Les bronzes d'Igbo-Ukwu (IXe siecle) sont parmi les plus anciens et sophistiques d'Afrique subsaharienne. L'architecture Mbari (maisons en argile de l'Owerri-Igbo) integre des sculptures polychromes grandeur nature de divinites, officiels, etrangers et ancetres. L'art Uli (lignes decoratives sur corps et murs) est pratique par les femmes. La mascarade (mmanwu) est l'art performatif central. Les instruments de musique traditionnels incluent l'udu (jarre d'argile), l'ekwe (tronc creux), l'ogene (cloche en fer forge), l'opi (flute), l'igba (tambour) et l'ichaka (hochet). Le highlife igbo moderne (Dr Sir Warrior, Oliver De Coque, Bright Chimezie, Chief Osita Osadebe) est un genre musical majeur en Afrique de l'Ouest.",
+      "spiritualities": "La religion traditionnelle igbo est l'Odinani (aussi appelee Odinala, Omenala). C'est un systeme theologique polytheiste avec un dieu supreme unique : Chukwu (grande force spirituelle), createur de l'univers. Le cosmos est divise en Okike (creation), Alusi (forces surnaturelles), Mmuo (esprits) et Uwa (monde terrestre). La deesse Ala (terre) est la plus importante des Arusi : omnipresente dans les villages, elle sanctionne la loi coutumiere (omenala). Amadioha est le dieu du tonnerre et de la justice. Chaque individu possede un Chi (gardien spirituel personnel) determinant son destin. Les ancetres (ndichie) resident dans le monde spirituel et protegent les vivants. Le christianisme (catholicisme et protestantisme) est aujourd'hui majoritaire, souvent synchretise avec l'Odinani."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en cités-États igbo. Réseaux marchands Aro. Pas d'État centralisé traditionnel.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora igbo importante dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt) et dans les pays occidentaux (États-Unis, Royaume-Uni)."
+      "kingdomsOrChiefdoms": "Le royaume theocratique de Nri (Xe-XXe siecles) etait l'entite politico-religieuse la plus importante : son autorite spirituelle sur tout l'Igboland permettait la neutralisation des crimes rituels. La Confederation Aro (XVIIe-XIXe siecles), centree sur Arochukwu, controlait les reseaux commerciaux et esclavagistes de toute la region via l'Oracle Ibini Ukpabi. Les royaumes d'Onitsha (Obi, influence avec les Bini), d'Aboh et d'Agbor etaient des chefferies centralisees. Les communautes Igbo de la rive ouest du Niger (Asaba, Delta State) avaient leurs propres structures politiques.",
+      "relationsWithNeighbors": "Relations commerciales et conflictuelles avec les Ijaw (delta du Niger). Relations culturelles etroites avec les Ibibio (langue et commerce). Contacts avec les Bini (Benin Kingdom) pour les regimes d'Onitsha. Echanges commerciaux intensifs avec les Efik d'Old Calabar via la Confederation Aro. Relations tendues avec les Haoussa-Fulanis ayant mene au pogrom anti-igbo de 1966 (10 000 a 30 000 morts).",
+      "conflictsOrAlliances": "Guerre Aro-Igbo-Ibibio et conflits internes recurrents (XVIIe-XVIIIe siecles). Pacification britannique (guerre Aro de 1900-1902). Revolte des femmes de 1929 (Women's War). Pogrom anti-igbo au Nigeria du Nord (1966). Guerre du Biafra (1967-1970) : secession, siege et famine de masse (millions de morts). Mouvements separatistes contemporains MASSOB (fonde 1999) et IPOB.",
+      "diaspora": "La diaspora igbo est l'une des plus importantes et dynamiques d'Afrique. A l'interieur du Nigeria : presence massive a Lagos, Abuja, Kano, Port Harcourt. En Afrique : Gabon, Cameroun, Guinee Equatoriale, Ghana (21 000 en 1969), Sierra Leone, Gambie. Dans les Ameriques : heritage de la traite atlantique (Chesapeake, Jamaique, Barbade, Cuba, Haitı, Trinidad, Belize). Dans les pays anglo-saxons : Royaume-Uni (forte communaute a Londres), Etats-Unis (Maryland, Virginia, Houston, Chicago, Washington D.C.), Canada. Chine (nombreux commercants igbo a Guangdong). Le Congress annuel des femmes igbo (August Meeting) reunit chaque annee les femmes de la diaspora dans leurs villages d'origine."
     },
     "demography": {
-      "totalPopulation": 39365000,
+      "totalPopulation": 35000000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv (PPL_IGBO)"
+      "source": "CIA World Factbook (15,2 % d'une population nigeriane de 230 millions, soit environ 35 millions en 2024-2025). Certaines estimations internes nigerianes citent jusqu'a 40 millions en incluant la diaspora (NBS projections 2022, Wikipedia EN — Igbo people)",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 33000000,
+          "note": "Principalement dans les Etats d'Anambra, Imo, Abia, Ebonyi, Enugu ; importantes communautes a Lagos, Abuja et Port Harcourt"
+        },
+        {
+          "country": "CMR",
+          "population": 1000000,
+          "note": "Communautes frontalières et commercantes, notamment dans les regions du Sud-Ouest"
+        },
+        {
+          "country": "GIN",
+          "population": 500000,
+          "note": "Communautes commercantes et diaspora"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Igbo language (ibo)",
-      "CIA World Factbook – Nigeria",
-      "Nigerian Ethnographic Survey",
-      "ALCAM",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples igbo"
+      "Wikipedia EN — Igbo people. https://en.wikipedia.org/wiki/Igbo_people",
+      "Wikipedia EN — Odinani. https://en.wikipedia.org/wiki/Odinani",
+      "SIL Ethnologue — Igbo (ibo). https://www.ethnologue.com/language/ibo/",
+      "Joshua Project — Igbo in Nigeria. https://joshuaproject.net/people_groups/12189/NI",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/",
+      "Igbo Cyber Shrine — An Introduction to Odinani. https://igbocybershrine.com/2023/04/18/an-introduction-to-odinani/",
+      "Achebe, Chinua — Things Fall Apart. London: Heinemann, 1958 (reference ethnographique litteraire fondamentale)."
     ]
   }
 }

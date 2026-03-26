@@ -1,22 +1,105 @@
 {
   "id": "PPL_BWABA",
-  "nameMain": "",
+  "nameMain": "Bwaba",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["BFA", "MLI"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Bwaba",
       "selfAppellation": "Bwa",
+      "exonyms": [
+        "Bobo Oule (terme jula signifiant Bobo Rouge, pour les distinguer des Bobo noirs)",
+        "Red Bobo (appellation anglophone equivalente a Bobo Oule)",
+        "Nieniegue (Bwa du sud, dit Bwa scarifies, pour leur ancienne tradition de scarification faciale)",
+        "White Bobo (Bobo Gbe) : terme parfois applique aux Bwa par leurs voisins"
+      ],
+      "originOfExonyms": "Le terme Bobo Oule est une appellation jula (dioula) signifiant Bobo Rouge, les differençant des Bobo fing (Bobo Noirs), un peuple distinct. Les premiers Europeens ont confus les Bwa avec les Bobo, erreur perpetuee dans les documents coloniaux. Nieniegue (Bwa scarifies) designe les Bwa du sud qui pratiquaient historiquement la scarification corporelle et faciale. Les Bwa rejettent le terme Bobo comme une mauvaise denomination.",
+      "whyProblematic": "La confusion systematique entre Bwa et Bobo (deux peuples distincts) dans les sources coloniales et meme contemporaines est la principale difficulte ethnonymique. Les Bwa sont un groupe gur distinct des Bobo (groupe mande), bien que leurs territoires soient proches.",
+      "contemporaryUsage": "Bwa est l'auto-denomination prefere. Bwaba est la forme adjective ou nominale etendue utilisee dans les contextes academiques et nationaux burkinabe. Le terme Bobo Oule subsiste dans la litterature jula mais tend a etre abandonne.",
       "linguisticFamily": "FLG_GUR",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Gur (groupe bwa, Niger-Congo, branche Volta du Nord)",
+      "historicalRegion": "Centre-ouest du Burkina Faso (provinces du Tuy, Houet, Kossi, Sourou) et sud-est du Mali (region de Mopti, autour de San et Tominian), entre les fleuves Bani et Mouhoun (Volta Noire)",
+      "currentCountries": ["BFA", "MLI"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (bwm)", "Musée National du Burkina Faso"]
+    "ethnicities": [
+      "Bwa du nord (Burkina Faso) : utilisent principalement les masques en feuilles pour les ceremonies du Dwo ; plus conservateurs",
+      "Bwa du sud (Burkina Faso) : ont adopte les masques en bois sculptes depuis environ un siecle, empruntes aux Nunuma et Winiama ; dits Nieniegue (ancienne tradition de scarification)",
+      "Bwa de l'est du Mali (region de San, Tominian) : communautes proches des Bwa du Burkina Faso, partageant langue et culture"
+    ],
+    "origins": {
+      "ancientOrigins": "L'origine lointaine des Bwa est incertaine. Leur langue appartient au groupe gur (voltaique) de la famille Niger-Congo. Les Bwa affirment n'avoir aucun souvenir de populations anterieures dans leur territoire ; ils se considerent autochtones de la region situee entre le Bani et le Mouhoun. Ils resident dans cette region depuis au moins trois siecles selon les sources historiques documentees (Africa Direct, 2023). Les plaines fertiles entre les deux fleuveset les vallees boisees ont constitue leur habitat ancestral.",
+      "formationPeriod": "La communaute bwa s'est formee et consolidee a partir du 17e siecle au moins dans son territoire actuel. La resistance a l'expansionnisme bamana au 18e siecle et aux raids fulani au 19e siecle a renforce la cohesion identitaire, meme si ces invasions ont fragilise les structures sociales et politiques. La revolte de la Volta-Bani (1915-1916) contre les recrutements militaires français est un moment fondateur de la conscience bwa moderne.",
+      "migrationRoutes": [
+        "Aucune route de migration fondatrice documentee : les Bwa se considerent autochtones de leur territoire actuel",
+        "Adaptation locale et echanges culturels avec les Nunuma et Winiama voisins (adoption des masques en bois par les Bwa du sud)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Tuy (autour de Houndé, Burkina Faso)",
+        "Province de la Kossi et du Sourou (Burkina Faso occidental)",
+        "Environs de Boni, Bagassi, Dossi, Pa (Burkina Faso)",
+        "Region de San et Tominian (Mali meridional)"
+      ],
+      "unificationsOrDivisions": "La societe bwa est fragmentee en villages autonomes sans autorite centrale. Chaque village est gouverne par un conseil d'anciens males. Les divisions principales sont geographiques et rituelles : les Bwa du nord privilegient les masques en feuilles (tradition du Dwo pur), les Bwa du sud ont adopte les masques en bois sculptés (tradition empruntee aux Nunuma vers 1900). Cette difference a parfois genere des tensions entre les deux groupes selon Christopher Roy.",
+      "externalInfluences": "Empire bamana de Segou (18e siecle) : occupation des terres bwa, paiement de tribut, raides affaiblissant les structures politiques. Raids fulani (19e siecle) : esclavage et pillage du betail. Administration française (fin 19e siecle) : utilisation des Fulani pour controler les Bwa, imposition fiscale, requisitions de recrues militaires. Famine de 1911-1913 : destruction des reserves alimentaires par la fiscalite française. Revolte de la Volta-Bani (1915-1916) : soulèvement bwa (et d'autres peuples) contre la conscription française, reprime par la destruction de nombreux villages bwa.",
+      "majorHistoricalEvents": "18e siecle : occupation bamana du territoire bwa ; paiement de tribut, raids fragilisant les structures sociales. 19e siecle : domination fulani, esclavage et pillage. Fin 19e siecle : arrivee des Français, alliance avec les Fulani, pression fiscale et administrative. 1911-1913 : famine liee a la fiscalite coloniale. 1915-1916 : revolte de la Volta-Bani — soulèvement des Bwa (et d'autres peuples : Marka, Dafing) contre la conscription militaire française ; reprime violemment, de nombreux villages bwa detruits ; survie de la communaute et reconstruction. Apres 1960 : independance du Burkina Faso ; les Bwa s'inserent dans les structures nationales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe bwa est acephale et profondement egalitaire : aucun chef hereditaire, aucune autorite politique centrale. Chaque village est gouverne par un conseil d'anciens males (conseil des peres) qui prennent les decisions importantes par consensus. Les Bwa refusent toute autorite exterieure. La figure du Labie (l'homme le plus age du village) sert de pretre de la terre et de mediateur religieux, sans pouvoir politique formel.",
+      "clanOrganization": "Les villages bwa sont composes de trois castes professionnelles distinctes et endogames : agriculteurs (majoritaires), forgerons / bronziers et musiciens. Les masques (nwantantay) sont la propriete de grandes families etendues ou de clans, conserves par les hommes ages mais accessibles a tous les membres familiaux pour les ceremonies. La caste des forgerons fabrique les masques en bronze et les instruments rituels.",
+      "ageClassSystems": "Le systeme d'initiation est central : le passage de l'enfance a l'age adulte se fait par un processus d'initiation au cours duquel les jeunes apprennent les symboles et significations des masques et des codes moraux de la societe. Les membres initialises sont ensuite regroupes en classes d'age qui participent collectivement aux performances de masques.",
+      "roleOfLineages": "Les lignages familiaux determinent la propriete des masques (chaque masque est lie a une famille ou un clan specifique). La transmission des masques et des connaissances rituelles est patrilineaire. Les grandes families etendues constituent l'unite sociale de base au-dela du foyer.",
+      "religiousAuthority": "Le Labie (pretre de la terre, l'homme le plus age du village) dirige les ceremonies du Dwo et les rituels de propitiation. Le culte du Dwo (fils du createur Wuro / Difini / Dobweni) est la pratique religieuse centrale. Wuro a abandonne la Terre apres avoir ete blesse par une femme ; il a envoye son fils Dwo comme intermediaire entre les hommes et les forces de la nature. Le Dwo est represente par les masques en feuilles (tradition du nord) et en bois (tradition du sud depuis environ 100 ans). Certaines communautes ont adopte l'islam ou le christianisme, mais les pratiques animistes restent dominantes."
+    },
+    "languages": {
+      "mainLanguage": "Bwamu (ou Buamu, Bwa)",
+      "isoCodes": ["bwm"],
+      "dialects": [
+        "Cwi Bwamu (variete principale, Burkina Faso, ISO : bwx)",
+        "Bwamu parlé au Mali (region de San) : variete orientale",
+        "Jula (dioula) : utilise comme langue de commerce avec les voisins",
+        "Français (Burkina Faso) et dialecte bambara (Mali) : langues officielles utilisees dans l'administration et l'education"
+      ],
+      "vehicularRole": "Le bwamu est la langue maternelle de l'ensemble de la communaute Bwa. Le jula sert de langue vehiculaire pour le commerce interethnique. Le français est la langue officielle du Burkina Faso (en pratique, depuis janvier 2024, son statut a ete retrogradé a langue de travail par la constitution amendee). Population estimee a 270 000 locuteurs (bwm, recensement Ethnologue 2009) a 300 000 (Wikipedia EN)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation : passage de l'enfance a l'age adulte via l'apprentissage des symboles des masques et des codes moraux de la societe bwa ; les jeunes inities sont groupes en classes d'age qui participent aux performances collectives. Ceremonies funeraires : les masques (nwantantay) sont portes lors des funerailles pour accompagner les esprits des defunts et communiquer avec le monde spirituel. Rites agricoles de semaison et de recolte : ceremonies de benediction des terres et propitiation des esprits de la nature pour garantir de bonnes recoltes. Ceremonies annuelles de renouveau : rites d'avant-saison (saison seche, entre fevrier et mai) associant danse, masques et musique. Consecration de nouveaux masques : ceremonies speciales lors de la creation et de la dedication de chaque nouveau masque.",
+      "symbols": "Les masques (nwantantay) : symboles centraux de la culture et de la spiritualite bwa ; les masques-planches verticaux du sud sont les plus connus (hauteur pouvant depasser 2 metres). Les couleurs des masques : rouge (vie, danger), blanc (mort, maladie), noir (purete, connaissance) ; les motifs geometriques (damiers, zigzags, cercles) transmettent des codes moraux. La feuille : symbole du Dwo et de la nature sauvage ; les Bwa du nord portent des masques en feuilles lors des ceremonies majeures. Le hibou (representé dans certains masques) : animal mystique capable de voir au-dela du visible, symbole de clairvoyance et de sagesse spirituelle.",
+      "artsAndMusic": "Masques-planches en bois sculpte (nwantantay) : chef-d'oeuvre de l'art bwa, sculptes par les forgerons (bronziers), decores en rouge, blanc et noir ; ils representent des esprits volants du monde naturel (oiseaux, insectes, serpents, buffles, antilopes) ; reputes dans les musees du monde entier. Masques en feuilles : tradition des Bwa du nord, representant les esprits sauvages (Dwo) ; faits de lianes, herbes et feuilles. Bronzes et cuivres : les forgerons bwa fabriquent des figurines et ustensiles en bronze (animaux symboliques : hyene = betise, buffle sauvage = force, double cameleon, calao). Musique : flutes de bois (jeu en ensembles de 5 a 9 flutes a patterns entrelaces, reproduisant le discours des langues tonales et racontant des histoires), accompagnees de tambours ; la musique est centrale dans toutes les ceremonies. Danse : execution de danses complexes par les porteurs de masques, imitant les mouvements des creatures representees. Tissage : production de textiles locaux. Travail du cuir.",
+      "spiritualities": "Animisme (religion traditionnelle dominante) : croyance en un createur Wuro (aussi appele Difini ou Dobweni) qui a abandonne la Terre et delegue son fils Dwo (ou Do) comme intermediaire. Dwo est androgyne (male et femelle), represente le monde sauvage et sa force nourriciere, invoque pour la protection de la communaute, la fertilite et le passage des ames. Culte de Soxo (dieu de la nature sauvage), fils de Wuro. Culte de Kwere (dieu de la foudre). Islam adopte par certains Bwa du nord (contacts avec Marka et Fulani musulmans). Christianisme (catholicisme, protestantisme) adopte par une minorite dans les centres urbains."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bwa n'ont jamais constitue de royaume centralise, en accord avec leur philosophie egalitre et leur rejet de toute autorite exterieure. Leur resistance aux tentatives de domination (Bamana, Fulani, Français) est leur heritage historique principal. Leur rebellion de 1915-1916 (revolte de la Volta-Bani) est l'un des plus importants soulevement anti-coloniaux d'Afrique de l'Ouest française.",
+      "relationsWithNeighbors": "Relations commerciales et d'echanges culturels avec les Bobo, Marka Dafing, Bamana (Mali), Lobi et Fulani. Relations historiques de tension et de resistance avec les Bamana (18e siecle), les Fulani (19e siecle) et les Français. Adoption de la tradition des masques en bois sculptés depuis les Nunuma et Winiama (voisins du sud-est) il y a environ un siecle : exemple de dynamisme culturel et d'echange creatif. Certains Bwa ont ete confondus avec les Bobo voisins dans les sources coloniales.",
+      "conflictsOrAlliances": "18e siecle : assujettissement partiel par l'empire bamana (tribut paye, raids subis). 19e siecle : esclavage et pillage par les Fulani. 1915-1916 : revolte de la Volta-Bani — les Bwa (avec les Marka, Dafing et autres peuples) se soulevent contre la conscription militaire française ; repression violente (destruction de villages, massacres) qui a quasi-aneanti la communaute ; renaissance remarquable par la suite. Apres 1960 : adhesion aux structures nationales du Burkina Faso.",
+      "diaspora": "Migration vers les grandes villes burkinabe (Bobo-Dioulasso, Ouagadougou) pour le travail. Presence a Bamako (Mali). Emigration vers la Cote d'Ivoire, la France et d'autres pays europeens dans le cadre de la diaspora burkinabe. Les objets d'art bwa (masques) se trouvent dans les grands musees mondiaux (Metropolitan Museum of Art de New York, musees europeens) et constituent une diaspora artistique reconnue."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Bwa people (environ 300 000 personnes) ; PLU African Art Collection (300 000 en Burkina Faso et Mali) ; Ethnologue bwm : 270 000 locuteurs (2009) ; Joshua Project — Red Bobo Bwa : 145 000 (sous-estimation probable ne couvrant qu'une partie).",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 250000,
+          "note": "Centre-ouest du Burkina Faso : provinces du Tuy (Houndé), de la Kossi, du Sourou, de la Houet ; villages de Boni, Bagassi, Dossi, Pa"
+        },
+        {
+          "country": "MLI",
+          "population": 50000,
+          "note": "Sud-est du Mali, region de Mopti, autour de San et Tominian, entre le Bani et le Mouhoun"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bwa people. https://en.wikipedia.org/wiki/Bwa_people",
+      "Wikipedia EN — Buamu language. https://en.wikipedia.org/wiki/Buamu_language",
+      "Africa Direct — Bwa People. https://africadirect.com/blogs/people/african-peoples-art-bwa",
+      "Smarthistory — Mask (Nwantantay) Bwa peoples. https://smarthistory.org/mask-nwantantay/",
+      "SKOUNT Art — Bwa Owl Mask: African Symbolism. https://www.skountart.com/blog/bwa-owl-mask-african-symbolism",
+      "Joshua Project — Red Bobo Bwa in Burkina Faso. https://joshuaproject.net/people_groups/11056/UV",
+      "Pacific Lutheran University — Learn More: Bwa Mask. https://www.plu.edu/africanartcollection/masks/bwa-mask/learn-more-bwa-mask/",
+      "Encyclopaedia Britannica — Bwa. https://www.britannica.com/topic/Bwa",
+      "Roy, Christopher D. et Wheelock, Thomas G. B. Land of the Flying Masks: Art and Culture in Burkina Faso. Prestel Verlag, 2007."
+    ]
   }
 }

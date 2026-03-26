@@ -2,67 +2,113 @@
   "id": "PPL_MARAKA",
   "nameMain": "Maraka",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MLI"],
+  "currentCountries": ["MLI", "BFA"],
   "content": {
     "appellations": {
       "mainName": "Maraka",
-      "selfAppellation": "Maraka",
-      "exonyms": ["Maraka (terme utilisé par les Européens)"],
+      "selfAppellation": "Maraka / Soninke",
+      "exonyms": [
+        "Marka",
+        "Marka Dafing",
+        "Meka",
+        "Dafing",
+        "Wangara (dans certaines régions)",
+        "Sarakole"
+      ],
+      "originOfExonyms": "Le terme 'Maraka' est le nom par lequel les Bambaras désignent les Soninke du Mali (régions de Kayes, Koulikoro, Ségou, Mopti) et du Burkina Faso (région de Dafina). Son étymologie en bambara signifie 'hommes qui gouvernent', possiblement appliqué aux colons venus de l'empire Wagadu ou terme de respect pour leur rôle commercial dominant. Le terme 'Dafing' est utilisé au Burkina Faso pour les mêmes populations.",
+      "whyProblematic": "Le terme Maraka est un exonyme bambara appliqué à des populations qui se désignent elles-mêmes comme Soninke. La dénomination cache une grande diversité interne et une intégration progressive aux populations bambara et soninke voisines. Les 25 000 locuteurs du marka (dialecte manding distinct) ne représentent qu'une fraction des populations se disant Maraka.",
+      "contemporaryUsage": "Le terme Maraka est utilisé au Mali et au Burkina Faso pour désigner les descendants soninke intégrés aux structures sociales locales. Ils sont majoritairement islamisés depuis le 10e siècle. Leur identité distincte s'efface progressivement par intégration aux communautés bambara et soninke voisines.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Mandé (Mandé occidental)",
-      "historicalRegion": "Mali",
-      "currentCountries": ["MLI"]
+      "ethnoLinguisticGroup": "Mandé (Mandé occidental, branche Soninke-Bozo)",
+      "historicalRegion": "Moyen-Niger (Mali central) et région de Dafina (Burkina Faso occidental) — anciens centres commerciaux de Nyamina, Sansanding, Barouéli, Banamba",
+      "currentCountries": ["MLI", "BFA"]
     },
     "ethnicities": [
-      "Maraka du Nord",
-      "Maraka du Sud",
-      "Sous-groupes régionaux"
+      "Maraka du Moyen-Niger (Mali central — Ségou, Mopti)",
+      "Maraka de Kayes et Koulikoro (Mali occidental)",
+      "Dafing du Burkina Faso occidental (région de Dafina)",
+      "Maraka de Sansanding — ancien centre commercial islamique",
+      "Maraka de Nyamina — fondateurs du comptoir commercial du 11e siècle",
+      "Maraka de Barouéli et Banamba — centres fondés au 19e siècle"
     ],
     "origins": {
-      "ancientOrigins": "Les Maraka sont originaires de la région du Mali. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe mandé (Mandé occidental).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence de l'islam."
+      "ancientOrigins": "Les Maraka descendent des Soninke de l'empire du Wagadu (Ghana), l'un des premiers grands empires d'Afrique de l'Ouest (vers 200-1240 ap. J.-C.). Fondateurs de l'empire Wagadu, les Soninke développèrent très tôt des réseaux commerciaux transsahariens échangeant l'or contre le sel. Après l'effondrement de l'empire sous les pressions almoravides (vers 1076) et les sécheresses, des groupes soninke migrent vers le moyen-Niger entre le 11e et le 13e siècle, s'établissant comme classe marchande et agricole dans les zones sous contrôle bambara.",
+      "formationPeriod": "L'identité maraka distincte se consolide entre le 11e et le 18e siècle. Les Maraka fondent les centres commerciaux de Nyamina et Sansanding au début de cette période, puis Barouéli et Banamba au 19e siècle. Sous l'Empire bambara de Ségou (18e-19e siècle), les Maraka jouent un rôle clé en tant que communauté marchande musulmane imbriquée dans un État animiste, contrôlant le commerce transsaharien.",
+      "migrationRoutes": [
+        "Départ de l'empire Wagadu (actuelle Mauritanie et Mali occidental) vers le moyen-Niger après le 11e siècle",
+        "Dispersion le long du fleuve Niger vers les régions de Ségou, Mopti et Bamako",
+        "Extension vers le Burkina Faso (région de Dafina) et le Ghana (Dafin)"
+      ],
+      "historicalSettlementZones": [
+        "Nyamina (région de Koulikoro, Mali) — fondée au 11e-13e siècle",
+        "Sansanding (région de Ségou, Mali) — grand centre commercial islamique",
+        "Barouéli (région de Ségou, Mali) — fondé au 19e siècle",
+        "Banamba (région de Koulikoro, Mali) — fondé au 19e siècle",
+        "Région de Dafina (Burkina Faso occidental) — groupes Dafing"
+      ],
+      "unificationsOrDivisions": "Les Maraka forment une communauté relativement dispersée, organisée en réseaux marchands et agricoles plutôt qu'en royaume unifié. Sous l'Empire bambara de Ségou, les comptoirs maraka multiplient leurs établissements tout en maintenant une autonomie relative grâce à leur rôle économique indispensable. La conquête djihadiste d'Umar Tall (années 1850), bien que menée par un musulman, démantèle les concessions foncières et commerciales maraka, dont ils ne se remettront jamais entièrement.",
+      "externalInfluences": "L'islamisation précoce (10e-11e siècle) est l'influence culturelle majeure. Les Maraka adoptent l'islam malékite et deviennent des agents de son expansion dans la région. L'Empire bambara (animiste) intègre les communautés maraka dans sa structure étatique tout en les laissant pratiquer l'islam. La colonisation française (19e-20e siècle) transforme les réseaux commerciaux traditionnels. L'attaque d'Umar Tall (1850s) perturbe définitivement leur hégémonie commerciale.",
+      "majorHistoricalEvents": "Fondation des centres de Nyamina et Sansanding (11e-13e siècle). Intégration dans l'Empire bambara de Ségou comme classe marchande musulmane (18e siècle). Les Maraka contrôlent le commerce désertique entre le Sahel et les nomades touaregs et maures du Sahara, fondant leur richesse sur l'agriculture de plantation (coton, céréales) et les échanges de longue distance. Conquête djihadiste d'El Hadj Umar Tall dans les années 1850, qui détruit les structures commerciales maraka sans jamais s'en remettre."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans et des chefs religieux. Rôle important de l'islam."
+      "traditionalPoliticalSystem": "Les Maraka maintiennent une hiérarchie socio-politique stricte incluant un roi (faama), des chefs de litige, des chefs de guerre, et des chefs de clans et de familles. Une autorité centrale unifie le peuple, mais chaque village conserve une certaine autonomie. Les communautés marchandes sont organisées en réseaux de comptoirs (centres commerciaux) avec des règles claires de gouvernance interne.",
+      "clanOrganization": "Société patrilinéaire organisée en clans (kabila) et lignages. La stratification sociale est prononcée : nobles (hooro), artisans de caste (nyaxamala — forgerons, griots, cordonniers), et anciennement serviteurs (komo). Les Maraka entretiennent le système de castes hérité de la tradition soninke, où les mariages interclan sont régis par des règles strictes d'alliance.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le statut social, les droits fonciers et les alliances commerciales. L'appartenance à un lignage de marchands confère accès aux réseaux de crédit et aux routes commerciales. La solidarité lignagère est essentielle à la survie économique des communautés maraka dispersées.",
+      "religiousAuthority": "Autorité islamique forte : les oulémas et marabouts jouent un rôle central dans la vie sociale et politique. Les Maraka sont parmi les premiers peuples d'Afrique de l'Ouest à avoir adopté l'islam (10e-11e siècle). Les leaders religieux remplissent des fonctions d'éducation coranique, de résolution des conflits et de légitimation politique. Mosquées et écoles coraniques structurent la vie communautaire."
     },
     "languages": {
-      "mainLanguage": "Maraka",
-      "vehicularRole": "Le maraka est parlé par la majorité des Maraka. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Marka (dialecte manding) / Soninke (langue parente)",
+      "isoCodes": ["mwk", "snk"],
+      "dialects": [
+        "Marka proprement dit (Moyen-Niger, Mali) — environ 25 000 locuteurs",
+        "Dafing (Burkina Faso) — variété du marka parlée dans la région de Dafina",
+        "Soninke/Sarakole — langue parente plus largement parlée par les populations soninke intégrées"
+      ],
+      "vehicularRole": "Le marka est un dialecte manding parlé par environ 25 000 locuteurs, largement intégrés parmi leurs voisins soninke et bambara. Le bambara domine comme langue véhiculaire régionale. Le français est langue officielle au Mali et au Burkina Faso. La langue marka est en recul face au bambara et au soninke, avec lesquels les Maraka sont majoritairement bilingues."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles culturels maraka, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (griots, kora)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Islam majoritaire. Rôle important des croyances traditionnelles."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Circoncision (sunna) : rite de passage islamique fondamental, effectué dans l'enfance. Accompagné de festivités familiales, de récitation coranique et de dons communautaires.\", \"femaleInitiation\": \"Mariage comme rite de passage majeur ; célébrations accompagnées de musique de griots et de cadeaux aux familles.\"}, \"funeraryRites\": {\"burial\": \"Inhumation rapide selon le rite islamique malékite (dans les 24 heures), corps orienté vers La Mecque, prières funéraires collectives (salat al-janaza).\", \"postFuneraryCeremonies\": \"Condoléances communautaires pendant trois jours, repas collectifs, récitations coraniques et collecte de dons pour la famille du défunt.\"}, \"agriculturalRites\": {\"seasonalCeremonies\": \"Prières collectives (salat al-istisqa) pour demander la pluie en période de sécheresse ; bénédictions des semailles par les marabouts.\", \"harvestCelebrations\": \"Festivités de fin de récolte avec distribution de nourriture et prières de remerciement.\"}}",
+      "symbols": "Le livre (Coran) et la mosquée comme symboles de l'identité islamique maraka. Les objets de commerce (balances, calebasses de mil) renvoient à leur tradition marchande. La kora et le balafon, instruments des griots, symbolisent la mémoire historique. Le tissu tissé (bogolan, coton local) représente la maîtrise artisanale.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"musicalInstruments\": \"Kora (luth à 21 cordes des griots), balafon (xylophone), tama (tambour d'aisselle), djembé ; les griots (jeli) sont les dépositaires de la mémoire historique et assurent la musique aux cérémonies.\", \"dances\": \"Danses de mariage et de célébration collective avec percussions et chants de griots ; danses en cercle lors des fêtes islamiques (Aïd al-Fitr, Aïd al-Adha).\", \"songs\": \"Épopées chantées par les griots (jeli) relatant l'histoire des clans marchands et des fondateurs de villes ; poésie islamique (qasida) récitée lors des fêtes religieuses.\", \"crafts\": \"Tissage du coton (bogolan, bandes de tissu), poterie, travail du cuir pour les harnais et les sacs de commerce ; sculpture sur bois pour ustensiles et mobilier.\"}, \"gastronomy\": {\"staple\": \"Mil, sorgho, riz comme céréales de base ; tô (bouillie de mil) et sauce aux arachides ou aux feuilles de baobab ; viande de mouton lors des célébrations religieuses.\"}}",
+      "spiritualities": "{\"mainReligion\": {\"islam\": {\"school\": \"Islam sunnite malékite (école juridique dominante en Afrique de l'Ouest)\", \"adoption\": \"L'islamisation des Soninke remonte au 10e-11e siècle, en lien avec le commerce transsaharien et les contacts avec les marchands arabo-berbères.\", \"practices\": \"Prière quotidienne (cinq prières), jeûne du Ramadan, pèlerinage à La Mecque, zakât (aumône) ; enseignement coranique dans les écoles islamiques (madrasa) ; influence soufie notable (confréries Qadiriyya et Tijaniyya présentes au Mali).\"}}, \"traditionalBeliefs\": {\"note\": \"Une minorité significative maintient des pratiques animistes préislamiques, notamment des rites de protection contre les mauvais esprits et des offrandes aux ancêtres, coexistant avec la pratique islamique.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora maraka dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Maraka ne formèrent pas de royaume indépendant mais jouèrent un rôle crucial dans plusieurs entités politiques majeures. Leurs ancêtres soninke fondèrent l'Empire du Wagadu (Ghana, vers 200-1240), le premier grand empire d'Afrique de l'Ouest. Sous l'Empire bambara de Ségou (18e-19e siècle), les communautés maraka constituèrent le pivot économique de l'État, gérant le commerce transsaharien et les plantations de coton. Leurs centres commerciaux de Nyamina, Sansanding, Barouéli et Banamba furent à divers moments des points névralgiques du commerce ouest-africain.",
+      "relationsWithNeighbors": "Les Maraka entretinrent des relations complexes avec les Bambaras (intégration économique dans l'Empire bambara, dont ils subissaient la domination politique tout en finançant l'État), les Touaregs et Maures (partenaires commerciaux transsahariens), les Peuls (contacts lors des djihads du 19e siècle), et les Soninke voisins (parenté culturelle et linguistique). Leur rôle de classe marchande musulmane dans un environnement souvent animiste créa des tensions mais aussi des synergies économiques.",
+      "conflictsOrAlliances": "Résistance partielle à l'islamisation forcée lors du djihad d'El Hadj Umar Tall (1850s), qui bien que musulman, démantela les structures de pouvoir maraka. Antérieurement, les Maraka s'étaient accommodés du système bambara (animiste) tout en maintenant leur pratique islamique. La colonisation française perturba davantage leurs réseaux commerciaux, réorientant les flux économiques vers les comptoirs côtiers.",
+      "diaspora": "Les Maraka participent à la grande diaspora soninke, l'une des plus importantes d'Afrique de l'Ouest et de France. Des communautés soninke/maraka sont présentes en France (particulièrement en région parisienne), en Côte d'Ivoire, au Sénégal et en Gambie. Les jeunes hommes maraka migrent vers Abidjan et d'autres centres urbains à la recherche d'emploi, perpétuant une tradition de mobilité commerciale séculaire."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur Ethnologue (SIL International 2024 — code mwk pour Marka : environ 25 000 locuteurs actifs), CIA World Factbook Mali 2024 (Sarakole/Soninke/Marka représentent 9,8% de la population malienne), et données Joshua Project. La population totale incluant les Maraka intégrés aux communautés soninke et bambara est estimée entre 200 000 et 400 000 personnes au Mali et au Burkina Faso.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 230000,
+          "note": "Régions de Ségou (Sansanding, Barouéli), Koulikoro (Nyamina, Banamba) et Mopti — locuteurs du marka et populations soninke/maraka intégrées"
+        },
+        {
+          "country": "BFA",
+          "population": 60000,
+          "note": "Région de Dafina (Burkina Faso occidental) — populations Dafing, branche maraka du Burkina Faso"
+        },
+        {
+          "country": "GHA",
+          "population": 10000,
+          "note": "Dafin au Ghana — groupe maraka présent dans le nord du pays"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Maraka language (rmm)",
-      "CIA World Factbook – Mali",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Marka people. https://en.wikipedia.org/wiki/Marka_people",
+      "Wikipedia EN — Soninke people. https://en.wikipedia.org/wiki/Soninke_people",
+      "Ethnologue — Marka language (mwk). https://www.ethnologue.com/language/mwk",
+      "Joshua Project — Marka, Dafing in Mali. https://joshuaproject.net/people_groups/13550/ML",
+      "CIA World Factbook — Mali. https://www.cia.gov/the-world-factbook/countries/mali/",
+      "Qiraat Africa — Marka, people of Mali and Burkina Faso. https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
+      "SFASID — Mali Country Profile Social. https://pksoi.armywarcollege.edu/index.php/country-profile-of-mali-social/"
     ]
   }
 }

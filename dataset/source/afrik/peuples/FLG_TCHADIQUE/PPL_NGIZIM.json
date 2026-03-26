@@ -6,63 +6,94 @@
   "content": {
     "appellations": {
       "mainName": "Ngizim",
-      "selfAppellation": "Ngizim",
-      "exonyms": ["Ngizim (terme utilisé par les Européens)"],
+      "selfAppellation": "Ngizim (singulier : Ng@z@m, @ = voyelle centrale haute) / Ngizimawa (collectif en haoussa)",
+      "exonyms": [
+        "Ngizimawa (terme haoussa pour designer le peuple en collectif)",
+        "Bangizme / Bangizmiya (noms kanouri pour un homme / une femme ngizim)",
+        "Ngezzim / Ngijim / Ngujam / Ngazar / Nkazzar / Ngisam (variantes historiques documentees dans les sources de l'Empire du Bornou)"
+      ],
+      "originOfExonyms": "L'origine du nom Ngizim est incertaine. Palmer (notes sur le regne de Mai Idris Alooma, 1571-1583) rapporte que : 'Il y a diverses formes de ce nom qui, bien que distinguees, semblent designer le meme peuple — N'gizim, N'gujam, N'gazar, N'Kazzar, N'gissam'. Le meme radical est utilise en bade pour designer diverses variations ethniques ou regionales de langues proches. La capitale de l'Empire du Bornou, Birni N'gazargamu (fondee vers 1462), porte leur nom : 'N'gazar' ou 'N'gizim' etant les habitants anterieurs de la region.",
+      "whyProblematic": "Les multiples orthographes historiques (Ngazar, Ngujam, Nkazzar) ont pu etre confondues avec des termes geographiques ou dynastiques (Birni N'gazargamu). La distinction entre le peuple Ngizim proprement dit et le terme geographique utilise dans les sources historiques du Bornou necessite une lecture critique des sources.",
+      "contemporaryUsage": "Le terme Ngizim est utilise dans les publications academiques, les recensements et les media nigerians. Ngizimawa est couramment employe en haoussa. Le chefs traditionnel des Ngizim porte le titre de Mai Potiskum (ou Emir de Potiskum). L'ethnonyme est aujourd'hui porte avec fierte : 'My Tribe Is My Identity — Proudly to be Ngizim'.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique (Ouest-tchadique)",
-      "historicalRegion": "Nord-est du Nigeria",
+      "ethnoLinguisticGroup": "Tchadique occidental (West Chadic, branche B, sous-groupe B.1 — Bade Proper)",
+      "historicalRegion": "Yobe State, nord-est du Nigeria (region de Potiskum) ; anciennement dans les zones du Bornou occidental",
       "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Ngizim du Nord",
-      "Ngizim du Sud",
-      "Sous-groupes régionaux"
+      "Ngizim de Potiskum (capital traditionnel Pataskum, fonde par Bauya apres 1808)",
+      "Ngazar (branche ngizim de Daura / Dawura, vaincue lors de la fondation de Potiskum)",
+      "Binawa / Mabani (branche ngizim de l'ouest de l'empire, de la region de Bursari au Katagum)",
+      "Ngizim du Borno (assimiles dans d'autres groupes ethniques apres migration)",
+      "Ngizim du Jigawa State (extension vers l'ouest, partiellement assimiles)"
     ],
     "origins": {
-      "ancientOrigins": "Les Ngizim sont originaires du nord-est du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique (Ouest-tchadique).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples haoussa, influence de l'islam."
+      "ancientOrigins": "Les Ngizim font partie des plus anciens peuples documentes de la region du lac Tchad occidental. Selon les traditions du Bornou, les Bade et les Ngizim apparentes de Potiskum furent les premiers peuples a migrer de Kanem en contournant le nord du lac Tchad pour atteindre le Komadugu Yobe, a une epoque ou les So dominaient encore le Bornou. Des references aux Ngizim apparaissent dans les chroniques du Kanem des guerres civiles de 1396. La fusion des clans Kayi (Zaghawa) avec les habitants de la region du Fittri (appeles Ngizim dans la tradition) donna naissance a l'entite politique separee de Bulala vers 1350 ap. J.-C. La capitale de l'Empire du Bornou, Birni N'gazargamu (fondee vers 1462), fut etablie sur un territoire prealablement occupe par les Ngizim.",
+      "formationPeriod": "L'identite ngizim distincte est documentee depuis au moins le XIVe siecle dans les sources du Kanem-Bornou. Vers 1472, les Ngizim s'etaient etablis comme guerriers formidables et avaient fait de leur capitale culturelle Potiskum un centre regional. La periode du jihad peul (1804-1808) provoqua des deplacements importants : un groupe ngizim sous la conduite de Bauya fonda Pataskum (corrompu en Potiskum par les Europeens), dont le nom signifie en ngizim 'foret d'arbres Skum' (pata = foret / brousse, skum = type d'arbre distinct a trois poteaux).",
+      "migrationRoutes": [
+        "Migration originelle de Kanem (nord-est du lac Tchad) vers l'ouest, contournant le nord du lac Tchad, jusqu'au Komadugu Yobe",
+        "Etablissement a Potiskum et dans la region de Yobe State (nord-est du Nigeria)",
+        "Migration partielle vers le Borno State (assimilation) et le Jigawa State (ouest)"
+      ],
+      "historicalSettlementZones": [
+        "Potiskum (Pataskum), capitale traditionnelle et plus grande ville du Yobe State",
+        "Villages a l'est et au sud de Potiskum : Lailai, Muguram, Chikuriwa, Bubaram, Danchuwa, Damazai, Ngojin, Majewa",
+        "Nahuta, Lampade, Badejo, Buramau, Damagum, Fune, Jumma'a, Kurmi, Maje, Mamudo (Yobe State)",
+        "Maizarma, Dawura, Dakasku, Madhimba, Bula, Gaba, Gadaka, Babut, Bilam, Fusam, Nasarawan Helma (Yobe State)",
+        "Extension partielle dans le Jigawa State (ouest)"
+      ],
+      "unificationsOrDivisions": "Les Ngizim sont organises autour de l'Emirat de Potiskum, restaure en 1993. Historiquement, ils resistaient a l'integration forcee dans l'Emirat de Fika impose par les autorites coloniales britanniques. La rebellion du debut du XXe siecle, menee par Mai Agudum, fut reprimee par un officier de district britannique, et le chef rebelle fut execute. L'emirat fut finalement restaure en 1993 sous Mai Muhammadu Atiyaye, nomme par le gouverneur Bukar Abba Ibrahim.",
+      "externalInfluences": "Influence dominante du Kanuri et de l'Empire du Bornou/Kanem pendant des siecles comme force linguistique et culturelle majeure en nord-est du Nigeria. Jihad peul (1804) : attaque de Birni N'gazargamu provoquant la migration fondatrice de Bauya et la creation de Potiskum (1808). Domination coloniale britannique : en violation des traditions ngizim, l'administration britannique plaça les Ngizim sous l'Emirat de Fika (autre groupe ethnique), declenchant la rebellion de Mai Agudum. Islam adopte progressivement : la majorite des Ngizim sont musulmans mais un nombre significatif sont chretiens.",
+      "majorHistoricalEvents": "1396 : premiere mention documentee des Ngizim dans les guerres civiles du Kanem. Vers 1462 : fondation de Birni N'gazargamu sur territoire ngizim. 1472 : reputation des Ngizim comme guerriers formidables au sein de l'Empire du Bornou. 1571-1583 : mentions des Ngizim dans les chroniques du regne de Mai Idris Alooma. 1808 : migration de Bauya et fondation de Pataskum (Potiskum). Debut du XXe siecle : rebellion de Mai Agudum contre l'Emirat de Fika impose par les Britanniques ; execution du chef rebelle. 1993 : restauration de l'Emirat de Potiskum."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "L'institution centrale est l'Emirat de Potiskum, dirige par le Mai Potiskum (egalement appele Emir de Potiskum). Le mai est a la fois l'autorite politique supreme et le chef religieux islamique des Ngizim. Son siege est a Yarimaram, pres de Potiskum. L'emirat fut restaure en 1993 et le Mai Umaru Bubaram Ibn Wuriwa Bauya a ete promu au rang d'emir de premiere classe par l'ancien gouverneur Bukar Abba Ibrahim. Ce systeme emirat combine les structures politiques precoloniales avec les structures islamiques.",
+      "clanOrganization": "La societe ngizim est organisee selon des lignages patrilineaires. Les clans ont leurs propres territoires et identites distinctes : les relations entre clans ngizim sont parfois evoques dans des chansons traditionnelles ('Aiye Karniga Jinga Karniga' — relations entre clans ngizim). L'appartenance clanique determine les alliances matrimoniales et les responsabilites communautaires. Les hommes sont polygames selon la tradition et la loi islamique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'identite ngizim, les droits fonciers et les alliances. La transmission du pouvoir au sein de l'emirat suit des lignages specifiques. Les femmes Ngizim jouent un role actif dans la production artisanale (poterie) et les activites economiques (agriculture).",
+      "religiousAuthority": "Le Mai Potiskum est la figure islamique supreme des Ngizim. La majorite des Ngizim sont musulmans sunnites (islam malekite dominant en Afrique de l'Ouest). Un nombre significatif sont chretiens. Quelques personnes adherent encore a la religion traditionnelle, dont le rite pre-islamique Barakau (rituel annuel de la saison de plantation) constitue le vestige le plus documente."
     },
     "languages": {
-      "mainLanguage": "Ngizim",
-      "vehicularRole": "Le ngizim est parlé par la majorité des Ngizim. Le haoussa, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Ngizim, langue tchadique occidentale (West Chadic, branche B.1 — Bade Proper)",
+      "isoCodes": ["ngi"],
+      "dialects": [
+        "Peu de variation dialectale documentee : le ngizim presente une remarquable homogeneite geographique",
+        "La prononciation du nom propre est Ng@z@m (@ = voyelle centrale haute, 'barred i' de l'Alphabet Phonetique International)"
+      ],
+      "vehicularRole": "Le ngizim (ngi) est parle par la quasi-totalite des Ngizim du Yobe State. L'Ethnologue (1993) estimait la population de locuteurs a environ 80 000 a 100 000 personnes. Le haoussa est la langue vehiculaire dominante de tout le nord du Nigeria et est utilise couramment par les Ngizim dans les echanges commerciaux et interethniques. L'anglais est la langue officielle du Nigeria et la langue d'instruction. Le kanouri fut pendant des siecles la force linguistique et culturelle dominante en nord-est du Nigeria."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels ngizim.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture ngizim."
+      "majorRites": "Le rite Barakau est le plus important rituel pre-islamique ngizim, realise annuellement pendant la saison de plantation. Des invocations rituelles sont prononcees pour assurer de bonnes recoltes. Il a ete documente photographiquement et sonore par Russell Schuh en 1970 dans le village de Yandiski pres de Potiskum. Les ceremonies de mariage (Zebak Ngizim) suivent des procedures precisement codifiees avec des chansons specifiques (Dadegerakem — 'It's Your Limit', chanson pour la nouvelle mariee). Les celebrations de naissance et de nomination (D'iyi na Ngemuri Dlegun i Adak Ngizim) constituent des rites importants. Les rites islamiques (Ramadan, Aid el-Fitr, Aid el-Kebir, Hajj) sont pleinement integres dans la vie ngizim. La circoncision masculine est un rite de passage obligatoire. Certains Ngizim portent des marques tribales sur le visage et le ventre.",
+      "symbols": "Potiskum est le symbole identitaire central des Ngizim : ils en sont les fondateurs, et son nom (Pataskum, 'foret d'arbres Skum') rappelle leur histoire. Le titre de Mai Potiskum est le symbole de l'autorite politique et religieuse. La poterie feminine (dont les fonctions domestiques, matrimoniales, medicales et rituelles sont documentees depuis des generations) est un symbole de l'identite culturelle ngizim. Des dieux claniques pre-islamiques (Malum, Dishu et d'autres) etaient veneres par les clans avant l'islamisation.",
+      "artsAndMusic": "La poterie traditionnelle est la forme artistique la plus documentee des Ngizim : elle est produite par les femmes et sert des fonctions domestiques (stockage, cuisine), matrimoniales (dot), medicales et rituelles. L'histoire et la typologie de la poterie ngizim ont ete etudies par Lnuwa Luka (Umar Suleiman College of Education, Gashua). La tradition orale est riche : contes (tales) mettant en scene des personnages comme la hyene (bedlamu), l'ecureuil (kayak), le chat (gayim), la chevre (d'ayak), le belier (gomak), et Benderkuku (chasseur geant). Les chants traditionnels (ruwa) sont organises par etapes de la vie (chansons de cour, de mariage, de naissance, de deuil). La poesie orale et les proverbes font partie du patrimoine immatériel. Les danses traditionnelles accompagnent les ceremonies.",
+      "spiritualities": "L'islam sunnite (ecole malekite) est la religion majoritaire des Ngizim. Le Mai Potiskum est la figure islamique supreme. La foi islamique structure la vie sociale (mariage, heritage, calendrier religieux, pelerinage). Un nombre significatif de Ngizim sont chretiens (christianisation liee en partie aux missions coloniales britanniques). Certains maintiennent des pratiques de la religion traditionnelle : veneration d'ancetres, dieux claniques (Malum, Dishu), rites de plantation (Barakau). La croyance en la sorcellerie (arayye gaja) et en la divination (dlab'a) est documentee dans les chants traditionnels."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ngizim dans les grandes villes nigérianes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "L'Emirat de Potiskum est la principale entite politique historique des Ngizim. Fonde apres 1808 par Bauya, l'emirat fut supprime par les autorites coloniales britanniques qui le soumirent a l'Emirat de Fika, puis restaure en 1993. Historiquement, les Ngizim jouerent un role important dans les structures de l'Empire du Bornou : le Grand Vizir Kursu bin Harun et le mediateur Nasr Bultu etaient ngizim. La ville-capitale Potiskum, la plus grande du Yobe State, est leur fondation historique.",
+      "relationsWithNeighbors": "Relations historiques etroites avec les Bade (voisins au nord, language cousin, emirat de Bedde) et les Duwai. Contacts et influence du Kanuri (force culturelle dominante du nord-est pendant des siecles). Integration partielle dans les structures de l'Empire du Bornou puis de l'Emirat de Kano et des structures peules. Relations commerciales avec les Haoussa (langue vehiculaire). Des tensions avec l'Emirat de Fika (impose par les Britanniques) conduisirent a la rebellion de Mai Agudum.",
+      "conflictsOrAlliances": "Participation probable aux guerres civiles du Kanem (1396). Role important dans la consolidation de l'Empire du Bornou (XIVe-XVIe siecles) : Kursu bin Harun fut Grand Vizir du Bornou sous Mai Idris Alooma. Nasr Bultu servit de mediateur entre les Ngizim occidentaux et le gouvernement de Mai Idris Alooma. Sous le jihad peul (1808) : migration de Bauya depuis Mugni apres l'attaque de Birni N'gazargamu. Rebellion contre l'Emirat de Fika (debut du XXe siecle) : Mai Agudum execute par les Britanniques. Restauration de l'emirat en 1993.",
+      "diaspora": "Des Ngizim ont migre vers d'autres Etats nigerians (Lagos, Abuja, Kano) pour des raisons economiques. Des populations ngizim dans le Jigawa State (ouest) et le Borno State (est) ont ete partiellement assimilees par d'autres groupes. La diaspora internationale (Europe, Amerique du Nord) reste modeste."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur Ethnologue (SIL) : environ 80 000 a 100 000 locuteurs (1993). Wikipedia EN — Ngizim people : 100 000 (1993). Joshua Project : population ngizimawa estimee. Projection 2025 tenant compte de la croissance demographique du Yobe State (taux de croissance eleve).",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 150000,
+          "note": "Principalement Yobe State (Potiskum et region est-sud) ; partiellement dans Jigawa State ; population du Borno State assimilee dans d'autres groupes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ngizim language (ngi)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples tchadiques"
+      "Wikipedia EN — Ngizim people. https://en.wikipedia.org/wiki/Ngizim_people",
+      "African Languages at UCLA — Ngizim. https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/ngizim/",
+      "Joshua Project — Ngizim, Ngizmawa in Nigeria. https://joshuaproject.net/people_groups/13359/ni",
+      "Lnuwa Luka (2020). Typology and Functions of Ngizim Pottery Tradition in Yobe State, Nigeria. SGOJAHDS. http://sgojahds.com/index.php/SGOJAHDS/article/viewFile/460/484",
+      "SIL Ethnologue — Ngizim (ngi). https://www.ethnologue.com/language/ngi/",
+      "Schuh, R. G. (1981). A Dictionary of Ngizim. Berkeley: University of California Press.",
+      "Palmer, H. R. History of the first twelve years of the reign of Mai Idris Alooma (1571-1583) by Imam Ahmad Ibn Furtua (notes et traduction)."
     ]
   }
 }

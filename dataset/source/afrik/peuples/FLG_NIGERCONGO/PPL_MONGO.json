@@ -6,63 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "Mongo",
-      "selfAppellation": "Mongo",
-      "exonyms": ["Mongo (terme utilisé par les Européens)"],
+      "selfAppellation": "Anamongo / AnaMongo",
+      "exonyms": [
+        "Bangala (appellation coloniale impropre)",
+        "Nkundo (pour le sous-groupe central)",
+        "Mongo-Nkundo",
+        "Baulolo (sous-groupe du nord)"
+      ],
+      "originOfExonyms": "L'appellation 'Bangala' fut imposée par l'administration coloniale belge pour désigner les populations mongo à tel point que divers groupes mongo d'origine acceptèrent ce terme sans égard à ses origines artificielles. Le politologue M. Crawford Young a établi que 'Bangala' est une construction artificielle plutôt qu'un regroupement sociographique naturel. Le terme 'Anamongo' ('les gens de Mongo') est l'auto-désignation collective, référant à l'ancêtre mythique commun Mongo. 'Nkundo' désigne spécifiquement le sous-groupe central et est parfois utilisé comme synonyme de 'Mongo proprement dit'.",
+      "whyProblematic": "L'unité mongo est une construction anthropologique relativement récente : les anthropologues proposèrent en 1938 (Boelaert) et 1944 (Vanderkerken) de regrouper ces populations sous une identité commune. Les membres continuent à s'identifier principalement à leurs sous-groupes locaux (Nkundo, Ekonda, Tetela, Kusu, etc.) plutôt qu'à une identité mongo globale. L'historien Samuel Nelson note que 'Mongo' est plus souvent utilisé par les étrangers que par les habitants du bassin, qui préfèrent leurs identités localisées.",
+      "contemporaryUsage": "Le terme Mongo est utilisé au niveau national congolais et international pour désigner le plus grand groupe ethnique de la RDC, estimé à 12 millions de personnes. Ils occupent 14 des 26 provinces de la RDC. L'identité mongo s'est affirmée dans le contexte politique post-indépendance, notamment avec des personnalités comme Patrice Lumumba (premier Premier ministre du Congo indépendant, d'origine Tetela-Mongo) et Cyrille Adoula.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone C)",
-      "historicalRegion": "RDC (Équateur, Tshuapa)",
+      "ethnoLinguisticGroup": "Bantou (Zone C, groupe C60-C80 — Mongo-Nkundo)",
+      "historicalRegion": "Bassin du Congo équatorial — région de l'Équateur et du Bandundu (nord de la rivière Kasai et du Sankuru, sud du coude du Congo)",
       "currentCountries": ["COD"]
     },
     "ethnicities": [
-      "Mongo de l'Équateur",
-      "Mongo du Tshuapa",
-      "Sous-groupes régionaux"
+      "Nkundo (Mongo central) — groupe central du bassin équatorial, souvent appelé 'Mongo proprement dit'",
+      "Batetela (Tetela) — sous-groupe majeur, est du bassin, province du Sankuru",
+      "Bakusu (Kusu / Benya Samba / Benya Lubunda) — sous-groupe de la région du Maniema",
+      "Ekonda — sous-groupe méridional, plaines du Maï Ndombe",
+      "Bolia — sous-groupe du lac Maï Ndombe",
+      "Boyela — sous-groupe nord du bassin",
+      "Ntomba — sous-groupe des rives du lac Tumba",
+      "Sengele — sous-groupe de la région de la Lukenie",
+      "Mbole — sous-groupe oriental",
+      "Ndengese — sous-groupe méridional",
+      "Sakata — sous-groupe du Kwilu",
+      "Mpama — sous-groupe occidental",
+      "Ngando — sous-groupe de la Tshuapa",
+      "Iyadjima — sous-groupe de la forêt équatoriale profonde"
     ],
     "origins": {
-      "ancientOrigins": "Les Mongo sont originaires de la région de l'Équateur et du Tshuapa en RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Mongo descendent des vagues de migration bantoue depuis la région Nigeria-Cameroun, qui peuplèrent l'Afrique centrale et australe à partir d'environ 2000 ans av. J.-C. Leurs racines historiques précises restent floues, mais les Mongo commencèrent à entrer dans le bassin central du Congo dès les premiers siècles de l'ère commune. Les premiers migrants s'installèrent dans les niches écologiques les plus favorables, notamment le long des rivières où la pêche devint activité principale. D'autres groupes se dirigèrent vers l'intérieur pour pratiquer la chasse et l'agriculture d'ignames. Tous les Mongo partagent un mythe fondateur commun : ils croient descendre d'un ancêtre unique nommé Mongo.",
+      "formationPeriod": "La banane, permettant des récoltes bien supérieures à l'igname, s'établit comme culture principale vers 1000 apr. J.-C., ancrant les communautés mongo dans le bassin équatorial. Au 16e siècle, des cultures introduites par les Portugais (maïs, arachides, haricots) enrichirent le système agricole. Au 19e siècle, l'agriculture était devenue un pilier essentiel de la subsistance mongo. L'unité ethnique 'Mongo' fut conceptualisée par les anthropologues coloniaux Boelaert (1938) et Vanderkerken (1944).",
+      "migrationRoutes": [
+        "Migration bantoue depuis le Nigeria-Cameroun vers l'Afrique centrale (environ 2000 av. J.-C.)",
+        "Pénétration progressive des bassins fluviaux nord-ouest du Congo aux 1er-5e siècles apr. J.-C.",
+        "Extension du sous-groupe Tetela vers l'est (Sankuru, Maniema)",
+        "Migration du sous-groupe Kusu vers la région du Maniema",
+        "Dispersion des Sakata vers le Kwilu et des Sengele vers la Lukenie"
+      ],
+      "historicalSettlementZones": [
+        "Province de l'Équateur (Mbandaka, Basankusu, Bikoro) — coeur historique des Nkundo",
+        "Province de la Tshuapa (Boende, Befale) — Mongo central",
+        "Province du Mongala (Lisala) — Mongo nord",
+        "Province du Sankuru (Lodja) — Tetela et Kusu",
+        "Province du Maï Ndombe (Inongo) — Ekonda et Bolia",
+        "Province de la Tshopo — Mbole et groupes orientaux",
+        "Provinces du Maniema, Kasaï, Kwilu, Kongo-Central — sous-groupes dispersés"
+      ],
+      "unificationsOrDivisions": "Malgré une diversité considérable, les Mongo partagent : une langue commune (lo-Mongo ou nkundo avec environ 200 dialectes), une organisation sociale patrilinéaire par lignages (ilongo), un mythe fondateur commun (ancêtre Mongo), et des structures politiques similaires (village dirigé par un bokulaka). La colonisation belge (1880s-1960) perturba profondément ces sociétés en introduisant l'économie du caoutchouc, les maladies (maladie du sommeil, syphilis) et la conversion au christianisme, tout en maintenant une certaine reconnaissance de l'identité mongo collective.",
+      "externalInfluences": "Implication marginale dans la traite atlantique des esclaves au 18e siècle, puis impact croissant au 19e siècle via les raids arabes (route zanzibarite). Selon Alexander Reid, 'des milliers de Mongo capturés comme esclaves passèrent par la route de Zanzibar chez les Arabes'. La colonisation belge léopoldienne (1885-1908) exploita massivement le travail forcé pour la récolte du caoutchouc, décimant la population par la violence et les maladies importées (maladie du sommeil, syphilis). L'introduction du catholicisme et du protestantisme transforma les croyances et pratiques traditionnelles.",
+      "majorHistoricalEvents": "Installation dans le bassin du Congo dès le 1er siècle apr. J.-C. Introduction de la banane comme culture principale (vers 1000 apr. J.-C.). Introduction des cultures américaines par les Portugais (16e siècle). Raids arabes et traite esclavagiste (19e siècle). Conquête belge et période léopoldienne d'exploitation du caoutchouc (1885-1908) — atrocités massives documentées. Administration coloniale belge (1908-1960). Indépendance du Congo (30 juin 1960) : Patrice Lumumba (d'origine Tetela-Mongo) devient premier Premier ministre. Guerre civile et sécession katangaise (1960-1965). Mobutu au pouvoir (1965-1997) — Cyrille Adoula, Premier ministre d'origine mongo (1961-1964)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société mongo est organisée autour du foyer étendu patrilinéaire (etuka ou linkudu), comptant entre 20 et 40 membres issus d'un ancêtre commun, dirigé par l'aîné mâle (Tata — 'père'). Plusieurs etuka voisins forment un village (100 à 300 personnes) dirigé par un chef villageois (bokulaka), élu par le conseil des anciens des groupes domestiques. En temps de guerre ou d'instabilité, des villages dispersés forment des alliances territoriales (districts) sous la direction collective de chefs villageois et de médecins-sorciers reconnus pour leurs pouvoirs de divination et de magie de guerre. Seuls quelques sous-groupes du sud (Ekonda) ont développé une véritable chefferie basée sur la légitimité divine.",
+      "clanOrganization": "Société strictement patrilinéaire. Les membres d'un patrilinéage (ilongo) vivent souvent dans le même village. Les patrilinéages, exogames pour le sexe et le mariage, sont agrégés en clans. Les chefs de clan dirigent depuis le patrilinéage senior. Les terres appartiennent collectivement aux patriclans, les hommes acquérant des droits d'usufruit sur les parcelles qu'ils cultivent. La forêt est considérée comme 'un héritage des ancêtres', accessible à tous les membres de la communauté. La polygamie est une institution traditionnelle valorisée.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'autorité politique est fondée sur la richesse mais légitimée par la descendance généalogique. Les 'grands hommes' (détenteurs d'autorité) maintiennent leur pouvoir par l'allocation foncière, les échanges matrimoniaux et les droits d'appropriation, tous exprimés en termes de parenté et de séniorité. Les jeunes hommes obéissent aux anciens car ils hériteront eux-mêmes à terme de positions de pouvoir. Les conflits entre lignages se règlent par des biens (compensations) ou des inter-mariages.",
+      "religiousAuthority": "Les anciens du lignage remplissent de larges fonctions religieuses en raison de l'accent mis par la religion mongo sur le culte des ancêtres. D'autres praticiens religieux incluent des sorciers, magiciens et devins (nganga) qui manipulent les pouvoirs des esprits. Les ancêtres sont honorés par des prières et sacrifices ; des fêtes de fin de réclusion sont organisées pour les nouvelles mères et les conjoints endeuillés. Aujourd'hui, la majorité des Mongo sont chrétiens (catholiques et protestants), souvent en syncrétisme avec les croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Mongo",
-      "vehicularRole": "Le mongo est parlé par la majorité des Mongo. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Lomongo (Lo-Mongo / Nkundo)",
+      "isoCodes": ["lol"],
+      "dialects": [
+        "Mongo-Nkundo — dialecte central de référence (environ 400 000 locuteurs en 1995)",
+        "Longombe — dialecte de la région de la Tshuapa",
+        "Konda — dialecte occidental",
+        "Ngando — dialecte du sud de la Tshuapa",
+        "Ombo — dialecte méridional",
+        "Lalia — dialecte septentrionale",
+        "Tetela (Otetela) — dialecte du Sankuru, parfois considéré langue distincte",
+        "Kusu — dialecte du Maniema, lié au Tetela",
+        "Ekonda, Bolia, Ntomba, Sengele, Mbole — dialectes des sous-groupes périphériques"
+      ],
+      "vehicularRole": "Le lomongo (nkundo) est parlé comme langue maternelle par environ 3 à 6 millions de personnes selon les estimations. Le lingala remplace fréquemment le lomongo dans les centres urbains de la province de l'Équateur. Le français est la langue officielle de la RDC. Le kituba et le swahili sont véhiculaires dans les autres régions. Le lomongo compte environ 200 dialectes régionaux. En 1979, la missionnaire Mabel Ross publia en anglais 95 contes traditionnels Nkundo collectés dans les années 1970."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels mongo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"La circoncision (accompagnée de peu de fête selon les sources — naming and circumcision involve very little festivity) marque l'entrée dans la communauté adulte masculine. L'initiation est intégrée dans le système de transmission des normes patrilinéaires.\", \"femaleInitiation\": \"Réclusion post-accouchement : les nouvelles mères sont mises en isolement après la naissance, et une cérémonie de fin de réclusion est organisée par la communauté. Cérémonie similaire pour les conjoints endeuillés.\"}, \"funeraryRites\": {\"ancestorHonoring\": \"Les ancêtres (bakolo) sont honorés par des prières et sacrifices réguliers. Les anciens du lignage président les cérémonies funéraires. Les ancêtres peuvent intervenir dans la vie des vivants — protecteurs ou vengeurs selon le respect qui leur est rendu.\", \"burialRites\": \"Inhumation selon les rites traditionnels du lignage ; les possessions et insignes du défunt sont distribués selon les règles coutumières.\"}, \"covenantRites\": {\"lineageCovenants\": \"Les pactes entre lignages (covenants) règlent les conflits par échanges de biens ou inter-mariages. Les mariages sont organisés par les parents, souvent avec l'envoi d'un intermédiaire formel, et impliquent un prix de la fiancée substantiel (peaux, couteaux en fer, anneaux en cuivre, et anciennement esclaves mâles).\"}}",
+      "symbols": "L'ancêtre mythique Mongo est le symbole unificateur de toutes les populations Anamongo. La pirogue sur les rivières du bassin équatorial symbolise la connexion des Mongo à leur environnement fluvial et forestier. La forêt équatoriale est un espace sacré — 'relique des ancêtres' appartenant collectivement à la communauté. Les anneaux en cuivre et les couteaux en fer étaient autrefois des symboles de richesse et de statut social. Les insignes des bokulaka (chefs villageois) matérialisent l'autorité ancestrale.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"oralLiterature\": \"La littérature orale mongo est d'une exceptionnelle richesse : histoires, contes (épopées centrées sur la morale ou une sagesse), proverbes traitant de toutes les dimensions de la vie (obligations mutuelles, respect de l'autorité, importance de la famille), poèmes, chants et salutations. Les contes étaient essentiels à l'éducation des enfants. En 1979, 95 histoires traditionnelles des Nkundo furent publiées en anglais par Mabel Ross : 'On Another Day: Tales Told among the Nkundo of Zaire'.\", \"music\": \"Musique de percussion rythmique (tam-tams, ngoma) accompagnant les cérémonies communautaires. Chants polyphoniques lors des rites de passage et des cérémonies de réclusion.\", \"crafts\": \"Sculptures en bois (armes, ustensiles, emblèmes rituels) ; vannerie ; poterie ; fabrication de pirogues pour la navigation fluviale ; fabrication d'armes de chasse et de pêche sophistiquées.\"}, \"economy\": {\"subsistence\": \"Agriculture de subsistance sur brûlis en rotation : manioc, igname, banane plantain, maïs, arachides, haricots, légumes. Cueillette de produits forestiers variés : fruits sauvages, champignons, escargots, insectes comestibles (chenilles, termites), racines médicinales, noyaux de palme. La pêche est une activité majeure des groupes riverains (filets, nasses, harpons). La chasse au piège et à la sagaie est pratiquée exclusivement par les hommes.\"}}",
+      "spiritualities": "{\"traditionalReligion\": {\"ancestorCult\": {\"importance\": \"Le culte des ancêtres est le fondement de la vie religieuse mongo. Les ancêtres (bakolo) sont des êtres puissants qui peuvent bénir ou maudire leurs descendants selon le respect qui leur est rendu. Des prières, libations et sacrifices leur sont régulièrement adressés.\", \"religiousPractitioners\": \"Les anciens du lignage remplissent des fonctions religieuses essentielles. Des nganga (sorciers, devins, médecins-tradipraticiens) manipulent les pouvoirs des esprits pour aider ou nuire. Les nganga interviennent dans la guérison des maladies, la résolution de conflits et la protection contre les esprits malveillants.\"}, \"worldview\": \"La forêt et les rivières sont peuplées d'esprits (bekali) qui peuvent interagir avec les humains. L'ordre moral est soutenu par les puissances ancestrales qui sanctionnent les manquements aux valeurs communautaires (obligations mutuelles, respect de la hiérarchie, protection de la famille).\"}, \"christianity\": {\"note\": \"La grande majorité des Mongo se sont convertis au christianisme (catholicisme et protestantisme) depuis la période coloniale belge. La conversion fut souvent associée à la modernisation — accès à l'éducation dans les missions, aux soins médicaux. Un syncrétisme profond entre les croyances traditionnelles (culte des ancêtres) et le christianisme est répandu.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mongo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "La majorité des groupes mongo n'ont pas développé de royaumes centralisés, préférant des structures de gouvernance décentralisées par village et lignage. Exception notable : certains sous-groupes du sud (notamment les Ekonda et les Bolia au lac Maï Ndombe) ont développé des chefferies basées sur la légitimité divine (divine kingship). En termes d'influence politique moderne, les Mongo ont produit Patrice Lumumba (d'origine Tetela-Mongo, premier Premier ministre du Congo indépendant, 30 juin 1960, assassiné en 1961) et Cyrille Adoula (Premier ministre 1961-1964). Ces personnalités font des Mongo un groupe à poids politique historique majeur en RDC.",
+      "relationsWithNeighbors": "Les Mongo entretinrent des relations commerciales avec les 'peuples de l'eau' (pirogue-owning groups) le long du fleuve Congo, échangeant produits agricoles et forestiers contre poissons et marchandises importées. Relations complexes avec les peuples des savanes environnantes. Isolement relatif dans la forêt équatoriale dense les protégea partiellement des incursions arabes esclavagistes au 18e siècle, mais pas au 19e. Tensions historiques avec les groupes musulmans du nord-est du Congo (depuis l'époque des raids arabes).",
+      "conflictsOrAlliances": "Les guerres inter-lignages et intra-tribales étaient fréquentes en période précoloniale, généralement pour venger un meurtre non compensé ou régler un litige. Les raids arabes zanzibarites du 19e siècle dévastèrent certaines communautés mongo en capturant des milliers de personnes comme esclaves. La colonisation léopoldienne (1885-1908) fut particulièrement brutale : travail forcé pour la récolte du caoutchouc, mutilations (coupures de mains) comme système de contrôle, décimation démographique. L'indépendance (1960) et l'assassinat de Lumumba déclenchèrent des conflits politiques où les Mongo furent acteurs centraux.",
+      "diaspora": "Migration interne vers Kinshasa (capitale), Mbandaka et d'autres centres urbains de la RDC depuis l'indépendance. Les Mongo participent activement à l'économie nationale congolaise dans l'administration, l'armée, l'éducation et le commerce. Diaspora congolaise en Belgique, France, et autres pays, incluant des membres du groupe mongo."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 12000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur 101 Last Tribes Africa ('total population is about 12 million'), Wikipedia EN — Mongo people, Qiraat Africa — The Mongo People in Congo (12 millions), eHRAF World Cultures (Yale). La RDC ne publie pas de statistiques ethniques détaillées dans ses recensements. Estimation basée sur la proportion historique des Mongo (environ 15-20% de la population congolaise d'environ 100 millions en 2025). Les Mongo sont décrits comme le plus grand groupe ethnique de la RDC.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 12000000,
+          "note": "Présents dans 14 des 26 provinces de la RDC — principalement provinces de l'Équateur, Tshuapa, Mongala, Tshopo, Maï Ndombe, Sankuru, Kwilu, Maniema ; forte présence à Kinshasa (diaspora urbaine)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Mongo language (lol)",
-      "CIA World Factbook – RDC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Mongo people. https://en.wikipedia.org/wiki/Mongo_people",
+      "101 Last Tribes Africa — Mongo people. https://www.101lasttribes.com/tribes/mongo.html",
+      "eHRAF World Cultures — Mongo summary (Yale University). https://ehrafworldcultures.yale.edu/cultures/fo32/summary",
+      "Qiraat Africa — The Mongo People in Congo. https://qiraatafrican.com/en/12635/the-mongo-people-in-congo/",
+      "Ethnologue — Lomongo language (lol). https://www.ethnologue.com/language/lol",
+      "Nelson, S.H. (1994). Colonialism in the Congo Basin, 1880-1940. Ohio University Center for International Studies.",
+      "Mabel Ross (1979). On Another Day: Tales Told among the Nkundo of Zaire. Archon Books.",
+      "CIA World Factbook — Democratic Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/"
     ]
   }
 }

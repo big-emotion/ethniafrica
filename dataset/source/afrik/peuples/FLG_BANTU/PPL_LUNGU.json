@@ -2,58 +2,100 @@
   "id": "PPL_LUNGU",
   "nameMain": "Lungu",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Lungu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Alungu",
+      "exonyms": [
+        "Malaila-Lungu",
+        "Mambwe-Lungu (pour la branche nord)",
+        "Lungu de Tafuna",
+        "Lungu de Mukupa Kaoma"
+      ],
+      "originOfExonyms": "Les Lungu se divisent en deux branches distinctes: les Mambwe-Lungu (ou Lungu du chef Tafuna, branche nord) et les Malaila-Lungu (Lungu du chef Mukupa Kaoma, branche sud). Les Mambwe-Lungu sont souvent confondus ou assimiles aux Mambwe par les observateurs exterieurs; un ancien fonctionnaire britannique nota que 'les Tafuna's Lungu sont parfois appeles Mambwe ou Mambwe-Lungu'. Les Malaila-Lungu sont eux 'pour toutes fins pratiques des Bemba' selon le meme fonctionnaire.",
+      "whyProblematic": "La denomination Lungu regroupe deux groupes distincts qui n'ont jamais collabore dans un effort commun et ont des histoires, des systemes de descendance et des affiliations culturelles differents. Les Mambwe-Lungu (branche nord) sont patrilineaires et proches des Mambwe, tandis que les Malaila-Lungu sont matrilineaires et proches des Bemba.",
+      "contemporaryUsage": "Le terme Lungu est utilise officiellement en Zambie et en Tanzanie. Mambwe-Lungu est le terme utilise par les linguistes et les missionnaires pour designer la langue commune. La branche Mambwe-Lungu est recensee separement au sein des statistiques zambiennes et tanzaniennes.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu du Centre-Sud, sous-groupe Fipa-Mambwe",
+      "historicalRegion": "Rives sud-occidentales du Lac Tanganyika, district de Mpulungu et Mbala (Zambie nord-est) et district de Kalambo, region de Rukwa (Tanzanie)",
+      "currentCountries": ["ZMB", "TZA"]
     },
-    "ethnicities": ["Lungu"],
+    "ethnicities": [
+      "Mambwe-Lungu (branche nord, patrilineaire)",
+      "Malaila-Lungu (branche sud, matrilineaire)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "La dynastic royale du chef Tafuna (ainsi que celle du chef Mukupa Kaoma et les dynasties chiefly Tabwa) appartient au clan matrilineaire Zimba (leopard). Selon la legende, la lignee royale du chef Tafuna vient d'une terre appelee Uzao, a l'ouest du Lac Tanganyika dans l'actuelle RDC orientale. Les roturiers sous Tafuna sont patrilineaires et ont des affinites proches avec les Mambwe, montrant une integration complexe de traditions distinctes.",
+      "formationPeriod": "Probablement entre le XVIe et le XVIIIe siecle, lors des migrations Bantu dans la region du Lac Tanganyika. Les deux branches principales (Tafuna et Mukupa Kaoma) ont des histoires distinctes et sont restees separees tout au long de leur histoire memorielle.",
+      "migrationRoutes": [
+        "Uzao (ouest du Lac Tanganyika, RDC orientale) vers les rives sud-ouest du Lac Tanganyika",
+        "Installation sur les rives zambiennes et tanzaniennes du Lac Tanganyika"
+      ],
+      "historicalSettlementZones": [
+        "Rives sud-occidentales du Lac Tanganyika (cote zambienne et tanzanienne)",
+        "District de Mpulungu (Province du Nord, Zambie)",
+        "District de Mbala (Province du Nord, Zambie)",
+        "District de Kalambo, Region de Rukwa (Tanzanie)",
+        "Ile de Mbita (Lac Tanganyika, lieu sacre pour les rituels d'installation)"
+      ],
+      "unificationsOrDivisions": "Les deux branches Lungu (Tafuna et Mukupa Kaoma) n'ont jamais forme une unite politique ou sociale commune. Elles restent distinctes dans leurs traditions, leurs systemes de descendance et leurs affiliations culturelles. En 1889, les deux chefs Lungu (Tafuna, Chitimbwa, Chungu) conclurent separement des traites avec les Britanniques, tout comme les Mambwe (chefs Fwambo et Kela). Ces traites les integrererent dans le protectorat de Rhodesie du Nord-Est, finalement integre dans la Zambie actuelle.",
+      "externalInfluences": "Voisinage et influences des Bemba (au sud et a l'ouest), des Mambwe (proches culturellement), des Tabwa et des Fipa (au nord). La colonisation britannique en 1889-1890 incorpore les Lungu dans la Rhodesie du Nord-Est. L'evangelisation chretienne via les missions etablit ecoles et infrastructures sanitaires. Les routes commerciales du Lac Tanganyika facilitaient des echanges avec les peuples de la rive opposee (actuelle RDC et Tanzanie).",
+      "majorHistoricalEvents": "1889: traites des chefs Lungu (Tafuna, Chitimbwa, Chungu) et Mambwe avec les Britanniques. 1890: incorporation dans le protectorat de Rhodesie du Nord-Est. 1964: independance de la Zambie; les Lungu se retrouvent scindees entre Zambie et Tanzanie (independante en 1961). Maintien des structures chiefly traditionnelles sous Paramount Chief Tafuna en Zambie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Double systeme de chefferies independantes: la chefferie de Tafuna (Mambwe-Lungu, branche nord patrilineaire) et la chefferie de Mukupa Kaoma (Malaila-Lungu, branche sud matrilineaire). Les deux dynasties appartiennent au clan Zimba (leopard) pour la noblesse, mais les systemes de descendance des roturiers different. La chefferie de Tafuna est la plus documentee et la plus influente.",
+      "clanOrganization": "Les Lungu (branche Mambwe-Lungu) sont organises en clans patrilineaires exogames disperses (Umwiko). Les noms de clans sont majoritairement prefixes par 'Si-' (pere de) pour les males et 'Na-' (mere de) pour les femelles. Clans principaux: Sinyangwe, Sikazwe, Simuchenje, Silupya, Siulapwa, Sikatunga, Simfutata, Simuyemba, Sichilima, Sikasote et Chizu. La noblesse des deux branches appartient au clan royal Zimba (leopard).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires chez les Mambwe-Lungu determinent l'appartenance clanique et l'heritage. Chez les Malaila-Lungu, c'est le lignage matrilineaire qui gouverne l'heritage et l'appartenance. La distinction entre noblesse (clan Zimba) et roturiers est fondamentale dans les deux branches.",
+      "religiousAuthority": "Le chef Tafuna detient une autorite ceremoniale majeure a travers le rite d'installation (Walamo). L'ile sacree de Mbita sur le Lac Tanganyika est le lieu de legitimation spirituelle du nouveau chef. Les esprits ancestraux Kapembwa, Mbita et Namukale sont les principales divinites secondaires. Leza est le dieu supreme, mais distant."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Mambwe-Lungu (Cilungu)",
+      "isoCodes": ["mgr"],
+      "dialects": [
+        "Cilungu (dialecte Lungu)",
+        "Cimambwe (dialecte Mambwe, tres proche)",
+        "Fipa-Mambwe (parle par certains Fipa au nord)"
+      ],
+      "vehicularRole": "Les Mambwe et les Lungu des rives sud du Lac Tanganyika parlent une langue commune avec de legeres differences dialectales (Mambwe-Lungu, ISO 639-3: mgr). Le dialecte Lungu (Cilungu) est considere comme distinct du Cimambwe mais mutellement comprehensible. De nombreux Lungu parlent egalement le Bemba comme langue vehiculaire regionale. Le Fipa au nord partage des affinites avec le Mambwe-Lungu. La langue est aussi appelee Lungu ou Cilungu dans les sources locales."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Walamo: ceremonie d'installation du chef Tafuna. Le futur chef devait traverser le bras d'eau entre le Lac Tanganyika et l'ile sacree de Mbita en s'accrochant a deux pirogues. S'il survivait sans etre mange par les crocodiles ni se noyer, il etait approuve par les ancetres. Il cherchait ensuite la permission des esprits Kapembwa, Mbita et Namukale pour devenir chef du peuple Lungu. Les chants, danses culturelles et la percussion (kamangu) accompagnent les ceremonies. La danse traditionnelle Nsimba, accompagnee des instruments Vingwengwe, est specifique aux Lungu.",
+      "symbols": "L'ile de Mbita (Lac Tanganyika) est le lieu sacre central des Lungu de Tafuna. Les pirogues utilisees lors du rite d'installation symbolisent le lien avec les ancetres. Les tambours (Kamangu) sont un symbole culturel fort, utilises lors des ceremonies.",
+      "artsAndMusic": "La danse Nsimba est la danse culturelle traditionnelle des Lungu. Les instruments Vingwengwe (instruments a corde ou de percussion selon les sources locales) accompagnent cette danse. La pecherie traditionnelle sur le Lac Tanganyika est une activite culturelle et economique fondamentale pour les Lungu du nord. La culture de riz et de manioc accompagne la pecherie.",
+      "spiritualities": "Les Lungu croient en un dieu supreme appele Leza, distant des affaires humaines et non adore directement. La divinite mineure principale de l'Ulungu est Kapembwa. Les autres esprits ancestraux incluent Mbita et Namukale. L'animisme traditionnel coexiste avec le christianisme (majoritairement 75% de chretiens selon Joshua Project Zambie). La legitimite politique du chef Tafuna requiert l'approbation des ancetres via le rite de Mbita."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "La chefferie de Tafuna (Mambwe-Lungu) est la principale entite politique historique des Lungu. La chefferie de Mukupa Kaoma (Malaila-Lungu) constitue une entite distincte et parallele. Les deux ne se sont jamais unifiees. En 1889, les chefs Tafuna, Chitimbwa et Chungu signe des traites distincts avec les Britanniques. La structure chiefly est maintenue dans la Zambie contemporaine sous le systeme des chefs traditionnels.",
+      "relationsWithNeighbors": "Relations etroites avec les Mambwe (culture et langue similaires, souvent confondus). Relations de voisinage avec les Bemba (Malaila-Lungu proches culturellement), les Tabwa et les Fipa. Les rives du Lac Tanganyika facilitent les contacts avec les peuples de la RDC et de Tanzanie. Cohabitation avec les Mambwe le long des rives du Lac Tanganyika.",
+      "conflictsOrAlliances": "Coexistence historique avec les Mambwe le long de la frontiere zambo-tanzanienne. Incorporation commune dans la Rhodesie du Nord-Est britannique en 1889-1890. Scission administrative due aux frontieres coloniales (certains Lungu en Tanzanie, d'autres en Zambie). Absence de conflits armes majeurs documentes entre les deux branches Lungu.",
+      "diaspora": "Presence Lungu/Mambwe-Lungu significative en Tanzanie (district de Kalambo, region de Rukwa): estimee a 34,000 personnes en 1987, probablement plus aujourd'hui. Migration vers des centres urbains zambiens (Mpulungu, Mbala, Lusaka)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1100000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Mambwe-Lungu in Zambia: 456,000; Mambwe-Lungu in Tanzania: 653,000; total mondial: 1,109,000). 101lasttribes.com: total mondial de 800,000 (donnee ancienne). Estimation 1993: 262,800 Mambwe et Lungu combines en Zambie.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 456000,
+          "note": "Province du Nord: districts de Mpulungu et Mbala (Mambwe-Lungu); branche Malaila-Lungu au nord de Zambie"
+        },
+        {
+          "country": "TZA",
+          "population": 653000,
+          "note": "Region de Rukwa, district de Kalambo (rives sud-ouest du Lac Tanganyika)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lungu people – Wikipedia EN (https://en.wikipedia.org/wiki/Lungu_people)",
+      "Mambwe-Lungu language – Wikipedia EN (https://en.wikipedia.org/wiki/Mambwe-Lungu_language)",
+      "101 Last Tribes – Lungu people (https://www.101lasttribes.com/tribes/lungu.html)",
+      "Joshua Project – Mambwe-Lungu in Tanzania, 2025 (https://joshuaproject.net/people_groups/print/13470/TZ)",
+      "Joshua Project – Zambia people groups, 2025 (https://joshuaproject.net/countries/ZA)",
+      "Cancel, Robert – Asserting/inventing traditions on the Luapula: the Lunda Mutomboko Festival (in: Storytelling in Northern Zambia, Open Book Publishers)"
+    ]
   }
 }

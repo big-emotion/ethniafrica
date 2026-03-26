@@ -6,67 +6,130 @@
   "content": {
     "appellations": {
       "mainName": "Peuples Sahariens (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (Kanuri, Toubou, Zaghawa, etc.)",
+      "selfAppellation": "Appellation variable selon les groupes : Kanuri, Kanembu, Teda (Toubou du nord), Daza (Toubou du sud), Zaghawa, Berti, Buduma, etc.",
+      "exonyms": [
+        "Saharan peoples (anglais)",
+        "Nilo-Sahariens sahariens (désignation linguistique)",
+        "Peuples du lac Tchad (désignation géographique partielle)"
+      ],
+      "originOfExonyms": "Le terme Saharien est une désignation linguistique et géographique créée par les chercheurs pour regrouper les peuples parlant des langues de la branche saharienne de la famille nilo-saharienne. Ce n'est pas une identité que ces peuples revendiquent collectivement.",
+      "whyProblematic": "Ce regroupement macro est une construction académique et ne correspond à aucune identité collective revendiquée par les peuples concernés. Les Kanuri et les Toubou, par exemple, ont des histoires, des territoires et des cultures très distincts. La désignation Nilo-Saharien elle-même reste débattue parmi les linguistes.",
+      "contemporaryUsage": "Utilisé dans la littérature académique (linguistique, ethnologie) pour désigner l'ensemble des peuples parlant des langues de la branche saharienne de la famille nilo-saharienne. Comprend les Kanuri, Kanembu, Teda, Daza, Zaghawa, Berti, Buduma et d'autres groupes plus petits.",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien (macro-groupe)",
-      "historicalRegion": "TCD, NER, NGA, SDN, LBY",
+      "ethnoLinguisticGroup": "Saharien (branche occidentale et orientale, Nilo-Saharien)",
+      "historicalRegion": "Sahara central et méridional, bassin du lac Tchad, Bahr el Ghazal, Tibesti, Ennedi, Fezzan",
       "currentCountries": ["TCD", "NER", "NGA", "SDN", "LBY", "CMR"]
     },
     "ethnicities": [
-      "Kanuri",
-      "Kanembu",
-      "Toubou",
-      "Zaghawa",
-      "Daza",
-      "Teda",
-      "Autres groupes sahariens"
+      "Kanuri (Nigeria nord-est, Niger, Tchad, Cameroun) : le plus grand groupe, fondateurs de l'empire du Kanem-Bornu",
+      "Kanembu (Tchad, préfectures du Lac et du Kanem) : ancêtres des Kanuri, fondateurs de l'empire du Kanem",
+      "Teda (Tchad nord, Libye, Niger) : Toubou septentrionaux du Tibesti",
+      "Daza / Kreda (Tchad central) : Toubou méridionaux, Kreda sous-groupe principal du Bahr el Ghazal",
+      "Zaghawa (Tchad-est, Soudan-Darfour) : groupe saharien oriental",
+      "Berti (Soudan, Darfour) : groupe saharien oriental",
+      "Buduma (lac Tchad, Tchad-Nigeria) : pêcheurs du lac Tchad",
+      "Yerima / Yedina (lac Tchad, Nigeria) : variante des Buduma"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples Sahariens sont originaires de la région du Sahara central et du Sahel, notamment autour du lac Tchad. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.",
-      "externalInfluences": "Contacts avec les peuples arabes, touareg et autres groupes, influence profonde de l'islam."
+      "ancientOrigins": "Les peuples de la branche saharienne du groupe nilo-saharien sont originaires du Sahara central et de la région du lac Tchad. Les premières mentions de ces peuples dans les sources historiques remontent au 8e siècle (Ibn Qutaybah mentionne les Zaghawa et les Toubou). Des preuves archéologiques suggèrent une formation étatique précoce dans la région du lac Tchad dès c. 800 avant J.-C. (site de Zilum). La langue proto-saharienne remonterait à plusieurs millénaires, issue d'un ancêtre commun nilo-saharien. Ces peuples ont occupé les zones sahélo-sahariennes depuis au moins le premier millénaire de l'ère commune.",
+      "formationPeriod": "Les identités distinctes des différents peuples sahariens se sont consolidées entre le 7e et le 14e siècle, influencées par l'islamisation, les échanges commerciaux transsahariens et la formation des empires du Kanem et du Bornou. La branche kanuri-kanembu forma le coeur de l'empire du Kanem (c. 700-1380) puis du Bornou (c. 1380-1893). Les Toubou (Teda et Daza) maintinrent leur autonomie dans les zones sahariennes inaccessibles. Les Zaghawa et Berti se développèrent dans la zone saharienne orientale (Darfour-Ennedi).",
+      "migrationRoutes": [
+        "Nomadisme transsaharien des Toubou (Teda, Daza) entre Tibesti, Fezzan et Sahel",
+        "Expansion de l'empire du Kanem-Bornu depuis le lac Tchad vers le Fezzan, la Hausaland et le Bahr el Ghazal",
+        "Dispersion des Kanuri au Niger, Cameroun et Soudan lors de la colonisation",
+        "Migrations récentes liées aux sécheresses sahéliennes (1973, 1984) et aux conflits (guerres civiles tchadiennes, Darfour)"
+      ],
+      "historicalSettlementZones": [
+        "Bassin du lac Tchad (Kanuri, Kanembu, Buduma)",
+        "Massif du Tibesti et Fezzan (Teda)",
+        "Bahr el Ghazal et Kanem (Daza, Kreda)",
+        "Ennedi et Biltine (Zaghawa occidental)",
+        "Darfour et Kordofan (Zaghawa oriental, Berti)",
+        "Nord du Nigeria (Borno State, Yobe State) : Kanuri",
+        "Niger oriental (Diffa, Zinder) : Kanuri Manga, Tumari, Bilma"
+      ],
+      "unificationsOrDivisions": "Ces peuples n'ont jamais formé une entité politique unifiée, sauf sous la domination de l'empire du Kanem-Bornu (qui intégra de force ou par alliance plusieurs de ces groupes). Leurs langues appartiennent à la même branche linguistique mais leurs cultures, organisations politiques et histoires sont distinctes. La partition coloniale (fin 19e-début 20e siècle) les a divisés entre plusieurs États-nations modernes. Le concept de Grand Kanowra (revendiqué par des nationalistes kanuri dans les années 1950) illustre les tentatives d'unification pan-saharienne restées sans suite.",
+      "externalInfluences": "Islamisation progressive depuis le 11e siècle via les routes commerciales transsahariennes et l'empire du Kanem-Bornu. Contacts avec les civilisations nord-africaines (Libye, Egypte) et le monde arabe (échanges de savants, pèlerinages, commerce). Colonisation ottomane en Libye (Fezzan). Partage colonial entre France (Tchad, Niger), Royaume-Uni (Nigeria) et Allemagne puis France (Cameroun) en 1900-1902. Indépendances nationales (1956-1960). Conflits post-indépendance (guerres civiles tchadiennes, Darfour).",
+      "majorHistoricalEvents": "Fondation de l'empire du Kanem (c. 700). Islamisation du Kanem au 11e siècle. Apogée du Bornou sous Idris IV Alooma (fin 16e siècle). Jihads peuls (1804-). Conquête de Rabih az-Zubayr (1893). Partition coloniale (1900-1902). Indépendances (1956-1960). Guerres civiles tchadiennes (1965-2000). Crise du Darfour (depuis 2003). Conflit libyen (2011)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition du royaume du Kanem-Bornou pour certains groupes.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Les différents peuples sahariens ont développé des systèmes politiques distincts, allant de l'empire centralisé du Kanem-Bornu (Kanuri, Kanembu) aux organisations claniques décentralisées des Toubou. Chez les Kanuri : hiérarchie de sultans et émirs sous le Shehu de Borno. Chez les Teda : institution du derde (chef spirituel du clan Tumagra, Tibesti). Chez les Daza : chefferies claniques autonomes. Chez les Zaghawa : sultanat du Darfour (passé) et organisation clanique actuelle. Les systèmes coloniaux de cantons (1936 au Tchad) ont superposé une administration à ces structures traditionnelles.",
+      "clanOrganization": "Toutes ces sociétés sont organisées en clans patrilinéaires. La structure clanique détermine les droits aux ressources (terre, eau, pâturages, oases), les alliances matrimoniales et les obligations de solidarité. Les castes artisanales endogames à statut inférieur sont présentes dans plusieurs groupes (Azza chez les Toubou, forgerons chez les Kanuri et Kanembu).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent la transmission des titres, des droits fonciers et des alliances matrimoniales dans tous ces groupes. Les noble lignages kanuri revendiquent une ascendance directe des mâïs de l'empire du Kanem-Bornu. Chez les Toubou, les droits sur les oases et pâturages sont transmis en ligne patrilinéaire.",
+      "religiousAuthority": "Islam sunnite malékite dominant dans tous les groupes depuis le 11e siècle (plus précocement chez les Kanuri et Kanembu, plus récemment chez les Toubou). Les oulémas, imams et chefs de confréries soufies (Tijaniyya, Qadiriyya) jouent un rôle important. Les pratiques syncrétiques et les coutumes juridiques préislamiques persistent (diya, maraboutisme)."
     },
     "languages": {
-      "mainLanguage": "Langues sahariennes (Kanuri, Kanembu, Toubou, Zaghawa, etc.)",
-      "vehicularRole": "Les langues sahariennes sont parlées par les peuples Sahariens. L'arabe, le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Langues sahariennes (branche de la famille nilo-saharienne) : kanuri, kanembu, tedaga, dazaga, zaghawa, berti",
+      "isoCodes": ["kau", "knc", "kbl", "tuq", "dzg", "zag", "bti"],
+      "dialects": [
+        "Kanuri (kau) : Central Kanuri (knc), Manga (kby), Tumari (krt), Bilma (bms)",
+        "Kanembu (kbl) : dialectes Mao, Mando, Nguri, Karkawu",
+        "Tedaga (tuq) : Teda du Tibesti, Teda du Kawar",
+        "Dazaga (dzg) : Daza, Kara, Kaga, Kanobo, Taruge",
+        "Zaghawa (zag) : dialectes tchadiens et soudanais",
+        "Berti (bti) : Darfour occidental (Soudan)"
+      ],
+      "vehicularRole": "Les langues sahariennes forment la plus grande branche de la famille nilo-saharienne en termes de locuteurs (environ 11 millions). Le kanuri est la plus parlée (environ 9,7 millions). Ces langues ont servi de langues véhiculaires le long des routes commerciales transsahariennes pendant des siècles. Le kanuri a été lingua franca au Nigeria, au Niger, au Tchad et au Cameroun. Ces langues coexistent aujourd'hui avec l'arabe, le français et l'anglais selon les pays."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels sahariens, symboles du royaume du Kanem-Bornou.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture saharienne."
+      "majorRites": "Rites islamiques communs à tous les groupes : circoncision masculine (rite de passage fondamental), mariage islamique (négociation de dot, cérémonies élaborées), funérailles (inhumation rapide, deuil communautaire). Célébrations des fêtes islamiques (Aïd el-Fitr, Aïd el-Adha) avec prières, sacrifices et festins collectifs. Hajj très valorisé dans tous les groupes. Rites propres à chaque groupe : intronisation du derde chez les Teda, cavalerie cérémonielle (kachahari) chez les Kanuri, cérémonies pastorales chez les Toubou.",
+      "symbols": "Le chameau (symbole universel de richesse, de mobilité et de prestige dans tout l'espace saharien). Le cheval (symbole du pouvoir noble, centrale pour les Kanuri). L'islam et la calligraphie arabe (symboles de l'identité culturelle depuis le 11e siècle). Le lac Tchad (espace identitaire central pour les groupes sédentaires). Le massif du Tibesti (foyer sacré des Teda). Les routes commerciales transsahariennes (héritage commun).",
+      "artsAndMusic": "Musique et poésie orales : chants épiques, chants de mariage et de deuil en langues sahariennes. Griots et maîtres de la parole conservant les traditions orales et les généalogies chez les Kanuri. Artisanat commun : travail du cuir, tissage, broderie, poterie, bijouterie en argent. Cavalerie cérémonielle (Kanuri). Architecture sahélienne en banco (Kanuri, Kanembu) ou en pierre (Teda dans le Tibesti). Commerce du sel et du natron (activité économique emblématique des Toubou et des Kanuri de Bilma).",
+      "spiritualities": "Islam sunnite malékite pratiqué depuis le 11e siècle dans tous les groupes. Confréries soufies Tijaniyya et Qadiriyya influentes. Pratiques syncrétiques : maraboutisme (amulettes coraniques, talismans), divination, esprits de la nature. Coutumes juridiques propres coexistant avec la loi islamique (diya, goroga). Chez les Teda : institution du derde intégrant des dimensions spirituelles préislamiques. Chez les Kanuri : rôle des proverbes dans l'enseignement moral islamique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora saharienne dans les grandes villes tchadiennes, nigériennes, nigérianes, soudanaises et libyennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "L'empire du Kanem-Bornu (c. 700-1893) est la contribution historique majeure des peuples sahariens à l'histoire africaine. Fondé par les Kanembu, porté à son apogée par les Kanuri, cet empire dura près de 1 200 ans et domina le commerce transsaharien d'Afrique centrale. Il contrôlait les routes du sel (Bilma), de l'ivoire et des esclaves entre l'Afrique subsaharienne et le monde méditerranéen. Les Toubou maintinrent leur autonomie dans le Tibesti et le Fezzan. Les Zaghawa contribuèrent à la fondation d'États au Darfour.",
+      "relationsWithNeighbors": "Relations complexes et durables avec les Haoussa (à l'ouest), les Arabes nord-africains (au nord), les peuples nilotiques du Soudan (à l'est) et les peuples de la savane (au sud). Commerce transsaharien structurant : sel de Bilma, ivoire, esclaves, chevaux, textiles, épices. Influence culturelle sur les peuples voisins (diffusion de l'islam, de la langue kanuri, des techniques artisanales).",
+      "conflictsOrAlliances": "L'empire du Kanem-Bornu domina militairement la région pendant des siècles. Conflits avec les Bulala (13e-15e siècles), les Fulani (19e siècle), Rabih az-Zubayr (1893). Alliance avec les Ottomans sous Idris IV Alooma. Partition coloniale (1900-1902). Guerres civiles tchadiennes (1965-2000) impliquant profondément Toubou et Zaghawa. Crise du Darfour (depuis 2003, impliquant les Zaghawa). Insurrections libyennes (2008-2012, impliquant les Toubou).",
+      "diaspora": "Communautés kanuri dans les villes du Nigeria, du Niger et du Cameroun. Diaspora daza à Omdurman (Soudan). Travailleurs teda en Arabie Saoudite. Réfugiés liés aux guerres civiles tchadiennes, au Darfour et aux violences de Boko Haram dans plusieurs pays. Migrations économiques vers l'Europe et le Golfe depuis les années 1980."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 11500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques"
+      "source": "Estimation cumulative basée sur SIL Ethnologue (2024) et sources diverses : Kanuri-Kanembu environ 10 millions, Teda environ 160 700, Daza (dont Kreda) environ 380 000, Zaghawa environ 700 000, Berti environ 100 000, Buduma environ 100 000. Total macro-groupe saharien : environ 11,5 millions.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 7650000,
+          "note": "Principalement Kanuri (Borno State, Yobe State)"
+        },
+        {
+          "country": "NER",
+          "population": 1600000,
+          "note": "Kanuri (Diffa, Zinder), petites communautés Teda (Kawar)"
+        },
+        {
+          "country": "TCD",
+          "population": 1600000,
+          "note": "Kanembu, Teda, Daza/Kreda, Zaghawa, Buduma"
+        },
+        {
+          "country": "SDN",
+          "population": 700000,
+          "note": "Principalement Zaghawa (Darfour), Berti, diaspora kanuri"
+        },
+        {
+          "country": "LBY",
+          "population": 50000,
+          "note": "Teda (Fezzan méridional), diaspora Daza"
+        },
+        {
+          "country": "CMR",
+          "population": 100000,
+          "note": "Kanuri (Far North Region)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Saharan languages",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples sahariens",
-      "Études historiques sur le royaume du Kanem-Bornou"
+      "Wikipedia EN — Kanuri people. https://en.wikipedia.org/wiki/Kanuri_people",
+      "Wikipedia EN — Toubou people. https://en.wikipedia.org/wiki/Toubou_people",
+      "Wikipedia EN — Kanem-Bornu Empire. https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire",
+      "Wikipedia EN — Saharan languages. https://en.wikipedia.org/wiki/Saharan_languages",
+      "SIL Ethnologue — Saharan subgroup. https://www.ethnologue.com/subgroup/767/",
+      "Country Studies US — Chad. https://countrystudies.us/chad/19.htm",
+      "Michigan State University ALMA — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+      "CIA World Factbook — Country profiles. https://www.cia.gov/the-world-factbook/"
     ]
   }
 }

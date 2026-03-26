@@ -1,23 +1,103 @@
 {
   "id": "PPL_MOZABITE",
-  "nameMain": "",
+  "nameMain": "Mozabite",
   "languageFamilyId": "FLG_BERBERE",
-  "currentCountries": [],
+  "currentCountries": ["DZA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Imuhagh n Mzab / At Mzab",
+      "mainName": "Mozabite",
+      "selfAppellation": "At Mzab (Imuhagh n Mzab)",
+      "exonyms": [
+        "Mzabite",
+        "Banu Mzab",
+        "Ibadites du Mzab",
+        "Ghardaia Berber"
+      ],
+      "originOfExonyms": "Le nom Mzab dérive du nom de la tribu Banu Mus'ab, une branche des Zénètes berbères. Le terme fut transformé en Mzab dans la langue berbère. Ibn Khaldoun désigne leur région par ce nom dès le 14e siècle. Le terme Mozabite est la francisation de ce nom, utilisé depuis la période coloniale française.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mozabite est utilisé en français et en anglais. En tamazight, ils se nomment At Mzab (gens du Mzab) ou Imuhagh n Mzab. La désignation Ibadite souligne leur appartenance religieuse distinctive. En algérien arabophone, on dit Banu Mzab.",
       "linguisticFamily": "FLG_BERBERE",
-      "historicalRegion": "Vallée du Mzab (Ghardaïa – Algérie)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Berbère zénète (Mzab-Wargla)",
+      "historicalRegion": "Vallée du Mzab (Chebka) — Ghardaïa — Sahara septentrional algérien",
+      "currentCountries": ["DZA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["UNESCO Mzab", "CNRS Berbère", "Ethnologue (mzb)"]
+    "ethnicities": [
+      "At Ghardaia — habitants de la ville de Ghardaïa, capitale de la confédération des cinq ksour",
+      "At Beni Isguen — habitants du principal centre commercial de la confédération, ville sainte",
+      "At El Atteuf — habitants du premier ksar fondé (vers 1010), le plus ancien établissement",
+      "At Melika — habitants du ksar de Melika",
+      "At Bounoura — habitants du ksar de Bounoura",
+      "At Berriane — communauté mozabite de l'oasis isolée au nord de la confédération principale",
+      "At El Guerrara — communauté mozabite de l'oasis d'El Guerrara"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mozabites descendent des Berbères zénètes de la branche Banu Mus'ab, qui habitaient la région du Mzab bien avant l'arrivée des Ibadites. Ibn Khaldoun les décrit comme des nomades de al-Wabar installés dans le désert. L'historien Nasser Belhadj soutient que les premiers habitants du Mzab étaient berbères et préexistaient aux migrations ibadites post-Tiaret.",
+      "formationPeriod": "Fondation de la communauté ibadite du Mzab entre 1010 et 1053 apr. J.-C. : El Atteuf fut le premier ksar (vers 1010), suivi de Bou Noura (1012), Ghardaïa (1048), Beni Isguen (1347) et Melika (1347). Cette période de fondation des cinq ksour constitue l'acte fondateur de la civilisation mozabite telle qu'elle existe aujourd'hui.",
+      "migrationRoutes": [
+        "Depuis Tiaret (Rustamides) vers Ouargla après la défaite fatimide de 911",
+        "Depuis Ouargla (Sedrata) vers la vallée du Mzab autour de 1010-1012",
+        "Migrations économiques vers les villes algériennes du nord au 20e-21e siècle"
+      ],
+      "historicalSettlementZones": [
+        "Tiaret — siège du califat rustamide (767-911)",
+        "Ouargla / Sedrata — refuge intermédiaire (911-1010)",
+        "Vallée du Mzab (Chebka), Ghardaïa — siège permanent depuis 1010",
+        "Berriane et El Guerrara — oasis satellites au nord"
+      ],
+      "unificationsOrDivisions": "Les cinq ksour originaux (El Atteuf, Bou Noura, Ghardaïa, Beni Isguen, Melika) forment une confédération unifiée sous l'autorité religieuse et politique ibadite. Deux oasis plus récentes (Berriane, El Guerrara) s'y rattachent. La confédération a maintenu son unité et son autonomie face aux Ottomans (autorité nominale reconnue au 16e siècle) puis aux Français (convention de 1853).",
+      "externalInfluences": "Fondation du califat rustamide par un chef ibadite persan réfugié (767). Pression fatimide ayant conduit à l'exil (911). Reconnaissance nominale de l'autorité ottomane (16e siècle). Annexion par la France en novembre 1882 après la convention de 1853. Influences modernisatrices depuis l'indépendance algérienne (1962).",
+      "majorHistoricalEvents": "En 767, un chef ibadite persan fonda la dynastie rustamide à Tiaret, convertissant les Berbères au chiisme ibadite. En 911, la défaite face aux Fatimides força les Ibadites à s'exiler vers Ouargla. Vers 1010-1053, fondation successive des cinq ksour du Mzab. En 1031, l'imam Muhammad ibn Abi Bakr al-Riyghi diffusa la doctrine ibadite auprès des Mzabites. En 1853, convention avec la France garantissant l'autonomie. En novembre 1882, annexion par l'Algérie française. Inscription des cinq ksour au Patrimoine mondial de l'UNESCO en 1982."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système théocratique ibadite fondé sur deux institutions complémentaires : la Halqa al-'Azaba (conseil des clercs célibataires religieux), organe spirituel et moral suprême, et le Majlis Ammi al-Said (conseil communautaire laïc), organe de gouvernance civile. La tajmaat (assemblée villageoise) fonctionne selon des principes égalitaires. Les décisions sont prises par consensus.",
+      "clanOrganization": "La confédération est organisée en sept communautés locales (cinq ksour principaux et deux oasis satellites), chacune constituant une entité administrative et religieuse autonome. Ghardaïa est la capitale de la confédération, Beni Isguen le principal centre commercial. Les liens de solidarité communautaire (twiza) sont très forts.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Société patrilinéaire. Les Mozabites pratiquent une forte endogamie : les mariages hors de la communauté ibadite sont découragés. Cette pratique a produit une homogénéité physique et culturelle notable. Les femmes sont protégées des regards extérieurs mais encouragées à s'éduquer et à exercer une profession. Les hommes voyagent dans tout le pays pour le commerce, mais reviennent périodiquement dans la vallée du Mzab.",
+      "religiousAuthority": "La Halqa al-'Azaba, conseil des clercs ibadites célibataires, constitue l'autorité religieuse et morale suprême de chaque communauté. Aucun non-ibadite n'est admis dans une mosquée mozabite. Le code moral est rigide et les standards de pureté religieuse élevés. L'islam ibadite (branche du kharijisme) est extrêmement strict, égalitaire et séparatiste."
+    },
+    "languages": {
+      "mainLanguage": "Mozabite (Tumzabt / tamazight) — langue berbère zénète",
+      "isoCodes": ["mzb"],
+      "dialects": [
+        "Tumzabt (dialecte de la vallée du Mzab, autour de Ghardaïa)",
+        "Dialecte de Berriane",
+        "Dialecte d'El Guerrara"
+      ],
+      "vehicularRole": "Le mozabite (Tumzabt) est la langue maternelle et d'usage communautaire. L'arabe algérien est largement parlé comme seconde langue, notamment pour le commerce avec le reste de l'Algérie. Le mozabite est une langue de transmission intergénérationnelle active au sein des sept villes de la confédération. UNESCO estime à environ 150 000 le nombre de locuteurs (2010). C'est une des langues berbères zénètes du groupe Mzab-Wargla."
+    },
+    "culture": {
+      "majorRites": "Rites ibadites stricts : prières quotidiennes dans des mosquées exclusivement ibadites, jeune du Ramadan rigoureux, célébrations communautaires encadrées par la Halqa al-'Azaba. Rites de passage : circoncision masculine, mariage endogame obligatoirement arrangé selon les règles ibadites. Festival annuel des tapis au printemps à Ghardaïa. Architecture des ksour conçue pour la vie communautaire : chaque maison est une cellule cubique standardisée illustrant l'égalitarisme ibadite. La Halqa al-'Azaba est l'institution religieuse et morale centrale des Mozabites. Ce conseil de clercs ibadites célibataires exerce une autorité spirituelle et jurît à la fois : elle enregistre les naissances, supervisent les mariages, impose les sanctions religieuses, gère les biens waqf (fondations pieuses), organise l'enseignement coranique. Elle est complémentée par le Majlis Ammi al-Said, conseil laïc pour les affaires civiles.",
+      "artsAndMusic": "Artisanat très développé : poterie, dinanderie (cuivre et laiton), bijouterie, tapis (festival annuel). L'architecture mozabite, source d'inspiration pour Le Corbusier lors de sa visite en 1931, est un art en soi. Tissage de tapis et couvertures à motifs géométriques. La musique est sobre et encadrée par les préceptes ibadites. L'architecture des ksour mozabites est une source d'inspiration mondiale pour les urbanistes. Chaque maison est une cellule cubique standard illustrant l'société égalitaire ibadite : intimacy et autonomie familiale respectées. Le Corbusier s'en inspira lors de sa visite de 1931. Les cinq ksour (El Atteuf, Bou Noura, Ghardaïa, Beni Isguen, Melika) sont inscrits au Patrimoine mondial UNESCO depuis 1982.",
+      "symbols": "Architecture des ksour (villages fortifiés) classée au Patrimoine mondial de l'UNESCO depuis 1982, symbole d'une société parfaitement adaptée à l'environnement désertique. La mosquée à minaret conique de Ghardaïa est un symbole architectural majeur. Le voile intégral porté par les femmes en public (un seul oeil visible) est un marqueur culturel distinctif. La palmeraie irriguée par des canaux souterrains (foggaras).",
+      "spiritualities": "Islam ibadite, branche distincte de l'islam né au 7e siècle lors de disputes sur le califat. L'ibadisme mozabite est extrêmement pur, égalitaire et séparatiste : refus du mariage hors communauté, ségrégation des mosquées. Absence de maraboutisme et de culte des saints (interdit par l'ibadisme). Forte solidarité communautaire (twiza) et aide aux pauvres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mozabites sont les héritiers directs de la dynastie rustamide ibadite (767-911), fondée à Tiaret par un réfugié persan. Après la chute de Tiaret face aux Fatimides (911), ils fondèrent une état indépendant dans le Mzab (1010-1882), résistant à l'autorité ottomane (16e siècle, autonomie préservée moyennant une reconnaissance nominale) et à la pression française jusqu'en 1882.",
+      "relationsWithNeighbors": "Relations commerciales intenses avec l'ensemble de l'Algérie : les hommes mozabites sont réputés pour leur commerce (épiceries, quincailleries) dans toutes les villes algériennes. Tensions récurrentes avec les populations arabes voisines (Chaamba notamment) autour de Ghardaïa. Conflits intercommunautaires en 2014-2015 entre Mozabites et Arabes chaamba.",
+      "conflictsOrAlliances": "Guerre ibadite contre l'Umayyade (740), repli vers Tiaret, puis exil forcé vers Ouargla (911). Maintien d'une alliance ibadite avec les Rustamides de Tiaret. Convention avec la France (1853) préservant l'autonomie mozabite. Annexion française (1882). Participation à l'indépendance algérienne (1962). Conflits intercommunautaires avec les Arabes chaamba en 2014.",
+      "diaspora": "Présence mozabite dans de nombreuses villes algériennes (Alger, Oran, Constantine, Annaba) où les hommes exercent le commerce, tout en maintenant leur domicile principal dans la vallée du Mzab. Quelques communautés en France et en Europe. La tradition de retour au Mzab est très forte : le Mzab reste le centre émotionnel et religieux pour l'ensemble de la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (estimations 150 000 à 300 000 personnes), UNESCO (150 000 locuteurs en 2010), Ethnologue (mzb). Estimation 2025 : environ 250 000 personnes identifiées comme Mozabites, en tenant compte de la croissance démographique algérienne depuis 2010.",
+      "distributionByCountry": [
+        {
+          "country": "DZA",
+          "population": 250000,
+          "note": "Principalement vallée du Mzab (Ghardaïa), avec diaspora commerciale dans les grandes villes algériennes"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mozabite people. https://en.wikipedia.org/wiki/Mozabite_people",
+      "Wikipedia EN — Mozabite language. https://en.wikipedia.org/wiki/Mozabite_language",
+      "UNESCO — M'Zab Valley World Heritage. https://whc.unesco.org/en/list/188/",
+      "Ethnologue — Tumzabt (mzb). https://www.ethnologue.com/language/mzb/",
+      "WALS Online — Berber (Mzab) ISO 639-3: mzb. https://wals.info/languoid/lect/wals_code_bmz",
+      "Britannica — M'zabite. https://www.britannica.com/topic/Mzabite",
+      "Joshua Project — Berber, Mozabite in Algeria. https://joshuaproject.net/people_groups/13842/AG",
+      "ASJP/CERIST — The Mozabite Heritage: Authenticity of Identity and Continuity. https://asjp.cerist.dz/en/downArticle/136/11/3/275367"
+    ]
   }
 }

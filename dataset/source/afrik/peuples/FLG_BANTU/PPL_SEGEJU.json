@@ -2,58 +2,81 @@
   "id": "PPL_SEGEJU",
   "nameMain": "Segeju",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA"],
+  "currentCountries": ["TZA", "KEN"],
   "content": {
     "appellations": {
       "mainName": "Segeju",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wasegeju",
+      "exonyms": ["Asagidzu", "Wasegeju"],
+      "originOfExonyms": "Wasegeju est la forme plurielle en swahili. Asagidzu est le terme utilise par les Mijikenda. L'ethnonyme Segeju derive des mots swahilis Kusega (tirer) et juu (vers le haut / haut), reference a l'habitude de porter les vetements en peau plus hauts que la coutume, remarquee lors des premiers contacts avec les Shirazi au XVIIe siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Segeju est utilise dans les recensements officiels tanzaniens et kenyans. La langue segeju est en voie d'extinction, beaucoup de membres de la communaute utilisant desormais le digo ou le swahili.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
-      "currentCountries": ["TZA"]
+      "ethnoLinguisticGroup": "Bantu, cote est de l'Afrique orientale; apparente aux groupes Thagicu (Kamba, Kikuyu) d'un point de vue historique",
+      "historicalRegion": "Cote nord-est de la Tanzanie (region de Tanga, district de Mkinga) et comte de Kwale au Kenya",
+      "currentCountries": ["TZA", "KEN"]
     },
     "ethnicities": ["Segeju"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les traditions orales segeju font remonter leur origine a Shungwaya, lieu legendaire situe approximativement au nord de l'ile de Pate en Somalie actuelle. Une autre version evoque une origine arabe, specifiquement du Yemen. Les liens linguistiques avec les Dhaiso et les peuples bantous du Kenya central (Kamba, Kikuyu) suggerent une origine commune dans le cours superieur du fleuve Tana.",
+      "formationPeriod": "L'identite segeju distincte s'est formee au cours des siecles precedant le XVIe siecle. Au XVIe siecle, les Segeju etaient clairement localises sur la cote kenyane, entre Mombasa et Malindi, comme en temoignent des documents portugais.",
+      "migrationRoutes": [
+        "Depuis Shungwaya (Somalie meridionale) vers la cote kenyane",
+        "De la cote kenyane (Mombasa-Malindi) vers le sud, apres les conflits du XVIe-XVIIe siecle",
+        "Migration partielle vers l'ile de Lamu et le cours inferieur du Tana",
+        "Installation finale sur la cote nord de la Tanzanie (region de Tanga)"
+      ],
+      "historicalSettlementZones": [
+        "Cote kenyane entre Mombasa et Malindi (avant le XVIIe siecle)",
+        "Bande cotiere entre Tanga (Tanzanie) et la frontiere kenya-tanzanienne",
+        "District de Mkinga, region de Tanga, Tanzanie",
+        "Comte de Kwale, Kenya"
+      ],
+      "unificationsOrDivisions": "Les Segeju etaient traditionnellement divises en deux moities appelees Tlamu et Tumbulu. Les conflits avec les Galla au XVIIe siecle ont fragmente la societe en au moins trois sections: un groupe a fui vers l'ile de Lamu (donnant naissance aux Bajuni), un autre vers Mwangea, et un troisieme vers le cours inferieur du Tana.",
+      "externalInfluences": "Islamisation par les contacts avec les Swahili et les Shirazi au XVIIe siecle. Contacts avec les Portugais au XVIe siecle. Influence arabe dans l'architecture (portes sculptees). Adoption progressive du digo comme langue domestique sur la cote tanzanienne.",
+      "majorHistoricalEvents": "Au XVIe siecle, les Zimba (bras militaire du royaume maravi) pillent les villes swahilis; les Segeju annihilent les Zimba devant Malindi (vers 1589) et acquierent une grande renommee guerriere. Au XVIIe siecle, attaques des Galla provoquant la fragmentation du peuple. Les Segeju aident les Portugais a Mombasa. Au XIXe siecle, guerres intestines et esclavage. Sous les dominations zanzibarite, allemande puis britannique, un chef (Jumbe Mkuu) est designe comme representant officiel."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme decentralise sans chefferie hereditaire traditionnelle. Les pouvoirs judiciaires etaient historiquement detenus par des hommes verses dans la charia (loi islamique). Sous les dominations etrangeres (Zanzibar, Allemagne, Royaume-Uni), un Jumbe Mkuu (chef nomme) etait designe; sous son autorite, 17 chefs de village (Jumbes) administraient les villages importants.",
+      "clanOrganization": "La tribu etait historiquement divisee en deux moities: Tlamu et Tumbulu. Le principal regroupement social est le mlango (clan). La preference pour le mariage entre cousins, adoptee comme institution islamique, a transforme les communautes en reseaux de parente tres denses.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme de descendance a evolue au cours des deux derniers siecles d'un systeme de clans patrilineaires vers un systeme reticulaire ou la descendance et les relations sont tracees a travers les lignes masculines et feminines. Les frais funeraires d'une femme sont partages entre son mari, les freres de son mari et ses propres freres et soeurs.",
+      "religiousAuthority": "Autorite religieuse islamique (sheikhats et imams). Sheikh Ali Mohamed de Tanga etait le prelat mohamedan en chef de la region au moment des observations coloniales. Les walimu (enseignants) transmettent la connaissance religieuse aux enfants."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Segeju",
+      "isoCodes": ["seg"],
+      "dialects": [],
+      "vehicularRole": "Le segeju est une langue en danger critique: en 2012, moins de 7 000 personnes la parlaient encore, et elle n'a pas de forme ecrite. La plupart des Segeju ont adopte le digo comme langue domestique sur la cote tanzanienne; le swahili est la langue de communication formelle. La langue segeju n'est pas enseignee dans les ecoles."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques islamiques sunni (priere, ramadan, pelerinage). Mariage entre cousins comme pratique islamique adoptee. Ceremonies funeraires avec partage des depenses entre la famille de l'epoux et les freres et soeurs de la defunte. Artisanat traditionnel (nattes tissees, peignes sculptes, rapeurs a noix de coco, tabourets en bois).",
+      "symbols": "La mer et la peche sont au coeur de l'identite culturelle segeju sur la cote tanzanienne. Les portes sculptees (version simplifiee des portes arabes ornees) sont un element architectural emblematique des villages segeju de Moa. L'identite tribale est vivement ressentie malgre la pression demographique des peuples voisins.",
+      "artsAndMusic": "Artisanat specialise: teinture de feuilles de palmier en nuances de violet et mauve, tressage en bandes etroites et couture pour fabriquer des nattes de couchage. Fabrication de peignes sculptes a la main, rapeurs a noix de coco et tabourets en bois.",
+      "spiritualities": "Pratiquement tous les Segeju sont musulmans sunnites de l'ecole shafi'ite, en raison des interactions historiques et des mariages interethniques avec les Swahili voisins au XVIIe siecle. Une petite minorite chretienne existe parmi les Segeju du Kenya. Des pratiques pre-islamiques subsistent en parallele."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Absence de chefferie hereditaire traditionnelle clairement etablie. Systeme politique base sur des anciens et des leaders religieux. Sous les dominations etrangeres: Jumbe Mkuu comme representant officiel avec 17 Jumbes de village.",
+      "relationsWithNeighbors": "Relations de parente avec les Digo (un des neuf clans mijikenda). Alliance historique avec les Shirazi et les Swahili. Tensions et guerres avec les Digo au XIXe siecle (esclavage). Relations historiques avec les Portugais (alliance militaire). Connexion linguistique et historique avec les Dhaiso des monts Usambara.",
+      "conflictsOrAlliances": "Alliance avec les Portugais contre les Arabes de Mombasa au XVIe-XVIIe siecle. Anihilation des Zimba devant Malindi (vers 1589), un des faits d'armes les plus notes de leur histoire. Conflits internes et esclavagisme au XIXe siecle. Deplacement progressif vers le sud sous la pression des groupes voisins.",
+      "diaspora": "Certains Segeju ont migre vers des zones urbaines comme Mombasa (Kenya) en quete de meilleures opportunites economiques. Cette migration entraine souvent une rupture avec les liens communautaires et la non-transmission des traditions culturelles et linguistiques."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 37000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2025",
+      "distributionByCountry": [
+        { "country": "TZA", "population": 30000 },
+        { "country": "KEN", "population": 7000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Segeju people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Segeju_people)",
+      "Segeju Language (SEG) – Ethnologue, SIL International (https://www.ethnologue.com/language/seg/)",
+      "Segeju in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14816/TZ)",
+      "Segeju in Kenya Profile – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14816/KE)",
+      "Segeju of Tanzania (PGID: PG015035) – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015035/)",
+      "Segeju Tribe: People of the North Tanganyika Coast – Institute of Current World Affairs, 1956 (http://www.icwa.org/wp-content/uploads/2015/10/RFG-22.pdf)"
+    ]
   }
 }

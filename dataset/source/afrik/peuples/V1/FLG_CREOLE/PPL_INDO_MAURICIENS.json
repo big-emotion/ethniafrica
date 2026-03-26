@@ -1,0 +1,61 @@
+{
+  "id": "PPL_INDO_MAURICIENS",
+  "nameMain": "Indo-Mauriciens",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["MUS"],
+  "content": {
+    "appellations": {
+      "mainName": "Indo-Mauriciens",
+      "selfAppellation": "",
+      "exonyms": [
+        "\"Coolies\" (terme colonial péjoratif pour les travailleurs engagés indiens), \"Indiens\" (terme générique)"
+      ],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Toutes les régions de MUS, majoritaires",
+      "currentCountries": ["MUS"]
+    },
+    "ethnicities": ["Indo-Mauriciens"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Toutes les régions de MUS, majoritaires"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "N/A",
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 750,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

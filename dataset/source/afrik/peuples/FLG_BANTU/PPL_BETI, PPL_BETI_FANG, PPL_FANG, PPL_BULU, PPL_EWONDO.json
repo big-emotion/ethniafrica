@@ -2,63 +2,115 @@
   "id": "PPL_BETI",
   "nameMain": "Beti-Fang-Bulu",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["CMR"],
+  "currentCountries": ["CMR", "GNQ", "GAB", "COG"],
   "content": {
     "appellations": {
       "mainName": "Beti-Fang-Bulu",
-      "selfAppellation": "",
-      "exonyms": [
-        "\"Beti-Pahouin\" (catégorie coloniale englobante, terme problématique), \"Pahouins\" (ancienne étiquette coloniale pour les Fang)"
-      ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ekang",
+      "exonyms": ["Beti-Pahouin", "Pahouins", "Pangwe", "Pamue", "Fan"],
+      "originOfExonyms": "Le terme Beti-Pahouin est une categorie coloniale forgee par les administrations europeennes pour designer l'ensemble des groupes Beti, Fang et Bulu. Pahouin ou Pangwe etait l'ancienne appellation coloniale donnee aux Fang, parfois etendue a l'ensemble du groupe. Ekang est le terme d'auto-designation pan-ethnique revendique par les sous-groupes Beti, Fang, Bulu et Ewondo qui se reconnaissent un ancetre commun.",
+      "whyProblematic": "Le terme Pahouin est considere comme pejoratif et d'origine coloniale. L'appellation Beti-Pahouin amalgame des sous-groupes ayant des identites distinctes (Ewondo, Fang, Bulu, Eton, Bane). La categorisation coloniale a parfois occulte les frontieres identitaires internes.",
+      "contemporaryUsage": "Le terme Beti-Pahuin est utilise dans les statistiques officielles camerounaises et les publications academiques. Les sous-groupes se designent surtout par leurs noms propres (Ewondo, Fang, Bulu, Eton). Ekang est utilise comme terme federateur pan-ethnique dans le discours contemporain. La langue principale de reference est l'Ewondo (ewo) avec le Fang (fan) et le Bulu (bum).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre-Sud du Cameroun (forêts équatoriales)",
-      "currentCountries": ["CMR"]
+      "ethnoLinguisticGroup": "Bantou forestiers (zone A70, Beti-Fang)",
+      "historicalRegion": "Centre-Sud du Cameroun, forets equatoriales",
+      "currentCountries": ["CMR", "GNQ", "GAB", "COG"]
     },
-    "ethnicities": ["Beti-Fang-Bulu"],
+    "ethnicities": [
+      "Beti (Ewondo/Kolo, Bane, Eton, Mbida-Mbane)",
+      "Fang (Ntumu, Mvae, Okak)",
+      "Bulu (Bulu propre, Zaman, Fong, Mvele)",
+      "Ewondo (Yaunde)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Centre-Sud du Cameroun (forêts équatoriales)"
+      "ancientOrigins": "Les Beti-Fang-Bulu sont un ensemble de peuples bantous dont les ancetres vivaient dans les savanes du Cameroun septentrional et central, pres de l'actuel Ngaoundal-Tibati (departement du Djerem). Selon les traditions orales, leurs ancetres communs vecurent pres d'un grand lac et furent chasses par un peuple appele 'les Rouges', se divisant en trois branches: Beti (droite), Bulu (centre), Fang (gauche). Des recherches archeologiques confirment leur presence dans le Haut-Sanaga des le XVIe siecle.",
+      "formationPeriod": "Entre le XVIIe et le XIXe siecle: vers 1665, le Fang se separa du groupe Bulu-Beti et migra vers les forets du sud-Cameroun et du Gabon. Les Bulu abandonnerent les savanes du Cameroun vers le milieu du XIXe siecle sous la pression des Baare-Tchamba. Les Beti (Ewondo) suivirent leurs predecesseurs Fang et Bulu pour occuper les terres adjacentes autour de l'actuel Yaounde.",
+      "migrationRoutes": [
+        "Depuis la savane du Cameroun meridional (Ngaoundal-Tibati, Haut-Sanaga) vers les forets du Centre et Sud-Cameroun (XVIIe-XIXe siecles)",
+        "Migration du Fang vers le sud-Cameroun et le Gabon via la region de l'Est (a partir de 1665)",
+        "Migration du Bulu vers Sangmelima, Ebolowa, Kribi (1840-1880 sous Nsim Biyo'o)",
+        "Les Ewondo s'installerent autour de l'actuel Yaounde (Centre-Cameroun)",
+        "Extension du Fang vers la Guinee equatoriale (Rio Muni) et le nord du Gabon"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Centre-Sud du Cameroun (region de Yaounde pour les Ewondo, forets du Sud pour Bulu et Fang)",
+        "Region de la Sangmelima, Ebolowa, Kribi (Bulu)",
+        "Guinee equatoriale continentale (Rio Muni) - Fang (85% de la population)",
+        "Nord du Gabon jusqu'a l'estuaire de l'Ogooue - Fang (1/4 de la population)",
+        "Zones forestieres equatoriales entre la riviere Sanaga au nord et la Guinee equatoriale au sud"
+      ],
+      "unificationsOrDivisions": "L'ensemble Beti-Fang-Bulu regroupe plus de 20 clans individuels qui se reconnaissent un ancetre commun mais maintiennent des identites distinctes. Les sous-groupes principaux sont les Beti (avec Ewondo, Eton, Bane), le Fang proprement dit, et le Bulu. Les langues Beti sont mutuellement intelligibles, renforçant le sentiment d'appartenance commune au groupe Ekang.",
+      "externalInfluences": "Pression des Foulani (jihad d'Usman dan Fodio) et des Haoussa qui pratiquaient le commerce d'esclaves et d'ivoire, poussant les Beti-Fang-Bulu vers les forets meridionales. Invasion des Baare-Tchamba au sud de l'Adamaoua (XIXe siecle). Presence coloniale allemande (fin XIXe-1916), puis française et espagnole. Missions catholiques et protestantes à partir de la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Migration depuis la savane vers les forets equatoriales (XVIIe-XIXe siecles). Separation Fang-Bulu-Beti (vers 1665). Migration Bulu sous Nsim Biyo'o (1866-1883). Occupation allemande (1884-1916). Colonisation française du Cameroun (1916-1960). Independance du Cameroun (1960) et de la Guinee equatoriale (1968). Resurgence post-coloniale des traditions (musique Bikutsi des Ewondo, culte Bwiti des Fang)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Pas de royaumes centralises: organisation en chefferies a autorite limitee. Le chef de clan (also chef religieux) exerce une autorite nominale. Organisation lignagere patrilineaire constituant la colonne vertebrale de la societe. Plusieurs families d'une meme lignee constituent un village; plusieurs villages apparentes forment un clan. Structure decentralisee typique des societes forestieres bantou.",
+      "clanOrganization": "Plus de 20 clans individuels au sein de l'ensemble Beti-Pahuin. Chaque clan a un nom et une identite propre. Les sous-groupes Beti comprennent: Ewondo (Kolo), Bane, Eton (avec sous-groupes Eton-Beti, Eton-Beloua, Beloua-Eton), Mbida-Mbane, Mvog-Nyenge, Bran (Brong). Les sous-groupes Fang comprennent Fang propre, Ntumu, Mvae, Okak. Les sous-groupes Bulu comprennent Bulu propre, Fong, Zaman, Yengono, Yembama, Yelinda, Yesum, Yebekanga, Yebekolo, Mvele.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Filiation patrilineaire dominante (avec persistance d'un lien maternel oncle-neveu fort, heritage d'anciennes pratiques matrilineaires). La famille (homme, epouse(s), enfants) constitue l'unite de base. Les terres appartiennent au clan patrilineaire. Les anciens de lignages organisent les ceremonies rituelles majeures (mariage, funerailles).",
+      "religiousAuthority": "Le chef de clan assume egalement une fonction d'autorite religieuse. Societes secretes (Bwiti chez les Fang). Guerisseurs traditionnels et devins consultés parallelement aux eglises chretiennes. Syncrétisme courant: pratique du christianisme le dimanche et des societes secretes ou guerisseurs traditionnels le reste du temps."
     },
     "languages": {
-      "mainLanguage": "Beti-Fang-Bulu (ewo)",
-      "isoCodes": ["ewo"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ewondo (langue vehiculaire principale)",
+      "isoCodes": ["ewo", "bum", "fan"],
+      "dialects": [
+        "Ewondo (ewo, 1 200 000 locuteurs en 1982)",
+        "Bulu (bum, 174 000 locuteurs)",
+        "Fang (fan, 1 520 000 locuteurs au total: CMR, GNQ, GAB, COG)",
+        "Eton (500 000 locuteurs en 1982)",
+        "Bane",
+        "Eton-Beti"
+      ],
+      "vehicularRole": "L'Ewondo est la langue Beti la plus parlee au Cameroun et sert de lingua franca a Yaounde et dans les provinces du Centre et du Sud. Les langues Beti-Fang-Bulu sont mutuellement intelligibles. Le français est la langue officielle dominante au Cameroun et au Gabon; l'espagnol en Guinee equatoriale. Ces langues appartiennent a la zone A70 (Beti-Fang, Ewondo-Fang) de la classification Bantu."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiations et cultes des ancetres. Rites de mariage avec echanges de dot. Ceremonies funebres elaborees. Bikutsi: danse et musique traditionnelle des Ewondo, ayant connue une resurgence post-coloniale. Le Bwiti est un culte initiatique syncrétique des Fang impliquant l'usage d'iboga (Tabernanthe iboga), melant elements bantou et influences mikogo/syncrétiques; repandu aussi au Gabon.",
+      "symbols": "Masques traditionnels en bois sculpte (notamment masques Ngil des Fang), sculptures, symboles lignagers. Le leopard et d'autres animaux totémiques associes aux clans. La foret equatoriale comme espace sacre et refuge symbolique.",
+      "artsAndMusic": "Sculptures sur bois, ivoire et steatite reconnues internationalement (masques Fang et Bulu). Vannerie. Agriculture de cacao et cafe (principales cultures de rente). Musique Bikutsi des Ewondo (rythmes binaires caracteristiques). Musique ngombi (harpe arquee des Fang). Danse et rituel Bwiti lies a l'usage de l'iboga. Alimentation: manioc, mais, bananes plantains, ignames, arachides (appelees Ewondo en leur langue), produits forestiers, gibier (pangolin, porc-epic, singe), insectes, champignons.",
+      "spiritualities": "Animisme ancestral: veneration des ancetres, societes secretes. Bwiti: societe initiatique syncrétique parmi les Fang (et Gabon), combinant elements bantou et influences exterieures, utilisant l'iboga comme entheogene. Culte Ngil (chez les Fang): societe secret d'origine represetant un esprit ancestral. Christianisation massive avant 1939 (puis abandon de nombreuses pratiques traditionnelles); resurgence post-coloniale des traditions. Aujourd'hui: majorite se declare chretienne (catholique ou protestante) tout en maintenant des pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise mais un systeme de chefferies decentralisees a l'echelle du clan ou du village. Le chef de clan est egalement autorite religieuse. Les Beti-Pahuin forment le premier groupe ethnique du Cameroun central et de sa capitale Yaounde (nommee d'apres les Ewondo ou Yaunde). En Guinee equatoriale, les Fang constituent 85% de la population.",
+      "relationsWithNeighbors": "Voisins: au nord, les Bassa et Kirdi; interaction avec les Njem, Baka (Pygmees en cours de pahouinisation), Manguissa, Yekaba, Bamvele, Evuzok. Conflits historiques avec les Fulani au nord. Commerce d'ivoire et d'esclaves avec les Haoussa et les Arabes. En Guinee equatoriale, coexistence avec les Bubi et autres minorites.",
+      "conflictsOrAlliances": "Pression et jihadisme des Foulani (XVIIe-XIXe siecles) forçant les migrations vers le sud. Commerce d'esclaves via les reseaux Haoussa. Resistance a la penetration coloniale allemande (fin XIXe siecle). En Guinee equatoriale, les Fang ont fourni la majorite de l'elite politique depuis l'independance.",
+      "diaspora": "Presence importante dans les villes camerounaises (Yaounde, Douala). Diaspora en Europe (principalement France, Espagne pour les Fang de Guinee equatoriale). Les Ewondo et Beti de Yaounde constituent une elite politique et administrative visible au Cameroun depuis l'independance."
     },
     "demography": {
-      "totalPopulation": 6,
+      "totalPopulation": 8000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia Beti-Pahuin peoples (plus de 8 millions au debut du XXIe siecle); Fang: env. 3 320 000 (Britannica); Bulu env. 174 000 (Ethnologue); Ewondo 1 200 000 (Ethnologue 1982, actualise)",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 5500000,
+          "note": "Ewondo, Bulu, Eton, Bane et Fang du sud-Cameroun"
+        },
+        {
+          "country": "GNQ",
+          "population": 1200000,
+          "note": "Fang (85% de la population de Guinee equatoriale continentale)"
+        },
+        {
+          "country": "GAB",
+          "population": 700000,
+          "note": "Fang (1/4 de la population du Gabon)"
+        },
+        {
+          "country": "COG",
+          "population": 8500,
+          "note": "Fang (Congo-Brazzaville)"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Beti-Pahuin peoples – Wikipedia (https://en.wikipedia.org/wiki/Beti-Pahuin_peoples)",
+      "Beti people – Wikipedia (https://en.wikipedia.org/wiki/Beti_people)",
+      "Fang people – Wikipedia (https://en.wikipedia.org/wiki/Fang_people)",
+      "The Fang-Bulu-Beti (1665-1850): origin and migrations in Central Africa – Sociology International Journal, 2023 (https://medcraveonline.com/SIJ/the-fang-bulu-beti-1665-1850-origin-and-migrations-in-central-africa.html)",
+      "Fang – Encyclopaedia Britannica (https://www.britannica.com/topic/Fang-people)",
+      "Ewondo Language (EWO) – Ethnologue SIL (https://www.ethnologue.com/language/ewo/)",
+      "Beti-Pahuin peoples – 101 Last Tribes (https://www.101lasttribes.com/tribes/beti-pahuin.html)",
+      "The Fang and The Ewondo of Yaounde – Black History and Culture Blog, 2019 (https://blackhistory938.wordpress.com/2019/07/13/the-fang-tribe/)"
+    ]
   }
 }

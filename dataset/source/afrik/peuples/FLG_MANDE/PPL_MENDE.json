@@ -1,23 +1,110 @@
 {
   "id": "PPL_MENDE",
-  "nameMain": "",
+  "nameMain": "Mende",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": [],
+  "currentCountries": ["SLE", "LBR"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Mende",
       "selfAppellation": "Mende",
+      "exonyms": ["Boumpe", "Hulo", "Kossa", "Kosso"],
+      "originOfExonyms": "Les termes Boumpe, Hulo, Kossa et Kosso sont des appellations donnees par des peuples voisins pour designer les Mende ou certains de leurs sous-groupes. Ces exonymes sont peu utilises aujourd'hui. Mende est a la fois l'endonyme et le terme universel reconnu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mende est universellement utilise en Sierra Leone et au Liberia. C'est egalement le nom de la langue dans les classifications linguistiques internationales. Les Mende eux-memes l'utilisent comme terme d'identification premier.",
       "linguisticFamily": "FLG_MANDE",
-      "historicalRegion": "Sierra Leone (Sud-Est)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Mande meridional (branche Mande de la famille Niger-Congo)",
+      "historicalRegion": "Sud-Est de la Sierra Leone (provinces du Sud et de l'Est: Bo, Kenema, Kailahun, Moyamba, Pujehun)",
+      "currentCountries": ["SLE", "LBR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (men)", "Sierra Leone National Archives"]
+    "ethnicities": [
+      "Kpa-Mende: principalement dans le district de Moyamba au sud, confederation dirigee par Madam Yoko (1849-1906)",
+      "Golah-Mende: habitent la foret Gola entre les districts de Kenema et Pujehun en Sierra Leone et au Liberia",
+      "Sewa-Mende: installes le long de la riviere Sewa",
+      "Vai-Mende: presents au Liberia et dans le district de Pujehun en Sierra Leone",
+      "Koh-Mende: dominants dans le district de Kailahun"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Mende sont issus du melange de deux peuples: des chasseurs et pecheurs vivant en petits groupes pacifiques, et des migrants venus de la region de Moussadou (Guinee actuelle) au 16e siecle, apportant l'art de la guerre et construisant de plus grandes communautes. Ces migrants etaient tres probablement les Manes (Mane people) qui descendirent vers les basses terres cotieres, conquerant et se melant aux Bullom autochtones pour former le peuple mende.",
+      "formationPeriod": "La formation du peuple mende tel qu'on le connait aujourd'hui remonte au 16e siecle, avec la fusion des populations autochtones et des conquérants mane. L'organisation en confederations de chefferies s'affirma progressivement. Au 19e siecle, des guerres regionales affaiblirent certains groupes et conduisirent a la capture et a la vente en esclavage de nombreux locuteurs mende. L'identite mende se consolida sous la periode coloniale britannique.",
+      "migrationRoutes": [
+        "Migration des Manes depuis la region de Moussadou (Guinee actuelle) vers les basses terres de Sierra Leone (16e siecle)",
+        "Expansion progressive vers le sud-est de la Sierra Leone et le nord-ouest du Liberia",
+        "Deportation de Mende comme esclaves vers Cuba puis Amerique du Nord (incident de l'Amistad, 1839)"
+      ],
+      "historicalSettlementZones": [
+        "Provinces du Sud et de l'Est de la Sierra Leone (Bo, Kenema, Kailahun, Moyamba, Pujehun)",
+        "Foret Gola entre la Sierra Leone et le Liberia (Golah-Mende)",
+        "Vallee de la riviere Sewa (Sewa-Mende)",
+        "District de Kailahun (nord-est, Koh-Mende)"
+      ],
+      "unificationsOrDivisions": "Les Mende sont organises en cinq principales subdivisions (clans territoriaux): Kpa-Mende, Golah-Mende, Sewa-Mende, Vai-Mende et Koh-Mende. Chaque sous-groupe possede ses propres chefferies. Madam Yoko (1849-1906) dirigea la Confederation kpa-mende et fut reconnue par les Britanniques comme chef supreme sur un territoire divise en 14 chefferies (1894). Aujourd'hui, les Mende dominent politiquement les Provinces du Sud et de l'Est et sont associes au Parti du Peuple de Sierra Leone (SLPP).",
+      "externalInfluences": "Influences des Manes conquerants (16e siecle): apport des structures guerrieres et politiques. Traite atlantique des esclaves (17e-19e siecle): nombreux Mende deportes. Colonisation britannique (Protectorat de Sierra Leone, 1896): reorganisation des chefferies sous controle colonial, institution du role de chef supreme. Independance de la Sierra Leone (1961) sous Sir Milton Margai, Mende de naissance.",
+      "majorHistoricalEvents": "Conquete et fusion avec les Bullom (16e siecle) pour former l'identite mende. Incident de l'Amistad (1839): 52 Mende libres captivés par des negriers portugais, rebellion menee par Sengbe Pieh (Joseph Cinque), affaire juridique qui affirma leur liberte. Madam Yoko (1849-1906): première grande dirigeante politique reconnue, paramount chief. Independance de la Sierra Leone (27 avril 1961) avec Sir Milton Margai comme premier ministre. Guerre civile (1991-2002): les Kamajors (milice de chasseurs mende) jouerent un role majeur dans la defense des communautes. Invention du syllabaire Kikakui par Muhamad Turay (1917), popularise par Kisimi Kamara."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies patrilineaires avec un chef supreme (paramount chief) a la tete de chaque chefferie. Les femmes peuvent acceder au leadership: en periode coloniale, 15 a 20% des dirigeants locaux etaient des femmes. Les chefferies sont regroupees en confederations territoriales. L'autorite politique repose sur la legitimite du lignage fondateur, l'autorite des anciens et les societes secretes Poro (hommes) et Sande (femmes) qui encadrent la vie sociale et politique.",
+      "clanOrganization": "Societe patrilineaire et patrilocalite: l'homme vivant avec ses freres, femmes et enfants. Le male aine a autorite sur les dettes, dommages et dot (bride-wealth) de toute la maisonnee. Les cinq clans territoriaux (Kpa, Golah, Sewa, Vai, Koh) structurent l'identite regionale.",
+      "ageClassSystems": "La societe Poro (masculine) organise l'initiation des garcons en classes d'age. La societe Sande (feminine) encadre l'initiation des jeunes filles a la puberte. Ces societes conferent une appartenance collective definissant le statut social.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, l'acces a la terre, le statut politique et les alliances matrimoniales. Le manage est polygyne; la premiere epouse a l'autorite sur les autres epouses. Les femmes accedent au pouvoir comme epouses seniors dans les menages polygames, comme ainees des groupes proprietaires de terres, ou comme leaders des chapitres Sande.",
+      "religiousAuthority": "La societe Sande (feminine) et la societe Poro (masculine) detiennent l'autorite religieuse et rituelle traditionnelle. Les hauts membres Sande (Sowie) ont acces aux connaissances sacrees, aux ancetres et aux forces naturelles. L'islam est presente (majorite nominale) mais le christianisme est egalement significant (environ 13% selon Joshua Project). Le syncretisme entre pratiques traditionnelles des societes secretes et les religions abrahamiques est courant."
+    },
+    "languages": {
+      "mainLanguage": "Mende",
+      "isoCodes": ["men"],
+      "dialects": [
+        "Mende standard (variete de reference, parlee dans les Provinces du Sud et de l'Est de Sierra Leone)",
+        "Mende du Liberia (nord-ouest du Liberia, Golah-Mende et Vai-Mende)"
+      ],
+      "vehicularRole": "Le mende est l'une des langues officielles dans les parties de Sierra Leone ou il est parle. Avec le temne, il est la langue maternelle principale de Sierra Leone (32% des locuteurs primaires selon le recensement de 2004). Il est langue d'instruction dans l'education primaire dans les zones Mende. L'anglais et le krio sont utilises comme vehiculaires nationaux. Un syllabaire propre, le Kikakui (invente en 1917), a ete utilise pour ecrire le mende jusqu'aux annees 1940."
+    },
+    "culture": {
+      "majorRites": "Societe Poro (masculine): initiation des garcons a la virilite, duree historique de 7 ans (aujourd'hui reduite); apprentissage des responsabilites, de la sagesse et du leadership; language secret et mots de passe; les inities sont symboliquement devores et renais par l'esprit masque; entrainement intensif a la danse (jusqu'a 48h) par le Ndoli jowei (expert en danse), punitions pour les erreurs; acces progressif a des savoirs secrets. Societe Sande (feminine): toutes les femmes entrent a la puberte; clitoridectomie (excision) comme rite de passage marquant le passage de l'enfance a la femminite; apprentissage des responsabilites adultes; la Sowie (leader supreme Sande) incarne les ideaux moraux, applique les regles sociales, accede aux ancetres. Ceremonie de nomination du nouveau-ne. Rituels de funérailles: inhumation avec ceremonies specifiques selon le statut du defunt. Activites agricoles collectives: groupes de travail se deplacement de ferme en ferme pour les semailles et recoltes.",
+      "symbols": "Le masque Sowei (ou Ndoli jowei): masque-casque en bois noir, porte par les femmes lors des evenements Sande; caracteristiques symboliques: tete d'oiseau (intuition), front eleve (chance et intelligence), yeux baisses (vue spirituelle), petite bouche (humilite), scarifications sur les joues (feminite et vie difficile), bourrelets autour du cou (sante, prosperite et ondes de l'esprit de l'eau Sowo). Argile blanche (Hojo): pigment tire de l'eau, blanc pur; symbole de purete Sande, de protection et d'appartenance au monde des esprits; marque les inities et les Sowie. La chevelure: epaisse et longue synonyme de feminite, force et fecondite; sale ou sauvage synonyme de folie ou d'immoralite.",
+      "artsAndMusic": "Masques Sowei (Ndoli jowei): parmi les oeuvres d'art africaines les plus reconnues mondialement; sculptes dans le bois kpole selon un design revele en reve au sculpteur; utilises dans les initiations, les funérailles, les arbitrages et les installations de chefs; exposes au British Museum (exhibition 2013) et dans de nombreux musees mondiaux. Bijoux: colliers et bracelets en or et argent, boucles d'oreilles avec clochettes (les esprits entendent le bruit, les femmes en portent plusieurs). Textiles tisses: tissus traditionnels de la Sierra Leone. Musique: chants collectifs lors des ceremonies Sande et Poro, danses rituelles; preservation du chant Mende A waka par la communaute Gullah de Georgie (USA) pendant 200 ans (retrouve dans les annees 1990 par des chercheurs). Conte oral: tradition riche de narration orale preservant l'histoire et les valeurs.",
+      "spiritualities": "Les societes Poro et Sande sont le coeur de la vie spirituelle traditionnelle mende. La societe Sande est gardienne de l'esprit de l'eau Sowo (ou Sowei), divinite feminine protectrice associee aux rivières et aux forces de la nature; les masques Sowei incarnent cet esprit lors des ceremonies. L'islam est la religion majoritaire nominale, introduit progressivement depuis plusieurs siecles mais souvent syncrétise avec les pratiques traditionnelles. Le christianisme est present de maniere significative, notamment chez les Mende evangelises depuis l'ere coloniale britannique. Dualite corps-esprit: le corps comme enveloppe materielle et l'esprit comme essence permanente reliee aux ancetres et aux forces naturelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mende n'ont pas forme d'empire centralise mais de nombreuses confederations de chefferies. La Confederation kpa-mende dirigee par Madam Yoko (1849-1906) est la plus documentee: elle fut reconnue paramount chief par les Britanniques en 1894 sur un territoire de 14 chefferies. Les chefferies mende constituent l'unite politique fondamentale, avec le paramount chief hereditaire a la tete de chacune.",
+      "relationsWithNeighbors": "Rivalite politique historique avec les Temne (premiere ethnie de Sierra Leone, 35,5% de la population): les Mende sont associes au SLPP (Parti du Peuple de Sierra Leone) tandis que les Temne soutiennent l'APC (All People's Congress). Presence des Golah-Mende et Vai-Mende au Liberia avec des populations apparentees. Conquete historique des Bullom par les Manes (ancetres des Mende) au 16e siecle. Relations commerciales avec les groupes cotieres (Sherbro, Krio).",
+      "conflictsOrAlliances": "Guerres regionales au 19e siecle ayant conduit a la capture et vente en esclavage de nombreux Mende. Incident de l'Amistad (1839): affrontement judiciaire et politique international autour de 52 Mende libres. Resistance a l'etablissement du Protectorat britannique (revolte de Bai Bureh, 1898). Guerre civile de Sierra Leone (1991-2002): les Kamajors (chasseurs traditionnels mende) combattent le RUF; Samuel Hinga Norman, Mende, dirige les Forces de Defense Civile.",
+      "diaspora": "Diaspora historique liee a la traite des esclaves: des Mende deportes aux Ameriques ont preserve des elements de leur culture, notamment le chant A waka conserve par la communaute Gullah de Georgie (USA) pendant deux siecles. Coretta Scott King (epouse de Martin Luther King Jr.) aurait des origines mende. Diaspora contemporaine dans les grandes villes de Sierra Leone (Freetown) et dans les pays occidentaux (Royaume-Uni, USA, Canada) selon Joshua Project (6 900 aux USA, 1 100 au Canada)."
+    },
+    "demography": {
+      "totalPopulation": 2785000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): 2 785 100 total (Sierra Leone 2 730 000, Liberia 44 000, USA 6 900, Guinee 3 100, Canada 1 100). PeopleGroups.org (2025): 2 850 000 environ. Sierra Leone: 31,2% de la population totale selon Wikipedia, correspondant a environ 2,8 millions sur une population nationale de 8,98 millions (Ethnologue 2025).",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 2730000,
+          "note": "Provinces du Sud et de l'Est: Bo, Kenema, Kailahun, Moyamba, Pujehun; 31,2% de la population nationale"
+        },
+        {
+          "country": "LBR",
+          "population": 44000,
+          "note": "Nord-ouest du Liberia (Golah-Mende, Vai-Mende)"
+        },
+        {
+          "country": "USA",
+          "population": 6900,
+          "note": "Diaspora contemporaine, principalement cote Est"
+        },
+        {
+          "country": "GIN",
+          "population": 3100,
+          "note": "Quelques communautes pres de la frontiere"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mende people. https://en.wikipedia.org/wiki/Mende_people",
+      "Joshua Project — Mende people group all countries (2025). https://joshuaproject.net/people_groups/16123",
+      "PeopleGroups.org — Mende of Sierra Leone (PG014291). https://peoplegroups.org/people_groups/pg014291/",
+      "Qiraat Africa — Mende people of Sierra Leone. https://qiraatafrican.com/en/12327/mende-people-of-sierra-leone/",
+      "SIL Ethnologue — Mende language (men). https://www.ethnologue.com/language/men/",
+      "Translators without Borders — Language data for Sierra Leone. https://translatorswithoutborders.org/language-data-sierra-leone/",
+      "British Museum — Ndoli jowei Sande society mask collection (Sierra Leone).",
+      "SIL CEDS — ISO 639-3: Mende = men. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+    ]
   }
 }

@@ -6,54 +6,82 @@
   "content": {
     "appellations": {
       "mainName": "Ushi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Aushi",
+      "exonyms": ["Aushi", "Baushi", "BaAushi"],
+      "originOfExonyms": "Ushi est le nom anglicise du groupe. La forme bantoue correcte avec le prefixe pluriel Ba- est Baushi. Les locuteurs s'appellent eux-memes Aushi, et leur langue Ikyaushi. La forme Ushi est utilisee dans les sources coloniales et administratives.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Aushi et Ushi sont tous deux utilises en Zambie. La Chabuka Royal Foundation (Chabuka Baushi Royal Foundation) utilise la forme Baushi dans ses communications officielles.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Bantu centre-sud, groupe Bemba elargi",
+      "historicalRegion": "Province de Luapula (nord de la Zambie)",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Ushi"],
+    "ethnicities": ["Aushi", "Ushi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Aushi tracent leurs origines a l'Empire Luba-Lunda (actuelle RDC), un des grands empires bantous d'Afrique centrale. Ils font partie des groupes Luba qui ont migre vers l'est lors de l'expansion et de la fragmentation de cet empire aux XVe-XVIe siecles.",
+      "formationPeriod": "Vers 1500 apres J.-C., periode de la grande migration depuis l'Empire Luba-Lunda.",
+      "migrationRoutes": [
+        "Empire Luba-Lunda (RDC) vers le nord-est, traversee de la riviere Luapula vers la Zambie actuelle, installation dans la province de Luapula"
+      ],
+      "historicalSettlementZones": [
+        "Province de Luapula, districts de Chembe, Mansa et Milenge (Zambie)",
+        "Province du Haut-Katanga (RDC), pour la diaspora transfrontaliere"
+      ],
+      "unificationsOrDivisions": "Les Aushi partagent une histoire commune avec les Luunda de la province de Luapula et entretiennent des liens historiques forts avec eux. La traversee de la Luapula vers 1500 est commemoree chaque annee par la ceremonie Chabuka.",
+      "externalInfluences": "Influence de l'Empire Luba-Lunda dans l'organisation politique et les structures claniques. Contact avec les Bemba voisins, entraisant une forte similitude linguistique entre l'Ikyaushi et le Bemba. Influence coloniale britannique au XXe siecle.",
+      "majorHistoricalEvents": "Migration depuis la RDC vers la Zambie vers 1500, commemoree par la ceremonie Chabuka. La chefferie Matanda est la principale chefferie Aushi; le Chief Matanda, 19e du nom, est decede en septembre 2025 a Mansa."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie traditionnelle structuree. Le Chef principal (Senior Chief) Matanda est la plus haute autorite traditionnelle des Aushi, residant dans le district de Mansa, province de Luapula. Le peuple est considere comme une communaute tres organisee.",
+      "clanOrganization": "Organisation clanique d'origine Luba-Lunda, avec des lignages transmis selon les regles de descendance caracteristiques des peuples bantous de la region.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans l'organisation sociale et l'acces aux terres. La structure clanique issue de l'Empire Luba-Lunda a perdure malgre les migrations.",
+      "religiousAuthority": "Autorite religieuse traditionnelle liee aux chefs. Presence significative du christianisme et de l'islam en milieu urbain."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ikyaushi (Aushi)",
+      "isoCodes": ["auh"],
+      "dialects": [
+        "Ikyaushi est considere par certains chercheurs comme un dialecte du Bemba, mais les locuteurs natifs insistent sur son caractere de langue distincte. Une intelligibilite mutuelle elevee existe avec le Bemba."
+      ],
+      "vehicularRole": "La langue Aushi (Ikyaushi) est utilisee comme langue communautaire dans la province de Luapula. Le Bemba est la principale langue vehiculaire regionale. L'anglais est la langue officielle nationale de la Zambie. Des ressources bibliques et des films religieux existent en Bemba pour les Aushi."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie Chabuka est la principale celebration culturelle des Aushi. Elle commemore la migration historique des Aushi depuis la RDC a travers la riviere Luapula vers la Zambie actuelle. Cette ceremonie annuelle rassemble la communaute et affirme l'identite collective. La danse Kalela est une expression culturelle centrale, inscrite en 2022 au patrimoine culturel immateriel de l'UNESCO.",
+      "symbols": "La riviere Luapula symbolise la traversee fondatrice de l'identite Aushi. La danse Kalela avec ses grands tambours est un symbole culturel majeur.",
+      "artsAndMusic": "La danse Kalela est la pratique artistique la plus celebre des Aushi. Les danseurs forment deux ou trois lignes et se deplacent en avant et en arriere au rythme de deux grands tambours et d'un tambour plus petit. Un chanteur principal initie le chant, repris en choeur par les autres. Les danseurs sont vetus de tenues colorees et executent des pas synchronises. La Kalela sert aussi de commentaire social sur les normes et valeurs de la societe. La poterie et la vannerie sont egalement des arts pratiques importants.",
+      "spiritualities": "Croyances animistes traditionnelles heritees de la culture Luba-Lunda, coexistant avec le christianisme et, dans une moindre mesure, l'islam. Les ceremonies comme la Chabuka maintiennent un lien avec la spiritualite ancestrale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "La chefferie Matanda est la principale structure politique traditionnelle des Aushi. Chief Matanda, dont la lignee est numerotee (le 19e est decede en 2025), incarne la continuite dynastique depuis l'epoque de la migration Luba-Lunda.",
+      "relationsWithNeighbors": "Les Aushi entretiennent des liens historiques forts avec les Luunda de la province de Luapula. Des relations de voisinage existent aussi avec les Bemba du nord et d'autres peuples bantous de la region.",
+      "conflictsOrAlliances": "Alliance historique avec les Luunda, documentee dans les traditions orales et commemoree lors des ceremonies. Relations avec l'Empire Luba-Lunda dont ils sont issus.",
+      "diaspora": "Presence transfrontaliere dans la province du Haut-Katanga (RDC), heritee de l'histoire migratoire et des communautes proches de la frontiere zambienne."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 100000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Omniglot (2025) : environ 100 000 locuteurs de l'Ikyaushi en Zambie et en RDC",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 95000,
+          "notes": "Province de Luapula, districts de Chembe, Mansa et Milenge"
+        },
+        {
+          "country": "COD",
+          "population": 5000,
+          "notes": "Province du Haut-Katanga, zones frontalieres"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kingsfari – Kalela dance: the soulful rhythms of the Ushi people in Zambia, 2025 (https://www.kingsfari.com/blog-posts/kalela-dance-the-soulful-rhythms-of-the-ushi-people-in-zambia)",
+      "Omniglot – Aushi language and alphabet (https://www.omniglot.com/writing/aushi.htm)",
+      "Wikipedia – Aushi language (https://en.wikipedia.org/wiki/Aushi_language)",
+      "Joshua Project – Aushi in Zambia (https://joshuaproject.net/people_groups/10490/ZA)",
+      "Facebook – Chabuka Baushi Royal Foundation / Chief Matanda obituary, Daily Times Zambia, 2025",
+      "UNESCO – Liste representative du patrimoine culturel immateriel : Kalela (2022)"
+    ]
   }
 }

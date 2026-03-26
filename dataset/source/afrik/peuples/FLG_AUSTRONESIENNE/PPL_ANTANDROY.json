@@ -7,63 +7,92 @@
     "appellations": {
       "mainName": "Antandroy",
       "selfAppellation": "Antandroy",
-      "exonyms": ["Antandroy (terme signifiant \"ceux des épines\")"],
+      "exonyms": ["Tandroy", "Ampatres"],
+      "originOfExonyms": "Le nom Tandroy signifie ceux des epines ou peuple des epines en malgache, en reference aux fourres epineux endemiques (notamment les cactus raketa et les plantes succulentes) qui caracterisent la region aride du sud appeleé Androy. Le terme Ampatres etait utilise dans les sources du XVIIe siecle, notamment portugaises et françaises.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Antandroy est la forme officielle moderne en malgache (avec le prefixe An- de localisation). Tandroy est couramment employe dans les sources academiques anglophones et dans l'usage quotidien malgache. Les deux sont egalement valables.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Sud de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien (Austronesien, groupe malgache meridional)",
+      "historicalRegion": "Region aride de l'extreme sud de Madagascar : Androy, entre les rivieres Menarandra et Mendare, approximativement entre Amboasary et Beloha",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Antandroy du Nord",
-      "Antandroy du Sud",
-      "Sous-groupes régionaux"
+      "Karimbola : clan de la partie occidentale de l'Androy, tradition de presence originelle sans migration decrite",
+      "Mahandrovato : clan de la partie orientale, population d'origine progressivement minoritaire face aux refugies Antanosy et Bara",
+      "Zafimanara : sous-groupe du clan Mahandrovato, dynasty qui a gouverne la confederation Tandroy jusqu'a sa dissolution vers 1790",
+      "Zafindravoay : clan croyant descendre d'une union entre une femme Tandroy et un crocodile"
     ],
     "origins": {
-      "ancientOrigins": "Les Antandroy sont originaires du sud de MDG, dans la région aride. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme."
+      "ancientOrigins": "Les Antandroy sont originaires de la region aride du sud de Madagascar (Androy). Comme tous les Malgaches, ils descendent de colons austronesiens venus de la region des iles de la Sonde (Indonesie/Borneo) et de migrants bantous d'Afrique de l'Est. La tradition orale du clan Karimbola, dominant la partie occidentale, ne decrit aucune migration et implique une presence originelle dans la region. Dans la partie orientale, la population d'origine (clan Mahandrovato) a ete progressivement minoritarisee par des refugies Antanosy et Bara arrives au debut du XVIIIe siecle.",
+      "formationPeriod": "XVIIe siecle : emergence de la confederation Tandroy sous la dynastic Zafimanara. Debut XVIIIe siecle : consolidation du territoire entre les rivieres Menarandra et Mendare. Vers 1790 : dissolution de la confederation apres d'importantes inondations et upheaval ecologique.",
+      "migrationRoutes": [
+        "Arrivee des ancetres austronesiens sur les cotes de Madagascar (Ve-XIIIe siecles)",
+        "Implantation dans la zone aride du sud de l'ile",
+        "Migrations internes des refugies Antanosy et Bara vers l'Androy oriental au debut du XVIIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Region de l'Androy (entre Amboasary et Beloha, entre l'ocean et Bekily)",
+        "Zone la plus densement peuplee autour d'Ambovombe",
+        "Plateau de Manombo (territoire de repli de la dynasty Zafimanara apres 1790)"
+      ],
+      "unificationsOrDivisions": "La confederation Tandroy regroupait tous les habitants entre les rivieres Menarandra et Mendare sous l'autorite de la dynasty Zafimanara (sous-groupe Mahandrovato). Cette entite politique s'est effondree vers 1790 a cause d'inondations majeures et d'upheaval ecologique qui ont force les Zafimanara a fuir vers le plateau de Manombo. En 1972, les Antandroy ont joue un role cle dans les protestations armees a Toliara qui ont renverse la presidence de Philibert Tsiranana et mis fin a la Premiere Republique.",
+      "externalInfluences": "Isolement relatif du au terrain difficile et au climat aride, ayant protege les Antandroy de la domination du royaume Merina au XIXe siecle et complique la mission coloniale française (1897-1960). Contacts commerciaux avec les negociants arabes, swahilis et europeens sur la cote. Introduction du christianisme lutherien dans le sud de Madagascar a partir de la fin du XIXe siecle par des missionnaires. Marginalisation economique et prejudices apres l'independance de 1960.",
+      "majorHistoricalEvents": "XVIIe siecle : formation de la confederation Tandroy sous les Zafimanara. Vers 1790 : dissolution de la confederation apres de grandes inondations. XIXe siecle : resistance reussie a la domination Merina (les Tandroy n'ont jamais ete integres au royaume Merina). 1897-1960 : colonisation française avec des difficultes a exercer l'autorite sur ce peuple juge indomptable. 1972 : protest arme des paysans Antandroy a Toliara renversant Tsiranana."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins) et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation traditionnellement nomade, structuree en chefferies locales sans etat centralise permanent. Apres la dissolution de la confederation Zafimanara (vers 1790), les Antandroy sont retournes a une organisation decentralisee en groupes territoriaux autonomes. Les mpisoro (devins-soothsayers) constituent une autorite respectee dans la societe villageoise traditionnelle. Le systeme du fokonolona (assemblee communautaire) regit les affaires villageoises locales.",
+      "clanOrganization": "Organisation en clans (foko) patrilineaires, dont les principaux sont : Karimbola (ouest), Mahandrovato (est), Zafimanara (sous-groupe Mahandrovato, anciens souverains), Zafindravoay (clan se croyant descendants d'un crocodile). La structure clanique determine l'identite, les droits territoriaux et les alliances.",
+      "ageClassSystems": "La circoncision masculine est un rituel d'integration sociale important. Dans certaines communautes, le prepuce est tire d'un canon lors de la ceremonie. Le fil fole velo (fil vivant) est noue aux poignets par l'ambiasa (guerisseur) pour la protection lors des rituels, notamment lors de la circoncision.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, l'heritage des terres et du betail, et les alliances matrimoniales. La dot en betail (bovins, zebus) est un element central du mariage. Les ancetres (razana) occupent une place fondamentale : on les consulte, on les honore et on peut entrer en transe (bilo) pour communiquer avec eux. Les fady (tabous) imposes par les ancetres regissent de nombreux aspects de la vie : interdiction pour les femmes de traire les zebus, interdiction de tuer la tortue radiee (pour certains clans), etc.",
+      "religiousAuthority": "Les mpisoro (devins, soothsayers) sont une figure d'autorite respectee dans les communautes villageoises, practiquant la divination et mediant avec les ancetres. Les ambiasa (guerisseurs) realisent des rites de protection (fole velo). Pasteurs lutheriens presents depuis la fin du XIXe siecle, mais la majorite de la population reste attachee aux croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte antandroy)",
-      "isoCodes": ["sud"],
-      "vehicularRole": "Le malgache antandroy est parlé par la majorité des Antandroy. Le français est également utilisé."
+      "mainLanguage": "Malgache Tandroy-Mahafaly (tdx)",
+      "isoCodes": ["tdx"],
+      "dialects": [
+        "Tandroy-Mahafaly (tdx) : dialecte du sud extreme, classe separement par Ethnologue comme langue distincte du groupe malgache meridional ; locuteurs : env. 1 a 1,3 million",
+        "Malgache officiel (plt, base merina) : utilise dans l'administration, l'education et les medias",
+        "Français : langue d'administration et d'enseignement superieur"
+      ],
+      "vehicularRole": "Le dialecte Tandroy-Mahafaly (tdx) est la langue maternelle des Antandroy et des Mahafaly voisins, et constitue un marqueur fort d'identite du Grand Sud malgache. Le malgache officiel est utilise dans l'administration. La region est geographiquement et culturellement distante de la capitale Antananarivo, ce qui renforce le maintien du dialecte local. Les migrations de travail vers d'autres regions exposent les Antandroy au malgache officiel et a d'autres dialectes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles liés au désert, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Culte des ancêtres (razana)."
+      "majorRites": "Funerailles (rites complexes) : festin communautaire avec sacrifice de zebus, viande distribuee a la communaute ; corps garde plusieurs jours avant d'etre place dans le cercueil, nouveaux zebus abattus ; atmosphere festive et parfois course du cercueil vers la mer ; placement dans la tombe familiale (fanesy) ; deuil de deux jours avec sacrifice, lamentations, pierres heapcées sur le cercueil ; maison du defunt brulee. Circoncision : rite de passage masculin essentiel, avec utilisation du fole velo ; dans certaines communautes, le prepuce est tire d'un canon. Rites agricoles et pastoraux : propitiation des ancetres avant les saisons. Trance bilo : entree en transe possessionnelle pour communiquer avec les ancetres.",
+      "symbols": "Les zebus : richesse, statut social, monnaie rituelle, element central des mariages et funerailles. Les tombeaux decores (fanesy) : representation de la richesse et du statut par leur taille et leurs ornements ; colonnes en pierre (male/female) ou tours recentes ; crane de zebus en haut. Les fourres epineux de l'Androy : identite territoriale et metaphore de la resistance (ceux des epines). Les instruments de musique (marovany, lokanga). Le fole velo, fil de protection rituelle.",
+      "artsAndMusic": "Musique instrumentale : marovany (cithare-boite faite de planches de pin avec des cables de velo comme cordes), lokanga (instrument a archet avec caisse de resonance en calebasse, ressemblant a un violon a trois cordes), mandolina et gitara (cordophones du sud, cinq ou sept frettes mobiles, cordes en nylon). Chants : riches melodies polyharmoniques. Musique de danse : rythmee par des sifflets aigus et des flutes a bec. Danse distinctive : performances avec lances, accompagnees de sifflets et de flutes. Artisanat textile : les femmes tissent du coton (lamba, pagnes, loincloths) en utilisant un fuseau roule sur la cuisse ; parfois de la soie brute (landy). Architecture : maisons de plain-pied ou sur de bas pilotis, carrees, avec toit pyramidal, murs en planches de bois accroches verticalement, pas de fenetres, trois portes (femmes facade, enfants arriere, hommes troisieme). Clotures en cactus epineux (raketa) ou en plantes succulentes. Tombeaux : grands edifices rectangulaires (la taille indique la richesse), peintures colorees, pierres tallees ou tours recentes pour les defunts masculins et feminins, cranes de zebus au sommet.",
+      "spiritualities": "Croyances malgaches communes : dieu createur (Zanahary) et vie eternelle et pouvoir des ancetres (razana), qui interviennent dans les affaires des vivants et doivent etre respectes. Trance bilo : etat de possession par les ancetres. Crocodiles craints : le clan Zafindravoay se croit descend d'une union entre une femme Tandroy et un crocodile. Esprit kokolampo : capable d'exercer une influence positive ou negative sur les evenements de la vie. Fady (tabous) ancestraux : interdiction de traire les zebus pour les femmes, interdiction de tuer la tortue radiee pour certains clans, interdiction de prononcer le nom d'un roi defunt. Mpisoro (devins) : autorite respectee et figure constante de la vie villageoise. Christianisme lutherien : introduit par les missionnaires fin XIXe siecle, predominant parmi les chretiens, mais la majorite continue a adherer aux croyances traditionnelles en parallele."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora antandroy dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Confederation Tandroy (XVIIe siecle-vers 1790) : entite politique dirigee par la dynasty Zafimanara (sous-groupe Mahandrovato), regroupant les habitants entre les rivieres Menarandra et Mendare. Dissoute vers 1790 suite a des inondations majeures qui ont force les Zafimanara a fuir vers le plateau de Manombo. Absence subsequente de structure politique centralisee : organisation en chefferies locales decentralisees.",
+      "relationsWithNeighbors": "Voisinage avec les Mahafaly a l'ouest (qui ont conquis la partie occidentale de l'Androy au debut du XVIIIe siecle), les Antanosy et les Bara a l'est (dont des refugies ont integre la population orientale de l'Androy). Les Antandroy n'ont jamais ete integres au royaume Merina (centre du pouvoir du XIXe siecle), le terrain aride et difficile les ayant proteges. Durant la colonisation française (1897-1960), les Antandroy et les Mahafaly etaient vus comme les groupes les plus indomptables de Madagascar. Depuis l'independance, stereotype negatif repandu parmi les Malgaches (demi-sauvages) ayant provoque discrimination et marginalisation economique.",
+      "conflictsOrAlliances": "Debut XVIIIe siecle : la partie occidentale de l'Androy conquise par la dynasty Menarandra des Mahafaly voisins. Vers 1790 : eclatement de la confederation suite aux inondations. XIXe siecle : resistance reussie a l'expansion du royaume Merina. 1897-1960 : l'autorite coloniale française a eu du mal a s'imposer sur les Antandroy. 1972 : protestations armees des paysans antandroy a Toliara contre la corruption fiscale, renversant la presidence de Philibert Tsiranana.",
+      "diaspora": "Migrations economiques importantes depuis l'independance (1960) vers les villes malgaches voisines et d'autres regions, en raison de la pauvrete et de la marginalisation. Les hommes antandroy voyagent souvent saisonnierrement a la recherche de travail paye dans les regions voisines. Apres l'independance, les Antandroy (avec les Merina) sont devenus les pratiquants les plus frequents du mariage interethnique, en grande partie a cause des migrations frequentes des hommes. Presence dans les principales villes malgaches (Antananarivo, Toliara, Toamasina)."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Estimations basees sur : Wikipedia Antandroy (600 000 en 2013, cinquieme groupe ethnique le plus important de Madagascar). Population de Madagascar en 2025 : 32,7 millions (Worldometer). Taux de croissance annuel malgache : 2,5%. Projection 2025 a partir des 600 000 de 2013 en 12 ans de croissance, donnant environ 1,3 million. Ethnologue Tandroy-Mahafaly (tdx) : 1 million de locuteurs. La distribution par pays est uniquement MDG.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 1300000,
+          "note": "Region de l'Androy (extreme sud), principal centre Ambovombe ; communautes secondaires a Toliara, Antananarivo, Toamasina et autres villes malgaches du fait des migrations economiques"
+        }
+      ]
+    },
+    "additionalNotes": {
+      "economicMigration": "Les Antandroy constituent l'un des peuples malgaches les plus mobiles en raison de la secheresse et de la pauvrete endemiques dans leur region natale. Les hommes migrent saisonnierrement ou durablement pour travailler comme manoeuvres, gardiens ou dans l'agriculture dans d'autres regions. Cette mobilite a contribue a diffuser la presence Antandroy dans toute l'ile et a rendre ce groupe familier aux autres Malgaches, bien que sous des stereotypes negatifs issus de la periode coloniale.",
+      "tombArchitecture": "Les tombeaux antandroy (fanesy) sont parmi les plus elabores de Madagascar. Leur taille reflete la richesse du defunt et de sa famille. Les peintures murales colorees representent des scenes de la vie du defunt, ses zebus, ses activites. Les monuments funeraires combinent hautes colonnes de pierre (distincte pour les defunts masculins et feminins dans les societes traditionnelles) ou des tours plus recentes, avec des cranes de zebus disposes en haut pour signaler la richesse animale accumulee en vie.",
+      "aridEnvironment": "L'Androy est l'une des regions les plus arides de Madagascar, caracterisee par des fourres epineux d'especes endemiques (didieracees, euphorbes, aloes) et un deficit pluviometrique chronique. Cette aridite a forge une culture d'adaptation et de resilience, rendant les Antandroy particulierement resistants aux adversites exterieures. Les crises alimentaires recurrentes ont accelere les vagues migratoires vers les autres regions depuis les annees 1960."
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches"
+      "Wikipedia EN – Antandroy : https://en.wikipedia.org/wiki/Antandroy",
+      "Ethnologue – Malagasy, Tandroy-Mahafaly (tdx) : https://www.ethnologue.com/language/tdx/",
+      "Glottolog – Tandroy Malagasy : https://glottolog.org/glottolog?country=MG",
+      "Wikipedia EN – Malagasy peoples : https://en.wikipedia.org/wiki/Malagasy_peoples",
+      "Wikipedia EN – History of Madagascar : https://en.wikipedia.org/wiki/History_of_Madagascar",
+      "Worldometer – Madagascar Population : https://www.worldometers.info/world-population/madagascar-population/",
+      "CIA World Factbook – Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/"
     ]
   }
 }

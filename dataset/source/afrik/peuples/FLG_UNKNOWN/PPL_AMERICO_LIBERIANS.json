@@ -1,59 +1,92 @@
 {
   "id": "PPL_AMERICO_LIBERIANS",
   "nameMain": "Americo-Liberians",
-  "languageFamilyId": "FLG_UNKNOWN",
+  "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["LBR"],
   "content": {
     "appellations": {
       "mainName": "Americo-Liberians",
-      "selfAppellation": "",
-      "exonyms": ["Congo People, Settlers"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_UNKNOWN",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Monrovia et côte",
+      "selfAppellation": "Americo-Liberians",
+      "exonyms": ["Congo People", "Congau", "Congoes", "Settlers"],
+      "originOfExonyms": "Le terme Congo People ou Congau est apparu en reference aux Africains liberes de navires negriers (issus du bassin du Congo) integres par les premiers colons afro-americains. Par extension, il a designe l'ensemble des descendants de colons non autochtones au Liberia. Le terme Settlers souligne leur statut de colons distincts des populations indigenes liberiennes.",
+      "whyProblematic": "Ce fichier (PPL_AMERICO_LIBERIANS, FLG_UNKNOWN) est un doublon de PPL_AMERICANO_LIBERIENS (FLG_CREOLE), fiche deja completement enrichie. La famille linguistique correcte est FLG_CREOLE (anglais liberien, code ISO lir), et non FLG_UNKNOWN. Le terme Congau etait historiquement pejoratif, utilise par les autochtones liberiens pour distinguer les descendants de colons ; il est aujourd'hui partiellement reapproprie.",
+      "contemporaryUsage": "Les termes Americo-Liberian et Congo People sont utilises de facon interchangeable au Liberia contemporain. Apres la fin de la domination politique en 1980, le groupe a perdu sa cohesion institutionnelle mais conserve une identite culturelle distincte.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Creole anglophone afro-americain",
+      "historicalRegion": "Cote ouest-africaine, region de Monrovia et des comtes cotiers du Liberia",
       "currentCountries": ["LBR"]
     },
-    "ethnicities": ["Americo-Liberians"],
+    "ethnicities": ["Americo-Liberians", "Congo People", "Recaptives"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Monrovia et côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Americano-Liberiens descendent d'Afro-Americains libres ou affranchis et de Caribeens noirs qui ont emigre vers l'Afrique de l'Ouest au XIXe siecle. Leur migration etait soutenue par l'American Colonization Society (ACS), fondee en 1816. Les premiers settlers arriverent en 1822 sur la cote qui allait devenir le Liberia. Un groupe additionnel, les Recaptives (Africains liberes de navires negriers par la marine britannique et americaine apres 1808), surnommes Congoes, s'y integra progressivement.",
+      "formationPeriod": "1822-1865. La communaute se consolida entre l'arrivee des premiers settlers en 1822 et la declaration d'independance du Liberia en 1847, puis continua de se former jusqu'aux annees 1860-1880 avec les vagues migratoires caribeennes.",
+      "migrationRoutes": [
+        "Etats-Unis (Virginie, Caroline du Sud, Georgie, Maryland, Louisiane, Mississippi) vers la cote liberienne via l'ocean Atlantique",
+        "Caraibes (Barbade, Trinidad, Jamaique, Grenade) vers le Liberia, surtout apres 1865",
+        "Africains liberes de navires negriers (recaptives) vers les etablissements cotiers du Liberia"
+      ],
+      "historicalSettlementZones": [
+        "Monrovia (capitale fondee en 1822)",
+        "Careysburg",
+        "Clay-Ashland",
+        "Buchanan",
+        "Maryland (comte, extreme sud-est)",
+        "Mississippi-in-Africa",
+        "Cape Mount",
+        "Greenville",
+        "Crozierville (familles barbadaises)",
+        "Bords du fleuve Saint-Paul"
+      ],
+      "unificationsOrDivisions": "Les settlers afro-americains et caribeens s'unirent progressivement avec les Recaptives pour former la communaute americano-liberienne. Des tensions internes existaient selon l'origine geographique (Etat du Sud americain), le niveau d'education et la condition initiale (homme libre ou affranchi). La division principale etait entre la communaute creole anglophone et les peuples autochtones liberiens.",
+      "externalInfluences": "L'American Colonization Society financa les premieres migrations. La culture afro-americaine du Sud des Etats-Unis, la culture caribeenne anglophone (surtout barbadaise) et les traditions africaines des Recaptives ont toutes contribue a la formation identitaire du groupe. L'influence maconnique americaine fut egalement determinante.",
+      "majorHistoricalEvents": "1822 : arrivee des premiers settlers a Monrovia. 1847 : declaration d'independance du Liberia, premiere republique africaine. 1865 : arrivee de plus de 300 Barbadiens a Crozierville. 1867 : fondation du Grand Temple Maconnique de Monrovia. 1878 : domination absolue du True Whig Party (TWP) jusqu'en 1980. 1944 : election de William Tubman, politique d'ouverture et d'unification nationale. 1980 : coup d'Etat de Samuel Doe, assassinat du president Tolbert, fin de la domination americano-liberienne. 1989-2003 : guerres civiles liberiennes, exode massif de la communaute."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Republique constitutionnelle calquee sur le modele americain, avec trois branches de gouvernement (executif, legislatif, judiciaire). Le True Whig Party et la Loge Maconnique du Liberia constituaient les piliers du pouvoir politique de 1878 a 1980. L'appartenance a la franc-maconnerie etait un prerequis de facto pour acceder a des postes politiques de premier plan.",
+      "clanOrganization": "Pas de systeme de clans au sens traditionnel africain. Le groupe s'organisait plutot autour de reseaux familiaux et associatifs (eglise, loge maconnique, clubs elitaires) reproduisant les structures sociales du Sud des Etats-Unis et des Caraibes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les grandes familles americano-liberiennes (Tubman, Tolbert, Barclay, King, Blyden) jouaient un role central dans la succession du pouvoir politique et economique. L'endogamie au sein du groupe etait encouragee pour preserver le statut elitaire.",
+      "religiousAuthority": "Les pasteurs et eveques protestants (baptistes, methodistes, episcopaliens) exercaient une autorite morale et sociale significative au sein de la communaute. Les Americano-Liberiens furent parmi les premiers missionnaires protestants d'origine africaine au Liberia."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Liberian English (anglais liberien)",
+      "isoCodes": ["lir"],
+      "dialects": [
+        "Merico (parler des premiers settlers afro-americains)",
+        "Liberian Settler English",
+        "Standard Liberian English",
+        "Barbadian Creole (communaute de Crozierville)"
+      ],
+      "vehicularRole": "L'anglais liberien sert de langue vehiculaire nationale et de langue officielle du Liberia depuis la fondation de l'Etat en 1847. Il est fortement influence par l'anglais vernaculaire afro-americain (AAVE) et le gullah. Il joue un role central dans l'education, la gouvernance et le commerce."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mariages a l'occidentale (marie en costume, mariee en robe blanche), ceremonies religieuses protestantes (baptemes, funerailles). La franc-maconnerie structurait des rites d'initiation et de cohesion sociale elitaire.",
+      "symbols": "Le Grand Temple Maconnique de Monrovia (construit en 1867) est le symbole architectural le plus emblematique du pouvoir americano-liberien. Le drapeau liberien, qui reprend le design etoile du drapeau americain avec une seule etoile, illustre l'heritage identitaire du groupe. Les maisons de style antebellum americain sont des marqueurs culturels du groupe.",
+      "artsAndMusic": "Culture musicale heritee de la tradition afro-americaine du Sud (gospel, chants protestants). Architecture hybride melant style colonial americain (neoclassique, grec revival, georgien) et environnement africain. Cuisine melant soul food americaine (pain de mais, poulet frit) et cuisine d'Afrique de l'Ouest (soupe au beurre de palme, riz liberien).",
+      "spiritualities": "Christianisme protestant dominant : baptistes, methodistes et episcopaliens constituent les principales confessions. La franc-maconnerie (Masonic Order of Liberia) jouait un role spirituel et social de premier plan jusqu'a son interdiction temporaire en 1980 par Samuel Doe (levee en 1987)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume traditionnel africain. Les Americano-Liberiens fonderent la premiere republique noire d'Afrique subsaharienne en 1847 et dirigerent le pays jusqu'en 1980, constituant une minorite dominante d'environ 3 a 5 % de la population.",
+      "relationsWithNeighbors": "Relations marquees par une separation sociale et culturelle profonde avec les peuples autochtones liberiens (Kpelle, Bassa, Kru, Grebo, Mandingo). Le systeme de wardship permettait a des familles americano-liberiennes d'adopter des enfants autochtones. William Tubman tenta de reduire les inegalites via sa National Unification Policy.",
+      "conflictsOrAlliances": "Conflits recurrents avec les populations autochtones lors de la periode de colonisation cotiere (XIXe siecle). En 1980, le coup d'Etat du sergent Samuel Doe (peuple Krahn) mit fin a la domination americano-liberienne et entraina l'assassinat du president Tolbert. Les guerres civiles de 1989-1997 et 2000-2003 provoquerent l'exode de la majorite de la communaute elitaire vers les Etats-Unis.",
+      "diaspora": "Diaspora importante aux Etats-Unis, principalement dans le Maryland, le Minnesota, New York et la Pennsylvanie, ainsi qu'au Royaume-Uni. De nombreux membres de familles americano-liberiennes aisees ont emigre des 1980. Des milliers demeurent a Monrovia, Crozerville et Careysburg."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia – Americo-Liberian people (estimation 2009 de 150 000 sur 3,5 millions de Liberiens, soit environ 3-5 % de la population totale estimee a 5,5 millions en 2025)",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 120000 },
+        { "country": "USA", "population": 25000 },
+        { "country": "GBR", "population": 5000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Americo-Liberian people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Americo-Liberian_people)",
+      "Americo-Liberians – BlackPast.org, 2025 (https://blackpast.org/global-african-history/americo-liberians/)",
+      "Americo-Liberian in Liberia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10292/LI)",
+      "Americo-Liberian – Encyclopaedia Britannica, 2025 (https://www.britannica.com/topic/Americo-Liberian)",
+      "NOTE DOUBLON : Cette fiche PPL_AMERICO_LIBERIANS (FLG_UNKNOWN) est un doublon de PPL_AMERICANO_LIBERIENS (FLG_CREOLE). La famille linguistique correcte est FLG_CREOLE. Contenu identique a PPL_AMERICANO_LIBERIENS, deja enrichi dans le lot precedent."
+    ]
   }
 }

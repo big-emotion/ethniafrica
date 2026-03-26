@@ -6,54 +6,86 @@
   "content": {
     "appellations": {
       "mainName": "Hadimu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wahadimu (pluriel en swahili; singulier: Mhadimu); le vrai nom originel du peuple est inconnu",
+      "exonyms": [
+        "Hadimu (forme arabisée, du swahili Wahadimu)",
+        "Wahadimu (forme swahilie standard)"
+      ],
+      "originOfExonyms": "Le terme Hadimu / Wahadimu est une traduction swahilie de l'arabe Khadim, signifiant 'serviteur'. Ce nom leur a été attribué après leur soumission à l'autorité omanaise, lorsque leur chef déclara: 'Sisi ni Wahadimu wako' ('Nous sommes tes serviteurs'). Leur véritable nom endogène originel n'a pas été conservé dans les sources disponibles.",
+      "whyProblematic": "Le terme Hadimu rappelle leur statut historique de sujets subordonnés aux sultans omanais de Zanzibar. Certains membres de la communauté préfèrent d'autres désignations pour s'affranchir de cette connotation servile.",
+      "contemporaryUsage": "Wahadimu est le terme courant en swahili pour désigner ce peuple en Tanzanie. Le terme Hadimu est utilisé dans la littérature académique anglophone.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Zanzibar",
+      "ethnoLinguisticGroup": "Bantu (sous-groupe côtier est-africain; locuteurs d'un dialecte swahili distinct, Kihadimu)",
+      "historicalRegion": "Zanzibar (ile d'Unguja), Tanzanie insulaire",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Hadimu"],
+    "ethnicities": [
+      "Hadimu (Wahadimu)",
+      "Tumbatu (peuple cousine de Pemba, parfois associé)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Zanzibar"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon le témoignage de Mwenyiuzi, notable Hadimu, le peuple est originaire d'une zone côtière continentale près de la ville de Windi, entre Saadani et Bagamoyo (région actuelle de Pwani, Tanzanie continentale). Ils étaient pêcheurs de métier. Une grande tempête les aurait emportés jusqu'au rivage occidental de Zanzibar (Unguja), où ils s'installèrent au quartier de Shangani (littéralement 'le lieu de sable', nom qui désigne encore aujourd'hui une zone de Zanzibar Town). L'ancêtre fondateur s'appelait Ali; ses quinze enfants (Ibrahimu, Mtakata, Shangwana, Mtekwa, Mduvi, Mdonge, Seramala, Kitama Ali parmi les fils; Kasija, Mwatuna, Mwana wa Mwana parmi les filles) sont les ancêtres des lignages actuels.",
+      "formationPeriod": "L'installation permanente à Zanzibar remonte à plusieurs siècles avant la domination omanaise (XVIIe-XIXe siècles). Les chefs (Mwinyi Mkuu) étaient d'ascendance persane, en lien avec les traditions médiévales des cités côtières swahilies (Kilwa, Vumba, Shake près de Kipini). La lignée des Mwinyi Mkuu s'est éteinte vers 1870.",
+      "migrationRoutes": [
+        "Depuis la côte de Tanzanie continentale (entre Saadani et Bagamoyo) vers Zanzibar, suite à une tempête",
+        "Retours temporaires sur le continent pour trouver des épouses lors de la période de fondation"
+      ],
+      "historicalSettlementZones": [
+        "Ile d'Unguja (Zanzibar), zones intérieures et côte occidentale",
+        "Shangani (actuellement quartier de Zanzibar Town)",
+        "Palais de Dunga (résidence historique des Mwinyi Mkuu, aujourd'hui en ruines)"
+      ],
+      "unificationsOrDivisions": "Les Hadimu étaient unifiés sous l'autorité des Mwinyi Mkuu (chefs de lignée perse), qui résidaient au palais de Dunga. Cette chefferie s'est soumise à l'autorité omanaise au XVIIe siècle et la lignée s'est éteinte vers 1870. Sous la domination omanaise puis britannique, les Hadimu constituaient la population autochtone subordonnée ('hadimu ou population indigène') par opposition aux Arabes omanais et aux immigrants indiens.",
+      "externalInfluences": "La domination portugaise (Wareno) au XVIe-XVIIe siècles fut vécue comme une violence: les Portugais s'emparaient des femmes Hadimu pour en faire des concubines. La soumission aux Omanais (via Sayidi Hariri) fut un choix tactique pour chasser les Portugais. L'arabisation progressive de Zanzibar sous les sultans d'Oman a islamisé et swahilisé les Hadimu. L'administration britannique (à partir de 1890) les a maintenus dans une position subordonnée par rapport aux Arabes.",
+      "majorHistoricalEvents": "XVIe-XVIIe siècles: présence portugaise à Zanzibar; enlèvement de femmes Hadimu. XVIIe siècle: appel au chef omanais Sayidi Hariri pour chasser les Portugais; les Hadimu se déclarent 'serviteurs' (Wahadimu). 1856-1870: extinction progressive de la lignée des Mwinyi Mkuu. 1890: Zanzibar devient un protectorat britannique. 1963: indépendance de Zanzibar sous un gouvernement sultanat arabe. Janvier 1964: Révolution de Zanzibar menée par le parti ASP (African Shirazi Party), soutenu par les Shirazi (Africains de Zanzibar dont les Hadimu); renversement du sultan."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie héréditaire sous les Mwinyi Mkuu (chefs d'ascendance persane résidant au palais de Dunga). Cette institution assura la cohésion communautaire des Hadimu jusqu'à son extinction vers 1870. Après la soumission omanaise, les Hadimu furent gouvernés comme population autochtone soumise, cultivant les terres intérieures d'Unguja.",
+      "clanOrganization": "L'ancêtre fondateur Ali eut 15 enfants dont les descendants constituent les lignages Hadimu. Seramali Ali est l'ancêtre du notable Mwenyiuzi documenté dans les sources historiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages descendants des enfants d'Ali structurent l'appartenance communautaire. La filiation patrilinéaire est probable, bien que certaines influences côtières est-africaines impliquent des systèmes bilinéaires.",
+      "religiousAuthority": "Pratique de l'islam (sunnite), généralisé sous l'influence omanaise. Au XIXe siècle, un culte de possession par l'esprit kitimiri, pratiqué surtout par les femmes Hadimu, était documenté par un compte-rendu missionnaire français de 1869; ce culte a disparu dans les années 1920 et était quasiment inconnu dans les années 1960."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kihadimu (dialecte swahili de Zanzibar)",
+      "isoCodes": ["swh"],
+      "dialects": [
+        "Kihadimu (dialecte distinct parlé jusqu'au début du XXe siècle, auj. remplacé par le swahili standard)",
+        "Swahili de Zanzibar (swahili côtier, swh)"
+      ],
+      "vehicularRole": "Le Kihadimu était un dialecte swahili distinct, décrit comme ayant une intonation chantante caractéristique. Il a été progressivement remplacé par le swahili standard de Zanzibar au cours du XXe siècle. Au début du XXe siècle, de nombreux Hadimu des zones rurales ne connaissaient que quelques mots de leur dialecte originel. Le swahili (swh) est aujourd'hui la langue universelle des Hadimu."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Au XIXe siècle, un culte de possession de l'esprit kitimiri était pratiqué par les femmes Hadimu; ce culte avait une fonction sociale de cohésion féminine. Il a disparu dans les années 1920. Les pratiques islamiques (circumcision, mariage, funérailles selon les rites sunnites) sont aujourd'hui centrales. La culture des clous de girofle et la pêche constituent le socle des pratiques économiques et culturelles liées à la vie communautaire.",
+      "symbols": "Le palais de Dunga (résidence historique des Mwinyi Mkuu, Unguja) est le symbole architectural de l'identité Hadimu, bien qu'il soit aujourd'hui en ruines. Zanzibar, l'ile aux épices, est l'identité territoriale centrale.",
+      "artsAndMusic": "Les Hadimu partagent les traditions musicales swahilies de Zanzibar: taarab (musique de cour influencée par l'arabe et l'indien), ngoma (danses et percussions), unyago (cérémonies de passage féminine). La culture de la pêche et de la mer imprègne leur patrimoine oral et leurs chants traditionnels.",
+      "spiritualities": "Islam sunnite, pratiqué depuis la domination omanaise (XVIIe siècle), est la religion universelle des Hadimu contemporains. Des traces de syncrétisme avec des croyances bantoues préislamiques persistent, notamment dans les rituels de guérison traditionnels (uganga) et le souvenir du culte kitimiri. Plus de 98% de la population de Zanzibar est musulmane selon le recensement de 2022."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie des Mwinyi Mkuu (chefs d'ascendance persane, résidant au palais de Dunga). Cette institution était liée aux traditions médiévales swahilies semblables à Kilwa, Vumba et Shake. La lignée s'est éteinte vers 1870.",
+      "relationsWithNeighbors": "Relations fondamentalement asymétriques avec les Omanais (sultan de Zanzibar) sous la domination duquel les Hadimu furent placés comme population autochtone subordonnée. Conflit avec les Portugais (Wareno) du XVIe siècle qui avaient enlevé des femmes Hadimu. Proximité culturelle et politique avec les Shirazi (population africaine de Zanzibar d'ascendance persane mêlée), avec lesquels ils formèrent une alliance dans le parti ASP lors de la révolution de 1964.",
+      "conflictsOrAlliances": "Alliance tacticale avec l'officier omanais Sayidi Hariri pour chasser les Portugais au XVIIe siècle, au prix d'une soumission formelle. Rôle actif dans la révolution de Zanzibar de janvier 1964 aux côtés des Shirazi (African Shirazi Party), qui renversa le sultan arabe, mettant fin à des siècles de domination omanaise. Marginalisation politique et économique sous la domination arabe-omanaise puis britannique (exclusion du commerce et du pouvoir).",
+      "diaspora": "Les Hadimu sont un peuple insulaire dont la présence géographique est liée à Zanzibar. Certains membres ont migré vers Dar es Salaam et d'autres villes tanzaniennes dans le cadre des flux migratoires modernes."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basée sur la population de Zanzibar (1,89 million en 2022, recensement tanzanien) et la proportion historique de la population hadimu (indigènes africains de Zanzibar-Unguja); pas de chiffre précis disponible",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 200000,
+          "note": "Ile d'Unguja (Zanzibar), population autochtone africaine insulaire; estimation"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Hadimu – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Hadimu)",
+      "Zanzibar – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Zanzibar)",
+      "Zanzibar Fact Sheet 2025 – Gouvernement indien, Consulat général de Zanzibar (https://www.cgizanzibar.gov.in/pdf/Zanzibar%20Fact%20Sheet-2025.pdf)",
+      "Zanzibar: A Political Economy, Bevan D. et al. – Oxford Academic, 2013 (https://academic.oup.com/book/33093/chapter/282271632)",
+      "Ethnologue – Swahili, Coastal (swh), SIL International, 2024 (https://www.ethnologue.com/language/swh/)",
+      "A Handbook of the Swahili Language as Spoken at Zanzibar – Steere E., 1884 (archive Wikimedia)"
+    ]
   }
 }

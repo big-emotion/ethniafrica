@@ -2,67 +2,111 @@
   "id": "PPL_MURLE",
   "nameMain": "Murle",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["SDN", "ETH"],
+  "currentCountries": ["SSD", "ETH"],
   "content": {
     "appellations": {
       "mainName": "Murle",
       "selfAppellation": "Murle",
-      "exonyms": ["Murle (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Beir (terme dinka)",
+        "Jebe (terme luo et nuer)",
+        "Ajibba (terme anuak)",
+        "Merule",
+        "Mourle",
+        "Murele",
+        "Murule"
+      ],
+      "originOfExonyms": "Le terme Beir est l'exonyme dinka, Jebe celui des Luo et Nuer, et Ajibba celui des Anuak. Ces termes apparaissent dans la litterature coloniale britannique avant que l'autonyme Murle soit reconnu. L'ethnonyme Murle designe l'ensemble du groupe; tous les non-Murle sont appeles moden (ennemis ou etrangers).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Murle est aujourd'hui universellement accepte et utilise tant par les Murle eux-memes que par les administrations soudanaise et ethiopienne. Il figure dans les recensements, les accords de paix et les publications academiques.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique méridional",
-      "historicalRegion": "Sud-SDN, ETH",
-      "currentCountries": ["SDN", "ETH"]
+      "ethnoLinguisticGroup": "Surmic (branche sud-occidentale des langues nilotiques orientales)",
+      "historicalRegion": "Plateau de Boma, vallee de Lotilla, comte de Pibor (Soudan du Sud); regions frontieres du sud-ouest de l'Ethiopie",
+      "currentCountries": ["SSD", "ETH"]
     },
     "ethnicities": [
-      "Murle du Soudan du Sud",
-      "Murle d'Éthiopie",
-      "Sous-groupes régionaux"
+      "Murle des plaines (Lotilla) : agro-pasteurs des plaines inondables autour de Pibor, Veveno, Lotilla et Kengen",
+      "Murle des hautes terres (Ngalam / Bengalam) : agriculteurs du plateau de Boma",
+      "Longarim (Boya) : groupe apparente habitant les collines Boya (autrefois vassaux de la section Ngarotti)",
+      "Section Ngarotti : groupe dominant dans la hierarchie des chefferies de tambour",
+      "Didinga : groupe surmic apparente issu d'une ancienne separation des Murle dans les collines Didinga",
+      "Tenet : petit groupe surmic separe vivant dans les collines Lafit"
     ],
     "origins": {
-      "ancientOrigins": "Les Murle sont originaires du Soudan du Sud et de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique méridional.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme."
+      "ancientOrigins": "Les Murle sont un groupe ethnique surmic, branche de la famille nilo-saharienne (sous-groupe sud-occidental des langues surmiques). La tradition orale situe leur origine mythique a Jen, lieu sacre a l'est, au-dela de Maji en Ethiopie, associe au lever du soleil, aux pluies et a la memoire ancestrale. Jen symbolise le paradis originel depuis lequel les ancetres Murle ont commence leur migration vers le sud et l'ouest. Les Murle font partie d'un ensemble de peuples surmiques (dont les Didinga, Longarim et Tenet) qui se sont progressivement differencies au cours de leurs migrations.",
+      "formationPeriod": "La formation du peuple murle tel qu'il est connu aujourd'hui remonte a plusieurs siecles de migration depuis l'Ethiopie vers le Soudan du Sud. La separation d'avec les Didinga dans les collines Didinga et la penetration dans la region de Pibor sont les evenements fondateurs de l'identite murle distinctive. L'administration coloniale britannique des annees 1930 a contribue a fixer les frontieres territoriales murle autour de Pibor.",
+      "migrationRoutes": [
+        "Origine legendaire a Jen (Ethiopie, plateau de Boma) vers le sud le long de la riviere Omo jusqu'au lac Turkana (lac Rudolf)",
+        "Migration vers le nord-ouest a travers Kolobaadh (territoire Taposa), mont Kathiangor et collines Maruwa",
+        "Division au niveau des collines Maruwa : une partie vers le plateau de Boma (sans betail), l'autre vers le systeme de la riviere Pibor (avec betail)",
+        "Penetration dans la region de Pibor, repoussant les Dinka vers le Nil et les Nuer vers le nord"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Pibor et Grande Zone Administrative de Pibor, Etat de Jonglei, Soudan du Sud",
+        "Plateau de Boma (Ngalam) : agriculture, cafe, tabac",
+        "Plaines de Lotilla (Bengalam) : elevage, peche, chasse",
+        "Regions frontalieres du sud-ouest de l'Ethiopie (petite population)"
+      ],
+      "unificationsOrDivisions": "La societe murle est acephale : il n'existe pas de hierarchie politique unique. L'unite est assuree par trois institutions interconnectees : le systeme de classes d'age (buul), les chefs rouges (alan ci merik) et les drumships claniques (kidonwa). Les Longarim se sont separes et vivent dans les collines Boya. La guerre civile soudanaise a divise les Murle entre les administrations SPLA et gouvernement de Khartoum.",
+      "externalInfluences": "Contacts avec les peuples nuer, dinka, anyuak, toposa et jie. Influence de l'islam par les Arabes baggara. Presence de missionnaires presbyteriens americains depuis 1952 a Pibor, ayant traduit le Nouveau Testament en murle et introduit l'education et la medecine modernes. Pression demographique et conflits avec le SPLA lors des campagnes de desarmement.",
+      "majorHistoricalEvents": "Migration fondatrice depuis l'Ethiopie vers le Soudan du Sud (traditions orales). Separation d'avec les Didinga et formation des Longarim. Annees 1930 : negociation d'une enclave territoriale autour de Pibor avec l'administration coloniale britannique. 1952 : arrivee des missionnaires presbyteriens americains a Pibor. 2009-2011 : escalade des conflits intercommunautaires avec les Lou Nuer dans le Jonglei. Aout 2011 : raid murle sur Pierri, plus de 100 morts et milliers de bovins emportes. Decembre 2011 : contre-offensive de l'Armee des Jeunes Nuer (6 000 combattants) sur Pibor, environ 3 000 morts. 2012-2013 : plus de 1 000 morts dans des affrontements ethniques dans le Jonglei. Formation de la faction Cobra (David Yau Yau) pour la defense murle face au SPLA."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe acephale organisee autour de trois institutions : (1) le systeme de classes d'age masculines (buul) qui structure la vie sociale, politique, economique et militaire; (2) les chefs rouges (alan ci merik), autorites ceremoniales dont la legitimite est hereditaire au sein des clans dominants; (3) les drumships claniques (kidonwa), unites politico-religieuses organisees autour de tambours sacres. L'unite domestique de base est le korok (homestead), regroupant deux ou trois generations, dirige par le plus ancien homme de la famille.",
+      "clanOrganization": "Organisation clanique structuree autour des drumships (kidonwa). Chaque clan possede son chef rouge et son tambour sacre. La hierarchie entre clans determine la seniorite au sein des classes d'age. Les principaux groupes sont la section Ngarotti (dominant) et les Longarim (Boya). Les liens de parente sont horizontaux (liens entre vivants) plutot que verticaux (ancestraux).",
+      "ageClassSystems": "Le buul (classe d'age) est l'institution sociale fondamentale. Les garcons rejoignent leur buul a l'adolescence et y restent toute leur vie. Chaque buul porte le nom d'un animal totemique (ex: Dorongwa - hartebeest, Titi - cordon bleu, Bototnya, Muden, Kurenen). Les jeunes classes assurent la defense et les raids; les plus agees supervisent les affaires communautaires. Un fils ne peut appartenir a la classe suivant immediatement celle de son pere. Les classes d'age sont subdivisees en sous-groupes (kem ou nyakenet) par region.",
+      "roleOfLineages": "Les lignages patrilineaires (tatok, famille etendue) et les homesteads (korok) forment les unites de base. La societe murle privilegia les liens entre vivants sur la genealogie verticale. La relation de mariage (kaavdhet) est la plus valorisee. L'inceste (ngilidh) etait autrefois puni de mort. Les boeufs sont la monnaie des relations sociales : les parents sont ceux qui ont du betail entre eux (atenoc).",
+      "religiousAuthority": "Autorite des anciens et de specialistes religieux qui servent d'intermediaires avec les esprits. Croyance en Tammu (Dieu createur, dieu du ciel et de la pluie), parfois assimile a Jok (terme nilotique pour esprit supreme). Chaque famille effectuait un pelerinage tous les 5 a 6 ans a un lieu sacre sur la riviere Nyandit pour offrir des sacrifices a Nyandit. L'Eglise presbyterienne, presente depuis 1952, exerce une autorite spirituelle significative parmi les chretiens murle."
     },
     "languages": {
-      "mainLanguage": "Murle",
-      "vehicularRole": "Le murle est parlé par la majorité des Murle. L'anglais, l'amharique et d'autres langues sont également utilisés."
+      "mainLanguage": "Murle (aussi appele Ajibba, Beir)",
+      "isoCodes": ["mur"],
+      "dialects": [
+        "Murle des plaines (Lotilla / Bengalam) : dialecte des pasteurs des plaines de Pibor",
+        "Murle des hautes terres (Ngalam) : variante agricole du plateau de Boma",
+        "Longarim (Boya) : variete apparentee, locuteurs dans les collines Boya"
+      ],
+      "vehicularRole": "Le murle est la langue maternelle de l'ensemble du groupe murle (environ 200 000 a 400 000 locuteurs en 2025). Langue a statut vulnérable/menace selon Glottolog. Le Nouveau Testament a ete traduit en murle par des missionnaires. L'anglais est utilise dans l'administration, l'arabe soudanais dans les echanges commerciaux, l'amharique en Ethiopie."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels murle (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "Initiation : les garcons rejoignent leur classe d'age (buul) a l'adolescence lors de ceremonies marquees par des epreuves physiques. Mariage : le futur epoux rassemble le betail de la dot (kaavdhet) aupres de son pere et des parents maternels; la dot est transferee lors d'une ceremonie au homestead de la fille. Funerailles : le corps etait traditionnellement expose et laisse aux vautours et animaux; seuls les chefs sont enterres lors de ceremonies formelles. Sacrifices : chaque evenement social important (naissance, mariage, victoire) est souligne par le sacrifice d'un boeuf pour assurer la participation des esprits ancestraux. Pelerinage : les familles se rendent tous les 5 a 6 ans a la riviere Nyandit pour des offrandes a Nyandit.",
+      "symbols": "Le betail est le symbole central de la societe murle : il represente la richesse, les alliances sociales, la fertilite et la relation aux ancetres. Les scarifications sur le corps marquent l'appartenance a une classe d'age. Les tambours sacres des drumships (kidonwa) symbolisent l'autorite clanique. L'animal totemique de chaque classe d'age (hartebeest, cordon bleu) est un embleme identitaire. La direction de l'est (Jen) est sacree comme lieu d'origine et source de vie.",
+      "artsAndMusic": "Musique vocale et instrumentale : chants collectifs des classes d'age lors des raids et celebrations; compositions poetiques celebrant les troupeaux captures ou les victoires. Instruments : tambours (dont les tambours sacres des drumships), flutes et instruments a cordes simples. Danse : danses guerrieres et celebratoires des classes d'age. Artisanat : bijoux en metal et perles (colliers, bracelets, boucles d'oreilles) portes par hommes et femmes; armes (lances, boucliers en cuir de buffle); potterie utilitaire. Decoration corporelle : scarifications identificatrices des classes d'age; peintures ocre pour les guerriers.",
+      "spiritualities": "Religion traditionnelle centree sur la croyance en Tammu, dieu createur et dieu du ciel et de la pluie, parfois designe comme Jok (terme emprunte aux Nuer/Dinka). Le cosmos murle ne distingue pas les spheres religieuse et seculiere. Tout phenomene inexplique (arc-en-ciel, tonnerre) est considere comme une manifestation divine. Jen, lieu d'origine mythique a l'est, est une sorte d'Eden sacre ou reside la memoire ancestrale. Les esprits ancestraux participent a tous les evenements importants via les sacrifices. Les anciens et guerisseurs fonctionnent comme intermediaires avec le monde des esprits. La societe est reputed pour ses pouvoirs magiques par les voisins. Le christianisme presbyterien, introduit en 1952, est pratique par une part croissante de la population, surtout en Ethiopie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora murle dans les grandes villes soudanaises et éthiopiennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Societe sans Etat centralise (acephale). L'organisation politique repose sur les drumships (kidonwa) qui sont des unites politico-religieuses claniques, chacune dirigee par un chef rouge (alan ci merik). La hierarchie entre les drumships etablit la seniorite politique de l'ensemble du groupe. Absence de royaume ou chefferie formelle comparable aux royaumes nilotiques voisins.",
+      "relationsWithNeighbors": "Relations generalement conflictuelles avec les voisins en raison des raids de betail. Les Nuer (Lou Nuer) et les Dinka sont les principaux adversaires, appeles collectivement jong koth par les Murle. Les Anyuak sont appeles Nyoro et les Toposa et Jie sont designes comme kum. Les Murle sont consideres par leurs voisins comme redoutables pour leurs pouvoirs magiques. Des relations commerciales et de voisinage pacifiques existent en periode de treve.",
+      "conflictsOrAlliances": "Raids de betail cycliques contre les Dinka et les Nuer comme pratique economique et culturelle liee a la dot. Conflicts avec les Toposa lors de la migration historique. Guerre civile soudanaise : les Murle furent sous-representes au sein du SPLA et marginalises politiquement. Escalade violente des conflits intercommunautaires avec les Lou Nuer (2009-2013), avec des massacres reciproques et des enlevements d'enfants. Formation de la faction Cobra (2012) sous David Yau Yau pour negocier une representation politique murle. Accord de paix Yau Yau signe en 2014, conduisant a la creation de la Grande Zone Administrative de Pibor.",
+      "diaspora": "Diaspora murle dans les grandes villes du Soudan du Sud (Juba, Malakal) et dans les camps de refugies en Ouganda, Kenya et Ethiopie a la suite des conflits. Presence de communautes murle en Australie, aux Etats-Unis et dans d'autres pays occidentaux parmi les refugies sud-soudanais reinsalles depuis les annees 1990."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 350000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations croisees : 101 Last Tribes (300 000-400 000), SFASID/US Army War College (160 000, sous-estimation), ASJP Database (198 700 locuteurs), Joshua Project 2025. Population difficile a recenser en raison du nomadisme et des conflits. Projection 2025 basee sur les tendances demographiques depuis 2011.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 330000,
+          "note": "Grande Zone Administrative de Pibor (ancien comte de Pibor), Etat de Jonglei; plaines de Lotilla et plateau de Boma"
+        },
+        {
+          "country": "ETH",
+          "population": 20000,
+          "note": "Regions frontieres du sud-ouest de l'Ethiopie, zone Gambella et alentours"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Murle language (mur)",
-      "CIA World Factbook – South Sudan, Ethiopia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Murle people. https://en.wikipedia.org/wiki/Murle_people",
+      "101 Last Tribes — Murle people. https://www.101lasttribes.com/tribes/murle.html",
+      "WALS Online — Murle language (ISO 639-3: mur). https://wals.info/languoid/lect/wals_code_mrl",
+      "Glottolog — Murle (murl1244). https://glottolog.org/resource/languoid/id/murl1244",
+      "Joshua Project — Murle in South Sudan. https://joshuaproject.net/people_groups/13882/OD",
+      "SFASID/US Army War College — South Sudan Country Profile. https://pksoi.armywarcollege.edu/index.php/country-profile-of-south-sudan-social/",
+      "Arensen, J. E. (1992). Mice are Men: Language and Society Among the Murle of Sudan. Dallas: SIL International.",
+      "Lewis, B. A. (1972). The Murle: Red Chiefs and Black Commoners. Oxford: Clarendon Press.",
+      "Ethnologue — Murle (MUR). https://www.ethnologue.com/language/mur/"
     ]
   }
 }

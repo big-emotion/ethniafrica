@@ -2,61 +2,121 @@
   "id": "PPL_HARATINE",
   "nameMain": "Haratine",
   "languageFamilyId": "FLG_SEMITIQUE",
-  "currentCountries": ["MRT"],
+  "currentCountries": ["MRT", "MAR", "DZA", "MLI", "SEN"],
   "content": {
     "appellations": {
       "mainName": "Haratine",
-      "selfAppellation": "",
+      "selfAppellation": "Haratine (pluriel en arabe hassaniya) ; Hartani (singulier masculin) ; Hartania (singulier feminin)",
       "exonyms": [
-        "\"Haratine\" (terme local), \"Esclaves\" (terme historique, problématique), \"Affranchis\" (terme descriptif)"
+        "Haratin",
+        "Haratins",
+        "Chouachins",
+        "Chouachines",
+        "Maures noirs",
+        "Isemghan (berbere)",
+        "Drawi/Drawa (terme prefere au Maroc, moins pejoratif)",
+        "Bella (esclave libere, monde touareg)",
+        "Abid (esclave, terme historique pejoratif)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "L'etymologie de Haratine est debattue : certains chercheurs y voient un derive de l'arabe hurr (libre) + thani (deuxieme), soit affranchi de deuxieme categorie ; d'autres le rattachent au berbere aherdan (homme noir du Moyen-Atlas et du Haut-Atlas marocains) ou au mot arabe hiratha (culture, labour). En berbere, isemghan (plur.), asemgh (sing.) est l'equivalent dans diverses variantes dialectales (Gourara, Siwa). Au Maroc, hartani/hartania sont considered pejoratifs, associes a l'esclavage et au statut subalterne ; les interesses preferent Drawi (habitant du Draa) ou Sahrawi. Les Chouachins/Chouachines sont la designation usuelle en Tunisie et en Libye.",
+      "whyProblematic": "Le terme Haratine est fortement associe a l'histoire de l'esclavage et de la servitude dans le monde arabo-berbere. Il est perçu comme pejoratif dans certains contextes (notamment au Maroc). La population ainsi designee n'est pas homogene : elle regroupe des descendants de populations noires autochtones du Sahara, des descendants d'esclaves captures au sud du Sahara et des affranchis dont le statut social reste inferieur. La frontiere entre Haratine et Abid (esclaves proprement dits) est floue selon les regions et les epoques.",
+      "contemporaryUsage": "Haratine est le terme officiel en Mauritanie pour designer le groupe ethnique des Maures noirs (Sudanese Moors), distingues des Beidane (Maures blancs). La Mauritanie est l'un des derniers pays a avoir officialise l'abolition de l'esclavage (1981, criminalise en 2007 et 2015). Les Haratine constituent le groupe ethnolinguistique le plus important de Mauritanie (environ 40% de la population). IRA-Mauritanie (Initiative pour la Resurgence du mouvement Abolitionniste) milite pour l'emancipation complete. Messaoud Ould Boulkheir, Haratine, est elu president de l'Assemblee nationale mauritanienne le 27 avril 2007.",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Toutes les régions de la Mauritanie",
-      "currentCountries": ["MRT"]
+      "ethnoLinguisticGroup": "Arabe hassaniya (Mauritanie, Mali, Sahara occidental) ; berbere (Maroc, Algerie, regions du Maghreb) selon la region",
+      "historicalRegion": "Mauritanie, Maroc meridional (vallee du Draa, Tafilalet), Algerie saharienne (Touat, Gourara), Sahara occidental",
+      "currentCountries": ["MRT", "MAR", "DZA", "MLI", "SEN"]
     },
-    "ethnicities": ["Haratine"],
+    "ethnicities": ["Haratine", "Chouachins"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Toutes les régions de la Mauritanie"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Haratine descendent en grande partie des populations noires autochtones qui habitaient le Sahara avant son aridification. Les peintures rupestres du Sahara maghrebin (sites du Tassili et de la Tadrart Acacus) montrent des individus a phenotypes melanodermiques des le Neolithique (7e-2e millenaire av. J.-C., periode de l'elevage des bovins). Vers la fin du 2e millenaire av. J.-C., les proto-Berberes venus du nord-est de l'Afrique s'imposent au Sahara ; les populations melanodermiques des sites du Tassili migrent vers le Sahel (Malika Hachid). Certains restent comme population residuelle dans les oasis (Haratine des oasis sahariens). D'autres descendent d'esclaves captures par les nomades berberes au sud du Sahara, notamment lors de razzias des tribus Gétules vers les Garamantes et les populations subsahariennes (Rachid Bellil). L'academicien Chouki El Hamel affirme que les Haratine marocains ne descendent pas necessairement d'esclaves d'origine subsaharienne mais de populations noires autochtones du sud du Maroc.",
+      "formationPeriod": "Formation d'une identite commune Haratine dans les oasis du Sahara et au Maghreb, probablement entre le Xe et le XVIe siecle, en lien avec l'essor du commerce transsaharien et l'organisation sociale Berbero-Arabe. La hierarchie sociale incluant les Haratine comme classe de serfs agricoles est attestee depuis le XIVe-XVIe siecle (heritage bedouin : Hassane, Zwaya, Bidan au-dessus des Haratine).",
+      "migrationRoutes": [
+        "Populations noires autochtones du Sahara deplacees vers les oasis lors de l'aridification saharienne (fin 2e millenaire av. J.-C.)",
+        "Esclaves captures lors de razzias trans-sahariennes par les Berberes et les Arabes sur les populations subsahariennes (Mali, Soudan, Afrique de l'Ouest) depuis le Moyen Age",
+        "Deplacements inter-oasis dans le Sahara algerien, marocain et mauritanien",
+        "Migration vers les villes (Nouakchott, Rabat, Casablanca, Agadir, Zagora) au XXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Toutes les regions de la Mauritanie (particulierement le sud : Hodh El Gharbi, Hodh El Chargui, Brakna, Trarza)",
+        "Vallee du Draa (Maroc meridional, Zagora, Agdz)",
+        "Tafilalet (Maroc meridional, Erfoud, Rissani)",
+        "Touat et Gourara (Algerie saharienne)",
+        "Sahara occidental (camps de refugies de Tindouf, Algerie)",
+        "Region du Fleuve Senegal (frontiere mauritano-senegalaise)"
+      ],
+      "unificationsOrDivisions": "Pas d'organisation politique propre historique ; identite definie par le statut social inferieur impose par les groupes nomades dominants (Beidane, Berberes, Touaregs). Emergence d'une conscience politique specifique en Mauritanie au XXe siecle. Fondation de l'El Hor (Mouvement des Mauritaniens libres, 1974), premier mouvement politique haratine. Fondation d'IRA-Mauritanie (Initiative pour la Resurgence du mouvement Abolitionniste) par Biram Dah Abeid (candidat a la presidentielle, prix de l'ONU).",
+      "externalInfluences": "Domination politique et sociale par les Beidane (Maures blancs) en Mauritanie. Subjugation par les Berberes et Arabes tout au long de l'histoire. Incorporation forcee dans l'armee du sultan marocain Ismail Ibn Sharif (1672-1727), qui avait une mere Haratine, pour consolider son pouvoir. Colonisation française (Mauritanie, Maroc, Algerie) : en Mauritanie, perpetuation implicite de l'esclavage ; en Algerie, marginalisation puis promotion post-independance. Influence islamique (conversion a l'islam et adoption de la culture arabo-berbere).",
+      "majorHistoricalEvents": "Recrutement force dans l'armee du sultan marocain Ismail Ibn Sharif (1672-1727) : l'armee Haratine-Abid est contrainte de mener des guerres. Formation de 40% de la population du Touat algerien a la fin du XIXe siecle (Charles de Foucauld). Abolition officielle de l'esclavage en Mauritanie (1981) mais criminalisation seulement en 2007 et 2015, rarement appliquee. Amnesty International (1994) : 90 000 Haratine encore comme propriete de maitres, 300 000 affranchis dans une dependance informelle. Election de Messaoud Ould Boulkheir comme president de l'Assemblee nationale mauritanienne (27 avril 2007). Incident au Maroc (fevrier 2021) : deputee PJD Azzouha El Arrak traitee de hartania par un conseiller municipal (affaire nationale denoncant le racisme anti-haratine)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Pas de structure politique propre historique. Dans le systeme Beidane mauritanien, les Haratine occupent la base de la hierarchie sociale (en dessous des Hassan, Zwaya et autres Bidan). En Mauritanie, relation traditionnelle de patron-serf (khommasin : partage agricole au cinquieme). Dans les oasis du Sahara algerien, statut de serf agricole et d'artisan marginalise. Aujourd'hui, participation croissante a la vie politique mauritanienne (Messaoud Ould Boulkheir, president de l'Assemblee nationale 2007 ; Biram Dah Abeid, candidat presidentiels). Al Hor et IRA-Mauritanie sont les principales organisations politiques haratines.",
+      "clanOrganization": "Organisation clanique peu developpee en tant que groupe propre ; integration subalterne dans les tribus Beidane de tutelle. En Mauritanie, les Haratine sont historiquement attaches a des tribus Beidane dont ils portent le nom de tribu. Endogamie historique (mariages principalement entre Haratine) par segregation sociale imposee, non par choix identitaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Statut hereditaire transmis de generation en generation : le fils d'un Haratine restait Haratine quel que soit son affranchissement formel. La mobilite sociale etait quasi nulle jusqu'au XXe siecle. En Algerie, la guerre de liberation (1954-1962) a permis une promotion sociale significative (enseignement, postes locaux influents).",
+      "religiousAuthority": "Islam sunnite, tres souvent avec une forte coloration soufie (tariqa Tijaniyya, Qadiriyya). En Mauritanie, les Haratine pratiquent des chants religieux specifiques (Madih, Dhikr, Bonjé). Leur islamisation profonde ne les a pas protege de la discrimination sociale, ce que des activistes contemporains denoncent comme contraire a l'islam."
     },
     "languages": {
-      "mainLanguage": "Haratine (mry)",
-      "isoCodes": ["mry"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Hassaniya (arabe mauritanien)",
+      "isoCodes": ["mey"],
+      "dialects": [
+        "Arabe maghrebin (Maroc, Algerie, Tunisie, Libye selon la region)",
+        "Diverses variantes berberes (tachelhit, tamazight, zenaga) selon la communaute linguistique locale"
+      ],
+      "vehicularRole": "En Mauritanie, les Haratine parlent le hassaniya (variete d'arabe maghrebin, iso 639-3 : mey), langue commune avec les Beidane. Au Maroc, ils parlent principalement le darija (arabe marocain) ou des variantes berberes selon la region (tachelhit dans le Souss et le Draa, tamazight dans l'Atlas). En Algerie, l'arabe algerien ou des variantes berberes selon l'oasis. Le français est la langue administrative en Mauritanie et au Maroc."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques islamiques sunnites : priere, jeune, pelerinage. Musique religieuse mauritanienne specifique : Madih (chants du soir a la louange du Prophete, autour du luth tidinet et de tambours), Dhikr (recitations devotionnelles avec instruments), Bonjé (chants de danse et d'accueil). Ceremonies de mariage, ceremonies de naissance et de deuil conformes au droit islamique. Traditions de chant et de poesie orale en hassaniya.",
+      "symbols": "L'oasis est le symbole principal de l'identite haratine : espace de vie, de culture agricole et de servitude historique. Le luth tidinet (instrument a cordes de la musique mauritanienne) est associe aux chants religieux haratines. La couleur noire de la peau, signe de discrimination, est reappropriee comme marqueur d'identite par le mouvement abolitionniste (IRA).",
+      "artsAndMusic": "Musique Madih (chants du soir pour le Prophete), Dhikr (devotion soufie) et Bonjé (chants festifs) en Mauritanie. Traditions de poesie orale en hassaniya. Artisanat specialise : forgeron, tanneur, bijoutier, menuisier (activites reservees historiquement aux groupes de statut inferieur). Gnawa et Issaoua au Maroc : musiques de transe associees aux Haratine (gnaouiyya : terme derive de l'appellation berbere ignaouen).",
+      "spiritualities": "Islam sunnite dominant, avec forte coloration soufie (Tijaniyya, Qadiriyya). Pratiques spirituelles de guerison par la musique (Gnawa au Maroc : ceremonies de lila pour chasser les esprits). Syncretisme entre islam populaire et croyances pre-islamiques dans certaines communautes oasiennes. La dimension spirituelle est etroitement liee aux brotherhoods soufies qui ont parfois offert un refuge social aux communautes marginalisees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Aucun royaume propre ; role d'agriculteurs serfs dans les oasis controlees par les groupes nomades Berberes et Arabes dominants. Participation forcee a l'armee du sultan Ismail Ibn Sharif du Maroc (1672-1727). Role essentiel dans l'economie oasienne transsaharienne (agriculture, irrigation, artisanat) qui a soutenu le commerce d'or et de sel.",
+      "relationsWithNeighbors": "Dependance subalterne vis-a-vis des Beidane (Mauritanie), des Berberes (Maroc, Algerie) et des Touaregs (Sahara) qui les exploitaient comme serfs agricoles. Relations de servitude avec les elites arabes et berberes. Connexions avec les peuples subsahariens d'Afrique de l'Ouest (Wolofs, Toucouleurs, Peuls, Songhais) partageant des traits culturels lies a l'Afrique noire.",
+      "conflictsOrAlliances": "Aucune revolte de grande ampleur documentee avant le XXe siecle. Mouvement El Hor (1974) en Mauritanie : premiere organisation politique haratine. IRA-Mauritanie de Biram Dah Abeid : mouvement abolitionniste reconnu internationalement (prix ONU). Tensions avec les Beidane dans le contexte post-abolition mauritanien. Incidents discriminatoires au Maroc (affaire Azzouha El Arrak, fevrier 2021).",
+      "diaspora": "Presence dans toutes les villes mauritaniennes (Nouakchott, Nouadhibou) en exode rural depuis les annees 1970. Migration vers le Senegal, le Mali et l'Europe (Espagne, France) pour les Haratines mauritaniens. Au Maroc, presence dans les villes (Agadir, Marrakech, Casablanca) avec des communautes d'origine oasienne (Zagora, Rissani)."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 1800000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia EN Haratin : Mauritanie environ 1,5 million (40% de la population mauritanienne de ~4,3 millions en 2025) ; estimations supplementaires pour Maroc meridional, Algerie saharienne et pays voisins",
+      "distributionByCountry": [
+        {
+          "country": "MRT",
+          "population": 1500000,
+          "note": "Groupe ethnolinguistique le plus important de Mauritanie (~40% de la population) ; concentres dans le sud et le centre du pays, et a Nouakchott"
+        },
+        {
+          "country": "MAR",
+          "population": 200000,
+          "note": "Vallee du Draa (Zagora, Agdz, Rissani), Tafilalet, Anti-Atlas, parfois majoritaires dans certains villages oasiens du sud marocain"
+        },
+        {
+          "country": "DZA",
+          "population": 60000,
+          "note": "Touat, Gourara, Mzab et autres oasis sahariennes ; represents 40% de la population de certains oasis au XIXe siecle selon Charles de Foucauld"
+        },
+        {
+          "country": "MLI",
+          "population": 25000,
+          "note": "Nord du Mali (Tombouctou, Gao, Kidal), en lien avec les communautes Touareg et Arabe du Sahara"
+        },
+        {
+          "country": "SEN",
+          "population": 15000,
+          "note": "Region du Fleuve Senegal, en lien avec la diaspora mauritanienne"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia FR – Haratins (https://fr.wikipedia.org/wiki/Haratine)",
+      "Wikipedia EN – Haratin (https://en.wikipedia.org/wiki/Haratin)",
+      "El Hamel C. – Le Maroc noir (Black Morocco), Stanford University Press, 2014",
+      "Pazzanita A.G. – Historical Dictionary of Mauritania, 3e ed., Scarecrow Press, 2008",
+      "Ould Saleck El Arby – Les Haratins : le paysage politique mauritanien, L'Harmattan, 2003",
+      "Gast M. – article Haratin, Encyclopedie berbere, vol. XXII, 2000",
+      "Amnesty International – Mauritania: Human Rights Abuses Against Black Africans, 1994",
+      "Hachid M. – Les premiers Berberes, Inas-Edisud, 2000 (sur les populations du Tassili et leur devenir)"
+    ]
   }
 }

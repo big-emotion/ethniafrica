@@ -2,63 +2,119 @@
   "id": "PPL_TEDA",
   "nameMain": "Teda",
   "languageFamilyId": "FLG_SAHARIEN",
-  "currentCountries": ["TCD", "NER", "LBY"],
+  "currentCountries": ["TCD", "LBY", "NER"],
   "content": {
     "appellations": {
       "mainName": "Teda",
-      "selfAppellation": "Teda",
-      "exonyms": ["Teda (terme utilisé par les Européens)"],
+      "selfAppellation": "Teda (Téda, Toda, Tuda)",
+      "exonyms": [
+        "Tibbu (terme arabe historique)",
+        "Tibu (variante)",
+        "Toubou du nord (désignation géographique)",
+        "Tebu (terme générique pour Teda et Daza ensemble)",
+        "Tubu (variante)"
+      ],
+      "originOfExonyms": "Le terme Toubou (ou Tebu, Tubu) est le nom générique désignant les deux branches du peuple : Teda (nord) et Daza (sud). En vieux Tebu, tou désigne les montagnes du Tibesti (touda) et bou signifie sang en kanembu, donnant Toubou : les gens du Tibesti ou gens du même sang venus du Tibesti. Tibbu est l'appellation arabe historique. Les Teda préfèrent l'autoappellation Teda (peuple des rochers en vieux Tebu, en référence au Tibesti).",
+      "whyProblematic": "Le terme Teda est parfois utilisé pour l'ensemble des Toubou (Teda + Daza) dans la littérature française, ce qui peut créer une confusion. En anglais, Teda désigne spécifiquement le sous-groupe septentrional. La frontière linguistique et culturelle entre Teda et Daza est réelle mais les deux groupes partagent une origine commune.",
+      "contemporaryUsage": "Teda est utilisé spécifiquement pour désigner le sous-groupe septentrional des Toubou, concentré dans et autour du massif du Tibesti (Tchad nord, Libye sud, Niger est). Les Teda maintiennent une identité distincte des Daza, notamment par leur territoire et leur accent sur l'institution du derde (chef spirituel).",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien (Toubou)",
-      "historicalRegion": "TCD, NER, LBY",
-      "currentCountries": ["TCD", "NER", "LBY"]
+      "ethnoLinguisticGroup": "Saharien (Tebu septentrional, Nilo-Saharien)",
+      "historicalRegion": "Massif du Tibesti (nord du Tchad, sud de la Libye), Fezzan (Libye), oases du nord-est du Niger",
+      "currentCountries": ["TCD", "LBY", "NER"]
     },
-    "ethnicities": ["Teda du Tchad", "Teda du Niger", "Teda de Libye"],
+    "ethnicities": [
+      "Tumagra (clan principal du Tibesti, dont le chef derde est le chef spirituel des Teda)",
+      "Teda du Tibesti (Tchad, massif du Tibesti et Bardaï)",
+      "Teda de Fezzan (Libye méridionale)",
+      "Teda du Kawar (Niger oriental, oasis de Kawar)",
+      "Teda du Nigeria (petite communauté dans le nord-est)",
+      "Teda du Soudan (communauté diasporique)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Teda sont originaires du TCD, du Niger et de la LBY, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Toubou.",
-      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+      "ancientOrigins": "Les Teda sont parmi les plus anciens habitants du Sahara central. Leur présence dans la région du Tibesti et du Fezzan est attestée depuis l'Antiquité. Certains auteurs (Jean Chapelle) les relient aux Ethiopiens mentionnés par Hérodote (430 avant J.-C.), chassés par les Garamantes, qui occupaient les mêmes territoires de la Phazania (Fezzan) à la Nubie. Harold MacMichael a noté que le désert de Bayuda était connu sous le nom de désert des Goran (terme arabe pour les Daza/Teda). Les premières mentions dans la littérature islamique sont du 8e siècle (Ibn Qutaybah). Les Teda parlent le tedaga, une langue nilo-saharienne de la branche Tebu-Saharan, proche du dazaga (parlé par les Daza, branche méridionale).",
+      "formationPeriod": "L'identité teda s'est consolidée autour du massif du Tibesti, qui constitue leur foyer historique et culturel. L'institution du derde (chef spirituel du clan Tumagra, arbitre des conflits) est ancienne et représente le coeur de l'organisation sociale et politique Teda. Au 18e siècle, les Toubou de Kawar menaient une existence indépendante jusqu'en 1870, date à laquelle la tribu sanhajane Kerdusian du Fezzan mit fin à leur autonomie.",
+      "migrationRoutes": [
+        "Habitat permanent dans le massif du Tibesti et les oasis environnantes (nord du Tchad)",
+        "Circuits de nomadisme pastoral entre le Tibesti et les oasis du Kawar (Niger) et du Fezzan (Libye)",
+        "Migrations saisonnières vers le Borkou et l'Ennedi (Tchad) pour les pâturages"
+      ],
+      "historicalSettlementZones": [
+        "Massif du Tibesti (nord du Tchad) : foyer principal, Bardaï (chef-lieu du sous-préfecture du Tibesti)",
+        "Fezzan méridional (Libye) : oases et zones d'élevage",
+        "Kawar (Niger oriental) : oases de Bilma et Dirkou",
+        "Borkou et Ennedi (Tchad) : zones de transhumance méridionale",
+        "Nord-est du Nigeria : petite diaspora"
+      ],
+      "unificationsOrDivisions": "Les Teda sont réunis symboliquement sous l'autorité du derde, chef spirituel issu du clan Tumagra du Tibesti. Le derde n'a pas de pouvoir politique direct mais son autorité morale et de médiation est reconnue par tous les Teda. La société Teda est organisée en clans indépendants avec leurs propres territoires. Il n'existe pas d'organisation politique centralisée. La frontière Teda/Daza (Toubou du nord/du sud) est une division culturelle ancienne même si les deux parlent des langues Tebu mutuellement compréhensibles par les Teda (mais pas toujours par les Daza).",
+      "externalInfluences": "Islamisation progressive à partir du 11e-12e siècle via les contacts avec l'empire du Kanem-Bornu et les commerçants des routes transsahariennes. Influence ottomane en Libye (contrôle nominal du Fezzan). Colonisation française au Tchad (début du 20e siècle) : création des cantons administratifs en 1936, premier chef nommé al-haj Kelleï Chahami. Colonisation italienne en Libye (1911-1943). Indépendance du Tchad (1960) et de la Libye (1951). Sous Kadhafi en Libye (1969-2011) : citoyenneté retirée aux Toubou (déc. 2007), violences, évictions.",
+      "majorHistoricalEvents": "Indépendance du Kawar toubou (jusqu'en 1870). Colonisation française du Tibesti (début 20e siècle). Création des cantons Teda en 1936 (premier chef al-haj Kelleï Chahami). Libération des esclaves (agara) à Bardaï et dans le Borkou (accord de 1953). Première guerre civile tchadienne (1965-1979) : le derde Oueddei Kichidemi protesta contre les abus du gouvernement de N'Djaména (1965), fut exilé en Libye. Son fils Goukouni Oueddei dirigea la seconde armée de libération du FROLINAT et devint chef d'Etat tchadien (1979-1982). Hissène Habré (d'origine Daza) renversa Goukouni en 1982. Uprising des Toubou en Libye (novembre 2008, Front pour le Salut de la Libye TFSL) contre les persécutions de Kadhafi. Participation des Teda à la guerre civile libyenne (2011) aux côtés des rebelles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "L'institution centrale de l'organisation sociale et politique Teda est le derde, chef spirituel et juge du clan Tumagra dans le massif du Tibesti. Le derde arbitre les conflits entre clans, lève des sanctions morales et sert d'intermédiaire entre les Teda et le monde extérieur. Il n'exerce pas un pouvoir de commandement militaire direct. En dehors du Tibesti, les Teda sont organisés en chefferies de clan autonomes. Les cantons coloniaux (depuis 1936) ont superposé une organisation administrative à la structure clanique traditionnelle.",
+      "clanOrganization": "Société clanique patrilinéaire. Chaque clan Teda possède des droits historiques sur certaines oasis, pâturages, puits et palmiers dattiers. Les clans sont identifiés par leur territoire et leur ancêtre fondateur. Le clan Tumagra est le plus prestigieux car il fournit le derde. La caste des Azza (Aza) est une caste artisanale endogame (métal, cuir, sel, puits, dattes, poterie, couture) méprisée socialement mais indispensable économiquement. Les esclaves (Agara) constituaient une couche inférieure dont l'affranchissement fut imposé par l'administration française en 1953.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires constituent la structure sociale fondamentale. Les droits sur les ressources (oasis, puits, arbres, pâturages, parts de récolte) sont héritées en ligne patrilinéaire. Les alliances matrimoniales consolident les relations inter-claniques. Les Teda interdisent le mariage entre cousins jusqu'à neuf générations (contrairement aux Daza du Kanem qui pratiquent le mariage entre cousins proches). Les liens maternels sont également reconnus pour certaines obligations de solidarité.",
+      "religiousAuthority": "Islam sunnite malékite, adopté progressivement depuis le 11e-12e siècle. Les pratiques islamiques coexistent avec des coutumes juridiques anciennes : les meurtres sont réglés par négociation entre familles (diya : prix du sang, goroga en tedaga), la justice islamique formelle intervenant en second recours. Les imams de village et les malams (savants islamiques) jouent un rôle religieux et éducatif. Le Hajj confère un prestige social élevé."
     },
     "languages": {
-      "mainLanguage": "Teda (variété Toubou)",
-      "vehicularRole": "Le teda est parlé par la majorité des Teda. L'arabe et le français sont également utilisés."
+      "mainLanguage": "Tedaga (langue des Teda, aussi appelée Teda, Todaga, Tudaga)",
+      "isoCodes": ["tuq"],
+      "dialects": [
+        "Tedaga septentrional (Tibesti, Tchad et Libye méridionale)",
+        "Tedaga de Kawar (Niger oriental, oasis de Bilma et Dirkou)",
+        "Tedaga de Fezzan (Libye méridionale)"
+      ],
+      "vehicularRole": "Le tedaga (ISO 639-3 : tuq) est une langue nilo-saharienne de la branche Tebu-Saharan (Saharan occidental), parlée par les Teda dans le sud de la Libye, le nord du Tchad et l'est du Niger, avec une petite communauté dans le nord-est du Nigeria. Joshua Project (2025) estime la population totale des Teda parlant tedaga à environ 160 700 personnes (Tchad : 112 000, Niger : 29 000, Nigeria : 4 700, Soudan : 12 000, Libye : 2 900). L'Ethnologue classe le tedaga comme langue stable avec entre 10 000 et 1 million de locuteurs. La majorité des Teda comprend également le dazaga. L'écriture latine est en cours de normalisation (travaux à la bibliothèque de Bardaï)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels teda.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture teda."
+      "majorRites": "Rites islamiques : circoncision masculine (rite de passage accompagné de festivités claniques), mariage islamique avec dot en bétail (chameaux, chèvres, moutons), funérailles islamiques. Rites d'intronisation du derde : cérémonies complexes impliquant les anciens des clans Teda pour la désignation et l'installation du nouveau derde à Bardaï (Tibesti). Célébrations des fêtes islamiques avec prières collectives et festins. Cérémonies liées au cycle pastoral : départ et retour des troupeaux.",
+      "symbols": "Le dromadaire (chameau) est le symbole suprême de richesse, de mobilité et de statut chez les Teda. Les armes (tradition guerrière des Teda, réputés comme warrior people) : lance, épée, fusil (depuis la période coloniale). Le Tibesti (montagnes sacrées, identitaires) : touda signifie montagnes rocheuses en vieux Tebu. Le derde comme symbole de l'unité et de la continuité culturelle Teda. Le sel et le natron extraits des oasis (symboles de l'activité économique et des routes commerciales).",
+      "artsAndMusic": "Poésie orale en tedaga : chants épiques, chants de mariage, chants de deuil transmis oralement de génération en génération. Musique instrumentale de percussion (tambours, cithares) lors des cérémonies. Artisanat : confection de selles de chameau élaborées, tressage de nattes et de paniers, travail du cuir (outres, sacs de voyage, harnais), fabrication d'amulettes protectrices. Les femmes fabriquent des bijoux en argent et en cuivre. Architecture : maisons rectangulaires en pierre (construction spécifique au Tibesti, en raison de la disponibilité du matériau), tentes pour le nomadisme.",
+      "spiritualities": "Islam sunnite malékite, adopté progressivement depuis le 11e-12e siècle. Les coutumes juridiques propres persistent parallèlement à l'islam : diya (goroga en tedaga) pour les meurtres, réglés entre familles avant ou à la place de la justice formelle. Croyances en esprits de la nature (oasis, sources, grottes du Tibesti). Recours aux marabouts pour la protection des troupeaux et des voyages (amulettes coraniques, talismans). Le Hajj est particulièrement valorisé. Tradition de l'institution du derde qui intègre des dimensions spirituelles préislamiques (médiation, protection symbolique des Teda)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes, nigériennes et libyennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora teda dans les grandes villes tchadiennes, nigériennes et libyennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Teda n'ont pas fondé d'empire centralisé. Leur organisation politique est clanique et décentralisée, avec le derde du clan Tumagra comme seule autorité morale supra-clanique. La chefferie toubou de Kawar (Niger) maintint son indépendance jusqu'en 1870. Les Teda ont coexisté avec l'empire du Kanem-Bornu au sud et avec les Garamantes et Ottomans en Libye, en maintenant une large autonomie grâce aux défenses naturelles du Tibesti.",
+      "relationsWithNeighbors": "Relations de complémentarité commerciale avec les sédentaires du Kanem et du Bornou (échanges bétail contre céréales et produits manufacturés). Commerce du sel extrait des oases de Kawar (Bilma) vers les savanes du sud. Relations avec les Arabes du Fezzan (Libye) et les commerçants nord-africains sur les routes transsahariennes. Relations souvent tendues avec l'Etat libyen sous Kadhafi (citoyenneté retirée en 2007, persécutions). Relations avec les Zaghawa à l'est (groupes apparentés nilo-sahariens).",
+      "conflictsOrAlliances": "Résistance à la colonisation française au Tibesti (début 20e siècle). Implication centrale dans les guerres civiles tchadiennes : le derde Oueddei Kichidemi s'opposa aux abus du gouvernement en 1965 et fut exilé en Libye, devenant symbole de résistance. Son fils Goukouni Oueddei (Teda) fut chef d'Etat tchadien (1979-1982). Uprising toubou en Libye (novembre 2008) contre Kadhafi (TFSL, 5 jours, 33 morts). Participation à la guerre civile libyenne (2011) : capture de Qatrun et de Mourzouq (Fezzan). Conflits à Sebha (mars 2012) entre Toubou et Arabes ; menace de séparatisme de la région du Fezzan.",
+      "diaspora": "Quelques milliers de Teda et Daza à Omdurman (Soudan), cités dans la littérature ethnographique. Quelques milliers de travailleurs teda à Jeddah (Arabie Saoudite). Communautés dans les grandes villes tchadiennes (N'Djaména, Faya-Largeau). Migrations saisonnières entre Tchad, Libye et Niger selon les conditions pastorales."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 160700,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025) pour les Tubu Teda parlant tedaga (tuq) : Tchad 112 000, Niger 29 000, Nigeria 4 700, Soudan 12 000, Libye 2 900. Total : environ 160 700 personnes. Britannica estime les Teda à environ 50 000 au tournant du 21e siècle (chiffre sans doute sous-estimé). SIL Ethnologue : entre 10 000 et 1 million de locuteurs tedaga.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 112000,
+          "note": "Massif du Tibesti (Bardaï), Borkou, Ennedi. Principale population Teda."
+        },
+        {
+          "country": "NER",
+          "population": 29000,
+          "note": "Niger oriental, oases de Kawar (Bilma, Dirkou)."
+        },
+        {
+          "country": "LBY",
+          "population": 2900,
+          "note": "Fezzan méridional (Mourzouq, Qatrun). Population diminuée par les persécutions sous Kadhafi."
+        },
+        {
+          "country": "NGA",
+          "population": 4700,
+          "note": "Nord-est du Nigeria, petite communauté diasporique."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Teda language (tbv)",
-      "CIA World Factbook – Chad, NER, Libya",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples sahariens"
+      "Wikipedia EN — Toubou people. https://en.wikipedia.org/wiki/Toubou_people",
+      "Wikipedia EN — Teda language. https://en.wikipedia.org/wiki/Teda_language",
+      "Britannica — Teda people. https://www.britannica.com/topic/Teda",
+      "Joshua Project — Tedaga language (tuq). https://joshuaproject.net/languages/tuq",
+      "Joshua Project — Tubu Teda in Chad. https://joshuaproject.net/people_groups/15316/CD",
+      "Amara Accessibility Media — Tedaga language now supported on Amara. https://blog.amara.org/2020/09/14/tedaga-language-now-supported-on-amara/",
+      "SIL Ethnologue — Tedaga language (tuq). https://www.ethnologue.com/language/tuq/",
+      "Country Studies US — Chad. https://countrystudies.us/chad/19.htm",
+      "CIA World Factbook — Chad, Libya, Niger. https://www.cia.gov/the-world-factbook/"
     ]
   }
 }

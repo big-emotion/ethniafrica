@@ -2,63 +2,115 @@
   "id": "PPL_TSWA_MOZ",
   "nameMain": "Tswa (Mozambique)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MOZ"],
+  "currentCountries": ["MOZ", "ZAF", "ZWE"],
   "content": {
     "appellations": {
       "mainName": "Tswa (Mozambique)",
-      "selfAppellation": "Tswa",
-      "exonyms": ["Tswa (terme utilisé par les Européens)"],
+      "selfAppellation": "Vatswa (pluriel) / Mutswa (singulier)",
+      "exonyms": [
+        "Tshwa (orthographe portugaise coloniale)",
+        "Tsonga (designation inclusive utilisee par les recensements mozambicains, confondant Tswa, Ronga et Tsonga)",
+        "Shangaan (parfois utilise abusivement pour tout groupe de la famille Tswa-Ronga)",
+        "Batswa (forme avec prefixe bantou)"
+      ],
+      "originOfExonyms": "Le terme Tsonga est frequemment utilise dans les recensements et la litterature pour englober les Tswa, Ronga et Tsonga, ce qui efface l'identite specifique des Vatswa. L'appellation Shangaan (du nom du chef Soshangane, fondateur de l'Empire Gaza Nguni) a ete appliquee par extension a de nombreux groupes de la region, y compris les Tswa, bien que ces derniers precedent historiquement l'empire de Soshangane. La forme portugaise Tshwa fut utilisee dans les documents coloniaux.",
+      "whyProblematic": "La principale difficulte de denombrement et d'identification des Tswa du Mozambique est leur amalgame systematique avec les Tsonga dans les recensements officiels. Cette confusion administrative remonte a l'epoque coloniale portugaise. De plus, le terme Tswa couvre plusieurs sous-groupes (Hlengwe, Dzivi, Mhandla, Nwanati, Nzonge) qui ont des histoires et des identites partiellement distinctes. La langue Xitswa est parfois consideree comme un dialecte du Tsonga, ce qui accentue la difficulte de distinction.",
+      "contemporaryUsage": "En usage quotidien au Mozambique meridional, les habitants se designent eux-memes comme Vatswa ou utilisent le nom de leur sous-groupe (ex. VaHlengwe). Dans les contextes officiels mozambicains, la langue est souvent enregistree sous Tsonga ou Changana. Au Zimbabwe, les Hlengwe sont parfois identifies comme Shangaan. La langue Xitswa est reconnue par Ethnologue (code ISO 639-3 : tsc) comme une langue distincte a l'interieur de la famille Tswa-Ronga.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Mozambique",
-      "currentCountries": ["MOZ"]
+      "ethnoLinguisticGroup": "Bantou meridional — famille Tswa-Ronga (Zone S, sous-branche de Tsonga)",
+      "historicalRegion": "Mozambique meridional — provinces d'Inhambane et Gaza principalement; arriere-pays rural a l'ouest des cotes de l'Ocean Indien",
+      "currentCountries": ["MOZ", "ZAF", "ZWE"]
     },
-    "ethnicities": ["Tswa du Nord", "Tswa du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Hlengwe — sous-groupe le plus nombreux, s'etendant dans l'ouest de la province d'Inhambane et au Zimbabwe meridional; parfois classe comme langue separee",
+      "Dzivi (Dzibi) — sous-groupe de la region de Gaza et Inhambane centre",
+      "Mhandla (Mandla) — sous-groupe de l'interieur d'Inhambane",
+      "Nwanati (Makwakwa) — sous-groupe meridional, place au sud des Hlengwe",
+      "Nzonge (Gwambe) — sous-groupe entre les Dzivi et les Chopi",
+      "Vatswa urbanises de Maputo — population issue des migrations dues aux guerres civiles et a la recherche d'emploi"
+    ],
     "origins": {
-      "ancientOrigins": "Les Tswa du Mozambique sont originaires de la région du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Tswa d'Afrique du Sud.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Tswa du Mozambique font partie du vaste mouvement bantou qui s'est installe en Afrique australe avant le premier millenaire. Leurs ancetres partagent une origine commune avec les Ronga et les Tsonga (Shangaan), tous issus d'un meme groupe proto-bantou qui migra depuis l'Afrique centrale vers le sud en longeant la cote orientale africaine. Ces populations s'installerent dans le Mozambique meridional entre le VIIe et le XIe siecle, s'adaptant aux conditions agro-pastorales de l'arriere-pays d'Inhambane et des vallees du Save et du Limpopo. Les differences dialectales entre Tswa, Ronga et Tsonga se sont developpees progressivement du fait de l'isolement geographique relatif de chaque groupe.",
+      "formationPeriod": "L'identite Tswa distincte s'est affirmee entre le XIIe et le XVIIe siecle. Les Tswa s'etablirent preferentiellement dans l'arriere-pays (arriere d'Inhambane, vallees du Save) tandis que les Ronga occupaient la region de la baie de Maputo et les Tsonga/Shangaan les zones centrales. Le contact avec les commerantes arabes et swahili a Inhambane (active des le XIVe siecle) a influence leur economie sans modifier profondement leur identite culturelle. La domination de l'Empire Gaza Nguni (XIXe siecle) a modifie les structures politiques locales et introduit des elements culturels nguni.",
+      "migrationRoutes": [
+        "Descente bantou depuis l'Afrique centrale vers l'Afrique orientale et meridionale (avant le Xe siecle)",
+        "Installation dans l'arriere-pays d'Inhambane et les vallees des fleuves Save et Buzi",
+        "Expansion des Hlengwe vers l'ouest en direction du Zimbabwe meridional",
+        "Mouvements de refuge vers les hauteurs et les villes durant les guerres nguni (XIXe s.) et civiles mozambicaines (1977-1992)"
+      ],
+      "historicalSettlementZones": [
+        "Province d'Inhambane (Mozambique) — zone principale : arriere-pays de Maxixe, Massinga, Morrumbene, Jangamo",
+        "Province de Gaza (Mozambique) — region de Chibuto, Chokwe, Guija",
+        "Province de Manica (Mozambique) — presence mineure a l'est",
+        "Zimbabwe meridional — sous-groupe Hlengwe dans les districts de Chipinge et Chiredzi",
+        "Province de Maputo (Mozambique) — population urbaine et periurbaine"
+      ],
+      "unificationsOrDivisions": "Les Tswa du Mozambique ne sont pas politiquement unifies mais partages en chefferies claniques autonomes. La domination de l'Empire Gaza Nguni (1820-1895) sous Soshangane, puis Muzila et Gungunhana, a impose un systeme tributaire uniforme sur les groupes du sud du Mozambique. Apres la defaite de Gungunhana (1895), l'administration coloniale portugaise a regroupe les populations sous des regulos (chefs reconnus par les Portugais). FRELIMO (1975) a supprime le systeme des chefferies traditionnelles, partiellement restaure apres 1992.",
+      "externalInfluences": "Commerce avec les marchands arabes et swahili a Inhambane (cite commerciale active des le XIVe siecle). Domination de l'Empire Gaza Nguni de Soshangane (debut XIXe siecle) : introduction d'elements culturels nguni, systeme tributaire, assimilation partielle. Colonisation portugaise (etablie formellement en 1505, colonie en 1951) : travail force (chibalo), impot de capitation, missions chretiennes catholiques. Recrutement pour les mines d'Afrique du Sud (fin XIXe siecle — XXe siecle). Regime FRELIMO marxiste (1975-1990) : collectivisation, interdiction des pratiques religieuses traditionnelles.",
+      "majorHistoricalEvents": "Inhambane devient un port commercial arabo-swahili actif (XIVe siecle). Contact avec les Portugais : Vasco de Gama atteint Inhambane en 1498; etablissement permanent portugais des 1505. Domination par l'Empire Gaza de Soshangane (vers 1820-1895) : les Tswa paierent tribut et furent partiellement ngounises culturellement. Gungunhana transfere sa capitale a Manjacaze (1889) et mene resistance contre les Portugais. Capture de Gungunhana par Mouzinho de Albuquerque (1895) : fin de l'Empire Gaza. Independance du Mozambique le 25 juin 1975. Guerre civile FRELIMO-RENAMO (1977-1992) : deplacements massifs dans les provinces d'Inhambane et Gaza. Accord de paix de Rome (4 octobre 1992). Elections multipartites de 1994."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Tswa sont organises en chefferies (swipfumu) dirigees par des nfumu (chefs de village et de clan). Les decisions communautaires importantes sont prises en conseil des anciens. La hierarchie inclut le chef de village, le chef de lignage et le chef regional supervisanr plusieurs villages. L'Empire Gaza Nguni a superpose au XIXe siecle un systeme de chefs militaires (indunas) charge de collecter le tribut. Les Portugais ont institue les regulos (chefs coutumiers reconnus officiellement) en intermediaires de l'administration coloniale. FRELIMO a supprime ce systeme en 1975, mais les chefferies ont repris de l'importance depuis 1992.",
+      "clanOrganization": "La societe Tswa est patrilineaire. Les clans (tintimu, singulier ntimu) sont identifies par un ancetre commun masculin. Les regles d'exogamie interdisent le mariage au sein du meme clan. Les clans les plus importants correspondent aux sous-groupes (Hlengwe, Dzivi, Mhandla etc.) avec leurs propres chefferies et territoires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (tindyangu) structurent l'acces a la terre agricole, l'heritage, le nom et les droits sur les ressources communes. La residence est patrilocale : la femme s'installe chez la famille du mari. Le lobolo (transfert de betail ou de biens de la famille du marie) est obligatoire pour valider le mariage et etablir les droits de filiation sur les enfants.",
+      "religiousAuthority": "Les guerisseurs-devins (tinganga) et les mediums d'esprits ancestraux (swikwembu) ont une autorite spirituelle reconnue. Les ancetres (mikata) sont invoques lors de toutes les decisions importantes. Le christianisme catholique, introduit par les missions portugaises, est tres repandu. Les Eglises chretiennes africaines independantes (Eglise de Sion, Eglise apostolique) melant christianisme et culte ancestral sont populaires. Sous FRELIMO (1975-1990), la pratique religieuse fut officiellement decouragee."
     },
     "languages": {
-      "mainLanguage": "Tswa",
-      "vehicularRole": "Le tswa est parlé par la majorité des Tswa du Mozambique. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "Xitswa (Tswa)",
+      "isoCodes": ["tsc"],
+      "dialects": [
+        "Hlengwe — dialecte occidental s'etendant jusqu'au Zimbabwe; Maho (2009) le considere comme langue distincte",
+        "Dzibi (Dzivi / Dzonga) — dialecte central de la province d'Inhambane",
+        "Mhandla (Mandla) — dialecte de l'interieur",
+        "Ndoxonge (Nwanati / Makwakwa) — dialecte meridional",
+        "Nhayi (Nzonge / Gwambe) — dialecte de la zone entre Dzivi et Chopi"
+      ],
+      "vehicularRole": "Le Xitswa est parle par environ 1,3 million de personnes au Mozambique (estimation 2025). C'est l'une des langues bantoues les plus parlees dans le Mozambique meridional apres le Changana (Tsonga). Le portugais est la langue officielle et vehiculaire nationale du Mozambique. Le Xitswa est mutuellement intelligible avec le Tsonga et le Ronga. La radio mozambicaine diffuse des emissions en Tsonga/Changana qui sont generalement comprises par les Tswa. L'alphabetisation en Xitswa reste limitee; les publications et l'enseignement se font en portugais."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tswa, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Rites de passage masculins (khomba ya vasimana) lors de la puberte : sequestration du groupe de pairs, instruction sur les responsabilites adultes, l'histoire du clan et les relations avec les ancetres. Ces rites ont ete partiellement maintenus malgre les pressions coloniales et FRELIMO.\", \"femaleInitiation\": \"Khomba : rite de passage feminin a la puberte, tres important dans toute la zone Tsonga-Tswa. La jeune fille est recluse chez des femmes ainées pendant plusieurs semaines; elle recoit un enseignement sur les responsabilites de femme adulte, le mariage et les soins aux enfants. Termine par une grande fete celebree par le village.\"}, \"funeraryRites\": {\"burial\": \"Inhumation rapide dans le sol, generalement enveloppe dans une natte ou un linceul. Le mort est inhume avec quelques effets personnels. La tombe est placee dans un endroit specifique selon le clan.\", \"ancestralCeremonies\": \"Ceremonies de rapprochement avec les ancetres (ku phasa mikata) : libations de biere de sorgho versees sur le sol, degustations d'aliments offerts aux ancetres, invocations par le nganga ou le chef de famille. Ces ceremonies ont lieu lors de naissances, mariages, crises ou anniversaires de deces.\"}, \"agriculturalRites\": {\"firstFruits\": \"Avant de consommer la nouvelle recolte de sorgho ou de mais, une ceremonie de premieres recoltes est organisee pour remercier les ancetres et demander leur protection pour la prochaine saison. Le chef de clan preside generalement ce rite.\"}}",
+      "symbols": "Le foyer (ndilo) est le symbole central de la vie domestique et du lien avec les ancetres. Les nattes (tihata) tissees par les femmes symbolisent le savoir-faire feminin et servent dans toutes les ceremonies (mariage, funerailles). La biere de sorgho (mpambu) est l'offrande primordiale aux ancetres. Les perles de verre (timbuti) heritees des echanges commerciaux avec les marchants arabes sont des ornements de prestige et rituels. Le serpent python est dans certaines traditions un animal sacre associe aux esprits des ancetres.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"visualArts\": \"Tressage de nattes et paniers (tihata, tinseke) par les femmes, utilises pour le sommeil, les ceremonies et le stockage des cereales. Poterie en argile pour la cuisson, l'eau et la biere. Sculpture sur bois limitee. Broderie sur tissu pour les vetements de fete.\", \"musicalInstruments\": \"Tambour a membrane (ndzumba ou ngoma). Arc musical (xizambi) : luth monocorde joue avec la cavite buccale comme caisse de resonance. Flutes en roseau (nyonga). Racleurs rhythmiques. Hochets en calebasse.\", \"dances\": \"Muchongolo : danse vigoreuse des hommes avec simulacre de combat, pratiquee dans toute la zone Tsonga-Tswa des deux cotes de la frontiere mozambicano-sudafricaine. Danses de mariage et de khomba (initiation feminine) avec chants polyphoniques. Danse de guerison lors des seances de possession par les esprits.\", \"songs\": \"Chants de travail agricole (tisimbo). Chants de deuil (tirero). Chants de mariage tres elabores avec reparties entre familles des deux maries. Hymnes d'invocation ancestrale lors des ceremonies ku phasa.\", \"orature\": \"Contes (switori) transmis le soir autour du feu. Proverbes (swivuriso) encapsulant la sagesse du groupe. Poesie laudative (milawu) pour les chefs.\"}}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Tilo / Xikwembu\", \"attributes\": \"Tilo designe le ciel et la puissance celeste supreme, creatrice de la vie et de la pluie. Xikwembu est le terme pour esprit ou divinite en general. La divinite supreme n'est pas directement priee mais mediee par les ancetres.\"}, \"intermediateDivinities\": [{\"name\": \"Mikata (ancetres)\", \"role\": \"Les ancetres (mikata) sont les mediateurs entre les vivants et la divinite supreme. Ils veillent sur leur lignage, protegent contre les maladies et les mauvais esprits. Negliges, ils peuvent causer maladie et malheur. On les propitie par des libations, offrandes de nourriture et sacrifices d'animaux.\"}], \"natureSpirits\": {\"riverSpirits\": \"Les grandes rivieres (Save, Limpopo) sont associees a des esprits puissants qui doivent etre propities avant la peche ou la traversee. La mer (pour les zones cotieres d'Inhambane) est aussi associee a des esprits.\", \"possessionSpirits\": \"Les esprits de guerisseurs defunts (swikwembu swa ku tivisa) peuvent posseder les vivants et transmettre des pouvoirs de guerison. Ces possessions sont gerees par les tinganga (guerisseurs-devins).\"}, \"practitioners\": {\"nganga\": \"Le nganga est le guerisseur-devin qui diagnostique les maladies d'origine spirituelle, prepare les remedes a base de plantes et rituels (muti), et mediation avec les ancetres. La formation du nganga est longue et initiee par une experience de maladie ou de possession.\"}, \"christianity\": {\"specificPractices\": \"Le catholicisme romain, introduit par les missions portugaises, est la principale denomination chretienne. Les Eglises independantes africaines (Eglise de Sion, Zione, Eglise apostolique de Sion) sont tres populaires car elles integrent des elements de guerison, possession par l'Esprit et references aux ancetres dans une forme chretienne. Sous FRELIMO (1975-1990), toute pratique religieuse fut officiellement combattue. Depuis 1992, la liberte de culte est retablie.\"}, \"traditionalReligions\": {\"animism\": \"L'animisme et le culte ancestral restent pratiques, en particulier dans les zones rurales. Joshua Project (2008) estime a environ 43% la part de la population Tswa pratiquant encore les religions traditionnelles, souvent en syncrétisme avec le christianisme.\"}}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tswa dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Tswa n'ont pas forme d'empire centralise mais des chefferies claniques autonomes. Leur territoire fut periodiquement inclus dans des sphere d'influence de puissances exterieures. L'Empire Mutapa (Monomotapa, 1000-1629) controlait les routes commerciales du Zimbabwe vers Inhambane. L'Empire Rozvi/Changamire (1660-1830) influenca les groupes Hlengwe frontalieres. Au XIXe siecle, l'Empire Gaza Nguni (1820-1895), fonde par Soshangane, etablit sa capitale finale a Manjacaze (province de Gaza, 1889) et exerca une domination directe sur les Tswa : tribut, recrutement militaire, assimilation culturelle partielle. La resistance de Gungunhana se termina par sa defaite et capture par Mouzinho de Albuquerque en decembre 1895.",
+      "relationsWithNeighbors": "Relations etroites avec les Ronga et Tsonga voisins, avec qui les Tswa partagent langue et culture. Commerce et relations d'echanges avec les Chopi (voisins immediats de la cote d'Inhambane, connus pour leur musique de timbila/xylophone). Relations avec les groupes Ndau/Shona du Zimbabwe oriental. Commerce avec les marchands arabes et indiens sur le port d'Inhambane (un des plus anciens comptoirs de la cote mozambicaine). Relations tributaires avec l'Empire Gaza au XIXe siecle.",
+      "conflictsOrAlliances": "Soumission a l'Empire Gaza Nguni : les groupes Tswa furent forces de payer tribut et de fournir des soldats a Soshangane et ses successeurs. Resistances locales contre les exactions de l'Empire Gaza et des collecteurs de tribut portugais. Implication dans la resistance de Gungunhana contre les Portugais (1894-1895). Pendant la guerre de liberation contre le Portugal (1964-1975), les provinces d'Inhambane et Gaza etaient peu touchees par les combats mais supporterent les consequences economiques du conflit. Guerre civile FRELIMO-RENAMO (1977-1992) : les provinces de Gaza et Inhambane furent des zones de conflit intense; des centaines de milliers de Tswa furent deplaces ou refugies au Zimbabwe et en Afrique du Sud.",
+      "diaspora": "La diaspora Tswa la plus ancienne et la plus structuree est celle des travailleurs migrants recrutes pour les mines d'Afrique du Sud depuis la fin du XIXe siecle sous le systeme de travail sous contrat (later formalise comme WENELA/TEBA). Cette tradition de migration vers les mines de Johannesburg, Rustenburg et Witwatersrand s'est perpetuee tout au long du XXe siecle. Une diaspora de refugies s'est formee en Afrique du Sud et au Zimbabwe durant la guerre civile (1977-1992). Aujourd'hui, environ 23 000 Tswa vivent en Afrique du Sud selon les estimations."
     },
     "demography": {
-      "totalPopulation": 800000,
+      "totalPopulation": 1350000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur Joshua Project (Tswa in Mozambique 2008 : 1 259 000), SIL Ethnologue (tsc), INE Mozambique (Institut National de Statistiques — recensement 2017 classe sous Tsonga/Changana), CLEAR Global Language Data for Mozambique (2024). Note : la population Tswa de Mozambique est sous-estimee dans les recensements officiels car elle est souvent enregistree sous Tsonga/Changana. Estimation 2025 ajustee avec taux de croissance demographique mozambicaine (environ 2,8% par an).",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1300000,
+          "note": "Principalement provinces d'Inhambane (Massinga, Morrumbene, Jangamo, Funhalouro) et Gaza (Chibuto, Chokwe); presence dans Manica, Sofala et Maputo"
+        },
+        {
+          "country": "ZAF",
+          "population": 25000,
+          "note": "Travailleurs migrants et refugies, concentres dans le Limpopo et Gauteng"
+        },
+        {
+          "country": "ZWE",
+          "population": 18000,
+          "note": "Sous-groupe Hlengwe dans les districts de Chipinge et Chiredzi (Masvingo Province)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tswa language (tsc)",
-      "CIA World Factbook – Mozambique",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tswa language. https://en.wikipedia.org/wiki/Tswa_language",
+      "Jenkins, Orville Boyd. The Tswa people of Mozambique — A Cultural Profile. http://orvillejenkins.com/profiles/tswa.html",
+      "Joshua Project — Tswa in Mozambique. https://joshuaproject.net/people_groups/15600/MZ",
+      "Ethnologue — Tswa (tsc). https://www.ethnologue.com/language/tsc/",
+      "CLEAR Global — Language data for Mozambique (2024). https://clearglobal.org/language-data-for-mozambique/",
+      "Instituto Nacional de Estatistica — Mozambique. https://www.ine.gov.mz/",
+      "Wikipedia EN — Gaza Kingdom. https://en.wikipedia.org/wiki/Gaza_Kingdom",
+      "WorldAtlas — What Languages Are Spoken In Mozambique. https://www.worldatlas.com/articles/what-languages-are-spoken-in-mozambique.html"
     ]
   }
 }

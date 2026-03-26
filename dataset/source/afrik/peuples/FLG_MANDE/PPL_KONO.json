@@ -1,23 +1,104 @@
 {
   "id": "PPL_KONO",
-  "nameMain": "",
+  "nameMain": "Kono",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["SLE"],
+  "currentCountries": ["SLE", "GIN"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kono",
       "selfAppellation": "Kono",
+      "exonyms": ["Konnoh", "Kɔnɔ"],
+      "originOfExonyms": "Le nom Kono (ou Kɔnɔ) est l'endonym du groupe. Konnoh est une variante orthographique coloniale. Le district ivoirien de Kono tire son nom de ce peuple. Certains ethnolinguistes relient les Kono aux Via (Vai/Gallinas) de la cote Sierra-Leonaise et liberienne, suggérant une origine commune.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kono est utilise couramment en Sierra Leone pour designer le groupe ethnique et leur district. Il est present dans les recensements nationaux de Sierra Leone. Krio est utilise par les jeunes Kono pour communiquer avec les autres groupes ethniques.",
       "linguisticFamily": "FLG_MANDE",
-      "historicalRegion": "Sierra Leone (Est)",
-      "currentCountries": ["SLE"]
+      "ethnoLinguisticGroup": "Mande periferique (Vai-Kono, branche distincte du groupe Manding)",
+      "historicalRegion": "District de Kono, Province orientale de Sierra Leone",
+      "currentCountries": ["SLE", "GIN"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (kno)", "Sierra Leone Historical Records"]
+    "ethnicities": [
+      "Kono des chefferies Lei (chefferie fondatrice)",
+      "Kono des chefferies Sandor (chefferie fondatrice)",
+      "Kono des chefferies Soa (chefferie fondatrice)",
+      "Kono des chefferies de Nimikoro et Nimiyama",
+      "Kono des chefferies Gbense et Tankoro",
+      "Kono des chefferies Kamara et Gbane"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kono sont les descendants de migrants mali-guineens arrives dans la Sierra Leone actuelle au milieu du 16e siecle dans le cadre d'une migration mande plus large depuis le Mali et la Guinee. Des preuves archeologiques attestent d'une occupation du district de Kono des 2200 av. J.-C. La tradition orale kono affirme qu'ils etaient autrefois un peuple puissant au Mali et en Guinee. Certaines sources les relient aux Via (Vai-Gallinas), suggérant une origine commune dans le foyer mande.",
+      "formationPeriod": "L'identite kono distincte s'est formee lors de leur etablissement dans la Sierra Leone orientale au 16e siecle. Les trois premieres chefferies fondees (Lei, Sandor et Soa) constituent les noyaux fondateurs auxquels tous les Kono rattachent leurs origines en Sierra Leone. La partition du groupe par les colonisateurs europeens a separe une partie de la communaute en Guinee voisine.",
+      "migrationRoutes": [
+        "Mali et Guinee vers la Sierra Leone orientale (milieu 16e siecle)",
+        "Migration en tant que chasseurs pacifiques a travers les zones forestieres de la Guinee",
+        "Etablissement dans les hautes terres de la Province orientale de Sierra Leone",
+        "Un groupe a continue vers la cote atlantique, devenant les Via (Gallinas) du littoral"
+      ],
+      "historicalSettlementZones": [
+        "District de Kono, Province orientale de Sierra Leone (zone principale)",
+        "Hauts plateaux entre les districts de Koinadugu (nord), Kailahun (sud-est) et Kenema (sud)",
+        "Zones frontalieres avec la Guinee (a l'est)",
+        "Petites communautes en Guinee voisine"
+      ],
+      "unificationsOrDivisions": "Le district de Kono comprend 14 chefferies, chacune dirigee par un chef paramount. Les trois chefferies fondatrices (Lei, Sandor, Soa) sont les plus importantes demographiquement et historiquement. La partition coloniale europeenne a divise le groupe entre Sierra Leone et Guinee. Les conflits historiques avec les Mende (qui ont force les Kono a se refugier chez les Koranko) et leur retour subsequant ont marque l'histoire du groupe.",
+      "externalInfluences": "Relations avec les Mende (conflits periodiques pour le controle des terres). Cohabitation avec les Koranko (alliance et refuge). Colonisation britannique : integration administrative, extraction diamantaire massive depuis 1930. Guerre civile de Sierra Leone (1991-2002) : le district de Kono, riche en diamants, a ete fortement touche par le conflit. L'exploitation des diamants a transforme l'economie et la societe kono depuis le 20e siecle.",
+      "majorHistoricalEvents": "Fondation des trois premieres chefferies (Lei, Sandor, Soa) apres l'arrivee au 16e siecle. Conflits avec les Mende, entrainant un repli temporaire dans le territoire Koranko. Decouverte de diamants (1930) : transformation economique majeure et afflux de populations exterieures. Fondation du Kono Progressive Movement (1955) par Tamba S. Mbriwa pour protester contre l'alienation des terres kono par les societes minieres. Guerre civile (1991-2002) : devastation du district de Kono, utilisation des diamants de sang pour financer les factions armees. Reconstruction post-conflit et tentatives de gouvernance des ressources minieres."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en 14 chefferies, chacune dirigee par un chef paramount (Paramount Chief) elu par les chefs de section et les notables. Le district comprend 14 chefferies divisees en 70 sections, 9 circonscriptions politiques et 24 cantons. Les chefs paramount sont les detenteurs de l'autorite traditionnelle et jouent un role d'interface avec les autorites nationales.",
+      "clanOrganization": "Societe a filiation patrilineaire. Les clans sont identifies par des patronymes specifiques. L'organisation sociale traditionnelle est construite autour des lignages patrilineaires qui determinent les droits fonciers et les alliances matrimoniales. La propriete de la terre est clanique et ne peut etre vendue.",
+      "ageClassSystems": "Systeme d'initiation lie aux societes secretes : les garçons sont inities dans la societe Poro et les filles dans la societe Bondo (Sande). Les initiations ont lieu pendant la saison seche, une fois les recoltes terminees. Ces societes organisent le passage de l'enfance a l'âge adulte et enseignent les valeurs, les regles sociales et les savoirs culturels du groupe.",
+      "roleOfLineages": "Les lignages patrilineaires structurent l'identite clanique, les alliances matrimoniales et les droits sur la terre et les ressources. La transmission du patrimoine se fait de pere en fils. Autrefois, la richesse d'un homme se mesurait au nombre de femmes qu'il pouvait entretenir (polygynie).",
+      "religiousAuthority": "Dual : autorite des chefs et maitres des societes secretes (Poro pour les hommes, Bondo/Sande pour les femmes) pour les affaires traditionnelles. Presence de chefs religieux islamiques (imams) et chretiens (pasteurs, pretres) dans les communautes. Les ancetres jouent un role central comme intermediaires spirituels."
+    },
+    "languages": {
+      "mainLanguage": "Kono (Kɔnɔ)",
+      "isoCodes": ["kno"],
+      "dialects": [
+        "Varietes de chefferie (la langue varie legerement selon les chefferies)",
+        "Kono de Lei",
+        "Kono de Sandor",
+        "Kono de Soa"
+      ],
+      "vehicularRole": "Le kono est la langue maternelle du groupe et la plus repandue dans de nombreuses parties du district de Kono. Le krio (creole de Sierra Leone) est utilise par les jeunes pour communiquer avec les autres groupes ethniques. L'anglais est la langue d'administration nationale et d'enseignement. Le kono est classe parmi les langues mande periphériques (groupe Vai-Kono) et presente une relation de proximite avec le mandinka."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine dans la societe Poro : rite de passage majeur pour les jeunes garçons, realise pendant la saison seche apres les recoltes. Les initiés sont retires de la communaute pendant une periode d'enseignement intense couvrant les valeurs sociales, les responsabilites adultes et les secrets du groupe. Initiation feminine dans la societe Bondo (Sande) : rite de passage pour les jeunes filles, enseignant la fertilite, la moralite et les comportements adultes corrects. Mariages avec ceremonies communautaires et echanges de biens. Funerailles avec ceremonies et danses. Ceremonies liees aux cycles agricoles (semailles, recoltes du riz). Ceremonies de couronnement des chefs paramount.",
+      "symbols": "Masques de la societe Sande (Bondo), portes par les femmes lors des ceremonies d'initiation feminine : emblematiques et distinctifs, ils representent la beaute et la puissance feminine. La societe Poro est representee par des objets rituels masculins (tenues, instruments) transmis dans le secret. La feuille de kola comme symbole d'hospitalite et d'accord. Le diamant (ressource emblematique du territoire kono) est devenu un symbole ambigu, source de richesse mais aussi de conflits.",
+      "artsAndMusic": "Danse collective en file indienne circulaire : le soir dans les cours des villages, toute la communaute chante et danse au rythme des tambours ; chaque participant developpe ses propres pas et mouvements. Percussions : tambours cylindriques et tambours a fente fournissent le fond rythmique. Balafon (xylophone en bois). Musique ceremoniale des societes secretes (Poro, Bondo) : chants et instruments reserves aux initiés. Tissage traditionnel par les hommes pendant la saison seche. Poterie feminine. Tradition orale : contes, proverbes, genealogies transmis lors des veillees.",
+      "spiritualities": "Pratique plurielle : islam, christianisme et religion ethnique traditionnelle coexistent, souvent dans le meme individu. La religion ancestrale est centree sur la veneration des ancetres : les ancetres sont presents lors de chaque activite (agriculture, sommeil, decisions importantes) et invoqués pour protection, sante et bonne fortune. Croyance aux esprits de la nature (foret, eau, terre). Les societes secretes Poro et Bondo encadrent les pratiques initiatiques et spirituelles traditionnelles. Les malefices, presages, charmes et magie sont pratiques par certains membres. L'islam est surtout present dans les zones commerciales. Le christianisme s'est repandu avec la colonisation et les missions."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en 14 chefferies dirigees chacune par un chef paramount. Les trois chefferies fondatrices (Lei, Sandor, Soa) ont une preeminence historique. Les chefferies de Nimikoro et Nimiyama (riches en or dans les collines Nimini) et de Gbense et Tankoro (diamants) ont acquis une importance economique particuliere. Le Kono Progressive Movement (1955), fonde par Tamba S. Mbriwa, est la premiere organisation politique moderne kono.",
+      "relationsWithNeighbors": "Relations complexes avec les Mende (conflits historiques pour les terres, qui ont force les Kono a se refugier chez les Koranko). Alliance pacifique et d'accueil avec les Koranko (qui leur ont permis de cultiver leurs terres lors de leur exile). Liens avec les Mandinka (origine commune mande). Relations avec les Temne et Limba dans le contexte national sierra-leonais.",
+      "conflictsOrAlliances": "Attaques des Mende (periode precoloniale), forcant les Kono a se refugier dans le territoire Koranko. Resistance a l'alienation des terres kono par les societes minieres coloniales (Kono Progressive Movement, 1955). Guerre civile sierra-leonaise (1991-2002) : le district de Kono a ete dispute entre le gouvernement et le Revolutionary United Front (RUF) pour le controle des champs diamantiferes ; population deplacee, villages devastes. Reconstruction et gouvernance des ressources minieres post-2002.",
+      "diaspora": "Faible diaspora internationale en raison de la forte attache des Kono a leur territoire. Quelques communautes en Guinee voisine (issues de la division coloniale). Migration vers Freetown et d'autres villes sierra-leonaises, mais moindre que pour d'autres groupes ethniques. Presence d'une diaspora kono au Royaume-Uni (Kono District Development Association, KDDA UK)."
+    },
+    "demography": {
+      "totalPopulation": 400000,
+      "referenceYear": 2025,
+      "source": "Statistics Sierra Leone — Census 2021 (district de Kono : 620 703 habitants, dont les Kono represented environ 52% comme groupe majoritaire). KDDA UK (489 444 Kono soit 7,6% de la population sierra-leonaise). Joshua Project (353 000, estimation sous-evaluee). Projection 2025 basee sur la croissance demographique de 3,5% par an.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 395000,
+          "note": "Province orientale, district de Kono (14 chefferies). Groupe majoritaire du district a environ 52% de la population"
+        },
+        {
+          "country": "GIN",
+          "population": 5000,
+          "note": "Zones frontieres avec la Sierra Leone, petites communautes issues de la partition coloniale"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kono people. https://en.wikipedia.org/wiki/Kono_people",
+      "Wikipedia EN — Kono language (Sierra Leone). https://en.wikipedia.org/wiki/Kono_language_(Sierra_Leone)",
+      "KDDA UK — History of the Kono People. https://www.kdda.co.uk/index-aboutus-history.html",
+      "Joshua Project — Kono in Sierra Leone. https://joshuaproject.net/people_groups/18920",
+      "Ethnologue — Kono language (kno). https://www.ethnologue.com/language/kno/",
+      "City Population — Kono District Sierra Leone Census 2021. https://www.citypopulation.de/en/sierraleone/admin/13__kono/",
+      "Britannica — Sierra Leone cultural life (Poro and Sande societies). https://www.britannica.com/place/Sierra-Leone/Cultural-life",
+      "101 Last Tribes — Kono people. https://www.101lasttribes.com/tribes/kono.html"
+    ]
   }
 }

@@ -2,58 +2,99 @@
   "id": "PPL_NGONDE",
   "nameMain": "Ngonde",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA"],
+  "currentCountries": ["MWI", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Ngonde",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wangonde",
+      "exonyms": ["Nkhonde", "Konde", "Nkonde", "Ikingonde"],
+      "originOfExonyms": "Konde et Nkonde sont les noms utilises en Malawi (ex-Nyasaland britannique) pour designer le meme peuple que les Tanzaniens appellent Ngonde. Wangonde est la forme swahilie plurielle. Ikingonde est une forme linguistique alternative du nom de leur langue.",
+      "whyProblematic": "La distinction entre Ngonde (Tanzanie/Malawi) et Nyakyusa (Tanzanie) est parfois floue : les deux groupes partagent la meme langue (Nyakyusa-Ngonde, code ISO nyy) et une culture tres proche. La partition coloniale a separe les Ngonde dans le protectorat britannique du Nyasaland et les Nyakyusa dans la colonie allemande du Tanganyika.",
+      "contemporaryUsage": "Ngonde est le terme courant en Tanzanie et Malawi pour designer ce peuple. Nkhonde est prefere au Malawi. Les deux formes coexistent dans la litterature academique.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
-      "currentCountries": ["TZA"]
+      "ethnoLinguisticGroup": "Groupe Rukwa-Nyasa (Bantou du groupe Nyakyusa-Ngonde)",
+      "historicalRegion": "Plaine nord-ouest du lac Malawi (Karonga, Malawi) et rive sud du fleuve Songwe (Tanzanie)",
+      "currentCountries": ["MWI", "TZA"]
     },
-    "ethnicities": ["Ngonde"],
+    "ethnicities": ["Ngonde", "Nkhonde"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la tradition orale, les Ngonde tracent leurs origines a une reine nubienne nommee Nyanseba, fondatrice mythique de la lignee royale. Les ancetres des roturiers etaient des chasseurs et des recolteurs de miel venus des montagnes entourant le Rift Valley ou des environs. Les chefs (nobles) arriverent il y a environ dix generations en apportant le betail, les plantes cultivees, le feu et le fer.",
+      "formationPeriod": "Formation en tant que groupe identifiable entre le XVIIe et le XIXe siecle, dans la region du nord du lac Malawi. Contacts avec les marchands arabes et les caravanes swahilies documentees des le XIXe siecle.",
+      "migrationRoutes": [
+        "Migration depuis les montagnes du Rift Valley vers la plaine cotiere nord-ouest du lac Malawi",
+        "Installation sur les deux rives du fleuve Songwe (frontiere actuelle Tanzanie-Malawi)"
+      ],
+      "historicalSettlementZones": [
+        "District de Karonga (nord Malawi)",
+        "Chitipa (Malawi)",
+        "Rive sud du fleuve Songwe (Tanzanie)"
+      ],
+      "unificationsOrDivisions": "Avant la colonisation europeenne, les Ngonde formaient une chefferie unifiee. La partition coloniale vers 1890 a divise le peuple : les Ngonde au sud du Songwe furent integres au Protectorat britannique du Nyasaland (Malawi actuel), ceux au nord dans la colonie allemande du Tanganyika (Tanzanie actuelle).",
+      "externalInfluences": "Commerce avec les Arabes et les Swahili le long de la cote du lac Malawi. Raids d'esclaves arabes au XIXe siecle. En 1889, Harry Johnston negocia des traites pour mettre fin aux guerres entre les chefs Ngonde et les marchands d'esclaves arabes. En 1895, les Britanniques pendirent Mlozi, grand negrier de la region, et incorporerent le territoire comme Afrique centrale britannique.",
+      "majorHistoricalEvents": "1875 : Fondation de Karonga par des Ecossais. 1889 : Traites de Harry Johnston reduisant les conflits entre chefs Ngonde et Arabes. 1895 : Pendaison de Mlozi et incorporation du territoire au protectorat britannique. Apres 1895 : les Ngonde au Malawi integrent le Nyasaland britannique, ceux en Tanzanie restent sous administration allemande puis britannique du Tanganyika. La derniere ceremonie de passation de pouvoir (coming out) enregistree au Ngonde eut lieu en 1913."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie divine : le chef supreme (Kyungu) etait considere comme detenteur de pouvoirs sacres sur la pluie, la fertilite et la sante de la communaute. Le Kyungu etait etranglait rituellement lors de sa vieillesse ou maladie pour preserver ses pouvoirs. Systeme de villages d'age (age villages) semblable aux Nyakyusa : les jeunes hommes s'installaient dans des villages separes de ceux de leurs peres.",
+      "clanOrganization": "Societe organisee en lignages. Distinction entre nobles (descendants des chefs arrives avec le betail et les plantes cultivees) et roturiers (descendants des chasseurs et cueilleurs originels). Pas de groupes de descent nommes ou de clans formels au sens strict.",
+      "ageClassSystems": "Systeme de villages d'age analogue a celui des Nyakyusa : les jeunes hommes construisent leurs propres villages separes de ceux de leurs peres pour eviter les conflits intergenerationnels et l'inceste. Chaque generation passait par une ceremonie collective de transition (coming out).",
+      "roleOfLineages": "Les lignages determinaient le statut social (noble ou roturier) et l'acces aux terres agricoles. Succession cheffale : deux fils aines des deux grandes epouses du chef se partageaient le territoire lors de la ceremonie de passation.",
+      "religiousAuthority": "Le Kyungu (chef supreme) cumulait pouvoir politique et religieux. Il presidait les rituels de demande de pluie et de fertilite. Culte des ancetres comme pratique religieuse centrale. Le christianisme s'est diffuse via les missions ecossaises des le XIXe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kinyakyusa-Ngonde (Nyakyusa-Ngonde)",
+      "isoCodes": ["nyy"],
+      "dialects": [
+        "Ngonde (Konde)",
+        "Nkhonde",
+        "Nyakyusa",
+        "Kukwe",
+        "Mwamba (Lungulu)",
+        "Selya (Salya)"
+      ],
+      "vehicularRole": "Langue maternelle des Ngonde. Le chichewa (Malawi) et le swahili (Tanzanie) sont les langues vehiculaires nationales. La langue nyakyusa-ngonde est reconnue comme langue en developpement (niveau 5 selon Ethnologue)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonie du coming out (passage generationnel) : les chefs et chefs de village passaient leurs pouvoirs a leurs fils dans un grand rassemblement ; extinction des feux anciens et allumage de nouveaux feux par friction. Rituels de demande de pluie presides par le Kyungu au lieu sacre. Rites funeraires elabores. Rituels de puberete et de mariage.",
+      "symbols": "Le feu sacre (moto ufya) distribue lors des ceremonies de passation symbolise le renouveau. Le betail joue un role symbolique et economique central. Les bananiers forment le paysage identitaire des collines Ngonde.",
+      "artsAndMusic": "Agriculture intensive et organisation sociale elaboree valorisees comme marqueurs d'identite. Danse et chant dans les ceremonies communautaires. Tradition orale riche documentee par les anthropologues Monica et Godfrey Wilson.",
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres et les pouvoirs surnaturels du chef. Dieu appele Kyala (Nyakyusa) ou Mungu (swahili). Croyances en la sorcellerie : les sorciers (amafumu) etaient censees nuire aux gens et au betail la nuit. Le christianisme (protestantisme ecossais, puis catholique) est devenu dominant depuis le XIXe siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie theocratique du Kyungu, chef divin dont le pouvoir sacre garantissait la pluie et la fertilite. Plusieurs petites chefferies autonomes coexistaient, chacune dirigee par un chef issu de la meme lignee noble.",
+      "relationsWithNeighbors": "Relations commerciales avec les Arabes et Swahili via les caravanes du lac Malawi. Conflits avec les marchands d'esclaves arabes (notamment Mlozi) au XIXe siecle. Relations culturelles etroites avec les Nyakyusa au nord du Songwe. Contacts avec les Tumbuka et Henga au sud.",
+      "conflictsOrAlliances": "Guerre contre les negriers arabes fin XIXe siecle (culminant avec la pendaison de Mlozi en 1895 par les Britanniques). Incorporation dans le Nyasaland britannique (Malawi) au sud du Songwe et dans le Tanganyika allemand puis britannique au nord.",
+      "diaspora": "Communautes Ngonde/Nkhonde presentes au Malawi (Karonga, Chitipa), en Tanzanie (rive nord du Songwe) et dans une moindre mesure en Zambie."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 750000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "101lasttribes.com / Joshua Project (Nyakyusa, Ngonde in Malawi : 228 000 en 2025) / estimation globale",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 550000,
+          "note": "Districts de Karonga et Chitipa, nord du Malawi"
+        },
+        {
+          "country": "TZA",
+          "population": 180000,
+          "note": "Rive sud du fleuve Songwe, Tanzanie"
+        },
+        {
+          "country": "ZMB",
+          "population": 20000,
+          "note": "Presence minoritaire"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nyakyusa people – Wikipedia EN (https://en.wikipedia.org/wiki/Nyakyusa_people)",
+      "Nyakyusa language – Wikipedia EN (https://en.wikipedia.org/wiki/Nyakyusa_language)",
+      "Ngonde people – 101lasttribes.com (https://www.101lasttribes.com/tribes/ngonde.html)",
+      "Nyakyusa, Ngonde in Malawi – Joshua Project (https://joshuaproject.net/people_groups/14078/MI)",
+      "Nyakyusa And Ngonde – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fn17/summary)",
+      "Nyakyusa also known as Sokile, Konde, Nkonde, Wangonde – UBC Library (https://open.library.ubc.ca/cIRcle/collections/ubccommunityandpartnerspublicati/52387/items/1.0375684)",
+      "Nyakyusa-Ngonde – Glottolog (https://glottolog.org/resource/languoid/id/nyak1260)"
+    ]
   }
 }

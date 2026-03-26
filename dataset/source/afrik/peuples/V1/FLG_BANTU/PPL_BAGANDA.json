@@ -1,0 +1,65 @@
+{
+  "id": "PPL_BAGANDA",
+  "nameMain": "Baganda / Ganda",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Baganda / Ganda",
+      "selfAppellation": "Baganda (sg. Muganda)",
+      "exonyms": ["Ganda ; « Buganda tribe » (terme colonial administratif)"],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Ouganda)",
+      "historicalRegion": "Royaume du Buganda (région centrale de l’actuelle Ouganda)",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": [
+      "Groupe ethnique baganda (à détailler dans un futur fichier ETH_BAGANDA)",
+      "À préciser (sous-groupes régionaux du Buganda)",
+      "À préciser (autres segments lignagers internes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Formation progressive autour des rives nord du lac Victoria, à partir de populations bantoues venues du nord-ouest des Grands Lacs.",
+      "migrationRoutes": [
+        "Mouvements internes autour du lac Victoria et expansion à partir du noyau central de Buganda."
+      ],
+      "unificationsOrDivisions": "Unification politique sous la monarchie du Kabaka ; intégration de plusieurs clans et chefferies locales dans un royaume centralisé.",
+      "externalInfluences": "Contacts anciens avec Bunyoro, puis avec les commerçants swahili et arabes ; influence britannique à l’époque coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie (Kabaka) avec un conseil de chefs (Lukiiko) et une forte centralisation autour de la cour royale.",
+      "clanOrganization": "Plus de 50 clans reconnus, chacun avec un totem, une histoire et des responsabilités spécifiques.",
+      "roleOfLineages": "Les lignages structurent la parenté, l’héritage, les alliances matrimoniales et la transmission des fonctions.",
+      "religiousAuthority": "Autorités spirituelles traditionnelles liées aux esprits (balubaale) et aux sanctuaires, coexistant aujourd’hui avec christianisme et islam."
+    },
+    "languages": {
+      "mainLanguage": "Luganda (Ganda)",
+      "dialects": [
+        "Variétés régionales internes (Kibuga – langue de la cour, variétés rurales) mais forte standardisation actuelle."
+      ],
+      "vehicularRole": "Langue majeure de communication en Ouganda central ; l’une des grandes langues véhiculaires du pays."
+    },
+    "culture": {
+      "Rites majeurs": "Rites d’initiation, cérémonies royales du Kabaka, funérailles très codifiées.",
+      "Symboles": "Totems de clans (animaux, plantes), tambours royaux, emblèmes du royaume de Buganda.",
+      "Arts et musique": "Tambours, harpes, danses de cour, chants de louange ; riche tradition orale.",
+      "Spiritualités": "Anciennes croyances aux balubaale (esprits/ancêtres) ; aujourd’hui forte présence du christianisme (catholique et protestant) et de l’islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Buganda, l’un des plus puissants États précoloniaux de la région des Grands Lacs.",
+      "relationsWithNeighbors": "Relations complexes (alliances, guerres, échanges) avec Bunyoro, Toro, Ankole et les peuples voisins nilotiques et bantous.",
+      "conflictsOrAlliances": "Alliances avec la puissance coloniale britannique au XIXe siècle ; participation centrale à la formation de l’État ougandais moderne.",
+      "diaspora": "Diaspora baganda en Afrique de l’Est et dans les pays d’émigration (Europe, Amérique du Nord)."
+    },
+    "demography": {
+      "totalPopulation": 8499000,
+      "referenceYear": 2025,
+      "source": "peuple_demographie_globale.csv (PPL_BAGANDA) + statistiques nationales ougandaises"
+    },
+    "sources": [
+      "[Article] – « Buganda » / « Baganda people », encyclopédies et ressources en ligne (Wikipédia, School for Africa, UBOS)",
+      "[Rapport] – Uganda Bureau of Statistics, profils régionaux récents",
+      "[Études] – Travaux historiques et anthropologiques sur le royaume de Buganda"
+    ]
+  }
+}

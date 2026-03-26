@@ -2,58 +2,86 @@
   "id": "PPL_LUNDA_NDEMBU",
   "nameMain": "Lunda-Ndembu",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["AGO"],
+  "currentCountries": ["AGO", "ZMB", "COD"],
   "content": {
     "appellations": {
       "mainName": "Lunda-Ndembu",
-      "selfAppellation": "",
-      "exonyms": ["Ndembu"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ndembu",
+      "exonyms": [
+        "Ndembu",
+        "Ndembo",
+        "Lunda du Nord-Ouest",
+        "Kanongesha-Lunda"
+      ],
+      "originOfExonyms": "Le terme Ndembu designe un sous-groupe meridional du grand empire Lunda. Le nom Ndembo fait reference a une ancienne societe secrete de la region du bas-Congo associee aux rites d'initiation. Les Europeens ont utilise Ndembu pour distinguer cette branche des Lunda installee en Zambie nord-occidentale et en Angola.",
+      "whyProblematic": "La denomination Lunda-Ndembu peut preter a confusion avec les autres branches Lunda (Kazembe-Lunda, Ishindi-Lunda). Le terme Ndembu est parfois confondu avec la societe secrete Ndembo du bas-Congo, qui est distincte.",
+      "contemporaryUsage": "Lunda-Ndembu est l'appellation officielle utilisee par le Joshua Project et les organisations internationales. En Zambie les membres de ce groupe s'identifient le plus souvent comme Ndembu. En Angola le terme Lunda prevaut dans l'usage administratif.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Est",
-      "currentCountries": ["AGO"]
+      "ethnoLinguisticGroup": "Bantu central-occidental, sous-groupe Lunda",
+      "historicalRegion": "District de Mwinilunga (Zambie nord-occidentale), province de Lunda Nord (Angola)",
+      "currentCountries": ["AGO", "ZMB", "COD"]
     },
-    "ethnicities": ["Lunda-Ndembu"],
+    "ethnicities": ["Lunda-Ndembu", "Kanongesha-Lunda"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Lunda-Ndembu sont un sous-groupe Bantu issu du grand empire Lunda fonde au 17e siecle le long de la riviere Kalanyi dans l'actuelle Republique democratique du Congo. Leur ancetre fondateur etait Mwata Yamvo (Mwaant Yav) dont le capital etait Musumba. Ils descendaient de groupes Bantu qui avaient migre depuis la region des Grands Lacs en Afrique orientale plusieurs siecles auparavant.",
+      "formationPeriod": "Entre 1750 et 1800, les Ndembu se separent du tronc principal Lunda sous la direction de leur chef Kanongesha et migrent vers le sud-ouest pour s'installer dans la region de Mwinilunga en Zambie nord-occidentale. C'est lors de cette migration qu'ils abandonnent le systeme de filiation patrilineaire Lunda au profit du systeme matrilineaire local.",
+      "migrationRoutes": [
+        "De Musumba (Katanga, RDC) vers le sud-ouest a travers le plateau du Kasai",
+        "Traversee de la frontiere Congo-Zambie vers le district de Mwinilunga",
+        "Extension partielle vers l'Angola du nord-est au 20e siecle pour fuir la taxation coloniale britannique (1913)"
+      ],
+      "historicalSettlementZones": [
+        "District de Mwinilunga, Province nord-occidentale de la Zambie",
+        "Nord-est de l'Angola (province de Lunda Norte)",
+        "Regions frontieres de la Republique democratique du Congo"
+      ],
+      "unificationsOrDivisions": "Apres leur installation a Mwinilunga, les Ndembu perdirent leur organisation centralisee Lunda et abandonnerent la filiation patrilineaire pour adopter le systeme matrilineaire local. Ils maintenaient neanmoins un chef paramount (Kanongesha) et des sous-chefs. En 1913, une partie de la communaute fuit vers l'Angola pour echapper a la taxation britannique.",
+      "externalInfluences": "Dans la seconde moitie du 19e siecle, les marchands Ovimbundu et les raides Chokwe et Lwena reduisirent en esclavage de nombreux Ndembu. La British South Africa Company administra Mwinilunga a partir de 1906. Des missionnaires chretiens arriverent peu apres. A partir des annees 1930, l'economie miniere du Copperbelt zambien et du Katanga influenca profondement la societe Ndembu.",
+      "majorHistoricalEvents": "1750-1800 : migration de l'empire Lunda vers Mwinilunga sous Kanongesha. 1906 : debut de l'administration coloniale britannique (British South Africa Company). 1913 : exode partiel vers l'Angola pour fuir la taxation. Annees 1930-1960 : exode rural vers les villes minieres du Copperbelt. 1964 : independance de la Zambie. Annees 1970-1980 : absorption pacifique de refugies angolais."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie hierarchisee avec un chef paramount (Kanongesha) a la tete, des sous-chefs et des chefs de village. Kanongesha preside un tribunal coutumier local, legifere sur les questions de securite et de logement, et participe idealement aux ceremonies de circoncision. Les elders reveres deviennent juges et tranchent les litiges civils au niveau du village.",
+      "clanOrganization": "Societe matrilineaire : la descendance et l'heritage passent par la ligne maternelle. Les femmes quittent leur village pour rejoindre celui de leur mari, ce qui cree des tensions sociales caracteristiques. Les villages sont traditionnellement composes de cercles de maisons habitees par des parents matrilineaires, bien que ce modele evolue vers de petits groupes de maisons en brique a cour centrale.",
+      "ageClassSystems": "Initiation feminine (vers 12 ans) impliquant une retraite d'une semaine avec symbolisme du lait (arbre mudyi). Initiation masculine par la circoncision en groupe (7-12 ans) avec retraite en brousse jusqu'a la guerison des plaies. Des figures masquees (ikishi) apparaissaient autrefois aux circoncisions masculines.",
+      "roleOfLineages": "Les lignes matrilineaires structurent l'acces a la terre, l'heritage et l'appartenance aux associations cultuelles. Le premier occupant d'une terre est nomme 'proprietaire de la culture' et peut y accueillir d'autres cultivateurs. Les litiges fonciers deviennent plus frequents depuis la pression demographique autour des etablissements nuclees.",
+      "religiousAuthority": "Les docteurs-guerisseurs (ng'oma) dirigent les rituels curatifs avec l'aide de la communaute. Les associations cultuelles regroupent les personnes affligees par le meme type d'esprit ancestral. Environ 40% des Ndembu se declarent chretiens (Fraternite chretienne, Apostles of John Maranke, Baha'i)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lunda (Chilunda)",
+      "isoCodes": ["lun"],
+      "dialects": ["dialecte Ndembu du Lunda", "dialecte Kanongesha"],
+      "vehicularRole": "Le Lunda (Chilunda) est la langue principale des Lunda-Ndembu, utilise dans la vie quotidienne et les ceremonies. En Zambie, le Lunda est l'une des langues regionales reconnues. Le portugais est la langue officielle en Angola. En milieu urbain, le Bemba et l'anglais (Zambie) sont vehiculaires."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituel de pubertes feminine (impliquant l'arbre mudyi a seve laiteuse, symbole de la matrilinearite et de la maternite, avec danse ceremonielle du sein). Circoncision masculine collective (Mukanda) avec retraite en brousse et apparition de danseurs masques (ikishi). Rituels curatifs (ng'oma) pour soigner les maladies et expulser les esprits ancestraux affliges. Rituels funeraires avec danseurs masques (ka-dang'u) et tranchees colorees symbolisant les trois rivieres (blanc, rouge, noir) de Nzambi.",
+      "symbols": "Trilogie chromatique blanc-rouge-noir structurant toute la ritualite Ndembu : le blanc (mpemba) pour la purete et la bonne volonte entre vivants et morts ; le rouge (sang, ambivalence, force) ; le noir (mort, dissimulation, rituel). Arbre mudyi (seve blanche) : symbole de la matrilinearite et de la maternite. Arbre mukula (rouge) : masculinite et chasse. Arbre chikoli : force masculine. Baton fourchu (chishing'a) des associations de chasse.",
+      "artsAndMusic": "Fabrication de masques (en voie de disparition), fabrication de tambours, sculpture sur bois (auparavant tres developpee). La musique constitue le principal art Ndembu aujourd'hui, a la fois dans les rituels tambourines et dans les eglises : harmonie chorale et technique chorale de haut niveau. Instruments a percussion. Medecines a base de plantes, d'argile rouge et blanche, de cornes et de sang d'animaux pour les rituels curatifs.",
+      "spiritualities": "Religion traditionnelle centree sur les esprits ancestraux (isong'u) qui communiquent avec les vivants par la maladie ou le malheur. Dieu createur supreme : Nzambi (ou Nzamb Katang). La maladie est interpretee comme un signe de la presence d'un esprit ancestral souhaitant rappeler ses devoirs a un descendant. Les associations cultuelles permettent au patient d'etre initie et gueri dans une communaute sacree. Aujourd'hui environ 40% des Ndembu se declarent chretiens, souvent en syncrethisme avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Sous-groupe du grand empire Lunda fonde au 17e siecle sous Mwata Yamvo. Apres la migration de 1750-1800, les Ndembu maintiennent une chefferie locale sous Kanongesha (chef paramount) avec des sous-chefs et des chefs de village. Kanongesha preside un tribunal coutumier.",
+      "relationsWithNeighbors": "Relations historiquement tendues avec les Ovimbundu (marchands d'esclaves au 19e siecle), les Chokwe et les Lwena (razzias esclavagistes). Relations pacifiques avec les Lunda voisins et autres peuples bantous de la region. Absorption pacifique de refugies angolais dans les annees 1970-1980.",
+      "conflictsOrAlliances": "Au 19e siecle, victimes des razzias esclavagistes Ovimbundu, Chokwe et Lwena. Resistance passive a la colonisation britannique (fuite vers l'Angola en 1913 pour fuir la taxation). Participation a l'economie miniere zambo-congolaise a partir des annees 1930.",
+      "diaspora": "Migration saisonniere vers les villes minieres du Copperbelt zambien et du Katanga congolais a partir des annees 1930. Retour partiel apres l'effondrement des prix du cuivre dans les annees 1970. Presence de communautes Lunda-Ndembu en Angola (nord-est), en Zambie (Mwinilunga) et dans le sud-est du Congo-Kinshasa."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 21000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (population en Angola : 21 000). L'ensemble des Lunda (toutes branches confondues) totalise environ 1,45 million en RDC, 800 000 en Angola et 600 000 en Zambie selon Wikipedia/Lunda people.",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 21000 },
+        { "country": "ZMB", "population": 60000 },
+        { "country": "COD", "population": 15000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Joshua Project – Lunda, Ndembu in Angola, 2025 (https://joshuaproject.net/people_groups/13276)",
+      "101 Last Tribes – Ndembu people (https://www.101lasttribes.com/tribes/ndembu.html)",
+      "Wikipedia – Lunda people (https://en.wikipedia.org/wiki/Lunda_people)",
+      "Turner, Victor W. – The Forest of Symbols: Aspects of Ndembu Ritual, Cornell University Press, 1967",
+      "Turner, Victor W. – Colour Classification in Ndembu Ritual, Africa, 1966 (https://gwern.net/doc/psychology/vision/1966-turner.pdf)",
+      "Britannica – Ndembu, 2025 (https://www.britannica.com/topic/Ndembu)",
+      "Culture of Angola – Wikipedia (https://en.wikipedia.org/wiki/Culture_of_Angola)"
+    ]
   }
 }

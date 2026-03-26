@@ -6,54 +6,69 @@
   "content": {
     "appellations": {
       "mainName": "Lala-Soli",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Soli",
+      "exonyms": ["Bene Soli", "Ba-Soli", "Chisoli"],
+      "originOfExonyms": "L'ethnonyme Soli est utilise par les populations voisines ainsi que dans les documents coloniaux britanniques. Le prefixe Ba- est le pluriel bantu pour designer un peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Soli est utilise officiellement en Zambie, ou ce peuple figure parmi les 72 tribus reconnues par l'Etat. La designation Lala-Soli souligne son appartenance au groupe plus large des Lala.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Botatwe (Bantu zone M)",
+      "historicalRegion": "Province de Lusaka et province Centrale, Zambie",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Lala-Soli"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Soli sont consideres parmi les premiers habitants de la region qui constitue aujourd'hui Lusaka. Comme les autres peuples du groupe Lala-Lamba, ils sont reputes descendants du Royaume Luba, dans l'actuelle Republique Democratique du Congo. Ils auraient migre vers le sud le long de la riviere Luapula lors de l'expansion bantoue.",
+      "formationPeriod": "Etablissement dans la region de Lusaka atteste depuis le XVIIe ou XVIIIe siecle, selon les sources historiques et les traditions orales.",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo (territoire luba), via la riviere Luapula, vers les plateaux de la Zambie centrale et meridionale"
+      ],
+      "historicalSettlementZones": [
+        "Province de Lusaka (zone originelle)",
+        "Province Centrale de Zambie",
+        "District de Chongwe"
+      ],
+      "unificationsOrDivisions": "Les Soli constituent un sous-groupe des Lala, apparente aux Lenje et aux Lamba du groupe Botatwe. La frontiere ethnique entre les Ila-Tonga et les Lala-Lamba traverse la province Centrale, avec les Lenje-Soli occupant une zone tampon entre les deux.",
+      "externalInfluences": "Presence europeenne a partir de la fin du XIXe siecle, notamment lors de la periode coloniale de Rhodesie du Nord. Contact avec les missions chretiennes au debut du XXe siecle.",
+      "majorHistoricalEvents": "Etablissement de la ville de Lusaka sur les terres ancestrales soli au XXe siecle. Maintien d'une chefferie traditionnelle reconnue par l'Etat zambien. Resistance partielle a l'assimilation culturelle en milieu urbain."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie patrilinaire. La Haute Cheftaine Nkomeshya Mukamambo II est la dirigeante traditionnelle principale des Soli. La gouvernance soli presente une caracteristique notable : la mise en avant du leadership feminin, notamment a travers la cheftainesse.",
+      "clanOrganization": "Organisation en clans exogames de type matrilineaire, communs aux peuples de l'Afrique centrale orientale. Ces clans partagent des noms d'animaux, de plantes ou d'elements naturels, analogues a ceux des Lenje, Lala et autres groupes Botatwe voisins.",
+      "roleOfLineages": "Les lignages clanique structurent les alliances matrimoniales et la transmission des titres de chef. Le systeme de relations de plaisanterie entre clans (balwani) est documente chez les peuples voisins Lala et Lenje.",
+      "religiousAuthority": "Autorite spirituelle ancree dans la veneration des ancetres. Les chefs exercent egalement un role rituel, notamment dans les ceremonies de pluie et de recolte."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Soli (Chisoli)",
+      "isoCodes": ["sby"],
+      "dialects": ["Chisoli"],
+      "vehicularRole": "La langue soli (ISO 639-3 : sby, Glottocode : soli1239, Guthrie M.62) est une langue bantoue du groupe Botatwe, proche du lenje et du tonga. Elle est activement parlee dans la province de Lusaka et utilisee lors des ceremonies culturelles. En milieu urbain, le nyanja et l'anglais dominent."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie Chakwela Makumbi est la principale celebration culturelle soli. Tenue chaque annee en octobre a Chongwe (province de Lusaka), ce rituel de pluie signifie litteralement tirer les nuages vers le bas. Il fait appel aux esprits ancestraux pour des sols fertiles et une bonne recolte, et rassemble des milliers de personnes. La Haute Cheftaine Nkomeshya Mukamambo II preside la ceremonie.",
+      "symbols": "La cheftainesse Nkomeshya est un symbole central de l'identite soli. Les paniers tisses et la poterie sont des artisanats emblematiques.",
+      "artsAndMusic": "Les Soli pratiquent la danse cibitiko, partagee avec les Lenje voisins. La musique et la danse constituent des vecteurs essentiels de la transmission culturelle lors des ceremonies.",
+      "spiritualities": "Veneration forte des esprits ancestraux. Ceremonies de pluie et de recolte pour s'attirer les faveurs des ancetres. Adoption progressive du christianisme depuis la periode coloniale, coexistant avec les pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie soli avec une seniorcheftaine comme autorite principale. Le systeme de chefferie est reconnu par l'Etat zambien. La cheftaine Nkomeshya Mukamambo II est la dirigeante en titre.",
+      "relationsWithNeighbors": "Les Soli sont apparentes aux Lenje (groupe Botatwe), avec qui ils partagent la langue cibitiko et des pratiques culturelles similaires. Selon Britannica, les Soli sont connectes au groupe Lala-Lamba, tandis que les Lenje sont lies aux Ila-Tonga. Presente comme peuple tampon entre ces deux groupes culturels majeurs.",
+      "conflictsOrAlliances": "Les traditions orales mentionnent la cohabitation et parfois des tensions avec les Bene Mukuni (Lenje) arrivant vers 1700 depuis le Congo. Les Sala auraient ete deplaces de Chisamba par les Bene Mukuni.",
+      "diaspora": "Urbanisation importante a Lusaka, ou les Soli constituent encore une communaute significative malgre la pression demographique de la capitale zambienne."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement zambien 2010 et les projections PeopleGroups.org",
+      "distributionByCountry": [{ "country": "ZMB", "population": 150000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Soli people – Wikipedia EN (https://en.wikipedia.org/wiki/Soli_people)",
+      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
+      "Zambia – Ethnic Groups, Languages, Religions – Encyclopaedia Britannica, 2026 (https://www.britannica.com/place/Zambia/People)",
+      "Soli language – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/soli1239)",
+      "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)"
+    ]
   }
 }

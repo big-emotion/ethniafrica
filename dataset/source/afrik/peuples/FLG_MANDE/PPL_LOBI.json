@@ -6,65 +6,109 @@
   "content": {
     "appellations": {
       "mainName": "Lobi",
-      "selfAppellation": "Lobi",
-      "exonyms": ["Lobi (terme utilisé par les Européens)"],
+      "selfAppellation": "Lobi (du lobiri : lou = foret + bi = enfants, soit enfants de la foret)",
+      "exonyms": [
+        "Lobiri (nom de la langue principale)",
+        "Lobi-Wala (appellation groupée avec les Wala du Ghana)",
+        "Lobis (usage courant en français)"
+      ],
+      "originOfExonyms": "Le nom Lobi est issu de deux mots lobiri : lou (foret) et bi (enfants), signifiant litteralement enfants de la foret, reflet de leur installation historique dans les zones boisees du sud-ouest du Burkina Faso et du nord de la Cote d'Ivoire. Le terme Lobi-Wala regroupe les Lobi proprement dits et les Wala (du Ghana, region de Wa) qui partagent une histoire, une culture et une localisation geographique similaires.",
+      "whyProblematic": "ATTENTION : Classification erronee. Les Lobi parlent une langue GUR (famille volta-congo, groupe Gur/Voltaique), et non une langue Mande. La langue lobiri (ISO 639-3 : lob) est classifiee comme langue Gur par Ethnologue, Glottolog (lobi1245) et toutes les sources academiques. Ce fichier est class en FLG_MANDE par erreur. Il devrait etre en FLG_GUR. Cette fiche doit etre reclassifiee.",
+      "contemporaryUsage": "Le terme Lobi est couramment utilise en francais (Burkina Faso, Cote d'Ivoire) et en anglais (Ghana). Il designe aussi bien le groupe ethnique que sa langue principale (lobiri). Dans la litterature academique et artistique internationale, les Lobi sont connus pour leurs sculptures rituelles (bateba) et leurs croyances animistes liees aux thila (esprits intermediaires).",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "Mandé",
-      "historicalRegion": "BFA, CIV, GHA",
+      "ethnoLinguisticGroup": "Gur (Voltaique) — ATTENTION : classification incorrecte en FLG_MANDE, la langue lobiri est une langue Gur",
+      "historicalRegion": "Region du fleuve Mouhoun (Volta Noire) a la jonction du Burkina Faso, de la Cote d'Ivoire et du Ghana. Capitale culturelle : Gaoua (Burkina Faso).",
       "currentCountries": ["BFA", "CIV", "GHA"]
     },
     "ethnicities": [
-      "Lobi du Burkina Faso",
-      "Lobi de Côte d'Ivoire",
-      "Lobi du Ghana"
+      "Lobi proprement dits (Burkina Faso et Cote d'Ivoire, locuteurs du lobiri/miiwo)",
+      "Birifor / Birfor (Ghana principalement, souvent associes aux Lobi)",
+      "Dagara (groupe Lobi au sens large)",
+      "Dyan / Jaa (seul groupe Lobi politiquement centralise, avec royaute)",
+      "Dorossy",
+      "Gan",
+      "Tenbo / Loron (aussi Lorhon, Teese, Teguessie, Thuuna)"
     ],
     "origins": {
-      "ancientOrigins": "Les Lobi sont originaires du BFA, de la Côte d'Ivoire et du GHA, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples mandé et gur voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Lobi sont originaires de l'actuel Ghana. Le nom Lobi indique un lien originel avec la foret (lou = foret, bi = enfants en lobiri). Selon les traditions orales et les sources historiques, ils vivaient dans la region du Ghana septentrional ou ils subirent les raids des empires esclavagistes voisins (Gwiriko, Kenedougou). En 1770 environ, sous la pression de groupes plus puissants, une grande vague migratoire les poussa a traverser le fleuve Mouhoun (Volta Noire) vers l'ouest et le sud-ouest, s'installant dans le sud du Burkina Faso actuel, puis ultérieurement en Cote d'Ivoire.",
+      "formationPeriod": "La formation identitaire des Lobi comme groupe distinct s'est consolidee a partir de la fin du 18e siecle, lors de leur migration et installation dans la region du Mouhoun. La traversee du fleuve constitue un evenement fondateur symbolique (le Mouhoun represente dans leur cosmologie la frontiere entre le monde des vivants et celui des ancetres). La resistance aux raids et colonisations (Gwiriko, Kenedougou, puis France) a renforce l'identite collective lobi.",
+      "migrationRoutes": [
+        "Origine dans le Ghana septentrional actuel",
+        "Traversee du fleuve Mouhoun (Volta Noire) vers l'ouest, debut vers 1770",
+        "Installation dans le sud du Burkina Faso (region de Gaoua)",
+        "Extension ulterieure vers le nord de la Cote d'Ivoire et le nord-ouest du Ghana"
+      ],
+      "historicalSettlementZones": [
+        "Region de Gaoua (Burkina Faso) — capitale culturelle lobi",
+        "Sud-ouest du Burkina Faso (provinces du Poni et de la Bougouriba)",
+        "Nord de la Cote d'Ivoire (zones limitrophes avec le Burkina Faso)",
+        "Nord-ouest du Ghana (region de l'Upper West)"
+      ],
+      "unificationsOrDivisions": "Les Lobi sont caracterises par une organisation acephale : absence de chefferie centralisee (sauf chez les Gan qui ont une royaute). Chaque menage (soukhala) est une unite autonome dirigee par le tyuordaarkuun (chef de menage). Cette organisation acephale, souvent mal comprise par les administrateurs coloniaux, a contribue a leur reputation d'independance et de fierte. La seule institution unificatrice est la ceremonie d'initiation joro (dyoro) qui se tient tous les sept ans et reunit l'ensemble des Lobi.",
+      "externalInfluences": "Raids des empires esclavagistes de Gwiriko et Kenedougou (19e siecle). Resistance farouche a la penetration coloniale francaise : en 1897, la France annexe les terres lobi mais ne les soumet completement qu'en 1903, apres de nombreuses pertes infligees aux troupes coloniales par les fleches empoisonnees lobi. Accord franco-britannique de juin 1898 placant les Lobi sous juridiction francaise. Influence islamique limitee malgre la proximite des peuples mandé et voltaiques islamisés.",
+      "majorHistoricalEvents": "Migration fondatrice depuis le Ghana (vers 1770). Résistance aux raids de Gwiriko (attaque de 1815 par Bakary Ouattara, tue par une fleche empoisonnee lobi). Attaque devastatrice de Karakara en 1850. Résistance victorieuse a la colonisation française (1897-1903 : les Lobi n'ont jamais ete completement soumis avant 1903). Independance du Burkina Faso (1960), de la Cote d'Ivoire (1960) et du Ghana (1957)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation radicalement acephale : absence de chefferie centralisee dans la grande majorite des groupes lobi. Le menage (soukhala) est l'unite politique de base, dirige par le tyuordaarkuun (chef de menage) qui seul peut autoriser l'entree dans la maison. Au niveau du village, le thildaar (devin du village) peut aussi jouer le role de dithildaar (pretre du village) et est la seule autorite spirituelle reconnue collectivement. Seul le groupe Gan dispose d'une organisation royale centralisee. Cette structure acephale explique la resistance exceptionnelle des Lobi aux conquetes exterieures.",
+      "clanOrganization": "La filiation est bilineaire (a la fois matrilineaire et patrilineaire), ce qui est rare en Afrique subsaharienne. Les droits fonciers et les liens sociaux s'etablissent selon les deux lignes. Le menage (soukhala) est l'unite de base de la vie quotidienne et economique. Les habitations (maison soukala) sont de grandes enceintes rectangulaires ou polygonales en banco, isolees les unes des autres, laissant la place pour les troupeaux et les cultures.",
+      "ageClassSystems": "La ceremonie d'initiation joro (dyoro), qui se tient tous les sept ans, organise implicitement les generations : tous les hommes inities lors d'un meme cycle partagent une identite generationnelle commune. Le joro est l'institution culturelle la plus importante et la plus unificatrice chez les Lobi.",
+      "roleOfLineages": "Les lignages bilineaires structurent les droits sur la terre, les alliances matrimoniales et les relations avec les esprits (thila). La filiation maternelle determine certains droits specifiques tandis que la filiation paternelle en determine d'autres. Les ancetres des deux lignees sont veneres et consultes via les thila (esprits intermediaires).",
+      "religiousAuthority": "Le thildaar (devin du village) est la principale autorite religieuse. Il interprete les regles (soser) dictees par les thila (esprits) et conseille la communaute sur la conduite a tenir. Le dithildaar (pretre du village, un seul par village) officie lors des ceremonies au dithil (sanctuaire du village). Un thildaar intuitif peut interpreter plus de 50 esprits simultanement. Pas de pretre centralisé, chaque menage ayant ses propres thilduu (chambres-sanctuaires)."
     },
     "languages": {
-      "mainLanguage": "Lobi",
-      "vehicularRole": "Le lobi est parlé par la majorité des Lobi. Le français (BFA, CIV) et l'anglais (Ghana) sont utilisés dans l'éducation et l'administration."
+      "mainLanguage": "Lobiri (aussi appele Miiwo)",
+      "isoCodes": ["lob"],
+      "dialects": [
+        "Miiwo — variante principale parlee au Burkina Faso et en Cote d'Ivoire",
+        "Birifor (ou Birfor) — variante parlee majoritairement au Ghana, parfois utilisee comme synonyme de Lobi",
+        "Lobiri proprement dit — langue de reference"
+      ],
+      "vehicularRole": "Le lobiri (lob) est une langue Gur (famille Volta-Congo, non Mande) classifiee dans Glottolog sous le code lobi1245 et par ISO 639-3 sous lob. Elle compte environ 600 000 locuteurs (Language Gulper). Le français est langue officielle au Burkina Faso et en Cote d'Ivoire. L'anglais est langue officielle au Ghana. Le moore (langue mossi) sert de lingua franca au Burkina Faso. Le lobiri n'a pas de statut officiel et est principalement oral. La langue lobiri a une structure tonale avec consonnes complexes (kp, gb) et systeme vocalique riche."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Statues traditionnelles lobi, symboles culturels, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (statues lobi célèbres)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Ceremonie d'initiation joro (ou dyoro) : evenement culturel fondamental se tenant tous les sept ans, reunissant tous les Lobi adultes dans une grande celebration collective. Le joro marque le passage a l'age adulte et renforce la cohesion sociale et l'identite culturelle commune. Rites de naissance marques par des ceremonies au sanctuaire familial (thilduu). Rites de mariage : installation de poles de mariage (poles en bois de karite, d'environ trois metres de hauteur, places le long du chemin menant au compound) avec tissus symboliques indiquant le statut de l'epousee. Rites funeraires : ceremonies au sanctuaire familial, offrandes aux esprits ancestraux pour faciliter le passage du defunt dans l'au-dela. Ceremonies agricoles annuelles avec danses celebrant les pluies abondantes. Les Lobi celebrent les evenements majeurs de la vie (naissances, mariages, deces) dans des sanctuaires.",
+      "symbols": "Bateba (figures anthropomorphes sculptees en bois) : figures protectrices des maisons et des familles, considerees comme des esprits-gardiens materialisés. Les bateba habitent les thilduu (chambres-sanctuaires) et les dithil (sanctuaires du village) et servent d'intermediaires avec les thila. Les familles leur font des offrandes et des sacrifices pour maintenir leur bienveillance. Fleches empoisonnees : symbole de la resistance lobi et de leur capacite guerriere. Poles de mariage en bois de karite : symboles des unions et de la fertilite.",
+      "artsAndMusic": "Sculpture sur bois : les Lobi sont mondialement reconnus pour leurs bateba (figures anthropomorphes rituelles). Une caracteristique unique dans l'art africain est l'identifiabilite des sculpteurs individuels et de leurs ateliers (reconnue lors de l'exposition La Decouverte de l'Individu a Lutherstadt Wittenberg en 2016 et lors de la reconstruction du sanctuaire de Tyohepte Pale au Musee du quai Branly a Paris). Masques rituels utilises lors des ceremonies. Musique a percussion (xylophones, tambours) : les Wala (groupe associe) sont reputes pour leurs joueurs de xylophone virtuoses qui se produisent lors des funerailles et des danses. Artisanat : poterie, tissage, travail du metal. Tradition orale : contes, proverbes, chants rituels. Architecture en banco : maisons-forteresses a toit terrasse caracteristiques de la region lobi.",
+      "spiritualities": "Animisme traditionnel profond : les Lobi maintiennent un systeme spirituel complexe centre sur les thila (esprits intermediaires entre les hommes et Thangba Yu, le Dieu createur distant et inaccessible). Les thila sont des etres ambivalents (semblables aux dieux grecs ou romains, sujets aux vertus et vices mortels) qui habitent des objets naturels et artisanaux (bateba, pierres, grottes, cours d'eau). Ils requierent des offrandes regulieres (sacrifices) pour rester protecteurs et bienveillants. En l'absence d'offrandes, ils deviennent malveillants. Autres esprits : kontuoursi (esprits complementaires). Le fleuve Mouhoun symbolise la frontiere entre le monde des vivants et celui des morts. Malgre la proximite de peuples islamisés, les Lobi ont largement maintenu leurs croyances animistes. Le christianisme est present de maniere marginale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques burkinabé, ivoiriennes et ghanéennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lobi dans les grandes villes burkinabé, ivoiriennes et ghanéennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Lobi proprement dits sont organises sans royaute ni chefferie centralisee (organisation acephale). Seul le groupe Gan (un des sous-groupes lobi) dispose d'une organisation royale et politique centralisee. Cette organisation acephale est consideree comme une caracteristique definissante de la culture lobi, en opposition aux grands royaumes voisins (Mossi, Gwiriko, Kenedougou).",
+      "relationsWithNeighbors": "Tensions historiques recurrentes avec les empires esclavagistes voisins (Gwiriko, Kenedougou) qui menaient des raids dans les villages lobi. Les Lobi ont developpe en reponse des maisons-forteresses et l'usage de fleches empoisonnees. Relations commerciales limitees avec les peuples Dioula (marchands mandé). Contacts culturels avec les Dagari et les Dagomba du Ghana. Relations complexes avec les administrateurs coloniaux français et britanniques.",
+      "conflictsOrAlliances": "Resistance aux raids de l'empire de Gwiriko (1815 : mort de Bakary Ouattara tue par une fleche empoisonnee lobi). Resistance a l'attaque de Karakara en 1850 (devastating mais jamais complete). Résistance victorieuse a la colonisation francaise (1897-1903) : les Français annexent le territoire en 1897 mais ne parviennent a le controler completement qu'en 1903 apres de lourdes pertes. Accord franco-britannique de juin 1898 placant les Lobi sous juridiction française. Resistance caracterisée par l'utilisation systematique de fleches empoisonnees.",
+      "diaspora": "Migration economique vers les grandes villes de Burkina Faso (Ouagadougou, Bobo-Dioulasso), de Cote d'Ivoire (Abidjan) et du Ghana (Accra, Kumasi). Diaspora moderee, les Lobi etant historiquement attaches a leurs terres agricoles. Migrations recentes liees aux crises securitaires au Burkina Faso (depuis 2015). Presence lobi dans les diasporas africaines en Europe (France principalement)."
     },
     "demography": {
-      "totalPopulation": 700000,
+      "totalPopulation": 1100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, CIA World Factbook, et études démographiques"
+      "source": "Estimations basees sur Wikipedia (plus d'un million de Lobi au sens large, 2.4% de la population du Burkina Faso), Language Gulper (Lobi : 600 000 locuteurs du lobiri), Joshua Project (Lobi au Burkina Faso et en Cote d'Ivoire), Britannica (Lobi). Projections 2025 a partir des recensements nationaux (Burkina Faso 2019, Cote d'Ivoire 2021, Ghana 2021).",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 800000,
+          "note": "Majorite des Lobi, region de Gaoua et sud-ouest du Burkina Faso. Environ 2.4% de la population burkinabe."
+        },
+        {
+          "country": "CIV",
+          "population": 150000,
+          "note": "Nord de la Cote d'Ivoire, zones frontieres avec le Burkina Faso."
+        },
+        {
+          "country": "GHA",
+          "population": 150000,
+          "note": "Nord-ouest du Ghana (region Upper West). Souvent comptes dans le groupe Mole-Dagbon. Les Birifor constituent la branche principale au Ghana."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lobi language (lob)",
-      "CIA World Factbook – BFA, CIV, GHA",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples mandé",
-      "Études sur l'art lobi (sculpture)"
+      "Wikipedia EN — Lobi people. https://en.wikipedia.org/wiki/Lobi_people",
+      "Wikipedia EN — Lobi language. https://en.wikipedia.org/wiki/Lobi_language",
+      "Glottolog — Lobi (lobi1245). https://glottolog.org/resource/languoid/id/lobi1245",
+      "Britannica — Lobi. https://www.britannica.com/topic/Lobi",
+      "Joshua Project — Lobi in Burkina Faso. https://joshuaproject.net/people_groups/13082/UV",
+      "Pacific Lutheran University — Lobi art collection. https://www.plu.edu/africanartcollection/figures/lobi-1/learn-more-lobi-1/",
+      "Language Gulper — Gur languages (Lobi). https://languagesgulper.com/eng/Gur.html",
+      "Minority Rights Group — Burkina Faso. https://minorityrights.org/country/burkina-faso/",
+      "NOTE DE CLASSIFICATION : La langue lobiri (ISO 639-3 : lob) est une langue GUR (Volta-Congo), non une langue Mande. Ce fichier est classe en FLG_MANDE par erreur et doit etre reclassifie en FLG_GUR."
     ]
   }
 }

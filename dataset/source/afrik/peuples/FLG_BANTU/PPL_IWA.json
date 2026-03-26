@@ -2,58 +2,74 @@
   "id": "PPL_IWA",
   "nameMain": "Iwa",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA"],
+  "currentCountries": ["TZA", "ZMB"],
   "content": {
     "appellations": {
       "mainName": "Iwa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Aiwa",
+      "exonyms": ["Iwa", "Nyamwanga-Iwa"],
+      "originOfExonyms": "Le nom Iwa designe ce sous-groupe ethnique et dialectal du peuple Nyamwanga. Le terme est utilise dans les sources ethnographiques et dans les classifications de Joshua Project et PeopleGroups.org.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les Iwa sont generalement consideres comme un sous-groupe ou dialecte du peuple Nyamwanga. Dans les classifications modernes, le code linguistique Nyamwanga (mwn) leur est attribue. Ils vivent principalement en Tanzanie du sud-ouest (region de Songwe) et dans le nord-est de la Zambie (province de Muchinga).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
-      "currentCountries": ["TZA"]
+      "ethnoLinguisticGroup": "Bantu de Tanzanie centrale, sous-groupe Nyamwanga",
+      "historicalRegion": "Tanzanie du sud-ouest (region de Songwe) et nord-est de la Zambie (province de Muchinga)",
+      "currentCountries": ["TZA", "ZMB"]
     },
-    "ethnicities": ["Iwa"],
+    "ethnicities": ["Iwa", "Nyamwanga-Iwa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Iwa sont un sous-groupe ethnique bantou appartenant au peuple Nyamwanga (ou Mwanga), originaire du plateau du nord-est de la Zambie et du sud-ouest de la Tanzanie. Ils partagent leur histoire avec les Mwanga-Nyamwanga, dont les ancetres sont associes aux migrations bantoues venues du nord dans la region des Grands Lacs.",
+      "formationPeriod": "La formation du groupe Iwa en tant que sous-groupe Nyamwanga remonte probablement a plusieurs siecles, dans le cadre des mouvements de population bantous entre le XIVe et le XVIIIe siecle dans la region du Plateau de Muchinga.",
+      "migrationRoutes": [
+        "Mouvements des ancetres bantous depuis la region des Grands Lacs vers le plateau de Muchinga",
+        "Etablissement dans les zones frontalieres Tanzanie-Zambie (region de Songwe/province de Muchinga)"
+      ],
+      "historicalSettlementZones": [
+        "District de Momba, region de Songwe, Tanzanie",
+        "Province de Muchinga (districts d'Isoka et Nakonde), Zambie"
+      ],
+      "unificationsOrDivisions": "Les Iwa sont un sous-groupe du peuple Nyamwanga. Dans certaines classifications, ils sont distingues des Mwanga/Nyamwanga proprement dits par des differences dialectales et des pratiques culturelles specifiques.",
+      "externalInfluences": "Contacts avec les routes commerciales arabess et swahilis du XIXe siecle traversant la Tanzanie. Integration dans les systemes coloniaux allemand (Tanganyika) et britannique (Rhodesie du Nord/Zambie). Evangelisation chretienne aux XIXe-XXe siecles.",
+      "majorHistoricalEvents": "Penetration coloniale europeenne a partir de la fin du XIXe siecle. Independance de la Tanzanie (1961) et de la Zambie (1964). Christianisation progressive."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation traditionnelle basee sur des chefferies claniques et des conseils d'anciens, similaire a l'organisation des Nyamwanga voisins. La chefferie est l'unite politique de base.",
+      "clanOrganization": "Structure clanique patrilineaire organisee en clans exogames. Les clans regulent les mariages, l'heritage et les droits fonciers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires transmettent les terres, le betail et le statut social. Le betail (bovins) est un marqueur important de richesse.",
+      "religiousAuthority": "Croyances animistes traditionnelles avec veneration des ancetres. Le christianisme est predominant dans les communautes Iwa contemporaines, suite a l'evangelisation des XIXe-XXe siecles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nyamwanga (Chinamwanga)",
+      "isoCodes": ["mwn"],
+      "dialects": ["Iwa (dialecte du Nyamwanga)"],
+      "vehicularRole": "Les Iwa parlent le nyamwanga (ISO mwn, Chinamwanga), une langue bantoue partagee avec les Mwanga de Zambie et de Tanzanie. En Tanzanie, le swahili est utilise comme vehiculaire national. En Zambie, l'anglais est la langue officielle. La Bible complete est disponible en nyamwanga."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage (initiation, mariage, funerailles) partages avec le peuple Nyamwanga. Le betail joue un role important dans les ceremonies de mariage (dot) et les rituels funeraires.",
+      "symbols": "Le betail est un symbole de richesse et de prestige social. Les montagnes et collines du plateau de Muchinga constituent un repere identitaire geographique.",
+      "artsAndMusic": "Agriculture de subsistance (sorgho, mil, mais, manioc) et elevage (bovins, chevres). Artisanat local et tradition orale comme vecteurs culturels.",
+      "spiritualities": "Religion traditionnelle avec culte des ancetres. Le christianisme est la religion majoritaire parmi les Iwa contemporains (Protestantisme, Catholicisme). Syncretisme avec les croyances animistes traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation en chefferies independantes au niveau des clans, similaire aux structures des Nyamwanga et des peuples voisins du plateau de Muchinga.",
+      "relationsWithNeighbors": "Les Iwa sont etroitement lies aux Nyamwanga (Mwanga) dont ils sont un sous-groupe dialectal. Ils partagent la region frontaliere avec les Mambwe, Lungu et Nyiha. Sur le plan linguistique, le nyamwanga est considere comme une langue stable bridgeant la Tanzanie et la Zambie.",
+      "conflictsOrAlliances": "Relations commerciales avec les marchands arabes et swahilis via les routes de l'ivoire au XIXe siecle. Integration dans les systemes coloniaux britannique (Zambie) et allemand puis britannique (Tanzanie).",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 9300,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)",
+      "distributionByCountry": [{ "country": "TZA", "population": 9300 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mwanga people – Wikipedia (https://en.wikipedia.org/wiki/Mwanga_people)",
+      "Mwanga language – Wikipedia (https://en.wikipedia.org/wiki/Mwanga_language)",
+      "Iwa of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015580/)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025 (https://www.joshuaproject.net/clusters/341)",
+      "Nyamwanga Language – Ethnologue (https://www.ethnologue.com/language/mwn/)",
+      "Nyamwanga in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13901/TZ)"
+    ]
   }
 }

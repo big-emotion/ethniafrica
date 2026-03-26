@@ -6,59 +6,89 @@
   "content": {
     "appellations": {
       "mainName": "Bench",
-      "selfAppellation": "Bench",
-      "exonyms": ["Bench (terme utilisé par les Européens)"],
+      "selfAppellation": "Mer Bench",
+      "exonyms": ["Gimira", "Gebra", "Shenon", "Benchnon", "Mernon"],
+      "originOfExonyms": "Le terme Gimira est l'exonyme historique utilisé par les Amhara et les Éthiopiens du nord pour désigner le peuple Bench. Il a été largement employé dans la littérature coloniale et académique ancienne. Le terme Bench est devenu le nom officiel reconnu par l'État éthiopien. Mer Bench est l'auto-désignation en langue bench. Les formes Benchnon, Shenon et Mernon correspondent à trois variétés dialectales de la langue.",
+      "whyProblematic": "Le terme Gimira, exonyme amhara, est désormais considéré comme péjoratif par certains membres de la communauté. Il reste présent dans la littérature académique et linguistique ancienne.",
+      "contemporaryUsage": "Le terme Bench est officiellement reconnu et utilisé dans les divisions administratives éthiopiennes (Bench Maji Zone, anciennement dans le SNNPR, désormais dans le South West Ethiopia Peoples' Regional State). Mer Bench est l'auto-désignation courante.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique du Nord",
-      "historicalRegion": "Sud-ouest de l'Éthiopie",
+      "ethnoLinguisticGroup": "Omotique du Nord (sous-groupe Gimojan)",
+      "historicalRegion": "Bench Maji Zone, South West Ethiopia Peoples' Regional State — région du sud-ouest de l'Éthiopie, autour des villes de Mizan Teferi et Shewa Gimira",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Bench du Nord", "Bench du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Bench du Nord (Semien Bench) — district de Semien Bench",
+      "Bench du Sud (Debub Bench) — district de Debub Bench",
+      "She Bench — district de She Bench, parlent la variété Shenon",
+      "Mernon — sous-groupe dont la variété linguistique Mernon est documentée",
+      "Shako — groupe inclus par Cerulli dans l'ensemble Gimira",
+      "Nao — groupe voisin inclus par Cerulli dans la sphère Gimira"
+    ],
     "origins": {
-      "ancientOrigins": "Les Bench sont originaires du sud-ouest de l'ETH, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples couchitiques et sémitiques voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Bench sont un peuple omotique autochtone du sud-ouest de l'Éthiopie. Ils font partie des peuples qualifiés par Jensen d'anciens peuples du sud de l'Éthiopie, avec les Dizi, les Sheko, les Nao et les Basketo. Leur présence dans la région de Bench Maji est antérieure aux premiers contacts documentés avec les royaumes voisins d'Abyssinie et du Kaffa. La région Bench, riche en café sauvage et en cardamome éthiopienne, est historiquement liée à la zone de production du café arabica.",
+      "formationPeriod": "L'identité bench s'est consolidée autour d'une organisation agraire et clanique dans les forêts et savanes du sud-ouest éthiopien. Leur territoire faisait partie de la sphère d'influence du royaume de Kaffa avant la conquête éthiopienne. L'intégration à l'empire de Menelik II dans les années 1890 a profondément modifié leur organisation politique tout en préservant leur identité linguistique et culturelle.",
+      "migrationRoutes": [
+        "Peuple autochtone sans migration fondatrice documentée hors du sud-ouest éthiopien",
+        "Présence historique dans les régions boisées de Bench Maji depuis plusieurs siècles"
+      ],
+      "historicalSettlementZones": [
+        "Bench Maji Zone (South West Ethiopia Peoples' Regional State) — anciens districts de Debub Bench, Semien Bench et She Bench",
+        "Environs de Mizan Teferi et Shewa Gimira",
+        "Zones de forêts et de savanes du plateau du sud-ouest éthiopien"
+      ],
+      "unificationsOrDivisions": "Les Bench sont divisés en plusieurs sous-groupes territoriaux (Debub Bench, Semien Bench, She Bench) qui partagent une identité linguistique commune, leurs variétés dialectales étant mutuellement intelligibles. Cerulli inclut également les Shako, les Dizu-Benesho, les She, les Kaba, les Nao et les Maji dans l'ensemble Gimira/Bench. La division administrative éthiopienne en trois woredas a institutionnalisé les sous-divisions internes.",
+      "externalInfluences": "Influence du royaume de Kaffa avant la conquête éthiopienne. Intégration à l'empire de Menelik II dans les années 1890. Contacts avec les peuples omotiques voisins (Sheko, Dizi, Aari). L'expansion du protestantisme au XXe siècle a profondément influencé la vie religieuse. Contacts commerciaux liés au café et à la cardamome éthiopienne.",
+      "majorHistoricalEvents": "La conquête de la région Bench par les forces de Menelik II à la fin du XIXe siècle et l'intégration à l'empire éthiopien constituent le tournant majeur de leur histoire. La création du Bench Maji Zone a institutionnalisé leur représentation administrative. Selon Fernyhough, l'impact démographique de la traite des esclaves après la conquête éthiopienne fut catastrophique pour l'ensemble de la région (estimation de 300 000 personnes mortes ou déportées entre les débuts du XXe siècle et les années 1920)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation traditionnelle en chefferies locales. Les anciens (conseils d'anciens) exercent l'autorité dans la résolution des conflits et les décisions communautaires. Le système de chefferie Bench n'a pas connu de centralisation en royaume comparable à celui des voisins Dawro ou Wolayta. La gouvernance reste fondamentalement décentralisée, fondée sur le consensus des anciens au niveau du clan et du village.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les clans définissent les règles d'exogamie et les alliances matrimoniales. Système de castes sociales fonctionnelles comparable aux peuples omotiques voisins : les artisans (potiers, forgerons, tanneurs) occupent des positions marginalisées au bas de la hiérarchie sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits fonciers et les alliances sociales. L'appartenance lignagère régit les règles d'exogamie et les obligations rituelles.",
+      "religiousAuthority": "La religion traditionnelle bench reconnaît un dieu du ciel suprême auquel des sacrifices sont offerts lors des moments de crise (décès, épidémies). Les esprits locaux jouent un rôle central dans la vie quotidienne ; des experts rituels assurent la médiation entre le monde des esprits et les communautés. Le protestantisme est désormais dominant (christianisme évangélique). Le christianisme orthodoxe éthiopien et l'islam sont également présents."
     },
     "languages": {
-      "mainLanguage": "Bench",
-      "vehicularRole": "Le bench est parlé par la majorité des Bench. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Bench (Bencnon / Mer Bench)",
+      "isoCodes": ["bcq"],
+      "dialects": [
+        "Benchnon — variété centrale parlée dans le district de Bench",
+        "Shenon — variété parlée dans le district de She Bench",
+        "Mernon — troisième variété, mutuellement intelligible avec les deux autres selon Rapold (2006)"
+      ],
+      "vehicularRole": "Le bench est parlé par environ 353 526 personnes selon le recensement éthiopien de 2007. Il est l'une des langues régionales reconnues dans le South West Ethiopia Peoples' Regional State. La langue est phonologiquement remarquable : elle possède des consonnes rétroflexes (rare en Afrique) et six niveaux tonaux phonémiques, l'un des rares systèmes de ce type documentés dans le monde. Une forme sifflée du bench, utilisée principalement par les hommes, permet la communication sur de longues distances. Une orthographe latine a été adoptée en 2008. L'amharique est utilisé pour l'administration et l'enseignement secondaire."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels bench, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam."
+      "majorRites": "Rites de passage liés à la naissance, à la puberté, au mariage et à la mort. Le perçage et l'étirement du lobe de l'oreille droite avec des ornements ou de petits morceaux de bois est une pratique distinctive réservée aux chefs, aux chasseurs et aux guerriers valeureux. Les cérémonies sacrificielles (volaille, bovins) sont offertes au dieu du ciel lors des décès et des crises collectives. Les rituels d'alliance (naali) créent des liens de quasi-parenté entre individus non apparentés. Cérémonies liées au cycle agricole (café, cardamome, sorgho, maïs).",
+      "symbols": "Le perçage du lobe de l'oreille droite est un symbole de statut social élevé (chefs, guerriers). Le café et la cardamome éthiopienne (Aframomum corrorima) sont des symboles économiques et culturels centraux. La langue Bench, avec son whistled speech (communication sifflée) et ses six tons phonémiques, constitue un patrimoine linguistique distinctif.",
+      "artsAndMusic": "Artisanat traditionnel : poterie, tissage de paniers et de nattes, travail du bois. Les paniers tressés bench sont reconnus pour leur qualité. Musique traditionnelle : le krar (luth à 5 cordes) peut servir à transmettre la forme sifflée de la langue bench sur de longues distances, illustrant l'imbrication entre instrument et communication. Danses collectives lors des cérémonies de mariage et des fêtes agricoles. Poésie orale et tradition des griots. La gastronomie bench repose sur le maïs, le sorgho, le taro, l'igname, les légumineuses et le café.",
+      "spiritualities": "La religion traditionnelle bench (Gimira) est fondée sur la croyance en un dieu du ciel suprême auquel des sacrifices sont offerts, essentiellement pour apaiser sa colère lors de décès ou de calamités. Les esprits locaux (multiples et hiérarchisés) reçoivent une attention beaucoup plus quotidienne que le dieu suprême. Des experts rituels (mediums) permettent aux esprits de s'incarner en eux pour communiquer avec les communautés. Aujourd'hui, le protestantisme (christianisme évangélique) est largement dominant, suivi du christianisme orthodoxe éthiopien. L'islam est également présent de manière minoritaire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bench dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bench ne sont pas connus pour avoir formé un royaume centralisé comparable aux voisins Dawro ou Wolayta. Leur organisation traditionnelle en chefferies locales autonomes et en conseils d'anciens a prévalu. Cerulli documente plusieurs sous-groupes distincts (Shako, Dizu-Benesho, She, Kaba, Nao, Maji) inclus dans l'entité Gimira. La région Bench était dans la sphère d'influence du royaume de Kaffa avant la conquête éthiopienne. L'intégration à l'empire de Menelik II à la fin du XIXe siècle a mis fin à l'autonomie des chefferies locales.",
+      "relationsWithNeighbors": "Relations historiques avec le royaume de Kaffa qui a exercé une influence régionale sur les peuples du sud-ouest éthiopien. Relations avec les peuples voisins : Sheko, Dizi (Maji), Nao, Aari. L'impact de la traite des esclaves après la conquête éthiopienne (années 1890-1920) a durement affecté la démographie de la région Bench/Gimira/Maji. Les Bench entretiennent des relations d'échange commercial avec les marchés régionaux de Mizan Teferi.",
+      "conflictsOrAlliances": "La conquête par les forces de Menelik II à la fin du XIXe siècle constitue le principal conflit historique documenté. L'impact démographique de la période post-conquête (système du gebbar, traite des esclaves, épidémies) fut dévastateur pour la région. Le rapport Fernyhough estime à au moins 300 000 personnes les morts ou déportés dans les zones Kaffa, Gimira et Maji entre les débuts du XXe siècle et les années 1920.",
+      "diaspora": "La quasi-totalité des Bench réside dans leur zone d'origine (Bench Maji Zone). Une diaspora limitée est présente dans les grandes villes éthiopiennes (Mizan Teferi, Addis-Abeba). Les migrations sont principalement économiques vers les centres urbains régionaux."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+      "source": "Recensement éthiopien 2007 (CSA) : 353 526 Bench, soit 0,48% de la population totale de l'Éthiopie. Ethnologue (SIL) : 174 000 locuteurs en 1998. Absolute Ethiopia Tours (2025) estime la communauté à environ 547 000. Projection 2025 estimée à 500 000 en tenant compte du taux de croissance démographique éthiopien.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 500000,
+          "note": "Bench Maji Zone (South West Ethiopia Peoples' Regional State), principalement dans les districts de Debub Bench, Semien Bench et She Bench. Centre régional : Mizan Teferi."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bench language (bcq)",
-      "CIA World Factbook – Ethiopia",
-      "Recensements éthiopiens",
-      "Études anthropologiques sur les peuples omotiques"
+      "Wikipedia EN — Bench people. https://en.wikipedia.org/wiki/Bench_people",
+      "Wikipedia EN — Bench language. https://en.wikipedia.org/wiki/Bench_language",
+      "Ethnologue — Bench language (bcq). https://www.ethnologue.com/language/bcq/",
+      "101 Last Tribes — Bench people. https://www.101lasttribes.com/tribes/bench.html",
+      "Rapold, Christian. 2006. Towards a Grammar of Benchnon. Dissertation, Leiden University. https://www.universiteitleiden.nl/en/research/research-output/humanities/towards-a-grammar-of-benchnon",
+      "Recensement national de la population et du logement de l'Éthiopie 2007 (CSA). Données Bench Maji Zone.",
+      "Fernyhough, Timothy D. 1994. Human rights and precolonial Africa. In: Human Rights and Governance in Africa, pp. 55-99."
     ]
   }
 }

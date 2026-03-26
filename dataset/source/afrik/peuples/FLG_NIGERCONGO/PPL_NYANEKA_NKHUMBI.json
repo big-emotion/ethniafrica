@@ -6,56 +6,90 @@
   "content": {
     "appellations": {
       "mainName": "Nyaneka-Nkhumbi",
-      "selfAppellation": "",
+      "selfAppellation": "Nyaneka-Nkhumbi (terme collectif adopte) ; les sous-groupes se designent par leurs noms propres : Ovanyaneka, Ovakhumbi (Humbe), Ovamwila, Ovahanda",
       "exonyms": [
-        "Nyaneka-Nkhumbi (terme utilisé par les Européens et les Portugais)"
+        "Nyaneka-Humbe (denomination portugaise et litterature academique)",
+        "Nhaneka-Humbe",
+        "Nkumbi-Nyaneka"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le terme compose Nyaneka-Nkhumbi (ou Nyaneka-Humbe) a ete introduit par l'administration coloniale portugaise et les ethnographes europeens pour designer l'ensemble des peuples agropastoraux du plateau du Huila et des savanes environnantes. Nkhumbi est aussi orthographie Nkumbi ou Humbe en portugais.",
+      "whyProblematic": "L'appellation Nyaneka-Nkhumbi recouvre deux entites distinctes sur le plan linguistique : les Nyaneka (code ISO nyk, env. 1 267 000 locuteurs selon Joshua Project 2025) et les Nkhumbi (code ISO khu, env. 834 000 locuteurs). Ces deux groupes partagent une culture agropastorale commune et un territoire adjacent, mais parlent des langues differentes. La fiche PPL_NYANEKA_NKHUMBI documente l'ensemble ethnique elargi tel qu'il est traite dans la litterature scientifique et politique, tandis que PPL_NYANEKA couvre les Nyaneka stricto sensu.",
+      "contemporaryUsage": "L'expression Nyaneka-Nkhumbi ou Nyaneka-Humbe est couramment utilisee dans les publications academiques, les rapports de Minority Rights Group et la litterature sur l'Angola pour designer cet ensemble ethnique. Selon le recensement angolais de 2014, les Nyaneka-Nkumbi representent environ 3 % de la population angolaise.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-ouest de l'Angola",
+      "ethnoLinguisticGroup": "Bantou du sud-ouest (Southwestern Bantu)",
+      "historicalRegion": "Sud-ouest de l'Angola : province de Huila (plateau de Humpata, Chibia, Matala), province de Cunene, bordures de la province de Namibe",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Nyaneka-Nkhumbi"],
+    "ethnicities": ["Nyaneka (Mwila, Handa, Cilenge)", "Nkhumbi (Humbe)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-ouest de l'Angola"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "L'ensemble Nyaneka-Nkhumbi appartient aux populations bantou du sud-ouest africain qui ont progressivement occupe les savanes arborees du plateau angolais. Leur mode de vie agropastoral centre sur l'elevage bovin est commun a leurs voisins Ovambo et Herero, suggerant une ancienne convergence culturelle des populations bantou de cette zone ecologique semi-aride.",
+      "formationPeriod": "La constitution de l'identite collective Nyaneka-Nkhumbi est en partie le resultat de la categorisation coloniale portugaise. Les groupes composants (Mwila, Handa, Cilenge, Humbe) existaient anterieurement comme entites distinctes sur le plateau de Huila. La reconnaissance d'une identite commune se situe entre le XIXe et le debut du XXe siecle.",
+      "migrationRoutes": [
+        "Migration ancestrale bantou depuis les savanes du nord vers le plateau meridional",
+        "Etablissement progressif dans le bassin du rio Caculovar et le plateau de Humpata",
+        "Transhumance saisonniere vers les zones de paturage plus basses en periode de secheresse"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Humpata (Huila Planato), province de Huila",
+        "Bassin du rio Caculovar, sud-ouest Angola",
+        "Zones de savane de la province de Cunene",
+        "Zones marginales de la province de Namibe"
+      ],
+      "unificationsOrDivisions": "L'ensemble Nyaneka-Nkhumbi est une construction ethno-categorielle qui reunit des sous-groupes partageant un mode de vie pastoral et un territoire : les Mwila (les plus connus pour leurs ornements), les Handa, les Cilenge et les Nkhumbi (Humbe). Chaque sous-groupe a maintenu son identite propre tout en etant percu exterieurement comme un ensemble coherent.",
+      "externalInfluences": "Colonisation portugaise ayant introduit le catholicisme et une economie monetaire. La guerre d'independance (1961-1975) et la guerre civile (1975-2002) ont profondement perturbe les modes de vie traditionnels. Contrairement aux Herero et aux Ovambo, les Nyaneka-Nkhumbi n'ont pas disperse hors d'Angola.",
+      "majorHistoricalEvents": "Guerres de resistance contre la pacification portugaise au XIXe et debut XXe siecle. Independence de l'Angola (1975). Guerre civile entre MPLA et UNITA (1975-2002) affectant le sud-ouest angolais. Referendum et paix de 2002. Acces progressif aux services de base dans les provinces du sud."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferies (sobados) patrilineaires sans etat centralise. Les sobas exercent une autorite locale reconnue par le gouvernement angolais. La structure sociale est directement liee a la gestion du betail : la richesse, le prestige et les decisions collectives gravitent autour des troupeaux bovins.",
+      "clanOrganization": "Organisation clanique patrilineaire. Les clans sont definis par la possession commune de betail et de terres de paturage. Les decisions concernant le mariage (avec transfert de betail comme dot), les litiges fonciers et les successions sont gerees au niveau du clan sous l'autorite des anciens.",
+      "ageClassSystems": "Des classes d'age structurent le cycle de vie, notamment pour les rites de passage feminins (efiko) et masculins (initiation a la gestion du troupeau).",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage du betail et l'acces aux paturages. L'ensemble de la vie sociale (mariage, trahison, disputes juridiques, rituels de mort) est gouverne par des regles liees a la gestion du troupeau (ono ngombe en nyaneka).",
+      "religiousAuthority": "Chefs spirituels traditionnels coexistant avec des pretres et pasteurs catholiques. La foi dans les esprits ancestraux est maintenue paralllement au catholicisme pratique officiellement."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nyaneka (nyk) pour les sous-groupes Nyaneka ; Nkumbi (khu) pour les Nkhumbi (Humbe)",
+      "isoCodes": ["nyk", "khu"],
+      "dialects": [
+        "Mwila (sous-dialecte du nyaneka)",
+        "Handa (sous-dialecte du nyaneka)",
+        "Cilenge (sous-dialecte du nyaneka, parle notamment a Quilengues)",
+        "Nkumbi (Humbe) – langue propre des Nkhumbi"
+      ],
+      "vehicularRole": "Le portugais est la langue officielle et vehiculaire en Angola. Le nyaneka et le nkumbi sont des langues vernaculaires de communication locale. Les deux langues ont un Nouveau Testament traduit. Le nkumbi dispose egalement d'enregistrements audio de ressources religieuses."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "L'agropastoralisme structure toute la vie culturelle et rituelle. La ceremonie d'initiation feminine efiko inclut le sacrifice d'un bovin et l'adornement de la future femme avec des parties de l'animal. Les rituels de deuil, de mariage et de reglement des conflits impliquent tous des bovins. Les femmes Mwila se distinguent par leurs coiffures elaborees et leurs colliers de perles superposees, qui signalent leur statut marital et social.",
+      "symbols": "Le bovin est le symbole central de la culture Nyaneka-Nkhumbi. Les ornements corporels feminins (coiffures, colliers, bracelets) constituent un langage symbolique fort. La pate oncula (pierre rouge, beurre et herbes) est appliquee sur les cheveux comme protection et marqueur d'identite.",
+      "artsAndMusic": "Traditions orales riches : chants, proverbes et recits utilises pour transmettre le savoir entre generations. Danses rituelles d'initiation et de deuil. Artisanat du cuir et de la vannerie. Les femmes Mwila sont reconnues internationalement pour leurs ornements corporels, devenus symboles photographiques de la culture angolaise.",
+      "spiritualities": "Spiritualite traditionnelle centree sur les ancetres et les esprits (monde des Ono ngombe - les bovins comme intermediaires spirituels). Catholicisme dominant (officiellement), souvent combine aux pratiques traditionnelles. Les rituels pastoraux ont une dimension sacree."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Organisation en sobados (chefferies) multiples sans entite politique centralisee. Les Nkhumbi (Humbe) dans la province de Cunene ont maintenu une organisation pastorale semi-nomade. Les chefferies ont ete integrees progressivement dans l'administration coloniale portugaise.",
+      "relationsWithNeighbors": "Cohabitation avec les Ovambo (au sud, en Cunene et en Namibie), les Herero (a l'ouest) et les Ovimbundu (au nord). Echanges commerciaux et de betail avec ces populations. Le groupe Nyaneka-Nkhumbi (Nyaneka-Humbe) est distinct des Ovambo et des Herero qui eux ont des populations importantes hors d'Angola (Namibie, Botswana).",
+      "conflictsOrAlliances": "Resistance aux campagnes militaires portugaises de pacification. La frontiere avec la Namibie (anciennement Sud-Ouest africain) a ete une zone de tensions. La guerre civile angolaise a affecte les provinces du sud ou les Nyaneka-Nkhumbi sont concentres. La region de Cunene a ete traversee par des forces namibiennes (SWAPO) et sud-africaines.",
+      "diaspora": "Exclusivement angolais. Contrairement a leurs voisins Herero, les Nyaneka-Nkhumbi n'ont pas migre en masse hors du territoire angolais. Une minorite urbaine reside a Lubango et dans d'autres centres provinciaux."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 2101000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation aggregee : Nyaneka 1 267 000 (Joshua Project 2025, langue nyk) + Nkhumbi 834 000 (Joshua Project 2025, langue khu). Soit 3 % de la population angolaise estimee, conforme aux donnees de Minority Rights Group citant le recensement angolais.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 2101000,
+          "note": "Provinces de Huila (Nyaneka majoritairement) et Cunene (Nkhumbi majoritairement), avec des communautes dans les provinces de Namibe et Benguela"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Minority Rights Group – Angola, 2024 (https://minorityrights.org/country/angola/)",
+      "Joshua Project – Nyaneka in Angola (https://joshuaproject.net/people_groups/14084)",
+      "Joshua Project – Nkhumbi in Angola (https://joshuaproject.net/people_groups/13417)",
+      "Contemporary Capoeira – The Nyaneka-Nkhumbi, 2024 (https://capoeirahistory.com/the-nyaneka-nkhumbi/)",
+      "Wikipedia EN – Culture of Angola (https://en.wikipedia.org/wiki/Culture_of_Angola)",
+      "Glottolog – Nyaneka [nyan1305] (https://glottolog.org/resource/languoid/id/nyan1305)",
+      "Refworld – World Directory of Minorities and Indigenous Peoples, Angola (https://www.refworld.org/reference/countryrep/mrgi/2008/62215)",
+      "101 Last Tribes – Muila people (https://www.101lasttribes.com/tribes/muila.html)"
+    ]
   }
 }

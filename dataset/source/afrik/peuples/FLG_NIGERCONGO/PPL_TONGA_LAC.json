@@ -2,67 +2,107 @@
   "id": "PPL_TONGA_LAC",
   "nameMain": "Tonga (Lac)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["ZMB", "ZWE"],
+  "currentCountries": ["MWI"],
   "content": {
     "appellations": {
-      "mainName": "Tonga (Lac)",
-      "selfAppellation": "Tonga",
-      "exonyms": ["Tonga (terme utilisé par les Européens)"],
+      "mainName": "Tonga du Lac (Lakeshore Tonga)",
+      "selfAppellation": "Atonga (Chitonga : Batonga)",
+      "exonyms": [
+        "Chitonga",
+        "Kitonga",
+        "Siska",
+        "Sisya",
+        "Western Nyasa",
+        "Nyasa Tonga"
+      ],
+      "originOfExonyms": "Le terme Tonga est un ethnonyme bantu commun à plusieurs peuples d'Afrique australe sans parenté directe. Le terme Nyasa Tonga ou Western Nyasa distingue ce groupe des Tonga de Zambie et du Zimbabwe, avec lesquels il n'a aucune relation linguistique ni historique directe. Siska et Sisya sont des variantes locales plus anciennes. Chitonga désigne à la fois le peuple et la langue dans le système de préfixes bantous (Chitonga = la langue, Batonga = le peuple).",
+      "whyProblematic": "Le nom Tonga est partagé par plusieurs groupes ethniques d'Afrique australe sans parenté directe (Tonga du Malawi, Tonga de Zambie-Zimbabwe, Tonga du Mozambique), ce qui crée des confusions fréquentes. Le Tonga du Malawi (code N15, ISO tog) et le Tonga de Zambie (code M64, ISO toi) appartiennent à des branches différentes du bantou et sont mutuellement inintelligibles. Les Lakeshore Tonga sont spécifiquement les Tonga de la côte ouest du lac Malawi (Nkhata Bay), distinct aussi des Tonga de Malawi au sens large.",
+      "contemporaryUsage": "L'ethnonyme Lakeshore Tonga (Tonga du Lac) est utilisé dans la littérature anthropologique pour distinguer ce groupe des autres porteurs du nom Tonga en Afrique. En Malawi, ils sont généralement désignés simplement comme Tonga ou Atonga, dans le district de Nkhata Bay (Province du Nord). La langue Chitonga est enseignée dans les écoles locales; le Chitumbuka est la langue officielle de la Province du Nord.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "ZMB, ZWE",
-      "currentCountries": ["ZMB", "ZWE"]
+      "ethnoLinguisticGroup": "Bantou Central Etroit — groupe Manda (Zone N15, Guthrie); proche du Tumbuka et du Ngoni",
+      "historicalRegion": "Rive occidentale du lac Malawi (lac Nyasa) entre la baie de Nkhata et la rivière Luweya, Province du Nord du Malawi",
+      "currentCountries": ["MWI"]
     },
     "ethnicities": [
-      "Tonga du lac (Zambie)",
-      "Tonga du lac (Zimbabwe)",
-      "Sous-groupes régionaux du lac"
+      "Atonga de Nkhata Bay : groupe principal sur la rive du lac entre Nkhata Bay et Chinteche",
+      "Atonga de Chinteche : communauté qui refusa l'autorité native coloniale et proposa le conseil tribal de 32 chefs",
+      "Atonga de Kabunduli : chiefdom ayant accepté un chef native authority sous le système colonial britannique",
+      "Descendants d'au moins quatre groupes distincts venus s'établir sur la rive dans la seconde moitié du 18e siècle",
+      "Communautés côtières de pêcheurs (mphara) et communautés agricoles des collines intérieures"
     ],
     "origins": {
-      "ancientOrigins": "Les Tonga du lac sont originaires de la région de la Zambie et du ZWE, autour du lac Kariba. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Tonga.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Lakeshore Tonga se disent issus d'une migration depuis le nord lointain. Les anthropologues situent leur origine dans les mêmes foyers que les Tumbuka et les Cewa : des commerçants en ivoire qui s'établirent à l'ouest du lac Malawi à la fin du 18e siècle. Les Tonga du lac sont un peuple hétérogène issu d'au moins quatre groupes distincts qui se sont fondus en une identité commune lors de leur installation sur la rive occidentale. Leur langue, le Chitonga, est un dialecte du Chitumbuka érigé en langue distincte par les missionnaires au 19e siècle.",
+      "formationPeriod": "L'identité Lakeshore Tonga se consolida principalement au 19e siècle, sous la pression des raids Ngoni. Les Ngoni (guerriers zoulou ayant fui les guerres mfecane d'Afrique du Sud) razziaient la région pour se procurer nourriture et main-d'oeuvre. La vie dans de grands villages palissadés pendant la domination ngoni contribua à forger une identité collective. En 1875, des esclaves Tonga incorporés dans l'armée ngoni se révoltèrent, s'enfuirent et vainquirent les Ngoni lors de la bataille de la rivière Chinteche. L'arrivée de la Mission Livingstonia en 1881 (Bandawe) renforça encore la cohésion en produisant une élite éduquée locale.",
+      "migrationRoutes": [
+        "Migration depuis le nord (tradition orale) : direction non précisément documentée",
+        "Installation sur la rive ouest du lac Nyasa à la fin du 18e siècle (convergence de plusieurs groupes)",
+        "Dispersion vers les pays voisins (Zimbabwe, Afrique du Sud) en quête de travail au 20e siècle"
+      ],
+      "historicalSettlementZones": [
+        "Rive occidentale du lac Malawi entre Nkhata Bay et la rivière Luweya (zone de peuplement principal)",
+        "District de Nkhata Bay (Province du Nord du Malawi)",
+        "Zone de Chinteche (district contesté sous la colonisation britannique)",
+        "Collines de l'intérieur : Mtoghame (nord), Vipya (ouest), Kuwirwe et Kawadama (sud)"
+      ],
+      "unificationsOrDivisions": "Les Lakeshore Tonga n'ont jamais eu de structure politique centralisée avec un chef suprême unique. Leur système politique traditionnel repose sur des hameaux et villages dirigés par des headmen (fumu) dont le pouvoir découle autant de l'influence personnelle que de la lignée. Lors de la colonisation britannique, en 1917, les autorités tentèrent d'imposer cinq headmen principaux (indirect rule), mais ce système fut rejeté. Les Tonga proposèrent alors un conseil tribal de 32 chefs, défendu par l'intellectuel Filemon K. Chirwa, mais les Britanniques le supprimèrent en 1947. La devise tonga Nde fumu ndija (je suis moi-même un chef) reflète cette culture d'égalitarisme politique.",
+      "externalInfluences": "Raids Ngoni au 19e siècle (domination, esclavage, puis rébellion victorieuse en 1875). Alliance avec les Britanniques contre les esclavagistes arabes et yao (1888). Mission Livingstonia de l'Église libre d'Écosse à Bandawe (1881) : forte influence sur l'éducation et la cohésion identitaire. Administration coloniale britannique du Nyasaland (1889-1964). Indépendance du Malawi le 6 juillet 1964.",
+      "majorHistoricalEvents": "1861 : David Livingstone traverse la région. 1875 : révolte des esclaves Tonga dans l'armée Ngoni; victoire à la bataille de la rivière Chinteche. 1877-1881 : arrivée des missionnaires Stewart et Laws; fondation de la Mission Livingstonia de Bandawe. 1888 : combat aux côtés des Britanniques contre les esclavagistes arabes et yao. 1889-1894 : traités avec la Grande-Bretagne établissant le protectorat du Nyasaland. 1912 : District Administrative Ordinance; indirect rule. 1932 : Filemon K. Chirwa publie Nthanu za Chitonga (contes en langue tonga) et défend le conseil tribal des 32 chefs. 1947 : dissolution du conseil tribal par les Britanniques. 6 juillet 1964 : indépendance du Malawi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le village (composé de plusieurs hameaux mizi de 2 à 6 cases) est l'unité politique fondamentale. Il est dirigé par un headman (fumu) dont le pouvoir est hérité par le biais du lignage matrilinéaire mais dépend en pratique de son influence et de ses qualités de leader (un chef sans peuple n'est pas un chef). Le headman hérite d'un titre historique (nom du premier chef ayant établi le village) et mène une lutte pour les dépendants : il cherche à attirer et retenir des membres de lignages matrilinéaires et patrilatéraux par le biais des droits fonciers, des mariages et des dettes matrimoniales. Le village est l'unité préférentielle de règlement des conflits; les tribunaux externes (boma de la Native Authority) ne sont saisis qu'en dernier recours.",
+      "clanOrganization": "Société matrilinéaire : l'appartenance clanique et la transmission des droits (terre, titre) passent par la lignée maternelle. La distinction fondamentale oppose le matrikin (kuchikazi, du côté de la femme) et le patrikin (kuchirumi, du côté de l'homme). Les patrikins ne sont reconnus que jusqu'à la deuxième génération. Les clans se confondent souvent avec des patronymes partagés avec les peuples voisins. La distinction sociale traditionnelle entre hommes libres et esclaves (mkapora, personnes sans parenté) persiste symboliquement : les descendants d'esclaves ont un statut bas car ils n'ont personne derrière eux.",
+      "ageClassSystems": "Pas de classes d'âge formelles. Les groupes de danse (boma) composés de jeunes hommes issus de plusieurs villages fonctionnent comme institution para-politique : ils sont la seule institution villageoise qui transcende les frontières de village et créent des solidarités entre communautés.",
+      "roleOfLineages": "Les lignages matrilinéaires déterminent l'accès à la terre (les familles des premiers occupants sont les propriétaires de la terre), les droits sur la dot et les obligations de nkhoswe (garant matrimonial, généralement l'oncle maternel). La tenure foncière distingue trois types : cultivée (chikweta), en jachère (masara) et bush (dondo). Les conflits sur la jachère (fallow vs. bush) sont fréquents. La résidence idéale est matrilocale, bien que le patrilocal et le virilocal soient pratiqués.",
+      "religiousAuthority": "L'autorité religieuse traditionnelle est diffuse. La croyance en Chiuta (dieu suprême) et les esprits ancestraux (mzimu) coexistent avec le christianisme dominant depuis la Mission Livingstonia (1881). Les rites d'initiation féminins (nkholi) sont présidés par les chefs influents dans leurs compounds. Des croyances en la sorcellerie persistent dans certaines communautés. Les soupçons de sorcellerie sont souvent soulevés lors des funérailles."
     },
     "languages": {
-      "mainLanguage": "Tonga",
-      "vehicularRole": "Le tonga est parlé par la majorité des Tonga du lac. L'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Chitonga (Tonga du lac Malawi)",
+      "isoCodes": ["tog"],
+      "dialects": [
+        "Chitonga de Nkhata Bay : variété principale, base des publications missionnaires",
+        "Chitonga de Chinteche : variété du district de Chinteche (légèrement distincte)",
+        "Le Chitonga est mutuellement intelligible avec le Chitumbuka; il fut traité comme langue séparée par les missionnaires au 19e siècle"
+      ],
+      "vehicularRole": "Le Chitonga est parlé par environ 170 000 locuteurs (recensement Malawi 2018). Il est classé N15 dans la nomenclature Guthrie. Il est distinct et non intelligible avec le Tonga de Zambie (M64, ISO toi). Pendant la période coloniale, le Chitumbuka était la langue d'enseignement dans les écoles de la région. Aujourd'hui, le Chitonga est utilisé dans les communautés locales; l'anglais et le chichewa sont les langues officielles nationales du Malawi."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à la pêche",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture et à la pêche, symboles culturels tonga, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"femaleInitiation\": \"Le nkholi est le rite d'initiation féminin majeur : il implique une période de réclusion dans le compound du chef, suivie de plusieurs jours de festins. Seuls les chefs les plus influents avaient le droit d'organiser cette cérémonie, ce qui en faisait un marqueur de prestige politique autant que social.\", \"headmanInstallation\": \"Avant la colonisation britannique, les cérémonies d'investiture des headmen influents étaient colorées : les chefs puissants revêtaient des robes rouges cérémonielles symbolisant leur autorité.\"}, \"marriageRites\": {\"formal\": \"Le mariage formel (zowara) implique l'envoi d'un intermédiaire (go-between) par le headman du fiancé pour ouvrir la porte avec un paiement de fiançailles. Suit la négociation de la dot (bride-wealth), dont une première tranche est versée avec une promesse écrite (kalata) pour le solde, rarement payé en totalité. Le nkhoswe (garant, généralement l'oncle maternel) est responsable de la sécurité de la mariée et mange le paiement. Les grands mariages (zowara) incluent danses, boeuf, jeux et attirent les villages voisins. Les mariages simples (mtimba) sont plus modestes.\", \"preferredType\": \"Le mariage avec la cousine croisée maternelle (cross-cousin) est préféré car il crée des loyautés doubles envers le village et assure que les enfants resteront sur place.\"}, \"funeraryRites\": {\"burial\": \"Veillée funèbre, lavage du corps, préparation de la tombe. Les adultes des villages voisins participent. Les funérailles servent aussi d'enquête publique (inquest) pour renégocier résidence, terres et dettes. Le rasage des cheveux marque le début du deuil.\", \"inheritance\": \"La veuve en résidence virilocale peut être héritée par le fils de la soeur du mari. L'héritage passe ordinairement au fils de la soeur du défunt.\"}, \"agriculturalRites\": {\"planting\": \"Invocations aux esprits ancestraux (mzimu) et à Chiuta avant les semailles pour assurer la fertilité de la terre et les bonnes pluies.\"}}",
+      "symbols": "{\"redRobes\": \"Les robes rouges portées lors des investitures des chefs influents avant la colonisation symbolisaient l'autorité politique et le pouvoir de vie et de mort sur la communauté.\", \"nkhoswe\": \"La figure du nkhoswe (garant matrimonial, oncle maternel) est le symbole de la solidarité matrilinéaire : il est responsable de la protection et du bien-être de sa nièce dans son mariage, et mange la dot au nom du lignage maternel.\", \"mphara\": \"La maison des hommes (mphara), où les pêcheurs d'un même village stockent collectivement leur matériel de pêche, est le symbole de la coopération masculine et de l'économie de subsistance lacustre.\"}",
+      "artsAndMusic": "{\"dances\": \"Les groupes de danse boma, composés de jeunes hommes issus de plusieurs villages, sont la seule institution supravillageoise des Lakeshore Tonga. Ils organisent des danses compétitives appelées malepenga, impliquant des mimiques et l'imitation de manoeuvres militaires. Ces performances sont à la fois artistiques, sportives et politiques, renforçant les liens entre villages.\", \"oralLiterature\": \"Le Chitonga possède une tradition de contes (nthanu) documentée notamment par Filemon K. Chirwa dans Nthanu za Chitonga (1932), seul recueil de contes en langue tonga de la période coloniale et document littéraire de référence pour la langue. Les contes transmettent les valeurs morales, la cosmologie et l'histoire du peuple.\", \"pottery\": \"Poterie et vannerie traditionnelles pour les usages domestiques. Fabrication de pirogues (bwato) pour la pêche lacustre.\", \"fishing\": \"La pêche collective au lac Malawi est un art économique et social structurant : les hommes d'un village pêchent ensemble et stockent leur équipement dans la mphara. Diverses techniques de filets (chirimila) et de nasses sont utilisées.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Chiuta\", \"attributes\": \"Dieu suprême, créateur, associé à la pluie et au ciel. Le nom Chiuta est partagé avec les Tumbuka et d'autres peuples du nord du Malawi. Il est une divinité transcendante peu accessible directement.\"}, \"intermediateDivinities\": [{\"name\": \"Mzimu (ancêtres)\", \"role\": \"Les esprits ancestraux (mzimu, singulier : mzimu) sont les intercesseurs entre les vivants et Chiuta. Invoqués lors des semailles, des crises et des rites de passage. Propitiation par des offrandes de bière et de nourriture.\"}], \"natureSpirits\": {\"sorcery\": \"Des croyances en la sorcellerie (ufiti) persistent dans certaines communautés. Les soupçons de sorcellerie sont soulevés lors des funérailles, lors des enquêtes sur les décès inattendus.\"}, \"christianity\": {\"specificPractices\": \"Le christianisme est la religion principale depuis la Mission Livingstonia fondée à Bandawe en 1881 (Église libre d'Écosse, devenue Church of Central Africa Presbyterian - CCAP). L'église missionnaire produisit une élite éduquée (leaders syndicaux, politiciens) qui joua un rôle majeur dans la libération de Nyasaland. Les rites chrétiens et les croyances traditionnelles coexistent souvent.\"}, \"religiousSyncretism\": {\"description\": \"Syncrétisme entre christianisme et croyances traditionnelles (Chiuta, mzimu, sorcellerie). Les rites d'initiation nkholi et les cérémonies funèbres maintiennent des éléments de la religion traditionnelle malgré la christianisation.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tonga du lac dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Lakeshore Tonga n'ont jamais constitué de royaume centralisé. Leur organisation politique est fondée sur des villages autonomes dirigés par des headmen (fumu). Dans l'histoire coloniale, le chiefdom de Kabunduli (district de Nkhata Bay) est documenté comme l'une des chefferies d'importance acceptant partiellement l'indirect rule britannique. La résistance des Tonga de Chinteche à tout chef unique et leur proposition d'un conseil tribal de 32 chefs égaux (1932, défendu par Filemon K. Chirwa) constituent un épisode remarquable de résistance à l'autorité coloniale.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Ngoni (raids et domination au 19e siècle, puis rébellion victorieuse en 1875). Alliance avec les Britanniques contre les esclavagistes arabes et yao en 1888. Relations proches avec les Tumbuka (langues apparentées, origines communes). Liens commerciaux avec les marchands swahilis de Nkhotakota. Émigration massive de travailleurs tonga vers le Zimbabwe et l'Afrique du Sud au 20e siècle, créant une diaspora de travail importante.",
+      "conflictsOrAlliances": "1875 : révolte victorieuse des esclaves Tonga contre l'armée Ngoni; bataille de la rivière Chinteche. 1888 : alliance avec les Britanniques contre les esclavagistes arabes et yao. 1889-1894 : traités avec la Grande-Bretagne pour établir le protectorat du Nyasaland, garantissant protection contre les esclavagistes. 1932-1947 : résistance politique au système de Native Authority colonial; proposition du conseil tribal des 32 chefs.",
+      "diaspora": "Les Lakeshore Tonga ont été l'un des premiers peuples du Malawi à bénéficier de l'éducation missionnaire (30 écoles dès 1896). Cette avance éducative a produit une émigration précoce de travailleurs qualifiés (cols blancs, leaders syndicaux, politiciens) vers le Zimbabwe, l'Afrique du Sud et d'autres pays d'Afrique australe. Au 20e siècle, les deux tiers des hommes adultes étaient régulièrement absents pour le travail salarié à l'étranger. Des Tonga du lac ont participé à la fondation des premières organisations nationalistes de la région."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur : recensement du Malawi 2018 (170 000 locuteurs du Chitonga selon le National Statistical Office of Malawi); Encyclopedia of World Cultures (165 654 en 1998); SIL Ethnologue code tog. Projection 2025 estimée à environ 200 000 en tenant compte du taux de croissance démographique du Malawi (~2,7 % par an). District de Nkhata Bay principalement.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 195000,
+          "note": "District de Nkhata Bay (Province du Nord) principalement; rive occidentale du lac Malawi entre Nkhata Bay et la rivière Luweya"
+        },
+        {
+          "country": "ZWE",
+          "population": 5000,
+          "note": "Diaspora de travail en Zimbabwe; présence historique depuis le 20e siècle"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tonga languages (toi, tog)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Encyclopedia.com — Lakeshore Tonga. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lakeshore-tonga",
+      "Wikipedia EN — Tonga people (Malawi). https://en.wikipedia.org/wiki/Tonga_people_(Malawi)",
+      "Wikipedia EN — Tonga language (Malawi). https://en.wikipedia.org/wiki/Tonga_language_(Malawi)",
+      "eHRAF World Cultures — Lakeshore Tonga (fr07). https://ehrafworldcultures.yale.edu/cultures/fr07/summary",
+      "SIL Ethnologue — Tonga (tog, Malawi). https://www.ethnologue.com/language/tog/",
+      "Cochrane, Thandeka — Politics of Literature in Malawi: Filemon Chirwa, Nthanu za Chitonga and the Battle for the Atonga Tribal Council. Cambridge University Press, 2022. https://www.cambridge.org/core/services/aop-cambridge-core/content/view/28B6EEE65784897FB1F5BF9B06B550BA/",
+      "Wikipedia EN — Nkhotakota. https://en.wikipedia.org/wiki/Nkhotakota",
+      "Malawi Project — Customs, Traditions, and Religion in the Tribes of Malawi. https://www.malawiproject.org/download/malawi_project_brochures/2024/04-FLYER-CustomsTraditions.pdf"
     ]
   }
 }

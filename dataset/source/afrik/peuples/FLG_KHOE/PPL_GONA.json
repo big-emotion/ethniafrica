@@ -1,64 +1,104 @@
 {
   "id": "PPL_GONA",
-  "nameMain": "Gona",
+  "nameMain": "Gana",
   "languageFamilyId": "FLG_KHOE",
   "currentCountries": ["BWA"],
   "content": {
     "appellations": {
-      "mainName": "Gona",
-      "selfAppellation": "Gona",
-      "exonyms": ["Gona (terme utilisé par les Européens)"],
+      "mainName": "Gana",
+      "selfAppellation": "Gǁana",
+      "exonyms": [
+        "Gana",
+        "G//ana",
+        "ǁGana",
+        "Gxana",
+        "Dxana",
+        "Xgana",
+        "Central Kalahari Bushmen (terme generique)"
+      ],
+      "originOfExonyms": "Gǁana (prononce /ˈɡɑːnə/ en anglais) est l'auto-denomination du peuple. Les diverses orthographies (G//ana, ǁGana, Gxana) refletent les difficultes de transcrire les clics de la langue khoe. Central Kalahari Bushmen est un terme generique utilise par les non-Khoisan pour designer les peuples chasseurs-cueilleurs du Kalahari central.",
+      "whyProblematic": "Le terme Bushmen est historiquement pejoratif et reducteur. San (pluriel de San) est le terme generalement prefere par les organisations de defense des droits. Central Kalahari Bushmen efface la diversite linguistique et culturelle des peuples distincts du Kalahari (Gǁana, Gǀwi, Gwikwe, etc.).",
+      "contemporaryUsage": "Gana ou Gǁana est le terme utilise dans les sources academiques et linguistiques. San ou Basarwa (terme tswana) est employe dans les contextes administratifs au Botswana. Le terme Bushmen persiste dans le tourisme.",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "Khoe",
-      "historicalRegion": "Botswana",
+      "ethnoLinguisticGroup": "Khoe, sous-branche Tshu-Khwe (Kalahari central), groupe Gǁana-Gǀwi",
+      "historicalRegion": "Kalahari central, Reserve du Gibier du Kalahari Central (CKGR), Botswana",
       "currentCountries": ["BWA"]
     },
-    "ethnicities": ["Gona du Nord", "Gona du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Gǁana du Kalahari central (CKGR, zones de Xade, Molapo, Gope)",
+      "Gǀwi — groupe frere tres proche, dialecte majoritaire du meme continuum linguistique",
+      "Domkhoe — sous-groupe du continuum Gǁana",
+      "Gǁaa(khwe) — sous-groupe du continuum Gǁana",
+      "Kǀhessákhoe — sous-groupe du continuum Gǁana"
+    ],
     "origins": {
-      "ancientOrigins": "Les Gona sont originaires du BWA, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoisan voisins, influence du christianisme et des croyances traditionnelles."
+      "ancientOrigins": "Les Gana (Gǁana) sont l'un des peuples chasseurs-cueilleurs les plus anciens du Kalahari central. Leurs ancetres habitaient la region du desert du Kalahari bien avant l'expansion bantoue (2000 av. J.-C. - 1000 ap. J.-C.). Des analyses genetiques suggerent une divergence precoce des populations ancestrales des Khoe-San, potentiellement il y a 100,000 a 200,000 ans. Ils sont lies aux peuples San du sud de l'Afrique qui constituaient la quasi-totalite de la population de la region avant les migrations bantoues.",
+      "formationPeriod": "Les ancetres proto-Khoe seraient arrives dans le Kalahari il y a environ 2000 ans depuis le nord-est (direction de la Tanzanie moderne), porteurs d'une proto-langue Khoe-Kwadi acquise au contact des Bantous en expansion. Les Gǁana et Gǀwi se sont constitues comme groupes distincts au sein du Kalahari central, s'adaptant a un milieu de semi-desert parmi les plus arides d'Afrique.",
+      "migrationRoutes": [
+        "Presence ancestrale dans le Kalahari central (avant expansion bantoue)",
+        "Contacts avec des groupes migrants Juu (San) qui ont influe sur la langue Khoe (substrat Juu dans le Khoe occidental)"
+      ],
+      "historicalSettlementZones": [
+        "Reserve du Gibier du Kalahari Central (CKGR) — district de Ghanzi, Botswana",
+        "Zone des settlements de Xade, Xaka, Molapo et Metseamononong (interior CKGR)",
+        "Region de Gope et Kikao dans le CKGR",
+        "Zones peripheriques du CKGR autour du district de Ghanzi"
+      ],
+      "unificationsOrDivisions": "Organisation en bandes mobiles de quelques dizaines a quelques centaines de personnes, sans hierarchie politique institutionnalisee. Les groupes se rassemblent autour des points d'eau permanents et se dispersent suivant les ressources saisonnieres. Alliance par mariage entre bandes voisines.",
+      "externalInfluences": "Contacts avec les peuples Tswana (expansion bantoue, 14e-18e siecles). Colonisation britannique du Bechuanaland (1885-1966). Independance du Botswana (1966). Politique de relocalisation forcee du gouvernement botswanais (1970s-2002) hors du CKGR. Jugement de la Haute Cour botswanaise (2006) reconnaissant le droit des Gana et Gǀwi a retourner dans le CKGR.",
+      "majorHistoricalEvents": "Creation de la Reserve du Gibier du Kalahari Central (1961) explicitement pour proteger les droits des San (environ 5000 personnes). Politique de relocalisation gouvernementale (1970s-2002): services coupes pour forcer le depart. Jugement historique de la Haute Cour Roy Sesana et autres c. le Procureur general (2006): expulsion declaree illegale et inconstitutionnelle, droit de retour accorde. Jugement de la Cour d'appel (2011): droit de forer des puits d'eau dans le CKGR. Interdiction nationale de chasse (janvier 2014) impactant severement le mode de vie traditionnel."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en bandes de chasse-cueillette (10-50 personnes) sans chefferie institutionnalisee. Les decisions sont prises collectivement, notamment lors des kgotla (assemblees) au niveau de la bande. Les hommes ages ont plus d'autorite mais pas de pouvoir coercitif formel. Le respect se gagne par les competences de chasse, la connaissance du territoire et la capacite de mediation.",
+      "clanOrganization": "Structure familiale elargie: plusieurs familles nucleaires liees par la parente (bilateral, pas strictement patrilineaire) forment une bande mobile. Appartenance flexible: les individus peuvent changer de bande selon les ressources disponibles et les liens de mariage.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Liens de parente bilateraux (paternel et maternel) definissant les droits d'acces aux ressources (zones de chasse, points d'eau, plantes alimentaires). La transmission des connaissances (territoires, plantes medicinales, techniques de chasse) se fait au sein de la famille elargie.",
+      "religiousAuthority": "Autorité spirituelle des shamans (guerisseurs) capables d'entrer en transe pour communiquer avec le monde des esprits et soigner les malades. Les anciens detiennent les connaissances rituelles et mythologiques. Pas de hierarchie religieuse institutionnalisee."
     },
     "languages": {
-      "mainLanguage": "Gona (variété Khoe)",
-      "vehicularRole": "Le gona est parlé par la majorité des Gona. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "Gǁana (Gana, Khoe du Kalahari central)",
+      "isoCodes": ["gnk"],
+      "dialects": [
+        "Gǀwi — dialecte principal du continuum, majoritaire en locuteurs",
+        "Domkhoe — sous-variante du Gǁana",
+        "Gǁaa(khwe) — sous-variante du Gǁana",
+        "Kǀhessákhoe — sous-variante du Gǁana"
+      ],
+      "vehicularRole": "Le Gǁana et le Gǀwi forment un continuum dialectal Khoe du Kalahari central. Certains rapportent une intelligibilite mutuelle avec le Nama (Khoekhoe de Namibie). Le setswana est la langue nationale du Botswana, utilise dans l'administration et l'education. L'anglais est la langue officielle. Beaucoup de Gana parlent egalement setswana. Langue fortement menacee par le passage au setswana chez les generations plus jeunes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels gona, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Ceremonies de chasse precedant et suivant l'abattage des grands animaux: rituels de partage de la viande suivant des regles strictes de distribution sociale. Ceremonies de puberté feminine (menstruation): la jeune fille est isolee, des tabous alimentaires s'appliquent, ceremonies de danse feminine. Ceremonies de guerison par la transe: le shaman entre en transe (danse de guerison du !kia ou num), active une energie spirituelle (num), entre dans le monde des esprits pour soigner les malades et eloigner les mauvais esprits. Rites funeraires: enterrement rapide, le nom du defunt n'est plus prononce pendant une periode de deuil.",
+      "symbols": "Peintures rupestres ancestrales des San, nombreuses dans le Kalahari et les Tsodilo Hills voisins (patrimoine mondial UNESCO). Arc et fleches comme symboles de l'identite masculine du chasseur. Danses de transe comme expression centrale de la vie spirituelle et sociale. Le feu comme centre de la vie communautaire (partage de nourriture, narration, ceremonies).",
+      "artsAndMusic": "Musique instrumentale: arcs musicaux (bow, segankuru), percussions corporelles. Chants collectifs lors des danses de transe (polyphonie caracteristique des San). Narration orale (contes, mythes, genealogies). Art graphique ancestral: peintures rupestres representant des animaux, des humains en transe, des figures mi-humaines mi-animales (eland sacre). Fabrication d'objets: arcs en bois, fleches a pointe de roseau ou d'os, sacs en cuir, ornements de perles d'oeufs d'autruche.",
+      "spiritualities": "Cosmologie centree sur l'existence d'un dieu supreme bienveillant (Gǁoo, Kaang ou equivalents selon les groupes) et d'un dieu inferieur malveillant. Les esprits des morts (//gauwasi) peuvent causer maladies et malheurs. Le shaman (n/om-kxao ou healer) entre en transe par la danse du !kia pour combattre les mauvais esprits et soigner. L'eland (grand antilope) est l'animal le plus sacré, associe au pouvoir de transe. Animisme profond: les animaux, les plantes et les phenomenes naturels ont une dimension spirituelle. Presence limitee du christianisme (environ 10% chez certains groupes Gwikwe proches)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques botswanaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora gona dans les grandes villes botswanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie institutionnalisee. Les Gana ont maintenu leur mode de vie chasseur-cueilleur sans formation etatique. Le CKGR a ete cree en 1961 precisement pour preserver ce mode de vie. Leur histoire post-coloniale est marquee par la lutte juridique pour le droit au retour sur leurs terres ancestrales.",
+      "relationsWithNeighbors": "Contacts anciens avec les Tswana (commerce et parfois servitude). Relations avec les Gwikwe (groupe San cousin). Contacts avec les Herero et Kgalagadi dans les zones de contact. Relations conflictuelles avec le gouvernement botswanais autour du CKGR (1970s-2006). Soutien international d'ONG (Survival International) dans la bataille juridique.",
+      "conflictsOrAlliances": "Politique de relocalisation forcee par le gouvernement botswanais (1970s-2002): services coupes, betail tue, pression pour quitter le CKGR. Proces Roy Sesana c. Procureur general (2002-2006): victoire judiciaire historique. Conflits persistants avec le gouvernement sur l'acces a l'eau et aux zones de chasse post-2006. Interdiction nationale de chasse (2014) en contradiction avec le mode de vie traditionnel.",
+      "diaspora": "Communautes Gana dans les settlements de relocalisation hors du CKGR (New Xade, Kaudwane, Mothomelo) depuis les annees 1990-2000. Retour partiel dans le CKGR apres 2006 pour les families souhaitant reprendre le mode de vie traditionnel."
     },
     "demography": {
-      "totalPopulation": 20000,
+      "totalPopulation": 4000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur SIL Ethnologue et Khoisan language family data (Gana: 2,000 locuteurs; Gǀwi: 2,500 locuteurs). Ajout des locuteurs Gǁana hors Botswana tres limites. Population totale Gana (Gǁana) estimee a 3,000-5,000. Sources: Ling.fju.edu.tw Khoisan data; San peoples Wikipedia (63,500 San au Botswana en 2017).",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 4000,
+          "note": "Reserve du Gibier du Kalahari Central (CKGR), district de Ghanzi. Settlements de New Xade, Kaudwane, Mothomelo pour les deplacements. Retours partiels dans le CKGR apres 2006."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Gona language",
-      "CIA World Factbook – Botswana",
-      "Recensements botswanais",
-      "Études anthropologiques sur les peuples khoisan"
+      "Wikipedia EN – G//ana language: https://en.wikipedia.org/wiki/G%C7%81ana_language",
+      "Wikipedia EN – Khoe languages: https://en.wikipedia.org/wiki/Khoe_languages",
+      "Wikipedia EN – San peoples: https://en.wikipedia.org/wiki/San_peoples",
+      "Wikipedia EN – Ancestral land conflict Botswana (CKGR): https://en.wikipedia.org/wiki/Gana_people",
+      "Cambridge University Press – The G/wi and G//ana of the central Kalahari: https://www.cambridge.org/core/books/hunters-and-herders-of-southern-africa/gwi-and-gana-of-the-central-kalahari/ACAB14045D1FAE8988698311A31334D9",
+      "Orville Jenkins – Gwikwe Bushmen Profile: http://orvillejenkins.com/profiles/gwikwe.html",
+      "Khoisan language family data – Ling.fju.edu.tw: http://www.ling.fju.edu.tw/typology/Khoisan.htm",
+      "CEDS ISO 639-3 – G//ana (gnk): https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
     ]
   }
 }

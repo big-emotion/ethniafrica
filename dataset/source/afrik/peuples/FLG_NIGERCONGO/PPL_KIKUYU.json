@@ -6,63 +6,103 @@
   "content": {
     "appellations": {
       "mainName": "Kikuyu",
-      "selfAppellation": "Gĩkũyũ",
-      "exonyms": ["« Kikuyu » (terme utilisé par les Européens)"],
+      "selfAppellation": "Agikuyu / Gikuyu",
+      "exonyms": [
+        "Kikuyu (exonyme swahili et anglais, forme la plus repandue)",
+        "Gikuyu (forme endonymique egalement utilisee en anglais)"
+      ],
+      "originOfExonyms": "Le terme Kikuyu est la transcription swahili du nom Gikuyu. Ce nom derive du mukuyuou mugumo, l'arbre figuier sacre (Ficus thonningii), lieu central des rituels et des sacrifices adrresses a Ngai. Selon la tradition orale, Gikuyu etait le premier homme cree par Ngai, ancetre eponyme du peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kikuyu est le terme officiel en anglais et en swahili. Agikuyu ou Gikuyu sont les formes preferees dans la langue vernaculaire. Le peuple est aussi appele Agikuyu dans les textes academiques kenyans.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone E)",
-      "historicalRegion": "Centre du Kenya",
+      "ethnoLinguisticGroup": "Bantou nord-est (sous-groupe Thagicu)",
+      "historicalRegion": "Hauts plateaux du centre du Kenya — mont Kenya (Kirinyaga), massif des Aberdares (Nyandarua), region de Murang'a",
       "currentCountries": ["KEN"]
     },
     "ethnicities": [
-      "Kikuyu du Nord",
-      "Kikuyu du Sud",
-      "Sous-groupes régionaux"
+      "Anjiru (clan)",
+      "Ambui (clan)",
+      "Agaciku (clan)",
+      "Aceera / Aacera (clan)",
+      "Angui / Aithiegeni (clan)",
+      "Angechi / Aithi randuu (clan)",
+      "Ambura / Aakiuru / Eethaga (clan)",
+      "Airimu / Agathiigia (clan)",
+      "Angari / Aithekahuno / Aicakamuu (clan)",
+      "Groupe Thagicu (inclut Embu, Mbeere, proches parents linguistiques)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kikuyu sont originaires du centre du Kenya. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Les Agikuyu sont un peuple bantou originaire d'Afrique centrale (region Cameroun-Nigeria), faisant partie de la grande migration bantou a travers le bassin du Congo. Ils appartiennent au sous-groupe Thagicu des Bantou nord-est. Des donnees archeologiques et genetiques indiquent une arrivee sur les pentes nord du mont Kenya vers le 3e siecle de l'ere commune. Ils presentent une ascendance genetique mixte : bantou, nilotique (20-25 %) et couchitique (32-36 %), refletant des siecles d'interaction avec les peuples voisins.",
+      "formationPeriod": "Par le 13e siecle, les Agikuyu avaient etabli leur coeur culturel dans les hauts plateaux autour de Murang'a. Les 18e et 19e siecles furent marques par une expansion vers le sud dans l'actuel Kiambu, via des achats de terres, des mariages interethniques et des alliances de sang avec les chasseurs-cueilleurs locaux (Ogiek, Gumba). L'identite kikuyu consolidee etait en place avant l'arrivee des Britanniques en 1888.",
+      "migrationRoutes": [
+        "Migration bantou depuis l'Afrique centrale (region Cameroun-Nigeria) a travers le bassin du Congo",
+        "Progression vers le nord-est du Kenya en tant que groupe Thagicu (parents des Embu, Mbeere, Meru)",
+        "Etablissement sur les pentes nord du mont Kenya vers le 3e siecle",
+        "Expansion southward vers Kiambu aux 18e-19e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Massif du mont Kenya (Kirinyaga) et ses pentes — region de Nyeri et Kirinyaga",
+        "Massif des Aberdares (Nyandarua)",
+        "Region de Murang'a (coeur historique, Mukurwe wa Nyagathanga)",
+        "Region de Kiambu (expansion des 18e-19e siecles)",
+        "Nairobi et zones urbaines du Kenya (diaspora interne)"
+      ],
+      "unificationsOrDivisions": "La societe agikuyu n'etait pas organisee en royaume centralise mais en confederation de neuf clans (avec des variantes selon les sources) fonctionnant de maniere decentralisee. Le systeme des generations (itwika) regulait la transmission du pouvoir politique toutes les 35 ans environ. La derniere itwika eut lieu en 1898-1899, la suivante prevue en 1925-1928 fut bloquee par l'administration coloniale britannique.",
+      "externalInfluences": "Contacts genetiques et culturels avec les Nilotiques (Maasai, Samburu) et les Couchitiques. Arrivee des Britanniques en 1888 : perturbation de la vie traditionnelle. Ouverture des hauts plateaux aux colons europeens en 1902. Mouvement Mau Mau (1952-1960) : resistance armee a la domination coloniale, mene principalement par des Agikuyu. Independance du Kenya en 1963 : Jomo Kenyatta (Agikuyu) devient premier president.",
+      "majorHistoricalEvents": "1890 : Waiyaki wa Hinga brule le fort de Lugard. 1892 : Waiyaki capture et enterre vif par les Britanniques. 1921 : fondation de la Young Kikuyu Association par Harry Thuku. 1924 : fondation de la Kikuyu Central Association (KCA). 1947 : Jomo Kenyatta prend la presidence de la Kenya African Union. 1952-1959 : insurrection Mau Mau, Dedan Kimathi capture en 1956. 1963 : independance du Kenya sous Kenyatta. Depuis 1963, trois presidents kenyans sur cinq sont agikuyu (Kenyatta, Kibaki, Kenyatta II)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe agikuyu etait organisee de maniere decentralisee. Chaque clan disposait d'un conseil d'anciens (kiama). Les neuf conseils de clan delagueraient un representant a un conseil supraclan dont le porte-parole (muthamaki) n'avait pas de pouvoir hereditaire. Le pouvoir changeait de generation en generation via la ceremonie itwika (tous les 35 ans environ), mecanisme anti-dictatorial garantissant la rotation du pouvoir entre les generations Maina et Mwangi.",
+      "clanOrganization": "La societe est organisee en neuf clans matrilineaires en termes d'origine mythique (chaque clan descend d'une fille de Mumbi, epouse de Gikuyu), mais fonctionne en pratique selon des structures patrilineaires pour l'heritage et la residence. Les clans sont exogames. Le nom clanique determine les alliances matrimoniales et les droits communautaires.",
+      "ageClassSystems": "Le systeme des classes d'age (riika) est central. Chaque groupe de circoncision (initiation) forme une classe d'age portant un nom unique enregistrant les evenements de l'epoque. Les classes d'age sont regroupees en regiments (rika), puis en generations (itwika). Le cycle d'initiation durait neuf ans de circoncisions annuelles suivi d'une pause (muhingo) de quatre ans et demi dans la region de Metumi.",
+      "roleOfLineages": "Les lignages patrilineaires determinent la residence (residence patrilocale), l'heritage foncier et les droits sur les troupeaux. L'unite de base est la famille etendue (nyumba). Le lobola (ruracio — bridewealth en betail et chevres) scelle les alliances entre lignages et legitime la descendance.",
+      "religiousAuthority": "Les anciens (athuri) du kiama exercent une autorite religieuse lors des sacrifices. Les devins et guerisseurs (mundu mugo) servent d'intermediaires spirituels. L'arbre mugumo (figuier sacre) est le lieu des sacrifices adresses a Ngai. Aujourd'hui, la grande majorite des Agikuyu sont chretiens (diverses denominationsprotestantes et catholiques), avec une persistance des croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Kikuyu",
-      "vehicularRole": "Le kikuyu est parlé par la majorité des Kikuyu. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Gikuyu (Kikuyu)",
+      "isoCodes": ["kik"],
+      "dialects": [
+        "Gichugu (region de Kirinyaga)",
+        "Mathira (region de Nyeri nord)",
+        "Ndia (region de Kirinyaga sud)",
+        "Gikuyu du nord (Nyeri, Nyandarua)",
+        "Gikuyu du sud (Kiambu, Murang'a)"
+      ],
+      "vehicularRole": "Le gikuyu est la langue maternelle d'environ 9,9 millions de personnes (2025). Il est l'une des langues nationales du Kenya. Le swahili est la lingua franca nationale et l'anglais est la langue officielle. Le gikuyu est langue d'enseignement en premiere annee primaire dans les comtes a majorite gikuyu. Il est l'une des cinq langues du sous-groupe Thagicu des Bantou nord-est, apparente a l'embu et au mbeere."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kikuyu, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation (irua) : le rite de passage le plus important pour les garcons et les filles. La circoncision masculine marque l'entree dans la classe d'age (riika) et l'acces aux droits et responsabilites d'adulte. L'excision feminine (aujourd'hui largement abandonnee) marquait le passage a l'age adulte feminin. Le guracio (lobola) : negociation du bridewealth en betail et chevres pour le mariage, scellant les alliances entre clans. L'itwika : ceremonie de transmission du pouvoir entre generations, tous les 35 ans, marquant le passage des fonctions politiques d'un groupe de generation a l'autre. Le mburi cia kiama : sacrifice de chevres lors de l'acces des hommes aux differents niveaux du conseil des anciens.",
+      "symbols": "Le mugumo (figuier sacre, Ficus thonningii) est le symbole spirituel central, lieu des sacrifices a Ngai. Le mont Kenya (Kirinyaga, Montagne de la Clarte) est la demeure de Ngai et l'axe du monde agikuyu. Le muthigi (baton de commandement) et l'itimu (lance) symbolisent les pouvoirs politiques et militaires des generations. L'arbre d'olivier sauvage (mutamayu) est sacre pour les femmes. Le mukundugu wa Nyagathanga (site sacre de Murang'a) est le berceau mythique du peuple agikuyu.",
+      "artsAndMusic": "Musique traditionnelle : flute oblique en ecorce (muturiru), tambours, chants collectifs lors des ceremonies d'initiation et des reunions du kiama. Genres traditionnels : kibaata, nduumo, muthunguci (attestes avant 1888). Litterature orale riche : contes (gicaandi), chants de mariage, poesie des anciens. Litterature moderne en gikuyu : Ngugi wa Thiong'o (Caitaani mutharaba-Ini, 1981 ; Matigari, 1986 ; Murogi wa Kagogo, 2006), premier roman moderne en gikuyu. Artisanat : poterie, vannerie, perles (ornements de mariage et d'initiation), couvertures de peau.",
+      "spiritualities": "La cosmologie agikuyu est theiste-animiste. Ngai (aussi Mogai, Mungai, Mwene-Nyaga) est le Dieu supreme, createur omnipotent qui reside dans le ciel et visite la terre via le mont Kenya, le tonnerre et les eclairs. Les ancetres (ngoma) intercedent entre les vivants et Ngai. Les esprits de la nature et les entites invisibles (ngoma) peuvent influencer la vie des humains. Le concept de force vitale (ngumo) lie l'univers. La mort initie un cycle de reincarnation via les noms donnes aux nouveau-nes. Aujourd'hui la grande majorite des Agikuyu sont chretiens (protestants, catholiques) dans un syncretisme melant elements traditionnels."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kikuyu dans les grandes villes kenyanes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Agikuyu n'ont pas developpe de royaume centralise. La gouvernance etait assuree par des conseils d'anciens (kiama) decentralises au niveau clanique et supra-clanique. Le systeme des generations (itwika) empechait la concentration du pouvoir. Sous la colonisation britannique, des chefs designes (headmen) furent imposes, rompant avec le systeme traditionnel. Depuis l'independance, les Agikuyu occupent une place preponderante dans la vie politique kenyane.",
+      "relationsWithNeighbors": "Echanges commerciaux et alliances de sang (githaka) avec les Maasai, Embu, Meru et Kamba. Intermarriages avec les Maasai dans les regions de Kiambu et Nyeri. Resistance aux marchands d'esclaves arabes avant 1888. Partage de la croyance en Ngai avec les Embu, Kamba et Meru (Murungu, Mulungu). Tensions historiques avec les Maasai employes par les colons britanniques.",
+      "conflictsOrAlliances": "1890-1895 : resistance initiale a la penetration britannique (Waiyaki wa Hinga). 1952-1960 : insurrection Mau Mau (Land and Freedom Army), principalement agikuyu, contre la domination coloniale et la confiscation des terres des hauts plateaux. Dedan Kimathi, leader Mau Mau, fut capture en 1956 et execute en 1957. Le mouvement Mau Mau entraina une repression massive (camps de detention, Operation Anvil 1954). L'independance en 1963 consacra le role politique dominant des Agikuyu via la KANU de Kenyatta.",
+      "diaspora": "Les Agikuyu constituent une diaspora urbaine importante a Nairobi, Nakuru, Mombasa et d'autres grandes villes kenyanes. Une communaute agikuyu de la diaspora internationale est etablie en Grande-Bretagne, aux Etats-Unis, au Canada et en Australie, principalement des professionnels et des etudiants. Les remises de fonds de la diaspora sont significatives dans les comtes d'origine (Nyeri, Murang'a, Kiambu, Kirinyaga)."
     },
     "demography": {
-      "totalPopulation": 8000000,
+      "totalPopulation": 9900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements kenyans, SIL Ethnologue, et études démographiques"
+      "source": "Kenya National Bureau of Statistics — recensement 2019 (8 148 668) projete a 2025 ; estimations reseaux sociaux kenyans 2025 (9,9 millions) ; Worldometer Kenya 2025",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 9900000,
+          "note": "Premier groupe ethnique du Kenya (~17 % de la population totale de 57,5 millions en 2025). Concentration dans les comtes de Nyeri, Murang'a, Kiambu, Kirinyaga, Nyandarua, Nairobi."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kikuyu language (kik)",
-      "CIA World Factbook – Kenya",
-      "Recensements kenyans",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Kikuyu people. https://en.wikipedia.org/wiki/Kikuyu_people",
+      "Wikipedia EN — Kikuyu language. https://en.wikipedia.org/wiki/Kikuyu_language",
+      "Britannica — Kikuyu. https://www.britannica.com/topic/Kikuyu",
+      "Kenya National Bureau of Statistics — 2019 Population and Housing Census. https://www.knbs.or.ke",
+      "Worldometer — Kenya Population 2025. https://www.worldometers.info/world-population/kenya-population/",
+      "Jens Finke — Traditional Music and Cultures of Kenya : Kikuyu religion and beliefs. http://www.bluegecko.org/kenya/tribes/kikuyu/beliefs.htm",
+      "Ngugi wa Thiong'o — Caitaani mutharaba-Ini (Devil on the Cross), Heinemann, 1982.",
+      "Glottolog — Gikuyu (kiku1240). https://glottolog.org/resource/languoid/id/kiku1240"
     ]
   }
 }

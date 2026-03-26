@@ -6,63 +6,105 @@
   "content": {
     "appellations": {
       "mainName": "Urhobo",
-      "selfAppellation": "Urhobo",
-      "exonyms": ["Urhobo (terme utilisé par les Européens)"],
+      "selfAppellation": "Urhobo (pluriel : Urhobos / Uviovo en langue urhobo)",
+      "exonyms": [
+        "Sobo (terme pejoratif utilise par les Britanniques et certains voisins, aujourd'hui rejete)",
+        "Urhobo (nom adopte officiellement par le peuple lui-meme dans les contextes modernes)"
+      ],
+      "originOfExonyms": "Le terme Sobo, exonyme pejoratif d'origine incertaine (peut-etre lie a sobo signifiant sauvage ou rustique dans certaines langues voisines), fut utilise par les administrateurs coloniaux britanniques et les voisins itsekiri pour designer les Urhobo. Il est aujourd'hui fermement rejete par les Urhobo comme stigmatisant. Le terme Urhobo est l'appellation propre du groupe — son etymologie renvoie a l'ancetre eponyme fondateur du peuple selon les traditions orales urhobo.",
+      "whyProblematic": "La question de la relation entre les Urhobo et les Okpe est politiquement sensible. Les Okpe, l'un des vingt-quatre royaumes, revendiquent une identite ethnique distincte des Urhobo, bien que les deux groupes parlent des langues edoides tres proches et aient ete administrativement regroupes par les Britanniques sous le label Urhobo. Cette ambiguite perdure dans les discussions contemporaines sur la representation politique dans le Delta State.",
+      "contemporaryUsage": "Le terme Urhobo est universellement utilise par le peuple lui-meme, dans les medias, le gouvernement du Delta State et la litterature academique. La Urhobo Progress Union (UPU) fondee en 1931 est l'organisation faite-iere pan-urhobo la plus ancienne et la plus influente. Les Urhobo sont reconnus comme le plus grand groupe ethnique de l'Etat du Delta, une identity source de fierté culturelle et politique active.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone A)",
-      "historicalRegion": "Nigeria",
+      "ethnoLinguisticGroup": "Niger-Congo — Volta-Niger — Edoide (Edoid) — Urhobo (South-Western Edoid); distinct du bantou contrairement a ce qui etait indique dans la fiche initiale",
+      "historicalRegion": "Delta du Niger occidental — Delta Central Senatorial District (Etat du Delta, Nigeria) : vallees des fleuves Ethiope, Ughelli, Elume et Udu",
       "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Urhobo du Nord",
-      "Urhobo du Sud",
-      "Sous-groupes régionaux"
+      "Okpe (Okpe-Urhobo) — le plus grand des vingt-quatre royaumes; etabli autour de Sapele; chef titre Orodje; debat sur identite distincte ou sous-ensemble urhobo",
+      "Agbon — l'un des plus anciens royaumes, remonte au XIVe siecle; etabli dans l'Ethiope East LGA (Isiokolo); Ovie d'Agbon",
+      "Ughelli — l'un des plus anciens royaumes, XIVe siecle; tradition orale liee a Benin Kingdom",
+      "Uvwie (Effurun) — pres de Warri; l'un des royaumes les plus urbanises",
+      "Udu — connu pour la tradition Udje de chant-poesie",
+      "Ughievwen (Aghievwen) — connu pour la tradition Udje; appele Royaume des Chansons",
+      "Olomu — dirigé par l'Ohworode",
+      "Okere-Urhobo — dirigé par l'Orosuen",
+      "Agbarho — dirigé par l'Osuivie",
+      "Orogun — dirige par l'Okpara-Uku",
+      "Abraka, Idjerhe, Ughelle, Oghara, Jesse, Evwreni, Iyede, Emede, Olomu, Ewu, Arhavwarien, Owhe, Ogor, Ogharefe — autres royaumes parmi les vingt-quatre"
     ],
     "origins": {
-      "ancientOrigins": "Les Urhobo sont originaires de la région du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone A).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Urhobo sont originaires de la region du Niger Delta occidental et du Delta Central, dans l'actuel Etat du Delta, Nigeria. Selon les traditions orales, les fondateurs des royaumes urhobo migrerent en plusieurs vagues depuis le Royaume de Benin (Edo) entre le XIIe et le XVIIe siecle. La premiere vague migratoire eut lieu sous le regnier du premier Oba de Benin, Oba Oronmiyan (1170-1200), etablissant les premiers villages d'Ughelli. Une deuxieme vague sous Oba Ogbeka (1370-1400) s'etablit dans la region d'Abraka. Ces migrations fondatrices sont confirmees par les similarities linguistiques entre l'urhobo et l'edo (langue du Royaume de Benin), qui sont tous deux des langues edoide. La presence etablie dans la region precede l'arrivee des Portugais dans le Delta occidental en 1480.",
+      "formationPeriod": "Les royaumes (merafe) urhobo se sont consolides entre le XIVe et le XVIIe siecle. Le Royaume d'Agbon et celui d'Ughelli sont parmi les plus anciens, datant du XIVe siecle. Le Royaume d'Okpe fut formellement etabli au XVIIe siecle. Chaque royaume s'est forme independamment avec ses propres fondateurs legendaires. Les contacts avec les Portugais (arrives dans le Delta en 1480) et les Hollandais ont introduit le commerce de l'ivoire et des esclaves, modifiant les dynamiques economiques et politiques. La creation de l'Urhobo Progress Union en 1931 marque le debut d'une conscience pan-urhobo moderne.",
+      "migrationRoutes": [
+        "Migrations successives depuis le Royaume de Benin (actuel Benin City, Etat d'Edo) vers le Delta occidental : premiere vague vers Ughelli (vers 1170), seconde vague vers Abraka (vers 1370)",
+        "Expansion des Okpe depuis Benin vers Sapele et le Delta occidental au XVIIe siecle",
+        "Migrations internes au Delta — certains royaumes (Agbon) explorant vers l'est pour trouver des terres",
+        "Migration contemporaine vers les centres petroliferes de Warri, Port Harcourt et Lagos"
+      ],
+      "historicalSettlementZones": [
+        "Delta Central Senatorial District (Etat du Delta, Nigeria) : vallees fluviales de l'Ethiope, Ughelli, Elume et Udu",
+        "Local Government Areas de Ethiope East/West, Ughelli North/South, Udu, Uvwie, Okpe, Ughievwen, Jesse",
+        "Sapele (siege du Royaume d'Okpe)",
+        "Warri et Effurun (zones periurbaines avec population urhobo dense)",
+        "Lagos, Port Harcourt, Abuja (diaspora urbaine nigériane)"
+      ],
+      "unificationsOrDivisions": "Les Urhobo ne forment pas un etat centralise mais vingt-quatre royaumes independants partageant langue et culture. Chaque royaume (ou urhiapele) est dirige par un Ovie (roi), sauf Okpe (Orodje), Okere-Urhobo (Orosuen), Agbarho (Osuivie), Orogun (Okpara-Uku) et Olomu Kingdom (Ohworode). L'administration coloniale britannique regroupait les Urhobo et Okpe dans la Warri Division. L'Urhobo Progress Union (1931) fut le premier effort d'unification politique pan-urhobo. La creation de l'Etat du Delta (1991) a donne aux Urhobo une representation politique accrue comme principal groupe ethnique de cet Etat.",
+      "externalInfluences": "Influence du Royaume de Benin : les Urhobo maintenaient des relations commerciales et culturelles avec Benin; l'Oba de Benin exerça une influence symbolique et parfois politique. Contact avec les Portugais puis les Hollandais (XVe-XVIIe s.) dans le commerce maritime du Delta. Traite atlantique des esclaves (XVIIe-XIXe s.) : les Urhobo furent a la fois victimes (capture) et parfois intermediaires du commerce. Colonisation britannique : creation du Protectorat du Niger Delta (1891), puis Protectorat du Nigeria du Sud (1900); administration indirecte; missions chretiennes (catholiques, anglicanes). Boom petrolier (a partir des annees 1950) : transformations economiques et sociales profondes dans le Delta.",
+      "majorHistoricalEvents": "Fondation des premiers royaumes urhobo a Ughelli et Agbon (XIVe siecle) selon les traditions orales. Etablissement formel du Royaume d'Okpe (XVIIe siecle). Contact avec les marchands europeens dans le Delta occidental (XVe s.). Signature de traites de commerce et de protection avec les Britanniques (fin XIXe s.). Creation de l'Urhobo Progress Union (1931). Independance du Nigeria (1er octobre 1960). Creation de l'Etat du Midwest (1963) puis de l'Etat de Bendel et enfin de l'Etat du Delta (1991) : les Urhobo deviennent le groupe ethnique le plus nombreux de cet Etat. Petrole decouvert dans le Delta du Niger (annees 1950-1960) : enrichissement et conflits environnementaux dans le territoire urhobo. Activisme ecologique de Ken Saro-Wiwa (Ogoni voisin) et mouvements similaires dans le Delta."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chaque royaume urhobo est dirige par un Ovie (roi), chef supreme, symbole de la culture et des predecesseurs royaux. L'Ovie est assiste par des conseillers titres : l'Otota (porte-parole officiel), les Olorogun (Ilorogun — conseillers militaires et executifs), les Ikoikpokpo (executeurs des ordres royaux) et les Ogbu (guerriers). Le systeme judiciaire distingue les offenses civiles et penales. La reine (Ovieya) et les enfants royaux (Omo Ovie) ont des fonctions ceremoniales. Les communautes sans structure royale forte sont gouvernees par le gerontocratie : l'Okpako Orere (homme le plus age), chef politique indigene, appele aussi Okaroro. Le titres varie selon les royaumes (Okpe : Orodje; Agbarho : Osuivie; Orogun : Okpara-Uku; Olomu : Ohworode).",
+      "clanOrganization": "La societe Urhobo est patrilineaire et organisee en clans (erha) identifies par un ancetre masculin commun. Les clans sont regroupes en quartiers (orere) au sein des royaumes. Les lignages patrilineaires (ame, singulier ame) determinent l'heritage, les droits fonciers et les alliances. Chaque famille porte un nom de famille lie a son ancetre fondateur ou son totem.",
+      "ageClassSystems": "Les associations de grades masculins (urhierhaghan) jouent un role important dans l'organisation sociale et ceremonielle. Les jeunes hommes progressent par etapes au sein de ces associations qui conferent des responsabilites croissantes dans la vie communautaire, les travaux publics et les ceremonies. Ces grades sont distincts selon les royaumes.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage foncier, la succession au titre d'Ovie (heredite patrilineaire dans la famille royale), les obligations rituelles et les alliances matrimoniales. Le lobola (ifieva — paiement de dots par la famille du marie) est une institution centrale. La polygamie etait pratiquee par les hommes de statut eleve.",
+      "religiousAuthority": "Le systeme religieux traditionnel urhobo est centre sur Oghene (Dieu supreme), les Edjo (divinites intermediaires) et l'Erivwin (culte des ancetres). Les praticiens de l'Epha (divination par cauris, similaire au Ifa yoruba) et les guerisseurs traditionnels ont une autorite spirituelle reconnue. L'Ovie joue un role rituel dans les ceremonies liees au royaume. Le christianisme (catholique, anglican, pentecotiste) est aujourd'hui la religion dominante chez les Urhobo urbains et ruraux."
     },
     "languages": {
       "mainLanguage": "Urhobo",
-      "vehicularRole": "L'urhobo est parlé par la majorité des Urhobo. L'anglais et d'autres langues sont également utilisés."
+      "isoCodes": ["urh"],
+      "dialects": [
+        "Okpe — dialecte parlé par les Okpe (certains linguistes le classent comme langue edoide distincte)",
+        "Uvwie (Effurun) — dialecte periurbain influencé par le contact avec l'Itsekiri et le pidgin",
+        "Agbon — dialecte de la zone Agbon (Ethiope East)",
+        "Ughelli — dialecte de la zone Ughelli North/South",
+        "Udu-Ughievwen — dialecte de la zone connue pour l'Udje (chant-poesie)"
+      ],
+      "vehicularRole": "L'Urhobo est parle par environ 4 a 7 millions de personnes dans l'Etat du Delta (Nigeria). C'est la langue du plus grand groupe ethnique du Delta State. L'anglais est la langue officielle du Nigeria et vehiculaire principale dans les contextes formels. Le Nigerian Pidgin English est tres utilise dans le Delta comme langue de communication inter-ethnique. L'Urhobo est enseigne comme matiere dans certaines ecoles primaires et secondaires du Delta State. Code ISO 639-3 : urh; famille Edoid (Niger-Congo)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels urhobo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Les associations de grades masculins (urhierhaghan) organisent des ceremonies d'entree dans chaque grade, marquant la progression sociale des jeunes hommes. Ces ceremonies impliquent des serments, des revelations de secrets culturels et des demonstrations de force et de maturite.\", \"femaleInitiation\": \"Les jeunes filles passent par des rites de puberté incluant des periodes d'instruction par les femmes ainées sur les responsabilites feminines. Dans certains royaumes, ces ceremonies sont liees aux cultes de fertilite (Umalokun).\"}, \"funeraryRites\": {\"burial\": \"Les ceremonies funeraires urhobo sont complexes et socialement importantes. L'inhumation s'accompagne de danses, de chants et de festins. Des ceremonies d'elevation (second funerailles) sont organisees parfois des mois apres le deces pour honorer dignement le defunt et faciliter son passage dans l'Erivwin (monde des ancetres).\", \"secondBurial\": \"Le second enterrement (ivri) est une ceremonie elaborate qui peut couter des sommes considerables et implique toute la communaute. Le defunt est honore par des masques (Ekurhoro), de la musique et des discours elogieux. L'absence d'ivri pour une personne importante est consideree comme un manque de respect.\"}, \"healingRites\": {\"divination\": \"L'Epha est un systeme de divination similaire au Ifa yoruba, pratique avec des chapelets de cauris. Selon la tradition, il existe 1 261 Ejo (deites ou principles spirituels) au sein du systeme Epha, incluant Aziza (dieu tourbillon a une main et une jambe tenant un miroir).\", \"umalokun\": \"Umalokun est la deesse de la mer/eau, adoree dans les royaumes urhobo proches des cours d'eau. Son culte comprend des danses, des offre-andes et des ceremonies periodiques pour assurer la fertilite et la protection des pecheurs et des communautes riveraines.\"}}",
+      "symbols": "L'Ovie (roi) dans ses ornements royaux (couronne, sceptre, perles blanches de prestige) est le symbole supreme de chaque royaume. L'Orhen (craie blanche) est utilise dans tous les rituels urhobo comme symbole de purete, de connexion au divin et de benediction. La craie blanche marque le corps lors des ceremonies importantes. L'Ogele (trompe en ivoire) est un instrument ceremoniel reserve aux ceremonies royales. Les masques Ekurhoro et Ohworu sont des symboles cles de la tradition masquee urhobo. L'arbre Iroko est sacre dans certaines traditions du royaume; il abrite des esprits et est le lieu de rites propitiatoires.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"udje\": \"L'Udje est la tradition de chant-poesie seculier la plus importante des Urhobo, l'une des plus anciennes survivantes. Elle est pratiquee principalement dans les royaumes d'Udu et d'Ughievwen (Aghievwen), zones souvent appelees Royaumes des Chansons. L'Udje est organise comme une forme de guerre verbale entre groupes rivaux (Omesuo) qui s'attaquent mutuellement par des chants satiriques et humoristiques. Le compositeur principal est l'Ororile, assiste de plusieurs chanteurs (ebuole). Les chants emploient images, metaphores, similes, proverbes et allusions historiques. Ils sont structures en trois parties : umuoho (introduction), okparo (developpement) et ifuen (epilogue ou conclusion). L'Udje a decliné apres les annees 1960 mais a connu une renaissance contemporaine.\", \"masks\": \"Ekurhoro : masque de deuil, danse lors des seconds funerailles. Ohworu : danse masquee feminine, executee par les femmes pour assainir la communaute et contrecarrer les influences malefiques. Agadagodo : masque de divertissement. Egwuodu : masque aquatique associe aux esprits de l'eau.\", \"musicalInstruments\": \"Udu (pot d'argile comme percussion). Tambours en peau. Orovwodjo (cloches en fer). Instruments a vent en corne et ivoire (ogele). Hochets en calebasse.\", \"dances\": \"Danse Ohworu (danse feminine de purification). Danse de mariage Gele. Danse Ekurhoro (lors des funerailles). Danses des grades (urhierhaghan). Danses de possession lors des ceremonies Epha.\", \"visualArts\": \"Sculpture sur bois, notamment les masques (Ekurhoro, Ohworu, Agadagodo). Poterie. Tressage. Tissage de la tenue de raphia. Bijouterie en perles de verre et cuivre. Art de la peinture corporelle lors des ceremonies.\"}}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Oghene\", \"attributes\": \"Dieu supreme, createur tout-puissant et impartial. Oghene est fondamentalement non-anthropomorphique et transcende les categories humaines. Il est invoque comme juge suprême quand on est injustement oprime. Oghene est la source et la manifestation de toutes les divinites.\"}, \"intermediateDivinities\": [{\"name\": \"Edjo (divinites)\", \"role\": \"Les Edjo sont les divinites intermediaires entre Oghene et les hommes. Ils sont classes en : divinites gardiens, divinites de guerre, divinites de prosperite, divinites de fertilite et ethiques. Chaque royaume a ses propres Edjo patrons.\"}, {\"name\": \"Erhan (esprits de la nature)\", \"role\": \"Les Erhan sont des forces naturelles spirituelles associees a des lieux specifiques (arbres, rivieres, carrefours). Ils necessitent propitiation et respect.\"}], \"natureSpirits\": {\"umalokun\": \"Umalokun : deesse de la mer et des eaux, tres reveree dans les royaumes urhobo proches des cours d'eau et des marais du Delta. Son culte inclut des danses, ceremonies et offrandes. Elle protege les pecheurs et les communautes riveraines et accorde fertilite.\", \"aziza\": \"Aziza : esprit tourbillon a une main et une jambe tenant un miroir, l'un des 1 261 Ejo du systeme de divination Epha. Aziza symbolise la nature imprevisible des forces cosmiques.\"}, \"ancestors\": {\"erivwin\": \"Erivwin : le monde des ancetres et predecesseurs. Les morts rejoignent l'Erivwin apres des rites funeraires adequats. Ils continuent de veiller sur les affaires des vivants. Les Esemo (ancetres superieurs) et Iniemo ont des roles distincts dans le soutien aux vivants.\"}, \"metaphysics\": {\"dualNature\": \"L'homme a une double nature : Ugboma (corps physique) et Erhi (ame/essence spirituelle). L'Erhi declare la destinee de l'homme avant l'incarnation et controle sa realisation de cette destinee. Oghene scelle le chemin de la destinee dans l'Erivwin (monde spirituel).\", \"ufuoma\": \"Ufuoma designe le bien-etre total — physique, spirituel, social. La realisation de l'Ufuoma est le but supreme de la vie urhobo.\"}, \"christianity\": {\"specificPractices\": \"Le christianisme (catholique romain, anglicanism anglican, pentecostisme) est aujourd'hui la religion dominante chez les Urhobo. Les missions catholiques et anglicanes sont arrivees a la fin du XIXe siecle. De nombreux Urhobo maintiennent en parallele des pratiques de culte ancestral et d'Epha, creant un syncretisme vivant.\"}, \"traditionalReligions\": {\"summary\": \"La religion traditionnelle urhobo est tres riche et structuree. Le systeme de divination Epha (avec 1 261 Ejo) est un corpus de savoirs comparable au systeme Ifa yoruba. Le culte d'Umalokun, les danses masquees Ohworu et Ekurhoro, et les pratiques funéraires elaborees en temoignent.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora urhobo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Urhobo sont organises en vingt-quatre royaumes independants. Les plus anciens et les plus importants sont Agbon et Ughelli (XIVe siecle) et Okpe (XVIIe siecle). Le Royaume d'Okpe, dirige par l'Orodje d'Okpe, est considere le plus grand des vingt-quatre royaumes et a des frontieres ethniques definies — l'une des deux seules entites a frontieres ethniques definies dans le Delta State (l'autre etant le Royaume Itsekiri). La capitale ceremonielle de l'Okpe est Orerokpe, mais Sapele est la ville principale. L'Urhobo Progress Union (UPU), fondee en 1931, est l'organisation socioculturelle panurhobo la plus ancienne et influente du Nigeria.",
+      "relationsWithNeighbors": "Relations complexes avec le Royaume de Benin (Edo) : origine mythique et liens historiques, mais aussi tensions et guerres episodiques. Relations avec les Itsekiri de Warri : les Itsekiri ont longtemps domine le commerce coutier et les relations avec les Europeens; conflits fonciers et politiques recurrents, notamment apres la creation de l'Etat du Delta. Relations avec les Isoko et Ndokwa au sud-est. Relations commerciales et de voisinage avec les Ijaw. Relations avec les Edo et les Bini (Benin). L'alliance historique Urhobo-Bini-Esan contre l'expansion Oduduwa est mentionnee dans les traditions orales d'Agbon.",
+      "conflictsOrAlliances": "Alliance historique avec le Royaume de Benin contre les ennemis communs. Resistances aux raids esclavagistes. Sous la colonisation britannique, des resistances locales eurent lieu contre les impots coloniaux et les empiétements sur les terres. Tensions et violence communautaire avec les Itsekiri dans le contexte de la distribution du petrole et des ressources depuis les annees 1990 (conflits de 1997, 2003). Mouvements militants et groupes armes (MEND, Delta Avengers) ont profondement affecte la region peuplee par les Urhobo, bien que les Urhobo eux-memes aient cherche des moyens pacifiques de revendication politique.",
+      "diaspora": "Les Urhobo ont une diaspora nigériane interne importante dans les grandes villes de Lagos, Abuja, Port Harcourt et Benin City, liee aux migrations pour l'education et l'emploi (notamment dans l'industrie petroliere). Ils ont aussi une diaspora internationale en Grande-Bretagne (heritage colonial), aux Etats-Unis, au Canada et en Europe, principalement des professionnels, etudiants et gens de lettres. La Urhobo Progress Union dispose de branches dans de nombreuses villes nigerianes et dans la diaspora internationale."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 4500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur Joshua Project (Urhobo in Nigeria), SIL Ethnologue (urh), Recensement national du Nigeria (NPC — 2006 : dernier recensement officiel; extrapolation 2025), Delta State Government (Urhobo declares plus grand groupe ethnique du Delta State). Note : les estimations varient de 2 millions (sources conservatrices) a 7 millions (sources Urhobo Progress Union) en raison de l'absence de recensement ethnique recent. Une estimation centrale de 4,5 millions est retenue.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 4500000,
+          "note": "Concentres dans le Delta Central Senatorial District de l'Etat du Delta : LGAs Ethiope East/West, Ughelli North/South, Udu, Uvwie, Okpe, Ughievwen, Jesse, Sapele; diaspora dans Lagos, Abuja, Port Harcourt"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Urhobo language (urh)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Urhobo people. https://en.wikipedia.org/wiki/Urhobo_people",
+      "Wikipedia EN — Agbon Kingdom. https://en.wikipedia.org/wiki/Agbon_Kingdom",
+      "Ethnologue — Urhobo (urh). https://www.ethnologue.com/language/urh/",
+      "Joshua Project — Urhobo in Nigeria. https://joshuaproject.net/people_groups/15728",
+      "Okpe Union — Okpe Kingdom History. https://okpeunionng.net/okpe-kingdom-history/",
+      "Darah, G.G. Battles of Songs: Udje Tradition of the Urhobo. Lagos: Delta Publications, 1982.",
+      "Purdue University CLCWeb — Urhobo Folklore and Udje Aesthetics. https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3014&context=clcweb",
+      "Wikipedia EN — Urhobo language. https://en.wikipedia.org/wiki/Urhobo_language",
+      "Ojaide, Tanure. The Poetry of Tanure Ojaide. Trenton NJ: Africa World Press, 2006."
     ]
   }
 }

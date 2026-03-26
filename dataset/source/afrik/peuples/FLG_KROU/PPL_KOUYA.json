@@ -7,58 +7,89 @@
     "appellations": {
       "mainName": "Kouya",
       "selfAppellation": "Kouya",
-      "exonyms": ["Kouya (terme utilisé par les Européens)"],
+      "exonyms": ["Kuya", "Kowya", "Koyo"],
+      "originOfExonyms": "Le terme Kouya est utilisé de manière uniforme par les populations elles-mêmes et par les sources extérieures. Les formes Kuya et Kowya sont des variantes orthographiques utilisées dans la littérature linguistique anglophone (Ethnologue, ISO 639-3). L'appellation Koyo est parfois utilisée localement pour certains sous-groupes. Le terme a pu être consigné par des administrateurs coloniaux français sans déformation significative, ce qui explique l'uniformité des appellations.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kouya est l'appellation standard en français et en langue vernaculaire. Il est reconnu par l'Ethnologue sous le code kyf. Le nom ne fait pas l'objet de controverses identitaires particulières au sein de la communauté.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou",
-      "historicalRegion": "Côte d'Ivoire",
+      "ethnoLinguisticGroup": "Krou oriental (branche ivoirienne, sous-branche Est)",
+      "historicalRegion": "Région forestière du Centre-Ouest ivoirien, entre les fleuves Sassandra et Bandama, préfecture de Daloa et zone de Vavoua",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Kouya du Nord", "Kouya du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Kouya du Nord (zone nord de la région forestière, CIV)",
+      "Kouya du Sud (zone sud, vers la forêt dense équatoriale)",
+      "Koyo (sous-groupe dialectal très proche des Kouya)",
+      "Groupes villageois de la zone de Vavoua",
+      "Groupes villageois de la zone de Daloa"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kouya sont originaires de la CIV, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Kouya sont autochtones de la région forestière de Côte d'Ivoire, appartenant au grand ensemble ethno-linguistique Krou. Leurs ancêtres font partie des populations forestières qui ont migré depuis les hautes terres guinéo-ivoiriennes vers le sud, entre le XVe et le XVIIe siècle, sous la pression des royaumes mandingues esclavagistes. Ils s'installèrent dans les forêts entre les fleuves Sassandra et Bandama, zone forestière continue du pays Krou ivoirien. Ils partagent un fond commun avec les Bété, les Dida et les Godié voisins.",
+      "formationPeriod": "L'identité Kouya distincte se constitue entre le XVIe et le XVIIIe siècle avec la fixation des communautés dans les territoires forestiers du Centre-Ouest ivoirien. La langue kouya est mise à l'écrit pour la première fois dans les années 1980, grâce au travail de linguistes de SIL International. Une traduction partielle de la Bible en kouya a été publiée.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis les plateaux guinéo-ivoiriens vers le sud-est, dans la zone forestière entre Sassandra et Bandama",
+        "Déplacements secondaires liés aux pressions des peuples voisins (mandingues au nord, akan à l'est)",
+        "Dispersion villageoise progressive dans la forêt dense du Centre-Ouest"
+      ],
+      "historicalSettlementZones": [
+        "Zone forestière entre les fleuves Sassandra et Bandama (Centre-Ouest de la CIV)",
+        "Préfecture et sous-préfectures de la région du Haut-Sassandra (Daloa, Vavoua)",
+        "Villages forestiers du Centre-Ouest ivoirien aux altitudes moyennes (300-600 m)"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes territoriaux villageois distincts partageant une identité culturelle et linguistique commune. Absence de centralisation politique. Les Kouya du Nord et du Sud constituent des entités autonomes reliées par la langue, les traditions rituelles et les pratiques matrimoniales exogames. Aucune tentative documentée d'unification politique entre les différents groupes.",
+      "externalInfluences": "Contacts anciens avec les peuples voisins Krou (Bété, Dida, Godié, Nyabwa). Influence des migrations et pressions mandingues (commerce de la kola). Colonisation française ayant introduit les cultures commerciales de café et de cacao. Influence croissante du christianisme (catholique et évangélique) depuis la seconde moitié du XXe siècle. Travaux de SIL International ayant abouti à la mise à l'écrit de la langue dans les années 1980.",
+      "majorHistoricalEvents": "Intégration dans les structures coloniales françaises au début du XXe siècle. Transition vers l'économie de plantation (café, cacao) à partir des années 1950. Impact de la crise politico-militaire ivoirienne (2002-2011) sur les communautés forestières de l'Ouest. Publication de la première traduction biblique en kouya (kyf) par SIL International."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles villageoises. Système de conseils d'anciens pour la gouvernance locale. Les décisions importantes sont prises collectivement par les aînés des lignages. Absence de pouvoir centralisé au-delà du niveau villageois. Conformément au modèle Krou général, la société est de type lignager segmentaire, sans machinerie administrative centralisée.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages patrilinéaires. Les clans constituent les unités sociales de base, gérant collectivement les terres, les mariages et les obligations rituelles. Les chefs de clans et détenteurs de certains offices forment un conseil des chefs de village.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité sociale, les droits fonciers et les alliances matrimoniales. La résidence est patrilocale et le mariage exogame (pratique de l'exogamie clanique), conformément au modèle Krou général. L'aîné du lignage gère les affaires communes et représente le groupe lors des négociations inter-claniques.",
+      "religiousAuthority": "Autorité des prêtres et devins traditionnels, gardiens des rites lignagers et des cérémonies initiatiques. Les chefs religieux traditionnels coexistent progressivement avec les autorités des Eglises chrétiennes (catholiques et évangéliques) présentes dans les villages depuis le milieu du XXe siècle."
     },
     "languages": {
-      "mainLanguage": "Kouya",
-      "vehicularRole": "Le kouya est parlé par la majorité des Kouya. Le français est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Kouya (Kuya)",
+      "isoCodes": ["kyf"],
+      "dialects": [
+        "Kouya du Nord (zone de Vavoua)",
+        "Kouya du Sud (zone de Daloa)",
+        "Koyo (variante dialectale proche, parfois considérée comme dialecte distinct)"
+      ],
+      "vehicularRole": "Le kouya est la langue maternelle et d'usage quotidien de toute la communauté. La langue est stable, classée comme vivante par Ethnologue, et transmise entre générations. Le français est la langue officielle de l'éducation et de l'administration en Côte d'Ivoire. Le dioula est utilisé comme langue commerciale véhiculaire dans la région. La langue kouya a été mise à l'écrit dans les années 1980 par SIL International et dispose aujourd'hui de ressources bibliques publiées."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels kouya, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Cérémonies d'initiation masculines et féminines constituant les principaux rites de passage à l'âge adulte. Rites liés aux cycles agricoles (début des semailles, récolte du premier riz, fin de la saison). Funérailles traditionnelles avec danses et festins communautaires mobilisant l'ensemble du lignage. Cérémonies de réconciliation entre clans pour résoudre les conflits fonciers ou matrimoniaux. Rites de naissance, de puberté, de mariage et de mort structurant le cycle de vie individuel et communautaire selon les traditions Krou.",
+      "symbols": "Symboles claniques et lignagers transmis oralement et par les rites d'initiation. Art du masque, partagé avec les autres peuples Krou de la région (influences des traditions Bété et Wè voisines). Les instruments de musique traditionnels (tambours, instruments à cordes) servent de supports symboliques lors des cérémonies rituelles.",
+      "artsAndMusic": "Musique de percussion (tambours, balafon) accompagnant les cérémonies initiatiques, funéraires et festives. Danses traditionnelles transmises au sein des clans lors des rites de passage. Poésie et récits oraux (contes, épopées claniques) conservant la mémoire historique et les valeurs culturelles. Artisanat traditionnel : poterie féminine, tissage de pagnes, sculpture sur bois pour les objets rituels. Chants rituels liés aux rites de passage et aux fêtes agricoles.",
+      "spiritualities": "Croyances animistes traditionnelles : les ancêtres et les esprits de la nature (forêt, rivières, champs) sont dotés de pouvoirs surnaturels influençant la vie des vivants. Un dieu créateur suprême est reconnu mais considéré comme trop distant pour être directement approché sans intermédiaires. Culte des ancêtres intégré dans toutes les cérémonies importantes. Influence croissante du christianisme évangélique et catholique depuis la seconde moitié du XXe siècle, coexistant avec les croyances traditionnelles dans un syncrétisme pragmatique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kouya dans les grandes villes ivoiriennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles villageoises sans formation d'entités royales ou de royaumes étendus. Les chefferies Kouya se sont intégrées progressivement dans les structures administratives coloniales françaises, puis dans celles de l'Etat ivoirien post-indépendance (1960). Les chefs traditionnels demeurent des acteurs de la gouvernance locale aux côtés des représentants de l'Etat.",
+      "relationsWithNeighbors": "Relations de voisinage et d'échanges réguliers avec les Bété (peuple Krou voisin, le plus important numériquement en CIV), les Dida, les Godié et d'autres peuples krou de Côte d'Ivoire. Contacts commerciaux avec les Dioula (mandingues) pour la kola et les produits de la forêt. Relations avec les Akan (Baoulé) à l'est. Echanges matrimoniaux avec les groupes Krou voisins dans un système d'alliances inter-claniques.",
+      "conflictsOrAlliances": "Résistances sporadiques à la pacification coloniale française au début du XXe siècle. Implication marginale dans les conflits ivoiriens (2002-2011). Les Kouya ne figurent pas parmi les peuples ayant joué un rôle majeur dans les principaux conflits armés de la Côte d'Ivoire, contrairement aux Wè (Guéré) à l'ouest ou aux Bété dans la région de Gagnoa.",
+      "diaspora": "Diaspora interne en Côte d'Ivoire : présence croissante dans les grandes villes (Abidjan, Daloa, Yamoussoukro) due aux migrations économiques et à l'urbanisation. Diaspora internationale très limitée, composée principalement d'étudiants et de migrants économiques en France et dans d'autres pays francophones."
     },
     "demography": {
-      "totalPopulation": 30000,
+      "totalPopulation": 12000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (kyf) : 10 746 locuteurs selon Swordshare Map et Ethnologue. Estimation 2025 intégrant la croissance démographique naturelle de la Côte d'Ivoire (environ 2,5% par an).",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 12000,
+          "note": "Zone forestière du Centre-Ouest ivoirien, préfectures de Daloa et Vavoua, entre les fleuves Sassandra et Bandama"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kouya language (kyf)",
-      "CIA World Factbook – Côte d'Ivoire",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples krou"
+      "SIL Ethnologue — Kouya language (kyf). https://www.ethnologue.com/language/kyf/",
+      "Wikipedia EN — Kuya language. https://en.wikipedia.org/wiki/Kuya_language",
+      "Swordshare Map — Kouya language info (10 746 speakers). https://map.swordshare.com/kyf",
+      "Scribd — Histoire et culture du peuple Krou. https://fr.scribd.com/document/457402032/expose-sur-les-krou-docx",
+      "Wikipedia FR — Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "Minority Rights Group — Côte d'Ivoire. https://minorityrights.org/country/cote-divoire/",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Glottolog — Kru language family. https://glottolog.org/resource/languoid/id/kru1245"
     ]
   }
 }

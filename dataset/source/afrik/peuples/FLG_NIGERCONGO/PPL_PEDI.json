@@ -6,61 +6,124 @@
   "content": {
     "appellations": {
       "mainName": "Pedi",
-      "selfAppellation": "Pedi",
+      "selfAppellation": "Bapedi / Bamaroteng",
       "exonyms": [
-        "Pedi (terme utilisé par les Européens), parfois appelés « Bapedi » (terme alternatif)"
+        "Bapedi (prefixe bantu ba- au pluriel, signifiant 'peuple de')",
+        "Northern Sotho (appellation coloniale et administrative englobant plusieurs groupes de langue sesotho sa leboa)",
+        "Basotho ba Lebowa (designation de l'apartheid)",
+        "Transvaal Sotho",
+        "Marota",
+        "Dikgoshi"
       ],
+      "originOfExonyms": "Le terme 'Pedi' designe a la fois le clan royal Maroteng et par extension le grand ensemble linguistique sotho du nord. Durant la colonisation, l'administration britannique et boere a utilise 'Northern Sotho' pour regrouper une trentaine de dialectes distincts sous une meme etiquette administrative. Le terme 'Basotho ba Lebowa' derive du homeland de Lebowa cree sous l'apartheid en 1972.",
+      "whyProblematic": "L'appellation 'Pedi' est ambigue : elle renvoie tantot au clan royal Maroteng (sens etroit), tantot a l'ensemble des 27-30 dialectes Sesotho sa Leboa (sens large). L'assimilation de 'Sepedi' a 'Northern Sotho' dans la constitution sud-africaine de 1994 a efface les identites de nombreux groupes dialectaux tels que les Lobedu, Birwa ou Hananwa.",
+      "contemporaryUsage": "Le terme Pedi est couramment employe en anglais et en sesotho sa leboa. Les locuteurs se designent eux-memes comme Bapedi (peuple) et parlent Sepedi ou Sesotho sa Leboa. Sepedi est l'une des 12 langues officielles de l'Afrique du Sud depuis 1994.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Afrique du Sud",
+      "ethnoLinguisticGroup": "Bantou Sotho-Tswana (Zone S, S.32)",
+      "historicalRegion": "Sekhukhuneland — region entre les rivieres Olifants (Lepelle) et Steelpoort (Tubatse), Limpopo, Afrique du Sud. A son apogee sous Thulare (vers 1780-1820), le royaume s'etendait de Rustenburg a l'ouest jusqu'au lowveld a l'est, et jusqu'a la riviere Vaal au sud.",
       "currentCountries": ["ZAF"]
     },
-    "ethnicities": ["Pedi du Nord", "Pedi du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Maroteng — clan royal fondateur, portant le totem noko (porc-epic), etabli dans la region Steelpoort vers 1650",
+      "Kgatla — ancetre commun des Pedi, groupe tswana dont se sont separees les Maroteng",
+      "Tau — clan au totem du lion (tau), dialecte sepedi distinct",
+      "Roka — groupe du Limpopo septentrional",
+      "Kone — groupe du Limpopo",
+      "Molepo — groupe nordique",
+      "Mamabolo — groupe avec un dialecte distinct",
+      "Lobedu (Balobedu) — sous-groupe matrilineaire connu pour la reine de la pluie Modjadji",
+      "Tlokwa — groupe dialectal reconnu",
+      "Hananwa — groupe establi dans les montagnes Blouberg",
+      "Birwa — groupe situe a la frontiere botswanaise"
+    ],
     "origins": {
-      "ancientOrigins": "Les Pedi sont originaires de la région de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Ancien royaume Pedi.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Pedi). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Bapedi descendent des Bantous Sotho-Tswana qui ont migre depuis l'Afrique orientale (region des Grands Lacs) vers l'Afrique du Sud en plusieurs vagues successives sur cinq siecles, au plus tard au 7e siecle de l'ere commune. Leurs ancetres communs avec les Sotho du Sud et les Tswana ont suivi la route du Zimbabwe occidental. Les Maroteng, sous-groupe des Kgatla (eux-memes Tswana), se sont separes et ont migre vers l'est pour s'etablir vers 1650 au sud de la riviere Steelpoort. La tradition orale attribue la fondation du clan a un ancetre nomme Thobele, dont les descendants ont progressivement etendu leur autorite sur les groupes voisins.",
+      "formationPeriod": "L'identite pedi distincte s'est consolidee entre le 15e et le 18e siecle. Vers la fin du 18e siecle, sous le clan Maroteng, un etat pedi unifie s'est forme en incorporant par la force ou par alliance de nombreuses chefferies voisines. L'apogee de cet etat correspond au regne de Thulare (vers 1780-1820). La denomination 'Northern Sotho' dans son sens moderne s'est fixee sous la colonisation puis l'apartheid.",
+      "migrationRoutes": [
+        "Afrique orientale (region des Grands Lacs) vers le Zimbabwe occidental — migration proto-Sotho en vagues du 2e au 7e siecle",
+        "Zimbabwe occidental vers l'est du Transvaal — les derniers groupes Sotho, dont les Hurutse, s'etablissent a l'ouest de Gauteng vers le 16e siecle",
+        "Separation des Maroteng (Kgatla) : migration vers l'est, etablissement entre Olifants et Steelpoort vers 1650",
+        "Expansion du royaume Pedi sous Thulare (vers 1780-1820) jusqu'au Vaal et au Limpopo"
+      ],
+      "historicalSettlementZones": [
+        "Sekhukhuneland — entre les rivieres Olifants et Steelpoort, actuel district de Sekhukhune (Limpopo)",
+        "Province de Limpopo, notamment les arrondissements de Sekhukhune, Mopani, Capricorn",
+        "Province de Gauteng (migration urbaine et miniere depuis le 19e siecle)",
+        "Mpumalanga du Nord",
+        "Homeland de Lebowa (1972-1994, apartheid) — reconstitution administrative du territoire historique"
+      ],
+      "unificationsOrDivisions": "Le royaume Pedi (Marota) s'est constitue par l'integration progressive de chefferies voisines sous la dynaste Maroteng aux 18e-19e siecles. La technique d'integration privilegiait les mariages consanguins : les fils de chefs subordonnes devaient epouser des cousines de la maison royale, creant un reseau d'obligations. Apres la defaite de 1879 face aux Britanniques et l'assassinat de Sekhukhune I en 1882, le royaume a eclate. L'apartheid a reconstitue artificiellement l'identite pedi dans le cadre du homeland de Lebowa, avant la reintegration dans une Afrique du Sud democratique en 1994.",
+      "externalInfluences": "Chocs du Mfecane (annees 1820) : invasion des Ndwandwe (Ndebele du Nord sous Mzilikazi) et raids des Swazis ont ebranle la puissance pedi. Contacts avec les missionnaires lutheriens alemands (Alexander Merensky, 1860s), qui ont introduit l'ecriture et contribue a la standardisation du Sepedi. Colonisation boere (Republique sud-africaine du Transvaal) et annexion britannique (1877). Apartheid (1948-1994) : creation du homeland de Lebowa. Migration vers les mines de Kimberley et le Witwatersrand depuis la fin du 19e siecle.",
+      "majorHistoricalEvents": "Vers 1780-1820 : apogee du royaume Pedi sous Thulare. 1827-1861 : Sekwati I consolide le royaume, reforme l'administration, accueille les missionnaires. 1861 : Sekhukhune I succede a son pere Sekwati et inverse certaines reformes. 1876 : Premiere guerre de Sekhukhune — la Republique du Transvaal declare la guerre ; les Pedi repoussent les commandos boers. 1879 : Deuxieme guerre de Sekhukhune — les Britanniques sous le general Wolseley et leurs allies swazis capturent Sekhukhune I ; il est emprisonne a Pretoria. 1882 : Sekhukhune I est assassine par son demi-frere Mampuru II. 1958 : Revolte de Sekhukhune contre les autorites bantou de l'apartheid ; deportation du chef Morwamotse. 1994 : Fin de l'apartheid et reintegration du territoire Pedi dans une Afrique du Sud democratique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Pedi). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le systeme politique pedi est centralise autour du kgosi (chef suzerain, pluriel dikgosi), titre comparable a celui de roi. Le kgosi Maroteng exercait une autorite supreme sur les kgoro (unites politiques villageoises). Chaque kgoro constituait une unite judiciaire et politique dirigee par un kgosana (petit chef). Le chef dependait d'un conseil d'anciens (lekgotla) pour gouverner et rendre la justice. Le kgosi avait aussi un role rituel de faiseur de pluie (moroka). Les chefs des kgoro subordonnes etaient lies a la maison royale par des mariages obliges et des paiements de bohadi (dot) astronomiques en betail, garantissant la loyaute des groupes affilies.",
+      "clanOrganization": "La societe pedi est organisee en kgoro (unites d'organisation sociale et politique, pluriel dikgoro). Chaque kgoro regroupe des familles liees par des liens patrilineaires autour d'un noyau de parents males. Le centre de chaque kgoro comprend un lieu de reunion, un kraal a betail, un cimetiere et un sanctuaire ancestral. Les clans sont identifies par des totems animaux : noko (porc-epic) pour les Maroteng, tau (lion), kolobe (phacochere), kwena (crocodile) pour d'autres. Les mariages de cousins croises sont privilegies pour perpetuer les liens inter-clans.",
+      "ageClassSystems": "Le systeme d'age (mephato, singulier mphato) est une institution fondamentale. Les garcons subissent la circoncision et l'initiation a la koma (ecole d'initiation) environ tous les cinq ans, en plein hiver, en presence d'un fils ou petit-fils de rang eleve du chef. Le chef de l'initiation devient le commandant a vie du regiment correspondant. Les regiments portent le nom du chef de l'initiation et leurs membres partagent une loyaute a vie. Les filles ont leur propre koma, deux ans apres celle des garcons, et sont organisees en leurs propres regiments (ditswa-bothuku). Ce systeme a aussi une fonction militaire historique.",
+      "roleOfLineages": "Les lignages patrilineaires (dikgoro) structurent l'organisation sociale, fonciere et politique. Le foyer est l'unite de base, centre sur la famille etendue patrilineaire. Le controle du sol et du betail est transmis en ligne masculine. Les femmes integrent le lignage de leur mari au mariage, apres paiement du bohadi (dot en betail). L'ancetre fondateur Thobele et les ancetres royaux Maroteng sont veneres comme mediateurs entre les vivants et le monde spirituel.",
+      "religiousAuthority": "L'autorite religieuse traditionnelle appartient aux ngaka (guerisseurs-devins, singulier ngaka ya setso), interpretes des volontes ancestrales et praticiens de la medecine traditionnelle. Le kgosi a un role de faiseur de pluie. Le malopo est un rituel de possession spirituelle et de guerison tenu par des guerisseurs traditionnels (bongaka), au cours duquel musique, chant et danse permettent de communiquer avec les ancetres. L'Eglise lutherienne (implantee depuis 1860) et d'autres Eglises chretiennes ont une presence importante depuis le 19e siecle, creant un syncretisme dynamique."
     },
     "languages": {
-      "mainLanguage": "Pedi / Sepedi",
-      "vehicularRole": "Le pedi est parlé par la majorité des Pedi. L'anglais, l'afrikaans et d'autres langues sont également utilisés."
+      "mainLanguage": "Sepedi / Sesotho sa Leboa (Northern Sotho)",
+      "isoCodes": ["nso"],
+      "dialects": [
+        "Sepedi — dialecte du clan Maroteng, base de la langue standard officielle",
+        "Sekopa — dialecte integre dans la standardisation officielle",
+        "Setau — dialecte du clan Tau",
+        "Seroka — dialecte du clan Roka",
+        "Selobedu — dialecte matrilineaire des Balobedu (reine de la pluie Modjadji)",
+        "Sehananwa — dialecte des Hananwa (region de Blouberg)",
+        "Setlokwa — dialecte des Tlokwa",
+        "Sebirwa — dialecte des Birwa (frontiere botswanaise)",
+        "Semamabolo — dialecte des Mamabolo"
+      ],
+      "vehicularRole": "Sesotho sa Leboa (Sepedi officiel) est l'une des 12 langues officielles de l'Afrique du Sud depuis la constitution de 1994. Il est langue d'enseignement dans les provinces de Limpopo et partiellement Gauteng et Mpumalanga. Avec environ 4,6 millions de locuteurs natifs (recensement 2011), c'est la quatrieme langue maternelle du pays. Le Sesotho sa Leboa joue un role vehiculaire dans le Limpopo ou il est compris par la majorite de la population. L'anglais est utilise dans les contextes formels et educatifs."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels pedi, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "L'initiation masculine (bodika ou koma) est le rite de passage central de la culture pedi. Tenu tous les cinq ans en plein hiver, il comprend la circoncision par un thipana (medecin de circoncision venant de l'exterieur), des sequences d'enseignement rituel en langue archaique, des epreuves d'endurance et des chants d'initiation. Les initiates sont organises en regiments (mephato) lies au chef et portent la couleur blanche (kaolin). A la fin, les jeunes hommes brulen leur lodge d'initiation (mphato) et recoivent un nouveau pagne de leur pere. Les filles ont leur propre koma deux ans apres. Le malopo est un rituel de guerison par la possession spirituelle et la transe, au cours duquel les guerisseurs (ngaka) dansent, chantent et jouent de la musique pour communiquer avec les ancetres afin de guerir les malades. Les funerailles sont marquees par plusieurs jours de deuil communautaire. Les mariages impliquent le paiement du bohadi (dot en betail) et des ceremonies collectives.",
+      "symbols": "Le porc-epic (noko) est le totem sacre du clan royal Maroteng et symbole d'identite pedi. Le betail (komo) symbolise la richesse, le prestige et les liens sociaux (bohadi). Le tambour (moropa) est central aux ceremonies rituelles. L'arc-en-ciel et la pluie sont lies au role ritual du kgosi faiseur de pluie. Les perles (mahe) et l'artisanat en metal sont des marqueurs d'identite et de statut. Les montagnes du Sekhukhuneland, notamment les Leolo Mountains, sont des lieux sacres ancres dans l'histoire de resistance.",
+      "artsAndMusic": "La musique pedi (mmino wa setso) est basee sur une gamme de six notes jouee sur des roseaux, une guimbarde (setinkane) et une cithare. Les tuyaux en aluminium ont remplace les roseaux historiques dans la kiba (musique des hommes). Types de chants et danses : Mpepetlwane (jeunes filles), Mmatshidi (hommes et femmes ages), Kiba/Dinaka (hommes et garcons, avec des tuyaux end-blown dinaka en aluminium ; version feminine appelee kosha ya dikhuru ou knee-dance avec choeur et tambours meropa lors de fetes et mariages), Dipela (tout le monde), Makgakgasa (femmes agees). La poterie traditionnelle, la forge de metal, le travail du bois (fabrication de tambours), les perles (beadwork) et la peinture murale des maisons sont des expressions artisanales distinctives. La poesie orale (mabalelo) et les proverbes (diane) transmettent l'histoire et les valeurs.",
+      "spiritualities": "La religion traditionnelle pedi est centree sur le culte des ancetres (badimo). Les ancetres sont consideres comme des intermediaires entre les vivants et la puissance divine. Les ngaka (guerisseurs-devins) interpretent les volontes des ancetres et soignent par la plante et le rite. Le malopo est la manifestation la plus spectaculaire du lien ancestral : en etat de transe induite par la musique et la danse, le guerisseur communie avec les esprits pour diagnostiquer et guerir. Le christianisme (principalement lutherien, depuis l'arrivee de Merensky en 1860, et Eglises independantes africaines) coexiste avec les pratiques traditionnelles dans un syncretisme vivant. Modimo est le terme pour la divinite supreme dans la cosmologie sotho."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora pedi dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume Pedi (Marota) sous la dynastie Maroteng a constitue l'une des principales puissances du Transvaal aux 18e-19e siecles. A son apogee sous Thulare (vers 1780-1820), il etait suffisamment puissant pour resister aux raids Ndwandwe et Swazi. Sekwati I (1827-1861) a consolide le royaume militairement et diplomatiquement. Sous Sekhukhune I, le royaume a resiste victorieusement a la Republique du Transvaal en 1876 (premiere guerre de Sekhukhune), avant de succomber face aux forces britanniques en 1879 (deuxieme guerre de Sekhukhune). L'etat Maroteng a disparu apres l'assassinat de Sekhukhune en 1882. Durant l'apartheid, le homeland de Lebowa a ete cree en 1972 sur une partie du territoire historique Pedi.",
+      "relationsWithNeighbors": "Les Pedi ont entretenu des relations complexes avec les Swazis (raids, alliances variables), les Ndebele du Nord de Mzilikazi (conflits dans les annees 1820), les Tsonga et Shangaan (commerce), les Afrikaaners du Transvaal (tensions, guerres puis incorporation coloniale). Les missionnaires lutheriens alemands (Merensky, 1860s) ont ete accueillis par Sekwati I, introduisant l'ecriture et l'education chretienne. Les Pedi ont aussi entretenu des relations commerciales avec les ports de l'est (ivoire, betail) via des intermediaires tsonga.",
+      "conflictsOrAlliances": "1827-1840 : Conflits avec les Ndebele de Mzilikazi et raids swazis, repousses grace aux forteresses montagneuses. 1876 : Premiere guerre de Sekhukhune — victoire pedi contre les commandos boers de la ZAR. 1879 : Deuxieme guerre de Sekhukhune — defaite face aux Britanniques du general Wolseley allies aux Swazis ; Sekhukhune I est emprisonne. 1882 : Assassinat de Sekhukhune par Mampuru II, fin de l'etat independant. 1958 : Revolte contre le systeme d'autorites bantou de l'apartheid dans le Sekhukhuneland. 1994 : Participation des Pedi au processus democratique sud-africain.",
+      "diaspora": "La migration de travail pedi vers les mines de diamants de Kimberley et les mines d'or du Witwatersrand a commence des la fin du 19e siecle. Dans les annees 1960, environ 48% des hommes pedi etaient absents comme migrants economiques. Les villes de Pretoria, Johannesburg et d'autres centres urbains de Gauteng accueillent des communautes pedi importantes. Les Pedi se trouvent aussi en plus petits nombres au Botswana et au Lesotho, partageant des affiliations historiques avec les groupes Sotho-Tswana."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 4600000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Statistics South Africa, Census 2011 (4,208,980 locuteurs Sesotho sa Leboa) ; projections 2025 basees sur le taux de croissance de la population sud-africaine. Ethnologue SIL (langue nso). Les chiffres englobent les locuteurs de Sesotho sa Leboa dans son ensemble, dont les Pedi au sens strict representent le groupe le plus important.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 4580000,
+          "note": "Principalement dans la province de Limpopo (districts de Sekhukhune, Mopani, Capricorn), Gauteng et Mpumalanga du Nord"
+        },
+        {
+          "country": "BWA",
+          "population": 15000,
+          "note": "Communautes de langue sotho-tswana a la frontiere botswanaise"
+        },
+        {
+          "country": "LSO",
+          "population": 5000,
+          "note": "Petites communautes liees aux groupes Sotho"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Pedi / Sepedi language (nso)",
-      "CIA World Factbook – South Africa",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Pedi people. https://en.wikipedia.org/wiki/Pedi_people",
+      "South African History Online — Pedi. https://sahistory.org.za/article/pedi",
+      "Britannica — Pedi. https://www.britannica.com/topic/Pedi",
+      "Kruger Park — Pedi African Tribe. https://www.krugerpark.co.za/africa_pedi.html",
+      "African Languages — Sesotho sa Leboa (Northern Sotho). https://africanlanguages.com/northern_sotho/",
+      "SIL Ethnologue — Northern Sotho (nso). https://www.ethnologue.com/language/nso/",
+      "Acta Theologica — The cultural and historical significance of malopo ritual. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S1015-87582014000500002",
+      "Literator — The elevation of Sepedi from a dialect to an official standard language. https://literator.org.za/index.php/literator/article/view/1827",
+      "Kwekudee — Pedi (Bapedi/Northern Sotho) People. https://kwekudee-tripdownmemorylane.blogspot.com/2013/06/pedi-bapedinorthern-sotho-people-south.html",
+      "Statistics South Africa — Census 2011. https://www.statssa.gov.za/"
     ]
   }
 }

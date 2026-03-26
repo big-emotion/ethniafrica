@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Mucubal",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "OvaMucubal",
+      "exonyms": ["Mucubai", "Mucabale", "Mugubale", "Cubal", "Mukubal"],
+      "originOfExonyms": "Le terme Mucubal est d'origine portugaise et designe en Angola le meme groupe que les ethnologues appellent Mukubal ou OvaMucubal. Les variantes Mucubai et Mucabale refletent des romanisations alternatives du nom bantou. La forme Cubal est parfois utilisee dans les sources anglophones.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mucubal est le plus repandu dans les sources angolaises et les medias internationaux. OvaMucubal est la forme adoptee dans les etudes academiques recentes. Le groupe est egalement designe comme Cubal dans la litterature ethnographique anglophone.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Herero (sous-groupe bantou)",
+      "historicalRegion": "Sud-Ouest Angola (province de Namibe, deserts du Namib)",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Mucubal"],
+    "ethnicities": ["OvaMucubal", "Mucubal"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Mucubal sont un sous-groupe des Herero, peuple bantou d'Afrique australe. Ils sont considers comme originaires d'Afrique de l'Est (Kenya), lies aux Massais selon certaines traditions orales. Ils auraient migre vers le sud-ouest au cours de la grande migration Herero et se seraient arretes dans le desert du Namibe il y a environ 300 ans (XVIIIe siecle). Selon une autre tradition, ils seraient arrives dans le desert du Namibe apres une longue migration depuis la region des Grands Lacs au XVIe siecle.",
+      "formationPeriod": "XVIe-XVIIIe siecle, lors de la migration Herero vers l'Afrique australe.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est (Kenya) vers l'Afrique du Sud-Ouest",
+        "Traverse de la region des Grands Lacs",
+        "Implantation dans le deserts du Namibe entre la Serra da Chela (nord) et la riviere Cunene (sud)"
+      ],
+      "historicalSettlementZones": [
+        "Desert du Namibe (province de Namibe)",
+        "Region de Virei",
+        "Triangle Virei-Namibe-Cangulo",
+        "Versants de la Serra da Chela jusqu'aux abords de Chiange"
+      ],
+      "unificationsOrDivisions": "Les Mucubal comprennent plusieurs sous-groupes dont les Mucuroca, consideres comme parmi les premiers Bantous a etre arrives dans le desert du Namibe angolais (XVIIIe siecle). Les Mucuroca auraient rencontre les Mucuis (peuples autochtones pre-bantous) et s'y seraient meles.",
+      "externalInfluences": "Contacts historiques conflictuels avec les Nyaneka-Nkhumbi (voisins du plateau). Soumission militaire portugaise en 1939 apres les campagnes de 1939-1943. En 1975, lors de l'invasion sud-africaine, les Mucubal se sont allies aux forces MPLA.",
+      "majorHistoricalEvents": "Entre 1939 et 1943, l'armee portugaise a mene des operations contre les Mucubal, accusés de rebellion et de vol de betail. Des centaines de Mucubal ont ete tues, 3 529 faits prisonniers (20% femmes et enfants), envoyes dans des camps (dont Damba, ou 26% moururent). Environ 600 furent deportes a Sao-Tome-et-Principe. Ces operations ont ete qualifiees de genocide par l'historien Rafael Coca de Campos. En 1975, les Mucubal s'allerent aux forces MPLA contre l'armee sud-africaine. Ils furent le dernier groupe a se soumettre a l'administration coloniale portugaise (1939)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation tribale-clanique dirigee par un soba (chef de village), dont le fils de la soeur est l'heritier legitime (descent matrilineaire). L'autorite paternelle est reconnue mais la filiation matrilineaire prime pour l'heritage.",
+      "clanOrganization": "Organisation matrilineaire: l'heritage du bétail et de la chefferie suit la ligne maternelle. Le fils d'un soba n'herite pas de son pere mais de son oncle maternel. Les Mucubal ne peuvent se marier qu'en dehors de leur clan, mais non avec des membres d'autres tribus comme les Himba.",
+      "ageClassSystems": "Ceremonie d'initiation (circoncision) constituant un rite de passage majeur pour les jeunes hommes. Ceremonie Fico presentant la fiancee a son futur mari autour de 14 ans.",
+      "roleOfLineages": "Les lignages maternels sont sacres et inaliénables. L'oncle maternel doit fournir a son neveu un boeuf appele Remussungo, tandis que le pere donne un boeuf appele Hupa. Les femmes mariees ne peuvent parler a leur mari en public avant la naissance du premier enfant.",
+      "religiousAuthority": "Devins et guerisseurs (nganga) exercant des fonctions spirituelles et therapeutiques. La divination est centrale dans la vie quotidienne pour proteger le bétail et prevenir l'adultere."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Herero (Otjiherero)",
+      "isoCodes": ["her"],
+      "dialects": ["OtjiMucubal (dialecte Mucubal de l'Otjiherero)"],
+      "vehicularRole": "L'herero est la langue maternelle et exclusive du groupe. Le portugais est utilise pour les contacts avec l'administration angolaise. Formules de salutation en Mucubal: Okamene (bonjour, matin), Tchou (reponse d'une femme), Mba (reponse d'un homme)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Circoncision comme rite de passage majeur, celebree collectivement. Ceremonie Fico de presentation de la fiancee. Funerailles pouvant durer plusieurs semaines, avec sacrifice de betail dont le nombre reflete le statut du defunt. Tombes decorees de cornes de bovins. Donga: combat a la baguette pratique par les jeunes guerriers, necessaire pour obtenir une epouse.",
+      "symbols": "Coiffure feminine Ompota: structure en osier remplie de queues de vache liees, decoree de boutons, coquillages, fermetures eclair et perles. Ceinture Oyonduthi portee par les femmes mariees. Couteau Omotungo porte par les hommes comme symbole de virilite. Huile de mupeque (fruit jaune seche) appliquee sur le corps. Dents superieures affilees et dents inferieures retirees chez les femmes, pratique d'identification culturelle forte.",
+      "artsAndMusic": "Percussion, chant et danse lors des ceremonies de sacrifice animal. Tambours utilises lors des fetes rituelles. Artisanat limite en raison du mode de vie nomade. Pipes en bois sculptées.",
+      "spiritualities": "Croyance en Huku (aussi appele Klaunga ou Ndyambi), divinite supreme. Culte des esprits ancestraux Oyo Handi et Ovi Huku, consideres comme inferieurs a la divinite supreme. Divination importante: amulettes et talismans pour proteger le betail ou prevenir l'adultere. Tabou alimentaire sur le poisson: selon la legende, un chef Mucubal emmene en mer par les Portugais ne revint jamais, ce qui associe le poisson a la mort des hommes. Le betail n'est consomme qu'a l'occasion de ceremonies: le regime ordinaire est base sur le lait, le sorgho, les oeufs et le poulet."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies (sobas) locales independantes sans royaume centralise. Les Mucubal ont maintenu leur autonomie vis-a-vis des royaumes voisins Nyaneka-Nkhumbi et ont resisté le plus longtemps a la colonisation portugaise.",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Nyaneka-Nkhumbi (vols de betail frequents). Tensions avec les Mugambue et les Mumuila voisins. Relations mixtes avec les Muhimba, partageant le meme espace pastoral mais souvent en competition pour les paturages.",
+      "conflictsOrAlliances": "Alliance avec le MPLA en 1975 contre l'invasion sud-africaine. Resistance prolongee a la colonisation portugaise jusqu'en 1939. Tensions contemporaines liees au vol de betail avec les Muhimba.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 70000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "101lasttribes.com – Cubal people; Lastplaces.com – The Cubal tribe of Angola (estimation ethnographique)",
+      "distributionByCountry": [{ "country": "AGO", "population": 70000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mucubal people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Mucubal_people)",
+      "Mucubais – Wikipedia (version portugaise) (https://pt.wikipedia.org/wiki/Mucubais)",
+      "Cubal people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/cubal.html)",
+      "The Cubal tribe of Angola – Last Places (https://lastplaces.com/en/travel-is-knowledge/cubal-tribe-of-angola/)",
+      "Kumakonda African Travel Experience – Tribes of Angola (https://kumakonda.com/tribes-of-angola/)",
+      "Slow Food Foundation – Mucubal Cattle, Ark of Taste (https://www.fondazioneslowfood.com/en/ark-of-taste-slow-food/mucubal-cattle/)",
+      "Embassy of Angola – Grupos Etnicos (https://angola.org/grupos-etnicos/)",
+      "Responsible Travel – Angola's tribal groups (https://www.responsibletravel.com/holidays/angola/travel-guide/angolas-tribal-groups)"
+    ]
   }
 }

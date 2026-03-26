@@ -2,67 +2,112 @@
   "id": "PPL_BAINOUK",
   "nameMain": "Bainouk",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["SEN", "GMB", "GIN"],
+  "currentCountries": ["SEN", "GMB", "GNB"],
   "content": {
     "appellations": {
       "mainName": "Bainouk",
-      "selfAppellation": "Bainouk",
-      "exonyms": ["Bainouk (terme utilisé par les Européens), Banyun"],
+      "selfAppellation": "Bainouk / Gunyaamolo (autonym de la variante principale)",
+      "exonyms": [
+        "Banyun (denomination portugaise puis mandingue, potentiellement signifiant commercants)",
+        "Banyuk, Banun, Banyum, Banyung (variantes orthographiques)",
+        "Bagnoun, Banhum (autres formes attestees)",
+        "Elomay, Elunay (designations alternatives)",
+        "Nuu, Nyun (formes locales courtes)"
+      ],
+      "originOfExonyms": "Le terme Banyun est attribue aux Portugais, qui l'auraient emprunte au mandingue pour designer collectivement plusieurs groupes etablis aux points strategiques des voies navigables, portages et routes commerciales entre le fleuve Gambie et les fleuves Cacheu. Banyun aurait peut-etre servi de terme generique pour commercant, comme dyula designe les commerçants mande engages dans le grand commerce. Selon une autre tradition mandingue (region du Pakao, Casamance centrale), Bainouk serait un terme pejoratif employe apres une defaite militaire face aux Mandinka a la fin du 16e siecle.",
+      "whyProblematic": "L'ethnonymie bainouk est complexe : le terme est a la fois exonyme portugais, denomination mandingue pejorative selon certaines traditions, et terme adopte par le groupe lui-meme. Une legende maudit le peuple bainouk suite a l'assassinat de leur roi tyran Gana Sira Bana par ses sujets, ce qui conduit certains a nier leurs origines. D'autres revendiquent activement le patrimoine bainouk.",
+      "contemporaryUsage": "Bainouk est le terme courant en français et en anglais pour designer ce peuple. Les locuteurs utilisent differents autonyms selon les dialectes (Gunyaamolo, Gunyuno, Samik). La langue est en danger d'extinction, classee comme menacee ou en mutation par le projet de langues en danger (2022). Certains Bainouk travaillent activement a la preservation de leur heritage linguistique et culturel.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Atlantique",
-      "historicalRegion": "SEN, GMB, GIN-Bissau",
-      "currentCountries": ["SEN", "GMB", "GIN"]
+      "ethnoLinguisticGroup": "Atlantique — sous-groupe Bainouk (branche propre, Niger-Congo Atlantique)",
+      "historicalRegion": "Basse Casamance (sud du Senegal actuel), region entre le fleuve Gambie et le fleuve Cacheu (nord-ouest Guinee-Bissau), cote ouest-africaine senegambienne",
+      "currentCountries": ["SEN", "GMB", "GNB"]
     },
     "ethnicities": [
-      "Bainouk du Sénégal",
-      "Bainouk de Gambie",
-      "Bainouk de Guinée-Bissau"
+      "Banyun orientaux — Ijaxer (formes par la fusion entre habitants anciens de la Casamance et arrivants de la region Tenda, pousses vers l'ouest par l'expansion de l'Empire du Mali)",
+      "Gunyun (Banyun occidentaux de la Casamance septentrionale, zone Bignona-Tobor-Niamone)",
+      "Nanyun (Banyun occidentaux, seconde branche)",
+      "Bainouk de Guinee-Bissau (autour de Cacheu et Sao Domingos, dialecte Gunyuno / Gujaher)",
+      "Bainouk de Gambie (migrants dans la region de Kombo et la West Coast Region)"
     ],
     "origins": {
-      "ancientOrigins": "Les Bainouk sont originaires du SEN, de la Gambie et de la Guinée-Bissau. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples ouest-africains, influence de l'islam et du christianisme."
+      "ancientOrigins": "Les Bainouk sont consideres par les scientifiques comme la plus ancienne population documentee du Senegal, et sont reputes premiers habitants de la Basse Casamance. Certaines traditions orales datent leur arrivee du 11e siecle de notre ere, tandis que les decouvertes archeologiques attestent une occupation humaine de la region bien plus ancienne. Les etudes genomiques (sequences d'ADN et haplogroupe L2b) confirment leur anciennete sur la cote senegambienne. Les Bainouk tels qu'ils sont connus aujourd'hui auraient ete formes par une fusion entre des habitants originel de la Casamance et des migrants venus des regions Tenda a l'est, pousses vers l'ouest par la montee en puissance de l'Empire du Mali.",
+      "formationPeriod": "Dans la periode medievale (10e-13e siecles), les Bainouk dominaient le commerce riverain et cotier de la region senegambienne, restrictivement les activites des marchands portugais. Au 15e siecle, au moins cinq etats bainouk existaient : Bichangor, Jase, Foni, Buguando et d'autres. A la fin du 16e siecle, ils conclurent un accord avec les Portugais contre le royaume de Kasa. Du 17e au 19e siecle, pression croissante des Mandinka, Balanta et Diola les fit refluer progressivement.",
+      "migrationRoutes": [
+        "Presence originelle dans la Basse Casamance et la region Senegambienne (peuple autochtone)",
+        "Retrait progressif vers le sud et l'ouest sous la pression mandinka (15e-19e siecles)",
+        "Migrations vers le nord-est du Senegal (Sine et Saloum) puis retour vers le sud-ouest sous la pression de l'Empire du Mali et des migrations serer"
+      ],
+      "historicalSettlementZones": [
+        "Basse Casamance (triangle Bignona-Tobor-Niamone, nord de Ziguinchor)",
+        "Rive gauche du fleuve Casamance (region Samik, environ 20 km a l'est de Ziguinchor)",
+        "Region de Cacheu et environs de Sao Domingos (Guinee-Bissau)",
+        "Region de Kombo (Gambie, Sud-Ouest)",
+        "West Coast Region (Gambie, zone frontaliere Casamance)"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Kasa (aussi connu sous le nom de Kasanga) etait le royaume dominant de la Basse Casamance au 15e siecle, avec une forte composante Bainouk / Kassanke. Les Bainouk ont fonde plusieurs etats independants (au moins cinq). Vassalise progressivement par l'empire du Kaabu (mandinka, 16e-19e siecles), le royaume bainouk fut definitivement detruit en 1830 lorsque leur capitale Birikama fut incendiee par les Balanta. Le roi fondateur legendaire, Gana Sira Bana (Ganasiraba Biaye selon certaines sources), aurait ete execute par ses sujets ; sa malediction (la promesse d'un avenir sombre pour les Bainouk) pese encore sur la memoire collective du groupe.",
+      "externalInfluences": "Islam : islamisation progressive depuis le 17e siecle sous l'influence des marchands et savants musulmans mandingues. Domination mandinka puis kaabu (16e-19e siecles). Pression des Diola, Balanta et Mancagne. Colonisation portugaise (Guinee-Bissau) et française (Senegal, Gambie). Influence moderne du wolof au Senegal et des creoles a base portugaise en Guinee-Bissau.",
+      "majorHistoricalEvents": "11e siecle : arrivee des Bainouk selon la tradition orale. 15e siecle : au moins cinq etats bainouk, composante dominante du Royaume de Kasa. Fin 16e siecle : accord avec les Portugais contre Kasa, puis durcissement de la politique face aux commercants europeens. 16e-19e siecles : pression croissante et retraite progressive face aux Mandinka, Balanta et Diola. 1830 : destruction de la capitale Birikama par les Balanta, fin du royaume bainouk. 19e siecle : forte absorption culturelle par les Mandinka et les Diola ; les Bainouk disparaissent des recensements de 1973 et 1983 en tant que groupe distinct."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe bainouk etait hierarchisee selon les classes d'age, le pouvoir des anciens et les rites d'initiation. La royaute bainouk etait matrilineaire : le pouvoir se transmettait aux fils des tantes maternelles (neveux matrilineaires) plutot qu'aux fils du roi. Birikama (aujourd'hui deuxieme ville de Gambie) aurait tenu son nom de la langue bainouk et signifierait Ville des Femmes, faisant reference au siege du gouvernement d'une ancienne societe matriarcale a direction feminine.",
+      "clanOrganization": "La societe bainouk est matrilineaire : la filiation, l'heritage du pouvoir et les droits communautaires sont transmis par la ligne maternelle. Des interdits de mariage entre Bainouk et d'autres groupes existent dans les deux sens : un prejuge tenace dit que celui qui epouse un Bainouk ne prosperera pas, ce qui explique partiellement l'endogamie et l'isolement progressif du groupe.",
+      "ageClassSystems": "Classes d'age et rites d'initiation jouent un role central dans la structuration sociale bainouk. L'initiation marque le passage a l'age adulte et l'integration dans la hierarchie sociale.",
+      "roleOfLineages": "Le pouvoir royal et les droits collectifs sont determines par le lignage matrilineaire. Les Bainouk entretiennent des liens de cousinerie (cousinage a plaisanterie) avec les Peuls, les Lebous et les Sereres. Les Peuls sont credites de les avoir sauves d'un massacre ordonne par un roi sanguinaire en leur fournissant un subterfuge pour l'eliminer.",
+      "religiousAuthority": "Les Bainouk sont aujourd'hui en grande partie musulmans (islamisation depuis le 17e siecle) ou chretiens. Certains rites de la religion originelle animiste persistent. Le kumpo, tradition rituelle originellement bainouk (melant elements bainouk et concepts mande), a ete adopte par les Diola."
     },
     "languages": {
-      "mainLanguage": "Bainouk",
-      "vehicularRole": "Le bainouk est parlé par la majorité des Bainouk. Le français, le portugais, le wolof et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Bainouk-Gunyaamolo (variante principale)",
+      "isoCodes": ["bcz", "bab"],
+      "dialects": [
+        "Bainouk-Gunyaamolo (bcz) : parle par environ 30 000 personnes en 2013, dans la zone nord de la Casamance (triangle Bignona-Tobor-Niamone) et en Gambie",
+        "Bainounk-Gujaher / Bainouk-Gunyuno (bab) : parle par environ 8 860 personnes en 2006, autour de Cacheu et Sao Domingos en Guinee-Bissau",
+        "Bainouk-Samik (bcb) : parle par environ 1 850 personnes en 2006, sur la rive gauche du fleuve Casamance, region de Samik, a l'est de Ziguinchor"
+      ],
+      "vehicularRole": "Les langues bainouk sont en danger critique d'extinction, classees comme menacees (Gunyaamolo) a en mutation (Gujaher) par les sources de linguistique de terrain. Elles sont de plus en plus supplantees par le mandingue, le diola, le wolof et le portugais creoleseggun les zones. La population totale de locuteurs est estimee a moins de 66 000 personnes au total dans trois pays. Le français est langue officielle au Senegal, l'anglais en Gambie, le portugais en Guinee-Bissau."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels bainouk, symboles islamiques et chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Kumpo (rite originel bainouk, adopte par les Diola et mele de concepts mande) : ceremony rituelle impliquant un masque tourbillonnant associe a des pouvoirs protecteurs. Rites d'initiation : passage a l'age adulte marque par des ceremonies communautaires encadrees par les classes d'age et les anciens. Rites de mariage : ceremonies respectant la hierarchie matrilineaire, avec transmission de droits et biens par la lignee maternelle. Rites agricoles : ceremonies liees aux cycles de la riziculture (principale activite), invocations des ancetres et des esprits de la terre pour assurer de bonnes recoltes. Funerailles : reunions communautaires importantes, honneur rendu aux ancetres.",
+      "symbols": "La riziculture est le symbole economique et identitaire central des Bainouk. Les tissus tisses et teints (artisanat de reference) sont des marqueurs culturels reconnus dans toute la region. La legende de Gana Sira Bana et de sa malediction constitue un symbole fondateur, a la fois tragique et identitaire, expliquant la dispersion et l'effacement progressif du peuple.",
+      "artsAndMusic": "Les Bainouk sont renommes pour leur maitrise du tissage et de la teinture des etoffes, heritage artisanal transmis depuis des siecles. Les traditions poetiques orales transmettent l'histoire du peuple, notamment la legende de Gana Sira Bana et les etapes des migrations. Musique accompagnant les ceremonies d'initiation, de mariage et de recolte. Le kumpo, rite devenu aussi une forme d'expression artistique masquee, est partage avec les peuples voisins.",
+      "spiritualities": "La religion originelle des Bainouk est animiste, centree sur le culte des ancetres et des esprits de la nature. L'islamisation a commence au 17e siecle sous l'influence des commercants et savants mandingues, et aujourd'hui une part significative des Bainouk est musulmane (le chiffre 101lasttribes indique la religion ethnique comme majoritaire, mais Joshua Project indique un melange). Des Bainouk sont aussi chretiens, notamment en Guinee-Bissau (influence catholique portugaise). Certains rites de l'animisme originel perdurent en syncretisme avec l'Islam ou le christianisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bainouk dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bainouk ont cree au moins cinq etats independants au 15e siecle : Bichangor, Jase, Foni, Buguando et d'autres. Ils constituaient la composante principale du Royaume de Kasa (Kasanga), royaume dominant de la Basse Casamance du 15e au 18e siecle. Le Royaume de Kasa exerçait son influence sur la region entre le fleuve Cacheu et le fleuve Gambie. Ces royaumes entretenaient un commerce florissant grace a leurs terres fertiles et leur maitrise des voies navigables.",
+      "relationsWithNeighbors": "Les Bainouk cohabitent traditionnellement avec les Diola, Mancagne, Balanta, Coniaghui, Peuls et Mandingues. Ils ont entretenu des relations commerciales privilegiees en controlant les voies d'acces aux routes interieures, limitant les activites des marchands portugais jusqu'au 16e siecle. La tradition les dit peuple pacifique et tolerant, accueillant les autres groupes en Casamance avant d'etre progressivement supplantes. Liens de cousinerie (cousinage a plaisanterie) avec les Peuls, Lebous et Sereres.",
+      "conflictsOrAlliances": "Alliance ponctuelle avec les Portugais contre le Royaume de Kasa (fin 16e siecle), puis retour a une politique restrictive vis-a-vis des commercants europeens. Domination progressive par les Mandinka et l'Empire du Kaabu (16e-19e siecles). Invasion balanta et destruction de Birikama (1830) mettant fin au royaume bainouk. Absorption culturelle progressive par les groupes mande et diola environnants.",
+      "diaspora": "La minorite bainouk est si reduite que le concept de diaspora ne s'applique pas de façon classique. Des Bainouk se trouvent dans les villes de Ziguinchor, Bignona (Senegal), Banjul et Serekunda (Gambie) et Bissau (Guinee-Bissau). La dispersion est plutot le resultat d'une dilution culturelle et demographique que d'une migration volontaire."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 66000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "101 Last Tribes : 66 000 au total dans 2 pays. SIL Ethnologue : Gunyaamolo (bcz) 30 000 locuteurs (2013) ; Gujaher (bab) 8 860 locuteurs (2006) ; Samik (bcb) 1 850 locuteurs (2006). Joshua Project (Bainouk, Gunyaamolo in Senegal) : 35 500 au Senegal. Estimation totale 2025 : entre 60 000 et 70 000 personnes dans les trois pays.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 45000,
+          "note": "Principalement en Basse Casamance (region de Ziguinchor, Bignona, triangle Tobor-Niamone) ; estimations variees entre 30 000 et 45 000"
+        },
+        {
+          "country": "GMB",
+          "population": 12000,
+          "note": "Region de Kombo et West Coast Region (frontaliere Casamance)"
+        },
+        {
+          "country": "GNB",
+          "population": 9000,
+          "note": "Region de Cacheu et environs de Sao Domingos ; locuteurs du dialecte Gujaher (bab)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bainouk language (bcz)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples atlantiques"
+      "Wikipedia EN — Bainuk people. https://en.wikipedia.org/wiki/Bainuk_people",
+      "Wikipedia EN — Banyun language. https://en.wikipedia.org/wiki/Banyun_language",
+      "Glottolog — Bainouk-Gunyaamolo-Gutobor (bcz). https://glottolog.org/resource/languoid/id/bain1261",
+      "Glottolog — Bainounk-Gujaher (bab). https://glottolog.org/resource/languoid/id/bain1259",
+      "Joshua Project — Bainouk, Gunyaamolo in Senegal. https://joshuaproject.net/people_groups/print/10665/SG",
+      "101 Last Tribes — Bainuk people. https://www.101lasttribes.com/tribes/bainuk.html",
+      "Djola History and Genealogy Society — Bainuk, Fulup and Baiote/Bayot. https://www.djola.org/history/blog-post-title-three-3bz78",
+      "Lüpke, Friederike & Storch, Anne — Repertoires and Choices in African Languages. De Gruyter Mouton, 2013."
     ]
   }
 }

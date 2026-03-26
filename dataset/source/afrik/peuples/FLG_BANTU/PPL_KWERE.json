@@ -6,54 +6,82 @@
   "content": {
     "appellations": {
       "mainName": "Kwere",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wakwere",
+      "exonyms": [
+        "Ngh'wele",
+        "Kwele",
+        "Ng'were",
+        "Kinghwele",
+        "Ngwele",
+        "Tsinghwele",
+        "Kikwere",
+        "Ching'hewele",
+        "Kakwere"
+      ],
+      "originOfExonyms": "Wakwere est le nom en swahili (prefixe Wa- pour les personnes). Ngh'wele ou Ngh'were est le nom propre dans leur langue. Kikwere est le nom swahili pour la langue. La forme Kwele est parfois utilisee en anglais.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kwere est utilise en tanzanien standard et en anglais pour designer ce peuple. Wakwere est la forme swahili. Ngh'wele est l'endonyme. La personnalite la plus connue d'ascendance Kwere est l'ancien president tanzanien Jakaya Kikwete.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Groupe Ruvu, Bantu de la cote nord-est (Northeast Coast Bantu), sous-groupe G.32",
+      "historicalRegion": "District de Bagamoyo, Region Pwani (cote), Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Kwere"],
+    "ethnicities": ["Kwere", "Wakwere", "Ngh'wele"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les ancetres des Kwere ont migre dans l'actuelle Tanzanie vers 1000 apr. J.-C. depuis le sud, dans la zone du nord du Mozambique actuel. Ils firent partie des migrations Bantu de la cote nord-est et s'installerent a l'interieur des terres depuis la cote, en contact avec les ancetres des peuples swahilis islamises. Les Kwere sont membres du sous-groupe Ruvu des langues Bantu de la cote nord-est (proto-Northeast-Coastal-Bantu), etroitement apparentes aux Zaramo, Luguru, Kutu, Kami et Doe.",
+      "formationPeriod": "Constitution en groupe distinct apres 1000 apr. J.-C. dans la zone de Bagamoyo. Les frontieres strictes entre les groupes matrilineaires de la cote (Zaramo, Kwere, Luguru, Kutu, Doe) n'ont ete fixees qu'a l'epoque coloniale britannique.",
+      "migrationRoutes": [
+        "Du nord du Mozambique vers la cote tanzanienne vers 1000 apr. J.-C.",
+        "Installation dans la zone de Bagamoyo, a l'interieur depuis la cote, repoussant progressivement les chasseurs-cueilleurs San"
+      ],
+      "historicalSettlementZones": [
+        "District de Bagamoyo (zone principale : 35 404 personnes en 1967)",
+        "District de Kisarawe (3 857 personnes en 1967)",
+        "District de Chalinze, Region Pwani",
+        "Zone entre Bagamoyo et la riviere Wami au nord, et jusqu'a Msata a l'ouest sur la route Dar es Salaam-Arusha"
+      ],
+      "unificationsOrDivisions": "Les Kwere n'ont jamais eu d'autorite centrale. Organisation en petits groupes de lignages matrilineaires auto-gouvernes. Durant la colonisation, deux sous-chefs (subchiefs) etaient choisis pour administrer la communaute, un systeme sans tradition autochtone stricte.",
+      "externalInfluences": "Presence swahilie et islamique forte sur la cote depuis plusieurs siecles. Expedition de David Livingstone dans leur region lors de sa deuxieme expedition. Colonisation allemande puis britannique. UNESCO Heritage Site nomme Bagamoyo. Pression demographique de Dar es Salaam avec achat de terrains par des citadins pour residences secondaires.",
+      "majorHistoricalEvents": "Arrivee des ancetres vers 1000 apr. J.-C. Contacts avec les peuples Swahili islamises sur la cote. Expedition de David Livingstone traversant leur territoire (XIXe siecle), dont le souvenir est celebre chaque annee par des touristes britanniques incluant des descendants de Livingstone. Nomination de Bagamoyo comme site du patrimoine mondial de l'UNESCO en 2011. Election de Jakaya Kikwete (d'ascendance Kwere) comme president de la Tanzanie en 2005."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Pas de systeme politique centralise en periode precoloniale. Chaque village avait un chef (mpasi) avant la colonisation europeenne. Organisation en petits groupes de lignages matrilineaires auto-gouvernes. Les lineage heads (mndewa) recevaient un nom special et un role avec attributions de terre, gestion des membres du lignage et maintien des coutumes. La chefferie actuelle coexiste avec un president de village elu (village chairman) qui detient le pouvoir administratif.",
+      "clanOrganization": "Organisation en clans matrilineaires. Certains clans pratiquent une alliance de plaisanterie (ugongo) entre eux. Chaque clan a un tabou alimentaire (food taboo). Le lineage head (mndewa) gere les terres claniques, les membres et les rites.",
+      "roleOfLineages": "Les matrilineages controlent l'attribution des terres et les rites. Les ancetres maternels et paternels sont honores dans les rituels. Les wagongo (partenaires de plaisanterie) accomplissent les rites pour les ancetres d'autres clans.",
+      "religiousAuthority": "Croyance en un dieu createur (merungu ou Mulungu) associe a la pluie. Culte des esprits ancestraux maternels et paternels. Consultation d'un devin (mganga) pour determiner les causes des calamites. Ceremonies de faiseurs de pluie (kutungula mvula) avec sacrifice de chevre ou antilope a un carrefour. Culte upungi utilisant les capacites de devins et medecins deces dont les os sont conserves dans des medicinebundles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kwere (Ngh'wele, Kikwere)",
+      "isoCodes": ["cwe"],
+      "dialects": [],
+      "vehicularRole": "Langue maternelle des Kwere. Le swahili est dominant sur la cote est-africaine depuis des siecles et les Kwere sont generalement bilingues kwere-swahili. Des anciens de Bagamoyo ont confirme ce bilinguisme lors d'une conference en 2002 pour la nomination UNESCO de Bagamoyo."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites d'initiation masculins : circoncision des garcons entre 5 et 7 ans dans la brousse, celebree par des danses. Rites d'initiation feminins : reclusion lors du premier cycle menstruel (mkore), serie de rites educatifs culminant dans une danse de sortie (mlao) marquant la maturite complete. Le mwana hiti est une poupee sculptee (figure de femme en bois) que les filles puberes prennent en charge comme un enfant reel pendant leur initiation, la lavant, l'huilant et la nourrissant, symbole de fertilite et de contact avec les ancetres.",
+      "symbols": "Le mwana hiti (petite figure humaine en bois) est le symbole le plus connu des Kwere, partage avec les Zaramo. Ces figurines stylisees avec coiffure traditionnelle distinctive sont utilisees lors des rituels d'initiation feminine et servent de lien avec les ancetres. Elles sont sculptees dans des siecles de tradition artistique.",
+      "artsAndMusic": "Les Kwere etaient historiquement renommes pour leur sculpture sur bois. Le mwana hiti est leur creation artistique la plus connue. Ils fabriquent aussi des pièges a animaux elabores. Vannerie, poterie et instruments de musique font partie de leur patrimoine. La biere traditionnelle (upele) est faite a partir de sorgho.",
+      "spiritualities": "Croyances traditionnelles centrees sur Mulungu (dieu supreme associe a la pluie) et les esprits ancestraux. Pratique du culte upungi (medecins defunts dont les os sont conserves). Une partie des Kwere s'identifie comme catholiques romains, d'autres comme musulmans nominaux. Contrairement a leurs voisins de la cote, les Kwere ne sont pas majoritairement islamises ; ils sont principalement chretiens selon le Joshua Project."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en villages independants avec un chef local (mpasi). Deux sous-chefs existerent durant la colonisation sans base dans une procedure traditionnelle etablie.",
+      "relationsWithNeighbors": "Relations commerciales et de mariage avec les Zaramo (au sud), les Zigula et les Doe (au nord), les Luguru (a l'ouest) et les Swahili (sur la cote). Les differences entre ces groupes matrilineaires Bantu de la cote sont minimales ; les frontieres strictes furent etablies par les administrateurs coloniaux britanniques.",
+      "conflictsOrAlliances": "Coexistence pacifique et intermariage frequents avec les groupes voisins (Zaramo, Zigula, Luguru). Relations commerciales etablies avec les pecheurs swahili. Influence de l'expedition Livingstone (XIXe siecle) sur les Kwere de Bagamoyo.",
+      "diaspora": "Petites communautes Kwere (Ngh'were) dans la region de Morogoro (3 764 en 1967) et a Dar es Salaam (2 902 en 1967)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 150000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur 98 000 en 1987 (Wikipedia Kwere people) et la tendance demographique tanzanienne. Le recensement de 1967 comptait 48 132 Ngh'wele. Les recensements post-1967 en Tanzanie ne relevent plus l'appartenance ethnique.",
+      "distributionByCountry": [{ "country": "TZA", "population": 150000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kwere people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwere_people)",
+      "Kwere language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwere_language)",
+      "Kwere in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12923)",
+      "Kwere people – 101 Last Tribes (https://www.101lasttribes.com/tribes/kwere.html)",
+      "Kwere Tribe – Gateway Africa (https://www.gateway-africa.com/tribe/kwere_tribe.html)",
+      "Kwere of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014972/)",
+      "Kwere Language (CWE) – Ethnologue, SIL International (https://www.ethnologue.com/language/cwe/)"
+    ]
   }
 }

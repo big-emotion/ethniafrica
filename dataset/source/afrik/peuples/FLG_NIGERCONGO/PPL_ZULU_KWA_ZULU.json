@@ -6,62 +6,98 @@
   "content": {
     "appellations": {
       "mainName": "Zulu (KwaZulu)",
-      "selfAppellation": "Zulu",
-      "exonyms": ["Zulu (terme utilisé par les Européens)"],
+      "selfAppellation": "AmaZulu asekwaZulu",
+      "exonyms": [
+        "Zulu du KwaZulu-Natal",
+        "Zulus du bantustan",
+        "KwaZulu Zulu"
+      ],
+      "originOfExonyms": "KwaZulu signifie Place des Zulu ou Terre des Zulu (kwa- = lieu de, Zulu = clan et peuple fondateur). Ce nom a d'abord designe le territoire ancestral (Zululand) puis a ete repris par le gouvernement d'apartheid pour nommer le bantustan cree en 1970. KwaZulu-Natal est le nom de la province issue de la fusion de KwaZulu et du Natal en 1994. La distinction KwaZulu souligne le contexte specifique du bantustan et du Zululand historique.",
+      "whyProblematic": "Cette fiche se distingue de PPL_ZULU en se concentrant sur les Zulu du territoire historique et du bantustan de KwaZulu, aujourd'hui province de KwaZulu-Natal. Le bantustan de KwaZulu (1970-1994) etait artificiel et fragmente (11 exclaves non contiguus), cree par le regime d'apartheid pour priver les Zulu de leur citoyennete sud-africaine. Traiter les Zulu de KwaZulu comme une entite separee comporte donc un risque de reproduire les categories de l'apartheid.",
+      "contemporaryUsage": "Aujourd'hui, la province de KwaZulu-Natal est le foyer ancestral de la grande majorite des Zulu d'Afrique du Sud. Le roi zulu (depuis 2021, le roi Misuzulu kaZwelithini) reside a Nongoma. L'institution royale zulu est formellement reconnue par la Constitution sud-africaine post-apartheid. L'Ingonyama Trust administre environ 32 % des terres de la province au nom de la nation zulu.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Afrique du Sud (KwaZulu-Natal)",
+      "ethnoLinguisticGroup": "Bantou (Zone S, Nguni meridional, groupe S42)",
+      "historicalRegion": "Zululand / KwaZulu — territoire ancestral zulu dans le nord et le centre de l'actuelle province de KwaZulu-Natal (autour de Nongoma, Ulundi, Eshowe, Empangeni)",
       "currentCountries": ["ZAF"]
     },
     "ethnicities": [
-      "Zulu du KwaZulu-Natal",
-      "Sous-groupes régionaux du KwaZulu-Natal"
+      "Usuthu (Zulu royaux) — partisans de la lignee royale directe, autour de Nongoma et Ulundi",
+      "Buthelezi — clan du chef Mangosuthu Buthelezi, important dans la politique du bantustan KwaZulu",
+      "Cele — clan cotier du KwaZulu-Natal meridional",
+      "Ngcobo — clan de la region de Nquthu, nord du KwaZulu-Natal",
+      "Mchunu — clan zulu des collines du centre du KwaZulu-Natal",
+      "Zibhebhu Mandlakazi — branche rivale de la famille royale, conflit post-Cetshwayo"
     ],
     "origins": {
-      "ancientOrigins": "Les Zulu du KwaZulu-Natal sont originaires de la région de l'Afrique du Sud, dans la province du KwaZulu-Natal. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Zulu.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Zulu du KwaZulu sont les Nguni etablis dans la region du nord du KwaZulu-Natal depuis le 16e siecle, avant l'unification par Shaka. Le fundateur eponyme Zulu kaMalandela est associe a la region de Nongoma. Le territoire du Zululand historique est compris entre la riviere Thukela au sud, le Pongola au nord, la cote de l'ocean Indien a l'est et le Drakensberg a l'ouest. Ulundi, capitale historique du royaume zulu, fut le site de la defaite finale face aux Britanniques en 1879.",
+      "formationPeriod": "Le Zululand comme territoire politiquement specifique emerge clairement avec Shaka (1816). Apres la defaite de 1879, le territoire est administre par les Britanniques et divise en 13 chefferies (1879-1883). Le Zululand est annexe a la colonie du Natal en 1897. Sous l'apartheid, le Zululand constitue le noyau du bantustan KwaZulu (1970), gouverne par le chef Mangosuthu Buthelezi comme Chief Minister de 1970 a 1994. En 1994, KwaZulu fusionne avec le Natal pour former KwaZulu-Natal, une des neuf provinces de l'Afrique du Sud democratique.",
+      "migrationRoutes": [
+        "Etablissement ancestral nguni dans le nord du KwaZulu-Natal, partie des migrations bantoues de la cote est",
+        "Expansion du Zululand sous Shaka (1816-1828) vers le nord jusqu'au Pongola et au sud jusqu'a la Thukela",
+        "Deplacements forces sous l'apartheid de zones dites points noirs (black spots) vers le bantustan KwaZulu (1948-1990)"
+      ],
+      "historicalSettlementZones": [
+        "Nongoma — siege de la royaute zulu, kraal royal (Ondini)",
+        "Ulundi — derniere capitale du royaume zulu independant, aussi capitale du bantustan KwaZulu (apres 1980)",
+        "Eshowe — ancienne garnison britannique et centre du Zululand colonial",
+        "Empangeni, Eshowe, Melmoth — villes du coeur du Zululand historique",
+        "Mahlabatini, Nqutu, Msinga — districts du Zululand rural"
+      ],
+      "unificationsOrDivisions": "Le Zululand a ete fragmente par les Britanniques apres 1879 (13 chefferies rivales). Des guerres internes (Cetshwayo vs Zibhebhu, 1883-1884) ont dechire le royaume. L'apartheid a cree le bantustan KwaZulu en 11 exclaves non contiguus, ce qui a affaibli economiquement la region. Mangosuthu Buthelezi (IFP) et l'ANC se sont affrontes violemment dans le KwaZulu-Natal dans les annees 1980-1990, faisant des milliers de morts. Apres 1994, la province KwaZulu-Natal a ete reintegree dans le cadre national.",
+      "externalInfluences": "La guerre anglo-zouloue (1879) a ete le moment decisif de la confrontation entre le Zululand et le pouvoir imperial britannique. Apres la defaite, le Zululand devient un territoire colonial soumis a l'administration britannique directe, aux missions chretiennes et a l'economie de plantation. L'apartheid (1948-1994) a cree KwaZulu comme bantustan, prive les Zulu de leur citoyennete sud-africaine et exproprié leurs terres. L'Ingonyama Trust (cree en 1994) a subsequemment gere les terres zulu ancestrales.",
+      "majorHistoricalEvents": "1816 : Shaka fonde le royaume zulu. 1838 : Bataille de Ncome (Blood River) contre les Voortrekkers. 22 janvier 1879 : Victoire zulu a Isandlwana. Juillet 1879 : Defaite a Ulundi, fin du royaume independant. 1883-1884 : Guerre civile, Cetshwayo exile. 1897 : Annexion du Zululand a la colonie du Natal. 1906 : Rebellion Bambatha (derniere resistance armee). 1970 : Creation du bantustan KwaZulu (Territorial Authority). 1975 : Buthelezi fonde l'Inkatha Cultural Liberation Movement. 1994 : Dissolution du bantustan, creation de la province KwaZulu-Natal. 2021 : Mort du roi Goodwill Zwelithini, succession de Misuzulu kaZwelithini."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaumes et chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le systeme politique traditionnel du KwaZulu repose sur la monarchie zulu (Ubukhosi) reconnue constitutionnellement. Le roi (inkosi yamaZulu) est le chef ceremoniel supreme, residant a Nongoma. L'Ingonyama Trust, dont le roi est president, administre environ 32 % des terres de KwaZulu-Natal. Les chefs locaux (amakhosi, sing. inkosi) sont reconnus par la loi sud-africaine (Traditional Leadership and Governance Framework Act). Durant l'apartheid, le bantustan KwaZulu avait une Assemblee legislative a Ulundi, presideo par Mangosuthu Buthelezi comme Chief Minister.",
+      "clanOrganization": "La societe zulu du KwaZulu est patrilineaire : filiation, heritage et statut passent par la ligne paternelle. Le clan (isibongo) est l'unite d'identite fondamentale. Le mariage exogame (interdiction d'epouser quelqu'un du meme isibongo) est la regle. La dot en betail (ilobolo) cree des alliances inter-claniques. L'Usuthu (partisans royaux) et le Mandlakazi ont ete les principaux clans rivaux au 19e siecle.",
+      "ageClassSystems": "Les regiments d'age (amabutho, sing. ibutho) constituent l'institution d'age traditionnelle. Institues par Shaka comme systeme militaire, ils ont une dimension ceremoniale aujourd'hui. Les amabutho royaux actuels participent aux ceremonies royales (umhlanga, ukweshwama) et organisent des travaux communautaires. La crainte que les amabutho ne deviennent des forces para-militaires a ete soulevee dans la periode post-apartheid.",
+      "roleOfLineages": "Les lignages patrilineaires (umuzi, kraal familial) sont les unites sociales de base. Le systeme ilobolo cree des liens inter-lignages. Dans le KwaZulu rural, les chefs locaux (amakhosi) maintiennent une autorite forte sur l'allocation des terres communautaires gerees par l'Ingonyama Trust.",
+      "religiousAuthority": "L'autorite religieuse est partagee entre la monarchie zulu (qui preside les ceremonies traditionnelles : umhlanga, ukweshwama), les sangoma et inyanga (specialistes spirituels traditionnels), et les eglises chretiennes. La Nazareth Baptist Church (Ibandla lamaNazaretha, fondee par Isaiah Shembe en 1911) a son centre au KwaZulu-Natal et combine elements zulu traditionnels et chretiens. Le roi Goodwill Zwelithini a revitalise les ceremonies traditionnelles (umhlanga, ukweshwama, circoncision depuis 2010)."
     },
     "languages": {
-      "mainLanguage": "Zulu",
-      "vehicularRole": "Le zulu est parlé par la majorité des Zulu du KwaZulu-Natal. L'anglais, l'afrikaans et d'autres langues sont également utilisés."
+      "mainLanguage": "IsiZulu",
+      "isoCodes": ["zul"],
+      "dialects": [
+        "Zululand Zulu — dialecte rural du Zululand historique (Nongoma, Ulundi, Eshowe), forme la plus conservatrice",
+        "Natal Zulu — variante du sud du KwaZulu-Natal, influences Xhosa et anglaises",
+        "Northern KZN Zulu — dialecte du Zululand nord, zone frontaliere avec le Swaziland (Eswatini)"
+      ],
+      "vehicularRole": "Au KwaZulu-Natal, 81,8 % de la population declare l'isiZulu comme premiere langue (recensement 2022), soit environ 10 millions de locuteurs dans la seule province. L'isiZulu est la seule province d'Afrique du Sud ou les locuteurs natifs zulu forment la majorite. L'anglais est la deuxieme langue de la province (14,4 %). L'isiZulu est enseignee dans les ecoles primaires du KwaZulu-Natal comme langue d'enseignement."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels zulu, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"royalRites\": {\"umhlanga\": \"Danse des roseaux — umkhosi woMhlanga — ceremonie annuelle au kraal royal d'Enyokeni (Nongoma). Des dizaines de milliers de jeunes femmes non mariees de toute la nation zulu collectent des roseaux dans les zones marecageuses et les apportent au roi pour reparer les clotures royales. Rite symbolisant la purete virginale et la dedicace a la nation. Le roi s'adresse a la jeunesse. Revitalise en 1984 par Goodwill Zwelithini.\", \"ukweshwama\": \"Ceremonie des premieres recoltes — sacrifice d'un taureau a mains nues par les jeunes guerriers du regiment royal. La force vitale du taureau est transmise au roi. Celebree a la recolte du mais. Sujet de controverses juridiques (Animal Rights Africa, 2009).\", \"umemulo\": \"Rite de maturite feminine (vers 21 ans) marquant la readiness au mariage. La famille offre une ceremonie au cours de laquelle la jeune femme porte des parures de perles elaborees.\"}, \"funeraryRites\": {\"burial\": \"Inhumation avec ceremonies d'invocation des ancetres (amadlozi). Sacrifice d'un animal pour accompagner le defunt. Les sangoma guident l'esprit du defunt. Ceremonies de deuil communautaires et inter-familiales.\"}, \"marriageRites\": {\"ilobolo\": \"Lobola (ilobolo) — dot traditionnelle en betail versee par la famille du marie. Dans le KwaZulu rural, les bovins restent la monnaie de reference pour la lobola. Symbolise le lien entre les familles et le respect mutuel.\", \"umabo\": \"Ceremonie de bienvenue de la mariee dans sa nouvelle famille — les femmes du clan du mari accueillent la jeune mariee par des chants et des danses.\"},  \"initiationRites\": {\"maleInitiation\": \"Le roi Goodwill Zwelithini a retabli la circoncision (umkhosi wokusoka) en 2010 comme rite masculin central, pour lutter contre le VIH/SIDA. Le rite se deroule dans le cadre des regiments amabutho royaux. La circoncision avait ete supprimee par Shaka au debut du 19e siecle.\", \"femaleInitiation\": \"L'umhlanga est la principale celebration feminine collective. Des rites de pubertes plus intimes (preparations au mariage) sont egalement observes dans les familles.\"}}",
+      "symbols": "Ulundi (ancienne capitale du royaume et du bantustan) est un symbole de la memoire historique zulu. Le kraal royal Ondini/Enyokeni a Nongoma est le centre symbolique de la royaute. L'Ingonyama Trust (terre ancestrale) represente le lien entre la nation zulu et son territoire. Le bouclier (ihawu), la sagaie (umkhonto) et la peau de leopard sont les insignes royaux. Les perles de beadwork en motifs specifiques au KwaZulu sont des marqueurs identitaires.",
+      "artsAndMusic": "{\"beadwork\": \"Le beadwork du KwaZulu-Natal est caracterise par des styles specifiques aux regions : les perles de la region de Nongoma-Zululand sont differentes de celles de la cote. Les systemes de couleurs et de motifs (Isisshunka, Isithembu, Umzansi) varient par clan et region. Le beadwork est transmis par les femmes et constitue une forme d'alphabetisation visuelle.\", \"isicathamiya\": \"Style vocal a cappella ne parmi les travailleurs migrants zulu du KwaZulu-Natal et Gauteng au debut du 20e siecle. Ladysmith Black Mambazo, originaire de Ladysmith (KwaZulu-Natal), est le groupe le plus celebre mondialement. L'isicathamiya est inscrit au patrimoine immateriel de l'UNESCO (2008).\", \"dances\": \"Indlamu — danse de guerre des guerriers zulu (bouclier et sagaie, sauts et frappes de pieds vigoureux). Umhlanga — danse collective des jeunes femmes. Ingoma — danse des regiments amabutho lors des evenements royaux.\", \"crafts\": \"Poterie traditionnelle noire (izinkamba) — artisanat feminin de renommee regionale. Tissage de nattes (izintebe). Travail de la paille et des herbes pour les objets de ceremonie. Beadwork elabore.\", \"music\": \"Amahubo — chants de louange royaux executesprès par les regiments amabutho. Izibongo — poesie de louange recitee par les imbongi (poetes officiels) lors des ceremonies royales.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"uNkulunkulu\", \"attributes\": \"Createur supreme, eloigne des affaires quotidiennes. Les interactions spirituelles quotidiennes passent par les ancetres (amadlozi). Le concept de uNkulunkulu a ete reencadre par les missionnaires methodistes et lutheriens au 19e siecle.\"}, \"intermediateEntities\": [{\"name\": \"Amadlozi\", \"description\": \"Esprits ancestraux centraux dans la spiritualite zulu du KwaZulu. Ils protegent les descendants, peuvent les affliger s'ils sont negliges, et sont invoques par les sangoma dans les seances de guerison et de divination.\"}, {\"name\": \"Sangoma\", \"description\": \"Specialiste rituel divin, elu par les ancetres via des reves. Central dans la vie spirituelle du KwaZulu-Natal rural. Consulte pour les maladies, les conflits familiaux et les decisions importantes.\"}], \"cosmology\": \"La philosophie ubuntu (umuntu ngumuntu ngabantu — une personne est une personne a travers d'autres personnes) est le fondement ethique et cosmologique zulu. Elle structure les relations sociales, l'identite collective et les obligations envers les ancetres et la communaute.\", \"christianity\": {\"specificPractices\": \"La Nazareth Baptist Church (Ibandla lamaNazaretha, fondee par Isaiah Shembe en 1911 a Inanda, KwaZulu-Natal) est l'expression chretienne syncrétique la plus specifiquement zulu. Elle incorpore la danse, les beads, les ceremonies ancestrales et l'isiZulu dans la pratique religieuse. Autres eglises importantes : Zion Christian Church, eglises reformees, catholiques et anglicanes.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora zulu dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Zululand historique a ete le siege du royaume zulu (1816-1879), l'une des puissances militaires les plus redoutables d'Afrique australe au 19e siecle. Ulundi (Ondini) fut la capitale du royaume sous Cetshwayo et le site de la defaite finale (1879). Apres la colonisation britannique, le Zululand est maintenu comme territoire distinct (Zululand, 1887) avant son annexion au Natal en 1897. Sous l'apartheid, il forme le noyau du bantustan KwaZulu, gouverne par Mangosuthu Buthelezi (1970-1994) avec une assemblee legislative a Ulundi.",
+      "relationsWithNeighbors": "Le Zululand a entretenu des relations complexes avec la colonie du Natal (britannique), avec le Swaziland au nord (alliances et rivalites), avec les Sotho au ouest (pression du Mfecane) et avec les Afrikaners/Boers (guerre de Ncome, 1838). L'IFP de Buthelezi et l'ANC se sont affrontes violemment dans les annees 1980-1990 au KwaZulu-Natal, faisant plusieurs milliers de morts dans des conflits politiques a dimension ethnique.",
+      "conflictsOrAlliances": "La guerre anglo-zouloue (1879) — Isandlwana (victoire), Rorke's Drift (resistance heroique), Ulundi (defaite). La rebellion Bambatha (1906) — derniere resistance armee des Zulu contre la domination coloniale britannique, ecrasee avec environ 4 000 morts. Les violences IFP-ANC du KwaZulu-Natal (1985-1994) — estimees a plus de 10 000 morts. La transition post-apartheid a vu la participation de l'IFP aux elections de 1994 (apres une entente de derniere minute), evitant un boycott et une escalade violente.",
+      "diaspora": "Des migrations importantes ont eu lieu depuis le KwaZulu-Natal vers Gauteng (mines d'or, industries) depuis la fin du 19e siecle. Johannesburg et ses banlieues comptent une tres importante communaute zulu originaire du KwaZulu-Natal. La culture isicathamiya est nee de cette experience migratoire dans les hostels miniers de Johannesburg. L'Ingonyama Trust administre les terres ancestrales pour les Zulu restes au KwaZulu-Natal, mais aussi pour ceux qui en sont partis."
     },
     "demography": {
-      "totalPopulation": 8000000,
+      "totalPopulation": 10500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Statistics South Africa — Recensement 2022 : KwaZulu-Natal compte 12,42 millions d'habitants, dont environ 84,8 % de Noirs africains (soit ~10,5 millions), dont la grande majorite est Zulu. Statistics South Africa — Mid-year population estimates 2025. Parlement d'Afrique du Sud — KwaZulu-Natal Provincial Profile 2025 : population de 12,37 millions en 2025 (estimations mi-annee). Ethnologue (SIL, 2024) : 81,8 % de la population de la province parle l'isiZulu comme premiere langue.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 10500000,
+          "note": "Province de KwaZulu-Natal (foyer ancestral). Principaux districts : eThekwini (Durban, 4,24 millions), uMgungundlovu (Pietermaritzburg, 1,24 millions), King Cetshwayo, Zululand (Nongoma), uThukela, Amajuba. La province a 12,37 millions d'habitants totaux en 2025."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Zulu language (zul)",
-      "CIA World Factbook – South Africa",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — KwaZulu. https://en.wikipedia.org/wiki/KwaZulu",
+      "Wikipedia EN — Zulu people. https://en.wikipedia.org/wiki/Zulu_people",
+      "Wikipedia EN — KwaZulu-Natal. https://en.wikipedia.org/wiki/KwaZulu-Natal",
+      "Wikipedia EN — Goodwill Zwelithini. https://en.wikipedia.org/wiki/Goodwill_Zwelithini",
+      "South African History Online — Inkatha Freedom Party. https://sahistory.org.za/article/inkatha-freedom-party-ifp",
+      "Britannica — KwaZulu. https://www.britannica.com/place/KwaZulu",
+      "Statistics South Africa — Mid-year population estimates 2025. https://www.statssa.gov.za/?p=18613",
+      "Parliament of South Africa — KwaZulu-Natal Provincial Profile 2025. https://www.parliament.gov.za/storage/app/media/Pages/2025/07-11-2025_NCOP_Provincial_week/background/KwaZulu-Natal_Profile.pdf",
+      "BBC — Goodwill Zwelithini. https://www.bbc.com/news/world-africa-56371742"
     ]
   }
 }

@@ -8,63 +8,92 @@
       "mainName": "Betsimisaraka",
       "selfAppellation": "Betsimisaraka",
       "exonyms": [
-        "Betsimisaraka (terme signifiant \"les nombreux inséparables\")"
+        "Les nombreux inséparables (traduction française du nom Betsimisaraka)"
       ],
+      "originOfExonyms": "Le nom Betsimisaraka a été donné par le roi fondateur Ratsimilaho (Ramaromanompo) au début du XVIIIe siècle pour désigner la confédération de clans qu'il avait unifiée sur la côte est. Le terme signifie les nombreux qui ne se séparent pas ou les nombreux inseparables.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme accepté et revendiqué comme ethnonyme officiel. Deuxième groupe ethnique de Madagascar selon tous les recensements et estimations contemporains.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Côte est de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynésien — groupe oriental côtier du malgache (dialectes betsimisaraka nord et sud)",
+      "historicalRegion": "Côte est de Madagascar — bande littorale s'étendant de Mananjary au sud jusqu'à Antalaha au nord, incluant le port de Toamasina (Tamatave), Fénérive Est (Fenoarivo Atsinanana) et Maroansetra",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Betsimisaraka du Nord",
-      "Betsimisaraka du Sud",
-      "Sous-groupes régionaux"
+      "Antavaratra — Betsimisaraka du Nord (de la baie d'Antongil vers Antalaha)",
+      "Antatsimo — Betsimisaraka du Sud (de Toamasina vers Mananjary)",
+      "Betanimena (anciennement Tsikoa) — sous-groupe intermédiaire séparant nord et sud",
+      "Zana-malata — sous-groupe d'ascendance mixte malgache-européenne (pirates, marins, commerçants européens du XVIIe-XVIIIe siècle)",
+      "Clans du nord de la baie d'Antongil (ayant des regalia de chefferie attestés depuis 1500)",
+      "Clans côtiers de Vatomandry et de Foulpointe (berceau historique de la confédération)",
+      "Communautés des forêts orientales (liées à l'agriculture et à la chasse)"
     ],
     "origins": {
-      "ancientOrigins": "Les Betsimisaraka sont originaires de la côte est de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Formation d'une confédération au XVIIIe siècle.",
-      "unificationsOrDivisions": "Formation d'une confédération Betsimisaraka au XVIIIe siècle. Organisation en groupes territoriaux distincts.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme."
+      "ancientOrigins": "Les Betsimisaraka descendent du peuplement austronésien de Madagascar (Ve-VIIe siècle ap. J.-C.) par des migrants depuis le sud de Bornéo (Ma'anyan-Banjar), mêlés à des populations bantoues d'Afrique orientale. Parmi tous les peuples malgaches, les Betsimisaraka ont l'une des proportions les plus élevées d'ascendance bantou-africaine (environ 70% d'origine africaine en moyenne), reflétant leur position côtière propice aux échanges avec la côte est-africaine. Depuis au moins le XVe siècle, des clans distincts occupaient les ports naturels de la côte est (Antongil, Foulpointe, Fenerive, Tamatave).",
+      "formationPeriod": "La confédération betsimisaraka a été fondée au début du XVIIIe siècle (vers 1710-1712) sous la direction de Ratsimilaho (fils d'une fille de chef local et d'un pirate britannique nommé Thomas Tew). Avant cette unification, des dizaines de clans indépendants se disputaient la côte est sous des chefs (filohany) contrôlant chacun un ou deux villages.",
+      "migrationRoutes": [
+        "Migration austronésienne depuis le sud de Bornéo via l'Inde et l'Afrique de l'Est vers Madagascar (Ve-VIIe siècle)",
+        "Apports bantous depuis la côte mozambicaine et swahilie (VIIe-XIIe siècle)",
+        "Contacts et mélanges avec des pirates et marins européens (Britanniques, Américains, Français) le long de la côte est (XVIIe-XVIIIe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Côte est de Madagascar de Mananjary (sud) à Antalaha (nord) — bande de 72 000 km2 environ",
+        "Port de Toamasina (Tamatave) — principal port de l'île",
+        "Baie d'Antongil et Nosy Boraha (Sainte-Marie) — centres historiques du commerce et de la piraterie",
+        "Villes de Fénérive Est (Fenoarivo Atsinanana) et Maroansetra",
+        "Plaine côtière et forêts humides orientales"
+      ],
+      "unificationsOrDivisions": "La confédération betsimisaraka (vers 1710-1754) a connu son apogée sous Ratsimilaho (Ramaromanompo), qui a unifié les clans côtiers sur 650 km de côte. Elle s'est fragilisée après sa mort (1754) sous des successeurs moins stables (Zanahary, Iavy, Zakavolo). La division en Betsimisaraka du Nord (Antavaratra) et du Sud (Antatsimo), séparés par le sous-groupe Betanimena, perdure culturellement et dialectalement.",
+      "externalInfluences": "Influence majeure des pirates et commerçants européens (Britanniques, Américains, Français) aux XVIIe-XVIIIe siècles — naissance du sous-groupe zana-malata (métis). Domination par le royaume Merina de Radama I (1817) imposant le fanampoana (travail forcé). Colonisation française (1896-1960) : plantations de vanille, ylang-ylang, café, cocotiers. Christianisation progressive aux XIXe-XXe siècles.",
+      "majorHistoricalEvents": "Unification par Ratsimilaho (1710-1712) et création de la confédération Betsimisaraka. Mort de Ratsimilaho (1754) et affaiblissement de la confédération. Aventure de Benyowsky (1776). Colonisation par Radama I (1817). Rébellion betsimisaraka avortée (1825). Résistance à la colonisation française (1895-1896). Soulèvement national de 1947 (initialement à Moramanga) avec de lourdes pertes betsimisaraka. Indépendance (1960). Présidence de l'amiral Didier Ratsiraka (Betsimisaraka), dirigeant la Deuxième République (1975-1992) et la Troisième République (1997-2002)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins) et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies (fanjakana) dirigées par des filohany (chefs de clan ou de village). La confédération betsimisaraka du XVIIIe siècle a tenté d'établir une autorité centrale mais les chefs locaux conservaient leurs prérogatives en échange du tribut. La structure sociale repose sur des tanky (unités de chefferie de la côte est). Le fokonolona (assemblée villageoise) est la base de la gouvernance locale contemporaine.",
+      "clanOrganization": "Organisation clanique patrilinéaire avec des filohany à la tête de chaque clan. Les clans maintiennent des droits fonciers et des obligations rituelles liées à leurs ancêtres. La présence du sous-groupe zana-malata (métis d'Européens) crée une stratification sociale particulière à la côte est.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le statut social, les droits fonciers et les alliances matrimoniales. L'identité lignagère est marquée par des fady (tabous) propres à chaque ancêtre fondateur, notamment l'interdiction de toucher certains animaux (anguilles, lémuriens) ou d'accomplir certains actes. Après la mort d'un chef, son nom et certains mots associés deviennent fady pour la communauté.",
+      "religiousAuthority": "Les tangalamena (officiants rituels, gardiens des traditions ancestrales) président les cérémonies communautaires. Les mpisikidy (devins) jouent un rôle central dans la santé et la divination. Le tromba (possession par les esprits ancestraux) est une institution spirituelle forte chez les Betsimisaraka. Les pasteurs et prêtres chrétiens coexistent avec les pratiques traditionnelles dans un syncrétisme dynamique."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte betsimisaraka)",
-      "vehicularRole": "Le malgache betsimisaraka est parlé par la majorité des Betsimisaraka. Le français est également utilisé."
+      "mainLanguage": "Malgache betsimisaraka (dialectes nord et sud de la côte orientale)",
+      "isoCodes": ["bmm", "bzc", "mlg"],
+      "dialects": [
+        "Malgache betsimisaraka du Nord (bmm) — parlé de la baie d'Antongil à Antalaha, environ 1 270 000 locuteurs selon Ethnologue",
+        "Malgache betsimisaraka du Sud (bzc) — parlé du nord de la région Vatovavy-Fitovinany vers Toamasina, environ 2 000 000 de locuteurs selon Ethnologue",
+        "Dialecte betanimena — variété intermédiaire du sous-groupe central",
+        "Malgache standard (plt/merina) — utilisé dans l'administration et l'enseignement",
+        "Français — langue officielle seconde, d'administration et d'enseignement supérieur"
+      ],
+      "vehicularRole": "Les dialectes betsimisaraka (nord bmm et sud bzc) sont les langues maternelles du groupe. Le malgache standard (merina) assure la communication nationale. Le basesa (genre musical local) est chanté en dialecte betsimisaraka. L'influence du swahili et du français est perceptible dans le vocabulaire du betsimisaraka septentrional. L'intercompréhension entre nord et sud est partielle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées à la pêche et à l'agriculture",
-      "Symboles": "Symboles liés à la mer, symboles liés à l'agriculture, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Culte des ancêtres (razana)."
+      "majorRites": "Tromba (possession par les esprits ancestraux) : cérémonie centrale de la vie spirituelle betsimisaraka, au cours de laquelle des mediums (hommes ou femmes) incarnent des esprits royaux ou ancestraux pour des consultations, guérisons et rites communautaires. Sambatra (circoncision collective) : rite de passage masculin accompagné de sacrifices de zébus et de grandes fêtes communautaires. Famadihana (retournement des ancêtres) : pratiqué surtout dans la zone de Maroantsetra. Folanaka (rites pour le dixième enfant). Rites liés à la pêche et aux cycles agricoles du riz. Sacrifices de zébus lors des funérailles, mariages et inauguration de nouvelles maisons. Komby (seclusion post-partum de la mère lors du premier accouchement).",
+      "symbols": "Le lémur est un symbole sacré : la croyance veut que les esprits des ancêtres résident dans les lémuriens — il est fady de les tuer ou de les manger, et on enterre les lémuriens morts avec les honneurs funèbres. Le crocodile est révéré et craint : des offrandes lui sont faites (quartiers arrière de zébu, oies), et des amulettes protègent contre ses attaques. La vanille et le girofle symbolisent l'économie et l'identité de la côte est. Le zébu est symbole de richesse et de statut.",
+      "artsAndMusic": "Musique : basesa — genre musical festif traditionnel accompagnant les rites du tromba, joué avec des kaiamba (hochets à graines), et en version contemporaine avec guitare électrique, basse, batterie et accordéon sous l'influence du sega et du kwassa-kwassa. Valse malgache (valse betsimisaraka) : genre hérité des contacts européens, joué à l'accordéon. Tissage de fibres de raphia pour confectionner les vêtements traditionnels : simbo (wrapper féminin) et akanjo (bandeau). Vannerie et artisanat local. Poésie orale (hainteny). Distillerie de toaka (rhum artisanal local) à Fenoarivo Atsinanana.",
+      "spiritualities": "Syncrétisme entre croyances traditionnelles et christianisme. Croyance en des entités surnaturelles : angatra (fantômes), zazavavy an-drano (sirènes), kalamoro (esprits de la forêt). Fady (tabous) multiples : interdiction pour un frère et une soeur de se serrer la main, interdiction de manger des anguilles pour certains clans, interdiction de porter des chaussures pour les jeunes hommes du vivant de leur père. Culte des ancêtres : les razana interviennent dans la vie des vivants — leur négligence entraîne des malheurs. Sorcellerie : croyance aux sorciers (mpamosavy) pouvant causer maladies et mort."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora betsimisaraka dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Confédération Betsimisaraka (1710-1754 environ) fondée par Ratsimilaho (Ramaromanompo — le Seigneur Servi par Beaucoup), avec sa capitale à Foulpointe. Il a unifié des clans dispersés sur 650 km de côte, créant l'une des entités politiques les plus puissantes de Madagascar au XVIIIe siècle. La confédération s'est affaiblie après sa mort : successeurs Zanahary (assassiné 1767), Iavy, Zakavolo (destitué et assassiné 1803). La conquête de Radama I (1817) a mis fin à toute autonomie politique.",
+      "relationsWithNeighbors": "Alliance historique avec les Bezanozano (alliance établie par Ratsimilaho pour le commerce et la protection). Relations commerciales intenses avec les pirates et marchands européens (commerce du riz, des esclaves, des produits locaux). Alliance avec le royaume Sakalava d'Iboina (mariage de Ratsimilaho avec Matave, fille du roi Andrianbaba). Conflits avec les Merina. Exportation intensive vers les îles Mascareignes (riz, bétail, esclaves).",
+      "conflictsOrAlliances": "Guerres inter-claniques avant l'unification (XVIe-XVIIe siècles). Unification par Ratsimilaho (1710-1712) après les incursions du chef Ramanano de Vatomandry. Résistance à Radama I (1817) : défaite et colonisation. Rébellion avortée contre la domination merina (1825). Résistance à la colonisation française (1895-1896). Insurrection de 1947 : des nationalistes betsimisaraka ont combattu des soldats français et sénégalais, subissant de lourdes pertes dont des exécutions par précipitation depuis des avions.",
+      "diaspora": "Diaspora interne à Madagascar vers Antananarivo, Mahajanga et d'autres villes. L'amiral Didier Ratsiraka (betsimisaraka de Vatomandry) a exercé le pouvoir présidentiel pendant deux décennies, illustration du poids politique du groupe. Présence dans la diaspora malgache en France, à la Réunion et au Canada."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 3900000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Estimations basées sur Ethnologue (SIL International, 2024 : environ 1 270 000 locuteurs betsimisaraka nord + 2 000 000 betsimisaraka sud), Britannica (deuxième groupe ethnique d'environ 15% de la population malgache estimée à 29-30 millions en 2025), Wikipedia (1,5 million en 2011). La projection 2025 intègre un taux de croissance annuel d'environ 2,6%.",
+      "distributionByCountry": [{ "country": "MDG", "population": 3900000 }]
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches"
+      "Wikipedia — Betsimisaraka people, https://en.wikipedia.org/wiki/Betsimisaraka_people (consulté 2025)",
+      "Britannica — Betsimisaraka, https://www.britannica.com/topic/Betsimisaraka (consulté 2025)",
+      "101 Last Tribes — Betsimisaraka, https://www.101lasttribes.com/tribes/betsimisaraka.html (consulté 2025)",
+      "Joshua Project — Betsimisaraka North in Madagascar, https://joshuaproject.net/people_groups/10819 (consulté 2025)",
+      "Wikipedia — Northern Betsimisaraka Malagasy (bmm), https://en.wikipedia.org/wiki/Northern_Betsimisaraka (consulté 2025)",
+      "Wikipedia — Southern Betsimisaraka (bzc), https://en.wikipedia.org/wiki/Southern_Betsimisaraka (consulté 2025)",
+      "Ethnologue — Northern Betsimisaraka Malagasy (bmm), https://www.ethnologue.com/language/bmm/ (consulté 2025)",
+      "Ethnologue — Southern Betsimisaraka Malagasy (bzc), https://www.ethnologue.com/language/bzc/ (consulté 2025)",
+      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
+      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012."
     ]
   }
 }

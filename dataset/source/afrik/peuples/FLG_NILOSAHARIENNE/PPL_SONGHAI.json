@@ -2,58 +2,110 @@
   "id": "PPL_SONGHAI",
   "nameMain": "Songhai",
   "languageFamilyId": "FLG_NILOSAHARIENNE",
-  "currentCountries": ["MLI"],
+  "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
   "content": {
     "appellations": {
       "mainName": "Songhai",
-      "selfAppellation": "",
-      "exonyms": ["Songhai (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ayneha",
+      "exonyms": [
+        "Songhay",
+        "Sonrhai",
+        "Sonrai (influence francaise)",
+        "Songoi",
+        "Songait",
+        "Zarma-Songhai (designation englobante)"
+      ],
+      "originOfExonyms": "Le terme Songhai designe historiquement la caste dirigeante de l'empire (les Songhaiborai), et non l'ensemble du groupe. Il fut impose par les chroniqueurs arabes et les explorateurs europeens. L'autodesignation collective est Ayneha, signifiant je parle (ma langue). Le terme Zarma (ou Djerma), nom du sous-groupe le plus nombreux, est souvent employe en synonyme.",
+      "whyProblematic": "La designation Songhai amalgame des groupes linguistiques et identitaires distincts (Zarma, Dendi, Wogo, Kurtey, Arma, Sohance etc.) qui ne partagent pas tous une identite commune. Historiquement, Songhai ne designait que la caste royale de l'empire. Le terme est aujourd'hui reapproprie comme identite collective par certains, rejete par d'autres qui preferent leur designation sous-groupale.",
+      "contemporaryUsage": "Songhai et Zarma-Songhai sont utilises dans les recensements du Niger et du Mali. Dans la vie quotidienne, chaque sous-groupe prefere sa propre denomination. La notion de Songhai est renforcee par la memoire collective de l'empire, notamment dans les regions de Gao et Tombouctou.",
       "linguisticFamily": "FLG_NILOSAHARIENNE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Gao, Tombouctou, région du Moyen Niger",
-      "currentCountries": ["MLI"]
+      "ethnoLinguisticGroup": "Famille des langues songhai (branche independante ou nilosaharienne selon les classifications)",
+      "historicalRegion": "Boucle du Niger (Gao, Tombouctou, Djenné, region du Moyen Niger) ; Mali, Niger, Benin",
+      "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"]
     },
-    "ethnicities": ["Songhai"],
+    "ethnicities": [
+      "Zarma (Djerma)",
+      "Songhaiborai (Sohance)",
+      "Dendi",
+      "Wogo",
+      "Kurtey",
+      "Arma",
+      "Igdalen",
+      "Idaksahak",
+      "Belbali"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Gao, Tombouctou, région du Moyen Niger"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Songhai descendent de la dynasty Za (ou Zuwa), fondateurs du royaume de Kukiya et Gao sur le Niger dans l'actuel Mali. La fondation legendaire attribue au chef Za Alayaman une origine yemenite, mais les historiens considerent les Sorko (peche sur le Niger) et les Gabibi (agriculture) comme les premiers groupes formant le substrat songhai. Le premier royaume de Gao est documente des le VIIe siecle apres J.-C.",
+      "formationPeriod": "La formation de l'identite songhai se consolide entre le Xe et le XIe siecle, avec la conversion a l'Islam du roi Za Kusoy (1009-1010) et l'etablissement de Gao comme capitale. L'empire atteint son apogee sous Sonni Ali Ber (1464-1492) et Askia Muhammad (1493-1529).",
+      "migrationRoutes": [
+        "Expansion vers l'ouest : conqete de Tombouctou (1468) et de Djenné (1473)",
+        "Repli vers le sud apres la bataille de Tondibi (1591) : formation de royaumes au Niger (Dendi, Wanzarbe, Karma, Namaro)",
+        "Migrations dues au commerce transsaharien : communautes commerçantes vers le Ghana, le Burkina Faso et la Cote d'Ivoire (XIXe-XXe siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Gao (capitale historique de l'empire, actuel Mali)",
+        "Tombouctou (Mali)",
+        "Djenne (Mali)",
+        "Region du Tillabery et Niamey (Niger)",
+        "Region de Dosso et Agadez (Niger)",
+        "Nord du Benin (pays Dendi)"
+      ],
+      "unificationsOrDivisions": "L'empire Songhai fut unifie par Sonni Ali Ber puis consolide par Askia Muhammad. Apres la bataille de Tondibi (1591) contre les Saadiens marocains, l'empire se fragmente. Les nobles se refugient au Niger pour former de petits royaumes. Les Arma (descendants de soldats marocains maries a des femmes songhai) forment le Pashalik de Tombouctou (independant des 1618).",
+      "externalInfluences": "Empire du Mali (XIIIe-XIVe siecle) : domination puis independance. Islam transsaharien : influence commerciale, intellectuelle et politique croissante depuis le Xe siecle. Invasion marocaine saadienne (1591) : effondrement de l'empire. Colonisation francaise (XIXe-XXe siecle) : integration des territories songhai au Soudan francais (Mali) et au Niger.",
+      "majorHistoricalEvents": "Za Kusoy se convertit a l'Islam (1009-1010). Sonni Ali Ber conqiert Tombouctou (1468) et Djenné (1473) : formation de l'empire. Apogee sous Askia Muhammad I (1493-1529) : administration centralisee, universites de Tombouctou. Bataille de Tondibi (13 mars 1591) : defaite face aux Marocains armes d'arquebuses. Fragmentation en petits royaumes. Emirat zabarma (1860-1897) au nord du Ghana et Burkina Faso."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe hautement hierarchisee sous l'empire : le souverain (askia ou sonni) exercait un pouvoir centralise et sacre, inaccessible sauf en position prostree. L'administration etait organisee en provinces dirigees par des gouverneurs nommes. Un systeme de poids et mesures fut instaure par Askia Muhammad I. Aujourd'hui, les chefferies locales persistent mais avec un role reduit au cadre ceremoniel.",
+      "clanOrganization": "Societe a castes hereditaires et endogames : nobles-guerriers, scribes, artisans (forgerons, tisserands, cordonniers), chasseurs, pecheurs, griots (Wanzam) et anciens esclaves (Horso, Bannye). Les sorciers-pretres (Sohance ou Si Hamey) forment un pseudo-groupe semi-hereditaire. Les mariages entre castes sont rares.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Descendance et succession patrilineaires. Les mariages preferentiels entre cousins croises sont courants. L'endogamie de caste est la norme. Chaque caste a son esprit gardien. La terre appartient aux lignages aristocratiques.",
+      "religiousAuthority": "Islam sunnite (majoritairement malekite) dominant depuis le Xe-XIe siecle. Les Zima sont des pretres-clercs islamiques initiatiques. Les Sohance (sorciers) maintiendent une tradition pre-islamique d'usage de puissances naturelles, tolere en parallele de l'islam. Les confreries soufies sont influentes. La croyance en esprits habitant les objets naturels coexiste avec la pratique islamique."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Zarma (Djerma)",
+      "isoCodes": ["dje", "ses", "hmb"],
+      "dialects": [
+        "Zarma (Djerma) — ISO 639-3 : dje — plus de 6 millions de locuteurs, Niger et Mali",
+        "Koyraboro Senni (dialecte de Gao) — ISO 639-3 : ses — environ 400 000 locuteurs",
+        "Koyra Chiini (dialecte de Tombouctou)",
+        "Humburi Senni (enclave de Hombori) — ISO 639-3 : hmb",
+        "Dendi (nord du Benin)",
+        "Tondi Kiini"
+      ],
+      "vehicularRole": "Les langues songhai (surtout le zarma-djerma) servent de lingua franca dans tout le sud-ouest du Niger et dans certaines parties du Mali. Le zarma est langue vehiculaire au Niger aux cotes du haoussa. L'affiliation genetique des langues songhai au groupe nilosaharien reste debattue (Dimmendaal 2008 propose une famille independante). Le français est la langue officielle dans les pays concernes."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mariage polygyne, preferentiellement entre cousins croises. Ceremonies de circoncision et d'excision (selon les zones). Rituel de possession des esprits (Hauka), tradition syncrétique melant esprits locaux et influences coloniales, encore pratiquee dans certaines communautes. Fetes islamiques (Eid al-Fitr, Eid al-Adha) celebrees a grande echelle.",
+      "symbols": "Le fleuve Niger, artere vitale de l'espace songhai : navigation, commerce, agriculture de decrue. Le cheval : symbole de noblesse (race djerma issue du croisement Dongola-Barbe). Les grandes mosquees de Tombouctou et Djenné (patrimoine UNESCO). La pirogue de pecheurs sorko sur le Niger.",
+      "artsAndMusic": "Griots (Wanzam) : depositaires de la memoire historique, genealogique et musicale. Musique au luth monocorde (guimbri), violon (goge) et percussions. Tradition litteraire islamique ecrite en arabe a Tombouctou (Universite de Sankore, XIVe-XVIe siecle). Artisanat du cuir et de la forge. Tissage de cotonnades et broderies. Le chant religieux soufie (dhikr) est tres repandu.",
+      "spiritualities": "Islam sunnite avec pratiques soufies (confreries Tijaniyya et Qadiriyya tres implantees). Persistance de la religion traditionnelle Zarma-Songhai, notamment le culte des esprits (Hauka, Holey). Les Zima et Sohance assurent l'interface entre monde des vivants et monde des esprits. Chaque caste venerait un esprit gardien specifique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Gao (VIII-IXe siecle). Empire Songhai (apogee XVe-XVIe siecle) : un des plus grands empires d'Afrique, s'etendant du Senegal a l'actuelle Nigeria, avec Gao pour capitale. Dynasties : Sonni (vers 1464-1493), puis Askia (1493-1591). Pashalik de Tombouctou (1591-1780). Emirat zabarma (1860-1897). Royaume Dendi (post-1591, Niger). Petits royaumes post-imperiaux : Wanzarbe, Ayerou, Karma, Namaro.",
+      "relationsWithNeighbors": "Commerce transsaharien avec les Touaregs, les Maures et les marchands arabes. Relations tendues avec l'Empire du Mali (conquis au XVe siecle). Alliance et conflit avec les Mossi, les Dogon, les Fulani, les Haoussa. Imposition du systeme de poids et de mesures dans les zones commerciales.",
+      "conflictsOrAlliances": "Repulsion des Mossi attaquant Tombouctou (1480). Siege de Djenné (7 ans, 1468-1473). Campagnes contre les Dogon et les Peuls. Bataille de Tondibi (1591) contre les Saadiens : defaite decisive. Resistance de l'Askia Nuh contre les Saadiens a Lulami. Emirat zabarma au Ghana et Burkina (1860-1897).",
+      "diaspora": "Depuis le XVIe siecle, des Songhai nobles et marchands se sont installes dans toute l'Afrique de l'Ouest (Ghana, Cote d'Ivoire, Burkina Faso, Benin, Togo, Nigeria). Migrations economiques contemporaines vers Accra, Abidjan, Lagos et les capitales europeennes. Le zarma est langue de migrants dans de nombreuses villes d'Afrique de l'Ouest."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 8400000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia – Songhai people (2024) : environ 8,4 millions ; Britannica : plus de 3 millions pour la seule boucle du Niger (les Zarma representant plus de 2 millions au Niger seul)",
+      "distributionByCountry": [
+        { "country": "NER", "population": 4500000 },
+        { "country": "MLI", "population": 2000000 },
+        { "country": "BEN", "population": 800000 },
+        { "country": "BFA", "population": 600000 },
+        { "country": "NGA", "population": 500000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia – Songhai people, 2024 (https://en.wikipedia.org/wiki/Songhai_people)",
+      "Wikipedia – Songhai Empire, 2024 (https://en.wikipedia.org/wiki/Songhai_Empire)",
+      "Wikipedia – Songhay languages, 2024 (https://en.wikipedia.org/wiki/Songhay_languages)",
+      "Britannica – Songhai (ethnolinguistic group), 2026 (https://www.britannica.com/topic/Songhai)",
+      "Britannica – Songhai Empire, 2024 (https://www.britannica.com/place/Songhai-empire)",
+      "Glottolog – Koyraboro Senni ISO 639-3 : ses (https://glottolog.org/resource/languoid/id/koyr1242)",
+      "South African History Online – Songhai, African Empire 15-16th Century (https://sahistory.org.za/article/songhai-african-empire-15-16th-century)"
+    ]
   }
 }

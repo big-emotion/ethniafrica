@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Tonga-Ila",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ba-Ila / Ba-Tonga",
+      "exonyms": ["Baila", "Shukulumbwe", "Sukulumbwe", "Ila-Tonga"],
+      "originOfExonyms": "Le terme Shukulumbwe (ou Sukulumbwe) est un exonyme attribue par des voisins, dont le sens exact reste debattu. Baila est la forme bantoue avec le prefixe de pluriel Ba-. Le regroupement Ila-Tonga ou Tonga-Ila reflete la proximite linguistique et culturelle des deux groupes, reconnus comme formant un continuum dialectal par les ethnologues.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les noms Ba-Ila et Ba-Tonga sont couramment utilises au sein des communautes et dans les textes officiels zambiens. Le regroupement Tonga-Ila designe le cluster sociolinguistique dans la litterature academique.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Botatwe (sous-groupe Bantu, zone M/K)",
+      "historicalRegion": "Province du Sud et Province Centrale, Zambie",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Tonga-Ila"],
+    "ethnicities": ["Tonga-Ila", "Ba-Ila", "Ba-Tonga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Ba-Ila appartiennent au Bantu oriental et sont arrives dans leur domaine actuel depuis le nord-est, depuis la region autour de l'extremite sud du lac Tanganyika. Leurs ancetres sont probablement venus du Soudan meridional dans un mouvement migratoire plus ancien. Des influences linguistiques occidentales sont egalement attestees, avec des mots partages avec des groupes Bantu d'Afrique centrale et occidentale, suggerant deux vagues migratoires distinctes.",
+      "formationPeriod": "Le groupe Botatwe dont font partie les Ila et les Tonga s'est constitue aux alentours de 1000 avant notre ere, avec le Proto-Botatwe septant des langues ancestrales pres de l'actuelle province du Haut-Katanga (RDC) et de la Copperbelt zambienne. Les Ba-Ila seraient parmi les premiers peuples bantu a s'installer en Zambie, vers le 1er siecle de notre ere selon certaines traditions orales.",
+      "migrationRoutes": [
+        "Depuis le Soudan meridional vers l'Afrique centrale orientale",
+        "Depuis la region du lac Tanganyika vers le sud-ouest",
+        "Influence supplementaire depuis l'Afrique centrale via le Congo"
+      ],
+      "historicalSettlementZones": [
+        "Vallee de la Kafue (Province du Sud, Zambie)",
+        "District de Namwala",
+        "District d'Itezhi-Tezhi",
+        "District de Mumbwa"
+      ],
+      "unificationsOrDivisions": "Les Ila et les Tonga ont toujours ete consideres comme deux groupes distincts mais etroitement apparentes, partageant langue et culture. Les Ila n'ont jamais eu d'organisation politique centralisee, etant repartis en dix-sept chefferies independantes dans la region de Bwila.",
+      "externalInfluences": "Influences des Lozi (Barotse) via les pressions migratoires, contact avec les missionnaires britanniques a partir du debut du 20e siecle (missions ouvrant des ecoles dans les annees 1920). Contact ancestral avec des populations de chasseurs-cueilleurs avant l'expansion bantoue.",
+      "majorHistoricalEvents": "Au debut du 20e siecle, les Ila ont ete etudies de facon approfondie par les missionnaires Edwin W. Smith et Andrew Murray Dale, qui ont publie en 1920 l'ouvrage de reference 'The Ila-speaking Peoples of Northern Rhodesia'. La colonisation britannique a profondement modifie les structures traditionnelles. Conversion progressive au christianisme depuis les annees 1920."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme decentralise sans chef supreme. Chaque territoire (shishi) independant est preside par un chef autonome (nkuwa). Les villages sont gouvernes par un chef de village et un conseil informel d'anciens. Un groupe de villages forme une communaute territoriale gouvernee de facon lache par un chef, les chefs de village formant un conseil. Les Ba-Ila n'ont jamais eu d'organisation politique centralisee ni de chef supreme.",
+      "clanOrganization": "La societe Ila est organisee en matrilineages locaux et en clans matrilineaires plus larges qui traversent les frontieres communautaires. L'appartenance clanique decoule de la lignee maternelle pour les grandes decisions (mariage, heritage), mais les liens patrilineaires jouent egalement un role selon les circonstances.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les matrilineages determinent principalement l'appartenance clanique et les obligations de mariage. Les depenses de mariage (prix de la fiancee en betail, couvertures, coquillages, houes) sont fournies en priorite par les relations matrilineaires du mari, avec une contribution des relations patrilineaires. Apres le mariage, la residence typique est dans le groupe familial elargi du pere du mari.",
+      "religiousAuthority": "Culte de Leza, l'etre supreme, et des esprits des ancetres familiaux. Les maitres du culte et les devins (bafumu) jouent un role central dans la vie spirituelle. L'autorite religieuse est traditionnellement diffuse et non centralisee."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ila (chiIla)",
+      "isoCodes": ["ilb"],
+      "dialects": [
+        "Lundwe",
+        "Sala",
+        "Chitwa (dialecte Twa des plaines de Kafue)"
+      ],
+      "vehicularRole": "L'Ila est etroitement apparente au Tonga (too) et appartient au cluster Botatwe (zone M.60 de Guthrie). La langue vehiculaire regionale est le Nyanja/Bemba selon les zones. Le cluster Ila-Tonga comprend environ 12 groupes dialectaux incluant Lozi, Koba, Lenje, Tonga, Totela, Ila et d'autres."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Le Shimunenga est le principal festival traditionnel, celebre a Maala dans le district de Namwala. Le chisungu designe les rites d'initiation a la puberte, terme commun a plusieurs langues Botatwe. Les funerailles sont des evenements importants durant plusieurs jours: le lendemain de l'inhumation, des vaches sont abattues en nombre proportionnel au statut social du defunt, et les participants repartent avec de la viande.",
+      "symbols": "Le betail (bovins) constitue le symbole central de richesse et de statut social chez les Ila. La possession de grands troupeaux est un indicateur de prestige. La region de Bwila est le territoire symbolique des pucka Ba-Ila.",
+      "artsAndMusic": "Tradition de poterie et d'artisanat. Musique et chants jouent un role dans les ceremonies funeraires et les celebrations communautaires. Les Ila sont connus pour leurs ornements corporels et leurs traditions vestimentaires distinctives.",
+      "spiritualities": "Religion traditionnelle centree sur le culte de Leza (Dieu supreme, concept largement partage dans les langues Bantu du sud) et la veneration des esprits ancestraux. La notion de tonda (tabou) est centrale dans la pratique religieuse. Depuis les annees 1920, de nombreux Ila sont chretiens, principalement protestants, suite aux missions britanniques, mais les pratiques traditionnelles perdurent en parallele."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Dix-sept chefferies independantes dans la region de Bwila (district de Namwala). Absence de royaumes centralises. Chaque chefferie est autonome sous un nkuwa (chef).",
+      "relationsWithNeighbors": "Relations etroites avec les Tonga, groupe culturellement et linguistiquement apparente. Contacts avec les Lenje, Bisa, Lozi et d'autres groupes Botatwe. Interactions historiques avec des populations de chasseurs-cueilleurs (BaTwa) anterieures a l'expansion bantoue.",
+      "conflictsOrAlliances": "Pressions de l'expansion du royaume Lozi (Barotse) du 18e au 19e siecle. La colonisation britannique (Rhodesie du Nord) a introduit de nouveaux systemes d'administration tout en maintenant les chefferies traditionnelles comme structures locales.",
+      "diaspora": "Presence principalement en Zambie, avec une forte concentration dans la Province du Sud et la Province Centrale. Mobilite interne liee a l'urbanisation vers Lusaka et d'autres centres urbains zambiens."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 170000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur les donnees du recensement zambien (les Ila represented environ 0,8% de la population zambienne soit environ 150 000-180 000 personnes). Joshua Project, 2024.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 170000,
+          "note": "Province du Sud et Province Centrale, principalement district de Namwala"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Edwin W. Smith et Andrew M. Dale, The Ila-speaking Peoples of Northern Rhodesia, 2 vol., 1920 (reedition Humanities Press, 1968)",
+      "Ila people – Wikipedia (https://en.wikipedia.org/wiki/Ila_people)",
+      "eHRAF World Cultures, Ila – Description et Summary (https://ehrafworldcultures.yale.edu/cultures/fq06/description)",
+      "Britannica, Ila – African tribe, Zambia (https://www.britannica.com/topic/Ila-people)",
+      "Joshua Project, Ila in Zambia (https://joshuaproject.net/people_groups/12208)",
+      "Botatwe languages – Wikipedia (https://en.wikipedia.org/wiki/Botatwe_languages)",
+      "Wiktionary, Appendix ISO 639-3 codes Africa – code ilb pour Ila (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+    ]
   }
 }

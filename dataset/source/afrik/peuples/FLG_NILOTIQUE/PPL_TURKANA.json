@@ -6,63 +6,101 @@
   "content": {
     "appellations": {
       "mainName": "Turkana",
-      "selfAppellation": "Turkana",
-      "exonyms": ["Turkana (terme utilisé par les Européens)"],
+      "selfAppellation": "ngiTurkana (les Turkana, ou peuple de Turkan)",
+      "exonyms": ["Turkana (terme européen)", "Bume (terme Nyangatom)"],
+      "originOfExonyms": "Le terme Turkana désigne à la fois le peuple et son territoire (Turkan). L'endonyme ngiTurkana signifie littéralement les gens de Turkan. Le préfixe ngi est la marque du pluriel humain dans les langues du cluster Ateker. Le nom Turkana a été adopté par les explorateurs et administrateurs britanniques au 19e siècle. Les Turkana se désignent eux-mêmes comme les gens du taureau gris (zebu), référence à leur bétail totémique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Turkana est utilisé de manière cohérente par les membres du groupe, l'administration kényane et la littérature scientifique. Le comté de Turkana (Kenya) porte leur nom. Les Turkana constituent le troisième groupe nilotique le plus important du Kenya (après les Kalenjin et les Luo). Le recensement kenyan de 2009 a comptabilisé 1 016 174 Turkana, ce qui en fait le dixième groupe ethnique du pays.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique oriental",
-      "historicalRegion": "Nord-ouest du Kenya",
+      "ethnoLinguisticGroup": "Nilotique oriental, cluster Ateker",
+      "historicalRegion": "Bassin du Turkana — comté de Turkana, nord-ouest du Kenya, à l'ouest du lac Turkana (anciennement lac Rodolphe)",
       "currentCountries": ["KEN"]
     },
     "ethnicities": [
-      "Turkana du Nord",
-      "Turkana du Sud",
-      "Sous-groupes régionaux"
+      "Ngimonia — grande division septentrionale, subdivisée en sections Ngisir et non-Ngisir",
+      "Ngichuuro — grande division méridionale, subdivisée en sections Ngilukumong, Ngiwoyakwara, Ngikamatak, Ngibilai et Ngikebotok",
+      "Ngimacharin — clans dont certains membres ont le poisson comme tabou alimentaire",
+      "Alternance Ngimór (Pierres) — l'une des deux alternances transversales structurant le système de génération",
+      "Alternance Ngirisáe (Léopards) — l'autre alternance transversale"
     ],
     "origins": {
-      "ancientOrigins": "Les Turkana sont originaires du nord-ouest du KEN, dans la région aride du Rift est-africain. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Turkana font partie du cluster Ateker, groupe de peuples nilotiques orientaux intimement apparentés comprenant également les Karamojong (Ouganda), les Jie, les Dodos, les Toposa (Soudan du Sud) et les Nyangatom (Éthiopie/Soudan du Sud). Les Turkana sont entrés dans le bassin du Turkana depuis le nord comme une seule unité de la confédération Ateker. Ils se sont différenciés progressivement au cours de conflits internes au sein du cluster. Les Turkana sortirent victorieux de ces conflits en intégrant les jeunes des groupes conquis dans leur propre structure d'âge, augmentant ainsi leur puissance militaire et démographique.",
+      "formationPeriod": "Dès le 17e siècle, la tradition de l'élevage du zebu et l'émergence des grands devins (ngimurok) — notamment le premier grand devin Lokerio — permirent aux Turkana d'accumuler richesses et puissance dans les plaines septentrionales du bassin. Ils se développèrent ensuite vers le sud, conquérant des groupes ethniques moins bien organisés militairement. Au début du 19e siècle, le bassin du Turkana était pleinement occupé par les Turkana et leurs alliés. La pression des Turkana vers l'est poussa les Toposa vers Kapoeta vers 1830.",
+      "migrationRoutes": [
+        "Entrée dans le bassin du Turkana depuis le nord comme unité de la confédération Ateker",
+        "Expansion vers le sud le long de la vallée du Rift est-africain",
+        "Pression vers l'est ayant contraint les Toposa à migrer vers Kapoeta (vers 1830)",
+        "Conquête des groupes ethniques au sud de leurs frontières initiales"
+      ],
+      "historicalSettlementZones": [
+        "Comté de Turkana (nord-ouest du Kenya) — territoire principal, à l'ouest du lac Turkana",
+        "Rive occidentale du lac Turkana (anciennement lac Rodolphe)",
+        "Triangle d'Ilemi — zone de pâturages transfrontalière (Kenya/Soudan du Sud)",
+        "Zones septentrionales du Rift est-africain (Éthiopie méridionale)"
+      ],
+      "unificationsOrDivisions": "Les Turkana sont divisés en deux grandes divisions (Ngimonia et Ngichuuro) et de nombreuses sections et clans. La société est décentralisée : avant les années 1870, les Turkana vivaient dans des territoires décentralisés (sections) organisés selon des systèmes d'âge et de génération. L'expansion méridionale a renforcé le pouvoir des devins (ngimurok) et des chefs de guerre. Avec la colonisation britannique et l'introduction des armes à feu, le système gérontocratique traditionnel a été progressivement fragilisé, menant à l'émergence des Ngoroko, un groupe de guerriers rebelles permanents.",
+      "externalInfluences": "Arrivée des Arabes (introduction de l'islam pour une minorité). Colonisation britannique au début du 20e siècle (postes de l'Afrique orientale britannique établis vers 1927 dans le Turkanaland septentrional). Résistance à l'occupation britannique par des guerriers utilisant leur connaissance du terrain. Sécheresses récurrentes dans les années 1970-1980-2000. Découverte du pétrole dans le comté de Turkana (années 2010). Présence de réfugiés de la région (camp de Kakuma, le plus grand de Kenya)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société turkana est décentralisée et semi-nomade. Il n'existe pas de chefferie centralisée héréditaire. L'autorité est exercée collectivement par les anciens (elders) dont le pouvoir est renforcé par leur rôle de médiateurs religieux entre les vivants et Akuj (dieu suprême). Les anciens, considérés proches de la mort et donc proches d'Akuj, sont les praticiens religieux exclusifs. Le système d'âge et de génération (athapan) organisait l'ensemble de la vie sociale et politique jusqu'à ce que la colonisation et les conflits armés en fragilisent l'autorité.",
+      "clanOrganization": "Les Turkana sont composés de deux grandes divisions (Ngimonia au nord et Ngichuuro au sud), subdivisées en nombreux clans (ngimacharin, marques ou clans). Chaque clan possède des tabous alimentaires spécifiques : par exemple, certains clans ont le poisson comme tabou. Les structures familiales et claniques déterminent les droits pastoraux, les alliances matrimoniales et les obligations rituelles. Les maisons turkana ont un cadre en bois en dôme de saules recouvert de feuilles de palmier doum (Hyphaene thebaica), de peaux ou de cuir.",
+      "ageClassSystems": "L'initiation masculine (athapan) se tient tous les quatre à cinq ans, généralement lorsque la nourriture est abondante. Les jeunes de 16 à 30 ans sont initiés en groupes. Le rite d'initiation (athapan) redéfinit l'affect et la loyauté des jeunes, les faisant passer de leur père biologique à leur groupe d'âge collectif. Le système turkana comprenait historiquement des ensembles de génération, mais ceux-ci ont été progressivement remplacés par un système d'alternances (l'un des deux groupes qu'un initié rejoint lors de l'athapan), considéré par l'anthropologue Gulliver (1958) comme le vestige d'un système de génération plus ancien. Le grand cérémonial de succession de génération (qui se produisait environ tous les 50 ans) a été abandonné.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'identité, les droits pastoraux, les obligations matrimoniales (dot en bétail) et les alliances politiques. Les Turkana se désignent symboliquement comme les gens du taureau gris. Le bétail (chèvres, chameaux, ânes, zebus) est à la fois producteur de lait/viande et monnaie pour les dots et héritages. Les échanges commerciaux avec les Pokot (maïs, haricots, légumes) et les Marakwet (tabac) complètent l'économie pastorale.",
+      "religiousAuthority": "Les ngimurok (devins) sont les figures spirituelles centrales de la société turkana. Ils jouent un rôle actif dans presque chaque événement communautaire. Ils identifient les sources de maladie, de malheur ou de conflit et prescrivent les sacrifices nécessaires. Les devins les plus respectés, dits devins de Dieu, reçoivent leurs révélations directement d'Akuj, normalement par des rêves. Les devins célèbres Lokerio et Lokorijem ont marqué l'histoire turkana : Lokerio aurait divisé le lac Turkana pour permettre à des guerriers de traverser à pied ; Lokorijem recevait des rêves d'Akuj l'informant des positions des colonisateurs britanniques. D'autres ngimurok spécialisés lisent les feuilles de thé, le tabac, les intestines d'animaux, les chaussures, les pierres ou des cordes."
     },
     "languages": {
-      "mainLanguage": "Turkana",
-      "vehicularRole": "Le turkana est parlé par la majorité des Turkana. Le swahili, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Turkana (ngiTurkana language)",
+      "isoCodes": ["tuv"],
+      "dialects": [
+        "Variété septentrionale (division Ngimonia, régions de Lokichokio et frontière avec le Soudan du Sud)",
+        "Variété méridionale (division Ngichuuro, régions de Lodwar et du lac Turkana)",
+        "Langues mutuellement intelligibles avec le Karamojong, le Jie, le Teso (Ouganda), le Toposa (Soudan du Sud) et le Nyangatom (Éthiopie) — cluster Ateker"
+      ],
+      "vehicularRole": "Le turkana est parlé par environ 990 000 personnes au Kenya (recensement 2009) et une minorité en Éthiopie. La langue fait partie du cluster Ateker des langues nilotiques orientales. Elle est étroitement apparentée au karamojong et au toposa. Le swahili et l'anglais sont les langues officielles utilisées dans les contextes administratifs et éducatifs au Kenya."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels turkana (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"L'initiation masculine (athapan) se tient tous les quatre à cinq ans lors des périodes d'abondance. Les jeunes hommes entre 16 et 30 ans sont initiés en groupes. La cérémonie redéfinit fondamentalement les liens d'appartenance : l'initié passe de la loyauté envers son père à la solidarité de son groupe d'âge. L'athapan implique des rites publics supervisés par les anciens et les ngimurok, qui bénissent les mariages et les nouvelles générations.\", \"femaleInitiation\": \"L'initiation féminine (akinyonyo) marque le passage à l'âge adulte sans circoncision. Elle implique des cérémonies supervisées par les anciens des deux sexes.\"}, \"birthRites\": {\"aikido\": \"Les rites de naissance (aikido) reconnaissent l'arrivée d'une nouvelle vie au sein de la communauté. Ils impliquent des cérémonies familiales et claniques supervisées par les anciens.\"}, \"marriageRites\": {\"akuuta\": \"Le rituel de mariage (akuuta) est une cérémonie communautaire où les anciens jouent un rôle central et un ngimurok bénit l'union. La dot en bétail est au coeur de la négociation. Les Turkana pratiquent la polygynie.\", \"bridewealth\": \"Le bétail constitue la principale forme de dot. Les liens de mariage renforcent les alliances entre lignages et sections.\"}, \"deathRites\": {\"akinuuk\": \"Les rites funéraires (akinuuk) impliquent des sacrifices d'animaux et des prières aux ancêtres. Les ngimurok communiquent avec les ancêtres pour déterminer le sacrifice approprié et aider les familles à restaurer l'harmonie.\"}, \"annualBlessings\": {\"apiaret\": \"Le sacrifice de bénédiction annuel (Apiaret an awi) est offert pour assurer la prospérité du groupe familial. Les traditions (ngitalio) suivies quotidiennement conduisent aux bénédictions (augmentation du bétail, des enfants et de la nourriture).\", \"turkanaboy\": \"Le site de Nariokotome, sur la rive occidentale du lac Turkana, est le lieu de découverte en 1984 du fossile Turkana Boy (KNM-WT 15000), squelette quasi complet d'un Homo erectus/Homo ergaster âgé de 1,5 à 1,6 million d'années — le squelette de préhumain le plus complet jamais découvert. Ce site est un lieu de mémoire de portée mondiale sur le territoire turkana.\"}}",
+      "symbols": "{\"greyBull\": \"Le taureau gris (zebu) est le symbole totémique des Turkana, qui se désignent eux-mêmes comme les gens du taureau gris. Le bétail est au centre de la cosmologie, de l'économie et des rituels sociaux turkana.\", \"atapan\": \"Le coiffure atapan (coiffe cérémonielle faite de plumes d'autruche) est un symbole de statut et de prestige portée par les hommes lors des cérémonies. Elle est maintenue sur la tête à l'aide du tabouret en bois (ekicholong) utilisé également comme siège et appuie-tête.\", \"ekicholong\": \"Le tabouret en bois sculpté d'une seule pièce, conditionné au jus de tabac, est à la fois siège, appuie-tête et protecteur de la coiffure cérémonielle. Emblème de la culture matérielle turkana.\", \"wristKnife\": \"Le couteau de poignet (en acier et cuir de chèvre) porté par les hommes est utilisé à la fois comme outil et comme arme. Symbole de la masculinité et de la prédisposition guerrière turkana.\"}",
+      "artsAndMusic": "{\"bodyAdornment\": \"Les Turkana ont développé une culture de l'ornement élaborée. Les femmes portent des colliers multiples et se rasent les cheveux (avec des perles attachées aux extrémités). Les vêtements distinguent les groupes d'âge, les stades de développement, les occasions et les statuts. Les hommes portent la coiffe de plumes d'autruche (atapan) lors des cérémonies.\", \"basket\": \"La vannerie serrée est produite pour usage quotidien et constitue une forme d'artisanat féminin reconnu. Les paniers sont utilisés pour le transport, le stockage et comme récipients pour la nourriture.\", \"music\": \"La musique traditionnelle turkana comprend des chants pastoraux (chants dédiés au bétail et aux chameaux), des chants de guerre et des chants rituels lors des cérémonies d'initiation, de mariage et de bénédiction annuelle. Les instruments comprennent des tambours et des cordophones simples.\", \"oralPoetry\": \"Les traditions orales turkana incluent de la poésie épique, des récits des hauts faits des grands devins (Lokerio, Lokorijem) et des hymnes de génération transmis lors des initiations.\", \"camelRaising\": \"L'élevage du chameau, introduit progressivement dans la culture turkana, est devenu un art qui distingue les Turkana de nombreux autres groupes nilotiques. Les Turkana sont réputés pour leur expertise dans la gestion des troupeaux de chameaux en milieu aride.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Akuj\", \"attributes\": \"Akuj est le dieu suprême qui a créé le monde et contrôle les bénédictions de la vie (eau, nourriture, bétail, enfants). Il est encore directement actif et préoccupé par sa création. Les ngimurok les plus respectés reçoivent leurs révélations directement d'Akuj, normalement à travers des rêves. Akuj parle directement aux devins sans intermédiaire.\"}, \"ancestors\": {\"endonym\": \"Ngipean ou Ngikaram\", \"description\": \"Les ancêtres sont malveillants s'ils ne reçoivent pas les sacrifices d'animaux appropriés. Ils possèdent parfois les vivants pour communiquer leurs exigences. L'Ancêtre Ekipe est actif dans la vie quotidienne de manière négative ; les chrétiens turkana l'assimilent au Diable ou à Satan.\", \"mediation\": \"Les ngimurok agissent comme intermédiaires entre les vivants et les ancêtres pour déterminer le type de sacrifice animal nécessaire à la restauration de l'harmonie, à l'appel de la pluie, au traitement des maladies des enfants ou à la bénédiction des familles lors des mariages.\"}, \"ngimurok\": {\"description\": \"Les ngimurok (devins, sg. emuron) sont les praticiens spirituels les plus importants de la société turkana. Plusieurs spécialisations existent selon la source de révélation : devins de Dieu (les plus respectés, révélations directes d'Akuj par rêves), et devins spécialisés (lecture de feuilles de thé, de tabac, d'intestines d'animaux, de chaussures, de pierres ou de cordes). Le célèbre devin Lokerio aurait divisé le lac Turkana permettant aux guerriers de traverser à pied. Lokorijem recevait régulièrement des rêves d'Akuj localisant les colonisateurs britanniques.\"}, \"cosmology\": {\"description\": \"Il n'existe pas de frontière entre le sacré et le profane dans la vision du monde turkana. La religion n'est pas différenciée de la structure sociale ou de la réalité épistémologique : religion et culture sont une seule et même chose. Les traditions (ngitalio) correctement suivies conduisent aux bénédictions (augmentation du bétail, des enfants, de la nourriture).\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora turkana dans les grandes villes kényanes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Turkana n'ont pas développé de royauté centralisée. La puissance turkana a été construite sur la supériorité militaire et tactique : expansion par conquête et intégration des jeunes des groupes vaincus dans leurs propres structures d'âge. Au 17e siècle, la combinaison de l'élevage du zebu et de l'émergence des grands devins (le premier étant Lokerio) leur permit d'accumuler richesses et pouvoir dans les plaines septentrionales. Au 19e siècle, ils avaient pleinement occupé le bassin du Turkana. La découverte en 1984 du fossile Turkana Boy (KNM-WT 15000) à Nariokotome (rive occidentale du lac Turkana) a conféré au territoire turkana une renommée mondiale en paléoanthropologie : ce squelette d'Homo erectus âgé de 1,5 à 1,6 million d'années est le plus complet jamais découvert.",
+      "relationsWithNeighbors": "Relations compétitives et souvent conflictuelles avec les groupes du cluster Ateker (Karamojong, Toposa, Nyangatom) pour les pâturages et le bétail. Raids réciproques avec les Samburu, les Pokot, les Maasai et d'autres groupes pastoraux du nord du Kenya. Relations commerciales avec les Pokot (échanges de maïs, haricots, légumes) et les Marakwet (tabac). Les Turkana ont également résisté à la colonisation britannique en utilisant leur connaissance du terrain aride.",
+      "conflictsOrAlliances": "17e siècle : guerres d'expansion vers le sud et l'ouest. 18e-19e siècle : domination progressive du bassin du Turkana. Vers 1870 : début de la perturbation du système gérontocratique traditionnel, émergence des Ngoroko (groupe de guerriers rebelles permanents). 1927 : établissement des postes britanniques dans le Turkanaland septentrional. 1984 : découverte du Turkana Boy (Nariokotome) par Kamoya Kimeu sous la direction de Richard Leakey. Post-1990 : conflits répétés avec les Toposa, les Merille et d'autres groupes le long des frontières. Tensions post-2010 avec les Toposa autour de Nadapal (plus de 40 morts, 4 000 animaux volés). Depuis 2012 : développement pétrolier dans le comté de Turkana.",
+      "diaspora": "Les Turkana sont essentiellement une population rurale et semi-nomade concentrée dans le comté de Turkana (Kenya). Une minorité s'est urbanisée dans les villes de Lodwar (chef-lieu du comté) et de Nairobi. Le camp de réfugiés de Kakuma, situé dans le comté de Turkana et l'un des plus grands du monde (accueillant principalement des réfugiés de Somalie, du Soudan du Sud et d'autres pays), a eu un impact socio-économique significatif sur la communauté turkana locale."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements kényans, SIL Ethnologue, et études démographiques"
+      "source": "Basé sur le recensement kenyan de 2009 (1 016 174 Turkana, soit 2,14 % de la population kényane). Chiffres initialement contestés par le ministre kenyan de la Planification Wycliffe Oparanya, puis validés par décision de justice le 7 février 2012 (juge Mohammed Warsame). Projection 2025 tenant compte du taux de croissance démographique du Kenya. Troisième groupe nilotique le plus important du Kenya (après les Kalenjin et les Luo) et dixième groupe ethnique national.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 1180000,
+          "note": "Comté de Turkana (nord-ouest du Kenya) : villes de Lodwar (chef-lieu), Lokichokio, Kakuma. Rive occidentale du lac Turkana. Territoire aride du Rift est-africain."
+        },
+        {
+          "country": "ETH",
+          "population": 20000,
+          "note": "Zones frontalières dans la région de Gambela et autour du lac Turkana (côté éthiopien), pasteurs transfrontaliers saisonniers."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Turkana language (tuv)",
-      "CIA World Factbook – Kenya",
-      "Recensements kényans",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Turkana people. https://en.wikipedia.org/wiki/Turkana_people",
+      "Wikipedia EN — Turkana language. https://en.wikipedia.org/wiki/Turkana_language",
+      "Wikipedia EN — Turkana Boy. https://en.wikipedia.org/wiki/Turkana_Boy",
+      "Smithsonian Human Origins — KNM-WT 15000 (Turkana Boy). https://humanorigins.si.edu/evidence/human-fossils/fossils/knm-wt-15000",
+      "Turkana Basin Institute — All About Turkana Boy. https://www.turkanabasin.org/turkanaboy/",
+      "Glottolog — Turkana (tuv). https://glottolog.org/resource/languoid/id/turk1308",
+      "Ethnologue — Turkana (TUV). https://www.ethnologue.com/language/tuv/",
+      "eHRAF World Cultures — Turkana. https://ehrafworldcultures.yale.edu/cultures/fl17/summary",
+      "Gulliver, P.H. 1955. The Family Herds: A Study of Two Pastoral Tribes in East Africa, the Jie and Turkana. London: Routledge.",
+      "Gulliver, P.H. 1958. The Turkana age organization. American Anthropologist 60:900-922.",
+      "Lamphear, John. 1992. The Scattering Time: Turkana Responses to Colonial Rule. Oxford University Press.",
+      "Ethnology (Pitt) — The Filial Disaffection of a Turkana Age-Set. https://ethnology.pitt.edu/ojs/index.php/Ethnology/article/download/6085/6290",
+      "CIA World Factbook — Kenya. https://www.cia.gov/the-world-factbook/countries/kenya/"
     ]
   }
 }

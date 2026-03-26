@@ -7,59 +7,93 @@
     "appellations": {
       "mainName": "Basoga / Soga",
       "selfAppellation": "Basoga (sg. Musoga)",
-      "exonyms": ["Soga ; « Busoga tribes » (terminologie coloniale)"],
+      "exonyms": ["Soga", "Busoga tribes (terminologie coloniale britannique)"],
+      "originOfExonyms": "Le terme Soga est une forme abrégée utilisée par les explorateurs et administrateurs européens depuis le XIXe siecle. L'appellation Busoga (Usoga en swahili) est attestee des 1862 lors de l'arrivee de John Hanning Speke aux chutes Ripon.",
+      "whyProblematic": "L'expression Busoga tribes, utilisee pendant la colonisation britannique, reduisait les Basoga a une simple agregation de chefferies sans reconnaitre leur unite culturelle et linguistique reelle.",
+      "contemporaryUsage": "Basoga est le terme officiel utilise en Ouganda. Musoga designe l'individu, Basoga le peuple, Lusoga la langue et Busoga le territoire.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Est de l’Ouganda)",
-      "historicalRegion": "Royaume de Busoga (entre lac Victoria et lac Kyoga)",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Est de l'Ouganda, zone J)",
+      "historicalRegion": "Royaume de Busoga (entre le lac Victoria au sud, le lac Kyoga au nord, le Nil Victoria a l'ouest et la riviere Mpologoma a l'est)",
       "currentCountries": ["UGA"]
     },
     "ethnicities": [
-      "Basoga des différents principalités (sous-chefferies de Busoga)",
-      "À préciser (sous-groupes régionaux au sein du Busoga)",
-      "À préciser (autres segments internes et lignages)"
+      "Bugabula — chefferie royale, dirigee par le Gabula, berceau du titre Kyabazinga",
+      "Bulamogi — chefferie dirigee par le Zibondo, nord de Busoga",
+      "Kigulu — chefferie dirigee par le Ngobi, l'une des plus anciennes dynasties Baisengobi",
+      "Bukooli — chefferie dirigee par le Wakooli, a l'est de Busoga",
+      "Luuka — chefferie dirigee par le Tabingwa",
+      "Bukono — chefferie dirigee par le Nkono",
+      "Butembe — chefferie dirigee par le Ntembe",
+      "Bugweri — chefferie dirigee par le Menha",
+      "Busiki — chefferie dirigee par le Kisiki",
+      "Bunha — chefferie dirigee par le Luba",
+      "Bunhole — chefferie dirigee par le Nanhumba"
     ],
     "origins": {
-      "ancientOrigins": "Peuples bantous installés entre le Nil Victoria et le lac Kyoga, avec des liens historiques avec les royaumes voisins (Buganda, Bunyoro).",
+      "ancientOrigins": "Les Basoga sont un peuple bantou installe dans l'est de l'Ouganda, dans la region naturelle de Busoga, depuis au moins le Ve siecle de notre ere. Les recherches historiques rattachent leur origine aux locuteurs bantous qui ont penetre l'Ouganda depuis le Katanga septentrional (actuelle Republique democratique du Congo) entre 400 et 1000 de notre ere.",
+      "formationPeriod": "Entre 1250 et 1750, deux figures culturelles fondatrices — Mukama et Kintu — sont associees aux migrations et a l'organisation politique de Busoga. L'arrivee de migrants Luo entre 1550 et 1700 a conduit a la formation de zones culturelles differenciees : une zone bantou au sud pres du lac Victoria, et une zone d'influence luo au nord pres du lac Kyoga.",
       "migrationRoutes": [
-        "Mouvements locaux autour du lac Victoria et expansion vers le nord-est de la région."
+        "Entree depuis le nord du Katanga (DRC) vers le sud de l'Ouganda avant le Xe siecle",
+        "Expansion depuis le sud (lac Victoria) vers le nord, le long du Nil Victoria",
+        "Migrations internes liees aux Luo venus de l'est entre 1550 et 1700"
       ],
-      "unificationsOrDivisions": "Busoga comme union de plusieurs principautés (chefferies) sous une royauté (Kyabazinga).",
-      "externalInfluences": "Influences des royaumes voisins, puis de la colonisation britannique et des missions chrétiennes."
+      "historicalSettlementZones": [
+        "Rive nord du lac Victoria (zone bantou meridionale)",
+        "Plaine entre le lac Kyoga et la riviere Mpologoma (zone septentrionale d'influence luo)",
+        "Bande territoriale de 8 920 km2 entre le Nil Victoria et la riviere Mpologoma"
+      ],
+      "unificationsOrDivisions": "Busoga comme union de plusieurs principautes autonomes (chefferies) : avant 1906, il n'existait pas de souverain central. La colonisation britannique a installe un administrateur central en 1906 et cree le titre de Kyabazinga en 1918-1919. Le premier Kyabazinga officiel fut Ezekiel Tenywa Wako (1939). Les monarchies furent abolies en 1966 et restaurees en 1995 par la Constitution ougandaise (Article 246). William Kadhumbula Gabula Nadiope IV est l'actuel Kyabazinga depuis 2014.",
+      "externalInfluences": "Influences des royaumes voisins de Buganda et Bunyoro (dont les cinq chefferies fondatrices derivent du clan Baisengobi de Bunyoro). Impacts de la colonisation britannique (1900-1962), des missions chretiennes protestantes et catholiques, et de l'epidemie de maladie du sommeil (1898-1910) qui a depeuple le sud de Busoga.",
+      "majorHistoricalEvents": "Epidemie de trypanosomiase (1898-1910) ayant depeupl le sud de Busoga. Famine de 1898-1900, 1907, 1917, 1944. Abolition des monarchies en 1967 par Idi Amin Dada. Restauration du royaume en 1995. Emergence de Jinja comme capitale economique de l'Ouganda (barrage Owen Falls, industries textiles et sucrieres)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Fédération de 11 principautés historiques, dirigée par le Kyabazinga (roi) de Busoga.",
-      "clanOrganization": "Clans et lignages au sein de chaque principauté, organisant parenté, héritage et obligations sociales.",
-      "roleOfLineages": "Central dans la structure familiale, la répartition foncière et la gestion des conflits.",
-      "religiousAuthority": "Autorités rituelles locales, coexistant avec les structures religieuses chrétiennes et musulmanes."
+      "traditionalPoliticalSystem": "Federation de 11 principautes historiques (Bugabula, Bulamogi, Kigulu, Bukooli, Luuka, Bukono, Butembe, Bugweri, Busiki, Bunha, Bunhole), chacune dirigee par un chef hereditaire. Le Kyabazinga (roi) est elu parmi les cinq clans royaux (Baisengobi) : Wakoli-Bukooli, Zibondo-Bulamogi, Ngobi-Kigulu, Tabingwa-Luuka, Kitimbo-Bugabula. Le Lukiiko (conseil) est l'organe deliberant du royaume.",
+      "clanOrganization": "Les Basoga sont organises en plus de 54 clans (ebika), chacun portant un totem distinct (muziro). Parmi les clans documentés : Balwa (totem : poisson-poumon), Bandha (antilope), Basikwe (champignons), Igaga (lievre), Bwire (poisson-poumon). Les clans sont exogames et patrilineaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (patrilineaires) sont centraux dans la structure familiale, la repartition fonciere et la gestion des conflits. L'appartenance a un lignage determine les droits sur la terre, les obligations matrimoniales et les responsabilites rituelles. Le clan du pere determine l'identite sociale de l'enfant.",
+      "religiousAuthority": "Des specialistes rituels locaux (basamize) assurent les ceremonies aux ancetres et la communication avec les esprits de la nature (balubaale). Ces autorites rituelles coexistent avec les structures religieuses chretiennes (majoritairement anglicanes et catholiques) et musulmanes, issues de la colonisation et des missions du XIXe siecle."
     },
     "languages": {
-      "mainLanguage": "Lusoga / Soga",
+      "mainLanguage": "Lusoga (Soga)",
+      "isoCodes": ["xog", "lke"],
       "dialects": [
-        "Variantes internes (dialectes associés aux différentes principautés ; parfois distingués en sous-dialectes régionaux)."
+        "Lulamogi — dialecte du nord de Busoga",
+        "Lupakoyo — dialecte proche du Runyoro, parle dans le nord de Busoga, avec des traits similaires aux langues Luo",
+        "Lutenga — dialecte meridional, proche du Luganda, parle dans le sud de Busoga, sur les iles Buvuma et dans l'est de Buganda"
       ],
-      "vehicularRole": "Langue principale de la région de Busoga ; proche du luganda et utilisée pour la communication régionale en plus de l’anglais et du swahili."
+      "vehicularRole": "Le Lusoga est parle par plus de trois millions de locuteurs et constitue l'une des principales langues de l'Ouganda, apres l'anglais, le swahili et le Luganda. Il est utilise dans certaines ecoles primaires de la region de Busoga et enseigne dans les etablissements superieurs comme l'Universite de Busoga, Kyambogo et Makerere. L'Autorite linguistique Lusoga (LULA) a standardise la langue et publie un dictionnaire, une Bible et des ouvrages pedagogiques en Lusoga."
     },
     "culture": {
-      "Rites majeurs": "Rites de passage, cérémonies royales du Kyabazinga, fêtes agraires.",
-      "Symboles": "Emblèmes du royaume de Busoga, symboles liés au Nil, au lac Victoria et à la fertilité des terres.",
-      "Arts et musique": "Danses et musiques propres à Busoga ; instruments traditionnels (tambours, harpes, xylophones).",
-      "Spiritualités": "Anciennes croyances aux esprits de l’eau et de la terre ; forte présence actuelle du christianisme, avec une minorité musulmane."
+      "majorRites": "Rites de passage (naissance, puberte, mariage, mort) organises au sein des clans. Ceremonie royale du Kyabazinga lors des intronisations et funerailles. Fetes agraires liees aux cycles de culture du mil et du sorgho. Le Bigwala — musique et danse des trompettes en gourde — est joue lors des ceremonies royales (couronnements, funerailles royales) et lors d'occasions sociales. Inscrit en 2012 par l'UNESCO sur la Liste du patrimoine culturel immateriel en peril.",
+      "symbols": "Emblemes du royaume de Busoga (drapeau, insigne du Kyabazinga). Symboles lies au Nil Victoria et au lac Victoria, sources de vie et frontiere naturelle du territoire. Les gourdes (bigwala) sont les instruments symboliques de la royaute. Le lungfish (ndu ntono) est le totem de plusieurs clans (Balwa, Bwire, Diaga).",
+      "artsAndMusic": "Le Bigwala est un ensemble de cinq trompettes monotones en gourde jouees en hocket pour produire une melodie, accompagnees de tambours, de chants et de danses en formation circulaire. Les femmes uluent a l'apogee de la performance. Les Basoga pratiquent egalement des danses au tambour, des chants epiques narrés par des griots, et l'artisanat de la poterie et du tissage de nattes en roseau. Les xylophones (amadinda/embaire) et les harpes tubulaires (endongo) sont joues lors de ceremonies.",
+      "spiritualities": "Croyances traditionnelles aux esprits des ancetres et aux balubaale (esprits de la nature lies aux lacs et aux rivieres). Mukama, figure mythique de fondateur, est venere comme protecteur. Forte presence actuelle du christianisme (46,2 % anglicans, 16,2 % catholiques selon le recensement 2002) et de l'islam (30,6 %). Les croyances traditionnelles persistent en pratique syncrétique avec les religions abrahamiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Royaume de Busoga, reconnu comme l’une des monarchies traditionnelles de l’Ouganda.",
-      "relationsWithNeighbors": "Relations d’échanges et parfois de tensions avec Baganda, Banyoro et autres peuples de la région.",
-      "conflictsOrAlliances": "Alliances variées pendant la période précoloniale et coloniale ; participation à la vie politique de l’État ougandais moderne.",
-      "diaspora": "Migration vers Kampala et d’autres villes d’UGA, ainsi que diaspora plus large liée à l’émigration contemporaine."
+      "kingdomsOrChiefdoms": "Busoga est l'un des royaumes traditionnels reconnus par la Constitution ougandaise de 1995. Avant la colonisation, Busoga etait une confederation de principautes autonomes dont les dynasties fondatrices derivaient du royaume de Bunyoro (clan Baisengobi). Les Britanniques ont cree un Conseil de Busoga (Lukiiko) en 1906 et institue le titre de Kyabazinga en 1918-1919. Le premier Kyabazinga Ezekiel Tenywa Wako gouverna de 1939 a 1949.",
+      "relationsWithNeighbors": "Relations d'echanges commerciaux et politiques avec le Buganda a l'ouest (dont certains chefs de Busoga recevaient des nominations) et avec le Bunyoro au nord-ouest (origine des dynasties royales Baisengobi). Contacts commerciaux avec les marchands arabes et indiens via les dukas (boutiques) de Bugiri, Iganga et Kamuli. Tensions periodiques avec les Baganda pendant les periodes precoloniales.",
+      "conflictsOrAlliances": "Alliances strategiques avec le Buganda pendant la periode coloniale. Participation a la resistance a la colonisation britannique. Jinja, situee en Busoga, est devenue le principal centre industriel de l'Ouganda grace au barrage Owen Falls (centrale Nalubaale) : en 1962, 70 % des industries ougandaises etaient concentrees a Jinja. Expulsion des commercants asiatiques par Idi Amin en 1972, qui a permis aux Basoga de prendre le controle du commerce local.",
+      "diaspora": "Migration interne importante vers Kampala, Jinja (capitale de Busoga) et autres villes ougandaises. Diaspora internationale dans les pays occidentaux (Royaume-Uni, Canada, Etats-Unis, Suede) liee a l'emigration contemporaine."
     },
     "demography": {
       "totalPopulation": 3500000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv (PPL_BASOGA) + estimations récentes des groupes ethniques d’Ouganda"
+      "source": "Estimations basees sur le recensement ougandais de 2014 (UBOS, Uganda Bureau of Statistics), les donnees Ethnologue (SIL International 2024), les projections demographiques de 2025 et les donnees du Joshua Project. Les Basoga constituent le troisieme ou quatrieme groupe ethnique d'Ouganda selon les sources. Le recensement de 2014 indiquait environ 8,9 % de la population ougandaise totale comme Basoga. Avec une population ougandaise projetee a environ 48 millions en 2025, l'estimation Basoga atteint 3,5 a 4 millions.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 3500000,
+          "note": "Principalement dans les 11 districts de Busoga : Kamuli, Iganga, Bugiri, Mayuge, Jinja, Luuka, Bugweri, Buyende, Kaliro, Namutumba, Namayingo. Forte presence urbaine a Jinja (deuxieme ville d'Ouganda) et migration vers Kampala."
+        }
+      ]
     },
     "sources": [
-      "[Article] – « Basoga people » / « Busoga Kingdom » (ressources historiques et culturelles)",
-      "[Ressource] – Présentations culturelles de Busoga (guides culturels, sites institutionnels ougandais)",
-      "[Études] – Travaux sur les royaumes traditionnels ougandais (dont Busoga)"
+      "Wikipedia EN — Soga people : https://en.wikipedia.org/wiki/Basoga",
+      "Wikipedia EN — Busoga Kingdom : https://en.wikipedia.org/wiki/Busoga",
+      "Wikipedia EN — Soga language : https://en.wikipedia.org/wiki/Soga_language",
+      "UNESCO Patrimoine immatériel — Bigwala, musique et danse des trompettes en gourde de Busoga (inscrit 2012) : https://ich.unesco.org/en/USL/bigwala-gourd-trumpet-music-and-dance-of-the-busoga-kingdom-in-uganda-00749",
+      "101 Last Tribes — Basoga people : https://www.101lasttribes.com/tribes/basoga.html",
+      "SIL Ethnologue — Soga language (xog) : https://www.ethnologue.com/language/xog/"
     ]
   }
 }

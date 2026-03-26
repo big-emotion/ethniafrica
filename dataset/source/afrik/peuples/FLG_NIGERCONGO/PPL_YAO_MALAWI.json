@@ -6,59 +6,93 @@
   "content": {
     "appellations": {
       "mainName": "Yao (Malawi)",
-      "selfAppellation": "Yao",
-      "exonyms": ["Yao (terme utilisé par les Européens)"],
+      "selfAppellation": "Wayao",
+      "exonyms": ["Yao", "Ajawa", "Adsawa", "Wahiao"],
+      "originOfExonyms": "Le terme Yao est derive du nom d'une colline dans l'actuelle province de Niassa au Mozambique, lieu d'origine ancestrale du peuple. Le mot Yao serait le pluriel d'un nom signifiant colline deboisee. Le terme Wayao (avec le prefixe de classe wa- pour les personnes) est l'appellation en swahili et en chichewa. Les Europeens ont utilise des variantes comme Ajawa ou Adsawa.",
+      "whyProblematic": "L'ethnonymie yao au Malawi est complexifiee par le fait que les Yao sont un peuple trans-frontalier partage entre le Malawi, le Mozambique et la Tanzanie, avec une identite culturelle qui transcende les frontieres coloniales. Au Malawi, leur identification a l'islam peut creer des tensions avec les groupes chretiens majoritaires.",
+      "contemporaryUsage": "Le terme Yao est couramment employe au Malawi en anglais, en chichewa et dans les langues administratives. Les Yao du Malawi se designent eux-memes comme Wayao et leur langue comme Ciyawo ou Chiyao. Ils constituent environ 13 % de la population malawienne et sont concentres dans les districts de Mangochi, Machinga, Zomba, Chiradzulu et Blantyre.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "Malawi",
+      "ethnoLinguisticGroup": "Bantou (Zone P, groupe P21)",
+      "historicalRegion": "Region du lac Malawi meridional (district de Mangochi, Shire highlands) — originaires de la province de Niassa (Mozambique)",
       "currentCountries": ["MWI"]
     },
-    "ethnicities": ["Yao du Nord", "Yao du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Machinga Yao — groupe dominant autour de Mangochi et du lac Malawi meridional, chefferies Mponda et Makanjila",
+      "Mangochi Yao — implantes dans le district de Mangochi, premiers convertis a l'islam (1870)",
+      "Zomba Yao — dans les Shire Highlands, contact precoce avec les missionnaires ecossais",
+      "Blantyre Yao — sous la chefferie Kapeni, partiellement christianises au 19e siecle",
+      "Mulanje Yao — groupe meridional proche de la frontiere mozambicaine",
+      "Chiradzulu Yao — implantes dans les plateaux centraux du sud-Malawi"
+    ],
     "origins": {
-      "ancientOrigins": "Les Yao du Malawi sont originaires de la région du Malawi. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Yao du Mozambique et de Tanzanie.",
-      "externalInfluences": "Contacts avec les commerçants arabes et européens, influence de l'islam."
+      "ancientOrigins": "Les Yao du Malawi sont originaires de la region montagneuse de la province de Niassa, dans le nord du Mozambique actuel, autour d'une colline appelee Yao (entre les rivieres Lujenda et Luchelingo). Cette region constituait leur centre ethno-geographique ancestral, designe sous le nom de Chiconono. Les Yao font partie du groupe bantou (Zone P) et partagent des origines communes avec les peuples de l'Afrique orientale et centrale. Avant leur migration vers le Malawi, ils etaient principalement agriculteurs et forgerons, produisant des outils en fer avant l'arrivee des marchands arabes.",
+      "formationPeriod": "L'identite yao distincte s'est consolidee au cours du 18e et 19e siecle, sous l'impulsion du commerce de l'ivoire et des esclaves avec les negociants arabes et swahili de la cote de l'ocean Indien. Les grandes chefferies yao (Mponda, Makanjila, Mataka) ont emerge comme puissances regionales controlant les routes commerciales entre l'interieur et la cote. La conversion collective a l'islam entre 1870 et 1920 a acheve la formation d'une identite yao specifique differente de ses voisins chretiens (Chewa, Ngoni, Tumbuka).",
+      "migrationRoutes": [
+        "Migration depuis la province de Niassa (Mozambique) vers le Malawi meridional a partir des annees 1830, sous la pression de la famine et de conflits avec les Makua",
+        "Routes commerciales vers la cote swahili de Kilwa et Zanzibar empruntees depuis le 18e siecle",
+        "Extension progressive vers les Shire Highlands et les districts de Zomba, Blantyre, Chiradzulu et Mulanje"
+      ],
+      "historicalSettlementZones": [
+        "District de Mangochi (sud du lac Malawi) — zone principale, chefferies Mponda et Makanjila",
+        "District de Machinga — Shire Highlands meridionaux",
+        "District de Zomba — hauts plateaux, contact avec les Lomwe",
+        "District de Blantyre — chefferie Kapeni, contact precoce avec les missionnaires",
+        "District de Chiradzulu et Mulanje — bandes frontieres avec le Mozambique"
+      ],
+      "unificationsOrDivisions": "Les Yao du Malawi sont organises en plusieurs grandes chefferies autonomes (Mponda, Makanjila, Tambala, Kapeni) qui ont parfois rivalise entre elles. La conversion collective a l'islam entre 1870 et 1920 a constitue le principal facteur d'unite culturelle. La colonisation britannique (Protectorat du Nyassaland, 1891) a mis fin a l'independance des chefferies mais n'a pas eteint l'identite yao.",
+      "externalInfluences": "Contact avec les marchands arabes et swahili depuis le 18e siecle — adoption de l'islam, de l'architecture a toit plat, du swahili comme lingua franca. Presence de missionnaires ecossais (Free Church of Scotland, 1875 a Mangochi ; Established Church of Scotland, 1876 a Blantyre). Colonisation britannique (1891-1964) avec imposition de l'education chretienne en anglais. Resistance a la conversion chretienne en raison de l'identification de l'islam a l'identite yao.",
+      "majorHistoricalEvents": "En 1870, le chef Makanjila III adopte l'islam comme religion personnelle et de cour, declenchant la conversion progressive de la nation yao. En 1875, le chef Mponda accueille les missionnaires ecossais de Robert Laws a Mangochi, qui echoueront a convertir les Yao musulmans. En 1891, H. H. Johnston conquiert militairement les territoires yao pour etablir le Protectorat du Nyassaland. En 1893, la chefferie de Makanjila est vaincue par les forces britanniques. Le Malawi independant (1964) reconnait les chefferies traditionnelles yao. En 1994, Bakili Muluzi, Yao musulman, devient le premier president musulman du Malawi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+      "traditionalPoliticalSystem": "Les Yao du Malawi sont organises en chefferies traditionnelles (mfumu ou sultan) dont les plus importantes sont Mponda, Makanjila et Tambala dans le district de Mangochi. Le chef (mfumu) exerce une autorite politique, judiciaire et ceremonielle. Des conseils de sages (anciens du lignage) assistent le chef dans les decisions importantes. Apres la colonisation britannique, les chefferies ont ete integrees dans un systeme d'administration indirecte (indirect rule) qui a preserve leur pouvoir local.",
+      "clanOrganization": "La societe yao est matrilineaire et majoritairement matrilocale : l'identite, la terre et le statut sont transmis par la ligne maternelle. A la suite du mariage, le mari s'installe dans le village de sa femme (uxorilocalite), ce qui fait de lui un etranger partiel dans sa propre famille. Les clans (nyumba ou mbumba) sont des unites matrilineaires etendues. Le taux de divorce est eleve et la polygamie est repandue. Les oncles maternels (amayi wamkulu) jouent un role essentiel dans l'education des enfants.",
+      "ageClassSystems": "Les Yao pratiquent des rites d'initiation masculins (unyago) et feminins (lupanda ou chinamwali) qui marquent le passage a l'age adulte. Ces rites sont organises collectivement et representent une forme de classe d'age fonctionnelle. La periode d'initiation (qui dure plusieurs semaines) implique un retrait en brousse, l'enseignement des responsabilites adultes et des connaissances islamiques.",
+      "roleOfLineages": "Les lignages matrilineaires (nyumba) determinent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. L'oncle maternel (malume) detient une autorite considerable sur ses neveux et nieces, parfois superieure a celle du pere. La residence matrilocale renforce le poids du lignage maternel dans la vie quotidienne.",
+      "religiousAuthority": "L'autorite religieuse est exercee par les oulémas musulmans (cheikhs et imams) formes dans les madrasa (chiwuwo) et khalwa locales. Les cheikhs yao ont joue un role decisif dans la diffusion de l'islam depuis le 19e siecle, apportant la litteratie en arabe, des ecoles coraniques et un cadre social islamique. Le cheikh Idrissa Muhammad, le cheikh Dinala Chabulika et Muhammad Silika (traducteur du Coran en yao) sont des figures importantes. Les croyances animistes ancestrales coexistent en syncrétisme avec la pratique islamique."
     },
     "languages": {
-      "mainLanguage": "Yao",
-      "vehicularRole": "Le yao est parlé par la majorité des Yao du Malawi. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Ciyawo (Chiyao)",
+      "isoCodes": ["yao"],
+      "dialects": [
+        "Mangochi — dialecte principal du Malawi, parle dans le district de Mangochi autour du lac Malawi meridional",
+        "Machinga — variante des plateaux du Shire meridional",
+        "Zomba — dialecte des hauts plateaux en contact avec le chichewa",
+        "Blantyre — variante influencee par le contact avec les missions chretiennes"
+      ],
+      "vehicularRole": "Le ciyawo est parle par environ 1 000 000 de locuteurs au Malawi, principalement dans le sud du pays. Les locuteurs yao parlent aussi le chichewa (langue nationale du Malawi) et l'anglais (langue officielle). Le ciyawo est une langue bantoue de la Zone P (groupe P21), etroitement apparentee au lomwe et au makua. La langue a ete codifiee par des missionnaires ecossais au 19e siecle. Le Coran a ete traduit partiellement en ciyawo par Muhammad Silika de Mangochi."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels yao, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Le rite masculin unyago (ou jando, terme swahili adopte) est le rite de passage central. Les garcons sont circonscis et retires en brousse pendant plusieurs semaines sous la supervision de moniteurs (anankungwi). Ils recoivent un enseignement sur les responsabilites d'homme, les valeurs islamiques et les tabous sociaux. La periode se termine par une fete communautaire et la reintegration dans le village en tant qu'adultes. La danse manganje est associee a ce rite.\", \"femaleInitiation\": \"Le rite feminin chinamwali (ou lupanda) marque la puberte des filles. Il comprend un retrait, des enseignements sur les roles feminins, la sexualite et les responsabilites maternelles. Des femmes ainies (nankungwi) dirigent la ceremonie. La fille reintegre la communaute avec un statut d'adulte.\"},  \"funeraryRites\": {\"burial\": \"Inhumation rapide (dans les 24h) selon le rite islamique. Le corps est lave, enveloppe dans un linceul blanc (kafan) et enterre la tete tournee vers La Mecque. Les prieres funeraires (Salat al-Janazah) sont recitees. Les Yao observent une periode de deuil de trois jours avec des visites de condoleances.\", \"postFuneraryCeremonies\": \"Des commemorations ont lieu au 3e, 7e et 40e jour apres le deces, avec des repas collectifs et des recitations coraniques. La coutume ancestrale de consultation des esprits des ancetres (amasoka) coexiste en syncrétisme avec les pratiques islamiques.\"},  \"agriculturalRites\": {\"firstFruits\": \"Des prieres et invocations precèdent les semailles. Des offrandes aux esprits ancestraux (amasoka) sont encore pratiquees par certaines communautes, bien que l'islam officiel desapprouve ces pratiques.\"}, \"healingRites\": {\"herbalism\": \"Les Yao sont reputes comme guerisseurs (asing'anga). Ils possedent une connaissance approfondie des plantes medicinales locales et les guerisseurs voyagent loin pour collecter des ingredients. Des charmes islamiques (hirizi) fabriques par les cheikhs coexistent avec des remedes traditionnels. Les maladies sont attribuees a des causes physiques, des maledictions ou des violations de tabous (undubidwa, maladies ndaka).\", \"honeyHunting\": \"Les Yao maintiennent une tradition de chasse au miel guidee par l'oiseau indicateur (honeyguide, Indicator indicator), en utilisant un appel traditionnel transmis de pere en fils.\"}}",
+      "symbols": "Le croissant et l'etoile islamiques sont des symboles identitaires majeurs pour les Yao musulmans du Malawi. La mosquee est le centre symbolique de la vie communautaire. Les perles et les tissus aux motifs swahili (kanga, kitenge) portent une signification culturelle. La madrasa (chiwuwo) symbolise le savoir et la litteratie. La pirogue sur le lac Malawi represente la tradition de peche et de commerce lacustre.",
+      "artsAndMusic": "{\"sculpture\": \"Poterie feminine traditionnelle (jarres, plats et recipeients). Pas de tradition majeure de sculpture figurative en raison de l'influence islamique.\", \"musicalInstruments\": \"Ngoma (tambour), nyanga (flute en roseau), timbales et cloches rituelles utilisees lors des initiations et ceremonies communautaires.\", \"dances\": \"Manganje — danse masculine associee au rite d'initiation unyago, caracterisee par des mouvements vigoureux et des battements de tambour. Beni — danse collective influencee par les cultures militaires swahili-arabes, pratiquee lors des celebrations. Malipenga — danse communautaire a grand spectacle.\", \"songs\": \"Chants coraniques (nasheed, madrasa songs) en arabe et en ciyawo. Chants de mariage islamiques et chants ceremonials lies aux initiations.\", \"crafts\": \"Tissage de nattes et de paniers. Broderie de vetements islamiques (kofia, kanzu). Menuiserie de bateaux de peche (dhow de lac).\", \"gastronomy\": \"Regime base sur le riz (influence swahili-arabe), le nsima (farine de mais), le poisson seche du lac Malawi, les haricots et les legumes feuillus. Le riz et le poulet sont servis lors des celebrations islamiques (Eid al-Fitr, Eid al-Adha).\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Amanani / Mulungu\", \"attributes\": \"Dieu unique et omnipotent (Mulungu en ciyawo, assimile a Allah apres l'islamisation). Les Yao reconnaissaient avant l'islam un dieu createur (Amanani, aussi appele Achipinga ou Wakalakatele) accessible par les esprits ancestraux. L'islamisation n'a pas elimine les croyances en la mediation des ancetres.\"}, \"intermediateEntities\": [{\"name\": \"Amasoka\", \"description\": \"Esprits ancestraux qui servent d'intermediaires entre les humains et Dieu. La tradition yao considerait qu'on ne pouvait approcher Dieu directement, mais seulement via les amasoka. Les invocations sous un arbre msolo constituaient le principal acte rituel pre-islamique. Cette croyance perdure en syncrétisme avec l'islam populaire.\"}], \"cosmology\": \"Les Yao pratiquent un islam populaire (folk Islam) syncrétise avec leurs croyances animistes ancestrales. Les maladies sont attribuees a des causes spirituelles (maledictions, violation de tabous) autant que physiques. Les cheikhs preparent des charmes coraniques (hirizi) pour la protection. La divination et les guerisseurs traditionnels coexistent avec les imams.\", \"islam\": {\"specificPractices\": \"Islam sunnite (principalement), avec influences soufies. Les Yao appartiennent majoritairement a deux groupes sunnites. Pratiques principales : priere quotidienne (cinq fois), Ramadan, Eid al-Fitr, Eid al-Adha, mariage islamique. Les madrasa (chiwuwo) et khalwa dispensent l'education coranique. Le Coran a ete traduit en ciyawo par Muhammad Silika de Mangochi.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora yao dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Yao du Malawi ont developpe plusieurs grandes chefferies puissantes aux 18e et 19e siecles. La chefferie de Mponda (Mangochi) et celle de Makanjila ont controle les routes commerciales autour du lac Nyasa. La chefferie de Kapeni etait implantee a Blantyre. Ces chefferies s'appelaient sultanats en raison de leur conversion a l'islam, et leurs chefs portaient le titre de sultan. Le chef Mataka controalait le commerce entre le lac et la cote mozambicaine. Ces sultanats rivalisaient avec les forces ngoni et chewa tout en entretenant des relations commerciales etroites avec les marchands arabes et swahili de Kilwa et Zanzibar.",
+      "relationsWithNeighbors": "Les Yao entretenaient des relations commerciales actives avec les marchands arabes et swahili de la cote. Leurs relations avec les Chewa et les Mang'anja etaient souvent conflictuelles, ces derniers servant parfois de source d'esclaves pour le commerce yao. Les relations avec les Ngoni etaient competitives et parfois militaires. Apres la colonisation, les Yao musulmans se sont distancies des groupes evangelises par les missions chretiennes.",
+      "conflictsOrAlliances": "Les Yao ont mene une resistance active contre la colonisation britannique. En 1861, des conflits ont eclate avec l'eveque Mackenzie et Livingstone qui soutenaient les Mang'anja contre les Yao. En 1891, le commissaire H. H. Johnston a conduit des operations militaires pour soumettre les chefferies yao. La chefferie de Makanjila a ete conquise en 1893. Les Yao ont maintenu une resistance passive a l'evangelisation chretienne tout au long de la periode coloniale, preservant leur identite islamique.",
+      "diaspora": "Une diaspora yao existe dans les grandes villes malawiennnes (Blantyre, Lilongwe, Zomba). Des migrations vers l'Afrique du Sud, la Zambie et d'autres pays africains ont eu lieu au cours du 20e siecle pour des raisons economiques. La communaute yao maintient ses liens culturels et religieux islamiques au sein de la diaspora."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 1700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International, 2024) — 1 000 000 locuteurs du ciyawo au Malawi. Joshua Project 2024 — estimation d'environ 1,7 million de Yao au Malawi. CIA World Factbook (Malawi, 2023) — les Yao representent environ 13 % de la population malawienne (26 millions en 2025). Projections demographiques basees sur le recensement malawien de 2018.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 1700000,
+          "note": "Concentres dans les districts de Mangochi, Machinga, Zomba, Chiradzulu, Mulanje et Blantyre dans la region meridionale du Malawi"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Yao language (yao)",
-      "CIA World Factbook – Malawi",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Yao people (East Africa). https://en.wikipedia.org/wiki/Yao_people_(East_Africa)",
+      "Ethnologue — Yao language (yao). https://www.ethnologue.com/language/yao/",
+      "Joshua Project — Yao in Malawi. https://joshuaproject.net/people_groups/15988/MI",
+      "Qiraat Africa — The Yao/Wayao people of Lake Malawi. https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+      "The I Am Yawo Project — Who are the Yawo? https://www.ciyawo.org/who-are-yawo",
+      "Smithsonian Folkways — Ceremonial, dance, and story songs from the Yao people of Malawi. https://folkways.si.edu/ceremonial-dance-and-story-songs-from-the-yao-people-of-malawi/world/music/album/smithsonian",
+      "CIA World Factbook — Malawi. https://www.cia.gov/the-world-factbook/countries/malawi/"
     ]
   }
 }

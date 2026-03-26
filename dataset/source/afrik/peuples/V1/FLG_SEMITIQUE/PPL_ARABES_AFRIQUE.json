@@ -1,0 +1,104 @@
+{
+  "id": "PPL_ARABES_AFRIQUE",
+  "nameMain": "Arabes d'Afrique",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": [
+    "MAR",
+    "DZA",
+    "TUN",
+    "LBY",
+    "EGY",
+    "SDN",
+    "MRT",
+    "TCD",
+    "DJI",
+    "SOM",
+    "COM"
+  ],
+  "content": {
+    "appellations": {
+      "mainName": "Arabes d'Afrique",
+      "selfAppellation": "Al-'Arab (العرب)",
+      "exonyms": [
+        "Arabes, Arabophones, Maures (terme historique pour certains groupes sahariens)"
+      ],
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Sémitiques occidentaux",
+      "historicalRegion": "Péninsule arabique (origines), Afrique du Nord, Corne de l'Afrique, Sahel",
+      "currentCountries": [
+        "MAR",
+        "DZA",
+        "TUN",
+        "LBY",
+        "EGY",
+        "SDN",
+        "MRT",
+        "TCD",
+        "DJI",
+        "SOM",
+        "COM"
+      ]
+    },
+    "ethnicities": [
+      "Arabes du Maghreb (MAR, DZA, TUN, LBY)",
+      "Arabes d'Égypte",
+      "Arabes du Soudan",
+      "Arabes de Mauritanie",
+      "Arabes du Tchad",
+      "Arabes de Djibouti",
+      "Arabes de Somalie",
+      "Arabes des Comores",
+      "Bédouins sahariens",
+      "Communautés arabes diasporiques"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Arabes sont originaires de la péninsule arabique. La présence arabe en Afrique remonte aux migrations pré-islamiques et s'est intensifiée avec l'expansion de l'islam à partir du VIIe siècle.",
+      "unificationsOrDivisions": "Diversification en groupes régionaux distincts tout en maintenant une identité culturelle et linguistique commune. Métissages avec les populations berbères, africaines et autres groupes locaux.",
+      "externalInfluences": "Influence profonde de l'islam, de la culture arabe classique, et des échanges commerciaux transsahariens et transocéaniques."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale traditionnelle avec cheikhs et conseils tribaux. Systèmes étatiques modernes dans les pays arabes d'Afrique.",
+      "clanOrganization": "Structure tribale (qabila) et clanique (ashira) importante, particulièrement chez les Bédouins et les groupes sahariens.",
+      "roleOfLineages": "Lignages patrilinéaires (nasab) déterminant l'identité, les alliances et les droits. Importance de la généalogie.",
+      "religiousAuthority": "Autorité des oulémas (savants religieux) et des imams. L'islam sunnite (majoritairement malékite au Maghreb, chaféite en Égypte et Corne de l'Afrique) structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Arabe (dialectes variés)",
+      "vehicularRole": "L'arabe est langue officielle dans tous les pays arabes d'Afrique. L'arabe standard moderne est utilisé dans l'éducation, les médias et l'administration. Les dialectes sont utilisés dans la vie quotidienne."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd al-Fitr, Aïd al-Adha)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Calligraphie arabe, architecture islamique, étoile et croissant, motifs géométriques et arabesques.",
+      "Arts et musique": "",
+      "source_4": "Musique arabe classique et populaire (chaâbi, raï, malouf)",
+      "source_5": "Poésie arabe classique et moderne",
+      "source_6": "Calligraphie et arts décoratifs islamiques",
+      "source_7": "Danse traditionnelle (belly dance en EGY, danses bédouines)",
+      "Spiritualités": "Islam sunnite majoritaire (écoles malékite, chaféite, hanafite). Minorités chiites et ibadites. Soufisme important dans certaines régions. Préservation de certaines traditions pré-islamiques dans certaines communautés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Importante diaspora arabe en Europe, Amériques, et autres régions d'Afrique. Communautés arabes établies dans les grandes villes africaines."
+    },
+    "demography": {
+      "totalPopulation": 180000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, ONU, recensements nationaux, et études démographiques régionales"
+    },
+    "sources": [
+      "CIA World Factbook – Country profiles (EGY, DZA, MAR, etc.)",
+      "ONU – Population data 2025",
+      "Hourani, Albert – *A History of the Arab Peoples*",
+      "Lapidus, Ira M. – *A History of Islamic Societies*",
+      "SIL Ethnologue – Arabic language varieties",
+      "UNESCO – Atlas of the World's Languages in Danger",
+      "Recensements nationaux des pays arabes d'Afrique"
+    ]
+  }
+}

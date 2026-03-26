@@ -2,69 +2,123 @@
   "id": "PPL_TSWANA",
   "nameMain": "Tswana",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["BWA", "ZAF", "NAM"],
   "content": {
     "appellations": {
       "mainName": "Tswana",
-      "selfAppellation": "Tswana",
+      "selfAppellation": "Batswana (pluriel) / Motswana (singulier)",
       "exonyms": [
-        "Tswana (terme utilisé par les Européens), parfois appelés « Setswana » (terme alternatif)"
+        "Bechuana (ancien exonyme colonial britannique)",
+        "Sechuana (terme alternatif d'epoque coloniale)",
+        "Corannas (variante ancienne utilisee par les Hollandais pour certains groupes)"
       ],
+      "originOfExonyms": "Le terme Bechuana fut utilise par les administrateurs coloniaux britanniques du Bechuanaland Protectorate (actuel Botswana). Il derive du terme Batswana, avec deformation phonetique anglaise. La forme Sechuana (ou Sechuana) fut adoptee par les premiers missionnaires, notamment Robert Moffat de la London Missionary Society, pour decrire a la fois le peuple et sa langue. Ces termes ont progressivement cede la place a Tswana/Batswana apres l'independance du Botswana en 1966.",
+      "whyProblematic": "Le terme Tswana recouvre en realite une confederation de merafe (royaumes/chefferies) distincts partageant une langue et une culture communes mais ayant des histoires politiques independantes. Certains groupes comme les Barolong et les Batlhaping furent longuement etudies separement. Pendant l'apartheid en Afrique du Sud, les Tswana furent definis comme citoyens du bantoustan Bophuthatswana (1977-1994), instrumentalisant leur identite a des fins politiques.",
+      "contemporaryUsage": "Batswana designe aujourd'hui tant les citoyens du Botswana (quelle que soit leur origine ethnique) que le groupe ethnolinguistique tswana au sens strict. Au Botswana, le terme est usage courant dans les contexts officiels et quotidiens. En Afrique du Sud, les Tswana sont reconnus comme l'un des onze groupes linguistiques officiels, avec le setswana comme langue nationale. La Royal Bafokeng Nation en Afrique du Sud represente un exemple tres visible de nation tswana contemporaine autonome.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "BWA, Afrique du Sud",
-      "currentCountries": ["BWA"]
+      "ethnoLinguisticGroup": "Bantou — Sotho-Tswana (Zone S, S.31)",
+      "historicalRegion": "Plateau du Kalahari et hauts-plateaux du Transvaal — Bechuanaland, Nordveld (actuel Botswana, Province du Nord-Ouest d'Afrique du Sud, Namibie meridionale)",
+      "currentCountries": ["BWA", "ZAF", "NAM"]
     },
     "ethnicities": [
-      "Tswana du Botswana",
-      "Tswana d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Bangwato (Ngwato) — etablis autour de Serowe, Botswana central-nord",
+      "Bakwena — etablis autour de Molepolole, Botswana central",
+      "Bangwaketse — etablis autour de Kanye, Botswana sud",
+      "Bakgatla — etablis a Mochudi (Botswana) et Moruleng (Afrique du Sud, Pilanesberg)",
+      "Barolong — etablis a Mahikeng (Afrique du Sud) et Lobatse (Botswana)",
+      "Batlhaping — etablis dans le Grand Taung et Northern Cape",
+      "Batawana — etablis dans le Ngamiland, Delta de l'Okavango, Botswana nord-ouest",
+      "Balete — etablis autour de Ramotswa, Botswana sud-est",
+      "Royal Bafokeng Nation — etablis a Phokeng pres de Rustenburg, Afrique du Sud; celebres pour leur fonds souverain issu des revenus platiniferes",
+      "Bahurutshe — etablis dans le Zeerust/Marico, Nord-Ouest, Afrique du Sud",
+      "Tlharo — sous-groupe du Botswana"
     ],
     "origins": {
-      "ancientOrigins": "Les Tswana sont originaires de la région du Botswana et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les ancetres des Tswana font partie du vaste mouvement bantou qui a atteint l'Afrique australe entre le IIe et le Ve siecle de notre ere. Les premieres populations proto-Sotho-Tswana sont associees a la culture Toutswe (IXe-XIIIe siecles), etablie dans l'est du Botswana actuel, qui pratiquait l'elevage bovin intensif et le commerce le long des routes vers l'Ocean Indien (ivoire, or, corne de rhinoceros contre perles et cotonnades d'Asie). Les Tswana sont la branche occidentale du groupe Sotho-Tswana, partageant une origine commune avec les Sotho du Nord et du Sud. La differenciation linguistique et politique s'est accentuee entre le XIIe et le XVe siecle.",
+      "formationPeriod": "L'identite tswana distincte s'est cristallisee entre le XVe et le XVIIe siecle, avec la formation des premiers merafe (royaumes) sous des kgosi (chefs) specifiques. La capitale Kaditshwene (etablie a la fin du XVe siecle par les Bahurutshe) etait un centre de manufacture et de commerce sur des gisements de fer et de cuivre. Les chroniques europeennes du XIXe siecle (de Lichtenstein, 1806, aux missionnaires de la LMS) fournissent les premiers recits detailles des royaumes tswana.",
+      "migrationRoutes": [
+        "Migration depuis le bassin du Vaal vers le plateau du Kalahari, estimee autour de 600 apr. J.-C.",
+        "Expansion vers le nord-ouest (actuel Botswana) entre les XIIe et XVe siecles",
+        "Dispersion due au Difaqane/Mfecane (1815-1840) vers le nord et l'ouest",
+        "Migration vers l'Afrique du Sud (provinces du Nord-Ouest et Northern Cape) sous pression coloniale et lors des guerres boers"
+      ],
+      "historicalSettlementZones": [
+        "Botswana centre-sud (Gaborone, Molepolole, Kanye, Serowe)",
+        "Province du Nord-Ouest, Afrique du Sud (Mahikeng, Rustenburg, Zeerust, Lichtenburg)",
+        "Northern Cape, Afrique du Sud (Grand Taung, Kuruman)",
+        "Namibie meridionale (petit groupe autour du Gobabis)",
+        "Grande Zimbabwe (relations commerciales historiques)"
+      ],
+      "unificationsOrDivisions": "Les Tswana ne forment pas un etat centralise mais une constellation de merafe (royaumes) autonomes partageant langue, culture et droit coutumier. Chaque morafe est dirige par un kgosikgolo (chef paramount) assiste d'un conseil. Le Difaqane (1815-1840) a bouleverse cet equilibre : les raids des Ndebele, Zulu et Kololo ont deplace plusieurs merafe, engendrant a la fois des alliances et des conflits entre Tswana. La Guerre Tswana-Boer (1852-1860, Battle of Dimawe) a consolide une resistance commune face aux commandos boers. Le Bechuanaland Protectorate (1885) a fige des frontieres coloniales divisant les Tswana entre Botswana et Afrique du Sud.",
+      "externalInfluences": "Contact avec les peuples Khoisan (San et Khoi) des la prehistoire, influence sur la langue (emprunts, clics dans certains dialectes). Commerce avec les Swahili et les marchands arabes via les routes de l'Ocean Indien (avant le XVIe siecle). Arrivee des missionnaires protestants (LMS : Robert Moffat, David Livingstone), creation des premieres ecoles et bible en setswana (1857). Colonisation britanique du Bechuanaland (1885). Sous l'apartheid en Afrique du Sud : bantoustan de Bophuthatswana (1977-1994). Influence du droit coutumier et du christianisme reformateur sur les institutions politiques traditionnelles.",
+      "majorHistoricalEvents": "Settlement de Toutswe (IXe-XIIIe s.), premier centre de pouvoir proto-tswana. Fondation de Kaditshwene (fin XVe s.), capitale commerciale et administrative. Mission de Kuruman fondee par Robert Moffat (1824) : premiere Bible en langue bantoue subsaharienne (1857). Bataille de Dimawe (1852) : coalition tswana menee par Sechele Ier contre les commandos boers de Paul Kruger et Pieter Scholtz — victoire des Tswana. Guerre Tswana-Ndebele (1880-1884) : les Batawana du kgosi Moremi et les Wayeyi repoussent les raids ndebele. Proclamation du Bechuanaland Protectorate (1885). Alliance du kgosi Khama III avec les Britanniques lors de la Premiere Guerre Matebele (1893). Independence du Botswana le 30 septembre 1966. Royal Bafokeng Nation : developpement d'un fonds souverain platinifere parmi les plus importants d'Afrique (environ 4 milliards USD d'actifs, 2020s)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe tswana est organisee en merafe (royaumes, singulier : morafe), chacun gouverne par un kgosi (chef/roi). L'institution centrale est le kgotla, assemblee publique tenue a l'ombre des arbres ou dans un espace designe devant la residence du chef. Le kgotla est une forme de democratie deliberative : tous les hommes adultes (historiquement) ont droit de parole, selon le proverbe Mmualebe o a bo a bua la gagwe (meme celui qui parle mal doit s'exprimer). Les decisions sont prises par consensus apres que le kgosi a tshwaraganya (synthese). Le kgotla remplit des fonctions legislatives, judiciaires et executives au niveau local. Le systeme est reconnu par la Constitution botswanaise et les chefs siegent au Ntlo ya Dikgosi (Chambre des chefs), organe consultatif du Parlement.",
+      "clanOrganization": "La societe tswana est patrilineaire et organisee en kgotla (clan/ward). Chaque morafe est divise en groupes de lignages (dikgoro, singulier kgoro) et en batho (groupes de consanguins). Les batlhanka (serfs et dependants historiques), les bakgalagadi (sous-groupes assimiles) et d'autres groupes clients avaient des statuts variables. Les forgerons et certains artisans avaient des statuts semi-castes. La polygamie etait pratiquee par les hommes de haut rang.",
+      "ageClassSystems": "Le systeme des mephato (regiments d'age) est fondamental. Les garcons vers 16 ans sont regroupes en bogwane (pre-initiation) puis passent le bogwera (initiation masculine) : sequestration en brousse, circoncision, enseignement de l'histoire tswana, de la religion, de la guerre et des responsabilites civiques. Chaque mophato (regiment) recoit un nom collectif et reste solidaire a vie, pouvant etre mobilise par le kgosi pour des travaux publics, la defense ou le maintien de l'ordre. Les filles passent le bojale (initiation feminine) : instruction sur les responsabilites des femmes adultes, le mariage et la cosmologie tswana. Les missionnaires europeens ont combattu ces pratiques au XIXe siecle; les Balete restaient le seul groupe les maintenant en fin d'ere coloniale; des groupes comme les Bakgatla et les Balete les ont revigorees recemment.",
+      "roleOfLineages": "Les lignages patrilineaires (metse, singulier motse) structurent l'acces a la terre, l'heritage et les alliances matrimoniales. La residence est patrilocale. Le lobola (bohadi en setswana — transfert de betail de la famille du marie a celle de la mariee) cimente les alliances entre familles. L'appartenance a un morafe (royaume) est determinee par la naissance et le lieu de residence.",
+      "religiousAuthority": "Traditionnellement, le kgosi cumule les fonctions politiques et rituelles : il est le mediateur entre les ancetres (badimo) et la communaute, et responsable des rituels de pluie (go phasa). Les ngaka (guerisseurs/devins) jouent un role important dans la sante et la protection spirituelle. Le christianisme (protestant : LMS, anglicans, methodistes) s'est fortement implante des le XIXe siecle sous l'influence de Moffat et Livingstone, avec adoption de l'ecriture en setswana. Le christianisme zioniste (Afrique du Sud) et les Eglises apostoliques sont aujourd'hui tres repandus."
     },
     "languages": {
-      "mainLanguage": "Setswana / Tswana",
-      "vehicularRole": "Le setswana est parlé par la majorité des Tswana. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Setswana (Tswana)",
+      "isoCodes": ["tsn"],
+      "dialects": [
+        "Selete (dialecte de Balete, Ramotswa, Botswana)",
+        "Sekgatla (dialecte de Bakgatla, Mochudi/Pilanesberg)",
+        "Sengwaketse (dialecte de Bangwaketse, Kanye)",
+        "Sengwato (dialecte de Bangwato, Serowe)",
+        "Sekwena (dialecte de Bakwena, Molepolole)",
+        "Sehurutshe (dialecte de Bahurutshe, Zeerust)",
+        "Sepitori (variante urbaine de Pretoria, melange setswana-autres langues)"
+      ],
+      "vehicularRole": "Le setswana est l'une des deux langues officielles du Botswana (avec l'anglais) et l'une des onze langues nationales d'Afrique du Sud. Il est parle par environ 13 millions de locuteurs dans le monde (Botswana, Afrique du Sud, Namibie, Zimbabwe, diaspora). C'est la premiere langue bantoue a avoir recu une Bible complete en Afrique subsaharienne (1857, traduction de Robert Moffat). Il est enseigne dans les ecoles primaires et secondaires au Botswana et dans la Province du Nord-Ouest d'Afrique du Sud. Code ISO 639-1 : tn ; ISO 639-3 : tsn."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tswana, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Bogwera : rite de passage des garcons vers l'age adulte (vers 16 ans). Se deroule en brousse pendant plusieurs mois en automne/hiver. Inclut la circoncision, l'instruction sur l'histoire tswana, la cosmologie, la guerre et les devoirs civiques. Chaque initie compose un poeme laudatif personnel (seboko). Les initues sont regroupes en mophato (regiment d'age) qui reste solidaire a vie.\", \"femaleInitiation\": \"Bojale : rite de passage des filles avant le mariage. Instruction sur les responsabilites feminines adultes, le comportement envers les aines et la royaute, le mariage et la maternite. Les missionnnaires chretiens ont fortement reduit la duree et la pratique au XXe siecle.\"}, \"funeraryRites\": {\"burial\": \"Inhumation dans un delai rapide, generalement dans le kraal familial ou le cimetiere de village. Les chefs sont inhumes avec des biens et des objets de prestige. Deuil collectif de plusieurs jours avec repas communautaires.\", \"postFuneraryCeremonies\": \"Ceremonies de commemoration (go phasa) pour les ancetres (badimo) : libations de biere de sorgho, sacrifices de betail pour apaiser et invoquer les esprits ancestraux. Les badimo sont consultes lors de crises familiales et de maladies.\"}, \"weddingRites\": {\"bohadi\": \"Transfert de betail (bohadi/lobola) de la famille du marie a celle de la mariee, scellant l'alliance entre lignages. La fete de mariage (go nyalwa) comprend danses, festins et chants traditionnels.\"}}",
+      "symbols": "Le setswana est ecrit en alphabet latin. Les principaux symboles culturels tswana incluent : le ditlhako (chaussures de cuir traditionnel artisanales), le kaross (manteau de peau de betes), la perle de poterie et les paniers tresses. La vache (kgomo) est le symbole central de la richesse, du prestige et des alliances sociales. Le mot pula (pluie) est la devise nationale du Botswana et l'invocation supreme dans la culture tswana — symbole de benediction, de prosperite et de bonne fortune. Les animaux totems (dipholo) sont specifiques a chaque morafe (ex. crocodile pour les Bakwena, poisson-chat pour les Balete). Le kgotla (espace public d'assemblee) est le symbole architecturale de la democratie tswana.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"visualArts\": \"Poterie en argile (dikhunong) pour l'eau, la biere traditionnelle et la cuisson. Paniers tresses en palmier Mokola en trois types : grands paniers a couvercle pour le stockage, grands paniers ouverts pour le transport en equilibre sur la tete et le vannage, petits plateaux pour le vannage du grain pise. Tissage et confection de kaross (manteaux de peau). Leteisi (etoffe de coton imprimee, aka Shweshwe) : tissu de fete pour mariages et ceremonies.\", \"musicalInstruments\": \"Setinkane (petit piano a pouces / sanza). Segankure ou segaba (vielle a archet, version tswana de l'erhu). Moropa/meropa (tambours). Phala (sifflet a formes variees pour celebrations). Mains : claquements de mains et frappes sur phathisi (peau de chevre sur le mollet, hommes seulement). Guitare (ajout recent pour la variete des cordes). Melodies vocales predominantes, parfois sans tambour.\", \"dances\": \"Setapa (danse des femmes). Dinaka (danse des cornes, Nord-Ouest d'Afrique du Sud). Mophato (danses de regiment d'age). Moribela (danse rituelle de pluie). Mokorotlo (cri de guerre collectif).\", \"songs\": \"Diphala (poemes laudatifs du chef, chantes lors des assemblees). Dikosha (chants d'eglise en setswana, introduits par les missionnaires). Motswako (rap tswana moderne, melange de setswana et anglais, tres populaire en Afrique du Sud depuis les annees 2000).\", \"oralLiterature\": \"Seboko (poeme laudatif personnel, compose lors du bogwera). Maele (proverbes). Ditlhaka (contes et fables).\"}}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Modimo\", \"attributes\": \"Etre supreme non-anthropomorphique, createur cosmique transcendant le genre et la physicalite. Modimo n'est pas represente par des images ou des statues. Il est la force vitale et l'ordre cosmique. L'invocation de Modimo est liee a la pluie (pula), benediction supreme, et a la fertilite de la terre.\"}, \"intermediateDivinities\": [{\"name\": \"Badimo (ancetres)\", \"role\": \"Intermediaires entre Modimo et les vivants. Les ancetres influencent les affaires des vivants — sante, recoltes, relations sociales. Ils sont maintenus en equanimite par des libations (go phasa) et des sacrifices de betail. Les mauvaises recoltes, maladies et malheurs sont souvent interpretes comme le signe que les badimo sont mecontents ou negliges.\"}], \"natureSpirits\": {\"cosmology\": \"La Voie lactee (Molalatladi) est le chemin des ancetres dans le ciel. La lune (Ngwedi) est une femme apportant lumiere douce et bonheur. Venus est Mphatlalatsana (brillante). Les etoiles Selemela, Naka, Thutlwa et Dikolojwane indiquent les saisons agricoles. Le mythe des origines situe le premier homme et les premiers animaux sortant d'un trou dans le sol pres de Lowe (pres de Mochudi) — lieu sacre avec empreintes geantes attribuees a Matsieng.\"}, \"practitioners\": {\"ngaka\": \"Le ngaka (guerisseur-devin, pluriel : dingaka) diagnostique les maladies spirituelles, utilise les os divinatoires (ditaola) et prescrit des remedes a base de plantes (dipheko). Il peut identifier la sorcellerie (boloi) et proteger la communaute par des rituels.\"}, \"christianity\": {\"specificPractices\": \"Le christianisme protestant (Eglise de Londres, methodistes, anglicans, lutheriens) est devenu dominant depuis le XIXe siecle. De nombreux kgosi ont adopte le christianisme, ce qui a modifie ou supprime certaines pratiques traditionnelles (bogwera, bojale). Le christianisme zioniste et les Eglises apostoliques africaines, tres repandus en Afrique du Sud, integrent elements traditionnels et chretiens (chants, guerison par la foi, role des ancetres reformule).\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tswana dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Tswana ont fonde des entites politiques importantes sur les hauts-plateaux d'Afrique australe. Parmi les plus significatifs : le Morafe de Bangwaketse (Makaba II, debut XIXe s.) domine la region sud avec de vastes troupeaux et des raids militaires. Le Morafe de Bangwato (Khama III, 1875-1923) est le plus connu : Khama III interdit l'alcool, la chasse au lion, certaines pratiques traditionnelles et negocia directement a Londres (1895) pour maintenir le Bechuanaland comme protectorat britannique plutot que d'etre integre a la Rhodesie du Sud. Le Morafe de Bakwena (Sechele Ier) est celebre pour avoir resiste victorieusement aux commandos boers a la bataille de Dimawe (1852). La Royal Bafokeng Nation (Phokeng, Afrique du Sud) est celebre mondialement pour sa gestion innovante des revenus du platine : fonds souverain Royal Bafokeng Holdings (environ 4 milliards USD d'actifs), investissements dans l'education, la sante et le sport (stade de la Coupe du Monde 2010).",
+      "relationsWithNeighbors": "Les Tswana ont entretenu des relations complexes avec les peuples voisins. Relations commerciales millenniaires avec les Khoisan (San/Bushmen), avec qui ils echangeaient betail et produits manufactures contre du gibier et des guides. Alliances et conflits avec les Sotho du Sud (Basotho). Conflits avec les Ndebele et les Zulu durant le Difaqane (1815-1840). Alliance avec les Britanniques contre les Boers et les Ndebele au XIXe siecle. Relations tributaires avec certains groupes Kgalagadi (Bakgalagadi), integres dans les merafe comme sujets. Relations commerciales avec les Swahili et les Portugais via les routes est-africaines.",
+      "conflictsOrAlliances": "Difaqane/Mfecane (1815-1840) : vague de violence et de deplacement causee par l'expansion zouloue, qui disloqua plusieurs merafe tswana. Guerre Tswana-Boer (1852-1860) : Sechele Ier des Bakwena mena une coalition contre les commandos boers de Paul Kruger a Dimawe; victoire tswana, paix a Potchefstroom (1860). Guerre Tswana-Ndebele (1880-1884) : Kgosi Moremi des Batawana et ses allies repoussent les raids ndebele. Alliance avec Khama III dans la Premiere Guerre Matebele (1893) avec 700 guerriers tswana aidant la British South Africa Company. Protectorat du Bechuanaland (1885) : Khama III, Sebele et Bathoen se rendirent a Londres en 1895 pour plaider directement aupres de la Reine Victoria contre l'annexion par la BSAC, obtenant le maintien du protectorat.",
+      "diaspora": "La diaspora tswana est limitee mais presente en Europe (Royaume-Uni, Netherlands), aux Etats-Unis, au Canada et en Australie — principalement des etudiants, professionnels et refugies politiques de l'ere de l'apartheid. En Afrique du Sud, les Tswana des zones urbaines (Pretoria, Johannesburg, Klerksdorp, Potchefstroom) constituent une diaspora interieure importante qui parle souvent le Sepitori (dialecte urbain). La Royal Bafokeng Nation attire une attention internationale par ses realisations economiques."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 6500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur Ethnologue (SIL International, 2024 : environ 13 millions de locuteurs setswana, dont la majorite Tswana ethniques), CIA World Factbook (Botswana : Tswana 79% d'environ 2,6 millions habitants = environ 2 millions; Afrique du Sud : 4+ millions de locuteurs setswana en 2012), Statistics Botswana, Statistics South Africa Census 2011. Note : Les chiffres exacts varient selon les sources car certains pays ne distinguent pas systematiquement ethnies et locuteurs.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2100000,
+          "note": "Tswana forment environ 79% de la population du Botswana (recensement 2011); dominent les provinces Centre, Sud et Sud-Est"
+        },
+        {
+          "country": "ZAF",
+          "population": 4200000,
+          "note": "Concentres dans la Province du Nord-Ouest (Mahikeng, Rustenburg, Zeerust) et Northern Cape (Grand Taung, Kuruman); Bophuthatswana anciennement"
+        },
+        {
+          "country": "NAM",
+          "population": 10000,
+          "note": "Petite communaute autour de Gobabis (Omaheke Region)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Setswana / Tswana language (tsn)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tswana people. https://en.wikipedia.org/wiki/Tswana_people",
+      "Wikipedia EN — Bogwera and bojale. https://en.wikipedia.org/wiki/Bogwera_and_bojale",
+      "Wikipedia EN — Kgotla. https://en.wikipedia.org/wiki/Kgotla",
+      "Wikipedia EN — Royal Bafokeng Nation. https://en.wikipedia.org/wiki/Royal_Bafokeng_Nation",
+      "Ethnologue — Setswana (tsn). https://www.ethnologue.com/language/tsn/",
+      "Schapera, Isaac. The Tswana. London: International African Institute, 1953.",
+      "Parsons, Neil. King Khama, Emperor Joe, and the Great White Queen. Chicago: University of Chicago Press, 1998.",
+      "YourBotswana — Batswana Tribes. https://yourbotswana.com/2017/02/26/batswana-tribes/",
+      "EBSCO Research Starters — Tswana people. https://www.ebsco.com/research-starters/ethnic-and-cultural-studies/tswana-people",
+      "CIA World Factbook — Botswana. https://www.cia.gov/the-world-factbook/countries/botswana/"
     ]
   }
 }

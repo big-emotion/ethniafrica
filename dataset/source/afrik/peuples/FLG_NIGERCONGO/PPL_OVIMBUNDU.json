@@ -7,62 +7,101 @@
     "appellations": {
       "mainName": "Ovimbundu",
       "selfAppellation": "Ovimbundu",
-      "exonyms": ["Ovimbundu (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Umbundu (terme parfois employe par confusion avec la langue)",
+        "Southern Mbundu (pour distinguer des Kimbundu du nord)"
+      ],
+      "originOfExonyms": "Le terme Ovimbundu est le nom propre de ce peuple en umbundu (prefixe Ovi- de pluriel + mbundu). Le terme Southern Mbundu, utilise dans la litterature anglophone, sert a distinguer les Ovimbundu des Mbundu du Nord (Kimbundu), un autre grand peuple de l'Angola. Cette denomination comparative est d'origine coloniale.",
+      "whyProblematic": "La confusion fréquente entre Ovimbundu (peuple) et Umbundu (langue) dans la litterature non specialisee. Le terme Southern Mbundu efface la specificite culturelle et politique des Ovimbundu en les definissant uniquement par rapport a leurs voisins du nord.",
+      "contemporaryUsage": "Ovimbundu est le terme universellement employe au niveau national et international. En Angola, ils constituent le groupe ethnique le plus nombreux. L'identite ovimbundu a ete fortement politisee par leur association avec le mouvement UNITA pendant la guerre civile (1975-2002).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "Angola",
+      "ethnoLinguisticGroup": "Bantou (Zone R), sous-groupe R11 (Umbundu)",
+      "historicalRegion": "Plateau du Bié (Benguela) — hautes terres du centre-ouest de l'Angola, au-dessus de 1200 m d'altitude, autour de l'actuelle ville de Huambo",
       "currentCountries": ["AGO"]
     },
     "ethnicities": [
-      "Ovimbundu du Nord",
-      "Ovimbundu du Sud",
-      "Sous-groupes régionaux"
+      "M'Balundu (Bailundu) — royaume dominant au nord-ouest du coeur ovimbundu, connu pour le commerce a longue distance",
+      "Sele — ancien groupe territorial constitutif",
+      "Wambu (Huambo) — groupe central, region de l'actuelle capitale provinciale Huambo",
+      "Bieno (Bié/Viye) — royaume du nord-est, important pole commercial",
+      "Ngalangi — royaume tributaire",
+      "Sanbu — royaume tributaire",
+      "Ndulu — royaume tributaire",
+      "Ciyaka — groupe territorial",
+      "Civulu — groupe territorial",
+      "Dombe — groupe perifhérique, cote ouest, langue proche de l'umbundu",
+      "Mbui — groupe frontalier entre Ovimbundu et Kimbundu",
+      "Hanya et Nganda — groupes pastoraux de peripherie, partiellement assimiles"
     ],
     "origins": {
-      "ancientOrigins": "Les Ovimbundu sont originaires de la région de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Ovimbundu sont issus de populations bantoues qui dérivent vers le sud depuis le nord au cours du dernier millenaire. Les familles regnantes penetrerent dans les hautes terres du Benguela depuis le nord-est au 17e siecle, soumettant et incorporant les populations autochtones d'eleveurs qui occupaient le plateau. Ces populations autochtones pratiquaient l'elevage bovin, comme leurs voisins herero et ovambo au sud.",
+      "formationPeriod": "La formation des royaumes ovimbundu sur le plateau de Benguela s'acheva principalement au 17e siecle avec l'etablissement des grandes dynasties (Bailundu, Bié, Huambo/Wambu). Le commerce a longue distance vers l'est se developpa intensement aux 18e et 19e siecles, faisant des Ovimbundu les principaux intermediaires commerciaux entre la cote atlantique et l'interieur de l'Afrique centrale.",
+      "migrationRoutes": [
+        "Derive des populations bantoues depuis le nord sur le plateau du Bié entre le 14e et le 17e siecle",
+        "Penetration des familles regnantes depuis le nord-est au 17e siecle",
+        "Extension commerciale vers l'est jusqu'en Zambie, au Congo et en Namibie (18e-19e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Bié (Benguela), entre 1200 et 1800 m d'altitude, provinces de Huambo et Bié",
+        "Bande cotiere a l'ouest du plateau (Benguela, Lobito)",
+        "Provinces de Bie, Kwanza Sul, Huila en extension",
+        "Luanda et autres capitales provinciales (migrations coloniales et post-coloniales)"
+      ],
+      "unificationsOrDivisions": "Les Ovimbundu n'ont jamais forme un empire unifie. Ils constituaient une confederation de royaumes independants lies par la langue umbundu, les alliances commerciales et les accords de commerce. Les deux royaumes dominants, Bailundu et Bié (Viye), dominaient les plus petits (Wambu, Ngalangi, Sanbu, Ndulu, Ciyaka, Civulu). La guerre civile angolaise (1975-2002) a profondement traumatise la region et divise les Ovimbundu entre zones MPLA et UNITA.",
+      "externalInfluences": "Commerce d'esclaves et d'ivoire avec les negociants portugais de Benguela (17e-19e siecles). Les Ovimbundu furent les principaux esclavagistes et negociants a longue distance de l'interieur angolais. Fin du commerce des esclaves et construction du chemin de fer de Benguela (1904) : effondrement du commerce caravanier traditionnel. Missions protestantes nord-americaines (Congregationalist, 1880), puis catholiques : creation de l'IECA (Igreja Evangelica Congregacional de Angola), reseau dense d'ecoles et d'eglises. Colonisation portugaise intensive sur le plateau (annees 1940-1950) : expropriation des terres, travail migrant force. Guerre de liberation contre le Portugal (UNITA, 1966-1974). Guerre civile MPLA-UNITA (1975-2002), devastatrice pour Huambo et Kuito.",
+      "majorHistoricalEvents": "Les royaumes de Bailundu et Bié jouerent un role central dans le commerce caravanier d'ivoire, de cire d'abeille et d'esclaves entre la cote et l'interieur (18e-19e siecles). Revolte de Bailundu contre les Portugais (1902), reprimee violemment. Construction du chemin de fer de Benguela (1904) : fin progressive du commerce caravanier. Dans les annees 1940, les Ovimbundu developperent le reseau chretien le plus dense d'Angola (ecoles, eglises, villages chretiens). Fondation de l'UNITA par Jonas Savimbi (1966), mouvement emanant principalement de la communaute ovimbundu. Independence de l'Angola (1975). Guerre civile devastatrice (1975-2002) detruisant Huambo et Kuito. Mort de Savimbi (fevrier 2002) et cessez-le-feu. Shift electoral : la majorite ovimbundu vota MPLA aux elections de 2008, abandonnant UNITA affaiblie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Royaumes hereditaires (soba) avec roi (hosi) a la tete, assiste d'un conseil de notables et de chefs de village (sekulu). Les anciens royaumes de Bailundu et Bié etaient les plus puissants, avec des reseaux commerciaux etendus et des caravanes professionnelles. Chaque caravane avait un chef professionnel (olosoma) et un devin. Le systeme traditionnel a ete partiellement demantele par la colonisation puis par la guerre civile.",
+      "clanOrganization": "Structure patrilineaire : les enfants appartiennent au clan du pere. Organisation en familles etendues (ombala) regroupees en villages sous un chef (sekulu). L'appartenance clanique determine les alliances matrimoniales et les obligations de solidarite. Les dots (lobola) sont negociees entre familles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent la succession au pouvoir, la propriete fonciere et les alliances politiques. Les familles royales des anciens royaumes maintiennent leur prestige social meme apres la destruction des structures politiques formelles. Les missions chretiennes (IECA notamment) ont joue un role de substitution dans la structure sociale a partir des annees 1940.",
+      "religiousAuthority": "Autorite des devins traditionnels (kimbanda) dans les pratiques rituelles de protection et de guerison. Les chefs de caravane s'associaient systematiquement a un devin pour chaque expedition commerciale. L'IECA (Igreja Evangelica Congregacional de Angola, fondee par des missionnaires americains congregationalistes) est la principale Eglise ovimbundu, avec un reseau dense de paroisses sur le plateau. L'Eglise catholique est egalement tres presente."
     },
     "languages": {
       "mainLanguage": "Umbundu",
-      "vehicularRole": "L'umbundu est parlé par la majorité des Ovimbundu. Le portugais et d'autres langues sont également utilisés."
+      "isoCodes": ["umb"],
+      "dialects": [
+        "Bailundu (Umbundu du nord-ouest) — dialecte du royaume de Bailundu",
+        "Huambo (Wambu) — dialecte central, base des standards ecrits modernes",
+        "Bie (Umbundu du nord-est) — dialecte du royaume de Bie-Viye",
+        "Caconda — variete meridionale de l'umbundu"
+      ],
+      "vehicularRole": "L'umbundu est la deuxieme langue la plus parlee en Angola apres le portugais, avec environ 6 millions de locuteurs. C'est une langue de communication regionale sur le plateau du Bie et dans les provinces de Huambo et Bie. Le portugais est la langue officielle de l'Angola, utilise dans l'administration, l'education et les medias nationaux. L'umbundu est enseigne dans certaines ecoles primaires des provinces du centre-ouest de l'Angola."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ovimbundu, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites d'initiation masculine (okambanda) et feminine (okukulisa) marquant l'entree dans l'age adulte, avec periode de retraite et enseignement des roles adultes. Ceremonies matrimoniales avec negociation de dot (lobola) entre familles. Ceremonies funebres en plusieurs etapes avec participation collective du village. Rituels agricoles de benediction des semailles et actions de grace a la recolte (mais principalement). Divination (kimbanda) avant les decisions importantes, notamment les expeditions commerciales.",
+      "symbols": "Le plateau du Bie (Benguela) est le territoire identitaire central des Ovimbundu. Les caravanes (pombo) symbolisent l'identite historique de negociant. Le mais (milho) est la culture de base et symbole de prospérité. L'eglise IECA est un symbole communautaire fort depuis plus d'un siecle. Les instruments en bois sculpte (cannes de chef, tabourets) sont des insignes de pouvoir traditionnel.",
+      "artsAndMusic": "Agriculture sophistiquee : mais, haricots, elevage de petits animaux (poulets, chevres, porcs). Artisanat : sculptures en bois (masques, figures), vannerie, poterie. Musique percussive avec tambours (ngoma) et xylophones (marimba). Chants polyphoniques lors des ceremonies collectives. Danse ocimbanda liee aux rituels de divination et de guerison. Poesie orale et recits epiques sur les expeditions commerciales et les royaumes. Architecture traditionnelle de l'enclos (ombala) en pierre seche ou en terre.",
+      "spiritualities": "Religion traditionnelle centree sur la veneration des ancetres (ongombe ya putu) et le recours aux devins-guerisseurs (kimbanda/nganga) pour la divination, la guerison et la protection. Croyance en un dieu supreme (Suku ou Kalunga). Aujourd'hui, la grande majorite des Ovimbundu sont chretiens : l'IECA (Eglise Evangelique Congregationaliste d'Angola), fondee par des missionnaires nord-americains, compte plusieurs millions de membres, suivie de l'Eglise catholique romaine. Syncrétisme marque entre pratiques chretiennes et croyances ancestrales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ovimbundu dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Ovimbundu developperent une quinzaine de royaumes sur le plateau de Benguela, dont les plus importants furent Bailundu (nord-ouest), Bié ou Viye (nord-est) et Wambu/Huambo (centre). Ces royaumes s'associerent en reseaux commerciaux pour organiser les grandes caravanes vers l'est (jusqu'en Zambie, au Congo et au Mozambique) qui approvisionnaient les ports portugais de Benguela et Lobito en ivoire, cire d'abeille, caoutchouc et, anterieurement, en esclaves.",
+      "relationsWithNeighbors": "Les Ovimbundu furent les principaux intermediaires du commerce a longue distance entre la cote atlantique et l'interieur de l'Afrique centrale (18e-debut 20e siecle), interagissant avec les Chokwe, Luvale, Mbunda et Lunda a l'est, et avec les negociants portugais a l'ouest. Relations de commerce et parfois de conflit avec les Nyaneka-Nkhumbi et les Ovambo au sud. La construction du chemin de fer de Benguela (1904) a mis fin au monopole ovimbundu du commerce caravanier.",
+      "conflictsOrAlliances": "Revolte de Bailundu (1902) contre les abus des negociants portugais : reprimee apres plusieurs mois de resistance. Resistance passive a la depossession fonciere coloniale (annees 1940-1950). Fondation de l'UNITA (1966) par Jonas Savimbi : mouvement de liberation anti-portugais avec base sociale ovimbundu. Apres l'independance (1975) : guerre civile devastatrice avec l'MPLA (1975-2002). Mort de Savimbi (2002) et cessez-le-feu definitif. Reconciliation nationale progressive depuis 2002.",
+      "diaspora": "Diaspora ovimbundu considerable a Luanda (fuite de la guerre civile). Communautes importantes dans les villes portuaires de Benguela et Lobito. Emigration economique en Europe (Portugal notamment) et dans les pays de la SADC. Depuis 2002, retour progressif de certains deplaces vers le plateau du Bié."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 8700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Les Ovimbundu constituent environ 37-38% de la population angolaise. Population totale Angola 2025 : environ 38 millions (projections UN). 38% = ~14,4 millions, mais certaines sources citent 4 millions (Britannica, debut 21e siecle) a 6 millions (Ethnologue). Estimation retenue : 37% de 35 millions = ~8,7 millions (projection prudente 2025 sur base Minorityrights.org et Ethnologue).",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 8700000,
+          "note": "Principalement provinces de Huambo, Bié, Benguela, Kwanza Sul et Huila ; diaspora a Luanda (~2 millions)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Umbundu language (umb)",
-      "CIA World Factbook – Angola",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ovimbundu. https://en.wikipedia.org/wiki/Ovimbundu",
+      "Britannica — Ovimbundu. https://www.britannica.com/topic/Ovimbundu",
+      "Minority Rights Group — Ovimbundu in Angola. https://minorityrights.org/communities/ovimbundu/",
+      "eHRAF World Cultures — Ovimbundu (fp13). https://ehrafworldcultures.yale.edu/cultures/fp13/summary",
+      "Country Studies — Angola: Ovimbundu. https://countrystudies.us/angola/59.htm",
+      "SIL Ethnologue — Umbundu language, code umb. https://www.ethnologue.com/language/umb/",
+      "Localizely — Umbundu (umb) ISO code. https://localizely.com/language-code/umb/",
+      "Heywood, Linda. Contested Power in Angola, 1840s to the Present. University of Rochester Press, 2000."
     ]
   }
 }

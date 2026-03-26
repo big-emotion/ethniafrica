@@ -6,54 +6,96 @@
   "content": {
     "appellations": {
       "mainName": "Yungur",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Bena (prononce Bena ou Ebena en langue locale)",
+      "exonyms": [
+        "Yungur",
+        "Yongor",
+        "Yangeru",
+        "Yungirba",
+        "Binna",
+        "Buna",
+        "Ebina",
+        "Ebuna",
+        "Gbinna",
+        "Purra",
+        "Lala (pour la sous-variete nord)"
+      ],
+      "originOfExonyms": "Le nom Yungur est a l'origine un exonyme donne par les voisins de ce peuple. Il est aujourd'hui regulierement utilise par les Bena eux-memes lorsqu'ils s'expriment dans d'autres langues. Le terme Lala est utilise pour les Bena du nord (sous-groupe autour de Yang et Bodwai) mais n'est pas recommande. Purra est un terme general pour les Bena du nord.",
+      "whyProblematic": "La coexistence de plusieurs noms (Yungur, Bena, Bena-Yungur) peut preter a confusion. Depuis les travaux de Kleinewillinghöfer (1993), la denomination Bena-Yungur est privilegiee par les linguistes pour designer l'ensemble dialectal, afin de distinguer les Bena-Yungur des Lala qui se nomment aussi Bena.",
+      "contemporaryUsage": "Yungur est le nom courant utilise dans les medias nigerians et les publications administratives de l'Etat d'Adamawa. Le terme Bena est utilise par la communaute elle-meme. La chieftaincy Yungur a ete restauree recemment avec l'intronisation du 26e Gubo Yungur en 2025.",
       "linguisticFamily": "FLG_ADAMAWA_UBANGI",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Est",
+      "ethnoLinguisticGroup": "Groupe Bena-Mboi (branche Bena-Yungur), famille Adamawa, sous-famille Niger-Congo",
+      "historicalRegion": "Nord-est du Nigeria, Etat d'Adamawa, dans les montagnes a l'est du bas-Gongola, au sud de la riviere Hawal et au nord du Benue",
       "currentCountries": ["NGA"]
     },
-    "ethnicities": ["Yungur"],
+    "ethnicities": ["Yungur (Bena)", "Lala", "Roba", "Voro", "Mboi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Yungur/Bena sont etablis depuis des siecles dans les montagnes rocailleuses de l'actuel Etat d'Adamawa, au Nigeria. Leur langue appartient au groupe Bena-Mboi de la famille Adamawa, lui-meme distant de tous les autres groupes Adamawa nigerians, ce qui suggere une histoire distincte et ancienne. Les traditions orales font etat d'une organisation politique autonome remontant a plusieurs siecles, avec une succession de 25 dirigeants supremes (Gubo Yungur) avant la colonisation britannique.",
+      "formationPeriod": "La chefferie Yungur est attestee depuis au moins le debut du XIXe siecle avec des Gubo documentés (Gubo Yakusum, 1823-1863). L'organisation politique precede cette periode selon la tradition orale.",
+      "migrationRoutes": [
+        "Etablissement dans les zones montagneuses a l'est du bas-Gongola et au sud du Hawal (zones defensivement avantageuses)",
+        "Expansion dans les LGA de Song, Guyuk et Gombi (Etat d'Adamawa)"
+      ],
+      "historicalSettlementZones": [
+        "LGA de Song (Etat d'Adamawa) : zone principale, notamment le village de Dumne",
+        "LGA de Guyuk (Etat d'Adamawa)",
+        "LGA de Gombi (Etat d'Adamawa)",
+        "Montagnes a l'est du bas-Gongola"
+      ],
+      "unificationsOrDivisions": "La chefferie Yungur etait unie sous l'autorite d'un chef supreme (Gubo Yungur). Elle fut demembree par l'administration coloniale britannique en 1959 qui confisqua le baton de commandement, puis officiellement degradee en simple district en 1960. Apres plus de six decennies, la chefferie a ete restauree en 2025 avec l'intronisation de S.M.R. Gubo Johnson Dio Matalo (26e Gubo Yungur).",
+      "externalInfluences": "Contrairement a de nombreux peuples voisins, les Yungur n'ont jamais ete conquis par les Etats jihadistes de la region ni soumis a des puissances exterieures selon leur tradition orale. L'arrivee de missionnaires chretiens dans les annees 1930 a profondement transforme la vie religieuse. La periode coloniale britannique a affaibli les institutions traditionnelles.",
+      "majorHistoricalEvents": "Guerres de resistance contre toutes tentatives d'imposition externe (XIXe siecle). Confiscation du baton de commandement par l'administration coloniale en 1959. Degradation de la chefferie en district en 1960. Restauration de la chefferie en 2025."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie traditionnelle dirigee par un chef supreme appele Gubo Yungur (titre hereditaire), assiste d'un conseil d'anciens. Le systeme est l'un des plus anciens de l'Etat d'Adamawa selon les historiens locaux. La ligne de succession suit la descendance patrilineaire du clan Mwapa (clan regnant). La chefferie a ete supprimee par les Britanniques en 1959-1960 et restauree en 2025.",
+      "clanOrganization": "La langue Bena-Yungur est divisee en 17 clans, chacun etant dit avoir une variete de parole distincte. Le clan Mwapa est le clan regnant fournissant les Gubo Yungur. Les quatre branches linguistiques du groupe Bena-Mboi (Bena-Yungur, Lala, Mboi, Kaan) correspondent a des sous-groupes ethniques distincts.",
+      "roleOfLineages": "Les lignages patrilineaires (clans) jouent un role central dans la determination des droits politiques, l'acces a la chefferie et l'organisation sociale. Chaque settlement traditionnel est associe a un clan particulier.",
+      "religiousAuthority": "Majorite chretienne (suite a l'evangelisation des annees 1930). Presence de croyances animistes traditionnelles (ethnoreligion). Les autorites religieuses chretiennes coexistent avec les autorites coutumières du Gubo."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Bena (Bena-Yungur)",
+      "isoCodes": ["bvx"],
+      "dialects": [
+        "Bena-Yungur (dialecte de reference : variete Pra, parlee a Dumne)",
+        "Lala (cluster : varieties de Bodwai, Yang, Roba/Ebode)",
+        "Mboi (cluster nord : Livo, Gulongo ; cluster sud : Haanda, Banga)",
+        "Kaan/Libo (parle a Wuriyanka et dans les collines Libbo)"
+      ],
+      "vehicularRole": "Le haoussa sert de langue de communication interethnique dans le nord du Nigeria. L'anglais est la langue officielle du Nigeria. Le fulfulde est aussi utilise dans certaines zones d'Adamawa."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage et d'initiation lies aux cycles de vie. Ceremonies d'intronisation des chefs (Gubo). Rites agricoles lies aux saisons de pluie dans la savane rocailleuse. Les missionnaires chretiens ont modifie certaines pratiques rituelles depuis les annees 1930.",
+      "symbols": "Le baton de commandement du Gubo Yungur, confisque en 1959 et symbole de la resistance de la chefferie. Les habitations traditionnelles dans les zones montagneuses d'Adamawa. L'independance et l'autosuffisance sont des valeurs centrales dans la culture Yungur.",
+      "artsAndMusic": "Artisanat local lie aux activites agricoles et pastorales de la savane. Tradition musicale orale incluant des chants ceremonials. La sculpture sur bois et les arts lies aux rites de chefferie. L'art de la poterie est documente dans la region par des etudes archeologiques (Berns 1986).",
+      "spiritualities": "Majorite chretienne suite aux missions des annees 1930. Maintien de pratiques d'ethnoreligion (animisme) parallèlement au christianisme. La communaute fait face selon les sources a des defis lies au divorce, a l'abus de substances et a la propagation du VIH/SIDA."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "La chefferie Yungur est l'une des plus anciennes et historiquement significatives de l'Etat d'Adamawa, avec une tradition de 25 chefs supremes (Gubo Yungur) documentee avant 1959. Elle a ete un Etat bien organise et autonome. La liste des Gubo comprend notamment Gubo Yakusum (1823-1863), Gubo Yongon (1869-1879), Gubo Augeredya (1897-1910) et Gubo Agbalan Augubakla (1914-1929, 1947-1959).",
+      "relationsWithNeighbors": "Relations avec les groupes Longuda, Tula-Waja et Bikwin-Jen que Bennett (1983) regroupe dans le sous-ensemble Trans-Benue. Relations historiques avec les Lala (voisins linguistiquement proches) et les Gaanda (voisins chadic). Les Yungur constituent 75% de la population du LGA de Song.",
+      "conflictsOrAlliances": "Les Yungur ont resiste a toutes les tentatives de conquete par des tribus voisines ou des jihadistes selon leur tradition orale. Resistance passive a la colonisation britannique qui a abouti a la suppression de leur chefferie en 1959-1960.",
+      "diaspora": "La diaspora Yungur est principalement interne au Nigeria, avec des migrations vers les grandes villes nigerianes (Yola, Abuja, Lagos) pour raisons economiques et educatives."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 209000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org (PGID: PG014199), estimation 2025 ; donnees historiques : 44300 (1963 SIL), moins de 100000 (1990 est.)",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 209000,
+          "note": "concentres dans le LGA de Song (75% de la population locale), LGA de Guyuk et Gombi, Etat d'Adamawa"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Bena language (Adamawa) – Wikipedia (https://en.wikipedia.org/wiki/Bena_language_(Adamawa))",
+      "Bena-Mboi languages – Wikipedia (https://en.wikipedia.org/wiki/Bena%E2%80%93Mboi_languages)",
+      "Adamawa Language Projects – Bena-Mboi or Yungur Group, Kleinewillinghöfer 2011 (https://www.blogs.uni-mainz.de/fb07-adamawa/adamawa-languages/)",
+      "LLACAN-CNRS – AdaGram Bena-Yungur (https://llacan.cnrs.fr/AdaGram/bena-yungur.html)",
+      "PeopleGroups.org – Yungur of Nigeria, PG014199 (https://peoplegroups.org/people_groups/pg014199/)",
+      "Joshua Project – Yungur, Binna in Nigeria (https://joshuaproject.net/people_groups/16071)",
+      "Knight Media – The Yungur Chiefdom after 6 decades of loss, 2025 (https://kissingerdotblog.wordpress.com/2025/01/08/the-yungur-chiefdom-after-6-decades-of-loss/)",
+      "Fact Check News – Yungur Chiefdom: Our Heritage, Our Future, 2025 (https://factchecknews.com.ng/2025/01/01/yungur-chiefdom-our-heritage-our/)"
+    ]
   }
 }

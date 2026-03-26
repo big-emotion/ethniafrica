@@ -1,59 +1,97 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_DASSANECH",
   "nameMain": "Dassanech",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": ["ETH"],
+  "currentCountries": ["ETH", "KEN", "SSD"],
   "content": {
     "appellations": {
       "mainName": "Dassanech",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Daasanach",
+      "exonyms": [
+        "Daasanach",
+        "Dasenech",
+        "Dassanetch",
+        "Dassenech",
+        "Marille",
+        "Galeb",
+        "Geleba",
+        "Geleb",
+        "Gelubba",
+        "Reshiat",
+        "Merille"
+      ],
+      "originOfExonyms": "Marille ou Merille est le nom donné aux Dassanech par les Turkana du Kenya voisin. Galeb ou Geleba était un nom ancien utilisé par des sources extérieures mais a été abandonné en raison de ses connotations négatives. Reshiat est utilisé dans certains documents soudanais. Daasanach est l'orthographe principale adoptée par Ethnologue.",
+      "whyProblematic": "Le terme Galeb est considéré péjoratif et a été retiré des usages officiels. La multiplicité des orthographes (Dassanech, Daasanach, Dasenech, etc.) reflète les difficultés de transcription des consonnes implosives de la langue Dassanech, notamment le D initial implosif.",
+      "contemporaryUsage": "Daasanach est l'orthographe recommandée par Ethnologue et Glottolog. Dassanech est couramment utilisé dans les documents touristiques et les médias internationaux. Dans l'administration éthiopienne, le nom officiel est Daasanach. Ils se définissent comme les peuples du delta (Daasanach signifie littéralement 'gens du delta')."
     },
     "ethnicities": ["Dassanech"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "L'origine des Dassanech est singulière : leur identité communautaire repose sur un lieu de résidence commun plutôt que sur une ascendance ethnique unique. Des analyses génétiques indiquent qu'ils sont plus proches des populations Nilo-Sahariennes que des populations Couchitiques et Sémitiques de l'Éthiopie, suggérant des ancêtres nilotiques qui ont adopté la langue couchitique au contact de populations Couchitiques établies dans le sud de l'Éthiopie. Ils sont génétiquement liés au peuple Pokot du Kenya.",
+      "formationPeriod": "Au XIXe siècle, les ancêtres nilotiques des Dassanech ont commencé des migrations séparées : un groupe s'est dirigé vers le sud dans la région des Grands Lacs africains et un autre s'est installé dans le sud de l'Éthiopie. Des exilés de nombreux groupes autour du lac Turkana se sont progressivement unifiés dans ce milieu hostile, adoptant des traditions et une culture commune, et une langue couchitique.",
+      "migrationRoutes": [
+        "Migration nilotique depuis l'est de l'Afrique vers le sud de l'Éthiopie au XIXe siècle",
+        "Concentration dans le delta de l'Omo au nord du lac Turkana",
+        "Présence transfrontalière au nord du Kenya (Ileret, comté de Turkana) et au Soudan du Sud (Triangle de l'Ilemi)"
+      ],
+      "historicalSettlementZones": [
+        "Delta du fleuve Omo, Zone du Debub Omo, Région d'Éthiopie du Sud",
+        "Rives nord du lac Turkana, Kenya (site d'Ileret)",
+        "Triangle de l'Ilemi, Soudan du Sud",
+        "Rive orientale de l'Omo, entre Omorate et le lac Turkana"
+      ],
+      "unificationsOrDivisions": "Les Dassanech sont divisés en huit clans principaux. Chaque clan a une identité et des responsabilités propres mais partage les mêmes rituels cérémoniels. Les jeunes du même clan ne peuvent pas se marier entre eux ni même danser ensemble. Leur cohésion repose sur les pratiques culturelles communes (la cérémonie Dimi notamment) plutôt que sur une ascendance partagée.",
+      "externalInfluences": "La création de frontières coloniales entre l'Éthiopie, le Kenya et le Soudan a fragmenté le territoire traditionnel Dassanech et restreint leurs déplacements semi-nomades. Des missionnaires américains ont introduit des systèmes d'irrigation dans les années 1960 mais ces infrastructures ont été abandonnées après l'expulsion des étrangers d'Éthiopie en 1974. Le changement climatique, les conflits pour les pâturages avec les peuples voisins (Turkana, Gabra) et la construction du barrage Gibe III ont profondément modifié leur mode de vie.",
+      "majorHistoricalEvents": "Unification progressive d'exilés de divers groupes autour du delta de l'Omo au XIXe siècle. Fragmentation territoriale par les frontières coloniales vers 1900. Introduction de l'irrigation par des missionnaires américains dans les années 1960, abandonnée en 1974. Conflits récurrents avec les Turkana et autres voisins pour les ressources. Impact du barrage Gibe III sur les crues annuelles du fleuve Omo essentielles à leur agriculture."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "La société Dassanech est organisée selon un système de classes d'âge, avec les anciens servant de décideurs et gardiens des traditions. Le leadership est basé sur l'ancienneté et la richesse en bétail. Il n'existe pas de chefferie centralisée : chaque clan dispose de ses propres espaces cérémoniels et lieux de réunion.",
+      "clanOrganization": "Les Dassanech comptent huit clans principaux, dont le clan Ellele est parmi les plus documentés. Les clans détiennent chacun leur identité, leurs coutumes propres et leurs lieux cérémoniels spécifiques. Le mariage inter-clanique est encouragé, mais les unions au sein d'un même clan sont interdites.",
+      "ageClassSystems": "La société Dassanech est structurée en classes d'âge. Les hommes qui perdent leur bétail sont dégradés au statut de Dies (gens pauvres) et doivent vivre de la pêche et de la chasse aux crocodiles sur les rives du lac Turkana. Ce statut social inférieur illustre l'importance centrale du bétail dans la hiérarchie sociale.",
+      "roleOfLineages": "La première femme d'un homme est choisie par sa famille avec des considérations sociales. Les épouses suivantes peuvent être choisies librement, mais chaque femme doit avoir sa propre hutte pour elle et ses jeunes enfants. La dot en bétail est obligatoire pour le mariage.",
+      "religiousAuthority": "La cérémonie Dimi est le rituel central de bénédiction des filles lorsqu'elles atteignent l'âge de 8 à 10 ans. Elle est conduite par des anciens désignés appelés les Bulls, qui deviennent eux-mêmes Bulls après avoir fait bénir leurs filles. Chaque clan a son propre lieu cérémoniel pour la cérémonie Dimi."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Daasanach (dsh)",
+      "isoCodes": ["dsh"],
+      "dialects": [],
+      "vehicularRole": "La langue Daasanach appartient à la branche couchitique orientale de la famille afro-asiatique, groupe Omo-Tana occidental (Glottolog : daas1238, ISO 639-3 : dsh). Elle se distingue par un grand nombre de classes nominales, un système verbal irrégulier et des consonnes implosives. Le D initial de Daasanach est implosif. L'amharique est utilisé pour les contacts avec l'administration éthiopienne ; le swahili et l'anglais dans le contexte kenyan."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La cérémonie Dimi est le rite de passage principal pour les filles de 8 à 10 ans d'un même clan, célébrée collectivement dans un lieu cérémoniel propre à chaque clan. Elle comprend la construction de huttes temporaires, l'abattage de bœufs et de chèvres, et une bénédiction par les anciens Bulls. Après la cérémonie, les pères des filles bénies deviennent eux-mêmes des Bulls, marquant une élévation de leur statut social.",
+      "symbols": "Les huttes en dôme caractéristiques des Dassanech, couvertes de branches et de peaux avec une entrée délibérément très basse pour compliquer l'entrée non souhaitée, sont le symbole architectural le plus reconnaissable de ce peuple. Le bétail est le symbole central de richesse et de statut. Les coiffures élaborées des hommes, parmi les plus sophistiquées de la vallée de l'Omo, sont également très distinctives.",
+      "artsAndMusic": "Les femmes Dassanech portent des bandeau de perles, colliers et jupes ornés. Une tradition créative remarquable consiste à fabriquer des bijoux uniques à partir de matériaux recyclés : capsules de bouteilles, aluminium et objets de rebut. Les cérémonies sont accompagnées de danses et de musiques traditionnelles. Les coiffures masculines complexes signalent le statut social.",
+      "spiritualities": "La religion traditionnelle Dassanech est centrée sur les pratiques rituelles des classes d'âge et les cérémonies de bénédiction comme le Dimi. Les scarifications corporelles ont une valeur spirituelle et sociale : les femmes portent des scarifications sur le dos et les épaules comme signe de courage, tandis que les hommes qui ont tué un ennemi peuvent porter des cicatrices horizontales sur la poitrine."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Dassanech entretiennent des relations commerciales et conflictuelles avec les Turkana (qui les appellent Marille), les Gabra, les Nyangatom et les Karo. Ils échangent des perles, du bétail, des armes et de la nourriture avec les tribus voisines de la vallée de l'Omo et du nord du Kenya. Leur réputation guerrière leur vaut la crainte des peuples voisins.",
+      "conflictsOrAlliances": "Les Dassanech sont réputés pour leur habileté guerrière et célèbrent leurs raids pour l'acquisition de bétail. Des conflits armés récurrents avec les Turkana et les Gabra sont documentés. La division de leur territoire par les frontières coloniales a créé des tensions continues avec les administrations des trois États qui se partagent leur territoire.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 80000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Recensement éthiopien 2007 : 48 067 en Éthiopie / Horn of Africa Evangelical Mission : 66 200 en Éthiopie / estimation composite 2025 incluant populations au Kenya et au Soudan du Sud",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 68000, "percentage": 85 },
+        { "country": "KEN", "population": 10000, "percentage": 13 },
+        { "country": "SSD", "population": 2000, "percentage": 2 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Daasanach people – Wikipedia EN, 2006 (https://en.wikipedia.org/wiki/Daasanach_people)",
+      "Daasanach language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Daasanach_language)",
+      "Daasanach in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14549/ET)",
+      "Daasanach – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/daas1238)",
+      "Daasanach Language (DSH) – Ethnologue (https://www.ethnologue.com/language/dsh/)",
+      "Daasanach of Ethiopia – Horn of Africa Evangelical Mission (https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf)",
+      "The Daasanach Tribe: Nomads of the Omo-Turkana Basin – Begin North Adventures, 2025 (https://beginnorthadventures.com/daasanach-tribe/)",
+      "Ethiopians – Wikipedia EN, recensement 2007 (https://en.wikipedia.org/wiki/Ethiopians)"
+    ]
   }
 }

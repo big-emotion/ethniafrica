@@ -1,69 +1,100 @@
 {
   "id": "PPL_FANG_EQGUINEE",
-  "nameMain": "Fang (Guinée équatoriale)",
+  "nameMain": "Fang (Guinee equatoriale)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["GAB", "GIN", "CMR"],
+  "currentCountries": ["GNQ"],
   "content": {
     "appellations": {
-      "mainName": "Fang (Guinée équatoriale)",
-      "selfAppellation": "Fan / Pahouin / Pangwe",
-      "exonyms": ["« Pahouins » (ancienne étiquette coloniale)"],
+      "mainName": "Fang (Guinee equatoriale)",
+      "selfAppellation": "Fan / Fang (en langue fang) ; se definissent comme appartenant a l'ensemble be-ti ('les seigneurs')",
+      "exonyms": [
+        "Pamue (appellation espagnole coloniale et contemporaine en Guinee equatoriale)",
+        "Pahouin (ancienne etiquette coloniale française/allemande)",
+        "Pangwe (forme germanisee)"
+      ],
+      "originOfExonyms": "Pamue est la forme espagnole du mot Fang, utilisee par les colonisateurs espagnols et encore courante en Guinee equatoriale. Pahouin fut l'appellation coloniale générale pour le macrogroupe Beti-Pahuin. Ces termes sont consideres comme exonymes ; les Fang se designent eux-memes par Fan ou Fang.",
+      "whyProblematic": "La domination politique du clan Esangui (sous-ensemble Fang) depuis l'independance (1968) a charge l'identite fang d'une connotation de privilege politique en Guinee equatoriale, creant des tensions avec les minorites Bubi, Ndowe et Annobonaises.",
+      "contemporaryUsage": "Fang et Pamue sont tous deux utilises en Guinee equatoriale. L'espagnol est la langue officielle. La langue fang (Fang-Ntumu au nord, Fang-Okah au sud) est la plus parlee du pays et est utilisee dans l'education informelle et les pratiques culturelles.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantous forestiers (GAB, GIN Équatoriale, CMR)",
-      "historicalRegion": "Forêts équatoriales",
-      "currentCountries": ["GAB", "GIN", "CMR"]
+      "ethnoLinguisticGroup": "Bantou forestier — macrogroupe Beti-Pahuin (zone A70 Beti-Fang)",
+      "historicalRegion": "Rio Muni (province continentale de la Guinee equatoriale) et iles proches",
+      "currentCountries": ["GNQ"]
     },
     "ethnicities": [
-      "Fang de Guinée équatoriale",
-      "Sous-groupes régionaux de Guinée équatoriale"
+      "Fang-Ntumu (nord du Rio Muni ; parlent le dialecte Fang-Ntumu)",
+      "Fang-Okah (sud du Rio Muni ; parlent le dialecte Fang-Okah, plus distinct du Ntumu)",
+      "Clan Esangui (sous-ensemble fang detenant le pouvoir politique depuis 1968 ; famille Nguema)",
+      "Plus de 67 clans (ayong) au total en Guinee equatoriale"
     ],
     "origins": {
-      "ancientOrigins": "Les Fang de Guinée équatoriale sont originaires des forêts équatoriales. Migration nord-sud depuis le Cameroun septentrional. Installation en forêts équatoriales il y a plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Conflits et alliances forestières. Influence du christianisme et de l'espagnol."
+      "ancientOrigins": "Les Fang de Guinee equatoriale sont des migrants relativement recents dans leur territoire actuel (Rio Muni). Ils font partie du macrogroupe Beti-Pahuin, dont les origines linguistiques et archeologiques remontent a la foret du sud Cameroun (plus de 4 000 ans). La tradition orale et certains historiens rattachent leurs origines aux savanes et rivieres au nord du Gabon actuel, d'ou ils migrèrent vers le sud-ouest entre le 18e et le 19e siecle. Une autre tradition les relie a l'Afrique orientale (Soudan du Sud ou region des Grands Lacs), depuis laquelle ils auraient migre vers le sud-ouest sur plusieurs siecles pour fuir les invasions islamiques.",
+      "formationPeriod": "Les Fang penetrèrent le territoire du Rio Muni au cours du 19e siecle, principalement depuis le sud Cameroun, en suivant la vallee du Dja. Les premiers contacts significatifs avec les colonisateurs espagnols datent de la seconde moitie du 19e siecle. L'identite Fang de Guinee equatoriale se consolida sous la colonisation espagnole, qui les regroupa sous l'appellation Pamue.",
+      "migrationRoutes": [
+        "Zone d'origine au sud du fleuve Sanaga (Cameroun forestier)",
+        "Migration vers le sud en suivant la vallee du Dja River, avec separation d'avec les Bulu (vers Ebolowa)",
+        "Penetration du Rio Muni (Guinee equatoriale) au 19e siecle : sous-groupe Ntumu par le nord, sous-groupe Okak/Okah par le sud",
+        "Migration ulterieure vers Bioko (ancienne Fernando Poo) au 20e siecle, dominant numeriquement les Bubi autochtones"
+      ],
+      "historicalSettlementZones": [
+        "Rio Muni (toute la province continentale de la Guinee equatoriale)",
+        "Bata et ses environs (capitale economique du continent)",
+        "Zone de Niefang (limite historique de l'expansion fang, selon la tradition : 'ni-efang' signifie 'ici s'arrete le Fang')",
+        "Migration progressive vers Bioko (Malabo) depuis le 20e siecle"
+      ],
+      "unificationsOrDivisions": "Les Fang de Guinee equatoriale se divisent en 67 clans (ayong) independants. Le clan Esangui a monopolise le pouvoir politique depuis l'independance de 1968. Les deux sous-groupes linguistiques (Ntumu au nord, Okah au sud) ont des dialectes mutuellement intelligibles mais distincts. Une demarcation historique (village de Niefang) separait les Fang des peuples 'Playeros' (Ndowe, cotiers).",
+      "externalInfluences": "Colonisation espagnole (1778-1968) : evangelisation catholique profonde, adoption de l'espagnol, denomination Pamue. Influence du catholicisme comme religion dominante depuis le 19e siecle. Contact et conflits avec les peuples cotiers Ndowe (Playeros). Influence du Bwiti (religion initiatique gabonaise, adoptee et adaptee par les Fang). L'independance (1968) donna aux Fang le controle politique total du pays via le clan Esangui.",
+      "majorHistoricalEvents": "Arrivee dans le Rio Muni au 19e siecle et contacts avec l'administration espagnole. Independance de la Guinee equatoriale le 12 octobre 1968 : accession au pouvoir de Francisco Macias Nguema (Fang, clan Esangui), premier president, instaure une dictature sanguinaire (1968-1979), destruction des eglises, assassination de l'opposition, exil force d'un tiers de la population. Coup d'Etat de 1979 : Teodoro Obiang Nguema Mbasogo (cousin, meme clan Esangui) renverse et execute Macias ; gouverne jusqu'a aujourd'hui. Decouverte de petrole offshore en 1995 : transformation de l'economie mais benefices concentres dans le clan dirigeant."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Chefferies lignagères. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Clanisme fort. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation decentralisee fondee sur les lignages patrilineaires et les clans (ayong). Le village est l'unite politique de base, dirige par un chef de lignage. Le comite ngil (representants masculins interclaniques) exercait fonctions judiciaires, politiques et religieuses. L'independance des villages est caracteristique. Depuis 1968, le pouvoir etatique centralise est exerce par le clan Esangui, superposant une structure autoritaire moderne a l'organisation clanique traditionnelle.",
+      "clanOrganization": "67 clans (ayong) en Guinee equatoriale. Chaque ayong est l'unite d'identite sociale fondamentale. L'exogamie clanique (mariage hors du clan paternel) est obligatoire. Les reliquaires byeri (contenant les os des fondateurs de clan) concentrent la puissance ancestrale du groupe. Le clan Esangui, sous-ensemble du groupe Fang, exerce une domination politique et economique disproportionnee depuis l'independance.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent la succession, la propriete fonciere, les alliances matrimoniales et la veneration des ancetres. La figure gardienne (byeri) protege les ossements des ancetres fondateurs du lignage. Les os etaient portatifs lors des migrations, assurant la continuité spirituelle.",
+      "religiousAuthority": "La societe ngil (comite initiatique masculin) exercait l'autorite religieuse et judiciaire traditionnelle. Depuis la colonisation espagnole, le catholicisme est la religion dominante institutionnelle. Les pretres catholiques et les chefs de village partagent l'autorite morale. Le Bwiti (initiation avec iboga) connait un renouveau. L'Eglise evangelique est presente depuis les annees 1980."
     },
     "languages": {
-      "mainLanguage": "Fang",
-      "vehicularRole": "Le fang est parlé par la majorité des Fang de Guinée équatoriale. L'espagnol et d'autres langues sont également utilisés."
+      "mainLanguage": "Fang (Pamue en espagnol ; langue officieuse principale du Rio Muni)",
+      "isoCodes": ["fan"],
+      "dialects": [
+        "Fang-Ntumu (nord du Rio Muni ; predominant dans la province de Kie-Ntem et nord d'Ebibeyin)",
+        "Fang-Okah / Okak (sud du Rio Muni ; zone de Bata et du Centre-Sud ; distinct du Ntumu, les deux etant mutuellement intelligibles)"
+      ],
+      "vehicularRole": "Le fang (Ntumu et Okah) est la langue maternelle de 80-85% de la population equato-guineenne. Il est utilise dans les marches, les celebrations culturelles et l'education informelle. L'espagnol est la langue officielle de l'administration, de l'enseignement et des medias. Le français a ete ajoute comme langue officielle en 2012. Le fang ne possede pas d'orthographe nationale standardisee."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Masques fang (notamment ngil)",
-      "source_1": "Boîtes à reliques (byeri)",
-      "source_2": "Traditions d'initiation",
-      "source_3": "Rites de passage (initiation, fêtes de naissance)",
-      "source_4": "Cérémonies liées à l'agriculture",
-      "Symboles": "Masques fang (notamment ngil), boîtes à reliques (byeri)",
-      "Arts et musique": "",
-      "source_5": "Masques fang (notamment ngil)",
-      "source_6": "Boîtes à reliques (byeri)",
-      "source_7": "Musique traditionnelle",
-      "source_8": "Danse traditionnelle",
-      "source_9": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+      "majorRites": "Le byeri (culte des reliques ancestrales) est le rite religieux traditionnel central : ossements des ancetres fondateurs gardes dans des boites cylindriques, surmontes de figures gardiennes en bois (bieri/mwan bian). Ces figures sont frottees regulierement a l'huile de palme par les membres du lignage. La societe ngil (initiation masculine) conferait des pouvoirs judiciaires et spirituels via des masques blancs allonges. Rites de passage : naissance (ceremonies lignageres, imposition du nom), initiation masculine (entrant dans le systeme ngil ou Bwiti), mariage (dot et ceremonies de clan), mort (funerailles avec offrandes). Le Bwiti est une initiation profonde : ceremonies nocturnes de plusieurs jours, chants, danses, prise d'iboga (hallucinogene), permettant le contact avec les ancetres et la renaissance symbolique. Ces pratiques coexistent avec le catholicisme dominant.",
+      "symbols": "Les masques ngil (visage allonge, blanc, a plat, en bois) constituent l'embleme artistique le plus reconnu des Fang ; ils influencèrent le cubisme europeen. Les boites a reliques (byeri) et leurs figures gardiennes (front bombule, visage concave en coeur, patine noire) sont les sculptures canoniques de l'art africain. Le mvet (instrument a cordes a resonateurs) symbolise la memoire epique collective. La frontiere historique de Niefang ('ici s'arrete le Fang') est un symbole territorial identitaire.",
+      "artsAndMusic": "L'art fang (sculptures en bois, ivoire, steatite) est present dans les grands musees mondiaux (Musee du quai Branly, British Museum, Pitt Rivers Museum). Les masques ngil et les figures byeri ont inspire directement Picasso et les cubistes. La musique est centree sur le mvet (instrument a cordes/resonateurs joue par le mbomo mvet, gardien de la memoire epique), les tambours de bois (nkul) et les chants choreaux du Bwiti. La danse est indissociable des ceremonies (Bwiti, funerailles, initiations). L'artisanat comprend la vannerie, la poterie feminine et la sculpture sur bois. En Guinee equatoriale, la pratique artistique traditionnelle connait une tension entre preservation et modernisation imposee par le regime.",
+      "spiritualities": "La spiritualite fang en Guinee equatoriale est un syncrétisme entre catholicisme (dominant, heritage colonial espagnol), culte ancestral byeri et pratiques Bwiti. Le byeri repose sur la croyance que les ancetres fondateurs continuent de proteger le lignage depuis l'au-dela, via les reliquaires. La foret equatoriale est perçue comme un espace habite par les esprits ancestraux, 'bons et mauvais, incarnes dans certains arbres et animaux'. Le Bwiti (introduit depuis le Gabon via les Mitsogo) est un systeme initiatique qui utilise l'iboga comme sacrement, permettant une 'mort' et une renaissance symbolique et le contact avec les ancetres. Le catholicisme est la religion declaree de la majorite, souvent associee a ces pratiques en un syncretisme pragmatique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Migration vers les grandes villes et la diaspora."
+      "kingdomsOrChiefdoms": "Les Fang de Guinee equatoriale n'ont pas forme de royaume centralise. Leur organisation clanique (67 ayong) leur assurait une cohesion sans centralisme. Depuis l'independance (1968), le clan Esangui (Fang) exerce une domination politique absolue : les deux presidences (Macias Nguema 1968-1979 et Obiang Nguema 1979-present) sont issues de cette lignee. Cette monopolisation du pouvoir etatique est une forme inedite de suprematie clanique sur un territoire national.",
+      "relationsWithNeighbors": "Relations historiques de tension et de complementarite avec les peuples 'Playeros' cotiers (Ndowe, Kombe, Bujeba, Balengue, Benga) : les Fang occupaient l'interieur, les Playeros la cote. La frontiere symbolique de Niefang separait les deux mondes. Relations avec les Bubi (autochtones de Bioko) : tensions croissantes depuis l'independance, les Fang migrant massivement vers l'ile. Relations transfrontalières avec les Fang du Cameroun (Ntumu-Cameroun) et du Gabon (commerce, famille). Mouvements Bubi d'autodetermination (MAIB) en reaction a la domination fang sur Bioko.",
+      "conflictsOrAlliances": "Penetration migratoire du Rio Muni au 19e siecle (contacts conflictuels avec les populations anterieures). Resistance partielle a la colonisation espagnole. Independance (1968) : Macias Nguema instaure une dictature qui massacre l'opposition, detruit les eglises, vide le pays (exil force de plus de 100 000 personnes). Coup d'Etat (1979) par Obiang qui execute Macias. Repression recurrente des Bubi de Bioko (attaque de Malabo de 1995 par le MAIB). Decouverte et exploitation du petrole depuis 1995 : enrichissement du clan Esangui sans redistribution.",
+      "diaspora": "Une diaspora equato-guineenne significative (dont des Fang) est presente en Espagne (principalement a Madrid, Barcelone), au Cameroun voisin et au Gabon. Le contexte autoritaire a alimente des flux migratoires continues depuis 1968."
     },
     "demography": {
-      "totalPopulation": 800000,
+      "totalPopulation": 1575000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv (PPL_FANG_EQGUINEE)"
+      "source": "Wikipedia EN (Equatorial Guinea, 2025 : population totale 1 853 559, 85% Fang = 1 575 000 arrondis). UNFPA Equatorial Guinea (2025 : 1 900 000 total). PopulationPyramid.net (2025 : 1 938 430 total). En retenant une proportion de 80-85% de Fang (sources convergentes), la population fang de Guinee equatoriale est estimee entre 1 480 000 et 1 650 000 pour 2025.",
+      "distributionByCountry": [
+        {
+          "country": "GNQ",
+          "population": 1575000,
+          "note": "Rio Muni (province continentale, province principale) et migration croissante vers Bioko (Malabo) ; 67 clans representes ; Fang-Ntumu au nord, Fang-Okah au sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Fang language (fan)",
-      "Études sur les Pahouin",
-      "CIA World Factbook – Guinée équatoriale",
-      "Recensements nationaux"
+      "Wikipedia EN — Equatorial Guinea. https://en.wikipedia.org/wiki/Equatorial_Guinea",
+      "Wikipedia EN — Fang people. https://en.wikipedia.org/wiki/Fang_people",
+      "SIL Ethnologue / Omniglot — Fang language (fan). https://www.omniglot.com/writing/fang.htm",
+      "Minority Rights Group — Equatorial Guinea. https://minorityrights.org/country/equatorial-guinea/",
+      "UNFPA — Equatorial Guinea Population 2025. https://www.unfpa.org/data/world-population/GQ",
+      "PopulationPyramid.net — Equatorial Guinea 2025. https://www.populationpyramid.net/equatorial-guinea/2025/",
+      "101 Last Tribes — Fang people. https://www.101lasttribes.com/tribes/fang.html",
+      "Revistas UCE — Fang culture of Equatorial Guinea. https://revistadigital.uce.edu.ec/index.php/CATEDRA/article/download/3868/5199/23782",
+      "U.S. Department of State — Equatorial Guinea Background Note. https://2009-2017.state.gov/outofdate/bgn/equatorialguinea/116191.htm"
     ]
   }
 }

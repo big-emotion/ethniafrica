@@ -1,0 +1,68 @@
+{
+  "id": "PPL_XAM",
+  "nameMain": "ǀXam",
+  "languageFamilyId": "FLG_TUU",
+  "currentCountries": ["ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "ǀXam",
+      "selfAppellation": "ǀXam (peuple éteint)",
+      "linguisticFamily": "FLG_TUU",
+      "ethnoLinguisticGroup": "Tuu (ǀXam)",
+      "historicalRegion": "Afrique du Sud (province du Cap)",
+      "currentCountries": ["ZAF"]
+    },
+    "ethnicities": [
+      "ǀXam du Nord",
+      "ǀXam du Sud",
+      "Sous-groupes régionaux (tous éteints)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ǀXam étaient l'un des peuples les plus anciens d'Afrique du Sud, originaires de la région du Cap. Leur présence dans la région remontait à des dizaines de milliers d'années.",
+      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Peuple éteint au XIXe siècle.",
+      "externalInfluences": "Contacts avec les colons européens (néerlandais, britanniques) qui ont conduit à leur extermination et à leur assimilation forcée."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
+      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
+      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
+      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+    },
+    "languages": {
+      "mainLanguage": "ǀXam (éteinte)",
+      "vehicularRole": "La langue ǀXam est éteinte. Elle était parlée jusqu'au XIXe siècle. Documentation disponible grâce aux travaux de Wilhelm Bleek et Lucy Lloyd."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de guérison (trance dances)",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Cérémonies de chasse",
+      "source_3": "Rituels de partage",
+      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
+      "Arts et musique": "",
+      "source_4": "Art rupestre (peintures et gravures, patrimoine mondial)",
+      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
+      "source_6": "Danse de transe",
+      "source_7": "Contes et récits oraux (documentés par Bleek et Lloyd)",
+      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Peuple éteint. Quelques descendants métissés dans les populations sud-africaines modernes."
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "Documentation historique, travaux de Bleek et Lloyd, études anthropologiques"
+    },
+    "sources": [
+      "Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*",
+      "SIL Ethnologue – ǀXam language (xam, éteinte)",
+      "The Archive of Lucy Lloyd and Wilhelm Bleek*",
+      "UNESCO – Art rupestre de ǀXam (patrimoine mondial)",
+      "Études historiques sur l'extermination des peuples San en Afrique du Sud"
+    ]
+  }
+}

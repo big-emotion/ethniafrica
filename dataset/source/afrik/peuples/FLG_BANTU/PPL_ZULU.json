@@ -2,68 +2,120 @@
   "id": "PPL_ZULU",
   "nameMain": "Zoulou",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZAF"],
+  "currentCountries": ["ZAF", "ZWE", "MWI", "MOZ", "ZMB"],
   "content": {
     "appellations": {
       "mainName": "Zoulou",
-      "selfAppellation": "AmaZulu",
-      "exonyms": ["Zoulou (terme utilisé par les Européens), Zulu"],
+      "selfAppellation": "amaZulu",
+      "exonyms": ["Zulu", "Zoulou", "Amazulu"],
+      "originOfExonyms": "AmaZulu est l'autonym en isiZulu (ama- etant le prefixe de classe pour les peuples). Le nom Zulu derive de iZulu, qui signifie le ciel ou le temps (meteo) en langues Nguni. La legende attribue ce nom a Zulu kaMalandela, ancetre fondateur du clan vers 1574. Zoulou est la transcription francaise courante. Amazulu est parfois use en anglais comme variante.",
+      "whyProblematic": null,
+      "contemporaryUsage": "AmaZulu est l'autonym contemporain. Zulu est l'usage courant en anglais international. Zoulou est la forme officielle en francais. IsiZulu designe specifiquement la langue. La nation Zoulou (Zulu Nation) est un concept politique et culturel toujours actif.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Est de l'Afrique du Sud",
-      "currentCountries": ["ZAF"]
+      "ethnoLinguisticGroup": "Bantou Nguni septentrional et central (Zone S)",
+      "historicalRegion": "KwaZulu-Natal, Afrique du Sud — province du KwaZulu-Natal et regions adjacentes",
+      "currentCountries": ["ZAF", "ZWE", "MWI", "MOZ", "ZMB"]
     },
     "ethnicities": [
-      "Zoulou du Nord",
-      "Zoulou du Sud",
-      "Sous-groupes régionaux"
+      "amaZulu propres — groupe central de KwaZulu-Natal",
+      "Ndebele du Nord (aMaNdebele) — groupe fonde par Mzilikazi apres 1821, etabli au Zimbabwe actuel",
+      "Ngoni — groupe fonde par Zwangendaba, qui traversa le Zambezi en 1835 ; aujourd'hui disperses au Malawi, Mozambique, Tanzanie et Zambie",
+      "Clan de Gumbi (origine Pongola) — clan lie a Shaka via Zwangendaba",
+      "Buthelezi — clan tres influent, dont est issu Mangosuthu Buthelezi (fondateur de l'Inkatha)",
+      "Mthethwa — confederation absorbee par Shaka dans l'Empire Zoulou",
+      "Qwabe — ancien clan Nguni independant, integre au royaume zoulou"
     ],
     "origins": {
-      "ancientOrigins": "Les Zoulous sont originaires de l'est de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Formation du royaume zoulou.",
-      "unificationsOrDivisions": "Formation du royaume zoulou. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoïsan (emprunt de clics), influence du christianisme."
+      "ancientOrigins": "Les Zoulou sont originaires des migrations bantoues qui se sont etalees sur des millenaires le long de la cote est de l'Afrique. A l'origine, ils formaient un clan mineur dans ce qui est aujourd'hui le nord du KwaZulu-Natal. En langues Nguni, iZulu signifie le ciel ou le temps. La region etait occupee par de nombreuses communautes Nguni independantes avant l'unification sous Shaka.",
+      "formationPeriod": "Le clan Zulu fut fonde vers 1574 par Zulu kaMalandela. C'est la montee en puissance de Shaka kaSenzangakhona (roi de 1816 a 1828) qui transforma ce clan mineur en empire regional. Shaka integra la confederation Mthethwa de Dingiswayo (mort vers 1818) dans l'hegemonie Zoulou et mit en place un systeme militaire revolutionnaire.",
+      "migrationRoutes": [
+        "Migration Bantoue ancestrale le long de la cote est africaine, vers le sud",
+        "Installation originelle dans le nord du KwaZulu-Natal actuel",
+        "Expansion rapide sous Shaka vers tout le KwaZulu-Natal et au-dela (1816-1828)",
+        "Exode de Mzilikazi vers le nord (1821), eventual etablissement au Zimbabwe (Matabele)",
+        "Exode de Zwangendaba vers le nord, traversee du Zambezi a Chirundu (1835), puis Malawi, Mozambique, Tanzanie, Zambie (Ngoni)"
+      ],
+      "historicalSettlementZones": [
+        "KwaZulu-Natal — province principale, plus de 80% des Zoulou",
+        "Gauteng — importante population urbaine (Johannesburg, Soweto)",
+        "Mpumalanga — zone de culture de la canne a sucre et d'industrie",
+        "Zimbabwe (Matabele) — descendants de Mzilikazi (Ndebele du Nord)",
+        "Malawi, Mozambique, Tanzanie, Zambie — descendants de Zwangendaba (Ngoni)"
+      ],
+      "unificationsOrDivisions": "L'unification sous Shaka (1816-1828) fut radicale : imposition de l'identite Zoulou a toutes les nations absorbees via le systeme des regiments (amabutho). Apres la defaite face aux Britanniques (1879), Cetshwayo fut exile et l'empire divise en 13 royaumes vassaux. Cetshwayo fut reinstaure en 1883 mais mourut en 1884. Les guerres de succession et la colonisation menerent a l'integration dans la Colonie du Natal (1897). Sous l'apartheid, le homeland de KwaZulu fut cree en 1970. La reunification avec le Natal en 1994 forma le KwaZulu-Natal.",
+      "externalInfluences": "Contacts avec les Khoisan (emprunt de clics dans la langue isiZulu). Commerce avec les Portugais et les Arabes via la cote est. Confrontation avec les Boers (Voortrekkers) lors du Grand Trek (annees 1830-1840 : bataille de Blood River, 1838). Guerre Anglo-Zouloue (1879) : defaite britannique a Isandlwana (22 janvier 1879), victoire britannique finale a Ulundi (juillet 1879). Christianisme introduit par les missionnaires (Hanoverian Missionary Society, American Board Mission) a partir des annees 1820.",
+      "majorHistoricalEvents": "Regne de Shaka (1816-1828) : unification militaire et revolution tactique (assagaie courte iklwa, formation en comes de buffle). Mfecane / Difaqane (annees 1820-1840) : expansionnisme zoulou provoquant des migrations et guerres en cascade dans l'Afrique australe, depeuplant de vastes regions. Bataille d'Isandlwana (22 janvier 1879) : victoire zoulou, plus grande defaite britannique en Afrique. Domination Inkatha : Mangosuthu Buthelezi et l'Inkatha Freedom Party, conflits avec l'ANC dans les annees 1980-1990. Avenement de la democratie (1994) : Jacob Zuma (Zoulou) devient president de l'ANC (2007) puis de l'Afrique du Sud (2009-2018)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Zoulou). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie traditionnelle (iNkosi yaMakhosi, roi supreme des rois) : le roi Zoulou est une autorite symbolique reconnue par la constitution sud-africaine. Systeme royal fonde sur les amabutho (regiments d'age) institues par Shaka : chaque classe d'age est affectee au meme regiment (ibutho), qui loge dans des casernes royales (ikhanda). Les regiments sont sous commandement d'un parent du roi ou d'un officier royal. Le systeme amabutho remplacait en grande partie les initiations traditionnelles.",
+      "clanOrganization": "Societe patrilineaire organisee en clans identifies par un nom (isibongo). Les clans sont regroupes en chefferies (amakhosi) reconnues par le gouvernement sud-africain. Chaque individu s'identifie par son isibongo (nom de clan), qui revele ses origines. L'appartenance clanique determine les alliances matrimoniales (interdiction d'epouser quelqu'un du meme isibongo).",
+      "ageClassSystems": "Le systeme ukubuthwa (etre enrôle) rassemble les jeunes hommes d'une meme classe d'age dans un regiment commun (ibutho). Les filles sont egalement soumises au ukubuthwa et assignees a un groupe d'age. Ukweshwama : ceremonie annuelle de la nouvelle recolte ou un nouveau regiment de jeunes guerriers affronte un taureau pour prouver leur courage. Ilobolo : le systeme de prix de la mariee en betail, formalise en 1869, structure les obligations entre families.",
+      "roleOfLineages": "Les lignages patrilineaires determinent la succession, l'heritage, les droits fonciers et l'identite clanique. Le chef de lignage est responsable des rituels ancestraux. Les lignages royaux (de Shaka, Cetshwayo, Dinuzulu) conservent un prestige symbolique particulier.",
+      "religiousAuthority": "Autorite des divinateurs (izangoma) et des guerisseurs (izinyanga), intermediaires avec les ancetres (amadlozi). Christianisme tres repandu (eglises zioniste africaine, methodiste, catholique), souvent en syncrétisme avec le culte des ancetres. L'Eglise Zioniste Chretienne est la plus grande denomination chretienne d'Afrique du Sud, majoritairement Zoulou et Sotho."
     },
     "languages": {
-      "mainLanguage": "Zoulou",
-      "vehicularRole": "Le zoulou est parlé par la majorité des Zoulous. L'anglais, l'afrikaans et d'autres langues sont également utilisés."
+      "mainLanguage": "IsiZulu (zul)",
+      "isoCodes": ["zul"],
+      "dialects": [
+        "IsiZulu standard — parle dans le KwaZulu-Natal, base de la langue normee",
+        "IsiNdebele — dialecte parle par les Ndebele du Nord au Zimbabwe (forme par le groupe de Mzilikazi)",
+        "IsiNguni de Mpumalanga — parle par les Ndebele du Sud (Ndebele meridional)",
+        "Zulu urbain — variante parlée dans les zones urbaines (Johannesburg, Durban), avec emprunts a l'anglais et a l'afrikaans"
+      ],
+      "vehicularRole": "L'isiZulu est la langue maternelle la plus parlee d'Afrique du Sud (environ 24,4% de la population, soit 13,78 millions de locuteurs natifs et plus de 15 millions de locuteurs secondaires en 2025). C'est l'une des 11 langues officielles de l'Afrique du Sud. Plus de la moitie de la population sud-africaine comprend l'isiZulu. Selon Ethnologue, c'est la deuxieme langue bantoue la plus parlee dans le monde apres le swahili. Intelligibilite partielle avec l'isiXhosa, notamment en zones urbaines."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux zoulous, symboles liés à l'agriculture, symboles culturels zoulous, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Umhlanga (danse des roseaux) : ceremonie annuelle establecida en 1944, au cours de laquelle des milliers de jeunes femmes non mariees portent des roseaux au palais royal pres de Nongoma pour celebrer la virginie et ecouter le roi. Umemulo : ceremonie pour les femmes atteignant 21 ans, symbolisant leur readiness pour le mariage. Ukweshwama : ceremonie de la nouvelle recolte ; un regiment de jeunes guerriers affronte un taureau a mains nues pour transferer la force de l'animal au roi. Ilobolo : negociation de la dot en betail (10 vaches pour les roturiers, 15 pour les proches de chefs, plus de 20 pour les filles de chefs selon la codification de 1869). UMkhosi Womhlanga, Isigqi (lutte au baton, art martial pratique des l'age de 5 ans).",
+      "symbols": "Le bouclier de guerre zoulou (isihlangu), en peau de vache, est le symbole national Zoulou le plus reconnaissable. La sagaie courte (iklwa) innovee par Shaka. La carre de guerriers en formation de comes de buffle (impondo zankomo). Les perles (iziqu) : systeme de communication non-verbal par couleurs et motifs (blanc=purete, rouge=amour/desir, jaune=jalousie, vert=croissance, bleu=fidelite). Le palais royal (eSihlangwini, pres de Nongoma).",
+      "artsAndMusic": "Musique isicathamiya (chant choral acappella a cappella) : popularisee mondialement par Ladysmith Black Mambazo (groupe de Joseph Shabalala). Danse de guerre traditionnelle (ukusina) : stomp rythmique accompagne de chants guerriers. Perles (ubughosha) : artisanat feminin elabore, chaque combinaison de couleurs encode un message symbolique (quatre systemes de couleurs : isisshunka, isithembu, umzansi, isinyolovane). Sculpture sur bois (appui-tetes, cuilleres, recipients). Tissage de nattes et de paniers. Poterie. Litterature orale (izibongo : poesie de louange royale chantee par les izimbongi, poetes griots du roi).",
+      "spiritualities": "Culte des ancetres (amadlozi) : les ancetres communiquent avec les vivants via les reves et les maladies. Les izangoma (divinateurs principalement femmes) et izinyanga (guerisseurs) sont des intermediaires entre vivants et ancetres. Christianisme tres repandu (eglise zioniste, methodiste, catholique), souvent syncrétise avec le culte ancestral. Croyance en l'umuti (remedes traditionnels magiques) et en la sorcellerie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora zoulou dans les grandes villes sud-africaines et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume Zoulou fonde vers 1574, puissant empire sous Shaka (1816-1828). Succession royale : Shaka (1816-1828), Dingane (1828-1840), Mpande (1840-1872), Cetshwayo (1872-1884), Dinuzulu (1884-1913). Absorption dans la Colonie du Natal (1897). Homeland de KwaZulu sous l'apartheid (1970-1994, ministre en chef Mangosuthu Buthelezi). Province du KwaZulu-Natal depuis 1994. Rois contemporains : Goodwill Zwelithini (1971-2021), Misuzulu kaZwelithini (depuis 2022).",
+      "relationsWithNeighbors": "Le Mfecane (annees 1820-1840) : l'expansion militaire Zoulou provoqua un effet en cascade de guerres, migrations et reorganisations politiques sur l'ensemble de l'Afrique australe, affectant Sotho, Tswana, Ndebele, Swazi et d'autres nations. Guerre contre les Voortrekkers (Boers) : defaite a Blood River (16 decembre 1838). Guerre Anglo-Zouloue (1879) : victoire a Isandlwana, defaite a Ulundi. Conflits ANC-Inkatha en KwaZulu-Natal (1976-1994) : milliers de morts.",
+      "conflictsOrAlliances": "Guerre Anglo-Zouloue (1879) : la plus celebre confrontation militaire de l'histoire Zouloue. Bataille d'Isandlwana (22 janvier 1879) : 1 329 soldats britanniques et allies tues, plus grande defaite militaire britannique en Afrique. Rorke's Drift : resistance britannique (11 Victoria Cross decernes). Finalement, defaite zouloue a Ulundi (4 juillet 1879). Conflits Inkatha-ANC dans les annees 1980-1990. Insurrection de 2021 au KwaZulu-Natal (apres l'emprisonnement de Jacob Zuma).",
+      "diaspora": "Importante diaspora urbaine dans le Gauteng (Johannesburg, Soweto), notamment liee aux mines et a l'industrie depuis le debut du XXe siecle. Communauté Ndebele au Zimbabwe (descendants de Mzilikazi, environ 1,5 million). Communautes Ngoni au Malawi, Mozambique, Tanzanie et Zambie (descendants de Zwangendaba, plusieurs centaines de milliers). Petite diaspora internationale (Royaume-Uni, Etats-Unis)."
     },
     "demography": {
-      "totalPopulation": 12000000,
+      "totalPopulation": 15800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements sud-africains, SIL Ethnologue, et études démographiques"
+      "source": "Statistics South Africa Census 2022 et estimations 2025 : les Zoulou representent environ 24,4% de la population sud-africaine. Avec une population totale de 64,7 millions (2025), cela correspond a environ 15,8 millions de Zoulou en Afrique du Sud. IsiZulu : 13,78 millions de locuteurs natifs en Afrique du Sud selon Ethnologue/Wikipedia. Ndebele au Zimbabwe : environ 1,5 million. Ngoni (Malawi, Mozambique, Tanzanie, Zambie) : plusieurs centaines de milliers, groupes linguistiquement differencies.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 15800000,
+          "note": "Principalement KwaZulu-Natal (80%+), Gauteng, Mpumalanga ; premier groupe ethnique du pays (24,4%)"
+        },
+        {
+          "country": "ZWE",
+          "population": 1500000,
+          "note": "Ndebele du Nord, descendants de Mzilikazi ; provinces de Matabeleland"
+        },
+        {
+          "country": "MWI",
+          "population": 350000,
+          "note": "Ngoni du Malawi, descendants de Zwangendaba"
+        },
+        {
+          "country": "MOZ",
+          "population": 100000,
+          "note": "Ngoni du Mozambique septentrional"
+        },
+        {
+          "country": "ZMB",
+          "population": 100000,
+          "note": "Ngoni de Zambie orientale"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Zulu language (zul)",
-      "CIA World Factbook – South Africa",
-      "Recensements sud-africains",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le royaume zoulou"
+      "Wikipedia EN — Zulu people : https://en.wikipedia.org/wiki/Zulu_people",
+      "Wikipedia EN — Zulu language : https://en.wikipedia.org/wiki/Zulu_language",
+      "Wikipedia EN — Shaka : https://en.wikipedia.org/wiki/Shaka",
+      "South African History Online — Zulu : https://sahistory.org.za/article/zulu",
+      "Statistics South Africa — SA Population Trends 2025 : https://www.statssa.gov.za/?p=18613",
+      "SIL Ethnologue — isiZulu (zul) : https://www.ethnologue.com/language/zul/",
+      "University of Vienna — IsiZulu : https://afrika.univie.ac.at/en/studies/languages/isizulu/"
     ]
   }
 }

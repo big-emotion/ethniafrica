@@ -1,23 +1,103 @@
 {
   "id": "PPL_KOORETE",
-  "nameMain": "",
+  "nameMain": "Koorete",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Koorete",
       "selfAppellation": "Koorete / Koreta",
+      "exonyms": [
+        "Koore",
+        "Amarro",
+        "Amaarro",
+        "Badittu",
+        "Koyra",
+        "Kwera",
+        "Nuna"
+      ],
+      "originOfExonyms": "Le nom Koorete designe a la fois le peuple et leur langue : le suffixe -te est ajoute au nom ethnique Koore pour former le nom de la langue (Koorete). Les noms Amarro et Amaarro referent au territoire (Amaro Special Woreda). Badittu, Kwera et Nuna sont des noms utilises par les peuples voisins ou dans certaines zones specifiques. Le terme Koyra est egalement utilise comme exonyme pour les Koorete.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Koore et Koorete sont utilises de facon interchangeable dans les documents officiels ethiopiens. Le Woreda administratif est appele Amaro Special Woreda. La langue koorete est identifiee sous le code ISO kqy.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "historicalRegion": "Région du Sud (South Ethiopia)",
+      "ethnoLinguisticGroup": "Omotique central, sous-groupe Ometo oriental (East Ometo)",
+      "historicalRegion": "Amaro Special Woreda, montagnes Amaro, est du lac Abaya, SNNPR, Ethiopie meridionale",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (kqy)"]
+    "ethnicities": [
+      "Koorese — groupe clan principal des Koore d'Amaro",
+      "Kana'e — groupe secondaire, intermariant avec les Koorese",
+      "Inkalo — dynastie royale, dont le cimetiere sacre Gomale est preserver a Amaro",
+      "Oma — clans autochtones indigenes qui existaient avant l'arrivee des immigrants au 14e siecle",
+      "Sous-groupes de Burji — quatre kebeles au nord de Burji sont egalement peuples de Koore"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Koore (Koorete) sont un peuple omotique du sud de l'Ethiopie dont le territoire ancestral se trouve dans les montagnes Amaro, a l'est du lac Abaya. La tradition orale koore raconte que des emigrants venus des hauts plateaux de Gamo sont arrives en Amaro (Koorso) vers le milieu du 14e siecle. Ces emigrants auraient apporte avec eux des Tabots (Arche d'Alliance) et fonde des eglises orthodoxes incluant Yero Medhane Alem, Icha Giorgis et Derba Menena Michael. En Amaro se trouvaient deja de nombreux clans autochtones disperses (Oma). Les nouveaux arrivants combattirent ces tribus et se melangerent aux survivants pour former un peuple de nouvelle identite : les Koore.",
+      "formationPeriod": "Le Royaume d'Amaro fut etabli vers la fin du 14e siecle avec 23 unites administratives (daynete). Ce royaume fut gouverne par des Kaate (rois). Il inclut une periode d'influence chretienne orthodoxe, interrompue par les guerres d'Ahmed Gran (16e siecle) qui brula les eglises et persecuta les chretiens. Les survivants se refugierent a Birbir Mariam en Gamo. Au 19e siecle, le Royaume d'Amaro fut incorpore dans l'Empire ethiopien (vers 1896) tout en conservant son Kaate comme chef traditionnel.",
+      "migrationRoutes": [
+        "Migration d'emigrants depuis les hauts plateaux de Gamo vers Amaro (Koorso) au milieu du 14e siecle",
+        "Certains informateurs mentionnent un parcours via Dawuro et Gamo depuis Manz (Shewa amhara) entre le 14e et le debut du 15e siecle",
+        "Refugies chretiens fuyant vers Birbir Mariam en Gamo apres les raids d'Ahmed Gran au 16e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Amaro Special Woreda, montagnes Amaro (horst Amaro atteignant 3 602 m au mont Dello), est des lacs Abaya et Chamo",
+        "Quatre kebeles au nord du Burji Special Woreda",
+        "Certains membres en region Oromia (nord, nord-est et est d'Amaro)"
+      ],
+      "unificationsOrDivisions": "Le Royaume d'Amaro (Koorso) avec 23 daynete etait dirige par des Kaate et persista jusqu'a son incorporation dans l'Empire ethiopien vers 1896. Bien que le systeme politique traditionnel ait cesse de fonctionner pleinement apres 1896, les Koore honorent encore leur Kaate comme chef traditionnel fonctionnant parallelement aux structures administratives modernes. En 1981, le Woreda Amaro fut dissolus et partage entre Gedeo et Gamo Gofa ; il fut retabli comme Amaro Special Woreda apres 1991.",
+      "externalInfluences": "Invasion d'Ahmed Gran (16e siecle) : destruction des eglises et persecutions des chretiens koorete. Reconquete par l'Empire ethiopien (19e siecle) : reintroduction du christianisme orthodoxe mais associee a la domination amhara. Arrivee des missions protestantes Sudan Interior Mission a Burji et Amaro en 1948 : expansion rapide du protestantisme. Persecutions pendant le regime militaire Derg contre les protestants. Apres 1991 : expansion charismatique-pentecotiste.",
+      "majorHistoricalEvents": "Fondation du Royaume d'Amaro (Koorso) vers la fin du 14e siecle avec les 23 daynete. Guerres d'Ahmed Gran (16e siecle) : destruction des eglises, fuite des chretiens vers Gamo. Incorporation dans l'Empire ethiopien vers 1896. Etablissement de la Sudan Interior Mission en 1948 : debut de l'evangelisation protestante rapide. Dissolution et refondation d'Amaro Special Woreda (1981, 1991). Incorporation dans la South Ethiopia State lors des reformes administratives recentes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume d'Amaro etait dirige par des Kaate (rois) avec 23 unites administratives appelees daynete. Bien que ce systeme ait cesse de fonctionner pleinement apres l'annexion imperiale de 1896, il coexiste encore avec les structures modernes. Les Koore honorent toujours leur Kaate comme chef traditionnel. Des sites sacres comme Yeero Wala, Sagane Shashe, Gumure Ooshe et Gudena sont des lieux historiques et religieux importants. Le mont Delo et sa foret naturelle, Goona Biddo (poteau du roi Goona) et Gomale (cimetiere sacre des rois Inkalo) sont des reliques historiques preservees.",
+      "clanOrganization": "La societe koore est organisee en clans (Oma). Les Koorese et les Kana'e intermarient entre eux (exogamie partielle). Certains clans koorese pratiquent aussi l'endogamie tribale. Le prix de la dot est symbolique et renforce les liens d'affinite ; il est devenu socialement problematique en augmentant de maniere excessive recemment.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique et les droits sur les terres ancestrales. Le fils reste sur les terres de son pere et ancetres (d'ou le terme 'solide' pour designer un fils). Les cimetiers claniques ancestraux sacres perpetuent la memoire des lignages.",
+      "religiousAuthority": "Le tenquay (devin/voyant) joue un role central : il est cru capable de communiquer avec l'esprit du defunt (leemo) lors des rituels funeraires de necromanie (leemo epe). Les pretres orthodoxes ont une influence historique. Aujourd'hui, la plupart des Koore sont protestants charismatiques-pentecotistes apres l'expansion post-1991."
+    },
+    "languages": {
+      "mainLanguage": "Koorete (kqy)",
+      "isoCodes": ["kqy"],
+      "dialects": [
+        "Amarro — dialecte de la zone centrale d'Amaro",
+        "Badittu — variante utilisee dans certaines zones",
+        "Variante de l'ile Gidicho dans le lac Abaya"
+      ],
+      "vehicularRole": "Le koorete (kqy) est la seule langue ometo a l'est du lac Abaya. Il appartient au sous-groupe Ometo oriental avec le Kachama-Ganjule et le Zayse. Il a une similarite lexicale de 54% avec le Dorze et 53% avec le Wolaytta. L'education elementaire est dispensee en langue koorete, mais il n'existe pas encore de litterature etablie. L'amharique est utilise dans l'administration et l'education superieure."
+    },
+    "culture": {
+      "majorRites": "Les Koore pratiquent cinq types d'arrangements matrimoniaux : mariage arrange, rapt (abduction), baale (obligation a la famille d'une fille), mariage levirat et mishira (mariage secondaire de veuves ou divorces). La virginity feminine a une haute valeur sociale. Les rites funeraires sont complexes et successifs : ceremonie d'inhumation, rituel isha gelse (l'aine du defunt, le chef de clan et un tenquay vont a la tombe avec lait et farine), puis rituel de necromanie leemo epe (le tenquay communique avec l'esprit du defunt dans l'ancienne maison). Des sacrifices de lait, farine d'enset ou betail sont periodiquement offerts aux esprits ancestraux.",
+      "symbols": "Les sites sacres historiques et religieux — Yeero Wala, Sagane Shashe, Gumure Ooshe et Gudena — sont des symboles identitaires centraux. Le mont Delo et sa foret naturelle sont sacres. Goona Biddo (poteau du roi Goona) et Gomale (cimetiere sacre des rois de la dynastie Inkalo) sont des reliques royales preservees. L'enset est la plante-symbole de la subsistance et de l'identite culturelle koore.",
+      "artsAndMusic": "Les Koore pratiquent une agriculture intensive avec terrasses (moins que chez les Konso voisins) et un systeme d'irrigation traditionnel dit d'il y a 300 ans. L'artisanat inclut la poterie et le tissage. La tradition orale est riche : genealogies royales et claniques, mythes d'origine, recits des migrations et des guerres contre Ahmed Gran. Des chants et danses accompagnent les ceremonies de mariage et les rites de passage. L'interpretation des omens est importante dans la vie sociale et les decisions matrimoniales.",
+      "spiritualities": "La tradition religieuse koore inclut des croyances en esprits ancestraux pouvant nuire aux vivants (sahase, gomatse ou moitile) et necessitant des rituels successifs d'apaisement. Le tenquay (devin) est le specialiste de la communication avec les morts. Les premiers chretiens orthodoxes sont arrives avec les immigrants du 14e siecle (fondation de Yero Medhane Alem, Icha Giorgis, Derba Menena Michael). Apres les guerres d'Ahmed Gran (16e siecle), les Koore retomberent dans leurs anciennes croyances traditionnelles. La reintroduction du christianisme au 19e siecle fut associee a la domination amhara et peu adoptee. Depuis 1948, les Eglises protestantes evangeliques (Sudan Interior Mission, puis pentecotistes apres 1991) ont converti la grande majorite des Koore."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume d'Amaro (ou Koorso) fut fonde vers la fin du 14e siecle avec 23 unites administratives (daynete) gouvernees par des Kaate. Ce royaume perdura jusqu'a son incorporation dans l'Empire ethiopien vers 1896. La dynasty Inkalo dont le cimetiere sacre Gomale est preserve a Amaro symbolise la continuite monarchique koore. Le Kaate est toujours reconnu comme chef traditionnel.",
+      "relationsWithNeighbors": "Les Koore partagent des frontieres avec les Derashe et Konso (sud-ouest), le lac Abaya et Chamo (ouest), la region Oromia (nord, est), le Burji Special Woreda (sud) et la zone Gamo Gofa (nord-ouest). Des liens culturels et linguistiques existent avec les Gamo (tradition migratoire). Les conflits historiques avec les tribus autochtones Oma lors de l'installation au 14e siecle ont abouti a une fusion ethnique formant le peuple koore actuel.",
+      "conflictsOrAlliances": "Conflits initiaux avec les tribus autochtones Oma lors de l'arrivee des emigrants gamo au 14e siecle, aboutissant a la fusion en un peuple koore. Invasion d'Ahmed Gran au 16e siecle : destruction des eglises, persecution des chretiens et fuite vers Gamo. Incorporation dans l'Empire ethiopien vers 1896. Persecutions protestantes sous le regime Derg. Expansion charismatique-pentecotiste depuis 1991.",
+      "diaspora": "La mobilite koorete est principalement interne a l'Ethiopie. Quelques membres du groupe resident dans d'autres weredas ethiopiens pour le travail gouvernemental ou le commerce. Une petite diaspora existe dans les villes ethiopiennes (Hawassa, Addis-Abeba)."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue — Koorete [kqy] : environ 60 000 a 80 000 locuteurs (estimations variees). PeopleGroups.org 2025 : Koorete speakers. Joshua Project : Koore in Ethiopia. L'Amaro Special Woreda a une superficie de 1 597 km2 et est entierement habite par des Koore. Projection 2025 basee sur les estimations disponibles.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 100000,
+          "note": "Amaro Special Woreda, montagnes Amaro, est des lacs Abaya et Chamo (SNNPR / South Ethiopia State). Quelques kebeles dans le Burji Special Woreda et en region Oromia."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Koore people. https://en.wikipedia.org/wiki/Koore_people",
+      "Wikipedia EN — Koore language. https://en.wikipedia.org/wiki/Koore_language",
+      "Joshua Project — Koore in Ethiopia. https://joshuaproject.net/people_groups/12790",
+      "PeopleGroups.org — Koorete of Ethiopia. https://peoplegroups.org/people_groups/pg011608/",
+      "SIL Ethnologue — Koorete language [kqy].",
+      "Beletu Redda — The Morphology of Koorete. Addis Ababa University. https://www.kooretebible.com/sites/www.kooretebible.com/files/BELETU%20REDDA.pdf",
+      "Ethiopian Central Statistical Agency — Summary and Statistical Report of the 2007 Population and Housing Census. Addis Ababa, 2008.",
+      "Britannica — Omotic Languages. https://www.britannica.com/topic/Omotic-languages"
+    ]
   }
 }

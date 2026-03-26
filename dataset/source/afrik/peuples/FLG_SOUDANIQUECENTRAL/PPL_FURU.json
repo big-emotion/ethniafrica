@@ -2,63 +2,96 @@
   "id": "PPL_FURU",
   "nameMain": "Furu",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["SDN"],
+  "currentCountries": ["COD", "CAF"],
   "content": {
     "appellations": {
       "mainName": "Furu",
       "selfAppellation": "Furu",
-      "exonyms": ["Furu (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Furu (terme generalement accepte dans les sources europeennes)"
+      ],
+      "originOfExonyms": "Le terme Furu est utilise de facon coherente dans les sources linguistiques et ethnographiques pour designer ce groupe et sa langue. Il ne semble pas etre un exonyme pejoratif.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Furu est utilise dans la litterature linguistique (Ethnologue, Glottolog) et dans les profils missionnaires. La communaute est de petite taille et peu documentee. La langue furu est parfois classee dans le sous-groupe Kara des langues soudaniques centrales (Glottolog), ou dans le groupe Kresh (classification plus ancienne de Blench 2012).",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central",
-      "historicalRegion": "Sud-Soudan",
-      "currentCountries": ["SDN"]
+      "ethnoLinguisticGroup": "Soudanique central (groupe Kara selon Glottolog; anciennement classe Kresh)",
+      "historicalRegion": "Savanes du Nord-Ubangi (RDC) et le long de la riviere Ubangi; origines migratoires dans la region du Darfour (Soudan)",
+      "currentCountries": ["COD", "CAF"]
     },
-    "ethnicities": ["Furu du Nord", "Furu du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Furu de la province du Nord-Ubangi (RDC), le long de la riviere Ubangi",
+      "Furu de la Republique centrafricaine (CAR), dans les savanes de la region de l'Ubangi",
+      "Groupes lies: Kara, communautes apparentees soudaniques centrales du bassin de l'Ubangi"
+    ],
     "origins": {
-      "ancientOrigins": "Les Furu sont originaires du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Les Furu sont un petit peuple de langue soudanique centrale etabli dans les savanes de la province du Nord-Ubangi en RDC et dans des zones limitrophes de la Republique centrafricaine. Selon les sources missionnaires (Joshua Project), leurs ancetres ont migre depuis les regions du nord, probablement autour du Darfour au Soudan, vers leur zone d'habitation actuelle le long de la riviere Ubangi. Leur langue appartient a la branche soudanique centrale de la famille nilo-saharienne.",
+      "formationPeriod": "La formation de l'identite furu distincte est difficile a dater precisement, les sources historiques sur ce petit groupe etant rares. Leur presence dans le Nord-Ubangi est attestee dans les sources coloniales belges. Leur langue est classee comme l'une des langues Kara dans la classification contemporaine (Glottolog).",
+      "migrationRoutes": [
+        "Migration ancestrale depuis la region du Darfour (Soudan) vers le sud, dans les savanes de l'Ubangi",
+        "Installation dans le bassin de la riviere Ubangi en RDC et en Republique centrafricaine"
+      ],
+      "historicalSettlementZones": [
+        "Province du Nord-Ubangi, RDC (region de Bosobolo, Businga, Mobayi-Mbongo, le long de l'Ubangi)",
+        "Regions de savane le long de la riviere Ubangi en Republique centrafricaine"
+      ],
+      "unificationsOrDivisions": "Les Furu constituent un groupe de taille modeste disperses dans les savanes. Leur organisation sociale repose sur des villages autonomes diriges par des anciens. L'absence de structures politiques centralisees est caracteristique de ce type de groupes soudaniques centraux decentralises.",
+      "externalInfluences": "Influence de la colonisation belge du Congo (introduction de l'administration coloniale et de missions chretiennes). Contact avec les grandes langues vehiculaires de la region (lingala, sango). Influence des missions protestantes et catholiques depuis le 20e siecle. Pression des langues dominantes sur les pratiques linguistiques furu.",
+      "majorHistoricalEvents": "Incorporation dans la colonie du Congo belge au debut du 20e siecle. Contact avec les missions chretiennes (un projet de traduction biblique en furu a ete initie). La langue furu figure dans les classifications linguistiques depuis les travaux de Roger Blench (2000, 2012) qui la classa initialement parmi les langues Kresh."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en villages autonomes diriges par des anciens. Pas de chefferie centralisee documentee. Les decisions importantes sont prises colllectivement par les elders. La vie communautaire est organisee autour des familles etendues et des obligations reciproques.",
+      "clanOrganization": "Structure clanique patrilineaire, typique des groupes soudaniques centraux du bassin de l'Ubangi. Les clans determinent l'appartenance sociale, les alliances matrimoniales et l'acces aux ressources agricoles et aux terres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent la societe et determinent l'identite sociale de chaque individu. Les ancetres vivants et morts exercent une influence sur la vie quotidienne selon la cosmologie furu.",
+      "religiousAuthority": "Autorite des anciens et des specialistes rituels qui maintiennent les relations avec les esprits intermediaires et propitient le createur supreme Nzapa. Les missionnaires chretiens (protestants et catholiques) sont actifs dans la region depuis le debut du 20e siecle et ont initie un projet de traduction scripturaire en furu."
     },
     "languages": {
       "mainLanguage": "Furu",
-      "vehicularRole": "Le furu est parlé par la majorité des Furu. L'anglais, l'arabe et d'autres langues sont également utilisés."
+      "isoCodes": ["fuu"],
+      "dialects": [
+        "Furu parle en RDC (Nord-Ubangi, le long de l'Ubangi)",
+        "Furu parle en Republique centrafricaine (region de l'Ubangi)"
+      ],
+      "vehicularRole": "Le furu est la langue maternelle de la communaute furu. C'est une langue de petite taille sans statut vehiculaire regional. Le lingala est utilise comme langue vehiculaire en RDC; le sango en Republique centrafricaine. Le francais est la langue officielle dans les deux pays. Un projet de traduction des Ecritures en langue furu a ete initie par des organisations missionnaires, ainsi qu'un projet de ressources audio scripturailes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels furu, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites agricoles: les Furu cultivent le manioc et les arachides comme cultures principales; des pratiques rituelles accompagnent le cycle agricole pour assurer de bonnes recoltes. Les offrandes a l'esprit Nafe sont pratiquees pour garantir la sante, la chance et de bonnes recoltes. Rites de chasse: propitiation de l'esprit Zuga pour assurer le succes a la chasse. Rites de mariage et ceremonies de naissance. Rites funeraires respectant la influence des ancetres sur les vivants.",
+      "symbols": "Arbre Kwara (site d'offrandes a l'esprit qui habite les personnes et necessite des propiciations regulieres). Toitures en herbes naturelles (symbole de l'habitat traditionnel et de l'adaptation a l'environnement de savane).",
+      "artsAndMusic": "Artisanat traditionnel: poterie, vannerie et travail du bois. Architecture en materiau vegetal (toits en herbes naturelles typiques des savanes). Musique vocale et instrumentale dans le cadre des ceremonies rituelles et festives. La vie culturelle furu est steeped in rituels (selon les sources missionnaires). Poesie orale et transmission des traditions par voie orale. La cuisine inclut du manioc, des arachides, du poulet, des chevres et quelques bovins.",
+      "spiritualities": "Religion traditionnelle animiste centree sur le createur supreme Nzapa, qui agit par l'intermediaire d'esprits intermediaires. Trois esprits principaux sont documentes: un esprit qui habite les personnes et exige des offrandes a un arbre Kwara specifique; Nafe, dont la propitiation assure sante, chance et bonnes recoltes; Zuga, qui controle l'issue de la chasse. Les ancetres vivants et morts exercent une influence importante sur les affaires quotidiennes. La vie furu est impregnee de la peur des forces spirituelles et de rituels destines a obtenir de bons resultats. Un christianisme missionnaire est present depuis le 20e siecle; un projet de traduction biblique est en cours."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora furu dans les grandes villes soudanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Furu n'ont pas forme de royaumes ou de grandes chefferies centralisees. Leur organisation politique traditionnelle etait fondee sur des villages autonomes avec des anciens comme autorites locales. Cette structure decentralisee est commune aux petits groupes soudaniques centraux du bassin de l'Ubangi.",
+      "relationsWithNeighbors": "Les Furu vivent en voisinage avec les Ngbandi, Mbaka, Pagibete, Ngombe, Banda et d'autres groupes de la province du Nord-Ubangi (RDC). Leurs relations avec ces voisins sont marquees par des echanges commerciaux et culturels. La region du Nord-Ubangi est ethniquement tres diversifiee.",
+      "conflictsOrAlliances": "La region du Nord-Ubangi a ete marquee par les violences de la colonisation belge et par les instabilites politiques de la RDC depuis l'independance (1960). Les conflits armes qui ont touche le nord de la RDC ont affecte les communautes furu comme les autres peuples de la region.",
+      "diaspora": "La diaspora furu est limitee en raison de la petite taille de la communaute. Des migrations vers les centres urbains de la province du Nord-Ubangi (Gbadolite, Businga) sont probables. Peu de donnees disponibles sur une diaspora internationale."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 15000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements soudanais, SIL Ethnologue, et études démographiques"
+      "source": "PeopleGroups.org et Joshua Project: population estimee dans les profils de groupe. La province du Nord-Ubangi compte environ 1,5 million d'habitants (2020); les Furu en constituent une petite fraction. SIL Ethnologue code fuu. Les estimations varient; le chiffre exact est difficile a etablir en l'absence de recensements ethniques detailles en RDC.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 12000,
+          "note": "Province du Nord-Ubangi, le long de la riviere Ubangi (Bosobolo, Businga, Mobayi-Mbongo)"
+        },
+        {
+          "country": "CAF",
+          "population": 3000,
+          "note": "Zones de savane le long de la riviere Ubangi, Republique centrafricaine"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Furu language (fuu)",
-      "CIA World Factbook – South Sudan",
-      "Recensements soudanais",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Furu language. https://en.wikipedia.org/wiki/Furu_language",
+      "SIL Ethnologue — Furu language (fuu). https://www.ethnologue.com/language/fuu/",
+      "Glottolog — Furu. https://glottolog.org/resource/languoid/id/furu1242",
+      "Joshua Project — Furu in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/11780/CG",
+      "Joshua Project — Furu in Central African Republic. https://joshuaproject.net/people_groups/11780/CT",
+      "Wikipedia EN — Nord-Ubangi. https://en.wikipedia.org/wiki/Nord-Ubangi",
+      "Blench, Roger. Central Sudanic languages classification. 2012.",
+      "Britannica — Central Sudanic languages. https://www.britannica.com/topic/Central-Sudanic-languages"
     ]
   }
 }

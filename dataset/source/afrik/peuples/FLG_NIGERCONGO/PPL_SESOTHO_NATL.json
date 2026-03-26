@@ -2,69 +2,102 @@
   "id": "PPL_SESOTHO_NATL",
   "nameMain": "Sesotho (National)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["LSO"],
+  "currentCountries": ["LSO", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Sesotho (National)",
-      "selfAppellation": "Sesotho",
-      "exonyms": [
-        "Sesotho (terme utilisé par les Européens), parfois appelés « Basotho » (terme alternatif)"
-      ],
+      "selfAppellation": "Basotho (peuple) / Sesotho (langue)",
+      "exonyms": ["Sotho du Sud", "Southern Sotho", "Basuto", "Basutho"],
+      "originOfExonyms": "Le terme Basotho (singulier : Mosotho) est l'ethnonyme que le peuple se donne lui-même. Sesotho désigne la langue et la culture. Basuto et Basutho sont des orthographes coloniales britanniques. Southern Sotho (Sotho du Sud) est la désignation académique permettant de distinguer les Basotho du Lesotho des Sotho du Nord (Pedi) et des Tswana (Sotho de l'Ouest). Le terme Sesotho sa Borwa (Sesotho du Sud) est parfois utilisé en Afrique du Sud pour différencier du Sesotho sa Leboa (Sepedi).",
+      "whyProblematic": "En Afrique du Sud, le terme Sesotho peut désigner tantôt le sesotho du Sud (langue des Basotho, code sot), tantôt l'ensemble des langues sotho (incluant Sepedi et Setswana). Cette ambiguïté administrative et académique crée parfois des confusions dans les statistiques et les politiques linguistiques.",
+      "contemporaryUsage": "Sesotho est la langue nationale et officielle du Lesotho (avec l'anglais) et l'une des onze langues officielles de la Constitution sud-africaine de 1996. Les Basotho désignent principalement la population du Lesotho (environ 2,2 millions) et les locuteurs sesotho de la province du Free State, du Gauteng et de l'Eastern Cape en Afrique du Sud.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "LSO, Afrique du Sud",
-      "currentCountries": ["LSO"]
+      "ethnoLinguisticGroup": "Bantou (Zone S, groupe Sotho-Tswana)",
+      "historicalRegion": "Hauts plateaux du Drakensberg et du Maluti, Lesotho, province du Free State (Afrique du Sud)",
+      "currentCountries": ["LSO", "ZAF"]
     },
     "ethnicities": [
-      "Sesotho du Lesotho",
-      "Sesotho d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Basotho du Lesotho (Mosotho de la nation lésothienne)",
+      "Basotho du Free State (province du Free State, Afrique du Sud)",
+      "Basotho du Gauteng (travailleurs migrants et descendants)",
+      "Sous-groupes clans : Bataung (clan du Lion), Bakoena (clan du Crocodile), Bafokeng (clan de la Rosée), Baphuthing, Bahlakoana, Basiea",
+      "Basotho de l'Eastern Cape (Nord de la province)"
     ],
     "origins": {
-      "ancientOrigins": "Les Sesotho sont originaires de la région du Lesotho et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Ancien royaume du Lesotho.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume du Lesotho). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Basotho font partie du grand rameau Sotho-Tswana des peuples bantous de l'Afrique australe. Les données linguistiques et archéologiques suggèrent une origine dans l'actuelle Tanzanie, d'où les ancêtres Sotho-Tswana se sont dispersés vers le sud et l'ouest entre 600 et 1500 de l'ère commune. Par 1500, les groupes Sotho s'étaient séparés en trois branches distinctes : Sotho du Sud (futurs Basotho), Sotho de l'Ouest (futurs Tswana) et Sotho du Nord (futurs Pedi). Les ancêtres des Basotho se sont installés sur les hauts plateaux du Drakensberg.",
+      "formationPeriod": "La nation basotho (nation lésothienne) est fondée par Moshoeshoe I (vers 1786-1870) qui, à partir de 1822, unit des clans bantoues réfugiés sur les hauts plateaux du Drakensberg face aux ravages du Difaqane (guerres de déstabilisation liées à l'expansion zouloue). En 1822, Moshoeshoe établit sa première capitale à Butha-Buthe, puis déplace son siège à Thaba Bosiu, forteresse naturelle imprenable. Il transforme un agrégat de réfugiés en une nation soudée, reconnue en 1868 comme protectorat britannique sous le nom de Basutoland.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis l'Afrique de l'Est (Tanzanie actuelle) vers l'Afrique australe, entre 600 et 1500 de l'ère commune",
+        "Consolidation sur les hauts plateaux du Drakensberg et du Maluti face aux ravages du Difaqane (1820s-1840s)",
+        "Déplacements forcés des Basotho du Free State lors des guerres Basotho-Boers (1858, 1865-1868)"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux du Drakensberg et du Maluti (Lesotho actuel)",
+        "Lowlands (plaines basses de l'ouest du Lesotho)",
+        "Free State (Afrique du Sud) — anciens Basotho expropriés par les Boers après 1868",
+        "Gauteng et autres provinces d'Afrique du Sud (migration de travail vers les mines, XIXe-XXe siècles)"
+      ],
+      "unificationsOrDivisions": "Moshoeshoe I (1786-1870) est le fondateur et unificateur de la nation basotho. Il a réuni des clans disparates (Bataung, Bakoena, Bafokeng, Baphuthing, etc.) et des réfugiés nguni en une confédération cohérente. Après sa mort, des rivalités entre ses successeurs ont fragilisé le royaume. La division territoriale entre le Lesotho indépendant et les Basotho d'Afrique du Sud est une conséquence directe des guerres Basotho-Boers et du traité d'Aliwal North (1869).",
+      "externalInfluences": "Difaqane (1820s-1840s) : vagues de réfugiés de la grande déstabilisation générée par l'expansion zouloue et mfecane. Missions protestantes françaises (Paris Evangelical Missionary Society, à partir de 1833) : introduction du christianisme et de l'écriture en sesotho. Guerres Basotho-Boers (1858, 1865-1868) : perte des plaines occidentales fertiles. Proclamation du protectorat britannique (Basutoland, 1868). Indépendance du Lesotho (4 octobre 1966). Régime d'apartheid en Afrique du Sud (impact sur les Basotho d'Afrique du Sud).",
+      "majorHistoricalEvents": "1822 : Moshoeshoe I fonde sa capitale à Butha-Buthe et entame l'unification des clans réfugiés. 1833 : arrivée des premiers missionnaires protestants français (Eugene Casalis, Thomas Arbousset), qui codifient l'orthographe sesotho. 1858 et 1865-1868 : guerres Basotho-Boers ; perte des plaines basses au profit des Boers de l'État libre d'Orange. 1868 : Moshoeshoe I obtient la protection britannique (Basutoland). 1870 : mort de Moshoeshoe I, enterré au sommet de Thaba Bosiu. 1878 : première traduction de la Bible en sesotho. 1966 : indépendance du Lesotho sous Moshoeshoe II. 1996 : sesotho déclarée l'une des onze langues officielles de la nouvelle Afrique du Sud."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume du Lesotho). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie constitutionnelle héréditaire : le Lesotho est gouverné par un roi (Morena e Moholo, Grand Chef) issu de la lignée de Moshoeshoe I. Le système traditionnel repose sur une hiérarchie de chefs (marena, singulier morena) : chef suprême (roi), chefs de district (marena a makolo) et chefs de village. Le Lekhotla (conseil des chefs) est l'organe consultatif traditionnel. La Pitso (assemblée publique) permet aux sujets d'adresser pétitions et doléances à leur chef.",
+      "clanOrganization": "Organisation patrilinéaire : la descendance, l'héritage et l'appartenance clanique se transmettent par la lignée paternelle. Les principaux clans (merafe) sont : Bakoena (Crocodile, clan royal de Moshoeshoe), Bataung (Lion), Bafokeng (Rosée), Baphuthing, Bahlakoana, Basiea. Le tatouage de clan (à base de likhopo, argile noire ou blanche) est utilisé lors des initiations pour identifier l'appartenance clanique.",
+      "ageClassSystems": "Le Lebollo est le système d'initiation central structurant les classes d'âge. Le Lebollo la Banna (initiation masculine) regroupe les garçons de 12 à 20 ans qui se retirent dans un mophato (camp d'initiation) dans la montagne pendant plusieurs semaines. Ils y sont circoncis et reçoivent un enseignement sur les responsabilités d'adulte, les praises poems (lithoko) et l'histoire des ancêtres. Le Lebollo la Basadi (initiation féminine) marque l'entrée dans l'âge adulte pour les filles.",
+      "roleOfLineages": "Les lignages patrilinéaires (mahalaka) structurent l'héritage foncier, les alliances matrimoniales et les obligations cérémonielles. Le Bohadi (bogadi : dot en bétail) est offert par la famille du marié à la famille de la mariée pour légitimer le mariage et définir les droits sur les enfants.",
+      "religiousAuthority": "Les chefs traditionnels (marena) exercent une autorité spirituelle et politique combinée. Les devins-guérisseurs (ngaka ea ditaola) consultent les ancêtres par le biais du lancer d'os rituels. L'Église protestante (Église évangélique du Lesotho, ECLSA, fondée par les missionnaires français) et l'Église catholique (arrivée en 1862) sont les deux principaux corps chrétiens. La grande majorité des Basotho se définit comme chrétienne tout en maintenant des pratiques traditionnelles (culte des ancêtres, initiation)."
     },
     "languages": {
-      "mainLanguage": "Sesotho / Sotho du Sud",
-      "vehicularRole": "Le sesotho est parlé par la majorité des Sesotho. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Sesotho (Sotho du Sud)",
+      "isoCodes": ["sot"],
+      "dialects": [
+        "Sesotho du Lesotho (dialecte de référence, standardisé par les missions protestantes françaises au XIXe siècle)",
+        "Sesotho du Free State (Afrique du Sud, légèrement distinct du sesotho lésothien)",
+        "Sesotho de Gauteng (influencé par le zouloou, le tswana et les langues des travailleurs migrants)",
+        "Silozi (langue apparentée parlée en Zambie par environ 60 000 locuteurs, proche parente du sesotho)"
+      ],
+      "vehicularRole": "Le sesotho est la langue nationale et co-officielle du Lesotho (avec l'anglais). En Afrique du Sud, c'est l'une des onze langues officielles et la première langue de 4 millions de personnes (Free State : 64 %, Gauteng : 13 %). Il est enseigné dans le système éducatif de ces deux pays. Les radios Lesedi FM (SABC, Afrique du Sud) et Radio Lesotho diffusent en sesotho. La littérature sesotho est significative depuis le XIXe siècle (Thomas Mofolo, Chaka, traduit en plusieurs langues)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sesotho, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le Lebollo (initiation) est la pratique culturelle centrale des Basotho : lebollo la banna (initiation masculine par la circoncision dans un mophato en montagne) et lebollo la basadi (initiation féminine). L'initiation est convoquée par le chef, qui fournit un taureau et d'autres ressources. Les initiés (maqhaing) reçoivent un nouveau nom, un enseignement sur l'histoire du Lesotho et les valeurs basotho, composent des lithoko (poèmes épiques d'éloge) et portent à la fin un mokorotlo et un plaid basotho. Les rites funéraires incluent des veillées communautaires, des chants mangae et des repas collectifs. Le Pitso (assemblée publique) est une réunion rituelle convoquée par le chef pour les décisions importantes.",
+      "symbols": "Le mokorotlo est le chapeau conique tressé en herbe mosea (ou leholi), symbole national du Lesotho : il figure sur le drapeau national depuis 2006 et sur les plaques d'immatriculation. Sa forme s'inspire du mont Qiloane. La couverture basotho (Seana Marena, couverture du chef) est un autre symbole identitaire majeur : en 1860, Moshoeshoe I reçoit une couverture de laine en cadeau et, impressionné, l'adopte à la place du kaross (manteau de peaux animales). Les couvertures deviennent des marqueurs de statut social (Moholobela pour les jeunes, Lekhokolo pour les initiés, Lingoetsi pour les mariées, Serope offerte à la naissance du premier enfant, Seana Marena réservée au roi et aux chefs).",
+      "artsAndMusic": "Le Mokorotlo désigne également la danse et le chant de guerre masculin exécuté lors des rassemblements et initiations. Les Lithoko (poèmes épiques d'éloge) sont composés par les initiés pour glorifier leurs ancêtres et eux-mêmes. Le Famo est une musique urbaine basotho populaire née dans les camps de mineurs du Rand au XXe siècle, jouée à l'accordéon et aux percussions. La chorale chorale sesotho (moribo) est une tradition musicale collective très répandue. L'artisanat comprend : tissage en mohair (laine angora des Highlands), poterie, sculpture sur bois, travail du cuir. Les peintures rupestres des Bushmen (San) dans les montagnes du Lesotho constituent un patrimoine visuel ancien sur les terres basotho.",
+      "spiritualities": "Croyances traditionnelles centrées sur le culte des ancêtres (balimo) : les ancêtres défunts veillent sur les vivants et peuvent être invoqués par des rites de libation (ho phehla balimo). Les ngaka ea ditaola (devins) communiquent avec les ancêtres via le lancer d'os. La religion chrétienne (protestante surtout, via la Paris Evangelical Missionary Society fondant l'Église Évangélique du Lesotho en 1833, et catholique à partir de 1862) est dominante : plus de 90 % des Basotho se définissent comme chrétiens. Syncrétisme très répandu entre christianisme et pratiques traditionnelles (initiation, culte des ancêtres, médecine traditionnelle)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sesotho dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume du Lesotho (Muso oa Lesotho) est fondé par Moshoeshoe I vers 1822. C'est l'un des rares États africains précoloniaux à avoir préservé son indépendance au cours du XIXe siècle grâce à une diplomatie habile. Après avoir demandé la protection britannique en 1868 (Basutoland), le Lesotho est devenu indépendant le 4 octobre 1966 sous le roi Moshoeshoe II. Le Lesotho est aujourd'hui une monarchie constitutionnelle enclavée dans l'Afrique du Sud.",
+      "relationsWithNeighbors": "Moshoeshoe I a mené une politique étrangère pragmatique : alliance avec les missionnaires français (PEMS) pour accéder aux armes à feu, résistance aux Boers tout en cherchant la protection britannique, accueil des réfugiés du Difaqane. Les Basotho d'Afrique du Sud ont eu des relations complexes avec les Boers (Orange Free State) et l'administration coloniale britannique. La dépendance économique du Lesotho vis-à-vis de l'Afrique du Sud (mines, transit, unions douanières) a marqué les relations contemporaines.",
+      "conflictsOrAlliances": "Guerres Basotho-Boers (1858 et 1865-1868) : première guerre indécise, deuxième guerre perdue (perte des lowlands fertiles). Demande de protectorat britannique par Moshoeshoe I (1868). La Gun War (1880-1881) : rébellion des Basotho contre la tentative britannique de les désarmer. Indépendance pacifique en 1966. Coups d'État militaires en 1986 et 1991, instabilité politique récurrente. Intervention de la SADC (opération Boleas, 1998) pour rétablir l'ordre constitutionnel.",
+      "diaspora": "Très forte diaspora de travailleurs migrants basotho dans les mines sud-africaines depuis le XIXe siècle : le Lesotho a longtemps fourni une proportion importante de la main-d'oeuvre des mines d'or et de charbon du Witwatersrand. Les envois de fonds des mineurs (remittances) ont structuré l'économie lésothienne. Diaspora dans le Free State, Gauteng et d'autres provinces d'Afrique du Sud."
     },
     "demography": {
-      "totalPopulation": 6000000,
+      "totalPopulation": 6200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur Bureau of Statistics Lesotho (PHCII 2016, projections 2025), Statistics South Africa (Census 2011 : 3,98 millions de locuteurs sesotho), SIL Ethnologue (sot), et CIA World Factbook",
+      "distributionByCountry": [
+        {
+          "country": "LSO",
+          "population": 2200000,
+          "note": "Quasi-totalité de la population du Lesotho (environ 2,2 millions, dont 85 % de locuteurs sesotho de naissance)"
+        },
+        {
+          "country": "ZAF",
+          "population": 4000000,
+          "note": "Principalement Free State (64 % de locuteurs sesotho), Gauteng (13 %), Eastern Cape Nord — environ 4 millions de locuteurs selon le recensement 2011"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sesotho / Sotho du Sud language (sot)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Basotho. https://en.wikipedia.org/wiki/Basotho",
+      "Wikipedia EN — Basotho blanket. https://en.wikipedia.org/wiki/Basotho_blanket",
+      "Wikipedia EN — Mokorotlo. https://en.wikipedia.org/wiki/Mokorotlo",
+      "Wikipedia EN — Lebollo la banna. https://en.wikipedia.org/wiki/Lebollo_la_banna",
+      "University of Cape Town — Sekoele Basotho: Protecting Initiation through the Law in Lesotho. https://humanities.uct.ac.za/apc/sekoele-basotho-protecting-initiation-through-law-lesotho",
+      "Vogue — The Rich History Behind Basotho Heritage Blankets. https://www.vogue.com/article/basotho-heritage-blankets",
+      "SIL Ethnologue — Sesotho (sot). https://www.ethnologue.com/language/sot/",
+      "CIA World Factbook — Lesotho. https://www.cia.gov/the-world-factbook/countries/lesotho/",
+      "Mofolo, Thomas. Chaka. Morija Sesuto Book Depot, 1925."
     ]
   }
 }

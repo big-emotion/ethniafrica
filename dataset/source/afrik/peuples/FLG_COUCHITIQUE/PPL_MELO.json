@@ -6,54 +6,67 @@
   "content": {
     "appellations": {
       "mainName": "Melo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Malo",
+      "exonyms": ["Malo", "Melo"],
+      "originOfExonyms": "Le nom Malo est l'auto-denomination du peuple; le terme Melo est l'appellation externe utilisee dans les sources academiques et administratives ethiopiennes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Malo est utilise par la communaute elle-meme; Melo est la forme retenue dans les bases de donnees linguistiques internationales (Ethnologue, Glottolog). Les deux formes coexistent dans la litterature.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Omotic septentrional, branche Aroid",
+      "historicalRegion": "Gamo Gofa, sud-ouest ethiopien",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Melo"],
+    "ethnicities": ["Melo", "Malo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Melo (Malo) sont un peuple omotic etabli de longue date dans la zone de Gamo Gofa au sud de l'Ethiopie. Leurs traditions orales les rattachent aux populations agricoles des hauts plateaux du sud-ouest ethiopien. Ils font partie du vaste ensemble des peuples omotic du sud-ouest, qui sont consideres comme des populations autochtones de la region.",
+      "formationPeriod": "L'identite melo s'est consolidee avant la periode d'expansion du royaume de Kaffa et l'integration a l'empire ethiopien a la fin du XIXe siecle.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Zone de Gamo Gofa, region des Nations Nationalites et Peuples du Sud (SNNPR), Ethiopie meridionale"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "L'expansion de l'empire ethiopien sous Menilek II a la fin du XIXe siecle a integre le territoire melo dans l'Etat central ethiopien, modifiant les structures politiques traditionnelles. Le contact avec les populations voisines (Gamo, Gofa, Wolayta) a egalement influence la culture materielle.",
+      "majorHistoricalEvents": "Integration au Royaume de Kaffa puis a l'empire ethiopien sous Menilek II (fin XIXe siecle). Rattachement administratif a la zone de Gamo Gofa dans le cadre du federalisme ethiopien apres 1991."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferies locales au niveau du village ou du clan. Comme la plupart des peuples omotic du sud-ouest ethiopien, les Melo etaient organises en petites communautes agropastorales dirigees par des chefs hereditaires ou des anciens.",
+      "clanOrganization": "Organisation clanique patrilineaire, caracteristique des peuples omotic de la region de Gamo Gofa.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires jouent un role central dans la gestion des terres agricoles, la resolution des conflits et l'organisation des ceremonies rituelles.",
+      "religiousAuthority": "Presence de specialistes rituels (pretres ou devins) charges des ceremonies liees aux recoltes, a la pluie et aux ancetres. Depuis l'epoque coloniale ethiopienne, le protestantisme s'est diffuse dans la region."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Melo (Malo)",
+      "isoCodes": ["mfx"],
+      "dialects": [],
+      "vehicularRole": "La langue melo est la langue maternelle exclusive du groupe. L'amharique est utilise comme langue vehiculaire pour l'administration, le commerce et l'education. La langue a un Nouveau Testament traduit (ressources disponibles via Joshua Project et Faith Comes By Hearing)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites agricoles lies aux cycles de semailles et de recoltes, ceremonies de passage a l'age adulte. Le calendrier rituel est structure autour des saisons agricoles, avec des sacrifices propitiatoires pour la pluie et la fertilite des sols.",
+      "symbols": "La culture materielle melo est caracteristique des hauts plateaux du sud-ouest ethiopien: maisons rondes a toit de chaume, culture de l'ensete (faux bananier), fabrication artisanale de poteries et de tissages.",
+      "artsAndMusic": "Chants et danses traditionnels pratiques lors des ceremonies rituelles et des fetes communautaires. La musique vocale polyphonique est caracteristique de nombreux peuples omotic du sud de l'Ethiopie.",
+      "spiritualities": "Croyances animistes traditionnelles centrees sur le culte des ancetres et des esprits de la nature. Presence croissante du christianisme protestant depuis le XXe siecle. Certaines communautes pratiquent des formes syncrètistes melant croyances traditionnelles et christianisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Melo n'ont pas forme de grand royaume centralise. Ils etaient organises en petites chefferies villageoises, caracteristique commune des peuples omotic du sud-ouest ethiopien avant l'integration dans l'empire ethiopien.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles avec les peuples voisins de la zone Gamo Gofa: les Gamo, les Gofa, les Koyra et d'autres groupes omotic du sud-ouest ethiopien.",
+      "conflictsOrAlliances": "Comme beaucoup de peuples de la region, les Melo ont subi la conquete de l'empire ethiopien sous Menilek II a la fin du XIXe siecle, qui a mis fin a leur autonomie politique.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 29000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025), estimation basee sur le recensement ethiopien de 2007 et les projections demographiques",
+      "distributionByCountry": [{ "country": "ETH", "population": 29000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Melo language – Ethnologue (SIL International), 18e edition, 2015 (https://www.ethnologue.com/language/mfx/)",
+      "Melo language – Wikipedia (https://en.wikipedia.org/wiki/Melo_language)",
+      "Melo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13668)",
+      "Melo language resources – Joshua Project, 2025 (https://joshuaproject.net/languages/mfx)",
+      "ISO 639-3 Language Codes – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
+      "Ethiopian Languages: Semitic, Cushitic, Omotic and Nilo-Saharan – Ethiopian Treasures (http://www.ethiopiantreasures.co.uk/pages/language.htm)",
+      "Melo of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011618/)"
+    ]
   }
 }

@@ -1,0 +1,23 @@
+{
+  "id": "PPL_BULU",
+  "nameMain": "Bulu",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bulu",
+      "selfAppellation": "Bulu",
+      "linguisticFamily": "FLG_BANTU",
+      "historicalRegion": "Sud Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (bum)", "Cameroon Cultural Archives"]
+  }
+}

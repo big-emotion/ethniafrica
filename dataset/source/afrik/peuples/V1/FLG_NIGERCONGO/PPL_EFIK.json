@@ -1,0 +1,70 @@
+{
+  "id": "PPL_EFIK",
+  "nameMain": "Efik",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Efik",
+      "selfAppellation": "Efik",
+      "exonyms": [
+        "Efik (terme utilisé par les Européens), parfois regroupés avec les Ibibio sous le terme \"Calabar\""
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bénoué-Congo (Cross-River)",
+      "historicalRegion": "Nigeria (Calabar, Cross River)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Efik du littoral",
+      "Communautés Efik historiques de Calabar",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuple côtier issu de migrations anciennes depuis le Cameroun.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations étroites avec les Ibibio.",
+      "externalInfluences": "Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société secrète Ekpe (Ngbe). Chefferies lignagères. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Efik",
+      "vehicularRole": "L'efik est parlé par la majorité des Efik. L'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Masques Ekpe",
+      "source_1": "Rituels du Léopard",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à la société secrète Ekpe",
+      "Symboles": "Masques Ekpe, symboles du Léopard",
+      "Arts et musique": "",
+      "source_4": "Masques Ekpe",
+      "source_5": "Gastronomie locale (poissons, épices)",
+      "source_6": "Musique traditionnelle",
+      "source_7": "Danse traditionnelle",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora efik dans les grandes villes nigérianes et dans les pays occidentaux, notamment influence sur les traditions afro-cubaines."
+    },
+    "demography": {
+      "totalPopulation": 350000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (efi), Calabar Historical Records"
+    },
+    "sources": [
+      "SIL Ethnologue – Efik language (efi)",
+      "Calabar Historical Records",
+      "CIA World Factbook – Nigeria",
+      "Recensements nationaux"
+    ]
+  }
+}

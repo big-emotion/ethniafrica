@@ -6,35 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Amhara",
-      "selfAppellation": "አማራ (Āmara)",
+      "selfAppellation": "Amara (en amharique : አማራ)",
+      "exonyms": [
+        "Abyssins (terme historique occidental pour les Hautes Terres chrétiennes)",
+        "Habesha (terme régional englobant Amhara et Tigréens)",
+        "Al-Amhari (terme arabe médiéval)"
+      ],
+      "originOfExonyms": "Le terme Abyssin est dérivé du nom arabe Habash, désignant les peuples des hautes terres éthiopiennes. Le terme Habesha, utilisé par les Amhara et les Tigréens pour se désigner eux-mêmes collectivement, renvoie aux origines sudarabes (Himyarites, Sabaens) des populations sémitiques de la Corne de l'Afrique. Au 14e siècle, les sources arabes désignent l'empereur amhara sous le titre al-Malik al-Amhari.",
+      "whyProblematic": "L'identité amhara est complexe car ce groupe a longtemps exercé une domination politique et culturelle sur l'Éthiopie, ce qui a conduit à confondre l'identité amhara avec l'identité éthiopienne elle-même. Sous le FDRE (depuis 1991), l'organisation ethnique de l'Éthiopie a généré des tensions autour de la définition de l'amharité (débat Mesfin Woldemariam vs Meles Zenawi en 1991).",
+      "contemporaryUsage": "Le terme Amhara désigne aujourd'hui le groupe ethnique dominant des hautes terres centrales et nord-ouest de l'Éthiopie, langue officielle de facto de l'État éthiopien (avec l'oromo depuis 2019). Les Amhara représentent environ 26-27 % de la population éthiopienne. Depuis 2018, le Mouvement national amhara (MNA) défend leurs intérêts politiques.",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "ethnoLinguisticGroup": "Sémitique du Nord",
-      "historicalRegion": "Hautes terres du centre et du nord-ouest de l’Éthiopie (Gojjam, Gondar, Wollo)",
+      "ethnoLinguisticGroup": "Semitique ethiopien meridional (Ethio-semitique du sud, groupe afroasiatique)",
+      "historicalRegion": "Hautes terres centrales et nord-ouest de l'Éthiopie : provinces historiques de Gojjam, Gondar (Begemder), Wollo (Bete Amhara), Lasta, Shewa, Semien, Angot, Wag",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Gojjam Amhara", "Gondar Amhara", "Wollo Amhara"],
-    "origins": {},
-    "organization": {},
+    "ethnicities": [
+      "Gojjam Amhara (province du Gojjam, au sud du lac Tana, inclut le sous-royaume historique de Gojjam)",
+      "Gondar Amhara (province du Begemder, autour de Gondar, capitale impériale du 17e au 19e siècle)",
+      "Wollo Amhara (province du Wollo, region de l'ancienne Bete Amhara, centre historique de l'identité amhara)",
+      "Shewa Amhara (province du Shewa, incluant Addis-Abeba ; les locuteurs du nord du Shewa se désignent eux-mêmes comme Amhara)",
+      "Lasta Amhara (province du Lasta, Wollo, avec les fresques les plus anciennes de l'Église amhara)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Amhara descendent des populations sémitiques arrivées en Afrique de l'Est depuis la péninsule arabique (Sabaens, Himyarites) entre 800 et 400 av. J.-C. et se métissant avec les populations couchitiques autochtones (Agaw, Kefa, Gafat, Argobba). Leur ancêtre linguistique le plus proche est le ge'ez (guèze), langue sémitique du royaume d'Aksoum (1er-7e siècles), dont l'amharique est distinct (branche sud-éthio-sémitique) mais étroitement lié. Les premiers mentions documentées d'un territoire amhara (Bete Amhara, province du Wollo) datent du 9e siècle. Au 12e siècle (1128), les sources hagiographiques mentionnent la terre de Wärjih comme zone de conflits dans le cadre de la dynastie Zagwe.",
+      "formationPeriod": "L'identité amhara s'est constituée entre le 9e et le 13e siècle dans les hautes terres centrales de l'Éthiopie, à mesure que la langue amharique s'est différenciée du ge'ez et a acquis le statut de langue royale (Lessana Negus) sous la dynastie Zagwe. En 1270, Yekuno Amlak (issu de la province amhara du Shewa) fonde la dynastie salomonide, qui revendique la descendance du roi Salomon et de la reine de Saba, légitimant la domination amhara sur l'empire éthiopien pour sept siècles.",
+      "migrationRoutes": [
+        "Migrations sudarabes (Sabaens, Himyarites) vers la Corne de l'Afrique (800-400 av. J.-C.)",
+        "Déclin du royaume aksumite et migration vers le centre-sud de l'Éthiopie (à partir du 7e siècle)",
+        "Expansion vers le sud et l'est sous les empereurs salomonides (14e-20e siècles)",
+        "Diaspora moderne en Europe, Amérique du Nord, Israël (communauté Beta Israel)"
+      ],
+      "historicalSettlementZones": [
+        "Bete Amhara (province de l'actuel Wollo, coeur historique identitaire)",
+        "Gondar (Begemder) : capitale impériale de 1630 à la mi-19e siècle",
+        "Gojjam (au sud du lac Tana) : royaume semi-autonome",
+        "Shewa (incluant Addis-Abeba, fondée en 1886 par Menelik II)",
+        "Region Amhara (Éthiopie actuelle) : province ethno-fédérale depuis 1995",
+        "Addis-Abeba : métropole ethiopienne, centre de la diaspora amhara intérieure"
+      ],
+      "unificationsOrDivisions": "Sous la monarchie salomonide (1270-1974), les Amhara ont constitué le groupe dominant de l'empire éthiopien, fournissant la quasi-totalité des empereurs. La division entre les branches Gondar, Gojjam et Shewa de la dynastie salomonide a parfois généré des conflits internes. Depuis 1991 (FDRE), l'organisation ethnique de l'Éthiopie a fragmenté l'espace politique amhara. La Région Amhara (capitale Bahir Dar) est l'entité fédérale amhara depuis 1995.",
+      "externalInfluences": "Aksumisme (1er-7e siècles) : héritage culturel et linguistique fondateur. Christianisation (4e siècle, sous le roi Ezana). Contacts avec l'Égypte copte (Église copte d'Alexandrie). Jihad d'Ahmad ibn Ibrahim al-Ghazi (Ahmed Gragn, 1529-1543) : dévastation partielle des Hautes Terres amhara. Empire ottoman (16e siècle) : pression en mer Rouge. Colonialisme européen : résistance victorieuse à l'Italie (bataille d'Adoua 1896, Menelik II). Occupation italienne (1935-1941). Régime marxiste Derg (1974-1991) : abolition de la monarchie, redistribution des terres, répression.",
+      "majorHistoricalEvents": "1270 : Yekuno Amlak fonde la dynastie salomonide depuis le Shewa. 13e-14e siècles : expansion de l'empire éthiopien, conquêtes sous Amda Seyon I. 1434-1468 : règne de Zara Yaqob, consolidation de l'Église orthodoxe éthiopienne. 1529-1543 : jihad d'Ahmed Gragn, dévastation des Hautes Terres. 1630 : Fasilidès fonde Gondar comme capitale impériale. 1889 : Menelik II couronné empereur, capitale déplacée à Addis-Abeba. 1896 : bataille d'Adoua, défaite de l'Italie. 1930-1974 : règne de Haïlé Sélassié I. 1935-1941 : occupation italienne. 1974 : coup d'État du Derg, fin de la monarchie. 1991 : chute du Derg, nouvelle Constitution ethnique fédérale. 2022 : conflit en Éthiopie (Tigré, puis Amhara)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système féodal chrétien organisé autour de la monarchie salomonide (1270-1974). Les empereurs amhara (Negusa Nagast, roi des rois) exercaient une autorité théocratique fondée sur la revendication d'une descendance de Salomon et de la reine de Saba (récit du Kebra Nagast, 14e siècle). Les grandes provinces (Gojjam, Gondar, Wollo, Shewa) étaient gouvernées par des seigneurs (ras, dejazmach) nommés ou reconnus par l'emperor. Le système incluait une Église orthodoxe puissante (Église Tewahedo) étroitement liée à l'État.",
+      "clanOrganization": "Contrairement aux peuples pastoraux voisins, la société amhara n'est pas organisée en clans tribaux. Elle est structurée selon des hiérarchies de clans de rang élevé et de rang inférieur, ainsi que des castes d'artisans (forgerons, potiers, tisserands : beta) qui sont endogames et stigmatisées. Historiquement, une classe d'esclaves (barya) existait, abolie dans les années 1930. L'appartenance à un groupe est définie par des critères individuels et familiaux plutôt que par une logique de clan tribale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Descendance patrilinéaire. Les lignages nobles (ras, dejazmach) ont joué un rôle central dans la politique impériale. L'identité amhara est fondée sur des critères linguistiques, religieux (orthodoxie) et géographiques plutôt que sur des lignages stricts. Les nobles amhara revendiquaient des généalogies remontant aux empereurs salomonides.",
+      "religiousAuthority": "L'Église orthodoxe éthiopienne Tewahedo (EOTC) est l'institution religieuse centrale de la culture amhara. Son chef (Patriarche) exerce une autorité spirituelle majeure. Les prêtres (qassis) et les diacres sont présents dans chaque village. Les Debteras (chantres-lettrés) jouent un rôle crucial dans la musique liturgique et la médecine traditionnelle. Le monachisme (monastères du lac Tana, Lalibela) est très développé. L'Église a historiquement soutenu la légitimité de la monarchie salomonide."
+    },
     "languages": {
-      "mainLanguage": "Amharique"
+      "mainLanguage": "Amharique (Amarigna, አማርኛ), langue afroasiatique, branche sémitique éthio-sémitique du sud",
+      "isoCodes": ["amh"],
+      "dialects": [
+        "Judeo-Amharique (Amharique des Beta Israel, Juifs d'Éthiopie) : variété parlée par les Juifs éthiopiens (Beta Israel), aujourd'hui surtout en Israël, remplaçant certains termes chrétiens par des termes juifs",
+        "Variétés régionales (Gondar, Gojjam, Wollo, Shewa) : variations phonétiques et lexicales minimes, mutuellement intelligibles"
+      ],
+      "vehicularRole": "L'amharique (ISO amh) est la deuxième langue sémitique la plus parlée au monde après l'arabe, avec plus de 58,8 millions de locuteurs totaux (dont 33,7 millions de locuteurs natifs et 25 millions de locuteurs de deuxième langue en Éthiopie en 2020, plus 3 millions dans la diaspora). L'amharique est la langue de travail du gouvernement fédéral éthiopien, langue officielle de plusieurs régions (Amhara, Benishangul-Gumuz, Gambela, SNNPR), langue d'enseignement dans les écoles fédérales et langue franca pour toutes les métropoles éthiopiennes. Il est écrit en fidel (fidäl), un syllabaire dérivé du ge'ez (guèze), utilisé de gauche à droite."
     },
     "culture": {
-      "Religion majoritaire": "Christianisme orthodoxe (Église Tewahedo).",
-      "Célébrations": "Timqet, Meskel, Fasika.",
-      "source_0": "Littérature ge’ez et manuscrits sacrés.",
-      "source_1": "Musique begena, kirar ; tradition poétique qené.",
-      "source_2": "Architecture rupestre et basilicale."
+      "majorRites": "Timkat (Epiphanie, 19 janvier) : fête la plus importante, commémorant le baptême du Christ dans le Jourdain ; processions de nuit avec tabots (répliques de l'Arche d'Alliance), chants, danses, immersions rituelles. Meskel (Fête de la Vraie Croix, 27 septembre) : célébration de la découverte de la Vraie Croix par sainte Hélène ; grand feu (Demera), processions, chants. Fasika (Pâques ethiopienne) : la fête la plus sacrée, précédée de 55 jours de jeûne strict (Hudade) ; liturgies de nuit, repas festif avec injera et doro wat. Mariage : souvent arrangé, cérémonie à l'église (qurban, divorce interdit pour les prêtres), ou cérémonie civile (semanya, permettant le divorce). Naissance : la mère et l'enfant restent en maison 40 jours (garçon) ou 80 jours (fille) ; baptême à 40 jours. Cérémonie du café (buna) : préparation et service du café par la femme en trois passes, moment social rituel.",
+      "symbols": "Le Negarit (tambour de cour) et la croix processionnelle (meqrab) : symboles de la royauté et de l'Église orthodoxe. L'injera (galette de teff) et le wat (ragoût épicé) : symboles culinaires identitaires. Le tabots (réplique de l'Arche d'Alliance dans chaque église) : symbole religieux central. L'écriture fidel (syllabaire guèze-amharique) : symbole de l'identité culturelle séculaire. Le Lion de Juda (emblème royal salomonide) : symbol de la monarchie et du mouvement rastafari mondial.",
+      "artsAndMusic": "Peinture religieuse : icones sur toile ou parchemin avec les grands yeux caractéristiques des figures bibliques, tradition continue depuis le 13e siècle (styles Medieval, Low et High Gondarine) ; les fresques les plus anciennes d'Ethiopie sont à Lasta. Musique liturgique : qenie (poésie chantée à double sens sam-enna warq), begena (lyre à dix cordes, instrument spirituel), krar (lyre à six cordes), masenqo (luth à une corde), washint (flûte), kebero et negarit (tambours). Danse eskista (danse folklorique amhara, mouvements des épaules et du cou). Azmaris : musiciens populaires itinérants. Ethio-Jazz (Mulatu Astatke, années 1960-1970). Littérature : poésie qenie depuis le 14e siècle, premier roman amharique Lebb Walläd Tarik (1908, Afewerk Gebre Iyessus), première pièce de théâtre africaine écrite. Artisanat : broderies et tissages, bijoux en filigrane d'or et d'argent, emblèmes religieux.",
+      "spiritualities": "Christianisme orthodoxe éthiopien (Église Tewahedo) : 82,5 % des Amhara de la région Amhara selon le recensement de 2007. La foi est marquée par la descendance directe de la tradition aksumite (christianisation sous le roi Ezana, 4e siècle). Pratiques spécifiques : jeûnes stricts (Wednesdays, Fridays, et périodes liturgiques), liturgie en ge'ez, importance des monastères (monastères insulaires du lac Tana), culte des saints locaux. Religion populaire : croyance en Zar (esprits de possession, surtout chez les femmes), port d'amulettes coraniques et de phylactères. Minorité musulmane significative (17,2 % de la région Amhara), notamment dans le Wollo."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La dynastie salomonide (1270-1974) est le symbole du rôle historique amhara. Fondée par Yekuno Amlak en 1270 dans le Shewa amhara, elle a gouverné l'empire éthiopien pendant 700 ans (avec la parenthèse du Zemene Mesafint, 1769-1855). Les empereurs Amda Seyon I (1314-1344), Zara Yaqob (1434-1468), Fasilidès (1632-1667, fondateur de Gondar), Tewodros II (1855-1868), Menelik II (1889-1913) et Haïlé Sélassié (1930-1974) ont été les souverains les plus marquants. L'empire éthiopien était le seul État africain à ne jamais avoir été colonisé (sauf l'occupation italienne 1935-1941).",
+      "relationsWithNeighbors": "Les Amhara ont entretenu des relations d'hégémonie, d'alliance et de conflit avec les peuples voisins : Oromo (grand peuple couchitique, parfois soumis, parfois allié par mariage), Tigréens (partageant la tradition aksumite et l'Église Tewahedo, rivalités dynastiques), Somalis et Afars (zones frontières), Nuer et Anuak (sud de l'Éthiopie). La politique de l'empire éthiopien a longtemps consisté à imposer la langue amharique et la culture chrétienne aux peuples incorporés (Oromo, Sidama, Wolaita, etc.).",
+      "conflictsOrAlliances": "1529-1543 : jihad d'Ahmed Gragn (Ahmad ibn Ibrahim al-Ghazi) ; les Amhara furent partiellement vaincus, aidés finalement par les Portugais. 1896 : bataille d'Adoua, victoire de Menelik II sur l'Italie, symbole de résistance africaine au colonialisme. 1935-1941 : occupation italienne, résistance des patriotes amhara (Arbegnoch). 1974 : Révolution éthiopienne, renversement d'Haïlé Sélassié par le Derg. 1974-1991 : régime Derg (marxiste), terreur rouge, famines. 1991 : chute du Derg, prise de pouvoir par le FPLE (Tigréens) et OLF (Oromo). Depuis 2018 : montée du nationalisme amhara, tensions avec le Tigré (guerre 2020-2022) et les Oromo.",
+      "diaspora": "Diaspora éthiopienne et amhara estimée à 3 millions de personnes dans le monde. Principales communautés aux États-Unis (Washington D.C., Minneapolis, Atlanta), en Israël (Beta Israel, Juifs éthiopiens, environ 160 000), en Europe (Suède, Allemagne, Italie), au Canada et en Australie. La diaspora a joué un rôle important dans le soutien politique et économique à l'Éthiopie, notamment lors des famines des années 1980."
+    },
     "demography": {
+      "totalPopulation": 23000000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv (AFRIK 2025)"
+      "source": "Recensement ethiopien 2007 : 19 867 817 Amhara (26,9 % de la population). Projections 2025 basées sur le taux de croissance démographique ethiopien (2,5-3 % par an). Ethiopian Central Statistics Agency, peuple_demographie_globale.csv (AFRIK 2025). Note : les Amhara forment environ 26-27 % de la population éthiopienne selon les recensements et études.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 23000000,
+          "note": "Principalement dans la région Amhara (Bahir Dar, Gondar, Dessie, Bahir Dar), Addis-Abeba et diaspora intérieure dans toutes les villes éthiopiennes"
+        }
+      ]
     },
     "sources": [
-      "Ethiopian Central Statistics Agency",
-      "Encyclopaedia Aethiopica",
-      "Ethnologue (amh)",
-      "Glottolog (amha1245)"
+      "Wikipedia EN - Amhara people. https://en.wikipedia.org/wiki/Amhara_people",
+      "Wikipedia EN - Amharic language. https://en.wikipedia.org/wiki/Amharic",
+      "Wikipedia EN - Solomonic dynasty. https://en.wikipedia.org/wiki/Solomonic_dynasty",
+      "SIL Ethnologue - Amharic (amh). https://www.ethnologue.com/language/amh/",
+      "Glottolog - Amharic (amha1245). https://glottolog.org/resource/languoid/id/amha1245",
+      "Ethiopian Central Statistics Agency - Census 2007. https://www.csa.gov.et/",
+      "Encyclopaedia Aethiopica. Harrassowitz Verlag, 2003-2014.",
+      "Phillipson, David W. - Ancient Ethiopia. The British Museum Press, 1998.",
+      "Levine, Donald N. - Wax and Gold : Tradition and Innovation in Ethiopian Culture. University of Chicago Press, 1965.",
+      "CIA World Factbook - Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
     ]
   }
 }

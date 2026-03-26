@@ -2,58 +2,78 @@
   "id": "PPL_MWANGA",
   "nameMain": "Mwanga",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Mwanga",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Winamwanga",
+      "exonyms": ["Nyamwanga", "Namwanga", "Mwinamwanga"],
+      "originOfExonyms": "L'auto-designation est Winamwanga (pluriel) ou Mwinamwanga (singulier). Nyamwanga et Namwanga sont des variantes orthographiques du meme nom. Le nom de la langue est Chinamwanga. La designation Mwanga est une forme abregee utilisee dans les contextes officiels et academiques.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nyamwanga et Namwanga sont les formes les plus utilisees dans les documents officiels en Zambie et en Tanzanie. Le terme Winamwanga est l'auto-appellation collective. La langue est appelee Chinamwanga.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu de la zone M, groupe Mambwe-Lungu",
+      "historicalRegion": "Province de Muchinga (districts d'Isoka et Nakonde) en Zambie et district de Momba (region de Songwe) en Tanzanie",
+      "currentCountries": ["ZMB", "TZA"]
     },
-    "ethnicities": ["Mwanga"],
+    "ethnicities": ["Winamwanga", "Mwanga", "Nyamwanga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Winamwanga sont croyus venir d'Afrique du Nord-Est, arrivant ensemble avec les Tonga/Ila du sud de la Zambie vers 900 av. J.-C. Des similitudes de noms entre Tonga et Namwanga temoignent de cette origine commune (ex : Siame en Namwanga, Sianjunza en Tonga). Selon d'autres sources, ils migrerent depuis le Bassin du Congo et s'installerent dans ce qui est aujourd'hui le nord de la Zambie et des parties de la Tanzanie.",
+      "formationPeriod": "Avant l'ere coloniale, les Winamwanga de Tanzanie et de Zambie formaient un seul peuple sans frontieres, partageant la meme direction et les memes pratiques culturelles. La partition coloniale crea une division administrative qui persiste aujourd'hui.",
+      "migrationRoutes": [
+        "Afrique du Nord-Est vers le plateau du nord de la Zambie et le sud de la Tanzanie",
+        "Migration du Bassin du Congo vers la region transfrontaliere Zambie-Tanzanie"
+      ],
+      "historicalSettlementZones": [
+        "District d'Isoka et Nakonde (province de Muchinga, Zambie)",
+        "District de Momba, region de Songwe (Tanzanie)",
+        "Region de Mbeya (Tanzanie)",
+        "Nord-ouest du district de Chitipa (Malawi septentrional)"
+      ],
+      "unificationsOrDivisions": "Avant la colonisation, les Namwanga de Tanzanie et de Zambie partageaient la meme direction sous le roi base en Tanzanie. La rebellion du chef Kafwimbi qui deroba le tambour royal et migra vers le sud (district d'Isoka actuel) crea une division : son groupe fut appele Awiwa ou Iwa. Un autre chef de la dynaste Mukoma s'installa au Malawi sous le chef Kameme Siame.",
+      "externalInfluences": "Influence de l'exploration missionnaire ecossaise (mission de Mwenzo fondee en 1894). Colonisation britannique de la Rhodesie du Nord divisant le peuple par une frontiere internationale. Influence des missions chretiennes (Free Church of Scotland, Eglise catholique). Liens culturels et commerciaux avec la Tanzanie voisine (les Winamwanga apprirent le swahili plutot que le bemba, plus proche de la Tanzanie geographiquement).",
+      "majorHistoricalEvents": "Periode precoloniale : unite transnationale sous le roi de Tanzanie. Division coloniale par la frontiere Zambie-Tanzanie. Fondation de l'Association de Bien-etre de Mwenzo (Mwenzo Welfare Association) en 1912, premiere organisation politique de la Rhodesie du Nord, par Donald Robert Mengo Siwale (Namwanga) et Rev. David Kaunda. Independance de la Zambie (1964) et integration dans le systeme administratif zambian."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de royaute et chefferies multiples. Societe patrilineaire (heritages, noms et titres transmis par la ligne paternelle). La reine Nawaitwika preside la Zambie depuis Nakonde (titre unique : femme chef). Autres chefs : Kafwimbi, Muyombe et Mwenechifungwe, bases dans le district d'Isoka. Le roi de Tanzanie nomme un chef pour la Zambie.",
+      "clanOrganization": "Organisation patrilineaire, exceptionnelle parmi les peuples du nord de la Zambie qui sont majoritairement matrilineaires. Les clans sont identifies par des noms a prefixe genre : masculin commencant par 'Si' (ex : Siwale, Simukonda, Sikombe), feminin commencant par 'Na' (ex : Nawale, Namukonda, Nakaponda). Ces prefixes sont fixes et non relationnels.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage des noms, des biens et des titres. Cette patrilinearite distingue les Winamwanga de la plupart des autres peuples du nord de la Zambie.",
+      "religiousAuthority": "Chefs et anciens comme depositaires des traditions culturelles et coutumières. Guerisseurs traditionnels. Influence majeure de l'Eglise Unie de Zambie (UCZ, anciennement Free Church of Scotland) et de l'Eglise catholique."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nyamwanga (Chinamwanga)",
+      "isoCodes": ["mwn"],
+      "dialects": ["Chinamwanga (Zambie)", "Nyamwanga (Tanzanie)"],
+      "vehicularRole": "Langue bantoue de la zone M, etroitement liee au Mambwe-Lungu (mutuellement intelligible). Les Winamwanga preferent le swahili au bemba comme seconde langue, en raison de leur proximite geographique avec la Tanzanie. Le recensement zambien de 2010 recensait 140 000 locuteurs en Zambie. En Tanzanie, Ethnologue estimait 87 000 locuteurs en 1987. L'anglais est utilise dans les contextes officiels et urbains."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Vikamkanimba, Ng'ondo, Chambo Chalutanga et Mulasa : principales ceremonies traditionnelles. Umutomolo : la fete traditionnelle la plus populaire, celebree sur les rives du lac Chila (Isoka), avec danses, chants et offrandes pour apaiser les esprits et les remercier pour la bonne annee. Chants et danses illustrant la separation des tribus (Mambwe, Lungu, Namwanga) lors de leurs migrations fondatrices.",
+      "symbols": "Le tambour royal, symbole du pouvoir cheffal : sa capture par Kafwimbi provoqua la division historique du peuple. Le lac Chila (Isoka) comme lieu sacre de la principale ceremonie annuelle. Les noms a prefixe genre (Si/Na) comme marqueurs identitaires uniques.",
+      "artsAndMusic": "Musique et danse tres presentes lors des ceremonies traditionnelles, notamment l'Umutomolo. Chants narratifs transmettant l'histoire des migrations. Traditions orales riches incluant proverbes et histoires. La langue Namwanga est decrite comme coloree, pleine de dictons, blagues et ayant une qualite ancienne.",
+      "spiritualities": "Croyances ancestrales : reverence pour les esprits des ancetres, naturellement integree dans les ceremonies traditionnelles (Umutomolo notamment). Christianisme majoritaire : Eglise Unie de Zambie (UCZ), Eglise catholique, Eglise methodiste africaine, Temoins de Jehovah, Adventistes du Septieme Jour. Syncretisme frequent entre croyances traditionnelles et chretiennes, notamment dans les zones rurales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume transfrontalier Zambie-Tanzanie avant la colonisation. Dynasties royales : Nawaitwika (reine, Nakonde, Zambie), Kafwimbi, Muyombe, Mwenechifungwe (Isoka, Zambie), et le roi principal base en Tanzanie.",
+      "relationsWithNeighbors": "Relations etroites avec les Mambwe et Lungu (langues et cultures proches, mutuellement intelligibles). Relations culturelles et commerciales avec les Tanzaniens frontaliers. Influences reciproques avec les Lambya, Nyika et Wandya.",
+      "conflictsOrAlliances": "Alliance historique entre les Winamwanga de Tanzanie et de Zambie avant la colonisation. Division provoquee par la rebellion de Kafwimbi et le vol du tambour royal. Role pioneer dans le mouvement associatif de la Rhodesie du Nord (Mwenzo Welfare Association, 1912).",
+      "diaspora": "Presence en Zambie (districts d'Isoka et Nakonde, province de Muchinga), en Tanzanie (region de Songwe/Momba) et marginalement au Malawi (district de Chitipa). Migration interne vers les centres urbains zambiens (Lusaka, Copperbelt)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 502000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (population mondiale Nyamwanga : 502 000)",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 217000 },
+        { "country": "TZA", "population": 285000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mwanga people – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_people)",
+      "Mwanga language – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_language)",
+      "Nyamwanga in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13901/ZA)",
+      "Namwanga language – Chalo Chatu, Zambia online encyclopedia (https://chalochatu.org/Namwanga_language)",
+      "African Cultures by Young Africans: Namwanga Tribe – Afrikan Princess (https://afrikanprincess.com/2015/12/03/african-cultures-by-young-africans-namwanga/)",
+      "Mwanga of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015612/)"
+    ]
   }
 }

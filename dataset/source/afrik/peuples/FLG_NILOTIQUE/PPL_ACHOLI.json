@@ -2,67 +2,109 @@
   "id": "PPL_ACHOLI",
   "nameMain": "Acholi",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["UGA", "SDN"],
+  "currentCountries": ["UGA", "SSD"],
   "content": {
     "appellations": {
       "mainName": "Acholi",
-      "selfAppellation": "Acholi",
-      "exonyms": ["Acholi (terme utilisé par les Européens)"],
+      "selfAppellation": "Luo Gang (gens du foyer / people of the home)",
+      "exonyms": [
+        "Shooli (terme arabe du 19e siecle)",
+        "Acoli",
+        "Acooli",
+        "Atscholi",
+        "Shuli",
+        "Gang"
+      ],
+      "originOfExonyms": "Le terme Acholi est une transformation du mot arabe Shooli, utilise par les marchands arabophones du nord au cours de la seconde moitie du 19e siecle. Les voisins Lango les appelaient Ugangi (gens de la maison). Le nom propre est Luo Gang.",
+      "whyProblematic": "Le terme Acholi est un exonyme arabe adopte par commodite par les colonisateurs britanniques et les ethnographes. Le nom Luo Gang, autodescription historique, est moins utilise en dehors des communautes concernees.",
+      "contemporaryUsage": "Le terme Acholi est universellement utilise en ougandais, anglais et en contexte international. Les locuteurs s'identifient egalement comme Luo ou Luo Gang. L'identite acholi a ete profondement marquee par le conflit avec la LRA (1986-2006).",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique occidental",
-      "historicalRegion": "Nord de l'UGA, Sud-Soudan",
-      "currentCountries": ["UGA", "SDN"]
+      "ethnoLinguisticGroup": "Nilotique occidental (sous-groupe Luo)",
+      "historicalRegion": "Acholiland — nord de l'Ouganda (districts de Gulu, Kitgum, Pader, Agago, Amuru, Nwoya, Lamwo, Omoro) et Bahr el-Ghazal, Soudan du Sud",
+      "currentCountries": ["UGA", "SSD"]
     },
     "ethnicities": [
-      "Acholi d'Ouganda",
-      "Acholi du Soudan du Sud",
-      "Sous-groupes régionaux"
+      "Payira (le plus grand chiefdom, region de Gulu)",
+      "Patiko (chiefdom historique, nord de Gulu)",
+      "Paluo (groupe fondateur, lien avec les Luo nilotiques)",
+      "Lamogi (clan ancien, region de Gulu nord)",
+      "Padibe (nord du Kitgum, pres de la frontiere soudanaise)",
+      "Pajule (est du Pader)",
+      "Pader (groupe regional du district de Pader)",
+      "Acholi du Soudan du Sud (Acholi d'Agago, region de Bahr el-Ghazal)"
     ],
     "origins": {
-      "ancientOrigins": "Les Acholi sont originaires du nord de l'Ouganda et du sud du Soudan. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Luo.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les ancetres des Acholi ont migre vers le nord de l'Ouganda depuis la region du Bahr el-Ghazal (actuel Soudan du Sud) vers l'an 1000 apr. J.-C. Ils font partie du grand ensemble Luo (Lwo) nilotique occidental, dont les locuteurs se disperserent depuis la vallee du Nil superieur a travers l'Afrique de l'Est. Les Acholi constituaient alors des communautes agricoles et pastorales organisees en hameaux de cases circulaires.",
+      "formationPeriod": "A partir de la fin du 17e siecle, un nouvel ordre sociopolitique emergea parmi les Luo du nord de l'Ouganda, caracterise par la formation de chefferies (chiefdoms) dirigees par des Rwodi (sing. Rwot, chef). Au milieu du 19e siecle, on denombrait environ 60 petites chefferies en Acholiland oriental. L'identite acholi distincte se consolida durant cette periode.",
+      "migrationRoutes": [
+        "Migration depuis le Bahr el-Ghazal (Soudan du Sud) vers le nord de l'Ouganda, vers 1000 apr. J.-C.",
+        "Expansion progressive dans les plaines fertiles entre le Nil et les collines du nord ougandais",
+        "Contacts et absorptions de populations locales nilotiques et bantou"
+      ],
+      "historicalSettlementZones": [
+        "Acholiland (nord Ouganda) : districts de Gulu, Kitgum, Pader, Agago, Amuru, Nwoya, Lamwo, Omoro — 28 500 km²",
+        "Region du Bahr el-Ghazal meridional (Soudan du Sud)",
+        "Villes de Gulu, Kitgum, Lira (diaspora interne ougandaise)"
+      ],
+      "unificationsOrDivisions": "Les Acholi etaient divises en une soixantaine de petites chefferies independantes partageant langue et culture. Chaque chefferie etait dirigee par un Rwot issu d'un clan specifique, entour d'un conseil des anciens de clan. L'identite commune acholi s'est renforcee sous la colonisation britannique, qui les regroupait sous une meme administration. Le conflit LRA (Lord's Resistance Army) a provoque une dislocation sociale profonde mais a aussi consolide une conscience identitaire commune face a l'adversite.",
+      "externalInfluences": "Contacts avec les peuples bantous voisins (Banyoro, Langi). Domination coloniale britannique (fin 19e - 1962) : les Acholi furent largement recrutes dans la King's African Rifles (KAR) et deployes en Asie du Sud-Est pendant la Seconde Guerre mondiale. Le christianisme (catholicisme romain, anglicanisme) a profondement transforme la societe acholi depuis le debut du 20e siecle.",
+      "majorHistoricalEvents": "Vers 1000 apr. J.-C. : migration fondatrice depuis le Bahr el-Ghazal. Fin 17e siecle : formation des chefferies et systeme des Rwodi. Periode coloniale : recrutement massif dans les forces armees britanniques. 1962 : independance de l'Ouganda ; les Acholi jouent un role militaire central sous Obote. 1971-1979 : regime Idi Amin, massacre de nombreux Acholi. 1986 : prise du pouvoir par Museveni, debut de la marginalisation du nord. 1986-2006 : conflit LRA — la Lord's Resistance Army dirigee par Joseph Kony, un Acholi de Gulu, enrole de force des enfants (child soldiers), massacre des civils et deplaca 1,8 million de personnes (90% des Acholi). Le conflit causa au moins 300 000 morts et l'une des plus grandes crises de deplacement interne d'Afrique. La Cour penale internationale (CPI) inculpa Joseph Kony et plusieurs commandants LRA. 2005-2007 : negociations de paix de Juba ; retour progressif des deplaces. Depuis 2008, la LRA opera au Congo, en Centrafrique et au Soudan du Sud."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme des chefferies (chiefdoms) dirige par des Rwodi (sing. Rwot, chef oint). Les rwodi moo (chefs oints) gouvernaient avec des pouvoirs semi-sacres, mais etaient contrebalances par un Conseil des Anciens de clan qui exercait des fonctions equivalentes a un tribunal supreme (civiles et penales). Cette gouvernance etait entierement integree a la religion et a la cosmologie acholi. En 1995, une reforme constitutionnelle ougandaise a reconnu les chefs culturels, mais sans restaurer leurs pouvoirs anciens.",
+      "clanOrganization": "Societe patrilineaire organisee en clans (kaka). Chaque chefferie comprenait plusieurs villages de clans differents. Le clan du chef (Rwot) etait le clan dominant de la chefferie. On denombrait environ 60 chefferies en Acholiland au milieu du 19e siecle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite clanique, les droits fonciers et les alliances matrimoniales. La transmission des titres de chef (Rwot) se faisait au sein du clan dirigeant de chaque chefferie.",
+      "religiousAuthority": "Dans le systeme precolonial, les chefs (rwodi moo, chefs oints) avaient une autorite religieuse et politique. On croyait en un etre superieur, YA Latwer. La mort d'un individu appelait des negociations pour le prix du sang (blood money) et une ceremonie de reconciliation. Aujourd'hui, 72% des Acholi sont catholiques romains, 23% anglicans ; l'Acholi Religious Leaders' Peace Initiative (ARLPI, 1997) a joue un role majeur dans la reconciliation post-LRA."
     },
     "languages": {
-      "mainLanguage": "Acholi",
-      "vehicularRole": "L'acholi est parlé par la majorité des Acholi. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Acholi (Luo Acholi, Dok Acoli)",
+      "isoCodes": ["ach"],
+      "dialects": [
+        "Acholi du nord de l'Ouganda (dialecte principal, Gulu, Kitgum, Pader)",
+        "Acholi du Soudan du Sud (variante parlée dans le Bahr el-Ghazal)"
+      ],
+      "vehicularRole": "L'acholi (code ISO 639-3 : ach) est une langue nilotique occidentale du groupe Luo, parlée par environ 1,9 million de locuteurs en Ouganda et 45 000 au Soudan du Sud. Proche de l'alur, du langi, du dhola (padhola) et du luo du Kenya. L'acholi est utilisé comme langue d'enseignement dans les premieres classes du primaire en Acholiland. Le roman Song of Lawino de l'auteur acholi Okot p'Bitek (1966), écrit en acholi puis traduit en anglais, est une œuvre littéraire majeure de l'Afrique de l'Est."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels acholi, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"description\": \"Pas de rite d'initiation formel par scarification, mais des ceremoniels de passage jalonnent la vie sociale. Le mariage est le rite de transition le plus important, necessite le paiement de la dot en betail.\"}, \"funeraryRites\": {\"burial\": \"Inhumation traditionnelle dans le village d'origine. Ceremonies de deuil collectives avec chants et danses rituelles. Les rituels de purification (cleansing) sont essentiels pour eviter les esprits vengeurs (cen).\"}, \"reconciliationRites\": {\"matoOput\": \"Mato oput (boire la racine amere) : ceremony de reconciliation entre clans apres un meurtre, permettant de restaurer la paix sociale. Implique negociation du prix du sang, rituel collectif symbolique de partage d'une boisson amere.\", \"nyonoTongGweno\": \"Nyono tong gweno (poser le pied sur l'oeuf) : rite de reintegration communautaire pour les combattants LRA de retour (environ 12 000 personnes). Permet de purifier et restaurer la relation de la personne avec sa communaute.\"}, \"spiritualCleansing\": \"Rituels de purification des maisons, des lieux de combat et d'execution, effectues par des anciens pour chasser les esprits (cen) et restaurer l'equilibre communautaire.\"}",
+      "symbols": "Le chef Rwot et son baton de commandement symbolisent l'autorite traditionnelle. La lance et le bouclier (jadis en peau de girafe ou de boeuf) sont les symboles guerriers historiques. La croix chretienne est omniprésente depuis la christianisation massive. Le tam-tam (tambour) est le symbole de la communication et de la fete communautaire.",
+      "artsAndMusic": "{\"dances\": {\"larakaraka\": \"Danse de cour (courtship dance) la plus emblematique des Acholi, pratiquee lors des mariages et ceremonies communautaires. Les jeunes hommes et femmes s'y retrouvent dans une danse mixte energique avec tambours et chants ; consideree parmi les plus de 50 danses acholi, c'est celle qui incarne le mieux la vitalite culturelle du peuple.\", \"bwola\": \"Danse royale reservee aux occasions speciales, executee en presence du Rwot.\", \"otole\": \"Danse guerriere masculine.\"}, \"musicalInstruments\": [\"Lukeme (sanza / lamellaphone)\", \"Adungu (harpe en arc a plusieurs cordes)\", \"Tambour (bul)\", \"Flute en roseau\", \"Hochets (oroma)\"], \"oralLiterature\": \"Riche tradition de proverbes (ngero), de contes (oteka) et de poesie chantee. L'oeuvre d'Okot p'Bitek (Song of Lawino, 1966) en langue acholi est un monument de la litterature africaine.\", \"crafts\": \"Poterie traditionnelle, vannerie, tissage. Decoration des cases avec motifs geometriques en rouge, blanc et gris.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Jok (esprit supreme / force spirituelle)\", \"attributes\": \"YA Latwer (l'Etre superieur) etait cru omnipresent. Jok designe a la fois Dieu et les esprits des ancetres. La conception acholi du divin integre des esprits multiples (jogi) pouvant intervenir dans la vie des vivants.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les esprits des ancetres (cen) jouent un role crucial : les morts non apaises peuvent tourmenter les vivants. Les rituels de purification visent a apaiser les cen et a restaurer l'harmonie.\"}, \"christianity\": {\"specificPractices\": \"72% catholiques romains, 23% anglicans (recensement ougandais 2002). L'Eglise catholique et anglicane furent actives dans l'education et la reconciliation post-LRA. L'ARLPI (Acholi Religious Leaders' Peace Initiative, 1997) reunit leaders catholiques, anglicans, musulmans et orthodoxes pour la paix.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora acholi dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Acholi etaient organises en une soixantaine de petites chefferies (chiefdoms) independantes, non reunies en royaume centralise. Chaque chefferie etait dirigee par un Rwot (chef oint, rwot moo) assiste d'un Conseil des Anciens. Les principales chefferies etaient Payira (la plus grande), Patiko, Paluo, Padibe, Pader et Pajule. Le systeme des Rwodi se consolida a partir de la fin du 17e siecle. Contrairement aux royaumes voisins (Bunyoro, Buganda), les Acholi maintinrent une organisation segmentaire sans pouvoir centralise.",
+      "relationsWithNeighbors": "Relations d'alliance et de competition avec les Langi (Lango) au sud, les Madi a l'ouest, les Karamojong a l'est et les Nuer et Dinka au nord. Les Langi appelaient les Acholi Ugangi. Contacts commerciaux avec les marchands arabes du nord depuis le 19e siecle (qui leur donnerent le nom Shooli). Sous la colonisation britannique, les Acholi et les Langi formerent la base du recrutement militaire, creant une tension avec les groupes du sud (Baganda, Banyankole) qui dominaient la fonction publique.",
+      "conflictsOrAlliances": "La periode post-independance (1962-) fut marquee par une instrumentalisation politique de l'identite acholi. Sous Idi Amin (1971-1979), les Acholi furent massivement persecutes et massacres. En 1985, le general Tito Okello Lutwa (Acholi) prit brievement le pouvoir avant d'etre renverse par Museveni en janvier 1986. Le conflit le plus devastateur fut celui de la Lord's Resistance Army (LRA) de Joseph Kony (1986-2006) : combinant mysticisme chretien et violence extreme, la LRA enleva des dizaines de milliers d'enfants soldats, massacra des civils acholi, et provoqua le deplacement de 1,8 million de personnes dans des camps de protection. Au pic du conflit, 90% des Acholi vivaient dans ces camps, avec un taux de mortalite atteignant 1 000 morts par semaine. La CPI inculpa Kony et plusieurs commandants en 2005.",
+      "diaspora": "La guerre LRA a produit une importante diaspora acholi dans les grandes villes ougandaises (Kampala, Entebbe), au Kenya et dans les pays occidentaux (Etats-Unis, Canada, Royaume-Uni, Suede). Des organisations acholi en diaspora (Acholi diaspora associations) militent pour la justice, la reconciliation et le developpement de l'Acholiland. Le retour des deplaces s'est accelere apres 2007."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 2000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (ach, 2024) : 1,9 million de locuteurs en Ouganda. Recensement ougandais 2014 et projections 2025. CIA World Factbook Uganda. Acholiland : environ 2 155 000 personnes representant 6% de la population ougandaise (districts de Agago, Amuru, Gulu, Kitgum, Lamwo, Nwoya, Pader, Omoro). Soudan du Sud : plus de 45 000 (estimation 2000).",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 1950000,
+          "note": "Nord de l'Ouganda : districts de Gulu, Kitgum, Pader, Agago, Amuru, Nwoya, Lamwo, Omoro (Acholiland)"
+        },
+        {
+          "country": "SSD",
+          "population": 50000,
+          "note": "Region du Bahr el-Ghazal meridional, Soudan du Sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Acholi language (ach)",
-      "CIA World Factbook – Uganda, South Sudan",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Acholi people. https://en.wikipedia.org/wiki/Acholi_people",
+      "SIL Ethnologue — Acholi language (ach). https://www.ethnologue.com/language/ach/",
+      "Human Rights Watch — Northern Uganda : Abducted and Abused (2003). https://www.hrw.org/",
+      "Latigo, James Ojera — Northern Uganda: tradition-based practices in the Acholi region. In Traditional Justice and Reconciliation after Violent Conflict, IDEA, 2008.",
+      "p'Bitek, Okot — Song of Lawino (1966), East African Publishing House. Oeuvre litteraire majeure en langue acholi.",
+      "Doom, Ruddy & Vlassenroot, Koen — Kony's Message: A New Koine? The Lord's Resistance Army in Northern Uganda. African Affairs, 1999.",
+      "Glottolog — Acholi. https://glottolog.org/resource/languoid/id/achi1257",
+      "Wikipedia EN — Lord's Resistance Army. https://en.wikipedia.org/wiki/Lord%27s_Resistance_Army",
+      "UNFPA Uganda — Population data. https://uganda.unfpa.org/"
     ]
   }
 }

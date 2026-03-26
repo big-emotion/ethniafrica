@@ -2,71 +2,108 @@
   "id": "PPL_SWAHILI",
   "nameMain": "Swahili",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["KEN", "TZA", "MOZ", "COM"],
+  "currentCountries": ["KEN", "TZA", "MOZ", "COM", "COD", "UGA"],
   "content": {
     "appellations": {
       "mainName": "Swahili",
-      "selfAppellation": "Waswahili",
+      "selfAppellation": "Waswahili (pluriel), Mswahili (singulier) ; Waungwana (les gens civilises, terme d'auto-identification classe a Lamu)",
       "exonyms": [
-        "Swahili (terme utilisé par les Européens), parfois \"Arabes\" (terme problématique)"
+        "Swahili (terme europeen derive de l'arabe Sawahil, cotes)",
+        "Arabes de la cote (terme inexact et problematique utilise par les Europeens)",
+        "Wangozi (nom originel, parlaient le Kingozi, ancetre du swahili)"
       ],
+      "originOfExonyms": "Swahili derive de l'arabe sawahil (pluriel de sahel, rivage, cote). Le terme fut adopte par les Europeens pour designer les habitants de la cote est-africaine. L'auto-identification Waswahili s'est imposee comme denominateur commun d'une identite complexe bantoue, arabe, persane et indienne.",
+      "whyProblematic": "L'appellation Arabes pour les Waswahili efface leur fondement bantou dominant. Certains chercheurs distinguent les Waswahili ethniques (population de la cote) des locuteurs du swahili comme langue vehiculaire (plusieurs dizaines de millions de personnes).",
+      "contemporaryUsage": "Waswahili designe aujourd'hui les communautes historiques de la cote est-africaine (Kenya, Tanzanie, nord du Mozambique, Comores) partageant une culture islamique, une architecture specifique et un patrimoine commercial maritime.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone G)",
-      "historicalRegion": "Côtes de l'Afrique de l'Est",
-      "currentCountries": ["KEN", "TZA", "MOZ", "COM"]
+      "ethnoLinguisticGroup": "Bantou (Zone G, G40 — Swahili cluster, inclus le comorien G40c)",
+      "historicalRegion": "Cote swahili — Somalie du Sud, Kenya, Tanzanie, nord du Mozambique ; archipels de Zanzibar, Lamu, Comores ; cites-Etats de Kilwa, Mombasa, Malindi, Pate, Sofala",
+      "currentCountries": ["KEN", "TZA", "MOZ", "COM", "COD", "UGA"]
     },
     "ethnicities": [
-      "Swahili du Kenya",
-      "Swahili de Tanzanie",
-      "Swahili du Mozambique",
-      "Swahili des Comores"
+      "Waswahili de la cote kenyane — Mombasa, Malindi, Lamu, Pate ; identite islamique et commerciale ancienne",
+      "Waswahili de Tanzanie — Zanzibar (Unguja, Pemba), Dar es Salaam, Kilwa ; cœur historique de la civilisation",
+      "Shirazi — sous-groupe se reclamant d'une origine persane (Shiraz), present sur la cote et a Zanzibar",
+      "Waswahili des Comores — lies Comores et Mayotte, proches culturellement et linguistiquement",
+      "Waswahili du Mozambique — nord du Mozambique (Mozambique Island, Mtwara, Cabo Delgado)",
+      "Bajuni — sous-groupe peuplant les iles de la cote nord du Kenya et sud de la Somalie"
     ],
     "origins": {
-      "ancientOrigins": "Les Swahili sont originaires des côtes de l'Afrique de l'Est. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone G). Formation de cités-États swahili.",
-      "unificationsOrDivisions": "Formation de cités-États swahili. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples arabes et persans, influence de l'islam."
+      "ancientOrigins": "La civilisation swahili emerge de la rencontre entre des agriculteurs-pecheurs bantouphones installes sur la cote est-africaine depuis le debut du premier millenaire de notre ere et des marchands et immigrants arabes et persans. L'evidence archeologique a Fukuchani (nord-ouest de Zanzibar) date du 6e siecle des communautes sedentaires pratiquant agriculture et peche, avec des echanges limites (ceramiques persanes). Une etude ADN de 2022 sur 80 tombes islamiques datees 1250-1800 CE sur la cote swahili revele une ascendance maternelle majoritairement est-africaine (bantou et neolithique pastoral) et une ascendance paternelle majoritairement asiatique (principalement persane).",
+      "formationPeriod": "Les cites-Etats swahili emergent entre le 9e et le 13e siecle : Kilwa, Mombasa, Pate, Malindi, Zanzibar, Sofala deviennent des poles commerciaux majeurs integres au reseau de l'ocean Indien. Le mythe d'origine Shirazi (immigrants de Shiraz en Perse, 10e-11e siecle) est elabore pour legitimer une identite islamique et marchande.",
+      "migrationRoutes": [
+        "Installation bantouphone initiale le long de la cote est-africaine (1er-6e siecle)",
+        "Arrivee de marchands et immigrants du Golfe persique (Perse, Oman) a partir du 8e-9e siecle",
+        "Diffusion swahili vers l'interieur via les routes caravanières (19e siecle) : Zanzibar - Ujiji - Buganda - Katanga",
+        "Commerce triangulaire Zanzibar : Oman - cote - interieur africain (ivoire, esclaves, clous de girofle)"
+      ],
+      "historicalSettlementZones": [
+        "Archipel de Zanzibar (Unguja, Pemba) — capitale commerciale du monde swahili depuis le 10e siecle",
+        "Archipel de Lamu (Kenya) — plus ancienne ville habitee en continu d'Afrique subsaharienne",
+        "Kilwa Kisiwani (Tanzanie) — cite-Etat la plus prospere du 13e au 16e siecle, commerce de l'or zimbabween",
+        "Mombasa (Kenya) — principal port de la cote kenyane",
+        "Sofala (Mozambique) — extreme sud de la cote swahili, debouche du commerce de l'or shona",
+        "Comores — archipel integre a la sphere swahili depuis le 9e siecle"
+      ],
+      "unificationsOrDivisions": "Les cites-Etats swahili n'ont jamais forme un empire unifie mais un reseau de sultanats et de republiques marchandes independants partageant culture, langue et religion. La domination omanaise (Sultanat de Zanzibar, 1698-1964) unifa partiellement cet espace sous une hegemonie commerciale et politique. L'arrivee des Portugais (1498) perturba les routes commerciales et affaiblit plusieurs cites-Etats (Kilwa, Sofala). La Revolution de Zanzibar (1964) abolit le sultanat.",
+      "externalInfluences": "Islam sunnite (8e-9e siecle) : restructura l'identite, l'architecture et le droit. Influences persanes (langue, ceramiques, systeme d'irrigation). Influence indienne (textiles, mathematiques, gastronomie). Domination portugaise (1498-17e siecle) : destruction partielle des cites-Etats. Domination omanaise (17e-19e siecle) : sultanat de Zanzibar, commerce des esclaves et des clous de girofle. Colonisation britannique et allemande (fin 19e siecle).",
+      "majorHistoricalEvents": "Prospěrite de Kilwa (13e-15e siecle) comme plaque tournante de l'or zimbabween. Arrivee de Vasco de Gama (1498). Destruction de Kilwa et Mombasa par les Portugais (1505). Reprise de Mombasa par les Omanais (Fort Jesus, 1698). Sultanat de Zanzibar sous Seyyid Said (1804-1856). Abolition de l'esclavage sous pression britannique (1873-1897). Colonisation : Kenya et Ouganda britanniques, Tanzanie (Tanganyika) allemande puis britannique. Revolution de Zanzibar (1964) : renversement du sultanat arabe. Rattachement de Zanzibar a la Tanzanie continentale (Union, 1964)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en cités-États traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Sultanats et cites-Etats marchands : gouvernement par un sultan (ou sheha) assiste d'un conseil de notables (wakuu, hommes riches et lettres). Stratification sociale distincte entre les Waungwana (libres, citadins de longue date) et les Wazalia (nes en ville), en dessous les esclaves (watumwa). A Lamu, identification par groupe social et dialecte.",
+      "clanOrganization": "Clans patrilineaires (ukoo) organisant les alliances matrimoniales et la propriete. Les clans d'origine arabe ou shirazienne ont longtemps joui d'un statut superieur. L'appartenance clanique determine les droits sur les terres de l'archipel et les bateaux.",
+      "ageClassSystems": "Pas de systeme formal de classes d'age. La circoncision masculine (tohara) est un rite de passage islamique important effectue entre 5 et 12 ans, marque par une fete familiale.",
+      "roleOfLineages": "Lignages patrilineaires pour les biens et les titres. Traditions de mariage endogame dans certains clans pour conserver la richesse et les statuts. La reputation familiale (heshima) est un capital social central.",
+      "religiousAuthority": "Les oulémas et cadis (juges islamiques) detiennent une autorite religieuse et juridique majeure. Le cadi rend justice selon la charia (ecole shafi'ite). Les sheikhs des confreries soufies (notamment Qadiriyya) ont un role influent dans la vie spirituelle. Autorite du sultan comme garant de l'ordre islamique."
     },
     "languages": {
-      "mainLanguage": "Swahili",
-      "vehicularRole": "Le swahili est parlé par la majorité des Swahili et sert de langue véhiculaire en Afrique de l'Est. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Kiswahili (Swahili)",
+      "isoCodes": ["swa"],
+      "dialects": [
+        "Kiamu — dialecte de Lamu et archipel, repute le plus conservateur et prestige",
+        "Kimvita — dialecte de Mombasa",
+        "Kiunguja — dialecte de Zanzibar (Unguja), base du swahili standard moderne",
+        "Kipemba — dialecte de l'ile de Pemba",
+        "Kingozi — variete ancienne, ancetre probable du swahili moderne",
+        "Chimwini — dialecte de la cote de Barawa (Somalie meridionale)"
+      ],
+      "vehicularRole": "Le kiswahili est la langue nationale de la Tanzanie et du Kenya, langue officielle de la Communaute d'Afrique de l'Est (EAC), et langue de l'Union africaine. Il sert de vehiculaire pour environ 100 a 200 millions de personnes en Afrique subsaharienne (locuteurs natifs + appris). C'est la langue commerciale de l'Afrique de l'Est et des Grands Lacs, utilisee dans l'est de la RDC et en Ouganda."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels swahili, symboles liés à la mer.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, architecture)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture swahili."
+      "majorRites": "Celebrations islamiques centrales : Ramadan et Eid al-Fitr (Sikukuu ya Eid), Eid al-Adha, Mawlid an-Nabi (naissance du Prophete, celebree avec processions et chants). Tohara (circoncision) : rite de passage masculin entre 5 et 12 ans, fete familiale elaborate. Ceremonies de mariage (harusi) : multi-jours, incluant la nuit du henne (usiku wa hina), danses des femmes, recitation de poesie (taarab) et banquets. Unyago : ceremonies d'initiation feminine marquant la puberte. Divination par les versets coraniques (kombe : papier coranique trempe dans l'eau).",
+      "symbols": "Dhow (boutre, bateau a voile triangulaire) — symbole de la civilisation commerciale swahili et de ses liens avec l'ocean Indien. Architecture de corail et de bois sculpte (milango ya kuchonga, portes en bois sculptees de motifs floraux et geometriques) — patrimoine architectural distinctif. Le kikoi (tissu a rayures) et le kanga (tissu imprime a messages) sont des marqueurs vestimentaires identitaires. Zanzibar Stone Town inscrit au patrimoine mondial de l'UNESCO (2000).",
+      "artsAndMusic": "Taarab : musique orchestrale et poetique influencee par les traditions arabes, persanes et indiennes ; paroles en swahili ; orchestres de Zanzibar (Culture Musical Club, Ikhwani Safaa) mondialement connus. Beni : danse et musique de fanfare importee et transformee localement. Ngoma : danses percussives traditionnelles, variees selon les regions. Architecture distinctive : arches, cours interieures, niches murales (zidaka), plafonds en stucs, portes sculptees, utilisation du corail et du bois de mangrove. Poesie swahili (mashairi) : tradition litteraire ancienne ecrite en caracteres arabes (ajami) depuis le 13e siecle. Artisanat : sculpture de portes, marqueterie, bijoux en argent filigrane.",
+      "spiritualities": "Islam sunnite shafi'ite comme religion dominante depuis le 9e siecle. Pratiques soufies importantes, notamment la confrerie Qadiriyya. Croyances syncrétiques : foi en les djinn (esprits invisibles pouvant posseder ou aider les humains) ; port d'amulettes (hirizi) avec versets coraniques ; lavage des malades avec de l'eau ayant trempe des versets ecrits. Culte des ancetres (mzimu) maintenu en marge des pratiques islamiques dans certaines communautes. Presence chretienne minoritaire dans les communautes non-historiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora swahili dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Sultanas et cites-Etats : Sultanat de Kilwa (9e-16e siecle), cite-Etat la plus prospere de la cote, controlant le commerce de l'or zimbabween via Sofala. Sultanat de Zanzibar (10e-1964), dont le rayonnement s'etendit jusqu'au Katanga (actuelle RDC) via les routes caravanières. Sultanat de Pate (archipel de Lamu). Sultanat de Mombasa. Fort Jesus de Mombasa (construit par les Portugais, 1593-1596, repris par les Omanais en 1698).",
+      "relationsWithNeighbors": "Intermediaires commerciaux entre l'interieur de l'Afrique et l'ocean Indien : achetaient ivoire, or, esclaves et produits agricoles aux peuples de l'interieur (Shona, Yao, Nyamwezi, Makua) et les revendaient aux marchands arabes, indiens et chinois. Relations culturelles et commerciales intenses avec Oman, Perse, Inde et Chine. Ibn Battuta visita Kilwa en 1331 et la decrivit comme l'une des plus belles villes du monde.",
+      "conflictsOrAlliances": "Resistance a la domination portugaise (debut 16e siecle) : les cites swahili solliciterent l'aide des Ottomans et des Omanais. Alliance avec l'imam d'Oman qui expulsa les Portugais du Fort Jesus en 1698. Sultanat de Zanzibar sous Seyyid Said (1806-1856) : expansion economique et politique majeure ; capital des routes caravanières vers l'interieur. Abolition de l'esclavage imposee par les Britanniques (traite d'Hamerton, 1845 ; declaration 1873 ; abolition complete 1897). Revolution de Zanzibar (12 janvier 1964) : renversement du sultanat, violences, rejoignement avec le Tanganyika pour former la Tanzanie.",
+      "diaspora": "Presence swahili historique sur les cotes d'Oman (Mascate), du Golfe persique et du sous-continent indien due au commerce. Communautes swahili en Arabie saoudite, aux Emirats arabes unis et en Europe (Royaume-Uni principalement). La diaspore interne s'etend vers les villes d'Afrique de l'Est (Nairobi, Kampala, Dar es Salaam) et de la RDC orientale."
     },
     "demography": {
       "totalPopulation": 2000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "La population waswahili au sens ethnique strict (communautes historiques de la cote) est estimee a 1 a 2 millions. A distinguer des locuteurs du swahili comme langue vehiculaire (100-200 millions). Source : Wikipedia Swahili people (2024), Joshua Project profils Swahili Kenya/Tanzanie. La distinction entre Waswahili ethniques et locuteurs swahili rend les estimations difficiles.",
+      "distributionByCountry": [
+        { "country": "KEN", "population": 700000 },
+        { "country": "TZA", "population": 900000 },
+        { "country": "COM", "population": 200000 },
+        { "country": "MOZ", "population": 150000 },
+        { "country": "COD", "population": 30000 },
+        { "country": "UGA", "population": 20000 }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Swahili language (swa)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur les cités-États swahili"
+      "Wikipedia EN — Swahili people : https://en.wikipedia.org/wiki/Swahili_people",
+      "Wikipedia EN — Swahili language : https://en.wikipedia.org/wiki/Swahili_language",
+      "Wikipedia EN — Swahili coast : https://en.wikipedia.org/wiki/Swahili_coast",
+      "Wikipedia EN — Kilwa Sultanate : https://en.wikipedia.org/wiki/Kilwa_Sultanate",
+      "SIL Ethnologue — Swahili (swa) : https://www.ethnologue.com/language/swa/",
+      "UNESCO World Heritage — Stone Town of Zanzibar : https://whc.unesco.org/en/list/173/",
+      "Joshua Project — Swahili in United States : https://joshuaproject.net/people_groups/15145/US",
+      "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
+      "CIA World Factbook — Kenya : https://www.cia.gov/the-world-factbook/countries/kenya/"
     ]
   }
 }

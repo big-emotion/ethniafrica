@@ -1,23 +1,95 @@
 {
   "id": "PPL_WIYANA",
-  "nameMain": "",
+  "nameMain": "Wiyana",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["GHA", "BFA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Wiyã / Weeya",
+      "mainName": "Wiyana",
+      "selfAppellation": "Wiya / Weeya",
+      "exonyms": ["Wiyã", "Weeya", "Winyé", "Kolsi", "Gurunsi occidental"],
+      "originOfExonyms": "Le terme Wiyana (ou Wiyã, Weeya) est l'auto-denomination du peuple. Winyé (avec le suffixe -ye d'appartenance en moore) est la forme mossi du nom. Kolsi est un autre nom vernaculaire. Le terme Gurunsi est un meta-terme pejoratif d'origine djerma (guru-si: le fer ne penetre pas) utilise par les Mossi pour designer les peuples non-centralises du Burkina Faso occidental et du Ghana septentrional.",
+      "whyProblematic": "Le terme Gurunsi est d'origine externe et pejorative, impose par les voisins Mossi. Il recouvre une pluralite de peuples distincts ne partageant ni langue commune ni institutions politiques communes. Son emploi efface les identites specifiques comme celle des Wiyana.",
+      "contemporaryUsage": "Wiyana ou Wiyã est utilise dans les sources academiques et linguistiques. Winyé est employe dans la documentation de SIL International pour la langue de Burkina Faso. La communaute se designe elle-meme par Wiya ou Weeya.",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "Ghana",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Gur, sous-branche Gurunsi occidental (Grusi occidental)",
+      "historicalRegion": "Ghana septentrional (Upper West Region) et sud du Burkina Faso, region de Dedougou",
+      "currentCountries": ["GHA", "BFA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ghana Ethnographic Notes"]
+    "ethnicities": [
+      "Wiyana du Ghana (Upper West Region et Nord Ghana)",
+      "Winyé du Burkina Faso (region de Dedougou, province des Balé)",
+      "Sous-groupes villageois autonomes le long de la frontiere Ghana-Burkina Faso"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Wiyana (Winyé) sont un peuple Gur autochtone occupant la zone de contact entre le nord du Ghana et le sud-ouest du Burkina Faso. Comme les autres peuples Gurunsi, ils sont presents dans la region depuis des temps immemoriaux, anterieurement aux migrations Mossi et aux formations etatiques. Leur organisation acephale en villages fortifies leur a permis de resister aux pressions exterieures.",
+      "formationPeriod": "Identite Wiyana consolide en communautes sedentaires agricoles avant la formation des royaumes Mossi (15e siecle). Organisation en villages independants sans structure politique supra-villageoise. Resistance aux razzias Mossi et aux expeditions Djerma du 19e siecle.",
+      "migrationRoutes": [
+        "Populations autochtones de la zone frontaliere Ghana-Burkina Faso sans migration fondatrice documentee",
+        "Dispersion dans les villages fortifies lors des razzias Mossi (15e-19e siecles) et Djerma (fin 19e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Upper West Region du Ghana septentrional",
+        "Province des Balé et region de Dedougou, Burkina Faso",
+        "Zone de contact avec les peuples Dagaba (Ghana) et Nuna (Burkina Faso)"
+      ],
+      "unificationsOrDivisions": "Organisation acephale en villages autonomes. Absence d'unite politique centralisee. Cohesion assurée par les liens de parente patrilineaire, les alliances matrimoniales inter-villageoises et les cultes communs de la terre.",
+      "externalInfluences": "Pression des royaumes Mossi (Mossi de Ouagadougou et de Yatenga). Razzias des cavaliers Djerma de Babatu (1880-1896). Colonisation francaise (Burkina Faso) et britannique (Ghana). Integration dans les etats nationaux post-independance (Burkina Faso 1960, Ghana 1957). Influence de l'islam et du christianisme au 20e siecle.",
+      "majorHistoricalEvents": "Resistance aux conquetes Mossi (15e-19e siecles). Razzias Djerma (fin 19e siecle). Partage colonial de la zone entre France et Grande-Bretagne (frontiere arbitraire divisant des communautes). Alphabetisation dans les langues nationales (programme INSD/INSD Burkina depuis les annees 1980). Reconnaissance du Winyé comme langue nationale au Burkina Faso."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation acephale sans chefferie institutionnalisee au-dela du village. Gouvernance par un conseil d'anciens (chefs de lignages) et un pretre de la terre (tengsoaba / tinsoab), mediateur entre la communaute et les puissances de la Terre. Deliberation collective pour les decisions communautaires.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans controler la terre, organisent les mariages (dot) et les ceremonies rituelles. Identite clanique determinante pour l'appartenance sociale et les droits fonciers. Relations entre clans regulees par des interdits alimentaires et des alliances matrimoniales.",
+      "ageClassSystems": "Systeme de classes d'age organisant les travaux collectifs agricoles, la construction des maisons, les ceremonies initiatiques et la transmission des savoirs.",
+      "roleOfLineages": "Les lignages patrilineaires sont les unites sociales, economiques et rituelles fondamentales. La terre est patrimoine du lignage, transmise de pere en fils. L'appartenance au lignage determine les droits fonciers, les obligations de solidarite et les responsabilites rituelles.",
+      "religiousAuthority": "Le pretre de la terre (tengsoaba) est le principal mediateur religieux, responsable des sacrifices a la Terre pour la fertilite des recoltes. Les anciens des lignages dirigent le culte des ancetres. Pas de hierarchie religieuse institutionnalisee."
+    },
+    "languages": {
+      "mainLanguage": "Winyé (Wiya, Kolsi)",
+      "isoCodes": ["kst"],
+      "dialects": [
+        "Winyé du Burkina Faso (variante principale, region de Dedougou)",
+        "Wiya du Ghana (variante septentrional, Upper West Region)"
+      ],
+      "vehicularRole": "Le Winyé est langue maternelle de la communaute. Langue largement monolingue en milieu rural. Le moore est utilise comme lingua franca dans la partie burkinabe de l'aire culturelle. Le dagbani et le dagaare sont utilises dans la partie ghanéenne. Le francais (Burkina Faso) et l'anglais (Ghana) sont les langues de l'administration et de l'enseignement. Population estimee a 20,000 locuteurs (Ethnologue, cite 1999)."
+    },
+    "culture": {
+      "majorRites": "Rites agraires centraux lies au culte de la Terre: ceremonies de semailles avec invocations au tengban (autel de la terre), sacrifices d'animaux avant les recoltes. Rites funeraires avec participation communautaire et ceremonies ancestrales. Ceremonies d'initiation pour les hommes et les femmes marquant le passage a l'age adulte. Festivals collectifs lies au calendrier agricole (debut et fin de saison des pluies). Rites de purification apres souillure rituelle.",
+      "symbols": "Masques sculptés en bois aux motifs geometriques polychromes (noir, blanc, rouge), caracteristiques de l'art Gurunsi et utilisés lors des ceremonies. Peintures murales geometriques ornant les facades des maisons (motifs de protection et d'identite clanique). Sculptures zoomorphes (Winiama sculptures parmi les plus geometriques du groupe Gurunsi). Autels de la Terre (tengban) comme centres symboliques communautaires.",
+      "artsAndMusic": "Art sculptural remarquable: les sculptures Winiama/Wiyana sont reconnues comme parmi les plus geometriques et stylisees du groupe Gurunsi. Masques zoomorphes aux yeux concentriques et effets polychromes. Peintures murales ornementales sur les habitations (motifs en noir, blanc, rouge). Architecture en banco avec decorations murales caracteristiques. Musique de balafon et percussion lors des ceremonies villageoises. Poterie feminine. Tissage de coton.",
+      "spiritualities": "Religion traditionnelle centree sur le culte de la Terre (tengban) et le culte des ancetres. La Terre est une force sacree et souveraine dont le pretre est le mediateur. Les ancetres sont invoques par des libations et des sacrifices pour obtenir leur protection et leur bienveillance. Croyance en des esprits de la nature (cours d'eau, forets, rochers). Presence croissante du christianisme (missions evangeliques) et de l'islam sunnite au 20e-21e siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Les Wiyana (Winyé) etaient organises en villages independants. Leur resistance aux conquetes exterieures est symbolisee dans le nom Gurunsi (le fer ne penetre pas). L'art des masques et les maisons peintes temoignent d'une identite culturelle forte malgre l'absence de structures etatiques.",
+      "relationsWithNeighbors": "Relations complexes avec les Mossi voisins (tentatives de soumission historiques). Contacts avec les Dagaba et Wala au Ghana. Liens culturels etroits avec les autres peuples Gurunsi (Nuna, Lyele, Kassena). Echanges commerciaux regionaux (mil, sorgho, coton, betail).",
+      "conflictsOrAlliances": "Resistance aux conquetes Mossi (15e-19e siecles). Victimes des razzias de Babatu (cavaliers Djerma, 1880-1896). Integration dans la Gold Coast britannique (Ghana) et la Haute-Volta francaise (Burkina Faso) avec partition de la communaute par une frontiere coloniale arbitraire.",
+      "diaspora": "Migration economique saisonniere et permanente vers les villes ghanéennes (Accra, Kumasi, Tamale) et burkinabes (Bobo-Dioulasso, Ouagadougou), ainsi que vers la Cote d'Ivoire."
+    },
+    "demography": {
+      "totalPopulation": 25000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur SIL Ethnologue (langue Winyé kst, 20,000 locuteurs cites 1999), INSD Burkina Faso, Ghana Statistical Service. Population totale (Ghana + Burkina) estimee a 20,000-30,000. Projection 2025 retenue: environ 25,000.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 18000,
+          "note": "Province des Balé, region de la Boucle du Mouhoun (Dedougou), Burkina Faso"
+        },
+        {
+          "country": "GHA",
+          "population": 7000,
+          "note": "Upper West Region et nord Ghana, communautes Wiya transfrontalieres"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue – Winyé language (kst): https://www.ethnologue.com/language/kst/",
+      "Wikipedia EN – Winye language: https://en.wikipedia.org/wiki/Winye_language",
+      "Wikipedia EN – Gurunsi people: https://en.wikipedia.org/wiki/Gurunsi_people",
+      "Wikipedia EN – Gurunsi languages: https://en.wikipedia.org/wiki/Gurunsi_languages",
+      "101 Last Tribes – Gurunsi people (Winiama sculptures): https://www.101lasttribes.com/tribes/gurunsi.html",
+      "SIL Burkina Faso – Gur languages: https://sil-burkina.org/en/content/gur-languages",
+      "Britannica – Grusi: https://www.britannica.com/topic/Grusi"
+    ]
   }
 }

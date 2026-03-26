@@ -6,54 +6,80 @@
   "content": {
     "appellations": {
       "mainName": "Mbugwe",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Mbugwe",
+      "exonyms": ["Mbuwe", "Kimbugwe"],
+      "originOfExonyms": "Kimbugwe designe la langue du peuple Mbugwe (prefixe ki- de classe nominale bantoue). Mbuwe est une variante orthographique mineure. A ne pas confondre avec les Mbugu (ou Maa/Ma'a), peuple different habitant les monts Usambara en Tanzanie orientale, dont la langue n'a pas de parente directe avec le mbugwe.",
+      "whyProblematic": "La confusion avec les Mbugu des monts Usambara est possible en raison de la similarite des noms, mais les deux peuples et leurs langues sont distincts.",
+      "contemporaryUsage": "Mbugwe est le terme standard utilise par le peuple lui-meme et dans toutes les sources scientifiques.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu, groupe F (F.34 selon la classification Guthrie), cluster Rangi-Mbugwe",
+      "historicalRegion": "Plaines de la Vallée du Rift, district de Babati, region de Manyara, centre-nord de la Tanzanie ; sud-ouest de la region d'Arusha",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Mbugwe"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Mbugwe sont dits etre des descendants du peuple Rangi, dont ils se sont separes lors de migrations plus anciennes. Les recherches linguistiques (Mous, 2021) montrent que Rangi et Mbugwe forment une unite genetique bantoue. La langue mbugwe (F.34) est la plus etroitement apparentee au rangi, parle dans le district de Kondoa. Les deux langues partagent environ 70% de vocabulaire.",
+      "formationPeriod": "L'identite Mbugwe se constitue lors de l'etablissement dans les plaines du Rift, probablement plusieurs siecles avant la colonisation europeenne. Les Mbugwe sont une communaute agricole bantou en isolation relative du fait de leur entourage de populations nilotiques (Maasai, Datoga) et cushitiques (Iraqw).",
+      "migrationRoutes": [
+        "Separation du groupe Rangi dans le district de Kondoa et migration vers le nord-ouest",
+        "Installation dans les plaines de la vallee du Rift, a l'est et au sud du lac Manyara"
+      ],
+      "historicalSettlementZones": [
+        "District de Babati, region de Manyara (localites de Mwada, Magugu, Babati)",
+        "Sud-ouest de la region d'Arusha",
+        "Vallee du Rift, a une altitude d'environ 1 200 metres",
+        "Vallee de Kiru et zone de Mamire"
+      ],
+      "unificationsOrDivisions": "Le systeme politique Mbugwe repose sur des conseils d'anciens independants dans chaque village ou zone de peuplement. En 1974, le programme ujamaa de Julius Nyerere a regroupe les Mbugwe en villages plus grands pour faciliter l'education, l'agriculture commerciale et le controle politique, modifiant ainsi profondement leur mode d'organisation. Avant les annees 1970, la plupart des Mbugwe vivaient dans des homesteads isoles.",
+      "externalInfluences": "L'islam a atteint les Mbugwe au XIXe siecle via les negriers arabes traversant le centre de la Tanzanie. Plus de la moitie des Mbugwe se declarent aujourd'hui musulmans sunnites chafiites. Contact avec les peuples Maasai et Datoga (nilotiques) a l'est et au sud, leur imposant un isolement linguistique. La politique ujamaa tanzanienne de 1974 a profondement modifie leur organisation spatiale. L'influence du swahili national est intense, entrainant une substitution lexicale importante dans la langue mbugwe.",
+      "majorHistoricalEvents": "Devastation de la population par des maladies d'origine hydrique entre 1940 et 1960 (epidemies liees aux zones marecageuses du lac Manyara). Programme gouvernemental ayant reduit l'effet de la maladie. Regroupement en villages dans le cadre du programme ujamaa (1974). La population est passee d'environ 10 000 en 1910 a seulement 5 000 en 1967 avant de se redresser."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de conseils d'anciens independants dans chaque village. Pas de chefferie centralisee. Gray (1963) rapporte l'existence d'environ six chefferies puissantes avec agriculture et elevage comme activites economiques au moment de la colonisation.",
+      "clanOrganization": "Organisation clanique bantoue. Liens de clan structurant l'acces a la terre et les relations matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent l'organisation sociale et l'acces aux ressources. La question fonciere est importante : des etudes recentes (Boone 2015) montrent que les zones Mbugwe (vallee de Kiru, zone de Mamire) sont caracterisees par une forte immigration et des reattributions foncieres par l'Etat tanzanien.",
+      "religiousAuthority": "Islam sunnite (ecole chafia) : plus de la moitie de la population. Religion animiste traditionnelle, notamment le culte aux autels de pluie, persiste fortement meme parmi les musulmans (peu pratiquent la priere quotidienne ou observent le Ramadan). Presence de quelques eglises chretiennes, mais faible frequentation."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kimbugwe (Mbugwe)",
+      "isoCodes": ["mgz"],
+      "dialects": [],
+      "vehicularRole": "Le mbugwe est parle par environ 34 000 a 55 000 locuteurs. C'est la seule langue bantoue isolee dans une region dominee par les langues cushitiques (Iraqw, Gorowa) a l'ouest et au sud, et la langue nilotique maasai a l'est. Le swahili est la langue vehiculaire nationale et domine la communication quotidienne. Le mbugwe subit une forte influence du swahili, avec de nombreux mots swahili integres avec une prononciation mbugwe."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Culte aux autels de pluie : rite traditionnel majeur survivant a l'islamisation. Ceremonies islamiques (mariages, funerailles selon les rites sunnites chafiites). Rites d'initiation et ceremonies villageoises. La vannerie est une activite culturelle importante : les femmes tissent des nattes couvrant les sols des huttes et de grands paniers pour stocker le riz et le mais.",
+      "symbols": "Les oreilles percees et les scarifications faciales (heritage de contact avec les Datoga nilotiques) sont des marques distinctives des Mbugwe. Les autels de pluie sont des lieux sacres symboliques. Le lac Manyara borne leur territoire au nord.",
+      "artsAndMusic": "Artisanat de vannerie : nattes tissees pour les sols, grands paniers de stockage. Architecture specifique : huttes a toit plat dont les murs sont construits avec des troncs d'arbres solidarises par des branches, durcis avec de la boue et des bouses de vache. Le toit a une structure plus legere faite de tiges de mil entrelacees.",
+      "spiritualities": "Islam sunnite chafiite : plus de la moitie de la population. Animisme traditionnel persistant, notamment le culte aux autels de pluie. Christianisme minority. Utilisation traditionnelle des plantes et arbustes pour la guerison. La langue et l'identite ethnique Mbugwe constituent un marqueur identitaire fort, meme si elles sont de plus en plus influencees par le swahili et l'identite tanzanienne nationale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Environ six chefferies locales au moment de la colonisation, avec agriculture et elevage comme bases economiques (Gray, 1963). Pas de royaume centralise.",
+      "relationsWithNeighbors": "Entourage de peuples non-bantoues : Iraqw et Gorowa (cushitiques) a l'ouest et au sud, Maasai (nilotique) a l'est. Ces contacts ont contribue a l'isolement linguistique du mbugwe (seule langue bantoue de la region) et a certains emprunts culturels, notamment les scarifications faciales heritees des Datoga. Forte immigration contemporaine dans la region de Babati.",
+      "conflictsOrAlliances": "Les raids de pillage par les populations voisines (Maasai, Datoga) ont conduit les Mbugwe a garder le betail pres des habitations. La proximite d'un parc naturel (Lake Manyara National Park) cree des enjeux contemporains de cohabitation.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 55000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "101lasttribes.com citant PeopleGroups.org 2023 : 55 000 ; Wikipedia EN (1999) : 24 000 ; Mbugwe language Wikipedia : 34 000 locuteurs",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 55000,
+          "note": "District de Babati (region de Manyara), localites de Mwada, Magugu, Babati ; sud-ouest de la region d'Arusha"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN – Mbugwe people (https://en.wikipedia.org/wiki/Mbugwe_people)",
+      "Wikipedia EN – Mbugwe language (https://en.wikipedia.org/wiki/Mbugwe_language)",
+      "Joshua Project – Mbugwe in Tanzania (https://joshuaproject.net/people_groups/13637)",
+      "101 Last Tribes – Mbugwe people (https://www.101lasttribes.com/tribes/mbugwe.html)",
+      "PeopleGroups.org – Mbugwe of Tanzania (https://peoplegroups.org/people_groups/pg014989/)",
+      "Mous, Maarten – Towards the linguistic history of Rangi and Mbugwe, 2021 (https://www.youtube.com/watch?v=YBw5KY7LNoc)",
+      "Dunham, Gordon – A Grammatical Sketch of Mbugwe (Bantu F.34, Tanzania), Koeppe Verlag (https://www.koeppe.de/titel_print_a-grammatical-sketch-of-mbugwe-bantu-f-34-tanzania)",
+      "Mous, Maarten – Language and Identity among marginal people in East Africa, Universiteit Leiden (https://scholarlypublications.universiteitleiden.nl/access/item:3144215/download)"
+    ]
   }
 }

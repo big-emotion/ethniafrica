@@ -6,54 +6,86 @@
   "content": {
     "appellations": {
       "mainName": "Twifo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tu a anko",
+      "exonyms": ["Kuiforo", "Cuffroo", "Twifu", "Chufoman"],
+      "originOfExonyms": "Les formes Kuiforo et Cuffroo apparaissent dans les sources hollandaises du 17e siecle comme tentatives de rendre phonetiquement le nom Twifo. L'auto-designation Tu a anko signifie litteralement ceux qui ne sont pas partis (Twi : tu = migration, a anko = n'a pas bouge), rappelant que les Twifo sont restes a Hemang quand les autres clans Aduana en sont partis.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Twifo est le nom officiel des districts administratifs Twifo Heman Lower Denkyira et Twifo Ati Morkwa (Central Region, Ghana). Le terme est pleinement integre dans l'administration ghaneeenne.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Akan (groupe Aduana, dialecte Twi)",
+      "historicalRegion": "Central Region, Ghana (bassin du Pra et de l'Ofin)",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Twifo"],
+    "ethnicities": [
+      "Twifo",
+      "Twifo-Hemang",
+      "Twifo-Mampong",
+      "Tufoe",
+      "Morkwa"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Twifo sont l'un des plus anciens groupes etatiques akan du Ghana. Selon leurs traditions orales (rapportees notamment par F.K. Buah et l'historien Ivor Wilks), leurs ancetres ont migre depuis l'Etat de Bono (Bonoland) en passant par la region d'Adansi avant de s'etablir pres des rivieres Ofin et Pra. Ils appartiennent au clan Aduana et sont etroitement lies aux Akwamu avec qui ils ont co-fonde la communaute d'Hemang vers 1480.",
+      "formationPeriod": "Vers 1480, etablissement de la communaute a Kumkumso (pres de l'actuelle Twifo Hemang). L'Etat twifo devient une puissance forestiere centralisee au debut du 17e siecle. Les sources europeennes du 16e siecle l'identifient comme l'un des principaux Etats producteurs d'or de l'interieur.",
+      "migrationRoutes": [
+        "Sahel/nord Afrique vers le Bonoland (11e siecle, avec les autres Akan)",
+        "Bonoland vers Adanse (debut de la dispersion Akan vers le sud)",
+        "Adanse vers Kumkumso/Hemang sur les rivieres Pra et Ofin (vers 1480)"
+      ],
+      "historicalSettlementZones": [
+        "Twifo Hemang (capitale historique, Central Region)",
+        "Twifo Ati Morkwa (Twifo Praso, Central Region)",
+        "Twifo Mampong, Tufoe (divisions issues du mouvement de dispersion du 17e siecle)"
+      ],
+      "unificationsOrDivisions": "Vers 1580, apres la mort du cinquieme roi twifo, des disputes de succession ont provoque la dispersion des autres chefs Aduana qui quitterent Hemang pour fonder leurs propres communautes (Akwamu, Dormaa, Asaremankese, Takyiman, Wassa Akropong, etc.). Les Twifo resterent et leur tabouret/palais prit le nom de Tu a anko. Aujourd'hui les principales divisions sont Twifo Hemang, Twifo Mampong, Tufoe et Twifo Atti Morkwa.",
+      "externalInfluences": "Domination successivement par le Denkyira (soumission en 1670-1700, invasion en 1700) et l'Empire asante apres la defaite de Denkyira a Feyiase (1701). Les Twifo ont aussi subi les pressions de l'Assin et des fantes. Les marchands europeens hollandais et anglais ont influence leur economie commerciale des le 17e siecle.",
+      "majorHistoricalEvents": "Fondation de Kumkumso vers 1480. Soumission a Denkyira (1670-1701). Participation a la defaite de Denkyira par les Asante (1701), suivi d'un ralliement a l'Asante. Implique dans la traite transatlantique comme Etat de transit des esclaves entre Asante et les ports cotiers (Anomabo, Cape Coast, Elmina). Alliance avec les Britanniques lors des guerres anglo-asante de 1823-1826. Incorporation dans la Gold Coast britannique (1902). Partition du district en deux (2012) : Twifo Heman Lower Denkyira et Twifo Ati Morkwa."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie akan avec un Omanhene (chef paramount) a la tete d'un conseil de chefs et de sous-chefs des villes et villages dependants. L'autorite politique etait exercee de maniere hierarchique avec des communautes tributaires contribuant en produits, travail et service militaire. Aujourd'hui, l'autorite traditionnelle coexiste avec les assemblees de districts.",
+      "clanOrganization": "Le Twifo est un Etat Aduana (parfois orthographie Ajana). Le tabouret principal est l'Aduana stool. D'autres groupes como Morkwa, Mampong (venus d'Asante), Tufoe se sont integres au corpus identitaire twifo. Les Mampong ont recu des droits fonciers des Twifo Hemang vers 1831.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Organisation matrilineaire de type akan. Les nobles twifo possedaient des villages (crooms) avec des dependants et des clients le long des routes commerciales. Les captifs de guerre constituaient une couche de main-d'oeuvre servile dans les fermes et exploitations.",
+      "religiousAuthority": "Autorite religieuse liee aux ancetres et aux tabourets sacres. Ceremonies de chefferie. Festival Tuango (depuis la fin du 18e siecle) commemorant la resilience et le grand exode du clan Aduana, et honorant ceux qui sont restes pour proteger Hemang."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Twi (dialecte akan)",
+      "isoCodes": ["tw"],
+      "dialects": [
+        "Twifo Twi (l'un des premiers dialectes akan selon la tradition orale)"
+      ],
+      "vehicularRole": "Les Twifo parlent un dialecte Twi, l'un des grands dialectes akan du Ghana. Le mot Twifo signifie les gens du Twi (Twi = la langue, fo = les gens). Selon leur tradition orale, ils considerent leur variante du Twi comme la plus pure des langues akan. Le twi/akan est une langue d'Etat au Ghana."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Tuango : commemoration de l'exode du clan Aduana depuis Hemang, celebre depuis la fin du 18e siecle. Ce festival honore ceux qui partirent pour fonder de nouvelles communautes et ceux qui resterent pour proteger et perpetuer l'heritage Aduana. Ceremonies de chefferie liees aux tabourets ancestraux.",
+      "symbols": "Le tabouret palais Tu a anko (ceux qui n'ont pas migre) est le symbole identitaire central des Twifo. L'etymologie meme du nom du groupe constitue un symbole de resilience et de fidelite au territoire. La riviere Pra et les mines d'or en bordure de la Jimi constituent des references identitaires territoriales.",
+      "artsAndMusic": "Artisanat akan : orfevrerie (poids en or, bijoux), sculpture. Les Twifo etaient renommes pour la qualite de leur or, dont les marchands europeens soulignaient la purete. Activites de chasse, agriculture (palmier notamment) et artisanat.",
+      "spiritualities": "Religion traditionnelle akan : culte du dieu supreme (Nyame/Onyame), veneration des ancetres, sacralite des tabourets de chef. Christianisme majoritaire aujourd'hui dans la Central Region du Ghana."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Twifo (ou Twifo-Hemang), l'un des dix grands Etats akan formes avant la fin du 15e siecle. Identifie par les sources europeennes comme un important Etat producteur d'or des le 16e siecle. La capitale historique est Hemang (actuelle Twifo Hemang). L'historien Ivor Wilks (Transactions of the Historical Society of Ghana, 1958) considere Twifo et Akwamu comme les Etats forestiers akan les mieux organises et les plus anciens.",
+      "relationsWithNeighbors": "Relations complexes et fluctuantes avec les Asante (tantot allies, tantot tributaires), les Denkyira (soumission 1670-1701), l'Assin (guerres 1657-1659 et 1715-1716), les Fante (cooperation puis concurrence), les Wassa et les Aowin. Les Twifo ont participe avec Wassa et Aowin a des raids sur les villages asante (1719-1721) avant de se rallier aux Asante contre Wassa (1726).",
+      "conflictsOrAlliances": "Guerres avec l'Assin (1657-1659). Soumission a Denkyira (1670-1700). Alliance avec les Asante apres 1701. Participation a la coalition anti-asante avec Denkyira, Akyem et Agona (1715). Coalition Fante-Wassa-Twifo contre l'expansion asante (1765). Alliance avec les Britanniques lors des guerres anglo-asante (1823-1826).",
+      "diaspora": "La dispersion historique du clan Aduana depuis Hemang (vers 1580-1600) a fonde de nombreuses communautes aujourd'hui presentes dans toute la region akan du Ghana : Akwamu, Dormaa, Asaremankese, Takyiman, Wassa Akropong. Cette diaspora historique est commemoree par le festival Tuango."
     },
     "demography": {
-      "totalPopulation": 0,
-      "referenceYear": 2025,
-      "source": "N/A"
+      "totalPopulation": 150000,
+      "referenceYear": 2021,
+      "source": "Estimation basee sur les donnees du recensement Ghana 2021 pour les deux districts twifo (Twifo Heman Lower Denkyira et Twifo Ati Morkwa, Central Region). Population exacte du groupe ethnique non isolee dans les recensements recents.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 150000,
+          "note": "Central Region (districts Twifo Heman Lower Denkyira et Twifo Ati Morkwa), estimation 2021"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kingdom of Twifo – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Twifo)",
+      "Twifoman History (https://twifoman.org/history/)",
+      "TWIFOMAN – Our History (https://www.twifoman.com/history/)",
+      "Wilks, Ivor – A Note on Twifo and Akwamu, Transactions of the Historical Society of Ghana, Vol.3, No.3, 1958, pp.215-217",
+      "Akan Kingdoms – EBSCO Research Starters (https://www.ebsco.com/research-starters/politics-and-government/akan-kingdoms)",
+      "Ghana 2021 Population and Housing Census (https://ghdx.healthdata.org/record/ghana-population-and-housing-census-2021)"
+    ]
   }
 }

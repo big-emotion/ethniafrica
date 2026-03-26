@@ -1,35 +1,118 @@
 {
   "id": "PPL_DASANECH",
-  "nameMain": "Dasanach",
+  "nameMain": "Daasanach",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": ["ETH", "KEN", "SDN"],
+  "currentCountries": ["ETH", "KEN", "SSD"],
   "content": {
     "appellations": {
-      "mainName": "Dasanach",
+      "mainName": "Daasanach",
       "selfAppellation": "Daasanach",
+      "exonyms": [
+        "Geleb",
+        "Geleba",
+        "Marille",
+        "Merille",
+        "Reshiat",
+        "Dassanetch",
+        "Dasanech",
+        "Shangilla"
+      ],
+      "originOfExonyms": "Geleb et Geleba sont les noms utilises par les Ethiopiens. Marille et Merille sont les noms utilises par les Kenyans. Reshiat est un terme exonyme d'origine incertaine. Shangilla est un terme generique parfois applique de maniere depreciative aux peuples du Rift.",
+      "whyProblematic": "Le terme Shangilla est considere pejoratif. Marille et Geleb sont des exonymes ne reflétant pas le nom propre du groupe.",
+      "contemporaryUsage": "Daasanach est le terme officiel reconnu en Ethiopie et Kenya. Le nom signifie approximativement 'les gens du delta' ou 'les gens du pays', refletant leur lien au delta de l'Omo et au lac Turkana.",
       "linguisticFamily": "FLG_COUCHITIQUE",
       "ethnoLinguisticGroup": "Couchitique oriental",
-      "historicalRegion": "Bassin inférieur de l’Omo (Éthiopie – Kenya – Sud Soudan)",
-      "currentCountries": ["ETH", "KEN", "SDN"]
+      "historicalRegion": "Bassin inferieur de l'Omo et rive nord du lac Turkana (Ethiopie, Kenya, Soudan du Sud)",
+      "currentCountries": ["ETH", "KEN", "SSD"]
     },
     "ethnicities": [
-      "Daasanach de l’Omo",
-      "Daasanach de Marsabit (Kenya)",
-      "Groupes semi-nomades de la frontière soudanaise"
+      "Inkabelo (groupe territorial central, des deux cotes de l'Omo et son delta)",
+      "Oro (groupe territorial central)",
+      "Kuoro (groupe territorial central)",
+      "Riele (groupe territorial central)",
+      "Randal (partie nord-ouest du territoire)",
+      "Elele (partie nord-ouest du territoire)",
+      "Inkoria (rive nord-est du lac Turkana, cote kenyane, forme avec Inkabelo le Shiir)",
+      "Ngaritch (au nord d'Inkoria)"
     ],
-    "origins": {},
-    "organization": {},
-    "languages": {},
+    "origins": {
+      "ancientOrigins": "Les analyses genetiques indiquent que les Daasanach sont plus proches des populations nilo-sahariennes que de la plupart des populations couchitiques et semitiques d'Ethiopie. Ils partagent des origines communes avec les Pokot (Nilotes). Au XIXe siecle, leurs ancetres nilotiques ont commence des migrations separees, une branche se dirigeant vers le sud dans la region des Grands Lacs africains, l'autre s'etablissant dans le sud de l'Ethiopie. Ces premiers Nilotes Daasanach ont adopte une langue couchitique afro-asiatique au contact d'une population cushitique.",
+      "formationPeriod": "L'identite daasanach s'est consolidee sur les rives du lac Turkana et dans le delta de l'Omo a partir du XIXe siecle. L'identite du groupe est fondee sur le lieu de residence commun plutot que sur l'origine ethnique, ce qui a permis l'incorporation de refugies de nombreux groupes voisins. Le groupe a ete integre dans l'Empire ethiopien a la fin du XIXe siecle.",
+      "migrationRoutes": [
+        "Migration ancestrale nilotique vers le sud de l'Ethiopie au XIXe siecle",
+        "L'oral tradition des Inkabelo et Inkoria (Shiir) indique une origine pres de la riviere Kerio (sud-ouest du lac Turkana) avant d'etre repousses vers le nord par les Turkana ou Kuoro au debut du XIXe siecle",
+        "Les Randal et Kuoro seraient issus des Rendille et Samburu suite a des catastrophes naturelles a la fin du XIXe siecle",
+        "Migrations contemporaines vers les bords de l'Omo en raison des tensions sur les terres et du changement climatique"
+      ],
+      "historicalSettlementZones": [
+        "Zone Debub Omo (Ethiopie meridionale), principal foyer traditionnel adjacent au lac Turkana",
+        "Delta de l'Omo, terres de la rive nord du lac Turkana",
+        "Zones frontieres du Kenya (triangle d'Ilemi) et du Soudan du Sud",
+        "Rive nord-est du lac Turkana (Kenya, zone Inkoria)"
+      ],
+      "unificationsOrDivisions": "Les Daasanach sont organises en huit sections territoriales (emeto ou en) : Inkabelo, Oro, Kuoro, Riele, Randal, Elele, Inkoria et Ngaritch. Ces sections sont autonomes pour la gestion des ressources, les rituels religieux, les actions offensives et defensives et la resolution des conflits. Parallelement, le groupe est divise en huit clans exogames non territoriaux (turo) : Turinyerim, Fargar, Galbur, Turat, Ili, Mur, Edze et Tiyeme.",
+      "externalInfluences": "Integration dans l'Empire ethiopien a la fin du XIXe siecle. Sous les administrateurs ethiopiens et italiens des annees 1900-1941, les Daasanach ont ete organises en unites de razzia. Introduction des fusils au debut du XXe siecle par des marchands ethiopiens. Proliferation des armes automatiques dans les annees 1970 suite aux conflits en Ouganda, Soudan, Somalie et Ethiopie. Construction du barrage Gibe III sur l'Omo qui perturbe les crues dont depend l'agriculture. Explorations petrolieres et expropriations foncieres recentes.",
+      "majorHistoricalEvents": "Incorporation dans l'Empire ethiopien a la fin du XIXe siecle. Organisation par les administrations ethiopienne et italienne en unites paramilitaires pour la defense des frontieres contre le Kenya britannique (annees 1900-1941). Travaux de terrain d'Uri Almagor en 1968-1969 qui documente pour la premiere fois la societe daasanach. Construction du barrage Gibe III perturbant le cycle annuel des crues de l'Omo depuis les annees 2010."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe hautement egalitaire. Les huit sections territoriales (emeto) sont autonomes pour la gestion des ressources, les rituels et la resolution des conflits. Les decisions sont prises collectivement par les anciens (karsich). Il n'existe pas de chef centralise : le leadership repose sur le systeme de classes d'age (haari) et sur le prestige personnel.",
+      "clanOrganization": "Deux types d'unites sociales coexistent : les huit sections territoriales (en) qui sont les unites de residence et de cooperation, et les huit clans patrilineaires exogames non-residentiels (turo) : Turinyerim, Fargar, Galbur, Turat, Ili, Mur, Edze et Tiyeme. Le clan Galbur (clan de l'eau et du crocodile) est le plus grand et ses membres sont reconnus pour avoir un pouvoir sur l'eau et les crocodiles.",
+      "ageClassSystems": "Tous les hommes appartiennent a un groupe generationnel (haari). L'initiation, entre 15 et 20 ans, marque le passage du statut de garcon (nyigeny) a celui d'adolescent (kabana), apres quoi les hommes peuvent se marier. La ceremonie dimi marque l'acces au statut d'ancien (karsich) pour le couple dont la premiere fille atteint environ dix ans.",
+      "roleOfLineages": "L'unite de base de production et de consommation est le foyer (bil), compose d'un homme marie, de ses epouses et de leurs enfants non maries. La residence suit un modele polygame : chaque epouse a sa propre maison, son propre betail et ses propres cultures. Les clans (turo) sont exogames et leurs membres sont disperses dans toutes les sections territoriales.",
+      "religiousAuthority": "Pas d'autorite religieuse institutionnalisee connue. Les rituels sont realises collectivement au sein des sections territoriales (en). Les anciens jouent un role cle dans les ceremonies, notamment lors de la ceremonie dimi."
+    },
+    "languages": {
+      "mainLanguage": "Daasanach (ou Dassanetch)",
+      "isoCodes": ["dsh"],
+      "dialects": [
+        "Variete de la rive ethiopienne de l'Omo",
+        "Variete de la rive kenyane du lac Turkana (Inkoria)"
+      ],
+      "vehicularRole": "Le daasanach est la langue maternelle de l'ensemble du groupe. L'amharique est utilise dans l'administration et l'education en Ethiopie. Le swahili est parle par certains membres au Kenya. La langue appartient a la branche couchitique orientale de la famille afro-asiatique et se distingue par un grand nombre de classes nominales, un systeme verbal irregulier et des consonnes implosives."
+    },
     "culture": {
-      "source_0": "Rituels d’initiation masculine.",
-      "source_1": "Pastoralisme (chèvres, bovins, chameaux).",
-      "source_2": "Habits en perles, ornements métalliques.",
-      "source_3": "Importante tradition d’oralité."
+      "majorRites": "La ceremonie dimi est le rite le plus important de la vie d'un homme : elle celebrate la fertilite de sa premiere fille et marque l'elevation du pere au statut d'ancien (karsich). Des bovins et des petits ruminants sont abattus, les participants portent des capes en fourrure animale, des panaches de plumes d'autruche et des capes en peau de leopard. Les hommes se peignent en jaune symbolisant le renouveau. La circumcision masculine est un rite de passage obligatoire permettant l'entree dans le systeme des classes d'age. La circumcision feminine (excision) est pratiquee : une femme non excisee ne peut se marier. Les rituels agricoles accompagnent les cycles des crues de l'Omo.",
+      "symbols": "Les ornements corporels sont tres developpes : les femmes portent des bandeaux perlés, des colliers et des jupes en peau de vache. Les hommes portent de simples pieces d'etoffe a carreaux et des coiffures elaborees signifiant leur position dans le systeme des classes d'age. Le boeuf est le symbole central de richesse et de statut social. L'utilisation creative de materiaux recycles (capsules de bouteilles, aluminium) pour fabriquer des bijoux est une caracteristique contemporaine distinctive.",
+      "artsAndMusic": "La danse et la musique traditionnelles sont au coeur des ceremonies. Lors de la ceremonie dimi, les hommes forment une procession de maison en maison en executant une danse rythmee de sauts synchronises. Les femmes se joignent a la danse, creant un flot collectif de mouvement. L'artisanat comprend le travail du cuir, la confection de tenues ceremoniales en fourrure et la fabrication de bijoux. La tradition orale est importante pour la transmission des savoirs et de l'histoire du groupe.",
+      "spiritualities": "Les croyances spirituelles des Daasanach sont peu documentees dans la litterature. Les pratiques rituelles collectives au sein des sections territoriales jouent un role social central. Les clans ont des pouvoirs rituels specifiques : le clan Galbur est associe au pouvoir sur l'eau et les crocodiles, le clan Turat est associe au traitement des brulures et a la protection contre les serpents, le clan Turinyerim est associe au pouvoir sur la secheresse et prie pour la pluie. Des influences chretiennes sont presentes depuis les activites missionnaires americaines des annees 1960."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Daasanach n'ont pas developpe de royaumes ou de chefferies centralises. Leur organisation repose sur des sections territoriales autonomes (emeto) et un systeme de classes d'age egalitaire. L'autorite politique locale est exercee par les anciens (karsich) reconnus pour leur sagesse et leur prestige.",
+      "relationsWithNeighbors": "Les Daasanach designent les Kara (au nord) et les Arbore (nord-est) comme 'notre peuple' (gaal kinnyo) avec qui ils entretiennent des relations amicales. Leurs ennemis traditionnels (kiz) sont les Turkana (sud-ouest), les Nyangatom (nord-ouest), les Hamar (nord-est) et les Gabra (sud-est), avec lesquels des combats intermittents ont lieu. Les gouvernements ethiopien et kenyan ont complique les mouvements transfrontaliers et ont parfois oppose les Daasanach aux pastoraux kenyans.",
+      "conflictsOrAlliances": "Razzia de betail traditionnel contre les groupes voisins, notamment les Turkana et les Gabra. En 1900-1941, les administrations ethiopienne et italienne ont organise les Daasanach en unites de razzia pour la securite des frontieres contre l'Afrique orientale britannique. Les guerres civiles et les conflits regionaux (Ouganda, Soudan, Somalie) ont conduit a la proliferation d'armes automatiques dans les annees 1970. La construction du barrage Gibe III et les expropriations foncieres ont cree de nouvelles tensions avec le gouvernement ethiopien.",
+      "diaspora": "Pas de diaspora etablie hors d'Afrique de l'Est. Des milliers de Daasanach vivent au Kenya (nord-ouest), principalement dans la region d'Inkoria. Certains individus se sont deplaces vers des centres urbains ethiopiens. Les frontieres nationales perturbent les mouvements traditionnels entre l'Ethiopie, le Kenya et le Soudan du Sud."
+    },
     "demography": {
-      "source": "peuple_demographie_globale.csv"
+      "totalPopulation": 117000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 117 000 au total tous pays confondus. Recensement ethiopien 2007 : 48 067 personnes en Ethiopie. Projections 2025 basees sur le taux de croissance demographique de la region.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 92000,
+          "note": "Zone Debub Omo, Ethiopie meridionale, principalement autour d'Omorate et le long de l'Omo"
+        },
+        {
+          "country": "KEN",
+          "population": 20000,
+          "note": "Rive nord du lac Turkana, regions de Marsabit et Turkana (groupe Inkoria principalement)"
+        },
+        {
+          "country": "SSD",
+          "population": 5000,
+          "note": "Triangle d'Ilemi et zones frontieres sud-soudanaises"
+        }
+      ]
     },
-    "sources": ["Ethnologue (dsh)", "East African Pastoral Ethnography"]
+    "sources": [
+      "Wikipedia EN — Daasanach people. https://en.wikipedia.org/wiki/Daasanach_people",
+      "Wikipedia EN — Daasanach language (ISO 639-3 : dsh). https://en.wikipedia.org/wiki/Daasanach_language",
+      "Mursi Online — Daasanach. https://www.mursi.org/neighbours/daasanach",
+      "101 Last Tribes — Dassanech. https://www.101lasttribes.com/tribes/dassanech.html",
+      "Joshua Project — Daasanach in Ethiopia. https://joshuaproject.net/people_groups/14549/ET",
+      "Joshua Project — Daasanach in Kenya. https://joshuaproject.net/people_groups/14549/KE",
+      "SIL Ethnologue — Daasanach language (dsh). https://www.ethnologue.com/language/dsh/",
+      "Begin North Adventures — The Daasanach Tribe. https://beginnorthadventures.com/daasanach-tribe/"
+    ]
   }
 }

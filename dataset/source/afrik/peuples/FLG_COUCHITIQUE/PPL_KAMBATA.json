@@ -1,23 +1,104 @@
 {
   "id": "PPL_KAMBATA",
-  "nameMain": "",
+  "nameMain": "Kambata",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kambata",
       "selfAppellation": "Kambata",
+      "exonyms": [
+        "Kambaata",
+        "Cambat",
+        "Cambatta",
+        "Kambatta",
+        "Khambat",
+        "Kembata"
+      ],
+      "originOfExonyms": "Les orthographes variantes (Cambat, Kambatta, Khambat) proviennent des transcriptions de differents explorateurs et historiens europeens et ethiopiens a partir du XVe siecle. Le terme Kembata est souvent utilise pour designer la zone administrative. La premiere mention documentee du peuple figure dans les chroniques de l'Empereur Yeshaq Ier.",
+      "whyProblematic": "Le terme Kambata au sens large englobe plusieurs groupes autonomes (Kambata proper, Alaba, Tambaro) qui parlent des dialectes d'une meme langue et sont collectivement designes comme Kambata. Les differences entre ces groupes sont faibles car les peuples sont tres melanges par intermariage.",
+      "contemporaryUsage": "Le terme Kambata est officiel en Ethiopie et donne son nom a la zone administrative Kambata Tembaro (capital Durame). La langue kambaatissa est l'une des langues de travail de l'Ethiopie. Le nom Kembata est souvent utilise de maniere interchangeable.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Kembata-Tembaro (Éthiopie)",
+      "ethnoLinguisticGroup": "Couchitique des hautes terres de l'Est (Highland East Cushitic)",
+      "historicalRegion": "Masif Hambaricho, zone Kambata Tembaro, Ethiopie centre-meridionale",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ktb)", "Kembata-Tembaro Cultural Office"]
+    "ethnicities": [
+      "Kambata proper (habitants du coeur du massif Hambaricho, noyau ethnique principal)",
+      "Alaba (groupe autonome parlant un dialecte du kambaatissa, aussi code alw)",
+      "Tambaro / Tembaro (groupe autonome du sud de la zone, parlant un dialecte proche)",
+      "Qabeena (K'abeena) (groupe apparente, parfois classifie separement)",
+      "Oyeta (clan royal fondateur, lignee des rois Woma depuis le roi Hamlmal)",
+      "Tanners Shekla Seriwoch (clan des tanneurs, groupe d'artisans segreges interdits de mariage avec les autres Kambata et exclus des activites socioeconomiques ordinaires)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kambata appartiennent a la famille couchitique des hautes terres orientales. Selon des analyses linguistiques comparatives, ils partagent des origines communes avec les Hadiya et les Sidama. Des refugies couchitiques, semitiques et omotiques ont rejoint le groupe au fil des siecles, creant une societe composite aux lignages divers. La region entre les rivieres Omo et Bilate a constitue le berceau historique du peuple.",
+      "formationPeriod": "Le Royaume de Kembata a ete fonde par le roi Hamlmal (surnomme Hamo), premier roi et fondateur du clan royal Oyeta. La monarchie s'est perpetuee jusqu'a la fin du XIXe siecle. Le Royaume est mentionne pour la premiere fois dans les chroniques de l'Empereur Yeshaq Ier (XVe siecle) comme l'un des royaumes meridionaux dotes d'un systeme monarchique bien etabli.",
+      "migrationRoutes": [
+        "Etablissement originel dans la zone du massif Hambaricho, Ethiopie centre-meridionale",
+        "Diffusion vers les zones voisines de Hadiya, Gurage, Silte et Wolaita avec lesquelles ils partagent des liens culturels et familiaux",
+        "Migrations economiques contemporaines vers les grandes villes ethiopiennes, les zones industrielles et les grandes plantations",
+        "Migrations recentes vers l'Afrique du Sud et les pays du Moyen-Orient"
+      ],
+      "historicalSettlementZones": [
+        "Zone Kambata Tembaro (capitale Durame), Ethiopie centrale, a 352 km d'Addis-Abeba",
+        "Massif Hambaricho, residence historique des rois Woma",
+        "Region entre les rivières Omo (ouest) et Bilate (est), entre les zones Hadiya et Kambata",
+        "Presences dans les villes kambata (Durame, Shinshicho)"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Kembata a constitue l'unite politique historique. Il etait dirige par une ligne continue de rois (Woma), depuis le fondateur Hamlmal jusqu'au dernier roi independant Delbato Degoye, tue par les armees de Menelik II a la fin du XIXe siecle. La conquete de Menelik II a conduit a la christianisation forcee et a la fusion administrative avec la zone Hadiya, creant l'Awraja Kambata-Hadiya qui a dure jusqu'aux annees 1990.",
+      "externalInfluences": "Conquete par les armees de Menelik II a la fin du XIXe siecle (le roi Delbato Degoye est tue). Christianisation de la province kambata lors de cette incorporation dans l'Empire ethiopien. Fusion administrative avec la zone Hadiya (1903-1990). Regimes succeants : imperial, Derg, EPRDF. Separation administrative des zones Kambata et Hadiya dans les annees 1990 sous le federalisme ethnique de l'EPRDF.",
+      "majorHistoricalEvents": "XVe siecle : premiere mention dans les chroniques de l'Empereur Yeshaq Ier. Expansion territoriale sous le roi Dagoye. Fin XIXe siecle : mort du dernier roi independant Delbato Degoye face aux armees de Menelik II. 1893 : integration dans l'Empire ethiopien. 1936 : rebellion Gadecho Mekemekato contre l'occupation italienne avec le soutien des guerriers hadiya. Annees 1990 : separation des zones administratives Kambata et Hadiya dans le cadre du federalisme ethnique ethiopien."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume de Kembata etait dirige par des rois (Woma) issus du clan Oyeta. La residence royale etait au sommet du massif Hambaricho. La gouvernance traditionnelle reposait sur un conseil d'anciens (Oget) charge d'arbitrer les conflits et de gerer les affaires communautaires selon le droit coutumier (Bobani Geltita). Le systeme d'administration territoriale etait fonde sur la parente et le territoire.",
+      "clanOrganization": "La societe kambata comprend plusieurs groupes : les Kambata proper (habitants du noyau historique autour du massif Hambaricho), les Alaba, les Tembaro, et le clan des tanneurs segreges (Shekla Seriwoch). Ces derniers sont un groupe d'artisans totalement exclus des activites socioeconomiques et des mariages avec les autres Kambata. L'institution Seera joue un role dans la cohesion sociale et la resolution des conflits.",
+      "ageClassSystems": "Des rites de passage (naissance, circumcision, mariage, mort) structurent le cycle de vie. Les ceremonies de circumcision et les fetes funeraires (Lassaancho et Farsanno) ont une importance sociale particuliere. Le Fandano (religion traditionnelle, similaire au Fandaanano hadiya) structurait la vie ceremonielle.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique et les droits d'heritage. La proximite avec les Hadiya a cree de nombreux liens d'alliance par le mariage. La region est tres densement peuplee et les Kambata sont etroitement melanges avec leurs voisins hadiya, silte et gurage.",
+      "religiousAuthority": "Historiquement, l'autorite religieuse etait exercee par les rois Woma et par les pretres du Fandano (religion traditionnelle centree sur la divinite Abba Sarecho du massif Hambaricho). La conquete de Menelik II a entraine une christianisation. La vaste majorite des Kambata est aujourd'hui chretienne, notamment evangelique. L'assemblée Oget est la structure coutumiere de decision collective."
+    },
+    "languages": {
+      "mainLanguage": "Kambaatissa (Kambata)",
+      "isoCodes": ["ktb"],
+      "dialects": [
+        "Tembaro (Tambaro) : dialecte du groupe Tembaro",
+        "Alaba : dialecte apparente (parfois classe comme langue separee, code ISO alw)",
+        "Qabeena (K'abeena) : variete apparentee (parfois consideree separement)"
+      ],
+      "vehicularRole": "Le kambaatissa est l'une des langues de travail de l'Ethiopie et est utilise comme langue d'enseignement dans les ecoles primaires de la zone Kambata. La langue compte environ 4 millions de locuteurs. Elle est tres proche du hadiyya et du sidama. Elle est ecrite en alphabet latin et en alphabet ethiopique (Ge'ez). L'amharique est la langue nationale de communication interethnique et d'enseignement au secondaire."
+    },
+    "culture": {
+      "majorRites": "Le Gifata est la fete annuelle traditionnelle des Kambata, anciennement celebree en presence du roi (Woma) sur le massif Hambaricho. Les rites funeraires comprennent les ceremonies du Lassaancho et du Farsanno, qui sont documentes comme elements distinctifs de la culture kambata. La circumcision est un rite de passage obligatoire. Les ceremonies de mariage et les rituels de recolte scandent le calendrier social. La pelerinage annuel sur le mont Hambaricho (777 marches) est aujourd'hui un element de renouveau culturel.",
+      "symbols": "Le massif Hambaricho est le symbole sacre fondamental des Kambata : c'etait la residence des rois Woma et la demeure de la divinite Abba Sarecho. La montagne est aujourd'hui un lieu de pelerinage et de tourisme culturel, avec un escalier de 777 marches (projete d'etre agrandi a 1000). La cuisine a base de kocho (preparation a partir de l'enset, bananier fausse) est un symbole identitaire fort. Le droit coutumier Bobani Geltita symbolise la gouvernance traditionnelle.",
+      "artsAndMusic": "Les Kambata du sud de l'Ethiopie sont connus pour leurs danses du ventre rythmees, qui rappellent les danses du Moyen-Orient et caracterisent aussi les peuples voisins Hadiya, Gedeo et Sidama. L'artisanat traditionnel inclut la poterie, le tissage et le travail du cuir. La fabrication de bijoux et d'ornements traditionnels fait partie de l'artisanat feminin. Les chants coutumiers accompagnent les ceremonies de mariage, les deuils et les fetes agricoles. La tradition orale (poesie, contes) est le vecteur principal de transmission culturelle.",
+      "spiritualities": "La religion traditionnelle Fandano (similaire au Fandaanano hadiya) centrait la vie spirituelle sur le culte de la divinite Abba Sarecho, residant sur le massif Hambaricho avec le roi Woma. Des mosquees historiques comme celles de Katbare et de Zebimola (zone Kebena) attestent d'un heritage islamique et d'une influence de l'expansion islamique dans le sud de l'Ethiopie. La conquete de Menelik II a conduit a une christianisation forcee. Aujourd'hui, la grande majorite des Kambata est chretienne, notamment evangelique. Certaines pratiques et croyances traditionnelles persistent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Kembata a ete l'une des monarchies les plus durables du sud de l'Ethiopie : il s'est maintenu depuis le XVe siecle jusqu'a la fin du XIXe siecle. Les rois (Woma) ont gouverne depuis leur residence sur le massif Hambaricho. Le roi Dagoye est particulierement celebre pour avoir etendu les territoires kambata. La lignee royale Oyeta constitue un element fondateur de l'identite collective.",
+      "relationsWithNeighbors": "Relations tres intenses avec les Hadiya voisins : intermarriages frequents, bilinguisme courant (notamment a Hossana), affinite linguistique et culturelle forte. Relations commerciales avec les Gurage, Silte et Wolaita via les routes commerciales du XIXe siecle reliant Kambata aux grands marches. Les Kambata ont eu des conflits et cooperations avec les Hadiya sur des questions de terres et de ressources, mais les relations sont generalement decrites comme plus cordiales que belliqueuses.",
+      "conflictsOrAlliances": "Resistance a la conquete de Menelik II (fin XIXe siecle). Soutien aux guerriers hadiya lors de la rebellion Gadecho Mekemekato de 1936 contre l'occupation italienne. Tensions et petits conflits avec les Hadiya sur les terres au cours du XXe siecle, malgre une relation globalement cooperative. Luttes politiques pour la reconnaissance administrative separee du groupe Kambata, obtenue dans les annees 1990.",
+      "diaspora": "De nombreux Kambata vivent hors de la zone Kambata : en Hadiya, Gurage, Silte et Wolaita en raison des liens historiques. Migrations economiques vers Addis-Abeba, les zones industrielles et les grandes plantations agricoles ethiopiennes en raison de la surpopulation de la region. Migrations recentes vers l'Afrique du Sud et les pays du Moyen-Orient."
+    },
+    "demography": {
+      "totalPopulation": 989000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 989 000 personnes. Recensement ethiopien 2007 : 630 236 Kambata, dont 90,89% dans les Nations, Nationalites et Peuples du Sud. La langue kambaatissa serait parlee par environ 4 millions de personnes (incluant les locuteurs des dialectes Alaba et Qabeena).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 989000,
+          "note": "Zone Kambata Tembaro (capitale Durame), Ethiopie centrale. Presences dans les zones Hadiya, Gurage, Silte et Wolaita. Kambata est l'une des regions les plus densement peuplees d'Ethiopie."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kambaata people. https://en.wikipedia.org/wiki/Kambaata_people",
+      "Wikipedia EN — Kambaata language. https://en.wikipedia.org/wiki/Kambaata_language",
+      "SIL Ethnologue — Kambaata (ktb). https://www.ethnologue.com/language/ktb/",
+      "Joshua Project — Kambata in Ethiopia. https://joshuaproject.net/people_groups/12468",
+      "Wolde Lakew Hirigo. The Case of Kambata and Hadiya (1890s–1990s). Haramaya University, 2023. http://ir.haramaya.edu.et/hru/bitstream/handle/123456789/7065/Wolde%20Lakew%20Hirigo.pdf",
+      "Tagesse Shuramo. Ethnic Interaction in South Central Ethiopia: The Case of Kambata and Hadya (1890s–1990s). Jimma University. https://repository.ju.edu.et/bitstream/handle/123456789/833/tagesse.2.pdf",
+      "Recensement national ethiopien 2007. Ethiopian Statistics Services. https://ess.gov.et/"
+    ]
   }
 }

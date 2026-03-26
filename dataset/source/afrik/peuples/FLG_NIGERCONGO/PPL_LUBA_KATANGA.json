@@ -5,66 +5,98 @@
   "currentCountries": ["COD"],
   "content": {
     "appellations": {
-      "mainName": "Luba (Katanga)",
-      "selfAppellation": "Baluba",
-      "exonyms": ["« Luba » (terme utilisé par les Européens)"],
+      "mainName": "Luba-Katanga",
+      "selfAppellation": "Baluba (Katanga) / Baluba wa Katanga",
+      "exonyms": [
+        "Baluba (terme general englobant aussi les Luba-Kasai)",
+        "Luba-Shaba (appellation utilisee sous Mobutu quand Katanga fut renomme Shaba, 1972-1997)",
+        "Luba-Katanga (denomination academique et administrative standard)",
+        "Shankaji (appellation de la branche sudiste de la Depression de l'Upemba)"
+      ],
+      "originOfExonyms": "Le terme Luba-Shaba vint de la denomination mobutiste de la province du Katanga en Shaba (1972-1997) ; il reste parfois utilise dans les sources academiques de cette periode. Luba-Katanga est aujourd'hui l'appellation standard pour distinguer ce groupe des Luba-Kasai. La langue est appelee Kiluba par ses locuteurs (ki- etant le prefixe de classe pour les langues en bantou).",
+      "contemporaryUsage": "Les Luba-Katanga s'identifient comme Baluba ou Baluba wa Katanga. Leur langue, le Kiluba (lub), est l'une des quatre langues nationales de la RDC. Ils se distinguent des Luba-Kasai (tshiluba) par leur langue, leur territoire et leur heritage direct de l'Empire luba. La province du Haut-Lomami et le Haut-Katanga restent leur principal foyer.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone L)",
-      "historicalRegion": "RDC (Katanga)",
+      "ethnoLinguisticGroup": "Bantou (Zone L, groupe luban — Kiluba L31 selon Guthrie)",
+      "historicalRegion": "Depression de l'Upemba, Katanga (Haut-Katanga, Haut-Lomami, Tanganyika) — sud-est de la Republique democratique du Congo",
       "currentCountries": ["COD"]
     },
     "ethnicities": [
-      "Luba du Katanga central",
-      "Luba du Katanga oriental",
-      "Luba du Katanga occidental",
-      "Sous-groupes régionaux"
+      "Luba-Shankaji — sous-groupe originaire de la Depression de l'Upemba, fondateurs historiques de l'Empire luba, patrilineaires",
+      "Luba-Hemba — sous-groupe du nord-Katanga et sud-Kivu, systeme de descendance matrilineaire, renommes sculpteurs",
+      "Bena-Mitumba — groupe des hautes terres de Mitumba (est du Haut-Katanga)",
+      "Luba de Kabongo-Kamina — populations centrales du Haut-Lomami, coeur du territoire Kiluba",
+      "Luba de Malemba-Nkulu et Mulongo — groupes etablis sur les rives du lac Upemba et lac Kabamba"
     ],
     "origins": {
-      "ancientOrigins": "Les Luba du Katanga sont originaires de la région du Katanga en RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone L). Ancien royaume Luba.",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Luba). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Luba du Kasaï.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Des preuves archeologiques attestent que les ancetres des Luba-Katanga vivaient dans les lacs et marecages de la Depression de l'Upemba depuis le 5e siecle CE. Les series archeologiques Kamilambienne (5e-7e siecle), Kisalienne (7e-9e siecle) et Kabambienne (9e-14e siecle) documentent une societe d'Age du fer avancee, stable et prospere sur pres de dix siecles. Ces populations construisaient des digues et des canaux pour l'agriculture, pratiquaient la metallurgie du fer et du cuivre, la pecherie et le commerce interregional.",
+      "formationPeriod": "L'Empire luba prit forme vers le 15e siecle (selon les historiens occidentaux) ou des le 8e-12e siecle selon les historiens congolais. La tradition orale rapporte que Kalala Ilunga, fils d'un chasseur arrive de l'est (Mbidi Kiluwe), renversa le despote Nkongolo Mwamba (roi 'rouge', cruel) et inaugura la royaute sacree (bulopwe). L'empire atteignit son apogee sous Ilunga Sungu (vers 1780-1810) et Kumwimbe Ngombe (vers 1810-1840), qui etendirent son territoire jusqu'aux regions de l'actuel Zimbabwe.",
+      "migrationRoutes": [
+        "Peuplement autochtone de la Depression de l'Upemba depuis le 5e siecle",
+        "Expansion de l'empire vers le nord-ouest (Kasai) aux 15e-17e siecles — donnant naissance aux Luba-Kasai",
+        "Expansion vers le nord-est : formation du groupe Luba-Hemba (Maniema, sud-Kivu)",
+        "Mise en place des 'fire kingdoms' (royaumes-feux) aux frontieres nord et est de l'empire (18e-19e siecles)",
+        "Migrations de travail vers les mines de cuivre de Lubumbashi et Likasi (fin 19e - 20e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Depression de l'Upemba (lacs Upemba, Kabamba, Kisale, Tshangalele) — berceau originel de l'empire",
+        "Region de Kabongo, Kamina, Luena, Lubudi, Malemba Nkulu, Mulongo, Kabalo, Kaniama (Haut-Lomami) — coeur du territoire Kiluba",
+        "Region de Manono et Bukama (Tanganyika) — extensions du territoire luba-katanga",
+        "Nord Katanga et sud-Kivu (Luba-Hemba)"
+      ],
+      "unificationsOrDivisions": "L'Empire luba maintint son unite politique via le systeme des Balopwe (rois de clan), la societe Bambudye (gardiens de la memoire) et les alliances matrimoniales imposees aux chefs vaincus. En 1889, une guerre de succession divisa l'empire en deux factions. La colonisation belge (1885-1960) fragmenta definitivement l'empire. En 1960, lors de la tentative de secession du Katanga sous Moise Tshombe, les Luba-Katanga furent divises entre partisans de la secession et partisans du gouvernement central, ce qui genera d'importantes violences communautaires.",
+      "externalInfluences": "Commerce swahili et arabe : les reseaux commerciaux de l'est (ivoire, cuivre, esclaves) penetrerent le Katanga au 19e siecle. Raids de Msiri et de ses Yeke (tanzaniens) sur le Katanga du sud-est (1860s-1880s). Raids de Tippu Tip et de ses forces arabes-swahili. Penetration europeenne : Etat independant du Congo de Leopold II (1885) puis Congo Belge (1908) ; travaux forces dans les mines de cuivre du Katanga (UMHK — Union Miniere du Haut Katanga). Missions catholiques des Peres Blancs (White Fathers) et methodistes."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Luba). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "L'Empire luba etait gouverne par le Mulopwe (roi sacre, detenteur du bulopwe — principe de sacralite royale divine), assiste des Bamfumus (conseil de nobles). Les rois de clans tributaires (Balopwe) administraient les territoires regioaux. La societe secrete Bambudye (ou Mbudye) — ses membres etaient des 'hommes de memoire' (bami ba lukasa) — controlait la memoire historique royale, interpretait les lukasa et pouvait executer un roi abusif. Le systeme fut adopte par les Lunda et diffuse dans toute l'Afrique centrale.",
+      "clanOrganization": "Les Luba-Shankaji pratiquent la filiation patrilineaire, a la difference des Luba-Hemba qui sont matrilineaires. Les clans (bena) sont les unites sociales et politiques de base. L'appartenance clanique determine les droits fonciers, les obligations economiques (tributs) et les alliances matrimoniales. Les chefs conquis etaient obliges d'epouser des femmes de la famille royale luba pour creer des liens de loyaute.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (pour les Shankaji) ou matrilineaires (pour les Hemba) structurent les droits sur les ressources (mines, peche, agriculture), les droits successoraux et les obligations rituelles. Les mwadi (femmes mediums incarnant les esprits des rois defunts) assurent la communication entre vivants et ancetres royaux et jouent un role politique dans la legitimation du pouvoir en place. Apres la mort d'un roi, son village devenait kitenta (sanctuaire royal).",
+      "religiousAuthority": "La royaute luba est sacree (bulopwe) : le roi est a la fois chef politique et intermediaire avec le monde divin et ancestral. La societe Bambudye combina fonctions religieuses (rituel, divination) et politiques (contrepoids au pouvoir royal). Les pretres (Nsengha, Kitobo) et les guerisseurs-devins (Nganga, Mfwintshi) pratiquent la divination (Lubuko). Les Peres Blancs catholiques et les missions methodistes ont converti une grande partie des Luba-Katanga au christianisme depuis la fin du 19e siecle."
     },
     "languages": {
-      "mainLanguage": "Luba-Katanga",
-      "vehicularRole": "Le luba-katanga est parlé par la majorité des Luba du Katanga. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Kiluba (Luba-Katanga)",
+      "isoCodes": ["lub"],
+      "dialects": [
+        "Kiluba central (Kabongo, Kamina, Kaniama) — dialecte du coeur du Haut-Lomami",
+        "Hemba — parle par les Luba-Hemba du nord-Katanga et sud-Kivu (parfois considere comme langue independante)",
+        "Kanyok — parle par les Bena-Kanyok, groupe de transition Kasai-Katanga",
+        "Lwalu — dialecte du nord-est Katanga",
+        "Songe (Songye) — langue des Songye, voisins et allies/rivaux historiques des Luba"
+      ],
+      "vehicularRole": "Le kiluba (lub) est l'une des quatre langues nationales de la RDC. Il est parle principalement dans le Haut-Katanga (autour de Kabongo, Kamina, Malemba Nkulu, Mulongo, Kabalo, Kaniama, Luena et Lubudi). Il n'est pas mutuellement intelligible avec le tshiluba (Luba-Kasai) malgre leur appartenance commune au groupe luban. Omniglot estime le nombre de locuteurs a environ 1,5 million. Il est classe dans la Zone L (L31) selon Guthrie. Il fut mis par ecrit au milieu du 20e siecle en alphabet latin."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels luba, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Ceremonies d'investiture royale (bulopwe) : rituel complexe lors de l'intronisation du Mulopwe. Transformation en kitenta (village sacre-sanctuaire) lors du deces d'un roi. Ceremonies de consultation du lukasa par les membres de la societe Bambudye. Rites de circoncision masculine et initiation feminine. Consultations de divination (Lubuko) par le Nganga. Celebrations agriculturales liees aux saisons de crue et de secheresse du Katanga.",
+      "symbols": "Le lukasa (planche de memoire) : chef-d'oeuvre artistique et mnemotechnique en bois incrust de perles, coquillages et chevilles, utilise par la societe Mbudye pour reciter l'histoire royale. Le dos du lukasa est sculpte en forme de tortue (symbole de royaute luba). Les sieges royaux anthropomorphes (souvent figures feminines soutenant le siege) symbolisent la sacralite du pouvoir. Les haches fermees en fer forge. Les sceptres et appuie-tetes royaux. L'embleme de l'elephant. Les 'feux royaux' (embers royaux transmis aux royaumes vassal).",
+      "artsAndMusic": "Sculpture sur bois de premier plan mondial : les Luba-Shankaji et Luba-Hemba sont parmi les plus grands sculpteurs d'Afrique subsaharienne. Statues anthropomorphes (statuettes de memoire, statues de maternite bwanga bwa cibola), appuie-tetes (milongo), masques, haches ceremonielles, supports d'arc. Les collections luba se trouvent dans de nombreux grands musees mondiaux (Metropolitan Museum New York, Musee Royal de l'Afrique Centrale Tervuren). Metallurgie du fer et du cuivre. Poterie. Chants polyphoniques et danses ceremoniales. Missa Luba (1958, celebre dans toute l'Afrique). Tradition orale des gardiens de memoire (bami ba lukasa).",
+      "spiritualities": "La religion luba-katanga reconnait Shakapanga (Createur universel) et Leza (Etre supreme et bienveillant). Le monde surnaturel comprend les Bankambo (esprits ancestraux) et les Bavidye (esprits divers). L'ethique (Mwikadilo Muyampe, 'vie bien vecue') conditionne l'acces a l'au-dela. Les mwadi (femmes incarnant les rois defunts) maintiennent le contact avec les ancetres royaux. La divination (Lubuko) est centrale. Le christianisme catholique (Peres Blancs) et methodiste est aujourd'hui predominant. La Missa Luba (inculturation liturgique) est le symbole de cette synthese. L'islam est minoritaire dans la region."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora luba dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "L'Empire luba (Royaume de Luba) fut l'un des Etats precoloniaux les plus sophistiques d'Afrique centrale, active depuis le 15e siecle jusqu'en 1889-1900. A son apogee, il couvrait une grande partie du sud-est de l'actuelle RDC. Les rois marquants : Kalala Ilunga (fondateur legendaire), Ilunga Sungu (vers 1780-1810, plus grande expansion), Kumwimbe Ngombe (vers 1810-1840, expansion sud-est), Ilunga Kabale (vers 1840-1870). Des royaumes feux (fire kingdoms) furent etablis a la peripherie pour assurer la loyaute des regions frontieres. En 1889, une guerre de succession divisa l'empire ; en 1892, l'Etat libre du Congo annexa le territoire.",
+      "relationsWithNeighbors": "L'empire luba influenca profondement les Lunda, qui en adopterent le modele de gouvernement et le diffuserent dans tout le bassin du Congo (Kazembe, Mwata Yamvo). Relations tributaires avec les Songye au nord (conflits et alliances alternees). Influence culturelle et politique sur les Bemba (Zambie), Bisa, Tabwa et Yeke. Alliances matrimoniales avec les peuples conquis. Contacts commerciaux avec les reseaux swahili de l'est (cuivre, ivoire). Relations avec les Luba-Kasai comme partenaires culturels partageant les memes origines.",
+      "conflictsOrAlliances": "Guerre de fondation : Kalala Ilunga contre Nkongolo Mwamba. Guerres d'expansion sous Ilunga Sungu (fin 18e siecle). Raids de Msiri et Yeke sur le Katanga luba (1860s-1880s). Raids des esclavagistes arabo-swahili. Resistance aux Belges : rébellion de 1895, insurrection de 1905-1917. Crise de secession du Katanga (1960-1963) sous Tshombe : les Luba-Katanga se diviserent, certains soutenant la secession, d'autres le gouvernement central de Lumumba/Kasavubu. Violences inter-Luba au Katanga. Tensions recurrentes avec les migrants Luba-Kasai au Katanga (culminant dans les expulsions de 1992-1994 et 2014-2016).",
+      "diaspora": "Les Luba-Katanga sont restes majoritairement dans leur territoire historique du Katanga. Une diaspora urbaine s'est formee a Lubumbashi, Likasi et Kolwezi (villes minieres). La diaspora internationale comprend des communautes en Belgique (notamment a Bruxelles et a Tervuren, sieges du patrimoine colonial belge), en France et dans d'autres pays occidentaux, issues principalement des migrations academiques et des crises politiques post-coloniales."
     },
     "demography": {
-      "totalPopulation": 3000000,
+      "totalPopulation": 5000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Omniglot — Kiluba : environ 1,5 million de locuteurs natifs. Swordshare Map — Luba-Katanga : 5 023 685 locuteurs. Encyclopaedia Britannica : 5 594 000 pour l'ensemble Luba a la fin du 20e siecle. Estimation 2025 pour les Luba-Katanga (Shankaji + Hemba + branches Lomami/Tanganyika) : environ 5 millions.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 5000000,
+          "note": "Provinces du Haut-Lomami (Kamina, Kabongo, Malemba Nkulu), Haut-Katanga (Lubumbashi, Likasi, Kipushi), Tanganyika (Manono, Bukama) et une partie du Maniema-Sud-Kivu (Luba-Hemba)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Luba-Katanga language (lub)",
-      "CIA World Factbook – RDC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Luba Empire. https://en.wikipedia.org/wiki/Luba_Empire",
+      "Wikipedia EN — Luba-Katanga language. https://en.wikipedia.org/wiki/Luba-Katanga_language",
+      "Omniglot — Luba-Katanga language. https://www.omniglot.com/writing/lubakatanga.htm",
+      "SIL Ethnologue — Luba-Katanga (lub). https://www.ethnologue.com/language/lub/",
+      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
+      "Smarthistory — Lukasa (Memory Board), Luba peoples. https://smarthistory.org/lukasa-memory-board-luba-peoples/",
+      "Trailblazer Travelz — The Luba People, DRC. https://www.trailblazertravelz.com/the-luba-people-democratic-republic-of-the-congo/"
     ]
   }
 }

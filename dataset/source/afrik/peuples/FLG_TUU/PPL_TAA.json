@@ -6,64 +6,109 @@
   "content": {
     "appellations": {
       "mainName": "Taa (ǃXóõ)",
-      "selfAppellation": "ǃXóõ",
+      "selfAppellation": "ǃXoon (ǃXooŋake, pl.) / ʼNǀohan (Nǀumde, pl.)",
+      "exonyms": [
+        "ǃXóõ",
+        "ǃXoon",
+        "ǃKhong",
+        "ǃXoon",
+        "Masarwa",
+        "Magon",
+        "Tshasi",
+        "Koon"
+      ],
+      "originOfExonyms": "Le terme taa signifie être humain dans la langue elle-même ; la langue s'appelle taa ǂaan (langue des humains). ǃXóõ est un ethnonyme utilisé aux deux extremités de l'aire linguistique (Aminius Reserve en Namibie et Dzutshwa au Botswana) mais pas par les locuteurs intermédiaires. C'est le linguiste Westphal (1971) qui a adopté taa comme nom de la famille linguistique (aujourd'hui Tuu). Masarwa est le terme tswana générique pour les Bushmen (San), péjoratif. Magon et Tshasi sont des désignations tswana plus spécifiques aux Taa. Koon est une anglicisation.",
+      "whyProblematic": "La nomenclature est complexe : le même groupe est désigné Taa, ǃXóõ, ǃXoon, et chacun de ces termes recouvre des réalités légèrement différentes selon les dialectes et les regions. Les locuteurs eux-mêmes utilisent ǃXoon ou ʼNǀohan selon leur dialecte. Le terme ǃXóõ a été popularisé dans la littérature linguistique internationale mais n'est pas employé par tous les locuteurs. Le terme Masarwa est considéré péjoratif par les communautés San.",
+      "contemporaryUsage": "Le terme Taa est utilisé par les linguistes pour désigner la langue et le peuple. ǃXoon est l'appellation préférée des membres de la communauté dans l'Est du Botswana et en Namibie. ʼNǀohan est utilisé par la communauté de l'Est. La langue taa (ISO nmn) est la dernière variété vivante vitale de la famille Tuu, avec environ 2 500 à 3 000 locuteurs selon les sources (Ethnologue 2011 : 2 500 ; DoBeS/MPI : 3 000).",
       "linguisticFamily": "FLG_TUU",
-      "ethnoLinguisticGroup": "Tuu (Taa)",
-      "historicalRegion": "Désert du Kalahari (BWA, NAM)",
+      "ethnoLinguisticGroup": "Tuu, branche Taa — unique variété encore vivante de la branche méridionale Taa",
+      "historicalRegion": "Kalahari central, région du Ghanzi et des districts méridionaux (Botswana), Aminius Reserve (Namibie)",
       "currentCountries": ["BWA", "NAM"]
     },
     "ethnicities": [
-      "ǃXóõ du Nord (Botswana)",
-      "ǃXóõ du Sud (Botswana)",
-      "ǃXóõ de l'Est",
-      "Sous-groupes régionaux"
+      "ǃXoon — groupe principal, Botswana oriental et Namibie (Aminius Reserve, Lone Tree, Dzutshwa)",
+      "ʼNǀohan — groupe de l'Est du Botswana, dialecte Est Taa documenté par le projet DoBeS",
+      "West ǃXoon — locuteurs du dialecte occidental documenté par Anthony Traill et le projet DoBeS",
+      "Nǀuǁʼen — dialecte de Dorothea Bleek, apparemment éteint",
+      "Tsaasi — sous-groupe dialectal, district de Kgalagadi"
     ],
     "origins": {
-      "ancientOrigins": "Les Taa (ǃXóõ) sont l'un des peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les Taa (ǃXóõ) font partie des peuples San, considérés comme parmi les populations humaines génétiquement les plus anciennes, avec des divergences mitochondriales estimées entre 100 000 et 200 000 ans avant le présent. Leur présence dans le Kalahari central remonte à plusieurs dizaines de millénaires. Le Proto-Tuu, ancêtre commun des langues Tuu, était vraisemblablement parlé dans la région du Kalahari, comme en témoigne le terme reconstructible pour l'oryx : *hai. Les Taa représentent la continuation vivante de cette ancienne tradition linguistique, leur langue étant la seule variété vitale subsistante de la famille Tuu.",
+      "formationPeriod": "La communauté Taa est identifiée comme groupe linguistique distinct dans les recherches de terrain de Dorothea Bleek (début 20e siecle) et documentée systématiquement par Anthony Traill à partir de 1969. Traill a consacré près de 35 ans et une centaine d'expéditions à la documentation du ǃXóõ, culminant avec la publication d'un dictionnaire complet. Le projet DoBeS (Documentation of Endangered Languages, MPI Nijmegen) a mené des recherches intensives sur les dialectes occidentaux et orientaux entre 2004 et 2009.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari central, sans migration fondatrice documentée",
+        "Extension progressive vers l'Est du Botswana et la Namibie (Aminius Reserve) sur plusieurs millénaires",
+        "Déplacements forcés vers des fermes, des réserves et des zones urbaines sous la pression coloniale et post-coloniale"
+      ],
+      "historicalSettlementZones": [
+        "Kalahari central (Botswana) : region de Ghanzi, Lone Tree, Dzutshwa",
+        "District de Kgalagadi (Botswana méridional)",
+        "Aminius Reserve (Omaheke, Namibie) — locuteurs ǃXoon",
+        "Fermes agricoles et postes d'élevage de la region de Ghanzi"
+      ],
+      "unificationsOrDivisions": "Les Taa sont répartis en un continuum dialectal avec deux groupes principaux : les dialectes Est (East ǃXoon, documenté par Traill, et ʼNǀohan/Tsaasi-ǂHuan) et les dialectes Ouest (West ǃXoon, documenté par DoBeS). Les locuteurs se désignent par leur groupe dialectal (ǃXoon ou ʼNǀohan) et par leur environnement (gens des plaines, gens de la rivière). Il n'existe pas d'organisation supra-locale unifiée.",
+      "externalInfluences": "Pression des eleveurs tswana (Batswana) depuis plusieurs siecles dans le Kalahari. Contact avec les colons allemands (Namibie) et britanniques (Botswana). La colonisation et la sédentarisation forcée ont contraint de nombreux Taa à travailler sur des fermes ou dans des villages, abandonnant partiellement le mode de vie de chasseurs-cueilleurs. Au Botswana, les évictions du Central Kalahari Game Reserve en 2002 ont été particulièrement traumatisantes. En Namibie, les locuteurs sur fermes ou en zones urbaines adoptent progressivement l'afrikaans et le nama.",
+      "majorHistoricalEvents": "Premières documentations linguistiques par Dorothea Bleek (début 20e siecle). Lancement des recherches d'Anthony Traill en 1969 (35 ans de terrain, publication du Khoisan dictionary). Projet DoBeS sur le taa (2004-2009, MPI Nijmegen). Evictions du Central Kalahari Game Reserve par le gouvernement botswanais (2002). Décision de justice (2006) reconnaissant le droit des San à revenir dans la réserve. Glottolog classe le taa comme menacé (threatened) : un nombre significatif de locuteurs migrent vers le kgalagadi ou l'afrikaans."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation égalitaire sans chef permanent ni hiérarchie formelle. Les decisions sont prises par consensus au sein des bandes (groupes de 10 à 40 personnes). Les anciens et les guérisseurs jouent un rôle consultatif. Les Taa se distinguent eux-mêmes par leur environnement (ǃama ʘʔâni : gens de l'Ouest ; ǂhūã ʘʔâni : gens du Sud ; ʘqhōa ʘʔâni : gens de l'entre-deux ; tùu ʔʘnāhnsā : les gens purs) et par la direction.",
+      "clanOrganization": "Structure basée sur des groupes de parenté bilatérale et des liens de réciprocité (hxaro). Bandes semi-nomades suivant les ressources en eau et en gibier du Kalahari. Partage obligatoire des ressources au sein du groupe. L'appartenance se définit par les liens de parenté, l'affinité et la maitrise de la langue.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux. Droits d'usage des territoires de chasse et de cueillette transmis par les deux lignes parentales. L'identité de groupe se définit principalement par le dialecte parlé et la région d'appartenance (ǃXoon ou ʼNǀohan).",
+      "religiousAuthority": "Autorité des guérisseurs-chamanes (n/om-kxaosi), dont les pouvoirs thérapeutiques sont activés lors des danses de transe (healing dances). Ces spécialistes rituels médiatisent les relations avec les puissances spirituelles, guérissent les malades et protègent la communauté lors des cérémonies nocturnes."
     },
     "languages": {
-      "mainLanguage": "Taa (ǃXóõ)",
-      "vehicularRole": "Le taa est parlé par la majorité des Taa. Le tswana, l'afrikaans et l'anglais sont également utilisés."
+      "mainLanguage": "Taa (ǃXóõ) — langue avec le plus grand inventaire phonémique du monde",
+      "isoCodes": ["nmn"],
+      "dialects": [
+        "East ǃXoon — dialecte oriental principal, documenté par Anthony Traill (Lone Tree, Botswana) : 58 consonnes, 31 voyelles, 4 tons",
+        "West ǃXoon — dialecte occidental documenté par DoBeS (MPI) : 87 consonnes, 20 voyelles, 2 tons",
+        "ʼNǀohan (Nǀumde) — dialecte oriental, Botswana, documenté par DoBeS",
+        "Tsaasi-ǂHuan — sous-groupe dialectal méridional",
+        "Nǀuǁʼen — dialecte de Bleek, apparent éteint"
+      ],
+      "vehicularRole": "Le taa (nmn) est la seule langue vivante vitale de la famille Tuu, avec environ 2 500 à 3 000 locuteurs en 2011-2025, principalement au Botswana, quelques centaines en Namibie. La langue est classée threatened (menacée) par Glottolog (2022) et endangered par Ethnologue. Elle est célèbre pour posséder le plus grand inventaire phonémique documenté de toutes les langues humaines connues : 130 à 164 sons consonantiques selon les analyses (Traill : 130 ; DoBeS : 164), dont 20 à 43 clics distincts, environ 30 voyelles et 2 à 4 tons. Environ 82 % du vocabulaire de base commence par un clic consonantique. Le taa est également l'une des seules langues au monde avec des clics bilabials fonctionnels."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "La danse de transe (healing dance, gaisa) est le rituel central et la principale expression religieuse. Les femmes s'assoient en cercle, chantent des chants de puissance et frappent rythmiquement dans leurs mains. Les guérisseurs (n/om-kxaosi) dansent en cercle, hyperventilent et accumulent l'énergie spirituelle (n/om), concentrée dans le bas-ventre, qui monte le long de la colonne vertébrale jusqu'à la tête lors de la transe (kia). En état de transe, les guérisseurs imposent les mains sur les malades pour extraire la maladie et les forces négatives (star illness). Les rites de passage incluent : circoncision masculine, cérémonies de puberté féminine (isolement, instruction sur les tabous alimentaires et les responsabilités féminines), rituels de première chasse des jeunes hommes, et rituels de partage du premier gibier.",
+      "symbols": "L'éland (Taurotragus oryx) est l'animal symbolique suprême, associé à la puissance chamanique maximale et aux visions de transe. Le feu central lors des cérémonies est le foyer de la communication avec les esprits. Art rupestre du Kalahari représentant des transformations chamanes-animaux, des élands et des visions de transe. Les trois chiffres natifs de la langue (ǂʔûã : 1, ǂnûm : 2, ǁâe : 3) reflètent l'organisation de base du monde Taa ; tous les nombres au-delà sont empruntés au tswana ou au kgalagadi.",
+      "artsAndMusic": "Chants polyphoniques vocaux lors des danses de transe et des rassemblements communautaires. Arc musical (arc à bouche) comme instrument mélodique individuel. Percussions avec des coques de noix de mongongo et des cocons de chrysalides (joros) attachés aux chevilles des danseurs pour créer le rythme. Contes et mythes oraux (taa ǂaan, la parole des Taa) transmettant les savoirs cosmologiques, écologiques et sociaux. Art rupestre du Kalahari central attribué aux ancêtres San. Le groupe d'artistes Kuru de D'kar (Botswana), actif depuis les années 1990, produit des oeuvres San contemporaines en acrylique et en estampe dans un style San reconnaissable.",
+      "spiritualities": "Croyances en un dieu créateur bienveillant (Kaang ou ǃXóõ-n, avec des variantes dialectales) associé à la voie lactée, à la pluie et à la fertilité, et en un dieu inférieur malveillant associé à la mort et à la maladie. L'énergie spirituelle (n/om) est conçue comme une force qui circule entre les vivants, les morts et les animaux. Les guérisseurs activent cette énergie lors de la danse de transe pour soigner, protéger et communiquer avec les esprits ancestraux. Les ancêtres défunts jouent un rôle de médiateurs. Croyance en des esprits de la nature associés aux points d'eau, aux animaux totémiques et aux phénomènes météorologiques. Influence croissante du christianisme (missions wesleyennes et anglicanes) dans les communautés sédentarisées."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises et namibiennes."
+      "kingdomsOrChiefdoms": "Pas d'organisation étatique ni de chefferie formelle. Structure sociale égalitaire typique des chasseurs-cueilleurs San. Le linguiste Anthony Traill a joué un rôle fondamental dans la documentation et la valorisation du patrimoine Taa, effectuant près de 100 expéditions sur le terrain en 35 ans et publiant le premier dictionnaire complet de la langue.",
+      "relationsWithNeighbors": "Relations historiques d'échange et de voisinage avec les éleveurs tswana (Batswana, terminologie Masarwa, Magon) et les Kgalagadi. Les Taa échangeaient des produits de chasse et de cueillette (peaux, miel, gibier séché, plantes médicinales) contre du bétail ou des outils métalliques. Les Taa partagent de nombreux traits phonologiques avec les langues voisines ǂʼAmkoe et Gǀui dans le cadre du Kalahari Basin sprachbund (aire linguistique). Les Taa étaient aussi parfois recrutés comme traqueurs et serviteurs par les fermiers tswana et blancs.",
+      "conflictsOrAlliances": "Persécutions et chasses aux Bushmen par les commandos boers au 19e siecle en Afrique du Sud et dans le Bechuanaland. La Namibie allemande a déployé plus de 400 patrouilles anti-Bushmen entre 1911 et 1913, réduisant la population San de 8 000-12 000 à 3 600 en une décennie. Au Botswana, les évictions du Central Kalahari Game Reserve en 2002 ont déplacé de nombreux San, dont des locuteurs taa. Une décision de justice (2006) a reconnu le droit des San à retourner dans la réserve. Le projet DoBeS (MPI Nijmegen, 2004-2009) a établi des partenariats avec les communautés pour documenter la langue.",
+      "diaspora": "Les Taa (ǃXóõ) vivent principalement dans le Kalahari central botswanais et en Namibie (Aminius Reserve, Omaheke). Quelques communautés sont établies dans les villes et les villages de la région de Ghanzi. Il n'existe pas de diaspora internationale significative, mais une émigration croissante vers les centres urbains (Ghanzi, Gobabis) est documentée, avec adoption progressive du tswana, du kgalagadi ou de l'afrikaans."
     },
     "demography": {
-      "totalPopulation": 2000,
+      "totalPopulation": 3000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Environ 2 500 locuteurs selon Ethnologue (2011) ; environ 3 000 selon DoBeS-MPI (2004-2009). La majorité vit au Botswana, quelques centaines en Namibie. Glottolog (2022) classe la langue comme threatened. Sources : Ethnologue — Taa (nmn) (https://www.ethnologue.com/language/nmn/) ; DoBeS Taa project (https://dobes.mpi.nl/projects/taa/language/) ; Wikipedia EN — Taa language (https://en.wikipedia.org/wiki/Taa_language) ; Glottolog East Taa (https://glottolog.org/resource/languoid/id/huaa1248).",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2600,
+          "note": "Majorité des locuteurs, dans le Kalahari central (regions de Ghanzi, Kgalagadi, Lone Tree, Dzutshwa)"
+        },
+        {
+          "country": "NAM",
+          "population": 400,
+          "note": "Quelques centaines de locuteurs, principalement à Aminius Reserve (Omaheke) et dans des fermes de la region"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Taa language (nmn)",
-      "Traill, Anthony – *Phonetic and Phonological Studies of ǃXóõ Bushman*",
-      "Güldemann, Tom – *Studies in Tuu (Southern Khoisan) Linguistics*",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa"
+      "Wikipedia EN — Taa language. https://en.wikipedia.org/wiki/Taa_language",
+      "DoBeS MPI — Taa language project. https://dobes.mpi.nl/projects/taa/language/",
+      "Ethnologue — Taa (nmn). https://www.ethnologue.com/language/nmn/",
+      "Glottolog 5.3 — East Taa. https://glottolog.org/resource/languoid/id/huaa1248",
+      "Wikipedia EN — Tuu languages. https://en.wikipedia.org/wiki/Tuu_languages",
+      "Traill, Anthony (1994). A !Xoo Dictionary. Quellen zur Khoisan-Forschung / Research in Khoisan Studies, 9. Cologne: Rüdiger Köppe.",
+      "Naumann, Christfried (2008). DoBeS documentation project on Taa (West ǃXoon). MPI Nijmegen.",
+      "AURUNICO (2025). The Language With The Most Sounds In The World — !Xóõ. https://aurunico.com/blogs/news/the-language-with-the-most-sounds-in-the-world-xoo",
+      "San healing practices — Wikipedia. https://en.wikipedia.org/wiki/San_healing_practices",
+      "Cultural Survival Quarterly (2010). Foragers to First Peoples: The Kalahari San Today. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/foragers-first-peoples-kalahari-san-today"
     ]
   }
 }

@@ -2,63 +2,125 @@
   "id": "PPL_DAZA",
   "nameMain": "Daza",
   "languageFamilyId": "FLG_SAHARIEN",
-  "currentCountries": ["TCD", "NER"],
+  "currentCountries": ["TCD", "NER", "LBY", "SDN"],
   "content": {
     "appellations": {
       "mainName": "Daza",
-      "selfAppellation": "Daza",
-      "exonyms": ["Daza (terme utilisé par les Européens)"],
+      "selfAppellation": "Daza / Dazagra",
+      "exonyms": [
+        "Gorane ou Gouran (terme arabe et francophone utilise au Tchad pour designer les Daza)",
+        "Dazzaga (variante orthographique)",
+        "Dazagara (autre variante)",
+        "Dazagada (variante)"
+      ],
+      "originOfExonyms": "Le terme Daza est l'endonyme du groupe, utilise par les membres eux-memes. Gorane ou Gouran est l'exonyme arabe le plus repandu au Tchad pour designer les Daza; il est aussi utilise par l'administration tchadienne. Les Daza et les Teda forment ensemble le peuple Toubou (Tubu, Tebu), dont le nom vient du vieux-tebu signifiant gens des rochers, allusion aux montagnes du Tibesti.",
+      "whyProblematic": "La confusion entre Toubou (terme generique englobant Teda et Daza) et Daza (sous-groupe specifique) est frequente dans la litterature. Le terme Gorane peut etre vecu comme reducteur car il efface la distinction entre Daza et Teda. Dans le contexte des guerres civiles tchadiennes, les affiliations ethniques Daza/Toubou ont ete instrumentalisees politiquement.",
+      "contemporaryUsage": "Daza est l'appellation propre du groupe. Gorane reste tres utilise au Tchad dans l'usage courant administratif et populaire. La distinction Teda/Daza est reconnue dans la recherche academique. Les Daza representent le sous-groupe numeriquement dominant des Toubou, concentre au sud et a l'est du massif du Tibesti, dans les regions de Borkou, Ennedi, Kanem et Bahr el-Ghazal.",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien (Toubou)",
-      "historicalRegion": "TCD, NER",
-      "currentCountries": ["TCD", "NER"]
+      "ethnoLinguisticGroup": "Groupe saharien occidental, branche tebu (nilo-saharien); sous-groupe Daza (Dazaga) distinct du Tedaga (Teda)",
+      "historicalRegion": "Region du Borkou (Faya-Largeau), desert du Djurab, nord du Kanem, Bahr el-Ghazal septentrional (Tchad central et nord), extensions au Niger oriental et en Libye meridionale",
+      "currentCountries": ["TCD", "NER", "LBY", "SDN"]
     },
-    "ethnicities": ["Daza du Tchad", "Daza du Niger", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Alala",
+      "Anakaza (ou Anacaza)",
+      "Kamaya (canton de Borkou; etymologie Kama-dro-yede, habitant de l'oasis de Faya)",
+      "Kara",
+      "Gadwa",
+      "Donza",
+      "Wandala",
+      "Azza (caste artisanale endogame; forgerons, potiers, mineurs de sel, musicians; statut social inferieur)",
+      "Mourdiya",
+      "Tchiroua"
+    ],
     "origins": {
-      "ancientOrigins": "Les Daza sont originaires du Tchad et du NER, dans la région du Sahara central. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Toubou.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Toubou.",
-      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+      "ancientOrigins": "Les Daza partagent avec les Teda une origine commune dans les montagnes du Tibesti et les plaines sahariennes environnantes. Les Toubou (Teda et Daza) sont mentionnes dans les sources islamiques du 8e siecle (Ibn Qutaybah) conjointement aux Zaghawa. Certains chercheurs (Jean Chapelle) les identifient possiblement aux Ethiopiens mentionnes par Herodote (430 av. J.-C.) chasses par les Garamantes dans la region Fezzan-Nubie; les Garamantes et les Toubou occupent les memes terres de l'antiquite. Au 9e siecle, al-Khwarizmi mentionne specifiquement les Daza comme Toubou meridionaux. Des etudes genetiques (Haber et al. 2016) revelent chez les Toubou une composition genetique unique : environ 34% R1b-V88, 31% T1a, avec 20-30% d'ADN autosomal eurasien (agriculteurs europeens neolithiques) et des composantes africaines.",
+      "formationPeriod": "La distinction entre Teda (Tibesti et Sahara du nord) et Daza (Sahel et regions meridionales) s'est etablie au fil du temps, probablement a mesure que les groupes meridionaux s'adaptaient a un environnement plus sahelien. Les Daza couvrent le Borkou, le plateau de l'Ennedi, le nord du Kanem et le Bahr el-Ghazal. Aux 18e-19e siecles, les Toubou de Kaouar maintinrent une ville independante jusqu'en 1870. En 1936, les Francais creerent des cantons administratifs dans le Borkou et nommerent les premiers chefs officiels (dont al-haj Kellei Chahami pour le canton Kamaya).",
+      "migrationRoutes": [
+        "Presence ancestrale dans le Tibesti et les plaines sahariennes du Tchad central",
+        "Extension progressive vers le Borkou, l'Ennedi et le Kanem (mouvements saisonniers des paturages)",
+        "Transhumances nord-sud entre les oasis du Tibesti (saison seche) et les paturages saheliens du Kanem et Bahr el-Ghazal (saison des pluies)",
+        "Migrations vers le Niger (region de N'guigmi) et la Libye meridionale"
+      ],
+      "historicalSettlementZones": [
+        "Desert du Djurab (nord-central du Tchad)",
+        "Region du Borkou et Faya-Largeau (chef-lieu traditionnel des Daza, dit capitale Dazagra)",
+        "Plateau de l'Ennedi (nord-est du Tchad)",
+        "Nord du Kanem (environ 300 000 Dazaga-speakers selon Wikipedia)",
+        "Bahr el-Ghazal septentrional (Tchad)",
+        "Niger oriental (pres de N'guigmi et au nord; environ 93 200 locuteurs)",
+        "Libye meridionale (Sabha, Oasis de Kufra) et Soudan (Omdurman, 3 000 locuteurs)"
+      ],
+      "unificationsOrDivisions": "Les Daza sont divises en de nombreux clans (Alala, Altafa, Anakaza, Ankorda, Ayya, Sharara, Sharfada, Shuna, Djagada, Dogorda, Donza, Gadwa, Gaeda, Howda, Kamaya, Kamsoulla, Kara, Ketcherda, Kokorda, Maghya, Medelea, Mourdiya, Nara, Salma, Tchiroua, Tchoraga, Wandala, Wandja, Warba, Warda, Yira et bien d'autres). La caste Azza (artisans, statut inferieur, endogames, parlant le Dazaga) est segreguee du reste de la societe. Une autre caste historique, les esclaves (Agara, issus de raids vers le sud), a ete officiellement emancipee en 1953 dans le Borkou.",
+      "externalInfluences": "Islamisation progressive depuis les premiers contacts avec l'islam (8e-9e siecles), devenant pratique generalisee. Influence du sultanat du Kanem-Bornu en peripherie. Colonisation francaise : creation de cantons et de chefferies administrees en 1936; emancipation des esclaves en 1953. Independance du Tchad (1960) et integration dans l'Etat national. Guerres civiles tchadiennes (1966-1991) avec implication de chefs Daza (Hissene Habre, de clan Dazagra). Situation en Libye : sous Kadhafi, les Toubou ont ete prives de citoyennete (2007), suivi d'affrontements et de la guerre civile de 2011. Conflits contemporains au Tchad et en Libye.",
+      "majorHistoricalEvents": "9e siecle : mentions par al-Khwarizmi. 18e siecle : independance de la ville toubou de Kaouar jusqu'en 1870. 1936 : creation des cantons administratifs francais dans le Borkou. 1953 : emancipation des esclaves (Agara) dans le Borkou. 1960 : independance du Tchad. 1965-1966 : protestation contre la garnison tchadienne au Tibesti; le derde Oueddei Kichidemi est exile en Libye. 1966-1979 : premiere guerre civile tchadienne; Goukouni Oueddei (Teda) dirige le FROLINAT puis devient chef d'Etat. 1982-1990 : Hissene Habre (Dazagra) president du Tchad. 1990 : Idriss Deby (Zaghawa, non Daza) renverse Habre. 2007-2012 : crises des droits des Toubou en Libye, soulèvement du TFSL."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation clanique avec chefs de clan (sultan, melk) dont l'autorite s'exerce sur les oasis, paturages et puits familiaux ou claniques. Chez les Teda (et partiellement les Daza), le derde est le chef spirituel supreme (chef du clan Tumagra) : il arbitre les conflits majeurs, prononce des sanctions et peut maudire ou lever des maleductions. L'organisation politique daza est moins centralisee que celle des Teda. Depuis 1936 (colonisation francaise), des cantons et des chefs nommes par l'Etat coexistent avec les structures traditionnelles.",
+      "clanOrganization": "Nombreux clans (voir liste dans unificationsOrDivisions), chacun avec des droits sur des oasis, des puits et des paturages specifiques. Stratification sociale : hommes libres (proprietaires de terres et de betail), caste Azza (artisans endogames : forgerons, potiers, mineurs de sel, tanneurs, cordonniers, musiciens), et anciennement esclaves Agara (emancipes en 1953 dans le Borkou). Les droits sur les palmiers dattiers, puits, animaux et recoltes sont determines individuellement ou par famille au sein du cadre clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Patrilinearite pour la transmission des droits sur les terres, oasis et animaux. Les liens maternels jouent egalement un role dans les alliances interclaniques. Les droits sur les palmiers dattiers et les puits sont souvent individuels, transmis en heritage au sein de la famille. La clan assure l'hospitalite aux membres en transhumance dans d'autres territories.",
+      "religiousAuthority": "Islam sunnite base sur la loi islamique (diya / prix du sang pour les meurtres; restitution ou vengeance pour les crimes; negociation finale entre familles avec versement du Goroga/Diyya). Les oulémas locaux administrent la justice islamique. Le derde (chef spirituel Teda) a une fonction rituelle et d'arbitrage reconnue aussi par les Daza. Les croyances traditionnelles persistent en syncretisme avec l'islam."
     },
     "languages": {
-      "mainLanguage": "Daza (variété Toubou)",
-      "vehicularRole": "Le daza est parlé par la majorité des Daza. L'arabe et le français sont également utilisés."
+      "mainLanguage": "Dazaga (Daza)",
+      "isoCodes": ["dzg"],
+      "dialects": [
+        "Daza (dialecte central)",
+        "Kara (dialecte)",
+        "Kaga, Kanobo, Taruge (dialectes peripheriques, mutuellement intelligibles)",
+        "Azza (dialecte de la caste artisanale Azza; parle par les Dazagara de cette caste)"
+      ],
+      "vehicularRole": "Le dazaga est parle par environ 700 000 personnes : environ 606 000 au Tchad (Tibesti et Borkou notamment), 93 200 au Niger (pres de N'guigmi et au nord), 3 000 au Soudan (Omdurman) et de petites communautes en Libye. Le dazaga est classe langue de communication plus large (wider communication) par Ethnologue. Il est proche mais distinct du tedaga (langue des Teda); les Teda comprennent le dazaga mieux que l'inverse. L'arabe tchadien est la langue vehiculaire regionale, le francais la langue administrative au Tchad, l'arabe en Libye et au Soudan."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels daza.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture daza."
+      "majorRites": "Ceremonies islamiques majeures : Ramadan, Aid el-Fitr, Aid el-Adha (sacrifice du betail), Mawlid. Mariage : dot en betail (dromadaires, chevres, moutons) ; polygamie permise selon l'islam (relativement repandue); les Daza du Kanem et du Bahr el-Ghazal pratiquent le mariage entre cousins proches, contrairement aux Teda. Circoncision masculine comme rite de passage. Funerailles islamiques avec periodes de deuil et visites de condoleances. Rites lies a la transhumance : prieres et invocations avant les departs saisonniers. Goroga (Diyya, compensation versee par la famille du meurtrier a la famille de la victime) : systeme de resolution de conflits codifie.",
+      "symbols": "Le dromadaire est le symbole central de richesse, de mobilite et de statut chez les Daza : herde de dromadaires, chevres, bovins et anes constituent le capital familial et la dot matrimoniale. Les oasis (notamment Faya-Largeau, capitale du Borkou et centre dazaga) sont des poles identitaires majeurs. Le massif du Tibesti, bien que plus specifique aux Teda, est un repere territorial symbolique pour l'ensemble des Toubou. Le sel et le natron (extraits et commerces depuis des siecles) sont des produits identitaires du territoire daza.",
+      "artsAndMusic": "Poesie orale et recits epiques celebrant les exploits guerriers, les ancetres et les grands personnages historiques. La caste Azza joue un role de musicien (tambours, chants) lors des ceremonies de mariage et celebrations collectives. Artisanat : travail du cuir (selles, outres, sandales, tentes), ferronnerie (outils, bijoux), poterie, extraction et commerce du sel et du natron. Tissage et confection de vetements. Decoration des tentes nomades. Chants et danses lors des rassemblements de clans. Les femmes pratiquent la broderie et la teinture.",
+      "spiritualities": "Islam sunnite malekite generalise, base sur la pratique de la loi islamique (restitution/vengeance pour les crimes, negociation familiale). Maintien de pratiques pre-islamiques : croyances en des esprits locaux lies aux oasis et aux elements naturels. Le derde des Teda a une fonction spirituelle reconnue aussi dans le monde daza. La vie nomade favorise une spiritualite liee a l'environnement naturel (etoiles pour la navigation, interpretation des signes climatiques). Des communautes de Jeddah (Arabie Saoudite) temoignent d'un ancrage islamique important."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes et nigériennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora daza dans les grandes villes tchadiennes et nigériennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Daza n'ont pas forme de royaume centralise. Leur histoire politique est celle de clans semi-nomades maintenant une independence sur leurs territoires pastoraux. L'epoque du Kanem-Bornu les vit en peripherie de l'empire sans integration veritable. La ville toubou de Kaouar maintint son independance jusqu'en 1870. Dans l'histoire moderne tchadienne, des leaders daza (Hissene Habre, de clan Dazagra) ont accede au pouvoir national. Les Toubou (Teda et Daza) representent la quasi-totalite de la population du BET (Borkou-Ennedi-Tibesti), soit environ 6% de la population tchadienne sur plus d'un tiers du territoire.",
+      "relationsWithNeighbors": "Relations historiques avec les Zaghawa/Beri a l'est (probablement d'origine commune lointaine; voisinage et parfois rivalites). Relations avec les Kanembou et Kanembu au sud (echanges commerciaux, notamment sel et natron contre cereales). Relations avec les Arabes du Sahel (tensions et alliances variables selon les epoques). En Libye, coexistence conflictuelle avec les peuples arabes sous Kadhafi (privation de citoyennete, affrontements a Sabha 2012). Relations avec les Wodaabe-Fulani nomades dans les zones de paturages sahelo-sahariens.",
+      "conflictsOrAlliances": "Premiere guerre civile tchadienne (1966-1979) : role central des chefs Toubou (Goukouni Oueddei, Teda, chef du FROLINAT et president 1979-1982; Hissene Habre, Dazagra, president 1982-1990). 1965 : le derde Oueddei Kichidemi proteste contre la garnison tchadienne a Bardaï, est exile en Libye et devient symbole de la resistance. 2007 (Libye) : privation de citoyennete des Toubou par Kadhafi; soulèvement du Front toubou pour le salut de la Libye (TFSL) en 2008. 2011 : dans la guerre civile libyenne, les Toubou soutiennent les rebelles, prennent Qatrun et Murzuk. 2012 : affrontements a Sabha et menaces de separatisme. Tensions recurrentes avec les groupes arabes nomades pour le controle des puits et paturages.",
+      "diaspora": "Diaspora interne au Tchad vers les villes (Faya-Largeau, N'Djamena). Communautes en Libye (particulierement dans le Fezzan et les villes du sud) soumises a des pressions politiques recurrentes. Petite communaute en Arabie Saoudite (Jeddah). Au Niger, les Daza vivent principalement dans la region de Diffa et autour de N'guigmi, zone frontaliere avec le Tchad."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 820000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur les donnees linguistiques : Daza language (Wikipedia) indique environ 700 000 locuteurs de dazaga (606 000 au Tchad dont Tibesti, 93 200 au Niger, 3 000 au Soudan plus petites communautes en Libye). En ajoutant la croissance demographique tchadienne (environ 3% par an) et les communautes non-locuteurs, la population ethnique totale en 2025 est estimee a environ 800 000-850 000. Ethnologue (DZG) confirme le statut de langue de communication plus large.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 700000,
+          "note": "Principalement Borkou (Faya-Largeau), Ennedi, nord du Kanem, Bahr el-Ghazal septentrional; Tibesti partage avec les Teda"
+        },
+        {
+          "country": "NER",
+          "population": 100000,
+          "note": "Region de Diffa et nord du Niger, pres de N'guigmi (93 200 locuteurs selon Wikipedia)"
+        },
+        {
+          "country": "LBY",
+          "population": 15000,
+          "note": "Fezzan (Sabha, Murzuk, Oasis de Kufra); communaute soumise a des pressions politiques"
+        },
+        {
+          "country": "SDN",
+          "population": 5000,
+          "note": "Principalement Omdurman (3 000 locuteurs) et zones frontieres"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Daza language (dzg)",
-      "CIA World Factbook – Chad, NER",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples sahariens"
+      "Wikipedia EN — Toubou people (Daza subgroup). https://en.wikipedia.org/wiki/Toubou_people",
+      "Wikipedia EN — Daza language. https://en.wikipedia.org/wiki/Daza_language",
+      "Ethnologue — Dazaga (DZG). https://www.ethnologue.com/language/dzg/",
+      "Joshua Project — Daza in Niger. https://joshuaproject.net/people_groups/11518/NG",
+      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
+      "CIA — Libya-Chad Cultural Factors (document declassifie). https://www.cia.gov/readingroom/docs/CIA-RDP06T00412R000200010001-7.pdf",
+      "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982.",
+      "Haber et al. — Chad Basin: Genetic structure (Toubou Y-DNA study). American Journal of Human Genetics, 2016."
     ]
   }
 }

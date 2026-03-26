@@ -7,57 +7,98 @@
     "appellations": {
       "mainName": "ǂHoan",
       "selfAppellation": "ǂHoan",
+      "exonyms": [
+        "ǂ'Amkoe",
+        "ǂHoa",
+        "ǂHua",
+        "ǂHua-Owani",
+        "ǂHuan",
+        "ǂHõã",
+        "=|Hoa",
+        "Eastern ǂHoan",
+        "Nǃaqriaxe"
+      ],
+      "originOfExonyms": "Le terme ǂ'Amkoe est la denomination linguistique contemporaine preferee par les chercheurs pour designer la langue et, par extension, le groupe. Le terme ǂHoan correspond au nom du dialecte oriental de ce continuum, le mieux documente. Nǃaqriaxe designe un dialecte distinct du meme groupe. La notation ǂ indique un clic palatal, caracteristique du systeme phonologique de la langue.",
+      "whyProblematic": "La denomination de ce groupe est complexe en raison de la diversite dialectale interne et de la quasi-extinction du groupe. Le terme ǂHoan, bien que courant dans la litterature ancienne, ne correspond qu'a un des dialectes du continuum ǂ'Amkoe. La langue et le groupe etaient si peu etudies avant les annees 1970 qu'une classification linguistique erronee les avait places dans la famille Tuu (Khoisan meridional) avant leur rattachement definitif a la famille Kx'a en 2010.",
+      "contemporaryUsage": "Le nom ǂHoan reste d'usage courant pour designer ce peuple. Le terme scientifique ǂ'Amkoe est prefere par les linguistes pour designer la langue. Le groupe est aujourd'hui extremement reduit et la langue en voie d'extinction rapide, les enfants adoptant le kgalagadi ou le setswana comme premiere langue.",
       "linguisticFamily": "FLG_KXA",
-      "ethnoLinguisticGroup": "Kx'a (ǂHoan)",
-      "historicalRegion": "Désert du Kalahari (Botswana)",
+      "ethnoLinguisticGroup": "Kx'a (branche ǂ'Amkoe)",
+      "historicalRegion": "District de Kweneng, frange du desert du Kalahari (Botswana central)",
       "currentCountries": ["BWA"]
     },
-    "ethnicities": ["ǂHoan du Nord", "ǂHoan du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "ǂHoan orientaux (dialecte ǂHoan proprement dit, mieux documente)",
+      "Locuteurs du dialecte Nǃaqriaxe (variete distincte du meme continuum)",
+      "Locuteurs du dialecte Sasi (troisieme variete reconnue du groupe ǂ'Amkoe)",
+      "Communautes du district de Kweneng (Botswana central)"
+    ],
     "origins": {
-      "ancientOrigins": "Les ǂHoan sont l'un des peuples les plus anciens d'Afrique, originaires du désert du Kalahari au Botswana. Leur présence dans la région remonte à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les ǂHoan sont l'un des groupes San les plus anciens d'Afrique, dont la presence dans la region du Kalahari remonte a des dizaines de milliers d'annees. Les analyses genetiques montrent que les peuples parlant des langues Kx'a font partie des populations humaines les plus divergentes genetiquement. Le groupe ǂHoan se distingue genetiquement de ses parents linguistiques Ju/'hoansi et !Xun, montrant seulement 5% d'ancetre commun partage avec ces derniers, ce qui indique une longue separation et une histoire evolutive independante au sein de la region du Kalahari central.",
+      "formationPeriod": "Le groupe ǂHoan ne fut connu de la communaute academique qu'au debut des annees 1970. Avant cette decouverte, la langue etait inconnue des chercheurs. La classification linguistique resta incertaine jusqu'en 2010, lorsque Heine et Honken demonstrerent la parente de ǂ'Amkoe avec les langues Ju, formant la famille Kx'a. La diminution acceleree du groupe date du 20e siecle avec la sedentarisation forcee et le contact avec les populations bantoues.",
+      "migrationRoutes": [
+        "Population autochtone du Kalahari central, sans migration fondatrice documentee recente vers la region",
+        "Confinement progressif dans le district de Kweneng suite aux pressions foncieres exercees par les groupes Kgalagadi et les politiques gouvernementales botswanaises",
+        "Retrait vers des zones encore plus isolees suite a la sedentarisation forcee et aux changements d'affectation des terres"
+      ],
+      "historicalSettlementZones": [
+        "District de Kweneng, frange meridionale du desert du Kalahari (Botswana central)",
+        "Zones semi-arides entre les groupes bantous Kgalagadi au nord et les peuples Tuu au sud",
+        "Region de Bere et localites environnantes du district de Kweneng"
+      ],
+      "unificationsOrDivisions": "Le groupe ǂHoan forme un ensemble linguistique et culturel coherent malgre la diversite dialectale interne (dialectes ǂHoan, Nǃaqriaxe, Sasi). L'effondrement demographique du 20e siecle a fortement reduit les interactions entre ces sous-groupes. La langue semble etre en train de disparaitre rapidement, aucun enfant ne l'apprenant plus comme premiere langue selon des etudes du debut du 21e siecle.",
+      "externalInfluences": "Contact prolonge avec les peuples Kgalagadi (Bantu) dans le district de Kweneng, qui ont progressivement remplace la langue ǂHoan comme langue maternelle des enfants. Influence croissante du setswana (langue nationale du Botswana) dans les contextes officiels et educatifs. Marginalisation economique et politique similaire a celle des autres groupes San du Botswana.",
+      "majorHistoricalEvents": "Decouverte scientifique du groupe par les linguistes au debut des annees 1970, revelant l'existence d'une langue et d'un peuple jusqu'alors inconnus de la communaute academique mondiale. Classification linguistique provisoire dans la famille Tuu (Khoisan meridional) par erreur, corrigee par Heine et Honken (2010) qui demonstrerent la parente avec les langues Ju dans la nouvelle famille Kx'a. Designation de la langue ǂ'Amkoe (huc) comme moribonde par Glottolog et severement en danger par l'UNESCO. Etudes sociolinguistiques de Batibo (2005) et Moumakwa & Monaka (2017) documentant l'absence totale de transmission intergenerationnelle. Le groupe est aujourd'hui au bord de l'extinction culturelle et linguistique complete."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation egalisatrice sans hierarchie formelle, caracteristique des groupes San. Decisions prises par consensus au sein de groupes de parenté etendus. Pas de chefs permanents dans la tradition propre. Soumis aux structures politiques tswana (kgotla) en contexte botswanais.",
+      "clanOrganization": "Organisation en petites bandes de quelques familles elargiees, adaptee a un milieu semi-aride necessitant une mobilite importante et une gestion economique des ressources. Liens de reciprocite et d'hospitalite entre groupes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux. Les liens de parenté definissent les droits sur les territoires de chasse et de collecte. L'extreme petitesse du groupe contemporain rend les liens de parenté presque universels au sein de la communaute.",
+      "religiousAuthority": "Autorite des guerisseurs traditionnels (chamans) qui servent d'intermediaires avec le monde des esprits. Les guerisseurs entrent en etat de transe pour diagnostiquer et soigner les maladies. Pratiques animistes centrees sur les forces naturelles et les esprits des ancetres."
     },
     "languages": {
-      "mainLanguage": "ǂHoan",
-      "vehicularRole": "Le ǂhoan est parlé par la majorité des ǂHoan. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "ǂ'Amkoe (ǂHoan)",
+      "isoCodes": ["huc"],
+      "dialects": [
+        "ǂHoan (dialecte oriental, le mieux documente dans la litterature)",
+        "Nǃaqriaxe (dialecte distinct reconnu par les linguistes)",
+        "Sasi (troisieme variete du continuum ǂ'Amkoe)"
+      ],
+      "vehicularRole": "La langue ǂ'Amkoe (ǂHoan) est extremement menacee, classee comme moribonde par Glottolog (2022) et severement en danger par UNESCO. Aucun enfant ne l'apprend plus comme premiere langue ; les nouvelles generations acquierent d'abord le kgalagadi (langue des Kgalagadi, groupe bantou voisin), puis le setswana comme langue nationale et scolaire, et l'anglais dans les contextes formels. Le nombre de locuteurs actifs est estime a moins de 200 individus ages selon Campbell et al. (2022). La langue ǂ'Amkoe est l'une des langues les plus morphologiquement complexes du monde connues, avec un systeme de consonnes cliquees exceptionnellement riche incluant des clics bilabiales (uniques dans le monde) qui la distinguent meme de ses parents Ju au sein de la famille Kx'a. Des linguistes de l'Universite de Francfort et d'autres institutions europeennes ont conduit des sessions de documentation d'urgence pour preserver les dernieres traces de cette langue."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "Ceremonies de guerison par transe similaires aux autres groupes San : le guerisseur mobilise une energie medicinale, entre en etat de transe et soigne les malades par imposition des mains et chant. Rites de passage marquant les etapes de la vie (naissance, puberte des filles avec instructions sur les roles feminins, mariage, mort). Ceremonies liees a la chasse pour assurer le succes et prevenir les accidents. Rituels de partage du gibier codifies, visant a prevenir l'accumulation et a maintenir l'egalite sociale.",
+      "symbols": "Art rupestre du Kalahari central comme patrimoine symbolique collectif. Arcs de chasse et fleches empoisonnees comme symboles de la competence et de l'identite masculine. Ornements corporels (colliers de perles, bracelets de coquillage) comme marqueurs d'identite et de statut.",
+      "artsAndMusic": "Musique vocale polyphonique avec caracteristiques specifiques aux groupes San du Kalahari, comprenant des vocalisations complexes et des clics phonemiques integres dans les chants. Instruments a cordes dont l'arc musical (utilise pour la musique individuelle et dans les ceremonies). Chants collectifs accompagnant les ceremonies de transe. Traditions de contes oraux transmettant les recits d'origine, les normes sociales et les connaissances ecologiques du milieu semi-aride. La production artistique contemporaine est tres limitee compte tenu du declin demographique du groupe.",
+      "spiritualities": "Croyances animistes centrees sur l'existence d'un etre supreme et de forces spirituelles invisibles. Les guerisseurs servent d'intermediaires entre les vivants et les esprits des ancetres et de la nature. Croyance en des esprits capables de causer maladies et malheurs. La transe comme voie privilegiee d'acces au monde spirituel. Influence croissante du christianisme dans les communautes contemporaines, souvent en coexistence syncretique avec les pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises."
+      "kingdomsOrChiefdoms": "Aucune organisation etatique ou chefferie. Structure sociale de chasseurs-cueilleurs fondamentalement egalisatrice et sans accumulation de richesse. L'extreme isolement geographique du groupe dans le district de Kweneng a permis une relative independance culturelle jusqu'au 20e siecle.",
+      "relationsWithNeighbors": "Relations de coexistence et d'echange avec les groupes Kgalagadi (Bantu) voisins dans le district de Kweneng, qui ont largement absorbe linguistiquement et culturellement les ǂHoan. Ces contacts sont a l'origine du remplacement linguistique en cours : les enfants ǂHoan adoptent le kgalagadi comme premiere langue et le setswana comme langue de scolarisation. Marginalisation progressive par les politiques nationales botswanaises favorisant l'homogeneite linguistique autour du setswana et de l'anglais. Les echanges traditionnels incluaient probablement des relations de service (guidage en milieu semi-aride, medicinal) contre des produits agricoles ou du betail, similairement aux autres groupes San voisins de populations bantoues. Absence de documentation historique sur des alliances ou conflits formels avec d'autres groupes, en raison de la tres faible visibilite du groupe avant les annees 1970.",
+      "conflictsOrAlliances": "Pressions foncieres exercees par l'Etat botswanais et les communautes bantoues voisines sur les territoires de chasse et de collecte traditionnels des ǂHoan. Politiques de sedentarisation et de reduction des espaces de vie nomade dans le cadre des politiques San du gouvernement botswanais, similaires aux evictions du CKGR (Central Kalahari Game Reserve) qui toucherent d'autres groupes San. Marginalisation dans le systeme educatif et judiciaire botswanais conduisant a une perte acceleree de la langue et de la culture. La quasi-absence de mobilisation politique propre aux ǂHoan s'explique par la taille infime du groupe et l'absence d'organisation communautaire suffisante face aux pressions exterieures.",
+      "diaspora": "Pas de diaspora documentee. Le groupe est entierement concentre dans le district de Kweneng au Botswana. L'extreme fragilite demographique du groupe (estimations de moins de 200 a quelques centaines de locuteurs) ne permet pas de parler de dispersion communautaire significative."
     },
     "demography": {
-      "totalPopulation": 1000,
+      "totalPopulation": 300,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur les donnees de Glottolog (moribond, moins de 200 locuteurs selon Campbell et al. 2022), Khoisan languages Wikipedia (200 locuteurs pour ǂ'Amkoe), et les travaux sociolinguistiques sur les langues en danger du Botswana (Batibo 2005). La population ethnique totale peut depasser le nombre de locuteurs.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 300,
+          "note": "Exclusivement dans le district de Kweneng, Kalahari central"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – ǂHoan language (huc)",
-      "Collins, Chris – *The Internal Structure of VP in ǂHoan*",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa"
+      "Glottolog — Amkoe (ǂHoan) language entry (huc). https://glottolog.org/resource/languoid/id/hoaa1235",
+      "Wikipedia EN — Khoisan languages (section Kx'a). https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Wikipedia EN — Kx'a languages. https://en.wikipedia.org/wiki/Kx%CA%BCa_languages",
+      "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36.",
+      "Batibo, Herman M. (2005). Language Decline and Death in Africa. Multilingual Matters. (cite dans Glottolog)",
+      "Moumakwa, Tshiamiso V. & Monaka, Kemmonye C. (2017). Speakers living and languages dying: The endangerment of !Xoo and oHua in Botswana. University of Namibia Repository. https://repository.unam.edu.na/bitstreams/9844648c-ce29-49ac-9a94-2ae8e4594fd1/download",
+      "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510. https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
+      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/"
     ]
   }
 }

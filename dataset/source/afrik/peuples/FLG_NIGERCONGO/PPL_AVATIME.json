@@ -6,54 +6,76 @@
   "content": {
     "appellations": {
       "mainName": "Avatime",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Kedanima (pluriel ; m. singulier : Kedone, f. singulier : Kededze)",
+      "exonyms": ["Afatime", "Sideme", "Sia", "Siyase"],
+      "originOfExonyms": "Avatime est l'appellation ewe signifiant champ de bataille, donnee par les Ewe voisins. Les locuteurs se designent eux-memes Kedanima et appellent leur langue Siya ou Siyase. Afatime, Sideme et Sia sont des variantes de cet endonyme.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Avatime est le nom standard dans la litterature academique, les bases de donnees linguistiques (Ethnologue ISO 639-3 : avn, Glottolog : avat1244) et les documents officiels ghaneen. Kedone est utilise dans le contexte local par les membres de la communaute.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Langues Ghana-Togo Mountain (Togorestsprachen), groupe Avatime-Nyangbo, branche Kwa du Niger-Congo (appartenance definitive debattue)",
+      "historicalRegion": "Region Volta du Ghana, autour de la colline de Gemi, Ho Municipality",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Avatime"],
+    "ethnicities": ["Avatime", "Kedanima"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "L'origine des Avatime est une question historique complexe non definitivement resolue. La tradition dominante, documentee par Lynne Brydon (1996), indique une origine dans l'ouest, en territoire Ahanta, suivie d'une lente migration vers l'est le long de la cote puis vers le nord. Kwame Ampene (fondateur de la Guan Historical Society) soutient une migration depuis l'Igboland (Nigeria du Sud) apres rupture du groupe fondateur ; les fondateurs d'Avatime (centre de la region Volta), d'Agotime (pres de Ho) et de Gafe (Togo) seraient des voisins migrants partis ensemble de l'Igboland. Les Avatime portent des noms akan malgre leur situation en territoire ewe, suggerant un long sejour parmi les Ahanta (Akan) du Ghana occidental.",
+      "formationPeriod": "Avant 1720 (evenement fondateur date d'avant l'an 1720). Etablissement definitif sur les collines de Gemi apres la confrontation avec les habitants de Matse.",
+      "migrationRoutes": [
+        "Depuis l'Igboland (Nigeria du Sud) selon la tradition Ampene",
+        "Migration cotiere d'est en ouest, sejour parmi les Ahanta (Ghana occidental)",
+        "Retraite vers l'est jusqu'a l'estuaire du Volta pres d'Ada en raison des upheavals politiques de la region",
+        "Traversee du Volta, breve halte dans la region de Ho (Matse), guerre avec les habitants de Matse",
+        "Etablissement final sur les collines de Gemi, fondation de trois etablissements premiers",
+        "Long sejour a Ningo et Matse atteste dans la quasi-totalite des traditions orales (Brydon)"
+      ],
+      "historicalSettlementZones": [
+        "Amedzofe, Vane, Gbadzeme, Dzokpe, Biakpe, Dzogbefeme et Fume (sept villes et villages actuels)",
+        "Altitude de 400 a 800 m au-dessus du niveau de la mer pour cinq des villages (Gbadzeme, Biakpa, Dzogbefeme, Vane, Amedzofe)",
+        "Pieds de la chaine de collines pour trois villages (Old Dzokpe, New Dzokpe, Fume)"
+      ],
+      "unificationsOrDivisions": "A leur arrivee dans la region de Ho, le groupe fondateur s'est divise en trois : Agotime (signifiant ou est l'argent), Avatime (champ de bataille) et Gafe (au Togo). Chaque ville Avatime conserve une certaine autonomie sous la paramount du chef suzerain.",
+      "externalInfluences": "Colonisation allemande puis britannique ; mission protestante de Bale (missionaires allemands) etablie a Amedzofe grace au climat tempere des collines (vers 1894) ; introduction du presbyterianisme et du catholicisme. Invasion asante d'Adu Bofour en 1869 (les habitants d'Amedzofe ont roule des pierres sur les assaillants depuis les collines de Gemi). Emprunts terminologiques aux langues akan (odikro, akyeame) et ga (mankrado) pour les titres politiques.",
+      "majorHistoricalEvents": "Guerre de Matse (avant 1720) : les Avatime ont bloque l'approvisionnement en eau des habitants avec des cosses de palmier avant de s'installer sur la montagne. 1869 : invasion asante repoussee depuis les collines de Gemi. Etablissement de la mission de Bale (Basel Mission, missionaires allemands) a Amedzofe vers 1894 : introduction du cafe, del'education et de l'ecriture. Premieres fouilles dans une grotte de Biakpa revelant des poteries attestant d'une presence indigene ancienne (peuple Vaya/Guan)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie patrilineaire nominale avec une hierarchie extensive de chefs masculins. L'ensemble est sous la paramount d'Adja Tekpor VI (egalement connu sous Osei Adzatekpor XII). Chaque village et clan possede son propre chef. Le titre paramount est Osie (terme de parente designe un parent male distant d'une generation anterieure). Le chef de village porte le titre d'okusie.",
+      "clanOrganization": "La population villageoise est composee de clans (akpla, singulier lekple, signifiant noeud ou bosse) : groupes de descendants patrilineaires presumes d'un ancetre commun sans pouvoir retracer toutes les etapes. A l'interieur des clans se trouvent des lignages (ikune, singulier oku) qui tracent la descendance agnatique depuis un ancetre masculin identifie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (ikune) gouvernent la descendance, les droits fonciers et immobiliers. Les tantes paternelles (senior women, peres des peres) jouent un role dans les affaires economiques et sociales du patrilineage et dans les rites de crise.",
+      "religiousAuthority": "Culte du dieu supreme Aya (acculture en Mawu Aya sous influence ewe voisine) : dieu des dieux, present dans le ciel, l'eau, la foret et la mort. Pratiques de possession spirituelle coexistent avec le christianisme. Presbyterianisme et catholicisme introduits par les missionaires de Bale (vers 1894)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Avatime (Siyase / Sia)",
+      "isoCodes": ["avn"],
+      "dialects": [],
+      "vehicularRole": "La langue avatime (siyase) est la langue maternelle des Kedanima dans leurs sept villages. L'ewe est utilise comme langue d'enseignement dans les premieres annees du primaire et dans les eglises ; la majorite des Avatime parlent l'ewe comme deuxieme langue. L'anglais est la langue officielle du Ghana et le medium d'enseignement dans le secondaire."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de puberte feminine (kpe ablabe / nubilite) : rites post-menarche confirmant le statut de femme adulte Avatime (keda'midze). Ces rites, qui duraient autrefois environ deux mois (incluant ceremonies de mariage et preparation a la vie adulte mariee), sont pratiques dans une forme raccourcie depuis les annees 1940. Une version posthume est realisee sur le corps d'une femme decedee sans avoir accompli le rite, afin qu'elle soit enterree en tant que femme Avatime. Le statut de keda'midze confere a une femme le droit de posseder un foyer, de cuisiner pour un homme, de prendre la parole en reunion publique et d'organiser les affaires familiales et communautaires. Festival annuel de l'Amu (riz brun local) celebrant la culture du riz.",
+      "symbols": "La colline de Gemi (deuxieme plus haute montagne du Ghana) est le symbole territorial et defensif central : elle abrite le point de peuplement humain le plus eleve du Ghana et a permis de repousser l'invasion asante en 1869. Les grottes de Biakpa sont un site archeologique et culturel important.",
+      "artsAndMusic": "Culture agricole forte, notamment la riziculture (AMU = nom local du riz brun). Eco-tourisme developpe autour d'Amedzofe (societe Avatime-Gemi Otoga Eco-Tourism Society, AGOETOUSO) : plantes, animaux, chutes d'eau, montagnes, grottes. Les tombes des missionaires allemands constituent une attraction touristique locale.",
+      "spiritualities": "Animisme traditionnel avec possession d'esprits (pratique aux cotes du christianisme). Dieu supreme Aya (Mawu Aya). Autres divinites et dieux ancestraux. Christianisme (presbyterien ou catholique) introduit il y a environ cent ans ; moins de 10% de la population frequente regulierement l'eglise, avec un nombre supplementaire de chretiens nominaux."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Paramountcy d'Adja Tekpor (Osei Adzatekpor XII), couvrant les sept villages Avatime. Organisation politique propre avec termes de titulature uniquement Avatime (Osie pour le paramount, okusie pour les chefs de village) aux cotes des titres empruntes au vocabulaire akan et ga.",
+      "relationsWithNeighbors": "A l'ouest : Nyangbo et Tafi (langues etroitement apparentees) ; au nord : Logba (langues GTM distantes) ; au sud et a l'est : groupes ewe. Emprunts culturels et terminologiques aux Akan et aux Ga. Partage du territoire elargi avec les Ewe, langue vehiculaire dominante de la region. Confrontation avec les habitants de Matse lors de l'arrivee (avant 1720). Resistance a l'invasion asante en 1869.",
+      "conflictsOrAlliances": "Guerre de Matse (avant 1720) : les Avatime ont bloque l'eau des habitants pour s'installer sur les collines. 1869 : defensive contre l'armee asante d'Adu Bofour depuis les collines de Gemi pres d'Amedzofe.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 31000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia EN - Avatime language : 27 200 locuteurs natifs en 2013 ; 101 Last Tribes : environ 24 000 personnes, langue parlee par plus de 31 000 personnes au Ghana.",
+      "distributionByCountry": [{ "country": "GHA", "population": 31000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN - Avatime people (https://en.wikipedia.org/wiki/Avatime_people)",
+      "Wikipedia EN - Avatime language (https://en.wikipedia.org/wiki/Avatime_language)",
+      "101 Last Tribes - Avatime people (http://www.101lasttribes.com/tribes/avatime.html)",
+      "Ethnologue - Avatime Language (AVN) (https://www.ethnologue.com/language/avn/)",
+      "Joshua Project - Avatime, Sideme in Ghana (https://joshuaproject.net/people_groups/10496)",
+      "CAL Causality Across Languages - Avatime (Kwa) (https://causalityacrosslanguages.wordpress.com/languages/avatime-kwa/)",
+      "Brydon Lynne - Women Chiefs and Power in the Volta Region, 1996 (citee dans 101 Last Tribes)"
+    ]
   }
 }

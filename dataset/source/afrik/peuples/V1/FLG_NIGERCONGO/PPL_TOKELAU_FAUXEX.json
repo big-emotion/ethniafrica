@@ -1,0 +1,56 @@
+{
+  "id": "PPL_TOKELAU_FAUXEX",
+  "nameMain": "Tokelau (Faux exonyme)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "Tokelau (Faux exonyme)",
+      "selfAppellation": "N/A",
+      "exonyms": [
+        "Tokelau (terme erroné, ne correspond pas à un peuple africain)"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "N/A",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": {
+      "ancientOrigins": "Ce fichier identifie un exonyme erroné. Tokelau fait référence à un territoire du Pacifique, non à un peuple africain.",
+      "migrationRoutes": ["N/A"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "N/A",
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": [
+      "Ce fichier identifie un exonyme erroné qui ne correspond pas à un peuple africain."
+    ]
+  }
+}

@@ -6,64 +6,122 @@
   "content": {
     "appellations": {
       "mainName": "Ewe",
-      "selfAppellation": "Eʋe / Eʋegbe",
-      "exonyms": ["Ewe (terme utilisé par les Européens)"],
+      "selfAppellation": "Ewe (en ewe : Eʋe), locuteurs de l'Eʋegbe",
+      "exonyms": [
+        "Ewhe (variante orthographique allemande coloniale)",
+        "Vhe (denomination interne pour certains groupes)",
+        "Togolese (appellation anglophone rare)"
+      ],
+      "originOfExonyms": "Le terme Ewe vient de l'endonyme Eʋe, qui designe a la fois le peuple et sa langue (Eʋegbe signifiant 'langue des Ewe'). Les Allemands utiliserent la graphie Ewhe a l'epoque coloniale du Togo. Le terme Dogbo est mentionne dans certaines sources comme denomination anterieure.",
+      "whyProblematic": "Les frontieres coloniales (Berlin 1884) ont divise l'Eweland entre la Gold Coast britannique (Ghana actuel) et le Togo allemand, puis franco-britannique. Le referendum de 1956 sur la reunification du Togo britannique fut une tentative partiellement reussie. La question de l'unite politique des Ewe reste sensible.",
+      "contemporaryUsage": "Le terme Ewe est universellement utilise dans les contextes francophones (Togo, Benin) et anglophones (Ghana). L'endonyme Eʋe est utilise par les locuteurs eux-memes. L'Ewe est langue nationale au Togo et langue regionale officielle au Ghana.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bénoué-Congo (Gbe)",
-      "historicalRegion": "Ghana (Volta), TGO, BEN",
+      "ethnoLinguisticGroup": "Gbe (Benoue-Congo / Niger-Congo occidental), branche des langues kwa",
+      "historicalRegion": "Eweland (Eʋeduko) : sud-est du Ghana (Region Volta), sud du Togo, est du Benin (Mono, Couffo)",
       "currentCountries": ["TGO", "BEN", "GHA"]
     },
     "ethnicities": [
-      "Ewe du Ghana (Volta)",
-      "Ewe du Togo",
-      "Ewe du Bénin (Mono, Couffo)"
+      "Anlo Ewe (cote du Ghana, region de Keta et Anloga, sous-groupe le plus connu)",
+      "Tongu / Tɔŋu (delta de la Volta, Ghana)",
+      "Avenor (zone cotiere entre Keta et Lome)",
+      "Evedome (Danyi) (zones de plateaux interieurs du Togo)",
+      "Waci (zone frontaliere Togo-Benin, dialecte parfois considere comme langue distincte)",
+      "Peki (zone interieure du Ghana)",
+      "Kpando (zone nord de l'Eweland ghaneen)",
+      "Ho (capitale administrative de l'Eweland ghaneen)",
+      "Gen / Mina (groupe cotier apparente, Togo-Benin)"
     ],
     "origins": {
-      "ancientOrigins": "Migration depuis Notsé (Togo) selon tradition orale. Branche importante du groupe Gbe.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Relations anciennes avec Fon, Adja et Yoruba. Influence du christianisme et du vodun."
+      "ancientOrigins": "Les origines des Ewe remontent a Ketu, une ville yoruba situee dans le Benin actuel (frontiere Benin-Nigeria). Leurs ancetres vivaient aux cotes des Yoruba, des ancetres des Aja, Fon et Ga-Dangme. La pression d'expansion yoruba poussa les proto-Ewe vers l'ouest, vers Tado (pres du fleuve Mono, Togo actuel), puis vers Notsie (Togo central), ou ils s'installerent vers 1500. Notsie constitue le point de dispersion majeur, equivalent symbolique de l'Egypte biblique pour ce peuple.",
+      "formationPeriod": "L'identite ewe se consolida a Notsie entre le 15e et le 17e siecle. La fuite dramatique de Notsie (vers 1720) sous le roi tyran Agokoli I (qui imposait des corvees inhumaines et tuait les anciens) constitue l'evenement fondateur de la conscience collective ewe. La dispersion post-Notsie produisit les differents groupes regionaux actuels.",
+      "migrationRoutes": [
+        "Ketu (Benin/Nigeria) vers Tado (fleuve Mono, Togo) : migration vers l'ouest entre le 11e et le 15e siecle",
+        "Tado vers Notsie (centre Togo) : installation vers 1500",
+        "Fuite de Notsie vers 1720 : dispersion vers le sud et l'ouest en trois groupes principaux",
+        "Groupe nord : vers Kpando et Gbi-Hohoe (Ghana), rencontrant des Akan et Guan",
+        "Groupe central : vers la cote du Togo (Tsevie, Lome) et le Ghana meridional",
+        "Groupe cotier : vers Keta et le delta de la Volta (Anlo Ewe)"
+      ],
+      "historicalSettlementZones": [
+        "Region Volta (sud-est du Ghana) : Anlo, Ho, Kpando, Hohoe, Peki",
+        "Sud du Togo : Lome, Tsevie, Akatsi, Notse, Aneho",
+        "Est du Benin : departements du Mono et du Couffo",
+        "Frontiere Nigeria-Benin (quelques groupes residuels)"
+      ],
+      "unificationsOrDivisions": "Les Ewe n'ont jamais forme un Etat centralise : leur organisation en villages et chefferies independantes reflete un refus historique du pouvoir centralise, renforce par l'experience de Notsie. Ils se reunissaient en temps de guerre. La colonisation europeenne divisa l'Eweland entre la Gold Coast britannique et le Togo allemand (1884), puis franco-britannique (1914), creant une fracture administrative persistante.",
+      "externalInfluences": "Influence yoruba ancienne (origines). Interactions avec les Aja, Fon et Adja (voisins proches de la famille Gbe). Commerce et conflits avec l'Empire Ashanti (adoption de certains modeles de tissage kente). Traite negriere : les Ewe furent a la fois victimes et parfois acteurs. Colonisation allemande (Togo, 1884-1914), puis franco-britannique. Christianisme (missionnaires protestants allemands de la Norddeutsche Missionsgesellschaft, puis catholiques).",
+      "majorHistoricalEvents": "Fuite collective de Notsie (vers 1720) : evenement fondateur commémeoré chaque annee lors du festival Hogbetsotso des Anlo Ewe. Conflit avec le royaume danois en 1784 autour des forts cotiers. Partage colonial de l'Eweland par la Conference de Berlin (1884). Mandat franco-britannique apres 1914. Referendum de 1956 sur le Togo britannique (fusion avec le Ghana). Independance du Togo en 1960, du Benin en 1960, du Ghana en 1957."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Chefferies locales. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Lignages familiaux. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe patrilineaire decentralisee, fondee sur des lignages dirigés par l'aine masculin. Les decisions sont prises par un conseil d'anciens. La fierte de l'independance locale est forte (traumatisme de Notsie). En temps de guerre, le grand-pretre traditionnel (du territoire) joue le role de coordinateur politique supreme. Les femmes ont traditionnellement un role important comme marchandes et commercantes en gros et en detail.",
+      "clanOrganization": "Organisation en lignages patrilineaires (hlo). Chaque lignage honore des ancetres masculins et possede une deite ancestrale collective. Le totemisme clanique (chaque clan a un animal totemique) structure les alliances et les interdits alimentaires. La terre est consideree comme un heritage ancestral inalienable, jamais vendue.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (hlo) organisent la residence, la propriete fonciere, les mariages (exogamie clanique), les rituels et la transmission du pouvoir cheftal. Les ancetres du lignage sont venerés et invoques pour leur protection. Le pretre-lineage (hlofia) communique avec les ancetres.",
+      "religiousAuthority": "Le systeme Vodun structure l'autorite religieuse : chaque divinite (trɔ) a son pretre ou sa pretresse dedies. Le pretre du Yeve (culte du tonnerre) joue un role de juge moral. Le devin-oracle (bokono) utilise le systeme Afa (equivalent ewe du Ifa yoruba) pour les consultations. Depuis le 19e siecle, les eglises chretiennes (protestantes puis catholiques) ont une influence croissante, coexistant avec les pratiques vodun."
     },
     "languages": {
-      "mainLanguage": "Ewe",
-      "vehicularRole": "L'ewe est parlé par la majorité des Ewe. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Ewe (Eʋe / Eʋegbe)",
+      "isoCodes": ["ewe"],
+      "dialects": [
+        "Anlo (dialecte cotier ghaneen, base du standard litteraire)",
+        "Tongu / Tɔŋu (delta de la Volta)",
+        "Avenor (zone cotiere)",
+        "Evedome / Danyi (plateaux du Togo)",
+        "Ho (zone interieure Ghana)",
+        "Kpando (nord de l'Eweland ghaneen)",
+        "Waci (frontiere Togo-Benin, parfois langue distincte selon Ethnologue)",
+        "Gen / Mina (dialecte lingua franca du Togo, parle a Lome et dans les marches)"
+      ],
+      "vehicularRole": "L'ewe est langue nationale officielle au Togo et langue regionale soutenue par l'Etat au Ghana. Il est utilise dans l'education, le commerce, les medias et la culture. Gen/Mina (issu de l'ewe) sert de lingua franca dans tout le Togo. L'ewe est enseigne dans les ecoles primaires et fait l'objet de productions litteraires et radiophoniques."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Musique Agbadza",
-      "source_1": "Rituels vodun",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Tissage kente (variante ewe), symboles vodun",
-      "Arts et musique": "",
-      "source_4": "Musique Agbadza",
-      "source_5": "Tissage kente (variante ewe)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Rituels vodun. Syncrétisme entre croyances traditionnelles et christianisme."
+      "majorRites": "Le festival Hogbetsotso (annuel, organisé par les Anlo Ewe au Ghana en novembre) commémore la fuite de Notsie : processions, danses agbadza, reconstitutions historiques. Rites de naissance (offrandes aux ancetres, imposition du nom). Circoncision masculine (pratiquee dans certains groupes). Rites d'initiation au Vodun (yawotcha) : long processus d'initiation ou l'initie epouse spirituellement sa divinite. Funerailles : evenement social majeur, accompagne de nuits de danse (bobobo, agbadza), de dons et de festins. Rites agricoles (offrandes avant les semailles). Rituels de divination Afa (equivalent du systeme Ifa yoruba) pour les decisions importantes.",
+      "symbols": "Le tissu kente ewe (distinct du kente ashanti par ses motifs geometriques plus libres et individualises, tisses sur des metiers portables) est le symbole culturel le plus reconnu internationalement. Les tambours sacrés (atsimevu, sogo, kidi, kagan) symbolisent la hierarchie sociale et spirituelle. La figure du Legba (gardien des carrefours) et les shrines vodun sont des symboles du sacre. La ville de Notsie est un haut lieu de memoire collective.",
+      "artsAndMusic": "L'artisanat textilier ewe est mondialement reconnu : tissage du kente sur des metiers portables a bandes etroites, avec des motifs geometriques en bleu/blanc (influence savane) et des couleurs vives (commerce europeen et indien). Les Ewe sont reputes pour leur capacite d'innovation et d'adaptation des motifs (y compris imitation du kente ashanti). La musique ewe est complexe et regionale : le style pentatonique du sud est influence par la tradition yoruba, le style diatonique du centre-nord par les Akan. Les tambours forment un ensemble hierarchique : kagan (enfant), kidi (mere), sogo (pere), atsimevu (grand-pere). Danses traditionnelles majeures : agbadza (ancienne danse de guerre reconvertie en danse recreative et de festival), atsiagbekor (danse de guerre du peuple Ewe-Anlo), atsia (danse feminine dirigee par le tambourinaire principal), adevu (danse de chasse), bobobo/akpese (funerailles et celebrations sociales), sowu (culte Yewe). Poesie orale et contes (halo). Sculpture sur bois (statuettes votives, bocio).",
+      "spiritualities": "Le Vodun est le systeme spirituel ancestral des Ewe : croyance en un Dieu supreme (Mawu, associee a la lune ; Lisa, au soleil) et en de nombreuses divinites intermediaires (trowo). Parmi les trowo principaux : Xevioso/Yeve (dieu du tonnerre et de la justice), Sakpata (dieu de la terre et des maladies), Legba (gardien des carrefours), Egu (dieu du metal), Mami Wata (divinite des eaux). Le culte Yewe (ou Yeve) est une institution initiatique majeure autour de la divinite du tonnerre. La divination Afa (systeme oraculaire a 256 signes) guide les decisions de vie. L'ame individuelle comprend le luvo (ame immortelle) et le se (destin preassigne). Le Vodun coexiste avec le christianisme (protestant majoritaire, catholique) dans un syncretisme repandu, surtout au Ghana et au Togo."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ewe dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Ewe n'ont pas developpe de grand royaume centralise. La chefferie anlo (fiaga des Anlo Ewe) est la plus institutionnalisee. La ville de Notsie (Togo) fut une cite-etat fortifiee importante avant la dispersion du 18e siecle. Les Ewe s'organiserent historiquement en federations de chefferies locales capables de coalitions militaires en cas de menace exterieure.",
+      "relationsWithNeighbors": "Relations complexes avec les Ashanti (Ghana) : conflits et emprunts culturels (kente), les Ewe refusant la domination ashanti. Relations etroites avec les Fon (Benin) et les Aja (partage de l'heritage Gbe). Commerce avec les royaumes yoruba. Conflits avec les Danois coloniaux (1784). Relations avec les Ga-Dangme (voisins occidentaux). La division coloniale crea des tensions entre Ewe du Ghana et du Togo, mais le sentiment d'appartenance culturelle commune persiste.",
+      "conflictsOrAlliances": "Conflit avec le roi Agokoli de Notsie (fuite collective vers 1720). Guerre contre les forces danoises (1784). Resistance aux raids de l'Empire Ashanti et du Dahomey qui capturait des Ewe pour la traite. Division coloniale de l'Eweland (1884-1914). Pression unificationiste post-independance : le mouvement Togoland Congress souhaitait reunifier l'Eweland dans un seul Etat, en vain.",
+      "diaspora": "Une diaspora ewe significative est present dans les grandes villes ouest-africaines (Accra, Lome, Cotonou) et en Occident (France, Allemagne, Etats-Unis, Royaume-Uni, Canada). L'organisation CEANA (Council of Ewe Association of North America) coordonne les activites diasporiques nord-americaines. La communaute ewe maintient fortement son identite culturelle et linguistique a l'etranger."
     },
     "demography": {
-      "totalPopulation": 10300000,
+      "totalPopulation": 9500000,
       "referenceYear": 2025,
-      "source": "Ethnologue (ewe), GHA & Togo Gbe Studies"
+      "source": "Synthese de plusieurs sources : Wikipedia EN (Ewe people, 2024 : Ghana 6 millions, Togo 3,1 millions) ; Joshua Project (GH : 3 045 000 Ewe au Ghana, TGO : 2 101 000, BEN : 191 000) ; Diaspora Affairs GH (2026, Ghana 6 millions, Togo 3,1 millions). Total estime pour 2025 (Ghana + Togo + Benin + autres) : environ 9,5 millions.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 6000000,
+          "note": "Region Volta (sud-est) et Region Orientale ; environ 13% de la population nationale"
+        },
+        {
+          "country": "TGO",
+          "population": 3100000,
+          "note": "Sud du Togo, de Lome aux plateaux centraux ; premiere ethnie du Togo"
+        },
+        {
+          "country": "BEN",
+          "population": 191000,
+          "note": "Departements du Mono et du Couffo (est du Benin)"
+        },
+        {
+          "country": "BFA",
+          "population": 46000,
+          "note": "Burkina Faso (sud) selon Joshua Project"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ewe language (ewe)",
-      "Ghana & Togo Gbe Studies",
-      "CIA World Factbook",
-      "Recensements nationaux"
+      "Wikipedia EN — Ewe people. https://en.wikipedia.org/wiki/Ewe_people",
+      "Wikipedia EN — Ewe language. https://en.wikipedia.org/wiki/Ewe_language",
+      "SIL Ethnologue — Ewe language (ewe). https://www.ethnologue.com/language/ewe/",
+      "Glottolog — Ewe. https://glottolog.org/resource/languoid/id/ewee1241",
+      "Joshua Project — Ewe in Ghana. https://joshuaproject.net/people_groups/11169/GH",
+      "Diaspora Affairs GH — The Ewe Migration Story: From Notsie to Ghana's Volta Region. https://diasporaaffairsgh.org/ewe-migration-history-ghana/",
+      "EWAGA — History of the Ewes (Prof. D.E.K. Amenumey). https://ewaga.org/about-us/history-of-the-ewes/",
+      "Wikipedia EN — West African Vodun. https://en.wikipedia.org/wiki/West_African_Vod%C3%BAn"
     ]
   }
 }

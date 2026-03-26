@@ -1,0 +1,62 @@
+{
+  "id": "PPL_KABYE",
+  "nameMain": "Kabye",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Kabye",
+      "selfAppellation": "",
+      "exonyms": [
+        "\"Kabye\" (terme utilisé par les Européens), \"Kabiyè\" (variante)"
+      ],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Nord du Togo",
+      "currentCountries": ["TGO"]
+    },
+    "ethnicities": ["Kabye"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Nord du Togo"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Kabye (kbp)",
+      "isoCodes": ["kbp"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 1,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

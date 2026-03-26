@@ -2,67 +2,114 @@
   "id": "PPL_SERER",
   "nameMain": "Sérère",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["SEN", "GMB"],
+  "currentCountries": ["SEN", "GMB", "MRT"],
   "content": {
     "appellations": {
       "mainName": "Sérère",
-      "selfAppellation": "Sérère",
-      "exonyms": ["Sérère (terme utilisé par les Européens)"],
+      "selfAppellation": "Seereer",
+      "exonyms": ["Sérère", "Serer", "Sereer", "Serere", "Serre"],
+      "originOfExonyms": "L'exonyme Sérère (ou Serer) est utilisé en français depuis la période coloniale pour désigner ce groupe. Le terme endonymique est Seereer. Les variantes orthographiques (Sereer, Serere, Serre) sont des transcriptions différentes d'une même réalité ethnolinguistique. Chaque sous-groupe (Seereer-Sine, Ndut, Noon, Saafi, Palor, Laalaa) porte en outre son propre nom.",
+      "whyProblematic": "Le terme Sérère recouvre une réalité linguistique et culturelle complexe : les différents sous-groupes serer parlent soit le sérère proprement dit (serer-sine), soit des langues cangin apparentées (Noon, Ndut, Saafi, Palor, Laalaa) qui ont une faible intelligibilité mutuelle avec le sérère-sine. La classification Niger-Congo est débattue, certains chercheurs plaçant les langues sérère-cangin dans un rameau autonome atlantique.",
+      "contemporaryUsage": "Le terme Sérère est couramment utilisé au Sénégal et en Gambie pour désigner cet ensemble ethno-linguistique. Les Sérère constituent le troisième groupe ethnique du Sénégal. Leur identité ethno-religieuse reste fortement marquée, malgré la conversion majoritaire à l'islam au cours du XXe siècle.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Atlantique (sous-groupe du Niger-Congo)",
-      "historicalRegion": "SEN, GMB",
-      "currentCountries": ["SEN", "GMB"]
+      "ethnoLinguisticGroup": "Atlantique occidental (sous-groupe sérère-cangin, Niger-Congo)",
+      "historicalRegion": "Sénégambie — Sine-Saloum, Fatick, Kaolack, Thiès (Sénégal), Gambie",
+      "currentCountries": ["SEN", "GMB", "MRT"]
     },
     "ethnicities": [
-      "Sérère du Sénégal",
-      "Sérère de Gambie",
-      "Sous-groupes régionaux"
+      "Seereer-Sine (Sérère du Sine) — les plus nombreux, vallées du Sine et du Saloum",
+      "Seereer-Ndut — sud du Cayor, nord-ouest de l'ancien Thiès",
+      "Seereer-Noon — région de Thiès, Sénégal",
+      "Seereer-Saafi — triangle sud-ouest de Thiès (entre Diamniadio, Popenguine et Thiès)",
+      "Seereer-Palor (Falor) — Thiès, centre-ouest du Sénégal",
+      "Seereer-Laalaa (Lehar) — nord de Thiès, région de Tambacounda",
+      "Seereer-Niominka — îles du Saloum, Sénégal",
+      "Seereer-Njeghen (Dyegueme) — ancien Baol, Sénégal"
     ],
     "origins": {
-      "ancientOrigins": "Les Sérère sont originaires de la région du Sénégal et de la Gambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins (Wolof, Peuls), influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Sérère sont parmi les plus anciens habitants de la Sénégambie. Selon le chercheur David Galvan et d'autres historiens, les Sérère ont migré vers le sud depuis la région du Fuuta Tooro (vallée du fleuve Sénégal) à partir du XIe siècle, lorsque l'islam franchit le Sahara via le mouvement almoravide. Des données anthropologiques physiques et des archives linguistiques attestent de leur présence ancienne dans la région du Sine-Saloum. L'ethnie sérère est en réalité une fusion de deux groupes distincts — l'un d'origine plus méridionale, l'autre venu du nord — ce qui explique son système de parenté bilinéaire complexe.",
+      "formationPeriod": "L'identité sérère distincte s'est consolidée entre le XIe et le XVIe siècle avec la résistance aux pressions d'islamisation almoravide et wolof. Les royaumes du Sine et du Saloum, fondés par la dynasties Guelowar (d'origine mandingue maternelle) à partir du XVe siècle, ont constitué l'armature politique de l'identité sérère. Ces deux royaumes ont résisté à l'islamisation forcée jusqu'à la fin du XIXe siècle.",
+      "migrationRoutes": [
+        "Migration depuis la vallée du fleuve Sénégal (Fuuta Tooro) vers le sud, à partir du XIe siècle, sous la pression des Almoravides",
+        "Dispersion vers la région du Sine-Saloum et de Thiès (Sénégal occidental)",
+        "Expansion vers les îles du Saloum (Seereer-Niominka)",
+        "Présence en Gambie par continuité géographique avec le Saloum sénégalais"
+      ],
+      "historicalSettlementZones": [
+        "Sine-Saloum : Fatick, Kaolack (coeur historique du peuplement sérère)",
+        "Région de Thiès (Sénégal) — sous-groupes Noon, Ndut, Saafi, Palor",
+        "Îles du Saloum (delta du Saloum, Sénégal) — Niominka",
+        "Gambie septentrionale — extension du domaine du Saloum",
+        "Mauritanie du sud (très petite communauté)"
+      ],
+      "unificationsOrDivisions": "Les Sérère n'ont pas formé un État unitaire. Les royaumes du Sine (Maad a Sinig) et du Saloum (Maad Saloum), dirigés par des dynasties Guelowar, ont été les structures politiques majeures. Le royaume de Baol a également été gouverné par des dynasties à composante sérère. Ces royaumes ont coexisté avec les royaumes wolof (Jolof, Cayor, Waalo) et les sultanats peuls du Fuuta Toro.",
+      "externalInfluences": "Pression d'islamisation des Almoravides (XIe siècle). Expansion des royaumes wolof (Jolof, Cayor). Mouvement maraboutique du XIXe siècle (Lat Dior, Maba Diakhou Ba). Colonisation française (XIXe-XXe siècles). Islamisation massive au XXe siècle, notamment via les confréries Mourides et Tidjanes. Christianisation de certains sous-groupes (notamment autour de Thiès et Joal).",
+      "majorHistoricalEvents": "Fondation du royaume de Sine (XVe siècle). Résistance aux guerres maraboutiques de Maba Diakhou Ba (1860s). Bataille de Somb (1867) : victoire sérère sur les armées maraboutiques. Colonisation française et intégration au Sénégal français. Mort des derniers rois sérères, Maad a Sinig Mahecor Joof et Maad Saloum Fode N'Gouye Joof, en 1969. Restauration cérémonielle de la royauté du Saloum en 2017 et du Sine en 2019. Indépendance du Sénégal en 1960."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Système de royautés (Maad a Sinig pour le Sine, Maad Saloum pour le Saloum) à la tête d'États organisés. Au niveau local, les Lamanes (chefs de terre héréditaires) administraient les villages et les terres. La classe des Tyeddo (guerriers-nobles) exécutait les décisions royales. Les Saltigue (grands prêtres et prêtresses sérères, devins héréditaires) avaient une autorité religieuse distincte de l'autorité politique.",
+      "clanOrganization": "Système bilinéaire (double filiation) unique en Sénégambie : la descendance patrilinéaire (kucarla) détermine certains droits et la transmission des biens paternels ; la descendance matrilinéaire (tiim / ƭeen yaay) détermine d'autres droits et la transmission des biens maternels. La société sérère était hiérarchisée en cinq strates : nobles (sang royal), Tyeddo (guerriers), Jaraff (hommes libres cultivateurs, dont le jaraff était le chef), castes artisanales (forgerons, tisserands, griots, bijoutiers) et esclaves (la culture sérère condamne l'esclavage mais cette pratique a existé).",
+      "ageClassSystems": "Le Ndut est le rite d'initiation collectif qui regroupe les garçons d'une même classe d'âge. Les initiés (njuli) passent plusieurs semaines ensemble dans un espace sacré (le ndut, la «nid») hors du village. Ces classes d'âge créent des liens de fraternité durables structurant la vie sociale adulte.",
+      "roleOfLineages": "Les lignages patrilinéaires (kucarla) et matrilinéaires (ƭeen yaay) jouent des rôles complémentaires dans l'héritage, l'identité et les alliances. Le Pangool (esprit ancestral) de la lignée maternelle et celui de la lignée paternelle sont vénérés séparément. La bilinéarité sérère est un trait distinctif dans la région, la plupart des peuples voisins (Wolof, Mandingue) étant patrilinéaires.",
+      "religiousAuthority": "Le Saltigue (Saltigi) est le grand prêtre ou la grande prêtresse sérère, choisi parmi la lignée des Lamanes pour ses dons oraculaires. Les Saltigue tiennent la cérémonie annuelle Xooy (divination des pluies), prédisant le cours des saisons. Les O Yaal Pangool (maîtres du culte des pangool) sont les gardiens des autels ancestraux et des rites locaux. Ces fonctions coexistent aujourd'hui avec l'islam (pratiqué par environ 85 % des Sérère contemporains) et le christianisme."
     },
     "languages": {
-      "mainLanguage": "Sérère",
-      "vehicularRole": "Le sérère est parlé par la majorité des Sérère. Le français, le wolof et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Sérère-Sine (Seereer-Siin)",
+      "isoCodes": ["srr", "sfi", "snf", "fap", "laa"],
+      "dialects": [
+        "Seereer-Sine (srr) — langue principale, vallées du Sine et du Saloum, environ 1,2 million de locuteurs au Sénégal",
+        "Saafi-Saafi (sfi) — sous-groupe cangin, région de Thiès, environ 114 000 locuteurs",
+        "Noon (snf) — sous-groupe cangin, Thiès, environ 33 000 locuteurs",
+        "Ndut (dtu) — sous-groupe cangin, ouest de Thiès, environ 39 000 locuteurs",
+        "Palor (fap) — sous-groupe cangin, environ 11 000 locuteurs",
+        "Lehar-Laalaa (laa) — sous-groupe cangin, nord de Thiès, environ 12 000 locuteurs"
+      ],
+      "vehicularRole": "Le sérère-sine est la langue maternelle de la grande majorité des Sérère et fait partie du curriculum national sénégalais. Le wolof est la langue véhiculaire du Sénégal, très utilisée par les Sérère en contexte urbain. Le français est la langue officielle du Sénégal. En Gambie, l'anglais est la langue officielle et le mandingue la principale langue véhiculaire."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles culturels sérère, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (tambours, flûtes)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le Ndut est le rite de passage fondamental de la religion sérère, commandé par la foi en Roog : les garçons sérères doivent le subir une fois dans leur vie. Le rite comporte la circoncision (pour les garçons), un séjour dans un espace sacré isolé (le ndut, signifiant nid), et un enseignement religieux et moral intense. Avant la circoncision, chaque garçon prononce publiquement le Kan boppam (déclaration de courage en vers). Les filles reçoivent leur initiation via le njam (tatouage des gencives). La cérémonie du Raan (festival annuel du Pangool de Tukar) se tient chaque année le deuxième jeudi après la nouvelle lune d'avril. Le Xooy est la cérémonie annuelle de divination des pluies par les Saltigue. Le lundi est le jour de repos sacré dans la religion sérère ; jeudi est également un jour saint où certaines activités sont interdites.",
+      "symbols": "Le Pangool (singulier Fangool) est représenté par deux serpents noirs enroulés : symbole des esprits ancestraux intercesseurs entre les vivants et Roog. L'arbre Njambayargin (bauhinia rufescens) est un arbre sacré lié aux rites agricoles anciens. L'étoile Yoonir (Sirius) est sacrée et annonce le début des pluies et des semailles. Le fleuve Sine sacré est un lieu de prière et d'offrandes. Le baobab (arbre géant) est vénéré comme lieu de prières et de libations.",
+      "artsAndMusic": "Le Njuup est la tradition musicale religieuse sérère fondamentale, liée au rite du Ndut : les initiés composent des chants religieux dans le ndut pour surpasser l'épreuve de la circoncision. Musique percussive à base de tama (tambour d'aisselle), perngel, lamb, sabar et qiin. Le Tassu (Tassou) est une tradition de déclamation orale rythmée, ancêtre du rap, issue de la tradition sérère. Le Njuup est reconnu comme le progeniteur du mbalax (musique nationale populaire du Sénégal et de la Gambie), popularisé par Youssou N'Dour. La lutte sénégalaise (Laamb ou Njom) est originaire de la culture sérère. Arts visuels : sculpture, poterie féminine, vannerie, travail du cuir et de la forge.",
+      "spiritualities": "La religion sérère (A tat Roog, la voie du Divin) est une religion ancestrale monothéiste avec des intermédiaires. Roog (ou Koox dans les langues cangin) est la divinité suprême, créatrice et omnipotente, non directement accessible aux croyants ordinaires. Les Pangool (ancestral saints and spirits) jouent le rôle d'intercesseurs : ils accompagnaient les fondateurs de villages (Lamanes) et deviennent après leur mort des entités sacrées protégeant les lignages et les lieux. Les offrandes (bull, mouton, chèvre, poulet, récoltes) sont adressées aux Pangool lors de prières et libations. Croyance en la réincarnation (Ciid). Au XXe siècle, environ 85 % des Sérère ont adopté l'islam (sufisme mouride et tidiane) ; une minorité est chrétienne (notamment à Joal-Fadiout et Thiès) ; un noyau pratique la religion traditionnelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sérère dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Sine (Maad a Sinig) a été fondé au XVe siècle par la dyansatie Guelowar et a duré jusqu'en 1969 avec la mort du dernier roi Maad a Sinig Mahecor Joof (roi de Sine). La royauté du Sine a été restaurée en 2019 (Maad a Sinig Niokhobaye Fatou Diène Diouf, première reine). Le royaume de Saloum (Maad Saloum) a coexisté avec le Sine et a pris fin également en 1969 ; la royauté du Saloum a été restaurée en 2017. Ces deux royaumes sont parmi les rares monarchies précoloniales africaines à avoir survécu jusqu'au XXe siècle. Les Sérère ont aussi gouverné des parties des royaumes wolof (Jolof, Waalo, Cayor, Baol).",
+      "relationsWithNeighbors": "Relations complexes et parfois conflictuelles avec les royaumes Wolof (Cayor, Jolof) qui ont tenté d'islamiser les Sérère par la force. Les Sérère ont maintenu pendant des siècles leur autonomie culturelle et religieuse face à la pression wolof et maraboutique. Relations commerciales et matrimoniales avec les Mandingues du Saloum. Les Peuls (Fula) sont présents dans les régions sérères comme éleveurs. En Gambie, les Sérère coexistent avec les Mandingues, Wolofs et Peuls.",
+      "conflictsOrAlliances": "Résistance aux conquêtes almoravides (XIe siècle). Résistance aux guerres saintes maraboutiques de Maba Diakhou Ba (1860s) et victoire à la bataille de Somb (1867), qui a stoppé l'islamisation forcée. Résistance à la colonisation française dans la seconde moitié du XIXe siècle. Le Sénégal indépendant (1960) compte un Sérère parmi ses figures de proue : Léopold Sédar Senghor (1er président du Sénégal, 1960-1980), issu de la famille royale du Sine.",
+      "diaspora": "Forte présence sérère dans les grandes villes sénégalaises (Dakar, Thiès, Kaolack, Ziguinchor). Communautés en Gambie (environ 1,7 % de la population gambienne selon le recensement 2024). Diaspora en France, en Espagne et dans d'autres pays européens. Les Sérère urbains ont largement contribué au développement de la musique mbalax et à la culture populaire sénégalaise."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 3100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur ANSD Sénégal (recensement RGPH 2023, 16 % de 22 millions d'habitants), Gambia Bureau of Statistics (recensement 2024, 1,7 % de 2,42 millions), SIL Ethnologue (srr), et études démographiques",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 3000000,
+          "note": "Principalement Sine-Saloum (Fatick, Kaolack), Thiès, Dakar — environ 16 % de la population sénégalaise"
+        },
+        {
+          "country": "GMB",
+          "population": 95000,
+          "note": "Sérère-Sine surtout, environ 1,7-2 % de la population gambienne (recensement 2024)"
+        },
+        {
+          "country": "MRT",
+          "population": 5000,
+          "note": "Très petite communauté dans le sud de la Mauritanie"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sérère languages (srr, srt)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples atlantiques"
+      "Wikipedia EN — Serer people. https://en.wikipedia.org/wiki/Serer_people",
+      "Wikipedia EN — Pangool. https://en.wikipedia.org/wiki/Pangool",
+      "Wikipedia EN — Ndut initiation rite. https://en.wikipedia.org/wiki/Ndut_initiation_rite",
+      "Wikipedia EN — Njuup. https://en.wikipedia.org/wiki/Njuup",
+      "Wikipedia EN — Serer religion. https://en.wikipedia.org/wiki/Serer_religion",
+      "Gambia Bureau of Statistics — 2024 Population and Housing Census. https://gambia.unfpa.org/",
+      "SIL Ethnologue — Serer-Sine language (srr). https://www.ethnologue.com/language/srr/",
+      "Galvan, Dennis Charles. The State Must Be Our Master of Fire: How Peasants Craft Culturally Sustainable Development in Senegal. University of California Press, 2004.",
+      "Gravrand, Henry. La civilisation sereer. Dakar : Nouvelles Editions Africaines, 1983."
     ]
   }
 }

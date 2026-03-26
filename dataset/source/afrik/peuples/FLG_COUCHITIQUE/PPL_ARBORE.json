@@ -6,54 +6,81 @@
   "content": {
     "appellations": {
       "mainName": "Arbore",
-      "selfAppellation": "",
-      "exonyms": ["Arborés"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Hor ou Hoor (auto-désignation par les habitants des villages d'Eegude et Murale). Les habitants de Gandarab et Kulama utilisent Arbore.",
+      "exonyms": [
+        "Erbore",
+        "Irbore",
+        "Arborés",
+        "Marle (pour les habitants de Eegude et Murale)",
+        "Ulde"
+      ],
+      "originOfExonyms": "Arbore est le terme adopte par les anthropologues et le gouvernement éthiopien, issu des deux villages de Gandarab et Kulama. Marle est l'auto-désignation des deux autres villages (Eegude et Murale). Hor/Hoor est le terme pan-communautaire utilisé par le peuple lui-meme.",
+      "whyProblematic": "Le terme Arbore ne recouvre pas l'ensemble du peuple : les habitants de deux des quatre villages (Eegude et Murale) se désignent comme Marle et non comme Arbore. Cette dualité reflète une fragmentation identitaire interne.",
+      "contemporaryUsage": "Arbore est le terme officiel utilise par le gouvernement éthiopien et dans la litterature anthropologique. Hor est l'auto-appellation la plus inclusive. Le terme Erbore est également courant dans la litterature touristique.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Couchitique de l'Est des basses terres (Lowland East Cushitic), groupe Omo-Tana",
+      "historicalRegion": "Sud de l'Éthiopie, delta de la rivière Limo (aussi appelée Dullay ou Weito), zone du Sud-Omo",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Arbore"],
+    "ethnicities": ["Arbore", "Marle"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Arbore appartiennent au groupe linguistique Omo-Tana du Couchitique Est des basses terres, partageant une origine commune avec les Daasanach, Elmolo, Bayso, Rendille, Boni et les groupes somalis. Une étude génétique de 2021 a montré que les Arbore se regroupent génétiquement plus près des Nilotiques Nyangatom et des Omotiques Karo que des autres populations couchitiques d'Éthiopie, témoignant de métissages importants avec les peuples voisins.",
+      "formationPeriod": "Présents dans la région du lac Chew Bahir (lac Stéphanie) depuis des siècles comme pasteurs. Population documentée a 3 840 en 1996 et 6 850 selon le dernier recensement.",
+      "migrationRoutes": [
+        "Établissement dans le delta de la rivière Limo au nord du lac Chew Bahir (lac Stéphanie)"
+      ],
+      "historicalSettlementZones": [
+        "Delta de la rivière Limo (Dullay/Weito), nord du lac Chew Bahir, woreda de Hamer, zone du Sud-Omo, Éthiopie",
+        "Quatre villages : Gandareb (Gandaraba), Kulaama (Kulama), Murale, Eegude"
+      ],
+      "unificationsOrDivisions": "Le peuple est uni par une organisation de classes d'âge commune et par les clans dirigeants Garle et Olmoque, tout en étant géographiquement dispersé en quatre villages dont deux ont une auto-appellation distincte (Marle).",
+      "externalInfluences": "Relations commerciales et rituelles avec les Konso et les Burji, dont la langue konso sert de lingua franca régionale. Contacts avec les Daasanach (proches linguistiquement), les Karo (omotiques), les Nyangatom (nilotiques). Politiques éthiopiennes d'administration du Sud-Omo depuis le 20e siècle.",
+      "majorHistoricalEvents": "Intégration dans l'Empire éthiopien sous Menelik II (fin 19e siècle). Administration dans le cadre de la zone du Sud-Omo au sein de la région des Nations, Nationalités et Peuples du Sud. Pression croissante sur les terres pastorales en raison des projets de développement éthiopiens dans la vallée de l'Omo (barrages, plantations)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Système dualiste combinant pouvoir politique et pouvoir rituel. Chef politique (kyrnat) et chef rituel (qawot) dont les fonctions ne sont pas strictement séparées. Les chefs de l'organisation des classes d'âge supervisent le bon déroulement de la vie quotidienne.",
+      "clanOrganization": "Deux clans principaux : Garle (aîné) et Olmoque (cadet), qui dirigent conjointement la vie politique et rituelle des Arbore et de leurs voisins. L'entrée dans les enclos sacrés des qawots (chefs rituels) s'accompagne d'offrandes de génisses, taureaux, miel, café, tabac et herbes pour recevoir des bénédictions.",
+      "ageClassSystems": "Système d'organisation par classes d'âge (age organization) contrôlant le bétail, les pâturages et l'eau ; distribuant les terres cultivables après les crues ; garantissant l'ordre. Chaque classe générationnelle (herr) accède au pouvoir après une initiation tenue environ tous les 40 ans, lors de rituels appelés ner et chirnan. Chaque herr comprend quatre classes d'âge (jim). Le groupe des jeunes en attente d'initiation dans un jim est appelé morqo.",
+      "roleOfLineages": "Les clans Garle et Olmoque déterminent le leadership politique et rituel. L'appartenance clanique régit les alliances et les médiations avec les peuples voisins.",
+      "religiousAuthority": "Le qawot (chef rituel) est la figure spirituelle centrale. Il reçoit les offrandes pour assurer la fertilité humaine, animale et végétale, la pluie et la victoire contre les ennemis. Religion traditionnelle africaine."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Arbore",
+      "isoCodes": ["arv"],
+      "dialects": [],
+      "vehicularRole": "La langue arbore (ISO 639-3 : arv) est la langue maternelle du peuple, appartenant au groupe Omo-Tana du Couchitique Est des basses terres. La langue konso sert de lingua franca régionale avec les voisins Konso et Burji. L'amharique est la langue nationale éthiopienne."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituels d'initiation des classes d'âge (ner et chirnan) tenus environ tous les 40 ans. Offrandes aux chefs rituels (qawots) pour la fertilité et la pluie. Chants et danses rituels croyus capables d'eliminer les energies négatives et d'assurer la prospérité.",
+      "symbols": "Le bétail (bovins, caprins) est le symbole central de la richesse et du statut social. Les enclos sacrés des qawots constituent des espaces rituels importants.",
+      "artsAndMusic": "Chants et danses rituels collectifs lors des cérémonies des classes d'âge. Confection de bijoux et d'ornements corporels traditionnel dans les sociétés de la vallée de l'Omo.",
+      "spiritualities": "Religion traditionnelle africaine. Culte de la fertilité (humaine, animale, végétale) et de la pluie, médiatisé par le qawot (chef rituel). Réseau d'amitié liée (bond friendship) avec d'autres groupes, facilitant l'échange de dons et le maintien de la paix."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Governance par un système bipolaire de chef politique (kyrnat) et chef rituel (qawot), soutenu par l'organisation des classes d'âge.",
+      "relationsWithNeighbors": "Réseau régional d'amitié liée (bond friendship) avec les peuples voisins pour l'échange de dons. Lingua franca konso partagée avec les Konso et Burji voisins. Relations de coexistence avec les Daasanach (proches linguistiquement), les Karo, les Nyangatom et autres peuples de la vallée de l'Omo.",
+      "conflictsOrAlliances": "Alliances rituelles et commerciales avec les Konso et Burji. Pression exercée par les projets éthiopiens de développement de la vallée de l'Omo sur les terres pastorales des Arbore.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 11000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org 2025 (11 000) ; Wikipedia Arbore people : 6 850 (recensement récent) ; 3 840 en 1996",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 11000,
+          "note": "Quatre villages : Gandareb, Kulama, Murale, Eegude ; delta de la rivière Limo, zone du Sud-Omo"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Arbore people – Wikipedia EN (https://en.wikipedia.org/wiki/Arbore_people)",
+      "Arbore language – Wikipedia EN (https://en.wikipedia.org/wiki/Arbore_language)",
+      "101 Last Tribes – Arbore people (http://www.101lasttribes.com/tribes/arbore.html)",
+      "Trip Down Memory Lane – Arbore People (https://kwekudee-tripdownmemorylane.blogspot.com/2013/01/the-arbore-are-cushitic-omo-valley.html)",
+      "Ethnologue – Arbore [arv] (https://www.ethnologue.com/language/arv/)",
+      "Sasse H.-J., The Cushitic languages of the Omo-Tana group, 1974"
+    ]
   }
 }

@@ -2,58 +2,79 @@
   "id": "PPL_LAMBYA",
   "nameMain": "Lambya",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA"],
+  "currentCountries": ["MWI", "TZA", "ZMB"],
   "content": {
     "appellations": {
       "mainName": "Lambya",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Lambya",
+      "exonyms": ["Rambia", "Lambia", "Lambwa", "Kilambya", "Ichilambya"],
+      "originOfExonyms": "Rambia est une variante phonetique du nom Lambya utilisee notamment en Tanzanie. Kilambya et Ichilambya sont des formes prefixees de la langue (ki-/ichi- = prefixe de langue en bantu). Lambwa est une autre orthographe attestee.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Lambya est utilise au Malawi, en Tanzanie et en Zambie pour designer ce peuple. En Malawi ils relevent de la chefferie Mwaulambya dans le district de Chitipa. En Tanzanie ils se trouvent dans les districts d'Ileje et de Momba (region de Songwe). En Zambie ils sont minoritaires dans le district d'Isoka, province de Muchinga.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
-      "currentCountries": ["TZA"]
+      "ethnoLinguisticGroup": "Groupe Ngulube (Bantu de la zone frontaliere Malawi-Tanzanie-Zambie)",
+      "historicalRegion": "Ulambya (district de Chitipa, nord du Malawi) ; district d'Ileje et Momba (Tanzanie) ; district d'Isoka (Zambie)",
+      "currentCountries": ["MWI", "TZA", "ZMB"]
     },
     "ethnicities": ["Lambya"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Comme les autres peuples bantous, les Lambya sont originaires du bassin du Congo. Ils font partie du groupe Ngulube, qui comprend les Safwa, Bena, Kinga, Nyakyusa et Ndali du sud de la Tanzanie, ainsi que les Sukwa et Ngonde du Malawi. Le territoire ancestral Ulambya couvre environ 950 km2 dans le nord du Malawi.",
+      "formationPeriod": "Fondation du Royaume Lambya vers 1600. L'etablissement et l'expansion du royaume sont documentes entre environ 1600 et 1750 (Cambridge African Studies Review, 1993).",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo vers les hauts plateaux du nord du Malawi et du sud-ouest de la Tanzanie"
+      ],
+      "historicalSettlementZones": [
+        "Ulambya (district de Chitipa, nord du Malawi)",
+        "District d'Ileje, region de Mbeya (Tanzanie)",
+        "District de Momba, region de Songwe (Tanzanie)",
+        "District d'Isoka, province de Muchinga (Zambie)"
+      ],
+      "unificationsOrDivisions": "Le Royaume Lambya est une entite politique historique distincte, bien que de petite taille. Les Lambya de Malawi constituent le noyau principal du groupe ethnique ; ceux de Tanzanie et de Zambie sont le resultat d'expansions ulterieures. Le dialecte Sukwa, autrefois considere comme un dialecte du nyakyusa, est desormais classe comme dialecte du lambya.",
+      "externalInfluences": "Influence du Chitumbuka, lingua franca du nord et du centre du Malawi, qui a remplace le lambya comme langue courante chez la majorite des Lambya du Malawi, notamment les jeunes. En Tanzanie, le swahili est adopte comme langue nationale. Periode coloniale britannique au Malawi (Nyasaland) et en Rhodesie du Nord (Zambie).",
+      "majorHistoricalEvents": "Etablissement et expansion du Royaume Lambya (vers 1600-1750). Periode coloniale avec integration dans le Nyasaland britannique. Independance du Malawi (1964), de la Tanzanie (1961) et de la Zambie (1964). Maintien de la chefferie Mwaulambya au Malawi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme monarchique traditionnel. Au Malawi, les Lambya sont gouvernes par la Haute Chefferie Mwaulambya, dont le quartier general est a Chinunkha dans le district de Chitipa. La chefferie est une institution reconnue par l'Etat malawien.",
+      "clanOrganization": "Organisation clanique bantoue. Les clans sont la base des alliances matrimoniales et de la transmission du pouvoir.",
+      "roleOfLineages": "Les lignages royaux controlent la succession a la chefferie. La filiation est centrale dans la legitimite politique.",
+      "religiousAuthority": "Les chefs exercent une autorite spirituelle. Le chef possede un tambour ceremonial (symbole du pouvoir funeraire) : la famille du defunt doit demander au chef (umwene) la permission d'utiliser ce tambour pour annoncer un deces. Ce tambour transmet le message dans le village et distingue un enterrement d'un evenement festif."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lambya (Ichilambya)",
+      "isoCodes": ["lai"],
+      "dialects": ["Cilambya", "Cindali (Ndali)", "Cisukwa (Sukwa)"],
+      "vehicularRole": "Le lambya (ISO 639-3 : lai, Glottocode : lamb1272) est parle au Malawi (environ 59 500 locuteurs dans les districts de Chitipa et Karonga), en Tanzanie (environ 30 400 locuteurs dans le district d'Ileje) et en Zambie (environ 17 000 locuteurs dans le district d'Isoka). Le total mondial est estime entre 100 000 et 200 000 locuteurs. Le chitumbuka est la lingua franca des Lambya du Malawi ; le swahili est utilise en Tanzanie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les rites funeraires sont tres importants dans la culture lambya. A la mort d'un individu, les femmes presentes commencent a se lamenter et des messages sont envoyes au chef, au chef de village, aux parents et aux allies du defunt. La serie de rites funeraires peut durer un mois ou plus. L'inhumation (Kusyira umuvimba) dure trois a quatre jours pour un adulte, jusqu'a une semaine pour un homme riche, et seulement une journee pour un enfant.",
+      "symbols": "Le tambour du chef (umwene) est un symbole de pouvoir et d'autorite rituelle, utilise exclusivement lors des funerailles avec permission du chef. L'Ulambya (pays des Lambya) est un territoire identitaire fort.",
+      "artsAndMusic": "Traditions orales, contes (exemple : UKALULU NU KAYAMBA, conte du Lievres et de la Tortue en lambya). Danses traditionnelles documentees par Davie Moses Simengwa dans les Lambya Traditions (2017).",
+      "spiritualities": "Veneration des ancetres. Les rites funeraires elabores refletent la croyance en la continuite de la vie apres la mort et l'importance des defunts dans la vie communautaire. Adoption du christianisme (catholicisme notamment) depuis la periode missionnaire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume Lambya (vers 1600-1750). Ulambya : territoire couvrant environ 950 km2, avec une population historique d'environ 20 000 habitants (Stobbs et Young, 1972). Chefferie Mwaulambya au Malawi, siege a Chinunkha, district de Chitipa.",
+      "relationsWithNeighbors": "Les Lambya partagent leurs frontieres avec les Ndali au nord (Tanzanie), les Nyiha et Namwanga a l'ouest (Zambie), les Fungwe, Tambo et peuples tumbuka-speaking au sud, et les Sukwa a l'est. Ces peuples forment le groupe Ngulube de l'Afrique centrale de l'est.",
+      "conflictsOrAlliances": "Appartenance au groupe Ngulube avec les Safwa, Bena, Kinga, Nyakyusa, Ndali, Sukwa et Ngonde. Relations de voisinage avec les Namwanga de Zambie. Incorporation progressive dans les etats coloniaux du Nyasaland et de la Rhodesie du Nord.",
+      "diaspora": "Presence minoritaire en Zambie (district d'Isoka, environ 17 000 personnes) et expansion vers les plateaux tanzaniens (environ 30 400 personnes)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Omniglot (59 500 au Malawi + 30 400 en Tanzanie + 17 000 en Zambie = ~107 000 en 2006, projection 2025 estimee a 200 000) ; Wikipedia EN (85 000 en 2001)",
+      "distributionByCountry": [
+        { "country": "MWI", "population": 110000 },
+        { "country": "TZA", "population": 70000 },
+        { "country": "ZMB", "population": 20000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lambya people – Wikipedia EN (https://en.wikipedia.org/wiki/Lambya_people)",
+      "Lambya language – Wikipedia EN (https://en.wikipedia.org/wiki/Lambya_language)",
+      "The Establishment and Expansion of the Lambya Kingdom c1600-1750 – African Studies Review, Cambridge University Press, 1993 (https://www.cambridge.org/core/journals/african-studies-review/article/establishment-and-expansion-of-the-lambya-kingdom-c16001750/2A73651C94DF84588BD88A712D777AAF)",
+      "Lambya language and alphabet – Omniglot (https://www.omniglot.com/writing/lambya.htm)",
+      "Lambya, Rambia in Zambia – Joshua Project (https://joshuaproject.net/people_groups/12970/ZA)",
+      "Lambya – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/lamb1272)",
+      "Lambya – 101 Last Tribes (https://www.101lasttribes.com/tribes/lambya.html)"
+    ]
   }
 }

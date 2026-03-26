@@ -7,62 +7,85 @@
     "appellations": {
       "mainName": "Yerima",
       "selfAppellation": "Yerima",
-      "exonyms": ["Yerima (terme utilisé par les Européens)"],
+      "exonyms": ["Yarima", "Yarema"],
+      "originOfExonyms": "Le terme Yerima (aussi orthographié Yarima ou Yarema) est issu du titre administratif de l'empire Kanem-Bornu designant le Gouverneur de la province de Yéri, chargé notamment de contrôler les incursions touareg. Ce titre, répandu dans toute la zone du bassin du lac Tchad, a donné son nom à un groupe identitaire distinct dans le nord-est du Tchad.",
+      "whyProblematic": "Le terme Yerima est d'abord un titre dynastique et administratif de l'empire Kanem-Bornu avant d'être un ethnonyme. La distinction entre groupe ethnique Yerima et clan ou titre Yerima reste floue dans les sources académiques disponibles. Certaines sources les rattachent au groupe kanembou ou au groupe saharien par leur langue, d'autres les considèrent comme un groupe distinct.",
+      "contemporaryUsage": "Le terme Yerima est utilisé localement au Tchad pour désigner un petit groupe ethnique du nord-est du pays, dont les membres se réclament d'une ascendance liée aux structures politiques de l'empire Kanem-Bornu. Ils coexistent avec les Toubou (Teda et Daza), les Zaghawa et les populations arabes de la région.",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien",
-      "historicalRegion": "Tchad",
+      "ethnoLinguisticGroup": "Saharien (branche nilo-saharienne, proche du kanuri-kanembu)",
+      "historicalRegion": "Région du Kanem et du Borkou (nord-est du Tchad), zone de contact entre le Sahara et le Sahel",
       "currentCountries": ["TCD"]
     },
     "ethnicities": [
-      "Yerima du Nord",
-      "Yerima du Sud",
-      "Sous-groupes régionaux"
+      "Yerima du Kanem (groupe résidant dans la zone historique de l'empire Kanem, autour du lac Tchad)",
+      "Yerima du Borkou (groupe nomade de la zone du Borkou, nord du Tchad)",
+      "Yerima nobles (descendants de hauts fonctionnaires de l'empire Kanem-Bornu, titre Yerima = gouverneur de province)",
+      "Yerima religieux (lignages maraboutiques issus de lettrés islamiques de la cour de Kanem-Bornu)",
+      "Yerima pasteurs (sous-groupe éleveur nomade pratiquant la transhumance entre le Kanem et le Borkou)"
     ],
     "origins": {
-      "ancientOrigins": "Les Yerima sont originaires du TCD, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+      "ancientOrigins": "Les Yerima sont associés aux structures politiques et dynastiques de l'empire Kanem-Bornu (8e-19e siècles), l'un des plus anciens et durables empires d'Afrique centrale. Fondé initialement par les Zaghawa (selon certaines sources) ou les Duguwa, cet empire contrôlait les routes transsahariennes entre le lac Tchad et la Méditerranée. Le titre Yerima (Gouverneur de Yéri) désignait dans cet empire un haut fonctionnaire responsable d'une province frontalière, chargé notamment de la défense contre les incursions touareg. Les porteurs de ce titre et leurs descendants ont formé un groupe identitaire distinct dans la région du Kanem.",
+      "formationPeriod": "L'identité yerima comme groupe distinct s'est progressivement constituée entre le 10e et le 19e siècle, à mesure que l'empire Kanem-Bornu structurait les populations de la zone du lac Tchad. Après l'effondrement de cet empire sous les coups de Rabih az-Zubayr (1900) et la conquête française (1900-1914), les structures politiques traditionnelles ont été maintenues à un niveau local par des chefs traditionnels reconnus par l'administration coloniale.",
+      "migrationRoutes": [
+        "Populations autochtones de la zone Kanem-lac Tchad, avec mouvements saisonniers nord-sud liés au pastoralisme",
+        "Contacts et intégration progressive des groupes toubou, kanembou et arabes dans la zone de contact saharo-sahélienne"
+      ],
+      "historicalSettlementZones": [
+        "Région du Kanem (nord-ouest du Tchad, autour du lac Tchad)",
+        "Borkou (nord du Tchad, autour de Faya-Largeau)",
+        "Zone de contact entre le Sahara et le Sahel tchadien"
+      ],
+      "unificationsOrDivisions": "Le groupe Yerima est petit et peu documenté dans les sources académiques. Ses membres partagent une conscience identitaire liée au titre ancestral Yerima de l'empire Kanem-Bornu. Ils coexistent et interagissent avec les groupes toubou (Teda, Daza), zaghawa, kanembou et arabes de la région.",
+      "externalInfluences": "Empire Kanem-Bornu (8e-19e siècles) : influence majeure sur l'organisation politique et sociale. Islamisation progressive via cet empire à partir du 11e siècle. Colonisation française (début 20e siècle) : remaniement des structures politiques traditionnelles. Contacts avec les Toubou, les Zaghawa et les populations arabes de la région.",
+      "majorHistoricalEvents": "9e siècle : fondation de l'empire Kanem par les Duguwa, dans la région où les Yerima sont établis. 11e siècle : islamisation de l'empire Kanem. 13e siècle : apogée de l'empire sous Dunama II Dibalemi. 14e siècle : déplacement du centre de l'empire du Kanem vers le Bornou. 1900 : chute de l'empire Kanem-Bornu devant Rabih az-Zubayr, puis conquête française. 1900-1960 : période coloniale française. 1960 : indépendance du Tchad."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles héritées des structures de l'empire Kanem-Bornu. Le chef local (sultan ou al-haj) exerce une autorité reconnue à la fois par la communauté et par l'administration tchadienne. Les conseils d'anciens participent à la gouvernance locale. Le système politique traditionnel s'appuie sur la shura (consultation) islamique et les coutumes ancestrales.",
+      "clanOrganization": "Structure clanique patrilinéaire organisée en familles étendues. Les clans maintiennent des droits sur des zones de pâturage, des puits et des terres agricoles. Des relations matrimoniales et économiques relient les clans entre eux et aux groupes voisins (kanembou, toubou, arabes).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires structurant l'identité, les droits fonciers et les alliances matrimoniales. Les généalogies claniques sont transmises oralement et servent à établir le statut social et les droits au sein de la communauté. La lignée du Yerima (titre de gouverneur) confère un prestige héréditaire reconnu par les groupes voisins.",
+      "religiousAuthority": "Autorité des oulémas (savants islamiques) et des imams mosquée pour les questions religieuses et juridiques. Les marabouts (lettrés islamiques) exercent également une influence sociale et spirituelle. L'islam sunnite malékite, adopté depuis le 11e siècle via l'empire Kanem-Bornu, structure la vie quotidienne : prières, jeûne du Ramadan, mariage islamique, funérailles selon le rite sunnite."
     },
     "languages": {
-      "mainLanguage": "Yerima (variété saharienne)",
-      "vehicularRole": "Le yerima est parlé par la majorité des Yerima. L'arabe et le français sont également utilisés."
+      "mainLanguage": "Kanembou ou variété saharienne proche du kanembou (nilo-saharien, branche saharienne occidentale)",
+      "isoCodes": ["kbl"],
+      "dialects": [
+        "Variété du Kanem (dialecte du kanembou parlé dans la région historique du Kanem)",
+        "Variété du Borkou (parlé dans la région du Borkou, avec influences du dazaga toubou)"
+      ],
+      "vehicularRole": "Les Yerima utilisent principalement le kanembou (ISO kbl) ou une variété proche, ainsi que l'arabe tchadien comme langue véhiculaire commerciale et le français comme langue officielle. La langue kanembou (ISO kbl) est parlée par environ 1 million de personnes au Tchad et est la langue des descendants de l'empire Kanem-Bornu."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels yerima.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture yerima."
+      "majorRites": "Pratiques islamiques centrales : cinq prières quotidiennes, jeûne du Ramadan, célébration de l'Aïd al-Fitr et de l'Aïd al-Adha, pèlerinage à La Mecque (Hajj) pour ceux qui en ont les moyens. Circoncision masculine comme rite de passage. Cérémonies de mariage traditionnelles avec dot négociée entre familles. Funérailles : inhumation rapide dans les 24 heures, prières collectives, condoléances de trois jours. Rites de protection : port d'amulettes coraniques (grisgris) et recours aux marabouts pour la guérison et la protection.",
+      "symbols": "La mosquée comme centre de la vie communautaire. Les attributs du titre Yerima (sceau, turban, bâton d'autorité) comme symboles du statut et de la légitimité héritée de l'empire Kanem-Bornu. Le dromadaire et le cheval, animaux de prestige dans la culture saharo-sahélienne. La généalogie (nasab) comme symbole d'identité et de rang social.",
+      "artsAndMusic": "Artisanat traditionnel : travail du cuir (selles, outres, sandales), tissage de nattes et de tapis, poterie utilitaire. Musique : percussion (tam-tam, bendir), chants liturgiques islamiques (nashid) et chants de célébration lors des mariages. Poésie orale (madh) en kanembou et en arabe, louant les ancêtres, les guerriers et les saints locaux. Architecture : maisons en pisé (banco) avec toits plats dans les zones sédentaires, tentes et nattes dans les zones nomades.",
+      "spiritualities": "Islam sunnite malékite, pratiqué depuis le 11e siècle dans la région Kanem via l'empire Kanem-Bornu, l'un des plus anciens centres d'islamisation de l'Afrique subsaharienne. Croyances syncrétiques : recours aux marabouts pour la guérison, port d'amulettes coraniques, croyance aux djinns (esprits) et aux forces surnaturelles. Culte des saints locaux et vénération des ancêtres islamises du Kanem-Bornu. La pratique islamique locale est décrite comme un islam malékite mêlé de pratiques africaines traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora yerima dans les grandes villes tchadiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Yerima sont liés à l'empire Kanem-Bornu (8e-19e siècles), l'un des plus anciens empires de l'Afrique subsaharienne, dont le territoire a couvert le Tchad actuel, le Nigeria du Nord-Est, le Niger oriental, le Cameroun septentrional et le sud de la Libye. Cet empire fut un centre majeur d'islamisation de l'Afrique centrale et un acteur important du commerce transsaharien. Le titre Yerima désignait l'un des 12 hauts fonctionnaires de l'empire, gouverneur de la province de Yéri.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Toubou (voisins au nord, dans le BET), les Zaghawa (est), les populations arabes (centre et est du Tchad), les Peuls (Fulani) du Sahel, et les Kanuri (Nigeria, Niger). L'empire Kanem-Bornu avait établi des relations diplomatiques avec les sultanats du Maghreb et avec le Maroc (via la route caravanière de Koufra). Conflits récurrents avec les Touaregs (d'où la fonction défensive du titre Yerima).",
+      "conflictsOrAlliances": "L'empire Kanem-Bornu, dont les Yerima sont descendants, a traversé des siècles de conflits avec les Haoussa, les Touaregs, les Kanuri rivaux, les Bornou et finalement Rabih az-Zubayr qui le détruisit en 1900. La résistance à la conquête française (1900-1914) a été le dernier conflit majeur. Depuis l'indépendance du Tchad (1960), les Yerima, comme d'autres groupes du nord, ont été affectés par les guerres civiles tchadiennes successives.",
+      "diaspora": "La diaspora yerima est limitée, principalement dans les grandes villes tchadiennes (N'Djamena, Abéché, Moundou) où des membres du groupe ont migré pour le commerce et l'emploi. Quelques membres sont présents dans des pays voisins (Nigeria, Niger, Cameroun) dans la zone historique de l'empire Kanem-Bornu."
     },
     "demography": {
       "totalPopulation": 50000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements tchadiens, SIL Ethnologue, et études démographiques"
+      "source": "Estimation provisoire basée sur les données disponibles pour les petits groupes saharo-sahéliens du Tchad (SIL Ethnologue, CIA World Factbook Chad, Minority Rights Group). Groupe peu documenté ; l'estimation est approximative. La population exacte des Yerima comme groupe distinct est difficile à isoler des recensements tchadiens qui agrègent souvent les petits groupes.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 50000,
+          "note": "Principalement dans les régions du Kanem, du Borkou et du Lac Tchad"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Yerima language",
-      "CIA World Factbook – Chad",
-      "Recensements tchadiens",
-      "Études anthropologiques sur les peuples sahariens"
+      "Wikipedia EN - Kanem-Bornu Empire. https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire",
+      "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024. https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/03/4-DJIMADOUMADJI-Naidongarti.pdf",
+      "SIL Ethnologue - Kanembu (kbl). https://www.ethnologue.com/language/kbl/",
+      "Minority Rights Group - Chad. https://minorityrights.org/country/chad/",
+      "Joshua Project - Chad people groups. https://joshuaproject.net/countries/CD",
+      "CIA World Factbook - Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
     ]
   }
 }

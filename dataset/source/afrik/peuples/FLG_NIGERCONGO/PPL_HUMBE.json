@@ -6,54 +6,85 @@
   "content": {
     "appellations": {
       "mainName": "Humbe",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nkhumbi",
+      "exonyms": [
+        "Humbe",
+        "Nkumbi",
+        "Khumbi",
+        "Ngumbi",
+        "Otjingumbi",
+        "Nhaneca-Humbe"
+      ],
+      "originOfExonyms": "Le terme Humbe est un nom de lieu (ville et commune de Humbe, dans la municipalite d'Ombadja, province de Cunene) devenu designation ethnique. Nkumbi est la forme vernaculaire. Otjingumbi est la designation en langue herero. Nhaneca-Humbe est le terme compose utilise en portuguais pour designer le groupe ethno-linguistique plus large dont les Humbe font partie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Nkhumbi est prefere dans les sources academiques (Glottolog, Ethnologue). Humbe est plus courant dans les sources historiques portuguese et dans les usages administratifs. Nyaneka-Nkhumbi designe l'ensemble du groupe dont les Humbe sont le sous-groupe meridional.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Nyaneka-Nkhumbi (groupe bantu, sous-famille R)",
+      "historicalRegion": "Sud-Ouest angolais, province de Cunene, region d'Ombadja",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Humbe"],
+    "ethnicities": ["Humbe", "Nkhumbi", "Nyaneka-Nkhumbi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Humbe font partie du groupe ethnique Nyaneka-Nkhumbi, l'une des trois categories de peuples bantuphones du sud-ouest angolais avec les Ovambo et les Herero. Contrairement a ces derniers, les Nyaneka-Nkhumbi ne se sont pas disperses hors d'Angola. Le Royaume de Humbe fut a l'origine fonde par des Ovimbundu.",
+      "formationPeriod": "L'identite Humbe se consolida autour du Royaume de Humbe, l'un des trois royaumes Nhaneca-Humbe avec le Royaume de Mulondo et le Royaume de Camba. La ville de Humbe fut etablie vers 1882 comme site d'une mission catholique romaine.",
+      "migrationRoutes": [
+        "Etablissement dans les savanes du sud-ouest angolais par migration bantoue depuis le nord et l'est",
+        "Les Nyaneka-Nkhumbi sont restes confines a l'Angola, contrairement aux Ovambo et Herero voisins"
+      ],
+      "historicalSettlementZones": [
+        "Province de Cunene, Angola (municipalite d'Ombadja)",
+        "Savanes seches du sud-ouest angolais",
+        "Region en dessous du fleuve Cunene"
+      ],
+      "unificationsOrDivisions": "Le groupe Nyaneka-Nkhumbi comprend plusieurs sous-groupes: Nyaneka (dont les Mwila/Muila), Nkhumbi/Humbe, et trois langues distinctes (Handa, Cilenge, Nkumbi). Le Royaume de Humbe etait le plus puissant des trois royaumes Nhaneca-Humbe.",
+      "externalInfluences": "Contacts avec les marchands portugais et colons des 16e-19e siecles via la traite des esclaves. Guerres frequentes avec les Kwanhama (Ovambo) et autres voisins. Etablissement d'une mission catholique en 1882. Guerres de pacification portugaises de 1885 a 1915.",
+      "majorHistoricalEvents": "Le royaume de Humbe fut fonde par des Ovimbundu. Il etait repute le plus riche en betail de la region en dessous du Cunene. Razzie d'esclaves dans les hauts plateaux de Huila et Gambo, vendus au port de Benguela. Le roi Chingue invita les Portugais a etablir un fort en 1859. Guerres avec le Portugal: 1885-1888, 1891, 1897-1898. Le 7 juillet 1915, le general Pereira d'Eca reoccupa le territoire, integrant definitivement la region dans l'Angola portugais."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme monarchique avec un roi (soba) a la tete du Royaume de Humbe. Organisation militaire basee sur le quilombo (camp militaire itinerant). La succession royale pouvait etre contestee entre pretendants, comme en temoigne le conflit entre le chef Chingue et son neveu en 1859.",
+      "clanOrganization": "Organisation clanique typique des peuples agro-pastoraux bantu du sud angolais. Toute la vie sociale est liee a la gestion et l'elevage du betail (Ono ngombe): economie, processus culturels, danses rituelles d'initiation et de mort, mariage, arbitrage des conflits juridiques.",
+      "ageClassSystems": "Rites d'initiation feminins (efiko) et probablement masculins marquant les transitions de vie. La vie sociale est fortement structuree par les cycles rituels lies au betail.",
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et l'acces aux ressources en betail, qui constituent la principale richesse. La transmission du betail suit des regles lignageres strictes.",
+      "religiousAuthority": "Croyances traditionnelles animistes (dependance envers le monde des esprits). Presence catholique romaine depuis 1882 (mission de Humbe). Les Nkhumbi sont officiellement catholiques romains mais maintiennent leurs pratiques traditionnelles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nkumbi (Humbe)",
+      "isoCodes": ["khu"],
+      "dialects": ["Nkumbi", "Khumbi"],
+      "vehicularRole": "La langue Nkumbi (ISO 639-3: khu) est une langue bantu du groupe R (code Guthrie R.14). Elle est aussi appelee Humbe ou Khumbi. Parlee principalement dans la province de Cunene en Angola et dans une moindre mesure en Namibie. Le groupe Nyaneka comprend par ailleurs les langues Handa, Cilenge et Nkumbi."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation feminine efiko: inclut le sacrifice rituel de bovins et l'exposition de parties de la vache comme ornement de la jeune femme en devenir. Danses rituelles d'initiation et de mort. Ceremonies de mariage liees au betail. Rites funeraires. Le cycle de vie entier (naissance, initiation, mariage, mort) est marque par des rites lies a l'elevage bovin.",
+      "symbols": "Le betail (vaches) est le symbole central de la culture Humbe/Nkhumbi: richesse, statut social, et vie rituelle sont tous mesures en termes de betail. L'expression Ono ngombe (le betail) structure toute la vision du monde.",
+      "artsAndMusic": "Tradition de sculpture sur bois et ivoire. Tradition de contes oraux et chants. Danses rituelles d'initiation et de mort. Artisanat lie au mode de vie pastoral (objets en cuir, instruments). Musique et danse etroitement liees a la tradition orale.",
+      "spiritualities": "Croyances animistes traditionnelles (dependance envers le monde des esprits et les ancetres). Officiellement catholiques romains depuis la mission de 1882, mais pratiques traditionnelles maintenues. Pastoralisme sacralise: la vie spirituelle est indissociable de l'elevage bovin."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Humbe: l'un des trois royaumes Nhaneca-Humbe, considere comme le plus puissant. Il etait repute le plus riche en betail de la region en dessous du Cunene. Organisation militaire basee sur le quilombo.",
+      "relationsWithNeighbors": "Guerres frequentes avec les Kwanhama (Ovambo) et autres voisins (en particulier de juillet a decembre quand le Cunene est gueable). Razzie d'esclaves dans les populations de Huila et Gambo. Commerce d'ivoire avec les marchands portugais. Les Humbe furent a la fois esclavagistes et victimes de l'esclavage.",
+      "conflictsOrAlliances": "Attaque du gouverneur du Moçâmedes en 1856 (80 soldats, 4 canons, 50 000 guerriers Dumba). Accord de 1859 avec le chef Chingue pour un fort portugais. Guerres avec le Portugal: 1885-1888, 1891, 1897-1898. Abandon du fort en 1914 apres l'attaque allemande sur Naulila. Reoccupation definitive le 7 juillet 1915.",
+      "diaspora": "Les Nyaneka-Nkhumbi, dont les Humbe, sont restes exclusivement en Angola, contrairement aux Ovambo et Herero voisins qui s'etendent jusqu'en Namibie."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 834000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025: Nkhumbi in Angola, 834 000 personnes; Nyaneka total (Joshua Project): 1 267 000 au total; historiquement les Nyaneka-Humbe representaient 3 a 5% de la population angolaise (Country Studies, 1988)",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 834000,
+          "note": "Province de Cunene (Ombadja), sud-ouest de l'Angola; savanes seches"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kingdom of Humbe – Wikipedia, en.wikipedia.org/wiki/Kingdom_of_Humbe (consulte 2025)",
+      "Nkumbi language – Wikipedia, en.wikipedia.org/wiki/Nkumbi_language (consulte 2025)",
+      "Nkhumbi in Angola – Joshua Project, joshuaproject.net/people_groups/13417 (2025)",
+      "Nyaneka in Angola – Joshua Project, joshuaproject.net/people_groups/14084 (2025)",
+      "The Nyaneka-Nkhumbi – Contemporary Capoeira, capoeirahistory.com/the-nyaneka-nkhumbi/ (2024)",
+      "Angola – Ethnic Groups – Encyclopaedia Britannica, www.britannica.com/place/Angola/People (consulte 2025)",
+      "Glottolog 5.3 – Nkhumbi, glottolog.org/resource/languoid/id/nkhu1238 (2025)"
+    ]
   }
 }

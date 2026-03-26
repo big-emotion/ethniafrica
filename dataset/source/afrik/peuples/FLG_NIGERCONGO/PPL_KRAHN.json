@@ -6,68 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Krahn",
-      "selfAppellation": "Krahn",
+      "selfAppellation": "Wee (We)",
       "exonyms": [
-        "Krahn (terme utilisé par les Européens), parfois appelés « Guéré » en Côte d'Ivoire"
+        "Guere (terme en Cote d'Ivoire)",
+        "We (Wee)",
+        "Sapo (sous-groupe)",
+        "Wobe (Wobe)",
+        "Krai"
       ],
+      "originOfExonyms": "Le terme Krahn est derive du nom Gio-Kuare : les Dan (Gio) d'Ivory Coast et du Liberia appelaient ainsi les gens vivant de l'autre cote de la riviere Cestos. Selon une tradition orale, le Commissaire de district de Tappita, a qui des porteurs d'un chef local se sont presentes, leur a demande leur identite et ils ont repondu 'nous sommes le peuple de Krai' (nom de leur chef), d'ou Krahn. Le terme Guere a ete cree par un administrateur colonial français pour les Kpelle vivant au sud des Dan en Cote d'Ivoire. Wee est l'endonyme utilise dans les deux pays.",
+      "whyProblematic": "Le terme Krahn designe les membres de ce groupe vivant au Liberia, tandis que Guere (Wee) est prefere pour ceux vivant en Cote d'Ivoire, bien que ce soit le meme peuple. La politisation de l'identite krahn sous Samuel Doe (coup d'Etat de 1980, favoritisme ethnique) a rendu l'identite krahn controversee au Liberia.",
+      "contemporaryUsage": "Krahn est utilise dans le contexte liberien (administratif, politique, ethnographique). Guere ou We est prefere en Cote d'Ivoire. Wee est le terme que le groupe utilise pour se designer lui-meme. Depuis la fin des guerres civiles liberienne, l'identite krahn se reconstruit dans un contexte de reconciliation nationale.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Krou occidental",
-      "historicalRegion": "Libéria, CIV",
+      "ethnoLinguisticGroup": "Krou occidental (sous-groupe Wee/Guere-Krahn de la famille Kru)",
+      "historicalRegion": "Cote du Grain (Grain Coast), frontiere Liberia-Cote d'Ivoire, comtes de Grand Gedeh et Nimba (Liberia), departements du Bas-Sassandra et du Moyen-Cavally (Cote d'Ivoire)",
       "currentCountries": ["CIV", "LBR"]
     },
     "ethnicities": [
-      "Krahn du Libéria",
-      "Krahn de Côte d'Ivoire",
-      "Sous-groupes régionaux"
+      "Krahn de l'Est du Liberia (Eastern Krahn, comtes de Grand Gedeh et Sinoe)",
+      "Krahn de l'Ouest du Liberia (Western Krahn, Grand Gedeh County et frontiere CIV)",
+      "Wee/Guere de Cote d'Ivoire (regions du Bas-Sassandra et Moyen-Cavally)",
+      "Sapo (sous-groupe apparente de la zone Nimba-Grand Gedeh)",
+      "Wobe (Wobé, sous-groupe proche vivant au nord-ouest de la Cote d'Ivoire)"
     ],
     "origins": {
-      "ancientOrigins": "Les Krahn sont originaires de la région du Libéria et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe krou occidental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Guéré.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Krahn/Wee font partie de la famille linguistique Kru, dont les membres sont indigenes de la Cote du Grain (actuel Liberia meridional et Cote d'Ivoire occidentale). Les ancetres kru sont arrives sur la cote atlantique depuis l'interieur du continent, fuyant des groupes plus militaristes, bien avant les premiers contacts europeens (Portugais, 15e siecle). Les trois groupes Grebo, Sapo et Kru sont documentes des le 15e siecle par les chroniqueurs portugais. Les Krahn sont la branche la plus septentrionale et la plus continentale du complexe Kru/Wee.",
+      "formationPeriod": "L'identite krahn distincte s'est formee lors des migrations du 15e-16e siecle. La pression des groupes migrants depuis le Soudan occidental (apres la chute des empires Mali et Songhai) et l'augmentation des guerres regionales ont pousse les Krahn a migrer depuis le nord-est vers la zone frontiere Liberia-Cote d'Ivoire. Ils ont traverse la riviere Cestos et s'etablirent dans leur territoire actuel au cours du 16e et 17e siecles.",
+      "migrationRoutes": [
+        "Migration depuis le nord-est (zone d'ou venaient les pressions post-empire malien) vers le sud-ouest",
+        "Traversee de la riviere Cestos (frontiere symbolique de leur territoire actuel)",
+        "Etablissement le long des rivieres Cestos, Sanquine, Sino et Cavalla (frontiere Liberia-CIV)",
+        "Expansion progressive vers les zones de foret dense de Grand Gedeh et Nimba"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Grand Gedeh (Liberia orientale), principal berceau historique krahn",
+        "Comte de Nimba (Liberia orientale), zone de contact avec les Dan/Gio",
+        "Comte de Sinoe (Liberia meridionale)",
+        "Regions du Bas-Sassandra et Moyen-Cavally (Cote d'Ivoire occidentale)",
+        "Monrovia et grandes villes liberienne (migrations economiques et deplacements de guerre)"
+      ],
+      "unificationsOrDivisions": "Organisation decentralisee en villages independants sans chef supreme. Les Krahn de l'Est et les Krahn de l'Ouest du Liberia presentent des variations dialectales significatives. Les frontieres coloniales ont divise le peuple entre Liberia (britannique puis libérien) et Cote d'Ivoire (française), creant deux trajectoires historiques distinctes (Krahn/Wee).",
+      "externalInfluences": "Contacts avec les commerçants europeens des le 15e siecle : les Kru (dont les Krahn font partie de l'ensemble ethnique) furent employes comme marins, interpretes et intermediaires commerciaux sur les navires negriers et marchands europeens. Ils choisirent souvent de se suicider plutot que d'etre reduits en esclavage. L'independance liberienne (1847) place les Krahn sous l'autorite des Americano-Liberiens. La colonisation française en Cote d'Ivoire integre le groupe Guere/Wee dans l'administration AOF. Les guerres civiles liberienne (1989-2003) transforment profondement le groupe.",
+      "majorHistoricalEvents": "Migrations vers la Cote du Grain au 16e siecle. Premiere description par les Portugais (15e-16e siecles). Role de traders et de marins pour les compagnies europeennes (18e-19e siecles). Integration dans le Liberia independent (1847) et subordination aux Americano-Liberiens. Coup d'Etat du 12 avril 1980 : Samuel Kanyon Doe, Krahn du comte de Grand Gedeh, renverse le President William Tolbert et devient le premier chef d'Etat indigene du Liberia. Periode de favoritisme ethnique sous Doe (1980-1990). Premiere guerre civile (1989-1997) : massacres de civils Krahn par le NPFL de Charles Taylor. Assassinat de Doe en 1990. Deuxieme guerre civile (1999-2003) : creation du GROUP MODEL (Movement for Democracy in Liberia) par des Krahn. Reconstruction post-conflit depuis 2003."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation traditionnellement decentralisee : chaque village est gouverne par un headman (chef de village) qui a acquis sa position par la competence, le courage a la chasse et a la guerre, et la chance. Le headman forme un conseil de jeunes guerriers (protection) et d'anciens (consultation). Ce conseil arbitre les disputes commerciales avec les tribus voisines et prend les decisions importantes. Les masques ceremonials en forme d'animaux servent parfois a legitimer des decisions politiques et a exercer un controle social.",
+      "clanOrganization": "Societe patrilineaire : la descendance et l'heritage sont traces par les hommes. Les terres privees passent au fils aine, les biens du menage au frere cadet du pere. Les fils maries vivent dans le menage paternel. Organisation en clans localises (local lineage) qui dominent dans chaque localite, avec plusieurs etablissements bases sur une famille etendue agissant comme unite economique.",
+      "ageClassSystems": "Existence de structures par classes d'age regissant le passage au statut de guerrier puis d'ancien. Les Krahn pratiquent le levirat (mariage obligatoire de la veuve avec le frere du defunt) et le sororat (mariage obligatoire avec la soeur d'une femme decedee ou sterile). Les filles sont souvent fiancees en bas age.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers et les obligations de solidarite. En cas de conflit, la mediation passe d'abord par les structures lignageres avant d'impliquer les chefs villageois. L'accusation de sorcellerie est l'un des principaux mecanismes de controle social au sein des lignages.",
+      "religiousAuthority": "Les pretres-devins (medicine men) tiennent un role central dans la religion traditionnelle krahn. Chaque village dispose d'un chef religieux charge des rituels propitiatoires, et d'anciens qui assurent les sacrifices aux esprits ancestraux. Les masques (rituel et politique a la fois) sont geres par des specialistes. La croyance aux esprits de la brousse (bush spirits) necessite des ceremonies regulieres pour les maintenir pacifiques. Le christianisme est present mais le syncretisme avec les croyances animistes est dominant."
     },
     "languages": {
-      "mainLanguage": "Krahn",
-      "vehicularRole": "Le krahn est parlé par la majorité des Krahn. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Krahn-Wee (dialectes occidentaux et orientaux)",
+      "isoCodes": ["krw", "kqo"],
+      "dialects": [
+        "Western Krahn (krw) - parle dans Grand Gedeh County (Liberia) et en Cote d'Ivoire, environ 100 000 locuteurs au Liberia et 12 000 en CIV (1993)",
+        "Eastern Krahn (kqo) - parle dans le nord-est du Liberia (Nimba), environ 99 000 locuteurs (2020)",
+        "Wee/Guere (Cote d'Ivoire) - continuum dialectal avec le Krahn occidental, plus de 300 000 locuteurs en CIV"
+      ],
+      "vehicularRole": "Le krahn-wee fait partie du sous-groupe Wee de la branche Kru occidental de la famille Niger-Congo. Malgre la pression de l'anglais au Liberia et du français en Cote d'Ivoire, le krahn reste une langue vive. L'anglais sert de langue vehiculaire principale au Liberia, et le français ou le dioula en Cote d'Ivoire."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Masques glé",
-      "source_1": "Rituels du bois sacré",
-      "source_2": "Chants polyphoniques",
-      "source_3": "Cérémonies de mariage traditionnelles",
-      "source_4": "Rites de passage (initiation, fêtes de naissance)",
-      "source_5": "Célébrations culturelles krahn",
-      "Symboles": "Masques glé, symboles liés à l'agriculture, symboles culturels krahn",
-      "Arts et musique": "",
-      "source_6": "Masques glé",
-      "source_7": "Rituels du bois sacré",
-      "source_8": "Chants polyphoniques",
-      "source_9": "Musique traditionnelle",
-      "source_10": "Danse traditionnelle",
-      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme. Rôle important des ancêtres."
+      "majorRites": "Les Krahn pratiquent des rites d'initiation masculins et feminins qui marquent le passage a l'age adulte. Les rites d'initiation masculine comprennent des epreuves physiques en brousse et l'instruction dans les savoirs traditionnels (chasse, medecine, responsabilites communautaires). Les ceremonies de mariage impliquent des negociations complexes de dot (bride price). Les rites funeraires comportent des offrandes aux esprits ancestraux, souvent effectuees aux carrefours de chemins. Les Wee de Cote d'Ivoire pratiquent des ceremonies de propitiation des esprits de la brousse avant tout defrichement ou expansion du territoire.",
+      "symbols": "Les masques ceremonials (glee masks en liberien) sont les symboles culturels les plus caracteristiques des Krahn/Wee. Ces masques, qui representent souvent des animaux, jouent un double role rituel et politique : ils sont utilises dans les ceremonies, les divertissements, les recits moraux, et comme mecanismes de controle sociopolitique. Les masques masculins (plus ferocres) servent pour les questions politiques ; les masques feminins (plus beaux et apaises) pour les rituels et les fetes. Tous les masques Wee sont censes devier la sorcellerie. Symbole de l'eau : les objets rituels 'tien/nitien/Dwin' (dieux de l'eau) representent des esprits guerisseurs de riviere.",
+      "artsAndMusic": "Chants polyphoniques traditionnels (caracteristiques des peuples Kru). Fabrication et utilisation de masques en bois sculptés et peints. Poterie, tissage de fibres vegetales et forge traditionnelle. Les danses masquees sont parmi les expressions artistiques les plus elaborees de la culture krahn. La transmission de l'histoire orale par des specialistes est une forme d'art narratif.",
+      "spiritualities": "Religion animiste centree sur un dieu supreme createur (Nyswa, signifiant 'Pere celeste') qui est trop distant pour etre adore directement. Les Krahn adorent des esprits intermediaires (ancetres, esprits de la nature, esprits des masques) pour atteindre Dieu. Les esprits de la brousse sont des entites du monde non touche par l'homme qui doivent etre propitiatoires avant tout contact avec le territoire sauvage. Les esprits ancestraux des families requierent des sacrifices reguliers. La sorcellerie (tien, nitien) est une realite sociale importante, impliquant des praticiens specialises. Syncretisme avec le christianisme (protestantisme principalement) pour une fraction de la population."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora krahn dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Krahn/Wee n'ont pas constitue de royaume centralise. Leur organisation politique decentralisee en chefferies villageoises independantes leur a permis de maintenir une forte autonomie. Certains chefs krahn ont acquis une importance regionale grace a leurs succès militaires et commerciaux. La chefferie des Boao (Grand Gedeh County) est citee parmi les plus anciennes structures politiques documentees.",
+      "relationsWithNeighbors": "Relations commerciales et conflictuelles avec les Gio/Dan voisins (qui les ont nommes Krahn). Contacts avec les Kpelle au nord. Relations avec les groupes Kru de la cote (Klao) avec qui ils partagent l'appartenance a la famille ethnolinguistique Kru. En Cote d'Ivoire, relations avec les Bete, Dida et autres groupes Krou. Relations complexes avec les Mandingue islamises et les Senegalais commerçants.",
+      "conflictsOrAlliances": "Guerres inter-ethniques avant la colonisation pour le controle des ressources de peche et chasse. Role de trades et intermediaires dans le commerce atlantique esclavagiste (18e-19e siecles). Resistance a l'imposition du pouvoir amerco-liberien. Ascension politique sous Samuel Doe (1980-1990). Persecutions et massacres sous le NPFL de Charles Taylor (1989-1997). Fondation du MODEL (2003) comme milice krahn contre Taylor. Reconciliation nationale depuis 2003 sous la presidence Ellen Johnson Sirleaf puis George Weah.",
+      "diaspora": "Refugies krahn en Cote d'Ivoire lors des guerres civiles liberienne. Communautes krahn dans les grandes villes liberienne (Monrovia, Harper, Buchanan). Quelques membres de la diaspora liberienne en Europe et aux Etats-Unis, bien que l'identite krahn-specifique soit peu documentee a l'etranger."
     },
     "demography": {
-      "totalPopulation": 300000,
+      "totalPopulation": 450000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur Wikipedia (99 000 Eastern Krahn + 100 000 Western Krahn au Liberia, 12 000 en CIV en 1993), Minority Rights Group (Guere/Wee : 318 000 en CIV), 101 Last Tribes, projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 220000,
+          "note": "Comtes de Grand Gedeh, Nimba, Sinoe et Grand Kru. Eastern Krahn (environ 99 000) et Western Krahn (environ 100 000) selon les donnees 2020."
+        },
+        {
+          "country": "CIV",
+          "population": 330000,
+          "note": "Regions du Bas-Sassandra et Moyen-Cavally (connus comme Guere/We). Estimation basee sur Minority Rights Group (318 000 Guere) et recensement ivoirien."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Krahn language (khr)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples krou"
+      "Wikipedia EN - Krahn people. https://en.wikipedia.org/wiki/Krahn_people",
+      "101 Last Tribes - Krahn people. https://www.101lasttribes.com/tribes/krahn.html",
+      "Minority Rights Group - Krou in Cote d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Joshua Project - Krahn, Western in Liberia. https://joshuaproject.net/people_groups/print/15374/LI",
+      "Wikipedia EN - Guere language. https://en.wikipedia.org/wiki/Guere_language",
+      "SIL Ethnologue - Western Krahn (krw) et Eastern Krahn (kqo)"
     ]
   }
 }

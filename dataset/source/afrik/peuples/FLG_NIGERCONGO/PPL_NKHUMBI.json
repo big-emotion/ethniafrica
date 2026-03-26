@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Nkhumbi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nkhumbi (denomination endogene; aussi designes Humbe d'apres leur region historique)",
+      "exonyms": ["Nkhumbi", "Nkumbi", "Humbe", "Khumbi"],
+      "originOfExonyms": "Humbe est le nom de la localite (commune de Humbe, municipalite d'Ombadja, province de Cunene) dont ces gens sont originaires, et devint une denomination exonymique repandue. Khumbi est une variante phonetique. Nkumbi est la forme standardisee dans la litterature linguistique (ISO 639-3 : khu). Nkhumbi est la transcription orthographique la plus courante dans la litterature ethnographique anglophone.",
+      "whyProblematic": null,
+      "contemporaryUsage": "En Angola, Nkhumbi (ou Nkumbi, Humbe) est compris dans le groupe Nyaneka-Nkhumbi (aussi note Nyaneka-Nkumbi ou Nyaneka-Humbe), qui constitue une categorie administrative et ethnographique regroupant les Nyaneka et les Nkhumbi. La denomination officielle angolaise utilise Nyaneka-Nkhumbi pour le groupe global.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Bantu (zone R.14, Bantu sud-ouest), Niger-Congo",
+      "historicalRegion": "Province de Cunene, sud-ouest de l'Angola (savannes seches du sud-ouest)",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Nkhumbi"],
+    "ethnicities": ["Nkhumbi", "Humbe"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nkhumbi font partie du groupe Nyaneka-Nkhumbi, l'un des grands ensembles ethno-linguistiques du sud-ouest de l'Angola. Avec les Nyaneka, les Ovambo et les Herero, ils peuplent les savanes du sud-ouest angolais, milieu tres different des forets du nord occupees par les Mbundu et les Bakongo. L'ensemble Nyaneka se compose de quatre groupes linguistiques distincts : Myila (Mwila), Handa, Cilenge et Nkumbi.",
+      "formationPeriod": "Les Nkhumbi sont attestes dans les sources portugaises depuis l'epoque coloniale comme pasteurs semi-nomades du sud-ouest angolais. Leur mode de vie agro-pastoral et leur culture du betail definissent leur identite depuis des siecles. En 1988, le groupe Nyaneka-Humbe (Nyaneka-Nkhumbi) representait 3% de la population angolaise.",
+      "migrationRoutes": [
+        "Etablissement dans les savannes du sud-ouest de l'Angola, region de Cunene",
+        "Presence historique continue dans la province de Cunene sans grandes migrations documentees hors d'Angola"
+      ],
+      "historicalSettlementZones": [
+        "Province de Cunene, Angola (notamment municipalite d'Ombadja, commune de Humbe)",
+        "Province de Huila, sud-ouest de l'Angola"
+      ],
+      "unificationsOrDivisions": "Les Nkhumbi constituent l'un des quatre groupes composant les Nyaneka (Nyaneka-Nkhumbi) ; ils se distinguent par leur propre langue (Nkumbi, ISO khu) distincte du Nyaneka proprement dit. Contrairement aux Nganuela qui ont migre au-dela des frontieres angolaises, les Nyaneka-Nkhumbi ne se dispersèrent pas hors d'Angola.",
+      "externalInfluences": "Contacts avec les Portugais dans le cadre de l'expansion coloniale vers le sud de l'Angola. Pression coloniale de l'administration portugaise dans la province de Cunene. La guerre civile angolaise (1975-2002) affecta les Nkhumbi dans la province de Cunene. Influence catholique romaine via les missions portugaises.",
+      "majorHistoricalEvents": "Occupation coloniale portugaise progressive du Cunene. Guerre anti-coloniale (1961-1974). Independence de l'Angola (1975). Guerre civile (1975-2002) affectant le Cunene. Stabilisation progressive apres 2002."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe agro-pastorale a chefferies patrilineaires decentralisees. L'autorite politique repose sur des chefs de clan et de village. La vie sociale entiere est organisee autour de la gestion et de l'elevage du betail (Ono ngombe). La structure sociale est fortement liee a la possession et la redistribution du betail.",
+      "clanOrganization": "Organisation par clans patrilineaires. Le betail est la richesse fondamentale regulant les alliances matrimoniales, les heritages et les litiges. Les droits sur le betail determinent le statut social des individus et des families.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'acces au betail, a la terre et a l'autorite. Les disputes juridiques internes sont resolues en reference aux droits lignagers sur le betail.",
+      "religiousAuthority": "Les Nkhumbi maintiennent leurs propres croyances religieuses traditionnelles animistes centrees sur le monde des esprits, tout en etant officiellement catholiques romains (heritage des missions portugaises). La dependance au monde spirituel est forte : les esprits des ancetres et les forces naturelles sont consultes pour les decisions importantes liees au betail et a la communaute."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nkumbi (Humbe, Khumbi)",
+      "isoCodes": ["khu"],
+      "dialects": [
+        "Nkumbi (khu) – langue bantu du groupe R.14 (code Guthrie R.14)",
+        "Humbe – denomination dialectale du lieu d'origine"
+      ],
+      "vehicularRole": "Le Nkumbi (ISO 639-3 : khu, code Glottolog : nkhu1238, code Guthrie : R.14) est une langue bantu du sud-ouest de l'Angola. Il est distinct du Nyaneka (langue du groupe frere). Le portugais est la langue officielle de l'Angola et sert de vehiculaire avec l'administration. Les 150 000 locuteurs etaient estimes en 1996 (chiffre cite par Wikipedia, obsolete a 2025)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Le mode de vie pastoral structure l'ensemble de la culture rituelle Nkhumbi. Les danses d'initiation et les rites funeraires sont directement lies a l'elevage du betail. Le mariage est regle par des echanges de betail (bridewealth). Les disputes juridiques internes, la trahison et les conflits communautaires sont regles selon des codes coutumiers lies au betail. Les rituels d'initiation marquent le passage a l'age adulte avec des pratiques specifiques liees a la culture pastorale.",
+      "symbols": "Le betail (Ono ngombe) est le symbole central de la culture Nkhumbi. La possession de betail determine le prestige social, la richesse et l'autorite. La savane seche du Cunene constitue l'espace symbolique fondamental de l'identite Nkhumbi.",
+      "artsAndMusic": "Traditions musicales et de danse liees aux ceremonies pastorales et rituelles. La culture materielle est marquee par les arts du betail : etuis en peau, ustensiles, bijoux et parures fabriques a partir de materiaux animaux. Les Mwila (sous-groupe Nyaneka apparent) sont connus pour leurs coiffures et parures elaborees, une tradition partagee dans le groupe Nyaneka-Nkhumbi.",
+      "spiritualities": "Systeme de croyances traditionnelles animistes avec dependance forte au monde des esprits. Les Nkhumbi sont officiellement catholiques romains mais maintiennent leurs pratiques spirituelles traditionnelles en parallele. Les decisions importantes (migrations saisonnieres, guerrisons, litiges) impliquent la consultation des esprits des ancetres."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise Nkhumbi. Structure politique decentralisee basee sur des chefs de clan et de village. Le groupe Nyaneka-Nkhumbi forme une entite ethno-linguistique distinctive dans le sud-ouest de l'Angola, mais sans unite politique centrale.",
+      "relationsWithNeighbors": "Proches culturellement et linguistiquement des Nyaneka (groupe frere composant le meme ensemble Nyaneka-Nkhumbi). Voisins des Ovambo et des Herero dans les savanes du sud-ouest angolais, avec lesquels ils partagent un mode de vie pastoral similaire. Relations avec les Portugais dans le cadre de la colonisation du Cunene.",
+      "conflictsOrAlliances": "Le groupe Nyaneka-Nkhumbi, comme d'autres groupes pastoraux du sud-ouest angolais, resista a l'occupation coloniale portugaise progressive. Pendant la guerre civile angolaise (1975-2002), les zones du Cunene furent affectees par les conflits entre MPLA et UNITA.",
+      "diaspora": "Contrairement aux groupes Nganguela, les Nyaneka-Nkhumbi (dont les Nkhumbi) ne se dispersèrent pas significativement hors d'Angola. Ils restent concentres dans la province de Cunene et la province de Huila en Angola."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 180000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur les donnees historiques : le groupe Nyaneka-Humbe (Nyaneka-Nkhumbi) representait 3% de la population angolaise en 1988 (US Angola Country Studies). Population de l'Angola en 2025 estimee a environ 37 millions (Banque mondiale). 3% = environ 1,1M pour l'ensemble Nyaneka-Nkhumbi. Les Nkhumbi sont un des quatre sous-groupes ; estimation proportionnelle conservatrice.",
+      "distributionByCountry": [{ "country": "AGO", "population": 180000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nkumbi language – Wikipedia EN (https://en.wikipedia.org/wiki/Nkumbi_language)",
+      "Nkhumbi in Angola – Joshua Project (https://joshuaproject.net/people_groups/13417)",
+      "The Nyaneka-Nkhumbi – Capoeira History (https://capoeirahistory.com/the-nyaneka-nkhumbi/)",
+      "Nyaneka in Angola – Joshua Project (https://joshuaproject.net/people_groups/14084)",
+      "Angola – Ovambo, Nyaneka-Humbe, Herero, and Others – Country Studies (https://countrystudies.us/angola/64.htm)",
+      "Angola – Ethnic Groups and Languages – Country Studies (https://countrystudies.us/angola/56.htm)",
+      "Britannica – Angola People: Nyaneka-Nkhumbi (https://www.britannica.com/place/Angola/People)",
+      "World Directory of Minorities – Angola – UNHCR Refworld (https://www.refworld.org/country,COI,,COUNTRYREP,ago,,49749d6232,0.html)"
+    ]
   }
 }

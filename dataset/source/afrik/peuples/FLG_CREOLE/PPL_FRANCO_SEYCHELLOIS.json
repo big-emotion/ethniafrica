@@ -6,58 +6,85 @@
   "content": {
     "appellations": {
       "mainName": "Franco-Seychellois",
-      "selfAppellation": "",
+      "selfAppellation": "Franco-Seychellois",
       "exonyms": [
-        "\"Français\" (terme générique), \"Colons\" (terme historique)"
+        "Grands blancs (classe aisée des grandes familles planteurs)",
+        "Petits blancs (classe ouvrière blanche)",
+        "French Seychellois (anglais)",
+        "Gran'bla (créole seychellois, terme pour les grands propriétaires blancs)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "La distinction entre grands blancs et petits blancs reflète la stratification sociale de l'époque coloniale : les premiers étaient les grandes familles propriétaires, les seconds les travailleurs blancs plus modestes. Gran'bla est l'adaptation en créole seychellois (Seselwa) du terme français.",
+      "whyProblematic": "Les termes Grands blancs et Gran'bla peuvent rappeler les inégalités coloniales héritées. Le terme petits blancs impliquait une hiérarchie au sein même de la population d'origine européenne.",
+      "contemporaryUsage": "Franco-Seychellois est le terme utilisé dans les contextes académiques et officiels. Dans la vie quotidienne aux Seychelles, le terme Blanc ou l'origine française est évoquée de façon informelle. La forte intégration du groupe dans la société créole seychelloise tend à rendre ces distinctions moins marquées au quotidien.",
       "linguisticFamily": "FLG_CREOLE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Toutes les îles des SYC, majoritairement urbains",
+      "ethnoLinguisticGroup": "Francophone d'origine européenne française",
+      "historicalRegion": "Archipel des Seychelles, principalement l'île de Mahé, Praslin et La Digue",
       "currentCountries": ["SYC"]
     },
-    "ethnicities": ["Franco-Seychellois"],
+    "ethnicities": [
+      "Franco-Seychellois",
+      "Petits blancs (intégrés progressivement à la communauté créole)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Toutes les îles des SYC, majoritairement urbains"
+      "ancientOrigins": "Les Seychelles étaient inhabitées avant leur colonisation par la France. En 1770, les premiers 28 colons français arrivèrent de l'Île de France (Maurice) pour s'établir sur Sainte-Anne. Ils apportèrent avec eux des esclaves africains et malgaches. Les Franco-Seychellois descendent de ces premiers colons français, auxquels s'ajoutèrent d'autres familles françaises attirées par les promesses de terres de la loi Malavois (1787, accordant 108 acres à chaque nouveau colon). Des déportés français de l'Île Bourbon (La Réunion) s'installèrent également à La Digue en 1798.",
+      "formationPeriod": "1770-1814. L'identité franco-seychelloise se forma pendant la période coloniale française, puis fut consolidée sous la domination britannique qui, par les termes de capitulation de 1810 puis du traité de Paris de 1814, permit aux colons français de conserver leurs terres, leur langue et leurs pratiques culturelles.",
+      "migrationRoutes": [
+        "Île de France (Maurice) vers les Seychelles à partir de 1770",
+        "France métropolitaine et Île Bourbon (La Réunion) vers les Seychelles, fin XVIIIe-début XIXe siècles",
+        "Émigration de certains Franco-Seychellois vers Maurice, l'Australie ou le Royaume-Uni après l'indépendance (1976)"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Île de Mahé (principale, 90 % de la population des Seychelles)",
+        "Praslin",
+        "La Digue (peuplée dès 1798 par des déportés français)",
+        "Victoria (capitale)"
+      ],
+      "unificationsOrDivisions": "La société coloniale seychelloise était divisée entre grands blancs (environ quarante grandes familles propriétaires) et petits blancs (travailleurs blancs moins aisés), qui s'alignèrent progressivement avec les créoles seychellois sur le plan politique dans les années 1960. Après l'indépendance (1976), de nombreux Franco-Seychellois jouèrent un rôle important dans la construction du parti socialiste à parti unique (SPUP) de France-Albert René, lui-même d'ascendance française.",
+      "externalInfluences": "La colonisation britannique (officiellement à partir de 1810, colonie séparée en 1903) imposa l'anglais comme langue administrative sans défranciser la population. La culture française, le catholicisme romain et la langue française demeurèrent des piliers identitaires. La proximité de Maurice renforça les liens avec d'autres communautés francophones de l'océan Indien.",
+      "majorHistoricalEvents": "1742 : première expédition française envoyée depuis l'Île de France. 1756 : prise de possession formelle par la France (nom donné en l'honneur du ministre des Finances Moreau de Séchelles). 1770 : arrivée des premiers 28 colons français sur Sainte-Anne. 1787 : loi Malavois accordant des terres aux colons. 1810 : capitulation aux Britanniques ; colons français conservent leurs droits. 1814 : traité de Paris, Seychelles officiellement britanniques. 1835 : abolition de l'esclavage ; émancipation de 6 521 esclaves. 1903 : les Seychelles deviennent une colonie de la Couronne britannique indépendante de Maurice. 1962 : création du Conseil législatif ; la Planters and Taxpayers Association des grands blancs le domine. 1976 : indépendance des Seychelles. 1977 : coup d'État de France-Albert René (d'origine française), instauration du parti unique."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Oligarchie plantatrice au sein du régime colonial. La Planters and Taxpayers Association représentait les intérêts des grands blancs et domina le Conseil législatif des Seychelles dès sa création en 1962. Le système politique était fondé sur la propriété foncière et la production de coprah et de cannelle.",
+      "clanOrganization": "Organisation autour de grandes familles planteurs (environ quarante familles de grands blancs) détenant la majorité des terres et du pouvoir économique. Parmi les noms de famille historiques des familles fondatrices : Esparon, Mellon, Mondon, Tirant, Doffay, Gonthier. L'endogamie au sein du groupe était encouragée pour maintenir le patrimoine foncier.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les grandes lignées familiales transmettent la propriété foncière, les réseaux d'affaires et le prestige social. Le premier enfant né aux Seychelles, Jean Pierre Le Beuze (né le 12 février 1790), appartient à une famille fondatrice franco-seychelloise.",
+      "religiousAuthority": "L'Église catholique romaine constitue l'institution religieuse centrale de la communauté franco-seychelloise. Les prêtres catholiques exercèrent historiquement une autorité morale et sociale forte. La quasi-totalité des Franco-Seychellois sont catholiques."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Créole seychellois (Seselwa)",
+      "isoCodes": ["crs", "fra"],
+      "dialects": [
+        "Seselwa (créole seychellois à base française, langue maternelle de la quasi-totalité de la population)",
+        "Français (utilisé dans la vie familiale et certains contextes formels)"
+      ],
+      "vehicularRole": "Le Seselwa (créole seychellois) est la langue maternelle de la quasi-totalité des Seychellois, y compris les Franco-Seychellois, et l'une des trois langues officielles (avec l'anglais et le français). Le français reste une langue de prestige et d'usage familial pour les familles d'origine française. L'anglais est utilisé dans les contextes officiels et économiques. Environ 91 % des Seychellois natifs sont locuteurs natifs du Seselwa, 5,1 % de l'anglais et 0,7 % du français."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques catholiques traditionnelles (messes, processions, célébrations des saints patrons). Les fêtes de famille autour des grandes propriétés et domaines agricoles sont des moments de cohésion communautaire. Le carnaval créole mêle influences françaises et africaines.",
+      "symbols": "Les grandes maisons coloniales créoles (architecture en bois avec varangues, toitures à forte pente) sont les symboles architecturaux de l'héritage franco-seychellois. Le cocotier et la production de coprah ont longtemps symbolisé l'économie du groupe. La langue créole Seselwa, bien que d'origine française, est le symbole de l'identité seychelloise métisse.",
+      "artsAndMusic": "La musique moutya (d'origine africaine) et le sega sont les formes musicales les plus emblématiques des Seychelles, partagées par l'ensemble de la communauté. La littérature en créole seychellois s'est développée après l'indépendance. La cuisine seychelloise reflète le métissage franco-africain : poissons grillés, carry de roussette, bouillon bréde.",
+      "spiritualities": "Catholicisme romain pratiquement exclusif. Les Seychelles sont l'un des pays les plus catholiques d'Afrique (82 % de la population est catholique romaine). Les Franco-Seychellois pratiquent un catholicisme traditionnel parfois mêlé de pratiques locales syncrétiques héritées du contact avec les populations africaines et malgaches."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume. Les Franco-Seychellois constituèrent la classe dirigeante coloniale des Seychelles de 1770 à l'indépendance (1976), détenant la majorité des terres et du pouvoir politique via la Planters and Taxpayers Association.",
+      "relationsWithNeighbors": "Relations historiques étroites avec Maurice (Île de France), d'où vinrent les premiers colons. Liens commerciaux avec les négociants indiens (Malabars) présents dès la période coloniale. Relations de dépendance économique avec les esclaves africains et malgaches, dont les descendants forment la majorité de la population créole actuelle.",
+      "conflictsOrAlliances": "Opposition aux réformes constitutionnelles britanniques après la Seconde Guerre mondiale. Les petits blancs s'allièrent aux créoles dans les mouvements politiques des années 1960. France-Albert René, lui-même d'ascendance française, dirigea le SPUP et le coup d'État de 1977, avec le soutien ou la neutralité d'une partie des Franco-Seychellois. Après l'indépendance, le groupe s'adapta au nouvel ordre politique tout en maintenant son influence économique.",
+      "diaspora": "Une partie des Franco-Seychellois a émigré vers l'Australie, la France ou le Royaume-Uni après l'indépendance de 1976 et le coup d'État de 1977. Cependant, la grande majorité est restée aux Seychelles et s'est intégrée à la société créole, contribuant activement à l'économie du tourisme et des services."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 17000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia – Franco-Seychellois (environ 17 000 personnes ou 14 % de la population seychelloise d'ascendance française) ; World Population Review (1,8 % de 132 779 Seychellois en 2025 = environ 2 400 s'identifiant comme Français de souche, mais 14 % d'ascendance française selon Wikipedia)",
+      "distributionByCountry": [{ "country": "SYC", "population": 17000 }]
     },
-    "sources": []
+    "sources": [
+      "Franco-Seychellois – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Franco-Seychellois)",
+      "Seychelles Population – Seyvillas (https://www.seyvillas.com/en/guide/at-a-glance/population)",
+      "We, the people of Seychelles – The Nation (Seychelles), 2022 (https://www.nation.sc/articles/15689/we-the-people-of-seychelles)",
+      "Seychelles Population 2026 – World Population Review (https://worldpopulationreview.com/countries/seychelles)",
+      "Seychelles – Encyclopaedia Britannica, 2026 (https://www.britannica.com/place/Seychelles)",
+      "Seychelles' population now stands at 120,581 – The Nation (Seychelles), 2024 (https://www.nation.sc/articles/21345/seychelles-population-now-stands-at-120581)",
+      "Seychelles (11/01) – U.S. Department of State (https://2009-2017.state.gov/outofdate/bgn/seychelles/19601.htm)"
+    ]
   }
 }

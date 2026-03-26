@@ -1,62 +1,123 @@
 {
   "id": "PPL_SERAHULE_SONINKE",
-  "nameMain": "Serahule / Soninke",
+  "nameMain": "Soninke",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["MLI", "SEN", "GMB"],
+  "currentCountries": ["MLI", "SEN", "MRT", "GMB", "GNB", "GIN", "BFA", "CIV"],
   "content": {
     "appellations": {
-      "mainName": "Serahule / Soninke",
-      "selfAppellation": "",
+      "mainName": "Soninke",
+      "selfAppellation": "Soninko (singulier : Soninke)",
       "exonyms": [
-        "Serahule (terme utilisé en Gambie), Soninke (terme utilisé au MLI, SEN)"
+        "Serahule",
+        "Serakhulle",
+        "Sarakole",
+        "Sarakolleh",
+        "Marka",
+        "Wangara",
+        "Azer",
+        "Dafing",
+        "Wakore"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Serahule/Serakhulle est le terme utilise en Gambie et au Senegal (au moins depuis le 16e siecle) ; son etymologie exacte est debattue mais il n'est pas necessairement d'origine wolof. Marka est le nom utilise au Mali (regions de Kayes, Koulikoro, Sikasso, Segou, Mopti) et au Burkina Faso. Wangara designe les reseaux marchands soninke repandus en Afrique de l'Ouest. Azer est utilise en Mauritanie. Wakore etait le nom utilise par les geographes arabes medievaux.",
+      "whyProblematic": "Le terme Soninke a historiquement des connotations peioratives dans le Fouta-Djallon et en Senegambie (designe les non-musulmans), ce qui explique la preference pour Serakhulle dans ces regions. Les sous-groupes Marka, Wangara, Diakhanke, Yarse sont parfois traites comme des groupes ethniques distincts mais sont en realite des branches du groupe soninke. Le present fichier (PPL_SERAHULE_SONINKE) couvre l'ensemble du groupe.",
+      "contemporaryUsage": "Soninke est l'appellation scientifique et officielle dans la plupart des etats africains francophones. Serahule/Serakhulle reste en usage courant en Gambie et au Senegal. Marka persiste au Mali et au Burkina Faso.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Diverses régions de la Gambie",
-      "currentCountries": ["MLI", "SEN", "GMB"]
+      "ethnoLinguisticGroup": "Mande du Nord-Ouest (Soninke-Bozo)",
+      "historicalRegion": "Wagadou (actuel Mali sud-ouest, Mauritanie meridionale, Senegal oriental) ; vallee du fleuve Senegal superieur",
+      "currentCountries": [
+        "MLI",
+        "SEN",
+        "MRT",
+        "GMB",
+        "GNB",
+        "GIN",
+        "BFA",
+        "CIV"
+      ]
     },
-    "ethnicities": ["Serahule / Soninke"],
+    "ethnicities": [
+      "Soninke",
+      "Marka",
+      "Wangara",
+      "Diakhanke",
+      "Jakhanke",
+      "Yarse",
+      "Maraka"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Diverses régions de la Gambie"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Soninke sont un des peuples mande les plus anciennement documentes. Leurs origines remontent aux proto-Mande agro-pastoraux du bassin du Niger occidental (environ 1300 av. J.-C. a 300 av. J.-C.). Les recherches archeologiques sur les sites de Dhar Tichitt, Dhar Nema et Dhar Walata (Mauritanie) attestent de leurs ancetres. Selon la tradition orale, le premier roi de l'empire du Ghana etait Dingha Cisse, d'origine semi-divine, venu de l'est.",
+      "formationPeriod": "L'identite soninke se cristallise avec la fondation de l'empire du Ghana (Wagadou) vers 300 apr. J.-C. L'empire atteint son apogee entre le 8e et le 11e siecle. La dispersion post-Ghana (apres 1076) marque la formation des sous-groupes regionaux.",
+      "migrationRoutes": [
+        "Vallees du fleuve Senegal et du Niger superieur (zone d'origine)",
+        "Dispersion vers le Mali, la Mauritanie, le Senegal, la Gambie apres la chute de Wagadou (11e-12e siecle)",
+        "Expansion marchande vers la Cote d'Ivoire, le Ghana actuel, le Nigeria (Kano) via les reseaux Wangara",
+        "Migration vers la France et l'Europe depuis les annees 1950 (principalement de la region de Kayes, Mali)"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du fleuve Senegal superieur et frontiere Mali-Senegal-Mauritanie (Nara a Nioro du Sahel)",
+        "Region de Kayes (Mali)",
+        "Gambie orientale",
+        "Guidimakha (Mauritanie)",
+        "Senegal oriental (Bakel, Diawara)",
+        "Nord du Burkina Faso (Dafina)"
+      ],
+      "unificationsOrDivisions": "L'empire du Ghana (Wagadou, c. 200-1240 apr. J.-C.) est la realisation politique majeure des Soninke. Sa chute, accelee par les conquetes almoravides (1076) et les raids soudanais, entraine une dispersion dans toute l'Afrique subsaharienne. Les royaumes successeurs de Gajaaga et Kaarta survivent. Les Soninke fusionnent ensuite avec divers peuples locaux, donnant naissance aux Marka, Yarse et Diakhanke.",
+      "externalInfluences": "Conversion a l'islam vers le 10e-11e siecle, l'une des premieres conversions en Afrique de l'Ouest subsaharienne. Influence almoravide (11e siecle). Influence du sultanat du Mali (13e-14e siecle). Colonisation francaise au 19e-20e siecle ayant provoque d'importantes migrations de travail vers Dakar puis vers la France.",
+      "majorHistoricalEvents": "Fondation et gouvernance de l'empire du Ghana (Wagadou, c. 200-1240). Prise de Kumbi Saleh par les Almoravides (1076). Fondation du sultanat du Gajaaga. Conquete de Kaarta par les Toucouleurs au 19e siecle. Migration massive vers la France a partir des annees 1950 ; les Soninke representent la plus grande communaute d'Afrique subsaharienne en France."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe tres hierarchisee avec une aristocratie guerriere (Tunkanlenmu en Jaara). Structure politique centree sur le roi (Tunka) entour d'une cour et de conseils de nobles. L'empire du Ghana etait gouverne par un roi-dieu qui controle le commerce de l'or et du sel.",
+      "clanOrganization": "Quatre clans principaux : Sisse, Drame, Sylla et Kante. Sous-groupes : Marka, Nono et Azer. Organisation en castes hereditaires endogames : nobles (Horro/Horon), castes artisanales (Namaxala/Nyaxamalo : forgerons/potiers Tage/Numu, cordonniers Garanke, griots/bardes Gesere/Jeli et Fune), esclaves (Komo). Les castes artisanales sont liees aux Nyamakalaw mande.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires controlent l'acces aux terres et determinent le statut social. Les mariages sont endogames entre cousins croises (preferentiels selon la loi islamique). La dot (nakhafa mensuelle) est versee a l'epouse et non a ses parents, contrairement a la plupart des peuples voisins.",
+      "religiousAuthority": "Islam sunnite majoritaire depuis le 10e-11e siecle ; les imams et marabouts jouent un role central. En Guinee, une partie de la population soninke reste animiste. Tradition de l'Ajami (ecriture du soninke en caracteres arabes)."
     },
     "languages": {
-      "mainLanguage": "Serahule / Soninke (snk)",
+      "mainLanguage": "Soninke (Sooninkanxanne)",
       "isoCodes": ["snk"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Azer (Mauritanie)",
+        "Kinbakka (Gambie)",
+        "Imraguen (Mauritanie, influence)"
+      ],
+      "vehicularRole": "Le soninke est une langue vehiculaire commerciale dans les zones frontieres Mali-Mauritanie-Senegal. Langue nationale au Mali, en Mauritanie, au Senegal et en Gambie. Environ 2,3 millions de locuteurs. S'ecrit en alphabet latin (officiels depuis 1982 au Mali et au Senegal) et en Ajami (arabe). Un systeme N'ti a egalement ete developpe. L'UNESCO classe le soninke parmi les langues vitales (non menacees)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Circoncision masculine (Birou) : les garcons de l'annee precedente organisent des tam-tams de preparation ; le rite insiste sur l'endurance physique, la douleur et le courage. Mariage islamique avec contrat, dote (nakhafa) versee a l'epouse, et festivites. Pratique de l'excision feminine historiquement repandue (actuellement illegale au Mali et au Senegal mais persistante).",
+      "symbols": "L'or et le sel (produits de commerce fondateurs de Wagadou). Le cheval (symbole du guerrier noble). Les griots (Gesere/Jeli) comme gardiens de la memoire historique. Le drapeau de Wagadou dans les representations contemporaines.",
+      "artsAndMusic": "Tradition griottique tres riche (Gesere, Jeli) : musique, poesie orale, histoire. Instruments : kora, balafon, tam-tam. Nombreux musiciens contemporains reconnus : Oumou Sangare, Ganda Fadiga. Tissage et artisanat du cuir (castes de tisserands et cordonniers).",
+      "spiritualities": "Islam sunnite majoritaire (predominant depuis le 10e-11e siecle). Pratiques animistes residuelles, notamment en Guinee. Croyance en les esprits et les ancetres (pratiquees clandestinement dans certaines communautes). Role central des marabouts dans la vie quotidienne."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Empire du Ghana ou Wagadou (c. 200-1240 apr. J.-C.) : premier grand empire d'Afrique de l'Ouest subsaharienne, controlant les routes commerciales or-sel transsahariennes. Royaumes successeurs : Gajaaga, Guidimakha, Kaarta. Empire du Sosso (Sumanguru Kante, 13e siecle, ancetre probable des Soninke).",
+      "relationsWithNeighbors": "Commerce intense avec les Berberes et Arabes via le Sahara. Relations d'echange et de conflit avec les Peuls du Fouta-Toro et du Fouta-Djallon. Alliance et intermariages avec les Wolof, Serer et Malinke. Les reseaux marchands Wangara ont joue un role crucial dans l'islamisation de l'Afrique de l'Ouest.",
+      "conflictsOrAlliances": "Resistance aux Almoravides (1076). Conquete par l'empire du Mali (13e siecle). Affrontements avec les Toucouleurs au 19e siecle (prise de Kaarta). Alliances marchandes Wangara avec de nombreux royaumes d'Afrique de l'Ouest.",
+      "diaspora": "Diaspora commerciale historique (Wangara) dans toute l'Afrique de l'Ouest. Importante diaspora en France (region parisienne, premiere communaute ouest-africaine en France) issue des migrations de travail depuis les annees 1950, principalement depuis Kayes (Mali). Communautes en Europe, Amerique du Nord et Afrique centrale."
     },
     "demography": {
-      "totalPopulation": 240,
+      "totalPopulation": 2300000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia (EN) estime plus de 2 millions. Ethnologue/SIL estime 2,3 millions de locuteurs du soninke. Wikipedia (FR) cite 2 201 000 locuteurs en 2012. Estimation 2025 en tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        { "country": "MLI", "population": 1100000 },
+        { "country": "SEN", "population": 450000 },
+        { "country": "MRT", "population": 180000 },
+        { "country": "GMB", "population": 200000 },
+        { "country": "BFA", "population": 120000 },
+        { "country": "GIN", "population": 40000 },
+        { "country": "GNB", "population": 20000 },
+        { "country": "CIV", "population": 60000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia – Soninke people (EN), 2024 (https://en.wikipedia.org/wiki/Soninke_people)",
+      "Wikipedia – History of the Soninke people (EN), 2024 (https://en.wikipedia.org/wiki/History_of_the_Soninke_people)",
+      "Wikipedia – Soninke language (EN), 2024 (https://en.wikipedia.org/wiki/Soninke_language)",
+      "Wikipedia – Soninkés (FR), 2024 (https://fr.wikipedia.org/wiki/Sonink%C3%A9)",
+      "Joshua Project – Soninke in Guinea, 2025 (https://joshuaproject.net/people_groups/14996/GV)",
+      "101 Last Tribes – Soninke people (https://www.101lasttribes.com/tribes/soninke.html)",
+      "Soninkara.com – Association culturelle soninke (https://www.soninkara.com)",
+      "COCOON/HUMA-NUM – Fiche langue Soninke ISO snk (https://cocoon.huma-num.fr/exist/crdo/language/snk)"
+    ]
   }
 }

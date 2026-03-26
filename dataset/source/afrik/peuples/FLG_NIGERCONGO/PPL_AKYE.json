@@ -7,58 +7,90 @@
     "appellations": {
       "mainName": "Akye",
       "selfAppellation": "Akye",
-      "exonyms": ["Akye (terme utilisé par les Européens), Attié"],
+      "exonyms": ["Attie", "Attye", "Atye", "Akie", "Akye (forme normalisee)"],
+      "originOfExonyms": "Le terme Attie est l'exonyme francophone le plus repandu, utilise par l'administration coloniale et encore employe dans de nombreuses sources. Les locuteurs se designent eux-memes comme Akye. Les variantes orthographiques (Attye, Atye, Akie) refletent des transcriptions differentes du meme endonyme.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Akye est prefere par les locuteurs et tend a s'imposer dans les sources academiques contemporaines, tandis qu'Attie reste courant dans les usages administratifs et touristiques ivoiriens.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Kwa",
-      "historicalRegion": "Sud-est de la Côte d'Ivoire",
+      "ethnoLinguisticGroup": "Kwa (branche Lagoonaire / Lagunaire)",
+      "historicalRegion": "Sud-est de la Cote d'Ivoire, zone lagunaire au nord de Grand-Bassam et Bingerville",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Akye du Nord", "Akye du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Akye du secteur de Bingerville — groupe meridional proche d'Abidjan",
+      "Akye du secteur d'Adzope — groupe septentrional",
+      "Akye du secteur d'Akoupe — groupe oriental",
+      "Sous-groupes locaux lies aux villages autonomes de la zone lagunaire",
+      "Akye des regions de l'interieur (nord d'Adzope) — sous-groupe continental"
+    ],
     "origins": {
-      "ancientOrigins": "Les Akye sont originaires du sud-est de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples ouest-africains, influence du christianisme."
+      "ancientOrigins": "Les Akye font partie des peuples akan installes dans le sud-est de la Cote d'Ivoire. Leur appartenance au groupe Kwa de la famille Niger-Congo les relie aux peuples akan du Ghana. La zone lagunaire de la Cote d'Ivoire orientale est habitee par douze groupes linguistiques distincts, dont les Akye constituent l'un des plus importants. La montee en puissance des premiers Etats akan centralises est datable du 13e siecle, liee a l'ouverture de routes commerciales pour l'or.",
+      "formationPeriod": "Les Akye se sont constitues comme groupe distinct au sein de la mouvance akan, probablement entre le 13e et le 15e siecle, lors de l'expansion des peuples kwa vers la cote ivoirienne. Avant la colonisation, chaque village akye etait autonome et les communautes s'unissaient ponctuellement en confederations face aux menaces exterieures.",
+      "migrationRoutes": [
+        "Migrations depuis l'interieur des terres vers la zone lagunaire du sud-est ivoirien",
+        "Pression du grand royaume ashanti au 18e siecle ayant consolide la fixation des groupes lagunaires"
+      ],
+      "historicalSettlementZones": [
+        "Zone lagunaire du sud-est de la Cote d'Ivoire — entre Abidjan, Bingerville et Grand-Bassam au sud",
+        "Region d'Adzope et d'Akoupe au nord",
+        "Environs de la lagune Potou et de l'Aby",
+        "Voisinage direct de l'actuelle agglomeration d'Abidjan, qui s'est developpee sur des terres akye"
+      ],
+      "unificationsOrDivisions": "Les Akye n'ont pas forme d'Etat centralise propre, mais ont maintenu une organisation en villages autonomes partageant une identite culturelle et linguistique commune. En cas de menace exterieure, ils se federaient sous l'autorite d'un chef territorial. L'administration coloniale francaise a introduit un systeme de chefferies formelles.",
+      "externalInfluences": "Appartenance a la mouvance akan du Ghana : partage de nombreux traits culturels (structures matrilineaires dans certains sous-groupes, art de la statuaire, economies agricoles). Contacts avec les peuples voisins (Anyi, Asante, Fante). Christianisation progressive depuis la periode coloniale. Influence de la culture urbaine d'Abidjan depuis l'independance (1960).",
+      "majorHistoricalEvents": "Integration dans la colonie francaise de la Cote d'Ivoire a la fin du 19e siecle. Resistance a la penetration coloniale avant la soumission definitive. Depuis l'independance (1960), integration progressive dans l'economie ivoirienne, notamment via la culture du cacao et la proximite avec Abidjan."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Traditionnellement, les Akye ne sont pas gouvernes par des chefs hereditaires au sens strict. La position sociale est determinee par l'age. La royaute est liee a la terre : toute personne pouvant faire remonter sa descendance a un membre fondateur d'un village peut etre consideree comme appartenant a la noblesse. En cas de menace, une hierarchie s'instaurait : chef de village, chef territorial, puis chef de division au sein d'une confederation plus large.",
+      "clanOrganization": "Chaque famille est responsable du maintien de l'ordre politique et social en son sein. L'organisation clanique est patrilineaire, organisee en familles etendues et lignages. La royaute ancestrale et la connexion a la terre fondent la legitimite.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, l'appartenance territoriale et les droits fonciers. Les ancetres fondateurs des villages confernent une legitimite politique aux descendants.",
+      "religiousAuthority": "Autorite des pretres servant les divinites locales (abosom) et des ancetres. Des femmes peuvent exercer des fonctions de pretresses. L'Eglise catholique et les eglises protestanttes jouent un role important depuis la periode coloniale, generant un syncretisme repandu."
     },
     "languages": {
-      "mainLanguage": "Akye",
-      "vehicularRole": "L'akye est parlé par la majorité des Akye. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Akye (Attie)",
+      "isoCodes": ["ati"],
+      "dialects": [
+        "Variante meridionale — secteur de Bingerville et Grand-Bassam",
+        "Variante septentrionale — secteur d'Adzope",
+        "Variante orientale — secteur d'Akoupe"
+      ],
+      "vehicularRole": "L'akye (code ISO 639-3 : ati) est classe langue stable et vivante par l'Ethnologue (SIL). Il est parle comme premiere langue par l'ensemble de la communaute ethnique. La langue n'est pas enseignee dans les ecoles. Le francais est la langue d'enseignement et de l'administration en Cote d'Ivoire. L'akye appartient au groupe lagunaire de la branche Kwa."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels akye, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les ceremonies de mariage traditionnel (dot, appellee 'Dot' en ivoirien) impliquent des negociations entre familles, des apports de biens et des celebrations communautaires. Les rites funeraires donnent lieu a des veillees, des repas collectifs et des ceremonies de levee de deuil. Des libations sont versees quotidiennement aux ancetres enteres dans la terre comme offrandes propitiatoires. Des statues representant les forces de la fecondite feminine sont utilisees dans des rituels agricoles et de fertilite. Les ceremonies liees aux cycles agricoles (yam et taro comme cultures principales) ponctuent le calendrier rituel.",
+      "symbols": "Les statues anthropomorphes de type alangua — debout ou assises, aux bras et jambes bulbeux — constituent l'expression artistique la plus identifiable des Akye. Elles presentent des coiffures geometriques caracteristiques et des marques de scarification en relief obtenues par insertion de chevilles en bois. La terre est concue comme une divinite feminine directement liee a la fertilite et a la fecondite, et constitue un symbole cosmologique central.",
+      "artsAndMusic": "La statuaire en bois est la forme d'art la plus caracteristique des Akye : figurines humaines, tabourets symbolisant le siege du pouvoir, poupees de fertilite, objets en ivoire et en laiton. La fonte a la cire perdue (or et laiton) est egalement pratiquee, dans la tradition akan elargie. La poterie et le tissage sont des traditions artisanales bien etablies. La musique traditionnelle inclut des chants ceremonials et des percussions lors des ceremonies de mariage, de funerailles et des fetes agricoles. Les femmes controlent les marches locaux et jouent un role economique et social important.",
+      "spiritualities": "Les Akye croient en un dieu supreme dont le nom varie selon les regions, trop distant pour etre contacte directement — conformement a la cosmologie akan elargie. Ce dieu a interagi librement avec les hommes autrefois mais s'est eloigne apres avoir ete frappe par le pilon d'une vieille femme pilant du fufu. De nombreuses divinites (abosom) recueilent l'energie du dieu supreme et sont liees au monde naturel (esprits des rivieres, des lacs, de l'ocean, divinites locales). Des pretres servent ces esprits individuels comme intermediaires. La terre est veneree comme une divinite feminine. Les ancetres inhumes dans la terre recoivent des libations quotidiennes. Le christianisme est majoritaire parmi les Akye, creant un syncretisme vivant avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora akye dans les grandes villes ivoiriennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Akye n'ont pas constitue de royaumes centralises independants mais font partie du vaste ensemble culturel akan. Chaque village maintint son autonomie sous la direction de chefs villageois, avec des confederations temporaires en periode de conflit. L'histoire politique akye est essentiellement locale et villageoise. Contrairement aux Ashanti ou aux Fanti, les Akye ont preserve une organisation decentralisee fondee sur l'autonomie villageoise et l'autorite des anciens.",
+      "relationsWithNeighbors": "Voisinage avec les Anyi (Agni) a l'est avec lesquels les Akye partagent de nombreux traits culturels akan. Relations avec les peuples lagunaires (Alladian, Avikam, Adjoukrou) au sud et a l'ouest. Echanges commerciaux et culturels avec Abidjan depuis la periode coloniale — la ville s'est developpee sur d'anciens territoires akye. Les femmes akye ont toujours controle les marches locaux, jouant un role economique majeur dans les echanges regionaux.",
+      "conflictsOrAlliances": "Integration dans des confederations akan etendues lors de menaces exterieures, dans la tradition des peuples kwa de Cote d'Ivoire. Resistance a la penetration coloniale francaise avant l'occupation definitive a la fin du 19e siecle. Depuis l'independance de la Cote d'Ivoire (1960), les Akye participent a la vie politique ivoirienne. Leur territoire historique a ete partiellement absorbe par l'expansion urbaine d'Abidjan, generant des conflits fonciers contemporains.",
+      "diaspora": "Diaspora akye principalement interne : migration vers Abidjan et les grandes villes ivoiriennes depuis la periode post-coloniale. Presence limitee dans les pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 838000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2024) : 838 000 en Cote d'Ivoire. Peoplegroups.org (2023) : 790 000. Estimation 2025 par projection legere. Ethnologue (SIL) : 10 000 a 1 000 000 locuteurs (fourchette large). La population est exclusivement localisee en Cote d'Ivoire.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 838000,
+          "note": "Sud-est de la Cote d'Ivoire : secteurs de Bingerville, Adzope, Akoupe, zone lagunaire au nord d'Abidjan"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Akye language (ati)",
-      "CIA World Factbook – Côte d'Ivoire",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples kwa"
+      "101 Last Tribes — Attie people. https://www.101lasttribes.com/tribes/attie.html",
+      "Gateway Africa Safaris — Akye Tribe. https://www.gateway-africa.com/tribe/akye_tribe.html",
+      "Joshua Project — Attie in Cote d'Ivoire. https://joshuaproject.net/people_groups/10483",
+      "SIL Ethnologue — Attie language (ati). https://www.ethnologue.com/language/ati/",
+      "TypeCraft — Typological Features for Attie. https://typecraft.org/tc2wiki/Typological_Features_Template_for_Attie",
+      "Friendly Borders — Ivory Coast Original Settlers. https://www.friendlyborders.org/news/ivory-coasts-original-settlers-and-their-art/",
+      "Akanfo Facebook — Akye Attie people. https://www.facebook.com/Akanfo/posts/the-akye-attie-are-a-separate-akan-people/",
+      "Glottolog — Attie. https://glottolog.org/resource/languoid/id/atti1239",
+      "Peoplegroups.org — Akye (Attie) in Cote d'Ivoire. https://www.peoplegroups.org/explore/GroupDetails.aspx?peid=16025"
     ]
   }
 }

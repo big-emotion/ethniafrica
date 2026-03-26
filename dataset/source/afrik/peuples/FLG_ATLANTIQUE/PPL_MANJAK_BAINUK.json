@@ -2,58 +2,101 @@
   "id": "PPL_MANJAK_BAINUK",
   "nameMain": "Manjak / Bainuk",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GMB"],
+  "currentCountries": ["GNB", "SEN", "GMB"],
   "content": {
     "appellations": {
       "mainName": "Manjak / Bainuk",
-      "selfAppellation": "",
-      "exonyms": ["Manjak, Bainuk (termes utilisés par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Manjaku (autoappellation des Manjak); Elomay / Elunay ou Nun (autoappellation des Bainuk)",
+      "exonyms": [
+        "Manjak: Mandjak (français), Manjaco (portugais), Njaago (wolof), Manjago (jola)",
+        "Bainuk: Banyuk, Banun, Banyun, Bainouk, Bainunk, Banyum, Bagnoun, Banhum, Banyung, Nun"
+      ],
+      "originOfExonyms": "Le nom Manjak signifie 'je te dis' dans la langue du groupe. Le terme Manjaco (portugais) s'est répandu depuis la colonisation. Pour les Bainuk, le nom Banyun est attribué aux Portugais, qui l'auraient dérivé du mandingue pour designer de façon collective plusieurs groupes vivant le long des voies d'eau entre la Gambie et le Cacheu; il signifie possiblement 'commerçant', à l'image du terme dyula pour les commerçants mande. Selon la tradition orale mandingue, Bainouk signifie 'ceux qui sont chassés' (de 'bai', chasser en mandingue), terme utilisé après une défaite militaire au XVIe siècle.",
+      "whyProblematic": "Le terme Bainouk est perçu comme péjoratif selon la tradition mandingue (signifiant 'ceux qui ont été chassés'). Une malédiction légendaire du roi Gana Sira Bana pousse historiquement certains Bainuk à dissimuler leurs origines. La confusion entre Manjak et Bainuk est fréquente, ces deux peuples étant bien distincts sur les plans linguistique et historique malgré leur cohabitation géographique.",
+      "contemporaryUsage": "Manjak / Manjaco est le terme officiel en Guinée-Bissau. Mandjak est utilisé au Sénégal. Les Bainuk connaissent un renouveau identitaire avec des efforts de préservation culturelle et linguistique, notamment en Sénégal et en Gambie.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Zones côtières et transfrontalières",
-      "currentCountries": ["GMB"]
+      "ethnoLinguisticGroup": "Bak (Manjak, Niger-Congo); Tenda / Bainuk (langue isolée ou classée dans le sous-groupe Bainuk-Kobiana, Niger-Congo)",
+      "historicalRegion": "Péninsule définie par le fleuve Cacheu, l'Atlantique et le fleuve Mansoa (Guinée-Bissau), Basse Casamance (Sénégal), Gambie méridionale",
+      "currentCountries": ["GNB", "SEN", "GMB"]
     },
-    "ethnicities": ["Manjak / Bainuk"],
+    "ethnicities": ["Manjak (Manjaco)", "Bainuk (Banyun)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Zones côtières et transfrontalières"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Manjak sont originaires de la péninsule entre le Cacheu, l'Atlantique et le Mansoa en Guinée-Bissau. Les Bainuk sont considérés par les scientifiques comme le plus ancien peuple du Sénégal (présence depuis le VIe siècle ap. J.-C. en Casamance). Ils sont crus être les premiers habitants de la Basse Casamance. Les études génétiques confirment leur ancienneté dans la région (haplogroupe L2b). Le groupe Bainuk se serait formé par fusion entre des habitants anciens de Casamance et des migrations venant des zones Tenda à l'est, sous la pression de l'Empire du Mali.",
+      "formationPeriod": "Les états Bainuk apparaissent au XVe siècle (Bichangor, Jase, Foni, Buguando). Les structures Manjak sont documentées dès les premières archives portugaises du XVe-XVIe siècles. L'organisation semi-féodale Manjak autour du Roi de Bassarel est attestée avant la colonisation.",
+      "migrationRoutes": [
+        "Bainuk: du Sine-Saloum et de régions plus septentrionales vers la Casamance, sous pression des Malinké",
+        "Bainuk: vers l'ouest lors de la domination de l'Empire du Kaabu et des incursions mandingues",
+        "Manjak: déplacement vers le Sénégal et la Gambie comme travailleurs migrants (XVIIIe-XXe siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Péninsule Cacheu-Mansoa (Guinée-Bissau nord, zones de Bassarel et Babok, région de Cacheu)",
+        "Casamance occidentale (Sénégal, entre la Gambie et le Cacheu)",
+        "Gambie méridionale et ouest (West Coast Region)"
+      ],
+      "unificationsOrDivisions": "Les Bainuk disposaient d'au moins cinq États au XVe siècle et constituaient un composant majeur du royaume de Kasa. Le royaume Bainuk, vassal du Kaabu, fut détruit en 1830 lors d'une invasion balanta. Les Manjak formaient une fédération sous le Roi de Bassarel, structure démantelée en 1913 lors de la conquête coloniale portugaise.",
+      "externalInfluences": "Les Bainuk ont subi la pression progressive des Mandingue, Balanta et Jola, qui les ont poussés vers l'ouest. L'Empire du Kaabu (empire mandingue) a exercé une suzeraineté sur les Bainuk jusqu'au XIXe siècle. Les Manjak ont résisté au contrôle colonial portugais jusqu'en 1913, puis ont choisi la migration de travail vers le Sénégal français et la Gambie britannique plutôt que de se soumettre. Les deux peuples ont intégré des éléments culturels mandingues et jola.",
+      "majorHistoricalEvents": "XVe siècle: cinq États Bainuk documentés dans la région. XVe-XVIe siècles: contact avec les Portugais; domination du commerce côtier. 1830: destruction du royaume Bainuk (vassal du Kaabu) par une invasion balanta. 1913: conquête du territoire Manjak par des soldats Peul et Mandingue sous commandement portugais. 1940s: un cinquième des Manjak travaillent hors de Guinée portugaise. 1959: massacre de Pidjiguiti (plus de 50 Africains tués, dont de nombreux Manjak), catalyseur du mouvement d'indépendance et du PAIGC. 1974: indépendance de la Guinée-Bissau; démantèlement des structures politiques traditionnelles Manjak. 1986: Kambatch (cérémonie centenaire de révision des coutumes) chez les Manjak."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Manjak: système semi-féodal pré-colonial; villages sous l'autorité d'un chef local tributaire du Roi de Bassarel, qui présidait une fédération. Après l'indépendance (1974), les structures royales ont été dissoutes par le nouveau gouvernement. Bainuk: organisation en États-chefferies (au moins cinq au XVe siècle); royauté matrilinéaire; pouvoir exercé par les fils des tantes maternelles (système d'héritage matrilinéaire).",
+      "clanOrganization": "Bainuk: société matrilinéaire, le pouvoir royal se transmettait par les neveux utérins (fils des tantes maternelles). Chez les deux peuples, des groupes d'âge et des espaces dédiés aux jeunes hommes (banju chez les Manjak) structurent la vie sociale.",
+      "ageClassSystems": "Chez les Manjak, les banju (espaces collectifs pour jeunes hommes non mariés) structurent l'entrée dans la vie adulte et les débats communautaires. Le Kambatch, cérémonie de révision des coutumes organisée tous les quarts de siècle, implique une initiation des hommes adultes.",
+      "roleOfLineages": "Matrilinéaire chez les Bainuk (héritage du pouvoir par les neveux utérins). Chez les Manjak, la structure politique liait les villages aux leaders locaux puis au Roi de Bassarel, avec une forte importance de la propriété des rizières comme marqueur de statut.",
+      "religiousAuthority": "Manjak: culte des ancêtres via les sanctuaires pitchap (poteaux en bois représentant collectivement les ancêtres), avec offrandes d'eau et de vin de palme; majorité catholique. Bainuk: syncrétisme islam-animisme; la tradition du Kumpo (masque sacré) est originaire des Bainuk, adoptée par les Jola."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Manjak (mfv) / Bainuk (bcb)",
+      "isoCodes": ["mfv", "bcb"],
+      "dialects": [
+        "Manjak de Guinée-Bissau (Cacheu, Bassarel)",
+        "Manjak du Sénégal (Casamance, Ziguinchor)",
+        "Bainuk Gunyaamolo (Sénégal, principal dialecte)",
+        "Bainuk Kobiana / Cobiana (Guinée-Bissau)"
+      ],
+      "vehicularRole": "Le manjak est langue communautaire dans le nord de la Guinée-Bissau. Le bainuk est une langue en danger, avec un faible nombre de locuteurs actifs au Sénégal et en Gambie; des efforts de documentation sont menés par ELAR (Endangered Languages Archive). En Guinée-Bissau, le Kriol (créole portugais) est la langue vehiculaire. Au Sénégal, le wolof et le français dominent les échanges interethniques."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Manjak: le Kambatch est une cérémonie majeure organisée tous les 25 ans, lors de laquelle les hommes initiés deliberent et décident de maintenir, modifier ou abolir les coutumes. En 1986, le service pré-nuptial obligatoire (travail des champs de la future épouse) a été remplacé par le consentement mutuel, et le culte de divination féminin a été aboli. Les funérailles sont essentielles: les Manjak de la diaspora retournent dans leur village natal pour y participer. Bainuk: rites d'initiation structurés par classes d'âge; le Kumpo (masque sacré incarnant un esprit forestier), originaire des Bainuk, est pratiqué lors de fêtes communautaires.",
+      "symbols": "Les pitchap (autels ancestraux Manjak, poteaux en bois) sont au coeur de la vie spirituelle. Chez les Bainuk, le masque Kumpo est un symbole de force spirituelle. Les rizières en mangroves (bolanhas) sont le symbole du patrimoine agricole Manjak.",
+      "artsAndMusic": "Les Manjak ont développé un système agricole unique (bolanhas): digues, canaux de drainage et rizières dans les mangroves, qui avait impressionné les explorateurs portugais par sa complexité. Les Bainuk sont reconnus comme tisserands et teinturiers habiles. Le rappeur sénégalais DIP Doundou Guiss (Dominique Preira) est d'origine Manjak. Des chants et danses collectifs accompagnent les cérémonies de passage et les fêtes saisonnières.",
+      "spiritualities": "Manjak: majorité catholique (forte influence de la mission catholique portugaise) avec persistance des pratiques animistes (culte pitchap). Une minorité musulmane existe, surtout chez les travailleurs migrants. La jeunesse urbaine est largement sceptique face à l'animisme traditionnel. Bainuk: syncrétisme islam-animisme; une part de la population est aussi chrétienne. La tradition du Kumpo, pratiquée par les Jola voisins, est d'origine Bainuk, mêlant concepts mande et croyances locales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Bainuk: cinq États documentés au XVe siècle (Bichangor, Jase, Foni, Buguando); composant majeur du royaume de Kasa; royaume Bainuk vassal du Kaabu (détruit 1830). Manjak: fédération de villages sous le Roi de Bassarel (pré-colonial); structure démantelée lors de la conquête portugaise (1913) puis par le gouvernement post-indépendance (1974).",
+      "relationsWithNeighbors": "Bainuk: étroite relation cousinière avec les Peul (qui les auraient sauvés d'un roi tyrannique selon la légende), les Lébou et les Sérères. Prédécesseurs accueillants de tous les peuples en Casamance selon leur tradition. Progressivement refoulés par les Mandingue, Balanta et Jola. Proche relation culturelle avec les Diola (Jola) partageant le masque Kumpo. Manjak: soumission à la colonisation portugaise via des soldats Peul et Mandingue en 1913. Migration vers le Sénégal français et la Gambie britannique pour le travail. Participation minimale à la lutte d'indépendance menée par le PAIGC.",
+      "conflictsOrAlliances": "Bainuk: collaboration tactique avec les Portugais contre le royaume de Kasa à la fin du XVIe siècle; invasion balanta en 1830 qui détruit le royaume. Manjak: résistance à l'annexion portugaise jusqu'en 1913; victimes du massacre de Pidjiguiti (1959); choix de la migration plutôt que de la lutte armée pour l'indépendance.",
+      "diaspora": "Importante diaspora Manjak en France (ancienne métropole coloniale) et en Sénégal. Les Manjak migrant en ville maintiennent un lien fort avec leur village natal via les funérailles et les cotisations pour les rituels. Les Bainuk de la diaspora sénégalaise sont présents à Dakar et en Casamance."
     },
     "demography": {
-      "totalPopulation": 80,
+      "totalPopulation": 366000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Manjak: 300 000 env.; Bainuk: 66 000 env.)",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 220000,
+          "note": "Manjak: 14% de la population de Guinée-Bissau (env. 220 000), région de Cacheu"
+        },
+        {
+          "country": "SEN",
+          "population": 100000,
+          "note": "Manjak et Bainuk en Casamance (Ziguinchor, Sedhiou); Bainuk Gunyaamolo: env. 35 500"
+        },
+        {
+          "country": "GMB",
+          "population": 46000,
+          "note": "Communautés Manjak et Bainuk, West Coast Region"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Manjak people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Manjak_people)",
+      "Bainuk people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Bainuk_people)",
+      "Mandyak, Manjago in Guinea-Bissau – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13493/PU)",
+      "Bainouk, Gunyaamolo in Senegal – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10665/SG)",
+      "Bainuk people – Djola History and Genealogy Society, 2021 (https://www.djola.org/history/blog-post-title-three-3bz78)",
+      "Van Binsbergen W., Migration and religion in Manjak society – Quest Journal, 2001 (http://m.quest-journal.net/shikanda/african_religion/socio.htm)",
+      "Ethnologue – Manjak (mfv) et Bainuk (bcb), SIL International, 2024 (https://www.ethnologue.com)"
+    ]
   }
 }

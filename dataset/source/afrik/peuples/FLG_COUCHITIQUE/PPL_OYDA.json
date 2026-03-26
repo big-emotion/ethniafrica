@@ -6,54 +6,69 @@
   "content": {
     "appellations": {
       "mainName": "Oyda",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Oyda",
+      "exonyms": ["Oida", "Oyita"],
+      "originOfExonyms": "Les formes Oida et Oyita sont des variantes orthographiques utilisees dans la litterature linguistique et ethnographique europeenne pour transcrire le nom du groupe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Oyda est employe dans les recensements officiels ethiopiens et dans les travaux academiques (DOBES, SIL/Ethnologue). L'Oyda est reconnu comme groupe ethnique distinct depuis le recensement de 2007.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Ometo (groupe Nord-Ometo, branche Omotique)",
+      "historicalRegion": "Gamo-Gofa, Sud-Ouest ethiopien",
       "currentCountries": ["ETH"]
     },
     "ethnicities": ["Oyda"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Oyda font partie du groupe Ometo, lui-meme rattache aux langues omotiques parlees dans la vallee de l'Omo, au Sud-Ouest de l'Ethiopie. Leur histoire ancienne est liee aux populations proto-omotiques qui occupent cette region depuis plusieurs millenaires. Avant 2007, le district Oyda etait administrativement rattache au district de Gofa.",
+      "formationPeriod": "Periode precoloniale indeterminee. La distinction ethnique et linguistique des Oyda par rapport aux groupes Ometo voisins (Gofa, Gamo, Wolayta) s'est consolidee progressivement au cours du premier millenaire de l'ere commune.",
+      "migrationRoutes": [
+        "Vallee de l'Omo vers les hautes terres du Gamo-Gofa"
+      ],
+      "historicalSettlementZones": [
+        "District de Gofa (avant 2007)",
+        "District Oyda, zone Gamo-Gofa, SNNPR, Ethiopie"
+      ],
+      "unificationsOrDivisions": "En 2007, un district administratif portant le nom Oyda a ete cree, separant ce groupe du district de Gofa. Le district est subdivise en vingt kebeles.",
+      "externalInfluences": "Les Oyda ont subi l'influence des groupes Ometo voisins (Gofa, Wolayta, Gamo) ainsi que de l'Etat ethiopien central depuis la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Creation du district administratif Oyda en 2007. Le recensement de 1994 denombrait environ 14 000 Oyda, chiffre passe a 45 120 en 2007, sans explication officielle de cet ecart considerable."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation clanique patrilineaire traditionnelle, commune aux groupes Ometo du Sud-Ouest ethiopien. Les affaires communautaires sont gerees par des conseils d'anciens.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans sont les unites de base de l'organisation sociale et de la regulation des mariages et des conflits.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers et les obligations cerimoniales.",
+      "religiousAuthority": "Les autorites religieuses traditionnelles coexistent avec les eglises protestantes evangeliques qui ont penetré la region a partir du XXe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Oyda",
+      "isoCodes": ["oyd"],
+      "dialects": [],
+      "vehicularRole": "La langue oyda est utilisee comme langue maternelle par l'ensemble du groupe ethnique. L'amharique sert de langue vehiculaire avec les autres groupes et l'administration. La langue oyda est consideree comme vulnerable selon Glottolog (evaluation Dilnesaw 2003)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les rites de passage (naissance, mariage, deces) suivent les traditions omotiques communes aux groupes Ometo. Les ceremonies agricoles et les rituels de fertilite sont centralises dans la vie communautaire.",
+      "symbols": "L'economie agricole et l'elevage constituent les fondements symboliques de l'identite oyda. Le betail joue un role important dans les echanges matrimoniaux et cerimonials.",
+      "artsAndMusic": "La tradition orale est le principal vecteur de transmission culturelle. La musique et les chants accompagnent les ceremonies de mariage et les fetes saisonnieres.",
+      "spiritualities": "Croyances animistes traditionnelles coexistant avec un christianisme evangelique croissant. Le projet de documentation DOBES (Max Planck Institute, JCU) a documente la langue et certains aspects culturels entre 2010 et 2013."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume independant atteste. Les Oyda relevaient historiquement de la sphere d'influence du district de Gofa avant d'obtenir leur propre district en 2007.",
+      "relationsWithNeighbors": "Les Oyda partagent des frontieres ethniques et culturelles avec les groupes Ometo voisins : Gofa, Gamo, Wolayta, Basketo et Melo. Des echanges commerciaux et culturels importants existent avec ces groupes.",
+      "conflictsOrAlliances": "Les relations interethniques avec les groupes Ometo voisins sont globalement pacifiques, avec des competences partagees dans les marches locaux et les ceremonies.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 87000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (estimation basee sur la croissance demographique depuis le recensement ethiopien de 2007 : 45 120 personnes)",
+      "distributionByCountry": [{ "country": "ETH", "population": 87000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Oyda – DOBES Documentation of Endangered Languages, Max Planck Institute / JCU, 2013 (https://dobes.mpi.nl/projects/oyda/)",
+      "Oyda Language (OYD) – Ethnologue / SIL International, 2024 (https://www.ethnologue.com/language/oyd/)",
+      "Oyda in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14240)",
+      "Glottolog 5.3 : Oyda (oyda1235) – Hammarstrom et al., 2024 (https://glottolog.org/resource/languoid/id/oyda1235)",
+      "Multi-media documentation of the Oyda Language – Amha A., JCU Research Online, 2013 (https://researchonline.jcu.edu.au/28529/1/28529_Amha_2013.pdf)",
+      "Omotic languages – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Omotic_languages)"
+    ]
   }
 }

@@ -1,23 +1,107 @@
 {
   "id": "PPL_CHLEUH",
-  "nameMain": "",
+  "nameMain": "Chleuh",
   "languageFamilyId": "FLG_BERBERE",
-  "currentCountries": [],
+  "currentCountries": ["MAR"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Išelḥiyen",
+      "mainName": "Chleuh",
+      "selfAppellation": "Išelḥiyen (Ichelhiyen)",
+      "exonyms": [
+        "Chleuhs",
+        "Shluh",
+        "Schloh",
+        "Shilha",
+        "Soussiens",
+        "Sousis"
+      ],
+      "originOfExonyms": "L'origine du nom Chleuh est debattue. La premiere mention occidentale est dans Marmol, Descripcion general de Affrica (1573) : les indigenes appeles Xilohes ou Berberes. L'IRCAM (Maroc) soutient une origine arabe : le terme arabe silh signifie bandit, mais cette etymologie ne s'applique pas aux dialectes arabes du Maghreb. L'historien Mohammed Akdim propose que le nom est l'appellation originale que les Masmuda de l'Atlas et du Souss se donnaient a eux-memes. En arabe marocain, un individu est appele Shluh (plur. Chlouh), d'ou Chleuh en francais.",
+      "whyProblematic": "Le terme Chleuh a parfois ete utilise comme insulte en France pendant la Seconde Guerre mondiale pour designer les soldats allemands, en raison d'une confusion phonetique. Au Maroc, il est employe de maniere courante et non pejorative.",
+      "contemporaryUsage": "Chleuh et Ishelhiyen sont tous deux en usage courant au Maroc. La langue s'appelle officiellement Tachelhit dans les documents de l'IRCAM et les textes constitutionnels marocains. Le terme Soussien est utilise pour les Chleuhs du Souss specifiquement.",
       "linguisticFamily": "FLG_BERBERE",
-      "historicalRegion": "Sud-Ouest marocain (Souss, Haut Atlas, Anti-Atlas)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Berbere meridional (branche atlasique meridionale / tachelhit)",
+      "historicalRegion": "Sud-Ouest marocain : Haut Atlas occidental, Anti-Atlas et plaine du Souss (regions de Souss-Massa, Guelmim-Oued Noun, parties du Haut Atlas)",
+      "currentCountries": ["MAR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["IRCAM (Maroc)", "Ethnologue (shi)"]
+    "ethnicities": [
+      "Masmuda (confederation historique dominante du Haut Atlas et du Souss)",
+      "Ait Baamran (tribu principale de la province d'Ifni, cote atlantique)",
+      "Ihahan (Chleuhs du nord-ouest du territoire tachelhit)",
+      "Ait Ouaouzguite (zone de continuum avec le Tamazight central)",
+      "Achtouken (extremite occidentale de la zone tachelhit)",
+      "Iznagen (extremite orientale de la zone tachelhit)",
+      "Ida ou Semlal, Ida ou Kensous (confederations tribales historiques du Souss)",
+      "Sanhaja de la cote (sanhaja du Souss, confederation historique)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ishelhiyen (Chleuhs) appartiennent principalement a la branche Masmuda des Berberes sedentaires du Grand Atlas et de l'Anti-Atlas. Les populations berberes du Souss et de l'Anti-Atlas sont documentees depuis l'Antiquite. Elles ont commerce avec les Pheniciens et les Carthaginois dans des comptoirs cotiers. Le royaume de Mauretanie, etabli par ces Berberes, a ete integre a l'Empire romain en 33 ap. J.-C.",
+      "formationPeriod": "Les Chleuhs ont joue un role determinant dans l'histoire du Maroc : l'empire almoravide (1053-1147), fonde par des Sanhaja nomades du Sahara, et surtout l'empire almohade (1147-1275), fonde par Ibn Tumart (natif du Souss), ont transforme le Maghreb et l'Andalousie. Ces dynasties berberes marocaines sont de culture tachelhit ou apparentee.",
+      "migrationRoutes": [
+        "Diffusion interne du Souss vers les villes marocaines (Casablanca, Agadir, Marrakech, Rabat) tout au long du 20e siecle",
+        "Diaspora internationale vers la France, la Belgique, les Pays-Bas, l'Espagne, le Canada, les Etats-Unis et Israel"
+      ],
+      "historicalSettlementZones": [
+        "Haute vallee du Souss et ses affluents (Agadir, Taroudant, Oulad Teima)",
+        "Massif de l'Anti-Atlas et de l'Haut Atlas occidental (Tiznit, Tafraout, Ouarzazate nord)",
+        "Plaine du Souss (region Souss-Massa)",
+        "Region de Guelmim-Oued Noun",
+        "Diaspora dans les 1512 communes marocaines sur 1538"
+      ],
+      "unificationsOrDivisions": "Les Chleuhs ne forment pas une unite politique formelle mais partagent une langue et une culture communes. Les confederations tribales (Masmuda, Sanhaja) sont la base de l'organisation. Les communautes du sud-ouest marocain cooperaient pour les droits de paturage reciproques et en temps de guerre, avec des rassemblements festifs annuels pour reaffirmer leurs alliances.",
+      "externalInfluences": "Contacts pheniciens et romains. Islamisation progressive aux 7e-8e siecles via la conquete arabe. Role pivot dans les dynasties almoravide et almohade. Resistance au controle Ottoman (qui ne s'est jamais etendu au Souss). Colonisation franco-espagnole (1912-1956 pour les Francais ; l'Espagne controlait Ifni). Independence en 1956 apres resistance sous Abdullah Zakour.",
+      "majorHistoricalEvents": "Fondation de l'empire almoravide par Abdallah ibn Yasin (mort 1059). Fondation de l'empire almohade par Ibn Tumart (vers 1080-1130, natif du Souss). Bataille de Sagrajas (1086) gagnee par Yusuf ibn Tashfin (almoravide). Etablissement de la dynastie Tazerwalt au 16e siecle par Sidi Ali Bou Dmia. Resistance a la colonisation et role dans l'independance du Maroc (1956). Saadeddine Othmani (Premier ministre 2017-2021) et Aziz Akhannouch (Premier ministre en fonction depuis 2021) sont d'origine chleuh."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale en confederations (taqbilin) avec conseil de village (jmaa) regroupant les hommes adultes. Les communautes du Souss ont developpe un systeme de representation equitable pour les decisions collectives. Les alliances inter-tribales etaient reaffirmees annuellement lors de rassemblements festifs et commerciaux.",
+      "clanOrganization": "Division en confederations (ex. Masmuda, Sanhaja), tribus (icherkan) et fractions (tikhsiwin). La tribu Ait Baamran dans la province d'Ifni est la plus connue. Chaque fraction est un groupe patrilineaire avec droits fonciers propres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Societe patrilineaire : la descendance, l'heritage et l'appartenance tribale se transmettent par le pere. Les alliances matrimoniales renforcent les liens entre lignages et fractions. Les droits de paturage saisonniers sont geres collectivement selon le lignage.",
+      "religiousAuthority": "Islam sunnite malekite avec une forte tradition soufie (confréries religieuses). Les saints locaux (imdlsn, moussems) jouent un role social important. Sidi Ḥammu est un poete-saint semi-legendaire du 18e siecle, embleme de la tradition litteraire tachelhit. Sidi Ahmed Ou Moussa (1460-1563), saint fondateur, et Sidi Ali Bou Dmia (1592-1659), fondateur de l'emirat de Tazerwalt, illustrent la fusion politique et religieuse."
+    },
+    "languages": {
+      "mainLanguage": "Tachelhit (Taclhiyt, Shilha)",
+      "isoCodes": ["shi"],
+      "dialects": [
+        "Tasusiyt (Tachelhit du Souss, variante dominante)",
+        "dialecte de l'Haut Atlas occidental",
+        "dialecte de l'Anti-Atlas (Tiznit, Tafraout)",
+        "dialecte de Guelmim",
+        "Judeo-berbere (variante historique des communautes juives du Souss)"
+      ],
+      "vehicularRole": "Le tachelhit est la langue amazighe la plus parlee au Maroc et probablement en Afrique du Nord. Selon le recensement marocain 2024, 14,2% de la population (environ 5,2 millions de personnes) le parlent comme premiere langue. Estimations larges : 6 a 10 millions de locuteurs (incluant la diaspora). Le tachelhit possede une tradition litteraire manuscrite en alphabet arabe remontant au 16e siecle. L'arabe marocain et le francais sont les langues vehiculaires nationales."
+    },
+    "culture": {
+      "majorRites": "Ahwach : grande fete collective ou les habitants chantent des poemes et dansent en ligne ; pratiquee lors des celebrations du Nouvel An amazigh (Yennayer, 13 janvier), des mariages et des fetes de saison. Laamt : danse specifique des Chleuhs de Demnat (Haut Atlas). Moussems (pelerinages aux saints locaux) : festivals majeurs dans tout le Souss. Mariage : celebration collective de plusieurs jours avec musique, chants et danses.",
+      "symbols": "La djellaba a capuche (hooded jellaba), le turban et les chaussures en cuir (blgha) sont les vetements traditionnels masculins. Les femmes portent le caftan Asmal ou Achayt, la jupe Ssayah et des bijoux en argent distinctifs selon la tribu : Tawnza (couronne en argent et corail), Tazerzit (fibule pectorale en argent), Tanbalt (bracelets en argent articulés). Ces ornements identifient la tribu et le village d'origine.",
+      "artsAndMusic": "Groupes musicaux emblematiques : Oudaden (formes en 1978 a Ben Sergao pres d'Agadir, musique tachelhit traditionnelle). Artistes notables : Ammouri Mbarek (1954-2015), Hassan Arsmouk (ne 1963), Hindi Zahra (nee 1979). Instruments : rebab (vielle a archet), banjo, lotar, bendir, flute. Litterature : Mohammed Awzal (1680-1749, auteur prolific de centaines d'oeuvres en tachelhit) ; Mririda n Ayt Atiq (poetesse c. 1900-1940, themes tabous) ; Mohammed Khair-Eddine (1941-1995, poete et romancier). Artisanat : bijoux en argent aux motifs specifiques a chaque tribu, tapis du Souss, poterie.",
+      "spiritualities": "Islam sunnite malekite. Forte tradition soufie avec confréries (tariqa) locales. Maraboutisme tres present : les saints locaux (imrabdhen) ont une autorite spirituelle et sociale. Yennayer est celebre comme fete culturelle et identitaire. Persistance de pratiques pre-islamiques : invocations pour la pluie, ceremonies de propitiation agricole."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire almoravide (1053-1147) : cofonde par Abdallah ibn Yasin et Yusuf ibn Tashfin, d'origine sanhaja et tachelhit ; expansion jusqu'en Andalousie. Empire almohade (1147-1275) : fonde par Ibn Tumart, natif du Souss ; gouverna tout le Maghreb et l'Espagne musulmane. Emirat de Tazerwalt (16e-19e siecle) : fonde par Sidi Ali Bou Dmia, centre spirituel et politique du Souss. Hafsides (1207-1574) : fondateurs issus de la meme lignee almohade du Souss.",
+      "relationsWithNeighbors": "Echanges commerciaux intenses avec les populations arabophones de Marrakech et de la cote atlantique. Commerce caravanier transsaharien : sel, or, esclaves. Relations avec les Touaregs et les Sahraouis au sud. Interactions avec les communautes juives du Souss (mellah) jusqu'au 20e siecle.",
+      "conflictsOrAlliances": "Resistance aux Omeyyades (739, bataille de Nobles et Bagdoura). Domination successive des royaumes Barghawata, Midrar, Idrisides. Fondation des empires almoravide et almohade. Resistance a la colonisation franco-espagnole : role d'Abdullah Zakour dans la liberation du Souss. Independence du Maroc en 1956.",
+      "diaspora": "Tres importante diaspora economique : petits commercants chleuh dans toutes les villes marocaines (Casablanca, 10% des habitants parlent tachelhit ; premiere ville tachelhit de facto). Diaspora europeenne en France, Belgique, Pays-Bas, Allemagne. Communautes en Espagne, Canada, Etats-Unis et Israel (familles judeo-marocaines chleuhs)."
+    },
+    "demography": {
+      "totalPopulation": 8000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN - Shilha language (recensement marocain 2024 : 14,2% de la population marocaine soit environ 5,2 millions de locuteurs directs ; estimations larges 6-10 millions incluant diaspora). Wikipedia EN - Berbers (tableau : Chleuhs 3,5 millions en Maroc, chiffre sous-estime). Eurasia Review 2022 : environ 8 millions pour le tachelhit. IRCAM Maroc. HCP - recensement 2024.",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 8000000
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Shilha people : https://en.wikipedia.org/wiki/Shilha_people",
+      "Wikipedia EN - Shilha language : https://en.wikipedia.org/wiki/Shilha_language",
+      "Ethnologue SIL International - Tachelhit (shi) : https://www.ethnologue.com/language/shi/",
+      "IRCAM (Institut Royal de la Culture Amazighe, Rabat) : https://www.ircam.ma/",
+      "Iwziwn.com - Tachelhit, language of the Souss and High Atlas : https://www.iwziwn.com/tachelhit-language-of-the-souss-and-high-atlas/",
+      "eHRAF World Cultures Yale - Shluh (Chleuh) : https://ehrafworldcultures.yale.edu/cultures/mw11/summary",
+      "Recensement HCP Maroc 2024 : https://www.hcp.ma/",
+      "Wikipedia EN - Berbers (tableau demographique) : https://en.wikipedia.org/wiki/Berbers"
+    ]
   }
 }

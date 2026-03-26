@@ -6,63 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Tiv",
-      "selfAppellation": "Tiv",
-      "exonyms": ["Tiv (terme utilisé par les Européens)"],
+      "selfAppellation": "Tiv (aussi Tiiv)",
+      "exonyms": ["Munchi", "Munshi", "Tivi"],
+      "originOfExonyms": "Le terme Munchi (aussi Munshi) fut utilisé par les Fula (Peuls) pour désigner les Tiv; les Tiv eux-mêmes considèrent ce terme péjoratif et inacceptable. Munchi fut repris par les administrateurs coloniaux britanniques. Le terme Tiv est à la fois endonyme et désormais exonyme reconnu internationalement. Le nom Tiiv avec redoublement de la voyelle est la graphie tiv endogène.",
+      "whyProblematic": "L'ethnonyme Munchi, utilisé par les Fula et répercuté dans la littérature coloniale britannique, est rejeté par les Tiv comme terme dépréciatif. La dénomination Tiv recouvre un groupe très large et linguistiquement homogène mais politiquement décentralisé, ce qui complique sa définition comme entité ethnique unifiée. La pression coloniale poussa les Tiv à créer le titre de Tor Tiv (roi) dans les années 1940, alors qu'ils étaient historiquement une société acéphale.",
+      "contemporaryUsage": "Le terme Tiv est universellement utilisé au Nigeria et au Cameroun. Les Tiv représentent environ 2,4 % de la population du Nigeria (plus de 5 millions de personnes). Ils sont connus comme l'un des peuples acéphales les mieux documentés d'Afrique, et leur résistance à la domination coloniale (indirect rule britannique inefficace) est un cas d'école en anthropologie politique.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone A)",
-      "historicalRegion": "NGA, CMR",
+      "ethnoLinguisticGroup": "Bantoid méridional (Tivoid) — branche Benue-Congo de la famille Niger-Congo",
+      "historicalRegion": "Vallée de la Benue (Benue State, Nigeria central), région du Swem (frontière Nigeria-Cameroun), plateaux d'Obudu",
       "currentCountries": ["NGA", "CMR"]
     },
     "ethnicities": [
-      "Tiv du Nigeria",
-      "Tiv du Cameroun",
-      "Sous-groupes régionaux"
+      "Ichongo : branche principale des Tiv circoncis, l'une des deux grandes divisions",
+      "Ipusu : branche principale des Tiv non-circoncis, alternant avec Ichongo pour la royauté (Tor Tiv)",
+      "Iyon (Kwande) : sous-groupe présent aussi au Cameroun en tant que Ekol",
+      "Utange (Ushongo) : sous-groupe présent aussi au Cameroun",
+      "Ikyurav-tiev de Katsina-Ala : parmi les derniers Tiv nigérians à migrer depuis le Cameroun (connus sous le nom Ekol au Cameroun)",
+      "Tiv du Cameroun (Akwaya) : groupes Bitare, Mesaka, Iyive, Ceve/Becheve, Evant, Eman, Ipulo, Caka partageant culture et langue"
     ],
     "origins": {
-      "ancientOrigins": "Les Tiv sont originaires de la région du Nigeria et du Cameroun. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone A).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Tiv croient descendre d'un ancêtre commun nommé Tiv, fils de Takuruku, et affirment provenir du sud-est de l'Afrique. Selon leur tradition orale, ils quittèrent leurs parents bantous et traversèrent l'Afrique méridionale, centre-méridionale et centro-occidentale avant de remonter vers le Soudan occidental via le fleuve Congo et les montagnes du Cameroun. Des analyses linguistiques (Abraham 1933, Malherbe 1933) établissent la parenté du tiv avec les langues bantoues de l'Afrique orientale (groupe Nyanza). L'archéologie documente leur présence dans la vallée de la Benue depuis au moins 1600 apr. J.-C.",
+      "formationPeriod": "Les Tiv s'établirent sur le site ancestral de Swem (région frontalière Cameroun-Nigeria) vers 1600 apr. J.-C., considéré à la fois comme le lieu de dispersion géographique et comme le symbole de l'alliance sacrée (serment Swem) fondant l'identité tiv. Les migrations de la Benue se déroulent principalement de 1600 à 1700 apr. J.-C. L'identité acéphale et segmentaire des Tiv fut leur trait définitoire jusqu'à la création du titre de Tor Tiv dans les années 1940 sous pression coloniale.",
+      "migrationRoutes": [
+        "Depuis l'Afrique du Sud-Est (Bantu ancestral) via le Congo et les montagnes du Cameroun",
+        "Établissement au Swem (frontière Nigeria-Cameroun) vers 1600 apr. J.-C.",
+        "Dispersion vers le sud à travers le plateau d'Obudu",
+        "Migration vers Mdema et le district de Waka (Taraba central et méridional)",
+        "Descente dans la vallée de la Benue (Nigeria central) entre 1600 et 1700 apr. J.-C.",
+        "Expansion dans les États de Nasarawa (depuis le 16e siècle), Taraba (1750-1800), et dans les collines vers l'est"
+      ],
+      "historicalSettlementZones": [
+        "Benue State (Nigeria) : principale zone de peuplement — LGAs de Makurdi, Gboko, Katsina-Ala, Kwande, Vandeikya, Konshisha, Ushongo",
+        "Nasarawa State : Lafia, Doma, Obi, Keana",
+        "Taraba State : Bali, Donga, Ibi, Gassol, Wukari",
+        "Plateau State : Langtang South, Shendam",
+        "Cross River State : Yala, Bekwarra, Obudu",
+        "Cameroun (Région du Sud-Ouest) : subdivision d'Akwaya (99 villages, 3682 km2), Manyu Division"
+      ],
+      "unificationsOrDivisions": "La société tiv est fondamentalement acéphale et segmentaire : il n'y a pas de chef ou de roi traditionnel; chaque clan (tar) ou lignage est administré par l'homme le plus âgé (Orya). Cette organisation en deux grandes moitiés (Ichongo et Ipusu) et en une multitude de clans locaux (ipaven, tar) fonctionnait par consensus et délibération des anciens. La colonisation britannique trouva ce système ingouvernable (l'indirect rule ne fonctionnant qu'avec des rois) et finit par imposer le titre de Tor Tiv dans les années 1940. La royauté alterne entre Ichongo et Ipusu.",
+      "externalInfluences": "Contact avec les Fula (Fulani) au nord : relation d'affinité mutuelle (Fulanijo / Tivjo), mais aussi tensions. Premier contact européen au 18e siècle. Expédition militaire britannique de 1906-1911 (regiment du Nigeria méridional, Lieutenant-Colonel Trenchard). Missionnaire Mary Slessor en mission de paix avant la construction des routes. Établissement des missions chrétiennes hollandaises réformées (NKST) en 1911 à Sai. Routes et liens commerciaux établis au début du 20e siècle.",
+      "majorHistoricalEvents": "Vers 1600 : établissement au Swem et début des migrations vers la Benue. 1906 : entrée des forces britanniques dans les terres tiv par l'est. 1907-1908 : expédition militaire du lieutenant-colonel Trenchard. 1911 : fondation de la première mission chrétienne NKST à Sai. 1927 : abolition du yamshe (mariage par échange de femmes). Années 1940 : création du titre de Tor Tiv sous pression coloniale. 1950 : les Tiv déclarent avoir vaincu les Britanniques, puis négocient. 1960-1964 : intégration dans le Nigeria indépendant, résistance aux impôts et tensions communautaires. Années 1990-2000 : conflits intercommunautaires récurrents avec les éleveurs Fulani dans le Benue State."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société tiv est un exemple classique de société acéphale ou segmentaire : il n'y a pas de chef héréditaire centralisé dans la tradition pré-coloniale. Chaque tar (territoire communautaire et lignage local) est administré par l'Orya, l'homme le plus âgé, dont les fonctions incluent la conduite des moots (assemblées de résolution des conflits), la garantie de sauf-conduits, l'arbitrage intérieur et la représentation extérieure. Les décisions importantes sont prises en conseil des anciens. L'absence de roi fut un désavantage structurel sous la colonisation britannique, qui privilégiait l'indirect rule via des souverains. Le titre de Tor Tiv (roi des Tiv) fut finalement créé dans les années 1940 pour satisfaire l'administration coloniale; la royauté alterne entre les deux moitiés Ichongo et Ipusu.",
+      "clanOrganization": "Organisation en lignages patrilinéaires segmentaires. La plus petite unité est le tar (à la fois territoire et communauté de lignage). Les tars s'agrègent en ipaven (branches), puis en clans plus larges. Les deux grandes divisions sont Ichongo (circoncis) et Ipusu (non-circoncis). Les clans principaux incluent Isherev, Utyondu, Nongov, Kunav (Nasarawa), Ukum, Ugondo, Shitile, Gaav, Shangev (Taraba). La maison polygyne typique rassemble un cluster de huttes rondes entourant une hutte de réception; les frères vivent généralement côte à côte.",
+      "ageClassSystems": "Pas de classes d'âge formelles au sens strict. Les anciens (Orya) constituent naturellement un groupe de conseil et d'arbitrage. Les jeunes hommes accèdent aux rôles publics progressivement par l'âge et l'influence. Les systèmes de communication traditionnels (Kakaki royal, Ilyu, Indyer, Akya) étaient réservés à des groupes de jeunes hommes sélectionnés ou aux anciens.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'accès à la terre, les mariages et l'identité. Le mariage traditionnel yamshe (échange de femmes entre familles) fut aboli par les Britanniques en 1927, remplacé par la dot (bride-wealth). Le lignage détermine l'appartenance aux deux grandes moitiés rituelles (Ichongo/Ipusu), qui alternent l'accès au titre de Tor Tiv. La solidarité de lignage est renforcée par le serment Swem, qui lie les membres d'un lignage ou d'une communauté par une obligation sacrée de vérité.",
+      "religiousAuthority": "Pas d'autorité religieuse centrale dans le système traditionnel. Les chefs de rituel incluent le zegepriseti (grand prêtre, gardien des autels indigènes), l'orchi (guérisseur-herboriste), et les detenteurs de tahavbukwagh-hir (pouvoirs magiques). Le serment Swem est géré collectivement par les anciens. Les mbatsav (sorciers/hommes ayant la tsav) exercent une influence sociale ambivalente. Aujourd'hui, les Tiv sont majoritairement chrétiens (NKST — Eglise réformée, fondée 1911, et autres confessions évangéliques)."
     },
     "languages": {
-      "mainLanguage": "Tiv",
-      "vehicularRole": "Le tiv est parlé par la majorité des Tiv. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Tiv (Tiv, Tiiv)",
+      "isoCodes": ["tiv"],
+      "dialects": [
+        "Dialecte standard du Benue State : base de l'écriture et de la littérature tiv",
+        "Dialectes Tivoid du Cameroun (Akwaya) : Bitare, Mesaka, Iyive, Ceve/Becheve, Evant, Eman, Ipulo, Caka",
+        "Variétés régionales de Nasarawa, Taraba, Plateau et Cross River States (Nigeria)"
+      ],
+      "vehicularRole": "Le tiv est la langue maternelle de plus de 5,2 millions de locuteurs (Ethnologue 2024), essentiellement dans le Benue State (Nigeria). C'est la plus grande des langues Tivoid (Bantoid méridional). Le tiv est enseigné dans certaines écoles du Benue State et utilisé dans la liturgie chrétienne NKST. L'anglais est la langue officielle du Nigeria et véhiculaire avec les autres groupes. Le tiv n'est pas langue nationale du Nigeria mais est reconnu comme langue régionale majeure du Middle Belt."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tiv, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Pas de rite d'initiation formel structuré comme le Poro. Les garçons entrent dans la vie adulte par l'apprentissage de l'agriculture, de la chasse et des rôles communautaires auprès des anciens. Circoncision pratiquée dans la branche Ichongo.\", \"marriageRites\": \"Le mariage actuel (Kwase-Kemen) passe par le Iye (cour/fréquentation avec visites et cadeaux), suivi de la dot (bride-wealth). La cérémonie de mariage inclut des festins communautaires et des danses avec les instruments Ilyu et Agbande.\"}, \"funeraryRites\": {\"burial\": \"Les Tiv enterrent leurs morts rapidement. La mort d'un ancien ou d'un chef important est annoncée par le tambour Indyer (bois de mahogany) et la trompette Adiguve, qui expriment publiquement le deuil. Festins collectifs et veillées funèbres.\", \"postFuneraryCeremonies\": \"Cérémonies de commémoration selon le rang du défunt. Pour un leader ou un ancien, le Kakaki royal (trompette royale) est sonné lors des funérailles.\"}, \"agriculturalRites\": {\"harvest\": \"L'igname (iyou) est la culture principale et la base de rites agraires. Festins communautaires de récolte. Les associations d'agriculteurs utilisent le kolugh ku bua (cornes de vache) pour appeler au travail collectif dans les champs.\"}, \"oathTaking\": {\"swem\": \"Le Swem est l'institution traditionnelle la plus sacrée des Tiv : un pot rituel (originellement associé à l'ancêtre Ikaragbe) utilisé pour les serments d'innocence, les résolutions de conflits et l'investiture des chefs. Avant le serment, les participants se frottent les feuilles d'ayandegh sur la langue et la poitrine pour ouvrir leur esprit aux ancêtres. L'accusé brise des noix de kola, fait des libations et jure en touchant le pot Swem. Si le parjure est suivi de calamités physiques (gonflement des jambes et de l'abdomen), la culpabilité est établie. Le Swem est aussi utilisé pour sceller les traités interclans.\"}}",
+      "symbols": "{\"angerCloth\": \"Le tissu a'nger (en tiv : vêtement) est le symbole culturel le plus visible des Tiv : tissu à rayures noires et blanches rappelant la peau du zèbre, animal que les Tiv chassaient dans leur patrie ancestrale et dont ils portaient la peau lors des cérémonies. Devenu symbole de la tivité, porté lors des fêtes, des cérémonies et par les dignitaires. Les robes élaborées pour le Tor Tiv et les anciens sont tissées dans ce motif.\", \"swemPot\": \"Le pot Swem, construit en bois, est le symbole de justice, d'unité et de vérité le plus puissant de la culture tiv. Bien qu'objet matériel, son pouvoir est entièrement spirituel et social : il incarne le pacte sacré entre le dieu suprême et les ancêtres tiv.\", \"kakaki\": \"La trompette royale Kakaki est le symbole du pouvoir politique : elle annonce les naissances, les couronnements, les mariages et les décès de personnages importants.\"}",
+      "artsAndMusic": "{\"performingArts\": \"Kwagh-hir : art dramatique spectaculaire associant masques sculptés, marionnettes, mascarades et narration orale. Le kwagh-hir permet aux Tiv d'exprimer leur identité, de se moquer des politiciens, de représenter des esprits (adzov) et de transmettre l'histoire. Il est l'une des formes d'art vivant les plus originales du Nigeria.\", \"musicalInstruments\": \"Kakaki (trompette royale en métal) pour les messages royaux. Ilyu (tambour en bois léger) pour les messages villageois et célébrations de mariage. Indyer (tambour en bois de mahogany) pour les événements graves (mort, guerre). Gbande/Agbande (grands tambours) pour les festivals et occasions royales. Adiguve (instrument à cordes de type violon) pour les musiques de deuil et les danses. Akya (instrument), Kolugh ku bua (cornes de vache pour les appels agricoles collectifs).\", \"dances\": \"Danses collectives lors des festivals et des mariages, accompagnées de l'Agbande, de l'Adiguve et de l'Akya. Le Kwagh-hir inclut des séquences de danses masquées.\", \"dress\": \"Tissu a'nger (rayures noires et blanches). Accessoires cérémoniels : coiffes, bracelets, colliers de perles noires et blanches pour les mariages. Tenues aux couleurs vives pour les femmes lors des célébrations.\", \"textiles\": \"Tissage artisanal du coton pour produire le tissu a'nger. Poterie traditionnelle et vannerie.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Aondo\", \"attributes\": \"Dieu céleste suprême, créateur, tout-puissant. Aondo (le ciel) est la divinité transcendante que les Tiv invoquent dans les serments et prières. Le Swem est parfois décrit comme le pacte entre Aondo et les ancêtres tiv.\"}, \"intermediateDivinities\": [{\"name\": \"Azor (Akombo)\", \"role\": \"Esprits ou forces rituelles (akombo) contrôlés par des spécialistes. Les akombo sont des entités à la fois protectrices et potentiellement dangereuses, dont la gestion requiert des rites spéciaux.\"}, {\"name\": \"Tsav\", \"role\": \"Substance mystique que certaines personnes (mbatsav) posséderaient sur le coeur, leur conférant des pouvoirs de sorcellerie ou de contre-sorcellerie. Les anciens reconnus comme mbatsav exercent une influence sociale ambivalente entre protection et peur.\"}], \"ancestors\": {\"roleOfAncestors\": \"Les ancêtres jouent un rôle central dans le droit et la morale tiv. Le Swem incarne l'alliance ancestrale : les ancêtres sanctionnent le parjure par des châtiments physiques sur le corps du coupable et de sa famille. Les libations d'alcool traditionnel (tyo, burukutu) et les offrandes aux autels des ancêtres maintiennent la cohésion communautaire.\"}, \"christianity\": {\"specificPractices\": \"Majorité des Tiv chrétiens depuis l'établissement de la mission NKST hollandaise réformée (1911). Les Tiv sont parmi les peuples les plus christianisés du Middle Belt nigérian. Des tensions existent entre l'adoption du christianisme et la préservation du Swem et des akombo traditionnels.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tiv dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Tiv n'ont pas formé de royaumes ou empires dans leur histoire pré-coloniale : leur organisation segmentaire et acéphale est définitoire. En revanche, cette absence de structure centralisée leur permit une résistance passive très efficace à la domination coloniale. Quand la British Indirect Rule tenta d'imposer des chefs Jukun pour gouverner les Tiv (les Jukun étant leurs voisins organisés en royaumes), les Tiv refusèrent toute subordination. Le titre de Tor Tiv fut finalement créé dans les années 1940 : il alterne entre les branches Ichongo et Ipusu. Le Tor Tiv actuel, James Ortese Iorzu Ayatse, fut couronné le 20 décembre 2016.",
+      "relationsWithNeighbors": "Les Tiv entretinrent des relations mixtes avec leurs voisins. Avec les Fula (Fulani), une relation d'affinité commerciale et de cohabitation (Fulanijo / Tivjo), malgré des tensions sur les pâturages qui persistent de nos jours. Avec les Jukun (voisins à chefferie organisée), des conflits historiques liés à la résistance à l'autorité Jukun imposée par les Britanniques. Avec les Chamba (Taraba), cohabitation pionnière dès 1750. Depuis les années 1990-2010, des conflits meurtriers éclatent régulièrement entre agriculteurs Tiv et éleveurs Fulani dans la vallée de la Benue.",
+      "conflictsOrAlliances": "Résistance à la colonisation britannique : les Tiv battirent les forces coloniales en 1950 selon leur tradition orale. L'expédition Trenchard (1907-1908) tenta de pacifier les Tiv sans succès durable. L'absence de chef centralisé rendait toute reddition collective impossible. Après l'indépendance du Nigeria (1960), les Tiv participèrent aux agitations politiques du Middle Belt, militant pour une région autonome. Les conflits intercommunautaires Tiv-Fulani (déplacés à Wukari, Donga, Ibi) ont fait des milliers de victimes depuis les années 1990.",
+      "diaspora": "Les Tiv sont avant tout un peuple agriculteur très attaché à la terre de la Benue. Une diaspora urbaine significative existe à Abuja, Lagos, Enugu et dans d'autres grandes villes nigérianes. Des migrants tiv travaillent dans d'autres États en louant des terres agricoles (Ekiti, Kwara, Kogi, Niger, Ondo, Ogun, Oyo) sans revendiquer ces terres. La diaspora internationale est limitée mais présente au Royaume-Uni et aux États-Unis."
     },
     "demography": {
-      "totalPopulation": 4000000,
+      "totalPopulation": 6000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur : SIL Ethnologue (tiv, 5,2 millions de locuteurs en 2024), Wikipedia EN — Tiv people (plus de 5 millions au Nigeria et au Cameroun), Tiv language Wikipedia (5,2 millions de locuteurs en 2024). Projection 2025 estimée à 6 millions en incluant la croissance démographique du Benue State (~6 % depuis 2006). Note : le Nigeria ne publie pas les données de recensement ethnique depuis le recensement de 2006.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 5900000,
+          "note": "Principalement Benue State, puis Taraba, Nasarawa, Plateau, Cross River et Adamawa States"
+        },
+        {
+          "country": "CMR",
+          "population": 100000,
+          "note": "Région du Sud-Ouest, subdivision d'Akwaya (Manyu Division) : groupes Bitare, Mesaka, Iyive, Ceve, Evant, Eman, Ipulo, Caka"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tiv language (tiv)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tiv people. https://en.wikipedia.org/wiki/Tiv_people",
+      "Wikipedia EN — Tiv language. https://en.wikipedia.org/wiki/Tiv_language",
+      "Encyclopedia Britannica — Tiv. https://www.britannica.com/topic/Tiv",
+      "SIL Ethnologue — Tiv (tiv). https://www.ethnologue.com/language/tiv/",
+      "Irom, Obar Ayami et al. — Swem (Oath of Justice) among the Tiv of Benue State. IJAR, 2025. https://www.journalijar.com/uploads/2025/12/695b8e72cf94f_IJAR-54576.pdf",
+      "Academia.edu — The Culture and History of Tiv People. https://www.academia.edu/34073446/THE_CULTURE_HISTORY_OF_TIV_PEOPLE",
+      "Intervention NG — Swem Must Be Preferred Over the Cross By the Tiv. https://intervention.ng/31606/",
+      "TDAR Core — Historical Ecology of Tiv Migration and Conflicts in the Benue Valley. https://core.tdar.org/document/430273/"
     ]
   }
 }

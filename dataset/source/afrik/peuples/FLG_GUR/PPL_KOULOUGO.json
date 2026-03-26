@@ -1,23 +1,106 @@
 {
   "id": "PPL_KOULOUGO",
-  "nameMain": "",
+  "nameMain": "Kulango",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["CIV", "GHA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kulango",
       "selfAppellation": "Kulango / Koulango",
+      "exonyms": [
+        "Nkurang",
+        "Koulango",
+        "Coolan",
+        "Kulango de Bouna",
+        "Kulango de Bondoukou"
+      ],
+      "originOfExonyms": "Le terme Nkurang est le nom utilise par les Kulango du Ghana (anciennement Bondoukou Kulango). Le terme Kulango, d'origine externe, est l'appellation francaise et anglaise standardisee designant l'ensemble du groupe. La distinction entre Kulango de Bouna (Bouna Kulango, langue nku) et Kulango de Bondoukou (Bondoukou Kulango, langue kzc) reflete deux variantes dialectales et deux zones d'implantation historique.",
+      "whyProblematic": "La denomination Kulango recouvre au moins deux communautes linguistiquement distinctes : les Kulango de Bouna (langue nku) et les Kulango de Bondoukou (langue kzc). Ces deux variantes sont traitees comme langues separees par l'Ethnologue et le SIL. La confusion entre les deux entites est frequente dans la litterature.",
+      "contemporaryUsage": "Kulango et Koulango sont utilises de facon equivalente en francais. En anglais, Kulango est prefere. En Cote d'Ivoire, le terme Koulango est officiel. Au Ghana, Nkurang est employe localement. Les Kulango de Cote d'Ivoire se designent aussi par leur localite d'origine (Bouna Kulango, Bondoukou Kulango).",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "Côte d’Ivoire (Nord-Est)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Gur (sous-groupe Kulango), apparente aux Lobi avec qui ils partagent langue, coutumes et croyances",
+      "historicalRegion": "Nord-est de la Cote d'Ivoire (region de Bouna et Bondoukou, Zanzan), avec presence au Ghana occidental central",
+      "currentCountries": ["CIV", "GHA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (kzc)", "Côte d’Ivoire Nord-Est Ethnic Records"]
+    "ethnicities": [
+      "Kulango de Bouna (Bouna Kulango) : nord-est de la Cote d'Ivoire, region de Bouna, langue nku",
+      "Kulango de Bondoukou (Bondoukou Kulango / Nkurang) : region de Bondoukou (Cote d'Ivoire) et Ghana occidental, langue kzc",
+      "Gbin (clan ancien habitant la zone de Bondoukou avant la fondation de la ville)",
+      "Loro (clan fondateur de la zone de Bondoukou, anciens occupants)",
+      "Nafana (groupe apparente partageant la region de Bondoukou)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kulango sont consideres comme autochtones du nord-est de la Cote d'Ivoire actuelle. Ils ont occupe en premier la region de Bouna, qui est leur foyer originel. La tradition orale rapporte que les Kulango du Ghana sont originaires de Bouna, notamment du village d'Angahi, repute pour la force et le courage de ses guerriers. Ils sont etroitement apparentes aux Lobi (anciens ennemis devenus voisins) avec qui ils partagent de nombreuses institutions, coutumes et croyances religieuses.",
+      "formationPeriod": "Le Royaume de Bouna, centre politique kulango, a ete etabli au debut du XVIIe siecle par un heros nomme Bounkani, de descendance dagomba et lorhon. Ce royaume a constitue le principal foyer de l'identite politique kulango jusqu'aux invasions mandingues. Les Kulango ont ensuite occupe Bondoukou au sud de Bouna.",
+      "migrationRoutes": [
+        "Peuple autochtone du nord-est de la Cote d'Ivoire (region de Bouna) sans migration fondatrice vers des territoires lointains",
+        "Expansion vers le sud dans la region de Bondoukou a partir du foyer de Bouna (XVIIe siecle)",
+        "Migration d'une partie vers le Ghana occidental (Nkurang), depuis Bondoukou vers les regions centrales-ouest du Ghana",
+        "Migrations contemporaines vers le sud en quete de terres agricoles plus fertiles"
+      ],
+      "historicalSettlementZones": [
+        "Region de Bouna (Cote d'Ivoire, nord-est, zone aride)",
+        "Region de Bondoukou (Cote d'Ivoire, departement de Bondoukou, Zanzan District)",
+        "Ghana occidental central (Nkurang de Ghana, anciennement Bondoukou Kulango)"
+      ],
+      "unificationsOrDivisions": "Du XVIIe siecle jusqu'aux invasions mandingues, un roi kulango installe a Bouna gouvernait l'ensemble du groupe via des familles princières. Ce pouvoir etait principalement concentre a Bouna, centre commercial domine par des marchands diula. La conquete mandingue a diminue significativement la monarchie, qui a connu un dernier sursaut comme outil de l'administration coloniale francaise. Les grandes migrations Akan (XVIIe siecle) et Lobi (XIXe siecle) depuis l'est et le nord ont desorganise l'unite culturelle kulango.",
+      "externalInfluences": "Dyula (marchands musulmans venus convertir les Kulango depuis des siecles mais avec peu de succes). Invasions mandingues detruisant la puissance du Royaume de Bouna. Conquete Akan (Abron) de Bondoukou au XVIIe siecle incorporant la zone dans le royaume de Gyaaman. Migrations lobi au XIXe siecle destabilisant la region. Colonisation francaise (1898-1960) ayant redesigne les frontieres et place la zone sous administration francaise.",
+      "majorHistoricalEvents": "Debut XVIIe siecle : fondation du Royaume de Bouna par Bounkani (descendance dagomba et lorhon). XVIIe siecle : conquete de Bondoukou par les Abron (Akan), incorporation dans le royaume de Gyaaman. XIXe siecle : invasions mandingues diminuant la monarchie kulango. 1898 : accord franco-britannique placant le territoire kulango sous juridiction francaise. Periodes 1990s-2000s : conflits ethniques periodiques entre les Kulango de Bondoukou et les Lobi a Bondoukou."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Historiquement, les Kulango etaient gouvernes par un roi (installe a Bouna) dont le pouvoir s'etendait via des familles princières. Depuis l'affaiblissement de la monarchie par les invasions mandingues et la colonisation, la vie communautaire est organisee autour des anciens de village et du chef religieux. Chaque village est compose de plusieurs petits etablissements, chacun forme de familles etendues constituant leur propre unite economique.",
+      "clanOrganization": "Les Kulango sont matrilineaires : l'heritage et la succession passent par les femmes. Le chef de famille etendue est le male responsable des offrandes aux esprits ancestraux. Il est succede par le fils aine de sa soeur ainee. Les etablissements sont constitues de plusieurs families etendues regroupees autour d'une cour centrale servant de lieu de reunion.",
+      "ageClassSystems": "Les jeunes filles sont souvent fiancees des l'enfance (pratique en declin). Les mariages sont arranges par le pere ou le chef de la famille etendue. Lorsqu'un homme se marie, la femme peut soit rejoindre son foyer soit rester chez son pere : dans ce dernier cas, les filles restent avec leur mere et les fils rejoignent leur pere des qu'ils savent marcher et parler.",
+      "roleOfLineages": "La matrilinearite structure l'heritage et la succession du leadership dans chaque famille etendue. Les disputes et affaires communautaires sont gerees par les chefs de village et le chef religieux. La femme joue un role central dans la perpetuation de la lignee et l'organisation du foyer.",
+      "religiousAuthority": "Le chef religieux (au cote du chef de village) gere les disputes et les affaires communautaires. L'autorite religieuse est liee au culte de la terre et au Dieu de la terre Tano. Le male chef de famille etendue est responsable des offrandes aux esprits ancestraux (offrandes d'ignames pilees lors des periodes de difficultes)."
+    },
+    "languages": {
+      "mainLanguage": "Kulango (deux variantes principales : Bondoukou Kulango kzc et Bouna Kulango nku)",
+      "isoCodes": ["kzc", "nku"],
+      "dialects": [
+        "Bondoukou Kulango (kzc) : parle en Cote d'Ivoire (region de Bondoukou) et au Ghana (Nkurang)",
+        "Bouna Kulango (nku, aussi appele Nkurange) : parle en Cote d'Ivoire (region de Bouna)"
+      ],
+      "vehicularRole": "Le kulango appartient a la famille des langues Gur (Niger-Congo). Les deux variantes (kzc et nku) sont traitees comme des langues distinctes par l'Ethnologue, bien qu'apparentees. Le français est la langue vehiculaire officielle en Cote d'Ivoire. Des contacts linguistiques importants existent avec le dyula (langue de commerce), le dagomba et l'akan dans les zones frontieres."
+    },
+    "culture": {
+      "majorRites": "Le festival annuel de l'igname est une celebration majeure : parents et enfants echangent des cadeaux et partagent un repas d'igname pilee et de soupe. Il existe egalement un festival des morts au cours duquel dieux et ancetres sont sollicites pour leur guidance et la prosperite ; danses et chants sont au programme. Un sanctuaire est dedie a Tano (dieu de la terre de toute la tribu) et un festival annuel lui est consacre. Des offrandes d'ignames pilees sont presentees lors des periodes de difficultes ou de desastres. Les ceremonies funeraires impliquent des rites elabores avec la participation du chef de famille et du chef religieux.",
+      "symbols": "Le masque ceremonial kulango est caracterise par des cornes de buffle symbolisant les forces de la nature ; les cornes sont un symbole de pouvoir permettant au porteur de se connecter aux esprits animaux puissants lors des ceremonies. Les yeux plisses et la bouche ouverte sont des elements traditionnels evoquant la sagesse enigmatique de la cosmologie kulango. L'igname est un symbole central de fertilite et de prosperite. Les sculptures kulango, rares, sont souvent rapprochees stylistiquement de l'art lobi. La statuaire kulango est reconnue dans le monde de l'art pour ses liens avec l'art Lobi.",
+      "artsAndMusic": "Les Kulango sont reconnus pour leurs beaux artisanats (crafts), notamment le travail du bois. Le masque ceremonial de danse kulango (exemple conserve dans des collections internationales) est caracterise par des cornes de buffle et une symbolique forte liee aux forces de la nature et aux esprits animaux. La sculpture kulango, rare et souvent derivee ou influencee par l'art lobi, est documentee dans les collections museales. Les festivals (igname, morts) incluent des danses et des chants. La statuaire est presentee dans les collections du monde de l'art contemporain africain.",
+      "spiritualities": "Les Kulango pratiquent principalement leur religion ethnique traditionnelle (environ 90% selon 101 Last Tribes). Ils croient en un dieu supreme qui n'est pas adore directement mais est associe a la terre-mere. Le dieu terrestre Tano est la divinite de toute la tribu : un sanctuaire lui est dedie et un festival annuel est organise en son honneur. En periode de crise, les Kulango prient les esprits de leurs ancetres et leur presentent des offrandes d'ignames pilees. Ils croient que les esprits habitent certains animaux sauvages et des phenomenes naturels (tonnerre, eclairs, eau). La resistance a l'islamisation (malgre des siecles de presence commerciale dyula) est notable : seule une petite minorite (6%) s'est convertie a l'islam. Une minorite chretienne est egalement presente."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Bouna, fonde au debut du XVIIe siecle par Bounkani (de descendance dagomba et lorhon), fut le principal Etat kulango. Il constitua un centre commercial important domine par des marchands diula, avant d'etre affaibli par les invasions mandingues. Les Kulango ont ensuite joue un role dans la resistance aux colonisateurs francais, ce qui constitue un element fort de leur identite culturelle (surtout pour les Bondoukou Kulango).",
+      "relationsWithNeighbors": "Les Kulango sont etroitement apparentes aux Lobi (anciens ennemis reconvertis en voisins partageant region, langues, coutumes et croyances). Des conflits periodiques entre les Bondoukou Kulango (fermiers gur) et les Lobi (recemment migrants depuis Bouna) ont eclate dans les annees 1990-2000. Les Nafaanra, Diola, Mande et Akan sont les autres voisins de la region de Bondoukou. Les marchands dyula ont influence economiquement et religieusement la region depuis des siecles.",
+      "conflictsOrAlliances": "Resistance a l'islamisation tentee par les marchands dyula pendant des siecles. Conflits avec les Akan (Abron) lors de la conquete de Bondoukou au XVIIe siecle. Resistance aux invasions mandingues. Conflits ethniques periodiques avec les Lobi a Bondoukou durant les annees 1990-2000. Resistance aux colonisateurs francais, constituant un element d'identite kulango (notamment chez les Bondoukou Kulango).",
+      "diaspora": "Des migrations internes vers les villes du sud de la Cote d'Ivoire (Abidjan et autres centres urbains) sont documentees chez les jeunes Kulango en quete d'emploi (chauffeurs de taxi, mecaniciens, employes de bureau). La zone d'origine kulango devient de plus en plus aride, poussant des familles entieres a migrer vers le sud pour trouver des terres agricoles plus fertiles."
+    },
+    "demography": {
+      "totalPopulation": 315000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : Bondoukou Kulango — 178 000 en Cote d'Ivoire, 48 000 au Ghana (total 226 000). Bouna Kulango — estimation complementaire. 101 Last Tribes (2023) : 272 000 en Cote d'Ivoire, total mondial 313 500. Estimation 2025 : environ 315 000, integrant la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 265000,
+          "note": "Region de Bouna (Bouna Kulango) et region de Bondoukou (Bondoukou Kulango), departement de Bondoukou, Zanzan District"
+        },
+        {
+          "country": "GHA",
+          "population": 50000,
+          "note": "Regions centrales-ouest du Ghana (Nkurang), frontaliers de Bondoukou"
+        }
+      ]
+    },
+    "sources": [
+      "Joshua Project — Kulango, Bondoukou in Cote d'Ivoire. https://joshuaproject.net/people_groups/10931/IV",
+      "Joshua Project — Kulango, Bouna in Cote d'Ivoire. https://joshuaproject.net/people_groups/10955/IV",
+      "Ethnologue — Kulango, Bondoukou (KZC). https://www.ethnologue.com/language/kzc/",
+      "Ethnologue — Kulango subgroup. https://www.ethnologue.com/subgroup/967/",
+      "101 Last Tribes — Kulango people. http://www.101lasttribes.com/tribes/kulango.html",
+      "Wikipedia EN — Bondoukou. https://en.wikipedia.org/wiki/Bondoukou",
+      "Contemporary African Diaspora Art (CADA) — Kulango Ceremonial Dance Mask. https://www.cada.us/symbols-of-spirit-by-ludlow-bailey/",
+      "Facebook Terroir — The Complete History of the Koulango People (2025). https://www.facebook.com/100090158294667/posts/terroir-the-complete-history-of-the-koulango-peopleby-francis-kofi-mensahfebruar/598624119819526/"
+    ]
   }
 }

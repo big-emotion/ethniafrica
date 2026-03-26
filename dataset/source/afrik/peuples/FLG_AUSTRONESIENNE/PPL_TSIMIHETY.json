@@ -8,63 +8,92 @@
       "mainName": "Tsimihety",
       "selfAppellation": "Tsimihety",
       "exonyms": [
-        "Tsimihety (terme signifiant \"ceux qui ne se coupent pas les cheveux\")"
+        "Tsimehety (variante orthographique)",
+        "Maraba (appellation alternative documentee par le Joshua Project)",
+        "Les anarchistes du nord-ouest de Madagascar (appellation descriptive utilisee par les anthropologues, notamment Peter Wilson)"
       ],
+      "originOfExonyms": "Le nom Tsimihety signifie en malgache ceux qui ne se coupent pas les cheveux (tsi : negation, mihety : couper les cheveux). Ce comportement est directement lie a leur independance vis-a-vis du royaume Sakalava, situe a l'ouest, ou couper les cheveux en signe de deuil lors de la mort d'un roi etait une obligation. En refusant de se couper les cheveux, les Tsimihety affirmaient symboliquement leur non-soumission a l'autorite royale sakalava.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Tsimihety est l'appellation officielle reconnue, utilisee dans tous les documents administratifs et academiques. Le premier president de la Republique malgache, Philibert Tsiranana (1959-1972), etait lui-meme Tsimihety de la region de Mandritsara.",
       "linguisticFamily": "FLG_AUSTRONESIENNE",
-      "ethnoLinguisticGroup": "Malayo-polynésien",
-      "historicalRegion": "Nord de Madagascar",
+      "ethnoLinguisticGroup": "Malayo-polynesien, sous-groupe des dialectes malgaches septentrionaux",
+      "historicalRegion": "Region nord-centre de Madagascar, principalement la region de Sofia (plaine de Mandritsara), s'etendant jusqu'a la region de Sava (district d'Andapa) et au-dela",
       "currentCountries": ["MDG"]
     },
     "ethnicities": [
-      "Tsimihety du Nord",
-      "Tsimihety du Sud",
-      "Sous-groupes régionaux"
+      "Tsimihety de la plaine de Mandritsara (region de Sofia, coeur historique du territoire tsimihety)",
+      "Tsimihety de la region de Sava (district d'Andapa)",
+      "Tsimihety de la diaspora urbaine (Mahajanga, Antananarivo)",
+      "Volafotsy (clan associe aux Maroserana sakalava, ayant migre vers le nord et dont les Tsimihety ont accepte la gouvernance apres leur propre migration)"
     ],
     "origins": {
-      "ancientOrigins": "Les Tsimihety sont originaires du nord de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Tradition de résistance à l'autorité centrale.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts. Tradition d'indépendance politique.",
-      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Tsimihety tracent leurs origines a la cote est de Madagascar. Ils ont migre avec leurs troupeaux de zebus vers la plaine de Mandritsara au XVIIIe siecle, se deplacant comme des refugies sans chef fuyant les guerres d'esclaves qui ravageaient leur territoire d'origine. Ce statut de refugies sans hierarchie aurait renforce leur tradition d'organisation egalitaire et d'absence d'autorite centralisee.",
+      "formationPeriod": "Leur identite comme groupe distinct se cristallise a travers le refus symbolique de couper les cheveux lors du deuil royal sakalava, affirmant leur independence vis-a-vis du royaume Sakalava voisin (a l'ouest). Peu apres leur migration sur la plaine de Mandritsara, ils acceptent la gouvernance du clan Volafotsy (associe aux Maroserana sakalava ayant migre vers le nord), sans pour autant renoncer a leur systeme egalitaire fondamental.",
+      "migrationRoutes": [
+        "Migration depuis la cote est de Madagascar vers la plaine de Mandritsara (XVIIIe siecle)",
+        "Expansion progressive vers la region de Sava (district d'Andapa) et d'autres zones du nord",
+        "Diffusion parmi les groupes ethniques voisins par exogamie etendue et taux de natalite eleve"
+      ],
+      "historicalSettlementZones": [
+        "Plaine de Mandritsara (region de Sofia, centre historique)",
+        "Region de Sava (district d'Andapa)",
+        "Regions montagneuses du nord-centre de Madagascar",
+        "Presence diasporique a Mahajanga et Antananarivo"
+      ],
+      "unificationsOrDivisions": "Pas de unification politique au sens classique : les Tsimihety n'ont jamais forme de royaume ni de tribu au sens sociologique. Leur organisation est fondamentalement decentralisee et egalitaire. En 1823, le roi Merina Radama I integre les Tsimihety dans son empire pan-malgache. La domination coloniale francaise les absorbe en 1896. Leur reputation de maitres de l'evasion persiste : sous la colonisation, ils abandonnaient leurs villages entiers plutot que de se soumettre au travail force.",
+      "externalInfluences": "Contacts avec les marchands arabes et swahilis du nord-ouest de Madagascar. Influence de l'islam et du christianisme (syncretisme). Dominance Merina a partir de 1823 (Radama I). Colonisation francaise a partir de 1896. Fort impact de l'economie monetaire et des opportunites d'emploi salarial sur les grandes plantations et dans les villes, conduisant progressivement les Tsimihety a s'integrer dans l'economie nationale.",
+      "majorHistoricalEvents": "Migration vers la plaine de Mandritsara (XVIIIe siecle) fuyant les guerres d'esclaves. Soumission nominale a Radama I (1823). Integration dans la colonie francaise (1896). Philibert Tsiranana, Tsimihety de Mandritsara, devient le premier president de la Republique malgache en 1959 et gouverne pendant 10 ans apres l'independance de 1960."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises). Tradition d'autonomie.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
-      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation resolument egalitaire et acephale : les Tsimihety ne forment pas une tribu et n'ont ni liens tribaux, ni contrat social collectif, ni structure de pouvoir hierarchique au niveau ethnique. L'autorite est concentree dans la famille biologique et le reseau de parente. Les decisions locales reposent sur le consensus informel. Toute personne se comportant comme un chef est consideree avec suspicion. Donner des ordres est moralement inacceptable. Meme l'idee de travailler pour un salaire etait traditionnellement mal vue. Peter Wilson decrit les Tsimihety comme pouvant etre definis uniquement en termes negatifs (par ce qu'ils ne font pas).",
+      "clanOrganization": "Clan Volafotsy (associe aux Maroserana sakalava, accepte comme dirigeants apres la migration tsimihety vers Mandritsara). Relations centrees sur la famille biologique et le reseau de parente (kin). Patrilineaire : les relations de parente avec les ancetres et descendants males sont les plus importantes pour les deux sexes. Le role de l'oncle maternel (frere de la mere) est particulierement important dans les conventions culturelles tsimihety.",
+      "ageClassSystems": "Pas de systeme de classes d'age formalise. Rites de passage presents mais sans structure rigide. Tabou (fady) : travailler dans les champs le mardi est un interdit culture majeur.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite et les alliances. Importance des ancetres (razana) comme dans l'ensemble de la culture malgache. L'exogamie etendue (obligation de se marier en dehors du groupe elargi) associee a un taux de natalite eleve a conduit a une forte diffusion parmi les groupes ethniques voisins, diluant progressivement les frontieres identitaires strictes.",
+      "religiousAuthority": "Autorite des ombiasy (devins-guerisseurs) et des mpisikidy (praticiens de la divination sikidy). Presence de pasteurs chretiens (protestants et catholiques). Presences d'oulemas musulmans dans certaines communautes. Syncretisme prononce entre pratiques ancestrales, christianisme et islam."
     },
     "languages": {
-      "mainLanguage": "Malgache (dialecte tsimihety)",
-      "vehicularRole": "Le malgache tsimihety est parlé par la majorité des Tsimihety. Le français est également utilisé."
+      "mainLanguage": "Malgache tsimihety (dialecte septentrional)",
+      "isoCodes": ["xmw", "mlg"],
+      "dialects": [
+        "Tsimihety Malagasy (xmw, dialecte septentrional, environ 1 615 000 locuteurs selon l'Ethnologue 2024)",
+        "Parlers du nord (region de Sava, Andapa, avec proximite avec le dialecte antakarana)",
+        "Parlers de la diaspora (Mahajanga, Antananarivo)"
+      ],
+      "vehicularRole": "Le tsimihety (xmw) appartient au sous-groupe des dialectes malgaches septentrionaux, avec le sakalava du nord, le bushi, le betsimisaraka du nord et l'antakarana. Ces dialectes septentrionaux sont fortement influences par le swahili et le francais. Les locuteurs du nord prononcent le o comme le o anglais dans cold, orthographie ô. Le malgache standard (plt) et le francais sont utilises pour les communications officielles et l'education. La diaspora tsimihety dans les villes de Mahajanga et Antananarivo maintient le dialecte."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Famadihana (retournement des morts)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles d'indépendance, symboles chrétiens et musulmans.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (tissage, vannerie)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+      "majorRites": "Ne jamais se couper les cheveux comme acte symbolique d'independence politique vis-a-vis de l'autorite sakalava (pratique identitaire originelle, aujourd'hui moins strictement observee). Tabou du mardi pour le travail agricole (fady). Ceremonies de circoncision (famorana). Funerailles avec respect des ancetres (razana). Ceremonies de mariage. Cycle de rites agricoles lies au riz et a l'elevage du zebu. Les Tsimihety partagent le famadihana avec d'autres groupes malgaches mais la pratique est moins centrale que chez les Merina.",
+      "symbols": "Les cheveux longs comme symbole originel d'independance et de non-soumission a l'autorite royale sakalava. Le zebu comme symbole de richesse et de statut (les Tsimihety sont eleveurs et agriculteurs). La plaine de Mandritsara comme territoire fondateur. Philibert Tsiranana comme figure heroique nationale tsimihety (premier president de Madagascar). La reputation d'anarchistes et de maitres de l'evasion comme embleme identitaire positif.",
+      "artsAndMusic": "Musique traditionnelle lors des ceremonies et rassemblements. Instruments : valiha (cithare en bambou), marovany (cithare de caisse), percussions, sodina (flute). Danse lors des ceremonies. Poesie orale et kabary (discours formes). Artisanat : tissage (lamba en soie et raphia), vannerie, travail du cuir. Agriculture du riz (cultivateurs actifs) et elevage du zebu comme activites economiques centrales. Travail saisonnier comme ouvriers agricoles sur les plantations.",
+      "spiritualities": "Syncretisme entre les croyances traditionnelles (culte des ancetres, razana), le christianisme (protestant et catholique) et l'islam (present dans certaines communautes en contact avec les zones d'influence arabe du nord). Importance des ancetres dans la vie quotidienne et les decisions importantes. Pratique de la divination sikidy par les ombiasy. Fady (tabous) structurant la vie communautaire (ex. travail agricole le mardi). Attachement fort a la famille et aux reseaux de parente comme fondement de la vie sociale et spirituelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tsimihety dans les grandes villes malgaches et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Aucun royaume ni chefferie formel au sens strict. Les Tsimihety acceptent nominalement la gouvernance du clan Volafotsy (associe aux Maroserana sakalava) apres leur migration, mais sans structure hierarchique proprement dite. Sous Radama I (1823), ils sont formellement integres dans l'empire Merina, puis dans la colonie francaise (1896). Leur resistance passive (evasion collective des villages entiers) est une strategie politique documentee contre toute forme d'autorite externe. Philibert Tsiranana (Tsimihety de Mandritsara) est elu premier president de la Republique malgache en 1959 et gouverne pendant 10 ans apres l'independance (1960).",
+      "relationsWithNeighbors": "Independence vis-a-vis du royaume Sakalava (a l'ouest) : refus de couper les cheveux comme acte de non-soumission. Acceptation nominale de la gouvernance Volafotsy (Maroserana). Relations avec les groupes du nord (Antakarana) et de l'est (Betsimisaraka du nord). Diffusion parmi les groupes voisins par l'exogamie etendue et le taux de natalite eleve. Travail saisonnier sur les plantations.",
+      "conflictsOrAlliances": "Fuite des guerres d'esclaves (XVIIIe siecle) comme origine du peuplement de la plaine de Mandritsara. Soumission nominale a Radama I (1823) : abolition du commerce international d'esclaves. Integration dans la colonie francaise (1896). Resistance passive sous la colonisation : evacuation totale des villages plutot que de fournir du travail force. Ce comportement a ete documente par les administrateurs coloniaux qui revenaient avec leur materiel une semaine apres la negociation du travail pour trouver le village entierement abandonne.",
+      "diaspora": "Forte diffusion parmi les groupes voisins en raison de l'exogamie etendue et du taux de natalite eleve, conduisant a un metissage progressif avec les populations environnantes. Diaspora tsimihety dans les villes de Mahajanga et Antananarivo, maintenant leur dialecte et leurs pratiques culturelles. Le Joshua Project recense 2 610 000 Tsimihety, refletant une croissance demographique significative et leur diffusion geographique."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 2610000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+      "source": "Joshua Project : 2 610 000 Tsimihety a Madagascar (estimation 2025). Ethnologue : 1 615 000 locuteurs du dialecte tsimihety (xmw). Wikipedia EN : estimations comprises entre 700 000 et plus de 1,2 million. Le Joshua Project fournit l'estimation la plus elevee et la plus recente, tenant compte de la forte croissance demographique et de l'exogamie extensive. Quatrieme plus grand groupe ethnique de Madagascar.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 2610000,
+          "notes": "Concentres dans la region de Sofia (plaine de Mandritsara) et la region de Sava (district d'Andapa) ; diaspora dans les villes de Mahajanga et Antananarivo"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Malagasy language (mlg)",
-      "CIA World Factbook – Madagascar",
-      "Recensements malgaches",
-      "Études anthropologiques sur les peuples malgaches"
+      "Wikipedia EN - Tsimihety people : https://en.wikipedia.org/wiki/Tsimihety_people",
+      "Wikipedia EN - Tsimihety dialect : https://en.wikipedia.org/wiki/Tsimihety_dialect",
+      "Wikipedia EN - Malagasy language : https://en.wikipedia.org/wiki/Malagasy_language",
+      "Joshua Project - Tsimihety in Madagascar : https://joshuaproject.net/people_groups/15593",
+      "SIL Ethnologue - Tsimihety Malagasy (xmw) : https://www.ethnologue.com/language/xmw/",
+      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
+      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "Wilson, Peter J. - Freedom by a Hair's Breadth: Tsimihety in Madagascar, University of Michigan Press, 1992"
     ]
   }
 }

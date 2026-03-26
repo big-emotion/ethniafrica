@@ -6,58 +6,91 @@
   "content": {
     "appellations": {
       "mainName": "Franco-Mauriciens",
-      "selfAppellation": "",
+      "selfAppellation": "Franco-Mauriciens",
       "exonyms": [
-        "\"Français\" (terme générique), \"Blancs\" (terme descriptif, peut être problématique), \"Colons\" (terme historique)"
+        "Blancs (terme descriptif courant à Maurice)",
+        "Grands blancs (pour les familles planteurs aisées)",
+        "Colons (terme historique)",
+        "White Mauritians (anglais)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le terme Blancs est utilisé couramment à Maurice pour désigner les Mauriciens d'origine européenne, principalement française. Grands blancs désignait historiquement la classe aisée des planteurs francophones. Le terme Colons rappelle leur rôle de premiers colonisateurs de l'île.",
+      "whyProblematic": "Le terme Blancs peut être perçu comme une réduction de l'identité du groupe à la couleur de peau, gommant la dimension culturelle et historique. Le terme Colons est chargé de connotations liées à l'esclavage et à l'exploitation coloniale.",
+      "contemporaryUsage": "Franco-Mauricien est le terme officiel et académique le plus utilisé. À Maurice, le groupe est couramment désigné comme Blancs dans la conversation quotidienne. Le groupe lui-même préfère Franco-Mauricien pour souligner son ancrage local et son héritage français.",
       "linguisticFamily": "FLG_CREOLE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Toutes les régions de MUS, majoritairement urbains",
+      "ethnoLinguisticGroup": "Francophone d'origine européenne française",
+      "historicalRegion": "Île Maurice (Isle de France, période coloniale), toutes les régions, avec forte concentration urbaine à Port-Louis et dans les districts de Pamplemousses et de Rivière du Rempart",
       "currentCountries": ["MUS"]
     },
-    "ethnicities": ["Franco-Mauriciens"],
+    "ethnicities": [
+      "Franco-Mauriciens",
+      "Gens de couleur (métis partiellement intégrés au groupe)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Toutes les régions de MUS, majoritairement urbains"
+      "ancientOrigins": "Les Franco-Mauriciens descendent des premiers colons français qui s'établirent durablement sur l'île Maurice (alors Isle de France) à partir de 1722, après l'échec des tentatives de colonisation hollandaises. Ils développèrent une société de plantation fondée sur l'esclavage africain et malgache et exercèrent un monopole économique et politique dès le début de la colonisation française.",
+      "formationPeriod": "1715-1810 (période française). L'identité franco-mauricienne se consolida sous la colonisation britannique (1810-1968) comme réaction à la pression anglicisante, notamment lors des mobilisations autour de l'abolition de l'esclavage en 1835 et de l'obtention d'une représentation législative.",
+      "migrationRoutes": [
+        "France métropolitaine vers l'Isle de France (Maurice) à partir de 1715-1722",
+        "Émigration de Franco-Mauriciens vers l'Afrique du Sud (surtout après 1947 et lors de l'indépendance en 1968)",
+        "Émigration vers la France, l'Australie et le Canada depuis l'indépendance de 1968"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Port-Louis (capitale)",
+        "Pamplemousses (nord)",
+        "Rivière du Rempart",
+        "Flacq (est)",
+        "Mahébourg (sud-est)",
+        "Propriétés sucrières de l'ensemble de l'île"
+      ],
+      "unificationsOrDivisions": "Sous la colonisation britannique (1810-1968), les Franco-Mauriciens maintinrent leur cohésion identitaire en s'appuyant sur la langue française, la religion catholique et la couleur blanche comme marqueurs distinctifs. Le groupe se divisa progressivement en un oligarchie sucrière aisée et une fraction plus modeste. Après l'indépendance (1968), la montée en puissance de l'élite indo-mauricienne contraignit les Franco-Mauriciens à adapter leurs stratégies de maintien de leur influence.",
+      "externalInfluences": "La colonisation britannique (1810-1968) imposa l'anglais comme langue administrative mais ne parvint pas à défranciser le groupe, qui conserva le français, la religion catholique et ses institutions. L'industrie sucrière mondiale et les liens avec la France ont continuellement nourri l'identité et la position économique du groupe.",
+      "majorHistoricalEvents": "1715 : prise de possession de l'île par la France. 1722 : premiers colons français permanents. 1810 : conquête britannique ; les termes de capitulation permettent aux colons français de conserver leur culture, leurs propriétés et la langue française. 1825 : accès préférentiel des sucres mauriciens au marché britannique ; boom sucrier et consolidation de l'oligarchie franco-mauricienne. 1835 : abolition de l'esclavage ; mobilisation identitaire franco-mauricienne contre la réforme. 1886 : représentation législative accordée. 1968 : indépendance du pays ; le pouvoir politique passe à la majorité indo-mauricienne. 1992 : Maurice devient république."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Oligarchie sucrière organisée autour des grandes familles propriétaires de plantations et d'usines sucrières. Le groupe bénéficiait d'institutions représentatives propres comme la Chambre d'Agriculture (fondée en 1853) et le Conseil législatif (représentation obtenue en 1886). Après l'indépendance, le groupe exerce son influence via des réseaux économiques plutôt que politiques.",
+      "clanOrganization": "Organisation de type clanique au sens large : grandes familles dont les noms sont associés à des domaines sucriers et à des positions économiques (familles Lamarque, de Spéville, Lagesse, Forget, etc.). L'endogamie est fortement encouragée, les mariages hors du groupe étant découragés pour préserver le capital économique et symbolique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignées familiales transmettent le capital économique (terres, usines sucrières), le réseau social (clubs élitaires, écoles privées) et l'identité culturelle. L'appartenance à une grande famille franco-mauricienne confère un statut et un accès aux ressources économiques.",
+      "religiousAuthority": "L'Église catholique joue un rôle central dans la vie sociale franco-mauricienne. Les pratiques religieuses incluent les messes en latin (tradition conservatrice), les processions et les grandes cérémonies familiales (baptêmes, mariages, funérailles). Les écoles catholiques privées constituent un vecteur de reproduction sociale du groupe."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Français",
+      "isoCodes": ["fra", "mfe"],
+      "dialects": [
+        "Français mauricien (variété locale du français standard)",
+        "Créole mauricien (mfe, parlé comme langue quotidienne par la majorité)"
+      ],
+      "vehicularRole": "Le français est la langue de la vie sociale, culturelle et familiale des Franco-Mauriciens. L'anglais est utilisé dans les contextes officiels et administratifs. Le créole mauricien (Morisyen) est parlé dans la vie quotidienne par l'ensemble de la population mauricienne, y compris les Franco-Mauriciens. Seuls 3,4 % des foyers mauriciens parlent principalement le français à la maison, mais la langue reste un marqueur identitaire fort du groupe."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques catholiques traditionnelles : messes dominicales, cérémonies familiales, processions religieuses. Les grandes propriétés familiales (domaines sucriers, maisons coloniales) sont des lieux de réunions sociales et familiales intergénérationnelles. Les clubs sociaux réservés aux élites (clubs de polo, de voile, de golf) structurent la sociabilité du groupe.",
+      "symbols": "Les demeures coloniales françaises (maisons créoles en bois avec vérandas et toitures en tôle) constituent le symbole architectural du groupe. Les usines sucrières et les champs de canne à sucre représentent l'héritage économique. L'Aapravasi Ghat à Port-Louis (site UNESCO) rappelle le moment charnière de l'arrivée des engagés indiens qui recomposa la société mauricienne.",
+      "artsAndMusic": "La cuisine franco-mauricienne mêle traditions françaises et saveurs créoles locales. La littérature francophone mauricienne compte des auteurs issus du groupe (Malcolm de Chazal, romancier et peintre du XXe siècle, figure emblématique). La musique séga, bien que d'origine afro-créole, est également appréciée par le groupe dans sa version patrimoniale.",
+      "spiritualities": "Catholicisme romain quasi-exclusif. La pratique religieuse est plus traditionaliste et conservatrice que chez les créoles catholiques. Certaines familles célèbrent encore la messe en latin (rite tridentin). La religion catholique est un marqueur identitaire fondamental, distinguant les Franco-Mauriciens des Indo-Mauriciens hindous et musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume traditionnel. Les Franco-Mauriciens constituèrent la minorité dominante de l'île Maurice de 1715 à 1968, contrôlant l'économie sucrière (en 1830, ils représentaient 8,9 % de la population mais possédaient 86,6 % des terres et 92,5 % des terres cultivées en canne à sucre), la politique coloniale et les institutions sociales.",
+      "relationsWithNeighbors": "Relations complexes et asymétriques avec les autres communautés mauriciennes. Tensions historiques avec les Créoles afro-mauriciens (descendants d'esclaves) et concurrence croissante avec la bourgeoisie indo-mauricienne depuis l'indépendance. Relations économiques étroites avec la France, l'Afrique du Sud (destination d'émigration) et le Royaume-Uni.",
+      "conflictsOrAlliances": "Opposition à l'abolition de l'esclavage en 1835 (indemnisation obtenue par les planteurs). Résistance culturelle à l'anglicanisation sous domination britannique. Après l'indépendance, stratégie d'alliance économique informelle avec les élites indo-mauriciennes pour maintenir leur position dans l'industrie sucrière. Tensions communautaires lors des émeutes de 1999.",
+      "diaspora": "Émigration significative vers l'Afrique du Sud depuis les années 1940-1960. Communautés en France, en Australie et au Canada. Cette diaspora est souvent désignée comme pollinisée (expression du chercheur C. Boudet) car elle maintient des liens économiques et culturels avec Maurice tout en s'intégrant dans les pays d'accueil."
     },
     "demography": {
-      "totalPopulation": 20,
+      "totalPopulation": 25000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia FR et EN – Franco-Mauriciens ; FairMoove (2 % de la population de Maurice estimée à 1 268 000 en 2025 = environ 25 000 personnes)",
+      "distributionByCountry": [
+        { "country": "MUS", "population": 22000 },
+        { "country": "ZAF", "population": 2000 },
+        { "country": "FRA", "population": 1000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Franco-Mauriciens – Wikipedia (français), 2024 (https://fr.wikipedia.org/wiki/Franco-Mauriciens)",
+      "Franco-Mauritians – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Franco-Mauritians)",
+      "Demographics of Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Mauritius)",
+      "The Franco-Mauritian Elite: Power and Anxiety in the Face of Change – American Anthropological Association, 2018 (https://anthrobookforum.americananthro.org/the-franco-mauritian-elite-power-and-anxiety-in-the-face-of-change/)",
+      "Les Franco-Mauriciens : une diaspora pollinisée – Revue Européenne des Migrations Internationales, Université de Poitiers (https://journals.openedition.org/remi/4215)",
+      "Religion in Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Religion_in_Mauritius)",
+      "Mauritius Population 2026 – Worldometer, 2025 (https://www.worldometers.info/world-population/mauritius-population/)"
+    ]
   }
 }

@@ -2,32 +2,98 @@
   "id": "PPL_MANKANYA",
   "nameMain": "Mankanya",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GIN", "SEN"],
+  "currentCountries": ["GNB", "SEN", "GMB"],
   "content": {
     "appellations": {
       "mainName": "Mankanya",
-      "selfAppellation": "Mankanya / Mankagne",
+      "selfAppellation": "Bahula (les gens de Hula/Bula)",
+      "exonyms": [
+        "Mancanha",
+        "Mancagne",
+        "Mankagne",
+        "Bola",
+        "Brame",
+        "Mankaya",
+        "Bawuh"
+      ],
+      "originOfExonyms": "Mancanha est la forme portugaise, Mancagne la forme francaise. Bola et Brame sont des noms anciens utilises dans les sources coloniales. Bawuh reflete une origine regionale dans la ville de Co (maintenant Ko/Wuh). Le nom Mankanya lui-meme serait un exonyme : selon la tradition, les colonisateurs auraient pris le nom du chef de l'epoque pour le nom du peuple.",
+      "whyProblematic": "Le terme Mankanya est un exonyme : selon la tradition orale, les colonisateurs auraient confondu le nom du chef de l'epoque avec le nom du groupe. Le veritable nom du peuple est Bahula (les gens de Hula), et leur langue est appelee Uhula par ses locuteurs.",
+      "contemporaryUsage": "Mankanya est le terme officiel utilise au Senegal et en Guinee-Bissau. La langue a ete reconnue comme langue nationale au Senegal en 2005 (decret signe en 2006). L'association culturelle Pkumel dirige des programmes d'alphabetisation depuis 2001.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Casamance (Sénégal), GIN-Bissau",
-      "currentCountries": ["GIN", "SEN"]
+      "ethnoLinguisticGroup": "Groupe Bak (sous-groupe Manjaku-Mankanya-Pepel) de la famille atlantique du Niger-Congo",
+      "historicalRegion": "Region de Cacheu (Guinee-Bissau), Casamance (Senegal, autour de Ziguinchor et le long du fleuve Casamance)",
+      "currentCountries": ["GNB", "SEN", "GMB"]
     },
     "ethnicities": [
-      "Mankanya du Sénégal (région de Ziguinchor)",
-      "Mankanya de Guinée-Bissau (zone littorale)"
+      "Mankanya de Bula (Hula, ville fondatrice, Cacheu Region, Guinee-Bissau)",
+      "Mankanya de Co (Ko/Wuh, deuxieme centre historique, Guinee-Bissau)",
+      "Mankanya de Casamance (Senegal, region de Ziguinchor, installes depuis le 19e siecle)",
+      "Mankanya de Gambie (installes plus recemment)",
+      "Bahula (designation interne generique pour les Mankanya de Guinee-Bissau)"
     ],
-    "origins": {},
-    "organization": {},
-    "languages": {},
-    "culture": {
-      "source_0": "Riziculture de mangrove.",
-      "source_1": "Musiques locales à percussions.",
-      "source_2": "Rituels forestiers liés à l’initiation."
+    "origins": {
+      "ancientOrigins": "Les Mankanya sont originaires de la region de Cacheu, au nord de la Guinee-Bissau, avec comme villes fondatrices Bula (Hula) et Co (Ko/Wuh). Leur chefferie est tracee jusqu'a 1522. La ville de Bula fut historiquement le siege de la royaute mankanya, chef supreme auquel tous les autres chefs etaient subordonnes.",
+      "formationPeriod": "Organisation politique etablie au moins depuis le 16e siecle (1522 selon les traditions orales documentees par Niouky et Robert, 2011). Premiers contacts avec les Portugais et le kreol portugais de Guinee des la fondation de celui-ci au debut du 17e siecle.",
+      "migrationRoutes": [
+        "Migration progressive du nord de la Guinee-Bissau vers la Casamance senegalaise depuis le premier quart du 19e siecle",
+        "Causes migratoires : manque de terres cultivables, conflits internes, abus de pouvoir de l'administration coloniale",
+        "Extension eastward le long du fleuve Casamance apres installation a Ziguinchor",
+        "Migration ulterieure vers la Gambie"
+      ],
+      "historicalSettlementZones": [
+        "Bula (Hula) et Co (Ko), region de Cacheu, nord de la Guinee-Bissau",
+        "Region de Ziguinchor, Basse-Casamance, Senegal (depuis le 19e siecle)",
+        "Axe du fleuve Casamance vers l'est (Senegal)",
+        "Gambie (arrivee plus recente)"
+      ],
+      "unificationsOrDivisions": "La chefferie de Bula etait l'autorite supreme historique. La ville de Co, second centre de pouvoir, s'etait separee a un moment donne avant d'etre reintegree sous l'autorite de Bula. Le systeme de chefferies existe toujours mais joue un role essentiellement symbolique.",
+      "externalInfluences": "Contact avec le kreol portugais de Guinee depuis le 17e siecle (langue vehiculaire regionale). Missions catholiques au debut du 20e siecle : les Mankanya furent parmi les premiers a repondre a l'evangelisation, d'ou une forte proportion de catholiques. Influence du wolof en Casamance depuis les annees 1990. Bilinguisme important avec le mandjak (largement intercomprehensible).",
+      "majorHistoricalEvents": "Etablissement de la chefferie de Bula (1522 selon la tradition). Migration vers la Casamance (1er quart du 19e siecle). Evangelisation catholique (debut 20e siecle). Reconnaissance officielle de la langue mankanya comme langue nationale senegalaise (2005-2006). Programme d'alphabetisation Pkumel depuis 2001."
     },
-    "historicalRole": {},
-    "demography": {},
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme hierarchique traditionnel avec un roi base a Bula ayant autorite supreme sur tous les chefs de village. Le chef de Co avait la deuxieme autorite. Chaque village avait son propre chef. Le systeme de chefferie existe encore, mais joue desormais un role largement symbolique.",
+      "clanOrganization": "Organisation en clans avec chefferie hereditaire. Le clan royal de Bula est la reference de l'autorite. La tradition de consonnance Mandinka et Joola est presente, mais les Mankanya maintiennent une identite propre.",
+      "ageClassSystems": "Rites d'initiation a l'age adulte pour les garcons et les filles. Ceremonies associant valeurs communautaires et transmission des savoirs traditionnels. La culture mankanya valorise fortement l'education : les missions catholiques ont entraine un acces precoce a l'ecole.",
+      "roleOfLineages": "Les lignages determinent la succession des chefferies et les droits fonciers. La migration vers la Casamance a entraine des adaptations dans les structures lignageres, avec constitution de nouvelles communautes locales.",
+      "religiousAuthority": "Autorite des chefs traditionnels et des specialistes rituels pour les pratiques animistes. Les pretres catholiques (presence depuis le debut du 20e siecle) jouent un role central dans la vie communautaire des catholiques mankanya."
+    },
+    "languages": {
+      "mainLanguage": "Mankanya (Uhula, Mancanha, Mancagne)",
+      "isoCodes": ["knf"],
+      "dialects": [
+        "Uhula (dialecte principal, parle a Bula et dans la majorite des communautes)",
+        "Uwuh (dialecte mineur, parle par les Mankanya de la region de Co/Wuh)"
+      ],
+      "vehicularRole": "Langue nationale au Senegal (depuis 2005-2006). Le mankanya entretient un bilinguisme important avec le mandjak (largement intercomprehensible), le kreol de Guinee-Bissau, le francais (Senegal), l'anglais (Gambie) et le portugais (Guinee-Bissau). Le wolof supplante le kreol comme vehiculaire en Casamance depuis les annees 1990."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation a l'age adulte combines a des ceremonies de transmission des valeurs communautaires. Rituels forestiers lies a l'initiation (pratiques maintenues malgre la christianisation majoritaire). Ceremonies agricoles liees a la riziculture de mangrove et, plus recemment, a la culture de l'anacardier (cashew). Ceremonies liees aux ancetres presidees par des specialistes rituels.",
+      "symbols": "La riziculture de mangrove est l'element identitaire et symbolique central historique. L'anacardier (cashew) est devenu un nouveau symbole economique et culturel. La ville de Bula (Hula) est le symbole politico-identitaire de reference. La langue uhula, reconnue officiellement, est un symbole d'identite culturelle.",
+      "artsAndMusic": "Musiques locales a percussions accompagnant les ceremonies d'initiation, de mariage et les festivals communautaires. Traditions de danse en lien avec les rites saisonniers. L'alphabetisation et la production litteraire en mankanya se developpent depuis 2001 (programme Pkumel). Les Mankanya valorisent fortement l'education, notamment via les ecoles catholiques.",
+      "spiritualities": "Majoritairement catholiques (reponse precoce aux missions du debut du 20e siecle). Maintien de pratiques animistes traditionnelles en parallele : rituels forestiers, invocations des ancetres, ceremonies lies a la nature. Synchretisme catholico-animiste frequent. Forte valorisation de l'education via les missions catholiques. Petite minorite pratiquant les religions traditionnelles seules."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie royale de Bula (Hula), tracee jusqu'a 1522, avec autorite sur l'ensemble des communautes mankanya. Deuxieme centre de pouvoir a Co (Ko/Wuh). Le systeme de chefferies s'etend aujourd'hui sur trois pays (Guinee-Bissau, Senegal, Gambie) mais joue un role essentiellement symbolique.",
+      "relationsWithNeighbors": "Proximite culturelle et linguistique avec les Mandjak et les Papel (groupe Bak). Bilinguisme important avec le mandjak. Cohabitation avec les Diola et les Balanta en Casamance et en Guinee-Bissau. Contacts depuis le 17e siecle avec les locuteurs du kreol portugais.",
+      "conflictsOrAlliances": "Depart de Guinee-Bissau vers la Casamance au 19e siecle en partie lie a des conflits internes et a la pression coloniale. La ville de Co s'est momentanement separee de Bula avant d'etre reintegree. Relations generalement pacifiques avec les groupes voisins.",
+      "diaspora": "Communautes mankanya au Senegal (region de Ziguinchor, 50 000 personnes) et en Gambie (2 600 personnes). Migration interne vers Dakar et d'autres centres urbains senegalais. Faible diaspora internationale au-dela de la sous-region."
+    },
+    "demography": {
+      "totalPopulation": 116600,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 64 000 en Guinee-Bissau, 50 000 au Senegal, 2 600 en Gambie. Total mondial : 116 600. Ethnologue (2013, cite par Gaved 2020) : environ 75 000 locuteurs a travers le Senegal, la Guinee-Bissau et la Gambie. Site 101lasttribes.com : population globale 96 600.",
+      "distributionByCountry": [
+        { "country": "GNB", "population": 64000 },
+        { "country": "SEN", "population": 50000 },
+        { "country": "GMB", "population": 2600 }
+      ]
+    },
     "sources": [
-      "Casamance Anthropological Studies",
-      "Ethnologue (langues proches)"
+      "Wikipedia EN - Mankanya people : https://en.wikipedia.org/wiki/Mankanya_people",
+      "Wikipedia EN - Mankanya language : https://en.wikipedia.org/wiki/Mankanya_language",
+      "Gaved T.J.D. - A grammar of Mankanya: An Atlantic language of Guinea-Bissau, Senegal and the Gambia. Leiden University, 2020 : https://scholarlypublications.universiteitleiden.nl/access/item:2969896/view",
+      "Glottolog - Mankanya mank1251 : https://glottolog.org/resource/languoid/id/mank1251",
+      "Joshua Project - Mankanya in Guinea-Bissau and all countries : https://joshuaproject.net/people_groups/13515"
     ]
   }
 }

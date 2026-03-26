@@ -2,63 +2,101 @@
   "id": "PPL_MORU",
   "nameMain": "Moru",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["SDN"],
+  "currentCountries": ["SSD"],
   "content": {
     "appellations": {
       "mainName": "Moru",
       "selfAppellation": "Moru",
-      "exonyms": ["Moru (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Moru (terme utilisé par les Européens et dans la littérature coloniale)",
+        "Moru-Madi (désignation linguistique groupant Moru et Ma'di)"
+      ],
+      "originOfExonyms": "La tradition orale ma'di et moru affirme que les deux peuples ne formaient qu'un seul groupe à l'origine. La séparation eut lieu au bord du Nil à la suite d'une querelle au sujet d'arachides : le groupe qui alla vers l'ouest donna naissance aux Moru (terme associé à 'ici nous allons' dans la langue). Le terme Moru-Madi désigne la branche linguistique commune dans la classification soudanique centrale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Moru est couramment utilisé en anglais et en arabe soudanais. Les Moru se reconnaissent dans cinq divisions principales (Miza, Agyi, Moroandri, Kediro, Bariba) qui entretiennent des dialectes et des identités locales distinctes. Le dialecte Moru Miza fut historiquement la variété standard pour l'éducation et le culte chrétien.",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central (Moru-Madi)",
-      "historicalRegion": "Sud-Soudan",
-      "currentCountries": ["SDN"]
+      "ethnoLinguisticGroup": "Soudanique central, branche Moru-Madi (branche méridionale)",
+      "historicalRegion": "Moruland : partie méridionale du comté de Mundri, Équatoria occidental, Soudan du Sud ; entre 4 et 6 degrés N, 29 et 31 degrés E",
+      "currentCountries": ["SSD"]
     },
-    "ethnicities": ["Moru du Nord", "Moru du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Moru Miza (division principale, variété standard pour l'éducation et l'Eglise, reçoit le plus d'attention historique)",
+      "Moru Agyi",
+      "Moru Moroandri",
+      "Moru Kediro",
+      "Moru Bariba ('Bariba')",
+      "Cluster Jur du nord (Beli, Sopi, Modo, Nyamusa, Wira, Biti, Morokodo — classé parfois avec les Moru mais constitue un groupe linguistique distinct, plus proche des Bongo et Baka)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Moru sont originaires du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central (Moru-Madi).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Madi et les Lugbara.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "La tradition orale commune aux Moru et aux Ma'di les rattache à une origine nigériane, d'où leurs ancêtres migrèrent vers le sud jusqu'à la zone ougandaise (Amadi). Lors de la traversée vers le Nil, les deux groupes se séparèrent : les Moru partirent vers l'ouest (le terme moru étant associé à ce mouvement) tandis que les Ma'di restèrent sur la rive du fleuve. Les Moru s'établirent dans la zone boisée et agricole du Moruland actuel, entre l'Équatoria central et occidental.",
+      "formationPeriod": "L'identité moru distincte se consolida lors de leur établissement dans la région de Mundri et des zones adjacentes. Les attaques des Azande (qui les chassèrent vers la colline Odo près de Lui) et les razzias esclavagistes du nord constituent les jalons historiques les plus clairs de leur histoire collective. La période coloniale (Enclave du Lado, puis Soudan anglo-égyptien) apporta des changements profonds, notamment l'arrivée des missions chrétiennes à Lui dès 1920.",
+      "migrationRoutes": [
+        "Du Nigeria ancestral vers le sud, jusqu'à la zone d'Amadi (Ouganda actuel) avec les Ma'di",
+        "Séparation au Nil et migration vers l'ouest dans l'Équatoria",
+        "Établissement dans la région de Mundri (Équatoria occidental)"
+      ],
+      "historicalSettlementZones": [
+        "Partie méridionale du comté de Mundri, Équatoria occidental, Soudan du Sud",
+        "Région de Lui (site du premier hôpital missionnaire, 1920)",
+        "Zones agricoles autour des axes routiers principaux dans le Moruland",
+        "Nord-est du district : présence du cluster Jur (Beli, Sopi, Modo, etc.)"
+      ],
+      "unificationsOrDivisions": "Les cinq divisions principales (Miza, Agyi, Moroandri, Kediro, Bariba) occupent des zones géographiques distinctes et ont leurs propres différences dialectales. Les familles étendues s'établissent en groupes clans sous des chefs et sous-chefs. Le terme 'village' chez les Moru désigne les gens qui se rattachent à un centre commun, et non nécessairement une concentration physique de maisons. Le Moru Miza bénéficia d'une attention privilégiée dans l'éducation et la mission chrétienne.",
+      "externalInfluences": "Attaques des Azande (qui les repoussèrent vers la colline Odo, près de Lui). Razzias esclavagistes du nord (traite turco-égyptienne, 19e siècle). Enclave du Lado (belgo-britannique, 1894-1910). Province d'Équatoria ottomane-égyptienne sous Baker, Gordon et Emin Pasha. Arrivée des missions de la Church Missionary Society (CMS) : Dr Kenneth Grant Fraser et sa femme Eileen (1920) ; hôpital de Lui, écoles, dispensaires, formation d'enseignants et d'évangélistes le long des routes principales.",
+      "majorHistoricalEvents": "19e siècle : attaques des Azande, refuge sur la colline Odo. 1894-1910 : intégration dans l'Enclave du Lado (nord-est du Congo Free State puis Congo belge). 1920 : début des activités missionnaires de Kenneth Grant Fraser à Lui ; hôpital, école et dispensaires. Années 1950-1960s : développement de l'Église épiscopale au Soudan du Sud parmi les Moru. Guerres civiles soudanaises (1955-1972, 1983-2005) : déplacements importants de population. 2011 : indépendance du Soudan du Sud."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chefferies traditionnelles : les familles étendues forment des clans dirigés par des chefs (headmen) et des sous-chefs. Le terme 'village' désigne les habitants qui se rattachent à un centre social commun plutôt qu'une agglomération physique. Le système cheffal est décentralisé, sans entité politique centralisée de type royaume.",
+      "clanOrganization": "La société moru est organisée en familles étendues regroupées en clans. Ces familles s'établissaient autour de leurs jardins, constituant des hameaux liés entre eux par des sous-chefs. Le mode de cultivation collectif katiri (parents proches cultivent ensemble dans une même zone, avec un arbre ou une termitière comme marqueur central) renforce la cohésion clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires structurant les clans et les alliances matrimoniales. Les oncles maternels jouent un rôle important dans les rituels funéraires : la famille se réunit avec eux pour régler les paiements coutumiers. La pratique katiri (travail collectif des parents proches) reflète l'importance des liens de lignage dans l'organisation agricole.",
+      "religiousAuthority": "Les missions chrétiennes (Church Missionary Society) s'établirent à Lui dès 1920. La majorité des Moru sont aujourd'hui membres de l'Église épiscopale du Soudan du Sud (ECS). Des pratiques traditionnelles subsistent : E.E. Evans-Pritchard nota en 1938 des pratiques liées aux faiseurs de pluie du clan Moro (note sur les rain-makers des Moru). Le Dr Fraser écrivit en 1926 sur la sorcellerie et la guérison chez les Moru."
     },
     "languages": {
       "mainLanguage": "Moru",
-      "vehicularRole": "Le moru est parlé par la majorité des Moru. L'anglais, l'arabe et d'autres langues sont également utilisés."
+      "isoCodes": ["mgd"],
+      "dialects": [
+        "Moru Miza (standard éducatif et ecclésiastique, reçoit le plus d'attention)",
+        "Moru Agyi",
+        "Moru Moroandri",
+        "Moru Kediro",
+        "Moru Bariba"
+      ],
+      "vehicularRole": "Le moru (ISO 639-3 : mgd) est une langue soudanique centrale méridionale, reconnue par la Constitution transitoire du Soudan du Sud (2011, article 6(1)). Il est mutuellement intelligible avec le ma'di, le lugbara, l'avukaya, le kaliko et le logo. L'anglais est la langue officielle du Soudan du Sud et utilisé dans l'éducation. L'arabe de Juba est également parlé dans la région."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels moru, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites funéraires : funérailles en plusieurs étapes. Torofo omvo (troisième ou quatrième jour) : nettoyage de la cour, rasage des cheveux de la famille proche près de la tombe, abattage de chèvres ou de boeufs, festin collectif, danse de deuil le soir. La période de deuil (lu'be o'be) : les femmes âgées portent un sac, se couvrent de cendres et limitent les bains. Assemblée quotidienne de deuil près de la tombe (matin et soir). Budri (cérémonie finale, un à trois ans après le décès) : rend permanent le tombeau ('budri obe), règlement de toutes les affaires liées au défunt, danse pouvant durer jusqu'à quatre jours. Ti onga : abattage de taureaux d'abord amenés à la tombe. Naissance : célébrée après trois ou quatre jours, moment où l'enfant reçoit son prénom.",
+      "symbols": "Les tambours (Dugye, Ruma, Diri, Lari Ngwa) sont les symboles musicaux centraux de la culture moru, différenciés selon les saisons. La colline Odo (près de Lui) est un lieu de mémoire de la résistance face aux attaques des Azande. La gara (hochet de femmes fait d'une courge séchée remplie de graines d'okra) est un symbole de la participation féminine aux rites religieux et communautaires.",
+      "artsAndMusic": "La danse et le chant sont les activités culturelles et sociales prédominantes, liées aux trois saisons agricoles. Danse Ruma (janvier-avril, saison d'abondance) : quatre tambours dont le grand Dugye ('la mère tambour') et le Ruma nommeur de la danse. Danse Dego (mai-août, saison agricole intense) : un Dugye et deux petits Lari Ngwa ; mouvements lents évoluant vers le Ngala (plus rapide). Danse Yelu (septembre-décembre, saison des récoltes) : cinq tambours (1 Dugye, 1 Diri/Biri, 3 Lari Ngwa). Instruments : kudi et lekyembe (harpes) pour les loisirs, la communication sur longues distances et la cour amoureuse ; gara (hochet féminin en courge séchée remplie de graines d'okra). Les harpes jouent un rôle central dans la communication entre hommes et femmes.",
+      "spiritualities": "Pratiques spirituelles traditionnelles : culte des faiseurs de pluie (rain-makers du clan Moro, documenté par Evans-Pritchard, 1938). Croyances liées à la sorcellerie et à la guérison (documentées par Fraser, 1926). La mort et les funérailles sont encadrées par des rituels précis (Torofo omvo, Budri) permettant aux vivants de clôturer le deuil. Aujourd'hui, la majorité des Moru sont chrétiens (Église épiscopale du Soudan du Sud, ECS), fruit des missions CMS depuis 1920."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora moru dans les grandes villes soudanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Moru n'ont pas constitué de royaume centralisé. Leur organisation en chefferies décentralisées (headmen et sous-chefs) était adaptée à leur milieu forestier et agricole. Les Moru Miza furent historiquement les plus en vue, leur dialecte servant de standard pour toute la communauté dans l'éducation et le culte.",
+      "relationsWithNeighbors": "Les Moru partagent une origine commune avec les Ma'di (mito séparé au Nil). Ils appartiennent au même groupe ethnolinguistique que les Madi, Lugbara, Avukaya et Logo (Ouganda, RDC). Les attaques des Azande constituent leur expérience historique collective la plus marquante (fuite vers la colline Odo). Au nord du comté de Mundri vivent les groupes Jur (Beli, Sopi, Modo, Nyamusa, Wira, Biti, Morokodo), souvent confondus avec les Moru mais formant un groupe linguistique distinct.",
+      "conflictsOrAlliances": "Attaques des Azande (19e siècle), contraignant les Moru à se réfugier sur la colline Odo. Razzias esclavagistes du nord (traite turco-égyptienne). Intégration dans l'Enclave du Lado (1894-1910) puis dans le Soudan anglo-égyptien. Guerres civiles soudanaises (1955-1972 puis 1983-2005) : déplacements de population. Indépendance du Soudan du Sud (2011).",
+      "diaspora": "Des Moru vivent dans les grandes villes du Soudan du Sud (Juba, Wau) et en Ouganda, notamment des réfugiés déplacés par les guerres civiles. Une petite diaspora est présente en Europe et en Amérique du Nord (étudiants, réfugiés). La communauté de Lui reste le foyer culturel et religieux central."
     },
     "demography": {
       "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements soudanais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN (Moru people) : 'la population ne dépasse probablement pas 200 000'. 101LastTribes.com et Ethnologue (SIL International) — Moru (mgd). Recensement du Soudan du Sud (données partielles).",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 200000,
+          "note": "Partie méridionale du comté de Mundri, Équatoria occidental, Soudan du Sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Moru language (mgd)",
-      "CIA World Factbook – South Sudan",
-      "Recensements soudanais",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Moru people. https://en.wikipedia.org/wiki/Moru_people",
+      "Ethnologue (SIL International) — Moru (mgd). https://www.scriptureearth.org/maps/SS/mgd.htm",
+      "Glottolog — Moru (moru1253). https://glottolog.org/resource/languoid/id/moru1253",
+      "African Mission — Farewell rituals of the Moru. https://africanmission.org/blog/farewell-rituals-of-the-moru/",
+      "Fraser, Kenneth Grant (1926). 'Witchcraft and Healing in the Moru Tribe.' Church Missionary Society.",
+      "Evans-Pritchard, Edward Evan (1938). 'A note on rain makers of the Moro clan.' African Studies.",
+      "101LastTribes.com — Moru people. https://www.101lasttribes.com/tribes/moru.html",
+      "CIA World Factbook — South Sudan."
     ]
   }
 }

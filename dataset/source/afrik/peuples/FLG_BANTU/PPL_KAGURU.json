@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Kaguru",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wakaguru",
+      "exonyms": [
+        "Kagulu",
+        "Megi",
+        "Wetumba",
+        "Solwa",
+        "Mangaheri",
+        "Northern Sagara"
+      ],
+      "originOfExonyms": "Wakaguru est la forme swahilie du nom. Kagulu designe a la fois le peuple et sa langue. Megi, Tumba et Mangehele sont des variantes dialectales. Northern Sagara fut employe par les premiers explorateurs europeens qui assimilaient les Kaguru aux Sagara du sud.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kaguru reste en usage courant en anglais et en swahili. La langue est officiellement nommee Kagulu (code ISO kki) par les organismes linguistiques internationaux comme SIL Ethnologue.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu de Tanzanie centrale, groupe des peuples matrilineaires des hautes terres orientales",
+      "historicalRegion": "Ukaguru, region de Morogoro (nord), Tanzanie",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Kaguru"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kaguru sont un peuple bantou etabli dans les montagnes Ukaguru, une partie de l'Arc oriental des montagnes de Tanzanie. Leur installation dans la region de Morogoro remonte a plusieurs siecles, dans le cadre des grandes migrations bantoues d'Afrique centrale et occidentale vers l'est du continent.",
+      "formationPeriod": "Siecles anterieurs au XVIIIe siecle, avec une identite ethno-linguistique bien distincte documentee des les premiers contacts europeens au XIXe siecle.",
+      "migrationRoutes": [
+        "Migration bantoue d'Afrique centrale vers l'est de l'Afrique",
+        "Installation dans les montagnes Ukaguru (arc oriental de Tanzanie)"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes Ukaguru (3 600 miles carres), district de Kilosa, Morogoro",
+        "Plateau central du district de Gairo",
+        "Plaines basses autour de la riviere Kinyasungwe"
+      ],
+      "unificationsOrDivisions": "Les Kaguru n'ont jamais forme de chefferies conventionnelles centralisees. La societe est organisee en clans matrilineaires autonomes. Au XIXe siecle, des leaders locaux emergeaient aux points de commerce des caravanes sans former de structure politique permanente.",
+      "externalInfluences": "La route principale des caravanes entre le lac Tanganyika et l'ocean Indien traversait l'Ukaguru aux XVIIIe-XIXe siecles. La colonisation allemande puis britannique a impose de nouvelles structures. Les missionnaires chretiens ont etabli des postes dans la region des le XIXe siecle.",
+      "majorHistoricalEvents": "L'Ukaguru etait le dernier point d'approvisionnement en eau avant les plaines de l'ouest semi-arides, ce qui en faisait un lieu strategique pour le commerce caravanier. Les raids des Maasai au nord et des Hehe au sud ont oblige les Kaguru a se fortifier dans les hautes terres. La Ligne Centrale ferroviaire (ancienne route de caravane) a traverse ulterieurement leur territoire."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe acephale (sans chefferie centralisee). L'organisation politique se faisait a l'echelle du clan et du village. Des leaders informels gereaient la justice et le commerce aux points de caravane en echange de reconnaissance, de munitions et de marchandises, sans autorite permanente.",
+      "clanOrganization": "Environ 100 clans matrilineaires, chacun associe a un totem (chat, chevre, messagers, biere gatee, pluie, perles, ravins, etc.). Chaque clan possede des droits sur des terres specifiques et organise des rituels annuels de revitalisation.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation et l'heritage se transmettent par la ligne maternelle. L'enfant appartient au clan de sa mere. Le lien frere-soeur est central : le frere utilise la dot de mariage de sa soeur pour son propre mariage et peut revendiquer le travail des fils de sa soeur et la dot des filles de sa soeur.",
+      "religiousAuthority": "Pas d'autorite religieuse centralisee. La propitiation des ancetres est l'axe central : les fantomes (esprit des morts) vivent dans un monde parallele et doivent etre apaises par des sacrifices, des invocations de noms et des rites avec de la farine de ble et du sang animal sur les tombes."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kagulu (Chikaguru)",
+      "isoCodes": ["kki"],
+      "dialects": ["Megi", "Tumba", "Mangehele"],
+      "vehicularRole": "La langue Kagulu est propre a ce groupe et n'est pas mutuellement intelligible avec le gogo ou le zaramo, bien que morphologiquement proche. Le swahili est utilise comme langue vehiculaire nationale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation masculine par la circoncision a la puberte : le jeune homme est emmene dans un camp en brousse, la circoncision symbolise la mort de l'enfance et la naissance a l'age adulte. Initiation feminine vers 14 ans par une reclusion de plusieurs semaines dans une maison, avec chants obscenes, danses et excision legere pratiquee en brousse par une vieille femme. Rites funeraires elabores incluant la propitiation des ancetres.",
+      "symbols": "Les rainstones (pierres a pluie) sont des objets rituels importants. Le sang sacrificiel et la farine de ble blanche sont utilises sur les tombes pour apaiser les ancetres. Les clans ont chacun un totem animal ou naturel.",
+      "artsAndMusic": "La tradition orale (contes, proverbes) est tres developpee. La musique et la danse etaient condamnees par les missionnaires ce qui atteste de leur importance. Coloration au rouge ochre, parure de perles et tatouages aux oreilles constituaient des elements identitaires forts.",
+      "spiritualities": "Croyance en un monde des ancetres (ghostland) parallele au monde des vivants. Les esprits des morts (fantomes) conservent leur identite et peuvent affliger les vivants s'ils sont negliges. La communaute inclut les morts, les vivants et les non-encore-nes. Pratiques magiques : medecines rituelles, rainstones pour provoquer la pluie."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume ni de chefferie formelle. Leadership informel aux points de commerce des caravanes au XIXe siecle. Certains hommes se proclamaient leaders en obtenant la reconnaissance des caravanes arabes et swahilies en echange de protection.",
+      "relationsWithNeighbors": "Borders avec les Ngulu a l'est, les Luguru au sud-est, les Gogo (Dodoma) a l'ouest, les Sagara au sud. Raids recurrents des Maasai au nord et des Hehe au sud ont pousse les Kaguru a se refugier dans les vallees des montagnes. Les zones basses attiraient des refugies et des immigrants d'autres groupes.",
+      "conflictsOrAlliances": "Les Kaguru ont souffert des raids des Maasai et des Hehe, qui ont favorise l'implantation dans les hautes terres fortifiees. Pendant l'epoque coloniale allemande, certains leaders Kaguru negociaient avec les Allemands, les Arabes et les Britanniques.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 468000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 468000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kaguru people – Wikipedia (https://en.wikipedia.org/wiki/Kaguru_people)",
+      "Kagulu language – Wikipedia (https://en.wikipedia.org/wiki/Kagulu_language)",
+      "Kagulu, Northern Sagara in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12414)",
+      "Kaguru – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kaguru.pdf)",
+      "Kagulu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kagu1239)",
+      "Beidelman, Thomas O. – The Kaguru: A Matrilineal People of East Africa, 1971"
+    ]
   }
 }

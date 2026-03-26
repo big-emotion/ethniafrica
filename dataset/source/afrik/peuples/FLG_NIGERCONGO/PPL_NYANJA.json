@@ -6,67 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "Nyanja",
-      "selfAppellation": "Nyanja",
+      "selfAppellation": "Chewa (aussi Achewa, Achawa); Nyanja est l'auto-denomination des groupes vivant autour du lac Malawi (Nyanja = lac)",
       "exonyms": [
-        "Nyanja (terme utilisé par les Européens), parfois appelés « Chewa » (terme alternatif)"
+        "Nyanja (terme geographique : gens du lac)",
+        "Chewa (nom ethnique principal du groupe majoritaire)",
+        "Maravi (appellation historique de l'ensemble du complexe culturel)"
       ],
+      "originOfExonyms": "Nyanja signifie lac en langue bantou de la zone N; il designe initialement les gens qui vivent pres du lac (lac Malawi/Nyasa). Chewa est le nom ethnique propre du sous-groupe dominant. Maravi (ou Malawi) est le nom historique du complexe ethno-politique, donne au pays lui-meme : il signifierait les flammes qui brillent (evoquant les reflets du soleil sur le lac). En 1968, le president Hastings Kamuzu Banda renomma officiellement la langue Chinyanja en Chichewa.",
+      "whyProblematic": "La distinction entre Nyanja et Chewa est historiquement et politiquement chargee : Kamuzu Banda imposa le terme Chichewa/Chewa dans le cadre d'une politique nationaliste d'unite (one nation, one language) qui marginalisa d'autres langues comme le tumbuka. En Zambie, le terme Nyanja reste prefere. Les deux noms referent essentiellement au meme continuum ethnolinguistique.",
+      "contemporaryUsage": "Chichewa est le terme officiel au Malawi (langue nationale depuis 1968). Nyanja est prefere en Zambie et Zimbabwe. En Mozambique, la langue est souvent appelee Chinyanja. La langue est l'une des 55 langues embarquees sur la sonde Voyager (1977).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "MWI, ZMB, MOZ, ZWE",
+      "ethnoLinguisticGroup": "Bantou (Zone N, groupe Chewa-Tumbuka)",
+      "historicalRegion": "Bassin du lac Malawi (lac Nyasa); region centrale et meridionale du Malawi, Province Orientale de Zambie, province de Tete et Niassa au Mozambique, est du Zimbabwe",
       "currentCountries": ["MWI", "ZMB", "MOZ", "ZWE"]
     },
     "ethnicities": [
-      "Nyanja du Malawi",
-      "Nyanja de Zambie",
-      "Nyanja du Mozambique",
-      "Nyanja du Zimbabwe",
-      "Sous-groupes régionaux"
+      "Chewa — groupe majoritaire au Malawi central et meridional, coeur de l'Empire Maravi",
+      "Nyanja du Malawi — populations des rives du lac Malawi et de la Shire Valley",
+      "Nyanja de Zambie — Province Orientale de Zambie, aussi appeles Chewa de Zambie",
+      "Mang'anja — sous-groupe meridional du Malawi et du Mozambique, etroitement lie aux Chewa",
+      "Nyanja du Zimbabwe — province de Manicaland et zones frontalieres orientales",
+      "Nyanja de Mozambique — provinces de Tete et Niassa",
+      "Clan Phiri — clan royal associe aux rois (Kalonga) et a l'aristocratie de l'Empire Maravi",
+      "Clan Banda — clan des guerisseurs et mystiques, de la tradition Maravi"
     ],
     "origins": {
-      "ancientOrigins": "Les Nyanja sont originaires de la région du MWI, de la ZMB, du Mozambique et du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les traditions orales font remonter les origines des Chewa/Nyanja a Malambo, une region du pays Luba dans l'actuelle Republique Democratique du Congo. De la, ils emigrerent vers le nord de la Zambie, puis vers le sud et l'est dans les hauts plateaux du Malawi actuel. Ils nommerent la region Malawi (les flammes) pour les reflets du soleil sur le lac. Le terme Nyanja (peuple du lac) decrit leur installation sur les rives du lac Malawi.",
+      "formationPeriod": "Le premier royaume Chewa est etabli avant ou apres 1480. Au 16e siecle, deux systemes de gouvernement coexistent : le clan Banda a Mankhamba (pres de Nthakataka) et le clan Phiri a Manthimba. L'Etat Maravi est unifie au 17e siecle et atteint son apogee entre 1600 et 1750, controlant un vaste territoire de la Zambie au Mozambique. Des contacts avec les Portugais sont documentes entre 1608 et 1667.",
+      "migrationRoutes": [
+        "Migration depuis la region Luba (DRC actuel) vers le nord de la Zambie (15e siecle)",
+        "Progression vers le sud-est dans les hauts plateaux du Malawi (15e-16e siecle)",
+        "Expansion de l'Empire Maravi vers la Zambie orientale, le Mozambique (province de Tete) et le Zimbabwe oriental (17e-18e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Rives du lac Malawi (lac Nyasa) — zone centrale ancestrale",
+        "Hauts plateaux du Malawi central et meridional (Lilongwe, Zomba, Blantyre)",
+        "Province Orientale de Zambie (Chipata)",
+        "Province de Tete et Niassa (Mozambique)",
+        "Zimbabwe oriental (Manicaland)"
+      ],
+      "unificationsOrDivisions": "L'Empire Maravi (17e-18e siecles) fut le grand Etat centralise des Chewa, gouverne par le Kalonga (roi supreme du clan Phiri). Deux grandes confederations coexistaient : Mankhamba (clan Banda, guerisseurs) et Manthimba (clan Phiri, rois). Apres le 18e siecle, l'empire se fragmenta en plusieurs royaumes locaux. Au 19e siecle, des incursions ngoni (d'origine zulu) affecterent une partie du territoire Chewa. La colonisation britannique unifia politiquement la region sous le Nyasaland Protectorate (1891).",
+      "externalInfluences": "Contacts avec les marchands portugais (17e siecle). Incursions des guerriers Yao (porteurs d'esclaves pour les Arabes). Pression des Ngoni (di origine zulu) au 19e siecle, absorbant certains groupes chewa. Missions britanniques chretiennes (David Livingstone atteignit le lac Malawi en 1859). Christianisation massive sous le regime colonial britannique (Nyasaland Protectorate, 1891-1964). Politique nationaliste de Kamuzu Banda (1966-1994) : le chichewa comme langue nationale d'unite.",
+      "majorHistoricalEvents": "Fondation du premier royaume Chewa (vers 1480). Apogee de l'Empire Maravi (17e siecle). Arrivee de David Livingstone au lac Malawi (1859). Etablissement du Nyasaland Protectorate britannique (1891). Independance du Malawi (1964). Reforme linguistique de Kamuzu Banda : renommage de Chinyanja en Chichewa (1968). Proclamation du Gule Wamkulu comme chef-d'oeuvre du patrimoine oral de l'UNESCO (2005); inscription sur la liste representative (2008)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe matrilineaire : l'appartenance clanique, l'heritage et les droits fonciers se transmettent par la mere. Les chefferies traditionnelles sont dirigees par des chefs hereditaires (traditionnellement issus du clan Phiri pour les fonctions royales). Le chef de village est assiste d'un conseil d'anciens. Les femmes detiennent un statut economique eleve (revenus des recoltes leur appartiennent). Les freres aines des meres (Nkhoswe) sont les gardiens des lignages et tuteurs de leurs neveux.",
+      "clanOrganization": "Societe matrilineaire organisee autour des Bele (familles etendues d'individus descendant du meme ancetre feminin). Les Mbumba (dependants : enfants du meme ventre et leurs enfants) constituent l'unite de dependance. Deux grands clans traversent toute la societe Chewa : le clan Phiri (rois et aristocratie) et le clan Banda (guerisseurs et mystiques). Les mphini (tatouages faciaux traditionnels) distinguaient les Chewa de leurs voisins.",
+      "ageClassSystems": "La Nyau brotherhood est la principale societe initiatique masculine : ses membres sont charges de l'initiation des jeunes hommes a l'age adulte. La performance du Gule Wamkulu conclut les ceremonies d'initiation. Les femmes ont leurs propres rites d'initiation a la puberte (chinamwali), conduits par des conseilleres (anankungwi).",
+      "roleOfLineages": "Les lignages matrilineaires (Bele) determinent l'heredite, les alliances matrimoniales et les droits fonciers. La propriete agricole reste sous le controle de la femme. Les hommes occupent une position sociale relativement marginale dans la structure matrilineaire (les maris viennent vivre dans le village de leur epouse — uxorilocalite). La Nyau brotherhood offre aux hommes une structure de solidarite et de pouvoir complementaire.",
+      "religiousAuthority": "La societe secrete Nyau est le pilier de l'autorite religieuse traditionnelle. Ses membres (exclusivement masculins) gardent les secrets des masques Gule Wamkulu et procedent aux ceremonies d'initiation. Le chef du village detient egalement un role ceremoniel lors des recoltes et des rituels de pluie. Les missions chretiennes tenterent d'interdire la Nyau; la societe survecue en adoptant certains elements chretiens sous la colonisation."
     },
     "languages": {
-      "mainLanguage": "Nyanja / Chichewa",
-      "vehicularRole": "Le nyanja est parlé par la majorité des Nyanja. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Chichewa / Chinyanja (Nyanja)",
+      "isoCodes": ["nya"],
+      "dialects": [
+        "Chichewa (Malawi central et meridional) — langue nationale du Malawi depuis 1968",
+        "Chinyanja de la Province Orientale de Zambie — variete zambienne (avec Lusaka Nyanja/Town Nyanja)",
+        "Lusaka Nyanja (Town Nyanja) — variete urbaine de Lusaka, considerable divergence sous influences d'autres langues",
+        "Chinyanja du Mozambique (Tete, Niassa) — variete mozambicaine",
+        "Mang'anja — sous-dialect meridional, frontalier Malawi-Mozambique"
+      ],
+      "vehicularRole": "Le chichewa/nyanja est parle par plus de la moitie des 20 millions d'habitants du Malawi comme premiere langue; c'est la langue nationale et d'enseignement. C'est egalement une des langues officielles de la Zambie. Il est parle dans les provinces de Tete et Niassa au Mozambique et en Zimbabwe oriental. Total : environ 15 millions de locuteurs dans la region. La premiere grammaire du chinyanja fut publiee par Alexander Riddel en 1880. La langue appartient a la Zone N du bantou (Guthrie N31)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels nyanja, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"guleWamkulu\": \"Gule Wamkulu (la Grande Danse) est la danse sacree et masquee de la Nyau brotherhood, executee lors des ceremonies d'initiation masculine, des funerailles et de l'installation ou du deces d'un chef. Les danseurs portent des costumes et masques en bois et paille representant une grande variete de personnages : animaux sauvages, esprits des morts, marchands d'esclaves et figures contemporaines (motos, helicopteres). Inscrit sur la Liste representative du patrimoine culturel immateriel de l'UNESCO en 2008 (proclame en 2005).\", \"chinamwali\": \"Rite d'initiation feminine : a la puberte, les filles sont retirees du village et educuees par des femmes ainées (anankungwi) sur les responsabilites de la femme adulte, la sexualite, le mariage et les obligations communautaires.\", \"mariageEtDotation\": \"Le mariage chewa est uxorilocal : le mari vient vivre dans le village de son epouse. Les negociations matrimoniales impliquent les families. La polygynie est pratiquee bien que moins repandue. Les revenus agricoles appartiennent a la femme.\", \"funerailles\": \"Les funerailles incluent de longues veillees communautaires. La Nyau brotherhood joue un role dans les ceremonies funeraires. La terre entiere d'un defunt est redistribuee au sein du lignage matrilineaire.\"  }",
+      "symbols": "Masques Gule Wamkulu (bois et paille) — patrimoine immateriel mondial UNESCO. Tatouages mphini — scarifications faciales ancestrales identifiant les Chewa. Mkango (lion) — symbole de la royaute Kalonga. La figure de Chiuta (Grand Arc dans le ciel) — appellation du Dieu supreme chewa. Peintures murales de greniers et huttes decorees de motifs geometriques.",
+      "artsAndMusic": "{\"guleWamkulu\": \"La Grande Danse est la forme d'expression artistique la plus elaboree des Chewa : les masques en bois scultes et les costumes en paille et raphia representent une grande variete de personnages spirituels et sociaux. Le repertoire est immense (certaines sources citent plus de 150 personnages distincts), chacun portant un message moral ou social.\", \"musique\": \"La musique nyau accompagne les ceremonies d'initiation et de deuil : flutes, tambours et voix chorale. La chanson traditionnelle celebre les recoltes et les evenements communautaires. Des chants chretiens integres aux pratiques nyau reflettent le syncrétisme culturel.\", \"artisanat\": \"Poterie traditionnelle produite par les femmes (jarres, bols). Sculpture de masques et de figures en bois (reserve aux hommes Nyau). Vannerie et natte tressees. Tissage et broderie pour les habits ceremonials. L'agriculture (mais, sorgho, manioc, riz, coton, tabac) est la base economique principale.\", \"litteratureOrale\": \"Riche tradition de contes (nthano), proverbes (miyambi) et chants epiques transmis oralement. Les recits des origines du clan Phiri et de l'Empire Maravi sont preserves par les anciens.\"}",
+      "spiritualities": "{\"chiuta\": \"Chiuta (Grand Arc dans le ciel, aussi Leza, Mulungu) est le Dieu supreme createur des Chewa. Il est peu implique dans les affaires quotidiennes. Il est invoque lors des grandes crises (secheresse, epidemies) par les chefs et les guerisseurs.\", \"culteDesAncetres\": \"Les ancetres (mizimu) restent actifs dans le monde des vivants et communiquent principalement par les reves. Les offrandes regulieres de biere et de nourriture maintiennent leur bienveillance. Les guerisseurs traditionnels (sing'anga) medient entre les vivants et les ancetres.\", \"nyauBrotherhood\": \"La societe secrete Nyau constitue le cadre religieux institutionnel masculin. Elle possede une cosmologie propre ou les masques Gule Wamkulu incarnent les esprits des morts et les animaux sacres. Sa survie sous la pression missionnaire chretienne est due a son adaptation partielle au christianisme.\", \"christianisme\": \"La grande majorite des Chewa est chretienne (catholique, presbyterienne, evangelique) depuis les missions britanniques du 19e siecle. Au moins 20% sont musulmans (influence des commerçants Yao). Les pratiques chretiennes et tradiconnelles coexistent couramment.\"}  "
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora nyanja dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Empire Maravi (ou Confederacy of Maravi) — vaste entite politique dont l'apogee se situe au 17e siecle, gouvernee par le Kalonga (roi supreme, clan Phiri), avec pour capitale Mankhamba (pres du lac Malawi). L'empire controlait un territoire s'etendant de l'actuelle Province Orientale de Zambie jusqu'au Mozambique (province de Tete) et au Zimbabwe oriental, representant plusieurs centaines de milliers de km2. Des dynasties locales : Kalonga (nord), Undi (centre-ouest, Mozambique), Lundu (Shire Valley). Ces royaumes perdurent comme institutions coutumiers reconnus au Malawi, Zambie et Mozambique contemporains.",
+      "relationsWithNeighbors": "Relations diplomatiques et commerciales avec les marchands portugais de la cote mozambicaine (17e siecle). Les Yao (sud-est) devinrent des intermediaires dans le commerce des esclaves arabe, ce qui crea des tensions avec les Chewa. Les Ngoni (nord) effectuerent des razzias au 19e siecle, emportant des femmes et des enfants chewa pour les integrer a leurs societes. Les Tumbuka (nord du Malawi) sont les plus proches culturellement; les Nsenga (Zambie) sont aussi apparentes.",
+      "conflictsOrAlliances": "Guerres contre les Yao (commerçants d'esclaves pour les Arabes de la cote, 18e-19e siecles). Incursions des Ngoni (d'origine Mfecane/zulu) au 19e siecle affectant le nord du territoire Chewa. Alliance strategique avec les missionnaires britanniques (David Livingstone, Free Church of Scotland) pour lutter contre l'esclavage. Le Nyasaland Protectorate britannique (1891) mit fin aux razzias esclavagistes mais inaugura la domination coloniale.",
+      "diaspora": "La diaspora chewa/nyanja est essentiellement regionale : migrations economiques vers les villes du Malawi (Blantyre, Lilongwe), de Zambie (Lusaka, Chipata) et du Zimbabwe (Harare). Une petite diaspora internationale existe en Grande-Bretagne (ancienne metropole coloniale) et dans d'autres pays anglophones. Le chichewa reste la langue vehiculaire de tous les Malawiens en diaspora."
     },
     "demography": {
-      "totalPopulation": 12000000,
+      "totalPopulation": 15000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue SIL — Chichewa/Nyanja (nya); Wikipedia EN — Chewa people (7,9 millions estimation 2024 pour le groupe ethnique chewa seul); Facebook source : 15 millions de locuteurs nyanja; Wisc.pb.unizin.org — plus de la moitie des 18 millions de Malawiens parlent chichewa comme premiere langue; estimation 2025 englobant tous les pays",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 10000000,
+          "note": "Groupe le plus important du Malawi (environ 35% de la population); regions centrale et meridionale"
+        },
+        {
+          "country": "ZMB",
+          "population": 3000000,
+          "note": "Province Orientale (Chipata) et Province de Lusaka (Town Nyanja); langue officielle de Zambie"
+        },
+        {
+          "country": "MOZ",
+          "population": 1500000,
+          "note": "Provinces de Tete et Niassa; Mang'anja dans la Shire Valley"
+        },
+        {
+          "country": "ZWE",
+          "population": 500000,
+          "note": "Provinces orientales (Manicaland) et populations frontalières"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Nyanja / Chichewa language (nya)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Chewa people. https://en.wikipedia.org/wiki/Chewa_people",
+      "Wikipedia EN — Chewa language. https://en.wikipedia.org/wiki/Chewa_language",
+      "UNESCO ICH — Gule Wamkulu. https://ich.unesco.org/en/RL/gule-wamkulu-00142",
+      "Ethnologue SIL — Chichewa (nya). https://www.ethnologue.com/language/nya/",
+      "Britannica — Chewa people. https://www.britannica.com/topic/Chewa-people",
+      "Wisc.pb.unizin.org — About Chichewa. https://wisc.pb.unizin.org/lctlresources/chapter/about-chichewa/",
+      "UNESCO — Gule Wamkulu safeguarding project. https://ich.unesco.org/en/projects/safeguarding-of-the-gulu-wamkulu-the-great-dance-of-the-chewa-people-00027",
+      "Wikipedia EN — Maravi. https://en.wikipedia.org/wiki/Maravi"
     ]
   }
 }

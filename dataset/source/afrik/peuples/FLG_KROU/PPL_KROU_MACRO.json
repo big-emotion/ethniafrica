@@ -1,25 +1,141 @@
 {
   "id": "PPL_KROU_MACRO",
-  "nameMain": "",
+  "nameMain": "Krou (macro-groupe)",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["LBR"],
+  "currentCountries": ["CIV", "LBR"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Diverses selon les sous-groupes",
+      "mainName": "Krou",
+      "selfAppellation": "Diverses selon les sous-groupes (Wè, Klao/Krao, Bété, Dida, Grebo, Kroumen, etc.)",
+      "exonyms": [
+        "Kru",
+        "Kroo",
+        "Krao",
+        "Krawi",
+        "Crau",
+        "Croo",
+        "Kuru",
+        "Krous",
+        "Wané"
+      ],
+      "originOfExonyms": "Le terme Krou (Kru, Kroo) est d'origine discutée. Selon l'hypothèse la plus solide, il dérive du nom propre Klao (ou Krao), l'autodesignation du peuple aujourd'hui appelé Klao. Dès 1588, une carte anglaise désigne la côte libérienne sous le terme Crua. Le terme a ensuite été étendu par les Européens à l'ensemble du groupe linguistique et culturel. Westermann (1952) notait que le terme était utilisé par les Européens pour désigner un ensemble de tribus parlant des dialectes apparentés. Une théorie populaire le dérivant de l'anglais crew (équipage de bateau) est largement considérée comme incorrecte.",
+      "whyProblematic": "Le terme Krou désigne à la fois un macro-groupe ethno-culturel et linguistique (famille Krou incluant les Bété, Dida, Wè, Klao, Grebo, Kroumen, Bassa, etc.) et parfois spécifiquement le peuple Klao du Liberia. Cette double acception crée des confusions. De plus, certains peuples inclus dans le groupe linguistique Krou (comme les Dida ou les Bassa) ne se reconnaissent pas nécessairement comme appartenant à une même identité ethnique pan-krou.",
+      "contemporaryUsage": "Le terme Krou est utilisé comme désignation du groupe ethno-linguistique dans la littérature académique, les institutions internationales (Ethnologue, Glottolog) et les administrations ivoirienne et libérienne. En Côte d'Ivoire, les Krou représentent environ 11% de la population nationale. Les peuples concernés utilisent généralement leurs propres appellations spécifiques plutôt qu'une identité pan-krou.",
       "linguisticFamily": "FLG_KROU",
-      "currentCountries": ["LBR"]
+      "ethnoLinguisticGroup": "Krou (famille ethno-linguistique Niger-Congo ou indépendante selon Glottolog)",
+      "historicalRegion": "Forêts et littoral atlantique de l'Afrique de l'Ouest, entre le fleuve Cavally (frontière CIV-LBR) et le fleuve Bandama (CIV), et vers l'est du Liberia",
+      "currentCountries": ["CIV", "LBR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
+    "ethnicities": [
+      "Bété (CIV, le plus nombreux, plus de 3 millions, 93 tribus)",
+      "Wè / Guéré (CIV et LBR, env. 700 000, civilisation des masques)",
+      "Wobé (CIV, sous-groupe wè du nord)",
+      "Dida (CIV, marches orientales du pays Krou)",
+      "Godié (CIV, zone côtière)",
+      "Néyo (CIV, littoral)",
+      "Bakwé (CIV, San Pedro)",
+      "Wané (CIV, San Pedro)",
+      "Kroumen / Krumen (CIV et LBR, marins côtiers)",
+      "Klao / Kru (LBR, marins et pêcheurs côtiers)",
+      "Grebo (LBR, côte orientale libérienne)",
+      "Krahn / Kran (LBR et CIV, proches des Wè)",
+      "Bassa (LBR, avec système d'écriture propre dit Vah)",
+      "Glio-Oubi (CIV)",
+      "Aïzi (CIV, zone lagunaire)",
+      "Nyabwa (CIV)",
+      "Kodia (CIV)",
+      "Gbii (LBR)",
+      "Sapo (LBR)",
+      "Konobo (LBR)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Krou sont des populations autochtones de l'Afrique de l'Ouest forestière, installées dans les zones comprises entre le fleuve Cavally et le fleuve Bandama (CIV) et dans l'est libérien. Ils occupent environ 120 000 km2 de territoire forestier et côtier. L'hypothèse dominante est que l'ancêtre commun du groupe Krou originel habitait une région de l'Afrique de l'Ouest intérieure et a migré progressivement vers les zones forestières et côtières entre le XIVe et le XVIIe siècle. Certains chercheurs évoquent une possible origine depuis des régions plus lointaines (liée à des traditions orales sur une migration depuis le nord-est africain), mais ces récits ne sont pas corroborés par des données archéologiques ou linguistiques solides.",
+      "formationPeriod": "La formation du macro-groupe Krou dans sa configuration actuelle s'étale du XIVe au XVIIe siècle, période au cours de laquelle les différentes communautés se fixent dans leurs espaces actuels et développent leurs identités distinctes. L'intensification du contact avec les Européens à partir du XVe-XVIe siècle accélère certaines différenciations identitaires, notamment pour les groupes côtiers (Kroumen, Klao).",
+      "migrationRoutes": [
+        "Migration depuis les hautes terres guinéo-ivoiriennes et les plateaux intérieurs vers les forêts atlantiques, via les vallées du Sassandra, du Cavally et du Poor River (LBR)",
+        "Expansion vers le littoral atlantique (XIVe-XVIIe siècles) sous la pression des royaumes mandingues du nord",
+        "Dispersion maritime ultérieure des groupes côtiers (Kroumen, Klao) le long de toute la côte de l'Afrique de l'Ouest"
+      ],
+      "historicalSettlementZones": [
+        "Zone forestière dense de l'Ouest ivoirien (entre Sassandra et Cavally)",
+        "Zone forestière du Centre-Ouest ivoirien (entre Sassandra et Bandama)",
+        "Littoral atlantique ivoirien (de Grand-Lahou à Tabou)",
+        "Est et Sud-Est du Liberia (comtés côtiers)",
+        "Zones lagunaires du littoral ivoirien (Aïzi, Avikam)"
+      ],
+      "unificationsOrDivisions": "Le macro-groupe Krou n'a jamais cherché à former un Etat unifié ou fédératif. Il s'agit d'une famille culturelle et linguistique organisée en communautés et clans souverains. L'unité se manifeste dans le fond linguistique commun, les structures sociales similaires (filiation patrilinéaire, exogamie clanique, segmentarité), les pratiques rituelles partagées et une conception religieuse voisine. La division en une vingtaine d'ethnies (6 au Liberia, 15 en CIV) résulte d'évolutions historiques indépendantes sur plusieurs siècles.",
+      "externalInfluences": "Pression des royaumes mandingues (Mali, Mandé) ayant poussé les migrations Krou vers le sud. Contact avec les navigateurs portugais depuis les années 1460. Commerce triangulaire atlantique (traite négrière) : les peuples Krou côtiers ont joué un rôle d'intermédiaires et de résistants. Colonisation française (Côte d'Ivoire) et americo-libérienne : introduction des cultures commerciales, alphabétisation, christianisation. Guerres civiles libériennes (1989-2003) et crise ivoirienne (2002-2011) : déplacements massifs de populations Krou.",
+      "majorHistoricalEvents": "Migrations vers les forêts atlantiques (XIVe-XVIIe siècles). Résistance à la traite négrière (Klao, Kroumen). Collaboration avec la Royal Navy pour la suppression de la traite (XIXe siècle). Révolte Kru de 1915-1916 (Liberia). Intégration dans les structures coloniales françaises et americo-libériennes. Participation aux guerres civiles libériennes. Crise ivoirienne de l'Ouest (2002-2011) : peuples Wè durement touchés. George Weah (issu du peuple Klao/Kru), 25e président du Liberia (2018-2024)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation segmentaire sans pouvoir central. Chaque groupe Krou (ethnie, tribu, clan, lignage) constitue une communauté souveraine. Les relations entre communautés sont régies par les lignages, les alliances matrimoniales et les échanges cérémoniels. Le système politique type comprend un chef villageois et un conseil d'anciens. La hiérarchie sociale va de l'ethnie aux tribus, clans, lignages majeurs et mineurs. Certains groupes côtiers (Kroumen, Klao) ont développé des organisations de compagnies maritimes sous headman.",
+      "clanOrganization": "Organisation patrilinéaire exogame commune à l'ensemble du macro-groupe Krou. Les chefs de clans et titulaires de certains offices forment des conseils de chefs. La propriété foncière est communale. La filiation est patrilinéaire et la résidence patrilocale dans la quasi-totalité des groupes, avec quelques exceptions (Dida, Bété orientaux influencés par les Akan).",
+      "ageClassSystems": "Des systèmes de classes d'âge sont documentés chez les Wè / Guéré (similaires aux Dan voisins) et chez les groupes côtiers (classes d'âge maritimes chez les Klao et Kroumen). Ces systèmes structurent la transmission des savoirs, le travail collectif et les activités rituelles.",
+      "roleOfLineages": "Les lignages patrilinéaires sont la structure de base de toute l'organisation sociale Krou. Ils déterminent l'identité, les droits fonciers, les obligations rituelles et les alliances. Chez les Krou, l'aîné du lignage représente l'autorité morale et pratique. L'organisation en hiérarchie de lignages (de l'ethnie au lignage moyen) constitue la base du système politique segmentaire.",
+      "religiousAuthority": "Conception religieuse commune : un dieu créateur unique, considéré trop distant pour être approché directement, nécessite des intermédiaires (esprits, ancêtres, masques). Les chefs religieux (prêtres traditionnels, devins, porteurs de masques) jouent un rôle central. Chez les Wè, le masque est l'intermédiaire spirituel principal. Les confréries Poro (sociétés secrètes masculines) sont présentes chez certains groupes Krou libériens voisins (Grebo, Bassa)."
+    },
+    "languages": {
+      "mainLanguage": "Famille de langues Krou (Niger-Congo ou famille indépendante selon Glottolog)",
+      "isoCodes": [
+        "bth",
+        "bwr",
+        "dik",
+        "gxx",
+        "grj",
+        "klu",
+        "kyf",
+        "ted",
+        "pye",
+        "ktj",
+        "nyr"
+      ],
+      "dialects": [
+        "Branche Krou occidentale (LBR) : Klao (klu), Grebo (grj), Krumen (ted, pye, ktj), Glio-Oubi",
+        "Branche Krou orientale (CIV) : Bété (bth), Dida (dik), Wè méridional/Guéré (gxx), Godié, Néyo, Kouya (kyf), Nyabwa (nyr), Aïzi",
+        "Les langues krou sont comptées parmi les systèmes toniques les plus complexes d'Afrique, souvent comparées aux langues omotiques d'Ethiopie"
+      ],
+      "vehicularRole": "Chaque langue Krou est la langue maternelle de son groupe. Le français (CIV) et l'anglais (LBR) sont les langues officielles. En CIV, un créole krou a fortement influencé le français populaire ivoirien. Au Liberia, le Kru English Pidgin (kreyol) est répandu. Le dioula est la langue commerciale régionale en CIV. Les langues krou sont tonales et complexes phonologiquement, rendant l'intercompréhension inter-ethnique difficile."
+    },
+    "culture": {
+      "majorRites": "Initiations masculines et féminines structurant le passage à l'âge adulte dans tous les groupes Krou. Chez les Wè : rites des hommes-panthères et circoncision. Chez les Kroumen : fête de la récolte du riz et funérailles en janvier. Chez les Wobé : luttes, concours de masques en février, fête des masques en juillet, invitation des hommes-panthères en septembre. Chez les Gnaboua (groupe Krou) : fête des masques en janvier et juillet, fête Alabwa. Rites funéraires élaborés universels dans l'ensemble du groupe, mobilisant d'importantes ressources communautaires.",
+      "symbols": "Les masques sont le symbole culturel central du macro-groupe Krou, particulièrement chez les Wè. La pirogue de surf est le symbole des Krou côtiers (Kroumen, Klao). Le tatouage facial indigo (arête du nez) des Klao/Kru est un symbole historique d'identité et de liberté. Les bracelets de fer des anciens (Klao) comme insignes d'autorité. La kola est le symbole des échanges et de l'hospitalité.",
+      "artsAndMusic": "Tradition majeure de sculpture de masques en bois chez les Wè (masques aux traits puissants, yeux tubulaires, ornements de cauris et clochettes). Musique de percussion (tambours, sanza, balafon). Danse bollo chez les Kroumen. Guitare kru : les Kroumen et Klao sont crédités d'avoir popularisé des styles de guitare à l'origine du highlife ghanéen. Poésie orale et épopées claniques. Art de la construction de pirogues de surf. Tissage, poterie féminine, forge.",
+      "spiritualities": "Croyances communes : un dieu créateur suprême (Nyesoa chez les Kru) trop distant, des esprits territoriaux, des esprits familiaux (âmes des ancêtres). Animisme profond, avec des variations culturelles importantes selon les groupes. Culte des ancêtres universel. Chez les Wè : cosmologie dualiste village / brousse avec le masque comme médiateur central. Chez les Kru côtiers : esprits marins. Christianisme (protestantisme, catholicisme) adopté progressivement depuis le XIXe siècle, souvent en syncrétisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaumes centralisés dans l'ensemble du macro-groupe. Les Krou n'ont jamais constitué d'entité politique unifiée. Les groupes côtiers (Klao, Kroumen) ont exercé un pouvoir économique maritime dominant sur la côte de l'Afrique de l'Ouest pendant plusieurs siècles. Les Wè ont maintenu des confédérations guerrières pour la défense territoriale.",
+      "relationsWithNeighbors": "Relations complexes avec les Mandé (commerce de la kola, pressions esclavagistes historiques). Relations avec les Akan (Baoulé, Ashanti) : Dida et Bété ont adopté certains éléments de culture matrilinéaire akan. Les Dan (Yacouba) au nord partagent des similitudes artistiques avec les Wè. Les Krou ont eu des rapports de collaboration et de tensions avec les settlers americo-libériens du Liberia.",
+      "conflictsOrAlliances": "Résistance historique à la traite négrière (tatouage identitaire des Klao). Alliances avec la Royal Navy britannique contre la traite (XIXe siècle). Révoltes contre l'administration libérienne (1915-1916). Résistances à la colonisation française au début du XXe siècle. Les Wè (Guéré) impliqués dans la crise politico-militaire ivoirienne (2002-2011). Guerres civiles libériennes (1989-2003) : déplacements massifs des communautés Krou libériennes.",
+      "diaspora": "Diaspora maritime historique des Klao/Kru et Kroumen dans tous les ports de l'Afrique de l'Ouest. Kru Town à Freetown (Sierra Leone) et à Liverpool (UK). Diaspora contemporaine à Monrovia (Liberia) et Abidjan (CIV). Les Krou représentent environ 7% de la population libérienne et 11% de la population ivoirienne. Les guerres civiles libériennes ont créé des communautés de réfugiés krou en CIV et en Sierra Leone."
+    },
+    "demography": {
+      "totalPopulation": 8000000,
+      "referenceYear": 2025,
+      "source": "VoyagesAventures.com : les Krou sont estimés à environ 8 millions, dont les Bété à plus de 3 millions en CIV. World Population Review CIV : les Krou représentent 11% de la population ivoirienne (env. 3,3 millions). Minority Rights Group LBR : Kru 7% de la population libérienne. Estimation 2025 intégrant tous les sous-groupes des deux pays.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 7000000,
+          "note": "Ensemble des groupes Krou ivoiriens : Bété (plus de 3 millions), Wè/Guéré, Dida, Godié, Bakwé, Kroumen, Wané, Néyo, Aïzi, Nyabwa, Kouya et autres (11% de la population ivoirienne)"
+        },
+        {
+          "country": "LBR",
+          "population": 1000000,
+          "note": "Ensemble des groupes Krou libériens : Klao/Kru (7%), Bassa (13,4%), Grebo (10%), Krahn (4%), Kroumen et autres (env. 40% de la population libérienne en comptant Bassa et Grebo)"
+        }
+      ]
+    },
     "sources": [
-      "Synthèse AFRIK 2025",
-      "Archives culturelles Côte d’Ivoire–Liberia"
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Wikipedia FR — Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Encyclopaedia Britannica — Kru. https://www.britannica.com/topic/Kru",
+      "Scribd — Histoire et culture du peuple Krou. https://fr.scribd.com/document/457402032/expose-sur-les-krou-docx",
+      "VoyagesAventures.com — Peuples du monde : Krou. https://voyagesaventures.com/peuplesmonde/component/content/category/202-catalogue-des-peuples/18-peuples-de-gal/334-krou2.html",
+      "Minority Rights Group — Liberia. https://minorityrights.org/country/liberia/",
+      "Minority Rights Group — Côte d'Ivoire. https://minorityrights.org/country/cote-divoire/",
+      "Glottolog — Kru language family. https://glottolog.org/resource/languoid/id/kru1245",
+      "Qiraat Africa — The Kru/Kroo of West Africa. https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/"
     ]
   }
 }

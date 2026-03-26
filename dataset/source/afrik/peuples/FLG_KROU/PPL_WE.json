@@ -1,69 +1,117 @@
 {
   "id": "PPL_WE",
-  "nameMain": "Wè (Guéré)",
+  "nameMain": "We",
   "languageFamilyId": "FLG_KROU",
   "currentCountries": ["CIV", "LBR"],
   "content": {
     "appellations": {
-      "mainName": "Wè (Guéré)",
-      "selfAppellation": "Wè / Guéré",
+      "mainName": "We",
+      "selfAppellation": "We / Wee",
+      "exonyms": [
+        "Guere",
+        "Guere",
+        "Kran",
+        "Krahn",
+        "Wobe",
+        "Ouobe",
+        "Sapo",
+        "Wee",
+        "Wece"
+      ],
+      "originOfExonyms": "Guere (ou Guere) est un exonyme donne par un administrateur colonial français pour designer les populations vivant au sud des Dan (Yacouba). Le terme Krahn designe les memes populations au Liberia, nommes ainsi par les Kru/Klao. Wobe (ou Ouobe) designe le sous-groupe nord (We septentrional, wob). Le terme We (prononcer Wee) est l'appellation que le groupe se donne lui-meme en Cote d'Ivoire.",
+      "whyProblematic": "La pluralite des denominations (We, Guere, Krahn, Wobe) reflete la fragmentation du groupe entre la Cote d'Ivoire et le Liberia, amplifiee par les frontieres coloniales. Les termes Krahn (Liberia) et Guere (CIV) designent en realite le meme peuple, ce qui cree une confusion durable dans la litterature. Le terme Wobe designe un sous-dialecte parfois traite comme une entite separee.",
+      "contemporaryUsage": "En Cote d'Ivoire, We est le nom officiel adopte par le groupe. Guere reste courant en français. Au Liberia, Krahn est le terme predominant. Wobe est utilise pour les locuteurs du We septentrional (wob). Ethnologue distingue trois varietes : We meridional (gxx), We septentrional (wob), We occidental (wec).",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou occidental",
-      "historicalRegion": "Ouest de la CIV, est du Libéria",
+      "ethnoLinguisticGroup": "Krou occidental (branche Wee)",
+      "historicalRegion": "Ouest de la Cote d'Ivoire (regions Dix-Huit Montagnes et Moyen-Cavally) et est du Liberia (comtes de Grand Gedeh, Nimba, Sinoe)",
       "currentCountries": ["CIV", "LBR"]
     },
     "ethnicities": [
-      "Wè de Côte d'Ivoire",
-      "Krahn du Libéria",
-      "Sous-groupes régionaux"
+      "We meridional (Guere) — CIV, region de Guiglo, Duekoe, Bangolo, Tai (We southern, code gxx)",
+      "We septentrional (Wobe/Ouobe) — CIV, region de Kouibly et Fakobly (We northern, code wob)",
+      "We occidental — CIV, sous-prefecture de Touleple (We western, code wec)",
+      "Krahn oriental (Eastern Krahn, kqo) — LBR, nord-est du Liberia (99 000 locuteurs en 2020)",
+      "Krahn occidental (Western Krahn, krw) — LBR, Grand Gedeh County et CIV (100 000 locuteurs LBR + 12 000 CIV en 1993)",
+      "Niao — sous-groupe We meridional (20 000 en 1995)",
+      "Zibiao, Zagne, Zagna, Beu (Zarabaon), Zaa, Neao, Gboo, Fleo, Nyeo — dialectes du We meridional"
     ],
     "origins": {
-      "ancientOrigins": "Les Wè sont originaires de l'ouest de la Côte d'Ivoire et de l'est du Libéria, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations entre Wè (Côte d'Ivoire) et Krahn (Libéria).",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les We/Guere/Krahn font partie du groupe krou occidental et sont consideres comme un des peuples les plus represents du coeur du pays krou. Selon la tradition orale nyabwa (voisins proches), les Wobe partagent un ancetre commun avec les Bete et les Niaboua (fils de Goze, venu du Liberia). Les We sont vraisemblablement arrives dans leur region actuelle entre le XVe et le XVIIe siecle, sous la pression des royaumes mandingues et dans le contexte des migrations de la fin du Moyen Age africain. Le peuple krou originel se serait divise, les We occupant le coeur du territoire krou de l'ouest ivoirien.",
+      "formationPeriod": "La presence des We dans l'ouest de la Cote d'Ivoire est documentee par les premiers administrateurs coloniaux français du XIXe siecle. Le nom Guere est fixe par l'administration coloniale. Au Liberia, les Krahn (memes populations) sont references comme l'un des groupes krou majeurs. L'identite we distincte s'est consolidee comme resistance aux razzias esclavagistes mandingues qui cherchaient a penetrer le pays forestier.",
+      "migrationRoutes": [
+        "Depuis l'interieur des hautes terres guineennes et ivoiriennes vers les forets de l'ouest de la CIV",
+        "Expansion transfrontaliere naturelle de part et d'autre du fleuve Cavally (frontiere CIV-Liberia)",
+        "Migrations recentes des Krahn du Liberia vers la CIV en periode de guerre civile (1989-2003)"
+      ],
+      "historicalSettlementZones": [
+        "Regions Dix-Huit Montagnes et Moyen-Cavally (Cote d'Ivoire) : Guiglo, Duekoe, Man, Touleple",
+        "Comtes de Grand Gedeh, Nimba et Sinoe (Liberia)",
+        "Zone frontaliere autour du fleuve Cavally",
+        "Camps de refugies en CIV et en Guinee pendant les guerres civiles liberienns"
+      ],
+      "unificationsOrDivisions": "Les We n'ont jamais eu de structure politique centralisee. Ils sont organises en villages autonomes, chacun sous l'autorite de ses aines et d'un chef de village designe. La distinction entre We ivoiriens (Guere) et Krahn liberiens est une consequence des frontieres coloniales, non d'une division ethnique originelle. Les tensions entre sous-groupes (Wobe vs Guere, Krahn de l'est vs de l'ouest) existent mais n'ont pas produit de rupture permanente de l'identite commune.",
+      "externalInfluences": "Contacts avec les Dan (Yacouba) au nord, avec qui les We partagent certains motifs artistiques (masques, costumes). Influence des missions chretiennes (catholiques et protestantes) depuis la colonisation française et liberienne. Contacts avec les groupes mandingues (Jula) via les reseaux commerciaux. Role majeur dans la politique liberienne sous le president Samuel Doe (1980-1990), membre du peuple krahn. Pendant les guerres civiles liberiennes (1989-2003), les Krahn furent cibles par le NPFL de Charles Taylor.",
+      "majorHistoricalEvents": "Samuel Kanyon Doe, membre du peuple krahn, prit le pouvoir au Liberia par coup d'Etat le 12 avril 1980, devenant le premier chef d'Etat indigene du pays. Il favorisa les Krahn dans les appointments gouvernementaux. Sa chute en 1990 entraina des represailles massives contre les Krahn. En 2003, des membres du peuple krahn fonderent le Mouvement pour la Democratie au Liberia (MODEL) pour s'opposer a Charles Taylor. En Cote d'Ivoire, les evenements du Guebié (1970) impliquant les Bete — proches culturels des We — furent un episode de tension politique unique dans la jeune republique ivoirienne. La crise ivoirienne (2002-2011) affecta fortement l'ouest du pays, terre des We."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Organisation acephale et decentralisee : pas de chef supreme, gouvernance par les anciens de chaque village. Le chef de village (headman) emerge par ses qualites de mediateur, chasseur ou agriculteur accompli. Il preside un conseil de guerriers jeunes et d'anciens. Ces conseils gerent les echanges commerciaux avec les tribus voisines et les decisions importantes. Les masques en bois servent egalement d'instruments de gouvernance et de controle social — les masques males (ferocissants) sont utilises dans les contextes sociopolitiques.",
+      "clanOrganization": "Structure en lignages patrilineaires. La societe we est patrilineaire, organisee en clans identifies par leur ancetre fondateur. Les societes d'initiation (Poro pour les hommes, societes feminines) constituent des structures supra-claniques regulant la vie sociale.",
+      "ageClassSystems": "Grades d'age des deux sexes encore en usage. Les societes d'initiation feminin sont particulierement bien maintenues (les Guere sont notes pour avoir maintenu les societes d'initiation feminines actives). Les grades d'age masculins combinent formation guerriere et transmission des savoirs rituels.",
+      "roleOfLineages": "Les lignages patrilineaires regissent l'acces a la terre, les alliances matrimoniales et les obligations cerimoniales. Le chef de lignage est l'aine masculin ayant l'autorite de parler au nom du groupe et d'assurer les rites ancestraux. Propriete foncière communautaire au niveau du lignage.",
+      "religiousAuthority": "L'autorite religieuse est distribuee entre les gardiens des masques sacres (grands masques de justice et de guerre, gla klagba), les maitres des societes initiatiques et les guerisseurs traditionnels. Les masques sont des vehicules des esprits de la brousse (bush spirits) et des ancetres, et servent de pivot entre le monde des vivants et le monde spirituel."
     },
     "languages": {
-      "mainLanguage": "Wè / Guéré / Krahn",
-      "vehicularRole": "Le wè/guéré/krahn est parlé par la majorité des Wè. Le français (Côte d'Ivoire) et l'anglais (Libéria) sont utilisés dans l'éducation et l'administration."
+      "mainLanguage": "We (Guere / Krahn)",
+      "isoCodes": ["gxx", "wob", "wec", "kqo", "krw"],
+      "dialects": [
+        "We meridional — gxx (293 000 loc. en CIV, 1999 SIL) : dialectes Zibiao, Zagne, Beu, Zaa, Neao, Gboo, Fleo, Nyeo",
+        "We septentrional (Wobe) — wob (156 000 loc. en CIV, 1993 SIL) : dialectes Tao, Peoïme, Semien",
+        "We occidental — wec (25 200 loc. en CIV, 1998 SIL) : dialectes Nidrou, Kaoro",
+        "Krahn oriental — kqo (99 000 loc. au LBR, 2020)",
+        "Krahn occidental — krw (100 000 loc. au LBR + 12 000 en CIV, 1993 SIL)"
+      ],
+      "vehicularRole": "Le we (guere/krahn) est l'une des langues krou les plus parlees, avec plus de 450 000 locuteurs au total en CIV et LBR. En Cote d'Ivoire, le français est la langue officielle d'education et d'administration. Au Liberia, l'anglais liberien joue ce role. Le dioula est utilise comme lingua franca dans les marches ivoiriens. Lexical similarity between We northern (wob) and We southern (gxx) : 84-94 % ; entre We southern et Western Krahn : suffisante pour intelligibilite partielle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Masques traditionnels wè, symboles culturels, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques wè célèbres)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam."
+      "majorRites": "Les esprits de la brousse (bush spirits) sont au centre de la vie rituelle we : invisibles dans la nature vierge, ils prennent forme corporelle pour participer aux ceremonies, communiquent par les reves et exigent que des masques soient fabriques en leur honneur. Chaque masque doit subir des sacrifices complexes avant de sortir (animaux, offrandes) et doit retourner a son sanctuaire en 2 a 4 jours. Rites d'initiation : les societes feminines sont particulierement maintenues ; les grades d'age des deux sexes sont prominents. Rites funeraires : annonces collectives, danse des masques, banquet communautaire. La ceremonie du serpent-fille (Snake Girl Ritual) est documentee chez les Guere de CIV : jeunes filles jugleuses formees depuis l'enfance. Rites agraires avant le defrichage de nouvelles terres : offrandes aux esprits de brousse obligatoires avant toute mise en culture. Sacrifices d'animaux lors des guerisons, des naissances et des passages.",
+      "symbols": "Les masques we sont reconnus internationalement comme des oeuvres artistiques majeures : ils ont fascine les grands artistes du debut du XXe siecle (Picasso, les cubistes). Masques femelles : moins imposants, plus beaux, utilises pour les rituels et le divertissement. Masques males : ferocissants, utilises dans les contextes sociopolitiques et guerriers. Tous les masques we sont reputes deflecteurs de sorcellerie. La foret vierge est l'espace sacre par excellence : elle abrite les esprits de brousse et les lieux d'initiation. Les plumes d'oiseaux (calao, rapaces) ornent les masques et signifient le pouvoir spirituel.",
+      "artsAndMusic": "La sculpture sur bois we est l'art le plus reconnu : masques zoomorphes (modelés d'apres des animaux) et anthropomorphes, utilises en mediation communautaire, en controle social et en ceremonies initiatiques. Les masques, selon leur rang hierarchique, ont des fonctions de justice, de sagesse, de guerre, de satire ou de divertissement. Musique rituelle : percussions (tambours de mortar et de calice), hochets, cloches, cors d'animaux (antilope, boeuf). Chants responsoriaux (soliste et choeur) pendant les danses masquees. Le rythme de tambour identifie les familles et les clans lors des sorties de masques. Danse spectaculaire des masques : acrobaties, feats of magic, force et invulnerabilite demontrees. Le zouglou, style musical populaire ivoirien ne a Abidjan dans les annees 1990, a des racines dans la culture krou (influencee par les We et les Bete). L'artisanat inclut : tissage, poterie, fabrication d'armes et d'outils agricoles.",
+      "spiritualities": "Animisme profond : les Webo/Guere/Krahn croient que tous les objets ont des esprits ou des ames. La nature vierge est composee d'esprits de brousse (bush spirits) que le monde intact (forets, rivieres non amenagees) abrite. Ces esprits sont vitaux pour la sante du groupe : les maintenir apaises est une obligation collective. Lorsqu'une nouvelle terre est defrichee ou qu'un villageois s'aventure hors du village, des offrandes aux esprits sont obligatoires. Un createur supreme est reconnu (analogue au Nyesoa kru). En Cote d'Ivoire, le christianisme catholique et protestant est largement repandu chez les We depuis le milieu du XXe siecle, en syncrétisme avec les croyances animistes. Au Liberia, la tradition animiste des Krahn coexiste avec le christianisme. L'islam est minoritaire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes et libériennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora wè/krahn dans les grandes villes ivoiriennes et libériennes, et dans les pays occidentaux (États-Unis)."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Les We sont organises en chefferies villageoises autonomes sans structure federative permanente. En Cote d'Ivoire, la reconnaissance officielle de chefferies cantonales sous la colonisation française a cree une hierarchie administrative imposee de l'exterieur. Au Liberia, la chefferie traditionnelle krahn fut formellement reconnue dans le cadre de l'administration liberienne du Sinoe, Grand Gedeh et Nimba counties.",
+      "relationsWithNeighbors": "Relations avec les Dan (Yacouba) au nord : voisinage anclen, echanges culturels (certains motifs de costumes sont partages), mais aussi tensions historiques. Relations avec les Nyabwa (Niaboua) a l'est : liens culturels et rituels (le kwi, le leli, les masques ont ete transmis des We aux Nyabwa). Relations avec les Bete plus a l'est : parente linguistique et culturelle krou. Au Liberia, cohabitation avec les Klao (Kru), Grebo et Sapo.",
+      "conflictsOrAlliances": "Resistance historique aux razzias esclavagistes mandingues avant la colonisation. Resistance a la penetration coloniale française dans l'ouest ivoirien. Au Liberia, les Krahn furent au coeur de la politique nationale sous Samuel Doe (1980-1990) : nominated dans les postes-cles, ils susciterent la jalousie des autres groupes. La chute de Doe en 1990 entraina des massacres de Krahn par le NPFL (Charles Taylor). En 1998, des centaines de Krahn furent massacres a Monrovia. En 2003, le MODEL (fonde par des Krahn) contribua a la defaite de Taylor. En Cote d'Ivoire, l'ouest (pays we) fut l'epicentre de violences intercommunautaires pendant la crise de 2002-2011.",
+      "diaspora": "Diaspora krahn significative aux Etats-Unis (Minnesota, Rhode Island) suite aux guerres civiles liberiennes. Refugies krahn en Cote d'Ivoire pendant les guerres civiles (1989-2003). Refugies we/guere en Guinee et dans d'autres pays d'Afrique de l'Ouest pendant la crise ivoirienne. Migration economique interne vers Abidjan, Guiglo, Man et San Pedro en Cote d'Ivoire."
     },
     "demography": {
-      "totalPopulation": 400000,
+      "totalPopulation": 550000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens et libériens, CIA World Factbook, et études démographiques"
+      "source": "SIL Ethnologue : We meridional (gxx) 293 000 (1999), We septentrional (wob) 156 000 (1993), We occidental (wec) 25 200 (1998). Krahn oriental (kqo) 99 000 (2020 LBR), Krahn occidental (krw) 100 000 (2020 LBR) + 12 000 (CIV, 1993). Refworld/MRGI : Guere ou We 318 000 en CIV. Estimation 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 400000,
+          "note": "Regions Dix-Huit Montagnes et Moyen-Cavally : We meridional (Guiglo, Duekoe, Bangolo, Tai), We septentrional (Kouibly, Fakobly), We occidental (Touleple) et Krahn occidental frontalier"
+        },
+        {
+          "country": "LBR",
+          "population": 150000,
+          "note": "Comtes de Grand Gedeh, Nimba et Sinoe : Krahn oriental (nord-est LBR) et Krahn occidental (Grand Gedeh County)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Wè/Guéré/Krahn language (wec)",
-      "CIA World Factbook – CIV, LBR",
-      "Recensements ivoiriens et libériens",
-      "Études anthropologiques sur les peuples krou",
-      "Études sur l'art wè (masques)"
+      "Wikipedia EN — Krahn people. https://en.wikipedia.org/wiki/Krahn_people",
+      "Wikipedia EN — Guere language. https://en.wikipedia.org/wiki/Guere_language",
+      "101 Last Tribes — Krahn people. https://www.101lasttribes.com/tribes/krahn.html",
+      "Refworld/MRGI — World Directory of Minorities, Cote d'Ivoire (Guere/We 318 000). https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+      "Day Translations — Ivory Coast Language Profile (gxx, wob, wec). https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+      "SIL Ethnologue — We Southern (gxx). https://www.ethnologue.com/language/gxx/",
+      "Glottolog — Wobe-We Northern (weno1238, ISO wob). https://glottolog.org/resource/languoid/id/weno1238",
+      "Joshua Project — Guere in Cote d'Ivoire. https://joshuaproject.net/people_groups/11124",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Wikipedia FR — Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)"
     ]
   }
 }

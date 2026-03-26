@@ -1,4 +1,6 @@
 {
+  "_note_duplication": "ATTENTION : Ce fichier PPL_BUGANDA semble etre un doublon de PPL_BAGANDA.json, deja enrichi dans une phase precedente. Les deux fichiers decrivent le meme peuple (les Baganda, peuple du royaume de Buganda en Ouganda). Il est recommande de fusionner ou supprimer l'un des deux fichiers. Ce fichier est conserve et enrichi a titre de reference complete, mais la base de donnees devrait disposer d'une seule fiche canonique pour ce peuple.",
+  "duplicateOf": "PPL_BAGANDA",
   "id": "PPL_BUGANDA",
   "nameMain": "Baganda",
   "languageFamilyId": "FLG_BANTU",
@@ -6,64 +8,95 @@
   "content": {
     "appellations": {
       "mainName": "Baganda",
-      "selfAppellation": "Baganda",
-      "exonyms": ["Baganda (terme utilisé par les Européens), Ganda"],
+      "selfAppellation": "Baganda (sg. Muganda)",
+      "exonyms": [
+        "Ganda (forme anglaise courte, utilisee dans les textes anciens)",
+        "Waganda (terme kiswahili)",
+        "Buganda (designe le territoire et le royaume, parfois utilise par extension pour le peuple)"
+      ],
+      "ethnicitiesNote": "Les Baganda sont le plus grand groupe ethnique d'Ouganda, representant 15,3 % de la population selon le recensement de 2024. Ils ont historiquement joue un role dominant dans la politique, l'economie et la culture de l'Ouganda central.",
+      "originOfExonyms": "Le terme Ganda est une forme abregee utilisee depuis les explorateurs europeens du XIXe siecle (Speke, Stanley). Le terme Buganda designe originellement le royaume et le territoire, et devient parfois un raccourci pour le peuple. Waganda est la forme plurielle en kiswahili.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Baganda est le terme officiel pour le peuple, Muganda pour l'individu, Luganda pour la langue, Kiganda pour l'adjectif culturel (ex : danse kiganda). Buganda designe le royaume et le territoire.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Centre de l'Ouganda",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (zone J, sous-groupe Nord-Nyanza, proto-Luganda)",
+      "historicalRegion": "Buganda — centre de l'Ouganda, autour du lac Victoria (nord-ouest des rives), depuis le Nil Victoria (a l'est) jusqu'a la riviere Katonga (a l'ouest)",
       "currentCountries": ["UGA"]
     },
     "ethnicities": [
-      "Baganda du Nord",
-      "Baganda du Sud",
-      "Sous-groupes régionaux"
+      "Baganda du centre (region de Kampala, Mengo, Masaka) — coeur historique du royaume",
+      "Baganda du nord (region de Luwero, Nakaseke) — zone d'expansion historique contre le Bunyoro",
+      "Baganda du sud (region de Masaka, Rakai, Kalangala — iles du lac Victoria)",
+      "Baganda du Ssese — communautes insulaires du lac Victoria, avec tradition maritime et de peche",
+      "Baganda naturalises — personnes non-baganda de naissance ayant choisi un clan baganda, integrees dans la structure clanique (notamment anciens esclaves ou captifs de guerre)"
     ],
     "origins": {
-      "ancientOrigins": "Les Baganda sont originaires du centre de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume Buganda.",
-      "unificationsOrDivisions": "Formation du royaume Buganda. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Baganda sont un peuple bantou natif de la region de Buganda, en Ouganda central. Leur mythe fondateur evoque Kintu, le premier homme sur terre, qui epousa Nnambi (fille du dieu Ggulu). Les Baganda se considerent descendants de Kintu et Nnambi (abaana ba Nnambi, les enfants de Nnambi). Walumbe, frere de Nnambi, est l'esprit de la maladie et de la mort (olumbe). Le terme Ganda signifie fraternite et unite (de obuganda : fagots de tiges lies ensemble), issu du proto-bantou -ganda (famille).",
+      "formationPeriod": "Le royaume de Buganda a ete fonde historiquement par Kato Kintu (figure historique distincte du Kintu mythique), qui a unifie des clans disperses et est devenu le premier Kabaka, adoptant le nom de Kintu pour legit imer sa royaute. Le royaume de Buganda s'est constitue comme entite politique au XIVe-XVe siecle et a connu une expansion majeure aux XVIIIe et XIXe siecles, eclipsant le royaume rival du Bunyoro-Kitara.",
+      "migrationRoutes": [
+        "Origines bantous depuis le Congo septentrional vers les Grands Lacs africains",
+        "Installation autour des rives nord-ouest du lac Victoria",
+        "Expansion vers le nord et l'ouest aux XVIIIe-XIXe siecles aux depens du Bunyoro"
+      ],
+      "historicalSettlementZones": [
+        "Rives nord-ouest du lac Victoria (region de Mengo, Kampala)",
+        "Iles du lac Victoria (archipel de Ssese et iles de Kalangala)",
+        "Corridor terrestre entre la riviere Katonga (ouest) et le Nil Victoria (est)"
+      ],
+      "unificationsOrDivisions": "Le Buganda est gouverne par le Kabaka (roi), avec un systeme de 52 clans (ebika) reconnus, dont 46 sont officiellement reconnus depuis 1993. Le Kabaka (Ssaabataka) est le chef supreme des chefs de clans (Abataka). La structure clanique est hierarchique : Akasolya (faite), Essiga, Olunyiriri, Omutuba, Oluggya, Ennyumba (maison nucleaire). Les monarchies ont ete abolies en 1966 par Idi Amin et restaurees par la Constitution de 1995.",
+      "externalInfluences": "Contacts avec les peuples nilotiques (Acholi, Langi) qui ont enrichi la culture Buganda. Influence de l'islam introduit par les marchands zanzibarites (1844). Arrivee des explorateurs europeens : Speke (1862), Stanley (1875). Missions chretiennes catholiques et anglicanes (1876). Protectorat britannique (1894). La Buganda Agreement de 1900 a restructure le systeme foncier.",
+      "majorHistoricalEvents": "Expansion maximale du Buganda aux XVIIIe-XIXe siecles (doublement du territoire aux depens du Bunyoro). Islamisation partielle sous Kabaka Mutesa I (1856-1884). Guerres des religions (1888-1892) entre catholiques, protestants et musulmans. Protectorat britannique sous Mwanga II (1894). Bataille de Buddu (1897 : defaite de Mwanga II, exil). Accord de Buganda (1900). Abolition des monarchies en 1966, restauration en 1995. L'actuel Kabaka Ronald Muwenda Mutebi II regn e depuis 1993."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Buganda). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie centralisee dirigee par le Kabaka (roi), chef de tous les chefs de clans (Ssaabataka) et source d'honneur (il distribue les positions en echange de loyaute et de service). Le Lukiiko est l'assemblee legislative traditionnelle du royaume. Le Katikiro (Premier ministre) est le chef du gouvernement du royaume. La politique historique du Buganda etait centree sur la competition pour les titres et l'ekitiibwa (honneur). La marine royale sur le lac Victoria (Ennyanja Nnalubaale) etait commandee par le Gabunga (chef du clan Mmamba).",
+      "clanOrganization": "Les Baganda sont organises en 52 clans (ebika, sing. ekika), dont 46 sont officiellement reconnus. Chaque Muganda doit appartenir a un clan (generalement celui du pere). Les clans sont exogames (interdiction de mariage intra-clanique). Chaque clan a un totem (interdit de manger ou de nuire a l'animal totemique). Structure hierarchique du clan : Akasolya, Essiga, Olunyiriri, Omutuba, Oluggya, Ennyumba. Les noms de chaque clan incluent au moins 20 prenoms masculins et 20 prenoms feminins. La ceremonie de nomination Okwalula abaana utilise le cordon ombilical pour etablir la paternite.",
+      "ageClassSystems": "Les Baganda ne disposent pas d'un systeme formel de classes d'age comme certains peuples nilotiques. Cependant, les etapes de la vie sont structurees socialement : enfance (okuweefunira), puberte (okula), mariage (okuwasa), parentalite (okuzaala) et vieillesse (obutaakulendejja). Chaque etape implique des obligations claniques et ceremoniales specifiques.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique, les alliances matrimoniales et les droits successoraux. L'appartenance clanique se transmet par le pere. Le Kabaka est la tete supreme de la hierarchie clanique (Ssaabataka). Les chefs de lignage (Abataka) jouent un role politique, judiciaire et ceremoniel.",
+      "religiousAuthority": "Les divinites traditionnelles Baganda sont les Lubaale (dieux ou esprits puissants, ex: Mukasa, Kibuuka, Musisi, Wamala, Musoke). Les pretres et pretresses des Lubaale mediaient entre les vivants et les esprits. Le Kabaka est mediateur entre le peuple et les ancetres royaux. Le syncrétisme est courant entre les croyances traditionnelles kiganda et le christianisme (42,7 % catholiques, 27,4 % anglicans selon le recensement 2002) et l'islam (23 %). Les pratiques traditionnelles perdurent souvent de maniere discrete."
     },
     "languages": {
-      "mainLanguage": "Ganda",
-      "vehicularRole": "Le ganda est parlé par la majorité des Baganda. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Luganda (Ganda)",
+      "isoCodes": ["lug"],
+      "dialects": [
+        "Luganda standard — variete de la region de Kampala et Mengo (base de la standardisation)",
+        "Variantes dialectales des iles du lac Victoria (archipel de Ssese)",
+        "Variantes des zones frontalieres avec le Lunyoro (ouest) et le Lusoga (est)"
+      ],
+      "vehicularRole": "Le Luganda est la langue la plus parlée en Ouganda apres l'anglais et sert de lingua franca a Kampala et dans toute la region centrale du pays. Il est utilise dans les medias (radio, television), la musique populaire, la litterature et l'enseignement primaire en Buganda. Avec le swahili et l'anglais, c'est l'une des trois langues vehiculaires principales d'Ouganda. Le Luganda est enseigne comme matiere dans les ecoles et les universites."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux baganda, symboles liés à l'agriculture, symboles culturels baganda, symboles chrétiens et islamiques.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Rôle important des ancêtres."
+      "majorRites": "Rites du mariage (Kiganda) : Okukyala (visite de la famille du pretendant), Okwanjula (presentation officielle avec cadeaux), Embaga (reception de mariage), Okuzza omuzigo (visite post-mariage de la mariee), Okugenda mu kisenge (lune de miel de six jours). Rites funeraires : Okubika (annonce du deces), veillees a domicile, Okuwabya Olumbe (fin du deuil, ceremonie de liberation de l'esprit du mort). Ceremonie de nomination des enfants (Okwalula abaana). Ceremonie des jumeaux (Okuzina abalongo). Ceremonies royales d'intronisation du Kabaka.",
+      "symbols": "La bark-cloth (lubugo/olubugo) du Mutuba tree (Ficus natalensis), jaune a brun-rouge fonce, est le vetement traditionnel sacre des Baganda — utilise pour les vetements, la literie et les linceuls (le blanc etant reserve au Kabaka). Inscrite par l'UNESCO. Le gomesi (robe des femmes) et le kanzu (tunique blanche des hommes) sont les tenues nationales. Les tambours royaux du Kabaka symbolisent le pouvoir royal. Les 52 blasons des clans constituent un systeme symbolique riche.",
+      "artsAndMusic": "La musique kiganda traditionnelle utilise l'endongo (harpe-cithare a 8 cordes), le fiditi (violon a une corde), l'amadinda (xylophone a 12 lames), le ngalabi (tambour allonge), les embaire (xylophones de retraite) et les resonateurs en pot de terre. Les danses kiganda incluent la danse royale au tambour (bakisimba), la danse des femmes (nankasa) et la danse des guerriers (muwogola). La poesie orale (amagesi) est un art elitaire cultive a la cour du Kabaka. L'artisanat traditionnel comprend la poterie, le tissage de nattes et de paniers, et le travail du bois.",
+      "spiritualities": "La religion traditionnelle kiganda est centree sur les Lubaale (puissances spirituelles) tels que Mukasa (esprit du lac Victoria), Kibuuka (esprit de la guerre), Musoke (arc-en-ciel), Wamala (esprit du lac Wamala). Walumbe est l'esprit de la maladie et de la mort. Les ancetres royaux sont veneres dans des sanctuaires (masiro). Le Kabaka est mediateur spirituel. Depuis le XIXe siecle, le christianisme (catholique et anglican) et l'islam sont majoritaires. Le syncrétisme est tres frequent : de nombreux Baganda pratiquent des ceremonies traditionnelles tout en s'identifiant comme chretiens ou musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora baganda dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Buganda est le plus grand et le plus puissant des royaumes traditionnels d'Ouganda. A son apogee au XIXe siecle, sa capitale comptait environ 80 000 habitants (selon le rapport de Stanley, 1875), avec un palais fortifie sur une colline, des rues organisees, une cour royale et une marine sur le lac Victoria. La structure administrative incluait des gouverneurs de province (bakungu), des chefs de district et des messagers royaux. Le Buganda a ete reconnu comme royaume traditionnel par la Constitution ougandaise de 1995.",
+      "relationsWithNeighbors": "Expansion territoriale aux depens du Bunyoro (XVIIIe-XIXe s.), doublant ou triplant le territoire du Buganda. Relations commerciales avec les marchands zanzibarites (ivoire, esclaves, et importation de produits manufactures). Rivalite historique avec le Bunyoro-Kitara, le Nkore (Ankole) et le Busoga. Alliance strategique avec les Britanniques dans le cadre du Protectorat (1894).",
+      "conflictsOrAlliances": "Guerres avec le Bunyoro (XVIIIe-XIXe siecles) aboutissant a la conquete de vastes territoires. Guerres des religions (1888-1892) entre catholiques, protestants et musulmans. Guerres contre les Britanniques (1897, Bataille de Buddu) menees par Kabaka Mwanga II, exilee puis baptise Anglican. Alliance avec les Britanniques sous l'Ugandan Agreement (1900). Participation a la politique ougandaise independante et role de la Buganda dans les tensions federales.",
+      "diaspora": "Diaspora Baganda organisee dans les grandes villes ougandaises (Kampala, Jinja, Entebbe). Communautes de diaspora internationale avec des organisations actives au Canada, en Afrique du Sud, en Suede, au Royaume-Uni et aux Etats-Unis. Les Baganda representent 15,3 % de la population ougandaise (recensement 2024), soit environ 16,3 millions de personnes en Ouganda."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 16300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Recensement ougandais 2024 (Uganda Bureau of Statistics) : 15,3 % de la population ougandaise d'environ 47 millions, soit environ 7,2 millions selon les recensements anterieurs mais le recensement 2024 indique environ 16,3 millions en incluant la diaspora interne. SIL Ethnologue (lug) : Luganda parle par environ 5,6 millions de locuteurs en premiere langue. CIA World Factbook Uganda. Les Baganda sont le plus grand groupe ethnique d'Ouganda. Communautes de diaspora internationale organisees au Canada, en Afrique du Sud, en Suede, au Royaume-Uni et aux Etats-Unis.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 16300000,
+          "note": "Region de Buganda : Kampala (capitale nationale), Wakiso, Mukono, Masaka, Kalangala (iles Ssese), Luwero, Mityana, Mubende, Rakai. Les Baganda sont presents dans tout le pays, leur langue Luganda servant de lingua franca nationale."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ganda language (lug)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le royaume Buganda"
+      "Wikipedia EN — Baganda : https://en.wikipedia.org/wiki/Baganda",
+      "Wikipedia EN — Buganda : https://en.wikipedia.org/wiki/Buganda",
+      "SIL Ethnologue — Luganda language (lug) : https://www.ethnologue.com/language/lug/",
+      "CIA World Factbook — Uganda : https://www.cia.gov/the-world-factbook/countries/uganda/",
+      "Uganda Bureau of Statistics (UBOS) — Uganda Population and Housing Census 2024",
+      "Joshua Project — Baganda in Uganda : https://joshuaproject.net/people_groups/10346/ug",
+      "UNESCO — Bark cloth making in Uganda (Buganda) — Patrimoine culturel immateriel inscrit 2008 : https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kiganda-bark-cloth-in-uganda-00110",
+      "Glottolog — Luganda (luganda1247) : https://glottolog.org/resource/languoid/id/luga1252"
     ]
   }
 }

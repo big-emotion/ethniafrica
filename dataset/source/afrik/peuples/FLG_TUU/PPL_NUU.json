@@ -2,66 +2,93 @@
   "id": "PPL_NUU",
   "nameMain": "Nǀuu",
   "languageFamilyId": "FLG_TUU",
-  "currentCountries": ["BWA", "ZAF"],
+  "currentCountries": ["ZAF"],
   "content": {
     "appellations": {
       "mainName": "Nǀuu",
-      "selfAppellation": "Nǀuu",
+      "selfAppellation": "Nǀuu / Nǀhuki",
+      "exonyms": ["Nluu", "ǂKhomani", "Nǁŋǃke", "Nǀusan", "N|uu"],
+      "originOfExonyms": "Le terme ǂKhomani est utilisé par le gouvernement sud-africain pour désigner la communauté et a été adopté officiellement lors de la restitution foncière de 1999. Le mot nǀuu est en réalité un verbe signifiant parler une langue San (Bushman), issu du khoekhoe. Nǀhuki est le nom déverbal de la même racine, signifiant une langue San. Le terme Nǁŋǃke désigne la langue dans son ensemble (famille Nǁng), dont Nǀuu est le dialecte occidental encore connu. Nǀusan est un exonyme khoekhoe ambigu utilisé pour plusieurs langues Tuu de la région.",
+      "whyProblematic": "Le nom Nǀuu est à la fois le nom du dialecte occidental de la langue Nǁng et un verbe khoekhoe générique. La désignation ǂKhomani est utilisée par le gouvernement et les ONG pour désigner l'ensemble de la communauté, alors qu'elle était historiquement un exonyme ǀʼAuni. La confusion entre Nǀuu (dialecte), Nǁng (langue) et ǂKhomani (communauté) est fréquente dans la littérature et dans les medias. L'orthographe varie : N|uu, Nluu, Nǀuu selon les normes utilisées.",
+      "contemporaryUsage": "Depuis juin 2021 (mort du frère Simon Sauls), Ouma Katrina Esau est la dernière locutrice fluente connue de nǀuu. En octobre 2025, agée de 92 ans, elle enseigne encore la langue à des enfants dans son domicile de Rosedale, pres d'Upington (Northern Cape). Elle a reçu un doctorat honorifique de l'Université du Cap (UCT) en mars 2023. La langue a été classée éteinte en 1973, puis redécouverte dans les années 1990. L'ONU (UNESCO) la classe comme langue en danger critique d'extinction.",
       "linguisticFamily": "FLG_TUU",
-      "ethnoLinguisticGroup": "Tuu (Taa)",
-      "historicalRegion": "Désert du Kalahari (Afrique du Sud, BWA)",
-      "currentCountries": ["BWA", "ZAF"]
+      "ethnoLinguisticGroup": "Tuu, branche ǃKwi (ǃUi), dialecte Nǀuu de la langue Nǁng",
+      "historicalRegion": "Kalahari méridional, région du Kgalagadi (Afrique du Sud, Northern Cape)",
+      "currentCountries": ["ZAF"]
     },
     "ethnicities": [
-      "Nǀuu d'Afrique du Sud",
-      "Nǀuu du Botswana",
-      "Sous-groupes régionaux"
+      "ǂKhomani San — communauté principale des Nǀuu, Northern Cape, Afrique du Sud",
+      "Nǀuu du nord-ouest (dialecte Nǀuu) — région d'Upington et d'Olifantshoek",
+      "ǁʼAu — locuteurs du dialecte oriental de la langue Nǁng, région de Langeberg"
     ],
     "origins": {
-      "ancientOrigins": "Les Nǀuu sont l'un des peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous. Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les Nǀuu font partie des peuples San, considérés comme les habitants les plus anciens de l'Afrique du Sud. Leurs ancêtres chasseurs-cueilleurs peuplaient le Kalahari méridional et les régions du Vaal et de l'Orange depuis des dizaines de millénaires. Les études génétiques situent les divergences mitochondriales des San entre 100 000 et 200 000 ans avant le présent, en faisant l'une des lignées humaines vivantes les plus anciennes. La langue nǀuu est souvent citée comme vieille de 25 000 ans, et certaines sources évoquent des racines pouvant remonter à 60 000 ans. Le groupe ǂKhomani est apparenté aux autres communautés ǃKwi du sud (ǀXam, ǂUngkue, ǁXegwi) dont les langues sont aujourd'hui toutes éteintes.",
+      "formationPeriod": "La communauté ǂKhomani, locutrice du nǀuu, s'est constituée dans le Kalahari méridional (désert du Kgalagadi). Elle est identifiée par Wilhelm Bleek au 19e siecle et documentée par sa fille Dorothea Bleek au début du 20e siecle. En 1973, la langue a été officiellement déclarée éteinte à la suite des évictions du parc national du Kalahari Gemsbok. Elle a été redécouverte à la fin des années 1990 grâce à l'identification d'une vingtaine de locuteurs âgés dirigés par Elsie Vaalbooi (101 ans), interviewée par le linguiste Anthony Traill en 1997.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari méridional, sans migration fondatrice documentée",
+        "Déplacements forcés au 20e siecle de la région du Kgalagadi vers Upington, Olifantshoek et d'autres zones du Northern Cape",
+        "Dispersion vers la Province du Cap-Occidental après les évictions du parc national en 1973"
+      ],
+      "historicalSettlementZones": [
+        "Désert du Kgalagadi (parc transfrontalier du Kalahari Gemsbok, Northern Cape, Afrique du Sud)",
+        "Région d'Upington et de Rosedale (Northern Cape, Afrique du Sud)",
+        "Région d'Olifantshoek (dialecte ǁʼAu, Northern Cape)",
+        "Province du Cap-Occidental (suite aux déplacements post-1973)"
+      ],
+      "unificationsOrDivisions": "La communauté nǀuu (ǂKhomani) était dispersée dans plusieurs villages et n'avait aucun lien permanent entre ses membres dans les années 1970-1980. La lutte pour la restitution foncière a favorisé une recomposition identitaire. En 1999, le president Thabo Mbeki a restitué 400 km2 de terres aux Nǁnǂe (ǂKhomani), et 250 km2 dans le parc en 2002. Elsie Vaalbooi a composé la devise de la communauté : Sa ǁʼa ǃainsi uinsi (Nous marchons vers une vie meilleure), adoptée comme devise officielle de la province du Northern Cape.",
+      "externalInfluences": "Colonisation néerlandaise puis britannique du sud de l'Afrique depuis le 17e siecle. La politique d'apartheid (1948-1994) a systematiquement marginalisé les San, leur interdisant l'usage de leurs langues, les confisant leurs terres et les réduisant au servage sur les fermes. L'influence du khoekhoe (nama) et de l'afrikaans a remplacé la langue nǀuu dans le quotidien. Les San étaient parfois contraints par les fermiers blancs à ne parler qu'afrikaans sous peine de punitions.",
+      "majorHistoricalEvents": "Bushman hunting (chasses aux San) par les commandos boers aux 18e-19e siecles, réduisant drastiquement la population. Eviction du Kalahari Gemsbok National Park en 1973, date à laquelle la langue a été officieusement déclarée éteinte. Redécouverte de locuteurs survivants en 1997 par Anthony Traill et le South African San Institute. Restitution foncière de 1999 par Thabo Mbeki. Lancement du dictionnaire nǀuu en 2022. Publication du premier livre pour enfants en nǀuu : !Qhoi n|a Tijho (Tortoise and Ostrich, 2021). Doctorat honorifique en littérature décerné à Ouma Katrina Esau par l'UCT en mars 2023."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation égalitaire sans chef permanent ni hiérarchie formelle. Decisions prises par consensus au sein des bandes (groupes de 10 à 30 personnes). Les anciens et les guerisseurs jouaient un rôle consultatif reconnu. Depuis la restitution foncière de 1999-2002, la communauté ǂKhomani est représentée par un conseil communautaire légalement constitué qui gère les terres et les droits fonciers.",
+      "clanOrganization": "Structure basée sur des groupes de parenté bilatérale et des liens de réciprocité (hxaro). Partage obligatoire des ressources au sein du groupe. Les liens d'appartenance étaient définis par la parenté, l'affinité et la réciprocité.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux. Droits d'usage des territoires transmis par les deux lignes parentales. L'identité de groupe se définissait par les liens de parenté et la maitrise de la langue et des connaissances écologiques.",
+      "religiousAuthority": "Autorité des guérisseurs-chamanes, dont les pouvoirs étaient activés lors des danses de transe (healing dance, gaisa). Médiation avec les puissances spirituelles et guérison des malades."
     },
     "languages": {
-      "mainLanguage": "Nǀuu",
-      "vehicularRole": "Le nǀuu est parlé par la majorité des Nǀuu. L'afrikaans, l'anglais et le tswana sont également utilisés."
+      "mainLanguage": "Nǀuu (dialecte occidental de la langue Nǁng)",
+      "isoCodes": ["ngh"],
+      "dialects": [
+        "Nǀuu (Nǀhuki) — dialecte nord-occidental, région d'Upington et d'Olifantshoek, le seul partiellement documenté et enseigné",
+        "ǁʼAu — dialecte oriental, région de Langeberg, pratiquement éteint (deux locuteurs en 2013, aucun connu depuis)"
+      ],
+      "vehicularRole": "Le nǀuu est en danger critique d'extinction : une seule locutrice fluente native connue en 2025 (Ouma Katrina Esau, née en 1933, Rosedale/Upington). La langue compte 112 sons distincts dont 45 clics, dont le rare clic bilabial (embrasse). En anglais, on compte 44 phonemes, contre 114 en nǀuu. La langue a été classée éteinte en 1973 par les autorités linguistiques, puis redécouverte dans les années 1990 avec une vingtaine de locuteurs âgés. L'UNESCO la classe comme langue en danger critique. Les eforts de revitalisation incluent : un dictionnaire nǀuu (lancé en 2022), un livre pour enfants en nǀuu (2021), une école de langue tenue par Ouma Katrina dans sa maison, et l'application mobile Saasi Epsi."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "La danse de transe (healing dance, gaisa) est le rituel central de la communauté nǀuu et de l'ensemble des peuples San. Les femmes s'assoient en cercle, chantent (chants de puissance, songs of the medicine dance) et frappent dans leurs mains selon un rythme soutenu. Les guérisseurs dansent autour d'elles, entrant progressivement en état de transe (kia) en hyperventilant et en concentrant l'énergie spirituelle (n/om) située dans la région du ventre. En transe, les guerisseurs imposent les mains sur les malades pour extraire la maladie ou la negative spirituelle (star illness). Les rites de passage incluent la circumcision masculine, les cérémonies de puberté feminine, et des rituels de chasse et de partage du gibier.",
+      "symbols": "L'éland (Taurotragus oryx) est l'animal symbolique par excellence des visions de transe, associé à la puissance chamanique maximale. Art rupestre (peintures et gravures) représentant des scènes de chasse, des transformations humain-animal et des visions de transe. La devise communautaire Sa ǁʼa ǃainsi uinsi (Nous marchons vers une vie meilleure), composée par Elsie Vaalbooi, est aujourd'hui la devise officielle de la province du Northern Cape.",
+      "artsAndMusic": "Chants polyphoniques vocaux lors des danses de transe et des veillées communautaires. Arc musical (arc à bouche) comme instrument mélodique individuel. Percussions avec des coques de noix de mongongo et des cocons de chrysalides attachés aux chevilles des danseurs. Contes et mythes oraux transmettant les connaissances cosmologiques, écologiques et sociales. Premier livre pour enfants en nǀuu : !Qhoi n|a Tijho (Tortoise and Ostrich), coécrit par Ouma Katrina Esau et sa petite-fille Claudia Snyman (2021). Un dictionnaire nǀuu multimédia a été lancé en 2022, avec enregistrements audio.",
+      "spiritualities": "Croyances en un dieu créateur bienveillant (Kaang ou variantes locales) associé à la voie lactée et à la pluie, et en un dieu inférieur malveillant associé à la mort et à la maladie. L'énergie spirituelle (n/om) circule entre les vivants, les ancêtres et les animaux totémiques. Les guerisseurs activent cette énergie lors de la danse de transe pour soigner, protéger et communiquer avec les esprits. Les ancêtres défunts jouent un rôle de médiateurs avec le monde spirituel. Influence croissante du christianisme (églises réformées, pentecôtisme) dans la communauté ǂKhomani depuis le 20e siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes sud-africaines et botswanaises."
+      "kingdomsOrChiefdoms": "Pas d'organisation étatique ni de chefferie formelle. Structure sociale égalitaire de chasseurs-cueilleurs. La communauté ǂKhomani a cependant développé une structure représentative moderne depuis la restitution foncière de 1999, avec un conseil communautaire et une représentation auprès du gouvernement sud-africain.",
+      "relationsWithNeighbors": "Relations historiques d'échange et de voisinage avec les groupes San ǀXam au sud, les Griqua (population métisse khoekhoe-européenne) au sud-ouest et les peuples tswana et sotho au nord. Les San de la region échangeaient des produits de chasse et de cueillette contre du bétail ou des outils en métal. Sous la colonisation, beaucoup ont été réduits à une condition de servage sur les fermes boers et britanniques.",
+      "conflictsOrAlliances": "Participation des San ǀXam apparentés aux guerres de Korana (1868-1869 et 1878-1879). Persécutions par les commandos boers au 19e siecle (Bushman hunting). Eviction du Kalahari Gemsbok National Park en 1973. Mobilisation juridique et politique pour la restitution foncière culminant en 1999-2002. Travail commun avec l'organisation African Tongue (Kerry Jones) et des linguistes comme Sheena Shah (SOAS) et Matthias Brenzinger (CASAS) pour documenter et revitaliser la langue.",
+      "diaspora": "La communauté ǂKhomani est principalement dispersée dans le Northern Cape (Afrique du Sud), entre Upington, Rosedale et la région du parc Kgalagadi. Quelques membres vivaient au Botswana en 2007. La communauté ne constitue pas une diaspora internationale significative mais est fortement urbanisée et dispersée par rapport à ses territories ancestraux."
     },
     "demography": {
-      "totalPopulation": 100,
+      "totalPopulation": 800,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "La communauté ǂKhomani (locuteurs nǀuu et descendants) compte environ 800 à 1000 personnes selon les estimations du South African San Institute et du Pan South African Language Board. Une seule locutrice fluente native est documentée en 2025 : Ouma Katrina Esau (née en 1933). Sources : Wikipedia EN — Nǁng language (https://en.wikipedia.org/wiki/N%C7%81ng_language) ; BBC Travel, 2021 ; UCT News 2023 (https://www.news.uct.ac.za/article/-2023-03-31-ouma-katrina-esau-reviving-a-language-one-child-at-a-time) ; Daily Sabah, octobre 2025.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 800,
+          "note": "Communauté ǂKhomani principalement dans le Northern Cape (région d'Upington, Rosedale, parc Kgalagadi). Une seule locutrice fluente native du nǀuu en 2025."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Nǀuu language (ngh)",
-      "Collins, Chris – *The Internal Structure of VP in Nǀuu*",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa"
+      "Wikipedia EN — Nǁng language. https://en.wikipedia.org/wiki/N%C7%81ng_language",
+      "BBC News (2017). Trying to save South Africa's first language. https://www.bbc.com/news/world-africa-39935150",
+      "BBC Travel (2021). South Africa's language spoken in 45 clicks. https://www.bbc.com/travel/article/20210601-south-africas-language-spoken-in-45-clicks",
+      "UCT News (2023). Ouma Katrina Esau: Reviving a language, one child at a time. https://www.news.uct.ac.za/article/-2023-03-31-ouma-katrina-esau-reviving-a-language-one-child-at-a-time",
+      "Daily Sabah (2025). 92-year-old's journey to save South Africa's endangered language. https://www.dailysabah.com/life/92-year-olds-journey-to-save-south-africas-endangered-language/news",
+      "UNESCO — Language: Niuu (ǂKhomani), South Africa. https://www.unesco.org/archives/multimedia/document-1781",
+      "NSF News (2015). Documenting endangered languages. https://www.nsf.gov/news/documenting-endangered-languages",
+      "Ethnologue — Nlu (ngh). https://rosettapanglossia.longnow.org/index.php?title=Nlu_Language_%28ngh%29",
+      "Wikipedia EN — Tuu languages. https://en.wikipedia.org/wiki/Tuu_languages"
     ]
   }
 }

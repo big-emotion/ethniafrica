@@ -2,58 +2,95 @@
   "id": "PPL_ITESO",
   "nameMain": "Iteso",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["UGA"],
+  "currentCountries": ["UGA", "KEN"],
   "content": {
     "appellations": {
       "mainName": "Iteso",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Iteso",
+      "exonyms": [
+        "Teso (nom donne au territoire par les colonisateurs)",
+        "Bakedi (terme Baganda, pejoratif : nus ou non-circoncis)",
+        "Wamia (appellation ancienne en Ouganda)",
+        "Elgumi",
+        "Ikumama",
+        "Etossio"
+      ],
+      "originOfExonyms": "Le terme Bakedi (aussi Bakidi) fut attribue par les Baganda au XIXe siecle et signifie peuple nu, reference au fait que les Iteso ne portaient pas de vetements etoffes. Ce terme est aujourd'hui considere pejoratif. Teso designe le territoire traditionnel, Ateso la langue.",
+      "whyProblematic": "La denomination Bakedi est considere insultante. Par ailleurs, les Iteso du nord de l'Ouganda (Soroti) et ceux du sud (Bukedi) sont parfois distingues, de meme que les Iteso d'Ouganda et ceux du Kenya, separement par la frontiere coloniale de 1902.",
+      "contemporaryUsage": "Iteso est la denomination preferee par le peuple lui-meme en Ouganda et au Kenya. Teso designe le territoire historique (sous-region de Teso en Ouganda). Ateso est le nom de leur langue. L'Union culturelle Ateker regroupe les Iteso et autres peuples du cluster Karamojong.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "N/A",
-      "currentCountries": ["UGA"]
+      "ethnoLinguisticGroup": "Nilotiques orientaux, branche Teso du cluster Teso-Turkana (Ateker-Karamojong)",
+      "historicalRegion": "Sous-region de Teso (est de l'Ouganda) et comte de Busia (ouest du Kenya)",
+      "currentCountries": ["UGA", "KEN"]
     },
-    "ethnicities": ["Iteso"],
+    "ethnicities": [
+      "Iteso du nord (Ouganda : Soroti, Amuria, Katakwi, Kumi)",
+      "Iteso du sud (Ouganda : Bukedi, Tororo, Pallisa, Bukedea)",
+      "Iteso du Kenya (comte de Busia)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["N/A"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Iteso font partie du cluster Ateker (ou Karamojong), qui inclut aussi les Karamojong, les Jie, les Dodos, les Turkana (Kenya), les Nyangatom et les Toposa (Soudan du Sud). Les traditions orales situent l'origine commune du groupe au Soudan ou en Abyssinie, d'ou les ancetres migrerent vers le sud au cours de plusieurs siecles.",
+      "formationPeriod": "La premiere vague de migration amena les Iteso jusqu'au nord-est de l'Ouganda et a l'ouest du Kenya. La deuxieme vague, vers 1500 apres J.-C., fut menee par le heros legendaire Oduk et son epouse Among'in, qui organisa militairement les Iteso et les etablit dans l'actuel comte de Busia (Kenya). En premier moitie du XVIIIe siecle, les Iteso etaient etablis sur les rives du lac Salisbury.",
+      "migrationRoutes": [
+        "Du Soudan ou d'Abyssinie vers le nord-est de l'Ouganda (premiere vague, processus graduel)",
+        "Du nord-est de l'Ouganda vers Bukedi et Busia (Kenya) : deuxieme vague, vers 1500 apres J.-C.",
+        "Expansion dans les plaines de l'est de l'Ouganda au XVIIIe-XIXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Sous-region de Teso (Ouganda) : districts de Amuria, Bukedea, Katakwi, Kumi, Ngora, Serere, Soroti, Kaberamaido, Kapelebyong",
+        "Bukedi (Ouganda) : Pallisa, Tororo, Busia",
+        "Comte de Busia (Kenya) : Teso North et Teso South"
+      ],
+      "unificationsOrDivisions": "En 1902, la frontiere coloniale divisa les Iteso entre l'Uganda Protectorat et le Kenya colonial, separant des communautes jadis unies. La fragmentation politique et les violences (raids karamojong, guerre des annees 1980) causerent des deplacements internes importants. L'installation du roi Emorimor en 1992 symbolisa le renouveau de l'unite Iteso.",
+      "externalInfluences": "Influence baganda (Luganda absorbee dans l'ateso du nord). Colonisation britannique : adoption rapide de la charrue a boeufs des 1900, transformation de l'economie pastorale en agriculture. Missions chretiennes : conversion massive. Deplacements dus aux raids karamojong post-1979 (arm par le gouvernement Amin). Influence du mouvement culturel Ateker pour la revitalisation des traditions.",
+      "majorHistoricalEvents": "Vers 1500 : seconde migration, fondation de la societe iteso sous Oduk. XIXe siecle : expansion agressive, conflits avec les voisins, puis reconquete par les Baganda allies aux Britanniques. 1902 : division coloniale entre Uganda et Kenya. 1979 : raids karamojong decimant le betail iteso. Annees 1980 : insurrection Teso contre le gouvernement Museveni. 1992 : fin du conflit, installation du roi Emorimor Paphrus Imodot Edimu. 2024 : recensement ougandais confirmant 3 146 079 Iteso en Ouganda."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe traditionnellement acephale, sans chefferie centralisee permanente avant la periode coloniale. Les decisions etaient prises collectivement par les anciens. L'installation du roi Emorimor en 1992 est une innovation institutionnelle visant a renforcer l'unite culturelle. Dans le cadre colonial et post-colonial, des chefs locaux (akolon ka) ont ete institues, un par clan.",
+      "clanOrganization": "Neuf clans fondateurs (noms transmis en patrilineaire) : Ikaruwok (guerriers et leaders), Ikatekok, Igoria, Inomu, Ikomolo (devins), Irarak, Iworopom et autres. Des clans supplementaires se sont formes par scission des neuf originaux. Chaque clan a un chef (akolon ka) et maintient des droits rituels specifiques.",
+      "ageClassSystems": "Presence de classes d'age structurant la vie sociale, notamment pour l'initiation des jeunes hommes et la distribution des roles dans la communaute. La transmission de biens (betail) du pere au fils marque le passage a l'age adulte.",
+      "roleOfLineages": "Lignages patrilineaires definissant l'appartenance clanique, les alliances matrimoniales (dot en betail), l'heritage et les droits fonciers. Le betail joue un role central dans les negociations de mariage. La patrilinearite determine aussi la transmission des chefferies claniques.",
+      "religiousAuthority": "Religion traditionnelle : dieu supreme Akuj (omnipotent), dieu du malheur Edeke. Les esprits (eparait) des anciens vivent dans la brousse et peuvent revenir si mecontents. L'ajon (biere de millet fermente) est central dans les ceremonies. Christianisme majoritaire (catholique et protestant), parfois mele de croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ateso",
+      "isoCodes": ["teo"],
+      "dialects": [
+        "Ateso du nord (influence du Luganda, districts de Soroti, Kumi, Amuria)",
+        "Ateso du sud (influence du Turkana, districts de Bukedi, Busia Kenya)"
+      ],
+      "vehicularRole": "L'ateso (ISO 639-3 : teo) est la langue maternelle de l'ensemble de la communaute, utilisee dans la vie domestique et ceremonielle. Il appartient a la branche nilotique orientale (groupe Teso-Turkana). Le luganda et l'anglais sont parles en Ouganda ; le swahili et l'anglais au Kenya. L'ateso est enseigne dans certaines ecoles primaires de la sous-region de Teso (Ouganda)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Sebu iteso (coutume de confinement de la mere 3 jours apres la naissance, puis placement d'ajon dans la bouche du nouveau-ne). Exhumation des corps plusieurs annees apres le deces pour les rafraichir selon la tradition orale (practice d'Oduk). Ceremonies culturelles annuelles au mont Kakapel (26 decembre). Festival Ateker Tobong'u Lore (retour au foyer) reunissant tous les peuples Ateker.",
+      "symbols": "L'ajon (biere de millet fermente) : boisson ceremonielle et sociale consommee dans une calebasse commune avec des tubes en roseau ; elle marque toute celebration importante. Le betail, notamment les vaches, comme unite de valeur economique et symbolique (dot, sacrifice). Le tabouret et la coiffe d'anciens comme insignes d'autorite.",
+      "artsAndMusic": "Tradition de chants educatifs (folksongs) : Ataikatiaka Kitiso (unite), Akidai Imojong (respect des anciens), Iyalama Imojong (gratitude envers les anciens). Danses en cercle accompagnees de tambours et de flutes. Contes oraux (folk tales) performes dans les villages. Poterie, tissage et vannerie pratiques traditionnellement par les femmes. L'ajon est desormais commercialise, modifiant son role ceremoniel.",
+      "spiritualities": "Christianisme (catholique et protestant) largement majoritaire depuis le XXe siecle. Religion traditionnelle persistant en parallele : culte d'Akuj (dieu supreme), croyance en Edeke (force du malheur), veneration des esprits des ancetres (eparait). Les creatures de la brousse (ajokin) dans la tradition orale ; reinterpretees comme demons sous influence missionnaire. Pratiques rituelles liees au cycle agricole et pastoral."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Societe traditionnellement sans royaume centralise. Les neuf clans fondateurs etaient des unites politiques autonomes. La figure de l'Emorimor (roi culturel) est une institution moderne (1992) visant a federer l'identite iteso. Des associations politiques informelles existaient via le systeme clanique et d'age.",
+      "relationsWithNeighbors": "XIXe siecle : expansion conflictuelle contre plusieurs groupes voisins, puis contre-offensive des Baganda allies aux Britanniques, avec perte de territoire et influence culturelle (luganda dans l'ateso du nord). Relations de longue duree avec les Karamojong (raids de betail), les Turkana, les Acholi et les Kumam. Post-1979 : recrudescence des raids karamojong armes decimant les troupeaux iteso.",
+      "conflictsOrAlliances": "Conquete par les Baganda (XIXe siecle) : perte de culture et assimilation partielle dans le nord. Roles militaires importants sous Obote I (armee et administration) et Obote II. Demobilisation et insurrection Teso sous Museveni (fin des annees 1980). Resolution par la Commission presidentielle pour le Teso (PCT, 1992). Rapatriement progressif des terres et des droits.",
+      "diaspora": "Des Iteso vivent dans les grandes villes d'Ouganda (Kampala) et du Kenya (Nairobi), souvent pour des raisons economiques ou d'education. Pas de diaspora internationale organisee documentee. La reunion culturelle Ateker Tobong'u Lore cherche a re-connecter les Iteso de la diaspora interne."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 4461000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Uganda Bureau of Statistics, recensement 2024 : 3 146 079 en Ouganda ; Joshua Project 2025 : 499 000 au Kenya et 4 461 000 au total (toutes localisations)",
+      "distributionByCountry": [
+        { "country": "UGA", "population": 3146000 },
+        { "country": "KEN", "population": 499000 }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia – Teso people (Iteso), 2024 (https://en.wikipedia.org/wiki/Iteso_people)",
+      "Wikipedia – Teso language (Ateso), 2024 (https://en.wikipedia.org/wiki/Teso_language)",
+      "Joshua Project – Iteso in Kenya, 2025 (https://joshuaproject.net/people_groups/15448/KE)",
+      "Uganda Bureau of Statistics – National Population and Housing Census 2024 (https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf)",
+      "Encyclopedia.com – Iteso (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/iteso)",
+      "Omniglot – Ateso language (ISO 639-3 : teo) (https://www.omniglot.com/writing/ateso.htm)",
+      "Ethnologue – Ateso (TEO) (https://www.ethnologue.com/language/teo/)",
+      "Mzee Lima S. scribbles – Clans of Iteso of Uganda and Kenya (https://mzeelimasierra.wordpress.com/2021/01/10/clans-of-iteso-of-uganda-and-kenya/)"
+    ]
   }
 }

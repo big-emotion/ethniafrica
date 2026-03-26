@@ -6,54 +6,71 @@
   "content": {
     "appellations": {
       "mainName": "Songo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nsongo",
+      "exonyms": ["Nsongo", "Ntsuo", "Nsong", "Sungu"],
+      "originOfExonyms": "Nsongo est la forme prefixee bantoue du nom propre, avec le prefixe de classe nominale n-/ns-. Songo est la forme simplifiee utilisee dans les sources portugaises et coloniales. Ne pas confondre avec les Songo de la RDC, peuple distinct.",
+      "whyProblematic": "Confusion frequente avec les Songo de la Republique Democratique du Congo, qui constituent un peuple distinct. La forme Nsongo est preferable pour l'identification linguistique precise.",
+      "contemporaryUsage": "Songo et Nsongo sont utilises indifferemment dans les sources anglophones et lusophonnes. Nsongo est le nom retenu par l'ISO 639-3 (code nsx) pour la langue.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Est",
+      "ethnoLinguisticGroup": "Bantou (zone H, Guthrie H.24), proche du Mbundu du Nord",
+      "historicalRegion": "Angola du Nord (province de Uige)",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Songo"],
+    "ethnicities": ["Songo", "Nsongo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Songo sont considered descendants des Mbundu qui habitaient l'Angola du Nord il y a plus de 2000 ans. Leur peuple est ne de la fusion entre des populations Mbutis et Mbundus locales et les vagues d'expansion bantoue qui ont penetre leur territoire. Leurs origines les lient etroitement aux peuples Mbundu du Nord, dont le Nsongo est considere comme un dialecte proche.",
+      "formationPeriod": "La formation du peuple Songo comme entite distincte remonte aux premiers siecles de l'ere chretienne, lors de l'expansion bantoue dans le nord de l'Angola. Leurs relations avec l'empire Lunda se sont formees avant le 18e siecle.",
+      "migrationRoutes": [
+        "Expansion bantoue depuis l'ouest-central africain (region Cameroun-Nigeria)",
+        "Installation dans les plaines du nord de l'Angola le long du systeme fluvial de Uige"
+      ],
+      "historicalSettlementZones": [
+        "Province de Uige, nord de l'Angola",
+        "Plaines et plateaux fertiles au nord de l'Angola"
+      ],
+      "unificationsOrDivisions": "Les Songo ont ete integres dans la sphere d'influence de l'empire Lunda jusqu'a la fin du 18e siecle. Leur region a ensuite connu l'expansion Chokwe avant la colonisation europeenne.",
+      "externalInfluences": "Sous la domination de l'empire Lunda jusqu'a la fin du 18e siecle. Contacts commerciaux avec les Portugais des le 15e siecle (echange d'ivoire contre des armes a feu). Tentative d'occupation Chokwe renversee par le colonialisme europeen. Evangelisation par des missionnaires il y a plus de 100 ans; christianisme aujourd'hui dominant.",
+      "majorHistoricalEvents": "Commerce avec les Portugais a partir du 15e siecle. Domination de l'empire Lunda jusqu'a la fin du 18e siecle. Renversement de la domination Lunda par les Chokwe. Colonisation portugaise et depart progressif de la structure politique traditionnelle. Independance de l'Angola en 1975 et guerre civile (1975-2002) ayant profondement marque les populations du nord."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie patrilineaire: le titre de chef se transmet du pere au fils, de generation en generation. Le chef (sobado) dirige la communaute avec l'appui des anciens.",
+      "clanOrganization": "Organisation avunculaire: les garcons de cinq ans sont confies a l'oncle maternel pour leur education. Cette pratique perpetue les liens de la famille elargie et garantit la transmission des valeurs et de la ligne familiale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme combine elements patrilineaires (succession du chef) et matrilineaires (elevation des enfants par l'oncle maternel). Les fils sont consideres comme appartenant au cote maternel de la famille.",
+      "religiousAuthority": "Croyances traditionnelles centrees sur les esprits ancestraux. Le christianisme, introduit par des missionnaires il y a plus d'un siecle, est hoje majoritaire (environ 80% de chretiens), mais des croyances en la sorcellerie persistent comme explication de malheurs."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nsongo (Songo)",
+      "isoCodes": ["nsx"],
+      "dialects": [],
+      "vehicularRole": "Le nsongo est parle comme langue maternelle dans la province de Uige, nord Angola. Le portugais est la langue officielle et vehiculaire national. Le nsongo est consideré proche du Mbundu du Nord; certains linguistes le traitent comme un dialecte de cette langue."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Elevation des garcons par leurs oncles maternels (avunculat): pratique centrale de la socialisation et de la transmission culturelle. Poterie de haute qualite avec influences Chokwe (sculptures-portraits de la famille royale vivante et defunte). Pratiques d'agriculture incluant brulis et rotation des cultures.",
+      "symbols": "Ceramiques et sculptures-portraits du lignage royal. Ivoire (objet de commerce historique). Epee et lance en bois (armes traditionnelles).",
+      "artsAndMusic": "Ceramique de qualite, similaire en style aux pieces Chokwe avec lesquelles elles sont parfois confondues. Sculptures-portraits commemoratives de membres royaux. Echanges commerciaux de produits artisanaux.",
+      "spiritualities": "Croyances animistes traditionnelles centrees sur les esprits ancestraux. Presence importante du christianisme (environ 80% de la population selon le Joshua Project), mais le christianisme reste souvent formel et syncrétique. Croyances persistantes en la sorcellerie: les malheurs (maladies, catastrophes naturelles) sont parfois attribues a des actes humains malveillants."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Songo vivaient sous la domination de l'empire Lunda jusqu'a la fin du 18e siecle. Ils ont ensuite ete confrontes a l'expansion du peuple Chokwe avant la colonisation europeenne.",
+      "relationsWithNeighbors": "Voisins des Mbundu du Nord, des Chokwe et des peuples de l'empire Lunda. Relations commerciales etablies avec les Portugais depuis le 15e siecle. Conflits recurrents avec des voisins agressifs.",
+      "conflictsOrAlliances": "Domination successive par l'empire Lunda et les Chokwe. Resistance passive a la colonisation portugaise. Impact severe de la guerre civile angolaise (1975-2002) sur les communautes Songo du nord du pays.",
+      "diaspora": "Certains Songo ont migre vers les grandes villes angolaises, notamment Luanda, lors de la guerre civile. La toxicomanie et la sorcellerie sont citees comme problemes sociaux actuels lies aux deplacements et aux traumatismes post-conflictuels."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 268000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Bantu Questionnaire Songo (University of Missouri, 2011): environ 128 000. Joshua Project / Swordshare Map: 260 000. Estimation 2025 sur base de croissance demographique angolaise (3% par an).",
+      "distributionByCountry": [{ "country": "AGO", "population": 268000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Bantu Questionnaire Songo – University of Missouri, 2011 (https://dice.missouri.edu/assets/docs/niger-congo/Songo.pdf)",
+      "Joshua Project – Songo, Nsongo in Angola (https://joshuaproject.net/people_groups/19052)",
+      "Swordshare Map – Songo NSX (https://map.swordshare.com/nsx)",
+      "Wikipedia – Nsongo language (https://wikipedia.nucleos.com/viewer/wikipedia_en_all_maxi_2025-08/Nsongo_language)",
+      "GhanaWeb – Songo, the African tribe where children are raised by their uncles (https://www.ghanaweb.com/GhanaHomePage/africa/Songo-the-African-tribe-where-children-are-raised-by-their-uncles-1757216)",
+      "ISO 639-3 – code nsx: Nsongo (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
+      "ScriptSource – Language Songo NSX (https://scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=nsx)"
+    ]
   }
 }

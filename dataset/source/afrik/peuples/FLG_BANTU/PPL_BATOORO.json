@@ -6,61 +6,87 @@
   "content": {
     "appellations": {
       "mainName": "Batooro",
-      "selfAppellation": "",
-      "exonyms": ["Toro"],
-      "originOfExonyms": "Le terme 'Toro' vient du nom du royaume historique du Toro",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abatooro",
+      "exonyms": ["Toro", "Batoro"],
+      "originOfExonyms": "Le terme Toro derive du nom du royaume historique fonde vers 1830 par le prince Kaboyo Olimi I. L'ethnonyme Abatooro signifie litteralement 'les ceremonieux' ou 'le peuple de la ceremonie', de la racine omutooro (dignite, ceremonie).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Batooro est employe couramment dans le contexte ougandais aussi bien par la communaute elle-meme que dans les documents officiels. Le nom Toro designe egalement le royaume constitutionnel subnational reconnu par la constitution ougandaise de 1995.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Ouest de l'Ouganda",
+      "ethnoLinguisticGroup": "Bantou (Zone J, groupe Lacustrin)",
+      "historicalRegion": "Ouest de l'Ouganda, region des Grands Lacs",
       "currentCountries": ["UGA"]
     },
-    "ethnicities": ["Batooro"],
+    "ethnicities": ["Batooro", "Bahuma", "Bairu", "Babiito"],
     "origins": {
-      "ancientOrigins": "Les Batooro sont originaires de l'ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume du Toro, scission du Bunyoro au XIXe siècle.",
-      "formationPeriod": "N/A",
+      "ancientOrigins": "Les Batooro sont un peuple bantou originaire de la region des Grands Lacs d'Afrique orientale. Selon la tradition orale, leurs ancetres comprennent les Batembuzi et les Bagabu, pionniers de la region, ainsi que les Bachwezi et les Babito d'origine nilotique venus du nord. Les Bantous de la zone J se sont propages depuis le bassin du Congo il y a plusieurs siecles. La legende fondatrice rattache les Batooro aux dynasties Bachwezi (mythiques) puis Babiito.",
+      "formationPeriod": "Le Royaume du Toro fut fonde vers 1822-1830 lorsque le prince Kaboyo Olimi Kasunsunkwanzi, fils du roi Omukama Kyebambe III de Bunyoro, fit secession et annexa la partie meridionale du royaume de son pere, placant la frontiere nord a la riviere Muziizi.",
       "migrationRoutes": [
-        "Migrations depuis les régions des Grands Lacs. Expansion vers l'ouest de l'Ouganda. Déplacements vers les zones urbaines."
+        "Expansion bantou depuis le bassin du Congo vers la region des Grands Lacs",
+        "Etablissement dans l'Ouganda occidental (actuels districts de Kabarole, Kyenjojo, Kyegegwa, Kamwenge, Kitagwenda, Ntoroko, Kasese)",
+        "Mouvements de populations vers les centres urbains au XXe siecle"
       ],
-      "historicalSettlementZones": ["Ouest de l'Ouganda"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "District de Kabarole (Fort Portal)",
+        "District de Kyenjojo",
+        "District de Kyegegwa",
+        "District de Kamwenge",
+        "District de Kitagwenda",
+        "District de Ntoroko",
+        "District de Kasese"
+      ],
+      "unificationsOrDivisions": "Le Toro faisait partie du grand empire de Kitara avant la secession de 1830. Le royaume fut temporairement reconquis par le roi Kabalega de Bunyoro dans les annees 1880. Un prince Toro fut reinstalle sur le trone en 1891 par les Britanniques. Le royaume fut aboli en 1967 sous le president Obote, puis retabli en 1993 comme institution culturelle.",
+      "externalInfluences": "Influence Bunyoro (partage de dynasties et de regalia royaux). Presence coloniale britannique a partir des annees 1890, qui reinstaura le prince Kasagama en echange de la loyaute et de concessions foncieres. Influence de l'islam et du christianisme a partir de la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Fondation du royaume vers 1830 par Kaboyo Olimi I. Invasion de Kabalega de Bunyoro (fin XIXe siecle). Protectorat britannique (1891). Abolition des royaumes par Obote en 1967. Reinstauration du royaume en 1993 avec Omukama Oyo Nyimba Kabamba Iguru Rukidi IV, couronne a l'age de 3 ans, devenant le plus jeune roi de l'histoire du Toro."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Toro). Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme monarchique centralise. L'Omukama (roi hereditaire de la dynastie Babiito) est a la tete du royaume, assiste d'une hierarchie de chefs (abakungu) et d'une armee. Les villages sont diriges par un ancien elu (mukuru w'omugongo), les familles par l'homme le plus age (Nyineka). Depuis 1993, l'Omukama est chef culturel reconnu par la constitution ougandaise, sans pouvoir politique direct.",
+      "clanOrganization": "Organisation clanique patrilineaire. Les principaux clans sont: Ababiito (clan royal), Abasiita, Abagweri, Abasumbi, Abaitara, Abaziira, Abaliisa, Abachwamba, Ababopi, Abachaaki, Abanyonza, Abagimu, Ababooro, Abasaigi, Abaisanza, Abalebeki, Abanekera, Abagumba, Abayaga, Ababwiju, Abahinda, Abasambu, Abasingo, Abafumambogo. Chaque clan possede un totem (engabi, entimba, enjojo, etc.).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee paternelle determine l'appartenance clanique. Il est tabou d'epouser quelqu'un de son propre clan ou du clan maternel. Les chefs de lignee (abakulembezi) agissent comme conseillers et arbitres des disputes. L'exception traditionnelle a l'exogamie concerne la famille royale pour preserver la purete du sang royal.",
+      "religiousAuthority": "L'Omukama est eleve au rang de divinite lors de ceremonies speciales (accueilli comme Okaali). Le mufumu (devin) est consulte en cas de maladie, mort ou malheur pour interpreter les exigences des emandwa (esprits). Le culte Mamdwa comprend des sanctuaires dans chaque maison avec offrandes, tambours (entimbho) et trompettes."
     },
     "languages": {
-      "mainLanguage": "Rutooro (ttj)",
+      "mainLanguage": "Rutooro",
       "isoCodes": ["ttj"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Rutooro de Kabarole",
+        "Rutooro de Kyenjojo",
+        "Rutooro de Kyegegwa"
+      ],
+      "vehicularRole": "Le Rutooro est la langue vernaculaire principale du royaume du Toro. Il est etroitement apparente au Runyoro (code ISO nyo) avec lequel il est parfois regroupe sous l'appellation Runyoro-Rutooro. Le swahili et l'anglais sont utilises comme langues de communication interethnique et officielles en Ouganda."
     },
     "culture": {
-      "Rites majeurs": "Traditions royales. Cérémonies royales. Cérémonies de mariage traditionnelles. Rites de passage. Cérémonies liées à l'agriculture.",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonie de nomination (a 4 jours pour les garcons, 3 jours pour les filles): presence des anciens du clan, choix du nom empaako par les tantes paternelles, repas de millet et boeuf fume, plantation d'arbre. Rites de mariage elabores: kibonabuko (intermediaire), negociation de la dot (vaches, chevres, houes), ceremonies okujuka, okuterura amata (grains de cafe et lait), okubukara (assis sur les genoux des parents), aspersion d'eau herbacee. Rites funeraires: lavage du corps, deuil differentencie hommes/femmes.",
+      "symbols": "Les regalia royaux comprennent tambours, fourches en fer, lances, cuillers en bois, trones, couronnes, perles, haches et couteaux. Le taureau blanc (Rutale) et le coq blanc sont utilises dans les ceremonies de couronnement. L'arbre plante lors des naissances symbolise l'identite clanique.",
+      "artsAndMusic": "Artisanat traditionnel: vannerie (plateaux a vanner, paniers plats, sacs, paniers de recolte), forge (lances, houes, couteaux, pointes de fleches), fabrication d'ecorce battue (bark-cloth), production de sel, poterie (pots a eau, biere, sauce). Danse traditionnelle Kinyege. Danse de cour Orunyege-Ntogoro. Musique pour les ceremonies emandwa (tambours entimbo, trompettes). Vetements traditionnels: suuka pour les femmes (soie/sari), kanzu pour les hommes.",
+      "spiritualities": "Croyance en Ruhanga, createur supreme bienveillant. Monde peuple d'esprits malefiques, sorciers et mediums. Culte emandwa: esprits ancestraux veneres dans des sanctuaires domestiques, apaises par des offrandes et ceremonies nocturnes avec tambours. Divination par le mufumu consulte pour maladies et malheurs. Langage code lors des ceremonies (termes empruntant au Runyankole). Maladies et deces attribues a la magie noire ou aux fantomes. Christianisme (catholique 48,8%, anglican 30,8%) et islam (5,4%) tres presents depuis la fin du XIXe siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Royaume du Toro (XIXe siècle - présent). Scission du Bunyoro au XIXe siècle. Traditions royales.",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume du Toro fonde vers 1830, issu de la secession du Bunyoro. Succession: Kaboyo Olimi I (fondateur), Nyaika, Kasagama (reinstalle par les Britanniques en 1891), Rukidi III, Oyo Nyimba Kabamba Iguru Rukidi IV (actuel depuis 1993). Le royaume faisait partie du grand empire de Kitara sous la dynastie Bachwezi puis Babiito. Reconnue constitutionnellement en Ouganda comme monarchie subrnationale.",
+      "relationsWithNeighbors": "A l'est: Banyoro (anciens suzerains, partage de dynasties et d'empaako). Au nord: Bamba et Bakonjo (zones du Rwenzori). Au sud-est et a l'ouest: Banyankore. A l'est: Baganda. Accueil de migrants Bakiga, Bafumbira et Banyarwanda. Pratique de la fraternite de sang (bunyankore) avec les peuples voisins.",
+      "conflictsOrAlliances": "Guerre de secession contre Bunyoro vers 1830. Reconquete temporaire par Kabalega de Bunyoro (annees 1880). Alliance avec les Britanniques (1891) pour la reinstauration du roi Kasagama en echange de la loyaute, de la taxation et de concessions foncieres et minieres. Le Toro, comme Bunyoro, Buganda et Ankole, fut aboli en 1967 et reinstalle en 1993.",
+      "diaspora": "Des migrations vers les zones urbaines ougandaises (Kampala, Entebbe) ont eu lieu au XXe siecle en raison des opportunites economiques. Des Batooro se trouvent dans differentes regions d'Ouganda mais la majorite reste concentree dans les districts du Toro occidental."
     },
     "demography": {
-      "totalPopulation": 1,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Fiche pays UGA, estimations ONU"
+      "source": "Joshua Project (2024), estimation basee sur le recensement ougandais 2014 (districts du Toro: 1 million) avec projection 2025",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 1200000,
+          "note": "Districts de Kabarole, Kamwenge, Kyegegwa, Kyenjojo, Kitagwenda, Ntoroko, Kasese"
+        }
+      ]
     },
     "sources": [
-      "Fiche pays UGA",
-      "SIL Ethnologue – Rutooro language (ttj)",
-      "CIA World Factbook – Uganda"
+      "Tooro people – Wikipedia (https://en.wikipedia.org/wiki/Tooro_people)",
+      "Tooro language – Wikipedia (https://en.wikipedia.org/wiki/Tooro_language)",
+      "Exploring the Rich Culture of the Batooro People – Kitara Foundation for Sustainable Tourism, 2025 (https://kitararcc.com/batooro-people/)",
+      "Toro – History, Culture and Traditions – Encyclopedia Britannica, 1998 (https://www.britannica.com/topic/Toro-people)",
+      "Batooro in Uganda – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15561)",
+      "Tooro Language (TTJ) – Ethnologue SIL (https://www.ethnologue.com/language/ttj/)",
+      "Language Runyoro-Rutooro – WALS Online (https://wals.info/languoid/lect/wals_code_rru)"
     ]
   }
 }

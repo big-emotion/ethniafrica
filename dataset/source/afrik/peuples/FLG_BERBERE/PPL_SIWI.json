@@ -2,26 +2,99 @@
   "id": "PPL_SIWI",
   "nameMain": "Siwi",
   "languageFamilyId": "FLG_BERBERE",
-  "currentCountries": ["EGY"],
+  "currentCountries": ["EGY", "LBY"],
   "content": {
     "appellations": {
       "mainName": "Siwi",
       "selfAppellation": "Isiwan",
+      "exonyms": ["Siwan", "Siwians", "Oasis Berber", "Berbere de Siwa"],
+      "originOfExonyms": "Le terme Siwi derive du nom de l'oasis de Siwa, lui-meme d'origine libyco-berbere ancienne. L'exonyme arabe est Siwiyyun (سيويون). Les coloniaux europeens utilisaient Siwians ou Oasis Berber. Le terme Dankal, parfois employe pour des populations voisines, n'est pas utilise pour les Siwi.",
+      "whyProblematic": "Le terme Siwi designe a la fois le peuple et sa langue, ce qui peut preter a confusion. De plus, les Siwi ont longtemps ete ignores dans les classifications ethniques egyptiennes, qui ne reconnaissent pas officiellement les groupes berberes comme distincts de la population arabe.",
+      "contemporaryUsage": "Le terme Siwi est utilise en arabe egyptien et en francais pour designer ce peuple. Les locuteurs se designent eux-memes comme Isiwan (singulier Asiw). L'arabe egyptien est aujourd'hui la premiere langue vehiculaire de l'oasis depuis l'arrivee de la route goudronnee dans les annees 1980.",
       "linguisticFamily": "FLG_BERBERE",
-      "historicalRegion": "Oasis de Siwa (Égypte)",
-      "currentCountries": ["EGY"]
+      "ethnoLinguisticGroup": "Berbere oriental (groupe siwa)",
+      "historicalRegion": "Oasis de Siwa et oasis de Gara (desert occidental egyptien, pres de la frontiere libyenne)",
+      "currentCountries": ["EGY", "LBY"]
     },
-    "ethnicities": ["Communautés berbères de Siwa", "Tribu Aghurmi"],
-    "origins": {},
-    "organization": {},
-    "languages": {},
+    "ethnicities": [
+      "Isiwan de Siwa (communaute principale de l'oasis de Siwa)",
+      "Isiwan de Gara (communaute de l'oasis de Gara, pres de la frontiere libyenne)",
+      "Tribu Aghurmi (etablis autour du site antique d'Aghurmi, pres du temple de l'Oracle)",
+      "Tribu Shali (centre historique de Siwa, autour de la forteresse de Shali)",
+      "Communautes des palmiers (groupes agriculteurs lies aux plantations de dattes et d'olives)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Siwi sont les descendants des populations berberes autochtones qui peuplaient l'oasis de Siwa depuis au moins le 10e millenaire avant J.-C. Leur oasis est connue pour avoir ete habitee de facon continue depuis les temps prehistoriques. Les premiers contacts documentes avec l'Egypte pharaonique remontent a la 26e dynastie (664-525 av. J.-C.), quand une necropole y fut etablie. Les Grecs de Cyrene entretinrent des contacts avec Siwa des le 7e siecle av. J.-C., notamment pour consulter l'Oracle d'Ammon. L'historien arabe Al-Bakri (11e siecle) affirme que Siwa etait peuplee uniquement de Berberes ; Al-Idrisi (12e siecle) mentionne une majorite berbere avec une minorite arabe.",
+      "formationPeriod": "L'identite siwi distincte s'est consolidee au cours du Moyen Age islamique, quand l'oasis devint un centre commercial et spirituel isole. L'annexion par Muhammad Ali d'Egypte en 1820 marque l'entree officielle de Siwa dans l'Etat egyptien. Des revoltes contre la domination egyptienne eclatent au 19e siecle. La visite du roi Fuad Ier en 1928 marque l'affirmation d'un controle egyptien plus ferme. L'arrivee d'une route asphaltee dans les annees 1980 rompt l'isolement millenaire de l'oasis.",
+      "migrationRoutes": [
+        "Population autochtone du desert occidental egyptien, sans migration fondatrice documentee vers l'oasis",
+        "Contacts commerciaux anciens avec les Berberes de Sokna et Nafusa (Libye) a travers les pistes sahariennes",
+        "Influence des Bedouins Awlad Ali via des alliances commerciales et matrimoniales"
+      ],
+      "historicalSettlementZones": [
+        "Oasis de Siwa (desert occidental egyptien, gouvernorat de Matruh)",
+        "Oasis de Gara (70 km au nord de Siwa, pres de la frontiere libyenne)",
+        "Forteresse de Shali (centre historique fortifie de Siwa en kershef)",
+        "Site d'Aghurmi (zone du temple de l'Oracle d'Ammon)"
+      ],
+      "unificationsOrDivisions": "Les Siwi sont organises en dix tribus distinctes partageant la meme langue et culture. Historiquement, des conflits interclaniques eclataient frequemment autour du controle des palmiers et des sources d'eau. L'isolement geographique de l'oasis a contribue a maintenir une identite collective forte face aux influences exterieures arabes et egyptiennes.",
+      "externalInfluences": "Conquete d'Alexandre le Grand (331 av. J.-C.) qui visita l'Oracle d'Ammon de Siwa. Islamisation progressive a partir du 7e siecle. Domination ottomane indirecte via Le Caire. Colonisation italienne de la Libye voisine (debut 20e siecle). Base de la confrerie Senussi dans la lutte contre les Britanniques (1915-1917). Pression egyptienne croissante depuis 1820 et homogeneisation culturelle acceleree apres 1980.",
+      "majorHistoricalEvents": "En 331 av. J.-C., Alexandre le Grand consulta l'Oracle d'Ammon a Siwa, evenement fondateur dans l'histoire antique de l'oasis. Au 12e siecle, des conflits entre deux factions tribales (les Easterners et les Westerners) diviserent l'oasis pendant des siecles. En 1820, Muhammad Ali annexa Siwa a l'Egypte. En 1915-1917, l'oasis fut une base de resistance de la Senusiyya contre les Britanniques. En 1928, la visite de Fuad Ier mit fin aux pratiques culturelles les plus distinctives. L'arrivee de la television et de la route asphaltee dans les annees 1980 accelera l'arabisation."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe siwi est organisee en dix tribus (qabilat) dont chacune possede ses propres coutumes et ideaux. Un conseil tribal (majlis al-qabila) regule les conflits internes et les relations avec les autorites exterieures. Historiquement, des factions antagonistes (celles de l'est et de l'ouest) ont structure la vie politique locale. Les chefs de tribus (shuyukh) exercent une autorite coutumiere reconnue, meme sous administration egyptienne.",
+      "clanOrganization": "Les dix tribus siwi sont endogames : les mariages avec des non-Siwi sont rares et considered socialement degrades. Un systeme de solidarite tribale (asabiyya) regule les droits fonciers sur les palmiers dattiers et les oliveraies. Les tribus se repartissent historiquement entre celles de l'est et celles de l'ouest de l'oasis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les droits sur les palmiers dattiers et les oliveraies sont transmis par lignage patrilineaire. Le statut social est herite du pere. Les familles Siwi maintiennent des registres genealogiques oraux remontant a plusieurs generations.",
+      "religiousAuthority": "L'islam sunnite est la religion dominante depuis le Moyen Age. Les imams des mosquees locales exercent une autorite morale et juridique. La confrerie Senussi (Sanusiyya) a eu une forte influence au debut du 20e siecle. Le culte du saint patron Sidi Solayman (Suleyman) structure la vie religieuse collective a travers la fete Siyaha."
+    },
+    "languages": {
+      "mainLanguage": "Siwi (Jlan n Isiwan)",
+      "isoCodes": ["siz"],
+      "dialects": [
+        "Siwi de Siwa (variete principale, parlee dans l'oasis centrale)",
+        "Siwi de Gara (variete de l'oasis de Gara, legerement differente du siwi de Siwa)"
+      ],
+      "vehicularRole": "Le siwi est la langue maternelle d'environ 15 000 a 20 000 personnes dans les oasis de Siwa et de Gara. C'est la seule langue berbere indigene a l'Egypte et la communaute berbere la plus orientale. Tous les locuteurs siwi sont aussi bilingues en arabe egyptien (Masri), devenu la langue dominante des echanges quotidiens depuis l'ouverture de l'oasis dans les annees 1980. Le siwi n'est pas enseigne dans les ecoles et n'a pas de statut officiel."
+    },
     "culture": {
-      "source_0": "Rituels de l’oasis, fêtes agricoles.",
-      "source_1": "Architecture en kershef.",
-      "source_2": "Tradition du henné et des bijoux siwi."
+      "majorRites": "La fete Siyaha (Eid El Solh ou Eid El Hasad) est le rite collectif le plus distinctif des Siwi : les hommes se reunissent sur le mont Gabal Al-Dakrour pour manger, chanter des chants spirituels et se reconcilier. Toutes les maisons cooperent a la preparation des repas collectifs (fattah : riz, pain grille, viande). Les femmes restent au village et celebrent avec danses, chants et tambours. La fete dure trois jours lunaires et se termine par une procession jusqu'a la place Sidi Solayman. Le mariage est un rite majeur : les femmes portent l'ensemble complet de bijoux en argent (jusqu'a 5-6 kilos), dont le grand disque adrim et le collier aghraw. La circoncision est celebree comme rite de passage masculin. La fete de l'Achoura est marquee par des torches et l'echange de sucreries entre enfants.",
+      "symbols": "Le grand disque d'argent adrim et le collier aghraw sont les symboles du statut de mariee siwi. Les motifs graves sur les bijoux en argent et les broderies des vetements feminins reprennent des signes ancestraux lies a l'histoire, aux croyances et a la protection contre le mauvais oeil. Le chale enveloppant tarfutet est distinctif de la femme siwi. L'architecture en kershef (brique de sel et argile) est le symbole architectural de l'oasis.",
+      "artsAndMusic": "L'artisanat siwi comprend la vannerie, la poterie, la broderie et surtout la joaillerie en argent. Les silversmiths (artisans joailiers) fabriquent des pendentifs, bagues, boucles d'oreilles, ornements de cheveux et disques pectoraux. Les motifs geometriques des broderies sur robes, pantalons et chales feminins constituent un art textile distinctif. La musique rituelle est pratiquee lors de la fete Siyaha (chants spirituels d'hommes sur la montagne) et lors des celebrations feminines (tambours, chants). La tradition musicale siwi est intimement liee aux rites religieux et saisonniers.",
+      "spiritualities": "Les Siwi sont musulmans sunnites et tres pratiquants : pendant le Ramadan, les commerces ferment et les habitants restent chez eux. Ils celebrent l'Aid el-Fitr (lEid ahakkik, le petit Aid) et l'Aid el-Adha (lEid azuwwar, le grand Aid) selon les traditions islamiques locales. Le culte du saint patron Sidi Solayman structure la vie spirituelle collective. La confrerie soufi Senussi a joue un role majeur au debut du 20e siecle. Des croyances pre-islamiques persistent dans le culte des sources thermales purificatrices et dans les motifs protecteurs des bijoux (contre le mauvais oeil)."
     },
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (swh)", "Siwa Heritage Foundation"]
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'oasis de Siwa etait connue dans l'Antiquite pour son Oracle d'Ammon (Amun), consulte par Alexandre le Grand en 331 av. J.-C. et par de nombreuses delegations grecques et puniques. Les pretres de l'Oracle constituaient une elite religieuse et politique locale. A l'epoque medievale islamique, Siwa etait dirigee par des chefs tribaux (shuyukh) sans formation etatique distincte. La Sanusiyya etablit un emirat de facto dans l'oasis au debut du 20e siecle.",
+      "relationsWithNeighbors": "Les Siwi entretenaient un systeme d'alliance specifique avec les Bedouins Awlad Ali : chaque Siwi (et ses descendants) etait lie d'amitie a un Bedouin specifique (et ses descendants), se hebergeant mutuellement et echangeant dattes et olives contre produits animaux et cereales. Des tensions existaient avec les communautes arabes et egyptiennes croissantes dans l'oasis. Des relations commerciales avec les Berberes de Sokna et Nafusa (Libye) sont documentees.",
+      "conflictsOrAlliances": "Des conflits internes entre factions de l'est et de l'ouest de l'oasis ont marque l'histoire medievale de Siwa. En 1915-1917, l'oasis fut le theatre d'une resistance arme de la Senusiyya contre les forces britanniques. Des revoltes contre l'autorite egyptienne ont eclate au 19e siecle apres l'annexion par Muhammad Ali en 1820.",
+      "diaspora": "La diaspora siwi est tres limitee en raison du fort attachement communautaire a l'oasis. Les Siwi sont traditionnellement endogames et migrent peu. On trouve quelques familles siwi dans les villes egyptiennes comme Le Caire et Alexandrie, mais elles constituent une tres petite communaute."
+    },
+    "demography": {
+      "totalPopulation": 28000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (28 000 total dont 27 000 en Egypte et 1 000 en Libye). Wikipedia et Siwa Oasis article estiment environ 25 000 a 30 000 Siwi dans les oasis. Ethnologue (siz) indique 15 000 a 20 000 locuteurs de siwi. La population totale de l'oasis de Siwa est estimee a 32 000 en 2020 (toutes communautes confondues).",
+      "distributionByCountry": [
+        {
+          "country": "EGY",
+          "population": 27000,
+          "note": "Principalement dans l'oasis de Siwa (gouvernorat de Matruh, desert occidental) et l'oasis de Gara"
+        },
+        {
+          "country": "LBY",
+          "population": 1000,
+          "note": "Petites communautes dans les oasis voisines de Libye orientale (region de Ghadames)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Siwa Oasis. https://en.wikipedia.org/wiki/Siwa_Oasis",
+      "Wikipedia EN — Siwi people. https://en.wikipedia.org/wiki/Siwi_people",
+      "Wikipedia EN — Siwi language. https://en.wikipedia.org/wiki/Siwi_language",
+      "Ethnologue — Siwi (siz). https://www.ethnologue.com/language/siz/",
+      "Joshua Project — Berber, Siwa in Egypt. https://joshuaproject.net/people_groups/14958/EG",
+      "Fakhry, Ahmed. Siwa Oasis. Cairo: The American University in Cairo Press, 1973.",
+      "Souag, Lameen. Siwa and its significance for Arabic dialectology. Zeitschrift fur Arabische Linguistik, 2009.",
+      "City Facts — Siwa Oasis demographics. https://www.city-facts.com/siwah/population"
+    ]
   }
 }

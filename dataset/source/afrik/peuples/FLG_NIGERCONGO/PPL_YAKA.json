@@ -6,60 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Yaka",
-      "selfAppellation": "Yaka",
-      "exonyms": ["Yaka (terme utilisé par les Européens)"],
+      "selfAppellation": "Bayaka (pluriel) / Muyaka (singulier)",
+      "exonyms": [
+        "Bayaka",
+        "Iaca",
+        "Iyaka",
+        "Kiyaka (designation de la langue)"
+      ],
+      "originOfExonyms": "Le terme Yaka est a l'origine un titre que les Kongo donnaient a leurs guerriers d'elite ('ceux qui capturent les balles et les fleches', ou 'les invincibles'). Lorsque les Lunda conquirent la region du Kwango au 17e siecle, ils adopterent ce titre valorisant comme identite collective. Le nom Iyaka ou Kiyaka designe la langue parlée. Le terme Iaca apparait dans les sources coloniales portugaises et belges.",
+      "whyProblematic": "Le nom Yaka recouvre une realite ethnique composite : une fusion historique de populations lunda (venues de l'est) et kongo (autochtones du Kwango). Des sous-groupes adjacents comme les Suku sont proches mais distincts. La stigmatisation coloniale — les agents belges decrivant les Bayaka comme 'guerriers et sauvages' pour justifier leur resistance a la colonisation — a laisse des stereotypes negatifs que la communaute Bayaka de Kinshasa continue de combattre.",
+      "contemporaryUsage": "Le terme Yaka (Bayaka au pluriel) est l'appellation officielle et auto-designee. Les Yaka vivent principalement dans la province du Kwango en RDC et sont reconnus comme groupe ethnique par l'Etat congolais. La langue Yiyaka (Kiyaka) fait l'objet de recherches academiques et est parlee par environ 900 000 personnes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "COD, AGO",
+      "ethnoLinguisticGroup": "Bantou Zone H (H.30) — groupe Yaka-Suku, issu de la fusion linguale Lunda-Kongo",
+      "historicalRegion": "Region du Kwango — plateau et savane boisee entre les fleuves Kwango et Wamba, province du Kwango (anciennement province du Bandundu), sud-ouest de la RDC",
       "currentCountries": ["COD", "AGO"]
     },
-    "ethnicities": ["Yaka de RDC", "Yaka d'Angola", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Yaka du Kwango central — territoire de Kenge et Popokabaka, zone du royaume de Kabamba-Lunda",
+      "Yaka du Kahemba — territoire de Kahemba, proches des Lunda de Nzofu",
+      "Yaka du Feshi — territoire de Feshi, issus des Basuku dissidents",
+      "Suku — groupe parent et adjacent (parfois distingue des Yaka, parfois regroupe avec eux)",
+      "Mbala, Tsamba, Hungana, Pindi — clans kongo incorpores au royaume Yaka lors de sa formation"
+    ],
     "origins": {
-      "ancientOrigins": "Les Yaka sont originaires de la région de la RDC et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "La region du Kwango etait habitee par des populations kongo (Mbala, Tsamba, Hungana, Pindi, Ngongo) avant le 17e siecle. Les Yaka resultent de la fusion entre ces populations kongo autochtones et les conquérants lunda venus de l'est. Le roi Kabamba conduisit l'expansion lunda vers l'ouest vers le 17e siecle, incorporant les clans kongo du Kwango dans un nouveau royaume unifie. Les Lunda adopterent le nom Yaka et la langue kongo (d'ou l'appartenance du kiyaka a la zone H, proche du kikongo), tandis que les chefs lunda epousaient des femmes kongo, creant une societe metisse.",
+      "formationPeriod": "Le royaume Yaka se consolide au 17e siecle sous la direction de Kabamba-Lunda. Une ceremonie de reconciliation — ou les representants kongo et lunda mangerent ensemble de la viande crue de perroquet, chien et chat — scella la paix entre les deux nations et marqua la fondation symbolique du royaume. Des sources alternatives suggèrent qu'il existait un ancien royaume Yaka qui fut vaincu et soumis par l'expansion de l'Empire Lunda vers 1730, avant la synthese politique du 17e siecle.",
+      "migrationRoutes": [
+        "Expansion lunda depuis l'est (bassin du Kasai) vers le Kwango, conduite par le roi Kabamba, vers le 17e siecle",
+        "Mouvement des groupes kongo originaux (Mbala, Tsamba, etc.) vers le Kwilu sous la pression lunda, laissant derriere eux des elements qui se fondirent dans le royaume Yaka",
+        "Exil de certains chefs Kabamba vers l'Angola lors de la resistance coloniale (kabamba Koko Kodia Puanga, 1915)"
+      ],
+      "historicalSettlementZones": [
+        "Territoire de Kenge — coeur du royaume de Kabamba-Lunda",
+        "Territoire de Popokabaka — sud du Kwango",
+        "Territoire de Kahemba — zone Lunda-Nzofu a la frontiere angolaise",
+        "Territoire de Feshi — zone des Basuku dissidents",
+        "Kinshasa — forte presence Bayaka dans la capitale, notamment lie aux activites de commerce et de travail"
+      ],
+      "unificationsOrDivisions": "L'unite du royaume Yaka etait maintenue par l'autorite du kiambv (chef supreme, Kabamba-Lunda) et d'un systeme de 41 nobles (bilio) gouvernant les clusters de villages. La resistance acharnee a la colonisation belge (guerres de 1892 et 1893, resistance civile jusqu'en 1960) maintint une conscience identitaire forte. La participation au mouvement d'independance via le parti LUKA (Union Kwangolaise pour la Liberte et l'Independance) renforce cette cohesion.",
+      "externalInfluences": "Penetration de l'Empire Kongo affaibli par les incursions portugaises (avant le 17e siecle). Expansion de l'Empire Lunda (17e siecle). Administration de Leopold II (concessionnaire du Congo) : guerres coloniales de 1892-1893, assassinat du roi Kabamba. Cession au gouvernement belge (1908) : resistance passive jusqu'en 1960. Mission catholique (Peres du Saint-Esprit, Peres Redemptoristes) : evangelisation du Kwango. Independance du Congo (1960) : participation active des Bayaka. Conflits armes en RDC (1990s-2000s) : impact sur la region du Kwango.",
+      "majorHistoricalEvents": "Formation du royaume Yaka par fusion Lunda-Kongo (17e siecle). Premiere guerre contre la Force Publique de Leopold II (1892). Assassination du roi Kabamba Tsiimba Nkumbi (1893) ; debut de la resistance civile. Exile du roi Kabamba Koko Kodia Puanga en Angola (1915). Creation du parti LUKA (Union Kwangolaise) et participation massive des Bayaka de Kinshasa a l'independance (1959-1960)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe Yaka est hierarchisee autour du kiambv (paramount chief, Kabamba-Lunda), reconnu par l'Etat congolais comme chef coutumier. Sous lui, 41 nobles (bilio, singulier yilolo) gouvernent des clusters de villages. Chaque village est dirige par un tulamba (chef de la terre). Les tributs (parties d'animaux puissants : leopard, elephant ; coquillages ndzimbu servant de monnaie) etaient verses au chef supreme. Le chef supreme est cense regner egalement sur le monde souterrain et posseder des pouvoirs surnaturels de voyance et de sorcellerie protectrice (uniquement pour le bien de la communaute).",
+      "clanOrganization": "La societe Yaka est matrilineaire pour la transmission du sang et de l'identite clanique, mais incorpore egalement un systeme de nom patrilineaire (patronyme). Les elders de matrilineage portent le hachoir khaandu (lame sortant de la gueule d'une tete sculptee) comme symbole d'autorite verbale. Les coupes ceremoniales en bois a double gueule (kyopa) pour le vin de palme sont transmises de generation en generation avec des instructions sur le respect des membres du lignage.",
+      "ageClassSystems": "Le nkanda (ou nkhanda) constitue le principal cadre d'integration des classes d'age masculines. Les novices circoncis (tundansi) forment une cohorte qui traverse ensemble les etapes du nkanda. Le tulombusi est le maitre d'initiation. Apres le nkanda, les initiés accèdent au statut d'adultes reconnus dans la communaute.",
+      "roleOfLineages": "La matrilinearite determine la transmission du clan, des droits sur les terres ancestrales, et de l'autorite spirituelle. Les elders de matrilineage sont respectes et craints — leur desapprobation peut causer malheur et maladie. Les offrandes (vin de palme, viande sechee, champignons) aux ancetres deceased sont deposees aux tombes, qui sont souvent construites dans des enclos ou des habitations avec plantation des arbres n-saanda et n-yoombu.",
+      "religiousAuthority": "Les autorites religieuses traditionnelles incluent les chefs (qui exercent des pouvoirs de sorcellerie protective), les devins (nganga) qui consultent les figures mbwoolo sculptees et le tambour-a-fente mukoku pour interpreter les songes et communiquer avec les ancetres, et les guerisseurs rituels. Les missionnaires catholiques (Peres du Saint-Esprit) ont converti une grande partie de la population au christianisme. Un syncrétisme entre catholicisme et croyances ancestrales est commun."
     },
     "languages": {
-      "mainLanguage": "Yaka",
-      "vehicularRole": "Le yaka est parlé par la majorité des Yaka. Le français, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Yaka (Yiyaka / Kiyaka)",
+      "isoCodes": ["yaf"],
+      "dialects": [
+        "Yaka proprement dit (Yaka proper) — dialecte principal, parle dans le territoire de Kenge et Popokabaka",
+        "Ngoongo — second dialecte, parle dans des zones specifiques du Kwango"
+      ],
+      "vehicularRole": "La langue Yaka (Yiyaka) est parlee par environ 900 000 personnes en RDC (principalement dans la province du Kwango) et par une minorite en Angola. C'est une langue bantoue de Zone H (H.31), proche du kikongo dont elle derive historiquement. Elle s'ecrit avec l'alphabet latin. Une traduction de la Bible en yaka est disponible. Le lingala et le francais sont utilises comme langues vehiculaires aux niveaux regional et national en RDC. En Angola, le portugais est la langue officielle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels yaka, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Le nkanda (ou nkhanda) est le rite d'initiation masculin fondamental : lorsqu'un nombre suffisant de garcons en age pubertaire est disponible, les anciens du village organisent la circoncision collective. Contrairement aux voisins qui circumcisent a la naissance, les Yaka attendent la puberte. Apres la circoncision, les tundansi (initiés) quittent le village pour une periode d'isolation d'un a trois ans dans la brousse, sous la direction des tulombusi (instructeurs). Ils apprennent les responsabilites, les valeurs morales et les competences de survie de l'homme adulte, sont interdits de contact avec les femmes. La sortie du nkanda est celebree par une ceremonie de danse des masques (mbala, kholuka, kakuungu), ou les tundansi ont sculpt leurs propres masques, juges sur la creativite et l'execution. L'ibhoma (hutte d'initiation) est ensuite brûlee. Les rites funeraires incluent des sacrifices animaliers et des offrandes aux tombes ancestrales.",
+      "symbols": "Les masques du nkanda sont le symbole culturel le plus reconnu des Yaka : bulbeux, avec des nez retournes vers le haut (upturned noses), des yeux en globules saillants, et des coiffes elaborate en forme de casques en forme tete humaine, d'antilope ou de buffle. Le kazekedi (anneau de cheville et de bras en cuivre) est l'insigne supreme du chef supreme. Le mbeele phoko (epee double face gainee de bois en forme phallique) symbolise l'autorite du chef et n'est degaine qu'en cas d'execution ou de guerre. Le tsala (chapeau de perles a cone et plumes) distingue les nobles selon le rang (plumes blanches = rang superieur). Le khaandu (hachoir matrilineage) symbolise l'autorite de la parole des anciens.",
+      "artsAndMusic": "Les Yaka sont celebres dans les musees du monde entier pour leurs masques sculptes, particulierement les masques du nkanda aux nez retournes (kholuka, kakuungu, mbala, mundo, ndemba, kapita) et les statuettes mbwoolo utilisees en divination et guerison. Les statuettes mbwoolo sont generalement sculptees en bois avec des formes humaines abstraites (membres allonges, petites tetes), souvent ornees de perles metalliques et coquillages. Le tambour-a-fente mukoku sculpte (avec tete sculptee au sommet) est utilise pour les rythmes chamaniques et peut servir de receptacle medicinaux et de siege pour le devin. Les Yaka fabriquent aussi des paniers, outils de chasse et de peche, et diverses sculptures utilisees dans la vie quotidienne et ceremonielle. La musique repose sur les percussions, les tambours et les chants collectifs lors des ceremonies d'initiation.",
+      "spiritualities": "Le systeme spirituel Yaka repose sur la communication avec les ancetres (dont les tombes sont honourees par des offrandes et plantations d'arbres sacres) et la croyance en la sorcellerie (baloki : sorciers dont les activites antisociales doivent etre contenues par le chef). Les figures nkisi (statues de pouvoir) et les masques du nkanda sont charges de force spirituelle. Le chef supreme Kabamba-Lunda est cense gouverner egalement le monde souterrain et posseder des pouvoirs de voyance. Le catholicisme (missions du Kwango depuis le 19e siecle) est aujourd'hui largement adopte en syncrétisme avec les pratiques ancestrales. Les croyances en la connexion entre fertilite du chef et prosperite de la communaute sont fondamentales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora yaka dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le Royaume Yaka de Kabamba-Lunda, etabli au 17e siecle, etait selon les ethnologues belges 'l'un des royaumes les mieux organises et le plus resistant a la penetration occidentale' de toute l'histoire coloniale du Congo. Il s'etendait sur les cinq territoires du Kwango (Kenge, Popokabaka, Kahemba, Feshi, et les zones adjacentes). Le roi Kabamba Faustin fut le dernier souverain a resister ouvertement avant son assassinat en 1893 par la Force Publique de Leopold II.",
+      "relationsWithNeighbors": "Les Yaka entretenaient des relations de coexistence pacifique avec les Suku (groupe parent au sud) apres la consolidation du royaume. Des tensions existaient avec les groupes kongo du Kwilu voisin. Les Lunda de Nzofu (territoire de Kahemba) gardèrent une identite distincte tout en etant alliés. L'arrivee des agents de Leopold II en 1890 transforma ces relations internes en front commun de resistance.",
+      "conflictsOrAlliances": "Resistance farouche a la penetration coloniale belge : deux guerres majeures en 1892 et 1893 contre la Force Publique de Leopold II (l'agent principal belge perit dans le premier conflit). Apres 1893, resistance civile passive (refus de cooperation, desobeissance civile, reseau des 'hommes-leopard' Masiona). Boycott total de toute activite coloniale, y compris les projets de developpement, maintenu jusqu'a l'independance en 1960. Participation active des Bayaka de Kinshasa aux evenements de 1959-1960 qui precipiterent l'independance du Congo via le parti LUKA.",
+      "diaspora": "Une forte communaute Bayaka est presente a Kinshasa, la capitale de la RDC, ou elle joue un role dans le commerce, l'artisanat et la vie culturelle. La stigmatisation heritee du discours colonial (qualifiant les Bayaka de 'guerriers sauvages' pour justifier leur resistance) a persiste dans certains milieux de Kinshasa mais est contredite par les documentations academiques. Des refugies Yaka se sont etablis en Angola lors de la resistance coloniale et des conflits post-independance."
     },
     "demography": {
       "totalPopulation": 1000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (2024) : environ 900 000 locuteurs de la langue yaka (yaf) en RDC. Wikipedia (cite 300 000, estimation ancienne). 101lasttribes.com : environ 400 000 dans la region du Kwango. Estimations 2025 inclusives (RDC + Angola + diaspora) : environ 1 million. La croissance demographique de la RDC (environ 3 % par an) justifie la fourchette haute.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 950000,
+          "note": "Province du Kwango (anciennement Bandundu) : territoires de Kenge, Popokabaka, Kahemba, Feshi. Presence importante a Kinshasa."
+        },
+        {
+          "country": "AGO",
+          "population": 50000,
+          "note": "Zones frontalieres de la province du Kwango (Angola), communautes proches de Kahemba et Feshi"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Yaka language (yaf)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Yaka people. https://en.wikipedia.org/wiki/Yaka_people",
+      "Wikipedia EN — Yaka languages. https://en.wikipedia.org/wiki/Yaka_languages",
+      "Omniglot — Yaka language and alphabet. https://www.omniglot.com/writing/yaka.htm",
+      "Britannica — Yaka. https://www.britannica.com/topic/Yaka",
+      "Smarthistory — Headdress (Yaka peoples). https://smarthistory.org/headdress-yaka/",
+      "Metropolitan Museum of Art — N-kisyan-khanda (initiation headdress). https://www.metmuseum.org/art/collection/search/312435",
+      "Smithsonian Institution — Initiation rituals among Yaka people. https://www.si.edu/object/archives/components/sova-eepa-1973-001-ref35845",
+      "SIL Ethnologue — Yaka (yaf). https://www.ethnologue.com/language/yaf/",
+      "101 Last Tribes — Yaka people. https://www.101lasttribes.com/tribes/yaka.html"
     ]
   }
 }

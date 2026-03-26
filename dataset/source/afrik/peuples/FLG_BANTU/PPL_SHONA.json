@@ -6,64 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Shona",
-      "selfAppellation": "Shona",
-      "exonyms": ["Shona (terme utilisé par les Européens)"],
+      "selfAppellation": "Shona (chiShona)",
+      "exonyms": [
+        "Mashona (terme colonial britannique, parfois percu comme pejoratif)",
+        "Karanga (pour le sous-groupe dominant du plateau)"
+      ],
+      "originOfExonyms": "Le terme Mashona fut impose par les colons britanniques et les Ndebele voisins pour designer l'ensemble des peuples du plateau zimbabween. Le linguiste Clement Doke reconcilia en 1931 les dialectes en un standard nomme Shona.",
+      "whyProblematic": "Mashona est considere pejoratif car il fut utilise par les colonisateurs pour effacer les identites claniques distinctes (Karanga, Zezuru, Korekore, Manyika, Ndau, Kalanga).",
+      "contemporaryUsage": "Shona est aujourd'hui largement accepte comme terme d'auto-identification collectif au Zimbabwe et au Mozambique.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "ZWE, MOZ",
+      "ethnoLinguisticGroup": "Bantou meridional (Zone S, Shona cluster S10-S15)",
+      "historicalRegion": "Plateau du Zimbabwe, royaume de Great Zimbabwe, empire Mutapa, empire Rozvi (actuel Zimbabwe et Mozambique occidental)",
       "currentCountries": ["ZWE", "MOZ"]
     },
     "ethnicities": [
-      "Shona du Zimbabwe",
-      "Shona du Mozambique",
-      "Sous-groupes régionaux"
+      "Karanga — sous-groupe dominant du centre-sud du Zimbabwe, region de Masvingo, batisseurs du Grand Zimbabwe",
+      "Zezuru — sous-groupe du centre du Zimbabwe pres de Harare, base du shona standard moderne",
+      "Korekore — sous-groupe du nord du Zimbabwe, regions de Mvurwi, Bindura, Guruve",
+      "Manyika — sous-groupe de l'est du Zimbabwe (Mutare, Buhera, Nyanga) et du Mozambique occidental",
+      "Ndau — sous-groupe du sud-est (Chimanimani, Chipinge) et du Mozambique, partiellement distincts linguistiquement",
+      "Kalanga — sous-groupe du sud-ouest du Zimbabwe, intermelee avec les Ndebele",
+      "Rozvi — fraction historique issue du clan Changamire, heritiers de l'empire Rozvi (17e-19e siecle)"
     ],
     "origins": {
-      "ancientOrigins": "Les Shona sont originaires du Zimbabwe et du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Formation du royaume du Grand Zimbabwe.",
-      "unificationsOrDivisions": "Formation du royaume du Grand Zimbabwe. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Shona descendent des peuples bantous de la culture Gokomere (200-800 apr. J.-C.) qui fabriquaient le fer et pratiquaient l'agriculture sur le plateau du Zimbabwe. Leurs ancetres occupaient la region depuis au moins le 4e siecle apres J.-C. Les proto-Karanga s'etaient installes sur le site du futur Grand Zimbabwe des l'an 1000 environ.",
+      "formationPeriod": "L'identite shona collective se forme progressivement entre le 11e et le 15e siecle, portee par l'essor du royaume du Grand Zimbabwe. La classification linguistique unifiee est etablie par Clement Doke en 1931.",
+      "migrationRoutes": [
+        "Migration depuis le bassin du Congo vers la fin du premier millenaire vers le plateau zimbabween",
+        "Dispersion des Karanga vers le nord pour fonder l'empire Mutapa (15e siecle)",
+        "Migration des Rozvi vers le sud-ouest, etablissement du royaume de Butua centre sur Khami"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Zimbabwe (altitude 1000-1500 m), centre politique et agricole",
+        "Vallee du Zambeze, zone de l'empire Mutapa",
+        "Province de Masvingo, berceau du Grand Zimbabwe",
+        "Est du Zimbabwe et Mozambique occidental, zone Manyika et Ndau"
+      ],
+      "unificationsOrDivisions": "La montee en puissance du Grand Zimbabwe unifia les chefferies Karanga au 13e-14e siecle. Apres le declin du Grand Zimbabwe (15e siecle), l'empire Mutapa et le royaume de Butua (Rozvi) se partagerent le plateau. Les guerres de succession affaiblirent l'empire Mutapa exploite par les Portugais. En 1830, les Ndebele detruisirent l'empire Rozvi affaibli.",
+      "externalInfluences": "Commerce arabe et swahili par la cote (or, ivoire contre textiles et porcelaine). Penetration portugaise depuis le 16e siecle (empire Mutapa). Colonisation britannique (BSAC, 1890). Diffusion du christianisme par les missions depuis le 19e siecle.",
+      "majorHistoricalEvents": "Construction du Grand Zimbabwe (11e-15e siecle). Fondation de l'empire Mutapa (vers 1430). Etablissement de l'empire Rozvi par Changamire Dombo (1684). Destruction de l'empire Rozvi par les Ndebele (1830s). Fondation de la Rhodesie du Sud par la BSAC (1890). Independence du Zimbabwe (1980)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Grand Zimbabwe). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme royaliste hierarchise : le roi (mambo) regnait sur plusieurs chefs (sadunhu), eux-memes au-dessus de sous-chefs et chefs de village (sabhuku). Le mambo percevait les revenus miniers (or, cuivre) et controlait le commerce a longue distance. Systeme de conseils d'anciens et de mediums spirituels (svikiro) qui legitimaient le pouvoir royal.",
+      "clanOrganization": "Systeme de clans et sous-clans (mitupo, sing. mutupo) identifies par des totems animaux. Plus de 25 mitupo au Zimbabwe. Le mutupo sert a eviter l'inceste, renforcer la solidarite et l'identite clanique. Les principaux clans incluent les Shumba (lion), Nzou (elephant), Tembo (zebre), Shiri (oiseau) et Nzara (famine).",
+      "ageClassSystems": "Pas de systeme formel de classes d'age, mais des rites de passage marquent les transitions de vie (naissance, puberte, mariage, mort).",
+      "roleOfLineages": "Lignages patrilineaires determinant l'heritage, les alliances matrimoniales et l'appartenance clanique. L'exogamie clanique est obligatoire : on ne peut epouser quelqu'un du meme mutupo.",
+      "religiousAuthority": "Les mediums spirituels (svikiro ou mhondoro) servent d'intermediaires entre les vivants et les esprits ancestraux (midzimu/dzavadzimu). Ils legitimaient historiquement l'autorite royale et conseillaient les chefs en cas de crise. Aujourd'hui, chefs religieux chretiens et svikiro coexistent."
     },
     "languages": {
-      "mainLanguage": "Shona",
-      "vehicularRole": "Le shona est parlé par la majorité des Shona. L'anglais, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Shona (chiShona)",
+      "isoCodes": ["sna"],
+      "dialects": [
+        "Karanga (chiKaranga, S14) — Zimbabwe centre-sud, sous-dialectes : Duma, Jena, Mhari, Govera",
+        "Zezuru (chiZezuru, S12) — Zimbabwe central, base du shona standard; sous-dialectes : Shawasha, Harava, Njanja, Mbire",
+        "Korekore (S11) — Zimbabwe nord; sous-dialectes : Gova, Tande, Tavara, Shangwe",
+        "Manyika (S13) — Zimbabwe est et Mozambique; sous-dialectes varies",
+        "Ndau (chiNdau, S15) — Zimbabwe sud-est et Mozambique",
+        "Kalanga (chiKalanga) — Zimbabwe sud-ouest"
+      ],
+      "vehicularRole": "Le chiShona est langue officielle du Zimbabwe avec l'anglais et le ndebele. Il sert de vehiculaire interethnique dans les zones rurales du Zimbabwe. L'anglais domine dans l'administration et l'education superieure. Au Mozambique, le portugais est la langue officielle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux shona, symboles liés à l'agriculture, symboles culturels shona, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La ceremonie Bira (reunion nocturne) convoque les esprits ancestraux (dzavadzimu) pour obtenir leur guidance et intercession aupres de Mwari (Dieu). La circoncision n'est pas universelle chez les Shona. Le mariage traditionnel (roora ou lobola, paiement de la dot en betail) est central. Les funerailles impliquent une veille, des chants et un enterrement rapide. La ceremonie kurova guva (un an apres le deces) marque le retour de l'ame de l'ancetre dans la famille.",
+      "symbols": "Les oiseaux de Zimbabwe (Zimbabwe birds), scultures en steatite retrouvees dans les ruines du Grand Zimbabwe, sont le symbole national du Zimbabwe. Le mutupo (totem clanique, souvent un animal) est le symbole identitaire fondamental de chaque clan. Les ruines du Grand Zimbabwe symbolisent la grandeur civilisationnelle shona.",
+      "artsAndMusic": "Sculpture sur pierre (steatite, serpentinite) : tradition remontant au 11e siecle, redecouvert dans les annees 1940 ; figures de transformation homme-animal, formes abstraites ; reconnue internationalement depuis les annees 1950. Mbira (lamellophone national) : variantes principales Mbira Dzavadzimu (22-24 lames, ceremonies rituelles), Mbira Nyunga Nyunga (15 lames, enseignee a l'ecole). Ngoma (tambours de tailles variees). Hosho (hochets en calebasse). Marimba (xylophone). Danses collectives. Poterie traditionnelle (hari). Tissage de nattes et paniers.",
+      "spiritualities": "Religion traditionnelle centree sur Mwari (ou Musikavanhu, createur), adore directement ou via des sanctuaires (Matopo Hills). Les esprits ancestraux (dzavadzimu) intercedent entre vivants et Dieu. Les esprits claniques (mhondoro) protegent des territoires entiers. Le syncrétisme est repandu : 60 a 80% des Shona se declarent chretiens (anglicans, catholiques, Eglises apostoliques africaines comme les Vapostori) tout en pratiquant les ceremonies ancestrales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora shona dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume du Grand Zimbabwe (11e-15e siecle), plus grande structure en pierre precoloniale d'Afrique subsaharienne, capitale d'un empire commercial exportant l'or. Empire Mutapa (Mwenemutapa, vers 1430-1760), controlant les mines d'or jusqu'au Zambeze et a la cote mozambicaine. Royaume de Butua puis empire Rozvi sous les Changamire (1684-1830s). Chefferies independantes des Manyika, Ndau et Korekore.",
+      "relationsWithNeighbors": "Commerce fructueux avec les cites-Etats swahili (Kilwa, Sofala) qui servaient d'intermediaires vers l'ocean Indien. Alliances et conflits avec les Ndebele arrivant du sud dans les annees 1830. Relations tendues avec les Portugais qui chercherent a controler les mines d'or de l'empire Mutapa des le 16e siecle.",
+      "conflictsOrAlliances": "Resistance a la BSAC lors de la Premiere Guerre du Matabele (1893) et du Soulèvement de Mashonaland (Chimurenga, 1896-1897). Participation active a la guerre de liberation zimbabweenne (Deuxieme Chimurenga, 1964-1979) qui aboutit a l'independance du Zimbabwe en 1980.",
+      "diaspora": "Diaspora shona significative en Afrique du Sud (environ 1 a 2 millions), au Botswana, en Zambie, au Malawi. Communautes plus petites au Royaume-Uni, aux Etats-Unis, au Canada et en Australie, notamment depuis la crise economique zimbabweenne des annees 2000-2010."
     },
     "demography": {
       "totalPopulation": 15000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN (Shona people, 2024) estime la population totale a environ 22,6 millions en definition large (tous les locuteurs du cluster shona). Joshua Project (2024) : Shona du Zimbabwe environ 14,9 millions. Ethnologue (SIL, 2022) : plus de 14 millions de locuteurs du chiShona (varietes centrales uniquement). Recensement Zimbabwe 2022 : population totale 15,1 millions dont plus de 70% Shona. Estimation retenue pour 2025 : 15 millions (Shona du Zimbabwe et Mozambique au sens strict, excluant sous-groupes Kalanga et Ndau que certains auteurs comptent separement). CIA World Factbook : les Shona representent 82% des 98% de la population zimbabweenne qui est africaine.",
+      "distributionByCountry": [
+        { "country": "ZWE", "population": 13500000 },
+        { "country": "MOZ", "population": 1500000 }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Shona language (sna)",
-      "CIA World Factbook – ZWE, MOZ",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le royaume du Grand Zimbabwe"
+      "Wikipedia EN — Shona people : https://en.wikipedia.org/wiki/Shona_people",
+      "Wikipedia EN — Shona language : https://en.wikipedia.org/wiki/Shona_language",
+      "Wikipedia EN — Great Zimbabwe : https://en.wikipedia.org/wiki/Great_Zimbabwe",
+      "Wikipedia EN — Kingdom of Great Zimbabwe : https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe",
+      "Ethnologue SIL — Shona (sna) : https://www.ethnologue.com/language/sna/",
+      "Joshua Project — Shona in Zimbabwe : https://joshuaproject.net/people_groups/14917/ZI",
+      "Encyclopaedia Britannica — Shona : https://www.britannica.com/topic/Shona",
+      "Encyclopaedia Britannica — Great Zimbabwe : https://www.britannica.com/place/Great-Zimbabwe",
+      "CIA World Factbook — Zimbabwe : https://www.cia.gov/the-world-factbook/countries/zimbabwe/",
+      "Glottolog — Shona (shon1251) : https://glottolog.org/resource/languoid/id/shon1251",
+      "Zimbabwe National Statistics Agency — Census 2022 : https://www.zimstat.co.zw/"
     ]
   }
 }

@@ -2,63 +2,108 @@
   "id": "PPL_YAKA",
   "nameMain": "Yaka",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["COD", "AGO", "COG"],
+  "currentCountries": ["COD", "AGO"],
   "content": {
     "appellations": {
       "mainName": "Yaka",
       "selfAppellation": "Yaka",
-      "exonyms": ["Yaka (terme utilisé par les Européens)"],
+      "exonyms": ["Iyaka", "Iaca", "Kiyaka", "Bayaka", "Yaga"],
+      "originOfExonyms": "Le terme Yaka serait un titre donne par les Kongo a leurs guerriers conquis, adopte par les Lunda comme titre de noblesse signifiant les attrapeurs de flèches et de boulets ou invincible. Les variantes Iyaka et Kiyaka designent la langue. Iaca est une transcription portugaise ancienne. Bayaka est parfois utilise mais peut creer une confusion avec les Aka (Pygmees d'Afrique centrale, groupe entierement distinct).",
+      "whyProblematic": "Le terme Bayaka peut creer confusion avec le peuple Aka (Mbenga), groupe pygmee d'Afrique centrale qui parle une langue bantoue differente (ISO axk). Ces deux peuples n'ont aucun lien historique.",
+      "contemporaryUsage": "Yaka est le terme de reference courant en francais et en anglais. Kiyaka designe la langue. Le gouvernement de la RDC reconnait les Yaka comme communaute ethnique distincte dans les provinces du Kwango et de la Kwilu.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "COD, AGO",
-      "currentCountries": ["COD", "AGO", "COG"]
+      "ethnoLinguisticGroup": "Bantou Zone H (H.31, Guthrie), proche du groupe Kongo",
+      "historicalRegion": "Province du Kwango (RDC) — region entre les rivières Kwango et Wamba ; nord de l'Angola",
+      "currentCountries": ["COD", "AGO"]
     },
-    "ethnicities": ["Yaka de RDC", "Yaka d'Angola", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Yaka de Kabamba-Lunda — groupe central autour du chef supreme (kiambv)",
+      "Yaka de Kenge — groupe du territoire de Kenge (Kwango, RDC)",
+      "Yaka de Popokabaka — groupe du territoire de Popokabaka (Kwango, RDC)",
+      "Basuku de Feshi — branche Kongo dissidente sous Meni Kongo, territoire de Feshi",
+      "Lunda de Nzofu (Kahemba) — Lunda ayant conserve une identite separee dans le territoire de Kahemba",
+      "Yaka d'Angola septentrional — groupes etablis au nord de l'Angola depuis les migrations du XVIIe siecle"
+    ],
     "origins": {
-      "ancientOrigins": "Les Yaka sont originaires de la RDC et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Le peuple Yaka est ne de la fusion entre des conquerants Lunda et des populations Kongo preexistantes. Le nom Yaka est un titre donne par les Kongo a leurs guerriers et repris par les Lunda comme titre de noblesse. Les Lunda avaient auparavant ete defaits et subordonnes par l'expansion de l'Empire Lunda vers les annees 1730, selon certaines sources. La region du Kwango etait occupee par des nations Kongo (Mbala, Tsamba, Hungana, Pindi, Ngongo) avant l'arrivee des Lunda.",
+      "formationPeriod": "XVIIe siecle. Le roi Kabamba mena un exode Lunda vers l'ouest pour conquerir la region du Kwango, dans le royaume de Kongo. Par diplomatie plutot que par la force, les Lunda s'integrerent aux nations Kongo locales. Les chefs Lunda epourerent des femmes Kongo ; leurs enfants s'identifierent comme Yaka. La langue kiyaka se developpa comme une ramification du kikongo.",
+      "migrationRoutes": [
+        "Exode Lunda sous le roi Kabamba depuis l'est vers la region du Kwango (XVIIe siecle)",
+        "Integration progressive des populations Kongo (Mbala, Tsamba, Hungana, Pindi, Ngongo)",
+        "Emigration des Basuku (Kongo) vers le territoire de Feshi sous Meni Kongo",
+        "Expansion vers le nord de l'Angola par des groupes Yaka"
+      ],
+      "historicalSettlementZones": [
+        "Kwango entre les rivieres Kwango et Wamba (province du Kwango, RDC)",
+        "Territoire de Kenge (province du Kwango, RDC)",
+        "Territoire de Popokabaka (province du Kwango, RDC)",
+        "Territoire de Kahemba (province du Kwango, RDC)",
+        "Territoire de Feshi (province de la Kwilu, RDC)",
+        "Nord de l'Angola (province de l'Uige et de la Zaire)"
+      ],
+      "unificationsOrDivisions": "L'unite Yaka fut construite par Kabamba autour d'une identite mixte Lunda-Kongo. La dissidence des Basuku de Meni Kongo (qui refuserent la soumission a Kabamba) et le maintien de l'identite Lunda par les Lunda de Nzofu/Kahemba illustrent les divisions persistantes. La paix entre les clans Tsamba de Feshi et les chefs Lunda fut scelle au XIXe siecle par une ceremonie rituelle (partage de viande de perroquet, chien et chat crue ; enterrement des armes).",
+      "externalInfluences": "Expansion de l'Empire Lunda depuis l'est. Contact avec le royaume de Kongo a l'ouest. Administration coloniale belge (Congo Belge) a partir de 1885 : guerres avec les forces de Leopold II en 1892 et 1893 ; deportation et assassinat de chefs yaka. Resistance passive pendant toute la periode coloniale. Implication dans le mouvement nationaliste congolais via la LUKA (Union Kwangolaise pour la Liberte et l'Independance).",
+      "majorHistoricalEvents": "Conquete Lunda-Kongo du Kwango (XVIIe s.). Guerres contre l'administration Leopold II en 1892 et 1893 : Kabamba Faustin et Kabamba Tsiimba Nkumbi assassines en 1893. Deportation de Mulombo Desire Nkulu et du chef Munene Nkenzi. Refuge en Angola de Kabamba Koko Kodia Puanga (1915). Independence du Congo-Belge (30 juin 1960) avec forte contribution des nationalistes Yaka."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme politique hierarchique matrilineaire a tendance mixte. A la tete : le kiambv (paramount chief, pl. biambv), chef supreme qui gouverne les royaumes physique et spirituel, percu comme voyant les sorciers. Il est entoure de 41 nobles (bilio, sing. yilolo) gouvernant des regroupements de villages. Chaque village est administre par un chef de terre (tulamba, pl. kalamba). Les tributs incluent des parties d'animaux puissants (leopard, elephant) verses au kiambv, et la monnaie en coquillages ndzimbu.",
+      "clanOrganization": "Societe matrilineaire incluant le nom de famille patrilineaire. Les clans sont identifies par des chefferies territoriales. Les nobles (bilio) portent des chapeaux de perles a plumes (tsala) dont la couleur indique le rang (plumes blanches tsala zi kanaangi = rang superieur, plumes rouges tsala zi nduwa = rang inferieur). Les chefs de terre (tulamba) portent des coiffes tissees en raphia (bweni) a 1 a 3 cretes, et dorment avec des appur-tete sculptee (musaw ou m-baambu).",
+      "ageClassSystems": "Le nkanda (initiation des jeunes garcons) constitue le principal systeme de classes d'age. Les tundansi (inities) passent 1 a 3 ans en reclusion, apprenant les codes de la virilite, et participent aux ceremonies masquees. Ce rite structure le passage de l'enfance a l'age adulte masculin.",
+      "roleOfLineages": "La matrilinearite determine la succession et la transmission des biens symboliques et rituels. Les chefs de lignage matrilineaire portent des hachettes khaandu et utilisent des coupes rituelles en bois a double embouchure (kyopa) pour le vin de palme, transmises de generation en generation. La terre est geree collectivement par les lignages.",
+      "religiousAuthority": "Autorite des devins (ngoombu) qui utilisent des paquets rituels, des statuettes mbwoolo, des miroirs, des herbes et des tambours slit (mukoku) pour les seances de divination. Le paramount chief (kiambv) detient aussi une autorite spirituelle : il est cense voir les sorciers (baloki) et participe a des pratiques magiques limitees au bien communautaire. Culte des ancetres (venerés aux tombes, dans les arbres n-saanda et n-yoombu plantes pres des sepultures)."
     },
     "languages": {
-      "mainLanguage": "Yaka",
-      "vehicularRole": "Le yaka est parlé par la majorité des Yaka. Le français, le portugais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Kiyaka / Yiyaka (yaf)",
+      "isoCodes": ["yaf"],
+      "dialects": [
+        "Yaka propre — dialecte central parle dans le Kwango (RDC)",
+        "Ngoongo — dialecte septentrional dans la zone de transition vers le Kwilu"
+      ],
+      "vehicularRole": "Le kiyaka est parle par environ 900 000 personnes principalement dans le sud-ouest de la RDC (province du Kwango) et au nord de l'Angola. C'est une ramification du kikongo (groupe H). Le francais est la langue officielle de la RDC et langue de l'administration. Le lingala est utilise comme lingua franca dans les zones urbaines de RDC. Le portugais est langue officielle en Angola."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels yaka, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Nkanda : initiation masculine des garcons (tundansi), comprenant la circoncision, une reclusion de 1 a 3 ans, l'enseignement des codes de la virilite, et une serie de performances masquees impliquant 5 types de masques (mondo, ndemba, kapita, mbala par le tulombusi, chef de la ceremonie). Historiquement, les masques etaient detruits a la fin de l'initiation. Rites funeraires comportant veneration des ancetres aux tombes. Seances de divination par le ngoombu pour diagnostiquer maladies et conflits. Rituels de chasse (abstinence pre-chasse, partage rituel des prises, tributs au chef).",
+      "symbols": "Masques : element le plus caracteristique de la culture Yaka, reconnus pour leurs yeux globulaires, nez retrousse, bouche ouverte ; utilises lors des initiations nkanda et des ceremonies religieuses. Coiffe a plumes des nobles (tsala). Anneaux enroules (kazekedi ou lukano) portes a la cheville ou au bras par le chef supreme. Epee double face (mbeele phoko) dans un fourreau en forme de phallus, symbole du pouvoir du chef.",
+      "artsAndMusic": "Sculpture sur bois tres elaborate : masques cerimonials (mbala, kholuka, kakuungu), statuettes de divination (mbwoolo) aux membres greles et torses gonfles, appui-tetes sculptees. Vannerie et paniers. Tambours slit (mukoku) couronnes de tetes sculptees, employes dans les ceremonies et la medecine. La sculpture Yaka est reconnue dans les grandes collections museales mondiales (Metropolitan Museum of Art de New York, Tervuren). Musique : tambours et percussions lors des ceremonies d'initiation.",
+      "spiritualities": "Religion traditionnelle fondee sur le culte des ancetres, la divination (ngoombu), et la croyance aux esprits et aux sorciers (baloki). Les statuettes mbwoolo servent de supports de divination, de guerison et de protection. Croyance en la capacite des chefs a voir les sorciers et a interagir avec le monde spirituel. Christianisme (catholicisme et protestantisme) largement repandu depuis la colonisation belge et portugaise, conduisant a un syncretisme religieux."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora yaka dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Royaume Yaka fonde au XVIIe siecle par Kabamba, integrant Lunda et Kongo (Mbala, Tsamba, Hungana, Pindi, Ngongo). Ce royaume fut l'un des mieux organises et des plus resistants a la penetration occidentale dans l'histoire coloniale belge. Il s'etendait de Kabamba-Lunda a Popokabaka en passant par Kenge.",
+      "relationsWithNeighbors": "Peuple proche des Suku (groupe frere). Integration diplomatique des Kongo (Mbala, Tsamba, Hungana, Pindi, Ngongo). Tension et scission avec les Basuku de Meni Kongo (Feshi). Paix rituelle scelle avec les clans Tsamba au XIXe siecle. Les colonisateurs belges denigrerent les Yaka comme guerriers et sauvages pour les separer des Bas-Congo et de Kwilu. Resistance notable contre Leopold II (1892-1893).",
+      "conflictsOrAlliances": "Guerres contre l'administration coloniale belge de Leopold II (1892-1893) ; chefs assassines ou deportes. Resistance passive durant la periode coloniale. Contribution au mouvement nationaliste congolais 1959-1960 via la LUKA. En Angola, les Yaka furent pris dans les conflits de la guerre d'independance (1961-1975) et de la guerre civile angolaise (1975-2002).",
+      "diaspora": "Presence significative a Kinshasa et dans les autres grandes villes de la RDC, liee aux migrations economiques depuis la province du Kwango. Petite communaute en Angola dans les provinces du nord."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Omniglot (2025) : environ 900 000 locuteurs kiyaka principalement en RDC et nord de l'Angola. Joshua Project : 1 625 000 Yaka en RDC et 2 207 000 dans tous les pays. Wikipedia EN : environ 300 000 (donnee probablement sous-estimee et ancienne). Estimation 2025 : environ 1,8 million en combinant les sources, avec une forte croissance demographique en RDC.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 1600000,
+          "note": "Province du Kwango (Kenge, Popokabaka, Kahemba) et province de la Kwilu (Feshi)"
+        },
+        {
+          "country": "AGO",
+          "population": 200000,
+          "note": "Nord de l'Angola, provinces de l'Uige et de la Zaire"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Yaka language (yaf)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Yaka people : https://en.wikipedia.org/wiki/Yaka_people",
+      "Omniglot — Yaka language and alphabet : https://www.omniglot.com/writing/yaka.htm",
+      "WALS Online — Language Yaka (ISO yaf) : https://wals.info/languoid/lect/wals_code_yak",
+      "Smarthistory — Headdress Yaka peoples (Metropolitan Museum) : https://smarthistory.org/headdress-yaka/",
+      "Metropolitan Museum of Art — Headdress Ndeemba Yaka : https://www.metmuseum.org/art/collection/search/310954",
+      "Joshua Project — Yaka in Congo DRC : https://joshuaproject.net/people_groups/15953/CG",
+      "SIL Ethnologue — Yaka H.31 : https://www.ethnologue.com/subgroup/3342/",
+      "Wikipedia EN — Aka language (ne pas confondre avec les Yaka) : https://en.wikipedia.org/wiki/Aka_language",
+      "ShareOK — Yaka Mbaala Masks During and After Colonization : https://shareok.org/items/53a62f67-eec5-4a59-b5b8-8b3133d8ae9a",
+      "Glottolog — Yaka (yaka1269) : https://glottolog.org/resource/languoid/id/yaka1269",
+      "UNFPA — DRC Population 2025 : https://www.unfpa.org/data/world-population/CD",
+      "CIA World Factbook — Congo DRC : https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+      "CIA World Factbook — Angola : https://www.cia.gov/the-world-factbook/countries/angola/"
     ]
   }
 }

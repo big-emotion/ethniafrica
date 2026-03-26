@@ -1,22 +1,102 @@
 {
   "id": "PPL_KUSASI",
-  "nameMain": "",
+  "nameMain": "Kusasi",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": ["BFA"],
+  "currentCountries": ["GHA", "BFA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kusasi",
       "selfAppellation": "Kusaal / Kusasi",
+      "exonyms": ["Kusaasi", "Kusale", "Kusaal people"],
+      "originOfExonyms": "Le terme Kusasi designe le peuple et Kusaal sa langue. Les locuteurs natifs n'acceptent pas l'appellation Kusasi pour designer la langue elle-meme. Les variantes Kusaasi et Kusale sont des orthographes alternatives en usage dans la litterature academique et administrative.",
+      "whyProblematic": "La confusion entre le nom du peuple (Kusasi) et la langue (Kusaal) est courante. Les locuteurs preferent Kusaal pour la langue, afin de distinguer clairement la denomination ethnique de la denomination linguistique.",
+      "contemporaryUsage": "Kusasi est le terme officiel utilise dans les recensements du Ghana et du Burkina Faso. Kusaal est utilise dans la litterature linguistique pour la langue. Le terme Kusaug designe la zone territoriale traditionnelle (l'ensemble des six districts).",
       "linguisticFamily": "FLG_GUR",
-      "currentCountries": ["BFA"]
+      "ethnoLinguisticGroup": "Gur (branche Mabia-Oti-Volta), apparente aux Bulsa et aux Gurunsi",
+      "historicalRegion": "Zone traditionnelle de Bawku (Kusaug), partie orientale de la region Upper East du Ghana, et sud du Burkina Faso",
+      "currentCountries": ["GHA", "BFA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (kus)", "Ghana Upper East Documentation"]
+    "ethnicities": [
+      "Kusasi des districts de Bawku Central et Bawku Ouest (Ghana, Upper East)",
+      "Kusasi de Pusiga (Ghana, frontiere burkinabe)",
+      "Kusasi de Garu (Ghana, zone orientale)",
+      "Kusasi de Binduri (Ghana)",
+      "Kusasi de Tempane (Ghana, zone orientale)",
+      "Kusasi du Burkina Faso (sud, zone frontaliere avec le Ghana)",
+      "Locuteurs du dialecte Agole (Angole, est du fleuve Volta, majorite des locuteurs)",
+      "Locuteurs du dialecte Toende (west, Bawku Ouest et Burkina Faso)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kusasi sont consideres comme le premier peuple a s'etablir dans la zone de Bawku (Kusaug), dans la partie orientale de la region Upper East du Ghana. Ils sont considers comme autochtones de cette region. Ils entretiennent des liens d'appartenance Gur avec les Bulsa et les peuples Gurunsi. Les Kusasi sont le deuxieme plus grand groupe ethnique de l'espace nordique du Ghana.",
+      "formationPeriod": "Les origines et migrations des Kusasi restent peu documentees. La tradition orale indique que de nombreux Kusasi, qui sont agriculteurs, ont migre a la recherche de terres agricoles plus fertiles. Les langues haoussa et moshi etaient parfois utilisees pour le commerce interethnique. Bawku est depuis des temps imemoriaux la capitale de la zone Kusaug.",
+      "migrationRoutes": [
+        "Peuple considere autochtone de la zone orientale de l'Upper East Region du Ghana",
+        "Migrations agricoles vers le nord (Burkina Faso) en quete de terres fertiles",
+        "Migrations vers les villes ghaneennes (Accra, Tamale, Kumasi) pour des raisons economiques au XXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Bawku Traditional Area (Kusaug) : Bawku Central, Bawku Ouest, Pusiga, Garu, Binduri, Tempane (Upper East Region, Ghana)",
+        "Zone frontaliere du sud Burkina Faso (Toende, locuteurs du dialecte occidental)",
+        "Togo (presence marginale, documentee par Ethnologue)"
+      ],
+      "unificationsOrDivisions": "Les Kusasi sont organises sous l'autorite d'un chef paramount, le Zugraan Naba. L'actuel chef (2025) est Naba Asigri Abugrago Azoka II, chef paramount de Bawku et president du conseil traditionnel de Kusaug, intronise en 1984 apres la mort de son pere Naba Zunzong Ba'ad Wabub Asigri Abugrago Azoka I. Les six districts (Bawku Central, Bawku Ouest, Pusiga, Garu, Binduri, Tempane) constituent l'entite politique traditionnelle unifiee.",
+      "externalInfluences": "Relations historiques avec les Mamprusi voisins (Bawku est aussi un foyer de tensions Kusasi-Mamprusi). Influences islamiques via les contacts commerciaux haoussa. Colonisation britannique ayant integre la zone dans la Gold Coast. Missions chretiennes au XXe siecle. Tensions interethniques avec les Mamprusi liees a la terre, la representation politique et les chefferies.",
+      "majorHistoricalEvents": "1984 : intronisation du chef paramount Zugraan Naba Asigri Abugrago Azoka II. 1987 : premiere celebration du festival Samanpiid (actions de grace pour la recolte). Tensions recurrentes dans la zone de Bawku entre Kusasi et Mamprusi, liees aux droits fonciers et a la representation politique. Recensement 2021 : plus de 1,2 million de Kusasi comptes a l'echelle nationale du Ghana."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Kusasi sont organises sous un systeme de chefferie avec le Zugraan Naba (chef paramount) de Bawku comme autorite superieure, president du conseil traditionnel de Kusaug. Ce systeme articule les fonctions politiques, judiciaires et cerimoniales. Les chefs de village administrent leurs communautes localement, en relation avec le chef paramount.",
+      "clanOrganization": "La societe kusasi est organisee en clans patrilineaires. Les clans controlent des terres ancestrales et constituent la base de la structure sociale. Les disputes foncieres entre clans ont ete une source de tensions, notamment avec d'autres groupes ethniques dans la region de Bawku.",
+      "ageClassSystems": "Des groupes de travail communautaires et des associations de jeunes participent a la vie sociale et economique. Le festival Samanpiid (depuis 1987) implique une organisation generationnelle pour les ceremonies de remerciement post-recolte.",
+      "roleOfLineages": "La descendance est patrilineaire. Les lignages definissent l'acces a la terre et les obligations sociales. Les anciens de lignage interviennent dans la mediation des conflits locaux et le maintien des pratiques culturelles.",
+      "religiousAuthority": "La religion traditionnelle (animisme) coexiste avec le christianisme (majoritaire) et l'islam. Des pretres ou gardiens de sanctuaires gerent les relations avec les esprits ancestraux et les divinites locales. Le festival Samanpiid, organise depuis 1987, exprime la dimension religieuse de la communaute kusasi par des actions de grace adressees a Dieu pour les bonnes recoltes."
+    },
+    "languages": {
+      "mainLanguage": "Kusaal (Kusaasi)",
+      "isoCodes": ["kus"],
+      "dialects": [
+        "Agole (Angole, Kusaal oriental) : parle a l'est du fleuve Volta (districts de Binduri, Bawku, Tempane, Garu, Pusiga) ; dialecte majoritaire avec environ 350 000 locuteurs",
+        "Toende (Kusaal occidental) : parle a Bawku Ouest (Zebilla) et au Burkina Faso ; environ 70 000 locuteurs ; necessite une investigation supplementaire cote burkinabe"
+      ],
+      "vehicularRole": "Le kusaal est parle principalement dans le nord-est du Ghana (Upper East Region) et au Burkina Faso (sud). L'Ethnologue documente egalement une presence au Togo. La population totale de locuteurs depasse 535 000 selon le recensement UNSD de 2018. Code ISO 639-3 : kus. Le kusaal est une langue stable (Ethnologue). Le haoussa et le moshi (moore) servent de vehiculaires pour le commerce interethnique."
+    },
+    "culture": {
+      "majorRites": "Le Samanpiid est le festival culturel le plus important des Kusasi, celebre depuis 1987 pour rendre grace a Dieu lors d'une bonne recolte pendant la saison agricole. Ce festival rassemble les communautes kusasi du Ghana et de la diaspora. Les rites funeraires sont elabores : les anciens sont enteres avec ceremonie et les periodes de deuil impliquent la communaute elargie. Les rites de mariage suivent des protocoles codifies impliquant des echanges entre familles. Les sacrifices aux esprits ancestraux sont pratiques pour solliciter leur protection et leurs benedictions. Les fetes agricoles marquent les cycles de plantation et de recolte.",
+      "symbols": "Bawku est le symbole de l'identite et du pouvoir politique kusasi en tant que capitale de la zone Kusaug. La chefferie (institution du Zugraan Naba) est le symbole de l'unite politique. Les conflits terres autour de Bawku sont symboliquement lies a l'identite territoriale kusasi comme premiers occupants de la region. Le festival Samanpiid est devenu un symbole de rassemblement et d'expression de l'identite culturelle.",
+      "artsAndMusic": "Les Kusasi possedent une tradition musicale et danses ceremoniales associees aux fetes et festivals. Des instruments de percussion (tambours, hochets) accompagnent les ceremonies. Les habits et parures traditionnels sont portes lors des festivals et ceremonies. La ceramique, le tissage et l'artisanat local sont pratiques dans la region. Les traditions orales (contes, proverbes, genealogies) constituent un patrimoine artistique important transmis de generation en generation.",
+      "spiritualities": "Les Kusasi sont majoritairement chretiens (toutes denominatons confondues), suivis par les musulmans, puis par les pratiquants de la religion africaine traditionnelle. La religion traditionnelle implique la croyance en des esprits ancestraux et en des forces surnaturelles influencant la vie quotidienne. Les offrandes et sacrifices aux ancetres font partie des pratiques traditionnelles maintenues en parallele de la religion abrahamique. La coexistence de la foi chretienne ou islamique avec des elements de la religion traditionnelle est courante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kusasi sont organises sous la chefferie du Zugraan Naba de Bawku, chef paramount de Kusaug. Bawku est la capitale de la zone traditionnelle kusasi depuis des temps imemoriaux. Les Kusasi sont considers comme les premiers occupants de la region de Bawku, ce qui est au coeur de leurs revendications territoriales et de leur identite.",
+      "relationsWithNeighbors": "Relations historiquement tendues avec les Mamprusi pour le controle de Bawku et de la zone environnante. Des cycles de violence ont eclate dans la zone de Bawku en raison de la competion pour les terres, la representation politique et les griefs historiques entre les deux groupes. Des relations commerciales et sociales existent avec les peuples voisins (Bulsa, Gurunsi, groupes du Burkina Faso). Les langues haoussa et moshi servent de vehiculaires dans les echanges interethniques.",
+      "conflictsOrAlliances": "La region de Bawku est un foyer de tensions interethniques recurrentes entre les Kusasi et les Mamprusi. Ces conflits sont lies aux droits fonciers, a la representation politique et aux chefferies. Des cycles de violence et de retaliation ont marque la vie communautaire recente. Des initiatives de paix et de mediation ont ete engagees par les gouvernements successifs du Ghana.",
+      "diaspora": "Des migrations vers les grandes villes ghaneennes (Accra, Kumasi, Tamale) ont cree des communautes de diaspora interne. Des Kusasi sont aussi presents dans d'autres pays d'Afrique de l'Ouest et dans la diaspora africaine internationale. Le festival Samanpiid sert de point de ralliement pour les Kusasi de la diaspora, notamment ceux d'Accra."
+    },
+    "demography": {
+      "totalPopulation": 780000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 729 000 au Ghana. Wikipedia EN (Kusasi people) : estimation 723 000. Recensement Ghana 2021 : plus de 1,2 million a l'echelle nationale. Facebook/ModernGhana (aout 2025) : estimation entre 688 000 et 729 000 pour le Ghana. Estimation totale 2025 (Ghana + Burkina Faso) : environ 780 000.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 729000,
+          "note": "Upper East Region : six districts de Bawku (Bawku Central, Bawku Ouest, Pusiga, Garu, Binduri, Tempane). Deuxieme plus grand groupe ethnique du nord du Ghana."
+        },
+        {
+          "country": "BFA",
+          "population": 51000,
+          "note": "Zone frontaliere du sud Burkina Faso, locuteurs du dialecte Toende (Kusaal occidental)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kusasi people. https://en.wikipedia.org/wiki/Kusasi_people",
+      "Wikipedia EN — Kusaal language. https://en.wikipedia.org/wiki/Kusaal_language",
+      "Ethnologue — Kusaal Language (KUS). https://www.ethnologue.com/language/kus/",
+      "Webonary — Kusaal Dictionary Introduction. https://www.webonary.org/kusaal-gh/overview/introduction/",
+      "Joshua Project — Kusasi in Ghana. https://joshuaproject.net/people_groups/12556/GH",
+      "Modern Ghana — Why Dr. Bawumia Cannot Win (2025). https://www.modernghana.com/news/1426645/why-dr-bawumia-cannot-win-any-presidential-electi.html",
+      "The Rest Journal — Ethnic Conflicts in Ghana (2025). https://therestjournal.com/2025/01/30/ethnic-conflicts-in-ghana-colonial-legacy-and-elite-mobilisation/",
+      "Government of Ghana — Composite Budget Kassena-Nakana 2022-2025. https://mofep.gov.gh/sites/default/files/composite-budget/2022/UE/Kasena-Nakana.pdf"
+    ]
   }
 }

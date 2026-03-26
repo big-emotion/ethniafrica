@@ -2,58 +2,92 @@
   "id": "PPL_LUCHAZI",
   "nameMain": "Luchazi",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["AGO"],
+  "currentCountries": ["AGO", "ZMB", "NAM"],
   "content": {
     "appellations": {
       "mainName": "Luchazi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "VaLuchazi",
+      "exonyms": [
+        "Lucazi",
+        "Chiluchazi",
+        "Ngangela",
+        "Nganguela",
+        "Lujash",
+        "Lujazi",
+        "Lutchaz",
+        "Lutshase",
+        "Luxage",
+        "Ponda"
+      ],
+      "originOfExonyms": "Luchazi est le nom du peuple tire du nom de la riviere Luchazi, affluent du Luena, dans l'est de l'Angola; les premiers groupes etaient etablis le long de cette riviere. Chiluchazi designe la langue (prefixe chi- = langue en bantou). VaLuchazi est la forme plurielle de l'auto-denomination (va- = prefix de classe des personnes). KaLuchazi designe un membre du peuple. Ngangela est un terme couvre-chef cree par les traders Ovimbundu et missionnaires au 18e siecle pour designer l'ensemble des peuples de l'Angola central-oriental. Lucazi est la forme portugaise du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Luchazi est la denomination standard en anglais et en portugais. Chiluchazi designe la langue. La denomination Ngangela est parfois utilisee pour l'ensemble du groupe linguistique, ce qui peut entretenir des confusions avec d'autres peuples Ngangela de la region.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["AGO"]
+      "ethnoLinguisticGroup": "Bantou central (Ciokwe-Luchazi, K.13), groupe Ngangela",
+      "historicalRegion": "Angola oriental (Cuando Cubango, Moxico), Zambie nord-occidentale",
+      "currentCountries": ["AGO", "ZMB", "NAM"]
     },
     "ethnicities": ["Luchazi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Luchazi sont un peuple bantou natif de l'Angola oriental, etablis le long de la riviere Luchazi (affluent du Luena). Ils font partie du cluster Ngangela, ensemble de peuples bantous de l'Angola central-oriental partageant une langue et une histoire communes. Entre 1600 et 1850, ils etaient sous l'influence considerable des etats Lunda et occupaient une position centrale en Angola. Ils partagent une ancestralite comune avec les Chokwe, Lunda, Luvale (Lwena) et Mbunda, les chefs hereditaires de tous ces peuples derivant d'une meme filiation.",
+      "formationPeriod": "Formation en tant que groupe distinct entre le 17e et le 19e siecle, dans le contexte de l'Empire Lunda et de ses peripheries meridionales.",
+      "migrationRoutes": [
+        "Etablis originellement le long de la riviere Luchazi, province de Moxico, Angola oriental",
+        "Migrations vers la Zambie (nord-ouest) a partir du 19e siecle, accentuees sous la colonisation portugaise",
+        "Migrations vers la Namibie (province de Kavango) fuyant la colonisation portugaise et la guerre civile angolaise (1975-2002)"
+      ],
+      "historicalSettlementZones": [
+        "Provinces de Cuando Cubango et Moxico, Angola",
+        "Province du Nord-Ouest (Northwestern Province), Zambie",
+        "Province de Kavango, Namibie"
+      ],
+      "unificationsOrDivisions": "Les Luchazi sont organises en kuimbo (unites residentielles circulaires) groupees sous un chef local (mwene). Ils n'ont pas de roi supreme unique. Leur histoire est interconnectee avec les mouvements politiques Chokwe et Lunda qui ont domine la region.",
+      "externalInfluences": "Influence du Portugal (colonisation de l'Angola) ayant provoque des migrations vers le Zambie et la Namibie. Influence des Chokwe et des Lunda sur leur organisation politique. Missions evangeliques (Africa Evangelical Fellowship) actives et influence chretienne significative. La guerre civile angolaise (1975-2002) a disperse de nombreux Luchazi.",
+      "majorHistoricalEvents": "17e-19e siecles: sous influence des etats Lunda. Fin du 19e siecle: colonisation portugaise et debut des migrations vers le Zambie et la Namibie. 1975: independance de l'Angola et debut de la guerre civile. 1975-2002: guerre civile angolaise causant l'exode massif de Luchazi vers le Zambie et la Namibie. 2002: fin de la guerre civile; retours progressifs en Angola."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe sans roi supreme centralise. Organisation en kuimbo (village circulaire). Chaque groupe de kuimbo est dirige par un mwene (chef hereditaire en principe matrilineaire, mais pouvant etre demis par la communaute ou une femme sage pouvant aussi etre choisie). Le titre mwananganga ('seigneur de la terre'), partage avec les Chokwe, designe aussi ce chef local. Le mwene administre les terres, resout les conflits, attribue les parcelles agricoles et dispense la justice.",
+      "clanOrganization": "Organisation matrilineaire en principe: la succession au titre de mwene se fait par la ligne maternelle (neveux = fils des soeurs). Cependant l'influence portugaise et chretienne a partiellement transforme les pratiques d'heritage au profit du modele paternel/occidental.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires controlaient traditionnellement la succession et l'heritage. Les neveux (fils des soeurs) etaient les heritiers principaux d'un chef defunt. Ce systeme a evolue: aujourd'hui, femmes et enfants partagent l'heritage selon le modele occidental adopte sous influence missionnairo-portugaise.",
+      "religiousAuthority": "Le mwene exerce a la fois l'autorite politique et religieuse: il regle les affaires du monde physique et spirituel. Les cimbundu (thaumaturges traditionnels) soignent avec des herbes, poudres blanches et incantations, mais ce role a decline avec la christianisation et la persécution portugaise de la religion traditionnelle. Le dieu supreme Kalunga est une force universelle inaccessible; le culte s'adresse aux esprits ancestraux."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Luchazi (Chiluchazi)",
+      "isoCodes": ["lch"],
+      "dialects": [],
+      "vehicularRole": "Le luchazi (ISO lch) appartient au groupe Ciokwe-Luchazi (K.13) des langues bantou centrales. Langues apparentees: Mbunda, Kangala, Tauma, Mbuela, Nyemba, Ngangela, Ngonzelo, Luembe. En Zambie, de nombreux Luchazi adoptent le luvale (langue officielle zambienne), perdant parfois le luchazi. Le portugais est la langue officielle en Angola. L'anglais est vehiculaire en Zambie. Le luchazi est reconnu comme langue minoritaire officielle en Angola, utilisee a la maison, a l'eglise et dans les commerces."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mudanda: ceremonie de circoncision pour les garcons entre 6 et 8 ans, initiant au savoir tribal. Mungongi: festin et danse celebrant la circumcision. Mandumbu: deuxieme celebration post-initiatique. Rites pour appeler la pluie: les anciens reunissent les hommes pour une danse nocturne d'appel aux esprits ancestraux en cas de secheresse. Rites feminins d'initiation au mariage (preparation a la vie d'epouse).",
+      "symbols": "Le kuimbo (village circulaire) est le symbole architectural et social de la communaute Luchazi. Les masques sculptes sont la forme d'art identitaire principale. Kalunga est le nom du dieu supreme symbolisant la force universelle.",
+      "artsAndMusic": "Sculpture et masques: art majeur des Luchazi, d'abord fonctionnel (rituels), aujourd'hui aussi commercial. Chant, tambours et danse lors des ceremonies et celebrations. Vannerie (basket-weaving) est un art honore. Les forgerons occupaient historiquement le rang professionnel le plus eleve, forgeant lances et couteaux. L'artisanat Luchazi est lie au reseau artistique Chokwe-Lunda de l'Angola central.",
+      "spiritualities": "Religion traditionnelle animiste: les esprits ancestraux sont la force predominante; Kalunga (Dieu) est la grande puissance derriere tout mais inaccessible directement. Culte rendu a des batonnets ou tetes d'animaux sur batonnets. Christianisme majoritaire aujourd'hui: en Namibie, la majorite des 3 200 baptistes des annees 1990 etaient Luchazi; Africa Evangelical Fellowship tres presente en Angola, Zambie et Namibie. Coexistence des pratiques chretiennes et des croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies locales (mwene) federees ponctuellement. Les Luchazi etaient a la peripherie meridionale de l'Empire Lunda (qui s'etendait sur l'actuel Angola, RDC et Zambie) et lui payaient tribut jusqu'a son declin au 19e siecle.",
+      "relationsWithNeighbors": "Liens etroits et ancestralite commune avec les Chokwe, Lunda, Luvale (Lwena) et Mbunda. Histoire interconnectee avec les mouvements politiques Chokwe et Lunda. Des sous-groupes comme les Lwimbi se sont sciscionnes suite a des conflits entre chefs (tradition orale collectee en 1923 par Emil Pearson). Relations commerciales avec les Ovimbundu (terme Ngangela).",
+      "conflictsOrAlliances": "Sous l'influence des etats Lunda (1600-1850). Fuite en Zambie sous la colonisation portugaise (fin 19e siecle). Exode massif vers Zambie et Namibie pendant la guerre civile angolaise (1975-2002). Statut de refugie en Namibie: absence de droits politiques et marginalisation economique.",
+      "diaspora": "Diaspora significative en Zambie (environ 29 600 locuteurs) et Namibie (province de Kavango, environ 1 400 locuteurs). Les Luchazi de Namibie ont vecu comme refugies sans participation politique locale. Des jeunes ont accede a l'education et integre les institutions gouvernementales namibiennes."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 820000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Omniglot 2025: environ 431 000 locuteurs (400 000 en Angola, 29 600 en Zambie, 1 400 en Namibie). 101 Last Tribes: total mondial 811 400. Estimation 2025 incluant non-locuteurs: environ 820 000.",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 760000 },
+        { "country": "ZMB", "population": 50000 },
+        { "country": "NAM", "population": 10000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN – Luchazi (https://en.wikipedia.org/wiki/Luchazi)",
+      "Omniglot – Luchazi language and alphabet (https://www.omniglot.com/writing/luchazi.htm)",
+      "101 Last Tribes – Luchazi people (https://www.101lasttribes.com/tribes/luchazi.html)",
+      "Orville Jenkins – The Luchazi: A Cultural Profile (http://orvillejenkins.com/profiles/luchazi.html)",
+      "Joshua Project – Luchazi in Angola (https://joshuaproject.net/people_groups/13138/ao)",
+      "Luchazi Language Blog – Origins (https://luchazi.blogspot.com/p/origins-according-to-oral-history.html)",
+      "PeopleGroups.org – Luchazi of Zambia PG015596 (https://peoplegroups.org/people_groups/pg015596/)"
+    ]
   }
 }

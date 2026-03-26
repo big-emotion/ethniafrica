@@ -1,23 +1,107 @@
 {
   "id": "PPL_DIOLA",
-  "nameMain": "",
+  "nameMain": "Diola (Joola / Jola)",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GMB", "GIN"],
+  "currentCountries": ["SEN", "GMB", "GNB"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Joola / Ajamat",
+      "mainName": "Diola (Joola / Jola)",
+      "selfAppellation": "Ajamat (singulier), Ajamataw (pluriel)",
+      "exonyms": [
+        "Diola",
+        "Jola",
+        "Joola",
+        "Dyola",
+        "Yola",
+        "Felupe",
+        "Flup",
+        "Floups"
+      ],
+      "originOfExonyms": "Diola est la translittération française du nom mandinka Jola signifiant 'ceux qui payent en retour'. Popularise au XIXe siecle par les colonisateurs. Felupe ou Flup designent specifiquement les groupes de Guinee-Bissau.",
+      "whyProblematic": "Diola et Jola sont des exonymes mandinka, pas des auto-appellations. Ils regroupent sous une meme etiquette des sous-groupes parlant des dialectes parfois mutuellement inintelligibles.",
+      "contemporaryUsage": "Diola reste l'usage dominant en francais (Senegal, Guinee-Bissau), Jola ou Joola en anglais (Gambie). L'auto-appellation Ajamat est privilegiee dans les milieux academiques et communautaires.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Casamance (Sénégal), GMB, GIN-Bissau",
-      "currentCountries": ["GMB", "GIN"]
+      "ethnoLinguisticGroup": "Atlantique (branche Bak)",
+      "historicalRegion": "Basse Casamance (Senegal), Gambie meridionale, nord de la Guinee-Bissau",
+      "currentCountries": ["SEN", "GMB", "GNB"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (dyo)", "Casamance Ethnographic Studies"]
+    "ethnicities": [
+      "Joola Fogni (Efogniayi) — rive droite de la Casamance, majoritaires en Gambie",
+      "Joola Kasa (Huluf, Eyun, Esulalu) — region d'Oussouye, rive gauche",
+      "Joola Ajamat (Ejamatayi) — zone frontaliere Senegal/Guinee-Bissau, majoritaires en Guinee-Bissau",
+      "Joola Bayot (Bayote) — autour de Ziguinchor",
+      "Joola Mlomp — village de Mlomp",
+      "Joola Karon — cote de Casamance au sud de Diouloulou",
+      "Joola Banjal — au sud du fleuve Casamance",
+      "Joola Bliss-Karones (Eblinayi) — littoral atlantique et iles",
+      "Joola Gusilay — village de Thionck-Essyl"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Joola sont consideres comme les premiers habitants des basses rives des fleuves Casamance et Gambie. Les traditions orales senegambiennes les disent apparentes aux Sereres et aux Peuls, originaires de la vallee du Nil. Ils ont assimile les Bainuk, population anterieure, et leur tradition rizicole.",
+      "formationPeriod": "Probablement installes en Basse-Casamance vers le XIVe siecle. Vers le XIe siecle, en reponse au dessechement climatique, les agriculteurs joola ont developpe un systeme de casiers rizicoles (padis) pour capter les eaux de pluie et de ruissellement.",
+      "migrationRoutes": [
+        "Migrations depuis l'est (region Mali actuel) vers l'ouest sous la pression des Malinkés conquérants a l'epoque de l'Empire du Mali",
+        "Installation progressive en Casamance, Gambie meridionale et nord Guinee-Bissau"
+      ],
+      "historicalSettlementZones": [
+        "Basse Casamance (Senegal) — zone principale, departements d'Oussouye, Bignona, Ziguinchor",
+        "Sud de la Gambie (region de Fogni-Kombo)",
+        "Nord de la Guinee-Bissau (region de Cacheu)"
+      ],
+      "unificationsOrDivisions": "Les Joola n'ont jamais forme un Etat centralise. Ils sont organises en communautes villageoises autonomes. Quelques royautes locales existent (royaume d'Analufay regroupant Selhek, Huluf, Eyun; pays du roi Ayi Mofayi).",
+      "externalInfluences": "Contacts avec l'Empire du Mali et les Malinkés (islamisations progressives dans certains groupes Fogni). Influence portugaise des 1456 (premiers Occidentaux). Resistance prolongee a la colonisation française et portugaise, a la traite negriere et au recrutement force.",
+      "majorHistoricalEvents": "Guerres recurrentes aux XVIIIe-XIXe siecles contre les Bainouk, les Mandinka et les razzias luso-africaines. Resistance de la heroine Aline Sitoe Diatta (1920-1944) contre la colonisation française. Mouvement independantiste de la Casamance (MFDC) depuis les annees 1980."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe initialement egalitaire, sans castes ni stratification sociale marquee. L'organisation politique ne depasse pas l'echelle villageoise. Certaines communautes ont un chef (Oyei ou pretre-roi) dont le role releve plus du religieux que du politique seculier.",
+      "clanOrganization": "Organisation en familles etendues et quartiers de clan. Patronymes caracteristiques : Badji, Bassene, Diatta, Diedhiou, Diemé, Sagna, Sambou, Sane, Tendeng, Coly, Goudiaby, Manga.",
+      "ageClassSystems": "Les classes d'age jouent un role structurant dans la vie sociale et ritualisee. La lutte traditionnelle oppose les villages par tranches d'age (garcons de 7 a 30 ans), renforçant la cohesion intergenerationnelle.",
+      "roleOfLineages": "Lignages maternels et paternels coexistent selon les groupes. Les femmes jouent un role important dans les conseils de village, la gestion des terres rizicoles et les ceremonies religieuses. Grands inities (hommes ou femmes) peuvent devenir pretres ou pretresses.",
+      "religiousAuthority": "Autorite des anciens (detenteurs de pouvoirs occultes), pretres et pretresses des bois sacres. Chez les Joola musulmans, le marabout assume une autorite religieuse. Coexistence du culte traditionnel d'Atemit (Dieu createur) avec l'islam et le christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Diola (Jola-Fogni / dyo)",
+      "isoCodes": ["dyo", "eja", "bda", "kdi"],
+      "dialects": [
+        "Jola-Fogni (dyo) — dialecte principal, l'une des six langues nationales du Senegal",
+        "Jola-Felupe / Ajamat (eja) — parle en Guinee-Bissau",
+        "Jola-Bayot (bda) — autour de Ziguinchor",
+        "Jola-Kasa — autour d'Oussouye",
+        "Jola-Karon — cote sud de la Casamance",
+        "Jola-Gusilay — village de Thionck-Essyl",
+        "Jola-Banjal — sud du fleuve Casamance"
+      ],
+      "vehicularRole": "Le Jola-Fogni est reconnu comme l'une des six langues nationales du Senegal et sert de langue vehiculaire en Basse-Casamance. Les differents dialectes joola peuvent etre mutuellement inintelligibles. Le français est langue d'education en Casamance; le portugais et le creole guineen en Guinee-Bissau."
+    },
+    "culture": {
+      "majorRites": "Le Bukut (Boukout) est la ceremonie initiatique masculine majeure, organisee tous les 20 a 25 ans. Les garcons ages de 12 a 35 ans passent plusieurs semaines en foret sacree, incluant la circoncision, des sacrifices et l'apprentissage de chants rituels. La sortie du bois sacre marque l'entree dans la vie adulte. Les femmes ont leurs propres ceremonies d'initiation separees. Les funerailles impliquent des rites precis permettant a l'ame de rejoindre les ancetres; sans ces rites, l'ame devient errante (Holowa). Fetes religieuses traditionnelles : Samay, Kumpo, Niasse. La lutte traditionnelle (sans frappe) est pratiquee comme rite de passage et evenement communautaire.",
+      "symbols": "Le riz est le symbole central de la culture joola, cultive depuis plus d'un millenaire dans des casiers hydrauliques (padis). Le vin de palme (bunuck) est utilise dans les ceremonies rituelles. Le masque Ejumba (cornes d'animaux sur structure de feuilles de palmier tressees), date aux alentours de 1750, est l'un des plus anciens masques africains connus. Les amulettes (gris-gris) et les sanctuaires villageois (boechin) sont des supports de communication avec les esprits.",
+      "artsAndMusic": "Instruments : Ekonting (luth a 3 cordes sur calebasse, ancetre probable du banjo), Bombolong (tambour a fente), Bougarabou (tambour), Galire (monocorde de Thionck-Essyl), Ediando (utilise par les femmes dans les danses d'initiation), Emombi (instrument sacre des ceremonies d'initiation, rare). Danses : Bugaar (danse mixte avec tambours et claquettes), Kumpo, danses de lutte. Chants : Siling (chants collectifs masculins pendant la recolte du riz, alternant deux choeurs), chants feminins d'initiation. Artisanat : tissage de paniers, poterie, masques rituels.",
+      "spiritualities": "Religion traditionnelle monothéiste centree sur Atemit (Emit, Ata Emit : Maitre de l'Univers, associe au ciel et a la pluie). Les ancetres et les esprits de la nature (Boechin/Eneerti) servent d'intermediaires entre les humains et le Createur. Sanctuaires sacres dans les forets et les champs. Syncretisme avec l'islam (majoritaire) et le christianisme. Environ 91% des Joola se declarent musulmans au total, avec maintien de pratiques animistes (vin de palme rituel, sanctuaires)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Joola n'ont pas developpe d'Etat centralise comparable aux royaumes voisins mandé ou wolof. Les principales formes d'organisation politique sont le royaume d'Analufay (regroupant les terres Selhek, Huluf et Eyun), le pays du roi Ayi (Mofayi), et la chefferie d'Oussouye. Ces structures sont a dominante sacerdotale.",
+      "relationsWithNeighbors": "Relations complexes avec les Mandinka (Malinkés): conflits pour le territoire et l'imposition de l'islam, mais aussi echanges culturels (adoption de certains rites comme le Kankuran dans les groupes Fogni et Bluff). Relations joking avec les Sereres basees sur une ancetre commune. Coexistence avec Balantes, Manjaques et Mancagnes dans la zone frontaliere. Influence des comptoirs portugais des 1456.",
+      "conflictsOrAlliances": "Guerres frequentes aux XVIIIe-XIXe siecles pour le territoire, contre les Bainouk, les Mandinka, les razzias luso-africaines et entre sous-groupes joola. Resistance prolongee a la traite negriere: les chefs joola refusaient la vente de leurs membres. Resistance a la colonisation française (refus des impots, du recrutement force pour les guerres mondiales). La figure d'Aline Sitoe Diatta (1920-1944) symbolise cette resistance.",
+      "diaspora": "Diaspora joola dans les grandes villes senegalaises (Dakar, Ziguinchor), en Gambie (region de Kombo), en Guinee-Bissau (region de Cacheu). Presence en Europe (France, Portugal, Royaume-Uni) et aux Etats-Unis. Personnalites diasporiques notables dans le sport (Ansu Fati, Bacary Sagna, Joshua King, John Carew), la politique (Yahya Jammeh, Robert Sagna) et la musique."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "Estimations aggregees : Joshua Project (Jola-Fonyi : 535 000 toutes regions; sous-groupes Karon, Bayot, Gusilay, Banjal, Bliss supplementaires); Minority Rights Group (environ 4% de la population senegalaise); Ethnologue (dyo, eja, bda). Chiffre global estime a 700 000 personnes en comptant tous les sous-groupes.",
+      "distributionByCountry": [
+        { "country": "SEN", "population": 550000 },
+        { "country": "GMB", "population": 100000 },
+        { "country": "GNB", "population": 50000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Jola people. https://en.wikipedia.org/wiki/Jola_people",
+      "Wikipedia FR — Diolas. https://fr.wikipedia.org/wiki/Diolas",
+      "Joshua Project — Jola-Fonyi in Senegal. https://joshuaproject.net/people_groups/11568/SG",
+      "Minority Rights Group — Diola (Jola) in Senegal. https://minorityrights.org/communities/diola-jola/",
+      "Ethnologue — Jola-Fogny (dyo). https://www.ethnologue.com/language/dyo/",
+      "Ethnologue — Jola-Felupe (eja). https://www.ethnologue.com/language/eja/"
+    ]
   }
 }

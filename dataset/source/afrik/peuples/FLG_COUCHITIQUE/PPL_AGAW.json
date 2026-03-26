@@ -1,23 +1,111 @@
 {
   "id": "PPL_AGAW",
-  "nameMain": "",
+  "nameMain": "Agaw",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": [],
+  "currentCountries": ["ETH", "ERI"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Agaw",
       "selfAppellation": "Agäw / Agew",
+      "exonyms": [
+        "Agau",
+        "Agew",
+        "Agaw",
+        "Central Cushitic peoples",
+        "Athagaus (antique)"
+      ],
+      "originOfExonyms": "Le nom Agaw (Ge'ez : አገው, romanise : Agäw) est utilise dans les sources ethiopiennes anciennes. La plus ancienne attestation connue est le terme Athagaus (ou Athagaous) dans le Monumentum Adulitanum (inscription aksumite du 3e siecle). Une interpretation probable est ʿAd Agaw, signifiant fils de Agaw en ge'ez. L'inscription d'Ezana d'Axum (4e siecle) mentionne le terme Atagaw. Le terme Central Cushitic est la designation linguistique scientifique moderne.",
+      "whyProblematic": "Le terme Agaw englobe des groupes linguistiques et culturels tres differencies (Awngi, Bilen, Xamtanga, Qimant) dont la diversite interne est plus grande que celle des langues romanes selon certains linguistes. L'identite agaw commune est davantage construite par des tierces parties (Amhara, Tigrinya) que vecue comme un identifiant primaire par les communautes concernees, qui se definissent plutot par leurs sous-groupes.",
+      "contemporaryUsage": "Le terme Agaw est utilise dans les contextes academiques, historiques et administratifs ethiopiens. Les membres des communautes se designent generalement par leur groupe specifique : Awi (Awngi), Bilen, Xamtanga ou Qimant. La Zone Agew Awi de la Region Amhara (Ethiopie) porte officiellement ce nom. En Erythree, les Bilen sont reconnus comme groupe distinct.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Amhara, Tigray, Lasta (Éthiopie)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Couchitique central (langues agaw)",
+      "historicalRegion": "Hautes terres du nord de l'Ethiopie et de l'Erythree meridionale : Lasta, Amhara, Tigray, Gojjam, region du lac Tana, Gondar, Keren (Erythree)",
+      "currentCountries": ["ETH", "ERI"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue", "Ethiopian Historical Studies"]
+    "ethnicities": [
+      "Awi (Awngi) — sous-groupe meridional, zone Agew Awi au sud-ouest du lac Tana (Region Amhara, Ethiopie) ; plus de 350 000 locuteurs",
+      "Bilen (Blin) — sous-groupe septentrional, autour de Keren en Erythree et de Kassala au Soudan oriental ; environ 70 000 locuteurs",
+      "Xamtanga (Khamir) — sous-groupe central/oriental, nord de la Region Amhara (Zone Wawi, Lasta) ; environ 143 000 locuteurs",
+      "Qimant (Kemant) — sous-groupe occidental, Zone Semien Gondar, ouest du Tekezé, nord du lac Tana ; langue quasi-eteinte",
+      "Beta Israel (Falasha) — communaute agaw de tradition hebraique (pratiquant un judaisme de type ancien), dispersee entre Gondar et le reste de l'Ethiopie ; la plupart ont emigre en Israel depuis 1980",
+      "Falash Mura — descendants d'Agaw Beta Israel convertis au christianisme aux 19e-20e siecles, certains restent en Ethiopie"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Agaw sont consideres par les historiens comme les habitants originels (seed-agropastoralists) des hautes terres du nord de l'Ethiopie et de l'Erythree meridionale. La tradition orale des Agaw pointe systematiquement vers Lasta comme lieu d'origine et de dispersion. La premiere mention ecrite connue est celle du Monumentum Adulitanum (3e siecle apres J.-C.), inscription aksumite qui mentionne un peuple appele Athagaus comme conquis par un roi inconnu. L'inscription d'Ezana d'Axum (4e siecle) les mentionne sous le nom d'Atagaw. Cosmas Indicopleustes (6e siecle) decrit une importante route commerciale de l'or traversant le pays des Agau (a l'ouest du Tekezé, pres du lac Tana) ; un gouverneur d'Agau charge par le roi Kaleb d'Axum de proteger les routes caravannieres y est base.",
+      "formationPeriod": "Les Agaw forment une couche de population anterieure a l'expansion des langues semitiques ethiopiennes (amharique, tigrinya). Leur territoire originel couvrait l'ensemble des hautes terres ethiopiennes du nord avant d'etre progressivement reduit par l'expansion amhara et tigrinya. Le point culminant de leur puissance politique est la Dynastie Zagwe (vers 1137-1270 apres J.-C.), fondee par Mara Tekle Haymanot, qui regna sur l'Ethiopie du nord et l'Erythree avec comme centre le province de Lasta. La chute de la Zagwe en 1270 sous les coups de la Dynastie amhara de Yekuno Amlak marque un tournant dans le declin politique agaw.",
+      "migrationRoutes": [
+        "Population autochtone des hautes terres nord-ethiopiennes, sans migration fondatrice externe documentee",
+        "Repli progressif vers les zones peripheriques (Gojjam, Gondar, Lasta) sous la pression de l'expansion amhara et tigrinya",
+        "Migration des Beta Israel vers Israel depuis 1980 (Operation Moise 1984, Operation Salomon 1991)"
+      ],
+      "historicalSettlementZones": [
+        "Province de Lasta (centre historique et lieu d'origine oral des Agaw) — aujourd'hui partie de la Region Amhara",
+        "Zone Agew Awi (Gojjam, au sud-ouest du lac Tana) — principal bastion contemporain des locuteurs awngi",
+        "Nord de la Region Amhara : Wawi, Soqota, ancien Wollo, Tembien, Abergele",
+        "Zone Semien Gondar, a l'ouest du Tekezé et au nord du lac Tana (Qimant et anciens Beta Israel)",
+        "Keren et Kassala — territoire des Bilen (Erythree et est du Soudan)"
+      ],
+      "unificationsOrDivisions": "Les differents sous-groupes agaw ne formaient pas un bloc politique unifie apres la chute de la Zagwe. La Zagwe elle-meme regit par succession agnathique (frere succede a frere) selon le droit agaw. Apres 1270, les Amhara accorderent aux derniers rois Zagwe le titre honorifique de Wagshum pour gouverner les regions de Wag et de Lasta, perpetuant une autonomie symbolique. Les sous-groupes agaw sont aujourd'hui linguistiquement tres diversifies et souvent assimiles aux populations amhara ou tigrinya environnantes.",
+      "externalInfluences": "Conquete par les rois aksumites (3e et 4e siecles). Gouvernance aksumite sur les routes de l'or (6e siecle). Christianisation progressive dans le cadre de l'Eglise orthodoxe ethiopienne (a l'exception des Beta Israel qui conserverent un judaisme de type ancien). Domination amhara apres la chute de la Zagwe (1270). Arabisation et islamisation partielle des Bilen (influences arabes via la mer Rouge et le Soudan). Pression croissante de l'amharisation sous les regimes modernes.",
+      "majorHistoricalEvents": "Au 3e siecle, les Agaw (Athagaus) sont mentionnes comme conquis par un roi aksumite dans le Monumentum Adulitanum. Au 4e siecle, l'inscription d'Ezana les cite. Au 6e siecle, Cosmas Indicopleustes mentionne le gouverneur d'Agau charge par le roi Kaleb de proteger les caravanes d'or. Entre 1137 et 1270, la Dynastie Zagwe regit l'Ethiopie du nord, avec comme apogee le roi Gebre Meskel Lalibela, credite de la construction des eglises rupestres de Lalibela (l'une des merveilles de l'architecture africaine). En 1270, la Zagwe tombe devant la Dynaste amhara de Yekuno Amlak a la Bataille d'Ansata. En 1984 et 1991, les Operations Moise et Salomon evacuent la majorite des Beta Israel (Falasha) vers Israel."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les communautes agaw contemporaines sont generalement organisees en villages diriges par des conseils d'anciens. Historiquement, sous la Zagwe, la succession au trone suivait le principe de l'ainesse agnathique (frere succede a frere selon le droit agaw), distinct du systeme de succession lineaire direct. Apres 1270, les Agaw de Wag et Lasta furent gouvernes sous le titre honorifique de Wagshum accorde par les rois amhara, une forme de gouvernance indirecte.",
+      "clanOrganization": "L'organisation sociale agaw varie selon les sous-groupes. Les Awi (Awngi) du Gojjam sont principalement agriculteurs et ont une culture proche des Amhara voisins. Les Qimant etaient organises en clans patrilineaires avec un systeme religieux syncrethique (hebraique-chretien-paien). Les Beta Israel avaient une organisation communautaire centree sur la synagogue et le pretre (kes) comme chef religieux et social.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role important dans la transmission des terres agricoles et dans les mariages. Chez les Beta Israel, la genealogie religieuse (sacerdotale) etait transmise par les kes (pretres). La Zagwe revendiquait une genealogie agaw specifique pour legitimiser son pouvoir. Apres la domination amhara, de nombreux Agaw ont adopte des noms et genealogies amhara pour s'integrer socialement.",
+      "religiousAuthority": "Les Agaw presentent une diversite religieuse exceptionnelle. Les Awi et Xamtanga sont largement chretiens orthodoxes ethiopiens. Les Bilen sont en grande partie musulmans. Les Qimant pratiquaient (et certains pratiquent encore) un syncrethisme unique melant elements chretiens, paiens et hebraiques, avec des pretres-chefs (wambar) comme autorites religieuses locales. Les Beta Israel (Falasha) maintinrent pendant des siecles un judaisme de type biblique (sans Talmud) avec des kes (pretres) comme chefs religieux."
+    },
+    "languages": {
+      "mainLanguage": "Langues agaw (couchitique central)",
+      "isoCodes": ["awn", "byn", "xan", "ahg"],
+      "dialects": [
+        "Awngi (Agaw du sud) — parle par les Awi au sud-ouest du lac Tana (Zone Agew Awi, Ethiopie) ; plus de 350 000 locuteurs (ISO : awn)",
+        "Bilen (Blin, Agaw du nord) — parle par les Bilen de Keren (Erythree) et Kassala (Soudan) ; environ 70 000 locuteurs (ISO : byn)",
+        "Xamtanga (Agaw central / Khamir) — parle dans le nord de la Region Amhara ; environ 143 000 locuteurs (ISO : xan)",
+        "Qimant (Kemant, Agaw occidental) — parle dans la Zone Semien Gondar ; langue quasi-eteinte, quelques centaines de locuteurs (ISO : ahg)",
+        "Kunfal — probablement un dialecte de l'Awngi, parle a l'ouest du lac Tana ; peu documente"
+      ],
+      "vehicularRole": "Les langues agaw sont des langues minoritaires en Ethiopie et en Erythree. La plupart des locuteurs agaw sont bilingues ou trilingues, parlant egalement l'amharique, le tigrinya ou le tigre selon leur region. L'amharique est la lingua franca dominante en Ethiopie. La morphologie des langues agaw modernes est fortement influencee par l'amharique. La diversite interne des langues agaw est remarquable : la difference entre varietes est plus grande que la diversite de l'ensemble des langues romanes selon certains linguistes."
+    },
+    "culture": {
+      "majorRites": "Les pratiques rituelles varient fortement selon le sous-groupe agaw et la religion practiquee. Les Awi et Xamtanga chretiens pratiquent les rites de l'Eglise Orthodoxe Ethiopienne : bapteme (90 jours apres la naissance pour les garcons, 80 pour les filles), circoncision, festivites de Timkat (Epiphanie), Meskel (Exaltation de la Sainte Croix) et jeunes liturgiques. Les Beta Israel pratiquaient des rites proches de la Torah biblique : celebration du Shabbat, de Pesach (Pessa), de Yom Kippour (Astasreyo) et de Sigd (fete proprement ethiopienne-juive). Les Qimant pratiquaient des rites syncrethiques uniques sous la direction du wambar (chef religieux-chef de clan).",
+      "symbols": "Les eglises rupestres de Lalibela (construites sous la Zagwe, vers 12e-13e siecles) sont le symbole architectural et historique le plus important de l'heritage agaw. Le rocher taille est un element symbolique fort dans la culture de Lalibela. Pour les Beta Israel, la tente synagogue (masgid) et le baton du pretre (kes) sont des symboles religieux essentiels. Le lac Tana et ses iles (avec leurs monasteres antiques) representent un espace sacre pour les communautes agaw chretiennes.",
+      "artsAndMusic": "Les Agaw ont contribue a l'artisanat ethiopien traditionnel, notamment la poterie et le tissage. Les femmes agaw produisent des paniers tresses et des textiles selon des techniques ancestrales. La musique agaw inclut des chants liturgiques chretiens (melodies du rite de l'Eglise Orthodoxe Ethiopienne) et des chants de travail agricole. Les instruments traditionnels comprennent le krar (lyre a six cordes), le masenqo (vielle monocorde), le begena (grande lyre) et les sistres (tsanasel) utilises dans les offices religieux orthodoxes. La poesie orale en langues agaw est documentee chez les Bilen et les Awngi.",
+      "spiritualities": "Les Agaw presentent un paysage spirituel unique en Afrique. Une partie pratique le christianisme orthodoxe ethiopien (majoritaire chez les Awi et Xamtanga). Les Beta Israel ont maintenu pendant des siecles un judaisme biblique pre-rabbinique sans Talmud, avec des pratiques propres (Sigd, rites de purete). Les Qimant pratiquaient un syncrethisme combine d'elements chretiens, paiens et hebraiques, avec veneration de sites sacres naturels. Une minorite des Bilen est islamisee. Des croyances animistes et des pratiques de veneration des ancetres persistent dans certaines communautes comme substrat pre-abrahamique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le point culminant du pouvoir agaw est la Dynastie Zagwe (vers 1137-1270 apres J.-C.), fondee par Mara Tekle Haymanot. La Zagwe regit les parties septentrionales de l'Ethiopie et de l'Erythree actuelles, avec comme base de pouvoir la province de Lasta. Son roi le plus celebre, Gebre Meskel Lalibela, est credite de la construction des onze eglises monolithiques rupestres de Lalibela, patrimoine mondial de l'UNESCO et chef-d'oeuvre de l'architecture africaine medievale. La Zagwe utilisait le titre de negus (roi) et ses rois portaient trois noms (baptismal, de regence, de famille), comme les rois aksumites.",
+      "relationsWithNeighbors": "Les Agaw ont ete en contact permanent avec les Aksumites (3e-7e siecles), dont ils etaient sujets et fournisseurs d'or. Sous la Zagwe, ils gouvernerent a leur tour les hautes terres ethiopiennes, en relation commerciale et politique avec le Sultanat d'Adal au sud et l'Egypte copte au nord. Apres 1270, ils furent progressivement domines par les Amhara et Tigrinya, certains sous-groupes s'assimilant linguistiquement. Les Beta Israel vecurent en minorite dans un environnement chretien pendant des siecles, avec des periodes de coexistence et de persecutions.",
+      "conflictsOrAlliances": "Conquete aksumite des Athagaus (3e siecle). Gouvernance aksumite sous Kaleb (6e siecle). Fondation de la Zagwe (vers 1137) apres une periode de transition post-aksumite. La Bataille d'Ansata (1270) marque la defaite de la Zagwe et le debut de la domination amhara. Conversions forcees et volontaires des Beta Israel au christianisme aux 19e et debut 20e siecles. La question Qimant (revendications d'autonomie culturelle de la Zone Semien Gondar) est source de tensions avec l'administration amhara ethiopienne contemporaine.",
+      "diaspora": "La diaspora agaw la plus massive et la mieux documentee est celle des Beta Israel (Falasha) : l'Operation Moise (1984) evacua environ 8 000 Beta Israel vers Israel ; l'Operation Salomon (1991) en evacua 14 325 en 36 heures. Aujourd'hui, environ 150 000 personnes d'origine ethiopienne de confession juive vivent en Israel. Les Falash Mura (descendants agaw convertis au christianisme) ont ete autorises a immigrer en Israel au titre du regroupement familial. Des membres des autres sous-groupes agaw vivent dans les grandes villes ethiopiennes (Addis-Abeba, Bahir Dar, Gondar)."
+    },
+    "demography": {
+      "totalPopulation": 1100000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN Agaw people (Ethiopie : 899 416 au recensement 2007 ; Erythree : 100 000 estimation 2012). Ethnologue : Awngi 350 000 locuteurs, Xamtanga 143 000, Bilen 70 000, Qimant quelques centaines. Estimation 2025 incluant la croissance demographique ethiopienne (taux annuel d'environ 2,6%) : total approximatif de 1 100 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1000000,
+          "note": "Principalement dans la Region Amhara : Zone Agew Awi (Awngi), nord de l'Amhara (Xamtanga), Zone Semien Gondar (Qimant) et Lasta"
+        },
+        {
+          "country": "ERI",
+          "population": 100000,
+          "note": "Bilen autour de Keren (Erythree centrale) et quelques communautes dans l'est du Soudan (Kassala)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Agaw people. https://en.wikipedia.org/wiki/Agaw_people",
+      "Wikipedia EN — Agaw languages. https://en.wikipedia.org/wiki/Agaw_languages",
+      "Wikipedia EN — Zagwe dynasty. https://en.wikipedia.org/wiki/Zagwe_dynasty",
+      "Ethnologue — Awngi (awn). https://www.ethnologue.com/language/awn/",
+      "Ethnologue — Bilen (byn). https://www.ethnologue.com/language/byn/",
+      "Ethiopia Insight — The Ethiopian Qemant of the Agaw in perspective. https://www.ethiopia-insight.com/2019/03/06/the-ethiopian-qemant-of-the-agaw-in-perspective/",
+      "Tamrat, Taddesse. Church and State in Ethiopia 1270-1527. Oxford: Clarendon Press, 1972.",
+      "Horn of Africa Evangelical Mission — Agew people profile. https://hornofafrica.org/wp-content/uploads/2019/12/Agew.pdf"
+    ]
   }
 }

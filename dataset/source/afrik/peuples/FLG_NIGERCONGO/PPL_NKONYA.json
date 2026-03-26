@@ -6,54 +6,83 @@
   "content": {
     "appellations": {
       "mainName": "Nkonya",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nkunyáfɔ (pluriel) / Okunyáyin (singulier)",
+      "exonyms": ["Nkonya", "Nkunya"],
+      "originOfExonyms": "Le nom Nkonya est la forme exonymique anglicisee du nom propre Nkunya. Le territoire est egalement appele Nkunya par ses habitants.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Nkonya est utilise dans les documents officiels ghanéens et par les organisations linguistiques. Les locuteurs preferent Nkunyáfɔ pour se designer eux-memes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Guan (branche Guang meridionale ou septentrionale selon la classification)",
+      "historicalRegion": "Region Oti, ancien district de Biakoye, long de la route Kpando-Worawora",
       "currentCountries": ["GHA"]
     },
     "ethnicities": ["Nkonya"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nkonya appartiennent au groupe Guan, considere comme l'un des premiers peuples installateurs du Ghana meridional. Les Guan auraient migre depuis la region de Mossi-Dagbon (Burkina Faso actuel) vers 1000 apr. J.-C., remontant la vallee de la Volta vers le sud. Selon la tradition orale nkonya, les ancetres venaient d'un lieu appele Kpembe (la Hache de Pierre) pres de Salaga, puis descendirent vers la cote pour s'etablir a Cape Coast.",
+      "formationPeriod": "Le peuple Nkonya tel qu'il existe aujourd'hui s'est constitue entre les XVIe et XIXe siecles, a la suite d'une serie de migrations et d'une scission communautaire majeure au gue de Senchi sur la rive occidentale de la Volta.",
+      "migrationRoutes": [
+        "Kpembe (pres de Salaga, nord du Ghana) vers Cape Coast (cote)",
+        "Cape Coast vers Larteh-Akuapem (montagnes Akwapim)",
+        "Larteh vers Senchi sur la rive ouest de la Volta",
+        "Scission a Senchi : une section (Wurubito/Ahenkro) sous le roi Tegyi traverse la Volta ; l'autre (Wurupong) sous le roi Asiakwa remonte vers le nord et traverse a la confluence de la riviere Obosom",
+        "Installation definitive dans la zone de 13 villes le long de la route Kpando-Worawora, Region Oti"
+      ],
+      "historicalSettlementZones": [
+        "District de Biakoye, Region Oti, Ghana",
+        "Environs de Kpando, dans un corridor de 34 km le long de la route Kpando-Worawora",
+        "Villes principales : Wurupong, Ahenkro, Ntsumuru, Ntumada, Akloba, Tepo, Tayi, Asakyiri, Kadjebi"
+      ],
+      "unificationsOrDivisions": "La communaute Nkonya s'est divisee en deux groupes distincts lors du sejour a Senchi : le groupe nord (Wurupong) et le groupe sud (Ahenkro ou Wurubito). Cette division persiste jusqu'a aujourd'hui sous la forme d'un bicephalisme politique (deux chefs supremes) et d'une division dialectale nord-sud.",
+      "externalInfluences": "Influence linguistique forte de l'Akan (Twi) et dans une moindre mesure de l'Ewe et de l'anglais. La colonisation britannique et les missions chretiennes (GILLBT - Ghana Institute of Linguistics, Literacy and Bible Translation) ont intensifie les contacts. Un taux de bilinguisme eleve en Akan et en Ewe est observe.",
+      "majorHistoricalEvents": "La traite negriere sur la cote poussa les Nkonya a fuir vers l'interieur, amorçant une longue migration vers le nord. La guerre d'expansion akwamu au XVIIIe siecle perturba plusieurs etablissements Guan dont les Nkonya. La traduction du Nouveau Testament en nkunya (2010-2017) par GILLBT constitue un jalon culturel majeur."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferie bicephalique : deux chefs supremes (paramount chiefs), l'un pour le groupe nord base a Wurupong (Nana Kwadwo Asiakwa II), l'autre pour le groupe sud base a Ahenkro. Cette dualite politique cree une division nord-sud marquee sur les plans linguistique, politique et social.",
+      "clanOrganization": "Organisation par communautes villageoises. La communaute compte environ 13 villes reparties dans la zone Nkonya. Les anciens de chaque village jouent un role consultatif aupres du chef. La communaute a developpe un Comite d'orthographe Nkonya (1998) montrant une organisation culturelle formelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques structurent les decisions communautaires, notamment les mariages et la succession des chefferies. Une integration croissante des communautes et des mariages inter-dialectes est rapportee par les anciens.",
+      "religiousAuthority": "Coexistence d'une vision du monde religieuse traditionnelle et du christianisme. La relation entre la spiritualite chretienne et les conceptions traditionnelles est jugee complexe selon le Joshua Project. Des pasteurs chretiens exercent une autorite religieuse croissante."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Nkunya (Nkonya)",
+      "isoCodes": ["nko"],
+      "dialects": [
+        "Dialecte nord (parle a Wurupong et villes au nord)",
+        "Dialecte sud (parle de Tepo vers le sud, notamment a Asakyiri, Tayi, Tepo)"
+      ],
+      "vehicularRole": "La langue Nkunya est la langue vernaculaire premiere des Nkonya. Elle n'est pas enseignee officiellement dans les ecoles. Le bilinguisme en akan (Twi) et en ewe est tres repandu. L'anglais est la langue d'enseignement scolaire. Nkunya joue un role de marqueur identitaire ethnique fort."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La vie ceremonielle est structuree autour des chefferies et des rites de passage. Des ceremonies communautaires lient les deux groupes dialectaux. La vie religieuse combine des pratiques chretiennes (majoritairement protestantisme) et une vision du monde traditionnelle.",
+      "symbols": "La langue nkunya est un symbole fort d'identite ethnique. Les Nkonya expriment des attitudes tres positives envers leur culture et leur langue, consideree comme marqueur d'appartenance ethnique plutot que religieux.",
+      "artsAndMusic": "Traditions orales et musicales partagees avec les autres peuples Guan. Lexique emprunte a l'akan et a l'ewe refletant les echanges culturels. La phonologie tonale (systeme a 9 voyelles avec harmonie vocalique ATR) confere a la langue une richesse expressive documentee.",
+      "spiritualities": "Spiritualite traditionnelle guan combinee au christianisme (environ 60 % de chretiens adherents selon le Joshua Project). Une relation complexe entre les pratiques traditionnelles et le christianisme est documentee : la conversion n'a pas efface les conceptions du monde ancestrales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Deux chefferies principales : la chefferie nord (Nkonya-Wurupong) et la chefferie sud (Nkonya-Ahenkro). Ces chefferies perpetuent la division historique issue de la scission de Senchi. Elles participent aux structures administratives modernes du district de Biakoye.",
+      "relationsWithNeighbors": "Relations avec les Ewe (majoritaires dans la region), les Akan et d'autres groupes Guan voisins (Likpe, Santrokofi, Akpafu). Le bilinguisme largement repandu temoigne d'une integration dans l'espace regional multilingue. Une proportion notable de non-Nkonya resident en zone Nkonya et parlent l'ewe.",
+      "conflictsOrAlliances": "Les Nkonya ont fui les pressions de la traite negriere puis des guerres akwamu au cours de leur longue migration. Selon la tradition, la proximite historique avec les Larteh (Guan des montagnes Akwapim) a laisse des traces phonologiques dans le dialecte sud.",
+      "diaspora": "Une diaspora nkonya existe dans les zones de la plaine Afram (rive ouest du lac Volta) et dans des etablissements migrants entre Kadjebi Akan et Nkwanta. Des locuteurs nkonya sont egalement presents dans des communautes urbaines en dehors de la zone traditionnelle."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 28000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (estimation fondee sur le recensement ghaneen de 2000 : 25 599 personnes se declarant Nkonya ethniquement)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 28000,
+          "note": "Concentres dans la Region Oti, district de Biakoye, le long de la route Kpando-Worawora"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Peacock, Wesley – An Overview of the Phonology of Nkonya, Collected Language Notes No. 27, Institute of African Studies, University of Ghana, Legon, 2007 (https://www.webonary.org/nkonya/files/Nkonya_Phonology_FINAL.pdf)",
+      "Joshua Project – Nkonya in Ghana, 2025 (https://joshuaproject.net/people_groups/13420/GH)",
+      "Ethnologue – Nkonya Language (NKO), SIL International, 2024 (https://www.ethnologue.com/language/nko/)",
+      "Wikipedia EN – Nkonya language (https://en.wikipedia.org/wiki/Nkonya_language)",
+      "Wikipedia EN – Guan people (https://en.wikipedia.org/wiki/Guan_people)",
+      "Ghana Place Names – Guang peoples (https://sites.google.com/site/ghanaplacenames/peoples-states/guang)"
+    ]
   }
 }

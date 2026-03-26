@@ -1,59 +1,89 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_BORANA",
   "nameMain": "Borana",
   "languageFamilyId": "FLG_COUCHITIQUE",
-  "currentCountries": ["ETH"],
+  "currentCountries": ["ETH", "KEN", "SOM"],
   "content": {
     "appellations": {
       "mainName": "Borana",
-      "selfAppellation": "",
-      "exonyms": ["Boranas"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Boorana",
+      "exonyms": ["Boran", "Boranas", "Borana Oromo", "Galla"],
+      "originOfExonyms": "Le terme Galla, aujourd'hui péjoratif et abandonné, était utilisé par les Amhara et les sources coloniales pour désigner l'ensemble du peuple Oromo. Boran est la forme anglicisée de Boorana, utilisée dans les documents administratifs kenyans et éthiopiens.",
+      "whyProblematic": "Le terme Galla est considéré comme une insulte par les Oromo et ne doit plus être utilisé. Le nom Borana peut prêter à confusion avec la moitié Boorana de l'ensemble du peuple Oromo, dont les Borana du sud sont une sous-division.",
+      "contemporaryUsage": "Le nom Boorana est utilisé par le peuple lui-même dans leurs propres langues et publications. Borana ou Boran est courant dans les documents administratifs éthiopiens et kenyans ainsi que dans la littérature académique anglophone."
     },
-    "ethnicities": ["Borana"],
+    "ethnicities": ["Borana", "Oromo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Borana sont l'une des deux grandes moitiés du peuple Oromo, aux côtés des Barentu. Les études de linguistique historique et d'ethnologie comparative suggèrent que les Oromo, dont les Borana, ont pour berceau la région des lacs Chew Bahir et Chamo dans le sud de l'Éthiopie et le nord du Kenya. Les Cushitiques sont présents dans cette région depuis au moins le premier millénaire avant notre ère.",
+      "formationPeriod": "Entre le XIIe et le XVe siècle, le peuple Oromo s'est différencié en deux grandes confédérations pastorales : les Boorana et les Barentu. Les Borana, dotés de leur organisation politique Gadaa, ont commencé à s'étendre vers le XVIe siècle lors des Grandes Migrations Oromo.",
+      "migrationRoutes": [
+        "Du berceau ancestral autour des lacs Chew Bahir et Chamo vers le sud, en direction de ce qui est aujourd'hui la zone de Borena (Éthiopie) et le nord du Kenya",
+        "Expansion progressive vers le nord du Kenya, notamment dans les districts de Marsabit, Isiolo et Tana River",
+        "Présence signalée jusqu'aux rives de l'île de Lamu sur la côte kenyane"
+      ],
+      "historicalSettlementZones": [
+        "Zone de Borena, région d'Oromia, Éthiopie",
+        "Comté de Marsabit, nord du Kenya",
+        "Comté d'Isiolo, Kenya",
+        "Comté de Tana River, Kenya",
+        "Triangle frontalier Éthiopie-Kenya-Somalie"
+      ],
+      "unificationsOrDivisions": "Les Borana se subdivisent en plusieurs sous-groupes dont les Macha, Tulama, Sadacha, ainsi que des groupes satellites comme les Gabbra, Sakuyye et Waata. Leur unité est maintenue par le système Gadaa commun. Leur territoire a été fragmenté par les frontières coloniales établies entre l'Éthiopie, le Kenya et la Somalie au tournant du XXe siècle.",
+      "externalInfluences": "La colonisation britannique au Kenya et la modernisation éthiopienne ont perturbé le système traditionnel de gestion des terres et des ressources en eau. Les sécheresses récurrentes et la pression démographique ont aussi intensifié les conflits avec les peuples voisins comme les Gabra et les Turkana.",
+      "majorHistoricalEvents": "Intégration progressive dans l'Empire éthiopien dès le XVIe siècle sous l'Empereur Susenyos I, qui grandit parmi les Oromo. Fragmentation territoriale par les frontières coloniales vers 1900. Grandes assemblées Gumi Gayo de 1966 et 1988, au cours desquelles des décrets furent adoptés pour gérer les ressources pastorales. Inscription du Gadaa au patrimoine de l'UNESCO comme patrimoine culturel immatériel de l'humanité."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Le Gadaa est un système de gouvernance egalitaire indigène pratiqué sans interruption par les Borana depuis environ 568 ans. Il couvre les dimensions politique, sociale, économique et spirituelle. Le chef suprême, l'Abagadha, est élu au sein du Gumi Gayo (parlement) composé de représentants des 17 sous-clans. L'Abagadha est désigné dès son plus jeune âge et suit une éducation de quarante ans avant de prendre le pouvoir.",
+      "clanOrganization": "Les Borana comprennent 17 sous-clans représentés au Gumi Gayo. Parmi les groupes associés figurent les Gabbra, les Sakuyye, les Boran-gutu et les Waata. Les clans gèrent collectivement les ressources pastorales, les pâturages et les points d'eau traditionnels appelés Tulla Saglan (les neuf puits sacrés).",
+      "ageClassSystems": "Le système Gadaa est organisé en dix classes d'âge séparées par huit ans chacune, couvrant ainsi quarante ans de cycle politique. Chaque classe est successivement responsable du gouvernement, de la défense, de la législation et des rites religieux. Cinq partis politiques permanents se succèdent au pouvoir dans ce cadre.",
+      "roleOfLineages": "Les lignages patrilinéaires définissent l'appartenance clanique et l'accès aux ressources pastorales. La filiation détermine la classe d'âge Gadaa dans laquelle un homme est enrôlé. Les anciens des lignages participent aux délibérations du Gumi Gayo.",
+      "religiousAuthority": "Le Gadaa intègre une dimension spirituelle : le chef suprême est symboliquement Dieu lui-même (Waqa), et toute décision incertaine est référée à Waqa Bekh (seul Dieu sait). Les assemblées se tiennent sous un figuier sycomore, symbole de dialogue et de consensus. Les fêtes Wadaja sont organisées pour honorer Waqa, avec des sacrifices de bétail."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Borana-Arsi-Guji Oromo (gax)",
+      "isoCodes": ["gax"],
+      "dialects": [
+        "Afaan Booranaa",
+        "Borana du Kenya",
+        "Borana du nord de l'Éthiopie"
+      ],
+      "vehicularRole": "La langue Borana (afaan Booranaa) est un dialecte de l'Oromo, suffisamment distinct pour être parfois difficile à comprendre pour d'autres locuteurs Oromo. Elle est utilisée comme langue d'enseignement et véhiculaire dans la zone de Borena et dans les communautés Borana du nord du Kenya. L'amharique en Éthiopie et le swahili au Kenya sont également utilisés pour les communications interethniques."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "L'Irreechaa (ou Irreensa) est la fête de thanksgiving Oromo célébrée à l'automne, marquant la fin de la saison des pluies. Le Gumi Gayo (grande assemblée parlementaire) se réunit tous les huit ans pour les transferts de pouvoir et la proclamation de lois. Les Wadaja sont des festins communautaires organisés lors de diverses occasions, avec sacrifices de bétail en l'honneur de Waqa.",
+      "symbols": "Les neuf puits sacrés Tulla Saglan constituent le symbole fondamental de l'identité Borana et sont des lieux de pèlerinage depuis l'Éthiopie et le Kenya. Le figuier sycomore symbolise le dialogue et le consensus dans le Gadaa. Le bétail est le principal marqueur de richesse et de statut social.",
+      "artsAndMusic": "La tradition orale Borana est particulièrement riche, transmettant l'histoire, les lois et les valeurs morales à travers des poèmes, des chants et des récits. Les femmes gardent vivant le savoir culturel et conduisent les processions lors des fêtes comme l'Irreechaa. La tenue traditionnelle féminine Gutino est portée lors des cérémonies importantes.",
+      "spiritualities": "La majorité des Borana Oromo est musulmane, mais conserve des pratiques de la religion traditionnelle. Ils adorent un Être suprême nommé Waqa (le ciel, Dieu). Les Borana croient que des objets comme les arbres, les sources et les rochers ont des esprits. Des esprits appelés jinn peuvent s'emparer des personnes. Les adultes jeûnent pendant le Ramadan, mais peu célèbrent les autres fêtes islamiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Borana n'ont pas développé de royaume centralisé mais ont maintenu un système républicain egalitaire via le Gadaa. Ce système a permis aux Borana de conquérir et de protéger leurs territoires jusqu'à la Seconde Guerre mondiale. Le Gumi Gayo fonctionne comme un sénat traditionnel avec des pouvoirs législatifs, exécutifs et judiciaires.",
+      "relationsWithNeighbors": "Les Borana entretiennent des relations commerciales et parfois conflictuelles avec les Gabra, les Turkana, les Sakuyye et les Somali. Des conflits armés pour l'accès aux pâturages et aux points d'eau ont opposé les Borana aux Gabra en particulier dans le nord du Kenya. Des échanges culturels et linguistiques ont eu lieu avec les peuples Nilotiques voisins.",
+      "conflictsOrAlliances": "Des confrontations répétées avec les Somali ont eu lieu aux XVIe-XVIIIe siècles dans les zones frontalières orientales. Au Kenya, le conflit entre Borana et Gabra est documenté depuis les années 1990 et lié à l'accès aux ressources pastorales. L'alliance de Susenyos I avec les Borana au XVIIe siècle illustre leur rôle militaire et politique dans l'histoire de l'Empire éthiopien.",
+      "diaspora": "Des communautés Borana sont présentes à Nairobi, Kenya, ainsi que dans d'autres villes éthiopiennes et kenyanes. Une diaspora Borana existe en Europe et en Amérique du Nord, principalement depuis les années 1990, suite aux conflits et aux sécheresses."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2024 / Wikipedia Oromo people / 101 Last Tribes, estimation composite",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 980000, "percentage": 82 },
+        { "country": "KEN", "population": 210000, "percentage": 17 },
+        { "country": "SOM", "population": 10000, "percentage": 1 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Boorana – Wikipedia EN (https://en.wikipedia.org/wiki/Boorana)",
+      "Oromo people – Wikipedia EN (https://en.wikipedia.org/wiki/Oromo_people)",
+      "Oromo, Borana in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/19651/ET)",
+      "Borana people – 101 Last Tribes (https://www.101lasttribes.com/tribes/borana.html)",
+      "The Gadaa System of the Oromo People – Participedia (https://participedia.net/method/the-gadaa-system-of-the-oromo-people)",
+      "Oromo – Encyclopaedia Britannica, 2026 (https://www.britannica.com/topic/Oromo)",
+      "Oromo, Borana-Arsi-Guji – Wiktionary ISO 639-3 Africa (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+    ]
   }
 }

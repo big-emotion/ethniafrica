@@ -6,63 +6,102 @@
   "content": {
     "appellations": {
       "mainName": "Tabwa",
-      "selfAppellation": "Tabwa",
-      "exonyms": ["Tabwa (terme utilisé par les Européens)"],
+      "selfAppellation": "Tabwa (aussi orthographié Taabwa)",
+      "exonyms": [
+        "Taabwa (orthographe alternative, utilisée par Ethnologue/SIL)",
+        "Rungu (aussi orthographié Malungu, désigne parfois le peuple et sa langue)",
+        "Tarbwa (variante orthographique ancienne)",
+        "Shila ou Sila (désigne les Tabwa de Zambie, en référence à un dialecte)"
+      ],
+      "originOfExonyms": "Le terme Tabwa viendrait d'un verbe de leur langue signifiant etre attache, en référence à la période où ils furent victimes de la traite des esclaves. Rungu est le nom utilisé en swahili et par certains linguistes pour désigner leur langue. Shila ou Sila est le nom donné aux Tabwa de Zambie dont la langue a été influencée par le bemba lors de leur migration au 18e siècle.",
+      "whyProblematic": "L'identité tabwa est en partie une construction coloniale : les populations qui s'identifient aujourd'hui comme Tabwa étaient à l'origine une série de villages distincts aux histoires différentes. L'administration coloniale belge a unifié ces groupes sous un même nom. La frontière ethnique avec les Lungu voisins est fluide, et certaines sources confondent les deux groupes.",
+      "contemporaryUsage": "Tabwa (ou Taabwa) est l'appellation couramment utilisée en anglais et en français. Les Tabwa de Zambie sont souvent désignés Shila. L'ethnonyme est devenu plus consolidé au cours du 20e siècle.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone M)",
-      "historicalRegion": "COD, ZMB",
+      "ethnoLinguisticGroup": "Bantou (Zone M, groupe Bemba)",
+      "historicalRegion": "Rivages sud-ouest du lac Tanganyika — massif de Marungu (Province du Katanga/Tanganyika, RDC) ; nord-est de la Zambie (districts de Mpulungu, Mbala)",
       "currentCountries": ["COD", "ZMB"]
     },
     "ethnicities": [
-      "Tabwa de RDC",
-      "Tabwa de Zambie",
-      "Sous-groupes régionaux"
+      "Tabwa du Katanga (RDC) — province du Tanganyika, lac Tanganyika, au sud de Moba",
+      "Tabwa/Shila de Zambie (districts de Mpulungu et Mbala, rivage nord-est zambien du lac Tanganyika)",
+      "Tabwa de la rivière Luapula (nord-est Zambie)",
+      "Nsama (sous-groupe lié à la chefferie de Nsama, issue d'un clan matrilinéaire Zimba)",
+      "Tabwa du plateau de Marungu (hauts plateaux herbeux au-dessus du lac Tanganyika)"
     ],
     "origins": {
-      "ancientOrigins": "Les Tabwa sont originaires de la région de la RDC et de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone M).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Tabwa descendent de populations bantou qui ont migré depuis l'Afrique de l'Est centrale, peut-être la région de l'actuelle Tanzanie, vers les rivages sud-ouest du lac Tanganyika, fuyant guerres et famines. Ils se sont installés le long des rives du lac et ont adopté de nombreuses coutumes de leurs voisins luba, influençant profondément leur cosmologie et leur art. Les ancêtres royaux des chefferies tabwa remontent à un clan matrilinéaire Azimba (ou Zimba, associé au léopard). Selon la tradition orale, trois femmes royales du clan Azimba, venues de l'ouest du lac Tanganyika, fondèrent les premières chefferies tabwa : Mukulu Kalwa établit la chefferie Nsama, Mukulu Munakile celle de Mukupa Kaoma, et Mukulu Mwenya s'installa à Mbete sur les rives du lac.",
+      "formationPeriod": "L'identité tabwa telle qu'elle existe aujourd'hui est en partie un artefact de l'administration coloniale belge. Historiquement, les Tabwa vivaient en villages relativement autonomes. Au 19e siècle, l'essor du commerce de l'ivoire et des esclaves (avec des marchands arabo-swahili comme Msiri et Tippu Tip) provoqua l'émergence de nouvelles chefferies plus puissantes et l'essor d'un art distinctif. Cette période vit l'ascension de familles d'élite qui s'approprièrent la gouvernance régionale en valorisant les traditions artistiques et les connexions ancestrales.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est centrale (probable actuelle Tanzanie) vers l'ouest, traversant le lac Tanganyika",
+        "Installation sur les rivages sud-ouest du lac Tanganyika (massif de Marungu)",
+        "Migration vers le nord-est de la Zambie au 18e siècle (dialecte Shila résultant d'influences bemba)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Tanganyika (RDC), lac Tanganyika, district de Moba et Kalemie",
+        "Plateau de Marungu (hauts plateaux herbeux au-dessus du lac Tanganyika, RDC)",
+        "Districts de Mpulungu et Mbala (nord-est Zambie, rivage nord-ouest du lac Tanganyika)",
+        "Rivière Luapula (nord-est Zambie)"
+      ],
+      "unificationsOrDivisions": "La société tabwa est organisée en plusieurs clans et sous-clans aux histoires indépendantes, pratiquant la descendance matrilinéaire. Plusieurs sous-groupes présentent des dialectes distincts. L'unification sous le nom Tabwa est largement le produit de l'administration coloniale. Localement, l'autorité est fragmentée entre de nombreuses chefferies villageoises autonomes, dont les plus importantes sont les chefferies Nsama, Tumbwe et Mpweto.",
+      "externalInfluences": "Forte influence culturelle des Luba voisins (à l'ouest), notamment dans l'art et la cosmologie. Contacts avec les Bemba (Zambie) qui influencèrent le dialecte Shila. Commerce avec les marchands arabo-swahili au 19e siècle (ivoire, esclaves), ayant introduit des perturbations politiques majeures. Colonisation belge (Congo belge) et britannique (Rhodésie du Nord, actuelle Zambie). Influence du christianisme (catholicisme romain) et, dans une moindre mesure, de l'islam.",
+      "majorHistoricalEvents": "Au 19e siècle, les Tabwa furent intégrés dans les réseaux commerciaux de l'ivoire et des esclaves dominés par les marchands arabo-swahili (dont Msiri). Cette période d'insécurité favorisa l'émergence de nouvelles chefferies puissantes et d'un art distinctif. Lors de la colonisation belge (1885-1960), les structures politiques tabwa furent partiellement réorganisées. Pendant la période post-indépendance, l'effondrement des infrastructures dans les années 1970 marginalisa la région. Les guerres du Congo (1996-2003) et les conflits du Kivu ont perturbé les populations tabwa."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les villages tabwa agissent traditionnellement de manière relativement autonome. Chaque village est dirigé par un chef (mwine) qui justifie son autorité en retraçant sa descendance jusqu'aux fondateurs mythiques de la société tabwa. Ce pouvoir est matrilinéaire : la succession à la chefferie se transmet par les femmes. Les chefs symbolisent la continuité de l'univers et la position de l'être humain dans le cosmos. Ils exercent leur autorité notamment lors des cérémonies de la nouvelle lune. Les grands chefs (comme les chefs Nsama ou Tumbwe) gouvernent plusieurs villages. Les chefs wielent des bâtons de commandement comme signe distinctif de leur autorité.",
+      "clanOrganization": "La société tabwa est fondée sur la descendance matrilinéaire (transmission par la mère). Plusieurs clans et sous-clans coexistent avec des histoires indépendantes. Le clan Zimba (associé au léopard) est le clan royal fondateur. L'appartenance clanique détermine les alliances matrimoniales (règle d'exogamie clanique), les droits fonciers et les affiliations spirituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilinéaires déterminent la succession des chefferies. La mémoire généalogique est entretenue par des sculptures d'ancêtres (mikisi mupasi) qui représentent les ancêtres fondateurs des lignées royales. Ces sculptures sont collectionnées et exposées par les chefs pour légitimer leur pouvoir.",
+      "religiousAuthority": "Les specialists religieux (des sculpteurs-devins, waganga) créent les mikisi (sculptures d'ancêtres) et assurent les rituels liés à la nouvelle lune. Les chefs-sorciers (bapule, ou chefs-féticheurs) ont une double autorité politique et spirituelle. Des sociétés masculines secrètes contrebalancent le pouvoir des chefs. La puissance rituelle est associée à la connaissance de médecines (bilongo) et d'objets chargés de force spirituelle."
     },
     "languages": {
-      "mainLanguage": "Tabwa",
-      "vehicularRole": "Le tabwa est parlé par la majorité des Tabwa. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Taabwa (Ichitaabwa / Kitabwa)",
+      "isoCodes": ["tap"],
+      "dialects": [
+        "Taabwa du Katanga (RDC) — variété principale",
+        "Shila ou Sila (Zambie) — dialecte influencé par le bemba, suite à la migration du 18e siècle",
+        "Variétés sous-dialectales liées à différents clans et sous-groupes"
+      ],
+      "vehicularRole": "La langue taabwa est classée par Ethnologue dans le groupe Bemba (Zone M, bantou). Elle est proche du bemba et du luba, langues des peuples voisins. Le nombre de locuteurs est estimé à environ 500 000 personnes (Taabwa language, Wikipedia). En RDC, le swahili est utilisé comme langue véhiculaire régionale. En Zambie, le bemba joue ce rôle, au point que 26 500 Tabwa parlent aussi le bemba comme langue maternelle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tabwa, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La nouvelle lune (balamwezi, le lever de la nouvelle lune) est le moment rituel le plus important du calendrier tabwa. Des offrandes de nourriture sont faites aux mikisi (sculptures d'ancêtres) lors de l'apparition de la nouvelle lune. Les cérémonies de la nouvelle lune réunissent les membres du clan et permettent aux chefs de renouveler leur connexion aux forces ancestrales. Rites d'initiation à l'âge adulte (pour les garçons et les filles) marquant le passage à la vie adulte. Rites funéraires comportant des périodes de deuil, des sacrifices et des cérémonies de consultation des ancêtres. Cérémonies de prise de fonction des chefs (installation officielle incluant des rites de legitimation ancestrale).",
+      "symbols": "La lune croissante (nouvelle lune, balamwezi) est le symbole cosmologique fondamental des Tabwa : elle représente la renaissance, le renouveau du cycle de vie et la continuité de l'existence. Le triangle est la représentation iconographique de la nouvelle lune dans l'art tabwa. Les scarifications triangulaires sur le visage et le corps des figurines ancestrales (et autrefois sur les personnes) symbolisent la pleine lune et le plus haut idéal de sagesse et de civilisation. La peau de léopard est associée au pouvoir du clan fondateur Zimba. Les bâtons de commandement (batons de chefs) symbolisent l'autorité politique.",
+      "artsAndMusic": "L'art tabwa est principalement un art de la vénération ancestrale. Les mikisi mupasi (figures d'ancêtres) sont les pièces centrales de la production artistique : sculptures en bois de taille petite à moyenne, représentant ancêtres et jumeaux ; les figures présentent de longues coiffures tressées pouvant descendre dans le dos, une posture légèrement inclinée en arrière, des yeux ouverts fixant le ciel et parfois une langue légèrement visible. Les scarifications triangulaires (représentant la nouvelle lune) ornent les visages et les corps des sculptures. Les visages portent des marquages spécifiques : des lignes sur les joues et les tempes indiquent l'origine de la sagesse, des bandes texturées encadrent le front (siège des rêves prophétiques). Des perles en verre sont parfois incrustées comme yeux. Des objets utilitaires finement sculptés complètent la production : peignes, tambours, soufflets de forge. La grande majorité des pièces collectées avant les années 1970 était incorrectement attribuée aux Luba voisins. L'art tabwa a été redécouvert grâce aux recherches d'Allen Roberts (Smithsonian Institution, exposition The Rising of a New Moon, 1985). Instruments musicaux : tambours, xylophones, instruments à cordes. Chants polyphoniques lors des cérémonies de la nouvelle lune.",
+      "spiritualities": "Le système religieux tabwa est centré sur le culte des ancêtres. Les ancêtres sont incarnés dans des sculptures mikisi, ointes d'argile et nourries lors de la nouvelle lune. Cette pratique assure la continuité du pouvoir des chefs et la fertilité de la communauté. La cosmologie tabwa est articulée autour de la nouvelle lune (balamwezi) comme métaphore centrale de la renaissance et de la continuité de la vie face aux ténèbres. La société tabwa partage plusieurs éléments de la cosmologie luba (peuples voisins) : les deux traditions ont coévolué dans un contexte de contacts étroits et d'influences mutuelles. Le premier chercheur à documenter systématiquement cette cosmologie est l'anthropologue Allen Roberts (Université du Michigan). La religion traditionnelle coexiste avec le christianisme (catholicisme principalement) et, dans une moindre mesure, l'islam."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tabwa dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Tabwa ne formèrent jamais un empire centralisé mais plutôt un ensemble de chefferies villageoises autonomes réunies par une identité culturelle commune. La chefferie Nsama (fondée par Mukulu Kalwa, ancêtre féminin du clan Zimba) fut l'une des plus puissantes. Au 19e siècle, de nouvelles élites tabwa prospérèrent grâce au commerce régional (sel, fer, poisson fumé, ivoire) et prirent le contrôle des structures politiques locales. Les chefferies Tumbwe et Mpweto étaient aussi historiquement importantes.",
+      "relationsWithNeighbors": "Relations étroites (et souvent conflictuelles) avec les Luba à l'ouest, dont les Tabwa ont assimilé de nombreux éléments culturels et artistiques. Relations commerciales importantes avec les Bemba au sud-ouest (échanges de sel, fer, poisson). Contacts avec les Lungu au nord (affinités culturelles et linguistiques). Au 19e siècle, contacts avec les marchands arabo-swahili et leurs réseaux commerciaux (ivoire, esclaves) qui perturbèrent l'équilibre politique régional.",
+      "conflictsOrAlliances": "Les Tabwa furent victimes des razzias esclavagistes au 19e siècle (d'où le nom taabwa : ceux qui sont attachés). Des alliances avec des marchands swahili comme Tippu Tip permirent à certaines élites tabwa de s'enrichir et de renforcer leur pouvoir local. La colonisation belge déstabilisa les structures politiques tabwa. Les guerres du Congo (1996-2003) ont causé des déplacements importants de populations tabwa.",
+      "diaspora": "Des Tabwa se trouvent dans les centres urbains du Katanga (Kalemie, Lubumbashi) et à Kinshasa suite aux migrations économiques. En Zambie, les Tabwa/Shila sont présents dans les districts de Mpulungu et Mbala."
     },
     "demography": {
-      "totalPopulation": 300000,
+      "totalPopulation": 1000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur SIL Ethnologue (tap, Taabwa), 101lasttribes.com (851 359 en RDC, 68 680 en Zambie en 1999), Operation World (594 940 RDC, 79 660 Zambie), Taabwa language Wikipedia (500 000 locuteurs). Les chiffres officiels sont difficiles à obtenir car les recensements ne distinguent pas systématiquement les groupes ethniques.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 900000,
+          "note": "Province du Tanganyika, lac Tanganyika, district de Moba et Kalemie, plateau de Marungu"
+        },
+        {
+          "country": "ZMB",
+          "population": 100000,
+          "note": "Districts de Mpulungu et Mbala (nord-est Zambie), sous-groupe Shila"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tabwa language (tap)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Britannica — Tabwa (people). https://www.britannica.com/topic/Tabwa",
+      "Wikipedia — Taabwa language. https://en.wikipedia.org/wiki/Taabwa_language",
+      "Roberts, Allen F. The Rising of a New Moon: A Century of Tabwa Art. Ann Arbor: University of Michigan Museum of Art / Smithsonian Institution, 1985.",
+      "Smithsonian National Museum of African Art — The Rising of a New Moon. https://www.si.edu/exhibitions/rising-new-moon-century-tabwa-art:event-exhib-1208",
+      "Metropolitan Museum of Art — Mukisi Mupasi (ancestor figure), Tabwa peoples. https://www.metmuseum.org/art/collection/search/311052",
+      "Seattle Art Museum — Balamwezi: The Rising of the New Moon. https://samblog.seattleartmuseum.org/2017/11/balamwezi-male-figure/",
+      "Gateway Africa Safaris — Tabwa Tribe. https://www.gateway-africa.com/tribe/tabwa_tribe.html",
+      "101lasttribes.com — Tabwa people. https://www.101lasttribes.com/tribes/tabwa.html",
+      "SIL Ethnologue — Taabwa (tap). https://www.ethnologue.com/language/tap/"
     ]
   }
 }

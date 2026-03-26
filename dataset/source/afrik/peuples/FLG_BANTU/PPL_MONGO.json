@@ -2,63 +2,115 @@
   "id": "PPL_MONGO",
   "nameMain": "Mongo",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": [],
+  "currentCountries": ["COD"],
   "content": {
     "appellations": {
       "mainName": "Mongo",
-      "selfAppellation": "Mongo",
-      "exonyms": ["Mongo (terme utilisé par les Européens)"],
+      "selfAppellation": "Anamongo",
+      "exonyms": [
+        "Mongo-Nkundu",
+        "Nkundo",
+        "Bangala (terme colonial impropre)"
+      ],
+      "originOfExonyms": "Le terme Bangala fut impose par l'administration coloniale belge et designe de maniere abusive plusieurs groupes de la province de l'Equateur. Mongo-Nkundu est le nom de la langue selon SIL Ethnologue.",
+      "whyProblematic": "Le terme Bangala est artificiel : le politologue M. Crawford Young le qualifie de construction coloniale sans fondement ethnographique reel.",
+      "contemporaryUsage": "Le terme Anamongo est l'autodesignation collective. Mongo reste le terme courant en francais et en anglais.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone C)",
-      "historicalRegion": "Centre-nord de la RDC",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Bantou (Zone C, groupe Mongo-Nkundu, C.61)",
+      "historicalRegion": "Region equatoriale du Congo, nord de la riviere Kasai et du Sankuru, au sud du grand coude du fleuve Congo, principalement la province de l'Equateur et le nord de l'ex-Bandundu",
+      "currentCountries": ["COD"]
     },
-    "ethnicities": ["Mongo du Nord", "Mongo du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Nkundo (groupe central, region de Mbandaka)",
+      "Ekonda (Konda, province de l'Equateur)",
+      "Bolia (ile Bolia, Lac Mai-Ndombe)",
+      "Batetela (Tetela-Kusu, region de Lodja)",
+      "Bakusu (Benya Samba, Benya Lubunda)",
+      "Sengele (rive du lac Mai-Ndombe)",
+      "Ntomba (peche, rive du fleuve)",
+      "Mbole (region de Lokolia)",
+      "Ngando (sous-groupe du nord-est)",
+      "Ndengese (Dengese, region de Lodja)",
+      "Sakata (Mpama, region de Bandundu)",
+      "Boyela (region de Boende)",
+      "Bongandu et Songomeno (region de Boende-Salonga)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Mongo sont originaires du centre-nord de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Mongo se sont probablement installes le long des vallees fluviales chaudes et humides du nord et de l'ouest du Congo au cours des premiers siecles du Ier millenaire. Les racines historiques exactes restent floues, mais l'agriculture de base (igname, banane) fut etablie vers l'an 1000 de notre ere. Selon leur tradition orale commune, tous les Mongo sont descendants d'un ancetre eponyme unique nomme Mongo.",
+      "formationPeriod": "L'unite ethno-culturelle mongo fut formellement proposee par les anthropologues europeens en 1938 (Boelaert), puis documentee en 1944 par Vanderkerken, gouverneur de l'Equateur. Avant la colonisation, les Mongo n'avaient pas de structure politique unifiee, mais partageaient langue, organisation sociale et legendes.",
+      "migrationRoutes": [
+        "Expansion depuis les vallees du nord-ouest du Congo vers le centre et le sud",
+        "Diffusion progressive le long des cours d'eau (fleuve Congo, Kasai, Sankuru, Lomela)"
+      ],
+      "historicalSettlementZones": [
+        "Province de l'Equateur (Mbandaka, Boende, Ingende)",
+        "Ex-province du Bandundu (nord, region de Kikwit)",
+        "Province du Sankuru (Lodja, Katako-Kombe)",
+        "Province de la Tshuapa (Boende)"
+      ],
+      "unificationsOrDivisions": "Aucune structure politique centralisee n'a existe avant la colonisation. Chaque groupe lignager (etuka) etait autonome. L'unite mongo est une construction anthropologique du XXe siecle. Des rivalites entre lignages ont toutefois conduit a des alliances et guerres inter-claniques.",
+      "externalInfluences": "Les incursions arabes zanzibarites aux XVIIIe et XIXe siecles ont conduit a l'esclavage de milliers de Mongo. La colonisation belge (Etat Independant du Congo de Leopold II) a profondement bouleverse leurs structures sociales, introduit le christianisme, des plantations de cacao, cafe et caoutchouc, et provoque des epidemies de maladie du sommeil et de syphilis.",
+      "majorHistoricalEvents": "Traite negriere arabe (XVIIIe-XIXe s.) ; exploitation coloniale leopoldienne et travail force du caoutchouc ; conversion massive au christianisme au XXe siecle ; impacts des guerres civiles congolaises (1996-2003) sur la region de l'Equateur."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme fonde sur le lignage patrilineaire. L'unite de base est l'etuka, foyer commun de 20 a 40 membres descendants d'un meme ancetre. L'aine masculin (Tata, signifiant pere) en est le chef. Un groupe d'etuka forme un village. Il n'existe pas de chefferie centralisee sauf dans certains sous-groupes meridionaux, ou un chef (Bokulaka) exerce une autorite fondee sur la legitimite divine.",
+      "clanOrganization": "Organisation patrilineaire en lignages (etuka). Les differends entre lignages se reglent par paiement de biens ou mariages interlineaires. Les sous-groupes du sud ont developpe de veritables chefferies a travers la figure du Bokulaka.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance sociale, les alliances matrimoniales, l'heritage et la gouvernance locale. L'aine (Tata) joue un role central de mediation et d'autorite religieuse.",
+      "religiousAuthority": "Autorite des anciens de lignage, investis d'une legitimite en partie religieuse (culte des ancetres). Depuis le XXe siecle, les pasteurs et pretres chretiens occupent une place centrale dans les communautes mongo."
     },
     "languages": {
-      "mainLanguage": "Mongo",
-      "vehicularRole": "Le mongo est parlé par la majorité des Mongo. Le français, le lingala et d'autres langues sont également utilisés."
+      "mainLanguage": "Mongo-Nkundu (Lomongo, Lonkundu)",
+      "isoCodes": ["lol"],
+      "dialects": [
+        "Kutu (Bakutu)",
+        "Bokote",
+        "Konda (Ekonda)",
+        "Ekota",
+        "Ikongo",
+        "Mbole",
+        "Ntomba",
+        "Sengele",
+        "Tetela-Kusu",
+        "Boyela",
+        "Songomeno",
+        "Bongandu",
+        "Bafoto (classe separee par Maho 2009)"
+      ],
+      "vehicularRole": "Le mongo (lomongo) est la langue maternelle de la majorite des Anamongo. En milieu urbain, notamment a Mbandaka, le lingala le supplante comme langue de communication. Le francais est la langue administrative et d'enseignement officielle en RDC."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels mongo, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites de passage a l'age adulte comprenant des pratiques de scarification corporelle traditionnelle. Ceremonies de mariage avec paiement de la dot (biens, betail). Rites funeraires impliquant le deuil collectif et les offrandes aux ancetres. Ceremonies agricoles pour la fertilite des terres et des recoltes. Rituels de guerison faisant appel aux nganga (devins-guerisseurs) pour combattre sorcellerie et maladies.",
+      "symbols": "L'ancetre eponyme Mongo comme symbole d'unite identitaire. L'etuka (foyer communautaire) comme symbole de cohesion sociale. Le Tata (pere-aine) comme figure d'autorite morale. Les instruments de musique a percussion et a cordes comme symboles de vie ceremonielle.",
+      "artsAndMusic": "La tradition artistique mongo se distingue par la sculpture sur bois (masques, statuettes), la poterie, et les tissages. La litterature orale est tres riche : histories, contes moraux (95 recits collectes aupres des Nkundo par Mabel Ross dans les annees 1970), proverbes, poesie et chants. Les instruments traditionnels comprennent des percussions (tambours), des xylophones, des cordophones et des flutes. Des chants polyphoniques accompagnent les ceremonies. Le musicien contemporain Jupiter Bokondji est d'ascendance mongo.",
+      "spiritualities": "La religion traditionnelle mongo repose sur le culte des ancetres, la croyance en des esprits de la nature, des rites de fertilite et des pratiques chamaniques (magie, sorcellerie). Le synchretisme religieux est dominant depuis la colonisation : la majorite des Mongo est aujourd'hui chretienne (catholique, protestante, kimbanguiste), tout en conservant des croyances et pratiques ancestrales. L'influence de l'islam missionnaire du nord de l'Afrique a ete source de tensions historiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mongo dans les grandes villes congolaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume centralise avant la colonisation. Organisation en chefferies de lignage autonomes. Quelques groupes meridionaux (Ndengese, Dengese) ont developpe des chefferies a legitimite divine (Bokulaka). Sous la colonisation belge, des chefferies territoriales furent crees pour l'administration indirecte.",
+      "relationsWithNeighbors": "Relations commerciales et matrimoniales avec les peuples voisins bantous (Tetela, Kuba, Luba au sud). Conflits recurrents avec les incursions esclavagistes arabisantes du nord-est. Relations ambivalentes avec les missionnaires et administrateurs belges.",
+      "conflictsOrAlliances": "Resistance aux razzias esclavagistes arabes (XVIIIe-XIXe s.). Resistance a l'exploitation coloniale leopoldienne (travail force du caoutchouc). Tensions avec groupes islamises du nord-est du Congo.",
+      "diaspora": "Diaspora mongo significative a Kinshasa, Mbandaka et dans les grandes villes de la RDC. Presence dans la diaspora congolaise en Europe (Belgique, France) et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 12000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International) : locuteurs du mongo-nkundu (lol) estimes entre 8 et 12 millions. Qiraat Africa (2024) : environ 12 millions. Wikipedia : plus grand groupe ethnique de RDC. Projection 2025 basee sur le taux de croissance demographique congolais d'environ 3,3% par an.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 12000000,
+          "note": "Quasi-totalite de la population, province de l'Equateur, Tshuapa, Sankuru, Mai-Ndombe"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Mongo language (lol)",
-      "CIA World Factbook – DRC",
-      "Recensements congolais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN – Mongo people : https://en.wikipedia.org/wiki/Mongo_people",
+      "Wikipedia EN – Mongo language : https://en.wikipedia.org/wiki/Mongo_language",
+      "SIL Ethnologue – Mongo-Nkundu (lol) : https://www.ethnologue.com/language/lol/",
+      "Qiraat Africa – The Mongo People in Congo (2024) : https://qiraatafrican.com/en/12635/the-mongo-people-in-congo/",
+      "Mabel Ross, On Another Day: Tales Told among the Nkundo of Zaire, Archon Books, 1979",
+      "Vanderkerken, G., L'ethnie mongo, Institut Royal Colonial Belge, 1944",
+      "Demographics of the DRC – Wikipedia : https://en.wikipedia.org/wiki/Demographics_of_the_Democratic_Republic_of_the_Congo"
     ]
   }
 }

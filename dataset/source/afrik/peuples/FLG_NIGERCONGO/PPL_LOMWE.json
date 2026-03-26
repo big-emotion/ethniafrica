@@ -6,63 +6,101 @@
   "content": {
     "appellations": {
       "mainName": "Lomwe",
-      "selfAppellation": "Lomwe",
-      "exonyms": ["Lomwe (terme utilisé par les Européens)"],
+      "selfAppellation": "Alomwe / M'Lomwe",
+      "exonyms": [
+        "Nguru (terme employe par certains voisins, surtout dans la litterature coloniale)",
+        "Ngulu (variante orthographique)",
+        "Lomwe (usage europeen)"
+      ],
+      "originOfExonyms": "Le terme Nguru fut utilise par les voisins et les administrateurs coloniaux portugais et britanniques pour designer les Lomwe. Il est encore present dans la litterature ethnographique ancienne. Le terme Alomwe (prefixe bantou pluriel) est la forme exacte en langue locale.",
+      "whyProblematic": "Les Lomwe sont etroitement apparentes aux Makua du Mozambique et sont parfois integres dans le super-groupe Makhuwa-Lomwe, qui represente environ 40% de la population mozambicaine. Les frontières ethniques et linguistiques entre Lomwe et Makua sont fluides. En 2005, l'Ethnologue reconnut que le lomwe du Mozambique (ngl) et le lomwe du Malawi (lon) ne sont pas mutuellement intelligibles et constituent deux langues distinctes.",
+      "contemporaryUsage": "Lomwe est l'appellation generalement utilisee dans les deux pays. Au Malawi, les Lomwe sont le deuxieme groupe ethnique par taille (18,9% de la population selon le recensement 2018). Au Mozambique, ils font partie du groupe Makhuwa-Lomwe dominant dans le nord. Des presidents malawites comme Bingu wa Mutharika et Peter Mutharika appartiennent a ce groupe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "MOZ, MWI",
+      "ethnoLinguisticGroup": "Bantou (Zone P, sous-groupe Makhuwa-Lomwe)",
+      "historicalRegion": "Province de Zambezia et de Nampula (Mozambique) ; districts du sud du Malawi (Mulanje, Phalombe, Thyolo, Chiradzulu, Zomba)",
       "currentCountries": ["MOZ", "MWI"]
     },
     "ethnicities": [
-      "Lomwe du Mozambique",
-      "Lomwe du Malawi",
-      "Sous-groupes régionaux"
+      "Lomwe du Mozambique (Elomwe) — etablis dans la province de Zambezia et les districts du sud de Nampula",
+      "Lomwe du Malawi (Chilomwe) — etablis principalement dans les districts de Mulanje, Phalombe, Thyolo, Chiradzulu et Zomba",
+      "Lomwe de Milange — sous-groupe de la region de Milange (Zambezia, Mozambique), proches du Malawi",
+      "Lomwe de Ile — sous-groupe du district de Ile (Zambezia, Mozambique)",
+      "Alomwe du sud du Malawi — etablis dans la zone lakeshore et le Shire Highlands"
     ],
     "origins": {
-      "ancientOrigins": "Les Lomwe sont originaires de la région du Mozambique et du Malawi. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Lomwe sont un peuple bantou appartenant au sous-groupe Makhuwa-Lomwe. Certaines etudes avancent que ce groupe est l'une des plus anciennes populations bantoues de cette partie de l'Afrique australe. Les Lomwe partagent une origine commune avec les Makua (Makhuwa), dont ils sont probablement issus ou avec qui ils forment une branche divergente. La langue et l'organisation sociale matrilineaire des Lomwe attestent d'une longue presence dans les plaines cotieres et les plateaux entre la Zambezia, Nampula et les abords du lac Malawi.",
+      "formationPeriod": "L'identite lomwe distincte de l'identite makua s'est progressivement consolidee durant le premier millenaire de notre ere dans la region de l'actuelle province de Zambezia. Les Lomwe forment, avec les Makua, le groupe Makhuwa-Lomwe qui est le plus grand ensemble ethnique du Mozambique. Les migrations vers le Malawi (et dans une moindre mesure vers le Zimbabwe) ont commence avant l'arrivee des missionnaires et colons au 19e siecle, avec une vague importante dans les annees 1930.",
+      "migrationRoutes": [
+        "Migration ancestrale est-ouest depuis le Mozambique (Zambezia, Nampula) vers le Malawi meridional (Mulanje, Phalombe, Thyolo)",
+        "Grande vague migratoire vers le Malawi dans la seconde moitie du 19e siecle, avant l'arrivee des colons",
+        "Vague migratoire des annees 1930 fuyant les guerres tribales au Mozambique",
+        "Migrations liees a la guerre civile mozambicaine (1977-1992), avec retours progressifs apres la stabilisation"
+      ],
+      "historicalSettlementZones": [
+        "Province de Zambezia (Mozambique) — coeur historique du peuplement lomwe au Mozambique",
+        "Province de Nampula (Mozambique) — parties meridionales",
+        "Shire Highlands et sud du Malawi — districts de Mulanje, Phalombe, Thyolo, Chiradzulu, Zomba",
+        "District de Liwonde et alentours (Malawi meridional)"
+      ],
+      "unificationsOrDivisions": "Les Lomwe partagent avec les Makua (Makhuwa) les memes lignages familiaux (mahimo) presents sur tout leur territoire, attestant d'une proche parente. L'Ethnologue a scinde officiellement la langue lomwe en deux : Elomwe/Lomwe (ngl) pour le Mozambique et Lomwe, Malawi (lon) pour le Malawi, en raison de leur manque d'intelligibilite mutuelle. Les Lomwe du Malawi sont en voie de transition vers le chichewa, langue nationale malawite.",
+      "externalInfluences": "Colonisation portugaise du Mozambique : la pression de l'expansion coloniale et du travail force (chibalo) poussa de nombreux Lomwe a migrer vers le Malawi britanique (Nyassaland). Colonisation britannique du Nyassaland (Malawi) : les Lomwe migrants furent employes dans les plantations de the des Shire Highlands. Mission des Universities en Afrique centrale (UMCA) a Magomero (1861) : les Lomwe furent parmi les premiers evangelises. Guerre civile mozambicaine (FRELIMO-RENAMO, 1977-1992) : nouvelles vagues migratoires vers le Malawi.",
+      "majorHistoricalEvents": "1861 : la Mission UMCA s'etablit a Magomero (sud Malawi), parmi les premiers Lomwe evangelises. Annees 1930 : vague migratoire majeure des Lomwe du Mozambique vers le Malawi, fuyant les conflits tribaux. 1961 : independance du Malawi (sous Kamuzu Banda, descendant par alliance du contexte lomwe). 1975 : independance du Mozambique. 1977-1992 : guerre civile mozambicaine — nouvelles migrations lomwe vers le Malawi. 2018 : recensement malawite revelant que les Lomwe constituent 18,9% de la population (3,3 millions de personnes). 2014-2019 : presidence de Peter Mutharika, d'origine lomwe, au Malawi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe lomwe est organisee en chefferies (chieftaincies) sous l'autorite de chefs hereditaires (mfumu), assistes par des conseils d'anciens. Le systeme de succession est matrilineaire : le chef est remplace par un neveu matrilineaire (fils de soeur). Les decisions importantes sont prises de maniere collegiale apres consultation des anciens du lignage et des representants des clans.",
+      "clanOrganization": "Organisation matrilineaire (mbumba) : l'identite, l'heritage et l'appartenance clanique se transmettent par la ligne maternelle. Les clans (mahimo) sont aussi presents chez les Makua, temoignant d'une origine commune. Chaque clan partage un ancetre fondateur et des interdits specifiques (tabous alimentaires, comportementaux). Le mariage est preferentiellement virilocal (la femme rejoint le foyer du mari) mais la residence peut etre uxorilocale dans certains cas.",
+      "ageClassSystems": "Des ceremonies d'initiation existent pour les garçons et les filles, marquant le passage a l'age adulte. L'initiation feminine inclut des instructions sur les responsabilites de la femme mariee, les taches domestiques et les valeurs communautaires. L'initiation masculine peut inclure la circoncision dans certaines communautes. Ces ceremonies se tiennent annuellement en groupes d'age.",
+      "roleOfLineages": "Les lignages matrilineaires (mbumba) sont au coeur de l'organisation sociale : ils determinent l'heritage, les droits fonciers, les alliances matrimoniales et les obligations rituelles envers les ancetres. Le neveu matrilineaire (mlongo) joue un role cle dans l'heritage et la succession. Le travail collectif entre membres du lineage et voisins (culture mutuelle des champs) est une pratique importante de cohesion sociale.",
+      "religiousAuthority": "Les chefs religieux traditionnels (nganga) pratiquent la divination et la medecine traditionnelle, maintenant la relation avec les esprits ancestraux. Le culte du dieu createur Muluku est central. Les autorites religieuses chretiennes (catholiques et protestantes) sont aujourd'hui preponderantes, notamment au Malawi. L'islam est present chez une minorite, surtout au Mozambique."
     },
     "languages": {
-      "mainLanguage": "Lomwe",
-      "vehicularRole": "Le lomwe est parlé par la majorité des Lomwe. Le portugais, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Elomwe (Mozambique) / Chilomwe (Malawi)",
+      "isoCodes": ["ngl", "lon"],
+      "dialects": [
+        "Elomwe (ngl) — variete du Mozambique, langue maternelle principale des Lomwe mozambicains, ecrite en alphabet romain",
+        "Lomwe, Malawi (lon) — variete du Malawi, non mutuellement intelligible avec l'Elomwe; de moins en moins utilisee, les locuteurs (surtout anciens) passant au chichewa",
+        "Variete de Milange — sous-dialecte de Zambezia proche des parlers lomwe du Malawi"
+      ],
+      "vehicularRole": "En Mozambique, l'Elomwe est la langue maternelle de la communaute lomwe dans les provinces de Zambezia et Nampula. Le portugais est la langue officielle et vehiculaire nationale. Au Malawi, le Chilomwe recede au profit du chichewa (langue nationale officielle depuis 1968). L'anglais est officiel au Malawi. Les Lomwe du Malawi ont generalement le chichewa comme premiere ou deuxieme langue. L'Ethnologue a separe les deux varietes en 2005. Le NT de la Bible est disponible en lomwe (traduit en 1931)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels lomwe, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation feminine : ceremonies d'enseignement (chinamwari) ou des femmes agees transmettent aux jeunes filles leurs responsabilites en tant qu'epouses et meres, accompagnees de chants, danses et conseils. Initiation masculine : ceremonies de passage a l'age adulte pouvant inclure la circoncision dans certaines communautes. Mariage : negociation de la dot (lobola, le plus souvent en betail ou argent) entre families, suivi de celebrations collectives avec nourriture, biere de sorgho et danses traditionnelles. Funerailles : veillees mortuaires avec chants et danses ; rites de commenmoration des ancetres. Ceremonies agricoles : invocations aux ancetres avant les semailles et actions de graces apres la recolte.",
+      "symbols": "La scarification faciale feminine (marques sur les joues) : symbole d'identite traditionnelle en voie de disparition. Les nattes et paniers tisses : symboles de l'artisanat et de la vie domestique. La jarre en argile (fabriquee par les femmes) : symbole de la culture materielle et de la fertilite. Les greniers a mais (construits par les hommes) : symbole de la prosperite et de la prevoyance familiale.",
+      "artsAndMusic": "Danse Manganje : danse traditionnelle emblematique, executee lors des celebrations et des ceremonies d'initiation, accompagnee de tambours, hochets et battements de mains. Musique rythmique : percussions (tambours ngoma), hochets (maseche), chants polyphoniques. Artisanat : tressage de nattes et paniers (hommes et femmes), poterie feminine, construction de greniers en roseau. Litterature orale : contes, proverbes, epopees transmis de generation en generation. Chants de travail collectifs lors des cultures communes des champs.",
+      "spiritualities": "Croyance en un dieu createur supreme (Muluku), qui agit par l'intermediaire des esprits ancestraux. Le culte des ancetres est central : les esprits des morts veillent sur les vivants, peuvent causer maladie ou bonheur, et necessitent offrandes et invocations regulieres. La divination (par le nganga) permet d'interpreter la volonte des ancetres. Le christianisme (catholicisme et protestantisme) est dominant, notamment au Malawi ou environ 75% des Lomwe s'identifient comme chretiens, tout en conservant des pratiques traditionnelles. Une minorite pratique l'islam au Mozambique. Le syncretisme est frequen : les croyances ancestrales influencent profondement la vie quotidienne des chretiens lomwe."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lomwe dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Lomwe s'organisaient en chefferies locales dirigees par des mfumu (chefs) dont le pouvoir etait fonde sur la legitimite matrilineaire. Ces chefferies etaient de taille modeste et n'ont pas forme de royaumes centralises comparables aux royaumes Yao ou Ngoni voisins. Dans le contexte du Mozambique precolonial, les Lomwe faisaient partie du vaste ensemble Makhuwa-Lomwe qui n'avait pas de structure politique pan-ethnique unifiee.",
+      "relationsWithNeighbors": "Les Lomwe sont etroitement apparentes aux Makua (Makhuwa) du Mozambique avec qui ils partagent des lignages communs (mahimo). Ils ont cohabite et interagi avec les Yao (commerce, conversion a l'islam), les Chewa et Nyanja (au Malawi), les Ngoni (migrants sud-africains au 19e siecle), et les Sena. Les tensions resultant des migrations lomwe vers le Malawi (perçues parfois comme une pression demographique) ont influence les relations inter-ethniques dans le sud malawite.",
+      "conflictsOrAlliances": "Les guerres tribales au Mozambique dans les annees 1930 furent un facteur majeur de migration vers le Malawi. La guerre civile mozambicaine (FRELIMO-RENAMO, 1977-1992) affecta gravement les communautes lomwe, provoquant deplacements internes et exodes vers le Malawi. La presence lomwe dans les plantations de the du Shire Highlands (Malawi) sous administration britannique crea des tensions avec les proprietaires terriens.",
+      "diaspora": "Des communautes lomwe se trouvent dans les grandes villes du Malawi (Blantyre, Lilongwe, Zomba) et du Mozambique (Quelimane, Nampula). Une diaspora limitee existe en Afrique du Sud (travailleurs migrants) et dans les pays occidentaux. Les Lomwe ont contribue a la vie politique malawite : Bingu wa Mutharika et Peter Mutharika (presidents du Malawi) sont d'origine lomwe."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 5000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur le recensement malawite 2018 (Lomwe = 18,9% de 17,5 millions = 3,3 millions) et les estimations pour le Mozambique (SIL Ethnologue, Bible Society of South Africa : environ 2 millions en Mozambique). Projection 2025 tenant compte des taux de croissance demographique. Source principale : National Statistics Office Malawi (2018 PHC), SIL Ethnologue (ngl, lon), Orville Jenkins Cultural Profile (http://orvillejenkins.com/profiles/lomwe.html).",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 3800000,
+          "note": "2e groupe ethnique du Malawi (18,9% selon le recensement 2018 : 3 302 634 personnes). Principalement dans les districts de Mulanje, Phalombe, Thyolo, Chiradzulu, Zomba et Liwonde (sud du Malawi). Projection 2025 a partir du taux de croissance national de 2,9%."
+        },
+        {
+          "country": "MOZ",
+          "population": 1900000,
+          "note": "Principalement dans la Province de Zambezia (districts d'Ile, Milange, Namacurra, Pebane) et le sud de la Province de Nampula. Estimation basee sur SIL Ethnologue (1,3 million en 2005) et Bible Society of South Africa ('pres de 2 millions de locuteurs' en Mozambique). Projection 2025."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lomwe language (ngl)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Lomwe people. https://en.wikipedia.org/wiki/Lomwe_people",
+      "Orville Boyd Jenkins — The Lomwe of Mozambique and Malawi: A Cultural Profile. http://orvillejenkins.com/profiles/lomwe.html",
+      "National Statistics Office Malawi — 2018 Population and Housing Census Main Report. https://malawi.unfpa.org/sites/default/files/resource-pdf/2018%20Malawi%20Population%20and%20Housing%20Census%20Main%20Report%20(1).pdf",
+      "SIL Ethnologue — Lomwe (ngl). https://www.ethnologue.com/language/ngl/",
+      "SIL Ethnologue — Lomwe, Malawi (lon). https://www.ethnologue.com/language/lon/",
+      "Britannica — Malawi Ethnic Groups. https://www.britannica.com/place/Malawi/People",
+      "Academia.edu — The Rise of Lomwe Ethnic Consciousness in Malawi, 1890-2010. https://www.academia.edu/11719522/",
+      "Maputo Essential Tours — Mozambique Ethnic Groups. https://www.maputoessentialtours.com/general-4"
     ]
   }
 }

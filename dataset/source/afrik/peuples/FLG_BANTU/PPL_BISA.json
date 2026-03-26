@@ -6,54 +6,88 @@
   "content": {
     "appellations": {
       "mainName": "Bisa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Bisa",
+      "exonyms": ["Wisa", "Biisa", "Vaviza", "Muizas"],
+      "originOfExonyms": "Dans le journal de voyage de Lacerda (1798), le chroniqueur Dionizio Rebello Curvo designa les Bisa sous le nom de Vaviza ou Muizas. Ces termes exonyms sont aujourd'hui obsoletes. Le terme Wisa ou Biisa est utilise pour designer la langue dans certaines classifications (Maho 2009).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bisa est utilise couramment en Zambie et dans les sources academiques et missionnaires. La langue est souvent classee sous l'appellation Lala-Bisa (code ISO 639-3 leb) en raison de la parente etroite entre les langues Bisa et Lala. Le Joshua Project distingue les Bisa (436 000) et les Lala-Bisa (864 000) comme groupes separés.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord",
+      "ethnoLinguisticGroup": "Bantou (zone M, groupe Bemba-Lala)",
+      "historicalRegion": "Plateau du nord-est de la Zambie, lac Bangweulu, Muchinga",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Bisa"],
+    "ethnicities": [
+      "Bisa",
+      "Bisa du lac Bangweulu",
+      "Bisa du plateau de Muchinga",
+      "Bisa de la vallee du Luangwa"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Bisa sont originaires de l'Empire Luba situe dans l'actuelle Republique democratique du Congo. Ils firent partie du mouvement migratoire bantou qui quitta l'Empire Luba vers 1650, en meme temps que les Bemba. La legende fondatrice Bisa evoque une separation d'avec les Bemba au cours de la migration depuis le Congo: une soeur royale, accusee de ne pas avoir offert des champignons a un neveu affame, fut excommuniee du groupe migrant avec sa famille immediate. Cette famille devint le clan Ngona (clan du champignon), dominant parmi les Bisa et source de leurs chefs. Le clan Ngona est associe au toteme du champignon.",
+      "formationPeriod": "Les Bisa emergerent comme groupe distinct dans la premiere moitie du XVIIIe siecle, apres leur installation sur le plateau situe entre l'escarpement de Muchinga et le lac Bangweulu. Les archives historiques les mentionnent des 1798 (Lacerda).",
+      "migrationRoutes": [
+        "Depart de l'Empire Luba (DRC) vers 1650",
+        "Migration vers l'est jusqu'au lac Bangweulu et ses environs",
+        "Installation sur le plateau de Muchinga (nord-est Zambie)",
+        "Extension vers la vallee du Luangwa (permanent apres la conquete Bemba des annees 1820)",
+        "Migrations vers les zones urbaines zambiennes au XXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Rives est du lac Bangweulu (Zambie du Nord)",
+        "Mpika et Chinsali, province de Muchinga",
+        "Lundazi et Chama, provinces de l'Est",
+        "Vallee du Luangwa (corridor de Munyamadzi)"
+      ],
+      "unificationsOrDivisions": "Les Bisa ne se sont jamais reunis sous un seul chef paramount. Ils constituaient une constellation de clans independants partageant langue et traditions mais gouvernes separement par leurs propres chefs. Cette absence d'unite politique les rendit vulnerables face aux Bemba organises sous leur roi Chitimukulu qui, dans les annees 1820-1830, conquit progressivement les terres Bisa sur le plateau. Certains Bisa qui fuyirent vers la vallee du Luangwa s'assimilerent culturellement et linguistiquement aux groupes de l'est de la riviere Luangwa.",
+      "externalInfluences": "Relations commerciales avec l'Empire Lunda de Kazembe (arrive au lac Mweru vers 1700): les Bisa devinrent les intermediaires du commerce entre la Lunda de Kazembe et les Portugais de la vallee du Zambeze (ivoire, cuivre, esclaves). Les Swahili-Arabes de la cote zanzibarite augmenterent leur commerce avec Kazembe par le nord. Pression et conquete par les Bemba (annees 1820-1830) en raison du manque d'organisation politique Bisa. Arrivee des Britanniques vers 1890 et fin du commerce des esclaves vers 1900.",
+      "majorHistoricalEvents": "Separation d'avec les Bemba lors de la migration depuis le Congo (vers 1650), legende du clan Ngona. Emergence comme groupe commercial majeur (XVIIIe siecle). Premieresmention dans les archives de Lacerda (1798). Conquete Bemba des terres Bisa sur le plateau (annees 1820-1830), fuite vers la vallee du Luangwa et les marais de Bangweulu. Etablissement du Protectorat britannique (vers 1890). Fin du commerce des esclaves (vers 1900)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation decentralisee en chefferies independantes sans chef paramount. Chaque chef Bisa gouvernait son territoire de facon autonome. Le chef (mwine mukaya) avait une autorite spirituelle sur la terre et la fertilite des mammiferes via les esprits de ses predecesseurs. Le chef Nabwalya est l'un des chefs traditionnels Bisa les plus connus. L'autorite des chefs fut progressivement sapee par les administrations coloniale et post-coloniale qui leur retirent le controle des etablissements, des ressources (ivoire, peaux confisques par le gouvernement), et remplacerent le tribut par des taxes et licences.",
+      "clanOrganization": "Organisation matrilineaire. Le clan Ngona (clan du champignon) est dominant et source de tous les chefs Bisa (Bena). Les villages appartiennent au clan du chef de village (luemba) et a son groupe matrilineaire. Plus petits groupes de lignage stabilisant la succession et le rang selon la parente au chef vivant.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Descent matrilineaire (lupwa: groupe de descendance matrilineaire depuis une meme fondatrice ancestrale). Le lupwa herite des biens, choisit les successeurs et accepte la responsabilite collective. Les hommes peuvent heriter des veuves (levirat). Succession du chef: idealement le frere, puis le neveu maternel, puis le petit-fils maternel; le successeur herite du nom, des epouses (ukupyani), des insignes (lance, fusil, hache) du predecesseur.",
+      "religiousAuthority": "Le chef (ex. Nabwalya) exerce un controle spirituel sur la terre et la fertilite des mammiferes via les esprits de ses predecesseurs. Certains grands mammiferes (elan, lion, elephant) sont associes au chef: le chasseur qui en tue un doit en informer le chef ou lui envoyer un tribut symbolique. Pratiques de witchcraft (sorcellerie) maintenues comme dernier recours, meme chez les chretiens declares."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (dialecte Bisa)",
+      "isoCodes": ["leb"],
+      "dialects": ["Biisa (Wisa)", "Lala", "Ambo", "Luano", "Swaka"],
+      "vehicularRole": "Le Lala-Bisa est la langue vernaculaire du groupe Bisa, etroitement apparentee au Bemba (langue vehiculaire majeure de la Zambie du Nord). L'anglais est la langue officielle de la Zambie. Le Bemba sert de vehiculaire regional dans le nord de la Zambie. L'Ethnologue classe le Lala-Bisa comme langue stable (code leb), parlee en Zambie et au RDC."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage en trois phases (separation, transition, incorporation): rites symboliques autour du meurtre d'un grand mammifere par un chasseur en maturation. Ceremonies agricoles liees aux saisons des pluies (sorgho comme culture principale, mais aussi mais, arachides, canne a sucre, pois, citrouilles, tabac). Rituels de deuil. Ceremonies de succession clanique (transmission du nom, des epouses et des insignes). Interdiction traditionnelle de consommer la viande d'hippopotame.",
+      "symbols": "Le champignon (ngona) est le totem du clan dominant et symbole de l'identite Bisa fondatrice. La lance, le fusil et la hache sont les insignes du pouvoir cheffal. Les graniers centraux d'un village (entour de huttes) signalent l'organisation spatiale de la communaute.",
+      "artsAndMusic": "Artisanat de subsistance: fabrication d'ustensiles agricoles et de peche. Cuisine traditionnelle: nshima (bouillie de mais), accompagnee de chibwabwa (feuilles de courge), ifisashi (legumes a la sauce arachide) et poisson frais. Peche (activite des deux sexes selon des methodes distinctes), chasse (activite masculine). Iron-working et salt-making traditionnels, aujourd'hui en declin.",
+      "spiritualities": "Croyances en les esprits ancestraux: le chef exerce un controle spirituel sur la fertilite de la terre et des mammiferes via les esprits de ses predecesseurs. Grands mammiferes (elan, lion, elephant) consideres comme lies au chef et necessitant tribut ou notification. Pratiques de witchcraft (sorcellerie) tres repandues, maintenues comme dernier recours meme chez les chretiens. Christianisme majoritaire (95% se declarent chretiens, dont une proportion evangelique significative) introduit depuis la periode coloniale britannique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises mais un reseau de chefferies independantes. Le chef Nabwalya est l'un des titres cheffaux les plus connus. Les Bisa n'eurent jamais de chef paramount, ce qui contribua a leur vulnerabilite face aux Bemba organises. L'autorite des chefs fut progressivement reduite par les administrations coloniale et post-coloniale.",
+      "relationsWithNeighbors": "Intermediaires commerciaux historiques entre la Lunda de Kazembe (lac Mweru) et les Portugais de la vallee du Zambeze au XVIIIe siecle. Relations commerciales avec les Swahili-Arabes de Zanzibar. Conquetes et deplacement par les Bemba (annees 1820-1830) sous Chitimukulu. Coexistence avec les Batwa (peuple de l'Age de la Pierre) autour du lac Bangweulu jusqu'a la fin du XIXe siecle.",
+      "conflictsOrAlliances": "Separation fondatrice d'avec les Bemba lors de la migration du Congo (tradition orale du clan Ngona). Competences commerciales reputees: reseau d'echanges d'ivoire, tissu, perles et esclaves aux XVIIIe-XIXe siecles. Conquete Bemba des terres Bisa sur le plateau de Muchinga (annees 1820-1830); fuite des Bisa vers les marais de Bangweulu et la vallee du Luangwa. Dispute avec les Bemba sur les puits de sel de Chibwe.",
+      "diaspora": "Des Bisa de la vallee du Luangwa s'assimilerent culturellement aux groupes vivant a l'est de la riviere Luangwa. Au XXe siecle, des migrations vers les centres urbains zambiens (Lusaka, Ndola, Copperbelt) eurent lieu pour fuir la pauvrete rurale."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 436000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/10875); population groupe Lala-Bisa: 864 000 (Joshua Project)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 436000,
+          "note": "Rives est du lac Bangweulu, province de Muchinga (Mpika, Chinsali), provinces de l'Est (Lundazi, Chama), vallee du Luangwa"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Bisa in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10875)",
+      "Bisa – Zambia's Traditional History – Scribd (https://www.scribd.com/document/707190467/Bisa-Zambia-s-Traditional-History)",
+      "Bisa people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bisa.html)",
+      "Lala-Bisa language – Wikipedia (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
+      "Lala-Bisa Language (LEB) – Ethnologue SIL (https://www.ethnologue.com/language/leb/)",
+      "Lala-Bisa – Glottolog (https://glottolog.org/resource/languoid/id/lala1264)",
+      "Bemba people – Wikipedia (history of Bisa-Bemba relations) (https://en.wikipedia.org/wiki/Bemba_people)",
+      "Bisa Tribe Safari Tours – Kingsfari (https://www.kingsfari.com/experiences/bisa-tribe-of-zambia)"
+    ]
   }
 }

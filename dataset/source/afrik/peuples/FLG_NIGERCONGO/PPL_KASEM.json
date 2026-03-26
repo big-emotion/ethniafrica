@@ -6,63 +6,100 @@
   "content": {
     "appellations": {
       "mainName": "Kasem",
-      "selfAppellation": "Kasem",
-      "exonyms": ["Kasem (terme utilisé par les Européens)"],
+      "selfAppellation": "Kasena",
+      "exonyms": ["Kassena", "Kasem", "Kasenna"],
+      "originOfExonyms": "Le terme Kasena est l'autodesignation du peuple. Kasem est le nom de leur langue et est souvent utilise, par metonymie, pour designer le peuple lui-meme. Le terme Kassena (avec double s) est la graphie anglicisee utilisee par l'administration coloniale britannique au Ghana. Les Kasena font partie du meta-groupe Gurunsi, terme d'origine djerma (Niger) qui signifie 'le fer ne penetre pas', utilise pour designer les soldats recrutes par le chef de guerre djerma Babatu dans les annees 1890 parmi plusieurs groupes ethniques de la region.",
+      "whyProblematic": "L'appellation Gurunsi est un exonyme impose par les envahisseurs djerma et repris par les colonisateurs europeens. Les Kasena n'ont aucune parenté linguistique ou culturelle proche avec tous les groupes designes sous ce terme. La partition coloniale franco-britannique de 1898 a divise le peuple kasena entre le Ghana (britannique) et le Burkina Faso (français), creant deux communautes distinctes sous des administrations differentes.",
+      "contemporaryUsage": "Kasena et Kassena sont tous deux utilises. Au Ghana, on parle de Kassena-Nankana (district administratif). Au Burkina Faso, le terme Kasena est predominant. La langue est appelee Kasem dans les deux pays. Le roi du peuple kasena reside a Tiébélé (Burkina Faso).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Gur",
-      "historicalRegion": "GHA, BFA",
+      "ethnoLinguisticGroup": "Gur (sous-groupe Grusi / Gurunsi, branche orientale)",
+      "historicalRegion": "Region frontaliere entre le nord du Ghana et le sud du Burkina Faso : districts de Kassena-Nankana (Navrongo, Paga, Chiana) au Ghana ; provinces de Po, Tiébélé et Naouhri au Burkina Faso",
       "currentCountries": ["GHA", "BFA"]
     },
     "ethnicities": [
-      "Kasem du Ghana",
-      "Kasem du Burkina Faso",
-      "Sous-groupes régionaux"
+      "Kasena de Navrongo (Ghana) — communaute principale au Ghana, capitale du district Kassena-Nankana",
+      "Kasena de Paga (Ghana) — communaute notable, voisine de la frontiere burkinabe",
+      "Kasena de Chiana (Ghana) — chefferie etablie",
+      "Kasena de Kayoro (Ghana) — chefferie de la zone occidentale",
+      "Kasena de Katiu (Ghana) — chefferie reconnue",
+      "Kasena de Nakon (Ghana) — sixieme chefferie principale",
+      "Kasena de Tiébélé (Burkina Faso) — siege du roi supreme (Peh) du peuple kasena",
+      "Kasena de Po (Burkina Faso) — communaute de la zone frontiere",
+      "Kasena de Pô-Koukouldi (Burkina Faso) — communaute de la province de Po"
     ],
     "origins": {
-      "ancientOrigins": "Les Kasem sont originaires de la région du Ghana et du Burkina Faso. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe gur.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Kasena sont un peuple de la famille gur (Volta-Congo), etabli depuis plusieurs siecles dans la region frontaliere entre le nord du Ghana et le sud du Burkina Faso. Ils font partie du meta-groupe Gurunsi (terme externe) qui designe plusieurs ethnies de la region de savane entre Ouagadougou et le nord-est du Ghana. Les Kasena ont historiquement organise leurs etablissements en arc de villes fortifiees, temoignant d'une organisation defensive ancienne.",
+      "formationPeriod": "La presence kasena dans la region est attestee depuis plusieurs siecles. Leur histoire connait une acceleration au 19e siecle avec les invasions djerma de Babatu (Baba Ato Zato) dans les annees 1880-1890. La partition coloniale de 1897-1898 entre la France et la Grande-Bretagne a divise le territoire kasena entre deux systemes administratifs distincts.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans la region de savane entre le nord du Ghana et le sud du Burkina Faso (origine Gur)",
+        "Organisation en arc de villes fortifiees de Ouagadougou au nord-est du Ghana comme strategie defensive"
+      ],
+      "historicalSettlementZones": [
+        "Navrongo — capitale du district Kassena-Nankana au Ghana, principal centre urbain kasena",
+        "Paga — ville frontiere au Ghana, connue pour ses crocodiles sacres",
+        "Chiana, Kayoro, Katiu, Nakon — chefferies kasena au Ghana",
+        "Tiébélé — siege royal au Burkina Faso, celebre pour ses maisons decorees",
+        "Po et ses environs — zone kasena au Burkina Faso"
+      ],
+      "unificationsOrDivisions": "Les Kasena etaient historiquement des sujets de l'Empire Mossi. Ils sont organises en chefferies independantes (Navrongo, Paga, Chiana, Kayoro, Katiu, Nakon au Ghana ; Tiébélé et autres au Burkina Faso) toutes liees par des traditions communes. Le roi supreme (Peh) reside a Tiébélé. La partition coloniale de 1898 a cree une division administrative persistante, bien que les deux communautes maintiennent des liens culturels forts.",
+      "externalInfluences": "Domination historique de l'Empire Mossi. Invasions et razzia esclavagistes des forces djerma de Babatu dans les annees 1880-1890. Competition coloniale franco-britannique-allemande dans les annees 1890. Partition entre France et Royaume-Uni en 1898, divisant le peuple entre Burkina Faso et Ghana. Missionaries catholiques actifs a Navrongo depuis le debut du 20e siecle. Influence de l'islam via les contacts avec les peuples Hausa et Mossi.",
+      "majorHistoricalEvents": "Resistance aux invasions djerma de Babatu (Baba Ato Zato) dans les annees 1880-1890 — les Kasena et autres groupes Gurunsi ont combattu les jihadistes djerma. Annexion par la France des terres kasena du Burkina Faso en 1897. Accord franco-britannique de 1898 divisant le territoire kasena. Creation du district administratif Kassena-Nankana en 1936 par les Britanniques au Ghana. Ghana independant en 1957. Haute-Volta (Burkina Faso) independant en 1960. Exposition 'Home Call' au musee MAS d'Anvers (Belgique) sur la culture kasena."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme de chefferies dirigees par un chef appele Peh (chef de ville). Chaque ville kasena possede son Peh. Le Peh de Tiébélé (Burkina Faso) est le plus puissant et est considere comme le roi supreme du peuple kasena. Les chefferies de Navrongo, Paga, Chiana, Kayoro, Katiu et Nakon sont les six chefferies predominantes du cote ghaneen. Le chef exerce des fonctions politiques, judiciaires et cerimoniales.",
+      "clanOrganization": "La societe kasena est organisee en lignages. L'unite de base est le compound (concession familiale) qui abrite la famille etendue. La societe distingue les quarters d'hommes et de femmes dans les compounds. Chaque femme mariee dispose d'une hutte individuelle dans laquelle elle cuisine pour elle et ses enfants. Les activites economiques et sociales sont fortement influencees par le systeme de parenté.",
+      "ageClassSystems": "La societe kasena possede des formes d'organisation par groupes d'age structurant certaines activites collectives et les responsabilites sociales des hommes et des femmes.",
+      "roleOfLineages": "Les lignages reglent la residence, l'heritage et les alliances matrimoniales. Les defunts sont enteres dans la cour ancestrale de la famille (compound familial) — pratique centrale de la relation avec les ancetres.",
+      "religiousAuthority": "Le peuple kasena est historiquement animiste monotheiste, adorant un Dieu createur appele We (presente dans de nombreux noms propres : Webedouh, Wettelne, Wepouli). Il venere egalement les ancetres. Les chefs (Peh) exercent une autorite spirituelle liee aux ceremonies et aux relations avec les ancetres. Depuis le 20e siecle, le christianisme catholique (actif a Navrongo) et l'islam ont penetre la communaute kasena, creant un syncretisme vivant."
     },
     "languages": {
       "mainLanguage": "Kasem",
-      "vehicularRole": "Le kasem est parlé par la majorité des Kasem. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": ["xsm"],
+      "dialects": [
+        "Kasem du Ghana (Navrongo, Paga) — variete principale au Ghana",
+        "Kasem du Burkina Faso (Tiébélé, Po) — variete du cote burkinabe",
+        "Variante de Kassem — graphie alternative recensee dans les classifications linguistiques"
+      ],
+      "vehicularRole": "Le kasem est parle comme langue maternelle par tous les membres de la communaute kasena. Il est utilise comme langue d'instruction dans certaines ecoles. Le francais est la langue officielle au Burkina Faso, l'anglais au Ghana. Le kasem est classe dans le sous-groupe Grusi (Gurunsi) des langues Gur (Volta-Congo), apparente au Nuni et au Lyele. La Bible complete est disponible en kasem."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles culturels kasem, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle (tambours, flûtes)",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Artisanat (tissage, poterie)",
-      "source_7": "Littérature orale",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Djongon : grand festival traditionnel annuel de danse et de celebration sociale. Le nagila (ou djongo) est la danse principale executee par les participants lors de ce festival. Rites d'inhumation : les defunts sont enteres dans la cour ancestrale du compound familial, maintenant le lien physique avec les ancetres. Ceremonies de naissance, de puberte et de mariage qui structurent le cycle de vie. Rites agricoles : ceremonies lies aux saisons de pluie et de recolte dans le contexte d'une economie vivriere de savane. Funerailles elaborees avec chants, danses et celebrations communautaires, constituant d'importantes occasions de rassemblement social.",
+      "symbols": "Les maisons kasena de Tiébélé (Burkina Faso) sont celebres pour leurs peintures murales geometriques aux couleurs noir, blanc et rouge, produites par les femmes a partir de pigments naturels. Ces decorations sont des symboles culturels reconnus mondialement. Les masques en bois et les sculptures en argile temoignent d'un riche heritage artistique. La rondeur des compounds (concessions) — architecture circulaire avec toit plat utilisable — est un symbole culturel distinctif. La chefferie et le palais du Peh de Tiébélé sont des symboles d'autorite et d'identite.",
+      "artsAndMusic": "Arts visuels : peintures murales geometriques de Tiébélé — art rupestre architectural féminin reconnu comme patrimoine culturel mondial ; masques en bois utilises dans les ceremonies ; sculptures en argile ; bijoux en bois sculpte. Architecture : les compounds kasena a Tiébélé sont une expression architecturale unique aux formes rondes et aux decorations picturales spectaculaires. Musique et danse : la danse est une composante centrale de la culture kasena. Elle est partie integrante de la plupart des evenements sociaux — naissances, mariages, funerailles, festivals. Le djongon et le nagila sont les formes de danse les plus emblematiques. Instruments de musique : tambours (diverses tailles et formes), flutes, xylophones, instruments a corde simples. La pratique musicale commune renforce la cohesion sociale.",
+      "spiritualities": "Monotheisme animiste : les Kasena adorent un Dieu createur unique appele We (ou Wene), dont le nom est integre dans de nombreux anthroponymes. Culte des ancetres : les defunts sont enteres dans la cour familiale pour maintenir leur presence et influence protectrice sur les vivants. Les ancetres jouent un role central dans la protection de la famille et du lignage. Pratiques divinatoires et medicales traditionnelles maintenues par des specialistes rituels. Depuis le 20e siecle, le christianisme catholique (introduit par les missionnaires de Navrongo) et l'islam (influence Mossi et Hausa) sont presents dans la communaute kasena. La religion predominante reste l'animisme traditionnel avec une proportion significative de chretiens (environ 12%) et de musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kasem dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Systeme de chefferies autonomes avec six chefferies predominantes au Ghana (Navrongo, Paga, Chiana, Kayoro, Katiu, Nakon) et des chefferies au Burkina Faso (Tiébélé comme siege du roi supreme). Les Kasena ont historiquement forme un arc de villes fortifiees de Ouagadougou au nord-est du Ghana, organisees comme bastions defensifs. Le Peh de Tiébélé est le roi supreme traditionnel du peuple kasena dans son ensemble.",
+      "relationsWithNeighbors": "Relations de sujetion historique a l'Empire Mossi qui dominait la region. Relations ethniques avec les Nankani (Nankana), peuple voisin avec lequel les Kasena ont ete administrativement regroupes dans le district Kassena-Nankana en 1936. Appartenance au meta-groupe Gurunsi partage avec d'autres peuples du nord du Ghana et du sud du Burkina Faso (Sisaala, Nankana, Builsa). Influence commerciale des Hausa et de l'axe caravanier entre la cote et le Sahel.",
+      "conflictsOrAlliances": "Resistance aux invasions djerma du chef de guerre Babatu (Baba Ato Zato) dans les annees 1880-1890 qui tentait de recruter des soldats et de faire des razzias esclavagistes. Competition entre puissances coloniales (France, Royaume-Uni, Allemagne) pour le controle du territoire kasena dans les annees 1890. Resistance locale aux colonisateurs avant l'annexion definitive. La partition coloniale de 1898 a scinde le peuple kasena entre deux administrations.",
+      "diaspora": "Emigration interne vers les villes du Ghana (Accra, Kumasi) et du Burkina Faso (Ouagadougou). Diaspora internationale limitee mais presente dans les pays europeens, notamment en Belgique (exposition 'Home Call' au musee MAS d'Anvers temoigne de l'interet academique et diasporique)."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 340000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project 2025 (Ghana : 205 000 ; Burkina Faso : 135 000 ; total mondial : 340 000) ; PeopleGroups.org 2024 (195 000 au Ghana)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 205000,
+          "note": "District Kassena-Nankana (Navrongo, Paga, Chiana) dans la region Upper East du Ghana"
+        },
+        {
+          "country": "BFA",
+          "population": 135000,
+          "note": "Province de Po, Tiébélé et Naouhri dans le sud du Burkina Faso"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kasem language (xsm)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples gur"
+      "Wikipedia EN — Kassena. https://en.wikipedia.org/wiki/Kassena",
+      "Wikipedia EN — Kassena-Nankana Municipal District. https://en.wikipedia.org/wiki/Kassena-Nankana_Municipal_District",
+      "Joshua Project — Kasem in Ghana. https://joshuaproject.net/people_groups/print/12556/GH",
+      "Joshua Project — Kasem in Burkina Faso. https://joshuaproject.net/people_groups/print/12556/UV",
+      "PeopleGroups.org — Kasena of Ghana. https://peoplegroups.org/people_groups/pg013342/",
+      "SIL Ethnologue — Kasem language (xsm). https://www.ethnologue.com/language/xsm/",
+      "WALS Online — Kasem language. https://wals.info/languoid/lect/wals_code_ksm",
+      "Wikipedia EN — Gur languages. https://en.wikipedia.org/wiki/Gur_languages"
     ]
   }
 }

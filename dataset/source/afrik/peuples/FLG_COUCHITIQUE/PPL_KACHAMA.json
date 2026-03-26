@@ -6,54 +6,71 @@
   "content": {
     "appellations": {
       "mainName": "Kachama",
-      "selfAppellation": "",
-      "exonyms": ["Kachama-Ganjule"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Kachama",
+      "exonyms": ["Kachama-Ganjule", "Gidicho"],
+      "originOfExonyms": "L'appellation Kachama-Ganjule regroupe deux communautés étroitement apparentées : les Kachama, établis sur l'ile de Gidicho dans le lac Abaya, et les Ganjule, originairement installés sur une petite ile du lac Chamo. Le nom Gidicho désigne parfois le peuple Kachama par référence à leur ile d'origine.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Kachama et Kachama-Ganjule sont utilisés dans les documents administratifs éthiopiens et dans la littérature linguistique. Ethnologue classe la langue sous le code kcx. Blench (2006) propose de traiter Gidicho, Kachama et Ganjule comme des langues distinctes, mais cette distinction est contestée."
     },
-    "ethnicities": ["Kachama"],
+    "ethnicities": ["Kachama", "Ganjule"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kachama sont un peuple de pêcheurs et d'agriculteurs établis sur l'ile de Gidicho dans le lac Abaya, dans la vallée du Grand Rift éthiopien. Leur présence sur cette ile remonte à plusieurs générations. Leur langue, le kachama-ganjule, appartient à la branche omoto-nord des langues omotiques (sous-groupe Ometo nord selon Blench), bien que classée historiquement avec les langues afroasiatiques par Ethnologue.",
+      "formationPeriod": null,
+      "migrationRoutes": [
+        "Etablissement ancestral sur l'ile de Gidicho (lac Abaya) ; les Ganjule, branche soeur, vivaient initialement sur une ile du lac Chamo avant de se relocaliser sur la rive occidentale du lac."
+      ],
+      "historicalSettlementZones": [
+        "Ile de Gidicho, lac Abaya, région des Nations, Nationalités et Peuples du Sud (SNNPR), Ethiopie",
+        "Lac Chamo (Ganjule), région des Nations, Nationalités et Peuples du Sud, Ethiopie"
+      ],
+      "unificationsOrDivisions": "Les Kachama et les Ganjule forment un continuum dialectal, parfois traité comme une seule communauté ethno-linguistique. Les Ganjule ont quitté leur ile d'origine sur le lac Chamo pour s'établir sur la rive occidentale du lac, en raison de pressions diverses.",
+      "externalInfluences": "Influences des peuples riverains des lacs Abaya et Chamo, notamment les Arbore, Hammer et Wolayta. La proximité du lac a façonné une économie axée sur la pêche et une culture lacustre distincte.",
+      "majorHistoricalEvents": "La relocalisation des Ganjule de leur ile du lac Chamo vers la rive occidentale constitue l'événement démographique majeur récent. La langue kachama-ganjule reste parlée par environ 1 000 monolingues, ce qui fait de cette communauté l'une des plus petites ethno-linguistiques d'Ethiopie."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation communautaire villageoise, probablement à base lignagère, adaptée à la vie insulaire lacustre. Absence de documentation sur un système politique centralisé.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent les droits d'accès aux ressources halieutiques du lac et aux terres agricoles insulaires.",
+      "religiousAuthority": null
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kachama-Ganjule (kcx)",
+      "isoCodes": ["kcx"],
+      "dialects": [
+        "Kachama (ile de Gidicho, lac Abaya)",
+        "Ganjule (anciennement ile du lac Chamo, maintenant rive occidentale)",
+        "Gatame/Get'eme/Gats'ame (parfois traité comme synonyme par Ethnologue, langue distincte selon Blench)"
+      ],
+      "vehicularRole": "La langue kachama-ganjule est une langue de première langue pour l'ensemble de la communauté ethnique. Elle n'est pas enseignée dans les écoles. L'amharique sert de lingua franca pour les échanges avec l'administration et les marchés extérieurs. On compte environ 1 000 locuteurs monolingues."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Culture lacustre centrée sur la pêche et l'agriculture insulaire. Les rites communautaires sont liés au cycle des pêches et aux saisons agricoles. Le lac Abaya et le lac Chamo, peuplés de crocodiles et d'hippopotames, jouent un rôle symbolique important dans la cosmologie locale.",
+      "symbols": "L'ile de Gidicho et les eaux du lac Abaya sont des éléments centraux de l'identité Kachama.",
+      "artsAndMusic": null,
+      "spiritualities": "Pratiques religieuses locales de type animiste, avec influences des religions abrahamiques environnantes. La langue kachama-ganjule possède ses propres termes pour la bière de miel (eesa en kachama, shida en ganjule) et d'autres productions culturelles distinctes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Kachama et Ganjule entretiennent des relations de voisinage avec les peuples de la rive des lacs Abaya et Chamo : Arbore, Hammer, Wolayta, et d'autres communautés de la région des Nations, Nationalités et Peuples du Sud.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 9000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ethnologue (kcx) : population inférieure à 10 000 ; environ 1 000 monolingues. Estimation 2025 basée sur Ethnologue et Wikipedia.",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 9000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kachama-Ganjule language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kachama-Ganjule_language)",
+      "Kachama-Ganjule Language (KCX) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/kcx/)",
+      "Kachama, Ganjule in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12400)",
+      "Blench, R. (2006). Afroasiatic Languages: Omotic sub-group classification.",
+      "T'ej in Other Ethiopian Languages – Ethiopian Tej Blog (https://ethiopiantej.wordpress.com/tej-names/)",
+      "Afro-Asiatic Languages – Sorosoro, 2011 (https://www.sorosoro.org/en/afro-asiatic-languages/)"
+    ]
   }
 }

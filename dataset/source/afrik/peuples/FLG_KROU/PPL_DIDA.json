@@ -1,23 +1,107 @@
 {
   "id": "PPL_DIDA",
-  "nameMain": "",
+  "nameMain": "Dida",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": [],
+  "currentCountries": ["CIV"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Dida",
       "selfAppellation": "Dida / Dita",
+      "exonyms": [
+        "Dida (terme accepté et utilisé par la communauté elle-même)",
+        "Lakota Dida (sous-groupe)",
+        "Yocoboué Dida (sous-groupe)",
+        "Brabori (désignation alternative)"
+      ],
+      "originOfExonyms": "Le terme Dida est d'usage courant et n'a pas de connotation péjorative avérée. Le terme Brabori est utilisé comme désignation alternative dans certains contextes. Les sous-appellations Lakota et Yocoboué renvoient aux zones géographiques principales d'implantation.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dida est universellement utilisé en Côte d'Ivoire et dans la littérature académique pour désigner ce peuple krou du sud-ouest ivoirien.",
       "linguisticFamily": "FLG_KROU",
-      "historicalRegion": "Sud-Ouest de la Côte d’Ivoire (Divo, Lakota)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Krou oriental",
+      "historicalRegion": "Sud-ouest et centre-sud de la Côte d'Ivoire : régions de Divo, Lakota, Hiré-Watta, Guitry, Zikisso, Yocoboué, Fresco et Grand-Lahou",
+      "currentCountries": ["CIV"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (did)", "Études krou ivoiriennes"]
+    "ethnicities": [
+      "Dida de Lakota – sous-groupe principal, région de Lakota",
+      "Dida de Yocoboué (Yokubwe) – sous-groupe du littoral, région de Divo et Grand-Lahou",
+      "Dida de Divo – sous-groupe du centre-sud",
+      "Dida de Hiré-Watta – sous-groupe forestier",
+      "Ogbrougbrou (Gbrougbrou) – tribu Dida métissée avec les peuples lagunaires Akan, à l'origine de certains peuples kwa lagunaires (Adioukrou, Alladjan, Ahizi, Avikam, Ebrié)",
+      "Sokouyas (Sokyas, Kouyas) – Dida de Vavoua, fondés par Soky, groupe dissident établi en pays Gouro",
+      "Plus de soixante tribus au total selon la tradition orale"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dida partagent avec les Bété l'ancêtre commun Magwé et font partie du grand groupe krou. Selon la tradition orale et les études historiques, ils sont originaires de la côte libérienne et font partie des peuples Krou ayant migré vers les forêts côtières de la Côte d'Ivoire. Ils se sont installés en Côte d'Ivoire à partir du 11e siècle, d'abord sur le littoral ivoirien dans les régions de Fresco et de Sassandra pour la pêche, puis ont progressé vers l'intérieur des forêts.",
+      "formationPeriod": "La formation du peuple Dida en tant qu'entité distincte s'est opérée entre le 11e et le 15e siècle, lors de leur progression vers l'intérieur des terres forestières. La catégorie Dida comme désignation unifiée s'est stabilisée à l'époque coloniale.",
+      "migrationRoutes": [
+        "Depuis la côte libérienne vers le littoral ivoirien (Fresco, Sassandra) à partir du 11e siècle",
+        "Progression vers l'intérieur forestier : régions de Divo, Hiré-Watta, Lakota, Guitry, Zikisso",
+        "Extension vers l'est du littoral : île de Lauzoua, Yocoboué, Grand-Lahou",
+        "Migration dissidente vers Vavoua en pays Gouro (fondateurs des Sokouyas)"
+      ],
+      "historicalSettlementZones": [
+        "Région de Divo et ses environs (Hiré-Watta, Guitry)",
+        "Région de Lakota et Abou",
+        "Littoral : Fresco, Sassandra, Yocoboué, Grand-Lahou",
+        "Zone de Zikisso et Gnagbodougnoa",
+        "Vavoua en pays Gouro (diaspora interne des Sokouyas)"
+      ],
+      "unificationsOrDivisions": "La société dida est traditionnellement très décentralisée. Chaque village reconnaît un lignage comme propriétaire des terres du village mais il n'existe pas d'autorité politique supravillageoise. Les plus de soixante tribus dida ont fonctionné de façon autonome. Des scissions sont attestées, comme celle qui a conduit les Sokouyas à s'installer en pays Gouro. Les Dida de Lakota ont subi une scission interne qui a conduit un groupe de mécontents à migrer vers Gagnoa en pays Bété.",
+      "externalInfluences": "Contacts importants avec les peuples lagunaires Akan (Adioukrou, Alladjan, Avikam, Ebrié, Ahizi) avec qui certaines tribus dida (Ogbrougbrou) se sont métissées. Influence culturelle des Baoulé au nord. Alliance ancienne et sacrée avec les Abé (Abbey) d'Agboville. Résistance à la colonisation française jusqu'en 1918. Influence du christianisme depuis le 20e siècle.",
+      "majorHistoricalEvents": "Résistance farouche à la pénétration coloniale française de 1909 à 1918 (derniers à avoir cédé parmi les peuples du sud-ouest). N'ont pas participé à l'économie de marché avant la Seconde Guerre mondiale. Soutien au Front Populaire Ivoirien (FPI) de Laurent Gbagbo dès 1982. Organisation du festival culturel annuel Djaka pour la préservation du patrimoine dida."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation très décentralisée : chaque village reconnaît un chef de lignage comme propriétaire des terres. La chefferie traditionnelle (choix du chef par dévotion automatique ou compétitive, puis investiture) joue un rôle de représentation communautaire et de résolution des conflits. Les conseils de familles (louboutété) gèrent les affaires internes, notamment les successions. Le palabre est le cadre privilégié de gestion et résolution des conflits.",
+      "clanOrganization": "Organisation en clans (loto) et lignages (lolo). Le lolo peut être une unité de descendance patrilinéaire ou matrilinéaire selon les groupes. La famille élargie (Gwo) est l'unité de base. Le lokpa-peteo (ou Gbo) désigne la famille nucléaire. Des pactes de paix et de non-agression (toupkè) régissent les relations entre groupes alliés. Alliance sacrée avec les Abé : interdits alimentaires mutuels et solidarité en cas de conflit.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (lolo) patrilinéaires ou matrilinéaires structurent l'identité, les droits fonciers et les alliances. Le sere est un lignage mineur. Le Dou est un groupe de chasseurs organisés en sous-lignage spécialisé. Les Opajdjilés (guerriers-chasseurs) formaient une catégorie spécialisée effectuant de longues expéditions en forêt.",
+      "religiousAuthority": "Autorité spirituelle exercée par des spécialistes rituels et des féticheurs assurant le lien entre le monde des vivants et celui des ancêtres. La chefferie dispose d'une dimension religieuse dans la garde des objets rituels."
+    },
+    "languages": {
+      "mainLanguage": "Dida (langue krou)",
+      "isoCodes": ["dic", "gud"],
+      "dialects": [
+        "Dida de Lakota (dic) – dialecte Lakota, Abu et Vata",
+        "Dida de Yocoboué (gud) – dialecte Lozoua (Guitry, 7 100 locuteurs en 1993) et Divo (94 500 locuteurs en 1993) ; dialecte de prestige : Lozoua de Guitry",
+        "Djiboua, Vatta, Zikié, Goudou, Koboua, Gah, Laboua, Abo, Zedié, Tigrou, Gnéhiri, Ménéhiri, Yocoboua, Diéko – variétés dialectales secondaires"
+      ],
+      "vehicularRole": "Le dida est la langue de communication au sein des communautés dida du centre-sud ivoirien. Le français est utilisé dans l'éducation et l'administration. Le dioula sert de langue véhiculaire nationale."
+    },
+    "culture": {
+      "majorRites": "Rites de naissance : chaque naissance est fêtée par toute la communauté ; le choix du prénom est familial et peut évoquer un ancêtre protecteur dont l'enfant est considéré comme la réincarnation. Rites de mariage en plusieurs phases : désignation, intermédiaire (messager), présentation avec la dot. Rites funéraires complexes : constat, annonce (louboutété), enterrement un mois après le décès, dernier repas du mort, règlement des dettes du défunt. Festival culturel annuel Djaka en pays Dida : préservation et transmission du patrimoine culturel.",
+      "symbols": "Le gbako est une hotte traditionnelle portée par les femmes âgées dida aux travaux champêtres ; il est érigé en symbole du peuple au rond-point du quartier Bada de Divo. Le kôdê est un pagne traditionnel en écorce d'arbre battue et séchée, efficace contre les épines et le froid en forêt tropicale. Le gnigbéli-lokui est le pagne de raphia de la tenue traditionnelle dida.",
+      "artsAndMusic": "Le dida de Yocoboué est réputé pour son artisanat en raphia (pagnes tissés). La tenue traditionnelle comprend le gnigbéli-lokui en raphia et le kôdê en écorce. L'agbagningnin est une danse de réjouissance pratiquée par les jeunes au clair de lune, anciennement liée à la bonne récolte ou aux tournois sportifs ; elle se pratique au son des tam-tams et autres instruments de percussion traditionnels. Le festival Djaka rassemble les arts, chants et danses du peuple dida. Des chants traditionnels (chants dida) sont documentés comme vecteurs de la mémoire culturelle.",
+      "spiritualities": "Les Dida ont une religion traditionnelle monothéiste : ils croient en un Dieu suprême unique (grand chef), au-dessus de tous. Les ancêtres décédés deviennent serviteurs ou notables de ce Dieu. Les fétiches servent de lien entre le monde des esprits et le monde des vivants. La croyance fondamentale est que le défunt ne meurt pas vraiment mais passe dans le monde des esprits, d'où l'importance du dernier repas funèbre. Le christianisme a été adopté depuis la colonisation, mais de nombreux rituels ancestraux sont maintenus. La foi chrétienne est majoritaire (74% selon Joshua Project 2025)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou de chefferie centralisée. Organisation en chefferies villageoises et lignages autonomes. Les institutions coutumières dida (chefferies, conseils d'anciens) constituent la structure politique traditionnelle, documentée dans l'ouvrage académique Dynamique des institutions coutumières dida de Côte d'Ivoire (Stanford).",
+      "relationsWithNeighbors": "Alliance sacrée et ancienne avec les Abé (Abbey) d'Agboville (interdits alimentaires mutuels, solidarité). Alliance avec les Akyé (Adzopé), Abidji (Sikenci), Adioukrou (Dabou), Avikam (Grand-Lahou), Alladjan (Jacqueville), Abouré (Bonoua), Ebrié (Abidjan), Kroumen (San-Pédro) et Bakwé (Méadji). Influence culturelle des Baoulé au nord.",
+      "conflictsOrAlliances": "Résistance acharnée à la colonisation française de 1909 à 1918. Soutien au FPI de Laurent Gbagbo dès les années 1980. Tensions avec les populations dioula lors de la crise ivoirienne de 2002, en raison de l'installation de migrants mandingues dans leurs terres.",
+      "diaspora": "Présence dida dans les grandes villes ivoiriennes, notamment Abidjan. Pas de diaspora internationale significativement documentée."
+    },
+    "demography": {
+      "totalPopulation": 457000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : Dida Lakota 216 000 ; Dida Yocoboué 241 000. Données confirmées par Minority Rights Group (195 000 dans les années 2000) et extrapolations 2025 basées sur le taux de croissance démographique ivoirien (2,4%)",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 457000,
+          "note": "Sud-ouest et centre-sud de la Côte d'Ivoire : Divo, Lakota, Hiré-Watta, Guitry, Zikisso, Yocoboué, Fresco, Grand-Lahou et environs"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR – Dida (peuple). https://fr.wikipedia.org/wiki/Dida_(peuple)",
+      "Wikipedia EN – Dida language. https://en.wikipedia.org/wiki/Dida_language",
+      "Joshua Project – Dida, Lakota in Côte d'Ivoire. https://joshuaproject.net/people_groups/12959",
+      "Joshua Project – Dida, Yocoboue in Côte d'Ivoire. https://joshuaproject.net/people_groups/16046",
+      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Ethnologue – Dida, Lakota (dic). https://www.ethnologue.com/language/dic/",
+      "Ethnologue – Dida, Yocoboué (gud). https://www.ethnologue.com/language/gud/",
+      "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire. https://searchworks.stanford.edu/view/11373252",
+      "France 24 / YouTube – Djaka festival en Côte d'Ivoire. https://www.youtube.com/watch?v=SYLpywVLMOE",
+      "Scribd – INTRODUCTION Dida. https://www.scribd.com/document/696994712/INTRODUCTION-dida"
+    ]
   }
 }

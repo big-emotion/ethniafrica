@@ -6,59 +6,112 @@
   "content": {
     "appellations": {
       "mainName": "Kongo (Sud)",
-      "selfAppellation": "Bakongo",
-      "exonyms": ["« Kongo » (terme utilisé par les Européens)"],
+      "selfAppellation": "Bakongo (pluriel), Mukongo (singulier), Bisi Kongo",
+      "exonyms": [
+        "Bakongo du Bas-Congo",
+        "Kongo du Kongo Central",
+        "Bakongo de la RDC"
+      ],
+      "originOfExonyms": "Le terme Kongo Sud (ou Kongo du Bas-Congo) est une denomination academique et administrative pour designer les Bakongo de l'actuelle province du Kongo Central en RDC (anciennement province du Bas-Congo). Cette province correspond au coeur historique du Royaume du Kongo sur la rive gauche du fleuve Congo. Le terme Bas-Congo (rebaptise Kongo Central en 2015) est d'origine coloniale belge.",
+      "whyProblematic": "L'appellation Kongo Sud regroupe de nombreux sous-groupes distincts (Manianga, Ntandu, Ndibu, Mboma, Solongo, Lemfu, Bwende, etc.) qui ont leurs propres identites et dialectes. La fragmentation politique post-independance a cree des tensions entre les Bakongo de la RDC et le gouvernement central kinois domine par d'autres groupes ethniques. Le Bundu dia Kongo, un mouvement politico-religieux visant a restaurer le Royaume du Kongo en secession des trois Etats actuels, est particulierement actif dans cette province.",
+      "contemporaryUsage": "Les habitants s'identifient d'abord par leur sous-groupe specifique (Manianga, Ntandu, Ndibu, etc.), puis comme Bakongo au sens large. L'identite bakongo est politiquement mobilisee par le Bundu dia Kongo, mouvement syncrétiste et independantiste. La province du Kongo Central est consideree comme le berceau historique et culturel de l'ensemble du peuple kongo.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "Bas-Congo (RDC)",
+      "ethnoLinguisticGroup": "Bantou Zone H (groupe H.10-H.16)",
+      "historicalRegion": "Province du Kongo Central (anciennement Bas-Congo) en RDC : territoire entre le fleuve Congo, la cote atlantique et la frontiere angolaise; coeur du Royaume du Kongo historique",
       "currentCountries": ["COD"]
     },
-    "ethnicities": ["Kongo du Bas-Congo", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Manianga (territoires de Luozi et Mbanza-Ngungu) : sous-groupe important, connu pour son role commercial historique",
+      "Ntandu (region de Thysville / Mbanza-Ngungu et Lukala) : sous-groupe numerique significatif",
+      "Ndibu (region de Kimpese et Mbanza-Ngungu) : sous-groupe distinct avec dialecte propre",
+      "Bwende (region cotiere et du Bas-Congo inferieur) : sous-groupe avec liens au Mayombe",
+      "Solongo / Nsolongo (bande cotiere pres de Moanda et Banana) : sous-groupe cotier",
+      "Woyo (extreme ouest, frontiere avec l'enclave de Cabinda) : sous-groupe proche des Woyo angolais",
+      "Lemfu (region de Kasangulu) : sous-groupe de la zone du Pool Malebo",
+      "Mboma / Ba Mboma (region de Matadi) : sous-groupe de la region portuaire",
+      "Ba Zombo / Bazombo (region de Luozi) : sous-groupe a cheval sur la frontiere Congo-Angola"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kongo du Sud sont originaires de la région du Bas-Congo (RDC). Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Kongo.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Le territoire de l'actuel Kongo Central est le coeur historique du Royaume du Kongo. Les Bakongo de cette region descendent des populations bantoues qui se sont etablies dans le bassin du Congo-Ouest il y a environ 2 000 ans. La capitale historique du royaume, Mbanza Kongo (Sao Salvador), se trouve juste au sud de l'actuelle frontiere RDC-Angola. Le Kongo Central est donc la region la plus directement heritiere du royaume, ayant abrite les provinces centrales de Mpemba, Nsundi et Mbata.",
+      "formationPeriod": "Le Royaume du Kongo, fonde vers 1380, avait son coeur dans cette region. Mbanza Kongo, capitale royale, attirait des populations de tout le royaume. L'actuelle province du Kongo Central correspond en grande partie aux anciennes provinces de Mpemba (au nord de Mbanza Kongo), Nsundi (nord-est) et Mbata (est). Apres l'effondrement du royaume central suite a la bataille de Mbwila (1665) et la guerre civile, la region s'est fragmentee en chefferies locales maintenant des liens culturels forts.",
+      "migrationRoutes": [
+        "Etablissement bantou ancien dans le bassin du Congo-Ouest (1er millenaire ap. J.-C.)",
+        "Organisation politique croissante autour du Bas-Congo (13e-14e siecles)",
+        "Expansion des sous-groupes Manianga et Ntandu depuis le coeur du royaume vers l'est et le nord (15e-17e siecles)",
+        "Migrations internes dues aux guerres civiles post-Mbwila (apres 1665)",
+        "Urbanisation vers Matadi, Boma, Kinshasa et Mbanza-Ngungu (20e-21e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Matadi (capitale provinciale) et du bas fleuve Congo : zone Mboma et cotiere",
+        "Region de Mbanza-Ngungu et Lukala : zone Ntandu et Ndibu",
+        "Region de Luozi : zone Manianga et Zombo",
+        "Region de Kimpese : zone Ndibu",
+        "Region de Boma (ancien chef-lieu colonial) : zone cotiere",
+        "Littoral et embouchure du Congo (Banana, Moanda) : zone Solongo et Woyo",
+        "Region de Kinshasa (est de la province) : zone fortement urbanisee"
+      ],
+      "unificationsOrDivisions": "La province du Kongo Central (anciennement Bas-Congo) est l'unite administrative qui regroupe les Bakongo de RDC. Cependant, les multiples sous-groupes maintiennent des identites distinctes. Le mouvement Bundu dia Kongo (BDK), fonde par Ne Muanda Nsemi, prone la restauration du Royaume du Kongo et s'est oppose violemment au gouvernement de Kinshasa (affrontements 2008, 2017). La tension entre les aspirations identitaires kongo et le centralisme de l'Etat congolais est une constante politique de la province.",
+      "externalInfluences": "1483 : premier contact avec les Portugais. 1665 : bataille de Mbwila (dans l'actuel Angola), declin du royaume. 1878-1908 : Etat independant du Congo de Leopold II, avec des atrocites particulierement documentees dans le Bas-Congo. 1908-1960 : Congo belge, exploitation des caoutchouc et du minerai, construction de la voie ferree Matadi-Kinshasa (1898). 1921 : prophete Simon Kimbangu (originaire de Ngombe-Lutete, Kongo Central) fonde le kimbanguisme. 1960 : independance du Congo (Leopoldville), ou Joseph Kasa-Vubu, lari (kongo), devient premier president.",
+      "majorHistoricalEvents": "1483 : arrivee de Diogo Cao et premier contact portugais a l'embouchure du Congo. 1509-1543 : apogee du Royaume du Kongo sous Afonso I, dont les provinces centrales incluent l'actuel Kongo Central. 1665 : bataille de Mbwila et debut du declin. 1878-1908 : Etat independant du Congo sous Leopold II, atrocites documentees. 1921 : arrestation du prophete Simon Kimbangu a Thysville (Mbanza-Ngungu), condamne a mort puis emprisonne jusqu'a sa mort en 1951. 1960 : independance, Kasa-Vubu president. 2008, 2017 : affrontements entre forces de securite et miliciens du Bundu dia Kongo."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Au niveau du Royaume du Kongo historique, la province du Kongo Central correspondait aux provinces centrales (Mpemba, Nsundi, Mbata) gouvernees par des gouverneurs nommes par le Manikongo, souvent des membres de la famille royale. Ces provinces etaient divisees en subdivisions (wene) dirigees par des chefs (mwene ou mani). Aujourd'hui, les chefferies locales (sous-chefferies et secteurs) sont reconnues par l'Etat congolais aux cotes de l'administration territoriale officielle. Les chefs traditionnels (mfumu ou nkazi) ont un role important dans la resolution des conflits fonciers et familiaux.",
+      "clanOrganization": "La societe bakongo du Kongo Central est organisee en clans matrilineaires (makanda). Chaque kanda a un ancetre feminin commun, un chef de clan (mfumu makanda), des terres ancestrales et des obligations mutuelles d'entraide. Les sous-groupes Manianga, Ntandu, Ndibu et autres ont chacun leurs propres configurations claniques. La descendance matrilineaire determine les droits fonciers, les successions et les alliances matrimoniales. L'organisation clanique est la base de la vie sociale dans les villages, meme si l'urbanisation l'affaiblit progressivement.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage matrilineaire (kanda) est fondamental dans toute l'organisation sociale du Kongo Central. Un homme herite de son oncle maternel (yaya wandi) et non de son pere. Les terres ancestrales appartiennent au lignage et ne peuvent etre vendues sans l'accord du conseil de clan. La succession aux positions cheftaines passe par la ligne maternelle. En ville, l'adhesion au lignage est maintenue par les cotisations pour les ceremonies communes (funerailles, mariages) meme si les pratiques quotidiennes s'en eloignent.",
+      "religiousAuthority": "Simon Kimbangu, originaire du Kongo Central (village de Nkamba, territoire de Mbanza-Ngungu), a fonde le kimbanguisme en 1921. L'Eglise kimbanguiste (EJCSK) est extremement presente dans toute la province. Nkamba (ou Nkamba-Jerusalem) est devenu le lieu saint du kimbanguisme, site de pelerinage majeur. Les nganga (tradipraticiens-guerisseurs) maintiennent un role important dans les villages. L'eglise catholique est aussi tres implantee (diocese de Boma depuis le 19e siecle). Le mouvement Bundu dia Kongo melange religion kongo traditionnelle et politique identitaire."
     },
     "languages": {
-      "mainLanguage": "Kikongo",
-      "vehicularRole": "Le kikongo est parlé par la majorité des Kongo du Sud. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Kikongo (plusieurs dialectes : Kimanianga, Kintandu, Kindibu, Kibwende, etc.)",
+      "isoCodes": ["kon", "kng"],
+      "dialects": [
+        "Kimanianga : dialecte de la region de Luozi et Manianga, proche du Kisikongo central",
+        "Kintandu (Ntandu) : dialecte de la region de Mbanza-Ngungu et Thysville",
+        "Kindibu : dialecte de la region de Kimpese",
+        "Kibwende : dialecte de la zone du Mayombe occidental (Kongo Central)",
+        "Kisolongo / Nsolongo : dialecte cotier de la zone de Moanda et Banana",
+        "Kimanianga-Kintandu est plus proche du Kisikongo que du Kiyombe ou du Civili",
+        "Kikongo ya Leta (Kituba) : creole vehiculaire, langue nationale de la RDC utilisee dans la province"
+      ],
+      "vehicularRole": "Le kikongo (macrolangue, ISO 639-3 : kon) est la langue vernaculaire principale du Kongo Central. Le Kikongo ya Leta (Kituba), creole a base kikongo, est l'une des quatre langues nationales de la RDC et sert de vehiculaire dans les echanges commerciaux et administratifs au-dela des frontières dialectales. Il est parle par des millions de personnes dans la region. Le francais est la langue officielle de la RDC et d'enseignement. La province du Kongo Central est l'une des regions ou le Kikongo (varietes locales) est le mieux preserve comme langue premiere."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kongo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites funeraires : parmi les plus elabores d'Afrique centrale. Les ceremonies de deuil (matanga) durent plusieurs jours et impliquent tout le village et le clan. L'inhumation doit avoir lieu dans le village ancestral. La levee de deuil (kizunguka) est une fete marquant la fin du deuil et la liberation du veuf ou de la veuve. Rites de mariage : la dot (lukumbu) est negociee entre familles et peut comprendre tissus, argent et autres biens. Le mariage traditionnel precede souvent le mariage civil et religieux. Rites du kimbanguisme : les celebrations kimbanguistes (Noel le 25 decembre, anniversaire de la naissance de Kimbangu, jour de l'arrestation de Kimbangu le 12 juin) sont de grandes fetes communautaires dans tout le Kongo Central. Pelerinage a Nkamba (Nkamba-Jerusalem) : des dizaines de milliers de pelerins convergent chaque annee vers le village natal de Kimbangu.",
+      "symbols": "Le Dikenga (cosmogramme kongo) reste un symbole culturel fondamental. Le kaolin blanc (mpemba) symbolise la purete, les ancetres et le passage dans l'autre monde. Nkamba, village natal de Simon Kimbangu, est devenu un symbole sacre pour les kimbanguistes du monde entier. Les figures de nkisi (minkisi) sont des symboles de la puissance spirituelle kongo, meme si leur fabrication est moins repandue qu'avant la christianisation.",
+      "artsAndMusic": "Musique : la rumba congolaise (appele aussi soukous), dont les racines bantoues-kongo sont reconnues, est la musique populaire dominante de Kinshasa et de la region. Des musiciens kongo ont joue un role fondateur dans la rumba congolaise (Franco Luambo, originaire du Kongo Central). Musique kimbanguiste : les choeurs de l'Eglise kimbanguiste sont renommes pour leurs harmonies polyphoniques. Art plastique : la sculpture traditionnelle (figures de nkisi, statuaires de chefs) a ete tres active dans la region jusqu'au 20e siecle. De nombreuses oeuvres du Kongo Central sont conservees dans des musees europeens et americains. Artisanat : la poterie, le tissage de raphia et la fabrication de paniers sont des pratiques maintenues. L'architecture rurale traditionnelle (cases en pisé ou en briques d'adobe) est caracteristique de la region.",
+      "spiritualities": "Le kimbanguisme (EJCSK) est l'une des principales confessions du Kongo Central, nee sur ce territoire en 1921. C'est la plus grande Eglise chretienne independante d'Afrique, avec plusieurs dizaines de millions de fideles en RDC, Congo et Angola. Les croyances kongo traditionnelles persistent en syncrétisme avec le christianisme : culte des ancetres (bakulu), esprits de l'eau (simbi), utilisation des minkisi. Le Bundu dia Kongo melange traditions kongo (Nzambi, ancetres) et revendiations politiques. Le catholicisme et les eglises evangeliques/pentecotistes sont egalement tres presents. Nkamba est le principal lieu de pelerinage kimbanguiste en Afrique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kongo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "La province du Kongo Central est le coeur historique du Royaume du Kongo (vers 1380-1914). Les provinces royales de Mpemba, Nsundi et Mbata couvraient ce territoire. Mbanza Kongo (actuel nord de l'Angola, a proximite immediate de la frontiere avec le Kongo Central) etait la capitale royale. La region abritait les plus grandes concentrations de population du royaume et ses principales infrastructures (routes, marches, artisanat royal). Apres 1665, des chefferies locales heritant de l'ancien systeme kongo ont survecu comme entites politiques.",
+      "relationsWithNeighbors": "Le Kongo Central borde la province de Kinshasa (ex-Leopoldville) au nord-est, ou les Bakongo forment une importante communaute urbaine. Des relations historiques existent avec les Teke (au nord du Pool Malebo). A l'est, des interactions avec les Yaka (Bayaka) ont parfois ete conflictuelles. La frontiere avec l'Angola (Mbanza Kongo, Uige) est une frontiere artificielle coloniale separant des communautes kongo soudees par l'histoire. Les echanges comerciaux et familiaux avec le Congo-Brazzaville (via le fleuve) sont intenses.",
+      "conflictsOrAlliances": "1665 : bataille de Mbwila (juste au sud de l'actuelle frontiere RDC-Angola), mort du Manikongo Antonio I, declin du royaume. 1878-1908 : atrocites de l'Etat independant du Congo (EIC) de Leopold II documentees dans le Bas-Congo (exploitation du caoutchouc, mutilations). 1921 : fondation et repression du kimbanguisme (Simon Kimbangu emprisonne 30 ans). 1960 : independance, Joseph Kasa-Vubu (Lari, Bakongo) premier president de la RDC. 2008 et 2017 : affrontements meurtriers entre forces de securite et miliciens du Bundu dia Kongo (BDK) dans le Bas-Congo. Tensions persistantes autour de la question identitaire et de l'autonomie regionale.",
+      "diaspora": "Importante diaspora bakongo a Kinshasa (capitale nationale), ou ils forment l'un des plus grands groupes ethniques de la ville. Des bakongo du Kongo Central se trouvent dans toutes les grandes villes de la RDC. Des communautes existent en France, Belgique, au Royaume-Uni et en Amerique du Nord. La diaspora est active dans le maintien de l'identite culturelle kongo et soutient parfois les mouvements politiques (kimbanguisme, BDK). Des echanges frequents (remittances, visites) maintiennent les liens avec les villages d'origine."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 5500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Province du Kongo Central : population estimee a 5 441 000 (Joshua Project 2025) a 6 923 500 (Data Commons 2024). Les Bakongo constituent environ 70-80% de la population provinciale. Estimation de 5,5 millions de Bakongo dans la province en 2025, avec projection basee sur le taux de croissance de la RDC (3,25% annuel, Worldometer 2025). Des Bakongo supplementaires vivent a Kinshasa et dans d'autres provinces. Sources : Joshua Project (2025), Data Commons (2024), Kongo Central Wikipedia EN.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 5500000,
+          "note": "Principalement dans la province du Kongo Central (Matadi, Mbanza-Ngungu, Boma, Kimpese, Luozi, Moanda). Importante communaute bakongo aussi a Kinshasa (province de Kinshasa). Sous-groupes principaux : Manianga, Ntandu, Ndibu, Bwende, Solongo, Woyo, Mboma, Zombo."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kikongo language (kng, kon)",
-      "CIA World Factbook – RDC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Wikipedia EN — Kingdom of Kongo. https://en.wikipedia.org/wiki/Kingdom_of_Kongo",
+      "Wikipedia EN — Kongo Central. https://en.wikipedia.org/wiki/Kongo_Central",
+      "Data Commons — Kongo Central population 2024. https://datacommons.org/place/wikidataId/Q1043494",
+      "Joshua Project — Kongo Central province population (2025). https://joshuaproject.net/people_groups/12774/CG",
+      "SIL Ethnologue — Kongo macrolanguage (kon). https://www.ethnologue.com/language/kon/",
+      "Wikipedia EN — Kongo language. https://en.wikipedia.org/wiki/Kongo_language",
+      "EBSCO Research Starters — Kongo (historical kingdom). https://www.ebsco.com/research-starters/history/kongo-historical-kingdom",
+      "101 Last Tribes — Kongo People (subgroups in DRC). https://www.101lasttribes.com/tribes/kongo.html",
+      "Worldometer — DR Congo Population 2025. https://www.worldometers.info/world-population/democratic-republic-of-the-congo-population/",
+      "VCU Scholars Compass — Transformation of Kongo Minkisi. https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1077&context=etd",
+      "Demographics of the Democratic Republic of the Congo — Wikipedia. https://en.wikipedia.org/wiki/Demographics_of_the_Democratic_Republic_of_the_Congo"
     ]
   }
 }

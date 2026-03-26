@@ -1,23 +1,96 @@
 {
   "id": "PPL_KAFA",
-  "nameMain": "",
+  "nameMain": "Kafa",
   "languageFamilyId": "FLG_OMOTIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kafa",
       "selfAppellation": "Kafficho / Kaafi",
+      "exonyms": ["Kaffa", "Kaficco", "Caffino", "Keffa", "Kefa", "Kaficho"],
+      "originOfExonyms": "Le nom Kaffa (ou Kefa, Keffa) est le terme geographique et ethnique le plus repandu dans la litterature internationale. L'appellation Kafficho designe a la fois le peuple et la langue dans les sources ethiopiennes. Le terme Kaafi est l'autonym le plus courant parmi les locuteurs. Le mot Kaffa est etymologiquement lie au terme cafe dans de nombreuses langues mondiales, en reference au fait que la region est le berceau du Coffea arabica.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Kafa et Kafficho sont tous deux utilises dans les documents officiels ethiopiens. La zone administrative est officiellement appelee Keffa Zone (parfois orthographiee Kaffa). La langue est identifiee sous le code ISO kbr (Kafa) et aussi sous kbr dans Ethnologue et Glottolog.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "historicalRegion": "Kaffa Zone (Éthiopie), hauteurs du sud-ouest",
+      "ethnoLinguisticGroup": "Omotique nord, groupe Gonga (Kefoid)",
+      "historicalRegion": "Zone Keffa (Kaffa Zone), hauts plateaux du sud-ouest de l'Ethiopie, ancienne province de Kaffa",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (kbr)", "Kaffa Cultural Studies"]
+    "ethnicities": [
+      "Manjo — groupe de chasseurs de statut inferieur ayant leur propre roi nomme par le Roi de Kaffa ; role de gardes des enceintes royales et des portes du royaume",
+      "Manne — groupe de tanneurs-cordonniers de statut inferieur (submerged status)",
+      "Qemmo — groupe de forgerons de statut inferieur",
+      "Les quatre sous-groupes principaux du Royaume de Kaffa partageant la langue Kefficho",
+      "Les clans nobles — plus de 200 clans, chacun avec sa propre histoire et ses emblemes"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kafficho sont l'un des plus anciens peuples du sud-ouest de l'Ethiopie. Leur territoire, la region de Kaffa, est mondialement reconnu comme le berceau du cafe arabica (Coffea arabica), dont les varietes sauvages poussent encore dans les forets primaires de la region. La Reserve de biosphere de Kafa contient pres de 5 000 varietes sauvages de la plante. Les forets de montagne de la zone Keffa representent plus de 50% des forets de montagne residuelles de l'Ethiopie.",
+      "formationPeriod": "Le Royaume de Kaffa fut fonde vers 1390 par Minjo, qui renversa la dynastie Mato (32 rois dont les noms ne sont plus memorises). Le royaume prospera pendant cinq siecles jusqu'en 1897. Il etait divise en quatre sous-groupes parlant tous le Kefficho. La capitale initiale etait Bonga ; Anderaccha fut la seconde capitale mais Bonga conserva son importance culturelle et administrative.",
+      "migrationRoutes": [
+        "Population autochtone des hauts plateaux du sud-ouest ethiopien, sans migration externe documentee",
+        "Extension territoriale par conquetes sous plusieurs rois : Gali Ginocho (1675-1710), Tato Shagi Sherocho (1775-1795), Hoti Gaocho (1798-1821)"
+      ],
+      "historicalSettlementZones": [
+        "Zone Keffa (avec Bonga comme capitale), dans le South West Ethiopia Peoples' Region",
+        "Anciennes zones d'expansion : territoires Gimira (She, Benesho, Majango), Welayta, Kambaata",
+        "La Gojeb River formait la frontiere nord du royaume"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Kaffa etait une monarchie centralisee dirigee par un roi appele Tato, figure sacree entouree de rituels complexes. Le systeme administratif sophistique comprenait des conseillers representant les clans majeurs et un systeme judiciaire pour resoudre les conflits. Apres la conquete par l'Empire ethiopien en 1897, la region fut reorganisee administrativement. En 1942, Haile Selassie elargit la Province de Kaffa en y integrant les royaumes Gibe.",
+      "externalInfluences": "Au 16e siecle, l'Empereur Sarsa Dengel convainquit le royaume d'adopter le christianisme comme religion d'Etat (eglise Saint-Georges a Baha). Cette influence chretienne s'affaiblit avec le temps. Au 18e siecle, invasion des Oromos Mecha repoussee grace au terrain, mais perte de territoires au nord de la Gojeb. En 1897, annexion par les armees de Menelik II malgre une resistance farouche du dernier roi Gaki Sherocho.",
+      "majorHistoricalEvents": "Fondation du Royaume de Kaffa vers 1390 par Minjo. Periode d'expansion maximale sous Hoti Gaocho (1798-1821) : territoire atteignant la riviere Omo et presque la confluence Omo-Denchya au sud. Le royaume repoussa avec succes les invasions amhara en 1890 et 1893 (superiorite des armes a feu amhara decisive en 1897). Capture du dernier roi Gaki Sherocho le 11 septembre 1897 ; il fut exile a Ankober puis Addis-Abeba. En 2010, la Reserve de biosphere de Kafa fut reconnue par l'UNESCO-MAB. En 2009, construction d'un Musee national du cafe a Bonga."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume de Kaffa etait une monarchie sacree dirigee par un Tato (roi), figure entoure de rituels complexes. Le systeme administratif comprenait un conseil de representants des clans majeurs et un systeme judiciaire. La hierarchie sociale etait strictement stratifiee en nobles, agriculteurs libres et groupes artisanaux de statut inferieur (Manjo, Manne, Qemmo). Le Manjo avait son propre roi nomme par le Tato de Kaffa, dont le role etait de garder les enceintes royales et les portes du royaume.",
+      "clanOrganization": "La societe kafa compte plus de 200 clans, chacun avec sa propre histoire et ses emblemes. Le systeme clanique continue de reguler les mariages, de resoudre les conflits locaux et de gerer les terres communales. Les conseillers du roi representaient les clans majeurs dans le systeme royal.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinent l'identite sociale, les droits sur la terre et les alliances matrimoniales. L'autorite des anciens est fondee sur la memoire genealogique et le respect des traditions claniques. Les clans Manjo, Manne et Qemmo sont des groupes a statut defini par l'occupation hereditaire.",
+      "religiousAuthority": "Traditionnellement, la religion kafa est centree sur un etre supreme appele Yero. Les rituels se deroulent dans des espaces sacres en foret ou pres de grands arbres. Un medium spirituel ou pretre joue le role central d'intermediaire. Le christianisme orthodoxe est entre dans la region (d'abord au 16e siecle sous Sarsa Dengel, puis reinforcement au 19e siecle). Des confessions catholiques et protestantes se sont ajoutees, ainsi qu'une minorite musulmane."
+    },
+    "languages": {
+      "mainLanguage": "Kafa (kbr)",
+      "isoCodes": ["kbr"],
+      "dialects": [
+        "Kafa — dialecte principal",
+        "Bosha (Garo) — dialecte potentiellement distinct selon certains linguistes",
+        "Manjo — argot base sur le kafa, parle par le groupe Manjo, avec des differences lexicales et grammaticales notables (certains speculer qu'il s'agissait d'une langue non-omotique anterieure)"
+      ],
+      "vehicularRole": "Le kafa (kbr) est parle par environ 830 000 personnes selon Ethnologue (2007). Il appartient a la branche Gonga (Kefoid) de l'omotique nord, au sein du phylum afro-asiatique. Il est ecrit en alphabet gueze (ethiopique) et parfois en caracteres latins. Dans la zone Keffa, le kafa est la langue maternelle de 82,49% de la population (recensement 2007). L'amharique est utilise pour l'administration et l'education superieure."
+    },
+    "culture": {
+      "majorRites": "Les Kafficho pratiquent des ceremonies agricoles lies aux forets et au cafe : benedictions des arbres et des recoltes, offrandes aux esprits de la foret dans les espaces sacres. Les ceremonies de mariage sont des evenements communautaires importants regis par les regles claniques. Les rites funeraires comprennent des ceremonies pour honorer les morts et apaiser leurs esprits. Des festivals annuels celebrent le cafe et l'histoire royale du royaume, permettant la transmission des valeurs et de la langue kaffuno aux jeunes generations. Le cycle saisonnier determine des celebrations agraires specifiques.",
+      "symbols": "Le cafe (Coffea arabica) est le symbole culturel le plus puissant des Kafa : le mot cafe lui-meme derive etymologiquement du nom de la region. La foret tropicale dense est a la fois espace nourricier et espace sacre. La maison traditionnelle circulaire a haut toit conique en chaume, adaptee aux fortes pluies, est un symbole architectural distinctif. Le miel sauvage de haute qualite est un produit symbolique de l'identite kafa.",
+      "artsAndMusic": "Les Kafficho excellent dans la production de textiles tisses en couleurs vives. La vannerie et les objets du menage en fibres vegetales sont elabores avec des designs artistiques refletant l'environnement naturel. Les maisons traditionnelles ont des murs en bois et en argile decores de motifs geometriques simples. La tradition orale est riche : epopees royales, genealogies claniques, legendes du cafe transmises par les anciens. La forge (Qemmo) et la poterie (groupes artisanaux) constituent des traditions artisanales transmises hereditairement. Des chants et danses accompagnent les festivals du cafe et les ceremonies royales.",
+      "spiritualities": "La religion traditionnelle kafa est centree sur Yero, l'etre supreme. Les rituels se tiennent dans des espaces sacres en foret ou aupres de grands arbres ancestraux. Des pretres-mediums jouent le role d'intermediaires entre le monde visible et les forces spirituelles. La veneration de la nature, notamment des forets et des arbres a cafe sauvages, est profondement ancree dans la vision du monde kafa. Le christianisme orthodoxe ethiopien, le catholicisme et le protestantisme se sont implantes successivement depuis le 16e siecle. Une minorite musulmane est presente. De nombreuses pratiques spirituelles traditionnelles demeurent entrelacees avec les religions abrahamiques, notamment pour la veneration de la nature et les celebrations des recoltes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Kaffa (vers 1390-1897) fut l'un des royaumes les mieux organises de l'histoire de l'Afrique orientale. Monarchie centralisee dirigee par le Tato, il controlatit un vaste territoire incluant des etats Gimira, Welayta et Kambaata a son apogee sous Hoti Gaocho. Le royaume etait un carrefour commercial reliant le bassin du Nil a la cote de la mer Rouge, exportant principalement cafe, cuir et musc.",
+      "relationsWithNeighbors": "Le Royaume de Kaffa etait borde par les royaumes Gibe au nord (au-dela de la Gojeb), les peuples Konta et Kullo a l'est, les sous-groupes Gimira au sud et les Majangir a l'ouest. Des relations commerciales intenses existaient avec les marchands musulmans ethiopiens et les membres de l'Eglise ethiopienne installes dans le royaume. Des conquetes periodiques etendirent l'influence kafa sur les Welayta et Kambaata.",
+      "conflictsOrAlliances": "Au 16e siecle, adoption du christianisme sous influence de l'Empereur Sarsa Dengel. Au 18e siecle, invasions Mecha Oromo repoussees grace au terrain montagneux. Resistances reussies aux invasions amhara en 1890 et 1893. Defaite finale et annexion par Menelik II le 11 septembre 1897, le dernier roi Gaki Sherocho etant capture malgre la superiorite de la resistance kafa en termes de nombre.",
+      "diaspora": "La diaspora kafficho est principalement interne a l'Ethiopie. Des migrations vers Addis-Abeba et d'autres villes ethiopiennes ont eu lieu notamment apres l'annexion de 1897 et au cours du 20e siecle. Les raids d'esclaves d'Abba Jifar II de Jimma apres 1897 ont quasi-depeuple certaines zones. Une petite communaute internationale existe dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1390000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien 2007 (CSA) : zone Keffa, 874 716 habitants totaux, dont 82,72% de Kafficho. PeopleGroups.org 2025 : 1 390 000 Kafa en Ethiopie. Joshua Project : 1 293 000. Kafa Biosphere Reserve UNESCO-MAB : 657 780 habitants totaux dans la reserve. Projection basee sur le taux de croissance ethiopien (2,6% annuel).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1390000,
+          "note": "Zone Keffa (South West Ethiopia Peoples' Region, capitale Bonga), Reserve de biosphere de Kafa (760 114 ha). Minorites dans les zones limitrophes."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kingdom of Kaffa. https://en.wikipedia.org/wiki/Kingdom_of_Kaffa",
+      "Wikipedia EN — Kafa language. https://en.wikipedia.org/wiki/Kafa_language",
+      "Wikipedia EN — Kefa Zone. https://en.wikipedia.org/wiki/Keffa_Zone",
+      "Wikipedia EN — Kafa Biosphere Reserve. https://en.wikipedia.org/wiki/Kafa_Biosphere_Reserve",
+      "UNESCO-MAB — Kafa Biosphere Reserve. https://www.unesco.org/en/mab/kafa",
+      "Kafa Biosphere Reserve official website. https://www.kafa-biosphere.com",
+      "Qiraat Africa — Kafficho People of Ethiopia. https://qiraatafrican.com/en/19029/kafficho-people-of-ethiopia/",
+      "Omniglot — Kafa language and alphabet. https://www.omniglot.com/writing/kafa.htm",
+      "PeopleGroups.org — Kafa of Ethiopia. https://peoplegroups.org/people_groups/pg011601/",
+      "Kafa Nature Tours — Kaffa: The Birthplace of Arabica. https://www.kafanaturetours.com/post/kaffa-the-birthplace-of-arabica"
+    ]
   }
 }

@@ -1,0 +1,80 @@
+{
+  "id": "PPL_AUSTRO_MACRO",
+  "nameMain": "Peuples Austronésiens (macro-groupe)",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Austronésiens (macro-groupe)",
+      "selfAppellation": "Variées selon les groupes (Merina, Betsimisaraka, Sakalava, etc.)",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien (macro-groupe)",
+      "historicalRegion": "Madagascar",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Merina",
+      "Betsimisaraka",
+      "Sakalava",
+      "Antandroy",
+      "Betsileo",
+      "Tsimihety",
+      "Antakarana",
+      "Vezo",
+      "Tanosy (Antanosy)",
+      "Antambahoaka",
+      "Bezanozano",
+      "Mikea",
+      "Antsalova",
+      "Autres groupes malgaches"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Austronésiens de Madagascar sont originaires de migrations depuis l'Asie du Sud-Est (probablement Bornéo) vers Madagascar (500-700 ap. J.-C.). Fusion avec les populations bantoues venues de la côte est-africaine.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.",
+      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme, de l'islam, et des croyances traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes et chefferies traditionnelles. Système de fokonolona (communautés villageoises). Diversité des systèmes politiques.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
+      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Malgache (langue austronésienne)",
+      "isoCodes": ["sud"],
+      "vehicularRole": "Le malgache est la langue officielle de Madagascar. Le français est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Famadihana (retournement des morts)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Cérémonies liées au riz, à la pêche, à l'élevage",
+      "Symboles": "Symboles royaux, symboles liés au riz, symboles liés à la mer, symboles chrétiens et musulmans.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (valiha, sodina)",
+      "source_5": "Danse traditionnelle (hira gasy)",
+      "source_6": "Poésie orale (hainteny)",
+      "source_7": "Artisanat (tissage, vannerie)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora malgache dans les grandes villes et dans les pays occidentaux (France, Canada, États-Unis)."
+    },
+    "demography": {
+      "totalPopulation": 27000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, recensements malgaches, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Malagasy language (mlg)",
+      "CIA World Factbook – Madagascar",
+      "Recensements malgaches",
+      "Études anthropologiques sur les peuples malgaches",
+      "Études historiques sur les royaumes malgaches"
+    ]
+  }
+}

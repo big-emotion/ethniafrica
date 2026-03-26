@@ -7,58 +7,88 @@
     "appellations": {
       "mainName": "Sena (Zambie)",
       "selfAppellation": "Sena",
-      "exonyms": ["Sena (terme utilisé par les Européens)"],
+      "exonyms": ["Chisena", "Cisena"],
+      "originOfExonyms": "Le nom Sena est emprunté à la ville de Sena, fondée en 1531 par le Portugais Vicente Pegado sur les rives du Zambèze (Mozambique). Ce nom a ensuite désigné le peuple vivant dans la vallée du Zambèze. Les variantes Chisena et Cisena désignent la langue parlée par ce peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Sena est couramment utilisé pour désigner ce groupe bantou présent en Zambie orientale, au Malawi et au Mozambique. Les locuteurs de Zambie se distinguent des Sena du Mozambique par leur contexte géographique et leurs affiliations tribales locales.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "Zambie",
+      "ethnoLinguisticGroup": "Bantou (Zone N, sous-groupe Nyanja-Sena)",
+      "historicalRegion": "Province Orientale de Zambie, vallée du Zambèze",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Sena du Nord", "Sena du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Sena de la province Orientale (Zambie)",
+      "Sena du district de Petauke",
+      "Sena du district de Nyimba",
+      "Sena de la vallée du Luangwa",
+      "Groupes apparentés : Nsenga, Chewa, Tumbuka"
+    ],
     "origins": {
-      "ancientOrigins": "Les Sena de Zambie sont originaires de la région de la Zambie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Sena du Mozambique et du Malawi.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Sena de Zambie font partie du grand groupe bantou de la Zone N qui peuple la vallée du Zambèze depuis plusieurs siècles. Selon les traditions orales et les études anthropologiques, leurs ancêtres font partie des migrations bantoues qui ont progressé du nord-ouest vers le sud-est de l'Afrique centrale. Historiquement, les Sena ont vécu entre les grandes cultures Shona du Zimbabwe et les peuples Nyanja-Chewa du Malawi, formant ainsi un ensemble culturel métissé.",
+      "formationPeriod": "La présence des Sena dans la vallée du Zambèze est documentée avant l'arrivée des Portugais au XVIe siècle. C'est à partir de 1531, quand Vicente Pegado fonde un comptoir commercial sur le Zambèze qu'il nomme Sena, que le nom s'applique à ce peuple. L'afflux de travailleurs migrants sena vers la Zambie s'est intensifié au XXe siècle, lors de la construction du Trans-Zambesi Railway (TZR) reliant Beira au Nyassaland.",
+      "migrationRoutes": [
+        "Migration depuis la vallée du Zambèze (Mozambique) vers la Province Orientale de Zambie au XXe siècle",
+        "Mouvement de travailleurs migrants vers les fermes et mines de Rhodésie du Sud (Zimbabwe actuel) et de Zambie",
+        "Déplacements internes liés aux guerres coloniales portugaises et à la résistance anticoloniale"
+      ],
+      "historicalSettlementZones": [
+        "Province Orientale de Zambie (districts de Petauke, Nyimba, Lundazi)",
+        "Vallée du Luangwa (Zambie)",
+        "Vallée du Zambèze (frontière Zambie-Mozambique)",
+        "Zones rurales agricoles de l'est de la Zambie"
+      ],
+      "unificationsOrDivisions": "Les Sena de Zambie ont maintenu des liens culturels et linguistiques avec les Sena du Mozambique et du Malawi tout en développant des identités locales distinctes liées aux chefferies de la Province Orientale. Leur organisation s'est articulée autour de chefferies matrilinéaires indépendantes.",
+      "externalInfluences": "Colonisation portugaise depuis le XVIe siècle dans la région du Zambèze. Arrivée de missionnaires chrétiens au XIXe siècle. Administration coloniale britannique en Zambie (Rhodésie du Nord jusqu'en 1964). Influence croissante du christianisme (catholicisme et protestantisme). Contacts prolongés avec les peuples Nsenga, Chewa et Tumbuka de la Province Orientale.",
+      "majorHistoricalEvents": "En 1792, le gouverneur du Mozambique ordonne la fin du commerce d'esclaves dans les rivières de Sena. Construction du Trans-Zambezi Railway (TZR) au début du XXe siècle attirant des travailleurs sena en Zambie. Indépendance de la Zambie en 1964 sous Kenneth Kaunda, intégrant les Sena comme citoyens zambiens à part entière."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Sena de Zambie sont organisés en chefferies traditionnelles (chieftaincy) héréditaires, chaque chef étant responsable de l'administration locale, de la résolution des conflits et de la gestion des terres. Les conseils d'anciens (village elders) assistent le chef dans ses décisions. Ce système coexiste avec les structures administratives de l'État zambien.",
+      "clanOrganization": "Structure clanique matrilinéaire : la descendance, l'identité et l'héritage se transmettent par la lignée maternelle. Les familles étendues (extended families) constituent l'unité sociale de base, regroupées en villages sous l'autorité d'un chef de village (headman).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilinéaires (matrilineages) déterminent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Le mariage est soumis au paiement d'une dot (lobolo) versée par la famille du mari à la famille de l'épouse.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, gardiens des sites sacrés et des cultes des ancêtres. Depuis la période coloniale, les pasteurs et prêtres chrétiens (catholiques et protestants) jouent un rôle religieux majeur. Syncrétisme courant entre croyances ancestrales et christianisme."
     },
     "languages": {
-      "mainLanguage": "Sena",
-      "vehicularRole": "Le sena est parlé par la majorité des Sena de Zambie. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Sena (Chisena / Cisena)",
+      "isoCodes": ["seh"],
+      "dialects": [
+        "Sena de la vallée du Zambèze (dialecte central)",
+        "Sena de Zambie orientale (variété locale influencée par le Chewa et le Nsenga)",
+        "Sena du Malawi (Chisena malawien, variété distincte)"
+      ],
+      "vehicularRole": "Le Chisena est la langue maternelle des Sena de Zambie orientale. Le Nyanja (Chinyanja), langue nationale de la Province Orientale, est utilisé comme lingua franca dans la région. L'anglais est la langue officielle de la Zambie, utilisée dans l'administration et l'éducation."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sena, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Cérémonies de mariage traditionnelles incluant la négociation de la dot (lobolo). Rites d'initiation à l'âge adulte pour les garçons et les filles. Rites funéraires comprenant des veillées communautaires, des chants et des repas collectifs offerts aux proches endeuillés. Cérémonies agricoles au début et à la fin des récoltes pour honorer les esprits des ancêtres. Rituel du Nyau, danse masquée partagée avec les peuples Chewa voisins, pratiqué lors des funérailles et des initiations.",
+      "symbols": "Symboles agricoles liés au mil et au maïs, cultures de base. Serpent comme symbole des esprits ancestraux. Masques Nyau utilisés lors des cérémonies d'initiation et funèbres. Tissu chitenje (nsalu), pièce de tissu coloré portée par les femmes, symbole d'identité culturelle.",
+      "artsAndMusic": "Musique traditionnelle percussive avec tambours (ngoma) et instruments à cordes. Danse Nyau exécutée par des sociétés secrètes masculines lors des cérémonies. Poésie orale et contes transmettant l'histoire et les valeurs sena. Poterie féminine (jarres, plats décorés). Tissage de paniers et de nattes. Sculpture de masques rituels en bois.",
+      "spiritualities": "Croyances traditionnelles centrées sur le culte des ancêtres (mizimu), esprits protecteurs des familles et des clans. Le chef religieux traditionnel (sing'anga) assure la médiation entre le monde des vivants et celui des morts. Depuis la colonisation portugaise, le catholicisme puis le protestantisme ont profondément marqué la vie spirituelle. Syncrétisme très répandu : pratiques chrétiennes coexistent avec le culte ancestral et les rites de protection."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sena dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles indépendantes, sans formation d'un royaume unifié. Les Sena de Zambie relèvent historiquement des structures de chefferies de la Province Orientale, en lien avec les chefferies Nsenga et Chewa. Sous la colonisation britannique (Rhodésie du Nord), les chefferies traditionnelles ont été partiellement intégrées au système d'administration indirecte (indirect rule).",
+      "relationsWithNeighbors": "Relations étroites avec les Nsenga, Chewa, Tumbuka et Tonga de la Province Orientale de Zambie. Échanges commerciaux et matrimoniaux fréquents. Les Sena partagent de nombreux traits culturels, notamment la danse Nyau, avec les peuples Chewa. Relations avec les Sena du Mozambique et du Malawi maintenues à travers les migrations.",
+      "conflictsOrAlliances": "Résistance à l'exploitation coloniale portugaise dans la vallée du Zambèze (XVIe-XXe siècle). Participation à la lutte anticoloniale et soutien au mouvement de libération zambien (UNIP de Kenneth Kaunda) menant à l'indépendance en 1964. Maintien de liens transfrontaliers avec les Sena du Mozambique pendant et après la guerre civile mozambicaine (1977-1992).",
+      "diaspora": "Diaspora sena dans les grandes villes zambiennes (Lusaka, Chipata, Livingstone) liée à la migration économique. Communautés dans les pays voisins (Mozambique, Malawi, Zimbabwe) issues des migrations historiques. Présence de la diaspora sena au Royaume-Uni et dans d'autres pays européens."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 230000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur SIL Ethnologue (seh), Central Statistical Office Zambia (recensements 2010 et 2022), et études anthropologiques sur les peuples bantous de la Province Orientale",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 230000,
+          "note": "Province Orientale, principalement districts de Petauke, Nyimba et Lundazi"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sena language (seh)",
-      "CIA World Factbook – Zambia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Sena people. https://en.wikipedia.org/wiki/Sena_people",
+      "SIL Ethnologue — Sena language (seh). https://www.ethnologue.com/language/seh/",
+      "Central Statistical Office Zambia — Census 2022. https://www.zamstats.gov.zm/",
+      "CIA World Factbook — Zambia. https://www.cia.gov/the-world-factbook/countries/zambia/",
+      "101 Last Tribes — Sena people. http://www.101lasttribes.com/tribes/sena.html",
+      "Isaacman, Allen. Mozambique: The Africanization of a European Institution. University of Wisconsin Press, 1972."
     ]
   }
 }

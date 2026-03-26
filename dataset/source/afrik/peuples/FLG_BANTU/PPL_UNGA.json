@@ -6,54 +6,77 @@
   "content": {
     "appellations": {
       "mainName": "Unga",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "BaUnga",
+      "exonyms": ["BaUnga", "Unga people of Lunga"],
+      "originOfExonyms": "Le nom Unga designe le peuple des iles et marecages du lac Bangweulu dans la province de Luapula, Zambie. Le terme BaUnga est l'auto-designation bantoue avec le prefixe Ba- (peuple).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Unga est utilise couramment en Zambie pour designer ce peuple insulaire du Bangweulu. Ils sont parfois confondus avec les BaTwa voisins mais constituent un groupe distinct d'agriculteurs-pecheurs bantoues.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu centre-sud, sous-groupe Bemba",
+      "historicalRegion": "Bangweulu, province de Luapula",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Unga"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les BaUnga sont apparentes aux Bemba et font partie des peuples bantoues du centre-sud africain ayant migre depuis le bassin du Congo. Selon les traditions orales, les BaUnga rapportent avoir trouve les BaTwa (chasseurs-cueilleurs) lorsqu'ils sont arrives dans la region depuis la RDC. Ils se sont progressivement installes sur les iles et dans les zones marecageuses du Bangweulu.",
+      "formationPeriod": "Probablement entre le XIIe et XVe siecle, lors des grandes vagues migratoires bantoues vers l'est et le sud de l'Afrique.",
+      "migrationRoutes": [
+        "Bassin du Congo (actuelle RDC) vers les marais du lac Bangweulu, province de Luapula, Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Iles du lac Bangweulu (Kasoma Lunga, Nsamba, Bwalya Mponda, Kalima Nkonde)",
+        "Marecages de Luapula, province nord de Zambie"
+      ],
+      "unificationsOrDivisions": "Les BaUnga constituent un sous-groupe distinct des Bemba, isoles sur les iles du Bangweulu. Leur isolement geographique a favorise le developpement d'un dialecte bemba specifique et de pratiques culturelles propres.",
+      "externalInfluences": "Au cours de la periode coloniale, plusieurs Europeens (missionnaires, fonctionnaires coloniaux britanniques) ont vecu parmi les Unga dans les iles de Lunga. Cette presence a donne lieu a une pratique culturelle unique : l'adoption de prenoms anglais comme noms de famille, transmis de pere en fils.",
+      "majorHistoricalEvents": "Contact avec les explorateurs et administrateurs coloniaux britanniques aux XIXe-XXe siecles. Les hommes Unga travaillaient pour des employes europeens et adoptaient leurs prenoms comme patronymes. Cette pratique est restee jusqu'a aujourd'hui : beaucoup de Unga portent des noms de famille anglais tels que James, White, Jefferson, Maurice."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie traditionnelle. Le chef principal est le Chief Kasoma Lunga, dont le titre correspond a la principale ile de residence du peuple Unga. L'autorite du chef est a la fois politique et spirituelle.",
+      "clanOrganization": "Organisation clanique de type Bemba, avec des groupes de descendance organises autour des villages et des camps de peche (pamitanda). Les groupes de parents se regroupent dans les memes camps de peche, formant des unites de production appelees nsanga.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les relations de parente (lignages et alliances par mariage) structurent les unites de peche. Les pecheurs du meme groupe de parente se regroupent dans un meme pamitanda. Les alliances matrimoniales entre groupes (Unga, N'gumbo, Kabende) sont egalement documentees.",
+      "religiousAuthority": "Autorite religieuse traditionnelle liee au chef et aux pratiques animistes ancestrales. Presence croissante du christianisme (95% de chretiens selon Joshua Project)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Bemba (dialecte Unga)",
+      "isoCodes": ["bem"],
+      "dialects": [
+        "Dialecte Unga du Bemba, distinct du Bemba parle en Muchinga et dans la province du Nord en raison de l'isolement insulaire du peuple"
+      ],
+      "vehicularRole": "Le Bemba est la langue vehiculaire regionale de la province de Luapula. L'anglais et le Nyanja sont les langues officielles nationales de la Zambie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites et ceremonies lies au cycle de la peche et de l'agriculture. La vie rituelle est fortement marquee par les contraintes saisonnieres du marecage : peche d'avril a novembre (saison seche), agriculture de janvier a mars (saison des pluies). Les pecheurs respectent le dimanche comme jour de repos et de visite sociale entre camps (pamitanda).",
+      "symbols": "L'ile et le marais constituent les symboles centraux de l'identite Unga. La pratique distinctive de l'adoption de noms anglais comme patronymes est devenue un symbole identitaire reconnu nationalement.",
+      "artsAndMusic": "Artisanat de la peche (fabrication de filets, de pirogues). Musique et chants traditionnels lors des rassemblements dans les pamitanda (camps de peche).",
+      "spiritualities": "Croyances animistes traditionnelles coexistant avec le christianisme. La grande majorite des Unga sont aujourd'hui chretiens (95% selon Joshua Project)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie de Kasoma Lunga, principale structure politique traditionnelle des Unga, centree sur les iles du lac Bangweulu.",
+      "relationsWithNeighbors": "Relations etroites et parfois de competition avec les N'gumbo et les Kabende (autres peupleurs du Bangweulu), ainsi qu'avec les BaTwa des marecages. Les Unga sont les seuls insulaires permanents des marecages du Bangweulu; les N'gumbo et Kabende viennent des villages continentaux pour pecher saisonnierment.",
+      "conflictsOrAlliances": "Alliances matrimoniales avec les N'gumbo et les Kabende documentees dans les camps de peche. Coexistence avec les BaTwa, anciens habitants chasseurs-cueilleurs du Bangweulu.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 55000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025) : 55 000 personnes",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 55000,
+          "notes": "Province de Luapula, iles et marecages du lac Bangweulu"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Joshua Project – Unga in Zambia (https://joshuaproject.net/people_groups/15714)",
+      "PeopleGroups.org – Unga of Zambia PGID PG015641 (https://peoplegroups.org/people_groups/pg015641/)",
+      "Imai, I. – Fishing Life in the Bangweulu Swamps: A Socio-ecological Study of the Swamp Fishermen in Zambia, African Study Monographs Supplementary Issue n°4, Kyoto University (https://jambo.africa.kyoto-u.ac.jp/kiroku/asm_suppl/abstracts/pdf/ASM%20%20Sup.4/Ichiro%20IMAI.pdf)",
+      "Shalala, P. – The Unga People: The Only Zambians With English Surnames, blog, 2015 (http://paulshalala.blogspot.com/2015/11/the-unga-people-only-zambians-with.html)",
+      "Nature Communications – BaTwa populations from Zambia retain ancestry of past hunter-gatherers, 2024 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11344834/)",
+      "Wikipedia – Languages of Zambia (https://en.wikipedia.org/wiki/Languages_of_Zambia)"
+    ]
   }
 }

@@ -2,63 +2,100 @@
   "id": "PPL_HALPULAAR",
   "nameMain": "Halpulaar",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MRT"],
+  "currentCountries": ["SEN", "MRT", "MLI"],
   "content": {
     "appellations": {
       "mainName": "Halpulaar",
-      "selfAppellation": "",
+      "selfAppellation": "Haalpulaar'en",
       "exonyms": [
-        "\"Toucouleur\" (terme français), \"Peul\" (terme français), \"Fulani\" (terme anglais), \"Pulaar\" (terme local)"
+        "Toucouleur",
+        "Tukulor",
+        "Futanke",
+        "Torooɓe",
+        "Pulaar",
+        "Tekruri"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le nom Toucouleur est probablement une deformation du mot precolonial tekruri signifiant peuple de Takrur, l'ancien royaume de la vallee du Senegal. Une etymologie populaire française le derive de toutes couleurs, interpretation jugee fantaisiste par les specialistes. Le terme Haalpulaar'en signifie ceux qui parlent le pulaar en fulfulde. Le terme Futanke designe les habitants du Futa Toro. La distinction entre Toucouleur et Peul (Fulani) fut inventee par les ethnographes français du 19e siecle.",
+      "whyProblematic": "La distinction entre Toucouleur sedentaires et Peul (Fulani) nomades est une construction coloniale française qui ne reflete pas la realite ethnique. Les Haalpulaar constituent en realite deux groupes distincts (Tukuloor et Fulbe) qui ont tente de forger une identite commune uniquement linguistique.",
+      "contemporaryUsage": "Le terme Haalpulaar'en est utilise de plus en plus comme categorie ethnique pour unifier les Toucouleur et les Fulbe du Senegal face a la domination culturelle wolof. Ce mouvement est principalement porte par les elites culturelles. Le terme Toucouleur reste usuel en français.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud de la Mauritanie (vallée du fleuve Sénégal)",
-      "currentCountries": ["MRT"]
+      "ethnoLinguisticGroup": "Groupe atlantique de la famille Niger-Congo, branche peule",
+      "historicalRegion": "Futa Toro, vallee du fleuve Senegal (nord Senegal, sud Mauritanie)",
+      "currentCountries": ["SEN", "MRT", "MLI"]
     },
-    "ethnicities": ["Halpulaar"],
+    "ethnicities": ["Toucouleur", "Haalpulaar", "Tukulor"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": [
-        "Sud de la Mauritanie (vallée du fleuve Sénégal)"
+      "ancientOrigins": "Selon les traditions orales des Toucouleur et des Serer, les Toucouleur descendent d'ancetres serer et peul. Cette tradition est soutenue par de nombreux chercheurs dont Foltz et Phillips. Le peuple Haalpulaar a longuement habite la region du fleuve Senegal, avec des racines dans le royaume organise de Tekrur remontant au 5e siecle.",
+      "formationPeriod": "Kingdoms de Tekrur: actif du 5e au 18e siecle. L'identite toucouleur distincte emergea avec l'islamisation au 11e siecle, faisant d'eux l'un des premiers peuples musulmans d'Afrique de l'Ouest. La theocracie almamiya de Futa Toro fut fondee en 1776 par les clercs musulmans Torobe.",
+      "migrationRoutes": [
+        "Etablissement historique dans la vallee du fleuve Senegal (Futa Toro)",
+        "Migrations coloniales et postcoloniales vers le Mali occidental",
+        "Dispersion minoritaire en Gambie et dans d'autres pays d'Afrique de l'Ouest"
       ],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "historicalSettlementZones": [
+        "Futa Toro (nord du Senegal et sud de la Mauritanie le long du fleuve Senegal)",
+        "Vallee du fleuve Senegal (habitat principal)",
+        "Regions nord du Senegal (15% de la population)",
+        "Mali occidental (diaspora coloniale et postcoloniale)"
+      ],
+      "unificationsOrDivisions": "La distinction entre Toucouleur et Peul/Fulani est une ligne de fracture interne. L'identite Haalpulaar'en tente de reunifier ces deux groupes autour de la langue pulaar. Le systeme de castes rigide constitue une division interne majeure au sein de la societe toucouleur.",
+      "externalInfluences": "Islamisation profonde au 11e siecle (parmi les premiers musulmans du Senegal). Influence du sultanat de Sokoto sur Omar Saidou Tall (1827). Colonisation française et resistance. Wolofisation contemporaine comme pression identitaire poussant au renforcement de l'identite Haalpulaar.",
+      "majorHistoricalEvents": "Fondation du royaume de Tekrur (5e siecle). Islamisation au 11e siecle. Fondation de l'almamiya (theocratic) de Futa Toro par les Torobe en 1776 (renversement de la dynastie paienne Deniyanke). Empire toucouleur fonde par Al-Hajj Umar Tall vers 1850, s'etendant du Senegal au Mali. Djihad contre les peuples non musulmans et les forces coloniales françaises (1854). Effondrement de l'empire dans les annees 1880 face aux attaques Fulani, Touareg et Maures et aux guerres civiles. Fin de l'empire en 1891 apres la conquete française."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe patriarcale avec stratification sociale en castes strictes et rigides. Systeme politique structure autour des Torobe (eruditiés islamiques et chefs aristocratiques). Theocracie islamique (almamiya) comme forme de gouvernance etablie en 1776. Gouvernance villageoise par un conseil d'anciens de la classe dirigeante.",
+      "clanOrganization": "Societe divisee en cinq castes endogames: Torobe (chefs aristocratiques et eruditiés islamiques, rang le plus eleve), Rimbe (administrateurs, commercants et agriculteurs), Nyenbe (artisans), Gallunkobe (affranchis), Matyube (esclaves). Propriete et terres exclusivement detenues par les castes superieures. Occupations et appartenances aux castes heritees. Mariages confines a la caste d'appartenance.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance aux castes et l'acces aux positions de pouvoir religieux et politique. La caste des Torobe fournit les eruditiés islamiques et les dirigeants. La transmission est patrilineaire.",
+      "religiousAuthority": "Islam sunnite de la confrerie Tijaniyya (introduite par Al-Hajj Umar Tall). Les marabouts (clercs islamiques) ont une autorite spirituelle et sociale considerables. Les Toucouleur furent parmi les premiers propagateurs de l'islam en Afrique de l'Ouest medievale."
     },
     "languages": {
-      "mainLanguage": "Halpulaar (fuc)",
+      "mainLanguage": "Pulaar (dialecte Futa Toro)",
       "isoCodes": ["fuc"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": ["Pulaar du Futa Toro"],
+      "vehicularRole": "Le pulaar est la langue maternelle des Haalpulaar. Il est aussi parle par les Peul (Fulani) et constitue un marqueur identitaire fort. Le pulaar est une langue atlantique de la famille Niger-Congo. Le mouvement Haalpulaar'en utilise la langue pulaar comme ciment identitaire face a la wolofisation au Senegal."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Mariage: bride price payable a la famille de la mariee (plus eleve pour les familles de haut rang); valide par un imam a la mosquee; la mariee vient vivre dans la famille du mari; tante de la mariee verifie la virginite avant la consommation, puis baigne et masse la mariee; fete de mariage avec la communaute. Naissance et denomination: une semaine apres la naissance (pembougale), le bebe est nomme; la gorgol (soeur du pere) coupe les cheveux; le pere transmet le nom choisi au marabout; le marabout le chuchote a l'oreille du nourrisson et prie; le marabout informe le gawlo (griot) qui annonce le nom au village.",
+      "symbols": "Le boeuf et le fleuve Senegal sont les symboles identitaires centraux. La langue pulaar est un marqueur identitaire fort. Le burnous et les tenues islamiques traditionnelles.",
+      "artsAndMusic": "Tradition du gawlo (griot): annonce les naissances, recite les genealogies et l'histoire des familles. Griots considerees comme historiens et genealogistes. Chants de louange (praise songs) contenant de longues listes d'ancetres. Role essentiel dans la Senegambie precoloniale comme gardiens de la memoire orale.",
+      "spiritualities": "Islam sunnite de la confrerie Tijaniyya. Islamises au 11e siecle, parmi les premiers musulmans d'Afrique de l'Ouest. Fierte identitaire de leur heritage islamique precoce. Al-Hajj Umar Tall, chef religieux et militaire majeur du 19e siecle, fut designe Calife des Noirs en Mecque en 1827."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Tekrur (5e-18e siecle, vallee du fleuve Senegal). Almamiya de Futa Toro (theocracie islamique fondee en 1776 par les Torobe, renversant la dynastie paienne Deniyanke). Empire toucouleur (env. 1850-1891): empire islamique fonde par Al-Hajj Umar Tall, s'etendant du Senegal au Mali jusqu'a Tombouctou.",
+      "relationsWithNeighbors": "Relations de plaisanterie (joking relationship) avec les Serer. Tensions avec les Wolof autour de la domination culturelle. Guerres contre les Bambara, Mandingues et autres peuples non musulmans lors du djihad du 19e siecle. Conflits avec les Français coloniaux. Relations complexes avec les Peul/Fulani, souvent amalgames malgre des differences culturelles.",
+      "conflictsOrAlliances": "Djihad islamique d'Al-Hajj Umar Tall contre les peuples non-musulmans (1854-1864). Guerres contre les Bambara de Segou et de Kaarta. Conquete de Macina et extension jusqu'a Tombouctou. Conflits avec les Français bloquant leur retour vers l'ouest. Effondrement face aux attaques des Fulani, Touareg et Maures et guerres civiles internes (annees 1880). Soumission aux Français en 1891.",
+      "diaspora": "Communautes minoritaires au Mali occidental (environ 100 000) et en Mauritanie. Migrations coloniales et postcoloniales. En Gambie, moins de 1% de la population."
     },
     "demography": {
-      "totalPopulation": 570,
+      "totalPopulation": 1150000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Wikipedia Toucouleur people: environ 1 million de Toucouleur en Afrique de l'Ouest dont environ 1 million dans la vallee du fleuve Senegal et 100 000 au Mali; estimation 2025 ajustee a la croissance demographique regionale",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 1000000,
+          "note": "15% de la population du nord du Senegal; vallee du fleuve Senegal (Futa Toro)"
+        },
+        {
+          "country": "MLI",
+          "population": 100000,
+          "note": "Mali occidental, diaspora historique"
+        },
+        {
+          "country": "MRT",
+          "population": 50000,
+          "note": "Sud de la Mauritanie, le long de la vallee du fleuve Senegal"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Toucouleur people – Wikipedia, en.wikipedia.org/wiki/Toucouleur_people (consulte 2025)",
+      "Tukulor people – 101 Last Tribes, www.101lasttribes.com/tribes/tukulor.html (consulte 2025)",
+      "Tukulor empire – Encyclopaedia Britannica, www.britannica.com/place/Tukulor-empire (consulte 2025)",
+      "Haalpulaar Identity as a Response to Wolofization – AfricaBib, www.africabib.org/rec.php?RID=147226244 (1995)",
+      "A Glance to the History of the Fulbe/Haapulaar en – Suudu Baaba, suudubaaba.home.blog (2019)",
+      "Senegal Cultural Field Guide Ethnic Groups – US Military, info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf"
+    ]
   }
 }

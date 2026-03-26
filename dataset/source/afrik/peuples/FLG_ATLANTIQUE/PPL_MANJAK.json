@@ -1,23 +1,98 @@
 {
   "id": "PPL_MANJAK",
-  "nameMain": "",
+  "nameMain": "Manjak",
   "languageFamilyId": "FLG_ATLANTIQUE",
-  "currentCountries": ["GNB", "SEN"],
+  "currentCountries": ["GNB", "SEN", "GMB"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Manjaku / Manjak",
+      "mainName": "Manjak",
+      "selfAppellation": "Manjaku",
+      "exonyms": [
+        "Manjaco",
+        "Mandjak",
+        "Manjaco",
+        "Mandyak",
+        "Manjago",
+        "Njaago",
+        "Kanyop"
+      ],
+      "originOfExonyms": "Manjaco est la forme portugaise, Mandjak la forme francaise, Njaago la forme wolof, Manjago la forme jola. Le terme Kanyop est egalement utilise comme designation de la langue dans certaines sources.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Manjak est la forme la plus courante en contexte anglophone, Mandjak en francais, Manjaco en portugais. Le terme Mandyak est utilise par Joshua Project.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "GNB, SEN",
-      "currentCountries": ["GNB", "SEN"]
+      "ethnoLinguisticGroup": "Groupe Bak (sous-groupe Manjaku-Papel) de la famille atlantique du Niger-Congo",
+      "historicalRegion": "Region cotiere nord de la Guinee-Bissau (Cacheu Region, zones de Bassarel et Babok), Casamance meridionale (Senegal)",
+      "currentCountries": ["GNB", "SEN", "GMB"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (mfv)", "Guinea-Bissau Cultural Records"]
+    "ethnicities": [
+      "Manjako de la region de Bassarel (Cacheu Region, nord de la Guinee-Bissau)",
+      "Manjako de la region de Babok (Cacheu Region)",
+      "Manjako de Casamance (Senegal, region de Ziguinchor)",
+      "Manjako de Gambie",
+      "Communautes Manjako en France (importante diaspora issue de la migration de travail)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Manjak sont un peuple atlantique ancien etabli dans la zone cotiere nord de l'actuelle Guinee-Bissau. Avant la colonisation, ils disposaient d'une structure politique et sociale robuste organisee en systeme semi-feodal autour du roi de Bassarel. Ils ont developpe un systeme agricole unique appele Bolanhas (digues, canaux de drainage, rizieres en zone de mangrove).",
+      "formationPeriod": "Societe bien etablie au moment des premiers contacts avec les Portugais a la fin du 15e siecle. L'organisation politique pre-coloniale fonctionnait avec des villages soumis a des leaders locaux, eux-memes rendant compte au roi de Bassarel, qui presidait une federation.",
+      "migrationRoutes": [
+        "Migration de travail vers le Senegal francais et la Gambie britannique depuis le debut du 20e siecle",
+        "Un cinquieme de la population avait migre vers 1940, un tiers vers 1950",
+        "Migration contemporaine vers la France (ancienne puissance coloniale)"
+      ],
+      "historicalSettlementZones": [
+        "Regions de Bassarel et Babok, Cacheu Region, nord de la Guinee-Bissau",
+        "Region de Ziguinchor, Casamance, Senegal",
+        "Gambie"
+      ],
+      "unificationsOrDivisions": "La federation de Bassarel et Babok, presidee par le roi de Bassarel, constituait l'organisation politique centrale avant la colonisation. Le pouvoir royal a ete supprime apres l'independance de la Guinee-Bissau en 1974, les terres aristocratiques reattribuees aux agriculteurs.",
+      "externalInfluences": "Contacts avec les Portugais des la fin du 15e siecle. Conquete militaire portugaise en 1913 par des soldats Fula et Mandinka sous commandement portugais. Influence catholique significative sur une part de la population. Pression du gouvernement colonial portugais, considere les Manjak comme superieur en termes d'ethique de travail.",
+      "majorHistoricalEvents": "Resistance a l'autonomie jusqu'en 1913 (seulement tribut verse aux Portugais de Cacheu). Massacre de Pidjiguiti (1959) : plus de 50 Africains tues, dont de nombreux Manjak, evenement declencheur de la creation du PAIGC. Kambatch de 1986 : ceremonie d'initiation masculine tous les quarts de siecle, au cours de laquelle la communaute a aboli le service de gendre et le culte de divination feminin."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme semi-feodal pre-colonial : villages soumis a des leaders, eux-memes sous autorite du roi de Bassarel presidant une federation. Apres l'independance (1974), l'autorite royale a ete abolie. Attitude contemporaine largement apathique vis-a-vis de la politique formelle, privilegiant l'acces aux documents de voyage et aux services (education, sante).",
+      "clanOrganization": "Organisation en clans matrilineaires. Les femmes jouent un role central dans la transmission du lignage. Les rizieres sont organisees en clusters : chaque cluster loue des champs et reverse une partie de la recolte a la hierarchie jusqu'au roi.",
+      "ageClassSystems": "Kambatch : grand rite d'initiation masculin tous les vingt-cinq ans environ. Les hommes initias debattent et peuvent modifier ou abolir les coutumes existantes. Les jeunes hommes non maries vivaient dans des espaces partages appeles banju. Service de gendre (groom service) historiquement : les jeunes hommes travaillaient les champs de leur future belle-famille avant le mariage (aboli en 1986).",
+      "roleOfLineages": "Les rizieres sont l'axe central de l'organisation sociale : leur propriete et leur transmission definissent le statut social et la hierarchie. Apres 1974, les terres des aristocrates ont ete redistribuees aux agriculteurs.",
+      "religiousAuthority": "Autorite des anciens et des specialistes rituels des sanctuaires ancestraux (pitchap). Les pretres traditionnels gererent les sanctuaires d'ancetres sculptes. Presence catholique significative (majorite des Manjak sont catholiques). Petite minorite musulmane."
+    },
+    "languages": {
+      "mainLanguage": "Mandjak (Manjaku, Kanyop)",
+      "isoCodes": ["mfv"],
+      "dialects": [
+        "Babok (ou Bassarel), dialecte principal de Guinee-Bissau",
+        "Bok (ou Cur), sous-variante regionale",
+        "Variantes de Casamance (Senegal, influence du wolof et du creole)"
+      ],
+      "vehicularRole": "Le mandjak est parle en Guinee-Bissau, au Senegal et en Gambie. En Guinee-Bissau, le kreol portugais sert de vehiculaire. En Casamance, le wolof et le francais sont des vehiculaires importants. La langue est classee en danger (EGIDS 5, Ethnologue 2024)."
+    },
+    "culture": {
+      "majorRites": "Kambatch : grand rituel d'initiation masculine tous les vingt-cinq ans, occasion de debattre et modifier les coutumes. Sanctuaires ancestraux (pitchap) : poteaux en bois sculptes representant les ancetres collectivement (non individuellement). Les hommes versent de l'eau puis du vin de palme pour invoquer les ancetres. Les femmes utilisent les sanctuaires pour raconter leurs affaires quotidiennes. Les ancetres sont abordes comme des egaux et non comme des guides moraux. Scarification feminine (avant 1960) : cicatrices ornementales sur le torse et les seins, en recul depuis l'influence coloniale.",
+      "symbols": "Les poteaux pitchap (ancestral shrines) sont le symbole culturel et spirituel central. Les rizieres de mangrove (Bolanhas) sont un symbole d'identite et d'ingenierie ancestrale. Le vin de palme joue un role rituel essentiel.",
+      "artsAndMusic": "Les Manjak sont reconnus pour la fabrication de tissu (attribue aux Pepeis et aux Manjacos selon les temoignages ethnographiques de Guinee-Bissau). Sculptures sur bois (poteaux pitchap). Le Club de developpement culturel de Bassarel (annees 1980) promouvait les arts et pratiques culturelles manjak tout en eliminant les aspects consideres archaiques. Les communautes en diaspora (France, Portugal) maintiennent la culture via la musique et la danse.",
+      "spiritualities": "Majorite catholique. Petite minorite musulmane. La jeunesse est sceptique vis-a-vis de l'animisme traditionnel. Persistance de pratiques ancestrales : sanctuaires pitchap, invocations des ancetres. Les ancetres morts a l'etranger sont consideres comme reincorpores aux sanctuaires ancestraux dans le pays d'origine. Synchretisme entre catholicisme et pratiques animistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Federation de Bassarel et Babok presidee par le roi de Bassarel, structure politique coherente jusqu'a la conquete de 1913. Autonomie maintenue face aux Portugais jusqu'en 1913 : paiement d'un simple tribut a Cacheu.",
+      "relationsWithNeighbors": "Relations tendues avec les Fula et Mandinka, utilises par les Portugais lors de la conquete de 1913. Cohabitation avec les Balanta, Papel et autres groupes de la cote de Guinee-Bissau. Liens avec les communautes Diola de Casamance.",
+      "conflictsOrAlliances": "Resistance a la domination coloniale portugaise jusqu'en 1913-1914. Participation limitee a la guerre d'independance (1963-1974) : de nombreux jeunes hommes ont fui vers le Senegal. Massacre de Pidjiguiti (1959) : evenement fondateur du PAIGC, auquel de nombreux Manjak ont pris part comme victimes.",
+      "diaspora": "Importante migration de travail vers le Senegal et la Gambie depuis le debut du 20e siecle (1/3 de la population vers 1950). Diaspora en France numeriquement significative. La migration a conduit au declin des rizieres de mangrove par manque de main-d'oeuvre."
+    },
+    "demography": {
+      "totalPopulation": 522000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 271 000 en Guinee-Bissau, 179 000 au Senegal, 47 000 en Gambie, 25 000 en France. Total mondial : 522 000. Wikipedia (Manjak language) : 315 300 locuteurs en 2006 (184 000 en Guinee-Bissau, 105 000 au Senegal, 26 300 en Gambie).",
+      "distributionByCountry": [
+        { "country": "GNB", "population": 271000 },
+        { "country": "SEN", "population": 179000 },
+        { "country": "GMB", "population": 47000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Manjak people : https://en.wikipedia.org/wiki/Manjak_people",
+      "Wikipedia EN - Manjak language : https://en.wikipedia.org/wiki/Manjak_language",
+      "Joshua Project - Mandyak, Manjago in Guinea-Bissau : https://joshuaproject.net/people_groups/13493/PU",
+      "Ethnologue - Mandjak (mfv) : https://www.ethnologue.com/language/mfv/",
+      "Glottolog - mand1419 Manjak : https://glottolog.org/resource/languoid/id/mand1419"
+    ]
   }
 }

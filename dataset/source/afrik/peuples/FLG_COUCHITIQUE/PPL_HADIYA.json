@@ -1,23 +1,102 @@
 {
   "id": "PPL_HADIYA",
-  "nameMain": "",
+  "nameMain": "Hadiya",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Hadiyya",
+      "mainName": "Hadiya",
+      "selfAppellation": "Hadiyyisa",
+      "exonyms": ["Hadiyya", "Adiya", "Adea", "Adiye", "Hadia", "Hadya"],
+      "originOfExonyms": "Selon une etymologie populaire, le nom Hadiya signifie 'don de Dieu'. Le terme Hadiyyisa est le nom propre de la langue et du peuple selon les locuteurs natifs. Les formes Adiya et Adea sont des variantes phonetiques utilisees dans certaines transcriptions anciennes.",
+      "whyProblematic": "L'identite hadiya est complexe : la definition historique basee sur l'ancien Sultanat Hadiya inclut des groupes ethniques aujourd'hui connus sous d'autres noms (Silt'e, Qabeena, Alaaba). Le terme Hadiya designe strictement aujourd'hui les groupes parlant le hadiyyisa (Hadiya proper), mais il est parfois utilise dans un sens plus large.",
+      "contemporaryUsage": "Le terme Hadiya est officiellement reconnu en Ethiopie et donne son nom a la zone administrative Hadiya. Les locuteurs se designent eux-memes par leur dialecte regional (Leemo, Sooro, Baadawwaachcho, Shaashoogo). Le hadiyyisa est l'une des dix langues principales d'Ethiopie.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Région Hadiya (Éthiopie)",
+      "ethnoLinguisticGroup": "Couchitique des hautes terres de l'Est (Highland East Cushitic)",
+      "historicalRegion": "Zone Hadiya, entre les rivieres Gibe (ouest) et Bilate (est), Ethiopie meridionale",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (hdy)", "Hadiya Cultural Bureau"]
+    "ethnicities": [
+      "Leemo (sous-groupe Hadiya proper)",
+      "Sooro (sous-groupe Hadiya proper)",
+      "Shaashoogo (sous-groupe Hadiya proper)",
+      "Baadawwaachcho (sous-groupe Hadiya proper)",
+      "Haballo (sous-groupe Hadiya proper)",
+      "Hojje (sous-groupe Hadiya proper)",
+      "Sha'ammanna (sous-groupe Hadiya proper)",
+      "Gabara (sous-groupe Hadiya proper)",
+      "Baadoogo (sous-groupe Weexo Giira)",
+      "Libidoo / Maraqo (groupe apparente, environ 27 sous-groupes, parle une langue tres proche)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hadiya sont les vestiges disperses d'un ancien complexe ethnique plus vaste sous le Sultanat Hadiya. Ils appartiennent a la famille couchitique des hautes terres orientales, issue du groupe Sidama. La plus ancienne mention des Hadiya se trouve dans le Kebra Nagast, indiquant l'existence du royaume des le XIIIe siecle. L'historien arabe Shihab al-Din al-Umari (1300-1349) decrit Hadiya comme le plus riche et le plus puissant des sept etats musulmans de la federation de Zeila. Une connexion avec le peuple Harla (sous le Royaume Harla au IXe siecle) est parfois avancee mais non prouvee.",
+      "formationPeriod": "L'identite hadiya distincte s'est formee entre le XIIIe et le XVIe siecle, periode du Sultanat Hadiya. La fragmentation du sultanat a la mi-XVIe siecle, sous les pressions conjointes de l'Abyssinie et des migrations oromo, a conduit a la dispersion du peuple et a l'emergence d'identites distinctes pour les sous-groupes (Alaaba, Qabeena, Silt'e). Les Libidoo, Leemo, Sooro, Shaashoogo et Baadawwaachcho ont conserve l'identite hadiya proper.",
+      "migrationRoutes": [
+        "Etablissement originel entre les bassins des rivieres Gibe et Bilate, Ethiopie meridionale",
+        "Dispersion vers l'est (Arsi, Bale) et l'ouest (Jimma, Kafa) suite aux migrations oromo du XVIe siecle",
+        "Absorption de clans hadiya par les Oromo (adoption du gada oromo), les Sidama, les Wolayta, les Gurage, et les Tigray",
+        "Migrations economiques contemporaines vers les villes ethiopiennes"
+      ],
+      "historicalSettlementZones": [
+        "Zone Hadiya (capitale Hossana), Ethiopie meridionale",
+        "Region Rift Valley ouest entre 6 degres N et les hautes terres, altitude 1 250 m (lac Abbayya) a plus de 2 000 m",
+        "Shawa meridional, Arsi et nord du Bale (selon la carte ethnique de 1970)",
+        "Parties assimilees en Oromia, Sidama, Wolayta, Gurage, Tigray, Afar et Somali"
+      ],
+      "unificationsOrDivisions": "Le Sultanat Hadiya a constitue l'unite politique originelle regroupant de nombreux groupes ethniques. Sa fragmentation au XVIe siecle a produit la diversite ethnique actuelle. Les groupes hadiya proper (Leemo, Sooro, Shaashoogo, Baadawwaachcho, Libidoo) ont conserve l'unite linguistique et culturelle, tandis que d'autres groupes (Alaaba, Qabeena, Silt'e) ont developpe des identites separees.",
+      "externalInfluences": "Conquetes successives par les empereurs ethiopiens (Amda Seyon Ier, Zara Yaqob). Alliance avec le Sultanat d'Adal contre l'Ethiopie (XVe-XVIe siecles). Participation a la jihad d'Ahmed ibn Ibrahim al-Ghazi (1529) contre l'Ethiopie chretienne. Pressions des migrations oromo du XVIe siecle qui ont fragmente le groupe. Conquest par Menelik II a la fin du XIXe siecle, suivie d'une christianisation forcee. Activites missionnaires protestantes a partir des annees 1930.",
+      "majorHistoricalEvents": "XIIIe siecle : premiere mention dans le Kebra Nagast. XIVe siecle : Hadiya est decrit comme l'etat musulman le plus puissant de la federation de Zeila, avec sa propre monnaie (akuna). 1444 : la reine Eleni de Hadiya est mentionnee comme imperatrice dans les chroniques de Zara Yaqob. 1529 : les chefs hadiya rejoignent la jihad d'Imam Ahmad contre l'Ethiopie. XVIe siecle : fragmentation du sultanat sous les pressions oromo et abyssiniennes. 1600 : le garad Sidi Mohammed bat les troupes de l'empereur Susenyos Ier. 1875-1893 : conquete par les forces de Menelik II. 1889 : defaite a la bataille de Jabdu Meda. 1936 : rebellion Gadecho Mekemekato contre l'occupation italienne avec le soutien des Kambata."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe hadiya etait historiquement organisee sous le Sultanat Hadiya, dirige par des titulaires portant les titres de Garad, Garaad, Sultan ou Imam. Apres la fragmentation du sultanat, la gouvernance est devenue decentralisee, fondee sur des chefs tribaux et communautaires autonomes. La structure contemporaine est celle d'une administration federale ethiopienne au sein de la zone Hadiya.",
+      "clanOrganization": "Les sous-groupes hadiya (Leemo, Sooro, Shaashoogo, Baadawwaachcho et leurs clans) maintiennent des structures claniques distinctes. Parmi les clans notables : Habarnoosa (Haballosa) qui revendique une descendance du sous-clan Habar Yoonis de l'Isaaq somali. Les liens de parente entre les clans hadiya et des groupes oromo, sidama, gurage et tigray sont documentes.",
+      "ageClassSystems": "Des elements du systeme gada oromo ont ete adoptes par certains clans hadiya qui se sont integres aux communautes oromo. Dans la societe hadiya traditionelle, les rites de passage (naissance, circumcision, mariage, mort) structurent le cycle de vie.",
+      "roleOfLineages": "Les lignages patrilineaires definissent l'appartenance clanique et les droits d'heritage. La proximite linguistique entre les Kambata et les Hadiya a conduit a de nombreux mariages mixtes et a une forte integration sociale dans la zone frontaliere, notamment a Hossana.",
+      "religiousAuthority": "Autorite des sultans et imams dans la periode du Sultanat. La religion traditionnelle Fandaanano etait administree par des pretres traditionnels. Apres la christianisation sous Menelik II, l'Eglise orthodoxe ethiopienne a joue un role croissant. Les missions protestantes (P'ent'ay) sont tres actives depuis les annees 1930. Des mosquees historiques comme celles de Katbare et Zebimola (Kebena Woreda) temoignent de l'heritage islamique."
+    },
+    "languages": {
+      "mainLanguage": "Hadiyyisa (Hadiyya)",
+      "isoCodes": ["hdy"],
+      "dialects": [
+        "Leemo (dialecte du groupe Leemo)",
+        "Badawacho (dialecte du groupe Baadawwaachcho)",
+        "Shashogo (dialecte du groupe Shaashoogo)",
+        "Sooro (dialecte du groupe Sooro)"
+      ],
+      "vehicularRole": "Le hadiyyisa est parle par plus de 1,2 million de personnes, ce qui en fait l'une des dix langues principales d'Ethiopie. Il est utilise comme langue d'enseignement dans les ecoles primaires de la zone Hadiya. La langue est ecrite avec un alphabet base sur le latin. L'amharique est la langue nationale utilisee dans l'administration et l'enseignement secondaire. Le hadiyyisa est tres proche du libido (maraqo) et du kambatissa."
+    },
+    "culture": {
+      "majorRites": "Le cycle de vie hadiya est marque par quatre rites de passage principaux : la naissance, la circumcision (pratiquee sur les deux sexes), le mariage et la mort. Le mariage le plus important est le kiffa, le type de mariage le plus complexe et le plus couteux. La religion traditionnelle Fandaanano structurait la vie sociale et religieuse par des rituels, des sacrifices et des ceremonies collectives. Les fetes liees aux recoltes et les ceremonies de mariage impliquent musique, danse et celebrations communautaires. La ceremonie de deuil comprend des chants rituels de lamentation par les femmes (chant en se battant la poitrine).",
+      "symbols": "La montagne Hambaricho est le symbole sacre le plus important des Kambata-Hadiya : ancienne residence des rois, lieu de culte de la divinite Abba Sarecho. Les mosquees historiques de Katbare et de Zebimola (zone Kebena) symbolisent l'heritage islamique. La monnaie akuna du XIVe siecle temoigne de la puissance historique du Sultanat Hadiya.",
+      "artsAndMusic": "La musique et la danse sont au coeur de l'identite hadiya. Les fetes kenyates et hadiya du sud de l'Ethiopie sont connues pour leurs danses du ventre rythmees qui rappellent les danses du Moyen-Orient. Les instruments traditionnels utilises dans la region incluent le kebero (tambour) et divers instruments de percussion. Les chants coutumiers accompagnent les ceremonies de mariage, de deuil et les fetes de recolte. La tradition orale (poesie, contes, proverbes) est un vecteur essentiel de transmission culturelle.",
+      "spiritualities": "La religion traditionnelle Fandaanano, pratiquee jusqu'aux XVIe-XIXe siecles, etait le systeme socioreligieux autochtone des Hadiya. Elle comprenait des rites de circumcision strictement appliques, des sacrifices, des ceremonies communautaires et l'organisation sociale de la communaute. Entre le XIIIe et le XVIe siecle, les Hadiya etaient principalement musulmans ou pratiquaient le Fandaanano. La conquete de Menelik II (XIXe siecle) a entraine des conversions massives au christianisme orthodoxe ethiopien. Depuis les annees 1930, les missions protestantes (P'ent'ay) ont converti une large partie de la population. Aujourd'hui, la zone Hadiya est majoritairement chretienne avec une minorite musulmane dans la zone de Kebena."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Sultanat Hadiya (XIIIe-XVIe siecles) etait l'un des sept etats musulmans de la federation de Zeila. Au XIVe siecle, l'historien al-Umari le decrivait comme le plus riche, le plus grand et le plus puissant de ces etats, avec sa propre monnaie (akuna). Le sultanat avait des relations commerciales avec l'Arabie, l'Asie et l'Europe. Apres sa fragmentation, des entites autonomes ont survecu jusqu'a la conquete de Menelik II. En 1600, le Garad Sidi Mohammed a battu les troupes de l'Empereur Susenyos Ier.",
+      "relationsWithNeighbors": "Relations complexes avec le Royaume d'Abyssinie : soumission forcee, tribut de femmes pour conversion, mariages avec la noblesse abyssine (la reine Eleni). Alliance avec le Sultanat d'Adal et l'Imam Ahmad contre l'Ethiopie au XVIe siecle. Relations etroites avec les Kambata voisins : intermarriages intensifs, bilinguisme courant, cooperation economique et politique. Contacts avec les Oromo (certains clans adoptes dans les communautes oromo).",
+      "conflictsOrAlliances": "Resistance a la conque abyssine sur pres de deux siecles (1270-1555). Alliance avec l'Adal et participation a la jihad de 1529. Conquest par Menelik II (1875-1893). Rebellion Gadecho Mekemekato de 1936 contre l'occupation italienne, avec le soutien de combattants kambata. Luttes politiques pour la reconnaissance ethnique sous le gouvernement EPRDF (1991-2018) a travers le Hadiya National Democratic Organization (HNDO).",
+      "diaspora": "Clans d'origine hadiya absorbes dans de nombreux groupes ethiopiens : Oromo (Arsi, Bale, Wolega, Harar), Sidama, Wolayta, Gurage, Tigray (Rayyaa, Azaaboo, Ashaange), Afar. Des Hadiya vivent dans toutes les grandes villes ethiopiennes. Migrations economiques recentes vers l'Afrique du Sud et les pays du Moyen-Orient."
+    },
+    "demography": {
+      "totalPopulation": 1800000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien 2007 : 1 269 382 personnes identifiees comme Hadiya. Projections 2025 basees sur le taux de croissance demographique de l'Ethiopie meridionale. Selon certaines sources, la nation hadiya au sens large (y compris les groupes de descendance) depasse 5 millions de personnes dans la zone Hadiya et les regions voisines.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1800000,
+          "note": "Zone Hadiya (capitale Hossana), principalement dans les Nations, Nationalites et Peuples du Sud (93,9 % de la population hadiya selon le recensement 2007). Presence dans l'Oromia, le Sidama, le Wolayta, le Gurage et d'autres regions."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hadiya people. https://en.wikipedia.org/wiki/Hadiya_people",
+      "Wikipedia EN — Hadiyya language. https://en.wikipedia.org/wiki/Hadiyya_language",
+      "SIL Ethnologue — Hadiyya (hdy). https://www.ethnologue.com/language/hdy/",
+      "Braukamper, Ulrich. A History of the Hadiyya in Southern Ethiopia. Wiesbaden : Franz Steiner Verlag, 1980.",
+      "History of Hadiya state and political struggles for self-determination. https://hadiyajourney.com/wp-content/uploads/2022/02/History-of-Hadiya-state-and-political-struggles-for-self.pdf",
+      "Academia.edu — Wedding Ceremonies in Hadiyya. https://www.academia.edu/3666145/Wedding_Ceremonies_in_Hadiyya",
+      "Recensement national ethiopien 2007. Ethiopian Statistics Services. https://ess.gov.et/"
+    ]
   }
 }

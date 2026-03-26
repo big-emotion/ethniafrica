@@ -6,63 +6,107 @@
   "content": {
     "appellations": {
       "mainName": "Jarawa",
-      "selfAppellation": "Jarawa",
-      "exonyms": ["Jarawa (terme utilisé par les Européens)"],
+      "selfAppellation": "Afizere (Afizarek) — signifie riverains ou gens de la riviere",
+      "exonyms": [
+        "Jarawa (exonyme haoussa : gens du fleuve, terme courant dans le Nigeria du Nord)",
+        "Jar (forme abregee utilisee en linguistique)",
+        "Jaranci (terme haoussa pour la langue jarawa)",
+        "Jarawan Dutse (Jarawa des collines)",
+        "Jarawan Kasa (Jarawa des plaines)"
+      ],
+      "originOfExonyms": "Le terme Jarawa est un exonyme haoussa qui signifie gens du fleuve ou riverains. Le groupe se designe lui-meme Afizere (Afizarek), terme signifiant gens de la riviere dans leur propre langue. La distinction Jarawan Dutse (collines) et Jarawan Kasa (plaines) reflète leur etablissement historique dans des zones geographiques distinctes suite a la jihad peule.",
+      "whyProblematic": "L'ethnonyme Jarawa est partage par deux groupes sans relation entre eux : les Afizere (Benue-Congo) du Nigeria et les Jarawa des iles Andaman (Inde). En linguistique, le terme Jarawa designe aussi un groupe de langues Bantoid (Jarawan languages) distinct des Afizere. La langue afizere (izere) est Bantoid et non tchadique, bien que les Jarawa aient ete places administrativement aux cotes des peuples tchadiques de Bauchi.",
+      "contemporaryUsage": "Le terme Jarawa est largement utilise dans la litterature nigerianes et les sources administratives. Le groupe prefere de plus en plus le terme Afizere pour se distinguer des autres groupes portant le meme exonyme. L'Afizere Cultural Festival est celebre annuellement.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique (Biu-Mandara)",
-      "historicalRegion": "Nord-est du Nigeria",
+      "ethnoLinguisticGroup": "Bantoid (Benue-Congo), groupe Jarawan, dialectes Bankal (jjr) et Gwak (jgk) pour le Jarawa linguistique ; Izere (ize) pour les Afizere/Jarawa ethniques du Plateau",
+      "historicalRegion": "Nord-est du Nigeria : etat du Plateau (Jos East, Jos North, Mangu, Jos South) et etat de Bauchi (Tafawa Balewa LGA, Toro LGA, Dass LGA)",
       "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Jarawa du Nord",
-      "Jarawa du Sud",
-      "Sous-groupes régionaux"
+      "Afizere du Plateau (Jos East, Jos North, Mangu, Jos South LGAs) — population principale",
+      "Afizere de Bauchi (Tafawa Balewa LGA, Toro LGA) — Jarawan Dutse",
+      "Jarawan Kogi (Jarawa des plaines, Dass LGA et environs)",
+      "Jarawan Bununu (Gwak — Dass LGA, Tafawa Balewa LGA, Bauchi)",
+      "Jarawan Kasa (variante de plaine autour de Bauchi)",
+      "Lignages des 16 districts traditionnels : Fobur, Forsum, Maigemu, Shere, Federe et autres"
     ],
     "origins": {
-      "ancientOrigins": "Les Jarawa sont originaires du nord-est du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique (Biu-Mandara).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples haoussa, influence de l'islam."
+      "ancientOrigins": "Les Jarawa (Afizere) sont un peuple autochtone du plateau central nigerien. Selon la tradition orale, leur ancetre fondateur Yalam etait un leader courageux qui emigra de la region du Bornou-Tchad durant le regne de Shehu Ali Ghaji, s'etablit dans la zone de Kaltungo (actuel etat de Gombe) au XVIIe siecle, puis se deplaça vers la region de Chawai (actuel Kaduna du Sud). De la, les Afizere se disperserent vers les etats actuels du Plateau et de Bauchi. La division Jarawan Dutse (collines) et Jarawan Kasa (plaines) est apparue : Dass fut fonde par un petit groupe de Jarawa des plaines.",
+      "formationPeriod": "La periode de formation s'etend du XVIIe au XIXe siecle. L'etablissement sur les plateaux du Jos-Bauchi est documente au XVIIe siecle. Durant la periode precoloniale, les Afizere vivaient sur les collines entourant le plateau de Jos comme mecanisme de defense contre les attaques jihadistes pendant et apres la jihad peule (1804-1808). Plus de 500 000 Afizere sont distribues sur 16 districts traditionnels.",
+      "migrationRoutes": [
+        "Region de Bornou-Tchad (origine ancestrale) — periode du Shehu Ali Ghaji (XVe-XVIe siecle)",
+        "Kaltungo (actuel etat de Gombe) — premier etablissement au XVIIe siecle",
+        "Region de Chawai (Kaduna du Sud) — etablissement intermediaire",
+        "Plateau de Jos et etat de Bauchi — expansion finale aux XVIIe-XIXe siecles"
+      ],
+      "historicalSettlementZones": [
+        "Region de Chawai, Kaduna du Sud (etablissement pre-Jos)",
+        "Jos East, Jos North, Mangu, Jos South LGAs (Plateau State)",
+        "Tafawa Balewa LGA et Toro LGA (Bauchi State)",
+        "Dass LGA (Bauchi State) — Jarawan Kasa et Jarawan Bununu",
+        "Villes principales : Dong, Tudun Wada (Gyese), Kabong, Rikkos, Fudawa, Kwanga, Fobur, Angware, Gwafan (Lamingo), Shere, Zandi"
+      ],
+      "unificationsOrDivisions": "Les Afizere ne furent jamais unifies sous un royaume unique. Chaque groupe ethnique avait ses propres chefferies avec des niveaux de cooperation variables. Systeme gerontocratique et decentralise. Les 16 districts traditionnels sont representes par cinq familles royales (Fobur, Forsum, Maigemu, Shere, Federe). La jihad peule du XIXe siecle et la creation des etats nigerians (Bauchi et Plateau) ont divise les Afizere entre deux entites administratives distinctes.",
+      "externalInfluences": "Jihad peule de Usman dan Fodio (1804-1808) : pression militaire forcant le repli dans les zones montagneuses. Influence haoussa persistante (langue vehiculaire, commerce). L'etat de Bauchi sous l'Emir Yakubu integra partiellement certains territoires afizere. Missionnaires du Sudan Interior Mission (SIM) : introduction du christianisme au XXe siecle. Influence de l'emirat de Bauchi sur les parties orientales du territoire afizere.",
+      "majorHistoricalEvents": "XVIIe siecle : migration sous Yalam depuis le Bornou-Tchad, etablissement dans la region de Kaltungo puis de Chawai. XIXe siecle : jihad peule — repli defensif sur les hauteurs du plateau de Jos. 1907 : arrivee des premiers missionnaires Sudan United Mission (SUM) a Panyam. 1929 : demembrement administratif colonial (creation de la province de Plateau). Post-1960 : division entre les etats de Benue-Plateau et de Bauchi lors de la creation des etats nigerians. Festivals annuels : Afizere Cultural Festival, Kerewa (moisson), Akarawa (debut de la saison agricole)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Systeme de chefferies traditionnel et gerontocratique dirige par un Agwom (chef qui est aussi grand pretre du peuple). L'Agwom est assiste de cinq chefs de district representant les cinq familles royales (Fobur, Forsum, Maigemu, Shere, Federe). Chaque district regroupe 6 a 12 villages. L'Agwong Kuwop est le grand pretre et l'Atsi est le pretre. La societe est decentralisee et republicaine.",
+      "clanOrganization": "Organisation en 16 districts traditionnels avec des structures claniques patrilineaires. Chaque district est une combinaison de lignages issus des cinq familles royales. Le mariage traditionnel implique des verifications de lignage, des negociations de liste nuptiale et de dot.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance aux familles royales et les droits traditionnels. Les chefs sont designes parmi les cinq familles royales representant les cinq districts principaux.",
+      "religiousAuthority": "Systeme traditionnel : supreme dieu createur Adakunom (pere du soleil ou soleil tout-puissant), source de vie et de sante. Des dieux mineurs servent d'intermediaires avec Adakunom. Esprits benefiques (Itseng Iseng, esprits rouges ou blancs) et malefiques (Afere, esprits noirs). Depuis le XXe siecle : christianisme (majorite, introduit par les missionnaires SIM) et islam (minorite, dans les parties relevant de l'emirat de Bauchi)."
     },
     "languages": {
-      "mainLanguage": "Jarawa",
-      "vehicularRole": "Le jarawa est parlé par la majorité des Jarawa. Le haoussa, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Izere (Jarawa ethnique / Afizere) ; Bankal et Gwak (Jarawa linguistique)",
+      "isoCodes": ["jjr", "jgk"],
+      "dialects": [
+        "Zhar (Bankal, jjr) — parle a Dass, Bauchi, Toro LGAs, Bauchi State",
+        "Gwak (Gingwak, jgk) — parle dans Dass, Tafawa Balewa LGAs",
+        "Duguri (dbm) — Alkaleri et Tafawa Balewa LGAs",
+        "Mbat (Bada) — Kanam LGA, Plateau State",
+        "Doori (Duguri) — Alkaleri, Tafawa Balewa LGAs ; Kanam LGA",
+        "Kantana — Kanam LGA, Plateau State",
+        "Ibor (dialecte Izere parle dans le district de Fobur)",
+        "Isum (dialecte Izere des villages Forsum)",
+        "Iganang (dialecte Izere de Shere)"
+      ],
+      "vehicularRole": "Le jarawa (Bankal, Gwak) est la langue maternelle de la communaute. Le haoussa est largement utilise comme langue vehiculaire dans la region. L'anglais est la langue officielle. La totalite des Jarawa parle au moins le haoussa en plus de sa langue maternelle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels jarawa.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture jarawa."
+      "majorRites": "Afizere Cultural Festival (celebre annuellement). Kerewa (festival de la moisson, celebre en saison de recoltes). Akarawa (festival du debut de la saison agricole). Rites de passage : mariage traditionnel (visites formelles des familles, verification des lignages, negociation de la dot, ceremonie traditionnelle). Accession au pouvoir des chefs (Agwom) : port du kukpra et de l'akbong. Rites funeraires : danse Asurbe uniquement lors des funerailles d'une personne agee. Bapteme et noms symboliques attribues selon les circonstances de naissance.",
+      "symbols": "Couleurs traditionnelles afizere : vert (naya — agriculture), blanc (cha'an — paix), jaune (izizere — la langue), noir (aga'ab — force), coquillages (icribi — richesse). Vetements cerimonieaux : les rois portent le kukpra et se distinguent par une coupe de cheveux et l'akbong (baton royal, un fil pour le roi, deux fils pour le pretre). Adakunom (le soleil tout-puissant) comme symbole cosmologique supreme.",
+      "artsAndMusic": "Danses traditionnelles : Asharuwa (jeunes hommes et adultes, toutes occasions ; groupes ayant represente la culture afizere aux USA, UK, Canada, Allemagne, Afrique du Sud, Ukraine, Kenya). Amata (femmes, toutes occasions). Agba (hommes, lors des ceremonies royales et des coronations). Agafu (hommes, toutes occasions). Apanga (royaute uniquement, ceremonies et coronations). Natoo abarshi (hommes, lors des activites agricoles). Musique avec tambours et chants. Artisanat : sculpture sur bois, poterie, tissage. Nourriture traditionnelle : tuwo (bouillie de mais ou sorgho) avec miyan kubewa (sauce gombo) ; Akarek (bouillie de farine de mais) ; kuka (sauce de feuilles de baobab).",
+      "spiritualities": "Religion traditionnelle : dieu createur supreme Adakunom (pere du soleil), source de vie et de sante. Dieux mineurs comme intercesseurs. Esprits benefiques (Itseng Iseng) et malefiques (Afere). Croyance aux sorciers. Christianisme : religion majoritaire, introduit par les missionnaires Sudan Interior Mission (SIM) au XXe siecle ; denomination principale ECWA (parmi les Barawa et Jarawa de Toro, Dass, Bauchi, Alkaleri LGAs). Islam : minoritaire, dans les parties relevant historiquement de l'emirat de Bauchi."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora jarawa dans les grandes villes nigérianes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Afizere n'ont jamais ete unifies sous un royaume unique. Societe decentralisee et republicaine organisee en 16 districts independants avec chefferies locales (Agwom). Cette decentralisation a renforce la resilience culturelle face a la pression jihadiste du XIXe siecle. Chaque district maintient ses traditions et sa chefferie sous l'autorite supreme de l'Agwom.",
+      "relationsWithNeighbors": "Au nord : Haoussa et Jarawan Dass. A l'est et au sud-est : Zari, Zaar et Pyem. Au sud et sud-ouest : Berom. A l'ouest : Irigwe et Bache (Rukuba). Relations complexes avec les Haoussa (influence linguistique, comerciale) et les Peuls (conflits du XIXe siecle). Alliance culturelle informelle avec les groupes du plateau de Jos.",
+      "conflictsOrAlliances": "XIXe siecle : resistances contre les incursions jihadistes de l'emirat de Bauchi, conduisant au repli defensif dans les zones montagneuses. Certaines parties du territoire afizere furent integrees dans l'emirat de Bauchi. Post-independance : conflits inter-ethniques a Tafawa Balewa et environs entre les autochtones et les migrants haoussa-fulani, signales parmi les conflits les plus violents de la sous-region.",
+      "diaspora": "Presence documentee a Jema'a LGA, etat de Kaduna. Migration interne vers Jos, Bauchi, Abuja et Lagos pour l'education et le travail. Des groupes afizere ont represente leur culture a l'international (USA, UK, Canada, Allemagne, Afrique du Sud, Ukraine, Kenya)."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN (Afizere) : plus de 500 000 Afizere sur 16 districts. Bankal (jjr) : 20 000 locuteurs (LA 1971). Gwak (jgk) : 19 000 locuteurs (LA 1971). Doori : locuteurs nombreux a Bauchi et Plateau States. La population ethnique totale (Afizere + Jarawa des plaines) est estimee a plus de 500 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 500000,
+          "note": "Etat du Plateau : Jos East, Jos North, Mangu, Jos South (majorite) ; Etat de Bauchi : Tafawa Balewa LGA, Toro LGA, Dass LGA ; Etat de Kaduna : Jema'a LGA"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Jarawa language (jar)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples tchadiques"
+      "Wikipedia EN — Afizere. https://en.wikipedia.org/wiki/Afizere",
+      "Wikipedia EN — Jarawan languages. https://en.wikipedia.org/wiki/Jarawan_languages",
+      "Wikipedia EN — Jarawa language (Nigeria). https://en.wikipedia.org/wiki/Jarawa_language_(Nigeria)",
+      "SIL Ethnologue — Bankal (jjr). https://www.ethnologue.com/language/jjr/",
+      "SIL Ethnologue — Jarawan subgroup. https://www.ethnologue.com/subgroup/622/",
+      "Glottolog — Jarawa (Nigeria). https://glottolog.org/resource/languoid/id/jara1263",
+      "Kunzaar.com — History and Origin of Jarawa Tribe. https://kunzaar.com.ng/",
+      "Scribd — Jos-Bauchi Plateau Peoples Overview. https://www.scribd.com/document/790271702/THE-JOS-BAUCHI",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
     ]
   }
 }

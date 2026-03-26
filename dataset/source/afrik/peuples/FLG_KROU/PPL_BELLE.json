@@ -6,54 +6,79 @@
   "content": {
     "appellations": {
       "mainName": "Belle",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Kuwaa (endonyme propre du groupe, signifie le peuple ou les gens dans la langue locale)",
+      "exonyms": [
+        "Belle (nom impose par l'administration liberienne et les colons americains)",
+        "Belleh (variante orthographique anglaise)",
+        "Kowaao (autre transcription de Kuwaa)",
+        "Kwaa (forme abregee)"
+      ],
+      "originOfExonyms": "Le nom Belle fut attribue par le gouvernement libero-americain comme denomination administrative. Dans les documents officiels liberiens du XIXe et debut XXe siecle, les autorites utilisaient Belle pour designer ce groupe, tandis que les membres du groupe s'identifiaient par l'endonyme Kuwaa. Le gouvernement libérien a reconnu ulterieurement le terme Kuwaa comme denomination preferentielle.",
+      "whyProblematic": "Le nom Belle, d'origine externe, efface l'identite propre du groupe. Il reste toutefois largement utilise dans les sources anglophones et les statistiques officielles du Libéria.",
+      "contemporaryUsage": "Kuwaa est le terme prefere par la communaute et de plus en plus employe dans les etudes linguistiques et ethnographiques. Belle demeure la designation officielle dans les recensements liberiens et la litterature ancienne.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud du Libéria",
+      "ethnoLinguisticGroup": "Kru (branche occidentale)",
+      "historicalRegion": "Comte de Lofa, nord-ouest du Libéria",
       "currentCountries": ["LBR"]
     },
-    "ethnicities": ["Belle"],
+    "ethnicities": ["Kuwaa / Belle (deux clans principaux : Lubaisu et Gbade)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud du Libéria"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kuwaa font partie du groupe ethnique kru (kruan) qui, selon les traditions orales et les recherches historiques, a migre depuis des zones interieures vers la cote liberienne. Les plus anciens habitants connus du Libéria etaient les peuples Dey, appartenant a la famille kwa, qui migrerent depuis l'Afrique orientale par vagues successives et se diviserent en Bassa, Grebo, Belle (Kuwaa), Krahn, Gbi et Kru.",
+      "formationPeriod": "Les Kuwaa se sont etablis dans le comte de Lofa avant l'arrivee des groupes mande (XVe-XVIe siecles). Leur presence dans cette zone est anterieure a celle des Lorma, Gbandi et Kpelle qui migrerent de Guinee vers le Libéria a partir du XVIe siecle, poussant les groupes kru vers le sud.",
+      "migrationRoutes": [
+        "Migration depuis le nord et l'est, avec d'autres groupes kruan (Bassa, Krahn, Dei), vers l'interieur forestier du nord-ouest du Libéria",
+        "Etablissement dans le comte de Lofa, entre la riviere Lofa et les contreforts des montagnes guineennes"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Lofa, nord-ouest du Libéria (zone principale)",
+        "Zones frontalieres avec la Guinee forestiere et la Sierra Leone"
+      ],
+      "unificationsOrDivisions": "Les Kuwaa sont organises en deux clans principaux, Lubaisu et Gbade, dont les parlers ne different que par de legeres variations de prononciation. Ces deux clans partagent une organisation sociale et culturelle commune.",
+      "externalInfluences": "Pression des groupes mande (Lorma, Gbandi, Kpelle) migres au XVe-XVIe siecles qui ont reduit l'espace territorial des Kuwaa. Contact avec la colonie libero-americaine a partir du XIXe siecle, imposant l'anglais et le christianisme. Guerres civiles liberienees (1989-2003) ayant profondement perturbe les communautes du comte de Lofa.",
+      "majorHistoricalEvents": "Avant le XVe siecle : etablissement kru dans le Lofa. XVe-XVIe siecles : migrations mande reconfigurant la repartition ethnique du nord-ouest libérien. 1820-1847 : installation des colons libero-americains et creation du Libéria independant (1847), marginalisant les peuples autochtones dont les Kuwaa. 1904 : premier droit a la citoyennete etendu aux autochtones. 1989-2003 : guerres civiles liberienees dévastant le comte de Lofa."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation decentralisee par villages et clans, sans chefferie centralisee. Chaque village est dirige par un chef de village reconnu par le groupe. L'autorite traditionnelle est fondee sur l'age, le prestige et la filiation au clan fondateur.",
+      "clanOrganization": "Deux clans principaux : Lubaisu et Gbade. Organisation patrilineaire. Les decisions communautaires sont prises par les anciens de chaque clan.",
+      "ageClassSystems": "Presence probable de societes initiatiques (Poro pour les hommes, Sande pour les femmes) communes aux groupes kru et mande du nord-ouest du Libéria, bien que la documentation specifique aux Kuwaa soit limitee.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, l'acces a la terre et la succession des chefferies villageoises.",
+      "religiousAuthority": "Pratiques animistes traditionnelles liees aux societes initiatiques. Presence croissante du christianisme, religion principale depuis la colonisation libero-americaine. Certaines pratiques syncrétiques persistent."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kuwaa (langue kru, egalement connue sous les noms Belle, Belleh, Kowaao, Kwaa)",
+      "isoCodes": ["blh"],
+      "dialects": [
+        "Parler Lubaisu",
+        "Parler Gbade (les deux varietes ne different que par de legeres variations de prononciation)"
+      ],
+      "vehicularRole": "L'anglais libérien est la langue officielle et vehiculaire. Le kpelle, langue mande dominante du Libéria, sert de langue de communication regionale dans certaines zones. Le kuwaa est une langue stable selon l'Ethnologue, parlee par l'ensemble de la communaute adulte mais dont la transmission aux jeunes generations est incertaine."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Initiation dans la societe Poro pour les hommes (commune aux groupes du nord-ouest liberien), marquant le passage a l'age adulte par un retrait en brousse et un enseignement des codes sociaux, moraux et spirituels du groupe. Rites agricoles lies au cycle du riz (culture de subsistance principale). Ceremonies funeraires avec chants et percussions.",
+      "symbols": "Le riz est l'element culturel central, fondement de l'economie et des rites de passage. La foret du comte de Lofa constitue le cadre symbolique et materiel de la vie kuwaa.",
+      "artsAndMusic": "Musique de percussions et chants collectifs lors des ceremonies. Traditions de conte oral (histoire du groupe transmise par les anciens). Artisanat de vannerie et de travail du bois.",
+      "spiritualities": "Animisme base sur la croyance en esprits de la nature (foret, eau, ancetres). Les societes initiatiques (Poro/Sande) gèrent les relations entre le monde des vivants et celui des esprits. Christianisme majoritaire aujourd'hui, ayant reconfigure sans effacer entierement les pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies villageoises. Les Kuwaa sont l'une des 17 tribus majeures reconnaissables du Libéria mais ne forment pas de confederation politique unifiee.",
+      "relationsWithNeighbors": "Coexistence dans le comte de Lofa avec les Lorma (groupe majoritaire a 51 % du comté), les Gbandi (26 %), les Kissi, les Mandingo et les Kpelle. Relations generalement pacifiques avec alternance de tensions liees aux terres et aux ressources forestieres. Les Kuwaa ont ete pousses vers leur territoire actuel par les migrations mande des XVe-XVIe siecles.",
+      "conflictsOrAlliances": "Les Kuwaa, comme d'autres peuples autochtones, ont subi la domination politico-economique des Libero-Americains apres 1847 ; ils n'ont reçu la citoyennete complete qu'en 1904 et le droit de vote qu'en 1946. Les guerres civiles de 1989-2003 ont provoque des deplacement massifs dans le comte de Lofa.",
+      "diaspora": "Presence en milieu urbain libérien (Monrovia) et dans les camps de refugies en Guinee et Sierra Leone lors des conflits des annees 1990-2000. Retour progressif dans le comte de Lofa depuis 2003."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 13000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur les donnees Facebook communautaires (12 800 personnes, environ 0,4 % de la population liberienne) et le recensement de 1962 (5 465 personnes selon le Liberian Studies Journal), avec projection pour 2025.",
+      "distributionByCountry": [{ "country": "LBR", "population": 13000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia – Kuwaa language (https://en.wikipedia.org/wiki/Kuwaa_language)",
+      "Ethnologue – Kuwaa Language (BLH) (https://www.ethnologue.com/language/blh/)",
+      "Joshua Project – Kuwaa, Belle in Liberia (https://joshuaproject.net/people_groups/12894)",
+      "Lughayangu – Kuwaa Belle Kowaao Kwaa language dictionary (https://lughayangu.com/kuwaa)",
+      "AfricaBib – A Kuwaa (Belle) Wordlist, Liberian Studies Journal (https://www.africabib.org/rec.php?RID=188860991)",
+      "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)",
+      "Kru languages – Wikipedia (https://en.wikipedia.org/wiki/Kru_languages)"
+    ]
   }
 }

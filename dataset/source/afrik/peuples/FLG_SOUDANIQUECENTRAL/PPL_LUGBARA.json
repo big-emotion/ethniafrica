@@ -7,62 +7,110 @@
     "appellations": {
       "mainName": "Lugbara",
       "selfAppellation": "Lugbara",
-      "exonyms": ["Lugbara (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Logbara",
+        "Lugbarati",
+        "High Lugbara",
+        "Low Lugbara (Aringa)"
+      ],
+      "originOfExonyms": "Le terme Logbara est une variante orthographique utilisee dans certaines sources coloniales belges et britanniques. Lugbarati designe plus precisement la langue. High Lugbara et Low Lugbara sont des designations linguistiques distinguant les dialectes septentrionaux des dialectes meridionaux (Aringa). En 1874, des sources coloniales designaient les Lugbara du nord-est de la RDC comme Les Gens nus en reference a leurs pratiques vestimentaires de l'epoque.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Lugbara est universellement utilise en anglais, en francais, en lingala et dans les langues locales. Les Lugbara habitent principalement le West Nile en Ouganda (Arua City, districts d'Arua, Maracha, Terego, Madi-Okollo, Yumbe, Koboko) et la province adjacente de la RDC. Ils constituent le neuvieme groupe ethnique d'Ouganda (4,2% de la population selon le recensement de 2002).",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central (Moru-Madi)",
-      "historicalRegion": "UGA, COD",
+      "ethnoLinguisticGroup": "Soudanique central (Moru-Madi); apparentes aux Madi, Ma'di et Kaliko",
+      "historicalRegion": "West Nile, Ouganda du nord-ouest; province de l'Ituri et Orientale, RDC; extension limitee au Soudan du Sud",
       "currentCountries": ["UGA", "COD"]
     },
     "ethnicities": [
-      "Lugbara d'Ouganda",
-      "Lugbara de RDC",
-      "Sous-groupes régionaux"
+      "Ayivu (clan principal, base du dialecte de reference du lugbara; district d'Arua)",
+      "Vurra (clan, district d'Arua)",
+      "Terego (clan, district de Terego)",
+      "Maracha (clan, district de Maracha)",
+      "Aringa (clan, district de Yumbe; parle le Low Lugbara ou Aringa, dialecte meridional)",
+      "Lugbara de la RDC (majorite de la population lugbara du cote congolais de la frontiere)"
     ],
     "origins": {
-      "ancientOrigins": "Les Lugbara sont originaires de l'Ouganda et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central (Moru-Madi).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Moru et les Madi.",
-      "externalInfluences": "Contacts avec les peuples nilotiques et bantous, influence du christianisme."
+      "ancientOrigins": "Les Lugbara sont un peuple soudanique central (groupe Moru-Madi) originaire de la region du West Nile en Ouganda et du nord-est de la RDC. Animistes a l'origine, leur mythologie atteste une cosmologie riche distinguant une periode pre-heroique (temps sans ordre ni autorite) d'une periode post-heroique (structuree par le temps, sociale et morale) reliees par des mediateurs heroiques. Les clans actuels (une soixantaine) sont fondes sur les fils des heros culturels. L'anthropologue John Middleton, qui mena ses recherches de terrain dans les annees 1950, est le principal auteur de reference sur les Lugbara.",
+      "formationPeriod": "L'identite lugbara s'est consolidee autour du systeme de lignages segmentaires patrilineaires qui structure leur societe. La langue lugbara fut mise a l'ecrit pour la premiere fois par des missionnaires chretiens en 1918, sur la base du dialecte Ayivu. En 2000, une conference tenue a Arua (Ouganda) etablit un alphabet lugbara standardise international de 28 lettres. Le gouvernement ougandais designa le lugbara en 1992 comme l'une des cinq langues de grande communication pour l'enseignement primaire.",
+      "migrationRoutes": [
+        "Implantation ancestrale dans le West Nile (Ouganda du nord-ouest) et le nord-est du Congo belge",
+        "Dispersion des clans depuis des ancetres culturels fondateurs",
+        "Extension vers le Soudan du Sud (petite presence documentee)"
+      ],
+      "historicalSettlementZones": [
+        "West Nile, Ouganda: Arua City, districts d'Arua, Maracha, Terego, Madi-Okollo, Yumbe, Koboko",
+        "Nord-est de la RDC: province Orientale (Ituri), frontiere avec l'Ouganda",
+        "Petite presence au Soudan du Sud (environ 10 000 personnes)"
+      ],
+      "unificationsOrDivisions": "La societe lugbara est politiquement decentralisee, fondee sur des petits lignages patrilineaires formant la base des etablissements locaux, relies en un systeme de lignages segmentaires du type classique. Il n'y a pas de roi ni de structure politique centralisee au-dessus des anciens de lignage. L'autorite rituelle et politique est exercee par des faiseurs de pluie (un par clan) et occasionnellement par des prophetes. La colonisation belge (1900, RDC) et britannique (1914, Ouganda) a introduit des chefs administratifs nommes qui se situent en dehors du systeme religieux traditionnel.",
+      "externalInfluences": "Missions catholiques (Peres de Verone) et protestantes (African Inland Mission) actives depuis la Premiere Guerre mondiale, avec succes notable en education et conversions. Colonisation belge du Congo (1900) et britannique de l'Ouganda (1914). Bouleversements politiques sous Idi Amin et Obote en Ouganda: le systeme de lignages traditionnel a ete severement affaibli, les cultes associes ayant perdu de leur importance. Introduction du manioc comme culture de substitution apres les secheresses des annees 1960 qui firent echouer les cultures de mil et de sorgho.",
+      "majorHistoricalEvents": "Vers 1890-1919, la societe lugbara subit des raids de groupes voisins et des epidemies, en plus de la colonisation, entraenant instabilite sociale et emergence du mouvement Yakan. En 1914, le British Protectorate etablit son controle sur le West Nile. Le mouvement Yakan (1916-1919) fut reprime par les autorites coloniales. John Middleton mena ses recherches anthropologiques principales dans les annees 1950 et publia Lugbara Religion en 1960, reference fondamentale sur ce peuple. Idi Amin, dont la mere etait de lignage lugbara (et kakwa), integra des Lugbara dans son administration. Dorcus Inzikuru, Lugbara, devint championne du monde du 3000 m steeple a Helsinki en 2005."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe lugbara est politiquement decentralisee (sans roi ni hierarchie centralisee). L'autorite traditionnelle appartient aux anciens des petits lignages patrilineaires. Ces lignages forment la base des etablissements locaux et sont integres dans un systeme de lignages segmentaires classique. Au-dessus des anciens, l'autorite rituelle et politique est exercee par des faiseurs de pluie (un par clan, homme le plus age de la descendance la plus ancienne) et occasionnellement par des prophetes. La colonisation a introduit des chefs et sous-chefs administratifs qui se tiennent en marge du systeme religieux traditionnel.",
+      "clanOrganization": "La societe lugbara compte environ soixante clans, fondes sur les fils des heros culturels fondateurs. Chaque clan a un faiseur de pluie (rainmaker), depositaire de la verite secrete sur les categories cosmiques. Les etablissements locaux regroupent des lignages apparentes. Les Lugbara de la RDC constituent la majorite demographique du groupe, le gros de la population se trouvant du cote congolais de la frontiere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires sont le fondement de l'ordre social. Les ancetres (ghosts, ori) sont consideres comme des membres seniors de leurs lignages, assurant le lien entre vivants et morts. L'autorite des anciens est exercee par la mediation des ghosts (ori) et la sacrifice aux autels des ancetres. La violation des normes de lignage entraine des sanctions spirituelles (maladie envoyee par les ghosts). Les femmes sont conceptuellement liees aux forces exterieures du bushland (adro), les hommes etant les membres du foyer (home).",
+      "religiousAuthority": "L'autorite religieuse traditionnelle est exercee par les anciens qui maintiennent les autels des ancetres (ghost shrines) et president aux sacrifices. Les faiseurs de pluie (rainmakers) detiennent une autorite rituelle et politique superieure. Les devins identifient les ghosts responsables des maladies et prescrivent les sacrifices. Les missionnaires catholiques (Peres de Verone) et protestants (African Inland Mission) sont actifs depuis la Premiere Guerre mondiale. Le christianisme est devenu la religion predominante: selon le recensement ougandais de 2002, 48,6% sont catholiques romains, 21,4% anglicans, 29,1% musulmans sunnites."
     },
     "languages": {
-      "mainLanguage": "Lugbara",
-      "vehicularRole": "Le lugbara est parlé par la majorité des Lugbara. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Lugbara (Lugbarati)",
+      "isoCodes": ["lgg"],
+      "dialects": [
+        "Ayivu (dialecte de reference, base de la standardisation orthographique de 1918)",
+        "Maracha (clan/dialecte, district de Maracha, Ouganda)",
+        "Terego (clan/dialecte, district de Terego, Ouganda)",
+        "Vurra (clan/dialecte, district d'Arua, Ouganda)",
+        "Aringa / Low Lugbara (dialecte meridional, district de Yumbe; parfois considere dialecte distinct)"
+      ],
+      "vehicularRole": "Le lugbara est la langue maternelle de l'ensemble de la communaute ethnique en Ouganda et en RDC. En 1992, le gouvernement ougandais le designa comme l'une des cinq langues de grande communication pour l'enseignement primaire, mais il ne fut finalement pas utilise dans les ecoles (contrairement aux quatre autres). Il figure desormais au curriculum de certaines ecoles secondaires du West Nile (St. Joseph's College Ombaci, Muni Girls Secondary School). L'anglais est langue officielle en Ouganda; le francais et le lingala en RDC. ISO 639-3: lgg. Statut Glottolog: vigoureux (6a*)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels lugbara, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites funeraires: les seuls rites de transition importants. L'inhumation est suivie de danses competitives et agressives ou les hommes des lignages apparentes demonstrent leur senioritee relative. La mort introduit le desordre (inceste de clan temporairement permis); l'ordre est retabli par d'autres danses, distribution de nourriture et de fleches. Ceremonies de nomination (Cikiri) a la naissance de chaque enfant. Sacrifice aux autels des ancetres: des animaux (boeuf, mouton, chevre, volaille) sont sacrifies pour propitier les ghosts (ori) apres identification par les devins; la viande est partiellement deposee aux autels et partiellement consommee collectivement. Rites agricoles marquant le cycle des cultures (mil, sorgho, manioc). Mariage avec dot.",
+      "symbols": "Leopard aux 300 taches (symbole culturel lugbara selon la tradition). Autels des ancetres (ghost shrines, miniature huts) dans les compoundsd des familles. Arcs et longues fleches a pointes en hamecon (armes et symboles du prestige de chasseur). Arc-en-ciel et pluie (lies au faiseur de pluie, rainmaker, depositaire du savoir cosmique). L'opposition interieur/exterieur (foyer/brousse) comme structure cosmologique fondamentale.",
+      "artsAndMusic": "Musique vocale et instrumentale dans les ceremonies. Danse competitive lors des funerailles et celebrations (demonstration de senioritee entre lignages). Tradition de proverbes (collection publiee; proverbes lies a l'ethique lugbara). Chasse au grand arc: les hommes sont de grands chasseurs avec des arcs puissants et de longues fleches a pointes en hamecon. Agriculture de subsistance: manioc (amidon de base depuis les annees 1960), mil, sorgho, legumineuses, haricots, tubercules varies, arachides, sesame (simsim), pois chiches (Cikiri), patates douces. Elevage: poules (guineafowl appele ope, predominant en Ouganda), porcs, chevres, bovins aux altitudes elevees. Cultures de rente: tabac, avocat, ananas, mangue. Mais brasse en biere (kpete). Artisanat: poterie, tissage.",
+      "spiritualities": "Cosmologie lugbara (d'apres Middleton, 1960): distinction fondamentale entre l'interieur du foyer/village (moral) et l'exterieur de la brousse (esprits, pouvoirs divins). Le Dieu (Adroa, forme diminutive d'adro) est transcendant; son aspect immanent malevole est Adro. Les hommes ont une ame (orindi, siege de l'autorite de lignage), un esprit (adro, siege du comportement antisocial) et un tali (influence sur autrui). Les femmes ont adro et tali. A la mort: l'ame (orindi) monte vers Dieu et peut etre redomestiquee par un devin en ghost (ori) si le defunt etait chef de segment de lignage avec des fils; sinon elle rejoint la collectivite des ancetres (a'bi). L'esprit (adro) part dans la brousse avec l'aspect immanent malevole d'Adro. Le tali se fond dans une collectivite de tali. Culte central des morts: les ghosts (ori) sont les membres seniors de leurs lignages. Les anciens sacrifient aux autels des ghosts (miniature huts) pour maintenir l'ordre social. Mouvement Yakan (1890-1919, reprime en 1919): mouvement anti-colonial forme autour du prophete Rembe (un Kakwa), qui se dit possede par l'esprit Yakan. Ses adherents buvaient l'eau sacree (eau Yakan, infusee d'un daffodil psychedelique local appele Kamiojo, aussi decrit comme l'LSD d'Afrique centrale). Ils croyaient que les balles tirées sur eux se transformeraient en eau inoffensive. Le mouvement visait a chasser les Europeens et rappeler les ancetres et le betail mort. Rembe fut deporte par les Britanniques et pendu au Soudan. Il est aujourd'hui figure mythique sacree. Le christianisme est desormais predominant."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lugbara dans les grandes villes ougandaises et congolaises, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Lugbara n'ont jamais forme de royaume centralise. Leur organisation etait fondee sur des chefferies (chiefdom), sans rois ni hierarchies elevees. Les anciens de lignages et les faiseurs de pluie (un par clan) constituaient les autorites politiques et rituelles. La colonisation belge (1900 en RDC) et britannique (1914 en Ouganda) imposa des chefs administratifs nommes qui fonctionnaient en parallele du systeme traditionnel.",
+      "relationsWithNeighbors": "Les Lugbara sont apparentes linguistiquement aux Madi, Ma'di et Kaliko du Soudan du Sud. Ils partagent la region du West Nile avec les Kakwa, Madi et Acholi. Des alliances defensives avec les tribus voisines etaient formees pour la securite contre les attaques. Les Lugbara et les Kakwa partageaient la region frontaliere et leurs histoires sont entrelacees, notamment dans la biographie d'Idi Amin (dont le pere etait kakwa et la mere de lignage lugbara-kakwa).",
+      "conflictsOrAlliances": "La periode 1890-1919 fut difficile avec des raids de groupes voisins et des epidemies, en plus des invasions coloniales. Le mouvement Yakan (1890-1919) fut la principale reponse collective a la colonisation: reprime par les Britanniques en 1919. Le regime d'Idi Amin (1971-1979) perturba profondement la societe lugbara: le systeme de lignages traditionnel fut severement affaibli et les cultes associes perdirent de leur importance en raison des bouleversements politiques et des mouvements de population. Le West Nile accueillit des refugies du Soudan du Sud et de la RDC au 20e et 21e siecles, les Lugbara, Madi et Kakwa ayant des parents de chaque cote des frontieres.",
+      "diaspora": "La diaspora lugbara se trouve principalement dans les grandes villes ougandaises (Kampala, Gulu) et congolaises, ainsi qu'au Royaume-Uni et dans d'autres pays occidentaux. Des personnalites notables de la diaspora sportive incluent Dorcus Inzikuru (championne du monde du 3000 m steeple, Helsinki 2005), Jackson Asiku (champion du Commonwealth de boxe poids leger) et John Munduga (boxeur international)."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 2100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Uganda 2014 Census: 1 099 733 Lugbara en Ouganda. RDC: 646 000 (estimation; la majorite de la population lugbara est du cote congolais). Soudan du Sud: environ 10 000. Joshua Project 2025: 1 454 000 High Lugbara en Ouganda, population mondiale 2 243 000. Neuvieme groupe ethnique d'Ouganda (4,2% de la population selon le recensement 2002 et WorldAtlas). SIL Ethnologue: 1M a 1B de locuteurs.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 1400000,
+          "note": "West Nile (Arua City, districts d'Arua, Maracha, Terego, Madi-Okollo, Yumbe, Koboko); 9e groupe ethnique d'Ouganda (4,2% de la population)"
+        },
+        {
+          "country": "COD",
+          "population": 690000,
+          "note": "Province Orientale (Ituri), frontiere avec l'Ouganda; la majorite demographique des Lugbara se trouve du cote congolais"
+        },
+        {
+          "country": "SSD",
+          "population": 10000,
+          "note": "Petite presence au Soudan du Sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lugbara language (lgg)",
-      "CIA World Factbook – Uganda, DRC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Lugbara people. https://en.wikipedia.org/wiki/Lugbara_people",
+      "Wikipedia EN — Lugbara language. https://en.wikipedia.org/wiki/Lugbara_language",
+      "Wikipedia EN — Yakan movement. https://en.wikipedia.org/wiki/Yakan_movement",
+      "Encyclopedia.com — Lugbara Religion (Encyclopedia of Religion). https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/lugbara-religion",
+      "Middleton, John. Lugbara Religion: Religion and Authority among an East African People. Oxford University Press, 1960. New ed. 1999.",
+      "Middleton, John. The Lugbara of Uganda. New York: Holt, Rinehart and Winston, 1965 (Archive.org: https://archive.org/details/lugbaraofuganda00midd).",
+      "SIL Ethnologue — Lugbara language (lgg). https://www.ethnologue.com/language/lgg/",
+      "Glottolog — Lugbara. https://glottolog.org/resource/languoid/id/lugb1240",
+      "Joshua Project — Lugbara, High in Uganda. https://joshuaproject.net/people_groups/13141/UG",
+      "WorldAtlas — Largest Ethnic Groups In Uganda. https://www.worldatlas.com/articles/largest-ethnic-groups-in-uganda.html",
+      "Uganda Bureau of Statistics — West Nile Sub Region Census 2024 Profile. https://www.ubos.org/wp-content/uploads/2025/06/West-Nile-Sub-Region-Census-2024-Profile-Report.pdf"
     ]
   }
 }

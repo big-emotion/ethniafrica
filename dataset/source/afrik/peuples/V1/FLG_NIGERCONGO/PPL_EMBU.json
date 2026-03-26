@@ -1,0 +1,63 @@
+{
+  "id": "PPL_EMBU",
+  "nameMain": "Embu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Embu",
+      "selfAppellation": "Embu",
+      "exonyms": ["Embu (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantu (Zone E)",
+      "historicalRegion": "Kenya (Province orientale)",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": ["Embu du Nord", "Embu du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Embu sont originaires de la province orientale du Kenya. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantu (Zone E).",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples bantous voisins (Kikuyu, Meru), influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Embu",
+      "vehicularRole": "L'embu est parlé par la majorité des Embu. Le swahili, l'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Rites de passage (initiation, fêtes de naissance)",
+      "source_1": "Cérémonies liées à l'agriculture",
+      "source_2": "Funérailles traditionnelles",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels embu",
+      "Arts et musique": "",
+      "source_3": "Musique traditionnelle",
+      "source_4": "Danse traditionnelle",
+      "source_5": "Poésie orale",
+      "source_6": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora embu dans les grandes villes kenyanes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (ebu), KEN National Bureau of Statistics"
+    },
+    "sources": [
+      "SIL Ethnologue – Embu language (ebu)",
+      "Kenya National Bureau of Statistics",
+      "CIA World Factbook – Kenya",
+      "Recensements nationaux"
+    ]
+  }
+}

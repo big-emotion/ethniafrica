@@ -6,27 +6,126 @@
   "content": {
     "appellations": {
       "mainName": "Touareg",
-      "selfAppellation": "Kel Tamasheq / Imajaghan",
+      "selfAppellation": "Kel Tamasheq / Imajaghan / Imuhagh",
+      "exonyms": [
+        "Tuareg",
+        "Twareg",
+        "Touareg",
+        "Kel Tagelmust",
+        "Veiled people",
+        "Blue people",
+        "Mulatthamin"
+      ],
+      "originOfExonyms": "Le terme Touareg est d'origine arabe et a ete utilise par les geographes arabes medievaux. Ibn Hawkal et Al-Bakri les designaient comme Mulatthamin (les voiles) en reference au tagelmust (voile indigo couvrant le visage des hommes). L'appellation Blue People vient de la teinture indigo du voile qui decolorait la peau. Les Touareg se designent eux-memes comme Kel Tamasheq (locuteurs du tamasheq) ou Imajaghan/Imuhagh (les fiers et libres).",
+      "whyProblematic": "Le terme Touareg a ete applique de maniere uniforme a des groupes confedres distincts qui n'avaient pas necessairement conscience d'une identite commune avant la colonisation. Les etats post-coloniaux ont souvent criminalise les revendications identitaires touaregues. Le terme Tamacheq ou Tamajaq est prefere par certains linguistes pour designer la langue plutot que le peuple.",
+      "contemporaryUsage": "Touareg est le terme officiel utilise en francais et dans les etats du Sahel. Les locuteurs se designent selon leur confederation d'appartenance (Kel Ahaggar, Kel Adagh, etc.) plutot que par un nom commun. Depuis les annees 1990, une identite touaregue transnationale s'affirme dans le contexte des rebellions au Mali et au Niger et du mouvement berbere.",
       "linguisticFamily": "FLG_BERBERE",
-      "ethnoLinguisticGroup": "Tamasheq",
-      "historicalRegion": "Sahara central (Ahaggar, Azawagh, Air, Adrar, Adagh)",
+      "ethnoLinguisticGroup": "Tamasheq (berbere saharien meridional)",
+      "historicalRegion": "Sahara central et occidental : Ahaggar (Algerie), Adrar des Ifoghas (Mali), Massif de l'Air (Niger), Azawagh, Adrar, Fezzan (Libye)",
       "currentCountries": ["MLI", "NER", "DZA", "LBY", "BFA"]
     },
-    "ethnicities": ["Kel Ahaggar", "Kel Adagh", "Iwellemmedan"],
-    "origins": {},
-    "organization": {},
+    "ethnicities": [
+      "Kel Ahaggar (Kel Hoggar) — confederation de l'Ahaggar (Algerie meridionale), centre a Tamanrasset",
+      "Kel Ajjer (Azjar) — confederation de l'Ajjer, centree sur l'oasis de Ghat (Libye/Algerie)",
+      "Kel Adagh (Kel Assuk) — confederation de l'Adrar des Ifoghas, regions de Kidal et Tombouctou (Mali)",
+      "Iwillimmidan Kel Ataram (Iwellemmedan occidentaux) — zones de Menaka et Azawagh (Mali occidental)",
+      "Iwillimmidan Kel Denneg (Iwellemmedan orientaux) — region de Tchin-Tabaraden et Azawagh (Niger)",
+      "Kel Ayr (Kel Air) — Massif de l'Air, Agadez, In Gal, Timia (Niger)",
+      "Kel Gres — region de Zinder et Tanut (Niger meridional, nord du Nigeria)",
+      "Kel Owey — Massif de l'Air, avec migrations saisonnieres vers le sud (Niger)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Touareg descendent des populations berberes autochtones d'Afrique du Nord. Leur ascendance est une mosaique de populations nord-africaines locales (Taforalt), proche-orientales, europeennes (premiers agriculteurs europeens) et sub-sahariennes, anterieure a la conquete musulmane du Maghreb. Certains chercheurs lient leur origine a la chute des Garamantes, qui habitaient le Fezzan (Libye) du 1er millenaire av. J.-C. au 5e siecle apres J.-C. La tradition orale touaregue associe leurs origines a la reine fondatrice Tin Hinan, dont la tombe vieille de 1 500 ans a ete decouverte a Abalessa dans les monts Hoggar, portant une inscription en tifinagh.",
+      "formationPeriod": "Les Touareg se forment en tant que groupe distinct lors de migrations vers le sud depuis la region du Tafilalt (Maroc) a partir des 4e-5e siecles apres J.-C., selon la tradition de Tin Hinan. Les invasions arabes du 7e siecle et les migrations des Banu Hilal et Banu Sulaym au 11e siecle accentuent leur retrait vers le Sahara central. Les confederations actuelles se structurent au cours du Moyen Age et sont bien documentees par les geographes arabes a partir du 10e siecle (Ibn Hawkal, El-Bekri, Ibn Battutah).",
+      "migrationRoutes": [
+        "Migration fondatrice depuis le Tafilalt (Maroc actuel) vers le Sahara central (4e-5e siecles)",
+        "Expansion vers l'Ahaggar, l'Azawagh et l'Air sous la pression des conquetes arabes (7e-11e siecles)",
+        "Migrations des Kel Denneg et Kel Gress vers le Tchad oriental (Abech) et le nord du Darfour (Soudan) aux epoques modernes"
+      ],
+      "historicalSettlementZones": [
+        "Monts Hoggar / Ahaggar (Algerie meridionale)",
+        "Adrar des Ifoghas (Mali septentrional, region de Kidal)",
+        "Massif de l'Air (Niger central, region d'Agadez)",
+        "Azawagh (Mali et Niger, depression du Sahel)",
+        "Fezzan et Ajjer (Libye meridionale)",
+        "Nord du Burkina Faso (Oudalan)",
+        "Enclave Kinnin (nord du Darfour soudanais, region de Mellit)"
+      ],
+      "unificationsOrDivisions": "Les Touareg ne forment pas un Etat unifie mais sept grandes confederations (Drum Groups) chacune gouvernee par un amenokal (chef supreme) assiste d'un conseil d'anciens. Chaque confederation (kel) est composee de clans (tawshet) independants. La societe est stratifiee en nobles (imuhagh), vassaux (imghad), clercs (ineslemen), artisans (inadan), agriculteurs sedentaires (izeggaghan) et anciens esclaves (ikelan/bellah). La colonisation francaise a fragmente le territoire touareg entre cinq Etats independants apres 1960.",
+      "externalInfluences": "Contact avec l'islam sunnite malekite a partir du 7e siecle (influence Umayyade) ; approfondissement par l'erudit marocain Al-Maghili au 16e siecle. Controle des routes trans-sahariennes (or, sel, esclaves). Resistance a la colonisation francaise (expedition Flatters 1881 ; bataille de Tit 1902). Independances nationales (1960) qui divisent le territoire touareg entre Niger, Mali, Algerie, Libye et Burkina Faso. Rebellions au Mali (1963, 1990) et au Niger (1990, 2007). Conflit malien de 2012 (MNLA) et presence de groupes jihadistes.",
+      "majorHistoricalEvents": "Au 14e siecle, les Touareg Imasheghen fondent Tombouctou, ville carrefour du commerce saharien. En 1449, la maison touaregue fonde le Sultanat de l'Air (Sultanat d'Agadez). En 1881, la mission Flatters est aneantie par les Kel Ahaggar. En 1902, la bataille de Tit oppose les Kel Ahaggar aux troupes francaises. Des traites coloniaux sont imposes au Mali (1905) et au Niger (1917). Les rebellions touaregues post-coloniales eclatent en 1963 (Mali), 1990 (Mali et Niger), 2007 (Niger, MNJ pour les ressources d'uranium). En mars 2021, une attaque d'IS-GS a Tillia (Niger) tue 141 villageois touaregs."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chaque confederation touaregue est gouvernee par un amenokal (chef supreme), elu par les imegharan (anciens de clans nobles) et charge de lever les tributs en temps de guerre et de representer la confederation dans les negociations exterieures. Les affaires interclans sont regees par un conseil d'elders. L'autorite est exercee de facon consultative, avec une forte autonomie des clans (tawshet). La succession de l'amenokal suit une logique matrilineaire (le fils de la soeur herite du titre).",
+      "clanOrganization": "La societe touaregue est divisee en tawseten (clans, sing. tawshet), groupes de familles dirigees par un amghar (chef hereditaire par la matrilinee). Plusieurs tawseten forment une confederation (kel). La stratification sociale est rigide : les nobles (imuhagh/imajaghan) exercent le pouvoir politique et militaire ; les vassaux (imghad) s'occupent de l'elevage et paient un tribut (tiwse) ; les clercs (ineslemen/marabouts) sont des juges et imams ; les artisans (inadan) forment des castes endogames de forgerons, joailiers et travailleurs du cuir ; les anciens esclaves (ikelan/bellah) dependent encore dans certaines zones des familles nobles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La societe touaregue est matrilineaire pour la transmission du titre politique (amenokal, amghar) — vestige pre-islamique — mais patrilineaire pour le droit islamique (heritages, mariage, polygamie). Les femmes touaregues jouent un role central dans la transmission culturelle : la langue, l'ecriture tifinagh, la musique anzad et la poesie sont transmises par les femmes. Les lignages nobles maintiennent un droit exclusif sur les armes et les chameaux.",
+      "religiousAuthority": "Les ineslemen (marabouts touaregs) constituent une caste clerique endogame, chargee des fonctions de juge (qadi), d'imam et d'enseignant. L'influence soufi (tariqa) est presente mais l'islam touareg est generalement qualifie de laxiste en raison du syncretsime avec les croyances pre-islamiques (culte des ancetres, veneration des esprits feminins de la fertilite et de la terre). Al-Maghili, erudit marocain, joua un role dans la diffusion d'un islam plus orthodoxe au 16e siecle."
+    },
     "languages": {
-      "mainLanguage": "Tamasheq"
+      "mainLanguage": "Tamasheq / Tamahaq / Tamajeq (langue berbere saharienne)",
+      "isoCodes": ["tmh", "taq", "ttq"],
+      "dialects": [
+        "Tamahaq (Tahaggart) — parle par les Kel Ahaggar et Kel Ajjer (Algerie, Libye occidentale, nord du Niger) ; environ 77 000 locuteurs ; ISO tmh",
+        "Tamasheq — parle par les Kel Adrar (Adrar des Ifoghas, Mali) ; environ 500 000 locuteurs ; ISO taq",
+        "Tamajeq (Tayart) — parle par les Kel Ayr (Massif de l'Air, Niger) ; environ 250 000 locuteurs",
+        "Tawellemmet (Tawallammat) — parle par les Iwellemmeden (Mali et Niger) ; environ 800 000 locuteurs ; ISO ttq"
+      ],
+      "vehicularRole": "Les langues touaregues forment un ensemble de varietes mutuellement comprehensibles, regroupees sous le macrocode ISO tmh. Elles s'ecrivent en tifinagh (ecriture libyco-berbere ancestrale), mais aussi en arabe et en latin selon les pays. Le tifinagh est traditionellement transmis par les femmes touaregues. Le tamasheq est langue nationale au Mali et au Niger. L'arabe est utilise comme langue vehiculaire inter-communautaire. Le total de locuteurs est estime entre 1,2 et 2 millions selon les sources."
     },
     "culture": {
-      "source_0": "Alfabet tifinagh ; poésie assak.",
-      "source_1": "Rituels du thé ; musiques tende et imzad.",
-      "source_2": "Place centrale des femmes dans la transmission culturelle."
+      "majorRites": "Le port du voile (tagelmust) par les hommes est le rite de passage majeur vers l'age adulte : a la puberté, le jeune homme touareg commence a se voiler le visage, geste qui le protege des mauvais esprits et du sable. Ce voile n'est jamais retire en public et est abaisse en presence de beaux-peres et d'etrangers respectes. La construction de la tente de mariage par la femme (bien de la femme, metaphore de l'union) est un rite matrimonial essentiel. Les ceremonies pre-islamiques incluent le culte des esprits ancestraux feminins (fertilite, terre) et la veneration des morts. L'imzad (violon monocorde joue par les femmes) accompagne les veillees rituelles nocturnes. L'hospitalite (tafaghost) est une obligation sociale et culturelle fondamentale.",
+      "symbols": "Le tagelmust (voile indigo) est le symbole identitaire le plus immediatement reconnaissable des Touareg hommes. La Croix d'Agadez (tanaghilt ou zakkat), pendentif en argent grave de motifs geometriques, est le bijou symbolique des Kel Ayr et est devenu un embleme touareg international. L'ecriture tifinagh (alphabet libyco-berbere ancestral) est un symbole d'identite culturelle et de memoire collective. La tente (ahaket) en cuir de chevre et bois est le symbole de la vie nomade. La couleur indigo teintant peau et vetements a donne le surnom Blue People.",
+      "artsAndMusic": "Les Touareg ont une riche tradition de bijouterie : les inadan (artisans forgerons-joailiers) fabriquent au procede de la cire perdue et par martelage des colliers (takaza), boucles d'oreilles (tizabaten), bracelets (Eweki, Tcherow) et amulettes (grigri protecteurs). L'art culinaire nomade comprend le pain sous la cendre (tagella), la bouillie de mil, les produits laitiers de chamelle et de chevre, et le the a la menthe (atay). La musique traditionnelle comprend l'anzad (violon monocorde joue par les femmes lors de veillees nocturnes asak), le tende (tambour en peau de chevre joue lors des courses de chameaux et ceremonies), les poemes chantes (tisiway) et le cercle des hommes a dos de chameau autour des femmes au tende (tasikisikit). La musique ishumar (teshumara) est un genre moderne ne des rebellions touaregues, melangeant guitares electriques et musique traditionnelle, represente par des artistes comme Tinariwen, Bombino, Mdou Moctar et Les Filles de Illighadad.",
+      "spiritualities": "Les Touareg sont majoritairement musulmans sunnites malekites, mais leur pratique de l'islam est qualifiee de syncrethique : ils conservent des croyances et pratiques pre-islamiques telles que la veneration des esprits ancestraux feminins (lies a la fertilite, a la terre et a la menstruation), le culte des morts, une cosmologie integrant des esprits de la nature, et des pratiques de divination. L'astronomie traditionnelle (Venus : Azzag Willi, Pleiades : Shet Ahad) guide les cycles pastoraux. Les ineslemen (marabouts) jouent le role de guides spirituels. Les tombes megalithiques pre-islamiques (jedar avec inscriptions tifinagh) temoignent d'une spiritualite ancestrale berbere."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Touareg controlaient les grandes routes commerciales trans-sahariennes (or, sel, esclaves) depuis le Moyen Age. Vers le 12e siecle, les Imasheghen touaregs fondent et protegent Tombouctou (Mali), centre nevralgique du commerce saharien. En 1449, la maison touaregue fonde le Sultanat de l'Air (Sultanat d'Agadez, Niger), qui perdurera plusieurs siecles. L'amenokal de chaque confederation exercait une souverainete pleine sur son territoire et prelevait des tributs sur les caravanes traversant son territoire.",
+      "relationsWithNeighbors": "Les Touareg entretinrent des relations complexes avec les peuples voisins : razzias (rezzous) contre les nomades Chaamba, Toubou, Haoussa et Peul avant la colonisation ; commerce et tributs avec les sedentaires du Sahel ; alliances et conflits avec les sultanats haoussa, les empires du Mali et du Songhai. La relation avec les Bella (Ikelan, anciens esclaves) reste une question sociale sensible dans les societes touaregues contemporaines.",
+      "conflictsOrAlliances": "Les Touareg resisterent a la colonisation francaise : aneantissement de la mission Flatters (1881), bataille de Tit contre les Kel Ahaggar (1902), traites imposes au Mali (1905) et au Niger (1917). Apres les independances, de multiples rebellions eclatent : 1963 (Mali), 1990-1995 (Mali et Niger, menees par des leaders comme Mano Dayak), 2007 (Niger, MNJ), 2012 (Mali, MNLA). La fragmentation du territoire touareg entre cinq Etats est la source de conflits politiques recurrents.",
+      "diaspora": "Les migrations touaregues dues aux secheresses sahariennes des annees 1970-1980 et aux rebellions ont cree des diasporas dans les villes sahariennes (Agadez, Kidal, Gao, Tamanrasset) et dans les capitales africaines. Des artistes touaregs (Tinariwen, Bombino) ont constitue une diaspora culturelle en Europe et aux Etats-Unis depuis les annees 2000. De petites communautes touaregues existent en Libye, au Ghana, au Tchad et au nord du Soudan (enclave Kinnin, Darfour)."
+    },
     "demography": {
-      "referenceYear": 2025
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN Tuareg people (plus de 2,5 millions combines) ; Ethnologue macrolanguage tmh (environ 1,2 million de locuteurs Ethnologue, estimation conservative) ; Joshua Project et estimations CIA World Factbook 2024. Les chiffres varient selon les sources : Niger seul compte environ 2 millions de Touaregs (11% de la population). Estimation totale 2025 : 3 millions incluant Mali, Niger, Algerie, Libye et Burkina Faso.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 2000000,
+          "note": "Plus grande population touaregue, environ 11% de la population nationale, majoritaires dans la region d'Agadez et l'Azawagh"
+        },
+        {
+          "country": "MLI",
+          "population": 500000,
+          "note": "Principalement dans la region de Kidal (Adrar des Ifoghas) et Tombouctou ; environ 3% de la population nationale"
+        },
+        {
+          "country": "DZA",
+          "population": 300000,
+          "note": "Monts Hoggar et Ajjer, wilaya de Tamanrasset et Illizi"
+        },
+        {
+          "country": "LBY",
+          "population": 150000,
+          "note": "Fezzan et region d'Ajjer (Ghat), migrations post-2011"
+        },
+        {
+          "country": "BFA",
+          "population": 50000,
+          "note": "Region du Sahel (Oudalan), frontieres avec le Niger et le Mali"
+        }
+      ]
     },
-    "sources": ["Ethnologue (tmh)", "Tuareg Studies", "UNESCO Sahara Heritage"]
+    "sources": [
+      "Wikipedia EN — Tuareg people. https://en.wikipedia.org/wiki/Tuareg_people",
+      "Wikipedia EN — Tuareg languages. https://en.wikipedia.org/wiki/Tuareg_languages",
+      "Ethnologue — Tuareg macrolanguage (tmh). https://www.ethnologue.com/language/tmh/",
+      "UNESCO — Patrimoine culturel immatériel : musique Ishumar touareg. https://ich.unesco.org/",
+      "Claudot-Hawad, Helene. Touaregs : Voix solitaires sous l'horizon confisque. Paris: Editions de l'EHESS, 1996.",
+      "Prasse, Karl-Gottfried. The Tuareg: The Blue People. Copenhagen: Museum Tusculanum Press, 1995.",
+      "Imuhar / Tamahaq Dictionary. http://imuhar.eu/site/en_dictionary/tamahaq-dictionary-with-grammar.php",
+      "Joshua Project — Tuareg people groups. https://joshuaproject.net/"
+    ]
   }
 }

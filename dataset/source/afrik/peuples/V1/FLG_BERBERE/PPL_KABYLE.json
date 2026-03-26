@@ -1,0 +1,135 @@
+{
+  "id": "PPL_KABYLE",
+  "nameMain": "Kabyle",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["DZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kabyle",
+      "selfAppellation": "",
+      "originOfExonyms": "",
+      "whyProblematic": "",
+      "contemporaryUsage": "",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbère septentrional (kabyle)",
+      "historicalRegion": "Kabylie (Tamurt n Leqvayel) — massifs montagneux du Djurdjura et de Babor (Atlas tellien)",
+      "currentCountries": ["DZA"]
+    },
+    "ethnicities": [
+      "confédération de la Grande Kabylie, région de Tizi Ouzou",
+      "confédération puissante de la Grande Kabylie, bassin de la Soummam",
+      "confédération de la vallée de la Soummam",
+      "confédération de la Grande Kabylie",
+      "confédération du versant sud du Djurdjura",
+      "Grande Kabylie, région d'Akbou",
+      "confédération de Petite Kabylie",
+      "confédération de Petite Kabylie, littoral de Jijel",
+      "Petite Kabylie",
+      "habitants historiques du massif du Djurdjura",
+      "confédération de Petite Kabylie, région de Collo Note : Les Kabyles sont organisés en confédérations tribales (archs) portant le préfixe « At » (ou « Aït »), signifiant « les gens de » ou « fils de », suivi du nom d'un ancêtre éponyme ou d'un lieu."
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Kabyle (taqbaylit / ⵜⴰⵇⴱⴰⵢⵍⵉⵜ en tifinagh)",
+      "vehicularRole": ""
+    },
+    "culture": {
+      "divinitiesAndSpirits": {
+        "supremeDeity": {
+          "endonym": "Rebbi / Yakuc (Dieu en kabyle)",
+          "attributes": "Dieu unique, créateur, tout-puissant (conception islamique adoptée après l'islamisation). Les croyances pré-islamiques concernant une divinité suprême berbère sont peu documentées."
+        },
+        "intermediateDivinities": [{}],
+        "natureSpirits": {
+          "earthSpirits": "Larbâa n leǧnun (les sept djinns) : esprits invisibles pouvant causer maladies et malheurs. Croyance en des esprits gardiens de lieux (grottes, ruines).",
+          "otherSpirits": "Thislith (ogresse mythique des contes), esprits malveillants nocturnes."
+        },
+        "ancestors": {
+          "roleOfAncestors": "Les ancêtres (lejdud) sont respectés et invoqués pour leur bénédiction et protection. Ils veillent sur les vivants depuis l'au-delà."
+        }
+      },
+      "cosmology": {
+        "worldStructure": {},
+        "spiritualConcepts": {}
+      },
+      "personAndNature": {
+        "bodyAndSpirit": {
+          "physicalBody": "Enveloppe matérielle (lǧesed), temporaire, vouée à la dégradation.",
+          "spiritualEssence": "Rruh (âme), part divine, immortelle, retournant à Dieu."
+        }
+      },
+      "ritesAndPractices": {
+        "initiationRites": {
+          "maleInitiation": "Circoncision (laεadda, tahara), rituel de passage vers l'âge adulte, généralement entre 5 et 10 ans. Fête familiale, dons, repas collectif.",
+          "femaleInitiation": "Pas de rite formel comparable, mais puberté marquée par port du foulard et participation aux tâches féminines. Mariage comme rite de passage majeur."
+        },
+        "funeraryRites": {
+          "burial": "Inhumation rapide (dans les 24h) dans cimetière (lmaqbara), tête orientée vers La Mecque. Prière funéraire (ṣalat lǧenaza) à la mosquée ou au cimetière. Cortège funèbre (ljnaza) accompagne le défunt.",
+          "postFuneraryCeremonies": "Condoléances (taεzit) pendant trois jours. Repas collectifs offerts aux visiteurs. Commémoration au 3e, 7e et 40e jour, puis anniversaire annuel."
+        },
+        "agriculturalRites": {
+          "landBlessing": "Avant les semailles, prières et invocations pour demander la baraka. Visite aux tombeaux de saints pour solliciter protection des récoltes."
+        },
+        "purificationRites": {
+          "ritualBaths": "Lγusal (ablution majeure) après souillure (menstrues, rapports sexuels, accouchement). Sources thermales (hammams naturels) réputées purificatrices.",
+          "fumigation": "Brûler du benjoin (ljawi), rue (fiǧel), ou encens pour purifier maison, protéger contre mauvais œil (tiṭ).",
+          "exorcism": "Ruqya (exorcisme coranique) par taleb ou imam pour chasser djinns possesseurs. Sacrifices expiatoires (asfel)."
+        },
+        "divination": {}
+      },
+      "symbolsAndArts": {
+        "artsAndMusic": {
+          "sculpture": "Poterie traditionnelle féminine (ikufan, plats, jarres décorées), peu de sculpture figurative (islam).",
+          "masks": "Masques de fêtes (Yennayer, carnavals villageois), personnages comiques ou effrayants (Aïssaoua).",
+          "musicalInstruments": "- Bendir (tambourin), derbouka (percussion) - Gasba (flûte en roseau) - Mandole kabyle (luth à long manche) - Guitare moderne (depuis 20e siècle)",
+          "dances": "Danse collective en cercle (ahellil, aḥidus), danses de mariage (lεalwat), danse du foulard (tbal).",
+          "songs": "- Isefra (poésie chantée), tradition des troubadours (imusnawen) - Ahellil (chants polyphoniques collectifs) - Chanson kabyle moderne (musique engagée, identitaire)",
+          "weaving": "Tapis et couvertures (aḥenbel, thilħawin), tissés par femmes, motifs géométriques colorés, laine locale."
+        },
+        "gastronomy": {}
+      },
+      "contemporarySpirituality": {
+        "christianity": {},
+        "islam": {
+          "specificPractices": "- Islam sunnite malékite (école juridique dominante) - Forte influence du soufisme (confréries Rahmaniyya, Qadriyya) - Culte des saints (maraboutisme, ziara) - Célébrations populaires (mawlid, Achoura)"
+        },
+        "traditionalReligions": {},
+        "religiousSyncretism": {}
+      }
+    },
+    "historicalRole": {},
+    "demography": {
+      "totalPopulation": 10000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Ethnologue (SIL International, 2024), CIA World Factbook, ONS Algérie (projections 2025), UNFPA Algérie, travaux de Salem Chaker (INALCO), peuple_demographie_globale.csv Note : Les chiffres exacts sont difficiles à obtenir car l'Algérie ne distingue pas officiellement les groupes ethnolinguistiques dans ses recensements. Les estimations reposent sur le nombre de locuteurs du kabyle."
+    },
+    "sources": [
+      "L'Harmattan, 1995.",
+      "Études de syntaxe et de diachronie*. Paris : Peeters Publishers, 1995.",
+      "Mémoire et identité*. Paris : Éditions Errance, 1987.",
+      "Édisud / CNRS, 1984-2010. https://journals.openedition.org/encyclopedieberbere/",
+      "Des Kabyles, des ethnologues et la guerre d'Algérie*. Paris : La Découverte, 1997.",
+      "Éditions La Découverte, 2005.",
+      "PUF, 1958 (rééditions).",
+      "Hanoteau, Adolphe & Letourneux, Aristide. *La Kabylie et les coutumes kabyles* (3 volumes). Paris, 1872-1873. BNF Gallica / Archive.org.",
+      "SELAF, 1982.",
+      "ENAG Éditions, 2003.",
+      "la guerre de 1914-1918 et le premier quart du XXe siècle*. Genève : Droz, 1981.",
+      "PUF, 1968.",
+      "Jeune Afrique, 1980.",
+      "la mémoire de la guerre d'Algérie*. Paris : La Découverte, 1991.",
+      "//www.ethnologue.com/language/kab (consulté en 2024).",
+      "//glottolog.org/resource/languoid/id/kaby1243",
+      "//en.unesco.org/",
+      "//www.cia.gov/the-world-factbook/countries/algeria/",
+      "//www.ons.dz/",
+      "//algeria.unfpa.org/",
+      "The Peoples of Africa*. Oxford : Wiley-Blackwell, 1997.",
+      "Weidenfeld & Nicolson, 1969.",
+      "Algérie 1954-1962*. Paris : Séguier, 2002.",
+      "La Découverte / Awal, 1989.",
+      "des illusions de l'émigré aux souffrances de l'immigré*. Paris : Seuil, 1999."
+    ]
+  }
+}

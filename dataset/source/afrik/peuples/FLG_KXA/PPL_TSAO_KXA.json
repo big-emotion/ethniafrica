@@ -6,58 +6,87 @@
   "content": {
     "appellations": {
       "mainName": "Tshao Kx'a",
-      "selfAppellation": "Tshao (variante)",
+      "selfAppellation": "Tshao",
+      "exonyms": ["San", "Bushmen", "Basarwa"],
+      "originOfExonyms": "Le terme San est utilise par les voisins khoekhoegowab pour designer les chasseurs-cueilleurs. Bushmen, d'origine coloniale neerlandaise et britannique, est aujourd'hui souvent rejete comme pejoratif. Basarwa est le terme officiel utilise au Botswana.",
+      "whyProblematic": "Le terme Bushmen est historiquement charge de connotations coloniales et deshumanisantes. San est prefere dans les contextes academiques et militants, mais certaines communautes le rejettent egalement. Basarwa reste le terme officiel botswanais.",
+      "contemporaryUsage": "La communaute se designe elle-meme comme Tshao. Les termes San et Basarwa sont utilises dans les contextes administratifs et officiels au Botswana.",
       "linguisticFamily": "FLG_KXA",
-      "ethnoLinguisticGroup": "Kx'a (Juu)",
-      "historicalRegion": "Désert du Kalahari (Botswana)",
+      "ethnoLinguisticGroup": "Kx'a (branche amkoe/hoan)",
+      "historicalRegion": "Desert du Kalahari central et oriental (Botswana)",
       "currentCountries": ["BWA"]
     },
-    "ethnicities": ["Tshao du Nord", "Tshao du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Tshao du nord du Kalahari central",
+      "Tshao du sud du Kalahari",
+      "Sous-groupes locaux lies aux territoires de chasse ancestraux (n!ore)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Tshao sont un peuple ancien du désert du Kalahari au Botswana. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage.",
-      "externalInfluences": "Contacts limités avec les peuples bantous (Tswana). Influence croissante de la modernisation et de la sédentarisation forcée."
+      "ancientOrigins": "Les Tshao font partie des populations San du Kalahari, parmi les groupes humains les plus anciens du monde. Des etudes genomiques datent leur divergence des autres lignees humaines il y a plus de 100 000 ans. Ils habitent le Kalahari depuis des temps immemoriaux, bien avant les migrations bantou (vers 300-500 ap. J.-C.) et khoekhoegowab dans la region.",
+      "formationPeriod": "Presence documentee dans le Kalahari botswanais depuis plusieurs millenaires. La specificite Tshao au sein du groupe Kx'a s'est affirmee par l'occupation de territoires de chasse distincts (n!ore) dans le Kalahari central.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari, sans migration fondatrice documentee",
+        "Repli progressif vers les zones desert et semi-desert face aux pressions bantoues et khoekhoegowab dans les plaines et savanes"
+      ],
+      "historicalSettlementZones": [
+        "Kalahari central (Botswana)",
+        "Ngamiland (nord-ouest du Botswana)",
+        "Zones periurbaines suite aux deplacements forces des decades 1980-2000"
+      ],
+      "unificationsOrDivisions": "Organisation traditionnelle en bandes de chasseurs-cueilleurs occupant des territoires de chasse hereditaires (n!ore). Chaque bande constitue une unite sociale et economique independante. Pas de structure politique supralocale.",
+      "externalInfluences": "Contacts historiques avec les peuples bantous tswana et les khoekhoegowab. Influence de la mission chretienne au XXe siecle. Deplacements forces par le gouvernement botswanais hors de la Reserve du Kalahari Central (CKGR) dans les annees 1990-2000, condamnes par la Haute Cour du Botswana en 2006. Soutien des ONG IWGIA et Survival International.",
+      "majorHistoricalEvents": "Deplacements forces hors de la Reserve du Kalahari Central (1997-2002). Arret de la Haute Cour du Botswana (2006) reconnaissant le droit des San a occuper leurs terres ancestrales. Luttes continues pour les droits fonciers et l'acces a l'eau dans la reserve."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation egalitaire sans hierarchie formelle ni chef permanent. Decisions prises par consensus au sein du groupe. Autorite morale conferee aux anciens et aux guerisseurs par leur experience et leur reputation. Le chef nominal (si present) assume des fonctions de coordination sans pouvoir coercitif.",
+      "clanOrganization": "Structure basee sur les groupes de parenté et les liens de reciprocite. Organisation en bandes (groupes locaux) de 10 a 30 personnes liees par la parente bilaterale et le mariage. Mobilite saisonniere au sein du territoire de chasse hereditaire (n!ore).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux : droits sur le territoire (n!ore) et acces aux ressources transmis par les deux lignees parentales. L'appartenance a un groupe local determine les droits de chasse et de cueillette sur un territoire specifique.",
+      "religiousAuthority": "Autorité centrale des guerisseurs (n!om-k''au) qui maitrisent le n!om (energie spirituelle). Pendant les ceremonies de transe (trance dance), ils entrent en contact avec les esprits ancestraux et le monde des esprits pour guerir les malades et proteger la communaute."
     },
     "languages": {
-      "mainLanguage": "Tshao (variété Juu)",
-      "vehicularRole": "Le tshao est parlé par la majorité des Tshao. Le tswana et l'anglais sont également utilisés."
+      "mainLanguage": "Tshao (variete du Kx'a, proche du dialecte amkoe)",
+      "isoCodes": ["huc"],
+      "dialects": [
+        "Naqriaxe (variete orientale du amkoe)",
+        "Hoan (variete centrale)",
+        "Sasi (variete meridionale)"
+      ],
+      "vehicularRole": "Le tshao est la langue premiere de la communaute. Le tswana est utilise comme langue vehiculaire avec les voisins bantous et dans les rapports avec l'administration botswanaise. L'anglais est la langue d'enseignement officielle. La langue est classee comme en grave danger d'extinction par l'UNESCO, avec moins de 200 a 500 locuteurs."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+      "majorRites": "Ceremonies de guerison par transe (trance dance) : rite central de la vie spirituelle et sociale. Les guerisseurs entrent en etat de transe au rythme des chants des femmes et du claquement des mains pour mobiliser le n!om (energie spirituelle) et chasser les esprits malveillants. Rites de passage : initiation feminine a la puberte (marquee par une periode de seclusion et d'enseignement), rites de mariage, rites funebres. Ceremonies de chasse : purification avant la chasse, partage rituel de la viande selon des regles strictes de reciprocite sociale. Rites de premiers-fruits : offrandes symboliques lors de la premiere recolte de plantes sauvages.",
+      "symbols": "Art rupestre du Kalahari : peintures et gravures representant des animaux (eland, rhinoceros, girafe) et des scenes de chasse et de transe, datant de plusieurs millénaires. L'eland est l'animal totémique et symbolique par excellence, associe au n!om et au monde des esprits. Motifs geometriques (entoptiques) dans l'art rupestre, lies aux hallucinations de la transe.",
+      "artsAndMusic": "Art rupestre parmi les plus anciens du monde : peintures polychromes representant scenes de chasse, figures anthropomorphes en transe et animaux sacres. Musique vocale : chants polyphoniques en echo (notamment le style !gom) produits par les femmes lors des ceremonies de transe, reconnus par les ethnomusicologues comme l'une des formes musicales les plus complexes au monde. Instruments : arc musical (instrument soliste a resonance buccale), percussions corporelles (claquements de mains, frappes sur les cuisses). Contes et recits oraux transmettant les mythes d'origine, les techniques de survie et les relations avec les esprits. Bijoux et ornements en coquilles d'oeuf d'autruche, utilisés comme monnaie d'echange et parures.",
+      "spiritualities": "Croyances centrées sur le n!om, energie spirituelle cosmique presente dans les eres, les animaux et les guerisseurs. Le grand dieu createur (Kaang ou //Gauwa selon les dialectes) est bienveillant et distant. Un second etre, plus capricieux, envoie maladie et malheur. Les guerisseurs (n!om-k''au, litteralement ceux qui possedent le n!om) sont les intermediaires entre le monde des vivants et le monde des esprits. Influence croissante du christianisme due au contact avec les missions et les eglises independantes africaines au Botswana."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises."
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique. Structure sociale egalitaire de chasseurs-cueilleurs sans chef hereditaire ni institution politique permanente au-dela du groupe local.",
+      "relationsWithNeighbors": "Relations complexes et ambivalentes avec les voisins bantous tswana : echanges commerciaux (miel, peaux, produits de la foret contre outils metalliques et grains), mais aussi domination et servitude dans certaines zones. Relations avec les khoekhoegowab (pasteurs) dans le nord-ouest du Botswana. Les San ont souvent servi comme guides, traceurs et travailleurs chez les populations voisines.",
+      "conflictsOrAlliances": "Conflits recurrents avec les populations bantous pour l'acces aux terres et aux ressources en eau. Deplacements forces par le gouvernement botswanais lors des campagnes de relocalisation hors de la CKGR (1997-2002) : pres de 2 000 San furent expulses de leurs terres ancestrales. Mobilisation internationale avec le soutien de Survival International et IWGIA. Premiere victoire juridique : arret de la Haute Cour du Botswana du 13 decembre 2006, reconnaissant illegalite de l'expulsion et droit de retour. Deuxieme arret (2011) reconnaissant le droit des San d'acceder a leur puits ancestral dans la reserve.",
+      "diaspora": "Communautes deplacees dans les camps de reinstallation gouvernementaux de New Xade et Kaudwane, hors de la CKGR. Presence dans les zones peri-urbaines des villes botswanaises (Gaborone, Maun, Francistown). Certains membres de la communaute ont pu retourner dans la CKGR depuis l'arret de 2006."
     },
     "demography": {
-      "totalPopulation": 500,
+      "totalPopulation": 400,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements botswanais, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur les donnees de SIL Ethnologue (huc, moins de 200-500 locuteurs), IWGIA Indigenous World 2024, Survival International et etudes anthropologiques sur les San du Kalahari. La population totale des San (Basarwa) du Botswana est estimee a 55 000-60 000 personnes selon le recensement botswanais de 2011, dont le groupe Tshao Kx'a constitue une fraction tres mineure correspondant aux locuteurs du dialecte amkoe (huc). Le recensement botswanais ne distingue pas les sous-groupes San, ce qui rend les estimations precises difficiles.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 400,
+          "note": "Principalement dans la Reserve du Kalahari Central (CKGR) et les camps de reinstallation de New Xade et Kaudwane"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tshao language",
-      "UNESCO – Atlas des langues en danger",
-      "IWGIA – Indigenous Peoples in Africa",
-      "Études anthropologiques sur les peuples San du Kalahari"
+      "Wikipedia EN — Kx'a languages. https://en.wikipedia.org/wiki/Kx%CA%BCa_languages",
+      "SIL Ethnologue — amkoe / huc language. https://www.ethnologue.com/language/huc/",
+      "IWGIA — Indigenous World 2024, Botswana chapter. https://www.iwgia.org/en/botswana",
+      "Survival International — Bushmen of the Kalahari. https://www.survivalinternational.org/tribes/bushmen",
+      "Wikipedia EN — Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Pmc.ncbi — The genomic prehistory of peoples speaking Khoisan languages (2021). https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/",
+      "Cultural Survival Quarterly — Land, Language, and Leadership (2010). https://www.culturalsurvival.org/publications/cultural-survival-quarterly/land-language-and-leadership",
+      "UNESCO — Atlas des langues en danger du monde."
     ]
   }
 }

@@ -2,69 +2,109 @@
   "id": "PPL_SWAZI",
   "nameMain": "Swazi",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["SWZ"],
+  "currentCountries": ["SWZ", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Swazi",
-      "selfAppellation": "Swazi",
+      "selfAppellation": "Emaswati (pluriel) / Liswati (singulier)",
       "exonyms": [
-        "Swazi (terme utilisé par les Européens), parfois appelés « Swati » (terme alternatif)"
+        "Swazi (exonyme anglais issu du roi Mswati II)",
+        "Swati (forme alternative, officielle en siSwati)",
+        "bakaNgwane (les gens de Ngwane, appellation historique)"
       ],
+      "originOfExonyms": "Le nom Swazi est un exonyme dérivé du nom du roi Mswati II (r. 1839-1865), qui unifia et consolida la nation swazi. En siSwati, la forme correcte est Liswati (singulier) ou Emaswati (pluriel). L'appellation historique bakaNgwane (les gens de Ngwane) fait référence au chef Ngwane III, considéré comme le premier roi du royaume moderne d'Eswatini.",
+      "whyProblematic": "Le terme Swazi est un exonyme européanisé. Les locuteurs natifs utilisent Emaswati ou siSwati. La double appellation Swazi/Swati crée parfois une confusion dans les sources anglophones et francophones.",
+      "contemporaryUsage": "Swazi est couramment utilisé en anglais et français ; siSwati est la désignation officielle dans le royaume d'Eswatini (anciennement Swaziland, renommé en 2018 par le roi Mswati III). Le siSwati est langue officielle d'Eswatini et l'une des douze langues officielles de l'Afrique du Sud.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "SWZ, Afrique du Sud",
-      "currentCountries": ["SWZ"]
+      "ethnoLinguisticGroup": "Bantou Nguni (Zone S, groupe Tekela)",
+      "historicalRegion": "Royaume d'Eswatini (anciennement Swaziland) — hautes terres et moyennes terres d'Afrique australe ; province de Mpumalanga (Afrique du Sud)",
+      "currentCountries": ["SWZ", "ZAF"]
     },
     "ethnicities": [
-      "Swazi d'Eswatini",
-      "Swazi d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Bemdzabuko (les 17 clans originels qui accompagnèrent les rois Dlamini) : Dlamini (clan royal), Nhlabathi, Hlophe, Kunene, Mabuza, Madvonsela, Mamba, Matsebula, Mdluli, Motsa, Ngwenya, Shongwe, Sukati, Tsabedze, Tfwala, Mbokane, Zwane",
+      "Emakhandzambili (ceux qui étaient déjà sur la terre avant l'arrivée des Dlamini) : Gamedze, Fakudze, Ngcamphalala, Magagula",
+      "Emafikemuva (ceux qui rejoignirent le royaume plus tard, d'origine Sotho, Tsonga ou Nguni)",
+      "Emaswati d'Eswatini (environ 1,2 million de personnes)",
+      "Emaswati d'Afrique du Sud (province de Mpumalanga, Soweto)"
     ],
     "origins": {
-      "ancientOrigins": "Les Swazi sont originaires de la région d'Eswatini et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Ancien royaume du Swaziland (Eswatini).",
-      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume du Swaziland). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Swazi sont un peuple bantou de la branche Nguni dont les origines remontent à l'Afrique orientale. Les ancêtres des Swazi migrèrent depuis l'Afrique de l'Est vers le Mozambique, puis s'installèrent dans la région d'Eswatini au 15e siècle sous la conduite du chef Dlamini I, fondateur de la lignée royale qui porte encore son nom. Avant l'arrivée des Dlamini, la région était habitée par les San (Bochimans) et diverses populations Sotho et Nguni.",
+      "formationPeriod": "L'identité swazi distincte se consolida au cours des 17e et 18e siècles. Le chef Ngwane III (r. 1745-1780), petit-fils de Dlamini III, est considéré comme le premier roi du royaume moderne d'Eswatini ; il s'établit dans la région de Shiselweni, près de la rivière Pongola. Son successeur Sobhuza I (aussi connu sous le nom de Somhlolo, r. 1815-1840) étendit considérablement le territoire en intégrant de nombreux clans Sotho, Nguni et des groupes San, créant ainsi un État composite unifié. Le royaume prit le nom de Swaziland sous le roi Mswati II (r. 1839-1865), qui améliora l'organisation militaire et unit definiticement la nation.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est (origines proto-bantou) vers le Mozambique (côte de Delagoa Bay)",
+        "Mouvement vers le sud-ouest le long de la plaine côtière entre les montagnes Lubombo et l'océan Indien",
+        "Installation dans la région de Shiselweni (rivière Pongola) sous Ngwane III au 18e siècle",
+        "Expansion vers le centre et le nord de l'actuel Eswatini sous Sobhuza I et Mswati II au 19e siècle"
+      ],
+      "historicalSettlementZones": [
+        "Shiselweni (région de la rivière Pongola, premier centre du royaume)",
+        "Hautes terres centrales d'Eswatini (Manzini, Hhohho, siège du pouvoir royal à Lobamba et Ludzidzini)",
+        "Lubombo (région orientale, frontière avec le Mozambique)",
+        "Province de Mpumalanga, Afrique du Sud (importantes populations swazi en dehors d'Eswatini)"
+      ],
+      "unificationsOrDivisions": "Le peuple swazi se caractérise par un système d'identité inclusive : tout individu qui prête allégeance aux deux monarques jumeaux (Ngwenyama et Indlovukati) est considéré comme Liswati. Cette structure a permis l'intégration de clans d'origines diverses (Nguni, Sotho, Tsonga). Environ les trois quarts des clans sont d'origine Nguni ; le reste est d'origine Sotho, Tsonga, ou issu d'autres groupes d'Afrique du Nord-Est et des San.",
+      "externalInfluences": "Contacts avec les Boers néerlandais dès la fin des années 1830 (cession partielle de territoire à la République du Transvaal dans les années 1840). Influence britannique croissante à partir des années 1880 (Convention de Pretoria 1881 reconnaissant l'indépendance d'Eswatini). Colonisation britannique de 1903 à 1968. Influence du christianisme (syncrétisme avec les croyances traditionnelles). Impacts de l'apartheid sud-africain sur les Swazi résidant en Afrique du Sud.",
+      "majorHistoricalEvents": "Sous Sobhuza I (1815-1840), consolidation du royaume et intégration de nombreux clans lors du Mfecane (période de bouleversements en Afrique australe). Mswati II (1839-1865) unifia definiticement la nation et donna son nom au peuple. Nombreuses concessions minières et foncières accordées aux colons britanniques et boers sous Mbandzeni (fin 19e siècle). Protectorat britannique de 1903. Indépendance en 1968 sous le roi Sobhuza II. En 1973, Sobhuza II abroga la constitution et restaura le gouvernement traditionnel. En 2018, le roi Mswati III rebaptisa le pays Eswatini (Terre des Swazi)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume du Swaziland). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Le royaume d'Eswatini est régi par une monarchie duale unique : le Ngwenyama (le Lion, roi) et l'Indlovukati (l'Éléphante, reine mère) exercent conjointement le pouvoir suprême. Cette dualité symbolise l'équilibre entre le pouvoir masculin et féminin. Le Ngwenyama est le chef de l'État et du gouvernement ; l'Indlovukati est la gardienne des traditions et de la nation. En l'absence de roi (interrègne), l'Indlovukati gouverne seule. Le roi règne avec l'assistance du Libandla (conseil national des chefs et notables) et du Liqoqo (conseil privé restreint). Eswatini est la dernière monarchie absolue d'Afrique subsaharienne.",
+      "clanOrganization": "La société swazi est organisée en clans patrilinéaires (emindeni). Les 17 clans bemdzabuko (vrais Swazi) ont un statut particulier car ils accompagnèrent les rois Dlamini dans leur migration fondatrice. Le clan Dlamini est le clan royal. Les clans emakhandzambili sont les peuples autochtones intégrés à la nation. Chaque clan a ses propres traditions, tabous alimentaires (imitimba) et chants de louange (imbongi).",
+      "ageClassSystems": "Le système des régiments (emabuto, singulier libuto) structure les hommes par tranches d'âge. Les régiments sont convoqués par le roi pour des travaux collectifs (agriculture royale, construction) et la défense du royaume. La cérémonie Umhlanga (Danse des Roseaux) rassemble les femmes par classes d'âge. Les régiments ont un rôle cérémoniel fort lors de l'Incwala.",
+      "roleOfLineages": "Les lignages patrilinéaires (emindeni) déterminent l'identité clanique et les droits fonciers. La reine mère est toujours choisie parmi un clan différent de celui du roi (règle d'exogamie royale) pour éviter la concentration du pouvoir. Les chefs de clans (tindvuna) ont autorité sur leurs membres et représentent les intérêts claniques au Libandla.",
+      "religiousAuthority": "Le roi-Ngwenyama est aussi le grand prêtre de la nation, notamment lors de l'Incwala. Les devins-guérisseurs (tangoma) jouent un rôle essentiel dans la médiation avec les ancêtres. La religion traditionnelle swazi reconnaît un dieu créateur (Mvelincanti, Celui qui était là depuis le commencement) et le culte des ancêtres. Le christianisme s'est profondément implanté depuis le 19e siècle et coexiste souvent avec les croyances traditionnelles."
     },
     "languages": {
-      "mainLanguage": "Swati / Swazi",
-      "vehicularRole": "Le swati est parlé par la majorité des Swazi. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "siSwati (Swati / Swazi)",
+      "isoCodes": ["ssw"],
+      "dialects": [
+        "Hhohho (nord d'Eswatini, variété standard et prestigieuse)",
+        "Manzini (région centrale)",
+        "Lubombo (région orientale)",
+        "Shiselweni (région méridionale, influence zouloue marquée)",
+        "Mpumalanga (Afrique du Sud, influence des langues sud-africaines voisines)"
+      ],
+      "vehicularRole": "Le siSwati est la langue officielle d'Eswatini (avec l'anglais) et l'une des douze langues officielles de l'Afrique du Sud. Le nombre total de locuteurs est estimé à environ 4,7 millions (locuteurs natifs et secondaires). Le siSwati appartient au groupe Nguni (bantou Zone S), plus précisément au sous-groupe Tekela, proche du zoulou et du xhosa. Il est enseigné dans les écoles d'Eswatini et de Mpumalanga (Afrique du Sud)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels swazi, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Incwala (cérémonie des Prémices, décembre-janvier) : la cérémonie culturelle et spirituelle la plus importante des Swazi, organisée selon les phases de la lune autour du solstice d'été. Elle comprend le Petit Incwala (deux jours de danse et de chants rituels) et le Grand Incwala (six jours). Des hommes (bemanti, gens de l'eau) collectent de l'eau de mer et des rivières pour les rites de purification. Des jeunes hommes marchent des dizaines de kilomètres pour couper des branches de lusekwane (Dichrostachys cinerea), arbre sacré. Le quatrième jour, le roi goûte les premiers fruits de la récolte, marquant l'autorisation pour tous les Swazi de consommer la nouvelle récolte. La cérémonie renouvelle le pouvoir royal, célèbre l'unité nationale et renforce le lien entre le roi et ses ancêtres. Umhlanga (Danse des Roseaux, fin août-début septembre) : des dizaines de milliers de jeunes filles et femmes non mariées convergent vers la résidence royale de Ludzidzini pour couper des roseaux et les offrir à la reine mère Indlovukati. L'événement dure huit jours et célèbre la chasteté, la fertilité et le lien des femmes à la monarchie. Rites de passage : circoncision masculine (non universelle), mariage traditionnel (umtsimba) avec paiement du lobola (prix de la fiancée en bétail), rites funéraires incluant une période de deuil réglementée.",
+      "symbols": "Le lion (ingwenyama) symbolise le roi. L'éléphante (indlovukati) symbolise la reine mère. Le bouclier guerrier et les sagaies représentent la force et la souveraineté nationales. Les branches de lusekwane sont centrales dans les rites de l'Incwala. Le bétail (inkomo) est le symbole de richesse, de statut social et de lien aux ancêtres. Les plumes de veuve noire (intsindane) sont portées par les guerriers lors des cérémonies royales. Le drapeau national représente l'iklwa (lance courte) et le bouclier.",
+      "artsAndMusic": "Le chant choral (ingoma) et la danse collective (sigijo, sibhaca) sont centraux à la culture swazi. La louange royale (imbongi) est un art oratoire sophistiqué exercé par des poètes officiels. Instruments traditionnels : le lipalampandla (harpe à arc), le ligwalagwala (trombone de corne), les tambours (ingoma). La poterie et la sculpture sur bois sont pratiquées. Le tissage de nattes et de paniers (timbenge) en herbes tressées est un artisanat féminin important. Les peintures murales ornent les maisons des femmes. La danse des guerriers (ingoma) lors de l'Incwala est un spectacle impressionnant en habits traditionnels (peaux de léopard, plumes, boucliers de peau de vache).",
+      "spiritualities": "La religion traditionnelle swazi (inkholo) reconnaît un dieu créateur supreme appelé Mvelincanti (Celui qui était là depuis le commencement), également parfois désigné Mlentjengamunye. Les ancêtres (emadloti) jouent un rôle d'intermédiaires entre les vivants et le divin ; ils veillent sur leur famille et peuvent infliger des maladies si on les néglige. Les devins-guérisseurs (tangoma, singulier sangoma) sont des spécialistes spirituels qui consultent les ancêtres, diagnostiquent les maladies et prescrivent des remèdes à base de plantes. Les herbalists (tinyanga) soignent avec des médecines traditionnelles. Le culte royal des ancêtres, célébré lors de l'Incwala, est au cœur de la spiritualité nationale. La grande majorité des Swazi pratique le christianisme (catholique, protestant, sioniste africain) en syncrétisme avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora swazi dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume d'Eswatini est l'un des États africains les plus anciens encore en existence. Fondé par la lignée Dlamini, il fut consolidé par Sobhuza I (1815-1840) et Mswati II (1839-1865). Sobhuza II (r. 1921-1982), le roi dont le règne fut le plus long du 20e siècle, mena le pays vers l'indépendance en 1968 et abroga la constitution en 1973 pour restaurer la monarchie absolue. En 1986, Mswati III prit la tête du royaume à l'âge de 18 ans. Le royaume d'Eswatini est l'unique monarchie absolue subsistante d'Afrique subsaharienne.",
+      "relationsWithNeighbors": "Relations complexes avec les Zoulous au 19e siècle (protection mutuelle et conflits territoriaux). Cessions de territoires aux Boers du Transvaal dans les années 1840 et ultérieurement. Relations avec le Mozambique, notamment via les ports de Delagoa Bay, commercialement stratégiques. Actuellement, Eswatini entretient des relations pacifiques avec l'Afrique du Sud (dont il est économiquement dépendant) et le Mozambique. Eswatini est l'un des rares pays à reconnaître Taiwan plutôt que la Chine populaire.",
+      "conflictsOrAlliances": "Le Mfecane des années 1820-1830 (période de guerres et de déplacements en Afrique australe liée à l'expansion zouloue) contraignit Sobhuza I à des alliances défensives et à l'intégration de réfugiés. Pendant la période coloniale britannique (1903-1968), la résistance passive du roi Sobhuza II préserva les institutions traditionnelles. Pendant l'apartheid sud-africain, Eswatini servit parfois de refuge pour les militants de l'ANC. Depuis l'indépendance, le pays est stable bien que des tensions politiques existent autour de la monarchie absolue.",
+      "diaspora": "Une importante diaspora swazi réside en Afrique du Sud (province de Mpumalanga, Soweto, Johannesburg), dont le nombre dépasse celui des Swazi résidant en Eswatini. Des communautés existent aussi au Royaume-Uni, aux États-Unis et dans d'autres pays occidentaux, principalement pour des raisons d'emploi et d'études."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 3500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur Ethnologue (SIL International, 2024 : 4,7 millions de locuteurs de siSwati), CIA World Factbook (Eswatini 2024 : environ 1,2 million d'habitants dont 97% Swazi), Statistics South Africa (Mpumalanga), Joshua Project 2024. Note : la population swazi hors d'Eswatini (Afrique du Sud principalement) est légèrement supérieure à la population résidant en Eswatini.",
+      "distributionByCountry": [
+        {
+          "country": "SWZ",
+          "population": 1200000,
+          "note": "Royaume d'Eswatini (ex-Swaziland), totalité du territoire national"
+        },
+        {
+          "country": "ZAF",
+          "population": 2300000,
+          "note": "Province de Mpumalanga (zone frontalière), townships de Soweto et autres zones urbaines"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Swati / Swazi language (ssw)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Swazi people. https://en.wikipedia.org/wiki/Swazi_people",
+      "Wikipedia EN — Swazi language. https://en.wikipedia.org/wiki/Swazi_language",
+      "Wikipedia EN — Incwala. https://en.wikipedia.org/wiki/Incwala",
+      "Wikipedia EN — Umhlanga (ceremony). https://en.wikipedia.org/wiki/Umhlanga_(ceremony)",
+      "Eswatini National Trust Commission — Incwala Ceremony. https://entc.org.sz/incwala-ceremony/",
+      "The Kingdom of Eswatini — Incwala Festival. https://www.thekingdomofeswatini.com/eswatini-experiences/events/incwala-festival/",
+      "SIL Ethnologue — siSwati (ssw). https://www.ethnologue.com/language/ssw/",
+      "CIA World Factbook — Eswatini. https://www.cia.gov/the-world-factbook/countries/eswatini/",
+      "Gillis, D. Hugh. The Kingdom of Swaziland: Studies in Political History. Greenwood Press, 1999.",
+      "Kuper, Hilda. The Swazi: A South African Kingdom. Holt, Rinehart & Winston, 1963."
     ]
   }
 }

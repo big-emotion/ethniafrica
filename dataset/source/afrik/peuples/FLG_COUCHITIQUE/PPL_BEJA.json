@@ -1,23 +1,112 @@
 {
   "id": "PPL_BEJA",
-  "nameMain": "",
+  "nameMain": "Beja",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["SDN", "ERI", "EGY"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Bidhaawyeet / Hadendoa",
+      "mainName": "Beja",
+      "selfAppellation": "Bidhaawyeet / Tubdhaawi",
+      "exonyms": [
+        "Blemmyes (epoque romaine)",
+        "Medjay (epoque egyptienne antique)",
+        "Bega (inscriptions aksumites en gueze)",
+        "Fuzzy-Wuzzy (terme britannique, pejoratif, 19e s.)"
+      ],
+      "originOfExonyms": "Le terme Medjay designait les Beja dans les textes egyptiens antiques. Les Romains les appelaient Blemmyes. Les inscriptions aksumites en gueze utilisaient Bega. Le terme Fuzzy-Wuzzy, utilise par les soldats britanniques (popularise par Rudyard Kipling en 1890), designe les Hadendoa et leur coiffure caracteristique ; ce terme est considere pejoratif.",
+      "whyProblematic": "Le terme Beja est un exonyme d'origine arabe signifiant combattants ou combattants des Pharaons selon certains cheikhs beja. Les locuteurs se designent eux-memes par Bidhaawyeet (langue et peuple) ou par les noms de leurs sous-groupes (Bishareen, Hadendoa, Amarar, etc.).",
+      "contemporaryUsage": "Le terme Beja est accepte dans les usages academiques et politiques internationaux. Le Congres Beja, forme en 1952, a adopte ce nom comme denomination politique collective.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "SDN, ERI, EGY",
+      "ethnoLinguisticGroup": "Couchitiques septentrionaux (North Cushitic)",
+      "historicalRegion": "Desert oriental d'Afrique du Nord-Est : entre le Nil et la mer Rouge, du Soudan oriental a la frontiere soudano-egyptienne, englobant le nord-ouest de l'Erythree",
       "currentCountries": ["SDN", "ERI", "EGY"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (bej)", "Beja Studies"]
+    "ethnicities": [
+      "Bishareen (ou Bisharin) — dans le nord-est du Soudan et le sud-est de l'Egypte",
+      "Hadendoa (ou Hedareb) — dans l'est du Soudan, dominant la region au 18e siecle",
+      "Amarar (Atmaan) — dans la region de Port Sudan",
+      "Ababda — dans le sud-est de l'Egypte, arabises, parlent l'arabe",
+      "Beni Amer — sous-groupe en Erythree et est du Soudan, parlent le tigre (langue semitique)",
+      "Hallenga — sous-groupe dans le nord-est du Soudan",
+      "Habab — sous-groupe en Erythree",
+      "Hamran — sous-groupe dans la region du Nil Bleu",
+      "Qamhat (Bishareen de la region du barrage d'Assouan, deplaces vers l'oasis de Kharga)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Beja descendent de populations qui habitent leur territoire depuis au moins 4000 av. J.-C. Ils sont identifies aux Medjay des textes egyptiens antiques, puis aux Blemmyes de l'epoque romaine. Leurs territoires dans le desert oriental furent conquis et vassalises par le Royaume d'Aksoum au 3e siecle. Certains cercles savants soutiennent que la langue beja pourrait etre anterieure a l'egyptien ancien. Plusieurs Beja revendiquent une ascendance arabe et pretendent descendre des Quraych, la tribu du Prophete Mohamed.",
+      "formationPeriod": "Au 9e siecle, le geographe al-Yaqubi documentait six royaumes beja distincts entre Assouan et Massaoua : Bazin, Belgin, Jarin, Nagash, Qita'a et Tankish. Au 10e siecle, les Beja etaient encore chretiens selon le geographe Abu Nasr Mutahhar al-Maqdisi. L'islamisation s'effectua progressivement par les migrations arabes (Juhaynah, Mudar, Rabi'a) ; elle etait largement accomplie au 15e siecle.",
+      "migrationRoutes": [
+        "Populations autochtones nomades du desert oriental, sans migration fondatrice documentee",
+        "Expansion vers le nord, le long de la mer Rouge, atteignant l'Egypte meridionale"
+      ],
+      "historicalSettlementZones": [
+        "Desert oriental soudanais : etats du Nil Rouge (Port Sudan), du Nil, Al Qadarif et Kassala",
+        "Erythree : regions de la mer Rouge Nord, Gash-Barka et Anseba",
+        "Egypte : gouvernorats de la mer Rouge, d'Assouan, de Louxor et de Qena, de la frontiere soudanaise a Qena sur le Nil et Hurghada sur la mer Rouge",
+        "Oasis de Kharga (desert occidental egyptien) : Bishareen deplaces par le barrage d'Assouan"
+      ],
+      "unificationsOrDivisions": "Les Beja n'ont jamais forme un Etat unifie. Ils sont organises en sous-groupes clans independants. Au 18e siecle, les Hadendoa dominaient une grande partie de l'est du Soudan. Au 19e siecle, les sous-groupes se diviserent dans la guerre des Mahdistes : les Hadendoa aux cotes des Mahdistes, les Bisharin et Amarar aux cotes des Britanniques. Le Congres Beja (1952) tenta une unite politique.",
+      "externalInfluences": "Egypte antique (Medjay, guerriers aux ordres des pharaons). Royaume d'Aksoum (3e siecle). Conquerants arabes (islamisation progressive a partir du 7e siecle). Empire ottoman. Colonisation britannique (les Hadendoa affronterent les troupes britanniques a Tamai en 1884). Arabisation partielle (le sous-groupe Ababda est entierement arabophone). Deplacements causes par le barrage d'Assouan (Qamhat).",
+      "majorHistoricalEvents": "Six royaumes beja documentes au 9e siecle. Islamisation au 15e siecle. Les Hadendoa brisent le carre anglais a la bataille de Tamai (1884), celebre par le poeme Fuzzy Wuzzy de Kipling. Congres Beja forme en 1952 pour l'autonomie regionale. Guerrilla dans l'est du Soudan (1990-2006) : sabotage de l'oleoduc vers Port Sudan (1999-2000), alliance avec l'Armee de Liberation du Soudan (2004). Accord de paix avec Khartoum en 2006. Retrait de l'accord en 2011. Declaration d'autogouverne en 2022."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle en groupes de clans independants avec des chefs (nazirs et omda). Historiquement, des royaumes independants (six au 9e siecle). A partir du 20e siecle : organisation politique moderne via le Congres Beja (1952) et le Mouvement National pour le Soudan Oriental (NMES). En 2022, le Conseil supreme des tribus Beja a declare un autogouverne dans l'est du Soudan.",
+      "clanOrganization": "Clans patrilineaires constitutifs de chaque sous-groupe. Les Bishareen, Hadendoa, Amarar et Beni Amer sont les principaux groupes clans. L'organisation clanique regit les droits fonciers, les alliances matrimoniales et la resolution des conflits.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires transmettent l'identite tribale, les droits sur la terre et les obligations de loyaute. La genealogie est cruciale : chez les Beja, les droits fonciers ne sont valides que s'ils sont exprimes en langue beja.",
+      "religiousAuthority": "Autorite des cheikhs islamiques sunnites. Certains sous-groupes maintiennent des pratiques pre-islamiques. Le statut feminin particulier des femmes beja — capables d'arreter des conflits inter-tribaux en traversant un champ de bataille — evoque une influence de l'ancienne veneration de la deesse Isis."
+    },
+    "languages": {
+      "mainLanguage": "Beja (Bidhaawyeet / Tubdhaawi)",
+      "isoCodes": ["bej"],
+      "dialects": [
+        "Port Sudan — dialecte decrit par Wedekind, Wedekind et Musa",
+        "Sinkat — dialecte decrit par Vanhove et Roper",
+        "Atmaan — dialecte des Amarar"
+      ],
+      "vehicularRole": "La langue beja (ISO bej) etait parlee par environ 2 759 000 locuteurs en 2022-2023 : 2 550 000 au Soudan, 121 000 en Erythree et 88 000 en Egypte. Les Beni Amer (Erythree, est Soudan) parlent le tigre, langue semitique. Les Ababda (Egypte) parlent l'arabe. L'arabe est utilise comme langue vehiculaire moderne, mais les Beja lui attribuent une valeur culturelle inferieure. La langue beja est liee aux plus hautes valeurs morales et culturelles ; les revendications foncieres ne sont valides que si exprimees en beja."
+    },
+    "culture": {
+      "majorRites": "Rites de naissance : lors de la naissance d'un enfant, l'entree de la maison maternelle est illuminee pendant 40 jours. A 7 ans, un enfant beja devient berger et recoit un poignard. A 15 ans, age de maturite, il est arme d'une epee. Rites funeraires islamiques. Les femmes beja ont la capacite traditionnelle d'interrompre des conflits inter-tribaux en traversant un champ de bataille, prerogative liee a la veneration ancestrale de la deesse Isis.",
+      "symbols": "La coiffure afro (tiffa) des Hadendoa, celèbre sous le nom de Fuzzy-Wuzzy par les soldats britanniques. Le poignard et l'epee comme marqueurs d'age et de statut. La langue beja elle-meme comme symbole de l'identite culturelle supreme.",
+      "artsAndMusic": "Tradition poetique orale tres riche : la poesie beja est hautement valorisee ; les reclamations foncieres ne sont valides que si exprimees en beja. Instrument musical central : le Basankob (cordophone a cinq cordes, fonctionnant en gamme pentatonique), seul instrument capable de produire les sons caracteristiques de la musique beja et accompagnant les danses traditionnelles comme la danse Hossiet. Musicien contemporain notable : Nour al-Din Atta al-Mawla Jaber (Noori), album Beja Power. Le groupe Otaak Band incarne la fusion ethnique beja moderne.",
+      "spiritualities": "Islam sunnite, pratique dominante depuis le 15e siecle. Les Beja etaient chretiens au 10e siecle (temoignage d'al-Maqdisi). Persistance de pratiques culturelles pre-islamiques, notamment le statut particulier des femmes et certains rites de passage. Certains sous-groupes revendiquent une ascendance arabe et Quraych, renforçant leur attachement a l'islam. Veneration ancienne de la deesse egyptienne Isis attestee dans les traditions sur le statut feminin."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Six royaumes beja documentes au 9e siecle par al-Yaqubi : Bazin, Belgin, Jarin, Nagash, Qita'a et Tankish, s'etendant d'Assouan a Massaoua. Les Hadendoa dominerent une grande partie de l'est du Soudan au 18e siecle. Le Beja Congress, fonde en 1952, constitua la premiere organisation politique moderne unissant les sous-groupes.",
+      "relationsWithNeighbors": "Relations complexes avec les Arabes : mariages mixtes contribuant a l'arabisation partielle tout en preservant l'identite beja. Relations historiques avec l'Egypte antique (Medjay guerriers), Rome (Blemmyes), Aksoum (vassaux au 3e siecle), et les Ethiopiens. Alliances et conflits avec les differents gouvernements soudanais. En Erythree, les Beni Amer/Hedareb vivent aux cotes des Tigre.",
+      "conflictsOrAlliances": "Conquete et vassalisation par Aksoum au 3e siecle. Alliance des Hadendoa avec les Mahdistes dans les annees 1880-1890. Les Bishareen et Amarar aux cotes des Britanniques (meme periode). Les Beni Amer avec le Ras Alula ethiopien (bataille de Kufit). Bataille de Tamai (1884) : les Hadendoa brisent le carre britannique. Congres Beja (1952-2006) pour l'autonomie regionale, guerilla dans l'est du Soudan (sabotage oleoduc 1999-2000), accord de paix 2006. Declaration d'autogouverne en 2022.",
+      "diaspora": "Presence beja en milieu urbain a Port Sudan, Kassala et Khartoum. Communautes de refugies dans les pays voisins suite aux conflits soudanais."
+    },
+    "demography": {
+      "totalPopulation": 2900000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (langue beja, 2022-2023) : 2 759 000 locuteurs (2 550 000 Soudan, 121 000 Erythree, 88 000 Egypte). Population totale Beja estimee entre 1,9 et 3 millions (Wikipedia). Projection 2025 estimee a environ 2,9 millions en comptant les locuteurs de tigre (Beni Amer) et d'arabe (Ababda).",
+      "distributionByCountry": [
+        {
+          "country": "SDN",
+          "population": 2350000,
+          "note": "Etats du Nil Rouge (Port Sudan), du Nil, Al Qadarif et Kassala; principalement Bishareen, Hadendoa, Amarar, Hamran"
+        },
+        {
+          "country": "ERI",
+          "population": 200000,
+          "note": "Regions de la mer Rouge Nord, Gash-Barka et Anseba; principalement Hedareb, Beni Amer, Habab"
+        },
+        {
+          "country": "EGY",
+          "population": 350000,
+          "note": "Gouvernorats de la mer Rouge, d'Assouan, Louxor, Qena; principalement Ababda (arabises) et Bishareen"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Beja people. https://en.wikipedia.org/wiki/Beja_people",
+      "Wikipedia EN — Beja language. https://en.wikipedia.org/wiki/Beja_language",
+      "Fanack — The Beja: A Long, Cultural Presence in Sudan and Egypt. https://fanack.com/sudan/society-of-sudan/the-beja-a-long-cultural-presence-in-sudan-and-egypt/",
+      "SIL Ethnologue — Beja language (bej). https://www.ethnologue.com/language/bej/",
+      "Wikipedia EN — Demographics of Eritrea. https://en.wikipedia.org/wiki/Demographics_of_Eritrea",
+      "ISO 639-3 Language Codes — CEDS. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+    ]
   }
 }

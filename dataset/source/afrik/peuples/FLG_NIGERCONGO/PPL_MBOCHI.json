@@ -6,63 +6,116 @@
   "content": {
     "appellations": {
       "mainName": "Mbochi",
-      "selfAppellation": "Mbochi",
-      "exonyms": ["Mbochi (terme utilisé par les Européens)"],
+      "selfAppellation": "Mbosi / Mbochi",
+      "exonyms": [
+        "M'Boshi",
+        "Mbosi",
+        "Mbonchi",
+        "Boubangui (pour les groupes du nord)",
+        "Ngala (désignation coloniale groupée)"
+      ],
+      "originOfExonyms": "Le terme 'Mbochi' est la francisation du terme originel 'Mbosi', la prononciation ayant été modifiée sous l'influence coloniale portugaise puis française. L'appellation 'Boubangui' (ou Bobangi) désigne les groupes mbochi qui ont migré le plus au nord, jusqu'en République centrafricaine. Le terme colonial 'Bangala' fut parfois imposé aux populations mbochi avant d'être reconnu comme une construction artificielle.",
+      "whyProblematic": "Le terme Mbochi désigne en réalité une constellation de dix groupes ethniques apparentés (Likouaka, Mbochi proprement dit, Likouba, Kouyou, Makoua, Bonga, Boubangui, Moye, Ngaré, Mboko) dont les histoires migratoires et les dialectes diffèrent. La prééminence politique des Mbochi sous Denis Sassou Nguesso a créé une association entre ce terme et un groupe de pouvoir au Congo-Brazzaville, rendant l'identité mbochi politiquement sensible.",
+      "contemporaryUsage": "Le terme Mbochi est utilisé officiellement au Congo-Brazzaville pour désigner ce groupe ethnique. Il recouvre environ 12% de la population nationale. Depuis l'accession de Denis Sassou Nguesso à la présidence (1979, puis 1997 à aujourd'hui), les Mbochi sont associés au pouvoir politique congolais, contrôlant la majorité des postes gouvernementaux clés.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone C)",
-      "historicalRegion": "Congo (Cuvette)",
+      "ethnoLinguisticGroup": "Bantou (Zone C, groupe C10-C30)",
+      "historicalRegion": "Cuvette et Plateaux du Congo-Brazzaville — bassins fluviaux des rivières Alima, Kouyou, Likouala et Sangha",
       "currentCountries": ["COG"]
     },
     "ethnicities": [
-      "Mbochi du Nord",
-      "Mbochi du Sud",
-      "Sous-groupes régionaux"
+      "Mbochi proprement dit — groupe central, région de la Cuvette (Owando, Oyo, Mossaka)",
+      "Kouyou — sous-groupe influent politiquement, dont est issu Denis Sassou Nguesso",
+      "Makoua — sous-groupe de la Cuvette Ouest",
+      "Likouba / Likouala — pêcheurs et commerçants fluviaux",
+      "Likouaka — groupe du nord de la Cuvette",
+      "Bonga — sous-groupe agriculteur et pêcheur",
+      "Boubangui / Bobangi — groupe migré vers le nord, présent jusqu'en RCA",
+      "Moye — sous-groupe de la région des Plateaux",
+      "Ngaré — sous-groupe de la zone fluviale",
+      "Mboko — sous-groupe méridional des Plateaux"
     ],
     "origins": {
-      "ancientOrigins": "Les Mbochi sont originaires de la région de la Cuvette au Congo. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone C).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Mbochi sont un groupe bantou dont les origines remontent à la grande expansion bantoue depuis le Nigeria-Cameroun. Selon leurs traditions orales, tous les Mbochi descendent d'un ancêtre commun appelé Ndinga. Des recherches académiques indiquent que leurs ancêtres sont arrivés dans la région des Grands Lacs africains, d'où ils ont entrepris une longue migration vers l'ouest et le centre, atteignant progressivement les bassins du Congo. Avant l'arrivée des Mbochi, les terres qu'ils occupent n'étaient peuplées que par les Atswa (Pygmées/Twa), chasseurs-cueilleurs de la forêt équatoriale.",
+      "formationPeriod": "La migration mbochi vers les bassins fluviaux du Congo central s'est déroulée principalement au milieu du 18e siècle (vers 1750-1850), lorsque des groupes bantous ont migré depuis la rive occidentale du fleuve Congo vers les confluences de la Sangha, de la Likouala et du Congo. Des recherches suggèrent également une présence antérieure de certains sous-groupes, notamment les Moye, dont la présence dans la région pourrait remonter avant le 12e siècle.",
+      "migrationRoutes": [
+        "Départ de la région des Grands Lacs africains — migration vers l'ouest et le centre",
+        "Traversée du fleuve Congo depuis sa rive occidentale vers les bassins intérieurs",
+        "Installation progressive autour des confluences Sangha-Likouala-Congo, puis remontée vers le nord-ouest",
+        "Extension de certains groupes (Boubangui) jusqu'à la République centrafricaine"
+      ],
+      "historicalSettlementZones": [
+        "Cuvette (districts de Boundji, Ngoko, Owando, Oyo, Bokouélé, Tongo, Tchikapika, Mossaka)",
+        "Cuvette Ouest (Etoumbi, Mbana, Makoua)",
+        "Plateaux (districts d'Olombo, Abala, Allembé, Ogogni, Makotimpoko, Gamboma)",
+        "Rivières Kouyou, Alima, Sangha et Likouala — zones de pêche traditionnelle",
+        "Présence minoritaire en RDC occidentale et au Gabon oriental"
+      ],
+      "unificationsOrDivisions": "Les dix sous-groupes mbochi ont maintenu des identités distinctes tout en partageant une langue, des traditions et un ancêtre mythique communs. Des tensions entre sous-groupes (notamment les divisions entre Kouyou, Makoua et Likouba) ont existé historiquement mais ne les ont pas empêchés d'être reconnus comme une famille ethnique unifiée. L'administration coloniale française et le regroupement politique post-indépendance ont renforcé une identité mbochi collective.",
+      "externalInfluences": "Isolation relative dans les forêts denses du nord du Congo pendant la traite atlantique, qui a épargné les Mbochi d'une déportation massive. Colonisation française : recrutement de nombreux Mbochi dans l'armée coloniale, ce qui leur a conféré un avantage dans les structures militaires post-coloniales. Après l'indépendance (1960), l'accession de Marien Ngouabi (Kouyou) à la présidence en 1969, puis de Denis Sassou Nguesso (Kouyou) à partir de 1979, positionne les Mbochi au sommet du pouvoir congolais.",
+      "majorHistoricalEvents": "Migration vers les bassins fluviaux de la Cuvette au milieu du 18e siècle. Intégration dans les réseaux commerciaux du fleuve Congo aux 19e-20e siècles. Colonisation française : recrutement militaire massif dans l'armée coloniale. Indépendance du Congo en 1960. Prise de pouvoir de Marien Ngouabi (1969), premier président Mbochi. Assassinat de Ngouabi (1977). Accession de Denis Sassou Nguesso à la présidence (1979). Guerre civile congolaise (1997) : Sassou Nguesso reprend le pouvoir avec le soutien militaire de ses Cobras (milice recrutée en zone mbochi). Consolidation du pouvoir Mbochi aux plus hautes fonctions de l'État depuis lors."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Mbochi s'organisent en clans patrilinéaires d'environ quatorze familles ou lignages, sous la direction d'un chef de clan appelé kani. La société est hiérarchiquement structurée, avec des niveaux successifs du foyer, du lignage et du clan. Les décisions communautaires importantes sont prises collectivement par le conseil des anciens. Les droits de pêche héréditaires sur les tronçons de rivière constituent un élément fondamental de l'organisation territoriale.",
+      "clanOrganization": "Organisation clanique patrilinéaire stricte : la descendance et l'héritage se transmettent par la lignée paternelle. Les clans contrôlent des droits territoriaux sur des tronçons de rivières (droits de pêche héréditaires), des terres agricoles et des zones de chasse. Des institutions régulatrices comme l'Otwere (empruntée aux voisins Teke) ont parfois été adoptées pour réguler les pouvoirs claniques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité sociale, les droits fonciers et les droits de pêche. La solidarité lignagère est la base de l'organisation économique et militaire. L'appartenance au lignage du chef (kani) confère un statut et des prérogatives particulières dans la gestion des ressources communes.",
+      "religiousAuthority": "Syncrétisme entre croyances traditionnelles bantoues et christianisme (environ 40% de chrétiens, 60% de pratiquants des religions traditionnelles selon diverses estimations). Les pratiques traditionnelles incluent le culte des ancêtres avec libations rituelles (boissons versées en offrande : jus de mangue, bière traditionnelle dite 'chamcham'). Les cérémonies se tiennent dans des forêts sacrées. La conception mbochi du divin associe le Créateur suprême à des éléments de feu et d'eau, manifestés à travers les ancêtres."
     },
     "languages": {
-      "mainLanguage": "Mbochi",
-      "vehicularRole": "Le mbochi est parlé par la majorité des Mbochi. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Mbosi (Mbochi)",
+      "isoCodes": ["mdw"],
+      "dialects": [
+        "Mbochi proprement dit (Cuvette — Owando, Oyo, Mossaka)",
+        "Kouyou — dialecte du sous-groupe dominant politiquement",
+        "Makoua — dialecte de la Cuvette Ouest",
+        "Likouba / Likouala — dialecte des pêcheurs fluviaux",
+        "Moye — dialecte du groupe des Plateaux"
+      ],
+      "vehicularRole": "Le mbosi est la langue maternelle des Mbochi et des sous-groupes apparentés de la Cuvette et des Plateaux. Le Nouveau Testament en langue mbosi a été achevé en 2023. Le français est la langue officielle du Congo-Brazzaville. Le lingala et le munukutuba (kituba) servent de langues véhiculaires nationales. Les jeunes Mbochi adoptent de plus en plus le français ou d'autres langues régionales, menaçant la transmission intergénérationnelle du mbosi."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels mbochi, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Circoncision comme rite de passage principal, accompagnée d'une période de réclusion et d'instruction par les anciens sur les normes communautaires, les droits de pêche héréditaires et les obligations envers le lignage.\", \"femaleInitiation\": \"Rites féminins de passage à l'âge adulte marqués par des cérémonies communautaires et l'apprentissage des rôles de femme dans la société mbochi.\"}, \"funeraryRites\": {\"mourning\": \"Les veuves rasent leurs cheveux en signe de deuil, coutume persistant dans les zones rurales, bien que moins fréquente chez les générations urbaines. La période de deuil peut durer jusqu'à six mois.\", \"libations\": \"Partage de boissons (libations) avec les ancêtres lors des cérémonies funéraires : jus de mangue, bière traditionnelle (chamcham) versée sur le sol en offrande sacrée, signe de respect envers les défunts et invocation de leur protection.\"}, \"ancestralRites\": {\"sacredForest\": \"Les cérémonies traditionnelles se tiennent dans des forêts sacrées, lieux de médiation entre les vivants et les ancêtres. Des objets rituels y sont déposés comme offrandes.\", \"greetings\": \"La poignée de main est une salutation commune dotée d'une dimension symbolique de respect mutuel.\"}}",
+      "symbols": "La pirogue et la pagaie symbolisent l'identité fluviale et le savoir-faire de construction navale des Mbochi, réputés constructeurs de bateaux. Les rivières (Alima, Kouyou, Likouala, Sangha) sont des espaces sacrés associés aux ancêtres et aux droits territoriaux héréditaires. Les noms mbochi commençant généralement par une voyelle constituent un marqueur identitaire phonétique distinctif. La forêt sacrée est le lieu de connexion avec le monde des esprits.",
+      "artsAndMusic": "{\"artsAndMusic\": {\"boatBuilding\": \"Construction traditionnelle de pirogues (luwas) : savoir-faire transmis de génération en génération, faisant de certains groupes mbochi (notamment les Bobangi) des maîtres de la navigation fluviale. La pirogue est à la fois outil économique et symbole culturel.\", \"oralLiterature\": \"Riche tradition orale comprenant histoires, contes, proverbes et chants transmis par les anciens. Les proverbes mbochi traitent des relations entre lignages, du respect de l'autorité et de la solidarité communautaire.\", \"musicalInstruments\": \"Tambours (diverses tailles pour différentes cérémonies), hochets rituels, instruments à cordes simples ; la musique accompagne toutes les cérémonies importantes.\", \"crafts\": \"Poterie traditionnelle pour ustensiles et rituels ; vannerie ; travail du bois pour la fabrication de pirogues et d'ustensiles.\"}, \"gastronomy\": {\"staple\": \"Manioc, banane plantain comme féculents de base ; poisson fumé ou frais (ressource centrale des communautés fluviales) ; cultures de café, cacao, tabac et riz pour certains groupes.\"}}",
+      "spiritualities": "{\"traditionalReligion\": {\"supremeDeity\": \"Conception d'un Créateur suprême associant les éléments du feu et de l'eau, manifesté à travers les ancêtres. Cette conception est proche des systèmes religieux luba, pende et kuba voisins.\", \"ancestors\": \"Le culte des ancêtres est central : les défunts veillent sur les vivants et peuvent intercéder pour eux. Des libations régulières entretiennent le lien entre vivants et ancêtres.\", \"sacredSpaces\": \"Les forêts sacrées sont les lieux de cérémonie et de contact avec le monde des esprits.\"}, \"christianity\": {\"note\": \"Environ 40% de la population mbochi se dit chrétienne (catholique et protestante), souvent en syncrétisme avec les croyances traditionnelles. Le Nouveau Testament en mbosi (2023) marque une étape importante dans l'évangélisation en langue maternelle.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mbochi dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Mbochi ne développèrent pas de royaumes centralisés mais s'organisèrent en chefferies claniques contrôlant des tronçons de rivières et des zones de pêche. Leur expertise en navigation fluviale et en commerce sur les rivières du Congo central leur conféra une influence régionale significative. Les Bobangi (sous-groupe mbochi migrateur) développèrent un réseau commercial fluvial étendu jusqu'à la République centrafricaine.",
+      "relationsWithNeighbors": "Relations complexes avec les Teke (voisins du plateau, qui se retirèrent sur les hauteurs lors de l'installation des Mbochi dans les zones marécageuses) ; adoption de l'institution Otwere des Teke pour réguler les pouvoirs claniques dans certaines zones. Commerce avec les populations pygmées (Atswa/Twa) qui précédèrent les Mbochi dans la région. Tensions historiques avec les groupes du Sud lors des guerres civiles post-indépendance.",
+      "conflictsOrAlliances": "Recrutement massif de soldats mbochi dans l'armée coloniale française, qui leur conféra une avance militaire au moment de l'indépendance. Rivalités interethniques post-indépendance avec les Kongo et les Teke du sud. Guerre civile congolaise de 1997 : Denis Sassou Nguesso reprend le pouvoir avec l'appui de la milice Cobra, recrutée principalement en zone mbochi du nord. Depuis lors, hégémonie politique des Mbochi sur la majorité des postes gouvernementaux et sécuritaires du Congo-Brazzaville.",
+      "diaspora": "Migration interne importante depuis les régions rurales de la Cuvette vers Brazzaville, la capitale, en raison du sous-développement du nord. La domination politique mbochi depuis 1979 a attiré de nombreux membres du groupe vers les emplois gouvernementaux et militaires de la capitale. Présence minoritaire dans d'autres pays d'Afrique centrale (RDC, Gabon) et dans la diaspora congolaise en France."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 655000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basées sur StudyGuides.com (environ 655 000 Mbochi en 2025), 101 Last Tribes Africa (données historiques), BTI Transformation Index Congo 2024 (12% de la population nationale congolaise d'environ 5,8 millions), Ethnologue SIL — Mbosi (mdw), CIA World Factbook Congo 2024. Note : les statistiques ethniques officielles ne sont pas publiées par le Congo-Brazzaville.",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 650000,
+          "note": "Principalement dans les départements de la Cuvette (Owando, Oyo, Mossaka), Cuvette-Ouest (Makoua, Etoumbi) et Plateaux (Abala, Ollombo, Ongogni) ; migration importante vers Brazzaville"
+        },
+        {
+          "country": "COD",
+          "population": 3000,
+          "note": "Présence minoritaire dans l'ouest de la RDC, notamment populations Bobangi"
+        },
+        {
+          "country": "GAB",
+          "population": 2000,
+          "note": "Présence minoritaire en Gabon oriental"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Mbochi language (mdx)",
-      "CIA World Factbook – Congo",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Mbosi people. https://en.wikipedia.org/wiki/Mbochi_people",
+      "101 Last Tribes Africa — Mbochi people. https://www.101lasttribes.com/tribes/mbochi.html",
+      "BTI Transformation Index — Congo Republic 2024. https://bti-project.org/en/reports/country-report/COG",
+      "StudyGuides.com — M'Bochi African Ethnic Group. https://studyguides.com/study-methods/overview/cmkyhtf0qhkgn01d52dv4scq2",
+      "Ethnologue — Mbosi language (mdw). https://www.ethnologue.com/language/mdw",
+      "Embassy of Republic of Congo — People and Culture. http://www.ambacongo-us.org/en/about-congo/people-culture/people",
+      "Worldscholars — Mboshi and Teke Culture Contact. https://worldscholars.org/index.php/ajhss/article/download/505/pdf",
+      "CIA World Factbook — Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/"
     ]
   }
 }

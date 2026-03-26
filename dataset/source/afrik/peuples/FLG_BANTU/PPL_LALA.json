@@ -6,54 +6,82 @@
   "content": {
     "appellations": {
       "mainName": "Lala",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Ilala",
+      "exonyms": ["Lala", "Cilala"],
+      "originOfExonyms": "Le terme Ilala est l'appellation locale utilisee par le peuple lui-meme pour designer a la fois le groupe et sa langue. Cilala designe specifiquement la langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Lala est universellement utilise en Zambie et dans la litterature academique. Ilala est prefere dans les contextes locaux et culturels. Cilala designe la langue dans les discussions linguistiques.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu du Centre, groupe Bemba-Lala",
+      "historicalRegion": "Province Centrale, Zambie",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Lala"],
+    "ethnicities": ["Lala", "Ilala"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Lala sont un peuple bantou qui descend du royaume Luba-Lunda, situe dans l'actuelle Republique Democratique du Congo. Leur migration vers la Zambie actuelle fait partie des grandes vagues d'expansion bantoue en Afrique centrale et australe.",
+      "formationPeriod": "Les Lala se sont constitues en groupe distinct a partir du 17e-18e siecle lors de leur etablissement dans la Province Centrale de Zambie. Leur identite ethno-linguistique s'est consolidee autour des chefferies de Serenje et Mkushi.",
+      "migrationRoutes": [
+        "Depart du Kola (region Luba-Lunda, RDC actuelle)",
+        "Migration vers le sud-est en traversant le plateau du Shaba/Katanga",
+        "Installation dans les collines d'Itumba a l'ouest de Serenje",
+        "Expansion vers les districts de Serenje, Mkushi et Kabwe en Province Centrale de Zambie"
+      ],
+      "historicalSettlementZones": [
+        "District de Serenje, Province Centrale (Lala de l'Est)",
+        "District de Mkushi, Province Centrale (Lala de l'Ouest)",
+        "Province du Copperbelt (frange nord)"
+      ],
+      "unificationsOrDivisions": "Les Lala se divisent en deux groupes principaux : les Lala de l'Est (Serenje), gouvernes par une lignee distincte, et les Lala de l'Ouest (Mkushi), gouvernes par la lignee Mushili du clan Bena Nyendwa. Cette division remonte aux migrations distinctes depuis le Kola.",
+      "externalInfluences": "Les Lala ont ete influences par les royaumes Bemba, Lunda et Yeke (Msiri de Bunkeya). Au 19e siecle, la lignee Mushili a conquis une partie du territoire Lamba dans la region de Bukanda. L'arrivee des missionnaires et des colonisateurs britanniques a partir des annees 1890 a transforme l'organisation sociale et politique Lala.",
+      "majorHistoricalEvents": "David Livingstone mourut en mai 1873 au village du chef Chitambo (Serenje), evenement qui est reste dans la memoire collective Lala. En 1925, le chef Namopala fut depose pour avoir heberge Tomo Nyirenda (Mwana Lesa), un predicateur millenariste. La lignee Mushili a conquis les Lamba de Bukanda au milieu du 19e siecle avant que les Belges ne retablissent la frontiere ethnique vers 1900."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Lala sont gouvernes traditionnellement par des chefs (mfumu). Le chef superieur porte le titre de Kankomba-we-Lala et est actuellement le Senior Chief Muchinda. Les districts de Serenje sont divises en huit chefferies : Chibale, Chisomo, Kabamba, Kafinda, Mailo, Muchinka, Muchinda et Serenje. En dessous des chefs se trouvent les Chilolos (semblables a des conseillers regionaux), puis les Sulutani (chefs de village), et enfin les anciens des villages.",
+      "clanOrganization": "Les Lala sont organises en clans matrilineaires exogames. Le clan royal est le Bena Nyendwa (clan du Vagin), specifique aux Lala et leurs sous-groupes Ambo. Les clans complementaires comprennent Bena Bi (clan de l'Anus), Bena Mwanso (clan du Sexe masculin) et Bena Mubinda (clan du Cache-sexe). Un conseil traditionnel independant, l'Insaka ye Lala, conseille les chefs et arbitre les conflits entre chefferies.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance est matrilineaire : l'appartenance clanique, le statut social, l'heritage et la succession passent par la ligne maternelle. La famille royale est appelee Bena Nyendwa. La succession a la chefferie suit la ligne maternelle.",
+      "religiousAuthority": "Les Lala pratiquent un culte des ancetres. Les esprits ancestraux sont venerés lors de la ceremonie Ichibwela Mushi (retour au village depuis les champs). Les chefs jouent un role de mediateurs entre les vivants et les ancetres. Le christianisme est aujourd'hui predominant mais coexiste avec les pratiques traditionnelles."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lala-Bisa (Cilala / Ilala)",
+      "isoCodes": ["leb"],
+      "dialects": [
+        "Cilala (Lala proprement dit)",
+        "Bisa",
+        "Ambo",
+        "Luano",
+        "Swaka"
+      ],
+      "vehicularRole": "Le Cilala/Lala-Bisa est une langue bantoue de Zambie etroitement apparentee au Bemba. Il est mutuellement intelligible avec le Bisa et le Bemba des provinces du Nord, de la Muchinga et de la Luapula. Le Swaka est un dialecte divergent parfois classe comme langue separee. Le Bemba sert souvent de langue vehiculaire regionale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie principale est l'Ichibwela Mushi (aussi ecrit Chibwelamushi), une fete des recoltes celebree en septembre dans le district de Mkushi, signifiant le retour au village depuis les champs. Elle rend graces aux esprits ancestraux pour les bonnes pluies et les abondantes recoltes. Des danses, drames, chants, nourriture et boissons traditionnelles (katata, katubi) y sont presentes. Les Lala pratiquaient aussi un rite d'initiation feminin (semblable au wali Luvale) lors des premieres regles, impliquant isolement et enseignement par les ainées, bien que ce rite soit en voie de disparition.",
+      "symbols": "L'ubulungu est un collier fait de racines de plantes (impande) porte par les femmes agees comme symbole d'appartenance pure au peuple Lala. Le Kankomba-we-Lala est le titre honorifique du chef superieur. La famille royale Bena Nyendwa est le symbole de l'autorite politique. Le chitemene (systeme de defriche par brulis) est un symbole culturel de l'agriculture Lala.",
+      "artsAndMusic": "Les Lala pratiquent le chant traditionnel, la narration d'histoires autour du feu le soir (contes, fables), la poesie et le theatre. La danse Kakele est une danse traditionnelle distinctive. Les instruments de musique traditionnels comprennent des tambours et d'autres instruments a percussion. Les artisans Lala produisent des sculptures, des houes et des haches decoratives. Les femmes portent le chitenge et l'ichitambal (coiffure), refletant une identite culturelle melant tradition et modernite.",
+      "spiritualities": "Les Lala pratiquent le culte des ancetres (venerés lors de ceremonies et rites funèbres). Quand un chef mourrait, son corps etait embaume avec du Nyangu (soupe de haricots) et conserve dans une petite maison avant l'inhumation secrete menee de nuit par quelques chefs. Aujourd'hui, la majorite des Lala sont chretiens (protestants et catholiques), avec persistance de pratiques ancestrales traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Lala n'ont pas forme de royaume centralise mais une confederation de chefferies sous l'autorite suprematrice du Senior Chief Muchinda (Kankomba-we-Lala). Les chefferies historiques incluent Chitambo, Muchinda, Chisomo, Serenje, Kabamba, Mailo, Chibale, Mboshya et Kafinda. La lignee Mushili (Lala de l'Ouest, Mkushi) a etendu son pouvoir sur les Lamba de Bukanda au 19e siecle.",
+      "relationsWithNeighbors": "Les Lala entretiennent des relations etroites avec les Bemba, les Bisa, les Lamba, les Swaka et les Aushi, partageant des origines Luba-Lunda communes et des systemes de clans similaires. Des joking relationships (balwani) existent entre clans complementaires de peuples voisins. Les Lala de l'Ouest ont eu des conflits avec les Lamba pour le controle de la region de Bukanda au 19e siecle.",
+      "conflictsOrAlliances": "Au milieu du 19e siecle, la lignee Mushili des chefs Lala (clan Bena Nyendwa) a conquis les Lamba de Bukanda, a l'est de la riviere Munyengashi. Vers 1900, les Belges ont retabli la riviere Munyengashi comme frontiere ethnique suite a une guerre du chef Lala contre des villages Lamba. Les Aushi ont envahi le territoire Lala dans les annees 1880, prenant en otage Musonda Kaseba (fille d'un chef Lala).",
+      "diaspora": "Des Lala se sont installes dans les centres urbains du Copperbelt (Kitwe, Ndola) depuis l'epoque coloniale, attires par les opportunites d'emploi dans les mines de cuivre. Une migration vers Lusaka et d'autres centres urbains s'est poursuivie depuis l'independance de la Zambie en 1964."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 635000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org (2025), recoupé avec le recensement zambien de 2010 (Lala : 3,1% de la population)",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 635000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lala people – Wikipedia (https://en.wikipedia.org/wiki/Lala_people)",
+      "Mkandawire, S.B. & Daka, H. – Cultural Preservation Literacy in Zambia: A Case Study of the Lala People of Serenje District, University of Zambia (https://dspace.unza.zm/server/api/core/bitstreams/c53ebc1e-2380-4aff-9b69-2b4d9fd13057/content)",
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)",
+      "PeopleGroups.org – Lala of Zambia (https://peoplegroups.org/people_groups/pg015588/)",
+      "Ethnologue – Lala-Bisa Language (LEB) (https://www.ethnologue.com/language/leb/)",
+      "Joshua Project – Zambia People Groups (https://joshuaproject.net/countries/ZA)"
+    ]
   }
 }

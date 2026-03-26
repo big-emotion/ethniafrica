@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Ndamba",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wandamba",
+      "exonyms": ["Wandamba", "Chindamba"],
+      "originOfExonyms": "Wandamba est la forme avec le prefixe pluriel bantou wa- designant les personnes. Chindamba designe la langue du groupe. L'ethnonyme derive probablement du nom de leur premier chef, Mbuyi Undole.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ndamba et Wandamba sont utilises de maniere interchangeable en Tanzanie. Certains ethnologues incluent les Pogoro parmi les Ndamba en raison de leur forte proximite linguistique et culturelle.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Groupe Rufiji-Ruvuma, sous-famille Kilombero (langues G52)",
+      "historicalRegion": "Vallee du Kilombero, region de Morogoro (centre-sud Tanzanie)",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Ndamba"],
+    "ethnicities": ["Ndamba", "Wandamba"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la tradition orale, les Ndamba sont une ramification du peuple Pogoro. Le premier chef, Mbuyi Undole I, mena un petit groupe vers l'ouest en s'eloignant des Pogoro, donnant naissance a une identite distincte.",
+      "formationPeriod": "Fin du XIXe siecle comme entite formellement reconnue : Mbuyi Undole I enregistra officiellement le groupe Ndamba aupres du gouvernement allemand en 1901. Leur implantation dans la vallee du Kilombero precede cette date de plusieurs generations.",
+      "migrationRoutes": [
+        "Separation d'avec les Pogoro vers l'ouest dans la region de Morogoro",
+        "Diffusion dans la vallee du Kilombero et la region d'Ulanga"
+      ],
+      "historicalSettlementZones": [
+        "District de Kilombero (vallee du Kilombero)",
+        "District d'Ulanga",
+        "District de Kilolo, region d'Iringa",
+        "Localites : Mlimba, Masagati, Chisano, Chita, Merera, Malinyi, Igawa, Biro, Ngombo, Mchombe, Mngeta, Lwipa, Mbingu, Mofu"
+      ],
+      "unificationsOrDivisions": "Bien que certaines sources distinguent les Ndamba et les Mbunga comme deux groupes distincts, des travaux linguistiques recents etablissent qu'il s'agit en realite d'un seul peuple dont les varietes linguistiques constituent des dialectes du meme ensemble. Les Ndamba, Mbunga et Pogolo partagent une origine commune.",
+      "externalInfluences": "Administration coloniale allemande (enregistrement officiel en 1901). Politique ujamaa du gouvernement tanzanien (depuis les annees 1970) reorganisant les habitats traditionnels en villages collectifs pour faciliter l'education et la sante publique.",
+      "majorHistoricalEvents": "Enregistrement officiel de la tribu Ndamba par Mbuyi Undole I aupres du gouvernement colonial allemand en 1901. Publication du premier dictionnaire Chindamba en 2008 et 2010 par Agathon Kipandula, chercheur linguistique de la Banque de Tanzanie. Publication en 2022 de Historia na Maisha ya Wandamba par plusieurs auteurs dont le Rev. Fidelis Mfalanyombo (OSA)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie hereditaire. Le premier chef enregistre etait Mbuyi Undole I. Organisation villageoise avec autorite clanique.",
+      "clanOrganization": "Descendance patrilineaire : les Ndamba tracent leur filiation par la ligne paternelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage et l'appartenance clanique.",
+      "religiousAuthority": "Majorite musulmane pratiquant un islam peu rigoriste : le port du bonnet blanc et l'adoption d'un prenom arabe constituent les principaux marqueurs religieux observes. Ramadan et autres rituels islamiques souvent non observes. Presence de l'Eglise catholique romaine dans certaines communautes."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Chindamba",
+      "isoCodes": ["ndj"],
+      "dialects": [
+        "Mbunga (dialecte proche, similarite lexicale de 69 %)",
+        "Pogolo (similarite lexicale de 56 %)"
+      ],
+      "vehicularRole": "Le chindamba est la langue maternelle. Le swahili est utilise comme langue vehiculaire nationale. Chindamba, Mbunga et Pogolo sont des langues Rufiji-Ruvuma du groupe bantou (code Guthrie G52)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques religieuses liees a l'islam local. Traditions d'habitat en hameaux selon un modele traditionnel remis en cause par la politique ujamaa tanzanienne des annees 1970.",
+      "symbols": "Le riz et le poisson constituent les aliments symboliques identitaires du groupe : les Ndamba sont connus pour ne consommer que du riz et du poisson.",
+      "artsAndMusic": "Traditions orales. Publication en 2022 de Historia na Maisha ya Wandamba temoigne d'une conscience culturelle vivante et d'un effort de documentation. Grammaire publiee en 2010 : Edelsten, Peter ; Lijongwa, Chiku, A Grammatical Sketch of Chindamba (Rudiger Koppe Verlag).",
+      "spiritualities": "Islam populaire predominant. Memoire historique sur les origines et le premier chef Mbuyi Undole I, transmise par voie orale et desormais documentee par ecrit."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie fondee par Mbuyi Undole I, dont la descendance dirigeait le groupe apres l'enregistrement de 1901. Diffusion progressive du groupe dans le sud de la region de Morogoro.",
+      "relationsWithNeighbors": "Proches des Pogoro dont ils sont issus. Relations historiques complexes avec les Bena au nord-est et les Hehe a l'ouest. Les Ndamba et les Pogoro se sont dispute l'autorite sur les rizieres de la vallee du Kilombero dans les annees 1940-1950.",
+      "conflictsOrAlliances": "Dispute avec les Pogoro pour les droits sur les terres rizieres du Kilombero dans les decennies 1940-1950 (documents JSTOR, Memoria, Migration and the Authority of History in Southern Tanzania). Resistance passive a la politique de regroupement ujamaa.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 350000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org (2024) : 295 000 ; Wikipedia (2022) : 500 000 ; estimation mediane 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 350000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ndamba people – Wikipedia EN (https://en.wikipedia.org/wiki/Ndamba_people)",
+      "Ndamba in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13271)",
+      "Ndamba tribe – Hadzabetribe.com (https://www.hadzabetribe.com/ndamba-tribe/)",
+      "Ndamba – Glottolog 5.3, ISO 639-3: ndj (https://glottolog.org/resource/languoid/id/ndam1239)",
+      "Ndamba – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndamba.html)",
+      "Memory, Migration and the Authority of History in Southern Tanzania – JSTOR (https://www.jstor.org/stable/183473)"
+    ]
   }
 }

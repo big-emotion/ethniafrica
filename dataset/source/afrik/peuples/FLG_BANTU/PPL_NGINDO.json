@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Ngindo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wangindo",
+      "exonyms": ["Wandingo", "Wangindo", "Gindo"],
+      "originOfExonyms": "Wandingo est la forme swahilie plurielle usuelle ; Gindo est la forme abreuvee utilisee dans les sources coloniales allemandes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Ngindo est utilise dans les sources officielles tanzaniennes et academiques. Wangindo designe collectivement le peuple en swahili.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Groupe Rufiji-Ruvuma (Bantou du Sud-Est tanzanien)",
+      "historicalRegion": "Sud-Est de la Tanzanie (Pwani meridionale, Ruvuma orientale, Morogoro meridionale, Lindi septentrionale)",
       "currentCountries": ["TZA"]
     },
     "ethnicities": ["Ngindo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Peuple bantou originaire du groupe linguistique Rufiji-Ruvuma, installe de longue date dans les zones forestieres et de brousse de l'est de la Tanzanie. Les ancetres Ngindo pratiquaient l'agriculture itinerante, la chasse et la cueillette dans les plaines du Selous et des districts de Liwale et Kilwa.",
+      "formationPeriod": "Identite ethnique consolidee avant la periode coloniale, documentee des le XIXe siecle par les voyageurs arabes et europeens sur la cote est-africaine.",
+      "migrationRoutes": [
+        "Migrations internes depuis les collines cotieres vers les plaines interieures du Selous",
+        "Deplacements forces vers 1945 suite a une epidemie de maladie du sommeil dans la Reserve de chasse du Selous orientale"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Liwale et Kilwa (region Lindi)",
+        "Sud de la region Pwani",
+        "Est de la region Ruvuma",
+        "Nord de la region Lindi"
+      ],
+      "unificationsOrDivisions": "Le peuple Ngindo n'a pas forme de royaume centralise ; il etait organise en petites communautes de clans. La pression des Ngoni voisins et les violences coloniales allemandes ont maintenu leur population a un niveau peu eleve.",
+      "externalInfluences": "Influence de la traite esclavagiste arabe par la cote, puis oppression coloniale allemande. Apres la guerre Maji Maji (1905-1907), les Ngindo ont souffert de la politique de la terre brulee allemande et d'une severe famine. Les Ngoni dominaient les Ngindo comme voisins plus puissants.",
+      "majorHistoricalEvents": "Participation active a la rebellion Maji Maji (1905-1907) : le 14 aout 1905, des combattants Ngindo attaquent un groupe de missionnaires, tuant cinq personnes dont l'eveque Spiss. Puis attaque du boma allemand de Liwale. La repression allemande et la famine subsequente deciment la population. En 1945, les Wangindo sont expulses de force de la Reserve de chasse du Selous oriental en raison d'une epidemie de maladie du sommeil."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en clans autonomes sans chef centralise. Les anciens de clan (elders) assuraient la prise de decision collective. Absence de structure royale ou de chefferie hierarchisee.",
+      "clanOrganization": "Societe patrilineaire organisee en clans. Les liens familiaux etendus constituaient l'unite sociale et politique de base.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinaient l'appartenance clanique, l'acces a la terre et les obligations sociales. Les elders de lignage jouaient un role central dans la resolution des conflits.",
+      "religiousAuthority": "Croyances animistes traditionnelles centrees sur les esprits ancestraux et les rituels de la nature. L'islam sunnite s'est diffuse depuis la cote lors des siecles precedents et est aujourd'hui la religion majoritaire."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kingindo (Ngindo)",
+      "isoCodes": ["nnq"],
+      "dialects": ["Kingindo", "Ndendeule (langue proche apparentee)"],
+      "vehicularRole": "La langue ngindo est utilisee en contexte communautaire local. Le swahili est la langue vehiculaire nationale et d'education en Tanzanie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituels agricoles et de chasse lies aux esprits ancestraux. Ceremonies d'initiation a l'age adulte. Pratiques islamiques integrees dans la vie quotidienne (fetes religieuses, mariages).",
+      "symbols": "La tradition orale, la poesie et les pratiques de denomination constituent le coeur de l'identite culturelle Ngindo. Le nom Andanenga (anda = comme, nenga = moi) illustre la richesse de la langue.",
+      "artsAndMusic": "Tradition de poesie orale et de chant. Le poete Amir Abdallah Sudi, dit Andanenga, est une figure culturelle notable. Artisanat et vannerie courants dans les communautes rurales.",
+      "spiritualities": "Animisme traditionnel avec culte des ancetres et rituels de la nature. Islam sunnite majoritaire, profondement integre dans la vie sociale. Des croyances animistes persistent notamment dans les zones rurales isolees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume ou de chefferie centralise. Les Ngindo s'organisaient en communautes de clans dispersees dans les zones forestieres et de brousse.",
+      "relationsWithNeighbors": "Relations difficiles avec les Ngoni qui les dominaient et les pillaient. Contacts commerciaux avec les populations cotieres arabes et swahilies. Voisinage avec les Matengo, Matumbi, Ndendeule et Yao.",
+      "conflictsOrAlliances": "Participation a la rebellion Maji Maji (1905-1907) aux cotes d'autres peuples du Sud tanzanien contre la colonisation allemande. Pression historique des Ngoni limitant la croissance demographique.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 620000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project / PeopleGroups.org (estimation 2025)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 620000,
+          "note": "Regions de Pwani meridionale, Ruvuma orientale, Morogoro meridionale, Lindi septentrionale"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ngindo people – Wikipedia EN (https://en.wikipedia.org/wiki/Ngindo_people)",
+      "Ngindo language – Wikipedia EN (https://en.wikipedia.org/wiki/Ngindo_language)",
+      "Ngindo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13357)",
+      "Ngindo of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015005/)",
+      "Past Wangindo Settlements in the Eastern Selous Game Reserve – Tanzania Notes and Records (https://www.africabib.org/rec.php?RID=188857230)",
+      "Maji Maji Rebellion – Wikipedia EN (https://en.wikipedia.org/wiki/Maji_Maji_Rebellion)"
+    ]
   }
 }

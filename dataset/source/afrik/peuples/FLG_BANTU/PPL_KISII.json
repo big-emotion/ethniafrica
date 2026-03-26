@@ -6,54 +6,86 @@
   "content": {
     "appellations": {
       "mainName": "Kisii",
-      "selfAppellation": "",
-      "exonyms": ["Kisii (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abagusii",
+      "exonyms": [
+        "Gusii",
+        "Wakisii",
+        "Mkisii",
+        "Abaguzii",
+        "Kosova",
+        "Kossowa"
+      ],
+      "originOfExonyms": "Kisii est un exonyme swahili adopte par l'administration coloniale britannique. En swahili, une personne est Mkisii, le peuple Wakisii et leur langue Kikisii. Gusii vient de Mogusii, ancetre fondateur legendaire du XVIe siecle. Abagusii signifie litteralement 'peuple de Mogusii'. Kosova/Kossowa est une forme derivee de 'Inka Sobo' en Ekegusii ('leur maison') ou de 'Gosobe' en langue kipsigis.",
+      "whyProblematic": "Le terme Kisii ne designe pas le peuple dans leur propre langue mais une ville (Kisii, aussi appelee Bosongo ou Getembe). Il provient de l'administration coloniale britannique. Le nom authentique est Abagusii.",
+      "contemporaryUsage": "Kisii est le nom le plus courant au Kenya pour designer ce peuple et leurs comtes ancestraux. Abagusii reste l'auto-denomination preferee dans les contextes culturels et academiques.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs, Kenya occidental",
+      "historicalRegion": "Hauts plateaux de Gusii (Kisii), Kenya occidental",
       "currentCountries": ["KEN"]
     },
-    "ethnicities": ["Kisii"],
+    "ethnicities": ["Abagusii", "Kisii"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Abagusii (Kisii) sont un groupe ethnique bantouphone indigene des comtes de Kisii et Nyamira (ex-Nyanza) ainsi que de parties des comtes de Kericho et Bomet (ex-Rift Valley) au Kenya. Leur proto-langue emerge du bantou meridional du Nigeria et ouest du Cameroun, avec une expansion vers le sud et l'est de l'Afrique. Les etudes indiquent une descendance des East Nyanza Bantu depuis le sud de la region de Mara (Tanzanie), et une arrivee dans le flux bantou general depuis l'Ouganda oriental. Les traditions orales mentionnent une origine de 'Misri' (associee a l'Egypte ou au nord-est), interpretee par certains historiens comme une adoption du recit nilotique de migration.",
+      "formationPeriod": "Le premier peuplement de Gusiiland remonte au Neolithique (chasseurs-cueilleurs type Khoisan/Ogiek, puis agropastoralistes cushitiques vers 3200-1300 av. J.-C., puis pasteurs nilotiques vers 500 av. J.-C., puis Bantous a partir de 1 ap. J.-C.). La structure clanique actuelle des Abagusii a commence a prendre forme dans les plaines de Kano entre environ 1640 et 1755.",
+      "migrationRoutes": [
+        "Mont Elgon (frontiere Kenya-Ouganda)",
+        "Riviere Nzoia vers Yimbo (Siaya)",
+        "Yala et Alego vers Kisumu",
+        "Plaines de Kano (1640-1755)",
+        "Kabianga et Sotik (territoire kalenjin)",
+        "Installation finale dans les hauts plateaux de Kisii-Nyamira"
+      ],
+      "historicalSettlementZones": [
+        "Comtes de Kisii et Nyamira, ex-province de Nyanza, Kenya",
+        "Parties de Kericho et Bomet, ex-province du Rift Valley",
+        "Hauts plateaux de Gusii, 50 km a l'est du lac Victoria, altitude jusqu'a 2000 m"
+      ],
+      "unificationsOrDivisions": "Les six clans principaux fondateurs (Abagetutu, Abanyaribari, Abagirango, Abanchari, Abamachoge, Ababasi) se sont formes lors des migrations. Les clans ont commence a se desintegrer vers le milieu du XIXe siecle. Les sept sous-groupes clanique actuels sont: Kitutu (Getutu), North Mugirango, South Mugirango, Majoge, Wanjare (Nchari), Bassi et Nyaribari.",
+      "externalInfluences": "Influence profonde des Kipsigis (Kalenjin) sur les traditions orales et certaines pratiques (dont la circoncision). Absorption de lignages kalenjin (clan Abachere) dans la structure sociale Abagusii. Interactions intenses avec Luo, Maasai et Nandi. Domination coloniale britannique depuis le debut du XXe siecle (apres avoir ete consideres comme guerriers feroces).",
+      "majorHistoricalEvents": "Bataille de la riviere Migori (vers 1820) detruisant l'identite corporative des Gusii. Expeditions punitives britanniques (1904-1907) mettant fin au mode de vie pastoral et guerrier. Revoltes Gusii jusqu'en 1914. Introduction de nouveaux immigrants (Baganda, Maragoli, Nubi, Suba) par les Britanniques dans les annees 1930 comme interpretes, soldats et fermiers."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation decentralisee fondee sur les clans, sans etat centralise. Avant la colonisation, des guerriers (oborwani/chinkororo) et des guerisseurs-devins assuraient certaines fonctions de leadership. Aujourd'hui representation par des chefs dans l'administration kenyane locale.",
+      "clanOrganization": "Sept sous-groupes clanique: Kitutu (Getutu), North Mugirango, South Mugirango, Majoge, Wanjare (Nchari), Bassi et Nyaribari. Les clans (patrilineaires) determinaient l'acces aux terres et la resolution des conflits. Les affiliations clanique ont commence a s'affaiblir au milieu du XIXe siecle.",
+      "ageClassSystems": "Systeme d'age lie a la circoncision masculine (vers 10 ans), divisant les hommes en classes d'age avec des roles et responsabilites specifiques.",
+      "roleOfLineages": "Lignages patrilineaires au centre de l'organisation sociale. Le homestead (omochie) comprend un homme marie, ses epouses, ses filles non mariees et ses fils non circoncis. La transmission des terres de pere en fils est centrale.",
+      "religiousAuthority": "Anciennement: hommes-medecine et devins (omoragori) jouant un role religieux et therapeutique. Croyance en Engoro (aussi Nyasae) comme dieu supreme. Aujourd'hui: majorite chretienne (catholiques, adventistes, lutheriens suedois, assemblees de Dieu)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ekegusii",
+      "isoCodes": ["guz"],
+      "dialects": [
+        "Rogoro (dialecte nord, forme standard utilisee dans la presse et la radio)",
+        "Maate (dialecte sud)"
+      ],
+      "vehicularRole": "L'Ekegusii est la langue maternelle de 2,7 millions de locuteurs (recensement kenyan 2019). Classe parmi les langues bantoues des Grands Lacs (code E.42 de Guthrie), apparente a Lulogooli, Ameru, Kuria, Ware, Ikizu, Ikoma et Sanjo. Le swahili et l'anglais sont les langues nationales du Kenya et de l'administration."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Circoncision masculine (initiation sans anesthesie vers 10 ans, novembre-decembre) comme rite de passage majeur. Seclusion post-initiatique avec enseignement des roles adultes, du code de conduite (honte: chinsoni, respect: ogosika). Celebrations communautaires et familiales lors de la circoncision.",
+      "symbols": "Sculptures en soapstone (pierre a savon, chigware) renommees mondialement, concentrees dans le sud du comte de Kisii autour de Tabaka. Forteresses en pierre et tranchees (orwaki) anciennement construites pour la defense.",
+      "artsAndMusic": "Lyre basse a 8 cordes obokano, la plus grande du Kenya (jusqu'a 1,80 m de hauteur), reservee aux hommes. Femmes jouant tambours (Ekonu) et hochets lors des ceremonies de circoncision. Flutes traditionnelles. Musique vocale predominante.",
+      "spiritualities": "Croyance traditionnelle en un dieu supreme Engoro (Nyasae), createur de l'univers et de la vie. Le soleil (Risase) et les etoiles sont importants. Maladie et malheur attribues aux esprits malins, a la sorcellerie ou aux ancetres mecontents (Ebirecha). Veneration des ancetres et recours aux devins (omoragori). Aujourd'hui majorite chretienne (catholiques, adventistes, lutheriens suedois, assemblee de Dieu pentecotiste) coexistant avec des pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation par clans avec des leaders guerriers locaux. Reputation de guerriers feroces, aux cotes des Ameru, Abakuria et Maasai, avant la colonisation britannique.",
+      "relationsWithNeighbors": "Voisins Nilotiques: Luo (a l'ouest), Kipsigis (a l'est, relation d'opposition et d'influence mutuelle), Maasai (au sud). Interactions de commerce, conflits de betail et alliances temporaires. Les Gusii, Kuria et Luhya sont parmi les premiers groupes bantous au Kenya.",
+      "conflictsOrAlliances": "Expulsion de la region du lac Victoria par les Luo (vers 1755-1770). Conflits avec les Kipsigis pour le betail et les paturages. Alliance avec les Luo contre les Kipsigis lors de la bataille decisive de la riviere Charachani. Bataille de la riviere Migori (vers 1820) contre les Kwavi Maasai.",
+      "diaspora": "Expansion post-coloniale dans les villes kenyanes (Homa Bay, Migori, Kisumu, Siaya, Nairobi). Diaspora internationale aux Etats-Unis (surtout Minnesota), Royaume-Uni, Canada, Nouvelle-Zelande, Australie et Afrique du Sud."
     },
     "demography": {
-      "totalPopulation": 3,
+      "totalPopulation": 3100000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Recensement kenyan 2019 (2,7 millions de locuteurs Ekegusii), estimation 2025",
+      "distributionByCountry": [{ "country": "KEN", "population": 3100000 }]
     },
-    "sources": []
+    "sources": [
+      "Gusii people – Wikipedia (https://en.wikipedia.org/wiki/Gusii_people)",
+      "Gusii – Encyclopaedia Britannica (https://www.britannica.com/topic/Gusii)",
+      "Ekegusii – Minority and Minoritized Languages and Cultures, Texas State University Press, 2023 (https://pressbooks.txst.edu/minoritylanguages/part/ekegusii/)",
+      "Gusii history – Traditional Music and Cultures of Kenya, Jens Finke, 2003 (https://www.bluegecko.org/kenya/tribes/gusii/history.htm)",
+      "Gusii in Kenya – Joshua Project (https://joshuaproject.net/people_groups/12721)",
+      "Gusii – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fl08/summary)",
+      "Information on the Kisii tribe – Immigration and Refugee Board of Canada, 2005 (https://www.ecoi.net/en/document/1060343.html)"
+    ]
   }
 }

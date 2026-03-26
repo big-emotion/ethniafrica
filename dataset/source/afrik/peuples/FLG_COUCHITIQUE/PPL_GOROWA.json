@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_GOROWA",
   "nameMain": "Gorowa",
   "languageFamilyId": "FLG_COUCHITIQUE",
@@ -6,54 +11,79 @@
   "content": {
     "appellations": {
       "mainName": "Gorowa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
-      "currentCountries": ["TZA"]
+      "selfAppellation": "Gorwaa",
+      "exonyms": [
+        "Fiome",
+        "Fiomi",
+        "Goroa",
+        "Gorwaa",
+        "Kimbulu",
+        "Ufiomi",
+        "Gobreik"
+      ],
+      "originOfExonyms": "Fiome et Fiomi (aussi écrit Ufiomi) sont des exonymes swahilis courants. Kimbulu ou Mbulu est emprunté au nom du plus grand village iraqw voisin ; de nombreux jeunes Gorowa s'identifient à l'ethnonyme Mbulu, qui subsume progressivement les deux groupes (Gorowa et Iraqw) dans les zones urbaines. Gobreik est le terme Datooga (ethnie nilotique pastorale voisine) pour désigner les anciens groupes couchitiques agriculteurs dont descendent les Gorowa et les Iraqw.",
+      "whyProblematic": "Le terme Kimbulu peut induire en erreur car il désigne à la fois la langue gorowa et la langue iraqw dans certains contextes urbains, brouillant la distinction ethnolinguistique entre les deux groupes.",
+      "contemporaryUsage": "Gorowa ou Gorwaa est le terme préféré par les locuteurs eux-mêmes et la communauté académique. Dans les zones urbaines comme Babati, les jeunes se décrivent souvent comme Mbulu. La langue est parfois écrite avec l'orthographe iraqw par défaut."
     },
-    "ethnicities": ["Gorowa"],
+    "ethnicities": ["Gorowa", "Gorwaa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Gorowa sont un peuple couchitique méridional (South Cushitic), appartenant à l'embranchement Afroasiatique. Ils font partie du groupe West-Rift des couchitiques méridionaux, avec les Iraqw, les Alagwa et les Burunge. Leurs ancêtres sont associés au complexe culturel Sirikwa, des agriculteurs-pasteurs néolithiques présents dans la région des Grands Lacs avant les migrations bantoues et nilotiques. Leur tradition orale les relie aux mêmes origines que les Iraqw, avec une séparation ethnogénétique après des rites d'expiation communs dans un lieu appelé Ya'eér Qantsar-Ma/angwe.",
+      "formationPeriod": "Les Gorowa sont établis dans leur zone actuelle depuis environ 250 à 300 ans (environ 10 générations). Leur séparation d'avec les Iraqw aurait eu lieu avant cette période de sédentarisation définitive dans le district de Babati.",
+      "migrationRoutes": [
+        "Depuis un foyer d'origine couchitique méridional commun avec les Iraqw, vers le sud en direction du Rift tanzanien",
+        "Établissement entre le mont Hanang (ouest) et le mont Kwaraa (est), avec de nombreux déplacements causés par les raids Datooga",
+        "Contraction définitive vers le district de Babati (régions de Manyara et Dodoma) après l'arrivée des Maasaï au XVIIIe siècle"
+      ],
+      "historicalSettlementZones": [
+        "District de Babati, région de Manyara, Tanzanie",
+        "Région de Dodoma, Tanzanie",
+        "Zone entre le mont Hanang et le mont Kwaraa"
+      ],
+      "unificationsOrDivisions": "Les Gorowa et les Iraqw sont linguistiquement très proches, avec une haute intelligibilité mutuelle, mais se considèrent comme deux groupes ethniques distincts. Des différences morphosyntaxiques salient (notamment l'ordre des arguments post-verbaux) distinguent les deux langues. Une identité Mbulu plus large tend à subsumer les deux groupes parmi les jeunes urbains.",
+      "externalInfluences": "Long contact avec les Datooga (pasteurs nilotiques), dont des emprunts lexicaux importants dans le vocabulaire gorowa, notamment en poésie. Les praticiens traditionnels (medecins) datooga sont tenus en haute estime par les Gorowa. Des mariages mixtes avec des Datooga sont attestés ; certains anciens locuteurs gorowa ont au moins un parent datooga. Influence de la pastoralisme maasaï depuis le XVIIIe siècle.",
+      "majorHistoricalEvents": "Série de conflits avec les Datooga conduisant à des déplacements répétés depuis les zones entre le mont Hanang et le mont Kwaraa. Arrivée des Maasaï aux alentours du XVIIIe siècle, exerçant une pression supplémentaire sur le territoire gorowa. Traduction de l'Ancien Testament iraqw produite en 1977 par la Tanzania Bible Society, utilisée par les locuteurs gorowa faute d'une traduction propre."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation communautaire décentralisée. La société gorowa ne possède pas de structure cheffale centralisée historique documentée. La gestion foncière et les rites collectifs sont organisés à l'échelle locale, avec une forte dimension rituelle liée à la sacralité de la nature.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un rôle dans la transmission des savoirs de gestion des terres et dans les droits d'usage des forêts et des points d'eau sacrés.",
+      "religiousAuthority": "Les praticiens rituels (medecins traditionnels) occupent une position d'autorité spirituelle, notamment lors des grandes réunions rituelles dans les bois sacrés. Les praticiens datooga sont également reconnus dans ce rôle. La figure prophétique historique datooga Saygilo Mageena est vénérée par les Gorowa."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Gorwaa (gow)",
+      "isoCodes": ["gow"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue nationale de Tanzanie et la langue d'instruction scolaire. Les locuteurs gorowa tendent à adopter le swahili dans les zones urbaines (Babati, Arusha) et dans les échanges commerciaux. L'iraqw joue un rôle véhiculaire régional, notamment avec les jeunes qui s'identifient à l'identité Mbulu. Le gorwaa est classifié comme langue menacée (statut 6b dans l'échelle EGIDS) avec environ 132 748 locuteurs."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les rites et rassemblements sociaux gorowa ont souvent lieu dans des forêts et des bosquets sacrés soigneusement préservés. Les grands ficus sont protégés comme demeures des esprits ameneurs de pluie. Des rites d'expiation collectifs sont pratiqués, avec des convergences notables avec ceux des Iraqw. Les praticiens rituels des deux groupes se réunissent régulièrement pour les grands rites.",
+      "symbols": "La vision du monde naturel comme sacré est centrale dans la cosmologie gorowa. Les grands arbres, particulièrement les ficus, sont des symboles de la présence des esprits. La nature est perçue comme régulatrice de l'ordre cosmique et social.",
+      "artsAndMusic": "Tradition orale riche : les anciens locuteurs ruraux ont contribué à un vaste corpus de données linguistiques incluant des chants, des contes traditionnels et un vocabulaire rare. Ce corpus a été archivé dans le cadre de programmes de documentation linguistique (Harvey 2017).",
+      "spiritualities": "Religion traditionnelle gorowa fondée sur la sacralité du monde naturel. Diverses pratiques de gestion foncière inspirées par les mythes ont été développées autour de cette vision : interdiction des pratiques d'usage des terres non durables, protection des bosquets sacrés pour les rituels, préservation des sources d'eau. Le christianisme est présent dans les zones urbaines."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Relations intenses et quotidiennes avec les Iraqw (culturellement dominants dans la région), les Rangi, les Mbugwe, les Alagwa et les Datooga. Le contact linguistique avec l'iraqw est si fort qu'une identité Mbulu commune émerge. Les Gorowa et les Iraqw partagent des systèmes rituels communs et leurs praticiens se réunissent régulièrement.",
+      "conflictsOrAlliances": "Long historique de conflits avec les Datooga, pasteurs nomades qui poussaient les Gorowa hors de leurs zones d'établissement entre le mont Hanang et le mont Kwaraa. Les Maasaï, arrivés au XVIIIe siècle, ont exercé une pression supplémentaire. Des alliances rituelles existent aujourd'hui entre Gorowa et Iraqw.",
+      "diaspora": "De petites communautés gorowa vivent dans les villes tanzaniennes (Babati, Katesh, Dareda, Arusha, Dar es Salaam). Ces familles tendent à adopter l'identité Mbulu et le swahili."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 145000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation 2025 basée sur le recensement tanzanien 2014 et l'étude Harvey 2015 (132 748 locuteurs gorwaa) – Harvey A., Gorwaa Tanzania, Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
+      "distributionByCountry": [
+        { "country": "TZA", "population": 145000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Gorowa people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Gorowa_people)",
+      "Gorowa language – Wikipedia (https://en.wikipedia.org/wiki/Gorowa_language)",
+      "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
+      "Harvey A., Toward a description of the Gorwaa language, 2018 (https://andrewdtharvey.com/wp-content/uploads/2019/01/harvey-andrew-2018-the-gorwaa-noun-toward-a-description-of-the-gorwaa-language.pdf)",
+      "Gorwaa Language (GOW) – Ethnologue (https://www.ethnologue.com/language/gow/)",
+      "Glottolog : Gorwaa goro1270 (https://glottolog.org/resource/languoid/id/goro1270)",
+      "Iraqw language – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_language)"
+    ]
   }
 }

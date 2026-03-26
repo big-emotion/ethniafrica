@@ -2,71 +2,101 @@
   "id": "PPL_ITSEKIRI",
   "nameMain": "Itsekiri",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["NER", "NGA"],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
       "mainName": "Itsekiri",
-      "selfAppellation": "Itsekiri",
+      "selfAppellation": "Itsekiri / Iwerre",
       "exonyms": [
-        "« Jekri » (terme utilisé par les Européens), « Warri » (nom de la ville principale)"
+        "Jekri (nom donne par les Europeens, alteration d'Itsekiri)",
+        "Warri (du nom de la ville principale, parfois employe comme metonymie ethnique)",
+        "Ishekiri / Isekiri / Itsekri (variantes orthographiques europeennes)",
+        "Warree et ses variantes historiques (dans les documents coloniaux britanniques et portugais)"
       ],
+      "originOfExonyms": "Le terme Jekri est une deformation europeenne d'Itsekiri, utilise par les navigateurs et commerçants britanniques a partir du XVIe siecle. Le terme Warri provient du nom de la ville Iwerre (ou Warri), capitale du royaume itsekiri. L'endonyme Iwerre est le nom propre du territoire itsekiri dans la tradition orale.",
+      "whyProblematic": "La confusion entre le nom du peuple (Itsekiri) et celui de la ville multiculturelle de Warri (qui abrite aussi les Urhobo, Ijaw et Isoko) cree des ambiguites dans les sources coloniales et contemporaines. Les Itsekiri revendiquent la primogeniture sur Warri, ce qui est source de tensions persistantes avec les Urhobo et les Ijaw.",
+      "contemporaryUsage": "Itsekiri est l'appellation officielle dans les contextes nigerians et academiques. Le terme Jekri a disparu. Les Itsekiri se designent eux-memes comme Itsekiri ou comme inhabitants d'Iwerre. Leur dirigeant traditionnel porte le titre d'Olu de Warri (actuellement Ogiame Atuwatse III).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Yoruboid (sous-groupe du Bénoué-Congo)",
-      "historicalRegion": "Delta du NER, sud-ouest du Nigeria",
-      "currentCountries": ["NER", "NGA"]
+      "ethnoLinguisticGroup": "Yoruboid (sous-groupe du Volta-Niger, branche Benue-Congo du Niger-Congo) ; apparente au yoruba, a l'igala et a l'olukumi",
+      "historicalRegion": "Royaume de Warri (Iwerre) — delta occidental du Niger, sud-ouest du Nigeria, actuel Delta State et zones cotieres adjacentes d'Edo et Ondo",
+      "currentCountries": ["NGA"]
     },
     "ethnicities": [
-      "Itsekiri central",
-      "Itsekiri du Nord",
-      "Itsekiri du Sud",
-      "Sous-groupes régionaux"
+      "Communautes pre-royales d'origine Yoruboide : Ugborodo (descendance Ijebu), Koko, Omadino, Obodo, Inorin, Irigbo, Ureju",
+      "Okere : communaute fondee par des Beninois qui rejoignirent le groupe apres la creation du royaume (XVe siecle)",
+      "Nobles : familles royales (Otolu) et aristocratie (Oloye et Olare-Aja, maisons du Ologbotsere et de l'Iyatsere)",
+      "Omajaja : personnes libres de naissance (classe moyenne historique)",
+      "Descendants des anciens esclaves integres (Oton-Eru, statut aboli)"
     ],
     "origins": {
-      "ancientOrigins": "Les Itsekiri sont originaires de la région du delta du Niger dans le sud-ouest du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe yoruboid et sont liés aux Yoruba.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les peuples voisins (Yoruba, Ijaw, Urhobo).",
-      "externalInfluences": "Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme, et plus récemment de l'islam et de la modernisation."
+      "ancientOrigins": "Les Itsekiri sont issus de plusieurs groupes de tribus yorubophones qui migrèrent dans le delta occidental du Niger dans l'Antiquite, principalement depuis Ijebu, Mahin, Ugbo, Owo, Igala et Ile-Ife. Ces populations aborigenes, collectivement designees sous le nom Umale (signifiant esprits ou etres mythiques), formerent les premieres communautes de la region (Inorin, Ugborodo, Irigbo, Ureju, Omadino). L'historien Henry Ling Roth ecrivit en 1903 que les Itsekiri etaient plus Yoruba que Beninois. Un rapport parlementaire britannique de 1893 et le capitaine H. L. Gallwey confirment leur affinite avec les Yoruba.",
+      "formationPeriod": "Avant 1480, le prince Ginuwa (Iginuwa) quitte le Royaume de Benin a la suite d'une crise de succession et fonde le Royaume de Warri dans les criques du delta occidental, unifiant les communautes pre-existantes sous une monarchie avec capitale a Okotomu Irigbo (plus tard Ode-Itsekiri, la Grande Warri). Des Beninois poursuivant Ginuwa s'installèrent et fonderent le quartier Okere, integrant des elements Edo dans la culture itsekiri. Le royaume continua sans interruption jusqu'a aujourd'hui, Ogiame Atuwatse III etant l'Olu actuel.",
+      "migrationRoutes": [
+        "Migrations prehistoriques de groupes yorubophones depuis Ijebu, Mahin, Owo, Igala et Ile-Ife vers le delta occidental du Niger",
+        "Arrivee du prince Ginuwa et de sa suite depuis Benin City vers 1480, avec des retardataires beninois formant le quartier Okere"
+      ],
+      "historicalSettlementZones": [
+        "Ode-Itsekiri (Big Warri / Ale Iwerre) : capitale historique du Royaume de Warri",
+        "Ville de Warri : metropole commerciale principale, palais de l'Olu",
+        "LGA de Warri South, Warri North et Warri South West (Delta State)",
+        "Portions adjacentes des etats d'Edo et d'Ondo sur la cote atlantique",
+        "Sapele, Burutu, Forcados : villes avec presence itsekiri significative"
+      ],
+      "unificationsOrDivisions": "La fondation du Royaume de Warri par Ginuwa I vers 1480 realisa l'unification des communautes yorubophones pre-existantes sous une monarchie centralisee. La crise dynastique de 1848 (mort de tous les heritiers potentiels) provoqua un interregne de 88 ans (1848-1936) durant lequel la gouvernance fut exercee par des princes-marchands (Gofine), avant la restauration de l'Oluship en 1936.",
+      "externalInfluences": "Contact precoce avec les navigateurs portugais (vers 1500, port de Tebu). Christianisation partielle des Olus (plusieurs Olus porterent des noms catholiques portugais au XVIIe siecle). Premier diplome universitaire d'Afrique subsaharienne : l'Olu Atuwatse I (Dom Domingo) obtint son diplome de l'Universite de Coimbra (Portugal) en 1611. Monopole commercial avec les Europeens brise par les Britanniques dans les annees 1890. Influence des cultures Yoruba, Edo, Urhobo et Ijaw par les contacts et metissages.",
+      "majorHistoricalEvents": "Fondation du Royaume de Warri par Olu Ginuwa I vers 1480. Premiers contacts avec les Portugais vers 1500. Conversion au catholicisme des Olus (XVIIe siecle). Olu Dom Domingos Atuwatse I diplome de Coimbra (1611). Crise dynastique et interregne 1848-1936. Restauration de l'Oluship le 7 fevrier 1936 (Ginuwa II). Tensions ethniques Itsekiri-Urhobo-Ijaw autour du controle de Warri (1997, 2003, 2013). Intronisation d'Ogiame Atuwatse III (2021)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel dirigé par l'Olu de Warri. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Le Royaume de Warri est une monarchie constitutionnelle dirigee par l'Olu (titre royal, precedemment accompagne du titre sacre Ogiame). L'Olu est assiste de grands chefs hereditaires par ordre de preseance : Ologbotsere (Premier ministre et faiseur de roi), Iyatsere (ministre de la defense), Uwangue, Ojomo et Oshodi. Le processus de succession est determine par les Otolu (descendants des trois derniers Olus), deliberant apres la mort d'un Olu pour designer un successeur parmi les fils en age du defunt. L'Ologbotsere est celui qui couronne l'Olu.",
+      "clanOrganization": "La societe itsekiri est historiquement organisee en classes sociales : la famille royale et l'aristocratie (Oloye et Olare-Aja) ; les hommes libres de naissance (Omajaja, qui constitue l'essentiel de la population) ; et les descendants d'esclaves (Oton-Eru, statut aboli). Les grandes maisons nobiliaires (Royal Houses, Ologbotsere House, Iyatsere House) constituent les unites politiques superieures.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La succession royale et les titres nobiliaires sont hereditaires dans les lignages patrilineaires. Les droits fonciers et commerciaux sont transmis par ligne patrilineaire. La noblesse exige que la mere d'un candidat au trone soit une Itsekiri ou Beninoise de naissance libre.",
+      "religiousAuthority": "Traditionnellement, l'Olu etait le grand pretre de la religion ancestrale itsekiri, officiant pour les cultes d'Oritse (dieu supreme), d'Umale Okun (divinite marine) et d'Ife/Ifa (oracle). Plusieurs Olus du XVIIe siecle furent catholiques pratiquants. L'Olu Atuwatse II (2015) renia publiquement les traditions religieuses ancestrales pour se convertir au christianisme evangelique, ce qui provoqua une crise populaire majeure. L'Olu actuel, Atuwatse III, maintient un equilibre entre traditions et foi chretienne."
     },
     "languages": {
-      "mainLanguage": "Itsekiri",
-      "vehicularRole": "L'itsekiri est parlé par la majorité des Itsekiri. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé."
+      "mainLanguage": "Itsekiri (Isekiri)",
+      "isoCodes": ["its"],
+      "dialects": [
+        "L'itsekiri ne presente pas de fragmentation dialectale notable, Ethnologue signalant une langue homogene sans variation dialectale majeure",
+        "Quelques variations phonologiques entre les communautes rurales et urbaines (Warri)"
+      ],
+      "vehicularRole": "L'itsekiri est parle par environ 1 million de locuteurs comme langue maternelle, et par davantage comme langue secondaire dans le delta du Niger, les parties d'Edo et d'Ondo. C'est une langue Yoruboid du groupe Volta-Niger, branche Benue-Congo du Niger-Congo. Il est enseigne dans les ecoles primaires de la region de Warri. L'anglais est la langue d'education superieure et d'administration, le pidgin nigerien etant utilise comme vehiculaire regional."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Masques traditionnels, symboles culturels itsekiri, art itsekiri",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle (tambours, flûtes)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "source_8": "Littérature orale",
-      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+      "majorRites": "Awankere ou Umale Okere : festival annuel en l'honneur d'Umale Okun, la divinite de la mer et de la prosperite, celebre au village d'Ogheye au bord de l'ocean. Ghigho Aghofen (veille du palais) : ceremonie royale liee aux rites de la royaute. Rites de succession de l'Olu : period de trois mois a Idaniken apres la designation du nouvel Olu avant son couronnement ; rites funeraires du predecesseur au cimetiere royal d'Ijala (rites Iken). Ceremonies de mariage : impliquant l'invocation d'Ifa et des libations ancestrales. Regates en pirogues : competitions aquatiques festives liees aux traditions maritimes itsekiri.",
+      "symbols": "Couronne d'argent de l'Olu (1612, d'origine probablement portugaise). Couronne perlée (Idigbe) et insigne (Idigbe). Epee de fonction (Sword of Office). Trompette en ivoire (Ogboron). Ombrelle ecarlate (Atsitsan Ododo). Robe ecarlate, trone ecarlate et neuf perles rondes (Oronkun) portees autour du cou. Ces insignes royaux symbolisent la continuite et la legitimite de la monarchie de Warri depuis le XVe siecle.",
+      "artsAndMusic": "Danse : tradition de danses fluides et gracieuses, souvent accompagnees de chants melodieux qui figurent parmi les expressions artistiques les plus reconnues du delta. Mascarades colorees : masques et costumes elabores lors des festivals annuels. Regates traditionnelles en pirogues : competition et spectacle aquatique emblematique. Chants : les Itsekiri sont renommes pour leurs voix melodieuses et leurs chants polyphoniques lors des ceremonies. Sculpture : heritage de la tradition beninoise dans la creation de bronzes et d'ivoires. Personnalites artistiques contemporaines : Omawumi Megbele (chanteuse), Oritse Femi (musicien), Tee Mac Omatshola Iseli (flutiste et musicien classique).",
+      "spiritualities": "La religion traditionnelle itsekiri, appelee Ebura-tsitse (culte des esprits et des ancetres) avant la christianisation, reconnait Oritse comme dieu supreme omnipotent mais distant. Les principales divinites incluent Umale Okun (divinite de la mer, de la richesse et de la prosperite, centre de culte a Ogheye), Ife ou Ifa (oracle omniscient a 256 Esen ou versets), Ogun ou Ada (divinite de la guerre et de la chasse, symbole : epee), Ale (dieu de la terre), Ebura (etres legendaires ancestraux), et Origho ou Ori (divinite personnelle/familiale, signifiant tete). Aujourd'hui, les Itsekiri sont majoritairement chretiens (protestants — Baptistes, Anglicans — et minorite catholique)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Royaume d'Itsekiri (Warri) dirigé par l'Olu de Warri.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora itsekiri dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt) et dans les pays occidentaux (États-Unis, Royaume-Uni)."
+      "kingdomsOrChiefdoms": "Le Royaume de Warri (Iwerre) est l'une des monarchies les plus anciennes et les mieux documentees du Nigeria, avec une liste de 20 Olus depuis Ginuwa I (vers 1480) jusqu'a Atuwatse III (couronne en 2021). Les Itsekiri furent parmi les premiers Nigerians a nouer des relations diplomatiques avec les Europeens : des princes itsekiris etudierent au Portugal au debut du XVIIe siecle, et l'Olu Dom Domingos Atuwatse I obtint son diplome de l'Universite de Coimbra en 1611, faisant de lui le premier diplome universitaire d'Afrique subsaharienne.",
+      "relationsWithNeighbors": "Relations historiquement complexes avec les Urhobo (voisins a l'est, competing pour les ressources et l'influence) et les Ijaw (voisins du delta, tensions periodiques pour le controle des terres de la region de Warri). Relations commerciales privilegiees avec les Europeens. Influences culturelles reciproques avec les Edo (Benin), dont ils ont adopte certains titres et pratiques politiques. La region de Warri fut le theatre de violences interethniques majeures en 1997, 2003 et 2013.",
+      "conflictsOrAlliances": "L'arrivee du prince Ginuwa depuis Benin (vers 1480) impliqua une negociation des relations avec les communautes Yorubophones pre-existantes, aboutissant a leur unification. Contact diplomatique avec les Portugais des 1500. Resistance a la colonisation britannique : le gouverneur Nana Olomu (Gofine de Warri, 1884-1894) s'opposa a l'expansion commerciale britannique et fut exile. Tensions recurrentes Itsekiri-Urhobo-Ijaw pour le controle du conseil local de Warri (violences de 1997, 2003, 2013).",
+      "diaspora": "Communautes itsekiri dans les grandes villes nigeriannes : Lagos, Benin City, Port Harcourt, Abuja. Diaspora au Royaume-Uni (Londres), aux Etats-Unis (Houston, New York) et au Canada, constituee principalement par l'emigration professionnelle liee a l'industrie petroliere du delta."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia Itsekiri people (environ 1,1 million), Ethnologue SIL (Isekiri, code its : environ 1 million de locuteurs comme langue maternelle), Britannica, 101lasttribes.com. La population est concentree dans les LGA de Warri South, Warri North et Warri South West (Delta State).",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 1100000,
+          "note": "Principalement dans les LGA de Warri South, Warri North, Warri South West (Delta State) ; minorities dans les etats d'Edo et d'Ondo et dans les grandes villes nigeriannes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Itsekiri language (its)",
-      "CIA World Factbook – Nigeria",
-      "Recensements nigérians",
-      "Études anthropologiques sur les peuples yoruboid"
+      "Wikipedia EN — Itsekiri people. https://en.wikipedia.org/wiki/Itsekiri_people",
+      "Wikipedia EN — Itsekiri language. https://en.wikipedia.org/wiki/Itsekiri_language",
+      "Ethnologue SIL — Isekiri (its). https://www.ethnologue.com/language/its/",
+      "Britannica — Itsekiri. https://www.britannica.com/topic/Itsekiri",
+      "101 Last Tribes — Itsekiri. https://www.101lasttribes.com/tribes/itsekiri.html",
+      "Itsekiri National Association — Language and Culture. https://www.itsekirinawb.org/itsekiri-language-and-culture",
+      "Warri People Business Blog — Kingship Traditions in Warri Kingdom. https://warripeople.business.blog/kingship-traditions-in-warri-kingdom/",
+      "Ayomike, J.O.S. — A History of Warri. Ethiope Publishing, 1976.",
+      "Roth, Henry Ling — Great Benin: Its Customs, Art and Horrors. 1903.",
+      "Nigeria National Population Commission — Census data Delta State 2006."
     ]
   }
 }

@@ -7,62 +7,86 @@
     "appellations": {
       "mainName": "Sokoro",
       "selfAppellation": "Sokoro",
-      "exonyms": ["Sokoro (terme utilisé par les Européens)"],
+      "exonyms": ["Sokoro", "Tunjur (terme parfois associé)"],
+      "originOfExonyms": "Le terme Sokoro est utilise aussi bien par les locuteurs eux-memes que par les observateurs exterieurs. Il designe a la fois le peuple et sa langue. Le terme Tunjur est parfois associe aux Sokoro dans les recensements missionnaires, en reference a un groupe historiquement lie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Sokoro est en usage courant au Tchad pour designer ce peuple et sa langue. Les locuteurs se retrouvent principalement dans le canton de Gogmi et les villages de Badanga, dans la sous-prefecture de Melfi.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique",
-      "historicalRegion": "Tchad",
+      "ethnoLinguisticGroup": "Tchadique est-oriental B (groupe Hadjarai du Guera)",
+      "historicalRegion": "Region du Guera, sud-centre du Tchad (massifs du Guera, sous-prefecture de Melfi)",
       "currentCountries": ["TCD"]
     },
     "ethnicities": [
-      "Sokoro du Nord",
-      "Sokoro du Sud",
-      "Sous-groupes régionaux"
+      "Sokoro (groupe principal, canton de Gogmi)",
+      "Bedanga (sous-groupe dialectal de la sous-prefecture de Melfi et de la prefecture du Guera)",
+      "Groupes villageois de Gogmi, Badanga et environs"
     ],
     "origins": {
-      "ancientOrigins": "Les Sokoro sont originaires du Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe tchadique.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples sahariens, influence de l'islam."
+      "ancientOrigins": "Les Sokoro font partie des peuples Hadjarai (de l'arabe : habitants des montagnes), un ensemble d'ethnies vivant dans les massifs rocheux de la region du Guera, au centre-sud du Tchad. Ces populations sont des descendants de refugies des plaines environnantes qui ont cherche refuge dans les montagnes lors des razzias esclavagistes menees par les royaumes voisins (Ouaddai, Baguirmi). Leur presence dans les massifs du Guera est attestee depuis plusieurs siecles.",
+      "formationPeriod": "L'identite sokoro s'est consolidee au sein du complexe hadjarai au cours des periodes pre-coloniale et coloniale, sous la pression des raids esclavagistes et de l'islamisation progressive de la region a partir du XVIIe siecle.",
+      "migrationRoutes": [
+        "Repli progressif des plaines du Chari-Baguirmi vers les massifs du Guera face aux pressions des royaumes islamiques voisins",
+        "Mouvements migratoires secondaires vers N'Djamena et les regions de Chari-Baguirmi et Salamat lors des secheresses des annees 1970-1990"
+      ],
+      "historicalSettlementZones": [
+        "Canton de Gogmi, sous-prefecture de Melfi, region du Guera (zone principale)",
+        "Village de Badanga et environs (zone Bedanga)",
+        "Capital N'Djamena (petite communaute en milieu urbain)"
+      ],
+      "unificationsOrDivisions": "Les Sokoro sont divises en deux sous-groupes linguistiques principaux : le sokoro proprement dit (Gogmi) et le bedanga (Badanga, Melfi). Ces deux groupes partagent une meme langue (ISO 639-3 : sok) mais maintiennent des identites villageoises distinctes au sein du complexe hadjarai.",
+      "externalInfluences": "Islamisation progressive a partir du XVIIe siecle sous l'influence du Ouaddai et du Baguirmi. Contacts avec les peuples arabes nomades (Baggara) du Guera. Colonisation francaise a partir de la fin du XIXe siecle. Episodicite des conflits civils tchadiens (guerre civile, operations MOSANAT 1987-1990) ayant affecte la region du Guera.",
+      "majorHistoricalEvents": "Les Hadjarai, dont font partie les Sokoro, ont joue un role important dans la politique tchadienne contemporaine : soutien a Hissene Habre en 1982, puis alienation et repression en 1987 (840 membres du groupe tues ou arretes). Ils ont ensuite soutenu la rebellion d'Idriss Deby qui a renverse Habre en 1990. La region du Guera a ete le theatre de violences et de deplacements de population lors des secheresses cycliques des annees 1973-1985."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Les Sokoro sont organises en chefferies villageoises traditionnelles. L'autorite est exercee par des chefs de village (malak ou sultan local) soutenus par des conseils d'anciens. La gouvernance s'appuie sur des assemblees communautaires pour la resolution des conflits et la gestion des ressources.",
+      "clanOrganization": "Structure clanique patrilineaire. Les familles etendues constituent l'unite sociale de base. Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent l'heritage, la transmission des terres agricoles, et les alliances entre villages. L'identite clanique reste centrale dans la vie sociale, notamment pour les mariages et la resolution des conflits coutumiers.",
+      "religiousAuthority": "L'islam sunnite (majoritairement malekite) structure la vie sociale depuis l'islamisation progressive de la region. Des oulémas locaux et des imams exercent une autorite religieuse dans chaque village. Parallelement, le culte des margai (esprits invisibles de la nature, commun a tous les groupes hadjarai) subsiste en syncrétisme avec l'islam, malgre les tentatives coloniales et islamiques de l'eradiquer."
     },
     "languages": {
-      "mainLanguage": "Sokoro",
-      "vehicularRole": "Le sokoro est parlé par la majorité des Sokoro. L'arabe, le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Sokoro (sok)",
+      "isoCodes": ["sok"],
+      "dialects": [
+        "Sokoro (dialecte principal, canton de Gogmi)",
+        "Bedanga (dialecte de Melfi et Badanga, parfois considere comme sous-groupe distinct)"
+      ],
+      "vehicularRole": "Le sokoro est la langue maternelle de l'ensemble des membres de la communaute. La quasi-totalite des hommes adultes parlent egalement l'arabe tchadien (turku), langue vehiculaire regionale. Le francais est utilise dans les contextes administratifs et scolaires. La langue n'est pas enseignee a l'ecole mais une equipe de traduction biblique SIL travaille sur un Nouveau Testament en sokoro (portions existantes depuis 2001-2022)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels sokoro.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture sokoro."
+      "majorRites": "Rites islamiques centraux : celebration du Ramadan et de l'Aïd el-Fitr, de l'Aïd el-Adha, pelerinage a La Mecque (Hajj) pour ceux qui en ont les moyens. Rites de passage : circoncision masculine, ceremonies de mariage avec dot, ceremonies de naissance. Le culte des margai, esprits invisibles residant dans les formations naturelles (rochers, cours d'eau, arbres), est pratique en parallele de l'islam, sous forme de ceremonies propitiatoires avant les semailles et les recoltes, et lors de maladies ou de crises collectives.",
+      "symbols": "Les massifs rocheux du Guera constituent un symbole identitaire central pour les Sokoro et les Hadjarai en general. La montagne est citee dans les chants traditionnels et les chants funeraires. Les symboles islamiques (croissant, etoile) sont presents dans la vie quotidienne.",
+      "artsAndMusic": "Musique traditionnelle vocale et instrumentale jouant un role dans les ceremonies communautaires et les celebrations. Artisanat local : poterie feminine, tissage, vannerie. Poesie orale et traditions narratives transmettant l'histoire et les valeurs du groupe. La danse accompagne les ceremonies collectives lors des fetes islamiques et des recoltes.",
+      "spiritualities": "Islam sunnite (pratique malekite dominante) avec une forte persistance du culte des margai, esprits invisibles communs a tous les groupes hadjarai. Ces esprits controlent les elements naturels et peuvent causer maladies et infortunes. Des ceremonies specifiques sont organisees pour les propitier. Ce syncrétisme spirituel a resiste a la fois a l'islamisation et aux tentatives d'evangelisation chretienne de l'epoque coloniale. Une petite communaute chretienne evangelique existe dans le village principal de Gogmi."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sokoro dans les grandes villes tchadiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Sokoro n'ont pas forme de royaume independant important. Ils ont fait partie du complexe hadjarai du Guera, zone de refuge contre les raids des royaumes islamiques de l'Ouaddai et du Baguirmi. Des chefferies villageoises locales ont maintenu l'organisation sociale interne.",
+      "relationsWithNeighbors": "Les Sokoro coexistent avec d'autres groupes hadjarai (Dangaleat, Bidiyo, Migaama, Barain, Kenga, Mogum) dans la region du Guera, partageant avec eux le culte des margai et une culture montagnarde commune. Des contacts commerciaux et pastoraux existent avec les Arabes baggara nomades qui traversent le Guera. Des tensions liees a la competition fonciere et a l'exploitation des ressources sont documentees.",
+      "conflictsOrAlliances": "Les Hadjarai, dont font partie les Sokoro, ont subi des razzias esclavagistes des royaumes voisins pendant des siecles, ce qui a forge leur tradition de resistance. Lors de la guerre civile tchadienne, ils ont ete impliques dans la politique nationale : soutien a Habre en 1982, repression sanglante en 1987 avec formation du mouvement MOSANAT, puis soutien a la rebellion de Deby en 1990. La region du Guera a ete le theatre de violences ayant provoque des migrations temporaires.",
+      "diaspora": "Une petite communaute sokoro est presente a N'Djamena, capitale du Tchad, et dans d'autres centres urbains tchadiens. Des migrations economiques temporaires vers le Soudan sont documentees. La diaspora internationale est negligeable."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 11000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements tchadiens, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur les donnees du WorldMap Chad Profile (8 600 pour les annees 2000, hors Bedanga estimes a 2 628), Ethnologue SIL (moins de 10 000 locuteurs), et la croissance demographique tchadienne (projection 2025). Population Bedanga comprise.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 11000,
+          "note": "Region du Guera (canton de Gogmi, sous-prefecture de Melfi, Badanga) et N'Djamena"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sokoro language (sok)",
-      "CIA World Factbook – Chad",
-      "Recensements tchadiens",
-      "Études anthropologiques sur les peuples tchadiques"
+      "Ethnologue SIL – Sokoro language (sok). https://www.ethnologue.com/language/sok/",
+      "Wikipedia EN – Sokoro language. https://en.wikipedia.org/wiki/Sokoro_language",
+      "Wikipedia EN – Hadjarai peoples. https://en.wikipedia.org/wiki/Hadjarai_peoples",
+      "Wikipedia EN – Guera Province. https://en.wikipedia.org/wiki/Gu%C3%A9ra_(province)",
+      "Joshua Project – Sokoro, Tunjur in Chad. https://joshuaproject.net/people_groups/14975/CD",
+      "WorldMap Chad Profile (WMI). http://www.worldmap.org/uploads/9/3/4/4/9344303/chad_profile.pdf",
+      "US Library of Congress Country Studies – Chad, Chadic Languages. https://countrystudies.us/chad/20.htm",
+      "Chesley, William, and David Faris. 1994. Une enquete sociolinguistique parmi les Sokoro du Guera. N'Djamena : SIL. Manuscript.",
+      "Mirjam de Bruijn. 2014. The Guera inspiration. Counter Voices in Africa. https://mirjamdebruijn.wordpress.com/2014/04/15/the-guera-inspiration/"
     ]
   }
 }

@@ -6,59 +6,111 @@
   "content": {
     "appellations": {
       "mainName": "Nande",
-      "selfAppellation": "Nande",
-      "exonyms": ["Nande (terme utilisé par les Européens)"],
+      "selfAppellation": "Yira (Bayira)",
+      "exonyms": [
+        "Yira",
+        "Nande",
+        "Banande",
+        "Konjo (pour la branche ougandaise)"
+      ],
+      "originOfExonyms": "Yira ou Bayira est l'autodesignation du groupe. Le terme Nande est utilise par les administrateurs et voisins swahilophones. Konjo designe le meme groupe en Ouganda.",
+      "whyProblematic": "La distinction entre Nande (RDC) et Konjo (Ouganda) est essentiellement administrative et politique : les deux populations se considerent comme une seule et meme entite ethno-culturelle, les Bayira, separee par la frontiere coloniale.",
+      "contemporaryUsage": "Nande est le terme courant en RDC et dans la litterature scientifique francophone. Bayira reste l'autodesignation preferee au sein de la communaute.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Est de la RDC",
+      "ethnoLinguisticGroup": "Bantou (Zone J, groupe Masaba-Luyia, J.40, sous-groupe Nande-Konjo)",
+      "historicalRegion": "Est de la RDC, territoires de Beni et Lubero dans la province du Nord-Kivu ; versants occidentaux des Monts Ruwenzori (frontiere RDC-Ouganda)",
       "currentCountries": ["COD"]
     },
-    "ethnicities": ["Nande du Nord", "Nande du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Baswagha (clan du nord, territoire de Lubero)",
+      "Basukali (Basu, clan du centre)",
+      "Bamate (famille noble du territoire de Beni)",
+      "Bahira (clan de la region de Beni)",
+      "Bakira (clan central du territoire de Beni)",
+      "Bahambo (clan du versant du Ruwenzori)",
+      "Bito (clan royal, region de Lubero)",
+      "Batangi (clan de la region de Tangi)",
+      "Bahumbe (clan du territoire de Lubero)",
+      "Bakumbule (clan de Kumbule)",
+      "Batike (clan de la region de Tike)",
+      "Babinga (clan du nord, territoire de Lubero)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Nande sont originaires de l'est de la COD, dans la région des Grands Lacs. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Les Bayira (Nande) tracent leurs origines aux Monts Ruwenzori, massif frontalier entre l'actuelle RDC et l'Ouganda. Selon la tradition orale et les travaux historiques, le peuple est arrive dans sa region actuelle depuis l'Ouganda, en traversant la riviere Semuliki. Cette migration les relie aux Bakonzo d'Ouganda, avec qui ils forment une seule entite ethno-culturelle.",
+      "formationPeriod": "La presence des Bayira dans les territoires de Beni et Lubero remonte a plusieurs siecles avant la colonisation europeenne. L'organisation en 12 clans independants s'est consolidee durant cette periode pre-coloniale. Les Nande ont developpe un commerce regional actif grace a leur position geographique a l'interface des zones forestieres et des hauts plateaux.",
+      "migrationRoutes": [
+        "Depuis les Monts Ruwenzori vers les vallees du Semliki et de la Rutshuru",
+        "Expansion vers le sud le long de la rift albertine vers les territoires de Beni et Lubero"
+      ],
+      "historicalSettlementZones": [
+        "Territoire de Beni (Nord-Kivu, versants du Ruwenzori)",
+        "Territoire de Lubero (hauts plateaux du Nord-Kivu)",
+        "Rutshuru (minorite)",
+        "Kasese et Bundibugyo (Ouganda, branche Bakonzo)"
+      ],
+      "unificationsOrDivisions": "Les Nande sont organises en 12 clans independants, chacun gouverne par sa propre tete de famille (omukama, omughole ou omwami). Il n'existe pas de roi supreme commun a l'ensemble des Bayira, ce qui les distingue des royaumes voisins centralises.",
+      "externalInfluences": "Influence swahilophone croissante depuis le XIXe siecle via le commerce caravanier arabo-swahili. Penetration missionnaire chretienne (catholique et protestante) pendant la colonisation belge. Presence militaire recurrente depuis les guerres du Kivu (1993-present) qui a bouleverse les equilibres demographiques et economiques de la region.",
+      "majorHistoricalEvents": "Commerce regional pre-colonial avec les populations de la foret et de la savane. Colonisation belge et creation des territoires administratifs de Beni et Lubero. Guerres du Kivu (1996-2003) et conflits armes recurrents avec des groupes rebelles (ADF, Interahamwe) qui ont fait des Nande une cible privilegiee."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en 12 clans independants. Chaque clan est dirige par sa propre tete de famille, egalement appelee roi (omukama, omughole ou omwami), qui exerce une autorite a la fois politique et ceremonielle. Il n'existe pas de structure politique supraclanique permanente. Les decisions interclaniques se prennent par consensus lors d'assemblees d'anciens.",
+      "clanOrganization": "Structure clanique patrilineaire. Les 12 clans principaux (Baswagha, Basukali, Bamate, Bahira, Bakira, Bahambo, Bito, Batangi, Bahumbe, Bakumbule, Batike, Babinga) sont chacun independants et territorialement definis. Les femmes du clan Basu sont designees Basukali.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires definissent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Le chef de clan (omukama) tire sa legitimite de son ancestre fondateur.",
+      "religiousAuthority": "Autorite spirituelle exercee par les chefs de clan, les devins (bamutu ou omulogo) et, depuis la colonisation, par les pretres et pasteurs chretiens. Le catholicisme et le protestantisme evangelique sont aujourd'hui les religions dominantes chez les Nande."
     },
     "languages": {
-      "mainLanguage": "Nande",
-      "vehicularRole": "Le nande est parlé par la majorité des Nande. Le français, le swahili et d'autres langues sont également utilisés."
+      "mainLanguage": "Kinande (Nande, Olhuyira)",
+      "isoCodes": ["nnb"],
+      "dialects": [
+        "Nande proprement dit",
+        "Kumbule (Ekikumbule)",
+        "Mate (Ekimate)",
+        "Tangi (Ekitangi)",
+        "Sanza (Ekisanza)",
+        "Shu (Ekishu, avec une variete feminine historique EkiShukaali)",
+        "Songola (Ekisongoora, Nyangala)",
+        "Swaga / Kira (Ekikira)"
+      ],
+      "vehicularRole": "Le kinande est la langue maternelle de plus de 60% de la population du Nord-Kivu. Il est parle dans les territoires de Beni et Lubero comme langue de communication intra-communautaire. Le swahili est la lingua franca regionale et le francais la langue officielle de la RDC et de l'enseignement. En Ouganda, la variante konjo (kikongo) est parlee a Kasese et Bundibugyo."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels nande, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Ceremonies de mariage impliquant la negociation et le paiement de la dot (ebikoko) entre familles. Rites d'initiation masculine marques par des ceremonies communautaires sous l'autorite des anciens du clan. Rites funeraires avec veille, chants et festin communautaire. Ceremonies de premiere recolte et de benediction des semailles. Rituels de purification et d'intercession aupres des ancetres lors des crises (secheresse, epidemie, conflit).",
+      "symbols": "Le Ruwenzori (Monts de la Lune) comme montagne sacree et lieu d'origine identitaire. L'omukama (chef de clan) comme figure d'autorite et de legitimite ancestrale. La houe et les cultures maraicheres (signe du travail de la terre comme valeur cardinale). La lune comme symbole cosmologique lie au nom Ruwenzori (montagne qui fabrique la pluie).",
+      "artsAndMusic": "Tradition de sculpture sur bois et de travail du fer. Musique comprenant des tambours (ngoma), des xylophones et des instruments a cordes. Chants polyphoniques accompagnant les ceremonies de mariage et de deuil. Danse yira, pratiquee lors des fetes communautaires et des ceremonies claniques. Artisanat de poterie (ekibo) et de tissage. Tradition de commerce et de negoce comme art social valorise.",
+      "spiritualities": "Le systeme spirituel traditionnel bayira inclut la veneration des ancetres (abazimu), la croyance en des esprits de la nature lies aux montagnes et aux eaux, et le recours aux devins-guerisseurs (omulogo ou omusamyi) pour la mediation avec le monde invisible. La tres grande majorite des Nande est aujourd'hui chretienne, principalement catholique (influence des missionnaires Assomptionnistes presents depuis le debut du XXe siecle) ou protestante evangelique, avec un synchretisme marquant les pratiques quotidiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora nande dans les grandes villes congolaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de royaume unifie : 12 chefferies claniques independantes. Certains clans comme les Bito ont exerce une influence preponderante dans leur territoire. Sous la colonisation belge, des chefferies reconnues administrativement furent instaurees dans les territoires de Beni et Lubero.",
+      "relationsWithNeighbors": "Relations commerciales avec les Pygmees (Mbuti) de la foret de l'Ituri, les Hunde, les Komo et les populations swahilophones de l'est du Congo. Les Nande sont reconnus comme des commercants actifs, controlant historiquement les echanges entre zones forestieres, montagneuses et lacustres du Nord-Kivu. Relations etroites et identite partagee avec les Bakonzo d'Ouganda.",
+      "conflictsOrAlliances": "Conflits recurrents depuis les annees 1990 avec des groupes armes (Interahamwe rwandais, ADF-NALU ougandais) dans le territoire de Beni. Les Nande ont ete victimes de massacres systematiques attribues aux ADF depuis 2014, faisant de leur region l'une des plus meurtries du conflit du Kivu.",
+      "diaspora": "Diaspora nande significative a Goma, Kinshasa et dans les grandes villes de la RDC. Presence dans la diaspora congolaise en Belgique, en France et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 4000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements congolais, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue (nnb) : plus de 10 millions de locuteurs de kinande en RDC (2022), chiffre qui inclut les locuteurs non nande. PeopleGroups.org (2024) : 2 615 000 Nande en RDC. 101 Last Tribes (2024) : 2 510 500 dans deux pays. La langue est declaree parlée par plus de 60% de la population du Nord-Kivu (province d'environ 6,5 millions d'hab. en 2025). Estimation 2025 retenue : 4 millions, incluant la diaspora nationale et la branche ougandaise (Konjo : env. 1 million).",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 3000000,
+          "note": "Territoires de Beni et Lubero, Nord-Kivu"
+        },
+        {
+          "country": "UGA",
+          "population": 1000000,
+          "note": "Bakonzo des districts de Kasese et Bundibugyo"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Nande language (nnb)",
-      "CIA World Factbook – DRC",
-      "Recensements congolais",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN – Nande people : https://en.wikipedia.org/wiki/Nande_people",
+      "Wikipedia EN – Nande language : https://en.wikipedia.org/wiki/Nande_language",
+      "SIL Ethnologue – Nande (nnb) : https://www.ethnologue.com/language/nnb/",
+      "PeopleGroups.org – Nande of DRC (2024) : https://peoplegroups.org/people_groups/pg014669/",
+      "101 Last Tribes – Nande people : https://www.101lasttribes.com/tribes/nande.html",
+      "Global Press Journal – A Tribe Watches Its Language Languish (2021) : https://globalpressjournal.com/africa/democratic-republic-of-congo/tribe-watches-language-languish/",
+      "Swordshare Map – Kinande (nnb) : https://map.swordshare.com/nnb"
     ]
   }
 }

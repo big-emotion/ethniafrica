@@ -5,60 +5,96 @@
   "currentCountries": ["ZAF"],
   "content": {
     "appellations": {
-      "mainName": "Xhosa (Ciskei)",
-      "selfAppellation": "Xhosa",
-      "exonyms": ["Xhosa (terme utilisé par les Européens)"],
+      "mainName": "Xhosa du Ciskei",
+      "selfAppellation": "amaXhosa",
+      "exonyms": [
+        "Ciskei Xhosa",
+        "amaRharhabe",
+        "Xhosa du Cap-Oriental occidental"
+      ],
+      "originOfExonyms": "Le terme Ciskei (du latin cis, signifiant 'de ce cote-ci') designe la region situee en deca du fleuve Kei, par opposition au Transkei (au-dela du Kei). Ce nom geographique europeen est devenu un identifiant administratif et politique sous l'apartheid. Les populations concernees se designent elles-memes comme amaXhosa, sans distinction ciskeienne.",
+      "whyProblematic": "La denomination 'Xhosa du Ciskei' est une construction administrative coloniale puis apartheid, artificielle du point de vue culturel. Le regime d'apartheid a deliberement maintenu deux bantoustans separes (Ciskei et Transkei) pour les Xhosa afin de diviser une communaute culturellement et linguistiquement homogene. Cette division fut rejetee par la majorite des Xhosa comme une manipulation politique. Le Ciskei n'a jamais obtenu de reconnaissance internationale comme Etat.",
+      "contemporaryUsage": "Depuis la reintegration du Ciskei dans l'Afrique du Sud post-apartheid (27 avril 1994), la distinction 'Xhosa du Ciskei' n'a plus de valeur administrative. L'ancien territoire du Ciskei fait partie de la province du Cap-Oriental (Eastern Cape). Les habitants se designent comme amaXhosa et citoyens sud-africains. La capitale de l'ancien Ciskei, Bhisho (Bisho), est devenue la capitale de la province du Cap-Oriental.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Afrique du Sud (Ciskei)",
+      "ethnoLinguisticGroup": "Nguni meridional — branche amaRharhabe (Bantou Zone S, groupe S.41)",
+      "historicalRegion": "Ancien Ciskei — region entre les fleuves Fish (Vis) et Kei, province du Cap-Oriental, Afrique du Sud",
       "currentCountries": ["ZAF"]
     },
-    "ethnicities": ["Xhosa du Ciskei", "Sous-groupes régionaux du Ciskei"],
+    "ethnicities": [
+      "amaRharhabe — branche cadette des Xhosa, descendants de Rharhabe (fils de Phalo), peuple dominant du Ciskei",
+      "amaMfengu (Fingo) — refugies des guerres mfecane assimiles, mieux eduques (ecoles missionnaires), allies des Britanniques",
+      "abaThembu du bas — sous-groupe thembu du Ciskei, region de Middledrift",
+      "amaNgqosini — groupe d'origine mixte khoikhoi et sotho, assimile aux Xhosa du Ciskei",
+      "amaGqunukhwebe — clan d'origine khoikhoi, absorbe par les amaRharhabe"
+    ],
     "origins": {
-      "ancientOrigins": "Les Xhosa du Ciskei sont originaires de la région de l'Afrique du Sud, dans l'ancien bantoustan du Ciskei. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Xhosa.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Xhosa du Ciskei sont principalement des amaRharhabe, descendants de Rharhabe, fils cadet du roi Phalo qui regna au 18e siecle. Apres la mort de Phalo, ses deux fils Gcaleka et Rharhabe se disputerent le pouvoir ; Rharhabe et sa branche s'etablirent a l'ouest du fleuve Kei, dans la region qui allait devenir le Ciskei. Cette zone avait ete precedemment occupee par des Khoikhoi et des groupes nguni anterieurs. Les amaRharhabe incorporerent progressivement des clans khoikhoi (Gqunukhwebe, amaNgqosini) par mariage et alliance.",
+      "formationPeriod": "La region du Ciskei est arrachee progressivement a l'autonomie xhosa lors des guerres cafres (1779-1879). En 1812, le lieutenant-colonel John Graham expulse 20 000 Xhosa au-dela du fleuve Fish sur ordre du gouverneur Cradock, etablissant ainsi la garrison de Grahamstown. La region entre Fish et Kei est designee British Kaffraria en 1847 puis annexee au Cap en 1865. Apres l'Union d'Afrique du Sud (1910) et les lois de segregation fonciere (Native Lands Act 1913, Native Trust and Land Act 1936), les reserves africaines du Ciskei sont consolidees et formalisees.",
+      "migrationRoutes": [
+        "Mouvement vers l'ouest de la branche amaRharhabe depuis le Transkei apres la mort de Phalo (vers 1775)",
+        "Deplacements forces par les guerres cafres et les expulsions coloniales (1812, 1819, 1835, 1847, 1877)",
+        "Deportations massives par le regime d'apartheid depuis les zones blanches vers le Ciskei (1960s-1980s)"
+      ],
+      "historicalSettlementZones": [
+        "Region du fleuve Fish (Vis) — frontier historique etablie par les Britanniques en 1812",
+        "King William's Town (Qonce) — centre administratif colonial puis ciskeien",
+        "East London (Qonce) — port industriel, attraction migratoire",
+        "Alice et Fort Hare — centre universitaire et intellectuel (Universite de Fort Hare, alma mater de Mandela, Mugabe, Biko)",
+        "Mdantsane — ville-dortoir construite par le Ciskei pres d'East London (plus de 105 000 hab. en 1991)"
+      ],
+      "unificationsOrDivisions": "La creation du Ciskei comme entite separee du Transkei par les autorites d'apartheid (1961 : region administrative separee ; 1972 : auto-gouvernement ; 1981 : pseudo-independance) constitue une division artificielle de la nation xhosa. Contrairement au Transkei ou les chefs hereditaires etaient influents, le Ciskei avait une tradition de maires elus et d'une classe ouvriere plus educee, liee a East London. La rivalite entre les amaRharhabe (majorite autochtone) et les amaMfengu (mieux eduques, anciens allies des Britanniques) structura la politique ciskeienne.",
+      "externalInfluences": "Missions chretiennes presbyteriennes et methodistes (19e siecle) : lourde influence educative, alphabetisation precoce. Universite de Fort Hare (fondee 1916) : pepiniere des elites africaines (Nelson Mandela, Robert Mugabe, Oliver Tambo, Steve Biko). Regime d'apartheid : deportations, pass laws, bantoustans, repression. Massacres de Bisho (1992). Transition democratique (1994) : reintegration dans l'Afrique du Sud et creation de la province du Cap-Oriental."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Dans le contexte du Ciskei, les structures cheffales traditionnelles amaRharhabe coexistaient avec des formes d'administration coloniale puis bantoustanienne. Le Ciskei fut dirige par Lennox Sebe (chef de la tribu amaKhambashe, Parti national d'independance ciskeien) de 1972 a 1990 : auto-gouvernement en 1972, pseudo-independance en 1981, dictature d'un seul parti. Sebe etait appele 'President for Life' et s'appuyait sur la Ciskei Defence Force et des services de securite repressifs. Le Bisho Massacre du 7 septembre 1992 — ou la Ciskei Defence Force tira sur une foule de manifestants de l'ANC, tuant 28 personnes — symbolise la nature du regime.",
+      "clanOrganization": "L'organisation clanique amaRharhabe dans le Ciskei suit les memes principes que l'ensemble de la societe xhosa : patrilineaire, avec des clans (isiduko) qui determinent les alliances matrimoniales et les droits fonciers. Les clans majeurs du Ciskei incluent les amaKhambashe (clan de Lennox Sebe), les amaNgwevu, les Mfengu clans (Tolo, Maduna, Ndlangisa). La rivalite entre amaRharhabe (autochtones) et amaMfengu (mieux scolarises et anciennement proches des Britanniques) marqua profondement la politique ciskeienne.",
+      "ageClassSystems": "Identique a la societe xhosa generale : distinction entre garcons non-initie (inkwenkwe), novices (umkhwetha), jeunes hommes recemment initie (amakrwala) et hommes accomplis (amadoda). L'ulwaluko (initiation masculine) reste la rite de passage central.",
+      "roleOfLineages": "Les lignages patrilineaires du Ciskei determinent l'acces aux terres des reserves africaines. Les deportations massives d'apartheid (transfert de populations des zones blanches vers le Ciskei) creerent des densites de population anormales — le Ciskei, 7 700 km2, devait abriter plus de 1,5 million de personnes — fragmentant les structures foncières traditionnelles.",
+      "religiousAuthority": "L'Universite de Fort Hare (Alice) a forme plusieurs generations de pasteurs et theologiens africains. Les Eglises protestantes (presbyteriennes, methodistes, Eglise de la Province d'Afrique du Sud) sont tres implantees. Les Eglises africaines independantes (sionistes, zionistes) sont populaires dans les zones rurales et periurbaines. Les isangoma (devins-guerisseurs) maintiennent leur autorite spirituelle parallelèment aux institutions chretiennes."
     },
     "languages": {
-      "mainLanguage": "Xhosa",
-      "vehicularRole": "Le xhosa est parlé par la majorité des Xhosa du Ciskei. L'anglais, l'afrikaans et d'autres langues sont également utilisés."
+      "mainLanguage": "isiXhosa",
+      "isoCodes": ["xho"],
+      "dialects": [
+        "isiRharhabe — dialecte propre aux amaRharhabe du Ciskei, legerement distinct du Gcaleka",
+        "isiXhosa standard — langue vehiculaire et scolaire commune a tous les Xhosa",
+        "isiMfengu — variante parlee par les amaMfengu, tres proche de l'isiXhosa standard"
+      ],
+      "vehicularRole": "IsiXhosa est l'une des 11 langues officielles d'Afrique du Sud. Dans la region de l'ancien Ciskei (districts de King William's Town, East London, Alice, Mdantsane), l'isiXhosa est langue dominante aux cotes de l'anglais. L'Universite de Fort Hare (Alice) joue un role historique dans la standardisation et le developpement intellectuel de l'isiXhosa. L'afrikaans est aussi parle par certains segments de la population de l'ancien Ciskei en raison de la proximite historique avec la communaute afrikaner du Cap-Oriental."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels xhosa, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les rites des Xhosa du Ciskei sont identiques a ceux de l'ensemble de la nation xhosa. L'ulwaluko (initiation masculine par circumcision) est le rite de passage central : seclusion en ibhoma (hutte en brousse), enduit d'argile blanche, emergence lors du umgidi (celebration). L'intonjane est le rite equivalent pour les filles. Le mariage suit le protocole de la lobola (dot en betail ou argent), les ceremonies d'invocation des ancetres (amadlozi) et les fetes communautaires. La particularite ciskeienne est l'influence plus forte des Eglises protestantes liee a la scolarisation precoce par les missions du 19e siecle — beaucoup de rites sont ainsi adaptes ou combines avec des elements chretiens.",
+      "symbols": "Le betail (inkomo) symbolise la richesse et les alliances. Les perles et les tissus de coton blanc ou bleu des amakrwala apres l'initiation. L'inkaba (lieu d'enterrement du cordon ombilical) lie chaque personne a sa terre ancestrale. Le drapeau de l'ancien Ciskei (bleu, vert et rouge) est aujourd'hui un symbole historique. L'Universite de Fort Hare est un symbole culturel et intellectuel fort, ayant forme de nombreux leaders panafricains.",
+      "artsAndMusic": "Les arts du Ciskei partagent les traditions xhosa : travail de perles (ubulawu) dont les couleurs et motifs codent le statut social, poterie feminine, sculpture. La musique inclut le chant choral polyphonique (influence des Eglises protestantes tres forte — les choeurs d'Eglise xhosa sont celebres), les percussions rituelles, les chants d'initiation. Le mbaqanga et les styles urbains contemporains se sont developpes dans les townships de Mdantsane et East London. L'hymne Nkosi Sikelel' iAfrika, compose par le pasteur xhosa Enoch Sontonga (1897), est intimement lie a l'identite du Ciskei et a la lutte anti-apartheid.",
+      "spiritualities": "Syncrétisme entre le culte ancestral xhosa (amadlozi/izinyanya, pratique des isangoma) et le christianisme protestant (principalement methodiste et presbyterien). Les Eglises africaines independantes (ethiopiennes, sionistes) ont une forte implantation dans les anciens townships ciskeiens (Mdantsane). La tradition des isangoma (devins appeles par les ancetres) et des izinyanga (guerisseurs) reste active en milieu rural. L'influence intellectuelle de Fort Hare a produit une theologie africaine liberatrice qui combine heritage ancestral et christianisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora xhosa du Ciskei dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "La chefferie amaRharhabe est la principale structure politique autochtone du Ciskei. Le chef Ngqika (1778-1829), fils de Mlawu et petit-fils de Rharhabe, fut le grand chef des amaRharhabe et l'interlocuteur principal des Britanniques. Son alliance avec les Britanniques contre son propre oncle Ndlambe divisa les Xhosa et facilita la penetration coloniale. La capitulation de Ngqika apres la guerre de 1819 entraîna la creation d'une zone neutre entre Fish et Keiskamma, videe de ses habitants xhosa.",
+      "relationsWithNeighbors": "Les amaRharhabe du Ciskei ont entretenu des relations historiquement tendues avec les amaMfengu (allies des Britanniques depuis les annees 1830) et avec les amaGcaleka du Transkei. Avec les Britanniques, la relation oscilla entre alliance (Ngqika), resistance (Sandile, Maqoma) et soumission forcee. La ville universitaire d'Alice (Fort Hare) et la ville industrielle d'East London ont cree des synergies intellectuelles entre Xhosa, Sotho, Zulu et autres groupes africains.",
+      "conflictsOrAlliances": "Les guerres cafres (1779-1879) opposent repetitivement les chefs amaRharhabe aux forces coloniales. Le chef Maqoma (amaRharhabe, vers 1798-1873) est l'un des plus grands guerriers xhosa, conduisant la resistance dans plusieurs guerres. Le soulèvement de 1850-1853 (8e guerre) est la plus longue guerre xhosa. La pseudo-independance du Ciskei (1981-1994) sous Lennox Sebe est caracterisee par une repression brutale des militants de l'ANC et un isolement economique. Le Bisho Massacre (7 septembre 1992) marque le tournant vers la reconciliation.",
+      "diaspora": "La migration de travail vers East London, Port Elizabeth et les mines du Witwatersrand constitue la diaspora principale du Ciskei depuis la fin du 19e siecle. Les townships de Mdantsane (pres d'East London), Lingelihle et Duncan Village abritent des populations xhosa deportees depuis les zones blanches. L'ancien territoire du Ciskei contribue significativement a la population xhosa du Cap-Occidental, notamment Cape Town (plus d'un million de Xhosa). Des personnalites originaires du Ciskei incluent Robert Sobukwe (fondateur du PAC), Raymond Mhlaba, et Walter Sisulu (compagnon de Mandela)."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement Ciskei 1991 : 477 501 habitants dans les districts de l'ancien Ciskei (districts Alice, Whittlesea, Keiskammahoek, Mdantsane, Middledrift, Peddie, Zwelitsha, Mpofu). Estimations 2025 basees sur Statistics South Africa (projections Buffalo City Metropolitan Municipality, Chris Hani DM, Amathole DM), croissance demographique du Cap-Oriental, et Human Rights Watch (1991 : 1,4 million de ressortissants ciskeiens). Population 2025 estimee a 1,5 million dans l'ancien territoire.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 1500000,
+          "note": "Ancien territoire du Ciskei : districts de King William's Town (Qonce), East London (Buffalo City), Alice, Mdantsane, Bhisho (aujourd'hui capitale du Cap-Oriental). Province du Cap-Oriental."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Xhosa language (xho)",
-      "CIA World Factbook – South Africa",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ciskei. https://en.wikipedia.org/wiki/Ciskei",
+      "Wikipedia EN — Lennox Sebe. https://en.wikipedia.org/wiki/Lennox_Sebe",
+      "South African History Online — Ciskei. https://www.sahistory.org.za/place/ciskei",
+      "Human Rights Watch — South Africa: Ciskei: Ten Years on. https://www.hrw.org/reports/1991/southafrica3/",
+      "Wikipedia EN — Xhosa people. https://en.wikipedia.org/wiki/Xhosa_people",
+      "SIL Ethnologue — Xhosa (xho). https://www.ethnologue.com/language/xho/",
+      "Statistics South Africa — Census 2011. http://www.statssa.gov.za/",
+      "CIA World Factbook — South Africa. https://www.cia.gov/the-world-factbook/countries/south-africa/"
     ]
   }
 }

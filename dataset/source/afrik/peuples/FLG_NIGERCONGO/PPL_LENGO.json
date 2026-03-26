@@ -6,59 +6,87 @@
   "content": {
     "appellations": {
       "mainName": "Lengo",
-      "selfAppellation": "Lengo",
-      "exonyms": ["Lengo (terme utilisé par les Européens)"],
+      "selfAppellation": "Lengola",
+      "exonyms": [
+        "Lengola (terme ethnographique et linguistique standardisé)",
+        "Lengora (variante orthographique utilisée dans certaines sources)",
+        "Lengo (abréviation usitée dans certaines bases de données)"
+      ],
+      "originOfExonyms": "Le terme Lengo est une abréviation ou variante de Lengola, nom propre de ce peuple bantou de la RDC. Lengora est une variante orthographique utilisée dans certaines sources linguistiques. Le terme complet Lengola est celui retenu par les linguistes et anthropologues.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Lengola est le terme utilisé dans la littérature ethnographique et linguistique contemporaine. La communauté se désigne elle-même comme Lengola. La population Lengola est recensée comme groupe ethnique distinct en RDC et figure dans les bases de données de Joshua Project et Peoplegroups.org.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "RDC (Bas-Congo)",
+      "ethnoLinguisticGroup": "Bantou (Zone D — code Guthrie D.12, groupe Lebonya)",
+      "historicalRegion": "Forêt équatoriale du centre-est de la RDC — des deux côtés du Lualaba (cours supérieur du Congo)",
       "currentCountries": ["COD"]
     },
-    "ethnicities": ["Lengo du Nord", "Lengo du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Lengola du nord du Lualaba — rive gauche du fleuve Congo supérieur (Lualaba)",
+      "Lengola du sud du Lualaba — rive droite du fleuve",
+      "Mbole — peuple voisin partageant une structure sociale similaire, souvent associé aux Lengola",
+      "Yela — peuple voisin à structure sociale proche",
+      "Metoko — peuple voisin dont les créations artistiques sont parfois difficiles à distinguer de celles des Lengola"
+    ],
     "origins": {
-      "ancientOrigins": "Les Lengo sont originaires de la région du Bas-Congo en RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les Lengola sont un peuple bantou de la zone forestière équatoriale du centre-est de la RDC, vivant des deux côtés du Lualaba (cours supérieur du fleuve Congo). Leur langue, le lengola (lej), est classée en Zone D (Guthrie D.12) et se distingue par son isolement relatif au sein de la famille bantoue : elle n'est pas proche des autres langues bantoues et se rapproche peut-être de certaines langues du groupe D.30 dans l'ensemble dit Lebonya. Comme la plupart des peuples bantous de la cuvette congolaise, les Lengola sont issus de la grande expansion bantoue à partir du Cameroun-Nigeria, il y a 3 000 à 4 000 ans.",
+      "formationPeriod": "L'identité culturelle lengola s'est formée dans la zone forestière équatoriale en interaction avec les peuples voisins (Mbole, Yela, Metoko, Kumu) dont les structures sociales et artistiques présentent de fortes similitudes. La société est organisée autour de la société secrète Butoka, qui régit les activités sociales, politiques et économiques.",
+      "migrationRoutes": [
+        "Expansion bantoue depuis la région Cameroun-Nigeria vers la cuvette congolaise il y a environ 2 000 à 3 000 ans",
+        "Installation dans la zone forestière équatoriale du centre-est de la RDC, des deux côtés du Lualaba"
+      ],
+      "historicalSettlementZones": [
+        "Forêt équatoriale du centre-est de la RDC — zone du Maniema et de la Tshopo",
+        "Des deux côtés du Lualaba (Congo supérieur) — rive gauche et rive droite",
+        "Zone forestière adjacente aux peuples Mbole, Yela, Metoko et Kumu"
+      ],
+      "majorHistoricalEvents": "Intégration dans l'État indépendant du Congo puis dans le Congo belge à partir de la fin du 19e siècle. Contact avec les missions chrétiennes catholiques et protestantes au 20e siècle, conduisant à une christianisation progressive. Les Lengola, comme leurs voisins Mbole et Yela, ont développé une tradition artistique reconnue mondialement pour leurs statues en bois à grande taille utilisées dans les cérémonies d'initiation de la société Butoka."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société Butoka est l'institution centrale qui régule les activités sociales, politiques et économiques de la communauté lengola. Ce n'est pas un système de chefferie centralisée mais une organisation communautaire par association secrète à fonctions multiples. Les décisions collectives, la résolution des conflits et la transmission des savoirs sont gérées dans le cadre de la Butoka. L'organisation sociale des Lengola est très proche de celle des Metoko, Kumu, Mbole et Yela voisins.",
+      "clanOrganization": "Société divisée en lignages dont l'organisation est très entrelacée entre les groupes Lengola, Mbole, Yela et Metoko. Les statues sculptées par un groupe peuvent se retrouver chez un autre, témoignant d'échanges claniques intenses. L'économie repose sur la culture de la banane et la chasse.",
+      "ageClassSystems": "Initiation des jeunes hommes à la société Butoka, processus central marquant le passage de l'adolescence à l'âge adulte et l'intégration à la communauté des hommes.",
+      "roleOfLineages": "Lignages structurant l'appartenance clanique et les droits d'accès aux terres de forêt, aux zones de chasse et aux ressources communautaires. Les lignages sont très interconnectés entre groupes voisins (Metoko, Kumu, Mbole, Yela).",
+      "religiousAuthority": "Autorité religieuse exercée dans le cadre de la société Butoka par ses membres initiés. Les grandes statues Butoka (Butoka/Bwami) ont des fonctions apotropaïques et assurent la stabilité sociale. Christianisme répandu depuis la colonisation belge et les missions du 20e siècle ; la majorité des Lengola se déclarent aujourd'hui chrétiens."
     },
     "languages": {
-      "mainLanguage": "Lengo",
-      "vehicularRole": "Le lengo est parlé par la majorité des Lengo. Le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Lengola (Lengora)",
+      "isoCodes": ["lej"],
+      "dialects": [
+        "Lengola proprement dit — dialecte principal de la rive gauche du Lualaba",
+        "Variétés locales non standardisées selon les villages de part et d'autre du Lualaba"
+      ],
+      "vehicularRole": "Le lengola (lej) est la langue maternelle de la communauté, avec environ 100 000 à 241 000 locuteurs selon les sources (100 000 d'après SIL en 1998, 241 000 d'après Peoplegroups.org en 2025). C'est une langue bantoue isolée, classée D.12, non mutuellement intelligible avec les langues voisines. Le swahili est utilisé comme langue véhiculaire régionale dans la zone est de la RDC. Le français est la langue officielle nationale."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels lengo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites de circoncision et d'initiation masculine marquant le passage à l'âge adulte et l'intégration à la société Butoka. La cérémonie d'initiation dans la Butoka est le rite central : les grandes statues articulées en bois (Butoka) sont sorties et présentées lors du rite de clôture de l'initiation. Des masques polychromes abstraits sont utilisés lors de la cérémonie finale. Rites funéraires associés à la protection des ancêtres et au maintien de la stabilité sociale. Cérémonies agricoles liées à la culture de la banane, activité économique principale.",
+      "symbols": "Les grandes statues Butoka en bois (fabriquées de six pièces assemblées) sont le symbole le plus distinctif des Lengola ; elles ont des fonctions apotropaïques et garantissent la stabilité sociale de la communauté. Les masques polychromes abstraits de style lega (influence des voisins Lega) sont un autre marqueur identitaire artistique.",
+      "artsAndMusic": "Sculpture sur bois : les Lengola produisent de grandes statues articulées Butoka, composées de six pièces en bois, utilisées lors des cérémonies d'initiation de la société Butoka. Ces statues, aux fonctions apotropaïques, assurent la protection et la stabilité sociale. Les masques, peu nombreux, sont abstraits et polychromes ; leur style est influencé par les voisins Lega à l'est. Les productions artistiques lengola présentent des similitudes stylistiques avec celles des Metoko, Kumu, Mbole et Yela, rendant parfois difficile leur attribution précise. Musique à percussions accompagnant les cérémonies de la Butoka et les rites de passage. Littérature orale (contes, proverbes) transmettant les savoirs et l'histoire communautaire.",
+      "spiritualities": "Croyances animistes centrées sur les ancêtres et les forces de la nature de la forêt équatoriale. La société secrète Butoka est le cadre rituel principal gérant la relation avec le monde des esprits et garantissant la protection communautaire. Les statues Butoka sont des objets rituels à fonction apotropaïque, protégeant la communauté contre les forces malveillantes. Christianisme majoritaire depuis le 20e siècle (catholique et protestant), coexistant avec les pratiques traditionnelles de la Butoka."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora lengo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation sociale décentralisée sans royaume centralisé ; la société Butoka remplit les fonctions politiques, religieuses et sociales normalement dévolues à une chefferie. Pas de chefferie unifiée historiquement documentée pour l'ensemble des Lengola.",
+      "relationsWithNeighbors": "Relations intenses et entrelacées avec les peuples voisins Mbole, Yela, Metoko et Kumu, avec qui ils partagent une structure sociale similaire. Les créations artistiques des Lengola et de leurs voisins sont souvent stylistiquement proches et parfois impossibles à distinguer, témoignant d'échanges culturels profonds. Influence artistique des Lega voisins à l'est (style des masques). Traditions orales sur les difficultés de traversée du Lualaba, partagées avec les Metoko.",
+      "conflictsOrAlliances": "Résistance à la pénétration coloniale belge à la fin du 19e siècle. Intégration dans l'État indépendant du Congo (État colonial de Léopold II) puis dans le Congo belge (1908). Les Lengola, comme leurs voisins, ont subi les prélèvements forcés de caoutchouc et de main-d'oeuvre caractéristiques de la période léopoldienne. Indépendance de la RDC en 1960 ; les Lengola ont vécu les conflits successifs (guerre civile, guerres du Congo) qui ont affecté l'est du pays.",
+      "diaspora": "Diaspora limitée au contexte urbain de la RDC, notamment migrations économiques vers Kisangani (chef-lieu de la province de la Tshopo) et Kinshasa."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 241000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Peoplegroups.org (2025) : 234 000 (chiffre le plus récent). SIL Ethnologue : environ 100 000 locuteurs en 1998. Joshua Project : 241 000 locuteurs de lengola (lej). Estimation 2025 retenue : 241 000, selon Joshua Project, en cohérence avec la croissance démographique de la RDC.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 241000,
+          "note": "Zone forestière équatoriale du centre-est de la RDC — Maniema et Tshopo, des deux côtés du Lualaba"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Lengo language (lgr)",
-      "CIA World Factbook – RDC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Lengola language. https://en.wikipedia.org/wiki/Lengola_language",
+      "101 Last Tribes — Lengola people. https://www.101lasttribes.com/tribes/lengola.html",
+      "Joshua Project — Lengola in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/13037",
+      "Peoplegroups.org — Lengola of Democratic Republic of the Congo. https://peoplegroups.org/people_groups/pg014611/",
+      "OpenEdition Journals — Paths in the eastern Congo rainforest: Vernacular histories. https://journals.openedition.org/afriques/4465"
     ]
   }
 }

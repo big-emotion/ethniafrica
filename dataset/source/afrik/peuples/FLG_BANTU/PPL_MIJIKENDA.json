@@ -6,56 +6,101 @@
   "content": {
     "appellations": {
       "mainName": "Mijikenda",
-      "selfAppellation": "",
-      "exonyms": [
-        "Mijikenda (terme signifiant \"neuf peuples\" en swahili), groupe comprenant Giriama, Digo, Chonyi"
-      ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wamijikenda",
+      "exonyms": ["Nyika", "Nika", "Wanyika"],
+      "originOfExonyms": "Le terme Mijikenda vient du swahili : miji (tribus/villages) + kenda (neuf), signifiant litteralement 'neuf tribus' ou 'neuf villages'. L'exonyme Nyika ou Nika, utilise historiquement par les populations swahilies et arabes cotieres, signifie 'gens de la brousse' ou 'gens de l'arriere-pays'.",
+      "whyProblematic": "Le terme Nyika/Nika est pejoratif (signifiant 'gens de la brousse') et fut impose par les populations swahilies et arabes. Son usage est aujourd'hui evite dans les contextes officiels et academiques.",
+      "contemporaryUsage": "Le terme Mijikenda est utilise officiellement au Kenya pour designer ce groupe de neuf peuples bantu de la cote. Le terme Wamijikenda est l'auto-designation collective courante. Les neuf sous-groupes gardent egalement leurs denominations individuelles (Giriama, Digo, Duruma, etc.).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Côte",
+      "ethnoLinguisticGroup": "Bantu de la cote kenyane",
+      "historicalRegion": "Cote du Kenya, entre les rivieres Sabaki au nord et Umba au sud, de la frontiere tanzanienne a la frontiere somalienne",
       "currentCountries": ["KEN"]
     },
-    "ethnicities": ["Mijikenda"],
+    "ethnicities": [
+      "Giriama",
+      "Digo",
+      "Duruma",
+      "Chonyi",
+      "Rabai",
+      "Kauma",
+      "Ribe",
+      "Jibana",
+      "Kambe"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Côte"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la tradition orale orthodoxe, les Mijikenda sont originaires de Shungwaya (Singwaya), localite de la cote nord somalienne. Ils furent pousses vers le sud par les Galla (Oromo) a la suite d'un incident impliquant le meurtre d'un Galla par un jeune Mijikenda et le refus de payer une compensation. Ils atteignirent la cote kenyane vers le XVIe siecle. Certains chercheurs suggerent que les Mijikenda pourraient avoir adopte ce recit migratoire pour creer une identite partagee avec les Swahili qui revendiquaient egalement des origines a Singwaya.",
+      "formationPeriod": "XVIe-XVIIe siecles. Lors de leur migration depuis Singwaya, les peuples Mijikenda se diviserent en six groupes qui etablirent les six premiers kaya fortifies. Ces six kaya se developpèrent ensuite en neuf kaya, correspondant aux neuf groupes actuels.",
+      "migrationRoutes": [
+        "Shungwaya (cote nord somalienne) vers le sud",
+        "Traversee de la cote kenyane et installation sur les collines boisees",
+        "Etablissement progressif depuis le nord (frontiere somalienne) jusqu'au sud (frontiere tanzanienne)"
+      ],
+      "historicalSettlementZones": [
+        "Collines boisees de la cote kenyane (districts de Kwale, Mombasa, Kilifi, Malindi)",
+        "Kaya fortifies originels : Giriama, Chonyi, Kambe, Jibana, Rabai, Kauma (six premiers), puis Ribe, Digo, Duruma",
+        "Plains cotiers entre Mombasa et Kilifi (Kaya Forests UNESCO)"
+      ],
+      "unificationsOrDivisions": "Division en six groupes lors de la migration depuis Singwaya, puis expansion en neuf groupes. Les kaya furent abandonnes comme residences permanentes a la fin du XIXe siecle et au debut du XXe siecle, mais conserves comme sites sacres. Colonisation britannique ayant affaibli l'autorite des chefs traditionnels Mijikenda au profit des populations swahilies et arabes.",
+      "externalInfluences": "Pression des Galla (Oromo) au nord provoquant la migration vers le sud (XVIe s.). Relations commerciales avec les Swahili et les Arabes de la cote. Colonisation portugaise puis britannique ayant modifie les structures de pouvoir. Participation au commerce des esclaves de la cote est-africaine (XIXe s.), ou certains Giriama furent esclaves. Influence islamique des populations cotieres swahilies.",
+      "majorHistoricalEvents": "Migration depuis Shungwaya et etablissement des kaya (XVIe-XVIIe s.). Periode de stabilite dans les kaya puis expansion le long de la cote (XVIIe-XVIIIe s.). Participation au commerce et a la politique de Mombasa (periode precoloniale). Resistance a la colonisation britannique menee par Mekatilili wa Menza (femme giriama) dans les annees 1910, qui s'opposa a l'enrolement force et a l'esclavage. Classement des forets kaya comme monuments nationaux par le gouvernement kenyan a partir de 1992. Inscription de onze kaya au patrimoine mondial UNESCO en 2008."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation gerontocratique autour des conseils d'anciens (Kambi). Les elders du Kaya (Kaya Elders) sont les gardiens des traditions et des forets sacrees. Absence de chefferie centralise forte ; chaque kaya possedait ses propres anciens rituels. Systeme de gouvernance diffuse base sur la sagesse des anciens.",
+      "clanOrganization": "Chacun des neuf groupes est organise en clans patrilineaires. Les clans sont la base de l'organisation sociale, reglant les mariages, les heritages et les relations entre communautes.",
+      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation sociale. La residence et les droits fonciers suivent la ligne paternelle dans la plupart des groupes Mijikenda.",
+      "religiousAuthority": "Les Kaya Elders (Kambi, conseils d'anciens) sont les depositaires du savoir rituel et des forets sacrees. Ils presidaient les prieres, les serments, les rites funeraires, les ceremonies de nomination, les initiations, les reconciliations, les mariages et les couronnements. Leur autorite est aujourd'hui affaiblie par l'urbanisation et la modernisation."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Langues Mijikenda (groupe linguistique bantou de la cote kenyane)",
+      "isoCodes": [
+        "nyf",
+        "dav",
+        "ribe",
+        "gir",
+        "dig",
+        "chw",
+        "rbl",
+        "jib",
+        "kam"
+      ],
+      "dialects": [
+        "Giriama (nyf)",
+        "Digo (dig)",
+        "Duruma (dav)",
+        "Chonyi (coh)",
+        "Rabai (rbl)",
+        "Kauma (kache)",
+        "Ribe (rib)",
+        "Jibana (jib)",
+        "Kambe (kam)"
+      ],
+      "vehicularRole": "Le swahili sert de lingua franca entre les differents groupes Mijikenda et avec le reste du Kenya. Les neuf langues Mijikenda sont etroitement apparentees et forment un groupe dialectal homogene. Le giriama est le plus parle avec plus d'un million de locuteurs."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites dans les kaya (forets sacrees) : prieres, serments, rites funeraires, ceremonies de nomination des nouveau-nes, initiations, reconciliations, mariages, couronnements. Fabrication et veneration des statues funeraires en bois kigango, erigees en memoire des defunts. Ceremonies de guerison et rituels de propitiation des ancetres dans les clairières sacrees des kaya.",
+      "symbols": "Le kaya (foret sacree fortifiee) est le symbole central de l'identite Mijikenda : a la fois maison ancestrale, lieu de priere, depot des croyances spirituelles et abode des ancetres. Les statues kigango (poteaux funeraires en bois sculpte) sont un symbole artistique et spirituel majeur. Le dieu supreme Mulungu est l'etre supreme createur.",
+      "artsAndMusic": "Sculpture sur bois, notamment les statues funeraires kigango (exposees dans des musees du monde entier). Tissage de paniers et poterie. Musique rythmique avec tambours (ngoma), xylophones et instruments a cordes (zeze). Danses ceremoniales lors des celebrations communautaires. Traditions orales riches incluant contes, proverbes et chants transmis de generation en generation.",
+      "spiritualities": "Croyance en Mulungu, dieu supreme gouvernant l'univers. Veneration des ancetres dont les esprits resident dans les kaya. Croyance en divers esprits pouvant influencer la vie. Systeme de guerisseurs traditionnels et d'anciens ritualistes. Syncretisme frequent entre croyances traditionnelles, islam (influence cotiere) et christianisme. Les kaya sont vus comme le sejour sacre des ancetres et la source des croyances spirituelles Mijikenda."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en neuf chefferies kaya distinctes, chacune gouvernee par ses anciens. Les kaya constituaient des espaces politiques et culturels autonomes. Participation a la politique de Mombasa a l'epoque precoloniale.",
+      "relationsWithNeighbors": "Relations commerciales et politiques anciennes avec les Swahili et Arabes de la cote (dependance alimentaire mutuelle : les Mijikenda fournissaient vivres aux Swahili cotiers). Relations avec les Pokomo et les Segeju. Periode coloniale : pouvoir transfere aux Swahili et Arabes sous administration britannique, les Mijikenda releguees au rang de squatters sur la bande cotiere.",
+      "conflictsOrAlliances": "Opposition aux forces coloniales portugaises. Resistance a la colonisation britannique menee par Mekatilili wa Menza (Giriama) dans les annees 1910, figure heroique nationale kenyane. Certains Giriama captures comme esclaves dans les plantations cotieres (XIX e s.) dans un systeme patron-client avec les proprietaires swahili et arabes.",
+      "diaspora": "Presence principalement au Kenya (cote). Quelques Mijikenda presents en Tanzanie du nord (frontieres communes avec les Digo). Migration interne vers Mombasa et les villes cotieres kenyanes. Les statues kigango ont ete dispersees dans de nombreux musees internationaux."
     },
     "demography": {
-      "totalPopulation": 2,
+      "totalPopulation": 3000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimations 2025 basees sur le recensement kenyan 2019 (2 488 691) et projections demographiques",
+      "distributionByCountry": [{ "country": "KEN", "population": 3000000 }]
     },
-    "sources": []
+    "sources": [
+      "Mijikenda peoples – Wikipedia EN (https://en.wikipedia.org/wiki/Mijikenda_peoples)",
+      "Traditions and practices associated with the Kayas – UNESCO ICH (https://ich.unesco.org/en/USL/traditions-and-practices-associated-with-the-kayas-in-the-sacred-forests-of-the-mijikenda-00313)",
+      "Sacred Mijikenda Kaya Forests – UNESCO WHC decision 32 COM 8B.50 (https://whc.unesco.org/en/decisions/4265/)",
+      "Githitho A.N., The Sacred Mijikenda Kaya Forests of Coastal Kenya and Biodiversity Conservation – Sacred Land Film Project (https://sacredland.org/wp-content/uploads/2017/07/Mijikenda_Kaya.pdf)",
+      "Ethnic Affiliation Kenya – Kenya National Bureau of Statistics 2009 (https://www.knbs.or.ke/ethnic-affiliation/)",
+      "History of the Mijikenda tribes – MSOLA Africa (https://www.msolafrica.org/2024/08/12/the-history-of-the-mijikenda-tribes-kenya/)"
+    ]
   }
 }

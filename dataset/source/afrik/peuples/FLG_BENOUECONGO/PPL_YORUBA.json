@@ -2,37 +2,117 @@
   "id": "PPL_YORUBA",
   "nameMain": "Yoruba",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["SLE", "NGA", "BEN", "TGO", "GHA"],
+  "currentCountries": ["NGA", "BEN", "TGO", "GHA", "SLE"],
   "content": {
     "appellations": {
       "mainName": "Yoruba",
-      "selfAppellation": "Yorùbá (Yorùbá ènìyàn)",
+      "selfAppellation": "Yoruba (Yoruba eniyan)",
       "exonyms": [
-        "« Nago » (terme colonial, connotation réductrice) ; « Aku » (diaspora, SLE)"
+        "Nago (terme colonial francophone, connotation reductrice, encore employe au Benin et au Togo)",
+        "Aku (diaspora historique en Sierra Leone et en Gambie)"
       ],
+      "originOfExonyms": "Nago est un terme utilise par les colons francais pour designer les Yoruba du Dahomey (actuel Benin) et du Togo ; il a une connotation reductrice et est evite en contexte academique. Aku designe les Yoruba liberes de la traite et reinstalles en Sierra Leone au 19e siecle ; il derive probablement de oka ou oka, un terme de salutation yoruba.",
+      "whyProblematic": "Nago peut etre percu comme reducteur par les communautes concernees. L'appellation Aku en Sierra Leone est specifique a la diaspora musulmane liberee et non a la totalite des Yoruba.",
+      "contemporaryUsage": "Yoruba est le terme universel dans les contextes academi­ques, officiels et communautaires en Afrique de l'Ouest et dans la diaspora. La Sierra Leone constitue une presence diasporique historique verifiable (communaute Aku / Oku, descendants de Yoruba liberes par la Royal Navy au 19e siecle et reinstalles a Freetown).",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "Volta-Congo → Yoruboïde",
-      "historicalRegion": "Sud-Ouest du Nigeria (Forêt–Savane)",
-      "currentCountries": ["SLE", "NGA", "BEN", "TGO", "GHA"]
+      "ethnoLinguisticGroup": "Volta-Congo, Yoruboid",
+      "historicalRegion": "Sud-Ouest du Nigeria (foret-savane), Yorubaland ; extensions au Benin (anciennement Dahomey), au Togo et au Ghana occidentaux",
+      "currentCountries": ["NGA", "BEN", "TGO", "GHA", "SLE"]
     },
-    "ethnicities": ["Ọ̀yọ́", "Èkìtì", "Ìjẹ̀ṣà"],
-    "origins": {},
-    "organization": {},
+    "ethnicities": [
+      "Oyo (Alaafin d'Oyo, noyau imperial)",
+      "Ijebu (region cotiere, commerce maritime)",
+      "Egba (Abeokuta)",
+      "Ekiti (confederation de royaumes Ekiti-Parapo)",
+      "Ijesha / Ijesa",
+      "Ife (Ile-Ife, cite sacree fondatrice)",
+      "Ondo",
+      "Owo",
+      "Ketu (actuel Benin)",
+      "Sabe (Shabe, actuel Benin)",
+      "Ana / Ife du Togo (Atakpame, actuel Togo)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les traditions orales yoruba placent l'origine du peuple a Ile-Ife, consideree comme le berceau de l'humanite dans la cosmologie yoruba. Le mythe fondateur rapporte que le dieu Olodumare envoya Oduduwa descendre du ciel pour creer la terre a Ife ; Oduduwa devint le premier roi de Ile-Ife et l'ancetre de tous les rois yoruba (Oba). Des fouilles archeologiques datent l'occupation de Ile-Ife a partir du 4e siecle avant J.-C., avec un apogee classique autour du 8e siecle apres J.-C. Une tradition alternative associe les origines a une migration en provenance d'Egypte ou du Moyen-Orient via la famille de Lamurudu.",
+      "formationPeriod": "L'identite yoruba collective s'est consolidee entre le 8e et le 12e siecle apres J.-C., avec Ile-Ife comme centre culturel et spirituel. La plupart des royaumes yoruba se fondent sur la pretention de descendre des princes envoyes depuis Ile-Ife par Oranyan, fils d'Oduduwa.",
+      "migrationRoutes": [
+        "Depuis Ile-Ife vers le nord-savane : fondation du royaume d'Oyo",
+        "Vers l'est : fondation du royaume de Benin (Edo) par des princes d'Oranyan",
+        "Vers l'ouest et le sud-ouest : Ketu, Sabe, Egba, Ijebu",
+        "Vers l'est : royaumes Ekiti, Ijesha, Ondo, Owo",
+        "Via la traite atlantique : diaspora en Sierra Leone (Aku), au Bresil (Nagos), a Cuba et en Haiti (Lucumi)"
+      ],
+      "historicalSettlementZones": [
+        "Yorubaland : Etats d'Ogun, Oyo, Osun, Ondo, Ekiti, Lagos, Kwara (Nigeria)",
+        "Departements de l'Atacora, du Zou et du Plateau (Benin)",
+        "Region des Plateaux (Togo)",
+        "Volta Region (Ghana)",
+        "Freetown et environs (Sierra Leone, diaspora Aku)"
+      ],
+      "unificationsOrDivisions": "Le peuple yoruba n'a jamais forme un Etat unique : les royaumes etaient independants tout en partageant la meme civilisation, la meme langue et le meme mythe fondateur (Oduduwa). L'Empire d'Oyo (apogee 1650-1750) constitue la plus grande unite politique yoruba ; son effondrement vers 1836 provoqua la diaspora interne et des guerres civiles (jihad de Ilorin, guerres d'Ekitiparapo). La colonisation britannique unifia les territoires yoruba du Nigeria en 1914.",
+      "externalInfluences": "Contact precoce avec les royaumes d'Afrique de l'Ouest (Dahomey, Borgu, Benin). La traite atlantique (16e-19e siecles) affecta profondement les royaumes yoruba comme exportateurs et victimes d'esclaves. Les missions chretiennes (CMS, Methodiste) s'etablirent a Abeokuta et Lagos dans les annees 1840. L'islam penetra le nord du Yorubaland depuis le 14e siecle et s'intensifia avec le jihad de Ilorin (1823-1830).",
+      "majorHistoricalEvents": "Fondation de l'Empire d'Oyo (vers 14e siecle) ; apogee de la civilisation de Ife (art classique en bronze et terre cuite, 12e-15e siecles) ; effondrement de l'Empire d'Oyo (1836) ; guerres civiles yoruba (1840-1893) ; traite du protectorat britannique (1893) ; independance du Nigeria (1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme politique yoruba est une monarchie constitutionnelle centralisee avec des mecanismes avances de contrepoids. L'Oba (roi) est chef supreme, figure sacree et semi-divine, mais son pouvoir est equilibre par le conseil des chefs (Oyomesi dans l'empire d'Oyo : sept chefs hereditaires conduits par le Basorun / Premier ministre) et par la societe secrete Ogboni (gardiens de la terre et du droit). Le Basorun pouvait contraindre un Alaafin devenu tyrannique a se suicider en lui remettant une calebasse vide ou des oeufs de perroquet. Les royaumes secondaires sont gouvernes par des Baale (vicerois tributaires des Oba).",
+      "clanOrganization": "Les Yoruba sont organises en de nombreux royaumes independants (Oyo, Ife, Ijebu, Egba, Ekiti, Ijesha, Ondo, Owo, Ketu, etc.), chacun structure autour d'un Oba et de son conseil de chefs. Les clans patrilineaires (idile) et les wards (adugbo) organisent la vie au niveau local.",
+      "ageClassSystems": "Les associations d'age (egbe) organisent les travaux communautaires, les ceremonies et les fonctions de police locale. L'egbe est aussi une forme d'association fraternelle adulte a adhesion volontaire qui joue un role social majeur.",
+      "roleOfLineages": "La descendance patrilineaire organise l'appartenance au groupe domestique (ile, maison), l'heritage foncier et les obligations rituelles. Les femmes maintiennent des liens forts avec leur lignage d'origine meme apres le mariage.",
+      "religiousAuthority": "Le systeme religieux orisha associe chaque divinite a des pretres et pretresses specialises (babalorisha, iyalorisha). Le babalawo (pretre de la divination Ifa) detient une autorite spirituelle de premier plan dans toutes les decisions importantes. L'Ooni de Ife detient l'autorite spirituelle supreme sur le Yorubaland en tant que descendant d'Oduduwa."
+    },
     "languages": {
-      "mainLanguage": "Yorùbá (ISO 639-3 : yor)",
-      "dialects": ["Oyo, Ijebu, Ekiti, Ife, Egba, etc."]
+      "mainLanguage": "Yoruba (yor)",
+      "isoCodes": ["yor"],
+      "dialects": [
+        "Oyo (dialecte standard de reference)",
+        "Ijebu",
+        "Ekiti",
+        "Ife",
+        "Egba",
+        "Ijesha",
+        "Ondo",
+        "Owo",
+        "Ana / Ife (Togo)",
+        "Ede (Togo)"
+      ],
+      "vehicularRole": "Le yoruba est une langue nationale au Nigeria, utilisee dans l'enseignement, les medias et l'administration des Etats du Sud-Ouest. Il fonctionne comme langue vehiculaire regionale au Benin occidental et dans certaines zones du Togo. La diaspora yoruba maintient la langue au Bresil (cultes Candomble), a Cuba (Lucumi / Lukumi) et en Sierra Leone."
     },
     "culture": {
-      "source_0": "Culte des orisha.",
-      "source_1": "Divination Ifá.",
-      "source_2": "Masques Gẹ̀lẹ̀dẹ̀, tambours dùndún."
+      "majorRites": "Le culte des orisha (divinites) structure la vie rituelle : chaque orisha (Sango, Ogun, Yemoja, Osun, Obatala, Esu, Oya, etc.) dispose de fetes annuelles, de pratiques initiatiques et de codes de conduite specifiques. La divination Ifa (consultation du babalawo avec le chapelet d'Opele ou les noix d'Ikin) est au coeur des decisions individuelles et collectives ; Ifa est inscrit au patrimoine culturel immateriel de l'UNESCO (2005). Les masques Gelede celebrent la puissance des femmes agees (iyami) et sont inscrits au patrimoine UNESCO (2003). Les funerailles (iku) et les ceremonies d'accession au trone (installation de l'Oba) sont des evenements sociaux majeurs.",
+      "symbols": "Les bronzes et sculptures de Ife et Benin (12e-15e siecles) representent le sommet de l'art classique yoruba. L'Opa Oranmiyan (stele rituelle d'Ile-Ife) symbolise l'heritage fondateur. Les tambours dundun (tambour d'aisselle parlant) sont l'instrument emblematique, capables de reproduire les tons de la langue yoruba. Les tissus aso-oke (brocart traditionnel tisse) et adire (batik a l'indigo) sont les symboles textiles de l'identite.",
+      "artsAndMusic": "La tradition musicale yoruba est internationalement reconnue : le dundun (tambour parlant), le bata (tambour sacre d'orisha), et le sekere (calebasse percussive) sont les instruments classiques. Le juju music (King Sunny Ade, Ebenezer Obey), l'afrobeat (Fela Kuti), le fuji et l'apala sont des genres musicaux modernes d'origine yoruba. La sculpture sur bois (masques, statues d'orisha), l'art bronze, la peinture sur tissu (adire eleko) et l'architecture des palais royaux (afin) forment le corpus artistique. La litterature yoruba inclut des epopees orales (ijala pour les chasseurs, ewi pour la poesie), des contes (alo), et des proverbes (owe).",
+      "spiritualities": "La religion traditionnelle yoruba (Aborisa) reconnait un Dieu supreme Olodumare (ou Olorun) et un pantheon de divinites secondaires les orisha, intermediaires entre les humains et le divin. Le culte Ifa est un systeme de divination et de connaissance sacree classe au patrimoine de l'UNESCO. Les religions afro-diaspori­ques derivees incluent le Candomble (Bresil), la Santeria / Lucumi (Cuba), le Sango (Trinidad), et le Vodou (Haiti, en partie). L'islam sunnite represente environ 50% des Yoruba du Nigeria (principalement Oyo, Ilorin) et le christianisme environ 40%, avec syncreti­sme frequent entre les trois traditions."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'Empire d'Oyo (apogee 1650-1750) fut le plus puissant des royaumes yoruba, contr­olant le commerce trans-saharien et inter-regional entre le Volta et le Niger. L'empire de Ife (classique, vers 800-1500 CE) est le plus ancien. Le royaume de Ijebu controlait le commerce maritime coti­er avec les Europeens. Le royaume d'Egba (Abeokuta, fonde vers 1830) devint un centre chretien et de resistance coloniale majeur. Les royaumes Ekiti formerent la confederation Ekitiparapo contre Oyo (1878).",
+      "relationsWithNeighbors": "Alliance et rivalite historiques avec le royaume de Benin (Edo) a l'est. Guerre contre le Dahomey (Fon) a l'ouest (18e-19e siecles). Incorpor­ation de populations Nupe et Bariba au nord dans la sphere d'Oyo. Commerce de longue distance avec les Hausa au nord et les peuples coti­ers. Relations complexes avec les royaumes du Borgu.",
+      "conflictsOrAlliances": "Les guerres civiles yoruba (1840-1893) suivirent l'effondrement de l'Empire d'Oyo : guerre d'Ijaye, guerres d'Ekitiparapo, guerres de Kiriji. Le jihad de Ilorin (1823-1830) detacha le nord du Yorubaland de l'empire et provoqua des vagues de refugies fondant de nouvelles villes (Ibadan, Abeokuta). La Grande-Bretagne imposa un protectorat en 1893 apres la Conference de Lagos mettant fin aux guerres inter-yoruba.",
+      "diaspora": "La diaspora historique yoruba issue de la traite atlantique (16e-19e siecles) est estimee a plusieurs millions de descendants en Amerique latine et aux Caraibes. Au Bresil les Nagos forment la base du Candomble ; a Cuba les Lucumi du systeme Santeria. En Sierra Leone, la communaute Aku (Oku), descendants de Yoruba liberes reinstalles a Freetown a partir de 1821, est estimee a environ 7,300 personnes (PeopleGroups.org, 2025) et constitue une presence diasporique historiquement verifiee justifiant SLE dans currentCountries. La diaspora moderne est presente en grande quantite au Royaume-Uni, aux Etats-Unis, au Canada, et en Europe continentale."
+    },
     "demography": {
       "totalPopulation": 48482000,
       "referenceYear": 2025,
-      "source": "peuple_demographie_globale.csv, estimations basées sur recensements, SIL Ethnologue, études démographiques, Yoruba Diaspora Studies"
+      "source": "Estimation basee sur peuple_demographie_globale.csv, recensements nationaux, SIL Ethnologue (2024 : environ 47 millions de locuteurs yoruba au Nigeria), Joshua Project, et etudes demographiques sur la diaspora yoruba. La population totale inclut Nigeria (environ 45 millions), Benin (environ 1,8 million), Togo (environ 450 000), Ghana (environ 150 000) et Sierra Leone (environ 7 300). Source secondaire : Yoruba Diaspora Studies, Encyclopedia Africana.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 45500000 },
+        { "country": "BEN", "population": 1800000 },
+        { "country": "TGO", "population": 450000 },
+        { "country": "GHA", "population": 150000 },
+        { "country": "SLE", "population": 7300 }
+      ]
     },
-    "sources": ["Encyclopedia Africana ; Ifé studies", "Ethnologue ; Glottolog"]
+    "sources": [
+      "Encyclopedia Africana ; Ife studies",
+      "Ethnologue, Yoruba (yor): https://www.ethnologue.com/language/yor",
+      "Glottolog, Yoruba: https://glottolog.org/resource/languoid/id/yoru1245",
+      "Wikipedia, Oyo Empire: https://en.wikipedia.org/wiki/Oyo_Empire",
+      "Wikipedia, Oduduwa: https://en.wikipedia.org/wiki/Oduduwa",
+      "Wikipedia, Oku people Sierra Leone: https://en.wikipedia.org/wiki/Oku_people_(Sierra_Leone)",
+      "Joshua Project, Yoruba in Sierra Leone: https://joshuaproject.net/people_groups/16057/SL",
+      "PeopleGroups.org, Yoruba of Sierra Leone: https://peoplegroups.org/people_groups/pg014300/",
+      "UNESCO, Patrimoine culturel immateriel Ifa (2005) et Gelede (2003): https://ich.unesco.org/",
+      "Britannica, Oyo Empire: https://www.britannica.com/place/Oyo-empire",
+      "Lumen Learning, The Yoruba States: https://courses.lumenlearning.com/atd-herkimer-worldcivilization/chapter/the-yoruba-states/"
+    ]
   }
 }

@@ -1,59 +1,80 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_FADASHI",
   "nameMain": "Fadashi",
-  "languageFamilyId": "FLG_COUCHITIQUE",
+  "languageFamilyId": "FLG_NILO_SAHARIEN",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
       "mainName": "Fadashi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Benishangul-Gumaz",
-      "currentCountries": ["ETH"]
+      "selfAppellation": "Fadashi",
+      "exonyms": ["Fadasi", "Fadasse"],
+      "originOfExonyms": "Le nom Fadashi (ou Fadasi) désigne à la fois le sous-groupe et le dialecte Berta qu'il parle. L'appellation Fadasi apparait dans les sources historiques arabes et dans la nomenclature des sheikhdoms du Benishangul au XIXe siècle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Fadashi est utilisé dans les documents officiels éthiopiens et dans les recensements pour désigner ce sous-groupe Berta. Les locuteurs se reconnaissent également sous l'appellation générique Berta ou Benishangul."
     },
-    "ethnicities": ["Fadashi"],
+    "ethnicities": ["Fadashi", "Berta"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Benishangul-Gumaz"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Fadashi sont un sous-groupe du peuple Berta (aussi appelé Bertha, Benishangul ou Funj), dont les origines remontent au sultanat de Sennar (Soudan oriental, 1521-1804). Les Berta constituent la plus grande tribu Funj selon l'historien soudanais Awn ash-Sharif Gasim.",
+      "formationPeriod": "Migration vers l'ouest de l'Éthiopie aux XVIe-XVIIe siècles ; établissement dans la région de l'actuel Benishangul-Gumuz. Le sheikhdom de Fadasi s'est constitué au cours du XIXe siècle comme l'une des subdivisions politiques du Benishangul.",
+      "migrationRoutes": [
+        "Sennar (Soudan) vers la région du Benishangul-Gumuz (Éthiopie occidentale) aux XVIe-XVIIe siècles",
+        "Établissement initial sur les hauteurs et les montagnes pour se protéger des razzias esclavagistes venant du Soudan",
+        "Redescente progressive dans les vallées au cours du XXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Région de Bambasi (Benishangul-Gumuz)",
+        "Zone d'influence du sheikhdom de Fadasi dans le Benishangul"
+      ],
+      "unificationsOrDivisions": "Au XIXe siècle, la région du Benishangul était divisée en plusieurs sheikhdoms dont Fadasi, Komosha, Gizen et Asosa. L'intégration dans l'empire éthiopien date de 1896.",
+      "externalInfluences": "Plusieurs siècles d'influence arabe et soudanaise ont islamise une grande partie des Berta, dont les Fadashi ; de nombreux locuteurs parlent couramment l'arabe soudanais. Des commerçants arabes ont donné lieu à des métissages, d'où le surnom Watawit (chauve-souris, signe du mélange).",
+      "majorHistoricalEvents": "Incorporation dans l'empire éthiopien en 1896 sous Menelik II. L'identité Fadashi est reconnue dans le recensement éthiopien de 1994 avec 741 personnes se déclarant Fadashi et 8 715 personnes comptabilisées comme locuteurs du dialecte Fadashi au sein de la population Berta."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en sheikhdoms au XIXe siècle ; le sheikhdom de Fadasi était l'une des quatre subdivisions politiques du Benishangul. Après l'intégration à l'Éthiopie, la structure des chefferies a été progressivement remplacée par l'administration régionale.",
+      "clanOrganization": "Organisation clanique au sein du groupe Berta ; les Fadashi constituent une branche distincte avec leur propre dialecte (Fadashi) aux côtés du Gebeto (Berta propre) et de l'Undulu.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent les relations sociales et les droits fonciers ; les travailleurs communautaires (working parties) jouent un rôle central lors des constructions de maisons et des travaux agricoles.",
+      "religiousAuthority": "Autorités islamiques locales (imams, chefs religieux) ; des spécialistes rituels traditionnels appelés neri exercent des pouvoirs de guérison et de divination, conformément aux pratiques Berta."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Fadashi (dialecte Berta, Nilo-Saharien)",
+      "isoCodes": ["wti"],
+      "dialects": ["Fadashi", "Gebeto (Berta propre)", "Undulu"],
+      "vehicularRole": "L'arabe soudanais est utilisé comme langue véhiculaire par de nombreux Berta-Fadashi en contexte commercial et religieux ; l'amharique est la langue officielle de l'État régional du Benishangul-Gumuz."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Cérémonies de mariage avec musique jouée par les hommes à l'aide de grandes trompettes en calebasse (waz'a) ; le marié arrive à cheval sur un âne en portant un bang (baton de jet). Après le mariage, le mari vit dans le village de sa femme pendant un an ou plus, cultivant les terres du beau-père. Rituels de fabrication de pluie.",
+      "symbols": "Scarifications rituelles : généralement trois lignes verticales sur chaque joue, interprétées comme la lettre initiale d'Allah en arabe (alif) ; symbole identitaire et spirituel fort chez les Berta-Fadashi.",
+      "artsAndMusic": "Musique de mariage jouée avec des trompettes en calebasse (waz'a) ; fabrication de céramiques (récipients awar et is'u pour la bière de sorgho). Architecture traditionnelle sur pilotis de pierre dans les zones rocheuses des hauteurs, décrite par le voyageur Ernst Marno en 1874.",
+      "spiritualities": "Islam majoritaire, souvent syncrétisé avec des pratiques traditionnelles Nilo-Sahariennes : rituels de pluie, consultation de spécialistes rituels (neri) qui traitent les esprits mauvais (shuman). Malgré l'islamisation, les traditions animistes persistent."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Sheikhdom de Fadasi au XIXe siècle, l'une des quatre subdivisions du Benishangul ; l'ensemble Berta-Benishangul était la plus grande formation Funj selon les sources soudanaises.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les peuples Gumuz et Uduk voisins (Nilo-Sahariens mais de langues différentes) ; forte influence des commerçants arabes soudanais, conduisant à l'islamisation et au bilinguisme arabe.",
+      "conflictsOrAlliances": "L'arrivée des Berta en Éthiopie aux XVIe-XVIIe siècles fut marquée par de forts conflits territoriaux entre les communautés Shangul. Des razzias esclavagistes venant du Soudan ont contraint les Berta à s'établir initialement sur des hauteurs défendables.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 12000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation 2025 basée sur le recensement éthiopien 1994 (741 personnes déclarées Fadashi ; 8 715 locuteurs du dialecte Fadashi au sein de la population Berta totale de 208 759) et croissance démographique projetée ; Joshua Project / Berta Benishangul ETH",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 12000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Berta people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Berta_people)",
+      "Fadashi language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Fadashi_language)",
+      "Berta languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Berta_languages)",
+      "Berta language (WTI) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/wti/)",
+      "Berta, Benishangul in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10793/ET)",
+      "1994 Population and Housing Census of Ethiopia – IPUMS / World Bank (https://microdata.worldbank.org/catalog/2746)",
+      "Between Domination and Resistance: The Bertha – Inlibra (https://www.inlibra.com/853968.pdf)"
+    ]
   }
 }

@@ -2,58 +2,85 @@
   "id": "PPL_TOKALEYA",
   "nameMain": "Tokaleya",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "ZWE"],
   "content": {
     "appellations": {
       "mainName": "Tokaleya",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tokaleya",
+      "exonyms": ["Toka-Leya", "Toka", "Batoka", "Leya", "Baleya"],
+      "originOfExonyms": "Tokaleya est un nom compose designant les deux sous-groupes constitutifs: les Toka (ou Batoka, dont le nom est attache aux gorges de la Batoka en aval de Mosi oa Tunya) et les Leya (ou Baleya, dont le chef Mukuni siege a Mukuni Village pres de Livingstone). La forme Toka-Leya est la plus frequente dans les documents officiels zambiens.",
+      "whyProblematic": "Le terme Tokaleya reunit deux groupes distincts (Toka et Leya) qui ont chacun une identite propre. Les Tokaleya sont parfois confondus avec les Tonga de Zambie car ils parlent des dialectes tongiques.",
+      "contemporaryUsage": "Toka-Leya est reconnu officiellement en Zambie comme groupe ethnique distinct. La Toka-Leya Native Authority existait depuis l'epoque coloniale britannique. Le groupe est presente aux touristes visitant les chutes Victoria (Mosi oa Tunya).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu du Sud (groupe Tonga-Leya)",
+      "historicalRegion": "Region de Mosi oa Tunya (chutes Victoria), Province du Sud de la Zambie et nord-ouest du Zimbabwe",
+      "currentCountries": ["ZMB", "ZWE"]
     },
-    "ethnicities": ["Tokaleya"],
+    "ethnicities": ["Toka (Batoka)", "Leya (Baleya)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tokaleya habitent la region de Mosi oa Tunya depuis des siecles. Ce sont les habitants originels des chutes Victoria, qu'ils appelaient Mosi oa Tunya (la fumee qui gronde). La tradition orale evoque des mariages interethniques entre les ancetres des Toka et des Leya, formant un peuple composite. Les gorges en aval des chutes portent le nom des Batoka.",
+      "formationPeriod": "Presence etablie avant le XIXe siecle; groupe composite Toka-Leya structure avant l'arrivee des colonisateurs europeens",
+      "migrationRoutes": [
+        "Etablissement ancien dans la vallee du Zambeze superieur et la region des chutes Victoria"
+      ],
+      "historicalSettlementZones": [
+        "Region de Mosi oa Tunya (chutes Victoria, Livingstone)",
+        "Vallee du Zambeze superieur (Province du Sud, Zambie)",
+        "Nord-Ouest du Zimbabwe"
+      ],
+      "unificationsOrDivisions": "Les Toka et les Leya constituent deux sous-groupes distincts unifies sous l'identite Tokaleya. Systeme de double chefferie: le chef masculin Mukuni administre le groupe Leya depuis Mukuni Village (siege royal a 5 km des chutes), avec une chefferie feminine complementaire.",
+      "externalInfluences": "Contacts avec les Tonga du plateau et les Lozi (langue Lozi aussi parlee). Arrivee de David Livingstone en 1855, premier Europeen a atteindre les chutes Victoria, guide par les Tokaleya. Integration dans l'economie coloniale britannique de la Rhodesia du Nord. Tourisme contemporain important autour des chutes Victoria.",
+      "majorHistoricalEvents": "1855: David Livingstone atteint Mosi oa Tunya guide par des Tokaleya. Periode coloniale: creation de la Toka-Leya Native Authority sous administration britannique. Les Tokaleya s'etablissent comme gardiens du site patrimonial de Mosi oa Tunya. Village de Mukuni: siege de la royaute Leya, haut lieu d'histoire locale."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de double chefferie Toka-Leya avec chef masculin (Chief Mukuni) responsable des affaires administratives. Le village de Mukuni est le palais royal et le siege du pouvoir traditionnel Leya.",
+      "clanOrganization": "Organisation clanique propre a chacun des deux sous-groupes. Le chef Mukuni cumule autorite politique, culturelle et spirituelle. Songwe Village (5 km en aval des chutes) est un autre village historique tokaleya.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent l'acces aux terres et la participation aux ceremonies. La transmission de la chefferie suit des regles lignageres etablies.",
+      "religiousAuthority": "Le chef Mukuni est le gardien des traditions spirituelles et des pratiques rituelles liees a la terre et aux ancetres. Croyances centrees sur les esprits ancestraux et les forces naturelles, notamment les chutes Mosi oa Tunya considerees comme sacrees."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Chitokaleya (dialecte du Tonga / dialecte Leya)",
+      "isoCodes": ["toi"],
+      "dialects": ["Chitokaleya (dialecte Toka)", "ChiLeya (dialecte Leya)"],
+      "vehicularRole": "Les Tokaleya parlent des dialectes du tonga (ISO toi) et du lozi. L'anglais est la langue officielle. Le chitonga est utilise dans les ecoles et les contextes formels. Les locuteurs tonga du plateau comprennent le tokaleya, mais l'inverse est plus difficile selon des sources communautaires."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival biennal commemorant la migration ancestrale du peuple Toka-Leya sur deux jours. Ceremonies liees au fleuve Zambeze (riviere sacree, source de vie). Pratiques de peche traditionnelle transmises de generation en generation. Seances de contes par les anciens autour du feu. Ceremonies du cycle de vie (naissance, initiation, mariage, funerailles).",
+      "symbols": "Les chutes Mosi oa Tunya sont le symbole culturel et spirituel supreme des Tokaleya. La double chefferie (male et femelle) est un symbole institutionnel distinctif. Les maisons en boue et chaume sont l'habitat traditionnel.",
+      "artsAndMusic": "Danses traditionnelles vibrantess pratiquees lors des ceremonies. Artisanat: objets fabriques a la main vendus sur les marches locaux. Fabrication de bijoux et d'objets en bois. Canoes de peche traditionnels sur le Zambeze.",
+      "spiritualities": "Croyances traditionnelles honnorant les ancetres et les forces naturelles. Le Zambeze est une riviere sacree. Les chutes Mosi oa Tunya sont un lieu de connexion spirituelle avec les ancetres. Coexistence entre religion traditionnelle et christianisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferie Mukuni (Leya), l'une des plus anciennes et influentes de la region des chutes Victoria. Le palais de Musokotwane (pres de Songwe Village) temoigne de l'histoire politique de la region. La Toka-Leya Native Authority fut etablie par l'administration coloniale britannique.",
+      "relationsWithNeighbors": "Relations etroites avec les Tonga du Plateau (langue et culture apparentees). Contacts avec les Lozi de la province occidentale. Les Batoka sont mentionnes en lien avec les gorges qui portent leur nom en aval des chutes.",
+      "conflictsOrAlliances": "Relations avec David Livingstone en 1855. Integration dans le systeme colonial rhodesien. Les Tokaleya sont reconnus comme gardiens originels du site patrimonial UNESCO Mosi oa Tunya/Victoria Falls.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 80000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation d'apres les sources disponibles (Joshua Project, Wikipedia)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 75000,
+          "note": "Zambie - Province du Sud, region de Livingstone et Kazungula"
+        },
+        {
+          "country": "ZWE",
+          "population": 5000,
+          "note": "Zimbabwe - region de Victoria Falls"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Tokaleya – Wikipedia EN (https://en.wikipedia.org/wiki/Tokaleya)",
+      "Tonga people of Zambia and Zimbabwe – Wikipedia EN (https://en.wikipedia.org/wiki/Tonga_people_(Zambia_and_Zimbabwe))",
+      "Toka-Leya Culture, Zambian Traditions – Peek.com (https://www.peek.com/zambia/r0gbbpp/toka-leya-culture-explore-zambian-traditions/a0d9pwd9)",
+      "Toka-Leya Tribe Safari Tours – Kingsfari (https://www.kingsfari.com/experiences/toka-leya)",
+      "African Cultural Experience: The Leya People – Volunteer International Adventures (https://volunteerinternationaladventures.com/african-cultural/)",
+      "Tonga people – Chalo Chatu, Zambia Online Encyclopedia (http://www.chalochatu.org/index.php?title=Tonga_people)"
+    ]
   }
 }

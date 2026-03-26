@@ -1,0 +1,24 @@
+{
+  "id": "PPL_HARARI",
+  "nameMain": "",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "ሐረሪ / Harari ; parfois Adare",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Sémitique du Sud",
+      "historicalRegion": "Ville historique de Harar",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["UNESCO Harar", "Ethnologue (har)", "Ethiopian CSA"]
+  }
+}

@@ -6,59 +6,98 @@
   "content": {
     "appellations": {
       "mainName": "Kongo (Cabinda)",
-      "selfAppellation": "Bakongo",
-      "exonyms": ["« Kongo » (terme utilisé par les Européens)"],
+      "selfAppellation": "Bakongo (pluriel), Cabindais (en reference a l'enclave)",
+      "exonyms": [
+        "Cabindans (en anglais et en portugais)",
+        "Fiote / Bafiote (terme ancien designe les Vili et Kongo cotiers)",
+        "Bakongo de Cabinda"
+      ],
+      "originOfExonyms": "Le nom Cabinda derive du nom d'un chef local, Kabinda. Le terme Fiote (ou Bafiote) fut utilise par les missionnaires chretiens dans les Ameriques pour designer les esclaves d'origine Vili ou Kongo cotier. La denomination Kongo de Cabinda est une convention moderne qui distingue les Bakongo de l'enclave de ceux du continent angolais.",
+      "whyProblematic": "Les Cabindais ont une identite distincte par rapport aux autres Bakongo angolais, issue de leur histoire separee sous trois royaumes (Ngoyo, Loango, Kakongo) et d'une culture differenciee. Le Traite de Simulambuco (1885) avait fait de Cabinda un protectorat portugais distinct de l'Angola, une difference constitutionnelle ignoree lors de l'independance angolaise (1975). Le mouvement separatiste FLEC (Front de Liberation de l'Enclave de Cabinda) milite depuis 1963 pour l'independance.",
+      "contemporaryUsage": "Les habitants de Cabinda se desinent souvent d'abord comme Cabindais plutot que comme Bakongo ou Angolais, en signe d'identite regionale. Les sous-groupes locaux (Woyo, Kakongo, Loango) sont des appellations quotidiennes. Le terme Bakongo reste utilise dans les contextes academiques et pour designer l'appartenance linguistique et ethnique generale.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "Cabinda (Angola)",
+      "ethnoLinguisticGroup": "Bantou Zone H (groupe H.10-H.16)",
+      "historicalRegion": "Cabinda : enclave angolaise sur la cote atlantique centrale africaine, separee du reste de l'Angola par le corridor congolais d'acces a l'ocean; anciennement Congo portugais",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Kongo de Cabinda", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Woyo / Bawoyo (cote nord de l'enclave, ancienne region du royaume de Ngoyo) : sous-groupe le plus identifie a Cabinda",
+      "Kakongo / Bakakongo (centre de l'enclave, ancienne region du royaume de Kakongo) : historiquement le plus puissant des trois royaumes de Cabinda",
+      "Loango / Bavili de Cabinda (extreme nord, lie au royaume de Loango) : sous-groupe numeriquement plus reduit dans l'enclave",
+      "Mayombe / Bayombe (foret du Mayombe a l'interieur de l'enclave) : chasseurs-cueilleurs et agriculteurs de la foret",
+      "Sundi (frontiere avec le Congo-Brazzaville) : sous-groupe de transition"
+    ],
     "origins": {
-      "ancientOrigins": "Les Kongo de Cabinda sont originaires de la région de Cabinda (Angola). Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Kongo.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+      "ancientOrigins": "Les populations de Cabinda descendent des Bakongo et de leurs cousins Vili qui se sont etablis sur la cote atlantique centrale avant le 14e siecle. Le territoire de Cabinda correspond a l'ancienne zone d'influence des royaumes de Ngoyo, Kakongo et Loango, trois Etats vassaux du Royaume du Kongo devenus independants apres l'affaiblissement de ce dernier au 17e siecle. Ces populations sont venues de l'interieur du bassin du Congo il y a environ 2 000 ans lors de la grande expansion bantoue.",
+      "formationPeriod": "Les trois royaumes de Cabinda (Ngoyo, Kakongo, Loango) se sont consolides entre le 14e et le 16e siecles comme entites politiques distinctes, liees au commerce maritime et a la traite des esclaves. Cabinda comme entite geo-politique distincte de l'Angola a ete fixee par le Traite de Simulambuco (1885), signe avec le Portugal, qui etablissait un protectorat separe. L'integration forcee dans l'Angola independant (1975) a cree une identite cabindaise propre, distincte des Bakongo du reste de l'Angola.",
+      "migrationRoutes": [
+        "Migration bantoue ancienne depuis le bassin du Congo vers la cote atlantique (1er millenaire ap. J.-C.)",
+        "Expansion des royaumes de Loango, Kakongo et Ngoyo depuis la region du Bas-Congo (14e-16e siecles)",
+        "Migrations de Mayombe depuis la foret interieure vers la cote et vice-versa"
+      ],
+      "historicalSettlementZones": [
+        "Cote nord de l'enclave (Woyo, autour de l'actuelle ville de Cabinda)",
+        "Plateau central de l'enclave (Kakongo, autour de Belize)",
+        "Zone frontaliere avec la Republique du Congo (Loango, Mayombe)",
+        "Foret du Mayombe (populations forestieres internes)"
+      ],
+      "unificationsOrDivisions": "Le Traite de Simulambuco (1885) unifiait les trois royaumes de Cabinda sous le protectorat portugais separement de l'Angola. En 1963, les mouvements de liberation de Cabinda se sont unis pour former le FLEC (Front de Liberation de l'Enclave de Cabinda). En 1975, l'incorporation de Cabinda dans l'Angola independant sans consultation specifique a cree une fracture politique durable. En 2006, un accord de paix partiel a ete signe avec une faction du FLEC, mais d'autres factions continuent la lutte.",
+      "externalInfluences": "Contact precoce avec les marchands portugais (15e siecle). Commerce d'esclaves : le port de Cabinda etait l'un des plus actifs d'Afrique centrale pour la traite atlantique. Colonisation portugaise depuis 1885 (Traite de Simulambuco). Christianisation : l'eglise catholique est très ancienne a Cabinda. Exploitation petroliere massive (depuis les annees 1960, aujourd'hui Chevron est le principal operateur) : Cabinda fournit la majorite du petrole angolais mais les revenus beneficient peu a la population locale.",
+      "majorHistoricalEvents": "1485 : premier contact avec les Portugais (Diogo Cao). 1885 : Traite de Simulambuco faisant de Cabinda un protectorat portugais distinct. 1963 : creation du FLEC. 1975 : independance angolaise et incorporation de Cabinda dans l'Angola. 1993 : pogroms anti-bakongo a Luanda tuant plus de 60 Bakongo. 2006 : accord de paix partiel avec une faction du FLEC. 2010 : attentat contre le bus de l'equipe de football du Togo lors de la CAN. Tensions continues liees a la question de l'independance."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Historiquement, les trois royaumes de Cabinda (Ngoyo, Kakongo, Loango) etaient gouvernes par des rois (maloango pour Loango, mangoyo pour Ngoyo, manikakongo pour Kakongo) assistés de conseils de chefs (mafuka). Ces rois etaient elus par les grandes familles au sein d'un clan royal specifique. Apres la colonisation, les chefferies traditionnelles ont ete maintenues sous tutelle portugaise. Aujourd'hui, les chefs traditionnels (sobas) sont reconnus officiellement par l'Etat angolais.",
+      "clanOrganization": "Comme chez tous les Bakongo, la societe cabindaise est organisee en clans matrilineaires (makanda). L'appartenance clanique determine l'identite sociale, les droits fonciers et les alliances. Les trois royaumes historiques etaient eux-memes structures par des liens claniques entre les grandes families nobles. Les Woyo sont connus pour leurs couvercles de pots sculptes (mbwoolo) utilisés pour communiquer des messages sociaux et moraux au sein des clans.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage matrilineaire est fondamental chez les Bakongo de Cabinda. L'heritage, le statut social et les droits sur les terres ancestrales passent par la ligne maternelle. Les tensions entre ce systeme matrilineaire et les pratiques de l'Etat angolais (titres fonciers individuels, heritage civil) creent des conflits au sein des familles. Le lignage joue un role important dans l'organisation des ceremonies de deuil et des mariages.",
+      "religiousAuthority": "Le catholicisme est tres fortement implante a Cabinda depuis plusieurs siecles. Cabinda a une population catholique majoritaire avec une longue tradition de formation du clerge local. Les nganga (guerisseurs traditionnels) continuent de pratiquer dans les zones rurales, notamment dans la foret du Mayombe. Des eglises evangeliques et pentecotistes ont aussi gagne des adeptes depuis les annees 1990."
     },
     "languages": {
-      "mainLanguage": "Kikongo",
-      "vehicularRole": "Le kikongo est parlé par la majorité des Kongo de Cabinda. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "Ibinda (dialecte kikongo de Cabinda) et Woyo (iwoyo)",
+      "isoCodes": ["kon", "kng"],
+      "dialects": [
+        "Ibinda : dialecte kongo specifique a Cabinda, parle par les Woyo et autres groupes de l'enclave (parfois code yom au sens large)",
+        "Iwoyo / Woyo : variete proche de l'ibinda, parlee specifiquement par les Woyo du nord de l'enclave",
+        "Fiote : terme generique parfois utilise pour les varietes kongo du littoral (Vili, Woyo)",
+        "Kikongo ya Leta / Kituba : creole vehiculaire utilise dans le commerce et les contextes inter-ethniques"
+      ],
+      "vehicularRole": "Le portugais est la langue officielle et d'enseignement en Angola, y compris a Cabinda. L'ibinda et l'iwoyo sont les langues vernaculaires principales. Le kikongo ya Leta (Kituba) sert de vehiculaire dans les marches et les echanges avec la Republique du Congo voisine. La proximite geographique avec le Congo-Brazzaville et la RDC favorise le multilinguisme (francais, lingala en plus du portugais et du kikongo)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kongo, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites funeraires : les ceremonies de deuil (matanga) sont longues et impliquent tout le clan. L'enterrement doit idealement avoir lieu dans le village ancestral. Les Woyo sont reputes pour leurs couvercles de marmite sculptes (mbwoolo) utilises lors des ceremonies de mariage pour communiquer des messages moraux de la femme a son mari sur leurs droits et obligations mutuels. Rites de mariage : la dot (lobola ou lukumbu) est negociee entre clans. Les ceremonies chretiennes et traditionnelles coexistent. Rites de protection : les nganga de la foret du Mayombe sont reputes pour leur maitrise des plantes medicinales et des charmes de protection (minkisi).",
+      "symbols": "Les couvercles de pots sculptes Woyo (mbwoolo) sont des objets culturels distinctifs de Cabinda : chaque sculpture represente un proverbe ou une situation sociale, servat d'outil de communication symbolique au sein du couple et du clan. Le kaolin blanc (mpemba) symbolise la communication avec les ancetres et est utilise dans les ceremonies. Les figures de nkisi restent des symboles de protection spirituelle.",
+      "artsAndMusic": "Art sculptural : les Woyo de Cabinda sont particulierement connus pour leurs sculptures sur bois, notamment les couvercles de pots (mbwoolo), parmi les plus inventifs de l'art kongo. Des figures de nkisi nkonde (figures de clou) ont egalement ete produites dans la region. Musique : les traditions musicales incluent les chants polyphoniques, les tambours ngoma et la sanza. Artisanat : la poterie, le tissage de raphia et la fabrication de paniers de haute qualite sont des traditions feminines persistantes dans les villages de l'enclave. Les objets rituels produits par les nganga du Mayombe (potions, charmes) font partie d'un artisanat rituel specifique.",
+      "spiritualities": "Catholicisme tres majoritaire, avec une eglise enracinee depuis le 16e siecle. La presence catholique est ancienne : des missionnaires capucins etaient actifs dans la region depuis le 17e siecle. Les croyances traditionnelles kongo persistent : culte des ancetres, croyance aux esprits de l'eau (simbi), pratiques nganga. La foret du Mayombe, consideree comme un espace sacre, abrite des sites rituels importants. Un syncrétisme marque entre catholicisme et traditions kongo caracterise la spiritualite de Cabinda. Des eglises pentecotistes et evangeliques se developpent depuis les annees 1990."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kongo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Trois royaumes historiques constituaient le territoire de l'actuelle Cabinda : le royaume de Ngoyo (au nord, autour de l'actuelle ville de Cabinda), le royaume de Kakongo (au centre, le plus puissant au moment du contact europeen) et le royaume de Loango (dont la zone meridionale borde l'enclave, le plus grand des trois). Ces royaumes etaient vassaux du Royaume du Kongo puis devinrent independants apres le 17e siecle. Ils participaient activement au commerce maritime avec les Europeens (esclaves, cuivre, ivoire).",
+      "relationsWithNeighbors": "Relations etroites avec la Republique du Congo au nord (separation par une frontiere artificielle coloniale). Relations historiques complexes avec le reste de l'Angola (incomprehension de l'identite cabindaise distincte). Les Bakongo de Cabinda ont des liens familiaux avec les Vili (Bavili) du Congo-Brazzaville et les Kongo du Kongo Central (RDC). Le corridor du Bas-Congo (RDC) qui separe physiquement Cabinda du reste de l'Angola a toujours ete un facteur d'identite separee.",
+      "conflictsOrAlliances": "1885 : Traite de Simulambuco avec le Portugal (protectorat distinct, non rattache a l'Angola). 1961 : soulèvement des travailleurs des plantations de cafe a Cabinda, l'un des plus grands soulèvements anti-coloniaux de l'Afrique tropicale. 1963 : fondation du FLEC. 1975 : integration forcee dans l'Angola independant, debut de l'insurrection armee. 1993 : violences anti-bakongo a Luanda. 2006 : accord de paix partiel avec une faction du FLEC (Accord de Mbizi). Accusations de violations des droits humains contre l'armee angolaise documentees par Amnesty International et Human Rights Watch.",
+      "diaspora": "Des Cabindais vivent en exil politique en Republique du Congo, en France, en Belgique, au Portugal et dans d'autres pays europeens, souvent du fait de la repression du mouvement separatiste. La diaspora cabindaise en Europe est active dans le soutien au mouvement pour l'autodetermination de Cabinda. Des echanges et des liens familiaux intenses existent avec les communautes kongo de la Republique du Congo voisine."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 750000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Province de Cabinda (Angola) : population estimee a 903 370 (Wikipedia, recensement angolais). Les Bakongo constituent la grande majorite de la population de l'enclave. Estimation 2025 ajustee a 750 000-850 000 Bakongo de Cabinda en incluant les membres du groupe presents dans d'autres provinces angolaises. Bakongo au total en Angola : environ 13% de la population angolaise, soit environ 4,3 millions (State Dept, 2024). Sources : Wikipedia EN — Cabinda Province; Minority Rights Group International; US State Department Angola country report 2024.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 750000,
+          "note": "Province de Cabinda principalement. Presence aussi dans les provinces de Uige et Zaire (nord de l'Angola continental). Sous-groupes principaux a Cabinda : Woyo, Kakongo, Loango/Bavili, Mayombe."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kikongo language (kng, kon)",
-      "CIA World Factbook – Angola",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Cabinda Province. https://en.wikipedia.org/wiki/Cabinda_Province",
+      "Minority Rights Group International — Bakongo and Cabindans in Angola. https://minorityrights.org/communities/bakongo-and-cabindans/",
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Immigration and Refugee Board of Canada — Bakongo in Angola (2024). https://www.ecoi.net/en/document/2110281.html",
+      "US State Department — Angola country report (Bakongo 13% of population). https://2009-2017.state.gov/outofdate/bgn/angola/82228.htm",
+      "SIL Ethnologue — Kongo macrolanguage (kon). https://www.ethnologue.com/language/kon/",
+      "Joshua Project — Kongo in Angola. https://joshuaproject.net/people_groups/12774/AO",
+      "EBSCO Research Starters — Kongo (historical kingdom). https://www.ebsco.com/research-starters/history/kongo-historical-kingdom",
+      "101 Last Tribes — Kongo People (subgroups in Angola). https://www.101lasttribes.com/tribes/kongo.html",
+      "The Bamoun Collection — Between Two Worlds (Woyo nkisi objects). https://www.thebamouncollection.com/between-two-worlds"
     ]
   }
 }

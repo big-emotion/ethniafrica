@@ -2,67 +2,114 @@
   "id": "PPL_KURTEY",
   "nameMain": "Kurtey",
   "languageFamilyId": "FLG_SONGHAY",
-  "currentCountries": ["MLI"],
+  "currentCountries": ["NER", "MLI", "BEN", "NGA"],
   "content": {
     "appellations": {
       "mainName": "Kurtey",
       "selfAppellation": "Kurtey",
-      "exonyms": ["Kurtey (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Voleurs d'hommes (surnom zarma au 19e siècle, en référence aux razzias d'esclaves)",
+        "Sous-groupe songhay (désignation de certains observateurs extérieurs qui les considèrent comme une fraction des Songhaï)"
+      ],
+      "originOfExonyms": "Le terme Kurtey est l'ethnonyme propre de ce groupe. Le surnom zarma de Voleurs d'hommes (en zarma : expression liée aux razzias d'esclaves) leur a été attribué au 19e siècle lorsque de nombreux Kurtey musulmans menaient des raids d'esclavage contre les Zarma non-musulmans des rives du Niger. Certains observateurs extérieurs les considèrent comme un sous-groupe des Songhaï en raison de leur langue songhay méridionale, mais d'autres soulignent leur identité distincte résultant de leur triple héritage songhaï-zarma-peul.",
+      "whyProblematic": "Le statut ethnique des Kurtey est sujet à débat : certains analystes les voient comme une fraction des Songhaï, d'autres comme un groupe distinct à part entière ayant des histoires, des cultures et une auto-identification spécifiques dans le plus large espace songhay. Leur identité hybride résultant d'un métissage historique entre Peuls, Songhaï, Zarma et Sorko rend leur classification ethno-linguistique complexe.",
+      "contemporaryUsage": "Le terme Kurtey est utilisé par la communauté elle-même et par les populations environnantes au Niger. On les trouve principalement le long du Niger dans la région de Tillaberi (Niger), ainsi que dans des proportions moindres au Mali, au Bénin et au Nigeria. Leur nombre est estimé à moins de 50 000 personnes.",
       "linguisticFamily": "FLG_SONGHAY",
-      "ethnoLinguisticGroup": "Songhay",
-      "historicalRegion": "Mali",
-      "currentCountries": ["MLI"]
+      "ethnoLinguisticGroup": "Songhay méridional — dialecte zarma-kurtey",
+      "historicalRegion": "Vallée du Niger, région de Tillaberi (Niger), entre Sansani, Dessa, Ayorou et Niamey ; ilôts et berges du Niger moyen",
+      "currentCountries": ["NER", "MLI", "BEN", "NGA"]
     },
     "ethnicities": [
-      "Kurtey du Nord",
-      "Kurtey du Sud",
-      "Sous-groupes régionaux"
+      "Kurtey de Tillaberi — groupe principal, concentrés dans la région de Tillaberi (Niger), sur les îles et les berges du Niger près de Sansani, Dessa et Ayorou",
+      "Kurtey de Niamey — communauté urbaine établie dans le quartier Koutoukalé de Niamey (Niger), capitale du Niger",
+      "Kurtey du Niger moyen — villages le long du Niger depuis Gao (Mali) jusqu'au nord du Nigeria",
+      "Kurtey du Bénin — communautés dans le nord du Bénin",
+      "Kurtey du Nigeria — petites communautés dans le nord-ouest du Nigeria",
+      "Kurtey du Mali — communautés dans le delta intérieur du Niger et les zones de Gao"
     ],
     "origins": {
-      "ancientOrigins": "Les Kurtey sont originaires du MLI, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples songhay.",
-      "externalInfluences": "Contacts avec les peuples touareg et autres groupes, influence de l'islam."
+      "ancientOrigins": "Les Kurtey sont un groupe ethnique issu d'un métissage historique entre trois peuples : les Peuls (Fulbé), les Songhaï-Zarma et les Sorko (pêcheurs spécialisés du Niger). Ce groupe n'existait pas avant le 18e siècle. Leur ancêtre collectif est un groupe de Peuls qui ont migré dans la vallée du Niger du Niger actuel, région de Tillaberi, vers 1750 sous la direction du chef Maliki. Ces Peuls s'y sont métissés avec les Songhaï, Zarma, Sorko et autres populations locales, adoptant progressivement leur langue et leurs modes de vie riverains tout en conservant des aspects de la culture peule.",
+      "formationPeriod": "La formation du groupe kurtey s'étale sur la période 1750-1820. Les Peuls d'abord arrivés vers 1750 sous Maliki se sont installés progressivement dans la région. Vers 1820, ils avaient établi leurs villages sur les îles du Niger près de Tillabéry et Niamey. Leur métissage avec les Sorkos (maîtres de la pêche fluviale) et les Kados (autre groupe riverain) a abouti à l'émergence d'une communauté distincte, les Kurtey, qui ont dominé la zone du Niger moyen avant l'arrivée des Français. Ils ont développé une économie fluviale combinant pêche, riziculture inondée, élevage bovin et culture du tabac.",
+      "migrationRoutes": [
+        "Arrivée initiale des Peuls-ancêtres dans la région de Tillaberi vers 1750, sous le chef Maliki",
+        "Etablissement sur les îles du Niger près de Tillabéry et Niamey vers 1820",
+        "Extension vers le nord (région de Gao, Mali) et le sud (nord du Bénin et du Nigeria) le long du Niger",
+        "Migrations saisonnières comme travailleurs au Ghana (Kurtey saisonniers modernes)"
+      ],
+      "historicalSettlementZones": [
+        "Îles du Niger et berges de la région de Tillaberi (Niger) — zone d'implantation originelle",
+        "Niamey — quartier Koutoukalé principalement",
+        "Sansani, Dessa, Ayorou — villages du Niger moyen dans la région de Tillaberi",
+        "Niger moyen — villages le long du fleuve de Gao (Mali) jusqu'au nord du Nigeria"
+      ],
+      "unificationsOrDivisions": "Les Kurtey et les Wogo, groupe voisin également arrivé dans la même zone depuis le Niger moyen vers 1800, ont été historiquement rivaux mais sont devenus étroitement liés au fil du temps, au point de partager les mêmes zones d'habitat, des dialectes similaires et des modes de vie comparables. Les deux groupes étaient musulmans avant leur migration dans la région et entretenaient des relations proches avec l'Emirat peul de Say. Les Kurtey ne possèdent pas de structure politique centralisée traditionnelle ; ils sont organisés en villages autonomes gouvernés par des conseils de chefs et d'anciens.",
+      "externalInfluences": "Héritage culturel peul (Fulbé) : élevage bovin sédentaire, organisation clanique, pratiques culturelles pastorales maintenues en parallèle avec l'adoption des modes de vie fluviaux songhaï-zarma. Influence zarma-songhaï : adoption de la langue songhay méridionale, des pratiques de pêche et de riziculture inondée. Influence sorko : techniques de pêche artisanale héritées des Sorkos avec qui les Kurtey se sont métissés. Colonisation française (fin 19e siècle-1960) : incorporation dans la colonie du Niger français. Au 19e siècle, des pratiques d'esclavage (razzias contre les Zarma non-musulmans) ont marqué les relations avec les voisins.",
+      "majorHistoricalEvents": "Vers 1750 : arrivée des ancêtres peuls dans la région de Tillaberi sous le chef Maliki. Vers 1820 : établissement sur les îles du Niger ; formation du groupe kurtey distinct par métissage. 19e siècle : razzias d'esclaves contre les Zarma non-musulmans, gagnant aux Kurtey le surnom zarma de Voleurs d'hommes. 19e siècle : rivalité avec les Wogo, groupe concurrent dans la même zone. Relations avec l'Emirat peul de Say (sultanat peul au Niger). Colonisation française et pacification de la région du Niger moyen (fin 19e siècle). Indépendance du Niger (1960) : intégration dans l'État nigérien."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en villages autonomes gouvernés par un chef de village (chef Kurtey) assisté d'un conseil d'anciens. Pas de structure politique centralisée au niveau inter-villageois. Les relations avec les structures étatiques du Niger sont assurées via les chefferies traditionnelles reconnues par l'administration. Les chefs islamiques (imams, marabouts) jouent un rôle social et religieux important dans les affaires communautaires.",
+      "clanOrganization": "Structure clanique patrilinéaire héritée de l'ascendance peule et consolidée par le métissage avec les Songhaï-Zarma. Les clans Kurtey maintiennent des généalogies qui les rattachent à la fois aux Peuls fondateurs et aux populations songhaï-zarma assimilées. Endogamie clanale partielle : préférence pour les alliances matrimoniales au sein du même groupe ou avec les Wogo. Castes spécialisées héritées : pêcheurs (héritage sorko), agriculteurs, éleveurs (héritage peul).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits sur les zones de pêche du fleuve, les terres de riziculture inondée et les pâturages pour le bétail. L'héritage de la maîtrise des zones de pêche (îles, berges) est transmis de père en fils. Les alliances matrimoniales renforcent les liens entre familles kurtey et entre Kurtey et Wogo voisins.",
+      "religiousAuthority": "Islam sunnite majoritaire, adopté avant même la migration dans la région de Tillaberi. Les marabouts jouent un rôle central : direction de la prière, enseignement coranique, médiation dans les conflits, guérison. Des pratiques syncrétiques persistent, notamment en lien avec les rites fluviaux (respect des esprits du Niger, offrandes au fleuve) hérités de l'influence sorko. Les Kurtey participent aux confréries islamiques (Tijaniyya notamment) présentes dans tout le Niger."
     },
     "languages": {
-      "mainLanguage": "Kurtey (variété songhay)",
-      "vehicularRole": "Le kurtey est parlé par la majorité des Kurtey. Le français est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Kurtey (dialecte songhay méridional, proche du zarma)",
+      "isoCodes": ["dje"],
+      "note": "Le dialecte kurtey n'a pas de code ISO 639-3 distinct ; il appartient au continuum songhay méridional zarma-djerma (code dje), dont il est une variété. Certaines sources le regroupent avec le zarma.",
+      "dialects": [
+        "Kurtey de Tillaberi — variété principale, similaire au zarma mais avec des caractéristiques distinctives héritées du mélange songhaï-peul-sorko",
+        "Kurtey de Niamey — variété urbaine, fortement influencée par le zarma de Niamey",
+        "Kurtey du Niger moyen — variétés parlées dans les villages entre Gao et le Nigeria, légèrement différentes"
+      ],
+      "vehicularRole": "Les Kurtey parlent un dialecte songhay méridional proche du zarma, avec une intelligibilité mutuelle élevée avec le zarma et le songhoyboro ciine. Certains linguistes et sources les intègrent dans le continuum zarma-dendi. Le zarma-songhaï est la langue de communication régionale au Niger occidental. Le français est la langue administrative du Niger. L'arabe est utilisé dans l'enseignement islamique. De nombreux Kurtey sont multilingues (kurtey, zarma, haoussa, français)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels songhay.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture kurtey."
+      "majorRites": "Rites islamiques : célébrations du Ramadan, Aïd el-Fitr, Aïd el-Adha, Mawlid. Circoncision masculine : rite de passage central, célébré en communauté ; les Kurtey comptent parmi les six groupes ethniques du Niger ayant historiquement pratiqué la circoncision féminine rituelle (excision), pratique en déclin suite aux campagnes de santé publique. Mariages : cérémonies communautaires avec fêtes, chants et danses ; dot négociée entre familles. Scarification faciale traditionnelle : certains Kurtey maintiennent la tradition d'une petite croix en haut de chaque pommette — marque identitaire distinctive héritée des ancêtres peuls. Rites liés à la pêche et à la riziculture : bénédictions des pirogues et des filets en début de saison de pêche ; offrandes symboliques au fleuve Niger.",
+      "symbols": "La pirogue et les filets de pêche symbolisent l'identité kurtey comme peuple du fleuve, héritiers des Sorkos. Les îles du Niger (dans la région de Tillaberi) sont le territoire identitaire historique des Kurtey. La petite croix de scarification faciale (en haut de chaque pommette) est le marqueur corporel distinctif des Kurtey, rappelant leur origine peule. Le boeuf, héritage de leur ascendance pastorale peule, coexiste symboliquement avec la pirogue et le filet. La culture du tabac (spécialité économique kurtey) est un autre élément identitaire.",
+      "artsAndMusic": "Musique et chants liés aux activités du fleuve : chants de pêcheurs rythmant la pose des filets et le retour au village. Chants islamiques (na'at, chants du Ramadan). Instruments de musique : tambours (dunun, tama), calebasse flottante (percussion). Danses lors des mariages et des fêtes communautaires. Artisanat spécialisé : construction de pirogues (art transmis de père en fils, héritage des Sorkos), tressage de nattes et filets, poterie. Culture du tabac (Nicotiana tabacum) : pratique agricole typique des Kurtey le long du Niger, avec des techniques de culture irriguée sur les berges. Riziculture inondée sur les berges et îles du Niger. Travaux saisonniers au Ghana (migrations de travail) comme source de revenu complémentaire.",
+      "spiritualities": "Islam sunnite (majorité) : cinq piliers, mosquées dans les villages, madrassa pour l'enseignement coranique, participation aux confréries (Tijaniyya). Syncrétisme animiste : respect des esprits du fleuve (holey ou génies des eaux), offrandes symboliques avant les grandes pêches, croyances en la protection des ancêtres. Les marabouts jouent un double rôle islamique et traditionnel : prières officielles et médecine traditionnelle (gris-gris, amulettes coraniques). Pratiques de divination et de guérison issues du mélange de traditions peules, songhaï et sorko. La croyance en la force protectrice du fleuve Niger est fondamentale dans la cosmologie kurtey."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques maliennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kurtey dans les grandes villes maliennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kurtey n'ont jamais constitué un royaume ou un sultanat autonome. Avant la colonisation française, ils dominaient la zone du Niger moyen dans la région de Tillaberi et entretenaient des relations privilégiées avec l'Emirat peul de Say (sultanat peul sur le Niger). Leur puissance était économique et fluviale (contrôle des zones de pêche et de riziculture) plutôt que politique ou militaire. Ils participaient à l'espace politique plus large du Niger moyen influencé par les Zarma, les Songhaï et les Peuls.",
+      "relationsWithNeighbors": "Relations complexes avec les Zarma : au 19e siècle, tensions dues aux razzias d'esclaves kurtey contre les Zarma non-musulmans. Relations avec les Wogo : rivaux historiques devenus proches voisins partageant les mêmes zones et modes de vie. Relations avec les Sorko (pêcheurs spécialisés) : parenté partielle et héritage des techniques de pêche. Relations avec les Peuls de l'Emirat de Say : liens politiques et culturels liés à l'origine peule des Kurtey fondateurs. Relations avec les Haoussa : échanges commerciaux importants. Relations avec les populations du Bénin, du Nigeria et du Mali voisins dans les zones frontières du Niger.",
+      "conflictsOrAlliances": "19e siècle : razzias d'esclaves des Kurtey contre les Zarma non-musulmans, créant des tensions durables avec leurs voisins. Rivalité puis rapprochement avec les Wogo. Alliance avec l'Emirat peul de Say. Domination sur les zones de pêche du Niger moyen avant l'arrivée des Français. Colonisation française (fin 19e siècle) : pacification et incorporation dans le Niger français. Depuis l'indépendance du Niger (1960), les Kurtey s'intègrent dans les structures étatiques tout en maintenant leurs chefferies traditionnelles.",
+      "diaspora": "De nombreux Kurtey sont des travailleurs saisonniers qui passent de longues périodes au Ghana pour des raisons économiques — pratique ancienne et importante dans leur économie. Des communautés kurtey existent dans les grandes villes nigériennes (Niamey, quartier Koutoukalé) suite à l'exode rural. Des communautés plus petites se trouvent dans les zones frontalières du Bénin, du Nigeria et du Mali. Pas de diaspora internationale significative documentée au-delà de la région ouest-africaine."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 45000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements maliens, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Kurtey people (moins de 50 000) ; 101 Last Tribes — Kurtey (moins de 50 000 au total, majoritairement au Niger et au Mali). Note : les chiffres exacts sont difficiles à établir car les Kurtey ne sont pas systématiquement distingués des Songhaï-Zarma dans les recensements nationaux nigériens.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 35000,
+          "note": "Région de Tillaberi principalement (îles et berges du Niger : Sansani, Dessa, Ayorou) ; quartier Koutoukalé à Niamey"
+        },
+        {
+          "country": "MLI",
+          "population": 5000,
+          "note": "Villages le long du Niger entre Gao et la frontière nigérienne"
+        },
+        {
+          "country": "BEN",
+          "population": 3000,
+          "note": "Nord du Bénin, zone frontalière avec le Niger"
+        },
+        {
+          "country": "NGA",
+          "population": 2000,
+          "note": "Nord-ouest du Nigeria, zones frontalières"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kurtey language",
-      "CIA World Factbook – Mali",
-      "Recensements maliens",
-      "Études anthropologiques sur les peuples songhay"
+      "Wikipedia EN — Kurtey people. https://en.wikipedia.org/wiki/Kurtey_people",
+      "101 Last Tribes — Kurtey people. https://www.101lasttribes.com/tribes/kurtey.html",
+      "Wikipedia EN — Songhay languages. https://en.wikipedia.org/wiki/Songhay_languages",
+      "Wikipedia EN — Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "Facebook / Zarma Songhai Media — Kurtey people. https://www.facebook.com/ZarmaSonghai/posts/the-kurtey-peoplethe-kurtey-were-formed/",
+      "CIA World Factbook — Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
     ]
   }
 }

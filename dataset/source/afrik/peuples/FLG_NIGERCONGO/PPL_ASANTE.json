@@ -2,68 +2,109 @@
   "id": "PPL_ASANTE",
   "nameMain": "Asante",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": ["GHA", "CIV"],
   "content": {
     "appellations": {
       "mainName": "Asante",
-      "selfAppellation": "Asante",
-      "exonyms": ["Asante (terme utilisé par les Européens), Ashanti"],
+      "selfAppellation": "Asante / Asantefo",
+      "exonyms": [
+        "Ashanti (variante orthographique anglaise utilisee depuis la periode coloniale britannique)",
+        "Asante (forme originale twi)",
+        "Coromantee (terme jamaicain designe les Akan captures dans la traite atlantique)"
+      ],
+      "originOfExonyms": "Le terme Ashanti est une variante orthographique anglophone imposee par l'administration coloniale britannique. Les Asante se designent eux-memes comme Asantefo (pluriel). Le terme Coromantee, utilise aux Caraïbes, designe les esclaves akan achetes au fort de Cormantin (Ghana), dont une majorite etait d'origine asante.",
+      "whyProblematic": "La distinction entre Asante et Ashanti est strictement orthographique. Les chercheurs anglophones utilisent les deux formes de facon interchangeable. Certains Asante contemporains preferent la graphie originale twi Asante pour affirmer leur identite independamment de la denomination coloniale.",
+      "contemporaryUsage": "Le terme Asante est aujourd'hui utilise de facon officielle au Ghana, notamment dans la denomination Ashanti Region (region administrative). Les locuteurs se disent Asante ou Asantefo en twi. La figure royale est l'Asantehene, dont le titulaire actuel est Otumfuo Osei Tutu II (depuis 1999).",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Kwa",
-      "historicalRegion": "Centre du Ghana",
-      "currentCountries": ["GHA"]
+      "ethnoLinguisticGroup": "Akan (Kwa)",
+      "historicalRegion": "Region Ashanti (centre du Ghana actuel), plaines de Kumase, region du lac Volta",
+      "currentCountries": ["GHA", "CIV"]
     },
     "ethnicities": [
-      "Asante du Nord",
-      "Asante du Sud",
-      "Sous-groupes régionaux"
+      "Clan Oyoko (clan royal fondateur, dont est issu l'Asantehene Osei Tutu I)",
+      "Clan Bretuo (grands guerriers et chefs)",
+      "Clan Agona (associe aux arts et a la fertilite)",
+      "Clan Asona (l'un des plus nombreux)",
+      "Clan Aduana (associe au feu et a la chasse)",
+      "Clan Asenie (clan de la region d'Asenie)",
+      "Clan Ekuona (associe a la bonte et a l'harmonie)",
+      "Asante du Nord (region de Brong-Ahafo)",
+      "Asante du Sud (region de Kumase et environs)"
     ],
     "origins": {
-      "ancientOrigins": "Les Asante sont originaires du centre du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo. Formation du royaume Ashanti.",
-      "unificationsOrDivisions": "Formation du royaume Ashanti. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples ouest-africains, influence du christianisme."
+      "ancientOrigins": "Les Asante font partie du grand groupe Akan, originaire du centre du Ghana et dont la presence dans la region remonte a plusieurs siecles avant notre ere. Selon la tradition orale, leurs ancetres provenaient de Bono-Manso (region de Brong-Ahafo actuelle), avant de migrer vers la region centrale. Ils sont le dernier grand groupe akan a s'etre constitue en entite politique distincte. L'Empire Ashanti fut fonde en 1670 par l'Asantehene Osei Kofi Tutu I, sur les conseils du pretre royal Okomfo Anokye, qui fit descendre le Sika Dwa Kofi (Trone d'or) du ciel pour symboliser l'ame collective du peuple asante.",
+      "formationPeriod": "L'entite politique asante emerge dans la seconde moitie du 17e siecle. Avant 1670, les Asante etaient un Etat tributaire du royaume centralise des Denkyira. Osei Tutu I, chef du clan Oyoko, rassembla les chefs akan avoisinants, fonda Kumase (1680) comme capitale, et battit les Denkyira en 1701, marquant la naissance de l'Empire asante independant.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis Bono-Manso (nord-ouest de l'actuelle region Brong-Ahafo) vers la region de Kumase",
+        "Expansion vers le sud et l'est sous Opoku Ware I (successeur d'Osei Tutu I) au 18e siecle",
+        "Traite atlantique : deportation forcee de nombreux Asante vers les Caraïbes (Jamaïque, Barbade, Antilles neerlandaises) au 17e-18e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Region de Kumase (capitale historique et actuelle de l'Ashanti Region)",
+        "Region de Brong-Ahafo (nord)",
+        "Bassin du fleuve Pra (sud)",
+        "Lac Volta (est)",
+        "Diaspora dans les grandes villes ghanéennes (Accra, Tema, Takoradi)"
+      ],
+      "unificationsOrDivisions": "L'Empire Ashanti etait un Etat centralise organise en confederation de sous-royaumes (oman) sous l'autorite supreme de l'Asantehene. Les territoires conquis avaient le choix de rejoindre l'empire ou de devenir Etats tributaires. La Confederation Ashanti fut officiellement reconnue par les Britanniques en 1935 apres avoir ete abolie en 1901 suite a la guerre du Tabouret d'or. Depuis 1957, les Asante constituent l'un des groupes les plus influents au sein de la Republique du Ghana.",
+      "externalInfluences": "Commerce trans-saharien et contacts avec les royaumes du nord (Haoussa, Songhai). Traite de l'or avec les Europeens (Portugais, Hollandais, Britanniques) a partir du 15e siecle. Quatre guerres anglo-asante (1823-1900) qui aboutirent a l'incorporation dans l'empire colonial britannique. Influence du christianisme (catholique et protestant) depuis le 19e siecle, sans elimination des pratiques religieuses traditionnelles.",
+      "majorHistoricalEvents": "1670 : fondation de l'Empire Ashanti par Osei Tutu I. 1701 : defaite des Denkyira, etablissement de la suprematie asante dans la region. 1817-1900 : quatre guerres anglo-asante (1823-1831, 1863-1864, 1873-1874, 1896). 1900 : guerre du Tabouret d'or (Yaa Asantewaa dirige la resistance). 1902 : incorporation comme protectorat britannique. 1935 : restauration de la Confederation Ashanti avec souverainete partielle. 1957 : independance du Ghana."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Ashanti). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "L'Empire Ashanti etait organise en confederation hierarchisee. L'Asantehene (roi des rois) siege a Kumase sur le Sika Dwa Kofi (Tabouret d'or). Il est assiste du Asantemanhyiamu (parlement traditionnel) compose des chefs des principaux sous-royaumes (oman). Chaque oman possede son propre omanhene (chef regional), lui-meme assiste de conseils de chefs. La juridiction s'etend depuis le niveau du village (avec un odikro, chef de village) jusqu'a l'Asantehene, en passant par les divisional chiefs. L'Asantehene actuel, Otumfuo Osei Tutu II (intronise en 1999), joue un role de reconciliation politique et diplomatique reconnu au-dela du Ghana.",
+      "clanOrganization": "La societe asante est organisee en huit clans matrilineaires principaux (abusua) : Oyoko, Bretuo, Agona, Asona, Aduana, Asenie, Ekuona et Asakyiri. L'appartenance clanique se transmet par la mere et determine les droits a la terre, l'heritage des biens, des titres et des offices. Le mariage est interdit entre membres du meme clan.",
+      "ageClassSystems": "Les classes d'age (asafo) jouaient un role militaire et communautaire historiquement important. Les hommes jeunes etaient incorpores dans des compagnies asafo responsables de la defense du territoire et de travaux communautaires. Ce systeme est aujourd'hui davantage ceremoniel.",
+      "roleOfLineages": "Le lignage matrilineaire (abusua) constitue la cellule fondamentale de l'identite sociale et de la transmission du patrimoine. Un individu herite de biens, titres et terres de son oncle maternel (wↄfa). La lignee patrilineaire (ntoro) determine en complement le caractere spirituel et certains attributs du fils.",
+      "religiousAuthority": "Le pretre royal (Okomfo) est l'intermediaire entre le monde des vivants et celui des ancetres et des dieux (abosom). L'Okomfo Anokye est le pretre fondateur legendaire de l'Empire. Les pratiques traditionnelles (religion akan) coexistent avec le christianisme (catholique, presbyterien, methodiste, pentecotiste) largement dominant aujourd'hui. Le culte des ancetres (stools noirs conserves dans le palais) reste central."
     },
     "languages": {
-      "mainLanguage": "Twi (Asante)",
-      "vehicularRole": "Le twi asante est parlé par la majorité des Asante. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Twi (dialecte asante / Asante Twi)",
+      "isoCodes": ["twi", "aka"],
+      "dialects": [
+        "Asante Twi (dialecte de Kumase et de la region Ashanti, variante de reference)",
+        "Fante (dialecte des zones cotieres, mutuellement intelligible)",
+        "Akuapem Twi (dialecte de la region orientale)"
+      ],
+      "vehicularRole": "L'Asante Twi est la variante la plus parlee du twi, avec plus de 9 millions de locuteurs natifs. Il sert de langue d'instruction au niveau primaire (classes 1 a 3) dans l'Ashanti Region et est enseigne a l'universite jusqu'au niveau master. Le twi est l'une des langues africaines les plus parlees en Afrique de l'Ouest et exerce une influence vehiculaire dans l'ensemble du Ghana. L'anglais est la langue officielle du pays."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux asante (Ashanti), symboles liés à l'agriculture, symboles culturels asante, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Bragoro (rite de puberté féminine) : cérémonie de plusieurs jours marquant les premières règles d'une jeune fille de 13 à 20 ans. La jeune femme a la tête rasée et teinte en noir, est nourrie d'oeufs bouillis, de poisson et d'eto par des filles plus jeunes. Les femmes âgées (mmerewa) lui enseignent le rôle d'épouse et de mère, la baignent dans un cours d'eau, l'habillent en tissu blanc (ntoma) et bijoux en or, et la présentent à la communauté avec chants et danses. Le blanc symbolise la pureté et la victoire, l'or symbolise la royauté et la richesse matrilinéaire. Adae et Akwasidae (cérémonies royales bimensuelles) : les chefs rendent hommage à l'Asantehene, on verse des libations aux ancêtres, les Fontomfrom et les Atumpan (tam-tams parlants) résonnent dans l'enceinte du palais. Adae Kese (grand festival périodique) : spectacle de splendeur royale avec danses élaborées, percussions et exposition des regalia. Odwira (festival de l'Igname, fête des récoltes) : purification du royaume, commémoration des ancêtres, libations et sacrifices. Rites funéraires : funérailles élaborées (ayi), souvent célébrées des semaines après le décès ; port de tissu rouge et noir ; présence de pleureurs professionnels ; repas collectifs.",
+      "symbols": "Sika Dwa Kofi (Tabouret d'or) : symbole suprême de la royauté et de l'âme collective du peuple asante, jamais assis dessus, descendu du ciel selon la légende par Okomfo Anokye. Kente (kente cloth) : tissu tissé à la main en soie et coton, chaque motif et couleur porte une signification symbolique liée au statut social et à l'occasion. Adinkra : symboles abstraits imprimés sur tissu ou sculptés, représentant des concepts philosophiques et proverbes (Gye Nyame = Sauf Dieu, Sankofa = retour aux sources, etc.). Ornements en or : bracelets, colliers, diadèmes signifiant la richesse et le statut royal. Tabourets noirs (blackened stools) : sièges des ancêtres conservés dans le palais, représentant l'âme des rois défunts.",
+      "artsAndMusic": "Fontomfrom (tambours royaux) : grands tambours dont les sons profonds et résonnants accompagnent toutes les cérémonies royales. Atumpan (talking drums) : tambours parlants communiquant des messages, proverbes et annonces en imitant les tons du twi. Seperewa : harpe-luth à 10-14 cordes, instrument traditionnel d'origine akan (Bono). Kete : ensemble musical royal composé de tambours et de flûtes. Artisanat de l'or : joaillerie, poids en laiton (abrammuo) servant à mesurer l'or. Tissage du kente : art royal transmis de génération en génération, pratiqué notamment à Bonwire. Sculpture sur bois : tabourets, masques, personnel (akyekyedee). Poterie traditionnelle. Anansi (contes de l'araignée) : littérature orale très riche, exportée dans la diaspora caribéenne (Jamaïque).",
+      "spiritualities": "La religion akan traditionnelle (Akom) place au sommet le Dieu créateur suprême Nyame (omniscient et omnipotent), assisté de Nyankopong (l'Être suprême du ciel) et de la déesse Asase Yaa (Terre Mère, mère nourricière). Les abosom (divinités secondaires ou esprits de la nature) servent d'intermédiaires accessibles aux vivants. Les ancêtres (nsamanfo) veillent sur les vivants depuis l'au-delà et sont honorés lors des cérémonies Adae. Les sunsum (âmes personnelles) et kra (principe vital) structurent la conception de la personne. L'Okomfo (prêtre-devin) communique avec les abosom en état de transe. L'Islam fut reçu sous forme talismanique (amulettes coraniques) depuis l'Afrique du Nord. Le christianisme est aujourd'hui la religion majoritaire, mais les pratiques traditionnelles perdurent lors des grandes cérémonies royales."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora asante dans les grandes villes ghanéennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "L'Empire Ashanti (Asanteman, 1670-1902) fut l'un des plus puissants royaumes d'Afrique subsaharienne. Sous Opoku Ware I (18e siecle), il s'etendait sur la majeure partie de l'actuel Ghana, une partie du Togo et de la Cote d'Ivoire. La capitale Kumase etait un centre commercial et culturel majeur, relie a Salaga, Bonduku et aux routes trans-sahariennes. La Confederation Ashanti fut restauree en 1935 sous administration britannique, puis integree a la Republique du Ghana independante en 1957.",
+      "relationsWithNeighbors": "Relations complexes avec la Confederation Fante (rivale cotiete alliee aux Britanniques), les Denkyira (suzerains vaincus en 1701), les Gonja et Dagomba (au nord, parfois tributaires), et les peuples Ewe (a l'est). Commerce d'or et d'esclaves avec les royaumes Haoussa au nord et les comptoirs europeens sur la cote.",
+      "conflictsOrAlliances": "Quatre guerres anglo-asante entre 1823 et 1900. Guerre du Tabouret d'or (1900) menee par la Reine-mere Yaa Asantewaa contre l'occupation britannique. Alliance commerciale avec les Hollandais contre les Britanniques et la Confederation Fante au 18e-19e siecles. Conflits recurrents avec les Denkyira (domines en 1701) et les Akyem. Alliance avec les royaumes du nord pour le commerce.",
+      "diaspora": "La traite atlantique a deporte un grand nombre d'Asante vers les Caraïbes, principalement la Jamaïque, la Barbade et les Antilles. En Jamaïque, les Asante sont connus sous le nom de Coromantee et ont joue un role majeur dans les revoltes d'esclaves. Nanny of the Maroons, heroine nationale jamaicaine, etait d'origine asante. Une etude genetique de BMC Biology (2012) a etabli que 60% du lignage matrilineaire des Jamaicains provient des Asante. Dans la diaspora contemporaine, des communautes asante existent au Royaume-Uni, aux Etats-Unis et en Europe."
     },
     "demography": {
-      "totalPopulation": 5000000,
+      "totalPopulation": 11000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ghanéens, SIL Ethnologue, et études démographiques"
+      "source": "Estimation fondee sur le recensement ghaneen 2021 (Ghana Statistical Service), projections 2025 de la region Ashanti (population regionale projetee depasse 6 millions en 2025), et estimations ethnolinguistiques de SIL Ethnologue (plus de 9 millions de locuteurs natifs du twi asante). La population asante totale, incluant la diaspora et les communautes hors Ghana, est estimee entre 10 et 12 millions.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 10500000,
+          "note": "Principalement dans la region Ashanti (Kumase), Brong-Ahafo, et diaspora interne a Accra et Tema"
+        },
+        {
+          "country": "CIV",
+          "population": 300000,
+          "note": "Communautes akan frontalières en Côte d'Ivoire"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Twi language (twi)",
-      "CIA World Factbook – Ghana",
-      "Recensements ghanéens",
-      "Études anthropologiques sur les peuples akan",
-      "Études historiques sur le royaume Ashanti"
+      "Wikipedia EN — Ashanti people. https://en.wikipedia.org/wiki/Ashanti_people",
+      "Wikipedia EN — Asante Empire. https://en.wikipedia.org/wiki/Asante_Empire",
+      "Ghana National Commission on Culture — Ashanti Region. https://ghanaculture.gov.gh/ashanti-region/",
+      "SIL Ethnologue — Twi language (twi/aka). https://www.ethnologue.com/language/twi/",
+      "Ghana Statistical Service — Population Projections Report Ashanti Region 2021-2050. https://statsghana.gov.gh/gssmain/fileUpload/pressrelease/06_Ashanti%20Region_Fau_final.pdf",
+      "R.S. Rattray — Asante Law and Constitution. Oxford: Clarendon Press, 1929.",
+      "EBSCO Research Starters — Ashanti People. https://www.ebsco.com/research-starters/ethnic-and-cultural-studies/ashanti-people",
+      "CIEE — Tradition Goes On At The Ntonso Adinkra Village (Adinkra symbols). https://www.ciee.org/go-abroad/high-school-study-abroad/summer/blog/tradition-goes-ntonso-adinkra-village"
     ]
   }
 }

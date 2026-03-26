@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Yem",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Yem",
+      "exonyms": ["Janjero", "Jangero", "Yemsa", "Yemma", "Yamma"],
+      "originOfExonyms": "Janjero est l'exonyme amharique traditionnel du peuple Yem, utilise depuis le XVe siecle dans les sources ethiopiennes chretiennes. Ce terme est considere comme pejoratif par les Yem eux-memes. L'ISO 639-3 a code leur langue jnj en reference a Janjero, ce que les Yem ont critique comme perpetuant un terme offensant. Yemma et Yemsa designent respectivement le peuple et la langue dans les sources academiques contemporaines. Le nom du royaume Yamma vient de l'appellation historique du territoire.",
+      "whyProblematic": "L'exonyme Janjero est percu comme stigmatisant par les Yem. Certains locuteurs de yemsa ont exprime un malaise a parler leur langue par crainte du jugement negatif associe au terme Janjero dans la societe ethiopienne.",
+      "contemporaryUsage": "Le nom Yem est utilise dans les documents administratifs ethiopiens actuels. Le woreda special de Yem et la zone Yem portent ce nom dans la region Ethiopie centrale.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Omotic (branche Omotic du Nord, groupe Kefoid)",
+      "historicalRegion": "Angle forme par les rivieres Omo et Gibe (Jimma), Sud-Ouest ethiopien",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Yem"],
+    "ethnicities": ["Yem", "Yemsa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Yem occupent un territoire situe dans l'angle forme par les rivieres Omo et Jimma Gibe. Le royaume de Yamma (Janjero) est l'un des etats les plus anciens et les plus organises du sud-ouest ethiopien. La premiere mention du peuple Yem, sous le nom de Janjero, figure dans la chanson de victoire du roi ethiopien Yeshaq I (1412-1427), qui recevait d'eux un tribut en chevaux.",
+      "formationPeriod": "Le royaume de Yamma est mentionne pour la premiere fois en 1420. La premiere dynstie royale (Halmam Gama) fut evincee par le clan Mwa, qui revendiquait une origine du nord. La dynstie Koyniyab a regné jusqu'en 1955, date de son extinction.",
+      "migrationRoutes": [
+        "Le clan fondateur Mwa revendique une origine septentrionale, suggerant une migration du nord vers le territoire de l'angle Omo-Gibe",
+        "Depuis 1977, de nombreux Yem avaient quitte leur territoire ancestral en raison de facteurs humains et naturels, avant de revenir progressivement"
+      ],
+      "historicalSettlementZones": [
+        "Woreda special de Yem, zone Yem, region Ethiopie centrale (anciennement SNNPR)",
+        "Angle forme par les rivieres Omo et Jimma Gibe, couvrant l'actuel district de Sekoru et le woreda Yem",
+        "Region de Fofa, noyau historique de la population Yem"
+      ],
+      "unificationsOrDivisions": "Le royaume de Yamma constituait une entite politique centralisee avec une dynastie royale. Sa puissance diminua apres la defaite face au royaume de Jimma en 1844. La conquete par Menelik II en 1894 mit fin a l'independance politique du royaume.",
+      "externalInfluences": "Relations diplomatiques et tribut verse a l'empire chretien d'Ethiopie depuis le XVe siecle. Visite de Pere Fernandez en 1614, premiere presence europeenne documentee. Conflit prolonge avec le royaume de Jimma (1844-1880s). Incorporation dans l'empire de Menelik II en 1894. Appartenance a la province du Kaffa de 1942 a 1995. Relations culturelles avec les Gurage, Hadya et Kembata a l'est.",
+      "majorHistoricalEvents": "Premiere mention dans la chanson de victoire de Yeshaq I vers 1420. Visite du Pere Fernandes en 1614. Deficit militaire face au royaume de Jimma en 1844 ; le roi emprisonne. Liberation du roi en 1847 et reprise du conflit. Conquete partielle par Jimma dans les annees 1880. Conquete complete et annexion par Menelik II en 1894 ; dernier roi Abba Bagibo s'exile en pays gurage puis se soumet. Absorption dans la province du Kaffa en 1942. Creation du woreda special de Yem en 1995 avec la constitution ethiopienne. Extinction de la dynstie Koyniyab en 1955."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie du type Sidamo, avec un roi disposant de pouvoirs etendus sur la population, y compris le droit de vente en esclavage. Le roi rendait l'audience du haut d'une tour fortifiee selon la description du Pere Fernandes en 1614. La structure politique distinguait la royaute centrale et les autorites locales des clans. La lignee Koyniyab a constitue la derniere dynstie (jusqu'en 1955).",
+      "clanOrganization": "Organisation clanique avec des attributions territoriales distinctes. Le clan Mwa, qui revendique une origine septentrionale, a fonde la deuxieme dynstie royale apres avoir evince les Halmam Gama. L'organisation sociale distingue des groupes lies a l'agriculture, a l'elevage et aux activites medicales traditionnelles.",
+      "roleOfLineages": "Les lignages royaux structurent la succession au trone et les alliances politiques. La liste des rois de la dynstie Koyniyab est partiellement documentee. Les lignages claniaux ordinaires organisent l'acces a la terre dans la region montagneuse.",
+      "religiousAuthority": "La tradition royale comportait des dimensions sacrees liant le roi a l'autorite divine. Les pratiques religieuses traditionnelles comprennent des rituels annuels importants comme Hebo (Nouvel An), qui joue un role central dans la resolution des conflits communautaires. Les ceremonies Hebo impliquent la collecte de medecines traditionnelles, des ceremonies funeraires et des offrandes a des objets sacres (boucliers, peaux, reliques). La religion traditionnelle coexiste avec l'orthodoxie (63 %) et l'islam (27 %) dans la zone Yem selon le recensement 2007."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Yemsa",
+      "isoCodes": ["jnj"],
+      "dialects": [
+        "Fuga (dialecte potentiellement distinct selon certaines sources)"
+      ],
+      "vehicularRole": "Le yemsa (ISO 639-3 : jnj) est la langue maternelle des Yem et la principale langue parlee dans le woreda special de Yem. Il appartient a la branche omotic du nord, proche du kafa. Il est remarquable par ses differents systemes de vocabulaire selon le statut social du locuteur, une caracteristique rare comparee au japonais et au javanais. L'amharique est utilise dans l'administration nationale. L'oromo est parle par 22 % des habitants du woreda comme L1."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Hebo (Nouvel An Yem) est le rituel le plus important, jouant un role crucial dans la resolution des conflits et crimes au sein de la communaute. Il comporte plusieurs stades de processus de reconciliation. Les bogegnas (participants rituels) frappent leurs boucliers avec des batons et scandent des acclamations rituelles. La collecte de medecines traditionnelles en groupes, independamment de l'age et du sexe, est une tradition transmise de generation en generation. Les ceremonies funeraires et le festival Maskhal sont aussi des moments communautaires majeurs.",
+      "symbols": "Le bouclier, les peaux d'animaux sauvages, les crannes, les lances, les epees et les cornes d'animaux sont des objets sacres utilises dans les rituels traditionnels. La riviere Jimma Gibe constitue une frontiere symbolique importante (les victimes de lepre et de teigne etaient envoyees de l'autre cote).",
+      "artsAndMusic": "Traditions orales riches, notamment des chants rituels lors du Hebo et des ceremonies funeraires. Le systeme de vocabulaire stratifie selon le statut social du locuteur constitue une richesse linguistique unique. Instruments et chants traditionnels transmis oralement de generation en generation.",
+      "spiritualities": "Religion traditionnelle basee sur un culte des ancetres avec des objets sacres rituels (boucliers, peaux, crannes, lances, cornes). Le Nouvel An Hebo est un rituel central de reconciliation sociale et de renouvellement cosmique. Aujourd'hui, 63 % de la population du woreda Yem pratique l'orthodoxie ethiopienne, 27 % sont musulmans et 9,61 % protestants selon le recensement 2007. La religion traditionnelle persiste sous forme de pratiques syncrétiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Yamma (connu sous le nom de Janjero dans les sources amhariques) : l'un des royaumes les plus anciens et les plus puissants du sud-ouest ethiopien, aux cotes du Kefa et du Wolayta. Systeme dynastique documente avec la dynstie Koyniyab comme derniere lignee royale (jusqu'en 1955). Le territoire couvrait l'actuel district de Sekoru et le woreda Yem.",
+      "relationsWithNeighbors": "Relations de tribute avec l'empire chretien ethiopien depuis le XVe siecle (tribut en chevaux). Conflit prolonge avec le royaume de Jimma a l'ouest. Relations commerciales et culturelles avec les Gurage, Hadya et Kembata a l'est (separes par la riviere Omo). Alliance historique avec les groupes du sud du Gabe.",
+      "conflictsOrAlliances": "Resistance au royaume de Jimma (1844-1880s). Soumission a Menelik II en 1894. Integration dans l'empire ethiopien puis dans la province du Kaffa (1942). Creation du woreda special de Yem en 1995.",
+      "diaspora": "En raison de deplacements causes par des facteurs humains et naturels, de nombreux Yem avaient quitte la region de Fofa jusqu'en 1977. La communaute est aujourd'hui principalement sedentarisee dans le woreda Yem."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 257000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2025 : environ 257 000 personnes ; recensement ethiopien 2007 : 160 447 Yem ; projection CityPopulation.de 2022 : 116 044 dans le woreda Yem",
+      "distributionByCountry": [{ "country": "ETH", "population": 257000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Yem people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_people)",
+      "Kingdom of Janjero (Yamma) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Janjero)",
+      "Yem language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_language)",
+      "Yem Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_Zone)",
+      "Yem in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16022)",
+      "Yem of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011656/)",
+      "Hebo: New Year Ritual of Yem People in South West Ethiopia – International Journal of Multidisciplinary and Current Research, 2019 (https://ijmmu.com/index.php/ijmmu/article/download/1207/898)",
+      "The Yem people – The Tribal Society, 2025 (https://thetribalsociety.com/the-yem-people/)"
+    ]
   }
 }

@@ -6,54 +6,80 @@
   "content": {
     "appellations": {
       "mainName": "Lenje",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Balenje",
+      "exonyms": [
+        "Bene Mukuni",
+        "Balenge",
+        "Benimukuni",
+        "Ciina mukuna",
+        "Lenge",
+        "Lengi",
+        "Mukuni"
+      ],
+      "originOfExonyms": "Bene Mukuni signifie en bantou les gens de Mukuni, en reference au fondateur legendaire de la chefferie lenje. Le prefixe Ba-/Be- est le pluriel bantu pour designer un peuple. Balenge est une variante phonetique de Balenje.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Lenje est le nom officiel utilise en Zambie. Bene Mukuni est le terme traditionnel toujours employe par les Lenje eux-memes. PeopleGroups.org les recense sous Lenje of Zambia (PGID PG015590). Reconnus parmi les 72 tribus officielles de Zambie.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Botatwe (Bantu zone M, Guthrie M.61)",
+      "historicalRegion": "Province Centrale, province de Lusaka et province du Copperbelt, Zambie",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Lenje"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Lenje sont consideres parmi les premiers peuples a s'installer en Zambie. Deux traditions d'origine coexistent : la premiere les fait venir de la region du Cameroun lors de l'expansion bantoue ; la seconde les relie aux royaumes Luba-Lunda du Congo. Selon les traditions orales conservees dans les documents de la ceremonie Kulamba Kubwalo (2016), vers 1700 les Bene Mukuni (lignage fondateur lenje) migrerent vers Chibombo depuis Kola au Congo, appartenant a la tribu Bayeke du Royaume Luba.",
+      "formationPeriod": "Etablissement dans la region de Chisamba atteste vers le XVIe siecle. Arrivee des Bene Mukuni dans la region de Chibombo vers 1700, ou ils trouverent deja les Lenje (Balenge) sous leur chef Nakandanga et les Soli sous Mbonshi.",
+      "migrationRoutes": [
+        "Depuis la region du Cameroun ou le bassin du Congo, via les migrations bantoues, vers les plateaux de la province Centrale de Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Province Centrale de Zambie (Chibombo, Chisamba, Kabwe, Kapiri Mposhi)",
+        "Province de Lusaka",
+        "Province du Copperbelt",
+        "Districts de Mumbwa, Masaiti et Mpongwe"
+      ],
+      "unificationsOrDivisions": "Les Bene Mukuni consoliderent l'autorite lenje en poussant certains groupes (Lenje de Namayani, qui devinrent les Sala) vers le sud. Les Lenje actuels de Chibombo ne seraient pas les Lenje d'origine ; les Lenje originels seraient les Sala d'aujourd'hui.",
+      "externalInfluences": "Contact avec les missions chretiennes et l'administration coloniale britannique en Rhodesie du Nord depuis la fin du XIXe siecle. Urbanisation croissante, notamment autour de Kabwe et Lusaka. Influence feministe contemporaine sur les pratiques traditionnelles.",
+      "majorHistoricalEvents": "Migration fondatrice des Bene Mukuni depuis Kola (Congo) vers 1700. Etablissement du systeme de sept chefferies lenje. Installation de Lusaka a proximite des terres lenje. Pratique de la Chisungu (ceremonie d'initiation feminine) documentee depuis les annees 1920."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferie patrilineaire avec un chef superieur et sept chefs subordonnes. Chef superieur : Mukuni Ng'ombe. Chefs subordonnes : Liteta, Mungule, Chitanda, Mukubwe, Ng'abwe et Chamuka. La grande femme fondatrice legendaire (Bene Mukuni) est enterree a Likonde Lyabankanga dans le district de Chibombo.",
+      "clanOrganization": "Organisation en clans patrilineaires. Les Lenje sont organises en clans exogames avec une hierarchie clanique. Le systeme de relations de plaisanterie entre clans (similaire aux balwani des Lala) est atteste.",
+      "roleOfLineages": "Les lignages claniques structurent les alliances matrimoniales, l'acces a la terre et la transmission des titres. Le lobola (dot) fait partie des coutumes matrimoniales.",
+      "religiousAuthority": "Les chefs exercent une autorite rituelle. Veneration des ancetres comme source de protection et de fertilite. Les chefs de village organisent les ceremonies d'initiation (Chisungu) et la ceremonie annuelle Kulamba Kubwalo."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lenje (Chilenje)",
+      "isoCodes": ["leh"],
+      "dialects": ["Lukanga (parle par les BaTwa du marais Lukanga)"],
+      "vehicularRole": "Le lenje (ISO 639-3 : leh, Glottocode : lenj1248, Guthrie M.61) est une langue bantoue du groupe Botatwe, proche du soli et du tonga. Il compte environ 130 000 locuteurs (recensement 2010). Langue activement utilisee lors des ceremonies culturelles. Le nyanja et l'anglais sont utilises en milieu urbain."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La Chisungu est le rite d'initiation feminine majeur : il marque le passage de l'adolescence a l'age adulte pour les jeunes femmes lenje. Il se deroule en trois etapes : separation (confinement dans une maison d'initiation), marge (enseignement des roles sociaux, responsabilites conjugales et normes sociales), et agregation (reintegration publique de l'initiee comme adulte). Pratique documentee depuis les annees 1920 a Chibombo. La ceremonie Kulamba Kubwalo est tenue chaque annee en octobre dans le district de Chibombo ; elle honore le chef traditionnel et celebre la cohesion communautaire.",
+      "symbols": "Le betail est un symbole identitaire fort chez les Lenje, qui sont reputes comme fiers eleveurs de bovins. La danse Mooba est un rituel emblematique associe a la possession spirituelle et a la guerison.",
+      "artsAndMusic": "La danse Mooba, rituel puissant associe a la possession spirituelle et a la guerison, est l'expression culturelle la plus distinctive des Lenje. La danse cibitiko est partagee avec les Soli voisins. Traditions orales et chants lors des ceremonies.",
+      "spiritualities": "Veneration des ancetres comme principale pratique spirituelle traditionnelle. Croyance dans le courroux des ancetres en cas de mauvais traitement d'un semblable. Ceremonies de pluie et de recolte. Adoption progressive du christianisme depuis la periode coloniale, aujourd'hui majoritaire."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Systeme de sept chefferies lenje reconnues par l'Etat zambien : Mukuni Ng'ombe (chef superieur), Liteta, Mungule, Chitanda, Mukubwe, Ng'abwe et Chamuka. Les sept chefferies s'etendent sur trois provinces : Lusaka, Centrale et Copperbelt.",
+      "relationsWithNeighbors": "Les Lenje sont apparentes aux Tonga voisins et aux Ila (groupe Botatwe). Ils sont en contact historique avec les Soli (groupe lala-lamba), occupant une zone tampon entre les Ila-Tonga et les Lala-Lamba selon Britannica. Ils partagent la langue cibitiko avec les Soli.",
+      "conflictsOrAlliances": "Les Bene Mukuni (faction lenje) chassa les Lenje-Balenge de Chisamba vers 1700 lors de leur migration depuis le Congo. Les Lenje de Namayani se deplacerent vers le sud et devinrent les Sala. Alliance ceremonielle et culturelle avec les Soli dans les ceremonies communes.",
+      "diaspora": "Urbanisation importante dans les villes de Lusaka, Kabwe et dans la province du Copperbelt."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 395000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org PGID PG015590 (395 000) ; Wikipedia EN (240 000 - 310 000)",
+      "distributionByCountry": [{ "country": "ZMB", "population": 395000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lenje people – Wikipedia EN (https://en.wikipedia.org/wiki/Lenje_people)",
+      "Lenje language – Wikipedia EN (https://en.wikipedia.org/wiki/Lenje_language)",
+      "Lenje in Zambia – Joshua Project, PGID 13039 (https://joshuaproject.net/people_groups/13039)",
+      "Lenje of Zambia – PeopleGroups.org, PGID PG015590 (https://peoplegroups.org/people_groups/pg015590/)",
+      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
+      "A case of Chisungu tradition of the Lenje people in Chibombo district – World Journal of Advanced Research and Reviews, 2025 (https://journalwjarr.com/sites/default/files/fulltext_pdf/WJARR-2025-0690.pdf)",
+      "The Birth and Sociolinguistic Features of Sala Language of Zambia – RSIS International, 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)",
+      "Lenje – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/lenj1248)"
+    ]
   }
 }

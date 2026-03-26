@@ -1,0 +1,23 @@
+{
+  "id": "PPL_DAWRO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Dawuro",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "historicalRegion": "Dawro Zone (Éthiopie)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (dwr)", "Dawro Zone Cultural Office"]
+  }
+}

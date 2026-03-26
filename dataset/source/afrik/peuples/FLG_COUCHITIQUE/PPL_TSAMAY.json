@@ -6,54 +6,70 @@
   "content": {
     "appellations": {
       "mainName": "Tsamay",
-      "selfAppellation": "",
-      "exonyms": ["Tsamai"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tsamakko",
+      "exonyms": ["Tsamai", "Tsemay", "Tsemai", "Tsamako", "Tsamakko"],
+      "originOfExonyms": "Les variantes orthographiques (Tsamai, Tsemay, Tsemai) refletent les differentes transcriptions de la phonologie de la langue par les linguistes et les administrateurs. Tsamakko est l'auto-designation du groupe. Le terme Tsamay est la graphie officielle ethiopienne.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Tsamay est utilise dans les recensements ethiopiens officiels. Les members du groupe preferent Tsamakko comme auto-designation. La communaute vit dans le woreda Bena Tsemay de la zone Debub Omo.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Dullay (Lowland East Cushitic)",
+      "historicalRegion": "Vallee de l'Omo inferieur, Sud-Ouest de l'Ethiopie",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Tsamay"],
+    "ethnicities": ["Tsamakko"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tsamay auraient ete, selon certaines sources, anciennement lies aux Konso. Des raids des Borana les aurait pousses a traverser la riviere Sagan pour s'installer parmi les Banna et les Dime, avec lesquels ils se sont melanges. Cette migration les a conduits dans la plaine de la riviere Weyt'o dans la vallee de l'Omo inferieur.",
+      "formationPeriod": "L'identite ethnique Tsamakko telle qu'elle existe aujourd'hui s'est vraisemblablement consolidee au cours du dernier millenaire, suite aux migrations et interactions avec les groupes Banna, Dime, Hamar et Konso.",
+      "migrationRoutes": [
+        "Migration depuis une zone proche du pays Konso, a l'est, vers la vallee de l'Omo inferieur, a l'ouest, apres les raids Borana",
+        "Installation dans la plaine de la riviere Weyt'o, a l'ouest du woreda special de Konso"
+      ],
+      "historicalSettlementZones": [
+        "Woreda Bena Tsemay, zone Debub Omo, region Sud de l'Ethiopie",
+        "Plaine de la riviere Weyt'o, vallee de l'Omo inferieur",
+        "Environnement de la ville de Weyto, sur la route Konso-Jinka"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Influences culturelles des groupes voisins Banna, Dime, Hamar et Konso avec lesquels les Tsamakko entretiennent des relations commerciales et des alliances. Utilisation de la langue konso comme lingua franca commerciale. Presence croissante du tourisme d'aventure dans la region.",
+      "majorHistoricalEvents": "Migration forcee depuis le pays Konso suite aux raids borana. Integration progressive dans l'administration ethiopienne au XXe siecle. Creation du woreda Bena Tsemay dans la zone Debub Omo. Recensement de 1998 documentant 9 702 Tsamay. Recensement de 2007 indiquant 20 046 individus identifies comme Tsamai."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation agropastorale decentralisee sans chefferie centralisee identifiee. Les decisions communautaires sont prises par les anciens. Le saut du taureau (bull jumping) marque le passage d'un garcon a l'age adulte et confere le droit au mariage, constituant une institution sociale centrale.",
+      "clanOrganization": "Organisation clanique, avec des liens d'alliance etablis avec les Hamar et les Banna a l'ouest et au sud-ouest. Les alliances interfamiliales sont scellees par des dots en betail.",
+      "roleOfLineages": "Les lignages patrilineaires organisent l'acces aux terres pastorales et agricoles ainsi que les alliances matrimoniales. Le mariage peut etre arrange par les parents de la fille sans son consentement ; la dot inclut du betail, du cafe, des munitions et d'autres objets de valeur.",
+      "religiousAuthority": "Systeme de croyances ethnique centre sur la cosmologie des etoiles : les Tsamakko croient que l'etoile male et l'etoile femelle ont cree le monde. Les anciens exercent l'autorite spirituelle. L'influence chretienne est tres limitee (5 a 10 % de chretiens selon Joshua Project)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Tsamai",
+      "isoCodes": ["tsb"],
+      "dialects": [],
+      "vehicularRole": "Les Tsamakko utilisent la langue konso (ISO : kxc) comme langue vehiculaire pour le commerce avec les groupes voisins. L'amharique est la langue nationale. Le tsamai est une langue cushitique du groupe Dullay, apparentee au bussa et au gawwada. Selon Ethnologue (code tsb), le nombre de locuteurs est estime entre 10 000 et 1 million ; le recensement ethiopien de 1998 indiquait 8 621 locuteurs natifs."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Le saut du taureau (bull jumping) est le rite de passage masculin central : le jeune homme doit sauter sur le dos d'une serie de taureaux pour acceder au statut d'adulte et au droit de se marier. Les tatouages faciaux des femmes constituent une marque identitaire importante. Le mariage est accompagne d'une ceremony avec dot en betail.",
+      "symbols": "Les vetements en cuir portes par les femmes constituent un marqueur identitaire distinctif. Les petits tabourets portes par les hommes sont un accessoire culturel caracteristique. Les tatouages faciaux feminins sont un signe d'appartenance culturelle.",
+      "artsAndMusic": "Artisanat du cuir (vetements, accessoires). Traditions orales. La communaute est frequemment photographiee par les touristes du fait de la richesse de ses traditions vestimentaires et corporelles.",
+      "spiritualities": "Religion ethnique centree sur une cosmologie dualiste : un dieu cree male et un dieu cree femelle sont a l'origine du monde. Les pratiques animistes locales predominent largement. Le christianisme reste tres minoritaire (5-10 % selon Joshua Project)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Alliance solide avec les Hamar et les Banna au sud-ouest. Relations commerciales avec les Konso a l'est (utilisation du konso comme langue de trade). Contacts avec les Gawwada et Kerkert a l'est et les Maale au nord. Relations avec les Arbore au sud.",
+      "conflictsOrAlliances": "Histoire de migration liee aux raids borana ayant pousse le groupe vers l'ouest. Alliances actuelles privilegiees avec les Hamar et les Banna.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 32000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2025 : environ 32 000 personnes ; recensement ethiopien 2007 : 20 046 Tsamai",
+      "distributionByCountry": [{ "country": "ETH", "population": 32000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Tsamai people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tsamai_people)",
+      "Tsemay in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15589)",
+      "Tsamai of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011650/)",
+      "Tsamai language (tsb) – Ethnologue, SIL International, 2022 (https://www.ethnologue.com/language/tsb/)",
+      "Tsemai people – 101 Last Tribes (https://www.101lasttribes.com/tribes/tsemai.html)",
+      "List of ethnic groups in Ethiopia – Wikipedia, 2024 (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia)"
+    ]
   }
 }

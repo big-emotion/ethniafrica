@@ -1,0 +1,69 @@
+{
+  "id": "PPL_KANEMBU",
+  "nameMain": "Kanembu",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kanembu",
+      "selfAppellation": "Kanembu",
+      "exonyms": ["Kanembu (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien (Kanembu)",
+      "historicalRegion": "Tchad",
+      "currentCountries": ["TCD"]
+    },
+    "ethnicities": [
+      "Kanembu du Nord",
+      "Kanembu du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kanembu sont originaires du TCD, dans la région du lac Tchad. Leur présence dans la région remonte à plusieurs siècles. Ils sont historiquement liés au royaume du Kanem-Bornou.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Kanuri.",
+      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence profonde de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition du royaume du Kanem-Bornou.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Kanembu",
+      "vehicularRole": "Le kanembu est parlé par la majorité des Kanembu. L'arabe et le français sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Symboles islamiques, symboles culturels kanembu, symboles du royaume du Kanem-Bornou.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture kanembu."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora kanembu dans les grandes villes tchadiennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements tchadiens, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kanembu language (kbl)",
+      "CIA World Factbook – Chad",
+      "Recensements tchadiens",
+      "Études anthropologiques sur les peuples sahariens",
+      "Études historiques sur le royaume du Kanem-Bornou"
+    ]
+  }
+}

@@ -6,63 +6,108 @@
   "content": {
     "appellations": {
       "mainName": "Grebo",
-      "selfAppellation": "Grebo",
-      "exonyms": ["Grebo (terme utilisé par les Européens)"],
+      "selfAppellation": "Grebo / Glebo",
+      "exonyms": [
+        "Glebo (désignation des Grebo côtiers de la région de Cape Palmas, Liberia)",
+        "Krumen (désignation utilisée en Côte d'Ivoire pour les Grebo transfrontaliers)",
+        "Bush Grebo (terme péjoratif utilisé par les Grebo côtiers pour les groupes de l'intérieur)"
+      ],
+      "originOfExonyms": "Le terme Grebo a été adopté par les explorateurs européens et les colons américo-libériens qui ont d'abord rencontré les Grebo côtiers (Glebo) à Cape Palmas. En l'absence d'autre qualification, Grebo désigne le dialecte Glebo. En Côte d'Ivoire, le terme Krumen est utilisé pour désigner les populations grebo du sud-ouest ivoirien. Le nom Grebo signifie les gens du saut du singe (peuple du singe bondissant) selon certaines traditions.",
+      "whyProblematic": "Le terme Grebo recouvre un continuum de plus de vingt-cinq dialectes distincts et des groupes d'ethnies diverses. Les groupes de l'intérieur contestent l'ascendant politique pris par les Grebo côtiers (Glebo) grâce à leurs alliances avec les colons américo-libériens.",
+      "contemporaryUsage": "Grebo est utilisé comme dénomination générique au Liberia pour l'ensemble du groupe ethnolinguistique. En Côte d'Ivoire, le terme Krumen prévaut. Les locuteurs utilisent souvent des sous-appellations selon leur sous-groupe.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou occidental",
-      "historicalRegion": "Sud-est du Libéria, sud-ouest de la Côte d'Ivoire",
+      "ethnoLinguisticGroup": "Krou occidental (branche Grebo)",
+      "historicalRegion": "Sud-est du Libéria (Maryland County, Grand Kru County, River Gee County, Sinoe County) et sud-ouest de la Côte d'Ivoire",
       "currentCountries": ["LBR", "CIV"]
     },
     "ethnicities": [
-      "Grebo du Libéria",
-      "Grebo de Côte d'Ivoire",
-      "Sous-groupes régionaux"
+      "Glebo (Seaside Grebo) – groupe côtier, région de Cape Palmas, Maryland County, Liberia",
+      "Bush Grebo – groupes de l'intérieur, Grand Kru County et River Gee County",
+      "Globo Grebo – sous-groupe parlant le dialecte grebo central",
+      "Krumen – Grebo de Côte d'Ivoire, sud-ouest ivoirien",
+      "Glio-Oubi – sous-groupe classifié séparément par Ethnologue (Liberia et Côte d'Ivoire)",
+      "Sous-groupes intérieurs du Grand Kru County et de Sinoe County",
+      "Plus de vingt-cinq dialectes correspondant à autant de groupes locaux distincts"
     ],
     "origins": {
-      "ancientOrigins": "Les Grebo sont originaires du sud-est du Libéria et du sud-ouest de la CIV, dans la région côtière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Kru.",
-      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Grebo font partie du grand groupe krou d'Afrique de l'Ouest. Les traditions orales de plusieurs groupes Grebo affirment que leurs ancêtres étaient originaires de régions désertiques (Sahel), d'où ils ont migré vers le sud via les forêts guinéo-libériennes. Les Glebo (Gbobo) étaient initialement un peuple de l'intérieur installé dans les montagnes sacrées de Putu. Selon l'ethnographie, leur présence dans la région de Cape Palmas remonte à au moins plusieurs siècles avant le contact européen.",
+      "formationPeriod": "L'identité grebo spécifique s'est constituée progressivement depuis les migrations krou des 13e-15e siècles. Le contact avec les colons américo-libériens à partir de 1827 a profondément reconfiguré les identités internes, créant une fracture durable entre Glebo côtiers (pro-colons) et Grebo de l'intérieur.",
+      "migrationRoutes": [
+        "Depuis le Sahel et les plateaux intérieurs vers les forêts tropicales libériennes",
+        "Les Gbobo (ancêtres des Glebo) ont migré depuis les montagnes Putu vers la côte, atteignant Bereby (actuelle Côte d'Ivoire) vers 1700, puis longeant la côte vers l'ouest à bord de pirogues volées",
+        "Migration vers Cape Palmas et les zones côtières du Maryland County"
+      ],
+      "historicalSettlementZones": [
+        "Maryland County (sud-est du Libéria) : zone côtière de Cape Palmas – Glebo",
+        "Grand Kru County (Libéria) : groupes côtiers et forestiers",
+        "River Gee County (Libéria) : groupes de l'intérieur",
+        "Sinoe County (Libéria) : groupes du nord-ouest",
+        "Sud-ouest de la Côte d'Ivoire : Krumen (Bereby, San-Pédro)"
+      ],
+      "unificationsOrDivisions": "Les Grebo n'ont jamais constitué d'entité politique unifiée. Les deux dakwe (alliances de villes) des Glebo (Nyomowe et Kuniwe) constituent le modèle d'organisation supravillageois. Un mouvement de réunification pan-grebo a émergé depuis la fin du 20e siècle dans le contexte des guerres civiles libériennes, dans l'opposition à la domination américo-libérienne. Les guerres grebo du 19e siècle opposaient différents sous-groupes grebo aux colons de Maryland.",
+      "externalInfluences": "Contact avec les colons américo-libériens depuis 1827 (Maryland Colonization Society). Influence du christianisme dès les années 1830 (missionnaires). Influence de la culture américo-libérienne (Masonic lodges remplaçant les bush schools). Guerres civiles libériennes (1989-2003) : déplacements massifs de populations. Les Glebo côtiers ont développé une forte intégration à la culture anglophone libérienne.",
+      "majorHistoricalEvents": "Résistance des Kru et Grebo en 1856 aux efforts de contrôle commercial des colons du Maryland (ancienne République indépendante du Maryland). Organisation de la Maryland Colonization Society dès 1827, établissant Maryland in Africa. Guerres grebo du 19e siècle. Première et Deuxième guerre civile libérienne (1989-2003) : déplacements massifs des Grebo de l'intérieur. Mouvement de réunification pan-grebo du 20e siècle."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Société orientée sur les classes d'âge (age grades) comme principal vecteur d'organisation sociale. Chaque ville est dirigée par un chef héréditaire dont le rôle est de représenter le peuple dans ses relations avec les étrangers. Le pouvoir est concentré dans les mains des anciens des deux sexes, qui contrôlent des forces spirituelles. La sidibo (classe guerrière des hommes adultes mariés) dispose de rituels propres et d'officiers. L'institution du bodio (grand prêtre) exerce une autorité spirituelle et de médiation entre les villes.",
+      "clanOrganization": "Organisation patrilinéaire et virilocalité (résidence chez le mari). Exogamie clanique obligatoire : mariage interdit au sein du même clan ; tabous de parenté stricts. Les Glebo sont divisés en deux dakwe (alliances de villes) : Nyomowe et Kuniwe. Les femmes adultes de chaque ville agissent collectivement dans les affaires communales, avec leurs propres officières élues.",
+      "ageClassSystems": "Les classes d'âge (age grades) sont centrales dans l'organisation grebo. La sidibo (classe des hommes adultes mariés) a des rituels, propriétés et officiers spécifiques liés à la guerre. Les bush schools (poro pour les hommes, sande pour les femmes) initient les jeunes aux traditions ; elles ont évolué en loges maçonniques de style fraterniste américain chez les Grebo côtiers.",
+      "roleOfLineages": "Les lignages patrilinéaires (clans) déterminent l'identité, les droits fonciers et les alliances. La propriété personnelle est gérée au sein de la famille. Les terres sont communales mais les droits du cultivateur cessent lorsqu'il ne les cultive plus. Les ancêtres récents d'une famille sont considérés comme les agents les plus probables de succès ou de malheur.",
+      "religiousAuthority": "Le bodio (grand prêtre) est la principale autorité religieuse grebo. Son rôle est héréditaire (lié à un lignage spécifique dans chaque grande ville). Il habite dans la maison-sanctuaire de la ville, sa vie étant régie par des tabous stricts : il ne peut passer une nuit hors de la ville, ne peut se mêler aux vivants en public. À sa mort, son successeur est installé avant que la ville reconnaisse officiellement le décès. Sa femme, la gyide, est une spécialiste rituelle. Le bodio porte une lourde bague de cheville en laiton, posée par un forgeron et portée jusqu'à la mort."
     },
     "languages": {
-      "mainLanguage": "Grebo",
-      "vehicularRole": "Le grebo est parlé par la majorité des Grebo. L'anglais (Libéria) et le français (Côte d'Ivoire) sont utilisés dans l'éducation et l'administration."
+      "mainLanguage": "Grebo (continuum dialectal krou)",
+      "isoCodes": ["grb", "grv", "grj", "gry", "grw", "gec", "gbo"],
+      "dialects": [
+        "Glebo / Grebo côtier (grb) – dialecte de référence, Cape Palmas",
+        "Grebo, Northern (grv) – dialecte septentrional",
+        "Grebo, Southern (grj) – dialecte méridional (Côte d'Ivoire, Krumen)",
+        "Grebo, Central (gec) – dialecte Globo",
+        "Glio-Oubi (gbo) – dialecte du sud-ouest, Liberia et Côte d'Ivoire",
+        "Krumen (trois langues en Côte d'Ivoire selon Ethnologue)",
+        "Plus de vingt-cinq dialectes couvrant l'ensemble du continuum grebo"
+      ],
+      "vehicularRole": "Le grebo est la langue maternelle de la communauté. L'anglais (Libéria) et le français (Côte d'Ivoire) sont les langues officielles utilisées dans l'éducation et l'administration. Le degré de bilinguisme et de bidialectalisme est élevé, favorisé par l'exogamie et les besoins commerciaux."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels grebo, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+      "majorRites": "Les funérailles sont l'occasion cérémonielle majeure dans la société grebo, pouvant avoir lieu jusqu'à un an après le décès pour permettre à la famille de préparer le festin communautaire. Elles comportent deux jours de danses guerrières (hommes et femmes). Sacrifices de poulets, chèvres ou bovins à l'occasion de demandes aux ancêtres et esprits. Rituels du bodio et de la gyide célébrés quotidiennement dans la maison-sanctuaire. Initiation dans les bush schools (poro et sande). Classes guerrières (sidibo) avec rituels propres. Application d'argile blanche sur les participants aux cérémonies pour signifier un esprit (ku). Pratique de la divination par scrutation (scrying) pour déterminer les responsables de crimes. En cas de décès en série inexpliqués, procès public de sorcellerie pouvant inclure l'ordalie (jugement par l'épreuve, ex. écorce de sassafou).",
+      "symbols": "Les masques en bois sculptés constituent l'expression artistique et rituelle majeure des Grebo : ils servent à médier avec les esprits lors des cérémonies. Les tambours peints et sculptés, parfois de 1,80 à 2,10 m de hauteur, jouent un rôle communicatif, récréatif et guerrier. Les bagues de laiton (nitien) portées par les bodio et offertes comme objets rituels aux villages sont des symboles de protection spirituelle. L'argile blanche (signifiant ku, esprit) est utilisée comme marqueur rituel.",
+      "artsAndMusic": "Les masques grebo sont sculptés en bois avec des têtes volumineuses et des cornes pour les hommes, des traits plus doux pour les femmes, des yeux géométriques, des bouches naturalistes. Ils peuvent être ornés de clous, perles, cauris. Portés comme casques au-dessus de la tête (non en cache-visage), ils apparaissent aux funérailles, danses et cérémonies guerrières. Les plus habiles initiés de la zone forestière en sont les fabricants et gardiens. Les grands tambours (de six à sept pieds de hauteur) sont joués en paires avec chaises ou mortiers pour atteindre la hauteur ; le son grave est masculin, le son aigu féminin ; ils servent à la communication, à la fête et à la guerre. La musique de brass band (instruments obtenus des navires européens) a développé une forme musicale hybride intégrée dans les funérailles d'adultes importants. Les danses guerrières masculines valorisent l'endurance et la recréation des tactiques de combat. La danse féminine est techniquement complexe et les danseuses habiles jouissent d'un grand prestige.",
+      "spiritualities": "Les Grebo reconnaissent un Dieu créateur suprême, Nyesoa, assimilé à la divinité chrétienne par les convertis et les missionnaires. L'essentiel de l'activité rituelle concerne des esprits locaux résidant dans des rochers, des cascades et d'autres lieux remarquables, ainsi que les ancêtres familiaux. Les défunts récents de la famille sont considérés comme les agents les plus susceptibles de causer succès et malheur. Les sanctuaires naturels (grandes roches, cours d'eau) abritent les esprits locaux et servent de lieux de réunion communautaire, de divination et d'offrandes. Les missionnaires chrétiens sont présents depuis les années 1830 ; plus de la moitié des Glebo sont nominalement chrétiens. La croyance au we (sorcellerie humaine) reste centrale dans la vision du monde, même chez les chrétiens."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques libériennes et ivoiriennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora grebo dans les grandes villes libériennes et ivoiriennes, et dans les pays occidentaux (États-Unis)."
+      "kingdomsOrChiefdoms": "Pas de royaumes centralisés. Organisation en chefferies villageoises regroupées en alliances de villes (dakwe). Les Glebo ont exercé une ascendance sociopolitique régionale grâce à leurs alliances avec les colons américo-libériens et l'accès aux technologies occidentales.",
+      "relationsWithNeighbors": "Relations complexes avec les Kru voisins et les peuples akan de Côte d'Ivoire. Résistance aux colons du Maryland en 1856 aux côtés des Kru. Opposition à la domination américo-libérienne. Tensions entre Grebo côtiers (Glebo) et Grebo de l'intérieur, les premiers étant accusés de vente des terres traditionnelles aux colons.",
+      "conflictsOrAlliances": "Guerres grebo du 19e siècle contre les colons du Maryland. Résistance à la domination américo-libérienne au Liberia. Implication dans les première et deuxième guerres civiles libériennes (1989-2003) au sein des factions tribales (political tribes). En Côte d'Ivoire, alliances avec d'autres peuples krou du sud-ouest.",
+      "diaspora": "Les Grebo de Côte d'Ivoire (Krumen) sont estimés à 48 300 (estimation 2001), dans le sud-ouest ivoirien. Présence de réfugiés grebo en Côte d'Ivoire issus des déplacements causés par les guerres civiles libériennes. Communautés grebo dans les grandes villes libériennes (Monrovia) et ivoiriennes. Diaspora en Amérique du Nord et en Europe (petite communauté)."
     },
     "demography": {
-      "totalPopulation": 300000,
+      "totalPopulation": 528000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements libériens et ivoiriens, CIA World Factbook, et études démographiques"
+      "source": "Estimation 2025 basée sur : 387 000 Grebo au Liberia (estimation 2001 extrapolée au taux de croissance libérien d'environ 2,5%) et 48 300 Krumen en Côte d'Ivoire (non réfugiés). Joshua Project 2025 : Grebo Seaside 221 000 (LBR+CIV) ; Globo Grebo 62 000. Les données précises sont difficiles à obtenir en raison des déplacements causés par les guerres civiles libériennes.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 480000,
+          "note": "Principalement dans Maryland County et Grand Kru County (sud-est du Libéria), aussi River Gee County et Sinoe County"
+        },
+        {
+          "country": "CIV",
+          "population": 48000,
+          "note": "Sud-ouest de la Côte d'Ivoire (Krumen), autour de Bereby et San-Pédro, non compris les réfugiés des guerres civiles libériennes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Grebo language (grb)",
-      "CIA World Factbook – LBR, CIV",
-      "Recensements libériens et ivoiriens",
-      "Études anthropologiques sur les peuples krou"
+      "Wikipedia EN – Grebo people. https://en.wikipedia.org/wiki/Grebo_people",
+      "Wikipedia EN – Grebo languages. https://en.wikipedia.org/wiki/Grebo_languages",
+      "Wikipedia EN – Grebo language. https://en.wikipedia.org/wiki/Grebo_language",
+      "Encyclopedia.com – Glebo. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/glebo",
+      "Joshua Project – Grebo, Globo in Liberia. https://joshuaproject.net/people_groups/11939",
+      "Joshua Project – Grebo, Seaside in Côte d'Ivoire. https://joshuaproject.net/people_groups/print/11939/LI",
+      "African American Registry – The Grebo People, a story. https://aaregistry.org/story/the-grebo-people-a-brief-story/",
+      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Wikipedia EN – Kru people. https://en.wikipedia.org/wiki/Kru_people"
     ]
   }
 }

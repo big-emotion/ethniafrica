@@ -6,54 +6,89 @@
   "content": {
     "appellations": {
       "mainName": "Abouré",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abou",
+      "exonyms": [
+        "Abonwa",
+        "Abule",
+        "Abure",
+        "Agoua",
+        "Akaplass",
+        "Akaples",
+        "Akapless",
+        "Asoko",
+        "Compa",
+        "Essouma",
+        "Esuma",
+        "Eyive"
+      ],
+      "originOfExonyms": "Les nombreux exonymes reflètent les differentes appellations utilisees par les voisins et les sources historiques coloniales. Kompa etait leur nom lorsqu'ils vivaient dans l'actuelle region des Agni-Sanwi. Eyive est la denomination utilisee par Joshua Project. Akaplass est une variante phonetique attestee dans plusieurs sources.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Aboure est la denomination officielle en Cote d'Ivoire. Abure est utilise dans les references linguistiques internationales (code ISO abu). Eyive apparait dans Joshua Project.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Est",
+      "ethnoLinguisticGroup": "Akan lagunaire, groupe Tano-Kwa (Niger-Congo)",
+      "historicalRegion": "Sud-est de la Cote d'Ivoire, entre le fleuve Comoe et la lagune Aby (Grand-Bassam, Bonoua, Moossou)",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Abouré"],
+    "ethnicities": ["Ediye", "Ohopwe", "Kaha", "Apolien"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Aboure situent leur pays d'origine dans la region sud de Koumassi (Ghana), non loin des sources de la Tanoe. Ils constituaient un sous-groupe akan. Ils vivaient initialement a l'emplacement actuel des Agni-Sanwi sous l'appellation de Kompa, avant l'arrivee des Agni qui les pousserent a migrer vers l'ouest. Les quartiers de villages portent les noms de Benini (est) et Kumasi (ouest), en souvenir des regions d'origine ashantie et apollonienne.",
+      "formationPeriod": "En 1715 debute le premier mouvement de migration des Aboure depuis la region de la Bia et du complexe des lagunes Abi-Tendo-Ehy, provoque par la presence et les conquetes des Agni dans la region. Le royaume d'Aboure avec pour capitale Bonoua se constitue au XVIIIe siecle.",
+      "migrationRoutes": [
+        "Depart du sud du Ghana (region de Koumassi/Kumasi), sources de la Tanoe",
+        "Etablissement initial dans la region des lagunes Abi-Tendo-Ehy et autour des iles eotile",
+        "Migration vers l'ouest en 1715 sous pression agni",
+        "Creation du royaume de Bonoua comme capitale"
+      ],
+      "historicalSettlementZones": [
+        "Entre le fleuve Comoe et la lagune Aby",
+        "Grand-Bassam (dont le village royal de Moossou)",
+        "Bonoua (capitale historique et culturelle)",
+        "Yaou",
+        "Ebrah",
+        "Vitre"
+      ],
+      "unificationsOrDivisions": "Creation d'un royaume unifie avec Bonoua comme capitale apres la migration depuis les terres des Agni-Sanwi. Des tensions internes et des guerres avec les voisins Agni (vers 1770) ont marque l'histoire du royaume.",
+      "externalInfluences": "Influence ashantie et apollonienne forte dans l'organisation sociale et les traditions. Traite avec les Francais en 1842 (explorateur Bouet-Willaumez). Christianisme (catholicisme et protestantisme) apporte il y a environ 100 ans par des missionnaires africains et europeens.",
+      "majorHistoricalEvents": "Conflicts avec les Agni a l'epoque d'Aka Esouin, roi du Krinjabo (vers 1770). Traite de 1842 avec l'explorateur francais Bouet-Willaumez. Rebellion contre le colonisateur francais a la fin du XIXe siecle sous la direction de Kadjo Amangoa, chef d'etat-major des troupes Aboure. Initiatives actuelles de traduction biblique en langue aboure (abu) par des chretiens locaux."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme matrilineaire : l'heritage et la transmission des pouvoirs passent par la lignee maternelle. Le peuple est dirige par un roi appele Mlingbi, assiste par des notables (Mlitin) et des chefs de clans. Chaque village possede une structure politique propre, reliee a une confederation ou alliance coutumiere plus large. La chefferie joue un role central dans la resolution des conflits, la gestion des terres et la preservation des traditions.",
+      "clanOrganization": "Hierarchie sociale en quatre groupes distincts : Ediye (membres des clans autochtones fondateurs, position privilegiee dans la vie politique et rituelle) ; Ohopwe (etrangers etablis avec l'accord d'un clan hote, integres socialement mais limites dans les decisions coutumeres) ; Kaha (anciens esclaves integres par un rituel specifique) ; Apolien (descendants d'esclaves jouissant de certains droits civiques). Les zones abritant les trones des clans ancestraux (ebiente-puko) sont des poles de continuite symbolique du village.",
+      "ageClassSystems": "Classes d'age (efwa) remplissant des fonctions sociales, economiques et militaires, consolidant les liens intergenerationnels au sein de la communaute.",
+      "roleOfLineages": "La lignee maternelle (matrilineaire) est centrale pour la transmission du pouvoir et des biens. Les residences claniques (opukoblee) et conjugales (opuko) structurent l'espace domestique et rituel, souvent dotees d'une maison rituelle (ajisyeblee).",
+      "religiousAuthority": "Culte des ancetres et consultation des Komians (figures de sagesse et de mediation avec le monde invisible). La chefferie assure la preservation des traditions religieuses."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Aboure (Abure)",
+      "isoCodes": ["abu"],
+      "dialects": [],
+      "vehicularRole": "L'aboure est une langue tano (Kwa, Niger-Congo) parlee pres d'Abidjan. Classe comme langue stable par Ethnologue (121 000 locuteurs en 2017 selon Wikipedia EN). Le francais est la langue officielle de la Cote d'Ivoire. Des portions bibliques sont en cours de traduction en aboure par les chretiens locaux."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Popo Carnaval : fete populaire issue de la fete des ignames, modernisee par un volet carnavalesque. Ceremonies d'ancestres : rituels, sacrifices et consultation des Komians. Culte funeraire avec rituels specifiques lies aux ebiente-puko (trones claniques ancestraux). Ceremonies liees aux classes d'age (efwa).",
+      "symbols": "Les ebiente-puko (zones abritant les trones claniques ancestraux) sont des poles de continuite symbolique soustraits a toute demolition. Les quartiers de village nommes Benini (est) et Kumasi (ouest) perpetuent le souvenir des regions d'origine au Ghana.",
+      "artsAndMusic": "Traditions musicales et de danse associees aux fetes communautaires (Popo Carnaval, fete des ignames). Artisanat lie a l'economie agricole et lagunaire (agriculture, peche). Musiques et chants rituels lors des ceremonies d'ancetres et des funerailles.",
+      "spiritualities": "Religions traditionnelles : culte des ancetres et des divinites naturelles (forets, rivieres). Consultation des Komians (figures de mediation spirituelle). Coexistence aujourd'hui avec le christianisme (catholicisme et protestantisme principalement) et, dans une moindre mesure, l'islam. Persistance de pratiques animistes (fetiches) meme parmi les chretiens."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Bonoua : royaume matrilineaire fonde apres la migration depuis les terres agni-sanwi, avec Bonoua comme capitale historique et culturelle. Gouverne par un roi (Mlingbi) assiste par des notables (Mlitin). Moossou est le village royal situe a proximite immediate de Grand-Bassam.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Agni (conflits vers 1770 avec Aka Esouin, roi du Krinjabo). Cohabitation avec d'autres groupes ethniques a Grand-Bassam. Liens ancestraux avec les groupes eotile (peuples freres), qui leur offrirent des terres lors de leur arrivee dans la region des lagunes. Alliance historique avec les Nzema et autres Akan lagunaires.",
+      "conflictsOrAlliances": "Conflits avec les Agni (vers 1770). Traite colonial avec la France en 1842 (Bouet-Willaumez). Rebellion contre le colonisateur francais a la fin du XIXe siecle (Kadjo Amangoa). Alliance et entraide avec les Eotile lors des premieres installations dans la region lagunaire.",
+      "diaspora": "De nombreux Aboure vivent a Abidjan (capitale economique) en raison de la proximite geographique. Communautes presentes a Grand-Bassam et dans les principales villes du sud de la Cote d'Ivoire."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 121000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (121 000) ; Wikipedia FR estime 78 000 dans les zones rurales principales ; Ethnologue 2017 : 93 000 locuteurs",
+      "distributionByCountry": [{ "country": "CIV", "population": 121000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Aboure (peuple) – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abour%C3%A9_(peuple))",
+      "Abure, Eyive in Cote d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10141/IV)",
+      "Abure language – Wikipedia EN, 2025 (https://en.wikipedia.org/wiki/Abure_language)",
+      "Ayemou, K.F. – Aboure et Eotile : deux peuples lies par l'histoire (XVIIe-debut XXe siecles), Ziglobitha, 2021 (https://www.ziglobitha.org/wp-content/uploads/2021/11/01-Kadjomou-Ferdinand-AYEMOU-pp01-16.pdf)",
+      "Classes d'age, chefferie et organisation dualiste : les Aboure – JSTOR (https://www.jstor.org/stable/4392603)",
+      "Cote d'Ivoire people groups – Joshua Project (https://joshuaproject.net/countries/iv)"
+    ]
   }
 }

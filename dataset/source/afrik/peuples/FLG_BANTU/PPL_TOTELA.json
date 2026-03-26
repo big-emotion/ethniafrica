@@ -2,58 +2,88 @@
   "id": "PPL_TOTELA",
   "nameMain": "Totela",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "NAM"],
   "content": {
     "appellations": {
       "mainName": "Totela",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Matotela",
+      "exonyms": ["Batotela", "Matotela"],
+      "originOfExonyms": "Totela est a la fois le nom du peuple et de sa langue. Le prefixe Ba- (Batotela) est la forme bantoue du pluriel appliquee au nom du peuple. Ma- (Matotela) est une autre forme prefixale utilisee dans certains contextes. Le nom est utilise de facon coherente dans la litterature academique et les sources coloniales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Totela est utilise dans les documents administratifs zambiens et namibiens ainsi que dans la litterature linguistique. Le peuple est considere comme faisant partie de la constellation Lozi/Barotse dans la region du Caprivi (Namibie) et de la Province de l'Ouest en Zambie.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Botatwe occidental (sous-groupe K, Guthrie K.41)",
+      "historicalRegion": "Vallee du Zambeze superieur (Province de l'Ouest, Zambie) et bande de Caprivi (Namibie)",
+      "currentCountries": ["ZMB", "NAM"]
     },
-    "ethnicities": ["Totela"],
+    "ethnicities": ["Totela", "Matotela"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Totela appartiennent au sous-groupe occidental des langues Botatwe (K.40-K.41) et partagent une origine commune avec les Fwe, Shanjo et Subiya. Leurs ancetres se sont initialement installes dans les plaines de la Kafue (Zambie centrale) comme indique par les donnees linguistiques et archeologiques. Ce n'est que plusieurs siecles plus tard qu'ils ont migre vers le sud-ouest.",
+      "formationPeriod": "La separation du Proto-Botatwe est estimee aux alentours de 1000 avant notre ere. La branche occidentale Botatwe (dont font partie les Totela) s'est differenciee au cours du premier millenaire de notre ere. Les Totela ont ensuite migre depuis les plaines de la Kafue vers leur territoire actuel.",
+      "migrationRoutes": [
+        "Depuis les plaines de la Kafue (Zambie centrale) vers le sud-ouest",
+        "Migration vers la vallee du Zambeze superieur",
+        "Migration supplementaire vers le sud (bande de Caprivi actuelle) aux 18e et 19e siecles pour echapper aux pressions du royaume Lozi en expansion"
+      ],
+      "historicalSettlementZones": [
+        "Province de l'Ouest (Zambie), vallee du Zambeze superieur",
+        "Bande de Caprivi orientale (region du Zambeze, Namibie)",
+        "Regions de Katima Mulilo et environs"
+      ],
+      "unificationsOrDivisions": "Les Totela font partie du groupe Botatwe occidental avec les Fwe, Shanjo et Subiya, qui constituent tous ensemble les peuples de la bande de Caprivi/Barotseland. Sous la pression de l'expansion du royaume Lozi, les Totela et leurs voisins ont migre vers le sud au 18e et 19e siecle. La colonisation allemande puis britannique a impose des frontieres administratives qui ont divise les communautes Totela entre la Rhodesie du Nord (Zambie) et le Sud-Ouest Africain allemand (Namibie).",
+      "externalInfluences": "Le royaume Lozi (Barotse) a exerce une influence culturelle et politique majeure, forçant la migration des Totela vers le sud et leur imposant des structures tributaires. La langue Silozi est devenue la lingua franca de toute la region du Caprivi. L'administration coloniale allemande (Caprivi) puis britannique (Zambie) a fige les frontieres actuelles.",
+      "majorHistoricalEvents": "18e-19e siecles: expansion du royaume Lozi provoquant la migration des Totela vers le sud. 1890: la bande de Caprivi est cedee par la Grande-Bretagne a l'Allemagne pour donner au Sud-Ouest Africain allemand un acces au Zambeze. 1964: independance de la Zambie. 1990: independance de la Namibie. La langue Totela est aujourd'hui consideree comme fortement menacee d'extinction avec une transmission intergenerationnelle tres limitee."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation sous autorite traditionnelle locale dans le cadre plus large de la sphere d'influence Lozi/Barotse. Les Totela etaient tributaires du royaume Lozi. Au niveau local, des chefs communautaires (indunas) maintiennent les structures traditionnelles dans les zones rurales du Caprivi et de la Province de l'Ouest zambienne.",
+      "clanOrganization": "Organisation clanique liee aux lignages familiaux. Les Totela partagent des structures claniques similaires a celles des autres groupes Botatwe occidentaux (Fwe, Shanjo, Subiya).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et les droits fonciers dans les zones d'implantation traditionnelles. La transmission de la langue et des savoirs culturels se fait principalement au sein des lignages.",
+      "religiousAuthority": "Pratiques spirituelles traditionnelles liees aux ancetres et aux forces naturelles, partagees avec les autres groupes Botatwe. Presence du christianisme (missions coloniales) et de l'islam dans certaines zones."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Totela (Echitotela)",
+      "isoCodes": ["ttl"],
+      "dialects": [],
+      "vehicularRole": "Le Totela (code ISO ttl, Guthrie K.41) est une langue Bantu mal documentee, classee dans la zone K de Guthrie. C'est une langue fortement menacee avec environ 1 220 locuteurs au recensement de 2010 en Zambie, et probablement moins de 5 000 locuteurs au total dans les deux pays. La langue vehiculaire principale de la region est le Silozi (loz), lingua franca du Caprivi et de Barotseland."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites lies aux cycles agricoles et aux transitions de vie (naissance, mariage, deces), partages avec les communautes voisines Botatwe. Participation aux ceremonies traditionnelles du systeme Lozi/Barotse dans la region.",
+      "symbols": "Le fleuve Zambeze et ses plaines inondables constituent le cadre symbolique central de la vie Totela. L'agriculture de subsistance sur les berges du Zambeze, du Kwando et du Chobe est l'element identitaire principal.",
+      "artsAndMusic": "Artisanat local lie aux ressources des zones humides (vannerie, pecherie). Traditions musicales partagees avec les groupes Botatwe et Lozi de la region. La culture materielle est peu documentee dans les sources accessibles.",
+      "spiritualities": "Pratiques spirituelles traditionnelles animistes centrees sur la relation aux esprits ancestraux et aux forces naturelles du Zambeze. Influence du christianisme (missions du debut du 20e siecle). Une partie de la population est chretienne, notamment dans les zones urbaines."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume Totela independant. Les Totela ont historiquement vecu sous la sphere d'influence du royaume Lozi (Barotse), auquel ils etaient tributaires. Ils font partie du groupe de peuples constitutifs du Barotseland et du Caprivi.",
+      "relationsWithNeighbors": "Relations etroites avec les Fwe, Shanjo et Subiya (langues Botatwe proches). Influence Lozi preponderante. Contacts avec les Yeyi, Mbukushu et d'autres groupes du Caprivi. Recherche genetique (Nature, 2012) a montre que les Totela ont des marqueurs Y-chromosomiques distincts par rapport a leurs voisins proches.",
+      "conflictsOrAlliances": "Soumission historique aux pressions du royaume Lozi. Dispute territoriale du Caprivi (Namibie/Botswana) devant la Cour internationale de Justice (1999, relatif a l'ile Kasikili/Sedudu). Le conflit du Caprivi (1999): tentative de secession armée de la Caprivi Liberation Army, rapidement maitrisee par l'armee namibienne.",
+      "diaspora": "Population principalement rurale dans les zones d'origine. Presence en Province de l'Ouest (Zambie) et dans la region du Zambeze (ex-Caprivi, Namibie). Recensement zambien: 9 427 locuteurs du Totela (donnees historiques), dont environ 5 424 en Province de l'Ouest."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 12000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement zambien (9 427 locuteurs historiques), Wikipedia (1 220 locuteurs en 2010 selon le recensement namibien), et projections demographiques. Population totale estimee entre 10 000 et 15 000 dans les deux pays.",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 10000,
+          "note": "Province de l'Ouest, vallee du Zambeze superieur"
+        },
+        {
+          "country": "NAM",
+          "population": 2000,
+          "note": "Region du Zambeze (ex-Caprivi), autour de Katima Mulilo"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Totela language – Wikipedia, ISO ttl (https://en.wikipedia.org/wiki/Totela_language)",
+      "Teresa Crane, Completion and Dissociation in Totela Tense and Aspect, ACAL 42, 2012 (http://www.lingref.com/cpp/acal/42/paper2770.pdf)",
+      "Nature, Genetic perspectives on the origin of clicks in Bantu languages from southwestern Zambia, 2012 (https://www.nature.com/articles/ejhg2012192)",
+      "Botatwe languages – Wikipedia (https://en.wikipedia.org/wiki/Botatwe_languages)",
+      "Language in Zambia (PDF), Zambian Christian University, donnees demographiques (http://www.zambiancu.org/1zRead/Language_in_Zambia.pdf)",
+      "Caprivi Strip – Wikipedia (https://en.wikipedia.org/wiki/Caprivi_Strip)",
+      "Joshua Project, Totela in Zambia (https://joshuaproject.net/people_groups/15571)"
+    ]
   }
 }

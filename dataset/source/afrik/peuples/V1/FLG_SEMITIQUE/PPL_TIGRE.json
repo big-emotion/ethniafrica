@@ -1,0 +1,73 @@
+{
+  "id": "PPL_TIGRE",
+  "nameMain": "Tigré",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ERI", "SDN", "ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Tigré",
+      "selfAppellation": "Tigré (ትግረ) / Tigrayit",
+      "exonyms": [
+        "Tigré (terme utilisé par les Européens), parfois confondu avec Tigréens (Tigray)"
+      ],
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Sémitiques méridionaux (éthiosémitiques)",
+      "historicalRegion": "Érythrée (régions côtières et basses terres)",
+      "currentCountries": ["ERI", "SDN", "ETH"]
+    },
+    "ethnicities": [
+      "Tigré du Nord (région de Sahel)",
+      "Tigré du Sud (région de Semhar)",
+      "Tigré de l'Est (région côtière)",
+      "Tigré de l'Ouest (régions frontalières)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tigré sont originaires de l'ERI, descendants des populations sémitiques qui se sont installées dans la région. Leur langue est proche du tigrinya mais distincte.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux. Distinction importante avec les Tigréens (Tigray) qui parlent le tigrinya et habitent les hauts plateaux.",
+      "externalInfluences": "Influences arabes, turques, et égyptiennes. Islam majoritaire contrairement aux Tigréens chrétiens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale traditionnelle avec cheikhs et conseils tribaux. Intégration dans les structures étatiques érythréennes modernes.",
+      "clanOrganization": "Structure tribale et clanique importante. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance de la généalogie tribale.",
+      "religiousAuthority": "Autorité des oulémas et des chefs religieux musulmans. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Tigré (Tigrayit)",
+      "vehicularRole": "Le tigré est parlé par la majorité des Tigré en Érythrée. L'arabe et le tigrinya sont également utilisés comme langues véhiculaires. L'anglais est utilisé dans l'éducation."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Pèlerinage à La Mecque (Hajj)",
+      "Symboles": "Symboles islamiques, motifs culturels érythréens, drapeau érythréen.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle tigré",
+      "source_5": "Poésie orale",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Artisanat (tissage, poterie)",
+      "Spiritualités": "Islam sunnite majoritaire. Minorités chrétiennes. Rôle central de l'islam dans la culture tigré."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies et sultanats historiques. Intégration dans les structures politiques érythréennes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora tigré dans les pays voisins (SDN, ETH) et dans les pays occidentaux, particulièrement suite aux conflits."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, recensements érythréens, et études démographiques régionales"
+    },
+    "sources": [
+      "SIL Ethnologue – Tigre language (tig)",
+      "CIA World Factbook – Eritrea",
+      "A Chronicle of the Eritrean Revolution*",
+      "The Eritrean People's Liberation Front*",
+      "The Making of a Nation*",
+      "Recensements érythréens"
+    ]
+  }
+}

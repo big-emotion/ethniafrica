@@ -6,64 +6,92 @@
   "content": {
     "appellations": {
       "mainName": "Banyoro",
-      "selfAppellation": "Banyoro",
-      "exonyms": ["Banyoro (terme utilisé par les Européens)"],
+      "selfAppellation": "Banyoro (sg. Munyoro)",
+      "exonyms": [
+        "Nyoro (forme abrégée utilisée en linguistique et dans la littérature coloniale)",
+        "Bakitara, Kitara (en référence à l'Empire de Kitara dont les Banyoro sont les héritiers)",
+        "Ouanyoro, Vouanyoro, Wanyoro (transcriptions swahili et arabisées)",
+        "Bunyoro (désignation du royaume, utilisée par métonymie pour le peuple)"
+      ],
+      "originOfExonyms": "Banyoro applique le préfixe bantou Ba- (les gens de) au nom du territoire Nyoro ou du royaume Bunyoro (Bu- = pays de). Bakitara est un nom historique lié à l'Empire de Kitara dont le Bunyoro est l'héritier direct. Les formes Ouanyoro et Wanyoro sont des transcriptions phonétiques de l'arabe et du swahili, utilisées par les premiers explorateurs européens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Banyoro est l'appellation standard en anglais et en ougandais. Nyoro est utilisé dans les contextes linguistiques. L'identité banyoro est étroitement liée à l'appartenance au royaume Bunyoro-Kitara, dont le souverain (Omukama) est actuellement Solomon Gafabusa Iguru I, 27e Omukama.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Ouest de l'Ouganda",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Zone J, sous-groupe Nyoro-Tooro-Ganda)",
+      "historicalRegion": "Royaume de Bunyoro (ouest de l'Ouganda actuel), incluant les districts de Masindi, Hoima, Kibaale, Buliisa, Kiryandongo, Kakumiro et Kagadi",
       "currentCountries": ["UGA"]
     },
     "ethnicities": [
-      "Banyoro du Nord",
-      "Banyoro du Sud",
-      "Sous-groupes régionaux"
+      "Abiru (commoners cultivateurs, groupe majoritaire dans la société banyoro traditionnelle)",
+      "Bahuma (Abahuma, pasteurs traditionnels de haut statut, éleveurs de bétail)",
+      "Babiito (Ababiito, clan royal descendant de Rukidi Mpuga, fondateur du Bunyoro)",
+      "Abalisa (clan des gardiens du bétail royal, bergers du roi)",
+      "Abahamba (clan des chasseurs et gardes du corps royaux, Abakumirizi)",
+      "Paluo (Palwo, Chope) : communauté de langue luo habitant le comté de Kibanda, district de Kiryandongo, intégrée comme Iru dans la société banyoro",
+      "Environ 150 clans totémiques patrilinéaires (ruganda) au total, structurant l'ensemble de la société"
     ],
     "origins": {
-      "ancientOrigins": "Les Banyoro sont originaires de l'ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume Bunyoro.",
-      "unificationsOrDivisions": "Formation du royaume Bunyoro. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Le Bunyoro est l'héritier direct de l'Empire de Kitara (ou Cwezi), qui domina la région des Grands Lacs d'Afrique de l'Est entre le 13e et le 16e siècle. La tradition orale distingue trois dynasties successives : les Batembuzi (premiers souverains légendaires), les Bachwezi (semi-divins, réputés pour leur sagesse et leur puissance ; l'Empire de Kitara atteignit son apogée sous leur règne), et les Babiito. Les fouilles archéologiques de Bigo bya Mugenyi ont mis au jour des vestiges de cette civilisation ancienne. Selon la tradition, les Babiito descendent d'un prince chwezi Kyomya et d'une femme luo Nyatworo ; leur fils Rukidi Mpuga fonda le Bunyoro au 16e siècle après la dissolution de l'Empire de Kitara.",
+      "formationPeriod": "Fondation du royaume de Bunyoro par Rukidi Mpuga (Isingoma Mpuga Rukidi) au 16e siècle, après la dissolution de l'Empire de Kitara. A son apogée aux 17e-18e siècles, le Bunyoro-Kitara incluait les territoires actuels de l'ouest de l'Ouganda, du nord-ouest de la Tanzanie, de l'est du Congo et du nord-ouest du Kenya.",
+      "migrationRoutes": [
+        "Migration des ancêtres bantu depuis le nord-ouest vers la région du plateau lacustre des Grands Lacs",
+        "Déplacements internes lors de l'expansion du royaume vers les régions de sel (Katwe), du fer (Kigezi) et de l'ivoire",
+        "Déplacements forcés lors des invasions coloniales (1872-1899) et des déplacements liés aux réserves de chasse (1904-1928)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau bien arrosé et fertile de l'ouest de l'Ouganda, entre le lac Albert (Mobutu) et le lac Victoria",
+        "Districts actuels de Hoima, Masindi, Kibaale, Buliisa, Kiryandongo (région du Bunyoro historique)",
+        "Zone du corridor Albertine (richesse en pétrole découverte en 2006, enjeux fonciers contemporains majeurs)"
+      ],
+      "unificationsOrDivisions": "Le Bunyoro-Kitara est organisé comme une monarchie féodale avec un roi (Omukama) au sommet, une hiérarchie de chefs territoriaux à quatre grades, et des clans comme unités sociales de base. La perte des comtés de Buyaga et Bugangaizi au profit du Buganda sous domination coloniale britannique (représentant plus d'un tiers du territoire) est un traumatisme identitaire majeur, réparé partiellement par le référendum de 1964 qui les réintégra dans le Bunyoro. Le royaume fut dissous par Obote en 1967, interdit sous Amin (1971-1979) et restauré en 1993.",
+      "externalInfluences": "Contacts anciens avec les Bahima et les peuples nilotiques (Acholi, Luo, Alur). Rivalité séculaire avec le Buganda. Première prise de contact avec l'Égypte khédiviale via Samuel Baker (1872). Résistance militaire à l'expansion coloniale sous l'Omukama Kabalega (1872-1899), capturé en 1899 et exilé aux Seychelles. Domination coloniale britannique (1899-1962) : réduction du territoire, travail forcé, épidémies, famines provoquées. Indépendance de l'Ouganda en 1962.",
+      "majorHistoricalEvents": "Apogée de l'Empire de Kitara sous les Bachwezi (13e-16e s.) ; fondation du Bunyoro par Rukidi Mpuga (16e s.) ; domination régionale du Bunyoro aux 17e-18e s. ; expansion du Buganda et éclipse progressive du Bunyoro (18e-19e s.) ; invasion de Baker pour l'Égypte (1872) ; résistance de Kabalega et création de l'armée Abarusuura ; capture et exil de Kabalega aux Seychelles (1899) ; dépopulation et famines coloniales (1899-1930) ; Kyanyangire rebellion (1906) ; restauration partielle par accord Bunyoro (1933) ; referendum sur les comtés perdus (1964) ; abolition du royaume (1967) ; restauration (1993) ; reconnaissance constitutionnelle (1995)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Bunyoro). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie centralisée dirigée par l'Omukama (roi, titre signifiant aussi seigneur/maître). Hiérarchie de chefs territoriaux à quatre grades répondant chacun de son territoire à l'échelon supérieur. Dans la famille, le père est le mukama (maître/tête) de tous les membres du foyer et de tous les biens. L'Omukama actuel est Solomon Gafabusa Iguru I, 27e Omukama. Le système des empaako (surnoms d'éloge) codifie les relations sociales et exprime le respect : douze noms partagés dans toute la communauté (Amooti, Abbooki, Akiiki, Ateenyi, Adyeri, Atwooki, Abwooli, Araali, Apuuli, Acaali, Bbala, Okaali) sont attribués en plus du prénom et du nom de famille.",
+      "clanOrganization": "Environ 150 clans totémiques patrilinéaires (ruganda, pl. imiryango). Chaque clan est présidé par un mukuru w'oruganda (chef de clan). Les membres du clan se désignent comme frères, pères, fils selon la génération. Les sept clans les plus anciens sont : Songa, Gahi, Ranzi, Yaga, Rungu, Gabu et Yanga. Le clan royal Biito (Ababiito) est le clan fondateur du royaume.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, l'héritage et les alliances matrimoniales. Un seul héritier par famille (l'aîné hérite du ménage et des terres ; les biens meubles sont partagés entre les fils). Les femmes quittent leur famille en se mariant ; seuls les hommes héritent des biens et du statut. La relation entre grands-parents et petits-enfants est plus détendue qu'entre père et fils (tabous du père : le fils ne peut pas vendre/tuer le bétail, punir son épouse ou porter les vêtements du père sans permission).",
+      "religiousAuthority": "La religion traditionnelle banyoro reconnaît des esprits ancestraux (bazimu) et des entités Cwezi : spirits bénéfiques d'une race ancestrale puissante, pratiques rituelles pour la fertilité, la santé et la prospérité. Culte de possession Cwezi (Chwezi cult) encore pratiqué. Les Bafumu (guérisseurs-herboristes) forment un corps professionnel reconnu, avec apprentissage et conférences, dotés de terres par les rois. Le christianisme est dominant (93 % selon Joshua Project 2025), principalement anglicanisme, catholicisme et pentecôtisme. Un faible pourcentage suit l'islam."
     },
     "languages": {
-      "mainLanguage": "Nyoro",
-      "vehicularRole": "Le nyoro est parlé par la majorité des Banyoro. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Runyoro (Nyoro)",
+      "isoCodes": ["nyo"],
+      "dialects": [
+        "Runyoro standard (dialecte du plateau central de Bunyoro, Hoima, Masindi)",
+        "Rutooro (dialecte du Tooro, très proche de Runyoro, parfois traité comme une seule langue Runyoro-Rutooro)",
+        "Variante de la zone Paluo (Kibanda county, Kiryandongo) avec influence des langues luo"
+      ],
+      "vehicularRole": "Le Runyoro est parlé par la majorité des Banyoro comme langue maternelle (670 000 locuteurs au recensement de 2002 ; environ 1,47 million selon Ethnologue/Joshua Project 2025). L'anglais est la langue officielle de l'Ouganda et de l'enseignement. Le Runyoro-Rutooro est aussi utilisé dans la région du Tooro voisine. L'anglais et le luganda sont utilisés dans les contextes urbains et administratifs."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux banyoro, symboles liés à l'agriculture, symboles culturels banyoro, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Cérémonie d'héritage : le père transmet la lance (symbole d'autorité) à son héritier ; le fils ne peut utiliser la lance du père de son vivant. Les veuves peuvent être héritées par le frère aîné du défunt (qui peut refuser si elle préfère vivre avec d'autres parents ou se remarier, avec remboursement de la dot). Rite de naissance : ablutions rituelles, imposition du nom lié au clan. Funérailles : veillée communautaire, enterrement avec rites claniques, deuil collectif. Cérémonies royales de l'Omukama codifiant l'accession au pouvoir et les principales étapes de la vie du roi. Culte de possession Cwezi : cérémonies de consultation des esprits cwezi pour la fertilité, la santé et la prospérité. Avulsion dentaire des quatre incisives inférieures (pratique traditionnelle aujourd'hui abandonnée).",
+      "symbols": "La lance (symbole de l'autorité paternelle et royale, transmise lors des cérémonies d'héritage). Les tambours royaux (engoma) comme insigne du pouvoir de l'Omukama. Le système des empaako (surnoms d'éloge) comme outil de cohésion sociale et d'expression d'affection et de respect, inscrit au patrimoine culturel immatériel de l'UNESCO. Le bétail comme signe de richesse et de statut chez les Bahuma (pasteurs). La poterie artisanale (le Bunyoro est réputé pour ses potiers habiles).",
+      "artsAndMusic": "Musique de cour royale (Royal Court Music) documentée par Hugh Tracey lors de ses enregistrements de 1950-1952 (Music Of Africa Series No. 8, The Uganda Protectorate, DECCA LF1173). Instruments traditionnels : endingidi (violon à une corde), ngoma (tambour), amakondere (cloches en fer). Danses collectives traditionnelles préservées lors des cérémonies royales et des fêtes du Bunyoro. Tradition orale riche : récits de la création et des dynasties Batembuzi, Bachwezi et Babiito, chants de louange de l'Omukama, proverbes nyoro. Artisanat de poterie (ustensiles, jarres décorées) ; forge (outils, armes) ; maçonnerie en terre et construction de cases. Médecine traditionnelle avancée : les Bafumu réalisaient des opérations chirurgicales (césariennes, trépanations) avec anesthésie au vin de banane et techniques antiseptiques, décrits avec admiration par les premiers explorateurs européens.",
+      "spiritualities": "La cosmologie banyoro traditionnelle distingue les bazimu (esprits des morts humains influençant les vivants) et les esprits Cwezi (esprits bénéfiques d'une race ancestrale puissante, mi-divins, auxquels sont associés des rituels de fertilité et de santé). Le culte Cwezi (possession ritualisée) est encore pratiqué par certains Banyoro en parallèle du christianisme. Les Bafumu (guérisseurs) combinent herboristerie, rituels spirituels et chirurgie. La connaissance de plus de 200 plantes médicinales est documentée. Le christianisme (anglicanisme, catholicisme, pentecôtisme) est dominant à 93 % de la population. L'islam est présent à un niveau marginal."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora banyoro dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Bunyoro-Kitara est l'un des plus anciens et des plus puissants États précoloniaux de l'Afrique de l'Est et des Grands Lacs. Héritier de l'Empire de Kitara, il fut à son apogée (17e-18e s.) la puissance dominante de toute la région. L'Omukama Kabalega (19e s.) créa une armée permanente (Abarusuura) et résista militairement à la colonisation britannique pendant plus de 27 ans. Le royaume actuel, restauré en 1993, couvre les districts de Buliisa, Hoima, Kibaale, Kakumiro, Kagadi, Kiryandongo et Masindi sous la direction de l'Omukama Solomon Gafabusa Iguru I.",
+      "relationsWithNeighbors": "Rivalité séculaire avec le Buganda, qui éclipsa progressivement le Bunyoro à partir du 18e siècle et s'allia aux Britanniques contre Kabalega. Relations étroites avec le Tooro (royaume fils issu d'une scission dans les années 1830, réclamant les salines du lac Katwe). Liens de parenté culturelle avec les Banyankole, Bakiga et Bahema. Relations d'échange (fer, sel, ivoire) avec les peuples nilotiques voisins (Acholi, Alur, Langi). Kabalega étendit son influence sur les Paluo, Acholi et Alur au nord.",
+      "conflictsOrAlliances": "Rivalité et guerres récurrentes avec le Buganda aux 17e-19e siècles. Résistance de l'Omukama Kabalega à l'expansion égyptienne de Baker (1872) puis à la colonisation britannique (1890-1899) : la résistance de Kabalega, capturé et exilé en 1899, est une référence identitaire majeure. Kyanyangire rebellion (1906) contre l'extorsion foncière par les chefs imposés. Comtés perdus (Buyaga et Bugangaizi) : cédés au Buganda sous pression britannique en récompense de la collaboration contre le Bunyoro, récupérés par référendum en 1964 sous Obote.",
+      "diaspora": "Migrations internes vers les grandes villes ougandaises (Kampala, Hoima, Masindi). Diaspora banyoro limitée en Europe et Amérique du Nord. La découverte de pétrole dans le corridor Albertine (2006) attire des migrations inverses et des investissements dans la région du Bunyoro."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1469000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025) : Nyoro language 1 469 000 locuteurs. Ethnologue (SIL) : Nyoro (nyo), Ouganda. Recensement ougandais 2002 : 670 000 locuteurs. Bunyoro-Kitara Kingdom (1997 projections) : 800 000 à 1 400 000 habitants dans le Bunyoro. Estimation 2025 retenue : 1 469 000.",
+      "distributionByCountry": [{ "country": "UGA", "population": 1469000 }]
     },
     "sources": [
-      "SIL Ethnologue – Nyoro language (nyo)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le royaume Bunyoro"
+      "Wikipedia EN – Banyoro (Nyoro people) : https://en.wikipedia.org/wiki/Banyoro",
+      "Wikipedia EN – Bunyoro : https://en.wikipedia.org/wiki/Bunyoro",
+      "Wikipedia EN – Nyoro language : https://en.wikipedia.org/wiki/Nyoro_language",
+      "Joshua Project – Banyoro, Nyoro in Uganda (2025) : https://joshuaproject.net/people_groups/14103",
+      "Bunyoro-Kitara Kingdom – History : http://www.bunyoro-kitara.org/7.html",
+      "SIL Ethnologue – Nyoro language (nyo) : https://www.ethnologue.com/language/nyo/",
+      "101 Last Tribes – Banyoro people : https://www.101lasttribes.com/tribes/banyoro.html",
+      "Beattie, John (1960). Bunyoro: An African Kingdom. New York: Holt, Rinehart and Winston.",
+      "CIA World Factbook – Uganda : https://www.cia.gov/the-world-factbook/countries/uganda/"
     ]
   }
 }

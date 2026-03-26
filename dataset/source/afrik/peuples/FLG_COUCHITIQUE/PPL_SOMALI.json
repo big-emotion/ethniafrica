@@ -1,24 +1,122 @@
 {
   "id": "PPL_SOMALI",
-  "nameMain": "",
+  "nameMain": "Somali",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["SOM", "DJI", "ETH", "KEN"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Somali",
       "selfAppellation": "Soomaali",
+      "exonyms": [
+        "Somali (français)",
+        "Somali (anglais)",
+        "As-Sumal (arabe)",
+        "Cushites orientaux (appellation académique)"
+      ],
+      "originOfExonyms": "L'ethnonyme Soomaali dérive probablement de l'ancêtre mythique Samaale, lui-même issu des expressions soo (viens) et maal (traire), référence à l'omniprésence du pastoralisme somali. Une autre étymologie propose une dérivation de l'arabe dhawamaal signifiant riche en bétail.",
+      "whyProblematic": "L'ethnonyme est parfois utilisé pour désigner à la fois le peuple et l'Etat somali, créant des ambiguïtés entre identité ethnique et citoyenneté. L'identité somali est complexifiée par le système clanique qui subdivise fortement la communauté.",
+      "contemporaryUsage": "Le terme Soomaali est universellement utilisé par les locuteurs eux-mêmes. Il désigne à la fois la nation, le peuple, la langue et la culture. Depuis la guerre civile de 1991, l'identité clanique (Darod, Hawiye, Dir, Isaaq, Rahanweyn) est souvent plus opératoire socialement que l'identité pan-somali.",
       "linguisticFamily": "FLG_COUCHITIQUE",
       "ethnoLinguisticGroup": "Couchitique oriental",
-      "historicalRegion": "Somalie historique (SOM, DJI, Ogaden)",
+      "historicalRegion": "Corne de l'Afrique : péninsule somalienne, Ogaden, Djibouti, nord du Kenya",
       "currentCountries": ["SOM", "DJI", "ETH", "KEN"]
     },
-    "ethnicities": ["Darod", "Hawiye", "Dir", "Isaaq", "Rahanweyn"],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Somali Studies", "Ethnologue (som)"]
+    "ethnicities": [
+      "Darod (clan noble, nord-est et Ogaden)",
+      "Hawiye (clan noble, centre et Mogadiscio)",
+      "Dir (clan noble, nord-ouest et Djibouti)",
+      "Isaaq (clan noble, Somaliland)",
+      "Rahanweyn (Sab, agro-pasteurs des régions inter-fluviales)",
+      "Digil (Sab, région de Basse-Shabelle)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancêtres des Somali, connus sous le nom de proto-Sam, émergèrent parmi les peuples couchitiques orientaux dans les hauts plateaux du sud de l'Ethiopie, dans la région des lacs, vers le premier millénaire avant notre ère. Le groupe proto-Sam s'est répandu vers les plaines du nord du Kenya, puis le long du fleuve Tana jusqu'à la côte de l'océan Indien. Sur la côte, ils se sont scindés : un groupe (les Boni) resta sur l'archipel de Lamu, l'autre se déplaça vers le nord pour peupler le sud de la Somalie. Les Samaale, ancêtres de la plupart des clans nobles actuels, ont ensuite poussé vers le nord en quête de pâturages, occupant l'ensemble de la Corne de l'Afrique vers 100 apr. J.-C. selon l'historien Bernd Heine.",
+      "formationPeriod": "Entre le Xe et le XVIe siècle, des vagues de migration liées à l'islam structurèrent l'identité clan-basée actuelle. Sheikh Ismail Jabari, ancêtre des Darod, s'installa dans le nord-est de la péninsule au XIe siècle. Sheikh Ishaaq, fondateur des Isaaq, arriva deux siècles plus tard. L'expansion islamique somali vers le sud s'accéléra aux XIVe-XVIe siècles. L'identité nationale somali moderne se consolida sous la colonisation européenne (britannique, italienne, française) aux XIXe-XXe siècles.",
+      "migrationRoutes": [
+        "Hauts plateaux du sud de l'Ethiopie vers les plaines du Kenya (proto-Sam, vers 1000 av. J.-C.)",
+        "Côte kenyane vers le sud de la Somalie le long du fleuve Tana",
+        "Expansion vers le nord depuis le sud de la Somalie vers la péninsule somalienne (vers 100 apr. J.-C.)",
+        "Expansion vers le sud-ouest depuis le nord : Ogaden, nord du Kenya, Djibouti (XVe-XVIe siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Péninsule somalienne (Somalie actuelle, Somaliland, Puntland)",
+        "Djibouti et côte du golfe d'Aden",
+        "Région Ogaden (Somali Region, Ethiopie)",
+        "Province du Nord-Est du Kenya",
+        "Diaspora mondiale : Nairobi, Londres, Minneapolis, Oslo, Dubai"
+      ],
+      "unificationsOrDivisions": "La société somalie n'a jamais connu d'Etat centralisé unique avant la colonisation. Le système de descent patrilinéaire (abtirsi) et les codes de droit coutumier (xeer) ont assuré la cohésion sociale sans gouvernement central. L'unification dans un Etat indépendant fut réalisée en 1960 (fusion de la Somalie italienne et du Somaliland britannique). L'effondrement de l'Etat en 1991 a réactivé les divisions claniques. Le Somaliland (non reconnu) et le Puntland sont des entités autonomes depuis les années 1990-2000.",
+      "externalInfluences": "Contacts et commerce avec l'Arabie et l'Inde depuis l'Antiquité (ports de Zeila et Berbera actifs dès 100 av. J.-C.). Islamisation progressive depuis le VIIe siècle, complète aux XVe-XVIe siècles. Sultanats médiévaux : Adal, Mogadiscio, Ajuran. Colonisation britannique (Somaliland), italienne (Somalie du Sud) et française (Djibouti) aux XIXe-XXe siècles. Guerre froide : soutiens soviétique puis américain au régime de Siad Barre (1969-1991).",
+      "majorHistoricalEvents": "Sultanat d'Adal et guerre éthio-adalie (XVe-XVIe siècles) : expansion somalie jusqu'au coeur de l'Ethiopie chrétienne. Résistance de Mohammed Abdullah Hassan (Sayyid Mohamed) contre la colonisation britannique (1899-1920). Indépendance et unification en 1960. Dictature de Siad Barre (1969-1991) : politique socialiste et guerre de l'Ogaden contre l'Ethiopie (1977-1978). Guerre civile et effondrement de l'Etat (1991). Crise humanitaire internationale (1992-1993, intervention de l'ONU et des Etats-Unis). Montée d'Al-Shabaab depuis les années 2000. Inscription du Xeer Ciise au patrimoine immatériel de l'UNESCO en 2024."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société somalie est organisée selon un système polycentriqe basé sur le droit coutumier oral xeer (prononcé hhéer). Le xeer est un code juridique pré-islamique (influencé ensuite par l'islam) qui régit les droits de propriété, les relations entre clans, la résolution des conflits, la compensation des victimes (diya ou mag) et les obligations communautaires. Les juges, appelés xeer begti, sont choisis parmi les chefs de famille les plus sages. Le système est consensuel et polycentriqe : chaque groupe de clans peut avoir ses propres interprétations du xeer.",
+      "clanOrganization": "Structure clanique patrilinéaire à plusieurs niveaux : familles de clans (Dir, Darod, Hawiye, Isaaq, Rahanweyn-Digil), clans, sous-clans, lignages, et groupes de paiement de la diya (mag). L'abtirsi (comptage des pères) permet à chaque Somali de retracer sa généalogie sur des dizaines de générations jusqu'aux ancêtres mythiques arabes ou quraychites. Les deux grandes divisions sont les Samaale (clans nobles pasteurs) et les Sab (Rahanweyn, agro-pasteurs).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le rer (grand groupe de parenté patrilinéaire) est l'unité sociale de base. Un Somali a des obligations à la fois envers son rer et envers l'unité sociale plus large dont il fait partie. Le gouvernement du rer est patriarcal, le chef étant conseillé par un groupe d'anciens. Les obligations de paiement de la diya (compensation versée à la famille de la victime en cas de meurtre ou blessure) cimentent les solidarités lignagères.",
+      "religiousAuthority": "Islam sunnite (principalement shafiite) dominant. Les cheikhs islamiques, marabouts et confréries soufies (Qadiriyya, Ahmadiyya, Salihiyya) ont joué un rôle central dans la propagation de l'islam et la résistance anticoloniale. Mohammed Abdullah Hassan (Sayyid Mohamed) fonda la confrérie Salihiyya et mena la résistance derviche (1899-1920). Les pratiques du maraboutisme et du culte des saints sont présentes, bien que contestées par le courant salafiste contemporain."
+    },
+    "languages": {
+      "mainLanguage": "Somali (Soomaali)",
+      "isoCodes": ["som"],
+      "dialects": [
+        "Somali septentrional (Northern Somali, base du somali standard)",
+        "Benaadir (dialecte de Mogadiscio et de la côte du Benadir)",
+        "Maay (Maay-Maay, parlé par les Rahanweyn dans le sud, parfois considéré langue distincte, ISO 639-3 : ymm)",
+        "Ashraaf (variété des communautés nobles descendant d'Arabes)",
+        "Jiiddu (variété du bas inter-fleuve)"
+      ],
+      "vehicularRole": "Le somali est la langue nationale et officielle de la Somalie depuis 1973 (standardisation écrite). Il est également langue co-officielle dans la région Somali d'Ethiopie et langue reconnue au Kenya et à Djibouti. Parlé par environ 25 millions de personnes dans la Corne de l'Afrique et la diaspora mondiale. Le somali est l'une des langues africaines les plus parlées."
+    },
+    "culture": {
+      "majorRites": "Rites de passage islamiques : circoncision masculine (sunna), mariage (nikaah, célébration clanique), funérailles (inhumation dans les 24 heures, lectures coraniques). Cérémonies du xeer pour la résolution des conflits et la conclusion d'accords inter-claniques. Cérémonies de la diya (paiement collectif de compensation en bétail ou argent). Fêtes islamiques : Aid el-Fitr, Aid el-Adha, Mawlid (commémoration de la naissance du Prophète). Rites d'initiation des jeunes hommes à la gestion des troupeaux et au code du xeer.",
+      "symbols": "Le chameau (geel) est le symbole central de la culture somalie : il représente la richesse, le prestige et le mode de vie pastoral. Le burnous (macawiis) et le turban sont des marqueurs identitaires masculins. Le poème épique (gabay) est le symbole suprême de l'éloquence et du prestige intellectuel. Le khat (qaat) est une plante socialement centrale, consommée lors des réunions masculines.",
+      "artsAndMusic": "La poésie orale (gabay, geerarr, jiifto, buraanbur) est l'art le plus valorisé. Les Somali sont reconnus comme un peuple de poètes : la poésie sert à exprimer des griefs, honorer des héros, enregistrer l'histoire, déclarer la guerre ou la paix. Les anciennes peintures rupestres de Laas Geel (datant de 5 000 à 10 000 ans) sont l'un des plus anciens patrimoines artistiques d'Afrique. Musique traditionnelle : instruments de percussion (doumbek, tambourin), flûtes. Danses collectives : dhaanto (originaire de l'Ogaden, danse mimant le chameau, accompagnée de chants rythmiques), afar jaraan, shirib. Architecture historique des sultanats de Mogadiscio et Ajuran (XIIe-XVIIe siècles). Art de la vannerie et du tressage. Tradition de la musique moderne dite heello depuis les années 1940.",
+      "spiritualities": "Islam sunnite shafiite, adopté progressivement depuis le VIIe siècle, généralisé aux XVe-XVIe siècles. Confréries soufies actives : Qadiriyya (la plus ancienne), Ahmadiyya, Salihiyya (fondée par Mohammed Abdullah Hassan). Culte des saints locaux (auliya) et pèlerinages aux tombeaux. Croyances pré-islamiques résiduelles : esprits zar (saar), invoqués lors de rituels de possession pratiqués par les femmes. Ces pratiques coexistent avec l'islam dominant. Influence salafiste grandissante depuis les années 1990, remettant en cause certaines pratiques soufies et syncrétiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat de Mogadiscio (Xe-XVIe siècles) : cité-Etat prospère, hub commercial de l'océan Indien. Sultanat d'Ajuran (XIIIe-XVIIe siècles) : empire hydraulique contrôlant un vaste territoire en Somalie et Ethiopie. Sultanat d'Adal (XIVe-XVIe siècles) : Etat islamique qui faillit conquérir l'Ethiopie chrétienne aux côtés d'Ahmed ibn Ibrahim al-Ghazi. Sultanat des Geledi et du Benadir (XVIIIe-XIXe siècles). Sultanat de Hobyo et Sultanat de Majeerteen (XIXe-XXe siècles) dans le nord-est.",
+      "relationsWithNeighbors": "Relations historiques de commerce et de compétition avec les Oromo, les Afar et les Harari en Ethiopie. Conflits territoriaux récurrents avec l'Ethiopie, notamment sur l'Ogaden (guerre de 1977-1978). Relations commerciales séculaires avec l'Arabie, l'Inde et la Perse via les ports côtiers. Alliance historique avec le monde arabo-islamique. Relations tendues avec le Kenya depuis l'indépendance (irrédentisme du Grand Somaliland).",
+      "conflictsOrAlliances": "Guerre éthio-adalie (XVIe siècle) : le sultanat d'Adal envahit l'Ethiopie chrétienne. Résistance derviche de Mohammed Abdullah Hassan contre la colonisation britannique (1899-1920). Guerre de l'Ogaden contre l'Ethiopie (1977-1978) : défaite somalienne après retrait du soutien soviétique. Guerre civile (1991-présent) : effondrement de l'Etat, conflits inter-claniques, intervention internationale. Insurgence d'Al-Shabaab depuis 2006.",
+      "diaspora": "La diaspora somalie est l'une des plus importantes d'Afrique. Plus d'un million de Somali vivent à l'étranger. Principales communautés : Minneapolis (Etats-Unis, plus de 80 000 personnes), Londres (Royaume-Uni), Oslo (Norvège), Nairobi (Kenya), Dubai (Emirats arabes unis), Toronto (Canada), Stockholm (Suède). La diaspora joue un rôle économique crucial via les transferts de fonds (hawala), représentant environ 1,4 milliard de dollars par an pour la Somalie."
+    },
+    "demography": {
+      "totalPopulation": 26000000,
+      "referenceYear": 2025,
+      "source": "UNFPA 2025 (Somalie : 19,7 millions), CIA World Factbook 2024 (Ethiopie : Somali 7,2% soit environ 9,7 millions dans la région Somali), UNFPA Djibouti (Issa-Somali majoritaires parmi 1,2 million), Kenya (Somali du Nord-Est, environ 2,4 millions). Diaspora mondiale estimée à 1-2 millions. Total global estimé à 25-27 millions en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "SOM",
+          "population": 19700000,
+          "note": "Population totale de la Somalie (Somalie fédérale, Somaliland, Puntland), quasi exclusivement somalienne"
+        },
+        {
+          "country": "ETH",
+          "population": 9700000,
+          "note": "Région Somali (Ogaden), environ 7,2% de la population éthiopienne (135 millions en 2025)"
+        },
+        {
+          "country": "KEN",
+          "population": 2400000,
+          "note": "Comté de Garissa, comté de Wajir, comté de Mandera (ancien North Eastern Province), et Nairobi"
+        },
+        {
+          "country": "DJI",
+          "population": 600000,
+          "note": "Clan Issa (Dir) majoritaire dans la population djiboutienne d'environ 1,2 million"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Somali people. https://en.wikipedia.org/wiki/Somali_people",
+      "Wikipedia EN — Somali clans. https://en.wikipedia.org/wiki/Somali_clans",
+      "Wikipedia EN — Culture of Somalia. https://en.wikipedia.org/wiki/Culture_of_Somalia",
+      "Wikipedia EN — Xeer. https://en.wikipedia.org/wiki/Xeer",
+      "UNESCO — Xeer Ciise (patrimoine immatériel 2024). https://ich.unesco.org/en/RL/xeer-ciise-oral-customary-laws-of-somali-issa-communities-in-ethiopia-djibouti-and-somalia-02087",
+      "UNFPA — Somalia Population 2025. https://www.unfpa.org/data/world-population/SO",
+      "Britannica — Somali people. https://www.britannica.com/topic/Somali-people",
+      "Countrystudies.us — Somalia : Origins, Migrations, and Settlement. https://countrystudies.us/somalia/3.htm",
+      "101 Last Tribes — Somali people profile. https://www.101lasttribes.com/tribes/somalis.html"
+    ]
   }
 }

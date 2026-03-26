@@ -6,54 +6,80 @@
   "content": {
     "appellations": {
       "mainName": "Soli",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Basoli (pluriel), Musoli (singulier)",
+      "exonyms": ["Soli"],
+      "originOfExonyms": "Le nom Soli est d'origine incertaine. Les Basoli constituent l'un des 72 groupes ethniques officiellement reconnus en Zambie. Le terme Basoli designe les membres du groupe en langue locale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Soli ou Basoli est utilise dans les contextes officiels et academiques zambiens. La ville de Lusaka et la province portent les noms derives du chef Soli Lusaaka, dont le village se trouvait a l'emplacement de l'actuelle poste centrale de Lusaka.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Bantu Botatwe (groupe center-sud)",
+      "historicalRegion": "Province de Lusaka, centre de la Zambie",
       "currentCountries": ["ZMB"]
     },
-    "ethnicities": ["Soli"],
+    "ethnicities": ["Soli", "Basoli"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Basoli sont parmi les plus anciens habitants connus de la region de Lusaka. Selon les traditions orales et les recherches academiques, ils sont descendants de la grande expansion bantoue et seraient lies aux migrations du royaume Luba (actuelle Republique Democratique du Congo). Selon Manchishi (1990), les Basoli et les Sala faisaient partie des premiers Bantous pre-Luba-Lunda a s'installer en Zambie centrale, probablement vers 1500 dans la region de Chisamba.",
+      "formationPeriod": "XVIe-XVIIIe siecles. Les Basoli s'installerent progressivement dans la region de Lusaka apres avoir ete deplaces de Chisamba vers 1700 par les Bene Mukuni (clan Bayeke du royaume Luba). Mbonshi est cite comme fondateur du chiefdom Soli. La ville et la province de Lusaka tirent leur nom du chef Soli Lusaaka.",
+      "migrationRoutes": [
+        "Depuis la region du fleuve Luapula (nord de la Zambie actuelle) vers le centre et le sud",
+        "Passage par la region de Chisamba avant le deplacement vers Lusaka",
+        "Migration vers Bwinjimfumu (actuel Northmead de Lusaka) apres le deplacement par les Bene Mukuni",
+        "Settlement final dans la region de Chongwe au sud-est de Lusaka"
+      ],
+      "historicalSettlementZones": [
+        "Region de Chisamba (avant 1700)",
+        "Zone de Lusaka actuelle (Northmead, Olympia, Matero)",
+        "District de Chongwe (settlement principal actuel)",
+        "Zone de Kafue (sud de la province de Lusaka)"
+      ],
+      "unificationsOrDivisions": "Vers 1700, les Bene Mukuni (Bayeke venus du Congo) s'installerent a Chibombo et pousserent les Soli hors de Chisamba. Mbonshi, chef des Soli, conduisit son peuple vers Lusaka. Au XIXe siecle, les commercants d'esclaves portugais et arabes commencerent a penetrer depuis la cote, forçant les Soli et les Lenje a se deplacer et a s'adapter.",
+      "externalInfluences": "L'arrivee de la British South Africa Company dans les annees 1890 transforma radicalement le territoire Soli. La fondation de Lusaka comme capitale coloniale puis nationale (1935) mit fin a l'autonomie Soli sur leurs terres ancestrales. Les missions chretiennes jouerent un role dans l'education et la transformation culturelle.",
+      "majorHistoricalEvents": "Expulsion de Chisamba par les Bene Mukuni (vers 1700). Attaques des marchands d'esclaves cotiers au XIXe siecle. Prise de controle par la British South Africa Company (annees 1890). Etablissement de Lusaka comme capitale de la Rhodesie du Nord (1935), effaçant les villages Soli originels."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en chiefdoms moins centralises que certains voisins. La chefferie est souvent exercee par des femmes (cheffe principale: Chieftainess Nkomeshya Mukamambo II). Ce systeme de leadership feminin est une caracteristique distinctive des Soli. Les chefs presidaient les ceremonies rituelles et arbitraient les litiges.",
+      "clanOrganization": "Organisation clanique avec des lignages remontant aux ancetres fondateurs. Le fondateur du chiefdom Soli est Mbonshi, dont descend la lignee du chef Bundabunda. La pratique de l'agriculture de subsistence et l'elevage organisaient la vie economique des clans.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages definissent les droits fonciers, les obligations rituelles et la participation aux ceremonies. L'accent mis sur le leadership feminin (role de la cheffe) et la reverence envers les esprits ancestraux sont des elements centraux de la vie lignagere Soli.",
+      "religiousAuthority": "Les ancetres jouent un role d'intercesseurs entre les vivants et les forces spirituelles. La Chakwela Makumbi (ceremonie des pluies) est presidee par la cheffe principale. Des leaders rituels facilitent les contacts avec les esprits ancestraux. Le christianisme est aujourd'hui la religion principale."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Soli (Cisoli)",
+      "isoCodes": ["sis"],
+      "dialects": [],
+      "vehicularRole": "Le soli appartient au groupe linguistique Bantu Botatwe (avec le tonga, le lenje, l'ila, le sala et le toka-leya). Ces langues sont mutellement comprehensibles. Le nyanja est utilise comme langue d'enseignement dans la zone Soli a Lusaka. L'anglais est la langue officielle nationale. De nombreux Soli sont bilingues voire multilingues (soli, nyanja, anglais)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Chakwela Makumbi: ceremonie annuelle des pluies tenue en octobre a Chongwe, appelee 'faire descendre les nuages'. Dirigee par la Chieftainess Nkomeshya Mukamambo II, cette ceremonie rassemble des milliers de personnes et invoque les esprits ancestraux pour des sols fertiles et une bonne recolte. Des ceremonies de gratitude pour les recoltes sont egalement pratiquees.",
+      "symbols": "La Chieftainess Nkomeshya Mukamambo II est le symbole vivant de l'autorite et de la continuite culturelle Soli. Les tambours rituels accompagnent les ceremonies. Les nombreux quartiers de Lusaka portent des noms en langue soli: Matero (de matelo = pente), Libala (ferme/champs), Chilenje (herbes epaisses), Kabwata (fils du chef Lusaaka), Lilayi (le soleil se couche).",
+      "artsAndMusic": "Artisanat traditionnel incluant le tissage de paniers et la poterie. La danse cibitiko est partagee avec les Lenje. Traditions orales riches preservant l'histoire et les connaissances ancestrales.",
+      "spiritualities": "Reverence forte des ancetres, exprimes notamment dans la Chakwela Makumbi. Les esprits ancestraux sont appeles pour assurer la pluie, la fertilite et la protection. Le christianisme est la religion principale depuis le XXe siecle, pratique par environ 55% de la communaute selon Joshua Project."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chiefdom Soli sous la chefferie de Nkomeshya (Bundabunda). Moins centralise que les royaumes voisins, il etait organise autour de villages et de lignages. La ville de Lusaka et la province de Lusaka portent le nom du chef Soli Lusaaka, dont le village se trouvait sur le site de l'actuelle poste centrale de Lusaka. Manda Hill (quartier commercial actuel) etait le lieu de sepulture traditionnel des Soli.",
+      "relationsWithNeighbors": "Relations historiques avec les Lenje (voisins du nord, langues et cultures apparentees). Les deux peuples partageaient la meme zone avant la fondation de Lusaka. Des tensions et des deplacements ont marque leurs relations lors des periodes de perturbation (arrivee Bene Mukuni au XVIIIe siecle, arrivee des Europeens au XIXe siecle).",
+      "conflictsOrAlliances": "Conflit avec les Bene Mukuni (vers 1700) qui les chassa de Chisamba. Raids des commercants d'esclaves arabes et portugais au XIXe siecle (depuis la cote de Tanzanie, Mozambique et Angola). Soumission a la British South Africa Company dans les annees 1890.",
+      "diaspora": "En raison de l'urbanisation de Lusaka (devenue capitale nationale), de nombreux Basoli ont ete deplaces de leurs terres ancestrales. Ils se sont disperses dans les differents quartiers de la capitale tout en maintenant des liens avec leur base a Chongwe. La Chieftainess siege a Chongwe, preservant l'identite culturelle Soli face a l'urbanisation croissante."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 155000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org (2025): 155 000; Joshua Project estimait 75 000 (chiffres moins recents)",
+      "distributionByCountry": [
+        {
+          "countryCode": "ZMB",
+          "population": 155000,
+          "notes": "Province de Lusaka, principalement dans le district de Chongwe et les quartiers periurbains de Lusaka"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Soli people – Wikipedia (https://en.wikipedia.org/wiki/Soli_people)",
+      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
+      "Soli of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015632/)",
+      "Soli in Zambia – Joshua Project (https://joshuaproject.net/people_groups/print/14977/ZA)",
+      "Manchishi, P.C. et Musona, E.T. – A Brief History of the Soli People from 1500-1900 (1990)",
+      "Machinyise, E. et al. – The Birth and Sociolinguistic Features of Sala Language of Zambia, IJRISS 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)"
+    ]
   }
 }

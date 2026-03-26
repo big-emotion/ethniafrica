@@ -1,0 +1,64 @@
+{
+  "id": "PPL_SWAHILI_YEMEN",
+  "nameMain": "Swahili (Yémen)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "Swahili (Yémen)",
+      "selfAppellation": "Swahili",
+      "exonyms": ["Swahili (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone G)",
+      "historicalRegion": "Côte est de l'Afrique, Yémen",
+      "currentCountries": []
+    },
+    "ethnicities": ["Swahili du Yémen", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Swahili du Yémen sont originaires de la côte est de l'Afrique. Leur présence au Yémen remonte aux migrations historiques et aux contacts commerciaux.",
+      "unificationsOrDivisions": "Organisation en communautés distinctes mais partageant une identité culturelle et linguistique commune avec les Swahili de la côte est de l'Afrique.",
+      "externalInfluences": "Contacts avec les commerçants arabes, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+    },
+    "languages": {
+      "mainLanguage": "Swahili",
+      "vehicularRole": "Le swahili est parlé par une partie des Swahili du Yémen. L'arabe et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Célébrations culturelles",
+      "source_3": "Cérémonies religieuses islamiques",
+      "Symboles": "Symboles culturels swahili, symboles islamiques",
+      "Arts et musique": "",
+      "source_4": "Architecture swahili (maisons en pierre)",
+      "source_5": "Musique traditionnelle (taarab)",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Artisanat (tissage, poterie)",
+      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Migration vers les grandes villes et la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 30000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Swahili language (swa)",
+      "CIA World Factbook – Yemen",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

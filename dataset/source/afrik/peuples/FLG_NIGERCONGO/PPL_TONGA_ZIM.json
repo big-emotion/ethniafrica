@@ -6,59 +6,101 @@
   "content": {
     "appellations": {
       "mainName": "Tonga (Zimbabwe)",
-      "selfAppellation": "Tonga",
-      "exonyms": ["Tonga (terme utilisé par les Européens)"],
+      "selfAppellation": "BaTonga / Basilwizi",
+      "exonyms": [
+        "BaTonga",
+        "Valley Tonga",
+        "Zambezi Tonga",
+        "Tonga du Zimbabwe"
+      ],
+      "originOfExonyms": "Le terme BaTonga (sing. MuTonga) est l'appellation bantoue standard. Basilwizi signifie litteralement gens du grand fleuve, en reference au Zambeze. Les colonisateurs britanniques employaient Tonga comme terme generique pour distinguer ce groupe des autres peuples de Rhodesie du Sud.",
+      "whyProblematic": "Le terme Tonga peut preter a confusion car il designe aussi les Tonga du Malawi (groupe non apparente, zone linguistique differente) et les Tonga du Pacifique. Les Tonga du Zimbabwe sont specifiquement des Bantous de la Zone N, apparentes aux Tonga de Zambie.",
+      "contemporaryUsage": "L'appellation BaTonga est couramment utilisee au Zimbabwe et en Zambie. Basilwizi est un terme identitaire fort, notamment depuis le deplacement force lie au barrage de Kariba (1957-1962). L'organisation Basilwizi Trust defend les droits des Tonga deplaces.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone N)",
-      "historicalRegion": "Zimbabwe",
+      "ethnoLinguisticGroup": "Bantou (Zone N) — sous-groupe Bantu botatwe (Tonga, Ila, Lenje)",
+      "historicalRegion": "Vallee du Zambeze, district de Binga (Matabeleland Nord), region de Kariba",
       "currentCountries": ["ZWE", "ZMB"]
     },
-    "ethnicities": ["Tonga du Nord", "Tonga du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Tonga de la vallee (Valley Tonga) — regions de Binga, Mola, Kariba",
+      "Tonga du plateau (Plateau Tonga) — zones elevees de Binga apres le deplacement de Kariba",
+      "Tonga-Goba — sous-groupe pres de la frontiere zambienne",
+      "Tonga de Gwembe — communautes du district de Gwembe cote zambien, partageant la meme identite",
+      "Sous-groupes clans principaux: Mudenda, Munkombwe, Muyuni, Mweetwa, Munsaka, Muloongo"
+    ],
     "origins": {
-      "ancientOrigins": "Les Tonga du Zimbabwe sont originaires de la région du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone N).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Tonga de ZMB, du Malawi et du Mozambique.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les BaTonga sont considers comme l'un des premiers groupes bantous a avoir traverse le Zambeze, vraisemblablement entre 300 et 400 apr. J.-C., venant du nord-est (regions de Nubie et du bassin du lac Malawi). Des etablissements de l'age du fer datant du 7e siecle ont ete retrouves en province du Sud de la Zambie, dont le site d'Ingombe Ilede (la vache endormie), dont la poterie est proche de celle des Tonga actuels. Ils font partie du groupe linguistique Bantu botatwe (les trois Bantous), avec les Ila et les Lenje.",
+      "formationPeriod": "L'identite tonga du Zimbabwe s'est cristallisee dans la vallee du Zambeze sur plusieurs siecles. Avant la colonisation, les Tonga n'avaient pas de chef supreme, leur organisation etant fondee sur de petites communautes de voisinage selon l'anthropologue Elizabeth Colson. La periode coloniale a impose des structures de chefferies etrangeres a leur tradition.",
+      "migrationRoutes": [
+        "Migration desde le nord-est (Nubie, region des Grands Lacs) vers la vallee du Zambeze entre 300 et 400 apr. J.-C.",
+        "Traversee du Zambeze et etablissement le long des rives fertiles du fleuve",
+        "Deplacement force vers les plateaux arides de Binga lors de la construction du barrage de Kariba (1957-1962)"
+      ],
+      "historicalSettlementZones": [
+        "Rives fertiles du Zambeze, entre Chirundu et Victoria Falls",
+        "District de Binga (Matabeleland Nord, Zimbabwe)",
+        "District de Kariba et region de Mola (Zimbabwe)",
+        "District de Gwembe (province du Sud, Zambie)"
+      ],
+      "unificationsOrDivisions": "Les Tonga etaient historiquement organises en communautes de voisinage independantes sans autorite centrale. La colonisation britannique a introduit des chefferies. Le deplacement de Kariba a provoque une cassure profonde entre Tonga du Zimbabwe et de Zambie tout en renforçant l'identite commune de Basilwizi. Depuis les annees 1990, des mouvements de restitution et de reparation ont renforce la solidarite trans-frontaliere.",
+      "externalInfluences": "Au 19e siecle, durant les regnes de Mzilikazi et Lobengula, les Ndebele consideraient les Tonga comme tres pacifiques. Influence coloniale britannique ayant introduit le christianisme et les structures de chefferies. Impact massif de la construction du barrage de Kariba (1957-1962) qui a noye les terres ancestrales et deplace 23 000 BaTonga au Zimbabwe et 34 000 en Zambie.",
+      "majorHistoricalEvents": "1957-1962: Deplacement force de 23 000 BaTonga du Zimbabwe par le gouvernement de Rhodesie du Sud pour la construction du barrage de Kariba. Les familles furent transportees dans des camions vers les plateaux arides et pierreux de Binga, qualifies d'ecologiquement hostiles (faibles pluies, sols pauvres, mouches tse-tse). Aucune compensation monetaire ne fut versee. En 1994, le pere Mike Tremel publia The People of the Great River, revivant la memoire de ce deplacement. En 1996, l'Autorite du fleuve Zambeze reconnut que la reinstallation n'avait pas pris en compte les besoins des populations."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Historiquement, les BaTonga n'avaient pas de chef supreme (paramount chief). La plus grande unite territoriale etait la communaute de voisinage, selon l'anthropologue Elizabeth Colson. Le pouvoir etait exerce par des anciens et des conseils de clan. La colonisation britannique a impose des chefferies artificielles. Aujourd'hui, des chefs traditionnels (chiefs) existent dans les districts de Binga et Kariba, mais leur autorite reste principalement ceremonielle.",
+      "clanOrganization": "Organisation en clans matrilineaires exogames appeles mikowa, chacun avec un totem (la plupart des totems sont des animaux). Un BaTonga a deux clans: kumausyi (cote paternel) et kumanyina/kumukowa (cote maternel). Principaux clans: Mudenda (elephant ou zebre), Munkombwe (coq), Muyuni (oiseau), Mweetwa (crocodile), Munsaka (chien ou elephant), Muloongo (singe), Muleya (chevre), Muchindu (lion).",
+      "ageClassSystems": "Pas de systeme de classes d'age formalise comme chez certains peuples voisins. La transmission du savoir se fait au sein des lignages maternels et par l'experience collective.",
+      "roleOfLineages": "Les lignages matrilineaires (mikowa) determinent l'identite, l'appartenance clanique, les alliances matrimoniales et la succession. La succession suit un systeme collateral rotatif: de frere en frere, puis d'oncle maternel a neveu. Les femmes jouent un role central dans la transmission de l'identite clanique.",
+      "religiousAuthority": "Autorite des mediums spirituels et gardiens des sanctuaires (malende), concentres dans la vallee du Zambeze. Culte central de Nyaminyami, l'esprit-serpent du fleuve Zambeze, considere comme gardien et pourvoyeur de subsistance et de fertilite. Ceremonies de propitiation liees aux crues du Zambeze et aux pluies. Le christianisme (catholique et protestant) est present depuis la colonisation, avec un syncretsime notable."
     },
     "languages": {
-      "mainLanguage": "Tonga",
-      "vehicularRole": "Le tonga est parlé par la majorité des Tonga du Zimbabwe. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Tonga (tchitonga / citonga)",
+      "isoCodes": ["toi"],
+      "dialects": [
+        "Tonga de la vallee (Valley Tonga, tchitonga) — principal dialecte du Zimbabwe",
+        "Tonga du plateau (Plateau Tonga) — parle dans les zones de reinstallation de Binga",
+        "Tonga de Gwembe — dialecte cote zambienne, tres proche du tonga zimbabween"
+      ],
+      "vehicularRole": "Le tonga (ISO 639-3: toi) est parle par environ 137 000 personnes au Zimbabwe (Ethnologue, 2024) et 1,38 million en Zambie. C'est une langue stable de la famille Niger-Congo. Lingua franca dans le district de Binga et les regions de Kariba. L'anglais est la langue officielle du Zimbabwe et est utilise dans les administrations. Le ndebele est egalement parle dans la region (Matabeleland Nord)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels tonga, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Ceremonie Lwiindi Gonde: festival annuel de remerciement aux ancetres et aux dieux pour les bonnes pluies et la recolte; celebree conjointement par les Tonga du Zimbabwe et de Zambie, symbole fort d'identite trans-frontaliere. Rites de passage a l'age adulte marques par des ceremonies familiales. Ceremonies de propitiation a Nyaminyami lors des periodes de secheresse ou d'inondation. Rites funeraires avec veillees communautaires et repas collectifs. Ceremonies agricoles avant les semailles (invocations aux ancetres et a Nyaminyami).",
+      "symbols": "Nyaminyami, l'esprit-serpent du Zambeze, est le symbole le plus puissant de l'identite BaTonga; son effigie est sculptee sur des boucles de ceinture, bijoux et objets rituels. Le fleuve Zambeze lui-meme est un symbole identitaire central (Basilwizi = gens du grand fleuve). Le totem du lion (Tau/Dau) est l'ancien totem originel de la nation tonga. Les tambours rituels (ngoma) et l'instrument izeze (violon a une corde) sont des symboles culturels majeurs.",
+      "artsAndMusic": "Musique traditionnelle rythmee par les tambours ngoma (grands et petits) joues par les femmes comme par les hommes. Instrument traditionnel izeze: violon a une corde, caracteristique des Tonga. Chants de danse collectifs enregistres par Hugh Tracey en 1957 (Dance Songs with Drums from the Valley Tonga People, Smithsonian Folkways). Poterie traditionnelle et vannerie artisanale. Sculpture sur bois incluant des effigies de Nyaminyami, devenues aussi des objets touristiques. Storytelling oral (contes, proverbes) central dans la transmission culturelle.",
+      "spiritualities": "Cosmologie centree sur Nyaminyami, la divinite-serpent du Zambeze, pourvoyeur de nourriture, de fertilite et de protection. Veneration des ancetres (mizimu) comme mediateurs entre les vivants et les forces spirituelles. Sanctuaires (malende) dans la vallee du Zambeze, geres par des gardiens rituels. Croyance en LEZA/NACAANZO comme divinite supreme creatrice. Syncretsime avec le christianisme (catholique et protestant), introduit par les missionnaires coloniaux; nombreuses eglises africaines independantes dans le district de Binga."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora tonga dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les BaTonga historiques ne formaient pas de royaumes centralises. Leur organisation etait fondee sur des communautes de voisinage independantes sous des anciens et des conseils clanique (Colson, 1971). Quelques figures de chefs locaux sont mentionnees dans les traditions orales: Sinang'ombe, Sichilaba, Shansali. La chefferie de Binga est l'autorite traditionnelle principale au Zimbabwe depuis la colonisation.",
+      "relationsWithNeighbors": "Relations historiquement pacifiques avec les Ndebele (Matabele) sous Mzilikazi et Lobengula au 19e siecle, qui les consideraient comme un peuple tres pacifique. Relations de coexistence avec les Shona (Korekore de Hurungwe, Shangwe de Kariba/Gokwe) le long de la vallee du Zambeze, creant des generations hybrides Tonga-Shona. Liens etroits avec les Tonga de Zambie, partageant langue, culture et la ceremonie Lwiindi.",
+      "conflictsOrAlliances": "Le deplacement force de Kariba (1957-1962) est le trauma historique central: 23 000 BaTonga zimbabweens deportes sans compensation adequite. Des decennies de pauvrete structurelle dans le district de Binga ont suivi. En 1994-1996, des mouvements de reparation ont commence avec le soutien de l'Autorite du fleuve Zambeze et d'ONG comme Basilwizi Trust. Le rapport de la World Commission on Dams (WCD) a documente ce deplacement comme l'un des cas d'etude majeurs d'injustice liee aux grands barrages.",
+      "diaspora": "Migration rurale-urbaine vers Bulawayo, Harare et Johannesburg. Certains descendants de deplaces de Kariba resident maintenant dans des villes minières. Une communaute de plaidoyer internationale s'est formee autour de Basilwizi Trust pour les droits des Tonga deplaces."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 340000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Ethnologue (SIL International, 2024): 137 000 locuteurs de toi au Zimbabwe. Wikipedia/sources secondaires: jusqu'a 300 000 Tonga au Zimbabwe. Binga District Profile (Food and Nutrition Council Zimbabwe). Estimation 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 300000,
+          "note": "District de Binga (Matabeleland Nord), Kariba, Mola — zones de reinstallation post-barrage de Kariba"
+        },
+        {
+          "country": "ZMB",
+          "population": 40000,
+          "note": "Province du Sud (district de Gwembe), Tonga du Zimbabwe installes en Zambie; les Tonga de Zambie au total sont 1,38 million (population distincte)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Tonga languages (toi, tog)",
-      "CIA World Factbook – Zimbabwe",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Tonga people (Zambia and Zimbabwe). https://en.wikipedia.org/wiki/Tonga_people_(Zambia_and_Zimbabwe)",
+      "SIL Ethnologue — Tonga (toi), langue du Zimbabwe et Zambie. https://www.ethnologue.com/language/toi/",
+      "Matebeleland Pulse (2026) — 23 000 BaTonga Displaced from Kariba. https://matebelelandpulse.co.zw/2026/03/14/batonga-displaced-kariba-dam-binga-zimbabwe-forgotten-dist/",
+      "International Rivers Resource Hub (1995/2007) — Legacy of Dams on the Zambezi. https://riverresourcehub.org/resources/legacy-of-dams-on-the-zambezi-group-works-to-right-wrongs-at-kariba-dam-1995/",
+      "Mashingaidze, Terence M. — The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements, 1956-1980s. Journal of African History of Social Sciences, vol. 9, no. 1. https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf",
+      "Colson, Elizabeth (1971) — The Social Consequences of Resettlement. Manchester University Press.",
+      "Zimtribes.com — Tonga Tribes, clans and political organization. https://www.blog.zimtribes.com/tonga-groups/",
+      "Smithsonian Folkways — Dance Songs with Drums from the Valley Tonga. https://folkways.si.edu/dance-songs-with-drums-from-the-valley-tonga-people-of-zambia/world/music/album/smithsonian"
     ]
   }
 }

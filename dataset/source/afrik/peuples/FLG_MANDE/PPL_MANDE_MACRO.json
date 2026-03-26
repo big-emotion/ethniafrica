@@ -6,70 +6,146 @@
   "content": {
     "appellations": {
       "mainName": "Peuples Mandé (macro-groupe)",
-      "selfAppellation": "Variées selon les groupes (Maninka, Bambara, Dioula, etc.)",
+      "selfAppellation": "Variées selon les groupes : Maninka (Guinée, Mali), Bambara (Mali), Dioula (Burkina Faso, Côte d'Ivoire), Mandinka (Gambie, Sénégal), Soninké (Mali, Mauritanie), Kpelle (Libéria, Guinée), Mende (Sierra Leone)",
+      "exonyms": [
+        "Mandé",
+        "Mande",
+        "Mandingo (anglophone, générique)",
+        "Manding (pan-mandé)",
+        "Mandingue (français colonial)"
+      ],
+      "originOfExonyms": "Le terme Mandé (ou Mande) désigne une famille de langues et un ensemble de peuples liés par une origine commune dans la région du Manden (actuel Mali méridional et Guinée nord-orientale). Mandingo est la version anglophone utilisée par les colonisateurs britanniques pour désigner l'ensemble des peuples mandé. Mandingue est l'équivalent français colonial. Manding est une forme pan-mandé couramment utilisée dans la littérature académique pour les langues du sous-groupe Manding (Bambara, Malinké, Dioula, Mandinka).",
+      "whyProblematic": "Le terme Mandé recouvre une réalité linguistique (famille de langues) et une réalité ethno-culturelle (peuples partageant des origines communes) qui ne se superposent pas parfaitement. Certains groupes classifiés comme mandé (ex. Kpelle, Mende) diffèrent culturellement des groupes mandé du cœur sahélien (Bambara, Malinké). De plus, les frontières entre Mandé et d'autres familles (Gur, Kwa) ne sont pas toujours claires dans les sources populaires.",
+      "contemporaryUsage": "Mandé est le terme académique standardisé en linguistique et en anthropologie pour désigner cette famille de langues et les peuples associés. L'écriture N'Ko (créée en 1949 par Solomana Kante) constitue une tentative d'unification culturelle pan-mandé, utilisée notamment en Guinée, au Mali et au Burkina Faso.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "Mandé (macro-groupe)",
-      "historicalRegion": "Afrique de l'Ouest (MLI, GIN, SEN, CIV, BFA, etc.)",
+      "ethnoLinguisticGroup": "Mandé (macro-groupe, comprenant Mandé occidental et Mandé oriental)",
+      "historicalRegion": "Sahel occidental, savane soudanienne et zones forestières de l'Afrique de l'Ouest : du Sénégal et de la Mauritanie à l'ouest jusqu'au Nigeria à l'est, de la Mauritanie au nord à la Côte d'Ivoire et au Libéria au sud",
       "currentCountries": ["MLI", "GIN", "SEN", "CIV", "BFA", "GMB", "SLE"]
     },
     "ethnicities": [
-      "Malinké / Mandinka",
-      "Bambara",
-      "Dioula",
-      "Soninké",
-      "Kpelle",
-      "Lobi",
-      "Autres groupes mandé"
+      "Malinké / Mandinka / Maninka (Mali, Guinée, Sénégal, Gambie, Côte d'Ivoire)",
+      "Bambara / Bamana (Mali — groupe le plus nombreux, 10 millions)",
+      "Dioula / Jula (Burkina Faso, Côte d'Ivoire — lingua franca commerciale)",
+      "Soninké / Sarakolé (Mali, Mauritanie, Sénégal — héritiers de l'empire du Ghana)",
+      "Kpelle / Guerze (Libéria, Guinée — mandé méridional)",
+      "Mende (Sierra Leone — mandé méridional)",
+      "Susu / Soussou (Guinée côtière)",
+      "Yalunka (Guinée, Sierra Leone)",
+      "Vai (Libéria, Sierra Leone — inventeurs d'une écriture syllabique propre)",
+      "Loma / Toma (Guinée, Libéria)",
+      "Gbandi (Libéria)",
+      "Bozo (Mali — pêcheurs du fleuve Niger, dits fondateurs de Djenné)",
+      "Marka / Soninké-Marka (Burkina Faso)",
+      "Bissa (Burkina Faso)",
+      "Dan / Yacouba (Côte d'Ivoire, Libéria — mandé oriental)"
     ],
     "origins": {
-      "ancientOrigins": "Les peuples Mandé sont originaires de la région du Mandé (MLI, GIN), berceau de l'empire du Mali. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Diversité linguistique importante.",
-      "externalInfluences": "Influence profonde de l'islam, rôle majeur dans l'empire du Mali et les réseaux commerciaux transsahariens."
+      "ancientOrigins": "Les ancêtres des peuples mandé sont originaires de l'Afrique du Nord-Est et ont migré vers l'Afrique de l'Ouest pendant la période du Sahara Vert (Green Sahara), avant son assèchement vers 3500 av. J.-C. Cette migration suivait probablement les voies saisonnières des cours d'eau vers le Niger et le bassin du Tchad. Les Proto-Mandé ont établi la culture de Tichitt en Mauritanie (2200-200 av. J.-C.), avec comme centre principal Dhar Tichitt, développant une agriculture céréalière sophistiquée (mil, sorgho, riz) entre 3000 et 1000 av. J.-C. Vers 900 av. J.-C., ils fondèrent Djenné-Djenno dans la vallée du Niger (Mali), qui deviendra l'une des plus vieilles villes d'Afrique subsaharienne (habitée jusqu'au 13e siècle CE). Le haplogroupe paternel E1b1a1-M2 (70-97% en Afrique de l'Ouest) est le marqueur génétique prédominant des peuples mandé.",
+      "formationPeriod": "La famille linguistique mandé s'est différenciée progressivement à partir d'un proto-mandé commun. La formation des identités ethniques distinctes s'est accélérée avec l'essor des grands empires (Ghana, Mali, Songhaï) aux 8e-16e siècles, puis lors des vagues migratoires mane des 15e-16e siècles qui ont porté les mandé méridionaux vers les régions forestières côtières. Les migrations commerciales dioula (14e-19e siècles) ont étendu la présence mandé à travers toute l'Afrique de l'Ouest.",
+      "migrationRoutes": [
+        "Depuis le Sahara central vers l'Afrique de l'Ouest (via cours d'eau, avant 3500 av. J.-C.)",
+        "Établissement en Mauritanie (culture de Tichitt, 2200-200 av. J.-C.)",
+        "Descente vers la vallée du Niger moyen (Djenné-Djenno, 900 av. J.-C.)",
+        "Expansion vers l'est et l'ouest depuis le Manden (12e-16e siècles CE)",
+        "Migrations mane vers les côtes (15e-16e siècles) : Guinée Forestière, Sierra Leone, Libéria",
+        "Routes commerciales dioula vers Burkina Faso et Côte d'Ivoire (14e-19e siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Mauritanie méridionale (Dhar Tichitt, Tagant, Walata) — foyer originel documenté",
+        "Vallée du Niger moyen (Djenné-Djenno, Tombouctou, Gao) — Mali actuel",
+        "Manden (Mali méridional, Guinée nord-orientale) — berceau politique",
+        "Sénégambie (Sénégal, Gambie, Guinée-Bissau) — diaspora mandinka",
+        "Guinée côtière et forestière (Soussou, Kpelle/Guerze)",
+        "Sierra Leone et Libéria (Mende, Kpelle, Loma, Gbandi)",
+        "Côte d'Ivoire du nord (Dioula, Dan/Yacouba)",
+        "Burkina Faso occidental (Dioula, Bissa, Marka)"
+      ],
+      "unificationsOrDivisions": "Les peuples mandé ne constituent pas une entité politique unifiée mais une famille linguistique et culturelle comprenant des dizaines de groupes distincts. La principale division linguistique oppose le Mandé occidental (27 langues, dont bambara, malinké, mandinka, dioula, soninké, soussou, kpelle, mende) au Mandé oriental (13 langues, dont dan/yacouba, bissa, bozo). Malgré cette diversité, des traits culturels communs les unissent : système de castes (nyamakala), tradition des griots (jeliw/jalolu), épopée de Soundiata, pratique dominante de l'islam sunnite.",
+      "externalInfluences": "Islam (11e-19e siècles) : influence profonde sur la majorité des groupes mandé via les réseaux commerciaux transsahariens, les jihads soufis et les marabouts. Colonisation européenne (française, britannique, portugaise, 19e-20e siècles) ayant restructuré les frontières et les systèmes politiques. Traite transatlantique (16e-19e siècles) : les peuples mandé, notamment les Mandinka de Sénégambie, comptent parmi les groupes les plus représentés dans les populations africaines-américaines.",
+      "majorHistoricalEvents": "Empire du Ghana (Wagadu, 4e-11e siècles CE). Fondation de l'empire du Mali par Soundiata Keïta (1235). Pèlerinage de Mansa Musa à La Mecque (1324). Apogée de l'empire du Mali (14e siècle). Université de Sankore à Tombouctou (12e siècle). Déclin du Mali et essor Songhaï (15e siècle). Vague migratoire mane (16e siècle). Jihads soufis (18e-19e siècles). Résistance de Samori Touré à la colonisation française (Wassoulou, 1882-1898). Indépendances africaines (1957-1965). Charte du Mandé (1222), texte de droits de l'homme transmis oralement."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance. Tradition de l'empire du Mali.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie sociale traditionnelle (nobles, griots, artisans, esclaves).",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, le statut social et les alliances. Importance de la généalogie.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite (malékite) structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation variable selon les groupes : de l'empire centralisé (Mali sous Mansa Musa) à la chefferie de village autonome (Kpelle acéphale). Le modèle dominant est la confédération de villages (kafu chez les Mandinka, dugu-kolo chez les Bambara) dirigée par un chef héréditaire assisté d'un conseil d'anciens. Les sociétés secrètes (Poro, Sande, Komo, Dwo) exercent une autorité transversale parallèle, particulièrement dans les groupes mandé méridionaux. La tradition de l'empire du Mali a instauré le titre de mansa (roi/empereur) pour les grands dirigeants politiques. Aujourd'hui, les chefferies traditionnelles coexistent avec les États nationaux.",
+      "clanOrganization": "Système de castes héréditaires commun à la majorité des groupes mandé : horon/foro (libres, nobles et agriculteurs), nyamakala/nyamolo (castes d'artisans et griots, endogames : forgerons, cordonniers, potiers, sculpteurs, griots/jeliw), jonw/jongo (descendants d'esclaves). Les griots (jeliw, jalolu) constituent une caste essentielle : historiens, musiciens, diplomates et gardiens de la mémoire collective. La sanankuya (relation à plaisanterie) entre clans mandinka régule les tensions sociales. Les patronymes (jamu/djamu) identifient l'appartenance clanique.",
+      "ageClassSystems": "Rites d'initiation à la puberté généralisés dans les groupes mandé. Sociétés secrètes d'initiation masculine (Poro dans les groupes méridionaux comme les Kpelle et Mende ; Komo chez les Bambara) et féminine (Sande/Bundu). Ces sociétés créent des classes d'âge cohésives et transmettent les savoirs traditionnels. La société Poro se réunit dans des bosquets sacrés et contrôle l'initiation et la gouvernance locale dans les groupes mandé méridionaux.",
+      "roleOfLineages": "Les lignages patrilinéaires sont dominants chez les groupes mandé septentrionaux (Malinké, Bambara, Soninké). Les Lobi (en réalité un groupe Gur et non Mandé) pratiquent la bilinéarité. La généalogie est fondamentale : les griots conservent et récitent les lignages sur des dizaines de générations. L'autorité politique et la propriété foncière se transmettent dans le lignage paternel. La relation fadenya (tensions entre demi-frères de même père/mères différentes) est un moteur dramatique clé de l'organisation sociale et politique mandé.",
+      "religiousAuthority": "Islam sunnite malékite : principal cadre religieux des peuples mandé depuis le 12e-13e siècle. Les oulémas et imams structurent l'éducation coranique (écoles coraniques, daara). Les marabouts (almaami, alpha) jouent un rôle de médiation entre le divin et les fidèles via les talismans coraniques. Les confréries soufies (Tijaniyya, Qadiriyya, Mouridiyya en Sénégambie) ont une influence majeure. Les griots (jeliw) maintiennent l'autorité sur la mémoire historique. Dans les groupes mandé méridionaux (Kpelle, Mende), la société Poro conserve une autorité religieuse et civile préislamique."
     },
     "languages": {
-      "mainLanguage": "Langues mandé (Malinké, Bambara, Dioula, Soninké, Kpelle, etc.)",
-      "vehicularRole": "Les langues mandé sont parlées par les peuples Mandé. Le bambara et le dioula servent de langues véhiculaires dans certaines régions. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Famille de langues mandé (environ 60 à 75 langues)",
+      "isoCodes": ["bam", "man", "snk", "sus", "men", "kpe", "vai", "dyu"],
+      "dialects": [
+        "Mandé occidental (27 langues) : bambara (bam, 10+ millions locuteurs Mali), malinké/mandinka (man, 15 millions), dioula (dyu, 4 millions lingua franca Côte d'Ivoire/Burkina Faso), soninké (snk, 2 millions), soussou (sus, Guinée), kpelle (kpe, 1,2 million Libéria/Guinée), mende (men, Sierra Leone)",
+        "Mandé oriental (13 langues) : dan/yacouba (Côte d'Ivoire/Libéria, 1,5 million), bissa (Burkina Faso, 700 000), bozo (Mali, pêcheurs du Niger)",
+        "N'Ko : système d'écriture panmandé créé par Solomana Kante en 1949 (Guinée), utilisé pour le bambara, le malinké, le dioula et d'autres langues mandé"
+      ],
+      "vehicularRole": "Les langues mandé comptent environ 60 millions de locuteurs (Wikipedia) ou 25 millions selon les estimations plus conservatrices (Ethnologue, EBSCO), parlées dans 10 à 15 pays d'Afrique de l'Ouest. Le bambara est la langue nationale du Mali (80% de la population). Le dioula est la lingua franca du nord de la Côte d'Ivoire et du Burkina Faso occidental (4 millions locuteurs). Le mandinka est la principale langue de Gambie. Les langues mandé constituent une des familles linguistiques les plus importantes d'Afrique de l'Ouest, avec plusieurs systèmes d'écriture indépendants (N'Ko, Vai syllabaire, Mende syllabaire, écriture Kpelle)."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "source_4": "Cérémonies de griots",
-      "Symboles": "Symboles de l'empire du MLI, symboles islamiques, symboles culturels mandé.",
-      "Arts et musique": "",
-      "source_5": "Musique traditionnelle (kora, balafon, djembé)",
-      "source_6": "Tradition des griots (jaliya)",
-      "source_7": "Danse traditionnelle",
-      "source_8": "Poésie orale (épopée de Soundiata)",
-      "source_9": "Artisanat (tissage, poterie, sculpture)",
-      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture mandé. Traditions pré-islamiques préservées dans certaines communautés."
+      "majorRites": "Initiation à la puberté universelle dans les groupes mandé : circoncision masculine et rites féminins correspondants, incluant des séjours en brousse sous la supervision des sociétés secrètes (Poro, Sande, Komo). Epopée de Soundiata (Sunjata Fasa) : récitée tous les sept ans par les griots de Kela (Mali) selon la tradition officielle, devant les descendants de Soundiata. Cérémonie Kamabolon à Kangaba (Mali) : reconstruction du sanctuaire sacré des Keïta tous les sept ans, événement pan-mandé majeur. Rituel joro des Lobi (groupe Gur, inclus ici par erreur de classification). Rites agricoles de semailles et de récoltes. Célébrations islamiques majeures (Eid al-Adha, Eid al-Fitr, Mawlid) intégrées dans la vie culturelle mandé. Sacrifice annuel d'un taureau noir chez les Mandinka pour les esprits ancestraux.",
+      "symbols": "Kora : harpe-luth à 21 cordes des griots malinké, symbole musical par excellence des peuples mandé. Djembe : tambour conique originaire de Guinée, symbole de la musique mandé dans le monde. N'goni : luth ancestral, ancêtre du banjo africain-américain. Sculpture de Djenné-Djenno : figurines en terre cuite (humains, animaux, chevaux, serpents) du 1er au début du 2e millénaire CE, symbole de la civilisation mandé ancienne. N'Ko (écriture) : système d'écriture panmandé créé en 1949, symbole d'unité culturelle. Art rupestre mandé au Mali (formes géométriques, animaux, humains) lié aux migrations du 15e siècle. Masques rituels Komo (Bambara), Poro (Kpelle, Mende) et Dan.",
+      "artsAndMusic": "Tradition des griots (jeliw/jalolu) : bards, historiens, musiciens et diplomates héréditaires. Instruments emblématiques : kora (harpe-luth à 21 cordes), n'goni (luth à 4 cordes, ancêtre du banjo), djembé (tambour), balafon (xylophone en bois), dundun (tambour de basse). Musiciens renommés : Toumani Diabaté (kora), Mamadou Diabaté (kora), Kandia Kouyaté (voix). Épopée de Soundiata (64 versions publiées à la fin du 20e siècle) : ensemble de mythes et d'histoire orale sur la fondation de l'empire du Mali. Littérature écrite : Tarikh al-Fattash et Tarikh al-Sudan (chroniques de Tombouctou, 16e-17e siècles). Artisanat : bogolan (tissu peint à la boue, Mali), bijoux en or et argent, maroquinerie, poterie (Soninké), sculpture de masques rituels, tissage. Architecture : cases rondes à toit de chaume (sahel), architecture en banco de Djenné (UNESCO). Art du quai Branly : collections importantes d'art mandé (Bambara, Dan, Mende).",
+      "spiritualities": "Islam sunnite malékite dominant (adoptés progressivement depuis le 11e siècle) : rituel des cinq piliers, école coranique (daara), confréries soufies (Tijaniyya, Qadiriyya, Mouridiyya). Syncrétisme profond : les croyances animistes préislamiques persistent sous le vernis islamique. Culte des esprits ancestraux et de la terre (notamment chez les Bambara, Mende, Kpelle). Nyama (force vitale spirituelle) : concept mandé de puissance spirituelle résidant dans tous les êtres et objets, manipulée par les initiés et les nyamakalaw (castes d'artisans). Sociétés secrètes d'initiation : Poro (Kpelle, Mende, Loma) et Komo (Bambara) maintiennent des rituels préislamiques fondamentaux. Figurines rituelles anthropomorphes : Chiwara (antilope Bambara), masques Komo, bateba (Lobi). Animisme maintenu chez certains groupes méridionaux (Bobo du Burkina Faso, Kpelle animistes de Guinée). Les marabouts islamiques utilisent les versets du Coran comme fétiches protecteurs, créant un syncrétisme islamo-animiste caractéristique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora mandé importante dans les pays d'Afrique de l'Ouest, et dans les pays occidentaux (États-Unis, France). Diaspora historique aux Amériques (traite transatlantique)."
+      "kingdomsOrChiefdoms": "Culture de Tichitt (Mauritanie, 2200-200 av. J.-C.) : proto-état mandé. Djenné-Djenno (Mali, 250 av. J.-C. - 13e siècle CE) : ville fondée par les ancêtres bozo/soninké des Mandé. Empire du Ghana / Wagadu (Soninké, 4e-11e siècles) : premier grand empire mandé, commerce transaharien de l'or. Empire du Mali (Malinké/Mandinka, 1235-15e siècle) : fondé par Soundiata Keïta, étendu à l'apogée de Mansa Musa sur une surface égale à l'Europe occidentale ; université de Sankore à Tombouctou. Sosso (Soussou, sous Soumaoro Kanté). Kaabu (Mandinka, Sénégambie). Wassoulou (Malinké, Samori Touré, résistance anticoloniale 1882-1898). Royaume Bambara de Ségou (18e-19e siècles). Royaume Kong (Dioula, Côte d'Ivoire, 17e-19e siècles). Royaume de Gwiriko (Dioula, Burkina Faso). Royaumes mandinka le long du fleuve Gambie (début 19e siècle).",
+      "relationsWithNeighbors": "Commerce transsaharien (or, sel, cuir, esclaves) avec les Berbères et Arabes du Maghreb, structurant les échanges dans tout le Sahel. Relations commerciales et culturelles avec les Wolof, Sérère, Fula/Peul, Songhaï, Mossi, Ashanti, et d'autres peuples d'Afrique de l'Ouest. Influence culturelle et islamique sur de nombreux peuples non-mandé voisins (Wolof nyeno, Sérère, Dogon, Gur). Tensions et guerres récurrentes avec les Fula/Peul (jihads), les Mossi (anti-islamiques), et les empires voisins.",
+      "conflictsOrAlliances": "Bataille de Kirina (1235) : Soundiata Keïta défait Soumaoro Kanté. Conquête du Sahel par l'empire du Mali (13e-14e siècles). Jihads fula (Imamat du Fouta Djalon, 18e siècle) convertissant les Mandinka de l'Ouest à l'islam. Résistance à la colonisation française : guerres du Wassoulou (Samori Touré, 1882-1898), rébellion de 1915-1916 au Libéria (Kpelle et autres peuples de l'intérieur). Traite transatlantique : entre 16e et 19e siècles, des centaines de milliers de Mandé (Mandinka en particulier) ont été déportés en esclavage vers les Amériques. Conflits contemporains : guerres civiles du Libéria (1989-2003) et de la Sierra Leone (1991-2002) ayant durement touché les groupes mandé méridionaux.",
+      "diaspora": "Diaspora historique aux Amériques (traite transatlantique, 16e-19e siècles) : les Mandinka de Sénégambie représentent un des groupes africains les mieux identifiés dans l'héritage africain-américain (Brésil, États-Unis, Caraïbes). Diaspora contemporaine : importantes communautés en France (Guinéens, Maliens, Sénégalais, Burkinabè), au Royaume-Uni, aux États-Unis, en Italie et au Portugal. La diaspora mandé en Europe et en Amérique du Nord est estimée à plusieurs millions de personnes. Migration intra-africaine : importantes communautés mandé (Dioula, Malinké) en Côte d'Ivoire, au Ghana et en Afrique du Sud."
     },
     "demography": {
-      "totalPopulation": 35000000,
+      "totalPopulation": 60000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur CIA World Factbook, recensements nationaux, et études démographiques"
+      "source": "Estimations basées sur Mande languages Wikipedia (environ 60 millions de locuteurs pour 60-75 langues mandé), EBSCO Research Starters (25 millions selon estimations conservatives), CIA World Factbook (profils pays), SIL Ethnologue. Note : les chiffres varient selon les sources (de 25 à 60 millions) en fonction de la définition retenue pour les langues et peuples mandé. La population de 60 millions correspond au total des locuteurs natifs des langues mandé selon Wikipedia (2024). Projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 15000000,
+          "note": "Bambara (majoritaires au Mali, environ 35%), Malinké, Soninké, Dioula, Bozo. Le bambara est parlé par 80% de la population comme lingua franca."
+        },
+        {
+          "country": "GIN",
+          "population": 8000000,
+          "note": "Maninka/Malinké (30%), Soussou (20%), Kpelle/Guerze (6%), Toma/Loma, Yalunka. Les Mandé représentent environ 60% de la population guinéenne."
+        },
+        {
+          "country": "SEN",
+          "population": 4000000,
+          "note": "Mandinka (Casamance, 4%), Soninké, Dioula-Malinké. Diaspora en région dakaroise."
+        },
+        {
+          "country": "CIV",
+          "population": 7000000,
+          "note": "Dioula/Malinké (nord ivoirien, lingua franca commerciale), Dan/Yacouba, Gouro/Guro. Environ 30% de la population ivoirienne."
+        },
+        {
+          "country": "BFA",
+          "population": 4000000,
+          "note": "Dioula (10%), Marka, Bissa. Présence mandé surtout dans l'ouest et le centre du Burkina Faso."
+        },
+        {
+          "country": "GMB",
+          "population": 800000,
+          "note": "Mandinka : groupe ethnique majoritaire de Gambie (environ 35% de la population)."
+        },
+        {
+          "country": "SLE",
+          "population": 2000000,
+          "note": "Mende (31% de la population, groupe mandé méridional le plus important de Sierra Leone), Loko, Kpelle, Mandinka."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Mande languages",
-      "CIA World Factbook – Country profiles",
-      "Niane, Djibril Tamsir – *Soundjata ou l'épopée mandingue*",
-      "Levtzion, Nehemia – *Ancient Ghana and Mali*",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples mandé"
+      "Wikipedia EN — Mande languages. https://en.wikipedia.org/wiki/Mande_languages",
+      "Wikipedia EN — Mandé peoples. https://en.wikipedia.org/wiki/Mand%C3%A9_peoples",
+      "Britannica — Mande. https://www.britannica.com/topic/Mande",
+      "Britannica — Mande languages. https://www.britannica.com/topic/Mande-languages",
+      "EBSCO Research Starters — Mande Languages. https://www.ebsco.com/research-starters/language-and-linguistics/mande-languages",
+      "Trailblazer Travelz — The Mande People. https://www.trailblazertravelz.com/the-mande-people-west-africa/",
+      "Study.com — Mande People History Location Features. https://study.com/academy/lesson/mande-people-location-culture.html",
+      "SIL Ethnologue — Mande language family. https://www.ethnologue.com/subgroup/1238/",
+      "Niane, Djibril Tamsir — Soundjata ou l'epopee mandingue. Paris : Presence Africaine, 1960.",
+      "Levtzion, Nehemia — Ancient Ghana and Mali. Londres : Methuen, 1973."
     ]
   }
 }

@@ -1,23 +1,97 @@
 {
   "id": "PPL_EKPEYE",
-  "nameMain": "",
+  "nameMain": "Ekpeye",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Ekpeye",
       "selfAppellation": "Ekpeye",
+      "exonyms": [],
+      "originOfExonyms": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Ekpeye est l'unique denomination usitee, tant en interne que dans les sources officielles et academiques nigerianes.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Nigeria (Rivers State)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Igboid (branche Benue-Congo, Niger-Congo)",
+      "historicalRegion": "Ekpeyeland — region d'Ahoada, Delta du Niger (Rivers State, Nigeria)",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ekp)", "Rivers Cultural Studies"]
+    "ethnicities": [
+      "Igbu Ehuda — l'un des sept clans (Igbu) majeurs d'Ekpeyeland",
+      "Igbu Upata — clan incluant Ihuaba, berceau de l'Eze Ekpeye Logbo I (Eze Edmund Unoshi Ashirim)",
+      "Igbu Ubie — clan dont est issu l'Eze Ekpeye Logbo II (Robinson O. Robinson, 1979)",
+      "Igbu Akoh — l'un des sept clans fondamentaux",
+      "Igbu Igbuduya — clan historique d'Ekpeyeland",
+      "Igbu Orlukwo — clan etabli dans la region d'Ahoada",
+      "Igbu Ugbobi — septieme clan majeur d'Ekpeyeland"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon les traditions orales ekpeye et les recherches de U. B. Ajugo (2005), l'histoire d'Ekpeyeland remonte a environ 3000 av. J.-C. Les Ekpeye sont descendants d'Akalaka et partagent une origine ancestrale commune avec les Ikwerre et les Ogba de Rivers State. Des liens culturels et linguistiques attestent d'une parenté profonde avec les peuples igboides du Delta du Niger. Les Ekpeye heritent egalement d'une connexion ancestrale avec le Royaume de Benin, dont ils ont adopte la tradition de sculpture de masques (Owu).",
+      "formationPeriod": "Les etudes de Isaac Amini-Philips (1994, 1998) et Gift Ekine (2014) permettent d'etablir une chronologie de l'histoire ekpeye depuis leurs etablissements pre-historiques dans la region d'Ahoada jusqu'a la periode contemporaine. La figure du roi Nworisa (1830-1899) illustre l'organisation politique ekpeye au XIXe siecle. L'Eze Ekpeye Logbo (roi supreme d'Ekpeyeland) fut cree comme institution en 1977.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans la region d'Ahoada (Rivers State), a partir d'une origine commune avec Ikwerre et Ogba",
+        "Mouvements intra-regionaux dans le Delta du Niger selon les dynamiques claniques",
+        "Presence attestee dans Ahoada East LGA, Ahoada West LGA (Rivers State) et Ohaji/Egbema LGA (Imo State)"
+      ],
+      "historicalSettlementZones": [
+        "Ahoada — metropole administrative des Ekpeye (chef-lieu d'Ahoada East LGA)",
+        "Ahoada East et Ahoada West LGA (Rivers State)",
+        "Parties du LGA d'Ogba-Egbema-Ndoni (Rivers State)",
+        "LGA d'Ohaji/Egbema (Imo State)"
+      ],
+      "unificationsOrDivisions": "Les Ekpeye etaient organises en sept clans (Igbu) autonomes avant la creation de l'institution de l'Eze Ekpeye Logbo (roi supreme) en 1977, qui assura une premiere unite politique formelle. Depuis 2022, l'Eze Kelvin Ngozi Anugwo sert de troisieme Eze Ekpeye Logbo.",
+      "externalInfluences": "Influence culturelle significative du Royaume de Benin, notamment dans la tradition de sculpture et de port de masques Owu. Contacts avec les peuples Ikwerre et Ogba. Colonisation britannique integrant Ekpeyeland a la Southern Nigeria Province. Presence de l'industrie petroliere dans le Delta du Niger depuis les annees 1960, impactant le territoire ekpeye.",
+      "majorHistoricalEvents": "Regne de Nworisa (1830-1899), roi marquant de l'histoire ekpeye. Creation de l'institution Eze Ekpeye Logbo (1977). Intronisation d'Eze Edmund Unoshi Ashirim (Logbo I) puis d'Eze Robinson O. Robinson (Logbo II, 1979). Intronisation d'Eze Kelvin Ngozi Anugwo (Logbo III, 4 mai 2022)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en sept clans autonomes (Igbu), chacun gouverne par ses propres autorites claniques. Depuis 1977, l'Eze Ekpeye Logbo (egalement appele Ny'udu Ekpeye Logbo) sert de roi supreme reconnu par l'ensemble des Ekpeye. L'Eze est intronise selon les traditions royales du Delta du Niger et reconnue par le gouvernement de Rivers State.",
+      "clanOrganization": "Les sept Igbu (Ehuda, Upata, Ubie, Akoh, Igbuduya, Orlukwo, Ugbobi) constituent les subdivisions claniques fondamentales. Chaque Igbu est compose de communautes villageoises et familiales organisees de maniere patrilineaire, avec des conseils d'anciens.",
+      "ageClassSystems": "Comme dans de nombreuses societes igboides du Delta, des associations d'age et des societes mascarades (notamment Owu) structurent la vie sociale et ceremonielle. Les jeunes hommes participent aux performances Owu lors des festivals.",
+      "roleOfLineages": "Les lignages patrilineaires (familles etendues) constituent la base de l'organisation sociale ekpeye. La propriete fonciere, les alliances matrimoniales et les responsabilites rituelles sont gerees au niveau du lignage.",
+      "religiousAuthority": "Les chefs claniques et les anciens assurent les fonctions rituelles et religieuses au sein des communautes. Les mascarades Owu et Ugbokolo, ainsi que les festivals Eta et Ogwu Ekpeye, sont presides par des autorites religieuses traditionnelles designees selon les coutumes claniques."
+    },
+    "languages": {
+      "mainLanguage": "Ekpeye",
+      "isoCodes": ["ekp"],
+      "dialects": [
+        "Varietes dialectales entre les sept Igbu (differences lexicales et phonologiques mineures)",
+        "L'ekpeye standard est enseigne dans les ouvrages de David J. Clark (1971) et Gift Ekine (2013)"
+      ],
+      "vehicularRole": "L'ekpeye est la langue communautaire d'Ekpeyeland. Le pidgin nigerien est largement utilise entre les groupes dans le Delta du Niger. L'anglais est la langue officielle et d'enseignement. L'ekpeye est parle dans Rivers State et partiellement dans Imo State."
+    },
+    "culture": {
+      "majorRites": "Le festival Ogwu Ekpeye est la principale celebration culturelle annuelle, reunissant les communautes pour renouveler les liens communautaires, honorer les ancetres et celebrer le patrimoine. Le festival Eta est une celebration rituelle clanique. Le festival Owu mettant en scene les mascarades est un evenement majeur transmis de generation en generation. Le festival Ugbokolo complete le calendrier ceremoniel annuel.",
+      "symbols": "Le masque Owu (terme ekpeye signifiant masque facial) est le symbole culturel le plus emblematique. Les masques sculptes en bois, combines de tissu, de raphia, de grelots et de costumes colores, representent des oiseaux, mammiferes, personnages humains ou etres mythiques. Cet heritage de sculpture de masques est lie a la connexion ancestrale avec le Royaume de Benin, considere comme le berceau de la sculpture de masques.",
+      "artsAndMusic": "La mascarade Owu est une forme d'art scenique sophistiquee ou les danseurs portant des masques sculptes incarnent divers personnages a travers des mouvements codes. Les performers vont des jeunes energiques aux anciens. La musique associee aux mascarades et festivals utilise tambours, grelots (aux chevilles des danseurs) et chants rituels. La sculpture sur bois (masques Owu), la poterie et le tissage constituent les arts visuels traditionnels ekpeye.",
+      "spiritualities": "La religion traditionnelle ekpeye est centree sur le culte des ancetres et la communication avec le monde des esprits, notamment lors des mascarades Owu et des festivals Eta et Ogwu Ekpeye. Le christianisme est aujourd'hui predominant dans la communaute ekpeye, en particulier les Eglises protestantes et catholiques, refletant l'influence missionnaire dans le Delta du Niger."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ekpeye ne formerent pas un royaume centralise mais des federations claniques sous sept Igbu autonomes. La chefferie Eze Ekpeye Logbo, creee en 1977 sous l'impulsion du gouvernement nigerien post-guerre civile, constitue la premiere institution politique d'unite supreme. Le titre est reconnu officiellement par le gouvernement de Rivers State.",
+      "relationsWithNeighbors": "Relations de parenté et d'alliance avec les Ikwerre et les Ogba de Rivers State (origine ancestrale commune depuis Akalaka). Liens culturels avec le Royaume de Benin (heritage de la mascarade Owu). Contacts avec les Ogoni, Ijaw et autres peuples du Delta du Niger dans les reseaux commerciaux regionaux.",
+      "conflictsOrAlliances": "La guerre civile nigeriane (1967-1970) affecta profondement Ekpeyeland, situe dans le Delta du Niger (zone du biafra). La restauration post-guerre et la creation de l'Eze Ekpeye Logbo (1977) viserent a reconstruire l'unite communautaire. Les tensions liees a l'exploitation petroliere dans le Delta du Niger impactent les communautes ekpeye contemporaines.",
+      "diaspora": "Une diaspora ekpeye est presente dans les grandes villes nigerianes (Port Harcourt, Lagos, Abuja). Des associations culturelles ekpeye maintiennent les liens avec la communaute d'origine et promeuvent la preservation de la langue et des traditions."
+    },
+    "demography": {
+      "totalPopulation": 260000,
+      "referenceYear": 2025,
+      "source": "Wikipedia — Ekpeye people : population superieure a 232 000. Projection 2025 estimee a 260 000 en tenant compte du taux de croissance de Rivers State (environ 3 % par an depuis 2020). Ethnologue (code ekp) confirme la presence du groupe au Nigeria.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 260000,
+          "note": "Principalement Ahoada East et Ahoada West LGA (Rivers State), avec presence dans Ohaji/Egbema LGA (Imo State)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Ekpeye people. https://en.wikipedia.org/wiki/Ekpeye_people",
+      "Wikipedia — Ekpeye language. https://en.wikipedia.org/wiki/Ekpeye_language",
+      "Ethnologue (SIL International) — Ekpeye language, code ekp. https://www.ethnologue.com/language/ekp/",
+      "Amini-Philips, Isaac C. King Nworisa of Ekpeyeland (1830-1899): his life and times. Riverside Communications, Port Harcourt, 1994.",
+      "Amini-Philips, Isaac C. Establishing a chronology for Ekpeye history. Emhai Print & Pub., Port Harcourt, 1998.",
+      "Ekine, Gift V. A Concise History of Ekpeyeland and People. Osia Digital Press, Port Harcourt, 2014.",
+      "Ajugo, U. B. The True History of Ekpeyeland: 3000 BC to 2005 AD. BGR Project, Port Harcourt, 2005.",
+      "YouTube — Revitalizing Ekpeye: A Cultural Documentary (Owu Festival, 2025). https://www.youtube.com/watch?v=D7FgPZhheZ0"
+    ]
   }
 }

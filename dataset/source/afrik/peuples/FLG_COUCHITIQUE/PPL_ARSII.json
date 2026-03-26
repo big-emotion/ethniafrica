@@ -6,67 +6,88 @@
   "content": {
     "appellations": {
       "mainName": "Arsi (Arsii)",
-      "selfAppellation": "Arsi Oromo",
-      "exonyms": [
-        "Arsi (terme utilisé par les Européens), parfois classés comme sous-groupe Oromo"
-      ],
+      "selfAppellation": "Arsi Oromo / Arsii",
+      "exonyms": ["Arussi", "Arusi", "Arsi"],
+      "originOfExonyms": "Le terme Arsi ou Arussi est un exonyme repris par les explorateurs et administrateurs europeens et ethiopiens du 19e siecle pour designer ce sous-groupe oromo. La forme Arsii est l'orthographe propre en oromo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Arsi Oromo est couramment utilise dans les sources academiques et officielles pour distinguer ce sous-groupe des autres Oromo. Les locuteurs se designent eux-memes comme Arsii ou Arsi Oromo. Le concept d'Arsooma (arsioite) constitue une identite collective forte.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "Couchitiques orientaux (Oromoid)",
-      "historicalRegion": "Sud-est de l'Éthiopie (région Oromia)",
+      "ethnoLinguisticGroup": "Couchitiques orientaux (Oromoid) — branche Barento, moities Sikkoo-Mandoo",
+      "historicalRegion": "Zones Arsi, West Arsi et Bale de la region Oromia (sud-est de l'Ethiopie) ; woreda Adami Tullu et Jido Kombolcha (zone East Shewa)",
       "currentCountries": ["ETH"]
     },
     "ethnicities": [
-      "Arsi du Nord",
-      "Arsi du Sud",
-      "Arsi de l'Est",
-      "Arsi de l'Ouest"
+      "Mandoo — moitie principale dans les zones Arsi et nord de Bale, subdivisee en sept sous-moities : Raayyaa, Kajawaa, Hawaxaa, Utaa, Waayyuu, Harawaa, Biiltuu/Harroojjii",
+      "Sikkoo — moitie principale dans la zone Bale, subdivisee en cinq sous-moities : Bullala, Wacaale, Jaawi, Waaji, Ilaanni",
+      "Arsi du Nord (zones Arsi et Shewa oriental)",
+      "Arsi du Sud (zones West Arsi et Bale)"
     ],
     "origins": {
-      "ancientOrigins": "Les Arsi sont un sous-groupe des Oromo, originaires de la région du sud-est de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Oromo.",
-      "externalInfluences": "Contacts avec les peuples sémitiques (Amhara), influence de l'islam et du christianisme orthodoxe éthiopien."
+      "ancientOrigins": "Les Arsi sont un sous-groupe des Oromo, issus de la branche Barentu, l'une des deux grandes confederations de l'expansion oromo aux 12e-16e siecles. Ils descendent d'un ancetre eponyme dont les deux fils, Sikko et Mando, sont les peres fondateurs des deux grandes moities arsi. Les traditions orales affirment que les ancetres arsi se sont meles aux habitants anterieurs de la region Arsi, les Adere (Harari), appeles Hadiya dans leur tradition.",
+      "formationPeriod": "La presence islamique dans la region de Bale est attestee des le 11e siecle (mosquee Dobbi, 1067 ap. J.-C.). Les Arsi etaient independants sous leur propre Republique Gadaa jusqu'au 19e siecle. Plusieurs sultanats musulmans (Dawaro, Sharkha, Arababni, Dara, Wej, Hadiya) ont exerce une influence directe sur leurs territoires aux 12e-13e siecles. Au debut du 17e siecle, leurs terres etaient sous l'emirat de Harar, qui perdit progressivement le controle dans les siecles suivants.",
+      "migrationRoutes": [
+        "Expansion oromo depuis le sud de l'Ethiopie vers le sud-est aux 15e-16e siecles",
+        "Implantation dans les zones de hauts plateaux entre Bale, Arsi et Shewa"
+      ],
+      "historicalSettlementZones": [
+        "Zone Arsi (autour d'Asela)",
+        "Zone Bale (autour de Goba)",
+        "Zone West Arsi",
+        "Woreda Adami Tullu et Jido Kombolcha (East Shewa)"
+      ],
+      "unificationsOrDivisions": "Les Arsi sont organises en deux grandes moities patrilineaires (Sikko et Mando), elles-memes subdivisees en sous-moities et clans. L'identite collective arsooma (arsioite) constitue un puissant ciment cultural transcendant les divisions claniques. La resistance commune contre Menelik II en 1881-1886 a renforce le sentiment d'appartenance.",
+      "externalInfluences": "Islamisation du 11e au 13e siecle via les sultanats du sud-est ethiopien. Influence de l'emirat de Harar au 17e siecle. Contacts avec les Amhara et les Somali. Annexion par Menelik II en 1886 apres une resistance acharnee. Persecutions par le gouvernement ethiopien dans les annees 1970, ayant conduit a des alliances avec la Somalie.",
+      "majorHistoricalEvents": "Presence de mosquees datant de 1067 ap. J.-C. en region arsi. Resistance sous le chef Nur Hussein contre Menelik II (1881-1886), defaite finale en 1886. Participation au mouvement Harari Kulub des annees 1940 contre la domination amhara. Persecutions dans les annees 1970 et alliances avec la Somalie. Maintien du systeme Gadaa Sikkoo-Mandoo, avec une grande assemblee Dhaddacha Guutaa tenue en 2026."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (gadaa system). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Système gadaa (classes d'âge) important.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence de l'islam et du christianisme orthodoxe éthiopien."
+      "traditionalPoliticalSystem": "Le systeme Gadaa (Sikkoo-Mandoo) est l'institution politique fondamentale des Arsi. Il s'agit d'un systeme de gouvernance democatique base sur des classes d'age (luba), chaque classe exercant le pouvoir pendant huit ans. Les Arsi disposaient d'une Republique Gadaa independante jusqu'au 19e siecle. L'assemblee Dhaddacha est le conseil deliberatif supreme. En 2026, une grande assemblee Gadaa (Ya'a Dhaddacha Guutaa) a ete tenue sur les terres historiques de Dhaddacha Heeroo, Bale Est.",
+      "clanOrganization": "Structure patrilineaire organisee en gosa (clan), balbala (lignage), araddaa (lignage mineur) et warra (famille etendue). La moitie Sikkoo est divisee en cinq sous-moities (Shanan Sikkoo) et la moitie Mandoo en sept (Torban Mandoo). Exogamie clanique stricte : la connaissance de sa genealogie est indispensable.",
+      "ageClassSystems": "Le systeme Gadaa organise la societe en classes d'age (luba) de huit ans. Les transitions entre classes sont marquees par des ceremonies d'investiture. Les hommes progressent collectivement d'une classe a l'autre, occupant des roles sociaux definis : enfants, guerriers, anciens, leaders. La classe au pouvoir (gadaa) gere les affaires politiques, militaires et judiciaires.",
+      "roleOfLineages": "Les lignages patrilineaires (balbala et gosa) determinent l'identite sociale, les alliances matrimoniales, la residence et les obligations reciproques. Un conflit entre individus est traite comme un conflit entre lignages. Les membres du meme clan vivent generalement dans le meme village.",
+      "religiousAuthority": "Autorite des cheikhs et imams islamiques dans les regions majoritairement musulmanes. Les qallu (pretres traditionnels oromo) exercent une fonction rituelle importante dans le systeme Gadaa. Le concept de Waaqa (Dieu supreme oromo) reste present dans les pratiques spirituelles, meme chez les musulmans."
     },
     "languages": {
-      "mainLanguage": "Oromo (dialecte Arsi)",
-      "vehicularRole": "L'oromo est parlé par la majorité des Arsi. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Oromo, dialecte Arsi-Borana-Guji (Boranaa-Arsii-Gujii)",
+      "isoCodes": ["gax"],
+      "dialects": [
+        "Arsi — parle dans les zones Arsi, West Arsi, Bale et East Shewa",
+        "Borana — parle dans le sud de l'Ethiopie et le nord du Kenya",
+        "Guji — parle dans le sud d'Oromia"
+      ],
+      "vehicularRole": "L'oromo (dialecte arsi-borana-guji, code ISO gax) est la langue maternelle de tous les Arsi. L'amharique est utilise dans l'administration, l'education formelle et les echanges avec d'autres groupes ethiopiens. L'oromo est la langue la plus parlee d'Ethiopie avec plus de 41 millions de locuteurs, dont environ 85% vivent en Ethiopie."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies du système gadaa",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels oromo, système gadaa.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle oromo",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat",
-      "Spiritualités": "Croyances traditionnelles oromo. Influence croissante de l'islam et du christianisme orthodoxe éthiopien."
+      "majorRites": "Le systeme Gadaa organise les grands rites de passage collectifs : investiture des nouvelles classes d'age (luba), ceremonies de transition vers le pouvoir (gadaa), rites de reconciliation (Guddifacha). Les rites de naissance, de mariage et de mort sont marques par des pratiques combinees oromo et islamiques selon les regions. La circumcision masculine est un rite de passage important. Les Arsi pratiquent le concept d'Arsooma : l'arsioite comme sentiment d'appartenance collectif transmis a travers les clans et generations.",
+      "symbols": "Le systeme Gadaa et ses attributs (le siège du Gadaa, les ornements des leaders gadaa, les chasse-mouches en queue de girafe) sont des symboles politiques et culturels centraux. L'assemblee Dhaddacha Heeroo est un lieu sacre pour les Arsi.",
+      "artsAndMusic": "Musique traditionnelle oromo : chants gadaa lies aux ceremonies de transitions (Gadaa Hiriira, chants de louange Faaruu, chants du Nouvel An Bara Haaraa, chants d'unite Wadaajaa). Instruments : krar (lyre), masenqo (violon monocorde), darar (tambour), flute en bambou. Danses collectives : danse Shangila (festivals), danse Gadaa (ceremonies), danse Harar (mariages). Poetique orale : chants epiques et genealogiques transmis oralement.",
+      "spiritualities": "Majorite musulmane sunnite (82% selon Joshua Project), avec une influence de l'islam depuis le 11e siecle. Presence chretienne (orthodoxe ethiopienne et protestante, environ 5-10%). Croyances traditionnelles oromo residuelles centrees sur Waaqa (Dieu supreme), les esprits (ayyaana) et les pratiques rituelles du Gadaa. Le concept de Waaqa traverse toutes les pratiques spirituelles arsi."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans la structure politique éthiopienne.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora arsi dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Arsi maintenaient une Republique Gadaa independante jusqu'au 19e siecle, organisee selon les principes democratiques du systeme Gadaa. Plusieurs sultanats musulmans avaient exerce leur influence sur leurs territoires aux 12e-13e siecles (sultanats de Dawaro, Sharkha, Bali). Au debut du 17e siecle, la region etait nominalement sous l'emirat de Harar.",
+      "relationsWithNeighbors": "Relations d'intermariage avec les populations anterieures de la region Arsi (Adere/Harari, Hadiya). Contacts avec les Oromo Guji et Borana au sud. Relations commerciales et culturelles avec les Amhara et Somali aux peripheries. Participation commune au mouvement Harari Kulub dans les annees 1940 avec les peuples de Bale.",
+      "conflictsOrAlliances": "Resistance farouche contre la conquete de Menelik II (1881-1886) menee par Nur Hussein, jusqu'a la defaite de 1886 face aux fusils modernes. Participation au mouvement ethno-religieux Harari Kulub (annees 1940) contre la domination amhara, brutalement reprime. Formation d'alliances avec la Somalie dans les annees 1970 face aux persecutions du gouvernement ethiopien.",
+      "diaspora": "Diaspora arsi dans les grandes villes ethiopiennes (Addis-Abeba, Asela, Goba) et dans les pays occidentaux (Europe, Etats-Unis, Canada) suite aux migrations economiques et aux deplacements politiques."
     },
     "demography": {
-      "totalPopulation": 2500000,
+      "totalPopulation": 7435000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, CIA World Factbook, et études démographiques"
+      "source": "Joshua Project 2024 : 7 435 000 Arsi Oromo en Ethiopie. CIA World Factbook — Ethiopia. Recensements ethiopiens. Estimations basees sur la population totale oromo (40+ millions) et la proportion arsi.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 7435000,
+          "note": "Zones Arsi, West Arsi et Bale (region Oromia), woreda Adami Tullu et Jido Kombolcha (East Shewa)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Oromo language (orm)",
-      "CIA World Factbook – Ethiopia",
-      "Baxter, P.T.W. – *Being and Becoming Oromo*",
-      "A History 1570-1860*",
-      "Recensements éthiopiens"
+      "Wikipedia EN — Arsi people. https://en.wikipedia.org/wiki/Arsi_people",
+      "Wikipedia EN — Oromo language. https://en.wikipedia.org/wiki/Oromo_language",
+      "Joshua Project — Oromo, Arsi in Ethiopia. https://joshuaproject.net/people_groups/19652",
+      "Bulcha, Jilo Wolde — Arsi Oromo Descent and Indigenous Moral System in Ethiopia. IJISRT, 2021. https://ijisrt.com/assets/upload/files/IJISRT21JUL1215.pdf",
+      "Advocacy for Oromia — Reviving Oromo Identity: Sikkoo Mandoo Gadaa Assembly 2026. https://advocacy4oromia.org/2026/01/07/reviving-oromo-identity-sikkoo-mandoo-gadaa-assembly-2026/",
+      "SIL Ethnologue — Borana-Arsi-Guji Oromo (gax). https://www.ethnologue.com/language/gax/",
+      "Baxter, P.T.W. — Being and Becoming Oromo. Uppsala: Nordiska Afrikainstitutet, 1996."
     ]
   }
 }

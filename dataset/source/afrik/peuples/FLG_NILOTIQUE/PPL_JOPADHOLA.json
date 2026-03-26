@@ -6,63 +6,87 @@
   "content": {
     "appellations": {
       "mainName": "Jopadhola",
-      "selfAppellation": "Jopadhola",
-      "exonyms": ["Jopadhola (terme utilisé par les Européens), Padhola"],
+      "selfAppellation": "Jopadhola (Jo'padhola)",
+      "exonyms": ["Adhola", "Padhola", "Badama"],
+      "originOfExonyms": "Jopadhola signifie litteralement les gens de Padhola (de jo = peuple et pa-Adhola = lieu d'Adhola). Padhola est la forme elliptique de Pa Adhola (le lieu d'Adhola), du nom du père fondateur légendaire du peuple. Badama est le terme utilisé par les Baganda, résultant d'une mauvaise interprétation du mot dhopadhola Widoma, cri de guerre signifiant tu es en difficulté.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Jopadhola est l'ethnonyme officiel et courant en anglais et en ougandais. Le terme Adhola est parfois utilisé par les chercheurs. Le nom de la langue, Dhopadhola, est universel. Le roi actuel (Kwar Adhola) porte le titre His Highness Moses Stephen Owor.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique occidental",
-      "historicalRegion": "Est de l'Ouganda",
+      "ethnoLinguisticGroup": "Nilotique occidental — sous-groupe Luo (Western Nilotic)",
+      "historicalRegion": "Padhola, district de Tororo, est de l'Ouganda",
       "currentCountries": ["UGA"]
     },
     "ethnicities": [
-      "Jopadhola du Nord",
-      "Jopadhola du Sud",
-      "Sous-groupes régionaux"
+      "Clan Nono (clan royal, base de l'organisation sociale centralisee)",
+      "Plus de 52 clans exogames distincts, chacun avec ses propres pratiques culturelles, une origine commune et un lignage distinct",
+      "Groupes issus des vagues de migration luo du 16e siecle, installes dans la foret de Padhola comme defense contre les voisins bantous"
     ],
     "origins": {
-      "ancientOrigins": "Les Jopadhola sont originaires de l'est de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Luo.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Jopadhola sont un peuple nilotique occidental appartenant au grand groupe Luo. Selon l'historien Bethwell Ogot (History of the southern Luo, 1967), ils firent partie de la grande migration Luo depuis le haut Nil (traditionnellement attribuee a une origine en Egypte ou en Ethiopie) vers le 16e siecle. Les Luo qui migresrent vers l'est de l'Ouganda constituerent les Jopadhola, tandis que ceux qui continuerent vers le Kenya et la Tanzanie formerent les JoLuo (connus simplement comme Luo). Leurs parents les plus proches installes dans le nord et le centre de l'Ouganda sont les Acholi et les Alur, dont les langues sont mutuellement intelligibles avec le dhopadhola.",
+      "formationPeriod": "Identite jopadhola consolidee au 16e siecle lors de l'installation dans la foret de Padhola (district de Tororo actuel), choisie comme refuge naturel contre les voisins bantous deja etablis. La legende fondatrice evoque Adhola, frere du fondateur des JoLuo du Kenya (Owiny), qui choisit de rester a Tororo plutot que de continuer la migration vers le Kenya et la Tanzanie.",
+      "migrationRoutes": [
+        "Grande migration Luo depuis le haut Nil ou l'Egypte (tradition orale)",
+        "Installation initiale en Ouganda central",
+        "Deplacement progressif vers le sud et l'est jusqu'au district de Tororo",
+        "Installation definitive dans la foret de Padhola (est de l'Ouganda) au 16e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Padhola (district de Tororo), est de l'Ouganda",
+        "Zones forestieres du district de Tororo servant de refuges defensifs contre les voisins bantous",
+        "Districts voisins de Busia et Iganga"
+      ],
+      "unificationsOrDivisions": "L'isolement volontaire des Jopadhola dans la foret de Padhola leur a permis de maintenir leur langue et leur culture face aux pressions bantous et ateker voisins. Contrairement a d'autres petits groupes luo, ils ont preserve leur identite distinctive. L'organisation en plus de 52 clans maintient une certaine autonomie des groupes tout en partageant une identite commune.",
+      "externalInfluences": "Contacts defensifs avec les peuples bantous (Baganda, Basoga) et les peuples ateker (Teso, Karamojong) voisins. Influence des missions chretiennes (notamment catholiques) depuis le 19e siecle. Administration coloniale britannique. Influence de l'Ouganda post-independant. Contacts avec les JoLuo du Kenya (langue et culture proches).",
+      "majorHistoricalEvents": "16e siecle : installation dans la foret de Padhola comme refuge defensif. 19e-20e siecles : contact avec les missions chretiennes. Epoque coloniale : integration a l'administration du protectorat britannique d'Ouganda. Post-independance : etablissement du district de Tororo. Institution de la monarchie culturelle Kwar Adhola, reconnue par le gouvernement ougandais."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme semi-centralise : pas de gouvernement central traditionnel, mais organisation autour du clan Nono (clan royal). Chaque clan dispose d'une structure de justice traditionnelle appellee koti (cour clanique), qui exerce des fonctions executives et judiciaires melees. Le koti suit une doctrine juridique abregee de separation des pouvoirs, imitant partiellement les conseils locaux gouvernementaux. Sa composition vise une parite d'age et de genre par la designation de representants des jeunes et des femmes. Aujourd'hui, un roi culturel (Kwar Adhola) est reconnu comme chef de la communaute.",
+      "clanOrganization": "Plus de 52 clans exogames, chacun avec des pratiques culturelles propres, une genealogie commune et un lignage distinct. Les clans pratiquent une justice interne via le koti. L'election des responsables du koti est fondee sur le merite (accomplissement des obligations sociales envers les parents) et la protection du clan contre le mal par le rituel (chowiroki).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires structurant l'identite, les droits fonciers et les alliances matrimoniales. Le concept elargi d'independance judiciaire est interprete a travers les relations de parente au sein des clans. Les obligations envers les parents (kin) constituent le critere principal de legitimite pour exercer des responsabilites dans le koti.",
+      "religiousAuthority": "Les anciens clanique exercent une autorite spirituelle lors des ceremonies rituelles (chowiroki). Les chefs traditionnels (chef du clan Nono, puis le Kwar Adhola) ont une dimension sacree. L'Eglise catholique et les Eglises protestantes sont tres influentes depuis le 19e siecle, avec une large majorite de chretiens parmi les Jopadhola."
     },
     "languages": {
-      "mainLanguage": "Jopadhola",
-      "vehicularRole": "Le jopadhola est parlé par la majorité des Jopadhola. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Dhopadhola",
+      "isoCodes": ["adh"],
+      "dialects": [
+        "Dhopadhola (dialecte de Tororo, forme standard)",
+        "Variantes dialectales dans les sous-districts de Tororo"
+      ],
+      "vehicularRole": "Le dhopadhola (ISO 639-3 : adh) est une langue luo de la branche nilotique occidentale, mutuellement intelligible avec l'acholi (nord de l'Ouganda), l'alur (nord-ouest de l'Ouganda) et le dholuo (Kenya-Tanzanie). La population dhopadhola est estimee a 680 000 locuteurs (Joshua Project). Le prefixe dho signifie langue de et jo signifie peuple de. L'anglais est la langue d'enseignement et d'administration officielle. Le swahili est peu utilise. La forte coherence culturelle des Jopadhola a permis la preservation remarquable de leur langue face aux pressions du luganda et du swahili."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels jopadhola, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Mariage arrange : le pere d'un garcon recherche une famille ayant une fille nouveau-nee des la naissance du garcon ; apres plusieurs annees de construction de la relation entre les familles, la dot est versee en betail et en cadeaux ; a 18 ans pour le garcon et 16 ans pour la fille, le mariage est finalise. La cour clanique (koti) joue un role dans la resolution des conflits matrimoniaux et communautaires. Ceremonies rituelles de protection du clan contre le mal (chowiroki), presidees par les anciens. Rites funeraires comprenant des periodes de deuil communautaire. Ceremonies agricoles liees aux saisons de plantation et de recolte.",
+      "symbols": "La foret de Padhola symbolise la resistance culturelle et l'identite jopadhola (refuge choisi face aux pressions exterieures). Le bracelet place au poignet de la jeune fille lors des fiancailles symbolise l'alliance entre familles. Les animaux domestiques (betail, chevres) sont centraux dans les ceremonies de mariage. Le titre Kwar Adhola (roi culturel) symbolise l'unite du peuple.",
+      "artsAndMusic": "Musique vocale et instrumentale traditionnelle lors des ceremonies de mariage et des celebrations communautaires. Danses traditionnelles pratiquees lors des evenements sociaux. Poesie orale et contes transmis par les anciens. Artisanat : poterie, vannerie et tissage pratiques par les femmes. La tradition orale (proverbes, recits genealogiques, contes moraux) est tres riche et preservee par les anciens du clan. Des chants ceremonials en dhopadhola accompagnent les principales ceremonies de la vie.",
+      "spiritualities": "Croyances traditionnelles luo fondees sur l'existence d'un etre supreme (Jok) et sur le role des esprits ancestraux. Les ancetres sont invoques pour leur protection et leurs benedictions lors des ceremonies claniques. Rituel de protection chowiroki pratique par les anciens lors des elections des responsables du koti. Syncrétisme important avec le christianisme : la tres grande majorite des Jopadhola est aujourd'hui chretienne (catholiques et protestants), tout en maintenant des pratiques spirituelles traditionnelles paralleles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora jopadhola dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Jopadhola n'ont pas developpe de royaume centralise mais maintiennent une monarchie culturelle (Kwar Adhola) reconnue par le gouvernement ougandais. Le clan Nono constitue le clan royal autour duquel s'organise le systeme politique. Leur identite est fondee sur la preservation culturelle dans un espace forestier enclave, ce qui les a distingues des autres groupes luo de la region.",
+      "relationsWithNeighbors": "Relations historiquement marquees par la defense contre les voisins bantous (Basoga, Baganda) qui avaient deja occupe l'est de l'Ouganda avant l'arrivee des Jopadhola. La foret de Padhola servait de bouclier naturel. Relations avec les communautes Ateker (Teso, Karamojong) a l'est et au nord. Liens culturels et linguistiques etroits avec les Acholi et les Alur au nord et avec les JoLuo du Kenya a l'est.",
+      "conflictsOrAlliances": "Resistance aux attaques des voisins bantous lors de l'installation initiale dans la foret de Padhola (16e-17e siecles). Maintien de l'isolement culturel et linguistique face aux pressions bantous et ateker. Participation a la politique nationale ougandaise depuis l'independance (1962). Les Jopadhola comprennent environ 8% de la population totale de l'Ouganda, ce qui leur confere un poids politique significatif.",
+      "diaspora": "Migration de Jopadhola vers les centres urbains ougandais, notamment Kampala, Jinja et Tororo, pour l'education et l'emploi. La communaute reste majoritairement ancree dans le district de Tororo. Presence de Jopadhola dans la diaspora ougandaise en Europe, en Amerique du Nord et en Australie."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 750000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Swordshare Map (Joshua Project) : 680 000 locuteurs de dhopadhola. Wikipedia : environ 8% de la population ougandaise (population ougandaise estimee a 48 millions en 2025 = environ 3,8 millions, mais ce chiffre parait excessif ; l'estimation de 680 000 a 750 000 pour 2025 est retenue). Recensements ougandais.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 750000,
+          "note": "Concentres principalement dans le district de Tororo, est de l'Ouganda (Padhola). Diaspora dans les centres urbains ougandais (Kampala, Jinja)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Jopadhola language (adh)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Adhola people. https://en.wikipedia.org/wiki/Adhola_people",
+      "Wikipedia EN — Adhola dialect. https://en.wikipedia.org/wiki/Adhola_dialect",
+      "Swordshare Map — Dhopadhola ISO 639-3 adh. https://map.swordshare.com/adh",
+      "Ogot, B.A. (1967). History of the southern Luo. East African Publishing House, Nairobi.",
+      "Owor, Maureen (2012). Creating an Independent Traditional Court: A Study of Jopadhola Clan Courts in Uganda. Journal of African Law, 56/2, pp 215-242.",
+      "Oboth-Ofumbi, A.C.K. (1959). Silver Tanga Padhola. East African Literature Bureau, Nairobi.",
+      "Ethnologue — Jopadhola (ADH). https://www.ethnologue.com/language/adh/"
     ]
   }
 }

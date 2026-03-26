@@ -6,63 +6,97 @@
   "content": {
     "appellations": {
       "mainName": "Ndebele d'Afrique du Sud",
-      "selfAppellation": "Ndebele",
-      "exonyms": ["Ndebele d'Afrique du Sud (terme utilisé par les Européens)"],
+      "selfAppellation": "AmaNdebele (isiKhethu)",
+      "exonyms": [
+        "Southern Ndebele",
+        "Transvaal Ndebele",
+        "Ndzundza Ndebele",
+        "Manala Ndebele",
+        "isiNdebele"
+      ],
+      "originOfExonyms": "Le terme Southern Ndebele distingue ce groupe du Northern Ndebele (Matabele) du Zimbabwe. Transvaal Ndebele fut utilise sous l'apartheid en reference a leur region historique. Ndzundza et Manala designent les deux clans principaux. isiKhethu (notre langue) est la designation interne populaire.",
+      "whyProblematic": "La designation Ndebele d'Afrique du Sud est souvent confondue avec les Ndebele du Zimbabwe (Matabele), auxquels ils ne sont pas directement lies : les deux groupes sont des branches distinctes du tronc nguni, separees depuis le XVIe siecle au moins.",
+      "contemporaryUsage": "isiNdebele est le terme officiel de la langue selon la Constitution sud-africaine de 1996. AmaNdebele ou Ndebele du Sud sont les termes courants pour designer le peuple.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Nord-est de l'Afrique du Sud",
+      "ethnoLinguisticGroup": "Bantou, groupe Nguni (sous-groupe du sud, zone S), distinct du Ndebele du Nord",
+      "historicalRegion": "Nord-est de l'Afrique du Sud : Highveld du Transvaal, actuelles provinces de Mpumalanga et Gauteng ; Bantustan de KwaNdebele (1977-1994, capitale Siyabuswa)",
       "currentCountries": ["ZAF"]
     },
     "ethnicities": [
-      "Ndebele du Nord",
-      "Ndebele du Sud",
-      "Sous-groupes régionaux"
+      "Ndzundza (Hlungwana, branche principale, guerriers, porteurs de l'iNamrhali)",
+      "Manala (Mbuduma, premier-ne de la Grande Epouse de Musi, branche ainee selon la Cour en 2017)",
+      "Sikhosana (descendants de Masombuka, fils de Musi)",
+      "Thombeni (Gheghana, descendants de Musi)",
+      "Sibasa (descendants de Musi)",
+      "Mhwaduba (Mrhwaduba, descendants de Musi)",
+      "Mphafuli et Dlomu (descendants de Musi)"
     ],
     "origins": {
-      "ancientOrigins": "Les Ndebele d'Afrique du Sud sont originaires du nord-est de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Migration depuis le Zoulouland.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Ndebele du Zimbabwe. Relations avec les Zoulous.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les AmaNdebele du Sud sont un peuple bantou nguni installe dans l'actuelle Afrique du Sud depuis le XVIe siecle. Leur ancetre eponyme, le roi Ndebele (fils du roi Mabhudu), rompit avec le groupe Mbo et s'etablit au sud du Drakensberg, dans les regions actuelles de la province du KwaZulu-Natal (capitale eLundini). Le roi Musi, descendant du roi Ndebele, traversa le Vaal et fonda les colonies de KwaMnyamana (cote est) et eMaruleni (cote ouest), sur la riviere Apies au nord de Pretoria.",
+      "formationPeriod": "La scission entre les deux branches principales (Manala et Ndzundza) remonte a une dispute de succession apres la mort de Musi. Selon la tradition, le fils cadet Ndzundza obtint par tromperie les insignes royaux (iNamrhali) et fuya vers l'est avec ses partisans. La mediation de Noqoli (ancienne de la famille Mnguni) donna naissance a l'accord isiVumelwano sakoNoqoli, etablissant deux royaumes separes avec la riviere Olifants comme frontiere.",
+      "migrationRoutes": [
+        "Desde le Natal vers le nord, traversee du Drakensberg",
+        "Traversee du Vaal, installation sur l'Apies au nord de Pretoria (region de KwaMnyamana)",
+        "Dispersion est-ouest suite a la querelle Manala-Ndzundza"
+      ],
+      "historicalSettlementZones": [
+        "Nord de Pretoria, riviere Apies (KwaMnyamana, eMaruleni)",
+        "Est du Highveld (Mpumalanga actuelle) : Ndzundza",
+        "KwaNdebele (Bantustan 1977-1994, Mpumalanga)",
+        "Gauteng et Mpumalanga (majorite actuelle)"
+      ],
+      "unificationsOrDivisions": "La scission Manala-Ndzundza est l'evenement fondateur de l'histoire interne ndebele. Les deux royaumes ont coexiste dans des rapports parfois tendus jusqu'a l'epoque coloniale. Les Ndzundza se sont illustres par leur resistance : la Guerre de Mapoch (1882-1883) les opposa aux Boers du Transvaal sous le roi Nyabela, qui se rendit apres un siege de plusieurs mois. Leurs terres furent confisquees et leurs membres disperses comme travailleurs sous contrat. La Commission Nhlapo (2010) avait declare les Manala ainesse royale ; une decision de la Haute Cour en 2017 la confirma.",
+      "externalInfluences": "Influence des cultures Sotho-Tswana (integration de mots et pratiques agricoles). Contacts avec les Boers du Transvaal, marqués par la defaite lors de la Guerre de Mapoch (1883) et la depossession fonciere. Apartheid et creation du Bantustan KwaNdebele (1977-1994). Introduction des peintures acryliques francaises dans les annees 1940, qui transformerent la tradition de peinture murale.",
+      "majorHistoricalEvents": "Guerre de Mapoch (1882-1883) : siege de KoNomtjarhelo, capitulation du roi Nyabela, indenture des Ndzundza. Depossession fonciere par la Republique du Transvaal. Creation du Bantustan KwaNdebele (1977). Reintegration dans l'Afrique du Sud post-apartheid (1994). Renom mondial acquis par l'artiste Esther Mahlangu pour la peinture ndebele."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie duale avec deux lignees royales : Manala (roi actuel Makhosoke II / Enoch Mabhena) et Ndzundza (roi actuel Mabhoko III / Mbusi Mahlangu). Un chef supreme (iKosi) dirige chaque branche, assiste d'un conseil interieur (iimphakathi). Les circonscriptions (izilindi) sont dirigees par des chefs de quartier. Les groupes familiaux sont gouvernes par des chefs de famille.",
+      "clanOrganization": "Structure patrilineaire en clans (izibongo). Le systeme dual Manala-Ndzundza structure toute la vie politique et ceremonielle. La appartenance clanique determine les droits successoraux, les alliances matrimoniales et le statut social.",
+      "ageClassSystems": "Regiments d'age masculins (iintanga) pour l'initiation : chez les Ndzundza, un cycle de 15 regiments nommes ; chez les Manala, un cycle de 13 regiments. Les initiés d'une meme classe forment une solidarite durable.",
+      "roleOfLineages": "Les lignages patrilineaires (izibongo) definissent l'appartenance clanique et le statut. Les femmes conservent le nom de clan de leur pere ; les enfants prennent celui de leur pere. Le mariage doit obligatoirement se faire entre clans differents (exogamie clanique).",
+      "religiousAuthority": "Autorite spirituelle des chefs de lignage et des guerisseurs traditionnels (izinyanga, izangoma). Christianisme (eglises africaines independantes, pentecotistes, methodistes) fortement repandu depuis la colonisation. Synchretisme marque entre pratiques ancestrales et christianisme."
     },
     "languages": {
-      "mainLanguage": "Ndebele (dialecte d'Afrique du Sud)",
-      "vehicularRole": "Le ndebele d'Afrique du Sud est parlé par la majorité des Ndebele d'Afrique du Sud. L'anglais, l'afrikaans et d'autres langues sont également utilisés."
+      "mainLanguage": "isiNdebele (Ndebele du Sud, Southern Ndebele, isiKhethu)",
+      "isoCodes": ["nbl"],
+      "dialects": [
+        "Ndzundza (variete dominante, base de l'isiNdebele standardise)",
+        "Manala (variete de la branche ainee)"
+      ],
+      "vehicularRole": "L'isiNdebele est la onzieme langue officielle de l'Afrique du Sud selon la Constitution de 1996. Avec 1 044 377 locuteurs primaires selon le recensement 2022 de Statistics South Africa (1,7% de la population nationale), c'est la deuxieme plus petite langue officielle. Elle est concentree en Mpumalanga (47% des locuteurs) et Gauteng (42,5%). Le zoulou, le xhosa et l'afrikaans sont utilises comme langues vehiculaires dans les regions mixtes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ndebele (peintures murales), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (peintures murales, poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation masculine (ukwela, aussi appelee ingoma ou ukuWela) : organisee tous les quatre ans pour les garcons d'environ 18 ans ; les classes d'age (iintanga) recoivent un nom propre ; ceremony de circoncision supervisee par le roi ; les initiees passent trois mois dans un abri en brousse (groupes de 8 par village), apprennent les lois, mythes et devoirs ; retour au village marque par un festin et une ceremonie de purification a la riviere. Initiation feminine (ukuthombisa) : a la puberte, environ deux mois ; rasage, bain rituel a la riviere, festin et danse communautaire ; un mois d'isolement (enseignement par grand-meres) ; remise des tabliers de perles (iphephetu). Mariage : la fiancee est recluse deux semaines ; emerge enveloppee dans une couverture, accompagnee de l'Ipelesi. Rites funeraires avec veille et chants des ancetres.",
+      "symbols": "Les peintures murales geometriques (izimpunjwana) : symbole international de l'identite ndebele. Les perles (amalobolo) et les colliers (iindzila) de cuivre et de laiton portes par les femmes mariees. L'iNamrhali (perles et baton magique de la royaute Ndzundza). Le bouclier comme symbole guerrier. L'iphephetu (tablier de perles des initiees).",
+      "artsAndMusic": "Peinture murale (ukuqhakaza) : tradition feminine des Ndzundza, pratiquee par les femmes a main levee sur les murs exterieurs et interieurs des habitations. Les motifs geometriques (triangles, losanges, formes de X, chevrons) sont hautement symboliques et codifies. Aux pigments naturels (ocres, limons, craie) ont succede des peintures acryliques depuis les annees 1940. L'artiste Esther Mahlangu (nee en 1935) a porte cet art sur la scene internationale (BMW Art Cars 1991, collaborations avec Motsepe Foundation). Perlage (ukwencenca) : les femmes creent des ornements perles elabores (iinrholwani, isithimba, nyoga, linga koba, isiphephetu) codifiant le statut, l'age et les rites de passage. Musique de percussions et de chants polyphoniques lors des ceremonies. Danse isigqi.",
+      "spiritualities": "Le systeme spirituel ndebele repose sur le culte des ancetres (amadlozi ou izinyanya), mediatises par les devins-guerisseurs (izangoma, izinyanga). Les ancetres interviennent dans la vie des vivants et doivent etre honores par des offrandes et des sacrifices d'animaux lors des ceremonies familiales importantes. La grande majorite des Ndebele d'Afrique du Sud est aujourd'hui chretienne (eglises chretiennes africaines independantes, pentecotistes, methodistes), tout en maintenant les pratiques de veneration des ancetres en parallele."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ndebele d'Afrique du Sud dans les grandes villes sud-africaines et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Deux royaumes independants issus de la scission post-Musi : royaume Manala (centre autour de KwaMnyamana, nord de Pretoria) et royaume Ndzundza (centre autour de KwaMaza puis eMrholeni/KoNomtjarhelo, Mpumalanga). Les Ndzundza ont acquis une reputation de guerriers valeureux, repoussant plusieurs attaques avant leur defaite lors de la Guerre de Mapoch (1883). Bantustan KwaNdebele (1977-1994) cree par le gouvernement d'apartheid.",
+      "relationsWithNeighbors": "Contacts commerciaux avec les BaKwena et BaKgatla (Sotho-Tswana) dans la region de Pretoria. Rencontres avec les San (appeles AbaTshwa). Conflits repetes avec les Voortrekkers boers au XIXe siecle (guerre de Mapoch 1882-1883). Relations avec les BaPedi (Sekhukhune) : alliances et tensions selon les periodes.",
+      "conflictsOrAlliances": "Guerre de Mapoch (1882-1883) : siege de KoNomtjarhelo par un commando boer de 2 000 hommes sous Joubert ; capitulation du roi Nyabela le 8 juillet 1883 ; terres confisquees, population indenturee. Resistance a l'apartheid lors de la creation forcee du Bantustan KwaNdebele (1977). Violence politique dans KwaNdebele dans les annees 1980 (tensions Ndzundza-Manala).",
+      "diaspora": "Forte concentration en Mpumalanga (region de Siyabuswa, KwaMhlanga) et Gauteng. Migrations vers les zones industrielles et urbaines (Johannesburg, Pretoria). Diaspora ndebele dans la communaute sud-africaine en Europe et en Amerique du Nord."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 1100000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements sud-africains, SIL Ethnologue, et études démographiques"
+      "source": "Statistics South Africa, Cultural Dynamics in South Africa (mars 2025), base Recensement 2022 : 1 044 377 locuteurs primaires de l'isiNdebele (1,7% de la population nationale). Projection 2025 avec taux de croissance sud-africain : environ 1,1 million. Principalement en Mpumalanga (47% des locuteurs) et Gauteng (42,5%).",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 1100000,
+          "note": "Mpumalanga (Siyabuswa, KwaMhlanga), Gauteng, Limpopo"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ndebele language (nbl)",
-      "CIA World Factbook – South Africa",
-      "Recensements sud-africains",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN – Southern Ndebele people : https://en.wikipedia.org/wiki/Southern_Ndebele_people",
+      "Wikipedia EN – Ndebele house painting : https://en.wikipedia.org/wiki/Ndebele_house_painting",
+      "Statistics South Africa – Cultural Dynamics in South Africa, basé sur le Recensement 2022 : https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
+      "SIL Ethnologue – Southern Ndebele (nbl) : code ISO 639-3 nbl",
+      "Wataka Africa – The Vibrant World of Ndebele Art and Culture (2023) : https://wataka.africa/blogs/stories/the-vibrant-world-of-ndebele-art-and-culture",
+      "Amusing Planet – The Painted Houses of The Ndebeles (2014) : https://www.amusingplanet.com/2014/09/the-painted-houses-of-ndebeles.html",
+      "StatsSA – Census 2022 Statistical Release : https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
     ]
   }
 }

@@ -6,55 +6,104 @@
   "content": {
     "appellations": {
       "mainName": "Bubi",
-      "selfAppellation": "",
-      "exonyms": ["Bubi (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Boobe",
+      "exonyms": [
+        "Bobe",
+        "Voove",
+        "Ewota",
+        "Boobes",
+        "Boobees",
+        "Adeejahs",
+        "Adijas",
+        "Ediyas",
+        "Eris",
+        "Fernando Poans",
+        "Bantu Bubi"
+      ],
+      "originOfExonyms": "Le terme Bubi derive du mot Boobe signifiant \"homme\" ou \"personne\" dans la langue bubi. Les europeens ont utilise diverses transcriptions de ce terme. Fernando Poans et Fernandians font reference a l'ancien nom portugais de l'ile Bioko (Fernando Poo/Po), donnee par l'explorateur Fernando Po en 1471-1472.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bubi est aujourd'hui le nom officiel et couramment utilise en Guinee equatoriale. La societe Bubi se definit comme le peuple autochtone de l'ile Bioko, en opposition aux Fang immigres du continent.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Île de Bioko (Fernando Póo)",
+      "ethnoLinguisticGroup": "Bantu de l'Atlantique occidental (branche isolee, insulaire)",
+      "historicalRegion": "Ile de Bioko (anciennement Fernando Poo), Guinee equatoriale",
       "currentCountries": ["GNQ"]
     },
     "ethnicities": ["Bubi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Île de Bioko (Fernando Póo)"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Bubi sont consideres comme l'un des premiers groupes Bantu a avoir quitte leur berceau d'origine (region Nigeria-Cameroun). Des etudes linguistiques suggerent qu'ils auraient quitte le continent il y a environ 5 000 ans, se dirigeant vers le sud-est pour s'etablir sur les cotes de l'actuel Cameroun meridional ou Gabon septentrional. De la, ils traverserent l'Atlantique en pirogues creusees pour s'installer sur l'ile Bioko, alors appelee Fernando Poo. La premiere vague d'occupation de l'ile remonterait entre 2 000 et 3 000 ans avant notre ere selon les traditions orales et les recherches archeologiques.",
+      "formationPeriod": "La societe Bubi s'est constituee sur l'ile Bioko en plusieurs vagues migratoires. Les traditions orales decrivent quatre grandes vagues d'immigrants, la premiere etant la tribu Biabba, consideree comme la premiere arrivante. L'identite bubi insulaire, distincte des Bantu continentaux, s'est consolidee sur une periode de plusieurs millenaires d'isolement relatif. La formation du royaume bubi (divise en cinq regions : Nord, Nord-Est, Est, Sud et Sud-Ouest) est estimee s'etendre sur plus de 3 000 ans.",
+      "migrationRoutes": [
+        "Migration depuis le berceau Bantu (Nigeria/Cameroun) vers les cotes meridionales du Cameroun ou du Gabon septentrional",
+        "Traversee de l'Atlantique depuis les cotes continentales vers l'ile Bioko en pirogues, selon les traditions sous couvert de la nuit pour echapper a leurs oppresseurs",
+        "Plusieurs vagues successives de sous-tribus (Biabba, Baney, Batate, Baho, Bakake, Bareka, Bokoko) s'etablirent dans differentes zones de l'ile"
+      ],
+      "historicalSettlementZones": [
+        "Ile de Bioko (Fernando Poo), Guinee equatoriale",
+        "Cotes septentrionales de l'ile (premiers sites archeologiques)",
+        "Ensemble de l'ile, chaque sous-tribu occupant un territoire distinct"
+      ],
+      "unificationsOrDivisions": "Le royaume Bubi etait historiquement divise en cinq regions (Nord, Nord-Est, Est, Sud, Sud-Ouest), chacune avec son propre botuku (roi) et son dialecte bubi distinct. Les guerres intertribales entre sous-groupes etaient frequentes. Une tentative d'unification eut lieu sous un roi supreme (botuku) au XIXe siecle. La colonisation espagnole et le regime brutal de Francisco Macias Nguema (1968-1979) decimèrent la population et detruisirent en grande partie les structures politiques traditionnelles.",
+      "externalInfluences": "Les Portugais (explorateur Fernando Po, 1471-1472) furent les premiers Europeens a atteindre l'ile. Les expeditions portugaises puis espagnoles causerent de lourdes pertes par les guerres et les maladies (coqueluche, variole, dysenterie). L'ile passa sous domination espagnole. Au XIXe siecle, Bioko devint un point de transit pour la traite des esclaves. Le regime de Macias Nguema (1968-1979) provoqua la mort ou l'exil d'environ 1/3 de la population du pays, frappant particulierement les Bubi.",
+      "majorHistoricalEvents": "Arrivee des premiers Bubi sur l'ile il y a 2 000 a 5 000 ans. Decouverte et nommage de l'ile par le Portugais Fernando Po (1471-1472). Massacre d'un equipage anglais entier par les Batete en 1810, illustrant la resistance Bubi aux intrus. Transfert de l'ile du Portugal a l'Espagne (1778). Independance de la Guinee equatoriale (1968). Dictature de Francisco Macias Nguema (1968-1979) : 80 000 morts, dont une large part de Bubi, et exode massif vers l'Espagne."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "La societe Bubi etait organisee en royautes (botukus). Chaque village avait son propre botuku (chef/roi) avec une hierarchie politique et spirituelle. Le botuku le plus important etait reconnu comme chef supreme pour sa region. Le systeme incluait une aristocratie (nobles de naissance) et des gens du commun soumis a une forme de servitude appelee botaki. Les decisions importantes etaient prises par le botuku avec un corps consultatif d'anciens.",
+      "clanOrganization": "La societe Bubi est matrilineaire : la filiation, l'heritage et l'appartenance clanique se transmettent par la ligne maternelle. Les filles sont particulierement valorisees car elles perpetuent le clan. Les sous-tribus historiques incluent les Biabba, Baney, Batate, Baho, Bakake, Bareka, Bokoko et Baloketo.",
+      "ageClassSystems": "Les jeunes hommes a la puberte (generalement 16-17 ans) passent par une ceremonie d'initiation qui les integre dans la categorie des jeunes hommes en age de se marier. Le chef (botuku) leur attribue un nouveau nom lors de cette ceremonie. Les femmes sont inspectees pour leur virginite avant le mariage.",
+      "roleOfLineages": "La matrilinearite est le principe fondateur de l'organisation sociale Bubi : les enfants heritent des biens de leur mere. L'importance des filles comme gardiennes de la continuite du lignage est centrale ('les filles sont les yeux du foyer'). La veuve ne peut jamais se remarier.",
+      "religiousAuthority": "Le grand pontife spirituel est l'abbe mote (ou abbe moto), seul un homme pouvant occuper ce role supreme. La religion traditionnelle Bubi venerait un dieu supreme createur nomme Rupe et divers esprits de la nature associes aux lieux specifiques de l'ile (montagnes, forets, cours d'eau). Des menhirs sacres etaient eriges comme points d'energie spirituelle et de fertilite. La ceremonie de purification collective abira visait a chasser le mal de la communaute."
     },
     "languages": {
-      "mainLanguage": "Bubi (buw)",
+      "mainLanguage": "Bubi",
       "isoCodes": ["buw"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "dialecte du Nord",
+        "dialecte du Nord-Est",
+        "dialecte de l'Est",
+        "dialecte du Sud",
+        "dialecte du Sud-Ouest"
+      ],
+      "vehicularRole": "Le Bubi (code ISO 639-3 : buw) est une langue Bantu unique a l'ile Bioko, sans equivalent sur le continent, reflet de son long developpement isole. Les linguistes le considerent comme l'un des premiers Bantu a se differencier. L'espagnol est la langue officielle de la Guinee equatoriale et est utilise comme langue vehiculaire. Le fang, langue de la majorite continentale, exerce une pression croissante sur la langue Bubi."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "L'abira est la ceremonie collective la plus importante : elle vise a purifier la communaute du mal. La danse du balete est pratiquee tout au long de l'annee sur la cote et a Bioko autour de Noel. Les rites de puberte masculine (bain, parure, presentation au botuku pour reception d'un nom) sont fondamentaux. Le mariage existe sous deux formes : ribala r'eoto (mariage par achat de la virginite) et ribala re rijole (mariage par amour mutuel). La ceremonie funeraire implique des rites pour eloigner l'ame du corps, la communaute croyant que l'esprit pourrait sinon hanter la famille.",
+      "symbols": "Les menhirs (pierres dressees) sacres disperses sur toute l'ile symbolisent l'energie spirituelle et la fertilite des lieux. Les arbres iko plantes aux entrees des villages protegent contre les esprits malefiques. Les cicatrices faciales (sillons sur le front et les joues) servaient autrefois a identifier les Bubi meme s'ils etaient enleves comme esclaves.",
+      "artsAndMusic": "Les Bubi pratiquent la danse autour d'un feu de camp accompagnee de xylophone, rituel ancien appele las tetas grandes. La danse du balete est une celebration cotiere emblematique. La poterie (principalement feminine), la vannerie et la fabrication d'armes (masculine) constituent les arts traditionnels. L'art culinaire traditionnel inclut des plats a base d'ignames (rea), de taro (malanga) et d'huile de palme.",
+      "spiritualities": "La spiritualite Bubi repose sur la croyance en un cosmos a trois niveaux : Labakoppua (paradis et bons anges), Ommo ich'ori (enfer et mauvais anges) et Ommo boeboe (purgatoire). Les mauvais esprits sont responsables des maladies et malheurs. Les ancetres vivent dans le Borimo (region des morts). La veneratoin d'une deesse feminine, Visila, est attestee chez les Bubi du Nord. Aujourd'hui, le catholicisme (heritage de la colonisation espagnole) coexiste avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le royaume Bubi etait structure en cinq grandes regions politiques, chacune gouvernee par un botuku (roi). Le systeme monarchique Bubi dura plus de 3 000 ans. Au XIXe siecle, une tentative de reunification sous un roi supreme eut lieu. L'independance de la Guinee equatoriale (1968) et surtout le regime de Macias Nguema (1968-1979) detruisirent les structures monarchiques traditionnelles.",
+      "relationsWithNeighbors": "Isoles sur leur ile pendant des millenaires, les Bubi n'entretenaient pas de relations regulieres avec des peuples voisins. Ils se montrerent hostiles aux Europeens et resistèrent avec succes a leur penetration pendant plusieurs siecles. L'arrivee massive de Fang continentaux apres l'independance (1968) crea des tensions ethniques. Les Fernandinos (descendants de Krio) et d'autres groupes coexistent sur l'ile.",
+      "conflictsOrAlliances": "Les guerres intertribales Bubi furent chroniques pendant des siecles (clans contre clans, villages contre villages). En 1810, les Batete tuèrent l'integralite d'un equipage anglais ayant tente de debarquer. La resistance aux esclavagistes europeens fut systematique. Sous Macias Nguema (1968-1979), les Bubi furent particulierement cibles en raison de leur niveau d'education et de leur prosperite relative ; des milliers furent tues ou s'exilèrent en Espagne.",
+      "diaspora": "Suite aux persecutions sous Macias Nguema (1968-1979), une importante communaute Bubi s'est formee en Espagne (principalement Madrid et Barcelone), ainsi que dans d'autres pays europeens. Cette diaspora joue un role actif dans la preservation de la culture et de la langue Bubi."
     },
     "demography": {
-      "totalPopulation": 90,
+      "totalPopulation": 136000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur 7% de la population totale de la Guinee equatoriale (1 938 430 en 2025, World Population Review)",
+      "distributionByCountry": [
+        {
+          "country": "GNQ",
+          "population": 126000,
+          "note": "Ile de Bioko, representant environ 6,5-7% de la population nationale"
+        },
+        {
+          "country": "ESP",
+          "population": 10000,
+          "note": "Diaspora en Espagne (Madrid, Barcelone), suite aux persecutions de 1968-1979"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Bubi people – Wikipedia (https://en.wikipedia.org/wiki/Bubi_people)",
+      "Equatorial Guinea – Wikipedia (https://en.wikipedia.org/wiki/Equatorial_Guinea)",
+      "Demographics of Equatorial Guinea – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Equatorial_Guinea)",
+      "Bubi – Encyclopaedia Britannica (https://www.britannica.com/topic/Bubi)",
+      "Bioko's indigenous Bubi tribe – The Bubis on Fernando Po, Colleen Truelsen (https://www.thebubis.com/Overview.html)",
+      "Introduction – The Bubis on Fernando Po (https://thebubis.com/Introduction.html)",
+      "Bubi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/bubi.html)",
+      "Bubi in Equatorial Guinea – Minority Rights Group (https://minorityrights.org/communities/bubi/)",
+      "Spirits of the Forest, Guardians of the Island – Art of the Motherland (https://artofthemotherland.com/spirits-of-the-forest-guardians-of-the-island/)"
+    ]
   }
 }

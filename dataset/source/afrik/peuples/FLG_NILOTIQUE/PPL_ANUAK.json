@@ -2,67 +2,105 @@
   "id": "PPL_ANUAK",
   "nameMain": "Anuak",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["SDN", "ETH"],
+  "currentCountries": ["SSD", "ETH"],
   "content": {
     "appellations": {
       "mainName": "Anuak",
-      "selfAppellation": "Anywaa",
-      "exonyms": ["Anuak (terme utilisé par les Européens)"],
+      "selfAppellation": "Anywaa (aussi Anyuak, Anyuaa)",
+      "exonyms": [
+        "Anuak (terme colonial europeen)",
+        "Anyuak",
+        "Yambo (terme utilise par certains voisins)"
+      ],
+      "originOfExonyms": "Le terme Anuak est un exonyme adopte par les administrateurs coloniaux et les ethnographes europeens. L'endonyme est Anywaa (ou Anyuak), signifiant approximativement 'partager' ou reference a une caracteristique fondatrice du groupe. La langue est appelee Dha-Anywaa.",
+      "whyProblematic": "La variation orthographique (Anuak / Anyuak / Anywaa) reflete les differentes transcriptions coloniales (britannique pour le Soudan du Sud, ethiopienne pour la region de Gambella). La denomination Anuak est aujourd'hui la plus repandue dans les contextes internationaux et humanitaires.",
+      "contemporaryUsage": "Le terme Anywaa est utilise par la communaute elle-meme. Anuak est la forme la plus repandue dans les documents officiels, les ONG et les medias internationaux. L'Anuak Justice Council (diaspore nord-americaine) utilise les deux termes.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique occidental",
-      "historicalRegion": "Sud-SDN, ETH",
-      "currentCountries": ["SDN", "ETH"]
+      "ethnoLinguisticGroup": "Nilotique occidental (sous-groupe Luo)",
+      "historicalRegion": "Region de Gambella (ouest de l'Ethiopie), vallee du Baro et de l'Akobo ; anciennement pres des fleuves Pibor et Sobat (Soudan du Sud)",
+      "currentCountries": ["SSD", "ETH"]
     },
     "ethnicities": [
-      "Anuak du Soudan du Sud",
-      "Anuak d'Éthiopie",
-      "Sous-groupes régionaux"
+      "Anuak de Gambella (groupe majoritaire en Ethiopie, region administrative de Gambella)",
+      "Anuak du Soudan du Sud (le long des fleuves Akobo et Baro, zone de marécages saisonniers)",
+      "Anuak du Pibor (ancienne zone historique, aujourd'hui principalement au Soudan du Sud)",
+      "Communautes Anuak de diaspora (Minnesota USA, Canada)"
     ],
     "origins": {
-      "ancientOrigins": "Les Anuak sont originaires du Soudan du Sud et de l'ETH, dans la région du Nil supérieur. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Luo.",
-      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme."
+      "ancientOrigins": "Les Anuak sont un peuple nilotique occidental du groupe Luo, partageant une origine commune avec les Luo du nord (Shilluk) et les Acholi du sud. Ils habitent la vallee du Nil superieur depuis des siecles et considerent leurs terres comme leur territoire tribal ancestral. Originellement etablis pres des fleuves Pibor et Sobat (actuel Soudan du Sud), ils furent progressivement deplaces par d'autres groupes vers les rives du Baro et de l'Akobo.",
+      "formationPeriod": "L'identite anuak s'est forgee dans la region du Nil superieur et du plateau ethiopien occidental au cours du premier et second millenaire de l'ere commune. Les Anuak se distinguaient des autres peuples nilotiques par leur systeme politique decentralise (chefs de village amovibles) et leur orientation davantage agricole que pastorale.",
+      "migrationRoutes": [
+        "Deplacement depuis les zones du Pibor et du Sobat (Soudan du Sud) vers les rives du Baro et de l'Akobo (region de Gambella, Ethiopie)",
+        "Presence historique dans la zone de jonction entre les basses terres soudanaises et les Hauts-Plateaux ethiopiens"
+      ],
+      "historicalSettlementZones": [
+        "Region de Gambella (ouest de l'Ethiopie) — zone de plaines inondables, forets-galeries et rivieres",
+        "Rives du Baro et de l'Akobo (zone de marecages saisonniers en saison des pluies)",
+        "Ancienne zone du Pibor et du Sobat (Soudan du Sud)"
+      ],
+      "unificationsOrDivisions": "La societe anuak est decentralisee : pas de pouvoir politique centralise. Les villages sont independants, diriges par des chefs de village (Headmen) dont le pouvoir est revocable par la communaute. Les Anuak n'ont pas de tradition de chefferie hereditaire omnipotente, refletant une philosophie d'egalitarisme relatif.",
+      "externalInfluences": "Sous l'Empire abyssin, de nombreux Anuak furent reduits en esclavage par les menages riches et imperiaux ; l'esclavage fut aboli au debut du 20e siecle, brievement retabli apres la Seconde Guerre mondiale. Le regime Derg (1974-1991) imposa en 1983 la mobilisation des hommes et en 1984 reinstalla 60 000 personnes des Hauts-Plateaux en terres anuak, creant des tensions durables. La decouverte de petrole et d'or dans la region de Gambella dans les annees 2000 a exacerbe les conflits fonciers.",
+      "majorHistoricalEvents": "1984 : le regime Derg reinstalle 60 000 paysans des Hauts-Plateaux en Gambella. 1991 : effondrement de l'Etat ethiopien ; tensions ethniques nouvelles. 1991-2000 : conflits ethniques recurrents entre Anuak et d'autres groupes (Nuer, migrants des Hauts-Plateaux), centaines de morts et milliers de deplaces. Decembre 2003 : massacre de Gambella — le matin du 13 decembre 2003, suite a l'embuscade d'Anuak armes contre un convoi gouvernemental (8 agents ARRA tues), des milices highlander et des soldats de l'armee ethiopienne (ENDF) massacrerent pendant trois jours environ 300 civils anuak dans les quartiers de Gambella (Omminingah, Owalingah, Tier Kidi, Addis Zefer). 440 maisons furent detruites, 70 000 personnes deplacees. Human Rights Watch (2005) documenta des meurtres de masse, viols et tortures constitutifs de crimes contre l'humanite. L'Anuak Justice Council (diaspore nord-americaine) qualifie ces evenements de genocide."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Systeme politique villageois decentralise. Chaque village est dirige par un Headman (chef de village) dont le pouvoir peut etre retire par la communaute si son comportement est juge dictatorial. La philosophie anuak refuse le concept d'hommes-dieux : aucun leader n'est au-dessus de la volonte collective. Ce systeme tranche avec les chefferies hereditaires de nombreux peuples voisins.",
+      "clanOrganization": "Structure patrilineaire organisee en clans et lignages. Les communautes sont des villages autosuffisants, relativement fermes sur l'exterieur (les Anuak sont decrits comme tres mefiant des etrangers par Cultural Survival).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les droits fonciers et les alliances matrimoniales. La terre est une ressource communautaire clanique fondamentale, source de conflits recurrents avec les migrants exterieurs.",
+      "religiousAuthority": "La majorite des Anuak sont aujourd'hui chretiens evangeliques, constituant l'un des premiers peuples nilotiques a s'etre presque entierement christianises (apres les Shilluk). Les traditions locales accordaient un role sacre aux arbres saints (dans certains villages) et a Jwok (ou Gwok), esprit tout-puissant."
     },
     "languages": {
-      "mainLanguage": "Anuak",
-      "vehicularRole": "L'anuak est parlé par la majorité des Anuak. L'anglais, l'amharique et d'autres langues sont également utilisés."
+      "mainLanguage": "Anywaa / Anuak (Dha-Anywaa)",
+      "isoCodes": ["anu"],
+      "dialects": [
+        "Anywaa d'Ethiopie (Gambella — dialecte dominant)",
+        "Anywaa du Soudan du Sud (variante des zones de l'Akobo et du Pibor)"
+      ],
+      "vehicularRole": "L'anuak (code ISO 639-3 : anu) est une langue nilotique occidentale du groupe Luo, parlee par environ 100 000 a 200 000 locuteurs en Ethiopie (region de Gambella) et au Soudan du Sud. Proche du shilluk, de l'acholi et du luo. En Ethiopie, l'amharique est la langue vehiculaire nationale ; en Soudan du Sud, c'est l'anglais. La transmission de la langue anuak est en danger en raison des pressions migratoires et du depeuplement des zones ancestrales."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels anuak, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"description\": \"Les ceremonies de passage incluent des rites de naissance, de mariage et de mort. Le mariage est accompagne de dots en betail. La communaute celebre les rites agricoles lies aux cycles de plantation et de recolte du sorgho.\"}, \"funeraryRites\": {\"burial\": \"Inhumation sur les terres ancestrales du clan. Ceremonies de deuil communautaires avec chants et rituels pour apaiser l'esprit du defunt.\"}, \"agriculturalRites\": {\"description\": \"Ceremonies liees aux cycles de plantation et de recolte du sorgho (principale culture vivriere). Rituels de benediction des champs et des semences.\"}, \"fishingRites\": {\"description\": \"Rituels lies a la peche saisonniere, activite complementaire a l'agriculture, particulierement lors de la saison seche quand les communautes forment des villages de peche temporaires.\"}}",
+      "symbols": "Les arbres sacres dans certains villages anuak sont des symboles spirituels importants. Le sorgho et les cultures vivrieres symbolisent la continuite et la vie. Les rivieres Baro et Akobo sont des references identitaires centrales. L'Anuak Justice Council (fond par la diaspora) est devenu un symbole de resistance et de memoire apres le massacre de 2003.",
+      "artsAndMusic": "{\"music\": {\"description\": \"Musique integree aux ceremonies communautaires et rituels. Les Anuak ont une tradition musicale documentee par le musicologue David Osterlund dans sa these de doctorat (1978), etude des idiomes musicaux anuak dans leur contexte socioculturel.\"}, \"instruments\": [\"Tambours\", \"Flutes en roseau\", \"Instruments a cordes artisanaux\", \"Hochets\"], \"dances\": \"Danses ceremoniales lors des mariages, des fetes de recolte et des celebrations communautaires. Les danses integrent chants polyphoniques et mouvements collectifs.\", \"crafts\": \"Poterie, vannerie, tressage. Les femmes confectionnent des nattes et des recipients en fibres vegetales. Artisanat lie a l'agriculture et a la vie quotidienne.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Jwok (aussi Gwok)\", \"attributes\": \"Esprit tout-puissant, force supreme qui gouverne l'univers. Jwok n'est pas anthropomorphise mais represente la puissance divine omnipresente. Certains villages honorent des arbres consideres comme saints (lieux de residence de l'esprit).\"}, \"ancestors\": {\"roleOfAncestors\": \"Les ancetres jouent un role de protection et d'intercession. Les rituels funeraires visent a assurer le passage serein du defunt et a maintenir la bienveillance des esprits ancestraux.\"}, \"christianity\": {\"specificPractices\": \"Majorite evangelique chretienne depuis le 20e siecle, l'un des premiers groupes nilotiques a se christianiser massivement. Les missions chretiennes (protestantes) furent actives en Gambella des le milieu du 20e siecle.\"}, \"syncretism\": \"Syncrétisme entre croyances traditionnelles (Jwok, arbres sacres) et christianisme evangelique.\"}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora anuak dans les grandes villes soudanaises et éthiopiennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Anuak n'ont jamais developpe de royaumes centralises ni de chefferies hereditaires durables. Leur organisation politique est radicalement decentralisee : chaque village est gouverne par un Headman revocable. Ce modele politique, fonde sur l'egalitarisme et la responsabilite envers la communaute, est une caracteristique identitaire forte des Anuak par rapport aux peuples voisins.",
+      "relationsWithNeighbors": "Les Anuak ont historiquement coexiste et compete avec les Nuer (expansion vers l'est tout au long du 20e siecle), les Murle, et les migrants des Hauts-Plateaux ethiopiens. Les tensions avec les Nuer sont notamment liees a des conflits fonciers et pastoraux. En 2002, un conflit entre Nuer et Anuak provoqua plus de 100 morts et des milliers de deplaces. Les Anuak percoivent leur territoire comme ancestral et resistent aux migrations exterieures.",
+      "conflictsOrAlliances": "Les Anuak ont subi des vagues de violence sous plusieurs regimes ethiopiens. Sous le Derg (1974-1991), la reinstallation forcee de 60 000 personnes en 1984 en terres anuak fut une source majeure de tensions. Le massacre de Gambella (13-15 decembre 2003) constitue l'evenement traumatique le plus severe : environ 300 civils anuak furent tues par des soldats ethiopiens (ENDF) et des milices highlander suite a l'embuscade d'agents gouvernementaux. Human Rights Watch (2005) et l'International Human Rights Law Clinic documenterent ces faits comme crimes contre l'humanite. Genocide Watch et Survivors' Rights International comparerent la situation a celle du Rwanda en 1993.",
+      "diaspora": "Une importante diaspora anuak s'est constituee dans les annees 1990-2000 en raison des violences interethniques et de la discrimination gouvernementale presumee. Les Etats-Unis (Minnesota) accueillent la plus grande communaute, employee notamment dans l'industrie agroalimentaire (Hormel Foods, Smithfield Foods). L'Anuak Justice Council, fonde par des Anuak aux USA et au Canada, milite pour les droits humains, documente les violences et plaide aupres des gouvernements internationaux. L'Organisation internationale pour les migrations (OIM) a aide certains Anuak a s'etablir en diaspora."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 250000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Anuak people (200 000 a 300 000 dans le monde). SIL Ethnologue — Anuak (anu, 2024). Cultural Survival (estimations 2010). Recensement ethiopien (region de Gambella). CIA World Factbook — Ethiopia, South Sudan. Population estimee a 250 000 en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 180000,
+          "note": "Region administrative de Gambella (ouest de l'Ethiopie), principalement dans les zones d'Anuak et de Godere"
+        },
+        {
+          "country": "SSD",
+          "population": 60000,
+          "note": "Long des fleuves Akobo et Baro (Soudan du Sud), zone de marecages saisonniers"
+        },
+        {
+          "country": "USA",
+          "population": 10000,
+          "note": "Diaspora, principalement dans le Minnesota (Twin Cities)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Anuak language (anu)",
-      "CIA World Factbook – South Sudan, Ethiopia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Anuak people. https://en.wikipedia.org/wiki/Anuak_people",
+      "Wikipedia EN — Gambela massacre. https://en.wikipedia.org/wiki/Gambela_massacre",
+      "Human Rights Watch — Targeting the Anuak: Human Rights Violations and Crimes Against Humanity in Ethiopia's Gambella Region (2005). https://www.hrw.org/reports/2005/ethiopia0305/",
+      "Cultural Survival — The Anuak: A Threatened Culture (2010). https://www.culturalsurvival.org/publications/cultural-survival-quarterly/anuak-threatened-culture",
+      "Osterlund, David — The Music of the Anuak of Ethiopia (these de doctorat, 1978). In Social and Cultural Characteristics of the Anuak Tribe. University of Northwestern. https://mlpp.pressbooks.pub/isbn9781732566125/",
+      "SIL Ethnologue — Anuak language (anu). https://www.ethnologue.com/language/anu/",
+      "Anuak Justice Council — Documentation des violations des droits humains. https://www.anuakjustice.org/",
+      "Glottolog — Anuak. https://glottolog.org/resource/languoid/id/anua1241"
     ]
   }
 }

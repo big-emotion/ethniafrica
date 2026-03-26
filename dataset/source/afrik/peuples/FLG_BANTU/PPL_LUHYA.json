@@ -2,60 +2,150 @@
   "id": "PPL_LUHYA",
   "nameMain": "Luhya",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["KEN"],
+  "currentCountries": ["KEN", "UGA", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Luhya",
-      "selfAppellation": "",
+      "selfAppellation": "Abaluhya (ou Abaluyia)",
       "exonyms": [
-        "Luhya (terme utilisé par les Européens), parfois appelés \"Baluhya\" (pluriel)"
+        "Luyia",
+        "Abaluhya",
+        "Baluhya",
+        "Baluyia",
+        "Bantu Kavirondo",
+        "North Kavirondo (terme colonial)"
       ],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "originOfExonyms": "Le terme Luhya/Luyia signifie 'le nord' dans plusieurs dialectes du groupe; Abaluhya signifie donc 'gens du nord'. Une autre interpretation est 'ceux du meme foyer'. L'etiquette coloniale 'North Kavirondo' (puis 'Kavirondo Bantu') fut remplacee par 'Baluhya' dans les annees 1940-1960 lors de la creation d'une identite politique unifiee pour la representation dans les institutions coloniales. Certains disent que Baluyia signifie 'ceux qui vivent ensemble'.",
+      "whyProblematic": "Le terme 'Luhya' designe en realite une constellation ethnolinguistique de plus de 20 sous-tribus distinctes, chacune avec sa propre langue/dialecte et son systeme clanique. L'identite Luhya est une construction politique du XXe siecle: chaque individu s'identifie d'abord par sa sous-tribu (Omubukusu, Omumaragoli, Omusamia, etc.) avant de se dire Luhya.",
+      "contemporaryUsage": "Le terme Abaluhya (ou Luhya) est officiellement reconnu au Kenya et utilise dans les recensements nationaux. Dans la vie quotidienne, les individus s'identifient d'abord par leur sous-tribu. Le terme Luhya a acquis une grande importance dans la politique kenyane depuis les annees 1990.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
-      "currentCountries": ["KEN"]
+      "ethnoLinguisticGroup": "Bantu des Grands Lacs, constellation linguistique Luhya (sous-groupe Bantu du centre-est)",
+      "historicalRegion": "Kenya occidental (ancienne Province de l'Ouest), region du bassin du Lac Victoria",
+      "currentCountries": ["KEN", "UGA", "TZA"]
     },
-    "ethnicities": ["Luhya"],
+    "ethnicities": [
+      "Bukusu (Ababukusu)",
+      "Maragoli (Abamaragoli / Avalogooli)",
+      "Wanga (Abawanga)",
+      "Samia (Abasamia)",
+      "Tachoni (Abatachoni)",
+      "Tiriki (Abatiriki)",
+      "Idakho (Abasidakho)",
+      "Isukha (Abasiiukha)",
+      "Kabras (Abakabras)",
+      "Tsotso (Abatsotso)",
+      "Marama (Abamarama)",
+      "Kisa (Abakisa)",
+      "Khayo (Abakhayo)",
+      "Marachi (Abamarachi)",
+      "Nyala (Abanyala)",
+      "Banyore/Nyole (Abanyole / Abanyore)",
+      "Nyala ba Ndombi",
+      "Kabarasi",
+      "Tadjoni",
+      "Holo"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les ancetres des Luhya faisaient partie de la grande expansion Bantu depuis l'Afrique centrale occidentale il y a environ 4000 a 5000 ans. Les preuves archeologiques, linguistiques et genetiques lient les Luhya a des communautes Bantu etablies sur les versants nord et ouest du mont Elgon, le long de la riviere Nzoia et dans les plaines autour de Kakamega, Vihiga et Busia des le deuxieme millenaire de notre ere. La majorite des sous-groupes Luhya ont des origines dans l'actuelle Ouganda.",
+      "formationPeriod": "L'identite unifiee Luhya se forma progressivement entre 1940 et 1960 sous l'impulsion d'administrateurs coloniaux, de politiciens africains et d'elites educees par les missions. Les communautes distinctes de l'ouest du Kenya furent regroupees sous le nom Baluhya pour une representation collective dans les institutions coloniales avant l'independance kenyane (1963).",
+      "migrationRoutes": [
+        "Afrique centrale (bassin du Congo) vers la region des Grands Lacs (il y a 4000-5000 ans)",
+        "Ouganda vers les versants ouest du mont Elgon et la vallee de la riviere Nzoia (deuxieme millenaire)",
+        "Migration des Bukusu depuis le mont Elgon vers Bungoma et Trans Nzoia",
+        "Migration post-independance (1963) vers les fermes de la Rift Valley (anciennes terres des colons)"
+      ],
+      "historicalSettlementZones": [
+        "Versants du mont Elgon (ouest du Kenya et est de l'Ouganda)",
+        "Vallee de la riviere Nzoia (Kakamega, Bungoma)",
+        "Region de Kakamega et Vihiga",
+        "Region de Busia (rives du Lac Victoria)",
+        "Comtes de Kakamega, Bungoma, Vihiga, Busia, Trans Nzoia (Kenya)"
+      ],
+      "unificationsOrDivisions": "Les Luhya ne forment pas un groupe d'origine commune unique. Ils furent politiquement unifies sous le nom Baluhya entre 1950 et 1960 pour obtenir la meme reconnaissance et representation politique que les grands groupes ethniques du Kenya (Kikuyu, Luo). Le royaume Wanga sous Nabongo Mumia fut la principale entite politique Luhya precoloniale, consolidant son influence par alliances et controle des routes commerciales.",
+      "externalInfluences": "Razzias de betail par les Maasai et les Kalenjin dans les zones Luhya au XIXe siecle. Expansion des groupes Luo le long des rivieres Nzoia et Yala. Influence des missions chretiennes (catholiques et protestantes) depuis la fin du XIXe siecle. Colonisation britannique (protectorat d'Afrique orientale de 1895): introduction de nouvelles frontieres administratives, taxation, missions et cultures de rapport. Participation significative aux King's African Rifles (KAR) pendant la Seconde Guerre mondiale.",
+      "majorHistoricalEvents": "XIXe siecle: essor du royaume Wanga sous Nabongo Mumia, commerce avec Buganda et la cote. 1895: incorporation dans le protectorat britannique (district de North Kavirondo). Annees 1940-1950: formation de l'identite politique Baluhya. 1948: fondation du mouvement religieux Dini ya Msambwa par Elijah Masinde (resistance anticoloniale). 1963: independance du Kenya, installation de communautes Luhya dans la Rift Valley. 2010: Constitution kenyane devolue creant 47 comtes dont Kakamega, Bungoma, Vihiga et Busia (a majorite Luhya)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "La majorite des groupes Luhya sont acephales: ils sont organises en lignages patrilineaires politiquement autonomes, chacun associe a un territoire. Il n'existait pas de chefferie traditionnelle unifiee pour la plupart des sous-groupes. Exception notable: le royaume Wanga sous Nabongo Mumia, qui exercait une influence regionale. Les decisions politiques se prenaient au niveau du lignage ou du clan.",
+      "clanOrganization": "Chaque sous-tribu Luhya est organisee en clans patrilineaires. Les clans utilisent le prefixe aba- ou ava- (signifiant 'ceux de' ou 'appartenant a'). Les Bukusu, les plus nombreux (environ 30% des Luhya), comptent de nombreux sous-clans. Les Wanga ont 22 sous-clans identifies. Les Samia comptent des sous-clans comme Abatabona, Abadongo, Abakhino, etc. La descendance et l'appartenance territoriale sont determinantes dans l'organisation sociale.",
+      "ageClassSystems": "La circoncision masculine constitue le rite de passage majeur, en particulier chez les Bukusu. La ceremonie Khuminya/circumcision Bukusu a lieu traditionnellement en aout et marque le passage de l'etat de Omusinde (garcon incirconcis) a celui d'homme. Les garcons ages de 12 a 16 ans annoncent leur readiness, visitent leur oncle maternel pour les benedictions, puis procedent aux rituels preparatoires.",
+      "roleOfLineages": "Les lignages patrilineaires sont les unites fondamentales d'appartenance territoriale, d'heritage et d'identite. L'identite individuelle s'exprime d'abord par le lignage et le clan, puis par la sous-tribu. Les chefs de lignage jouent un role dans la resolution des conflits et la gestion des terres.",
+      "religiousAuthority": "Les ancetres jouent un role important dans la spiritualite traditionnelle. Were (le dieu du mont Elgon chez les Bukusu) est une figure spirituelle centrale. Le mouvement Dini ya Msambwa (fonde 1948) combine traditions Bukusu et elements bibliques. Les missions chretiennes ont tres largement evangelise les communautes Luhya; la majorite est chretienne aujourd'hui."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Langues Luhya (constellation de dialectes Bantu)",
+      "isoCodes": [
+        "luy",
+        "bxk",
+        "rag",
+        "lwg",
+        "nle",
+        "lkb",
+        "ida",
+        "lsm",
+        "wni"
+      ],
+      "dialects": [
+        "Lubukusu (Bukusu)",
+        "Lulogooli (Maragoli)",
+        "Oluwanga (Wanga)",
+        "Lusamia (Samia)",
+        "Lutachoni (Tachoni)",
+        "Lutirichi (Tiriki)",
+        "Lwidakho (Idakho)",
+        "Lwisukha (Isukha)",
+        "Lukabarasi (Kabras)",
+        "Olutsotso (Tsotso)",
+        "Lumarama (Marama)",
+        "Olushisa/Olukisa (Kisa)",
+        "Olukhayo (Khayo)",
+        "Olumarachi (Marachi)",
+        "Lunyala (Nyala, est et ouest)",
+        "Olunyole (Banyore/Nyole)"
+      ],
+      "vehicularRole": "Il n'existe pas de langue Luhya unique: le groupe est constitue de plusieurs dialectes Bantu mutuellement comprehensibles partageant des systemes de classes nominales, une morphologie verbale extensive et les prefixes aba-/ava- pour les personnes. La caracteristique linguistique identificatoire est le prefixe aba-/ava- (de/appartenant a). Le swahili est la lingua franca nationale, l'anglais la langue officielle. La plupart des Luhya sont multilingues."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Circoncision (rite de passage central, notamment chez les Bukusu): le jeune homme (Omusinde) est circoncis en public, la bravoure etant valorisee. La ceremonie comprend des preparatifs rituels, une visite a l'oncle maternel pour les benedictions, un enrobage de boue, des chants et des danses nocturnes (khuminya), et la procedure elle-meme a l'aube. Rites funeraires elabores avec deuil pouvant durer 40 jours. Pour les hommes riches ou influents, un grand arbre est arrache et le defunt enterre a cet endroit; puis un arbre sacre (Mutoto, Mukhuyu ou Mukumu) est plante.",
+      "symbols": "L'arbre sacre (Mutoto, Mukhuyu ou Mukumu) plante sur les tombes des personnages importants est un symbole majeur, uniquement plante par une femme vertueuse (vierge ou tres agee). Les royaux Wanga utilisaient des regalia specifiques. Les tambours de cour du royaume Wanga symbolisaient le pouvoir royal.",
+      "artsAndMusic": "La musique traditionnelle comprend des chants et des danses liees aux ceremonies (circoncision, funérailles, mariages). Les Luhya sont connus pour leur cuisine traditionnelle (ugali, sukuma wiki, viande de poulet - plat de prestige). La poterie, le tissage et l'artisanat sont des traditions culturelles importantes. La tradition orale transmet l'histoire des migrations et des clans.",
+      "spiritualities": "Croyance traditionnelle en Were (dieu supreme, associe au mont Elgon chez les Bukusu). Culte des ancetres. Le mouvement syncretique Dini ya Msambwa (fonde par Elijah Masinde en 1948) venere Were tout en utilisant des portions bibliques; il est ne comme resistance anticoloniale. La grande majorite des Luhya est chretienne aujourd'hui (environ 80%), avec une presence catholique, protestante et evangelique forte issue des missions du XIXe et XXe siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le royaume Wanga sous Nabongo Mumia fut la principale entite politique precoloniale Luhya, consolidant son influence par alliances avec Buganda, Busoga et le commerce cotier. La capitale etait Mumias. C'est a Mumias que fut realisee la premiere traduction biblique en langue Luhya (Wanga) par Nicholas Stamp. Les autres sous-groupes Luhya n'avaient pas de structures politiques centralisees equivalentes.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Luo (expansion le long des rivieres Nzoia et Yala), les Maasai et Kalenjin (razzias de betail), le royaume Buganda (alliances commerciales du royaume Wanga). Relations de coexistence avec les Nandi et les autres peuples des Highlands.",
+      "conflictsOrAlliances": "Razzias Maasai et Kalenjin dans les regions Luhya au XIXe siecle. Alliance strategique du royaume Wanga avec les administrateurs britanniques pour obtenir protection et influence. Participation aux King's African Rifles (KAR) pendant la Seconde Guerre mondiale. Le mouvement Dini ya Msambwa (1948) constitua une forme de resistance anticoloniale. Depuis l'independance, les Luhya constituent un bloc electoral majeur au Kenya.",
+      "diaspora": "Presence Luhya significative en Ouganda oriental (districts de Tororo, Mbale, Busia), avec des groupes aparentes (Basamia, Banyole, Gisu/Masaba). Migration importante vers Nairobi, Mombasa et d'autres centres urbains kenyans. Diaspora moderee a l'etranger (Europe, Amerique du Nord)."
     },
     "demography": {
-      "totalPopulation": 7,
+      "totalPopulation": 8300000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Projection 2025 basee sur le recensement kenyan KNBS 2019 (6,823,482 personnes, 14,35% de la population kenyane) avec un taux de croissance annuel de 2,3%. Sources: Wikipedia EN (recensement 2019), projections publiees en 2025 (X/Twitter @thekenyatimes, juin 2025: 8,3 millions).",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 8100000,
+          "note": "Comtes de Kakamega, Bungoma, Vihiga, Busia, Trans Nzoia; deuxieme groupe ethnique du Kenya"
+        },
+        {
+          "country": "UGA",
+          "population": 150000,
+          "note": "Est de l'Ouganda: districts de Tororo, Mbale, Busia (Basamia, Banyole)"
+        },
+        {
+          "country": "TZA",
+          "population": 50000,
+          "note": "Nord de la Tanzanie, populations frontieres"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Luhya people – Wikipedia EN (https://en.wikipedia.org/wiki/Luhya_people)",
+      "Luhya Culture, Language & Traditions – Encyclopaedia Britannica (https://www.britannica.com/topic/Luhya)",
+      "A Cultural Guide to the Luhya People – Village Volunteers (https://www.villagevolunteers.org/wp-content/uploads/2011/10/Luhya-Cultural-Guide.pdf)",
+      "101 Last Tribes – Luhya people (https://www.101lasttribes.com/tribes/luhya.html)",
+      "List of Luhya Sub Tribes – Logmma Regency Hotel (https://logmma.com/list-of-luhya-sub-tribes/)",
+      "KNBS Kenya Census 2019 – Kenya National Bureau of Statistics (https://www.knbs.or.ke)"
+    ]
   }
 }

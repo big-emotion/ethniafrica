@@ -7,58 +7,99 @@
     "appellations": {
       "mainName": "Bakwé",
       "selfAppellation": "Bakwé",
-      "exonyms": ["Bakwé (terme utilisé par les Européens)"],
+      "exonyms": ["Bakoue", "Bakwe", "Bakoué"],
+      "originOfExonyms": "Bakoue et Bakoue sont des variantes orthographiques utilisees dans la litterature coloniale et les textes administratifs francais. Bakwe est la graphie anglophone. Le terme Bakwé est lui-meme l'appellation la plus repandue et correspond a l'autodenomination du groupe. Ils font partie du vaste ensemble ethno-linguistique Krou (ou Kru), regroupe sous le nom de Krou oriental (Eastern Kru).",
+      "whyProblematic": "Le terme Bakwé est parfois confondu avec les Kroumen (peuple cotier distinct du meme ensemble Krou), ce qui cree des ambiguites dans la litterature. Les Bakwé sont distincts des Kroumen (peche et activites maritimes) et des Wane (groupe voisin).",
+      "contemporaryUsage": "Bakwé est le terme officiel utilise en Cote d'Ivoire et dans la litterature academique. L'appellation Bakoue est utilisee dans les anciens documents administratifs. Le terme Krou (Kru) designe l'ensemble ethno-linguistique auquel appartiennent les Bakwé. En Cote d'Ivoire, les Bakwé s'identifient egalement comme faisant partie du Bas-Sassandra et de la region de San-Pedro.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "Krou oriental",
-      "historicalRegion": "Sud-ouest de la Côte d'Ivoire",
+      "ethnoLinguisticGroup": "Krou oriental (Eastern Kru, sous-groupe Bakwe de la classification de Marchese 1989)",
+      "historicalRegion": "Foret tropicale du sud-ouest de la Cote d'Ivoire : cercles historiques de Sassandra, Soubre et Tabou (actuelles regions du Bas-Sassandra et Montagnes)",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Bakwé du Nord", "Bakwé du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Bakwé de Soubré — sous-groupe principal, region de Soubré et Méagui",
+      "Bakwé de San-Pedro — sous-groupe cotier autour de San-Pedro",
+      "Bakwé de Sassandra — sous-groupe de la region de Sassandra",
+      "Dialecte Defa — variante du groupe Bakwé",
+      "Dialecte Deple — variante orientale",
+      "Dialecte Dafa — variante du sud-ouest",
+      "Dialecte Nigagba — variante septentrionnale",
+      "Dialecte Nyinagbi — variante peripherique"
+    ],
     "origins": {
-      "ancientOrigins": "Les Bakwé sont originaires du sud-ouest de la CIV, dans la région forestière. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins (Bété, Dida), influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Bakwé font partie du groupe ethnolinguistique Krou, dont les traditions orales affirment une origine dans des regions plus septentrionales, possiblement les franges sud du Sahara, suivi d'une migration progressive vers le littoral atlantique il y a environ six a sept siecles. Les vestiges archelogiques Bakwé ont ete retrouves dans le parc de Tai, ce qui suggere que les Bakwé seraient parmi les premiers habitants de la grande foret ivoirienne. Ils sont consideres comme des autochtones de la foret dense du sud-ouest.",
+      "formationPeriod": "L'identite Bakwé distincte s'est consolidee dans la foret tropicale du sud-ouest de la Cote d'Ivoire, entre les fleuves Sassandra et San-Pedro. Historiquement repartis sur trois cercles administratifs (Tabou, Sassandra, Soubre), les Bakwé ont maintenu une organisation politique de type lignager (sans Etat centralise) tout au long de leur histoire. La colonisation francaise (a partir de 1893) et le projet de developpement de San-Pedro (annees 1960-1970) ont profondement transforme leur rapport au territoire.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis le nord (franges sahariennes ou savanes nord-ivoiriennes) vers la foret dense du sud-ouest, partagee avec les autres peuples Krou",
+        "Pression des petits royaumes mandingues (traite esclavagiste) comme facteur de deplacement vers le littoral forestier (environ XIVe-XVIe siecles)",
+        "Mouvement vers les zones cotieres de San-Pedro et Sassandra au contact des activites maritimes"
+      ],
+      "historicalSettlementZones": [
+        "Foret tropicale du Bas-Sassandra (sud-ouest de la Cote d'Ivoire)",
+        "Region de Soubré et Méagui — coeur du territoire Bakwé",
+        "Littoral de San-Pedro et ses environs",
+        "Sassandra et ses sous-prefectures",
+        "Marge nord-ouest du parc de Tai (zone de presence ancestrale documentee)"
+      ],
+      "unificationsOrDivisions": "Les Bakwé n'ont jamais cherche a constituer un Etat unifie ou une federation. Leur organisation est de type lignager et clanique, avec des rapports de pouvoir confondus avec des rapports de parente. Ils cohabitent avec les Bété (voisins de l'est) et les Kroumen (voisins cotiers), avec lesquels ils partagent des elements culturels mais maintiennent une identite distincte. Le projet San-Pedro (depuis 1969) a entraine une immigration massive d'autres ethnies ivoiriennes dans leur territoire.",
+      "externalInfluences": "Contacts avec les peuples Bété (est), Dida (nord-est) et Kroumen (cote). Pression des royaumes mandingues pratiquant la traite esclavagiste (XIVe-XVIe siecles). Colonisation francaise a partir de 1893, avec la pacification de la foret et la mise en valeur agricole (cacao, cafe, palmier a huile, hevea). Le projet de developpement de San-Pedro (1969), impulse par le president Houphouet-Boigny, a transforme leur region en pole economique, entraînant une immigration massive et une pression fonciere intense sur leurs terres ancestrales.",
+      "majorHistoricalEvents": "La resistance a la penetration coloniale francaise dans la foret du sud-ouest a ete documentee dans les archives de l'ORSTOM. L'operation San-Pedro (1969) a ete le facteur le plus transformateur de l'histoire contemporaine Bakwé : la creation du port de San-Pedro a attire des migrations massives, marginalisant progressivement les Bakwé sur leurs propres terres. Des tensions foncières persistent depuis lors. Alfred Schwartz (ORSTOM) a documente l'impact de cette operation dans les annees 1970-1980."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Les Bakwé ont une organisation politique de type lignager minimal, dans laquelle les rapports de pouvoir et les rapports de parente sont confondus. Il n'existe pas de chefferie centralisee ni de roi. Le pouvoir est diffus, exerce par les anciens de lignage lors de conseils villageois. Les decisions importantes (conflits fonciers, mariages, ceremonies) sont deliberees collectivement par les chefs de lignage.",
+      "clanOrganization": "L'affiliation patrilineaire est la base de l'organisation sociale Bakwé. La societe est organisee en lignages (clans patrilineaires) portant un nom d'ancetre fondateur commun. Chaque lignage controle un territoire, des ressources et des droits ceremonials. Les relations entre lignages sont regies par des reseaux d'alliance matrimoniale et de solidarite interclaniques.",
+      "ageClassSystems": "Les classes d'age jouent un role dans la societe Bakwé, notamment dans l'organisation des travaux collectifs (culture des champs vivriers) et des ceremonies rituelles. Les anciens (detenteurs de l'autorite) presidulent les initiations et les ceremonies de passage. Les jeunes hommes constituent une categorie sociale active dans les activites productives et la protection du village.",
+      "roleOfLineages": "Les lignages patrilineaires sont l'unite de base de la vie sociale Bakwé : ils determinent l'identite, les droits fonciers, les regles de mariage (exogamie de lignage), les obligations rituelles et les alliances. L'appartenance au lignage du pere structure toute la vie sociale et ceremoniale de l'individu. Les femmes s'integrent dans le lignage du mari apres le mariage, mais maintiennent des liens avec leur lignage d'origine.",
+      "religiousAuthority": "L'autorite religieuse est exercee par les anciens de lignage et par des specialistes rituels (prêtres masqueurs, guerisseurs traditionnels). Les masques sacres occupent une place centrale dans la vie religieuse et politique Bakwé : ils incarnent les esprits ancestraux et servent d'intermediaires entre les vivants et les ancetres. L'influence du catholicisme et du protestantisme est significative depuis la periode coloniale, creant un syncrétisme."
     },
     "languages": {
       "mainLanguage": "Bakwé",
-      "vehicularRole": "Le bakwé est parlé par la majorité des Bakwé. Le français est utilisé dans l'éducation et l'administration."
+      "isoCodes": ["bjw"],
+      "dialects": [
+        "Defa — dialecte du groupe de Soubré, considere le plus representatif",
+        "Deple — dialecte oriental",
+        "Dafa — dialecte du sud-ouest",
+        "Nigagba — dialecte septentrional",
+        "Nyinagbi — dialecte peripherique",
+        "Bakwé de Soubré — variete standard documentee par Marchese (1983) et SIL"
+      ],
+      "vehicularRole": "Le bakwé est parle par environ 10 300 locuteurs selon SIL (1993), estimation consideree comme inferieure a la realite actuelle compte tenu de la croissance demographique. La langue est classee comme en developpement (niveau 5, Developing) par Glottolog/Ethnologue, ce qui signifie qu'elle est encore activement transmise a la generation suivante. Le francais est la langue d'enseignement et d'administration. Le dioula (bambara vehiculaire ivoirien) est utilise dans les echanges commerciaux. La langue bakwé presente une similitude lexicale elevee avec le Godie (god), son plus proche parent dans l'est Kru."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels bakwé, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (catholicisme et protestantisme) et de l'islam."
+      "majorRites": "Les masques sacres constituent le coeur de la vie rituelle Bakwé. Comme chez l'ensemble des peuples Krou, les masques (appelez Gla chez les Wé, similaires chez les Bakwé) incarnent les esprits des ancetres et interviennent lors des grandes ceremonies : initiations masculines, funerailles de notables, reglement de conflits fonciers et ceremonies propitiatoires. L'initiation des jeunes hommes marque le passage de l'enfance a l'âge adulte : seclusion dans la foret, transmission des savoirs traditionnels et des interdits claniques. Les rites funeraires sont elabores pour les anciens et les notables, avec des ceremonies pouvant durer plusieurs jours, accompagnees de danses masquees et de festins. La danse Djoko est une danse typique Bakwé pratiquee lors des fetes et celebrations communautaires. Le Bollo super est une danse Kroumen adoptee par les Bakwé.",
+      "symbols": "Les masques Krou, et notamment les masques Bakwé, sont celebres dans le monde entier pour leur plastique cubiste qui a fascine les artistes du debut du XXe siecle (Picasso, Braque). Ces masques ont valeur symbolique sacrée et politique : ils representent les ancetres fondateurs et l'autorite coutumière. Les motifs geometriques en scarifications et ornements corporels sont des symboles d'appartenance claniques. La foret dense est un espace symbolique central : elle abrite les esprits, les initiations et les ressources nourricières.",
+      "artsAndMusic": "La musique Bakwé est caracterisee par les danses collectives accompagnees de percussions (tambours, balafons) et de chants. La danse Djoko est la danse traditionnelle la plus emblematique des Bakwé. Le Bollo super est une musique-danse d'inspiration Kroumen, adoptee par les Bakwé, melant instruments africains et influences exterieures. Les masques Krou (dont les masques Bakwé) sont des chefs-d'oeuvre d'art sculptural africain, celebres dans les musees du monde entier depuis le debut du XXe siecle. La poesie orale, les proverbes et les contes constituent le repertoire litteraire transmis par les griots et les anciens. L'artisanat comprend la sculpture sur bois (masques, statuettes), le tissage et la vannerie.",
+      "spiritualities": "La spiritualite Bakwé est fondee sur la croyance en des forces ancestrales (esprits des morts, genies de la foret et des rivieres) qui interviennent dans la vie des vivants. Les masques sont le vecteur principal de communication avec ces forces surnaturelles. Les animistes Bakwé pratiquent des sacrifices propitiatoires (animaux, libations) pour se concilier les ancetres avant les grandes decisions, les travaux agricoles et les ceremonies de cycle de vie. Le culte des ancetres fonde l'autorite des anciens. L'influence du catholicisme et du protestantisme (introduit par les missions europeennes depuis le XIXe siecle) a cree un syncrétisme religieux, mais les pratiques traditionnelles perdurent dans de nombreux villages."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques ivoiriennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bakwé dans les grandes villes ivoiriennes (Abidjan, San-Pédro) et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bakwé n'ont pas developpe de royaume centralise. Leur organisation politique de type lignager minimal n'a jamais produit d'Etat unifie. Des chefs de village (chefs de terre, chefs de lignage) exercent une autorite locale. Sous la colonisation francaise, des chefs coutumiers ont ete reconnus comme intermediaires administratifs. Dans le contexte ivoirien post-independance, les chefferies traditionnelles bakwé ont ete integrees dans la structure administrative nationale.",
+      "relationsWithNeighbors": "Les Bakwé entretiennent des relations de voisinage avec les Bété (a l'est), avec lesquels ils partagent certains traits culturels (masques, organisation lignagere). Ils cotoient les Kroumen et les Wane dans la zone cotiere. Les Bakwé ont ete facilement assimiles aux Kroumen et aux Bété dans la perception exterieures, bien qu'ils maintiennent une identite propre. Des echanges commerciaux (produits forestiers, peche, agriculture) ont existe avec les peuples voisins. L'arrivee massive de migrants (Baoule, Dioula, Bété) dans la region de San-Pedro depuis les annees 1970 a cree des tensions foncières.",
+      "conflictsOrAlliances": "Les Bakwé ont resiste aux razzias d'esclaves mandingues qui cherchaient a penetrer la foret du sud-ouest. Pendant la colonisation francaise, des affrontements ont eu lieu lors de la pacification de la foret. La guerre civile ivoirienne (2002-2011) a affecte la region du Bas-Sassandra, entraînant des deplacements de populations. Les tensions foncières liees a l'afflux migratoire depuis l'operation San-Pedro restent un enjeu contemporain.",
+      "diaspora": "Une diaspora Bakwé interne existe dans les grandes villes ivoiriennes, notamment Abidjan et San-Pedro, ou des Bakwé travaillent dans le commerce, l'administration et les secteurs informels. Une petite diaspora est presente en France et dans d'autres pays occidentaux. L'exode rural depuis les annees 1970 a amplifie ce phenomene."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 24000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project (2025) : 24 000 individus dans la fiche Bakwe en Cote d'Ivoire. SIL Ethnologue (1993) : 10 300 locuteurs de la langue bakwé. La population Bakwé au sens large est estimee entre 20 000 et 30 000 selon les projections 2025, compte tenu de la croissance demographique ivoirienne (environ 2,5% par an). Glottolog classe la langue comme en developpement (non menacee).",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 24000,
+          "note": "Concentres dans les sous-prefectures de Soubré, Méagui, San-Pedro et Sassandra (region du Bas-Sassandra et district des Montagnes)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bakwé language (bjw)",
-      "CIA World Factbook – Côte d'Ivoire",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples krou"
+      "Wikipedia FR — Bakwé (peuple). https://fr.wikipedia.org/wiki/Bakw%C3%A9_(peuple)",
+      "Wikipedia EN — Bakwé language. https://en.wikipedia.org/wiki/Bakw%C3%A9_language",
+      "Glottolog 5.3 — Bakwé (bakw1243), ISO 639-3 : bjw. https://glottolog.org/resource/languoid/id/bakw1243",
+      "Joshua Project — Bakwe in Côte d'Ivoire. https://joshuaproject.net/people_groups/19061",
+      "SIL Ethnologue — Bakwé (bjw). https://www.ethnologue.com/language/bjw/",
+      "Day Translations — Ivory Coast Profile, Languages. https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Schwartz, Alfred. Krou et Bakwe face à l'opération San Pedro. ORSTOM, 1979. http://horizon.documentation.ird.fr/",
+      "Schwartz, Alfred. Sous-peuplement et développement dans le sud-ouest de la Côte d'Ivoire. ORSTOM, 1993. ISBN 2-7099-1117-5.",
+      "OpenEdition — Les masques Krou de Côte d'Ivoire. https://journals.openedition.org/aaa/767"
     ]
   }
 }

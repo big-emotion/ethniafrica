@@ -1,0 +1,63 @@
+{
+  "id": "PPL_TONGA_ZAMBIA",
+  "nameMain": "Batonga / Tonga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Batonga / Tonga",
+      "selfAppellation": "Batonga (sg. Mutonga)",
+      "exonyms": ["Tonga (forme générique) ; BaTonga (pluriel bantou)"],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous d’Afrique australe (ZMB, ZWE)",
+      "historicalRegion": "Vallée du Zambèze, rives nord et sud",
+      "currentCountries": ["ZMB", "ZWE"]
+    },
+    "ethnicities": [
+      "Tonga de Zambie (Southern Province)",
+      "Tonga de Zimbabwe (Binga, vallée du Zambèze)",
+      "À préciser (autres communautés rurales ou fluviales)"
+    ],
+    "origins": {
+      "ancientOrigins": "Installation sur la vallée du Zambèze avant l’arrivée des Nguni et autres migrants du sud.",
+      "migrationRoutes": [
+        "Mobilité locale entre vallées, plateaux et rives du fleuve."
+      ],
+      "unificationsOrDivisions": "Groupes liés culturellement mais politiquement décentralisés.",
+      "externalInfluences": "Contacts avec Shona, Lozis, Nguni, puis avec les colons britanniques."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies locales (chiefdoms) avec chefs héréditaires.",
+      "clanOrganization": "Clans totémiques ; structure familiale étendue.",
+      "roleOfLineages": "Héritage, accès aux terres, rôle cérémoniel.",
+      "religiousAuthority": "Devins et anciens ; syncrétisme avec christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Tonga (Zambie/ZW)",
+      "dialects": ["Variantes de plateau et variants fluviaux."],
+      "vehicularRole": "Langue majeure du sud de la Zambie."
+    },
+    "culture": {
+      "Rites majeurs": "Rituels agraires et pastoraux liés aux saisons.",
+      "Symboles": "Fleuve Zambèze ; bétail ; tambours rituels.",
+      "Arts et musique": "Danses traditionnelles ; polyrythmes.",
+      "Spiritualités": "Croyances aux esprits fluviaux et aux ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies Tonga influentes dans le sud de la Zambie.",
+      "relationsWithNeighbors": "Interactions avec Shona, Lozi, Ila.",
+      "conflictsOrAlliances": "Déplacements forcés lors de la construction du barrage de Kariba (années 1950).",
+      "diaspora": "Présente à Lusaka, Harare, Livingstone."
+    },
+    "demography": {
+      "totalPopulation": 1800000,
+      "referenceYear": 2025,
+      "source": "peuple_demographie_globale.csv (PPL_BATONGA)"
+    },
+    "sources": [
+      "Ethnologue (toi/tzl)",
+      "Zambia Statistics Agency",
+      "Archives historiques du Zambèze"
+    ]
+  }
+}

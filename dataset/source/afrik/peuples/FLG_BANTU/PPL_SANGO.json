@@ -2,63 +2,94 @@
   "id": "PPL_SANGO",
   "nameMain": "Sango (Bantou)",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": [],
+  "currentCountries": ["CAF", "COD"],
   "content": {
     "appellations": {
-      "mainName": "Sango (Bantou)",
-      "selfAppellation": "Sango",
-      "exonyms": ["Sango (terme utilisé par les Européens)"],
+      "mainName": "Sango",
+      "selfAppellation": "Sango / Basango (pluriel bantou)",
+      "exonyms": ["Sangho", "Bosango", "Sangos"],
+      "originOfExonyms": "Le terme Basango est la forme bantoue pluralisée du nom Sango. Sangho est une variante orthographique française. Les Européens nommèrent le groupe Sango d'après leur langue, qui donnera son nom à la lingua franca nationale de la RCA.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Sango est le terme courant et accepté. Le nom est aussi celui de la langue créole officielle de la RCA, ce qui peut prêter à confusion : la langue sango est aujourd'hui parlée par des millions de personnes sans appartenance ethnique sango.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou",
-      "historicalRegion": "Afrique centrale",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Ngbandi (branche Ubangienne du Niger-Congo) — note : le groupe ethnique Sango est apparenté aux Ngbandi, leur langue d'origine étant ngbandi septentrional, base du créole sango",
+      "historicalRegion": "Rives du fleuve Oubangui (Ubangi), entre Mobaye et Bangassou — sud de la République Centrafricaine",
+      "currentCountries": ["CAF", "COD"]
     },
-    "ethnicities": ["Sango de RCA", "Sango de RDC", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Sango riverains de l'Oubangui (RCA, rive nord)",
+      "Yakoma (sous-groupe Ngbandi apparenté, rive sud — RDC)",
+      "Dendi (sous-groupe Ngbandi de l'Oubangui)",
+      "Mbangi (sous-groupe Ngbandi)",
+      "Abira (sous-groupe de l'Oubangui supérieur)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Sango sont originaires de la RCA et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou. Le sango est également une langue créole véhiculaire.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Le sango est devenu une langue véhiculaire.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Sango font partie du grand ensemble Ngbandi, peuple originaire selon la tradition orale de la Nubie (Egypte antique), qui migra vers le sud-ouest à partir du XVe siècle en fuyant les razzias esclavagistes arabes et les conflits entre le Darfour et le Kordofan. Ils s'installèrent d'abord en République Démocratique du Congo sur les rives du Mbari et du Shinko avant de remonter vers l'Oubangui.",
+      "formationPeriod": "Les Sango et les groupes Ngbandi apparentés occupent les rives de l'Oubangui depuis au moins le XVIIe siècle. Leur organisation en unités indépendantes (kodoro) et leur maîtrise de la navigation fluviale en font un peuple riverain commercial. La première attestation européenne remonte à l'expédition belge de Van Gele en 1887.",
+      "migrationRoutes": [
+        "De la région nilotique (Nubie/Soudan) vers le sud et l'ouest (XVe siècle)",
+        "Installation sur les rives du Mbari et du Shinko (actuelle RDC)",
+        "Remontée vers l'Oubangui supérieur (XVIIe-XVIIIe siècle)",
+        "Dispersion sur les deux rives du fleuve Oubangui"
+      ],
+      "historicalSettlementZones": [
+        "Rives nord de l'Oubangui (RCA, entre Mobaye et Bangassou)",
+        "Rives sud de l'Oubangui (RDC, Province du Congo central)",
+        "Préfecture d'Ombella-M'Poko (RCA)",
+        "Quelques groupes au Tchad (Guera, Salamat)"
+      ],
+      "unificationsOrDivisions": "Les Sango s'organisent en unités territoriales indépendantes (kodoro) sans structure politique centralisée. Au sein du groupe Ngbandi on distingue les Sango, Yakoma, Dendi, Mbangi. La langue sango, pidgin créolisé issu du ngbandi septentrional, devint progressivement la lingua franca de toute la RCA et est aujourd'hui co-officielle avec le français depuis 1991.",
+      "externalInfluences": "Contact avec les colons belges (représentant du Congo Free State, 1887) et français (Bangui fondé en 1889). Les Sango devinrent des piroguiers et transporteurs essentiels pour l'administration coloniale. La Baptist Mid-Missions (années 1920) adopta une politique linguistique sango, contribuant à sa diffusion. Influence du christianisme catholique et protestant.",
+      "majorHistoricalEvents": "1887 : première expédition belge de Van Gele dans la région ngbandi-sango. 1889 : fondation de Bangui par les Français sur la rive droite de l'Oubangui. XIXe siècle : les Sango et Yakoma développent un réseau commercial étendu le long du fleuve. La langue sango devient lingua franca de l'Oubangui-Chari colonial. 1964 : le sango déclaré langue nationale de la RCA. 1991 : le sango déclaré langue co-officielle avec le français par décret présidentiel."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en unités territoriales indépendantes (kodoro), sans pouvoir politique centralisé. L'autorité est exercée par des souverains (Gbya), titre signifiant monarque ou dynaste. Les colons destituèrent les Gbya et les remplacèrent par des chefs de canton (makonzi) imposés, mais les Gbya conservèrent leur prestige et légitimité traditionnelle. L'exercice du pouvoir s'appuie sur le droit d'aînesse et la masculinité comme principes hiérarchiques.",
+      "clanOrganization": "Les villages sont organisés par lignages : chaque quartier regroupe les membres d'un même lignage patrilinéaire. Le premier né est le chef de famille (sango a mboa). Il est dépositaire du TOLO (autel ancestral), du tambour NGO, du couteau de léopard et du KENGO (symbole d'indépendance absolue). La polygamie est répandue ; le célibat est inconcevable.",
+      "ageClassSystems": "Présence de corporations de guerriers d'élite (LOMBE) qui doivent faire preuve de courage. Ces guerriers avaient historiquement une grande influence politique et sociale. Les forgerons jouent un rôle particulier : ils pratiquent les scarifications, la circoncision et la guérison.",
+      "roleOfLineages": "Le lignage patrilinéaire détermine l'appartenance au groupe, les droits fonciers et les obligations rituelles. La hiérarchie fraternelle est stricte : les cadets doivent des cadeaux et du respect aux aînés. Le grand frère ne peut être contredit par son cadet. Les ancêtres paternels (TOLO) assurent la cohésion du groupe, la santé, la fécondité et la réussite.",
+      "religiousAuthority": "Dieu suprême : NZAPA (ou Ngbandi Zo), être androgyne sans représentation figurative, commandant un panthéon de divinités (Matombe, Bibinon, Bandombe Ketua, Lombe, Kanda, Mdawele). Devins-féticheurs (hommes et femmes, disciples de BENDO) : font des prédictions avec des cauris ou des souris, lien entre morts et vivants. Génies de l'eau (MBOMBA), génies de la forêt (GINARO). Culte des ancêtres centraux. Sorciers (LIKUNDU/NDI) redoutés. Présence de Sociétés Secrètes des Hommes LI."
     },
     "languages": {
-      "mainLanguage": "Sango",
-      "vehicularRole": "Le sango est parlé par la majorité des Sango et sert de langue véhiculaire en RCA. Le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Sango (langue créole à base ngbandi)",
+      "isoCodes": ["sag", "ngb"],
+      "dialects": [
+        "Sango riverain (sango de la rivière, base du créole, ISO : sag)",
+        "Ngbandi septentrional (langue source, ISO : ngb)",
+        "Yakoma (variante ngbandi proche)",
+        "Sango standard de Bangui (forme créolisée urbaine)"
+      ],
+      "vehicularRole": "Le sango est la langue nationale et co-officielle de la République Centrafricaine depuis 1991. Issu de la langue des pêcheurs ngbandi de l'Oubangui, il est parlé comme première ou deuxième langue par environ 3 millions de personnes en RCA (quasi totalité de la population). Il est également utilisé en RDC riveraine, au Tchad et au Cameroun méridional. Lingua franca commerciale depuis le XIXe siècle."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels sango, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Cérémonies funéraires importantes : les endeuillés portent une gerbe de paille autour de la ceinture, les femmes se noircissent le front. Rites liés aux jumeaux (NGBO) : danses et repas organisés en leur honneur par leurs parents qui leur attribuent des pouvoirs extraordinaires. Mariage traditionnel : dot (en nature, ivoire, cauris ou armes) versée aux parents de la fille. Scarifications au milieu du front (petites excroissances verticales réalisées par les forgerons) comme marques identitaires. Rites de circoncision pratiqués par les forgerons. Libations et offrandes aux ancêtres sur le TOLO (autel familial).",
+      "symbols": "Le TOLO (autel ancestral) symbolise la mémoire et la protection des ancêtres. Le tambour NGO représente l'autorité et la communication. Le KENGO symbolise l'indépendance absolue. Les scarifications frontales sont les marques identitaires caractéristiques des Sango-Yakoma. Le leopard incarne la royauté (couteau de léopard du chef de famille).",
+      "artsAndMusic": "Danses traditionnelles ngbandi-sango : Gbaduma (danse très physique, agitation convulsive du dos et du bassin) et Lengué (danse des épaules et de la tête, petits pas). Instruments : tambour NGO, hochets. Artisanat féminin : poteries fabriquées avec de l'argile du bord du fleuve. Artisanat masculin (forgerons) : objets en métal, harpons pour la pêche (spécialité yakoma), couteaux, armes. Les Yakoma sont reconnus depuis l'Antiquité comme spécialistes du fer et du cuivre ainsi que de son extraction (région d'Ouango). Architecture : villages de 100 à 300 cases circulaires à parois d'écorce et toits coniques en herbe.",
+      "spiritualities": "Culte du dieu suprême NZAPA (androgyne, sans représentation figurative) entouré d'un panthéon de divinités. Culte des ancêtres paternels sur l'autel TOLO. Croyances aux génies de l'eau (MBOMBA, auxquels on offre des poulets blancs liés à des perches ou des oeufs) et de la forêt (GINARO). Pratiques divinatoires (cauris, souris). Sorcellerie (LIKUNDU) redoutée. Sociétés secrètes masculines (LI). Christianisme catholique (Pères du Saint-Esprit depuis 1894) et protestant (Baptist Mid-Missions depuis les années 1920) très présent."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora sango dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Pas de chefferie centralisée : organisation en unités indépendantes (kodoro) dirigées par des souverains locaux (Gbya). Au XIXe siècle, les Yakoma (groupe apparenté) constituaient une nation forte dotée d'une monnaie de fer (guinza), acceptée sur une grande partie du territoire centrafricain. Les Sango-Yakoma étaient des piroguiers et commerçants influents sur tout l'Oubangui.",
+      "relationsWithNeighbors": "Rivalités et échanges commerciaux avec les Nzakara et les Zande à l'est. Alliance avec les colons européens à partir de 1887 : les Sango fournirent des pirogues et des piroguiers pour les expéditions coloniales, devenant des intermédiaires privilégiés. Tensions avec les esclavagistes arabes du nord. Relations avec les Gbanziri (peuple riverain proche).",
+      "conflictsOrAlliances": "Résistance aux razzias esclavagistes arabes ayant provoqué les migrations ngbandi du XVe siècle. Collaboration pragmatique avec les colons belges puis français dès 1887-1889. Les Sango-Yakoma accédèrent rapidement à l'administration coloniale et constituent aujourd'hui une grande partie des intellectuels centrafricains. Leur langue devint la lingua franca nationale, renforçant leur influence culturelle.",
+      "diaspora": "Communautés sango dans les grandes villes centrafricaines, notamment Bangui. Diaspora dans les pays voisins (RDC, République du Congo, Tchad). Communautés en France (ancienne métropole coloniale)."
     },
     "demography": {
-      "totalPopulation": 500000,
+      "totalPopulation": 450000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations SIL Ethnologue (2024) pour les locuteurs sango natifs : 450 000 locuteurs natifs en 1988, projetés à environ 450 000-500 000 en 2025 pour l'ethnie sango proprement dite. A distinguer des 3 millions de locuteurs du sango lingua franca en RCA. Joshua Project (CAF, 2024). CIA World Factbook — Central African Republic.",
+      "distributionByCountry": [
+        { "country": "CAF", "population": 380000 },
+        { "country": "COD", "population": 70000 }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Sango language (sag)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Sango people : https://en.wikipedia.org/wiki/Sango_people",
+      "101 Last Tribes — Sango people : https://www.101lasttribes.com/tribes/sango.html",
+      "Oubangui Medias — Le peuple Ngbandi, le cas des Sango et Yakoma : https://oubanguimedias.com/2022/05/27/le-peuple-ngbandi-le-cas-des-sango-et-yakoma-photo-dun-village-sango-en-1905/",
+      "APiCS Online — Survey chapter: Sango (lingua franca) : https://apics-online.info/surveys/59",
+      "SIL Ethnologue — Sango (sag) : https://www.ethnologue.com/language/sag",
+      "SIL Ethnologue — Ngbandi septentrional (ngb) : https://www.ethnologue.com/language/ngb",
+      "CIA World Factbook — Central African Republic : https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
+      "Joshua Project — Sango in Central African Republic : https://joshuaproject.net/people_groups/14728/CT"
     ]
   }
 }

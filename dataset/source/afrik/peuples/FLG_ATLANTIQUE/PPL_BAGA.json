@@ -7,23 +7,103 @@
     "appellations": {
       "mainName": "Baga",
       "selfAppellation": "Baga",
+      "exonyms": [
+        "Aga",
+        "Baele",
+        "Baga-Binari",
+        "Baga-Koga",
+        "Bagas",
+        "Bagga",
+        "Bago",
+        "Bailo",
+        "Barka",
+        "Boloes",
+        "Kalum",
+        "Zape Boulones"
+      ],
+      "originOfExonyms": "Le nom Baga est derive de la phrase soussou bae raka signifiant gens du bord de mer ou peuple du rivage. Les exonymes varies refletent les denominations attribuees par les voisins soussous, mandingues et les colons portugais et francais, qui distinguaient differents sous-groupes par leurs lieux d'implantation ou traits culturels particuliers.",
+      "whyProblematic": "Le terme Baga recouvre plusieurs groupes distincts qui ne forment pas une unite linguistique homogene : leurs langues sont partiellement mutuellement inintelligibles. La denomination est avant tout geographique et culturelle plutot que strictement ethnolinguistique.",
+      "contemporaryUsage": "Le terme Baga est utilise officiellement en Guinee pour designer les populations atlantiques du littoral. En contexte artistique international, il designe le peuple createur du masque Nimba, reconnu dans les grands musees du monde.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Littoral de Guinée (Basse Guinée), îles et mangroves",
+      "ethnoLinguisticGroup": "Sous-groupe atlantique nord (Baga), famille Niger-Congo",
+      "historicalRegion": "Littoral de Guinee (Basse Guinee) entre le Cap Verga et Conakry, zones de mangroves et d'estuaires des rios Nunez, Pongo et Boffe",
       "currentCountries": ["GIN"]
     },
-    "ethnicities": ["Baga Sitemu", "Baga Kalum", "Baga Koba", "Baga Mandori"],
-    "origins": {},
-    "organization": {},
-    "languages": {},
+    "ethnicities": [
+      "Baga Sitemu (Citeme) — groupe le plus important, seul sous-groupe dont la langue reste vibrante",
+      "Baga Kalum — implantes pres de Conakry et de la presqu'ile de Kalum",
+      "Baga Koba — pres de la ville de Kaporo, principalement des locuteurs ages",
+      "Baga Mandori (Manduri) — sous-groupe du littoral nord",
+      "Baga Pukur (Pokur) — sous-groupe du littoral central",
+      "Baga Sobane (Kakissa) — sous-groupe, tres peu de locuteurs subsistant",
+      "Bulunits — sous-groupe apparente aux Baga, implante dans la zone cotieres"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale baga, le peuple est originaire des hauts plateaux de l'interieur de la Guinee (region du Fouta Djallon). Ils furent pousses vers les terres cotieres marecageuses par des voisins hostiles, notamment les Peuls en expansion. Ils sont consideres comme les premiers occupants (first-comers) de nombreuses zones du littoral superieur de Guinee, ayant acquis en consequence des droits de proprietaires terriens sur ces terres.",
+      "formationPeriod": "La formation identitaire baga sur le littoral est difficile a dater precisement. Les sources europeennes mentionnent leur presence des le XVIe siecle. Leur implantation dans les zones de mangroves s'est consolidee progressivement, les rios Nunez et Pongo servant de limites a leurs territoires traditionnels.",
+      "migrationRoutes": [
+        "Migration depuis les hauts plateaux du Fouta Djallon vers les basses terres cotieres",
+        "Deplacement vers les zones de mangroves et les iles du littoral sous la pression des Peuls et des Soussous",
+        "Dispersion le long de la cote entre le Rio Nunez et Conakry (environ 260 km)"
+      ],
+      "historicalSettlementZones": [
+        "Zones de mangroves entre le Cap Verga et Conakry",
+        "Estuaires des rios Nunez, Pongo et Fatala",
+        "Iles et presqu'iles du littoral guineen (presqu'ile de Kalum, region de Boke et Boffa)"
+      ],
+      "unificationsOrDivisions": "Les Baga n'ont jamais forme un etat centralise. Ils ont toujours constitue une serie de communautes autonomes (societe acephale), unies par des traits culturels et linguistiques communs mais sans autorite politique supra-villageoise. La colonisation francaise a introduit des chefs (chefs de canton) sans fondement dans leur organisation traditionnelle.",
+      "externalInfluences": "XVIe siecle : contact avec les marchands portugais (Lancados), dont certains epouserent des filles de chefs baga et s'integrerent. XVIIIe siecle : jihad peul du Fouta Djallon et missions mandingues conduisant a une islamisation rapide. 1958-1984 : regime marxiste de Sekou Toure menant une politique de demystification detruisant les objets rituels et interdisant les pratiques animistes. Post-1984 : reemergence culturelle.",
+      "majorHistoricalEvents": "XVIIIe siecle : malgre des siecles de resistance aux pressions religieuses et politiques peules, presque tous les Baga se convertissent a l'islam sous l'influence des missionnaires mande. 1958 : independance de la Guinee ; le gouvernement marxiste interdit les pratiques non islamiques. 1984 : mort de Sekou Toure et chute du regime ; renaissance culturelle baga, mais l'islam reste religion d'etat et les pratiques animistes restent marginalisees."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe acephale : pas d'autorite politique centralisee. Le pouvoir reside dans les anciens masculins des groupes de parenteles, qui forment un conseil de village. Les chefs de village existent mais leurs pouvoirs sont limites par les coutumes et les conseillers. Les dynasties de chefs crees sous influence portugaise (Gomez, Fernandez) et francaise coexistent avec les structures traditionnelles.",
+      "clanOrganization": "Organisation patrilineaire par lignages. Les hommes et femmes appartiennent aux groupes de parentele de leur pere. La terre est transmise dans la lignee masculine. Les Portugais Lancados s'integrerent en epousant des filles de chefs et developperent des dynasties dirigeantes melees.",
+      "ageClassSystems": "Les classes d'age structurent la societe baga, en lien avec les societes secretes. L'acces aux rituels et aux responsabilites depend du passage par des etapes d'initiation successives encadrees par la societe Simo.",
+      "roleOfLineages": "Le lignage (patrilineaire) est la cellule de base de l'organisation sociale. Il controle la terre et les rituels. Les families vivent en grappes de structures cylindriques en terre, parfois reunies en petits villages. Le pouvoir politique est exerce par les anciens des lignages reunis en conseil.",
+      "religiousAuthority": "La societe secrete Simo (terme soussou signifiant sacre) est l'institution religieuse et politique centrale. Elle encadre les initiations masculines et feminines (societe A-Tekan pour les femmes). Les esprits Somtup (masculin) et A-Bol (feminin, epouse de Somtup) gouvernent les societes secretes. Le createur supreme est nomme Kanu."
+    },
+    "languages": {
+      "mainLanguage": "Langues baga (groupe de langues atlantiques du nord, famille Niger-Congo). La langue la plus vivante est le baga sitemu (bsp). Les autres variantes sont menacees ou eteintes.",
+      "isoCodes": ["bsp", "bgo", "bmd", "bcg", "bqf"],
+      "dialects": [
+        "Baga Sitemu (bsp) — la seule variete encore vigoureuse, parlee dans le sous-groupe Sitemu",
+        "Baga Koga / Koba (bgo) — variete parlee par des personnes agees uniquement",
+        "Baga Mandori (bmd) — variete du sous-groupe Mandori",
+        "Baga Pokur (bcg) — variete du sous-groupe Pukur",
+        "Baga Kaloum (bqf) — variete consideree eteinte, parlee dans une zone isolee"
+      ],
+      "vehicularRole": "La plupart des Baga parlent aujourd'hui le soussou comme langue principale de communication et de commerce interethnique. Les jeunes ont en grande partie abandonne les langues baga pour le soussou, l'arabe coranique et le francais (langue officielle de Guinee). Le multilinguisme est la norme dans les communautes baga."
+    },
     "culture": {
-      "source_0": "Célèbres masques **Nimba**, symboles de fertilité.",
-      "source_1": "Cérémonies liées à la mer et à l’agriculture.",
-      "source_2": "Architecture traditionnelle en matériaux locaux."
+      "majorRites": "Les rites centraux de la culture baga sont lies aux societes secretes Simo (masculine) et A-Tekan (feminine). L'initiation masculine comprend une retraite dans un espace sacre, la transmission des savoirs secrets et des objets rituels Elek (symboles protegeant les lignages). Le masque D'mba (Nimba) est sorti lors des fetes de recolte, des maternites, des mariages et des ceremonies agraires (au moins deux fois par an avant les saisons des pluies). Le masque Bansonyi est utilise lors des initiations masculines. Les morts sont exposes dans un bois sacre avant inhumation selon le rite islamique, et certaines possessions et la maison du defunt sont brulees.",
+      "symbols": "Le masque Nimba (D'mba en langue baga, deforme en Nimba en soussou) est le symbole majeur du peuple baga. Il represente la deesse de la fertilite et la Grande Mere. Porter sur les epaules par un danseur masculin de grande taille (entierement cache sous des etoffes et des raphias), il mesure jusqu'a 2,40 m et peut peser plus de 35 kg. Ses seins saillants evoquent la femme ayant allaite ses enfants. Les lignes cheek (scarifications) marquent l'identite baga. Les objets Elek symbolisent la protection des lignages et les secrets de la societe Simo.",
+      "artsAndMusic": "Les Baga sont reconnus pour un art exceptionnel dont les pieces ornent les grands musees mondiaux (Musee du Quai Branly, Metropolitan Museum of Art, Art Institute of Chicago, Musee Barbier-Mueller de Geneve). Les sculptures principales sont : le masque Nimba (D'mba), masque d'epaule de fertilite ; le masque Bansonyi (pole peint de 3 a 6 m, decore de couleurs vives, termine par un drapeau et une icone triangulaire) ; les objets Elek (symboles de lignage). La poterie est une tradition feminine. La musique utilise le tambour timba, les percussions et les chants collectifs lors des ceremonies. Certaines collections ont ete detruites pendant la periode de demystification (1958-1984) mais la production artistique connait une renaissance depuis.",
+      "spiritualities": "Les Baga sont aujourd'hui majoritairement musulmans sunnites malekites, suite a leur conversion au XVIIIe siecle. Toutefois, ils maintiennent des pratiques animistes ancestrales : culte des ancetres, croyance en un createur supreme (Kanu) et en un esprit masculin superieur (Somtup), societes secretes avec leurs rituels. La mort donne lieu a une exposition en bois sacre avant l'inhumation islamique. Des groupes isoles dans les zones de Nunez et Pongo ont maintenu un animisme plus marque."
     },
-    "historicalRole": {},
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Baga n'ont pas forme de royaumes centralises. Ils ont constitue des chefferies de villages autonomes liees par des alliances. Sous la colonisation francaise, des chefs de canton furent imposes. Des dynasties dirigeantes metisses (Gomez, Fernandez) emergerent au XVIe siecle de l'union entre chefs baga et Lancados portugais.",
+      "relationsWithNeighbors": "Les Baga ont entretenu des rapports conflictuels avec les Peuls du Fouta Djallon qui exercaient une pression religieuse et politique (le Fouta stationnait un santigi a Bara pour collecter des tributs). Les Soussous ont progressivement absorbe linguistiquement de nombreux Baga. Les relations commerciales avec les Mandingues incluaient le commerce du riz, des noix de kola, et du sel contre des produits manufatures.",
+      "conflictsOrAlliances": "Les Baga ont resiste pendant des siecles aux conversions forcees et aux pressions peules avant de se convertir massivement a l'islam au XVIIIe siecle. La traite atlantique des esclaves a impacte leur littoral : des comptoirs anglais et americains utilisaient les ports guineen pour les plantations americaines. La politique de demystification du regime Sekou Toure (1958-1984) a represente la plus grave crise culturelle contemporaine.",
+      "diaspora": "Les Baga sont principalement sedentaires sur le littoral de Guinee. Une migration interne vers Conakry et les centres miniers (mines de bauxite des iles de Los) s'est developpee depuis l'independance. Pas de diaspora internationale significative documentee."
+    },
     "demography": {
-      "source": "peuple_demographie_globale.csv (2025)"
+      "totalPopulation": 80000,
+      "referenceYear": 2025,
+      "source": "Estimation etablie a partir de 101 Last Tribes (environ 80 000 personnes pour l'ensemble du groupe Baga, avec une population proche de 80 000 mentionnee), des donnees Ethnologue pour les sous-groupes linguistiques, et de la proportion de la population guineenne. La population exacte est difficile a etablir en raison des processus d'assimilation en cours (de nombreux Baga se declarent Soussous dans les recensements).",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 80000,
+          "note": "Totalite du groupe Baga, littoral entre Boke, Boffa et Conakry"
+        }
+      ]
     },
-    "sources": ["Ethnologue", "Côte Ouest–Guinée ethnographic records"]
+    "sources": [
+      "Wikipedia EN. Baga people. https://en.wikipedia.org/wiki/Baga_people",
+      "Kutubu Arts. The Baga People of Guinea: History, Culture, and the Iconic Nimba Mask. https://kutubuarts.com/blogs/african-art-curated/baga-history-and-culture (2025)",
+      "Encyclopedia Britannica. Baga. https://www.britannica.com/topic/Baga",
+      "101 Last Tribes. Baga people. https://www.101lasttribes.com/tribes/baga.html",
+      "Ethnologue (SIL International). Baga subgroup. https://www.ethnologue.com/subgroup/1232/"
+    ]
   }
 }

@@ -1,23 +1,90 @@
 {
   "id": "PPL_BILLE",
-  "nameMain": "",
+  "nameMain": "Bille",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Bille",
+      "mainName": "Bille",
+      "selfAppellation": "Bille (ou Bilé ; le terme Bille désigne à la fois le peuple, le royaume et la langue dans la tradition locale)",
+      "exonyms": ["Bile", "Billanchi", "Billi"],
+      "originOfExonyms": "Le nom Bille est l'appellation historique du groupe et de son territoire. La variante Bile est une translittération anglophone courante dans les sources coloniales. Billanchi est un terme utilisé dans certaines classifications de Joshua Project pour désigner les Bille du delta du Niger.",
+      "whyProblematic": "Le terme Bille peut prêter à confusion avec d'autres groupes ijaw ou des entités géographiques du delta du Niger (Bille Creek, Bille 1 Flow Station). Il ne faut pas confondre les Bille avec les Kalabari ou les Bonny, bien que ces groupes soient tous des clans ijaw orientaux.",
+      "contemporaryUsage": "Bille est l'appellation officielle reconnue par le gouvernement de Rivers State et par les institutions traditionnelles. Le titre royal est Amayanabo de Bille (His Royal Majesty).",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Nigeria (Rivers State – Delta du Niger)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Ijaw oriental (Eastern Ijo, sous-groupe du phylum Niger-Congo, famille Ijoid)",
+      "historicalRegion": "Delta oriental du Niger : Degema Local Government Area, Rivers State, Nigeria. Situé à l'ouest de l'île de Bonny et au sud de Port Harcourt.",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (okx)", "Niger Delta Cultural Records"]
+    "ethnicities": [
+      "Bille Town (siège du royaume) : noyau principal de la communauté (~41 000 habitants)",
+      "Touma : grande agglomération secondaire du royaume",
+      "Oruama : communauté satellite méridionale",
+      "Krikama : settlement périphérique",
+      "Kariama : communauté de pécheurs",
+      "Imopeleama : settlement nord du royaume",
+      "Communautés fondatrices d'autres villes ijaw revendiquant une origine bille : Kula, Idama, Ogoloma (Okrika), Kugbo, Ikiakiama, Oginiama, Nkoro (Andoni LGA)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bille sont des descendants des proto-Ijaw (proto-Ijo) de l'ancien delta central, issus des ancêtres Agadagba-Bou et Isomabou. Avant leur migration vers le delta oriental, ils vivaient avec le clan Tarakiri du delta central. L'ancienne tradition orale situe le départ vers le XIVe siècle. Le site de dispersion historique est Okolo-Bille (aussi appelé Akpata-Bille, dans l'actuelle zone d'Abua), à partir duquel différentes branches ont essaimé vers le delta oriental.",
+      "formationPeriod": "Avant le XIVe siècle pour les migrations originelles depuis le delta central. Formation du royaume Bille dans le site actuel à partir du IXe siècle selon les traditions locales (fondation de Bille Town par la reine Ikpakiaba). Consolidation du royaume aux XVe-XVIIe siècles.",
+      "migrationRoutes": [
+        "Delta central (Agadagba-Bou, Isomabou) → séjour chez les Tarakiri → déplacement vers Okolo-Bille (actuel Abua, nord de Degema)",
+        "Passage par les terres désolées d'Ogonobe Ingbetokuru (auj. Obuama) et Sukube Ingbetokuru (auj. site de la consulat de Degema)",
+        "Installation définitive à Bille Town, île dans les mangroves de la rivière Bille Creek (tributaire de la Sombrero River)"
+      ],
+      "historicalSettlementZones": [
+        "Bille Town : île dans les forêts de mangroves du delta oriental, accessible uniquement par voie d'eau (4°34'35\"N 6°53'20\"E)",
+        "Degema Local Government Area, Rivers State : 30 settlements couvrant l'ensemble du territoire bille",
+        "Zone de pêche et de commerce fluvial : rivières Sombrero, New Calabar, Bille Creek et affluents"
+      ],
+      "unificationsOrDivisions": "La légende fondatrice raconte que la migration vers le sud fut déclenchée par une dispute autour d'un tilapia (poisson prisé), provoquant une scission communautaire. Cette mémoire est préservée symboliquement par les habitants de Nkoro (peuple fondé par une branche bille) qui maintiennent encore un tabou alimentaire sur le tilapia. Différentes branches ont ensuite fondé des villes autonomes (Kula, Idama, Ogoloma). Le royaume Bille consolide son unité politique sous les rois successifs portant le titre Amayanabo.",
+      "externalInfluences": "Commerce transatlantique des esclaves : les Bille participaient à ce réseau dès 1520 selon des documents européens. Contact avec les Kalabari et Bonny : alliances et tensions dans le delta. Colonisation britannique : rapports d'intelligence coloniale de 1935 définissant les frontières territoriales du clan Bille. Avènement de l'industrie pétrolière au XXe siècle : bouleversement de l'économie traditionnelle de pêche et d'auto-organisation communautaire.",
+      "majorHistoricalEvents": "Migration fondatrice depuis le delta central (avant XIVe siècle). Fondation de Bille Town par la reine Ikpakiaba (tradition orale : IXe siècle). Essor du royaume sous le roi Agbaniye Jike au XVIIe siècle (conquête de territoires voisins, prééminence régionale). Participation au commerce transatlantique dès 1520. Rapport colonial britannique de 1935 (définition des frontières). Enquête de 1949/50 (reconnaissance de l'indépendance du clan Bille vis-à-vis du Kalabari). Avènement de l'industrie pétrolière (années 1970-1980). Couronnement du roi Agbaniye Jike XVIII le 4 avril 2021."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle dirigée par l'Amayanabo (aussi appelé Siyedabo) de Bille, titre royal héréditaire. Le royaume comprend 30 settlements dont Bille Town est le centre administratif. L'Amayanabo est assisté d'un Conseil de chefs. La communauté valorise les principes de démocratie et d'égalité des droits dans sa structure inclusive. Avant l'ère pétrolière, le développement communautaire était assuré par des initiatives d'auto-aide collectives (construction d'écoles, de centres de santé, d'une mairie, de projets de remblaiement).",
+      "clanOrganization": "Structure clanique ijaw : les maisons (cases) et les clans (fondés sur la descendance patrilinéaire ou la filiation par les maisons commerciales pour certains groupes ijaw orientaux) structurent la société. La mémoire des ancêtres fondateurs (Opu Ada ye Sira, Agbaniye Kio, Opu Ogulaya, Opu Okurukuru) est maintenue dans les traditions orales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages des maisons royales (remontant au roi Agbaniye Jike) et des familles fondatrices structurent les droits politiques et cérémoniels. La mémoire généalogique est entretenue par tradition orale lors des cérémonies comme l'Agiri Festival.",
+      "religiousAuthority": "Le grand prêtre et les gardiens des rites liés à Agiri (divinité ancestrale de guerre et protectrice du peuple) détiennent l'autorité spirituelle suprême. La reine Ikpakiaba est vénérée comme fondatrice et médiatrice avec les esprits des eaux."
+    },
+    "languages": {
+      "mainLanguage": "Bille (langue ijaw orientale)",
+      "isoCodes": ["bil"],
+      "dialects": [
+        "Variantes de Touma, Krikama, Jikeama : légères différences phonétiques entre les principaux settlements du royaume selon la classification Ethnologue",
+        "Usage du pidgin nigérian (Naija) comme langue véhiculaire dans les échanges inter-ethniques du delta"
+      ],
+      "vehicularRole": "La langue bille est la langue maternelle et la langue du foyer pour tous les adultes de la communauté. Elle est classée comme langue en danger (endangered) par Ethnologue car les jeunes générations ne la transmettent pas intégralement. L'anglais est la langue de l'éducation, le pidgin nigérian sert de langue de commerce inter-ethnique."
+    },
+    "culture": {
+      "majorRites": "Agiri Festival : plus importante fête culturelle du royaume Bille, nommée d'après Agiri, la divinité ancestrale guerrière et protectrice du peuple. Le festival commémore les victoires militaires passées, honore les guerriers tombés au combat et renouvelle le pacte spirituel de la communauté avec ses ancêtres. Il inclut des rites traditionnels, régates fluviales, expositions culturelles et banquets communautaires. Le grand masque Agiri n'est exhibé que lors du dernier jour du festival. Cérémonies de libations aux esprits des eaux (owama be apu). Rites funéraires ijaw avec respect rigoureux des protocoles claniques.",
+      "symbols": "Agiri : divinité ancestrale guerrière, protectrice du peuple Bille, symbolisée par un grand masque cérémoniel. Les Odu (tambours ou objets sacrés capturés lors des conquêtes) portés par des hommes valides lors du festival symbolisent la souveraineté du royaume sur les communautés vaincues. Bille Town : île-forteresse dans les mangroves, symbole de résistance et d'identité.",
+      "artsAndMusic": "Traditions de danse guerrière et de régates fluviales. Musique percussive à base de tambours, cloches et cloches doubles (instruments rituels lors de l'Agiri Festival). Sculpture de masques rituels (grand masque Agiri). Broderie et vêtements traditionnels portés lors des cérémonies. Tradition orale très riche : épopées des rois guerriers (surtout d'Agbaniye Jike), récits de fondation de la ville par la reine Ikpakiaba.",
+      "spiritualities": "Religion traditionnelle ijaw : croyance en des esprits des eaux (owama be apu), qui se manifestaient comme des sirènes jouant des mascarades lors de l'arrivée des premiers Bille. La reine Ikpakiaba négocia avec ces esprits par sacrifices rituels pour obtenir le droit de s'établir sur l'île. Culte de la divinité Agiri (dieu ancestral de la guerre et gardien du peuple). Culte d'Adumu (intelligence suprême dans la cosmologie proto-ijaw). Le christianisme est présent (Joshua Project indique 10-50% de chrétiens) mais les pratiques traditionnelles restent centrales dans la vie cérémonielle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Bille : fondé à partir de Bille Town (IXe siècle selon la tradition), consolidé comme puissance régionale aux XVe-XVIIe siècles. Sous le roi Agbaniye Jike (XVIIe s.), le royaume conquit de nombreux villages et communautés voisins, étendant son influence sur l'ensemble du delta oriental. Il est documenté dans les archives européennes dès 1520 comme participant au commerce transatlantique.",
+      "relationsWithNeighbors": "Relations complexes avec les Kalabari : compétition territoriale (délimitée par la New Calabar River, confirmée par l'enquête Robinson 1949/50). Relations avec Bonny : partage de droits sur certains cours d'eau (New Calabar River). Fondation de villes filles par des branches bille (Kula, Idama, Ogoloma/Okrika, Kugbo, Nkoro) créant un réseau de liens claniques dans tout le delta oriental. Alliance et tension avec la montée en puissance du Kalabari City State qui éclipsa partiellement le Bille à partir du XVIIIe siècle.",
+      "conflictsOrAlliances": "Conquêtes militaires du roi Agbaniye Jike (XVIIe s.) : domination sur les communautés voisines du delta oriental. Résistance à l'absorption par les Kalabari : certaines villes filles bille s'allièrent avec Kalabari pendant la période coloniale. Défense de l'indépendance territoriale : reconnaissance officielle de la frontière Bille/Kalabari par la Commission Robinson (1949/50). Tensions contemporaines liées à la ressource pétrolière dans le delta du Niger.",
+      "diaspora": "Communautés bille dispersées dans les grandes villes nigérianes (Port Harcourt, Lagos, Abuja). Diaspora internationale (Europe, Amérique du Nord). Liens maintenus via les festivals annuels qui rassemblent les ressortissants bille du monde entier. La diaspora contribue au financement d'infrastructures locales."
+    },
+    "demography": {
+      "totalPopulation": 85000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Bille Kingdom, 2016) : environ 77 000 personnes pour l'ensemble du royaume, dont 41 000 à Bille Town. Joshua Project : 54 000 (estimation conservatrice). Projection 2025 d'environ 85 000 en appliquant le taux de croissance nigérian (2,5% annuel depuis 2016).",
+      "distributionByCountry": [{ "country": "NGA", "population": 85000 }]
+    },
+    "sources": [
+      "Wikipedia EN : Bille kingdom https://en.wikipedia.org/wiki/Bille_kingdom",
+      "Wikipedia EN : Bille, Nigeria https://en.wikipedia.org/wiki/Bille,_Nigeria",
+      "Wikipedia EN : Ijaw languages https://en.wikipedia.org/wiki/Ijaw_languages",
+      "Ijaw Heritage TV : Origin of the Bille Ijaw People https://ijawheritagetv.com/2024/09/18/origin-of-the-bille-ijaw-people/",
+      "Joshua Project : Bile, Billanchi in Nigeria https://joshuaproject.net/people_groups/10847",
+      "Ethnologue : Bille Language (BIL) https://www.ethnologue.com/language/bil/",
+      "YouTube : Agiri Festival - The Spirit of Ancient Bille Kingdom https://www.youtube.com/watch?v=ynoNfSjyw9s",
+      "Facebook EveAfriquenews : Ancient Bille Kingdom and the Agiri Festival https://www.facebook.com/EveAfriqueNews/posts/ancient-bille-kingdom-is-agog"
+    ]
   }
 }

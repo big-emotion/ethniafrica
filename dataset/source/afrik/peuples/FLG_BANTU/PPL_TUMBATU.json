@@ -6,54 +6,80 @@
   "content": {
     "appellations": {
       "mainName": "Tumbatu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Tumbatu",
+      "exonyms": ["Shirazi", "WaTumbatu"],
+      "originOfExonyms": "Le terme Shirazi designe l'identite revendiquee par les Tumbatu et d'autres groupes cotieres de Zanzibar (Hadimu, Pemba) qui se reclament d'ancetres persans originaires de la ville de Chiraz (Fars, Iran). Ce recit d'origine persane est aujourd'hui largement considere par les archeologues et linguistes comme une construction identitaire posterieure plutot qu'une realite historique directe, les preuves attestant d'une origine africaine locale pour la culture swahilie. WaTumbatu est la forme avec le prefixe de pluriel wa- propre au swahili.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Tumbatu designe le peuple de l'ile Tumbatu, dans la partie nord de Zanzibar. L'identite Shirazi est maintenue par la communaute comme marqueur de distinction par rapport aux Arabes omanais, aux esclaves affranchis et aux immigrants continentaux. Les Tumbatu sont reconnus avec les Hadimu et les Pemba comme les populations 'indigenes' de Zanzibar.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Zanzibar",
+      "ethnoLinguisticGroup": "Swahili (Bantu zone G)",
+      "historicalRegion": "Ile Tumbatu, Zanzibar (archipel), Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Tumbatu"],
+    "ethnicities": ["Tumbatu", "Shirazi"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Zanzibar"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les ancetres des Tumbatu font partie des premieres populations a s'etre installees a Zanzibar, arrivant du continent africain (region des Grands Lacs) il y a environ 2 000 a 4 000 ans. Les premieres traces d'occupation humaine sur l'ile Tumbatu remontent a 2 000 ans selon les donnees archeologiques. La tradition orale revendique une ascendance persane: des marchands et aristocrates de la ville de Chiraz (Perse, actuel Iran) seraient arrives au 9e siecle et se seraient melanges avec les populations africaines locales pour former la civilisation swahilie.",
+      "formationPeriod": "La cite de Tumbatu s'est developpee comme centre commercial majeur de la cote swahilie entre le 12e et le 15e siecle, a l'apogee des echanges dans l'ocean Indien. Elle constituait un centre de rang superieur dans le reseau des cites-etats swahilies, engagee dans le commerce avec d'autres ports de l'ocean Indien.",
+      "migrationRoutes": [
+        "Arrivee initiale depuis le continent africain (region des Grands Lacs) il y a 2 000 a 4 000 ans",
+        "Vague persane revendiquee au 9e siecle (tradition orale Shirazi)",
+        "Consolidation progressive de la population insulaire au fil des siecles"
+      ],
+      "historicalSettlementZones": [
+        "Ile Tumbatu (nord de Zanzibar/Unguja)",
+        "Villages de Gomani et Jongowe sur l'ile Tumbatu",
+        "Partie nord de l'ile d'Unguja (Zanzibar) au nord du 6e parallele sud"
+      ],
+      "unificationsOrDivisions": "Les Tumbatu et les Hadimu constituent les deux groupes 'autochtones' principaux de Zanzibar (Unguja), les Pemba occupant l'ile de Pemba. Les Tumbatu occupent la partie nord de l'ile Unguja (au nord du 6e parallele sud) et l'ile Tumbatu adjacente. Ces deux groupes maintiennent leur identite tribale distincte et refusent toute fusion depuis des siecles.",
+      "externalInfluences": "Islam adopte des le 8e siecle, faisant des Tumbatu l'une des premieres communautes musulmanes d'Afrique orientale. Influence persane revendiquee (Shirazi) au 9e siecle. Influence arabe omanaise: le sultan Seyyid Said bin Sultan d'Oman est arrive a Zanzibar en 1828 et a trouve les Hadimu et Tumbatu comme populations majoritaires. Colonisation portugaise puis omanaise puis britannique. Revolution de 1964 mettant fin au sultanat arabe de Zanzibar.",
+      "majorHistoricalEvents": "8e siecle: debut de la conversion a l'islam. 9e siecle: arrivee presumee des Persans Shirazi selon la tradition orale. 12e-15e siecles: periode de prosperite de la cite de Tumbatu. Vers 1938: incendie du village detruisant le manuscrit de Tumbatu (chronique medievale unique). Juin 1957: visite de l'anthropologue neerlandais A. H. J. Prins qui identifie les ruines de la cite Shirazi. Revolution de Zanzibar (1964): renversement du sultanat arabe, impact sur l'equilibre ethnique de l'archipel."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation communautaire traditionnelle insulaire avec des leaders locaux. La communaute Tumbatu maintient son isolement relatif par rapport au reste de Zanzibar: absence d'electricite et de voitures sur l'ile Tumbatu, avec des deplacements essentiellement par bateau. Les etrangers sont admis uniquement avec la permission des autorites locales.",
+      "clanOrganization": "Le clan Matongo est le groupe clanique dominant sur l'ile Tumbatu, connu pour ses pratiques culturelles distinctives et son artisanat. La vie sociale est organisee autour des communautes villageoises de Gomani et Jongowe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages familiaux determinent l'appartenance aux groupes Shirazi et l'acces aux ressources de l'ile. La fierte de l'ascendance persane (reelle ou symbolique) est maintenue par les recits genealogiques familiaux.",
+      "religiousAuthority": "L'islam sunnite est la religion centrale de la communaute Tumbatu. Les mosquees constituent le coeur de la vie sociale et culturelle. Les leaders religieux (imams) jouent un role d'autorite morale. Des pratiquest sante sont maintenues en parallele."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Swahili (Kiswahili)",
+      "isoCodes": ["swh"],
+      "dialects": ["dialecte Tumbatu du swahili (variante locale)"],
+      "vehicularRole": "Les Tumbatu parlent une variante locale du swahili. Le kiswahili standard est la langue nationale de la Tanzanie et la langue d'enseignement. L'arabe est utilise dans le contexte religieux (lectures coraniques). Le swahili de Zanzibar (Kiunguja) est la variante de prestige de l'archipel."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques islamiques structurant la vie quotidienne: priere quotidienne, Ramadan, mariages et funerailles conformes aux traditions musulmanes swahilies. Ceremonies traditionnelles liees aux cycles de la vie, notamment la circoncision pour les garcons. Les rituels de mariage sont elabores et lies aux traditions swahilies de la cote est-africaine.",
+      "symbols": "Les ruines de la mosquee Shirazi (11e-12e siecle) dans la foret de l'ile sont le symbole central de l'identite historique Tumbatu. Les portes en bois sculpte de style swahili, les batiments en pierre de corail, et les plantations de clous de girofle representent l'heritage materiel. Les dhows (boutre) symbolisent le lien a la mer et aux traditions maritimes.",
+      "artsAndMusic": "Architecture swahilie traditionnelle avec des portes en bois finement sculptees et des constructions en pierre de corail, refletant l'influence arabe et persane. Construction de boutres (dhows) pour la navigation. Artisanat de tissage et broderie. Traditions musicales swahilies incluant le taarab (musique melant elements arabes, indiens et africains).",
+      "spiritualities": "Islam sunnite pratique depuis plus de douze siecles. La mosquee Shirazi sur l'ile Tumbatu est datee du 11e-12e siecle. Des pratiques syncrétiques conservant des elements de spiritualite africaine preislamique persistent dans certains rituels de protection et de guerison."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "La cite de Tumbatu etait un centre de rang superieur (higher-order state centre) dans le reseau des cites-etats swahilies entre 1100 et 1300 apres J.-C. Elle dominait les echanges commerciaux avec d'autres centres de l'ocean Indien. Elle a ete decrite dans une chronique locale connue sous le nom de 'Manuscrit de Tumbatu', detruit par un incendie vers 1938.",
+      "relationsWithNeighbors": "Relations avec la cite de Mkokotoni (Unguja), facilement accessible par bateau. Interactions commerciales avec les grands centres de l'ocean Indien (Perse, Inde, Arabie). Relations avec les Hadimu (autres autochtones de Zanzibar). Conflits historiques avec les Arabes omanais qui les ont progressivement expropries des terres les plus fertiles de l'ouest d'Unguja au 19e siecle.",
+      "conflictsOrAlliances": "Au 19e siecle, les Tumbatu et les Hadimu ont ete progressivement expropries des parties occidentales et les plus fertiles de Zanzibar par les nouveaux arrivants arabes. La Revolution de Zanzibar de 1964 a renverse le sultanat arabe omanais et modifie profondement l'equilibre du pouvoir dans l'archipel.",
+      "diaspora": "Population concentree sur l'ile Tumbatu et la partie nord d'Unguja. Peu de diaspora documentee en dehors de Zanzibar. Maintien de l'identite tribale distincte meme parmi les Tumbatu etablis dans les villes de Zanzibar."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 15000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur les sources disponibles. Les Hadimu et Tumbatu represented les populations autochtones de Zanzibar. Population exacte du sous-groupe Tumbatu non disponible dans les sources consultees; estimation conservatrice.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 15000,
+          "note": "Ile Tumbatu et nord de Zanzibar (Unguja), region de Kaskazini A, Tanzanie"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Tumbatu – Wikipedia (https://en.wikipedia.org/wiki/Tumbatu)",
+      "Tumbatu Island – Wikipedia (https://en.wikipedia.org/wiki/Tumbatu_Island)",
+      "Britannica, Tumbatu people (https://www.britannica.com/topic/Tumbatu)",
+      "Pongwe Beach Hotel, Tumbatu Island: Sacred Shores and Hidden History (https://pongwe.com/tumbatu-island/)",
+      "Joshua Project, Swahili Tumbatu in Tanzania (https://joshuaproject.net/people_groups/15633)",
+      "PeopleGroups.org, Tumbatu of Tanzania (https://peoplegroups.org/people_groups/pg050321/)",
+      "Essque Zalu Zanzibar, The People of Zanzibar: Ethnic Origins, Language and Religion (https://essquezaluzanzibar.wordpress.com/2013/12/13/the-people-of-zanzibar-ethnic-origins-language-religion/)",
+      "Masai Mara Migration Safaris, History of Zanzibar (https://www.masaimaramigration.com/safari-guide/history-of-zanzibar/)"
+    ]
   }
 }

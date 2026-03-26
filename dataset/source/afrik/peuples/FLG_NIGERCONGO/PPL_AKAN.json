@@ -6,68 +6,109 @@
   "content": {
     "appellations": {
       "mainName": "Akan",
-      "selfAppellation": "Akan",
-      "exonyms": ["Akan (terme utilisé par les Européens)"],
+      "selfAppellation": "Akan / Akanfoo",
+      "exonyms": [
+        "Coromantee (terme utilise par les colonisateurs britanniques pour les captifs akan d'Amerique)",
+        "Twi (designation parfois utilisee pour l'ensemble akan)"
+      ],
+      "originOfExonyms": "Le terme Coromantee, repandu en Jamaique et dans les colonies britanniques d'Amerique, designait les esclaves akan embarques sur la cote de l'Or (Gold Coast). Les zones habitees par les Akan apparaissent sur la carte neerlandaise de 1629 sous le nom Akani.",
+      "whyProblematic": "La denomination Akan recouvre un groupe metaethnique constitue de nombreux sous-groupes (Ashanti, Fanti, Baoul, etc.) partageant une structure linguistique et culturelle commune mais conservant des identites distinctes. Le terme fut parfois applique de facon trop extensive ou au contraire restreinte selon les sources coloniales ou academiques.",
+      "contemporaryUsage": "Le terme Akan est aujourd'hui largement accepte comme categorie metaethnique regroupant les peuples Kwa du Ghana meridional et de la Cote d'Ivoire. Les sous-groupes (Ashanti, Fanti, Baoul, Akuapem, etc.) maintiennent leurs identites propres.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Kwa",
-      "historicalRegion": "GHA, CIV",
+      "ethnoLinguisticGroup": "Kwa (branche Tano central)",
+      "historicalRegion": "Ghana meridional (ancienne Gold Coast) et Cote d'Ivoire orientale ; forets et zones de transition foret-savane",
       "currentCountries": ["GHA", "CIV"]
     },
     "ethnicities": [
-      "Ashanti",
-      "Fanti",
-      "Akuapem",
-      "Akyem",
-      "Brong",
-      "Nzema",
-      "Autres sous-groupes akan"
+      "Ashanti (Asante) — centre du Ghana, Kumasi, empire hegemonique 18e-19e siecle",
+      "Fanti (Fante) — cote du Ghana central, confederation 18e siecle",
+      "Akuapem — region de l'Est du Ghana",
+      "Akyem — region de l'Est du Ghana",
+      "Brong (Bono) — nord du Ghana, sous-groupe fondateur",
+      "Nzema — sud-ouest du Ghana et Cote d'Ivoire",
+      "Wassa — Ghana meridional",
+      "Denkyira — Ghana central, puissance precedant l'Ashanti",
+      "Akwamu — Ghana de l'Est, expansion 17e siecle",
+      "Sefwi — Ghana occidental",
+      "Kwahu — region de l'Est du Ghana",
+      "Baoul (Baoule) — centre et est de la Cote d'Ivoire",
+      "Anyi (Agni) — Cote d'Ivoire de l'Est et Ghana occidental",
+      "Sanwi — Cote d'Ivoire (region de Krinjabo)"
     ],
     "origins": {
-      "ancientOrigins": "Les Akan sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Formation de royaumes akan.",
-      "externalInfluences": "Contacts avec les peuples ouest-africains, influence du christianisme."
+      "ancientOrigins": "Les Akan font partie du groupe Kwa de la famille Niger-Congo. Leurs plus anciens sites documentés remontent au complexe Kintampo (vers 2000-500 av. J.-C.), transition vers la sedentarisation, l'agriculture et l'usage du fer dans les forets du Ghana actuel. Les analyses genetiques indiquent la dominance du haplogroupe paternel E1b1a1-M2 (70-97 %), commun aux peuples d'Afrique subsaharienne occidentale. La mutation drepanocytaire dans la population akan remonte a environ 7 300 ans. Les traditions orales situent les origines dans la zone de transition foret-savane, avec des sites fondateurs comme Adansemanso (des 393 apr. J.-C.), Asantemanso (des 700 av. J.-C.) et Bonoso (660-1068 apr. J.-C.).",
+      "formationPeriod": "Les premiers royaumes akan structures (Bono Manso, Begho) emergent entre le 11e et le 13e siecle, integres dans les reseaux d'echange transsahariens via le commerce de l'or. L'identite akan distincte s'est consolidee entre le 13e et le 17e siecle avec la formation successive des Etats d'Adanse, d'Akwamu, de Denkyira et enfin de l'empire ashanti (1701). En Cote d'Ivoire, les migrations baoul post-1701 ont introduit la culture akan dans le centre du pays.",
+      "migrationRoutes": [
+        "Migrations des populations fondatrices depuis la zone de transition foret-savane du Ghana septentrional vers le sud au 13e siecle",
+        "Expansion ashanti depuis Kumasi vers l'ensemble du Ghana meridional et les regions voisines (18e-19e siecles)",
+        "Migration baoul de la Gold Coast vers la Cote d'Ivoire apres la mort d'Osei Tutu (post-1717) : deux vagues successives depuis Denkyira (~1701) et Kumasi"
+      ],
+      "historicalSettlementZones": [
+        "Ghana meridional — regions Ashanti, Centrale, Occidentale, Orientale, Brong-Ahafo",
+        "Cote d'Ivoire — regions du centre et de l'est (Baoul, Anyi)",
+        "Diaspora historique aux Ameriques — Jamaique (Marrons), Suriname, Guyane"
+      ],
+      "unificationsOrDivisions": "Les Akan sont organises en royaumes distincts (oman, pluriel aman) partageant la structure matrilineaire et le systeme des huit clans. L'Empire ashanti (1701-1901) constitue la plus grande unification politique akan, sous l'autorite de l'Asantehene. La Confederation fanti s'est constituee au 18e siecle en reponse a la menace ashanti. En Cote d'Ivoire, le royaume Sanwi de Krinjabo tenta de faire secession en 1969. L'identite akan globale coexiste avec des identites sous-groupales fortes.",
+      "externalInfluences": "Commerce de l'or avec les marchands mande et haoussa medievaux. Contacts avec les Portugais sur la cote depuis 1471. Commerce europeen intensifie aux 17e-18e siecles (armes a feu). Traite transatlantique d'esclaves : environ 10 % des embarquements d'Afrique occidentale. Guerres anglo-ashanti (1824, 1826, 1874, 1900). Colonisation britannique du Ghana (1901). Colonisation francaise de la Cote d'Ivoire.",
+      "majorHistoricalEvents": "Fondation de l'empire ashanti sous Osei Tutu et Okomfo Anokye (1701), avec le Tabouret d'Or comme symbole d'unite nationale. Defaite de Denkyira a Feyiase (1701). Guerres contre les Britanniques : bataille de Nsamankow (1824), bataille de Katamanso (1826), invasion de Kumasi (1874), Guerre du Tabouret d'Or et resistance de Yaa Asantewaa (1900). Incorporation de l'Ashanti dans la colonie britannique (1901). Independance du Ghana (1957) sous Kwame Nkrumah (Akan). Independance de la Cote d'Ivoire (1960) sous Felix Houphouet-Boigny (Baoul)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaumes traditionnels (Ashanti, etc.). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Les Akan sont organises en Etats (oman) diriges par un chef (ohene ou omanhene). Les grandes confederations (Ashanti, Fanti, Akyem, Akwapim) regroupent plusieurs Etats. L'Asantehene est l'autorite supreme de la confederation ashanti. Chaque paramountcie est divisee en cinq sous-chefferies correspondant aux fonctions militaires (avant-garde, flanc gauche, flanc droit, corps principal, arriere-garde). Le systeme est fonde sur la consultation et le consensus via des conseils d'anciens.",
+      "clanOrganization": "La societe akan est organisee en huit clans matrilineaires (abusua) : Oyoko, Bretuo, Agona, Asona, Asenie, Aduana, Ekuona, Asakyiri. Chaque Akan appartient au clan de sa mere. L'appartenance clanique determine les droits successoraux, les alliances matrimoniales et l'acces aux titres politiques. La reine-mere (ohemaa) joue un role essentiel dans la nomination des chefs et la transmission du clan.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage matrilineaire (abusua) determine l'identite, l'heritage foncier et l'acces au pouvoir politique (mogya, le sang transmis par la mere). En parallele, le lignage paternel (ntoro, 12 groupes spirituels) transmet le nom, les tabous et certains rituels. L'Abusuapanyin (doyen de famille) gere les affaires du lignage. Le systeme Gyaase organise les branches candidates aux titres.",
+      "religiousAuthority": "Autorite des pretres traditionnels (okomfo) servant les divinites (abosom). La reine-mere (ohemaa) joue un role dans les ceremonies religieuses royales. Influence croissante du christianisme depuis le 19e siecle, genrant un syncretisme repandu. Les cultes des ancetres sont geres par les lineages."
     },
     "languages": {
-      "mainLanguage": "Akan",
-      "vehicularRole": "L'akan est parlé par la majorité des Akan. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Akan (Twi-Fante)",
+      "isoCodes": ["aka", "twi", "fat"],
+      "dialects": [
+        "Asante Twi — dialecte de Kumasi et de la region Ashanti, variete de prestige",
+        "Akuapem Twi — dialecte historiquement utilise pour la traduction de la Bible, premiere variete litteraire",
+        "Fante (Fanti) — dialecte cotier du Ghana central, avec sous-varietes Agona, Gomua, Abura, Anomabu",
+        "Brong (Bono) — dialecte du nord du Ghana, egalement parle en Cote d'Ivoire",
+        "Wassa — varietes Amenfi et Fianse du Ghana meridional"
+      ],
+      "vehicularRole": "L'akan est la langue la plus parlee du Ghana : environ 80 % de la population ghanenne le parle comme premiere ou deuxieme langue, et 44 % sont locuteurs natifs. Il est langue nationale officielle au Ghana. Le dialecte bono est parle en Cote d'Ivoire. Avec la traite atlantique, l'akan a influence le ndyuka en Suriname et le creole maroon en Jamaique (Coromantee). L'Akan Orthography Committee (AOC) a developpe en 1978 une orthographe commune basee principalement sur l'akuapem."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux akan (Ashanti), symboles liés à l'agriculture, symboles culturels akan, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La ceremonie Outdooring (ponkyerene) marque la naissance : l'enfant est presente publiquement et nomme huit jours apres sa naissance. Le mariage traditionnel akan implique le paiement d'une dot (aseda) et des ceremonies familiales. Les funerailles (ayie) sont des evenements sociaux majeurs impliquant plusieurs jours de ceremonies, de danses, de musique et d'offrandes aux ancetres. Le festival Odwira (purification annuelle) est celebre dans les etats ashanti. L'initiation a l'age adulte est marquee differemment selon les groupes. La circumcision n'est pas universelle mais pratiquee par certains groupes.",
+      "symbols": "Le Tabouret d'Or (Sika Dwa Kofi) est le symbole supreme de l'unite ashanti et de l'ame collective du peuple. Les symboles Adinkra — plus de 50 pictogrammes ideographiques — representent des concepts philosophiques et moraux akan. Les poids en or (abramuo) a effigie servaient a mesurer la poudre d'or et constituent une tradition artistique distinctive. Le tissu kente (nwentoma), tisse a la main sur de petits metiers, est le symbole le plus visible de la culture akan, associe a la royaute et au prestige. Les masques bo nun amuin (elephant, dieu de la foret) sont utilises dans les ceremonies.",
+      "artsAndMusic": "L'art metallurgique akan est mondialement reconnu : fonte a la cire perdue (or, bronze, laiton) pour les bijoux royaux, poids a peser l'or et statues. La poterie et le tissage (notamment le kente) sont des traditions feminines et masculines respectivement. La sculpture sur bois produit des tabourets (siege de l'ame), des dolls akua'ba (fertilite) et des regalia royaux. La musique akan comprend les tambours parlants (fontomfrom, atumpan), les cuivres royaux (mmenson) et les chorales ceremoniales. La danse adowa (associee aux funerailles ashanti), le kete (danse royale) et les danses de guerre asafo (fanti) sont les genres les plus representes. La tradition orale (anansesem, contes d'Ananse l'araignee) constitue un heritage litteraire central.",
+      "spiritualities": "La cosmologie akan reconnait un dieu supreme Nyame (Onyame, Onyankopon — le Grand Nyame) createu omniscient, inaccessible directement. Il est servi par des divinites intermediaires (abosom) liees aux elements naturels (rivieres, ocean, arbres). Les ancetres (nananom) sont veneres par les lignages et sollicites pour leur protection. La conception de la personne comprend le kra (ame individuelle, don de Nyame), le sunsum (esprit qui interagit avec le monde) et le mogya (sang matrilineaire). Le christianisme est majoritaire aujourd'hui, s'integrant dans un syncretisme aktif avec les croyances traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora akan dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Bono-Manso (11e-15e siecles) est considere comme le premier Etat akan structure, fondateur du commerce aurifere regional. L'Empire ashanti (1701-1901), fonde par Osei Tutu sous le Tabouret d'Or, etait l'un des empires les plus puissants d'Afrique de l'Ouest, controlant une grande partie du Ghana actuel et des zones frontalieres. La Confederation fanti (18e siecle) regroupait les peuples cotiers contre les Ashanti et les Europeens. Le royaume d'Akwamu captura Accra en 1681. Le royaume de Denkyira preceda l'hegemonie ashanti. En Cote d'Ivoire, les royaumes baoul et anyi perpetuent la tradition politique akan.",
+      "relationsWithNeighbors": "Les Akan ont entretenu des relations commerciales avec les peuples mande et haoussa du nord (or, cola, esclaves). Conflits et alliances complexes avec les peuples ewe, ga-adangme et guan du Ghana. Rivalites entre sous-groupes akan (Ashanti vs Fanti, Ashanti vs Denkyira). En Cote d'Ivoire, les Baoul sont entres en contact avec les populations krou et mande de l'interieur.",
+      "conflictsOrAlliances": "Quatre guerres anglo-ashanti (1824-1900) marquerent la resistance a la colonisation britannique. La guerre du Tabouret d'Or (1900), menee par la reine-mere Yaa Asantewaa, fut la derniere grande resistance. En 1733, des esclaves akan (Coromantee) menerent la revolte de Saint-Jean aux Antilles danoises. En 1760, Tacky dirigea une revolte akan en Jamaique. En 1969, le royaume Sanwi tenta de faire secession de la Cote d'Ivoire. La confiscation du Tabouret d'Or par les Britanniques en 1900 declencha la guerre finale.",
+      "diaspora": "La traite transatlantique deporta un nombre significatif d'Akan vers les Ameriques : leurs descendants constituernt les Marrons de Jamaique (ou ils conserverent une langue creole a base akan, le Coromantee), et influencerent la culture ndyuka en Suriname et en Guyane francaise. Aujourd'hui, une diaspora moderne akan est etablie au Royaume-Uni, aux Etats-Unis, en Allemagne et dans d'autres pays europeens — notamment issue des migrations post-independance."
     },
     "demography": {
-      "totalPopulation": 20000000,
+      "totalPopulation": 25000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations basees sur les donnees du recensement ghaneen (2021 : Akan = 47,5 % de 32 millions = environ 15,2 millions), recensement ivoirien (Akan = ~28,8 % de 32,7 millions = environ 9,4 millions), SIL Ethnologue, CIA World Factbook, TOTA World (12 925 000 au Ghana, 7 013 650 en Cote d'Ivoire). Projection 2025.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 15500000,
+          "note": "Regions Ashanti, Centrale, Occidentale, Orientale, Brong-Ahafo — population majoritaire du Ghana meridional"
+        },
+        {
+          "country": "CIV",
+          "population": 9500000,
+          "note": "Peuples baoul, anyi, nzema — centre et est de la Cote d'Ivoire"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Akan language (aka)",
-      "CIA World Factbook – GHA, CIV",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples akan",
-      "Études historiques sur le royaume Ashanti"
+      "Wikipedia EN — Akan people. https://en.wikipedia.org/wiki/Akan_people",
+      "Wikipedia EN — Akan language. https://en.wikipedia.org/wiki/Akan_language",
+      "SIL Ethnologue — Akan language (aka). https://www.ethnologue.com/language/aka/",
+      "TOTA World — Akan Geography. https://www.tota.world/article/803/",
+      "CIA World Factbook — Ghana. https://www.cia.gov/the-world-factbook/countries/ghana/",
+      "CIA World Factbook — Cote d'Ivoire. https://www.cia.gov/the-world-factbook/countries/cote-d-ivoire/",
+      "African American Registry — The Akan African Community. https://aaregistry.org/story/the-akan-african-community-a-story/",
+      "Wikipedia EN — Ashanti Empire. https://en.wikipedia.org/wiki/Ashanti_Empire"
     ]
   }
 }

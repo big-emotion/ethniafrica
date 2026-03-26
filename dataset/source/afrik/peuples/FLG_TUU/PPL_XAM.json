@@ -1,68 +1,109 @@
 {
   "id": "PPL_XAM",
-  "nameMain": "ǀXam",
+  "nameMain": "|Xam",
   "languageFamilyId": "FLG_TUU",
   "currentCountries": ["ZAF"],
   "content": {
     "appellations": {
-      "mainName": "ǀXam",
-      "selfAppellation": "ǀXam (peuple éteint)",
+      "mainName": "|Xam",
+      "selfAppellation": "|Xam-ka !Xe (les gens |Xam)",
+      "exonyms": [
+        "Flat Bushmen (terme de Bleek pour les |Xam du Strandberg)",
+        "Grass Bushmen (terme de Bleek pour d'autres sous-groupes)",
+        "Bosjesmans / Bushmen (terme colonial neerlandais et anglais)",
+        "|Kham",
+        "|Khuai"
+      ],
+      "originOfExonyms": "Le terme Bushman (Bosjesman en neerlandais) fut employe par les colons du Cap pour designer tous les chasseurs-cueilleurs San, terme aujourd'hui considere pejoratif. Wilhelm Bleek distingua les Flat Bushmen (Platte Bosjesmans du Strandberg) des Grass Bushmen selon leurs habitats. L'endonymen |Xam-ka !Xe signifie litteralement 'les gens |Xam'.",
+      "whyProblematic": "Le terme Bushman est une designation coloniale pejorative. Les designations modernes privilegient |Xam ou San. La langue |Xam etant eteinte et le peuple disparu, toute denomination est necessairement historique et issue de sources externes (archive Bleek-Lloyd).",
+      "contemporaryUsage": "Le peuple |Xam est eteint depuis le debut du 20e siecle. Son nom demeure present dans la conscience nationale sud-africaine grace a la devise nationale |Xam adoptee en 2000: !ke e: |xarra //ke ('les gens differents s'unissent'), gravee sur les armoiries de la Republique d'Afrique du Sud depuis le 27 avril 2000.",
       "linguisticFamily": "FLG_TUU",
-      "ethnoLinguisticGroup": "Tuu (ǀXam)",
-      "historicalRegion": "Afrique du Sud (province du Cap)",
+      "ethnoLinguisticGroup": "Tuu (!Kwi/!Ui, branche meridionale)",
+      "historicalRegion": "Karoo superieur, Bushmanland et Cap-du-Nord (Afrique du Sud): triangle entre Kenhardt, Brandvlei et Van Wyksvlei; aussi Orange River, Cederberg, Cap oriental (Aliwal North, Burghersdorp)",
       "currentCountries": ["ZAF"]
     },
     "ethnicities": [
-      "ǀXam du Nord",
-      "ǀXam du Sud",
-      "Sous-groupes régionaux (tous éteints)"
+      "Flat Bushmen (|Xam du Strandberg-Katkop): sous-groupe principal, documente par Bleek et Lloyd",
+      "|Xam de l'Achterveld: sous-groupe etudie par Bleek en 1866",
+      "Nǀusa (Orange River moyen): sous-groupe etudie par Lloyd en 1880",
+      "Nǀuusaa (fleuve Orange inferieur): sous-groupe etudie par Kronlein dans les annees 1850",
+      "!Ui de Colesberg et Burghersdorp: sous-groupes orientaux, elargissement |Xam selon Güldemann (2019)",
+      "!Ui d'Aliwal North: sous-groupe etudie par Lloyd en 1880"
     ],
     "origins": {
-      "ancientOrigins": "Les ǀXam étaient l'un des peuples les plus anciens d'Afrique du Sud, originaires de la région du Cap. Leur présence dans la région remontait à des dizaines de milliers d'années.",
-      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Peuple éteint au XIXe siècle.",
-      "externalInfluences": "Contacts avec les colons européens (néerlandais, britanniques) qui ont conduit à leur extermination et à leur assimilation forcée."
+      "ancientOrigins": "Les |Xam etaient des chasseurs-cueilleurs San parmi les plus anciens habitants de l'Afrique du Sud, dont les ancetres occupaient le Karoo superieur et les plaines du Cap-du-Nord depuis des dizaines de milliers d'annees. Leur langue appartient a la branche !Kwi de la famille Tuu, et leur plus proche parente vivante etait le Nǁng (N|uu), desormais moribond. Les donnees genetiques placent leurs ancetres parmi les populations humaines les plus anciennes genetiquement.",
+      "formationPeriod": "Les |Xam occupaient un vaste territoire dans le Karoo et le Bushmanland avant l'arrivee des colons europeens. La documentation de Bleek distingue plusieurs groupes dialectaux (Flat Bushmen du Strandberg, groupes de l'Orange, groupes orientaux), temoignant d'une diversite interne. L'extinction progressive resulte de la periode 1770-1910, marquee par le genocide colonial.",
+      "migrationRoutes": [
+        "Presence autochtone dans le Karoo superieur et le Bushmanland depuis le Paleolithique recent",
+        "Repli vers les zones les plus arides (Bushmanland) sous la pression des trekboers neerlandais aux 17e-18e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Triangle Kenhardt-Brandvlei-Van Wyksvlei (Bushmanland, Cap-du-Nord): coeur du territoire |Xam",
+        "Strandberg et Katkop (Karoo superieur): territoire des informateurs principaux de Bleek et Lloyd",
+        "Vallees du fleuve Orange (Nǀusa, Nǀuusaa)",
+        "Cap oriental (Colesberg, Burghersdorp, Aliwal North): groupes !Ui orientaux",
+        "Cederberg et montagnes du Cap occidental (gravures rupestres)"
+      ],
+      "unificationsOrDivisions": "Organisation en bandes independantes sans autorite politique centralisee. Les differents groupes |Xam (Flat, Grass, groupes de l'Orange) partageaient la meme langue et la meme culture mais vivaient en bandes separees sur leurs territoires propres. La notion de 'mon endroit' (|uru) etait fondamentale, chaque famille possedant ses points d'eau et ses sites de chasse.",
+      "externalInfluences": "Colonisation neerlandaise (VOC): expansion des trekboers vers le nord et l'est depuis le 17e siecle. Genocide systematique entre 1770 et 1900: commandos boers tuant les San consideres comme nuisibles. Travail force sur les fermes. Epidemies de variole decimant les populations. Influence culturelle Khoekhoe et afrikaans (les |Xam parlaient l'afrikaans comme langue seconde). Disparition totale du peuple |Xam comme communaute distincte vers 1910.",
+      "majorHistoricalEvents": "1770-1800: genocides des commandos neerlandais dans le Bushmanland (environ 30 000 San tues en 25 ans). 1857-1875: Wilhelm Bleek commence ses etudes sur le |Xam a Cape Town, travaillant avec des prisonniers |Xam (dont |Kabbo, 'Dream') loges dans sa maison de Mowbray. 1870s-1910: Lucy Lloyd conduit l'essentiel des interviews et transcriptions, produisant plus de 13 000 pages. 1910s: mort des derniers locuteurs natifs connus. 1997: inscription de l'archive Bleek-Lloyd au registre UNESCO Memoire du Monde. 2000: la devise |Xam (!ke e: |xarra //ke) est gravee sur les nouvelles armoiries de la Republique d'Afrique du Sud, adoptees le 27 avril (Jour de la liberte)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
-      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
-      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
-      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+      "traditionalPoliticalSystem": "Organisation egalitaire sans chefs hereditaires ni hierarchie formelle. Decisions prises par consensus au sein des bandes familiales. Chaque bande comptait generalement quelques familles nucleaires liees par la parente. L'autorite des guerisseurs-chamanes (!gi:xa) reposait sur leurs capacites rituelles et non sur un pouvoir coercitif.",
+      "clanOrganization": "Bandes de chasseurs-cueilleurs de 10 a 40 personnes, organisees autour des liens de parente bilateraux. Chaque personne avait des droits sur un territoire (|uru): points d'eau, sites de chasse, lieux de bivouac. La propriete des ressources etait collective au sein de la bande. Les visites entre bandes permettaient les echanges, les mariages et le partage de ressources.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatEraux sans primaute d'une ligne. Classification des parents selon un systeme generationnel (|Xam) et parfois lineaire. Les grands-parents transmettaient leurs noms aux petits-enfants. La notion d'appartenance a un lieu ('mon endroit', |uru) structurait l'identite plus que la descendance lignagere.",
+      "religiousAuthority": "Autorite des guerisseurs-chamanes documentee abondamment dans l'archive Bleek-Lloyd. Les !gi:xa (guerisseurs) entraient en transe lors de la grande danse pour voyager dans le monde spirituel, chasser les esprits malveillants, provoquer la pluie, guerir les malades. Les narreurs principaux de Bleek et Lloyd (|Kabbo, Diaǃkwain, |Haŋǂkass'o) etaient eux-memes des guerisseurs ou des membres de familles de guerisseurs."
     },
     "languages": {
-      "mainLanguage": "ǀXam (éteinte)",
-      "vehicularRole": "La langue ǀXam est éteinte. Elle était parlée jusqu'au XIXe siècle. Documentation disponible grâce aux travaux de Wilhelm Bleek et Lucy Lloyd."
+      "mainLanguage": "|Xam (eteinte, derniers locuteurs morts vers 1910)",
+      "isoCodes": ["xam"],
+      "dialects": [
+        "|Xam du Strandberg-Katkop (dialecte principal, Bleek SI)",
+        "|Xam de l'Achterveld (Bleek 1866, Bleek SI)",
+        "Nǀusa (Orange moyen, Lloyd 1880)",
+        "Nǀuusaa (Orange inferieur, Kronlein 1850s, Bleek SVIa)",
+        "!Ui de Colesberg, Burghersdorp et Aliwal North (groupes orientaux, Güldemann 2019)"
+      ],
+      "vehicularRole": "Langue eteinte depuis le debut du 20e siecle. La langue |Xam appartient a la branche !Kwi (!Ui) de la famille Tuu; sa plus proche parente encore attestee est le Nǁng (N|uu), desormais moribond (une locutrice en 2025). La phonologie |Xam comprend 8 series d'accompagnements de clic (versus 18 en Taa oriental), 5 voyelles de base avec nasalisation, pharyngealisation et glottalisation. Le corpus documente par Bleek et Lloyd (~13 000 pages, disponibles en ligne sur http://lloydbleekcollection.cs.uct.ac.za/) est la principale source de connaissance de cette langue."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de guérison (trance dances)",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Cérémonies de chasse",
-      "source_3": "Rituels de partage",
-      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
-      "Arts et musique": "",
-      "source_4": "Art rupestre (peintures et gravures, patrimoine mondial)",
-      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
-      "source_6": "Danse de transe",
-      "source_7": "Contes et récits oraux (documentés par Bleek et Lloyd)",
-      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe."
+      "majorRites": "Grande danse de transe (ceremonie centrale, documentee dans l'archive Bleek-Lloyd): les femmes chantent et claquent des mains, les hommes dansent en cercle toute la nuit. Les guerisseurs entrent en transe (semi-mort rituelle), saignent parfois du nez, et voyagent dans le monde spirituel. Rites de puberte feminins: lors de la premiere menstruation, la jeune fille est isolee, soumise a des interdits alimentaires, puis accueillie par des ceremonies. Rite de premiere chasse: le jeune chasseur doit respecter des interdits apres sa premiere mise a mort. Rituels de pluie: le guerisseur capture symboliquement l'animal de pluie (!khwa) et provoque les precipitations. Rituels funeraires: enterrement avec equipement personnel pour accompagner le defunt.",
+      "symbols": "La mante religieuse (|Kaggen): forme principale du demiurge-farceur, symbole de transformation et de creation. L'eland: animal le plus sacre, lie aux ceremonies de guerison, au mariage, a la puberte et a la mort. Le taureau de pluie (!khwa): entite spirituelle des eaux et des orages. L'arc et les fleches: armes, mais aussi instruments musicaux et symboles chamanique. La devise nationale sud-africaine !ke e: |xarra //ke: heritage |Xam grave sur les armoiries de la Republique d'Afrique du Sud depuis 2000.",
+      "artsAndMusic": "Art rupestre: gravures (petroglyphes) sur les rochers de dolerite noire du Karoo et du Bushmanland, et peintures dans les grottes du Cederberg et du Drakensberg. Les images representent des animaux (eland dominant), des guerisseurs en transe, des therianthropes (mi-homme mi-animal), des scenes de pluie et de chasse. Ces oeuvres sont interpretees comme des representations du monde spirituel chamanique. Documents Bleek-Lloyd: les narrations |Xam decrivent des mythes riches (creation de la lune par |Kaggen, origine de la mort, exploits de |Kaggen et des animaux). Les personnages mythiques de la faune ont chacun une facon distinctive de parler, melant differents types de clics. Instruments: arc musical, hochets, percussion corporelle.",
+      "spiritualities": "|Kaggen (Mantis, parfois corrompu en Cagn): demiurge-farceur de la cosmologie |Xam, createur de l'eland et de la lune, capable de se transformer en n'importe quel animal. Sa femme est |Hunntu!att!atte (hyraxa du Cap), leur fille adoptive est le porc-epic, leurs fils sont Cogaz et Gewi. Lewis-Williams (2000) le propose comme seule divinite principale des |Xam. !Khwa (taureau de pluie): entite dangereuse des orages et des eaux, pouvant capturer et tuer les humains; les guerisseurs devaient le maitriser pour provoquer la pluie. Esprits des morts (//gauwasi): les defunts deviennent des esprits pouvant causer des maladies ou etre mobilises par les guerisseurs. Pouvoir n/om: energie spirituelle activee par la danse, accumulee dans l'estomac des guerisseurs (!gi:xa). Cosmologie: deux mondes superposes, accessibles en transe par le voyage chamanique sous terre ou dans le ciel."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Peuple éteint. Quelques descendants métissés dans les populations sud-africaines modernes."
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique, de royaumes ni de chefferies permanentes. Structure sociale egalitaire de chasseurs-cueilleurs sans hierarchie politique formalisee. L'autorite etait fondee sur l'experience, la connaissance spirituelle et les capacites de chasse.",
+      "relationsWithNeighbors": "Relations d'echange avec les pasteurs Khoekhoe (Khoikhoi): commerce de peaux, viande seche et miel contre betail et produits artisanaux. Contact avec les agriculteurs Xhosa a l'est. Relations avec les trekboers neerlandais: d'abord echanges ponctuels, puis conflits devastateurs. Emprunts linguistiques au Khoekhoe (dont certains termes de parente). Les |Xam avaient acquis l'afrikaans comme langue seconde au cours du 19e siecle.",
+      "conflictsOrAlliances": "Resistance acharnee aux commandos neerlandais et boers du 18e siecle (attaques de betail en represailles aux chasses des trekboers). Genocides systematiques des commandos entre 1770 et 1900: les |Xam furent quasi-entierement extermines ou assimiles de force. Quelques |Xam travaillerent comme traceurs ou domestiques sur les fermes coloniales. Les informateurs de Bleek (dont |Kabbo et Diaǃkwain) avaient ete condamnes a des travaux forces pour avoir tue du betail de ferme, avant d'etre loges chez Bleek a Mowbray.",
+      "diaspora": "Le peuple |Xam en tant que communaute distincte a cesse d'exister vers 1910. Quelques descendants biologiques aux origines |Xam sont probablement integres dans les populations coloured et afrikaans du Cap-du-Nord et du Karoo, mais sans identite culturelle |Xam maintenue. L'heritage spirituel et litteraire |Xam survit exclusivement dans l'archive Bleek-Lloyd (Universite du Cap, Bibliotheque nationale d'Afrique du Sud, Musee Sud-Africain Iziko) et dans la devise nationale sud-africaine."
     },
     "demography": {
       "totalPopulation": 0,
       "referenceYear": 2025,
-      "source": "Documentation historique, travaux de Bleek et Lloyd, études anthropologiques"
+      "source": "Peuple eteint. Derniers locuteurs natifs morts vers 1910. Documentation: archive Bleek-Lloyd (1870s-1910), etudes anthropologiques et historiques. Adhikari (2010): environ 30 000 San du Cap reduits a quelques centaines entre 1770 et 1800 par les commandos boers.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 0,
+          "note": "Peuple eteint. Territoire historique: Karoo superieur, Bushmanland (Cap-du-Nord actuel), Orange River, Cap oriental."
+        }
+      ]
     },
     "sources": [
-      "Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*",
-      "SIL Ethnologue – ǀXam language (xam, éteinte)",
-      "The Archive of Lucy Lloyd and Wilhelm Bleek*",
-      "UNESCO – Art rupestre de ǀXam (patrimoine mondial)",
-      "Études historiques sur l'extermination des peuples San en Afrique du Sud"
+      "Wikipedia EN — |Xam language. https://en.wikipedia.org/wiki/%C7%80Xam_language",
+      "Bleek, Wilhelm H.I. & Lloyd, Lucy — Specimens of Bushman Folklore. London: George Allen, 1911.",
+      "Bleek-Lloyd Archive numerique — University of Cape Town. http://lloydbleekcollection.cs.uct.ac.za/",
+      "Skotnes, Pippa (ed.) — Claim to the Country: The Archive of Lucy Lloyd and Wilhelm Bleek. Jacana Media, 2007.",
+      "Deacon, Janette — My place is the Bitterputs: the home territory of Bleek and Lloyd's |Xam San informants. African Studies 45(2), 1986, pp. 135-155.",
+      "UNESCO Memory of the World — Bleek and Lloyd Collection, inscrit en 1997. https://www.unesco.org/",
+      "South African Government — National Coat of Arms (motto !ke e: |xarra //ke). https://www.gov.za/about-sa/national-coat-arms",
+      "Wikipedia EN — Coat of arms of South Africa. https://en.wikipedia.org/wiki/Coat_of_arms_of_South_Africa",
+      "Adhikari, Mohamed — A Total Extinction Confidently Hoped For: The Destruction of Cape San Society. Journal of Genocide Research 12(1-2), 2010.",
+      "Lewis-Williams, J.D. — Stories That Float From Afar: Ancestral Folklore of the San of Southern Africa. Cape Town: David Philip, 2000.",
+      "Ethnologue (SIL International) — |Xam language (xam, extinct). https://www.ethnologue.com/language/xam/",
+      "Ibali (UCT) — ǃKhwe-ta ǃXoe: The New Digital Bleek and Lloyd. https://ibali.uct.ac.za/"
     ]
   }
 }

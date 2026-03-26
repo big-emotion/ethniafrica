@@ -1,0 +1,72 @@
+{
+  "id": "PPL_ITSEKIRI",
+  "nameMain": "Itsekiri",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NER", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Itsekiri",
+      "selfAppellation": "Itsekiri",
+      "exonyms": [
+        "« Jekri » (terme utilisé par les Européens), « Warri » (nom de la ville principale)"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Yoruboid (sous-groupe du Bénoué-Congo)",
+      "historicalRegion": "Delta du NER, sud-ouest du Nigeria",
+      "currentCountries": ["NER", "NGA"]
+    },
+    "ethnicities": [
+      "Itsekiri central",
+      "Itsekiri du Nord",
+      "Itsekiri du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Itsekiri sont originaires de la région du delta du Niger dans le sud-ouest du Nigeria. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe yoruboid et sont liés aux Yoruba.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les peuples voisins (Yoruba, Ijaw, Urhobo).",
+      "externalInfluences": "Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme, et plus récemment de l'islam et de la modernisation."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel dirigé par l'Olu de Warri. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits fonciers et les alliances matrimoniales.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Itsekiri",
+      "vehicularRole": "L'itsekiri est parlé par la majorité des Itsekiri. L'anglais est utilisé dans l'éducation et l'administration. Le pidgin english nigérian est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Masques traditionnels, symboles culturels itsekiri, art itsekiri",
+      "Arts et musique": "",
+      "source_4": "Sculpture sur bois (masques, statues)",
+      "source_5": "Musique traditionnelle (tambours, flûtes)",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Artisanat (tissage, poterie)",
+      "source_8": "Littérature orale",
+      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume d'Itsekiri (Warri) dirigé par l'Olu de Warri.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora itsekiri dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt) et dans les pays occidentaux (États-Unis, Royaume-Uni)."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements nigérians, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Itsekiri language (its)",
+      "CIA World Factbook – Nigeria",
+      "Recensements nigérians",
+      "Études anthropologiques sur les peuples yoruboid"
+    ]
+  }
+}

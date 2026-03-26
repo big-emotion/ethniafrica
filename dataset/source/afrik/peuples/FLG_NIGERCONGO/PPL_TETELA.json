@@ -6,54 +6,72 @@
   "content": {
     "appellations": {
       "mainName": "Tetela",
-      "selfAppellation": "",
-      "exonyms": ["Tetela (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Batetela (pluriel) ; Motetela (singulier) ; AnKutshu-Membele (ancestral)",
+      "exonyms": ["Batetela", "Otetela", "Kitetela", "Sungu", "Watetera"],
+      "originOfExonyms": "Le terme Batetela est d'origine coloniale, apparu entre 1885 et 1887 dans les journaux geographiques europeens. Il derive de Watetera, terme arabe designant les populations de la region de Maniema a l'epoque du commerce esclavagiste. Le nom Motetela viendrait d'une divinite locale signifiant celui qui ne rit pas ou celui dont on ne peut se moquer.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Batetela est aujourd'hui pleinement adopte comme identite ethnique par les populations du Sankuru et du Maniema en RDC. Tetela designe a la fois le peuple et sa langue dans les usages administratifs congolais.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sankuru",
+      "ethnoLinguisticGroup": "Mongo-Nkutshu (sous-groupe Bantu)",
+      "historicalRegion": "Sankuru, Maniema",
       "currentCountries": ["COD"]
     },
-    "ethnicities": ["Tetela"],
+    "ethnicities": ["Tetela", "Batetela", "Sungu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sankuru"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tetela sont un peuple Bantu issu du vaste groupe Mongo du bassin du Congo. Leurs ancetres se designaient comme descendants d'AnKutshu-Membele. Selon l'ethnologue Emil Torday (1908-1909), les Batetela originels se trouvaient sur la rive droite de la riviere Lomami et ont migre vers leurs territoires actuels a une date indeterminee. Ils sont etroitement apparentes aux Kusu et ne s'en sont reellement separes qu'a la fin du XIXe siecle.",
+      "formationPeriod": "L'identite Batetela en tant que groupe ethnique distinct s'est consolidee sous pression coloniale entre 1885 et le debut du XXe siecle. Avant cette periode, les populations se definissaient par des affiliations claniques et lignageres locales.",
+      "migrationRoutes": [
+        "Rive droite du fleuve Lomami vers le bassin du Sankuru",
+        "Extension vers la province du Maniema au contact des Arabes et des Belges (fin XIXe siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sankuru (entre Lusambo et le fleuve Congo superieur)",
+        "Province du Maniema (est de la RDC)",
+        "Nord de la province du Kasai-Oriental"
+      ],
+      "unificationsOrDivisions": "Le groupe Batetela s'est unifie progressivement autour de l'identite coloniale imposee, mais reste divise entre plusieurs sous-groupes dont les Sungu, les Kusu et divers clans lignagers. La separation des Kusu et des Tetela est survenue a la fin du XIXe siecle apres l'arrivee des marchands arabes et des Belges.",
+      "externalInfluences": "Contact avec les marchands arabes esclavagistes des annees 1869-1870 (Tippu Tip). Colonisation belge a partir de 1885. Missions chretiennes protestantes (Methodist Episcopal Church South, 1910, a Wembo-Nyama). Islamisation partielle de certains groupes arabises.",
+      "majorHistoricalEvents": "1869-1870 : contact avec Tippu Tip et le commerce arabe. 1892-1894 : guerre arabo-congolaise, les Batetela combattent aux cotes des Arabes puis desertent vers les Belges. 1893 : execution du chef Gongo Lutete par les Belges. 1895-1908 : series de rebellions Batetela contre le pouvoir colonial belge. 1961 : assassinat de Patrice Lumumba, Tetela, premier Premier ministre du Congo independant. 1975 : epuration de nombreux Batetela de l'armee sous Mobutu."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en chefferies et groupements lignagers. Pas de royaume centralise unifie ; le pouvoir etait reparti entre des chefs locaux (chefs de village ou de clan). Au XIXe siecle, des leaders comme Kasongo Lushie et Gongo Lutete ont exerce une autorite elargie sous l'influence arabe.",
+      "clanOrganization": "Organisation clanique basee sur la filiation patrilineaire. Les clans principaux comprennent les Sungu (porteurs du titre Luba) et divers groupes lignagers identifies sous l'appellation AnKutshu. Les villages comptent de 10 a 100 cases, sans agencement regulier precis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'acces a la terre, les alliances matrimoniales et la transmission de l'autorite coutumiere. Le role des ancetres est central dans la legitimite politique et spirituelle.",
+      "religiousAuthority": "La divinite supreme en Kitetela est Djungumanga, decouverte par les missionnaires americains au debut du XXe siecle. Le terme Unya Shungu (pere des cieux) est egalement atteste. Des pretres et notables religieux coexistent avec l'autorite civile des chefs."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Otetela (Kitetela)",
+      "isoCodes": ["tet"],
+      "dialects": ["Otetela", "Kitetela", "Kikitatela", "Sungu"],
+      "vehicularRole": "L'otetela est la langue vernaculaire principale des provinces du Sankuru et du nord du Kasai-Oriental. Il est aussi utilise dans certaines zones du Maniema. Le swahili et le lingala sont utilises comme langues vehiculaires regionales plus larges en RDC."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage marques par des ceremonies lignageres. Pratiques funeraires elaborees avec percussions rituelles. Proverbes transmis oralement par les anciens comme outil educatif et moral, servant aussi bien a reprimer qu'a encourager.",
+      "symbols": "Le tambour lukumbi (tambour a fente a six tons) est le symbole culturel le plus distinctif des Batetela : il sert a la fois d'instrument musical, de moyen de communication a distance et de forme d'art poetique. Le port de plumes de perroquet etait anciennement un signe identitaire notable.",
+      "artsAndMusic": "Trois types de tambours structurent la vie musicale et ceremonielle : le ngomo (tambour a peau pour la danse), le lukumbi (tambour a fente a six tons, le plus elabore, servant aussi de systeme de communication) et l'ekuli (petit tambour cylindrique a deux tons, anciennement signe de victoire au combat, aujourd'hui utilise pour convoquer la communaute). La tradition des proverbes constitue egalement un art de la parole tres developpe.",
+      "spiritualities": "Religion traditionnelle centree sur la divinite supreme Djungumanga (ou Unya Shungu). Culte des ancetres important. Contact avec l'islam via les marchands arabes au XIXe siecle (islamisation partielle de certains groupes). Christianisme introduit par les missions protestantes americaines (Methodist Episcopal) a partir de 1910 a Wembo-Nyama."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise unique. Organisation en chefferies et groupements, dont le groupement Sungu (porteurs du titre Luba) dans le Sankuru. Les chefs Gongo Lutete et Kasongo Lushie ont joue des roles majeurs au XIXe siecle. Presence de souverains Kilembwe dans la region au milieu du XIXe siecle.",
+      "relationsWithNeighbors": "Relations etroites avec les Kusu (groupe frere), les Mongo, les Songye et les Luba. Commerce et alliances avec les marchands arabo-swahili de Zanzibar (Tippu Tip) aux annees 1869-1870. Conflits avec les Luba au Kasai (raids esclavagistes). Relations ambiguës avec les Belges : alliance puis revolte.",
+      "conflictsOrAlliances": "1869-1894 : alliance avec les marchands arabes (Tippu Tip, Gongo Lutete), raids contre les Luba. 1892-1894 : defection vers les Belges durant la guerre arabo-congolaise. 1895-1908 : series de rebellions anticoloniales (premiere rebellion de Luluabourg en 1895 apres l'execution de Gongo Lutete). 1975 : epuration des Batetela de l'armee sous Mobutu.",
+      "diaspora": "Dispersion geographique des Batetela a travers plusieurs provinces congolaises (Sankuru, Maniema, Kasai-Oriental, Kivu). Cette fragmentation a ete notee comme facteur de leur identite nationale plutot que tribale, favorisant l'emergence de leaders panafricains comme Patrice Lumumba."
     },
     "demography": {
-      "totalPopulation": 7,
+      "totalPopulation": 2350000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimate basee sur Peoplegroups.org 2024 (2 275 000) et Omniglot 2025 (plus d'un million de locuteurs), avec projection de croissance demographique congolaise",
+      "distributionByCountry": [{ "country": "COD", "population": 2350000 }]
     },
-    "sources": []
+    "sources": [
+      "Wikipedia EN – Tetela people (https://en.wikipedia.org/wiki/Tetela_people)",
+      "Wikipedia EN – Tetela language (https://en.wikipedia.org/wiki/Tetela_language)",
+      "Omniglot – Tetela language and alphabet, 2025 (https://www.omniglot.com/writing/tetela.htm)",
+      "101 Last Tribes – Tetela people, 2024 (https://www.101lasttribes.com/tribes/tetela.html)",
+      "South African History Online – Patrice Emery Lumumba, 2014 (https://sahistory.org.za/people/patrice-emery-lumumba)",
+      "Ubuntu National Institute – Culture: Tetela/Batetela, Bantu People of DRC, 2020 (https://ubuntunationalinstitute.wordpress.com/2020/06/02/culture-tetela-batetela-bantu-people-of-drc/)",
+      "Tangaza University – A Collection of 100 Tetela Proverbs (https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_tetela.pdf)"
+    ]
   }
 }

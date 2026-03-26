@@ -1,0 +1,22 @@
+{
+  "id": "PPL_GEDEO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Gedeo",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (drs)", "Gedeo Cultural Bureau"]
+  }
+}

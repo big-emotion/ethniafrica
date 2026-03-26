@@ -1,70 +1,109 @@
 {
   "id": "PPL_KHOISAN_CREOLE",
-  "nameMain": "Khoisan Créole",
+  "nameMain": "Khoisan Creole",
   "languageFamilyId": "FLG_CREOLE",
   "currentCountries": ["NAM", "ZAF"],
   "content": {
     "appellations": {
-      "mainName": "Khoisan Créole",
-      "selfAppellation": "Variées selon les groupes",
+      "mainName": "Khoisan Creole",
+      "selfAppellation": "Griqua, Baster, Rehobother selon le groupe",
       "exonyms": [
-        "Khoisan Créole (terme utilisé pour les créoles avec influences khoisan)"
+        "Griqua (ZAF)",
+        "Rehoboth Basters ou Basters (NAM)",
+        "Oorlam (terme historique pour les Khoekhoe christianises et afrikanophones du Cap)",
+        "Cape Coloured (categorie administrative de l'apartheid, rejetee par certains)"
       ],
+      "originOfExonyms": "Le terme Griqua derive du nom du clan Chariguriqua (Grigriqua), un groupe Khoikhoi dont un ancetre eponyme donna son nom a la communaute au 18e siecle. Baster vient du neerlandais bastaard (batard, metis), terme pejoratif reapproprie comme ethnonymie fierement revendiquee par la communaute de Rehoboth. Khoisan Creole est un terme analytique occidental designant l'ensemble de ces peuples metisses a heritage khoisan.",
+      "whyProblematic": "La categorisation unique de Khoisan Creole recouvre plusieurs identites distinctes et parfois rivales : Griqua (Afrique du Sud), Rehoboth Basters (Namibie), Oorlam, et d'autres. Sous l'apartheid, ces groupes etaient classes comme Coloured, terme rejete. Chaque communaute revendique une identite propre.",
+      "contemporaryUsage": "Les termes Griqua et Baster sont les auto-designations dominantes aujourd'hui. En Afrique du Sud, les Griqua sont reconnus comme peuple autochtone distinct depuis 1994. En Namibie, les Rehoboth Basters ont une identite politique formelle et ont tente d'obtenir une autonomie apres l'independance en 1990.",
       "linguisticFamily": "FLG_CREOLE",
-      "ethnoLinguisticGroup": "Créole avec influences khoisan",
-      "historicalRegion": "Afrique du Sud, NAM",
+      "ethnoLinguisticGroup": "Creole afrikaner a heritage khoekhoe",
+      "historicalRegion": "Cap de Bonne-Esperance, Griqualand (Afrique du Sud septentrionale), Namaqualand, Rehoboth (Namibie centrale)",
       "currentCountries": ["NAM", "ZAF"]
     },
     "ethnicities": [
-      "Créoles avec influences khoisan d'Afrique du Sud",
-      "Créoles avec influences khoisan de Namibie",
-      "Sous-groupes régionaux"
+      "Griqua (Griqualand Ouest et Griqualand Est, Afrique du Sud)",
+      "Rehoboth Basters (centre de la Namibie, autour de la ville de Rehoboth)",
+      "Oorlam (communautes Khoekhoe christianisees et afrikanophones ayant migre vers le nord depuis le Cap)",
+      "Nama Creole (Namaqualand, Afrique du Sud et Namibie meridionale)",
+      "Karretjiemense (peuple nomade des Karoo, heritage khoekhoe et metis)"
     ],
     "origins": {
-      "ancientOrigins": "Les Khoisan Créoles sont un peuple créole formé à partir du contact entre les populations khoisan locales et les colons européens (néerlandais, allemands, britanniques) à partir du XVIIe siècle. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune avec influences khoisan.",
-      "externalInfluences": "Contacts avec les populations khoisan locales, influence du christianisme (protestantisme) et des croyances traditionnelles."
+      "ancientOrigins": "Les peuples Khoisan Creoles descendent des Khoekhoe (Khoikhoi), peuple pastoral originaire d'Afrique du Sud, dont les racines remontent a plus de 2000 ans dans la region du Cap. A partir du 17e siecle, les contacts et unions entre colons neerlandais, allemands et britanniques et les femmes Khoekhoe ont produit une population metisse qui a developpe une identite culturelle et linguistique propre. Les ancetres khoikhoi avaient eux-memes probablement migre depuis l'Afrique de l'Est vers le sud il y a environ 2000 ans, amenant le pastoralisme dans la region.",
+      "formationPeriod": "L'identite creole khoisan se forme entre le 17e et le 19e siecle au Cap, puis se diversifie lors des grandes migrations vers l'interieur (Great Trek des Griqua, migration des Basters vers Rehoboth en 1868-1870). La denomination Griqua se fixe vers 1750-1820 ; les Rehoboth Basters constituent une communaute formelle apres 1870.",
+      "migrationRoutes": [
+        "Migration des Griqua depuis le Cap vers le nord : Griquatown (Griqualand Ouest), puis Kokstad (Griqualand Est) sous Adam Kok III",
+        "Migration des Basters depuis le Cap vers Rehoboth (Namibie actuelle) en 1868-1870",
+        "Migrations des Oorlam vers le Namaqualand et l'actuelle Namibie meridionale au debut du 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Cap-Occidental et Cap-Nord (Afrique du Sud) : berceau historique",
+        "Griqualand Ouest (autour de Kimberley, Cap-Nord, ZAF)",
+        "Griqualand Est (autour de Kokstad, KwaZulu-Natal, ZAF)",
+        "Rehoboth et centre de la Namibie (NAM)",
+        "Namaqualand (ZAF-NAM)"
+      ],
+      "unificationsOrDivisions": "Les Griqua etaient divises entre plusieurs lignages : Adam Kok (Griqualand Est) et Nicolaas Waterboer (Griqualand Ouest) dirigeaient des factions rivales. Les Basters de Rehoboth ont maintenu une forte unite communautaire basee sur leur propre constitution (Grondwet van Rehoboth, 1872). Les diverses communautes ont connu des fusions et des scissions liees aux pressions coloniales, aux decouvertes de diamants (1867) et aux guerres frontieres.",
+      "externalInfluences": "Colonisation neerlandaise et britannique au Cap (17e-19e siecles) : metissage force ou volontaire. Influence missionnaire moravienne et reformee : evangelisation, education occidentale, integration de l'afrikaans comme langue commune. Genocide des Nama par les Allemands en Afrique du Sud-Ouest (1904-1908) : impact majeur sur les groupes namibiens.",
+      "majorHistoricalEvents": "1652 : installation des Neerlandais au Cap, debut des contacts avec les Khoekhoe. 18e siecle : formation des communautes Griqua et Oorlam. 1848 : traite garantissant une autonomie Griqua avec la Couronne britannique. 1867 : decouverte de diamants en Griqualand ; pression sur les terres Griqua. 1871 : annexion de Griqualand Ouest par la Grande-Bretagne. 1872 : constitution formelle des Basters de Rehoboth (Grondwet). 1868-1870 : migration des Basters vers Rehoboth, Namibie actuelle. 1904-1908 : genocide des Herero et Nama par l'Allemagne en GSOA."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
-      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole et khoisan.",
-      "religiousAuthority": "Autorité des prêtres et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Les Griqua etaient organises sous des capitaines (Kaptein) elus ou hereditaires, assistees de conseils d'anciens. Les Basters de Rehoboth ont developpe un systeme constitutionnel formel avec un Kaptein elu a vie, un conseil executif et un conseil du peuple selon la Grondwet de 1872. Les Oorlam s'organisaient en bandes semi-nomades sous des chefs guerriers (notamment la famille Afrikaner).",
+      "clanOrganization": "Structure familiale clanique : les familles fondatrices (Griqua : Kok, Waterboer, Jager ; Basters : families de Rehoboth) constituent les lignages nobles. La citoyennete communautaire etait fondee sur la naissance ou l'acceptation par la communaute, pas sur la race.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages fondateurs (Kok, Waterboer chez les Griqua ; grandes familles de Rehoboth chez les Basters) conferaient un statut social et un acces a la terre. L'identite khoisan creole est transmise principalement par filiation paternelle, renforcee par les pratiques endogames au sein des communautes.",
+      "religiousAuthority": "Autorite religieuse protestante (Eglise reformee neerlandaise, mission moravienne). Chez les Griqua, l'Eglise Griqua (fondee en 1920) joue un role identitaire central. Les pasteurs combinent autorite spirituelle et leadership communautaire."
     },
     "languages": {
-      "mainLanguage": "Créoles avec influences khoisan",
-      "vehicularRole": "Les créoles khoisan sont parlés par la majorité des Khoisan Créoles. L'afrikaans, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Afrikaans (langue maternelle dominante pour l'ensemble des groupes)",
+      "isoCodes": ["afr"],
+      "dialects": [
+        "Afrikaans du Cap (variete standard)",
+        "Afrikaans de Rehoboth (variete namibienne avec influences khoikhoi)",
+        "Nama/Khoekhoe (naq) : encore parle par certaines communautes Nama et Griqua rurales",
+        "Anglais : utilise dans les milieux eduques et urbains en Afrique du Sud"
+      ],
+      "vehicularRole": "L'afrikaans est la langue vehiculaire principale de toutes les communautes Khoisan Creoles, tant en Afrique du Sud qu'en Namibie. C'est la langue de l'eglise, de l'administration communautaire et de la vie quotidienne. Le khoekhoe (naq) subsiste comme heritage dans certaines communautes Nama rurales."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses chrétiennes",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels créoles",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels créoles, symboles khoisan, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle créole avec influences khoisan",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat",
-      "Spiritualités": "Christianisme majoritaire (protestantisme). Croyances traditionnelles khoisan préservées dans certaines communautés."
+      "majorRites": "Rites de passage marques par la religion protestante reforme : bapteme, confirmation, mariage a l'eglise, funerailles communautaires. La circumcision male est pratiquee dans certaines communautes. Le Nagmaal (communion trimestrielle) constitue un rassemblement communautaire majeur, herite de l'Eglise reformee neerlandaise, qui sert aussi d'occasion sociale et identitaire. Chez les Griqua, des ceremonies commemoratives rappellent les migrations fondatrices (Great Trek griqua).",
+      "symbols": "Le cheval : symbole de liberte, de mobilite et de statut ; les cavaliers Griqua et Basters etaient reputes excellents cavaliers. Le wagon (ossewa) : symbol des grandes migrations. La Bible en afrikaans : fondement de l'identite protestante creole. Le drapeau Griqua (croix sur fond colore). La Grondwet (constitution de 1872) pour les Basters.",
+      "artsAndMusic": "La musique Ghoema (ou Goema) : genre musical creole du Cap melant rhythmes africains, malais et europeens, avec le tambour ghoema comme instrument central. Le riel : danse traditionnelle rythmee pratiquee lors des celebrations. Artisanat en cuir et en cuivre : tradition heritee du pastoralisme khoekhoe. Architecture en briques seches et maisons a pignon : tradition Baster de Rehoboth. Broderie et couture traditionnelle feminine (robes Victoriennes adaptees). Poesie orale en afrikaans celebrant les ancetres et les migrations.",
+      "spiritualities": "Protestantisme dominant : Eglise reformee neerlandaise (NGK), Eglise reformee neerlandaise en Afrique (NGKA), Eglise Griqua (protestante independante fondee en 1920). Certaines communautes rurales maintiennent des croyances khoisan en les esprits des ancetres (//Kaggen, divinite mantis San) et des pratiques de guerison traditionnelle (sangomas). Syncretisme entre christianisme protestant et croyances animistes khoisan dans les zones rurales reculees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques sud-africaines et namibiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora khoisan créole dans les grandes villes sud-africaines et namibiennes, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Etat Griqua de Griqualand Ouest sous Nicolaas Waterboer (reconnu par la Couronne britannique en 1871 avant annexion). Etat Griqua de Griqualand Est sous Adam Kok III (Kokstad, 1862-1879). Republique de Rehoboth des Basters (avec constitution formelle de 1872) : etat semi-autonome reconnu jusqu'a l'administration sud-africaine. Les Oorlam sous Jonker Afrikaner exercerent une domination regionale en Namibie meridionale au milieu du 19e siecle.",
+      "relationsWithNeighbors": "Relations complexes avec les Xhosa et les Tswana (alliances et conflits frontaliers). Alliance strategique avec la Couronne britannique contre les Boers en plusieurs occasions (guerre contre les Boers, guerre Anglo-Boere). Tensions avec les Nama et Herero en Namibie (19e siecle). Les Basters de Rehoboth ont negocie leur place entre Allemands, Nama et Herero.",
+      "conflictsOrAlliances": "Alliance des Griqua avec les Britanniques contre les Boers lors de la guerre de 1854. Resistance a l'annexion de Griqualand Ouest (1871). Les Basters ont combattu aux cotes des Allemands contre les Herero (1904-1908), puis aux cotes des Sud-Africains contre les Allemands (1915). Tentative d'autonomie des Basters apres l'independance de la Namibie (1990) : refusee par le gouvernement SWAPO.",
+      "diaspora": "Migration significative vers Windhoek, Le Cap, Johannesburg et d'autres centres urbains au 20e siecle. La diaspora Griqua est presente dans tout le Cap-Nord et le Cap-Occidental. Des communautes Basters se trouvent a Windhoek et Walvis Bay. Quelques familles ont emigre vers le sud de l'Angola (Lubango) apres 1870."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations composites : Griqua (ZAF) environ 250 000 selon Griqua National Conference et IWGIA 2024 ; Rehoboth Basters (NAM) environ 40 000-50 000 selon Encyclopaedia Britannica et recensement namibien 2011 ; autres groupes Oorlam et Nama Creoles environ 10 000-20 000.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 250000,
+          "note": "Griqua principalement dans le Cap-Nord (Griqualand), le Cap-Occidental et le KwaZulu-Natal (Kokstad)"
+        },
+        {
+          "country": "NAM",
+          "population": 50000,
+          "note": "Rehoboth Basters et Oorlam, principalement a Rehoboth et Windhoek"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Khoisan Creole languages",
-      "CIA World Factbook – South Africa, Namibia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples créoles"
+      "Wikipedia EN — Griqua people. https://en.wikipedia.org/wiki/Griqua_people",
+      "Wikipedia EN — Basters. https://en.wikipedia.org/wiki/Basters",
+      "Wikipedia EN — Khoekhoe. https://en.wikipedia.org/wiki/Khoekhoe",
+      "Encyclopaedia Britannica — Griqua. https://www.britannica.com/topic/Griqua",
+      "Encyclopaedia Britannica — Baster. https://www.britannica.com/topic/Baster",
+      "IWGIA — The Indigenous World 2024: South Africa. https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html",
+      "South African History Online — Rehoboth. https://sahistory.org.za/place/rehoboth",
+      "Namibia Safari Tours — The Rehoboth Basters and their culture. https://namibiasafaritours.com/the-rehoboth-basters-and-their-culture/",
+      "UCT Humanities — Coloured is not an Identity. https://humanities.uct.ac.za/apc/coloured-not-identity-learning-speak-my-ancestors-tongue-again"
     ]
   }
 }

@@ -1,23 +1,104 @@
 {
   "id": "PPL_KASEENA",
-  "nameMain": "",
+  "nameMain": "Kassena",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": ["GHA"],
+  "currentCountries": ["GHA", "BFA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Kassena",
       "selfAppellation": "Kassena / Kasena",
+      "exonyms": ["Grunshi", "Gurunsi", "Gourounsi"],
+      "originOfExonyms": "Le terme Gurunsi (ou Gourounsi) est un exonyme issu de la langue djerma : les mots guru-si signifient le fer ne perce pas, expression utilisee par le chef djihadiste djerma Babatu lors de ses invasions de la fin du XIXe siecle pour decrire les guerriers locaux reputes invulnerables grace a leurs medecines traditionnelles. Ce terme englobait plusieurs peuples distincts de la region sans coherence culturelle ou linguistique propre.",
+      "whyProblematic": "Le terme Gurunsi est un exonyme impose par des envahisseurs exterieurs et ne reflete pas une unite culturelle ou linguistique reelle entre les groupes ainsi designes. Les Kassena eux-memes ne se reconnaissent pas necessairement dans cette appellation collective.",
+      "contemporaryUsage": "Le terme Kassena est aujourd'hui couramment utilise en anglais et en francais pour designer ce peuple. Les habitants se designent eux-memes comme Kasena. La langue s'appelle Kasem ou Kassem.",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "Burkina Faso (Tiébélé), GHA (Upper East)",
-      "currentCountries": ["GHA"]
+      "ethnoLinguisticGroup": "Gur (Mabia), groupe Kasem-Nuni-Lyele",
+      "historicalRegion": "Zone frontaliere entre le nord du Ghana (region Upper East) et le sud du Burkina Faso (province du Nahouri, Tiebele, Po)",
+      "currentCountries": ["GHA", "BFA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (xsm)", "Tiébélé Cultural Documentation"]
+    "ethnicities": [
+      "Chiefdom de Navrongo (Ghana, capitale administrative Kassena-Nankana)",
+      "Chiefdom de Paga (Ghana, frontiere burkina)",
+      "Chiefdom de Chiana (Ghana, Upper East)",
+      "Chiefdom de Kayoro (Ghana, Upper East)",
+      "Chiefdom de Katiu (Ghana, Upper East)",
+      "Chiefdom de Nakon (Ghana, Upper East)",
+      "Kassena de Tiebele (Burkina Faso, province du Nahouri, siege royal)",
+      "Kassena de Po (Burkina Faso, province du Nahouri)",
+      "Kassena de la province de Naouhri (Burkina Faso)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kassena font partie du grand ensemble meta-ethnique Gurunsi (ou Gourounsi) du Ghana septentrional et du sud du Burkina Faso. Ils sont considers comme un peuple autochtone de la region frontaliere entre le Ghana et le Burkina Faso actuels. Historiquement, ils etaient des sujets de l'Empire mossi et ont resiste a plusieurs vagues d'envahisseurs exterieurs. Leur nom Gurunsi fut donne par les Djermas lors des invasions de la fin du XIXe siecle.",
+      "formationPeriod": "L'identite kassena distinctive s'est consolidee au cours des derniers siecles, notamment autour du site royal de Tiebele, dont le complexe architectural date du XVIe siecle. La cour royale de Tiebele, etablie au pied de la colline de Tchebili, constitue le centre historique de l'organisation politique kassena.",
+      "migrationRoutes": [
+        "Peuple autochtone de la zone frontaliere Ghana-Burkina Faso sans migration fondatrice documentee vers des territoires lointains",
+        "Repli vers des positions defensives organisees en arc de cercle entre Ouagadougou et le nord-est du Ghana face aux raids djerma (fin XIXe siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Nahouri (Burkina Faso) : Tiebele, Po et environs",
+        "Province de Naouhri (Burkina Faso)",
+        "District Kassena-Nankana Est et Ouest (Ghana, region Upper East)",
+        "Villes de Navrongo, Paga, Chiana (Ghana)",
+        "Zone frontaliere a environ 172 km au sud d'Ouagadougou"
+      ],
+      "unificationsOrDivisions": "Les Kassena sont organises en chiefdoms autonomes distincts. En 1936, les Britanniques ont regroupe les Kassena et les Nankani dans le district administratif de Kassena-Nankana. En 2008, ce district a ete divise en Kassena Nankana Est et Kassena Nankana Ouest. Le chef supreme (Pe) reside a Tiebele cote burkinabe.",
+      "externalInfluences": "Domination de l'Empire mossi. Raids et invasions djermas de Babatu a la fin du XIXe siecle. Partage colonial franco-britannique en 1898 ayant divise le territoire kassena entre la colonie britannique de Gold Coast (Ghana actuel) et l'Afrique occidentale francaise (Burkina Faso actuel). Influence des missions chretiennes au XXe siecle.",
+      "majorHistoricalEvents": "Fin du XIXe siecle : resistance aux raids du chef djerma Babatu et a la triple competition coloniale franco-britannique-allemande. 1895-1897 : annexion francaise des terres kassena apres les protectorats de Yatenga (1895) et de Ouagadougou (1896). 1898 : accord anglo-francais fixant la frontiere de la Gold Coast, divisant definitivement les Kassena. 1936 : creation du district colonial Kassena-Nankana par les Britanniques. 2024 : inscription de la Cour royale de Tiebele au patrimoine mondial de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe kassena est organisee en chiefdoms diriges par un chef traditionnel appele Pe (ou Peh). Chaque ville ou village a son propre Pe, mais le Pe le plus puissant est celui de Tiebele (cote Burkina Faso). Le chef remplit des fonctions administratives, judiciaires et rituelles. La Cour royale de Tiebele est geree traditionnellement par le Pe et la communaute. Six chiefdoms predominants ont ete identifies historiquement : Navrongo, Paga, Chiana, Kayoro, Katiu et Nakon.",
+      "clanOrganization": "La societe est organisee en clans et en concessions familiales etendues. La concession kassena (soukhala) est construite pour l'ensemble de la famille etendue. Elle est ronde, avec un mur reliant les batiments individuels. Les quartiers de vie des hommes et des femmes sont distincts. Chaque femme mariee dispose de sa propre case ou elle cuisine pour elle-meme et ses enfants.",
+      "ageClassSystems": "Les differents types de maisons traditionnelles correspondent aux stades de vie : la maison en forme de 8 (Dinian) pour les anciens, veuves et femmes non mariees ; la maison rectangulaire (Mangolo) pour les jeunes maries ; la maison circulaire (Draa) pour les hommes celibataires et adolescents. Les jeunes femmes non mariees vivent avec les grands-parents dans la maison en 8 jusqu'au mariage.",
+      "roleOfLineages": "La descendance et l'heritage suivent des lignages patrilineaires. Le chef de famille est le maitre de la concession et gere les affaires du menage. Les defunts sont enterres a l'interieur de la cour ancestrale familiale, soulignant le role central des ancetres dans la vie sociale.",
+      "religiousAuthority": "Le systeme de croyances kassena integre une autorite religieuse propre exercee par les pretres des ancetres et les gardiens des objets sacres (dala). La religion traditionnelle est un animisme monotheiste centrant la devotion sur le Dieu createur We, dont le nom apparait dans des anthroponymes comme Webedouh, Wettelne, Wepouli. Le culte des ancetres est fondamental : les rites funeraires et le culte ancestral sont pratiques a la Cour royale depuis le XVIe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kasem (Kassem)",
+      "isoCodes": ["xsm"],
+      "dialects": [
+        "Kasem Est (East Kasem) : parle a l'est de la zone, notamment en Ghana",
+        "Kasem Ouest (West Kasem) : parle a l'ouest, notamment au Burkina Faso"
+      ],
+      "vehicularRole": "Le kasem est utilise comme premiere langue par l'ensemble de la communaute ethnique. Il appartient a la famille des langues Gur (branche Mabia), apparente au Nuni et au Lyele. Il compte environ 250 000 locuteurs. Il est langue d'instruction dans certaines ecoles de la region. Le kasem beneficie d'un statut de langue stable selon l'Ethnologue (code xsm)."
+    },
+    "culture": {
+      "majorRites": "Les rites funeraires occupent une place centrale : les defunts sont inhumes a l'interieur de la cour ancestrale familiale, perpectuant le lien entre vivants et ancetres. Le culte ancestral implique des pratiques rituelles regulieres a la Cour royale de Tiebele (site UNESCO 2024), lieu de rituels spirituels et temporels specifiques a la culture kassena. La peinture des cases est reservee aux femmes pures (non menstruees, n'ayant pas recemment accouche) et constitue elle-meme un acte rituel. Le festival de danse Djongon rassemble les communautes autour de la danse nagila. Les fetes de mariage et les rites de passage sont marques par des danses collectives. La transmission des savoirs culturels se fait par ceremonies et competitions de peinture entre femmes.",
+      "symbols": "La maison en forme de 8 (Dinian) est le symbole identitaire par excellence des Kassena, unique au Burkina Faso, adopte par la famille royale au XVIe siecle. Les motifs peints sur les murs des cases constituent un systeme symbolique complet : le boa represente la divinite et la reincarnation des ancetres ; la tortue est un animal totemique respecte et protege ; le filet de peche symbolise la pratique ancestrale de la peche ; les scarifications feminines traditionnelles et les habits de deuil sont aussi representes. Les couleurs ont des significations codees : rouge (endurance et courage), blanc (purete), noir (bravoure). La Cour royale de Tiebele abrite plusieurs elements sacres : le Pourou (tumulus sacre ou sont enterres les placentas des nouveau-nes de la famille royale), le figuier rouge (marquant l'entree, sous lequel se trouvent les pierres sacrees dala des princes), le Nabari (tombe du fondateur), le Nankongo (lieu d'audience et de palabre), le Bonnale (cimetiere de la Cour royale).",
+      "artsAndMusic": "L'art kassena le plus remarquable est la peinture murale feminine : les femmes decorent les facades et interieurs des cases avec des motifs geometriques et figuratifs utilisant trois couleurs dominantes (rouge, blanc, noir) a base de pigments naturels. Ces decorations sont a la fois esthetiques et porteuses de sens historique et religieux, transmises de generation en generation par observation, pratique et competitions. Les Kassena sont egalement connus pour leurs masques en bois, sculptures en argile et bijoux en bois. La danse est un element central de la vie sociale : le festival Djongon reunissant les communautes autour de la danse nagila en est l'expression la plus connue. Les instruments de musique traditionnels accompagnent les ceremonies et fetes.",
+      "spiritualities": "Les Kassena pratiquent un animisme monotheiste centre sur le Dieu createur We (dont le nom entre dans des anthroponymes comme Webedouh, Wettelne, Wepouli). Ils venent egalement leurs ancetres, dont les esprits restent presents dans la vie quotidienne via les tombes amenagees dans les concessions familiales. La religion traditionnelle integre le culte des ancetres, des rites funeraires elabores et des pratiques rituelles propres a la Cour royale de Tiebele. Des croyances en la reincarnation des ancetres sous forme de boa sont documentees dans les motifs picturaux. L'influence chretienne s'est developpee au XXe siecle mais la religion traditionnelle reste vivace, notamment pour les pratiques liees a l'architecture et aux rites."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'organisation en chiefdoms est ancienne. La Cour royale de Tiebele (Burkina Faso), fondee au XVIe siecle, est le siege du Pe le plus puissant. Six chiefdoms principaux ont structure politiquement la societe kassena : Navrongo, Paga, Chiana, Kayoro, Katiu et Nakon. Les Kassena etaient historiquement sujets de l'Empire mossi tout en maintenant leurs structures politiques propres.",
+      "relationsWithNeighbors": "Les Kassena sont etroitement apparentes aux Nankani (ou Nankanna), avec qui ils ont ete reunis dans un district administratif commun en 1936. Ils font partie du vaste ensemble meta-ethnique Gurunsi regroupant plusieurs peuples du nord du Ghana et du sud du Burkina Faso. Leurs relations avec les peuples mossi etaient marquees par une domination politique de ces derniers. Des relations commerciales intenses existent avec le Ghana voisin, de nombreux produits ghaneens etant importes dans les villages kassena du Burkina.",
+      "conflictsOrAlliances": "A la fin du XIXe siecle, les Kassena ont resiste aux raids du chef djerma Babatu, forme par des guerriers au service des invasions coloniales. Ils ont ete pris dans la triple competition coloniale franco-britannique-allemande (1895-1898). Le partage franco-britannique de 1898 a divise definitivement la communaute kassena entre deux colonies, creant une frontiere artificielle que les familles traversent encore quotidiennement.",
+      "diaspora": "La diaspora kassena est limitee et essentiellement regionale. Des Kassena se trouvent dans les grandes villes du Ghana (notamment Accra, Kumasi, Tamale) et du Burkina Faso (Ouagadougou) pour des raisons economiques. La communaute reste fortement ancree dans ses terres d'origine frontieres."
+    },
+    "demography": {
+      "totalPopulation": 340000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 205 000 au Ghana, 135 000 au Burkina Faso. Ethnologue (SIL, code xsm) : population entre 10 000 et 1 million. Estimation totale 2025 : environ 340 000 personnes, integrant la croissance demographique projetee.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 210000,
+          "note": "Region Upper East : districts Kassena-Nankana Est et Ouest, villes de Navrongo, Paga, Chiana"
+        },
+        {
+          "country": "BFA",
+          "population": 130000,
+          "note": "Province du Nahouri : Tiebele, Po ; province de Naouhri"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kassena. https://en.wikipedia.org/wiki/Kassena",
+      "Wikipedia EN — Kasena language. https://en.wikipedia.org/wiki/Kasena_language",
+      "UNESCO World Heritage Centre — Royal Court of Tiebelé (inscrit 2024). https://whc.unesco.org/en/list/1713/",
+      "Joshua Project — Kasem in Ghana (2024). https://joshuaproject.net/people_groups/12556/GH",
+      "Ethnologue — Kasem Language (XSM). https://www.ethnologue.com/language/xsm/",
+      "Right for Education Africa — The Kassena of Tiebelé Houses (2024). https://rightforeducation.org/2024/07/29/the-kassena-of-tiebele-houses/",
+      "101 Last Tribes — Kassena people. https://www.101lasttribes.com/tribes/kassena.html",
+      "Mabia VP — Kasem language introduction. http://mabia-vp.com/tiki-index.php?page=Kasem"
+    ]
   }
 }

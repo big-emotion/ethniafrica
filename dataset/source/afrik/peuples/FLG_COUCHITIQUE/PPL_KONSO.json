@@ -7,66 +7,91 @@
     "appellations": {
       "mainName": "Konso",
       "selfAppellation": "Konso",
-      "exonyms": ["Konso (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Xonsita",
+        "Konso (terme europeen)",
+        "Afaa Xonso (designation linguistique)"
+      ],
+      "originOfExonyms": "Le terme Konso est a la fois l'exonyme utilise par les Europeens et le nom adopte par le groupe lui-meme. La forme Xonsita est utilisee dans certains contextes ethnographiques ethiopiens. Afaa Xonso est le nom propre de leur langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Konso est officiellement reconnu en Ethiopie. La zone Konso (anciennement partie de la zone des Nations, Nationalites et Peuples du Sud) est nommee d'apres le peuple. Le Paysage culturel konso est inscrit au patrimoine mondial de l'UNESCO depuis 2011.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "Couchitiques orientaux (Highland East Cushitic)",
-      "historicalRegion": "Sud de l'Éthiopie (région des nations, nationalités et peuples du Sud)",
+      "ethnoLinguisticGroup": "Couchitiques orientaux des basses terres (Lowland East Cushitic), sous-groupe Konso-Gidole",
+      "historicalRegion": "Hautes terres du Konso, sud de l'Ethiopie, au bord du Rift Valley, entre le lac Chamo et la riviere Sagan",
       "currentCountries": ["ETH"]
     },
     "ethnicities": [
-      "Konso du Nord",
-      "Konso du Sud",
-      "Konso de l'Est",
-      "Konso de l'Ouest"
+      "Konso du Nord (groupe habitant les hautes terres septentrionales de la zone Konso)",
+      "Konso du Sud (groupe habitant les hautes terres meridionales de la zone Konso)",
+      "Konso de l'Est (groupe habitant les contreforts orientaux de la zone Konso)",
+      "Konso de l'Ouest (groupe habitant le plateau occidental de la zone Konso)",
+      "Kholme (communautes parlant le dialecte Kholme)",
+      "Duuro (communautes parlant le dialecte Duuro)",
+      "Fasha (communautes parlant le dialecte Fasha)",
+      "Karatti (communautes parlant le dialecte Karatti)"
     ],
     "origins": {
-      "ancientOrigins": "Les Konso sont originaires du sud de l'ETH, dans la région actuelle de la zone de Konso. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Système de villages fortifiés.",
-      "externalInfluences": "Contacts avec les peuples couchitiques voisins (Oromo, Burji), influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Konso sont un peuple composite, a la fois physiquement et culturellement, dont les membres sont originellement issus de toutes les zones environnantes (Hallpike 1972). Une forte influence negroide est attribuee a un metissage precoce avec des pre-Nilotes agricoles qui sont entres dans les hautes terres ethiopiennes il y a environ 5 000 ans (Murdock 1959). Les traditions familiales konso confirment cette origine composite. Sur le plan genetique, l'ADN autosomique montre des affinites afro-asiatiques significatives, avec des liens avec des locuteurs nilo-sahariens et bantous du lac des Grands Lacs en raison d'echanges genetiques sur les 5 000 dernieres annees.",
+      "formationPeriod": "La presence konso dans leur territoire actuel remonte a plusieurs siecles, au moins 21 generations (plus de 400 ans selon l'UNESCO). Les terrasses agricoles et les villages fortifies representent une tradition culturelle continue de plus de 400 ans. Le paysage culturel konso est considere comme l'un des plus remarquables exemples de traditions culturelles vivantes dans la region.",
+      "migrationRoutes": [
+        "Etablissement originel dans les hautes terres du Konso, dans la region seche et rocailleuse du bord du Rift Valley",
+        "Presence de quelques individus dans le nord du Kenya, temoignant d'une certaine mobilite au-dela des frontieres"
+      ],
+      "historicalSettlementZones": [
+        "Zone Konso, Ethiopie meridionale (Region Ethiopie du Sud), au sud du lac Chamo dans le coude de la riviere Sagan",
+        "Villages fortifies (paleta) sur les sommets de collines selectionnees pour leur avantage strategique et defensif",
+        "Territoire de moins de 1 000 km2 tres densement peuple"
+      ],
+      "unificationsOrDivisions": "Les Konso sont organises en groupes territoriaux distincts (Nord, Sud, Est, Ouest) partageant une identite culturelle et linguistique commune. Leur systeme de villages fortifies (paleta) avec un systeme de quartiers (kanta) et de places communautaires (mora) constitue leur unite fondamentale. Chaque village paleta peut compter entre 1 500 et 3 000 habitants.",
+      "externalInfluences": "Contacts avec les peuples couchitiques voisins (Oromo, Burji). Adoption partielle du systeme de classes generationnelles gada oromo et d'un culte apparente au Waaq oromo. Influence croissante du christianisme depuis le XXe siecle (environ 60% de chretiens). Penetration de l'islam dans certaines communautes. Inscription au patrimoine mondial UNESCO (2011) apportant une attention internationale.",
+      "majorHistoricalEvents": "Le Paysage culturel konso est classe patrimoine mondial de l'UNESCO en 2011, reconnaissant une tradition culturelle continue de plus de 21 generations. La tradition d'eriger des steles generationnelles (daga-hela) est documentee comme marqueur du passage des generations au pouvoir. L'agriculture en terrasses represente un accomplissement ingenieur exceptionnel dans un environnement aride."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en villages fortifiés (paleta) dirigés par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Système de classes d'âge (hela).",
-      "religiousAuthority": "Autorité des prêtres traditionnels (poqalla) et des chefs religieux. Croyances traditionnelles importantes."
+      "traditionalPoliticalSystem": "Les Konso vivent dans de grandes agglomerations (paleta, villages fortifies sur les hauteurs) gouvernees par un conseil d'anciens. Le systeme de classes generationnelles hela (apparente au gada oromo) structure la vie politique et sociale. Les assemblees d'anciens (mora) se tiennent dans des espaces communautaires specifiques, les Pafta (maisons a toit de chaume sur des plateformes en pierre). Les pretres traditionnels (poqalla) jouent un role politique et religieux central.",
+      "clanOrganization": "Structure clanique patrilineaire. Les families etendues et les lignages constituent les unites sociales de base. Les villages paleta sont subdivises en quartiers (kanta) relies par des chemins. Chaque village peut compter jusqu'a 17 espaces communautaires mora connectes par des sentiers.",
+      "ageClassSystems": "Le systeme hela est un systeme de classes generationnelles (similaire au gada oromo) qui structure la vie politique, sociale et rituelle. Le passage de pouvoir entre generations est marque par l'erection de steles (daga-hela) et de pierres d'obligation (generationtrees ou Ulahitas). Des stelae (Daga-Hela), jusqu'a 5 ou 6 par cycle, sont erigees periodiquement pour commemorer les succes des generations au pouvoir.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale et les alliances. Le systeme de mariage est polygyne. L'organisation en villages fortifies renforce la solidarite au sein de chaque paleta.",
+      "religiousAuthority": "Les poqalla (pretres traditionnels) exercent une autorite religieuse et politique importante. Ils sont les gardiens des traditions rituelles et des croyances ancestrales. Des pretres similaires aux 'hauts pretres' oromo existent dans la societe konso. Le culte du Waaq/Wakh (divinite suprême des Cushitiques, liee au Waaq oromo) est pratique par ceux qui n'ont pas adopte le christianisme."
     },
     "languages": {
-      "mainLanguage": "Konso",
-      "vehicularRole": "Le konso est parlé par la majorité des Konso. L'oromo et l'amharique sont utilisés dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Konso (Afaa Xonso)",
+      "isoCodes": ["kxc"],
+      "dialects": ["Kholme", "Duuro", "Fasha", "Karatti"],
+      "vehicularRole": "Le konso (Afaa Xonso) est parle par environ 496 000 locuteurs selon le Joshua Project. Il appartient a la branche couchitique de la famille afro-asiatique, sous-groupe Konso-Gidole, et presente une similarite lexicale etroite avec le dirasha. La langue est transcrite en script ethiopique (Ge'ez). L'oromo et l'amharique sont utilises dans l'education et l'administration. L'anglais est utilise dans l'enseignement superieur."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "source_4": "Rituels liés à l'agriculture en terrasses",
-      "Symboles": "Statues funéraires (waka), terrasses agricoles, villages fortifiés.",
-      "Arts et musique": "",
-      "source_5": "Sculpture sur bois (statues funéraires waka)",
-      "source_6": "Musique traditionnelle",
-      "source_7": "Danse traditionnelle",
-      "source_8": "Poésie orale",
-      "source_9": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles centrées sur le culte des ancêtres et des esprits. Rôle important des prêtres traditionnels (poqalla). Influence croissante du christianisme et de l'islam."
+      "majorRites": "Les ceremonies d'initiation suivent le systeme de classes generationnelles hela. Les rites de passage (naissance, puberté, mariage, mort) sont importants dans la vie sociale. Des ceremonies de reconciliation communautaire ont lieu regulierement. Les rituels lies a l'agriculture en terrasses, notamment pour les semailles et les recoltes, scandent le calendrier ceremoniel. L'erection des statues funeraires waga est un rite de passage posthume pour un homme qui a tue un ennemi ou un animal predateur : les statues representent l'homme, ses epouses et ses adversaires.",
+      "symbols": "Les statues funeraires waga (ou waka) constituent le symbole culturel le plus distinctif des Konso : elles sont sculptees en bois et erigees en memoire d'un homme qui a tue un ennemi ou un animal sauvage dangereux. Les terrasses agricoles en pierre seche representent un genie ingenieur remarquable sur plus de 400 ans. Les villages fortifies paleta, entoures de un a six rangs de murs de pierres seches, sont le symbole de l'organisation sociale konso. Les steles de generations daga-hela, de pierre, temoignent du systeme de gouvernance generationnelle.",
+      "artsAndMusic": "La sculpture sur bois est l'art le plus valorise des Konso, notamment la fabrication des statues funeraires waga. Ces statues sont souvent arrangees en groupes representant le defunt, ses epouses et ses adversaires. La musique traditionnelle accompagne les ceremonies et les fetes. Les danses traditionnelles font partie des celebrations communautaires. La ceramique et l'artisanat du tissage completent la production artistique. La construction en pierres seches (terrasses, murs de village) est consideree comme un art architectural collectif.",
+      "spiritualities": "Environ 60% des Konso sont chretiens. Une partie significative pratique encore la religion traditionnelle centree sur le culte du Waaq/Wakh, divinite supreme des Cushitiques, apparentee au Waaq de la religion oromo ancienne. Le culte des ancetres joue un role important : les waga sont a la fois une expression artistique et un acte rituel en memoire des morts. Le culte de phallisme, partage avec la culture oromo, temoigne de liens culturels anciens. Les poqalla (pretres traditionnels) maintiennent les pratiques rituelles heritees."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en villages fortifiés (paleta) plutôt qu'en royaumes centralisés. Système de chefferies traditionnelles.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora konso dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Konso ne se sont pas organises en royaumes centralises mais en villages fortifies (paleta) regis par des conseils d'anciens. Le systeme hela de gouvernance generationnelle constitue une forme de gouvernance democratique et rotative. Des chefferies traditionnelles locales existent au niveau de chaque village.",
+      "relationsWithNeighbors": "Les Konso ont des differences marquees avec leurs voisins oromo dans les coutumes contemporaines, mais partagent des commonalites culturelles importantes : le systeme gada, des pretres similaires et le culte de phallisme. Le territoire konso est adjacent aux communautes omotiques, sidama et oromo. Les Konso ont des echanges commerciaux avec les Borana (betail contre produits agricoles), les Burji et les Dirasha. Les relations commerciales et les echanges matrimoniaux avec les groupes voisins ont marque l'histoire du peuple. Les terrasses konso fournissaient des surplus agricoles permettant ces echanges.",
+      "conflictsOrAlliances": "L'histoire des relations konso avec les groupes voisins est marquee par des echanges, mais aussi des tensions pour le controle des terres agricoles dans une region densement peuplee. Les villages fortifies (paleta) entourés de murs en pierre seche temoignent d'une necessite historique de defense.",
+      "diaspora": "Une diaspora konso existe dans les grandes villes ethiopiennes (Addis-Abeba, Hawassa). Quelques individus se trouvent dans le nord du Kenya. Les migrations economiques sont favorisees par la surpopulation relative du territoire konso (moins de 1 000 km2 pour environ 350 000 personnes)."
     },
     "demography": {
-      "totalPopulation": 250000,
+      "totalPopulation": 350000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, CIA World Factbook, et études démographiques"
+      "source": "Recensement ethiopien 2007 : 250 430 personnes dont 10 470 (4,18%) en milieu urbain. Joshua Project (2024) : 496 000 locuteurs du konso. Estimations 2025 d'environ 350 000 personnes selon des sources independantes (dinotruck.com, 2025). Plus de 87% vivent dans la Region Ethiopie du Sud (ex-SNNPRS).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 350000,
+          "note": "Zone Konso, Region Ethiopie du Sud, principalement au sud du lac Chamo dans le coude de la riviere Sagan. Quelques individus dans le nord du Kenya."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Konso language (kxc)",
-      "CIA World Factbook – Ethiopia",
-      "A Study of the Values of a Cushitic People*",
-      "Recensements éthiopiens",
-      "UNESCO – Konso Cultural Landscape (patrimoine mondial)"
+      "Wikipedia EN — Konso people. https://en.wikipedia.org/wiki/Konso_people",
+      "SIL Ethnologue — Konso (kxc). https://www.ethnologue.com/language/kxc/",
+      "UNESCO — Konso Cultural Landscape (Patrimoine mondial 2011). https://whc.unesco.org/en/list/1333/",
+      "UNESCO — Nomination du Paysage culturel konso. https://whc.unesco.org/uploads/nominations/1333rev.pdf",
+      "Joshua Project — Konso in Ethiopia. https://joshuaproject.net/people_groups/12786/ET",
+      "African World Heritage Sites — Konso Cultural Landscape. https://www.africanworldheritagesites.org/cultural-places/traditional-cultural-landscapes/konso.html",
+      "Hallpike, C.R. (1972). The Konso of Ethiopia: A Study of the Values of a Cushitic People. Oxford: Clarendon Press.",
+      "Recensement national ethiopien 2007. Ethiopian Statistics Services. https://ess.gov.et/"
     ]
   }
 }

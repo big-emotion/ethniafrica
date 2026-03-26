@@ -1,22 +1,104 @@
 {
   "id": "PPL_IGALA",
-  "nameMain": "",
+  "nameMain": "Igala",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["BEN"],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Igala",
       "selfAppellation": "Igala",
+      "exonyms": [
+        "Igara (variante orthographique utilisee dans certains documents coloniaux)"
+      ],
+      "originOfExonyms": "Le terme Igara est une variante ancienne utilisee dans les documents administratifs coloniaux britanniques. Le terme Igala derive du nom du territoire Ane Igala, signifiant « la terre ou l'on parle igala ».",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Igala est universellement utilise dans les contextes academiques, officiels et communautaires au Nigeria.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "currentCountries": ["BEN"]
+      "ethnoLinguisticGroup": "Yoruboid (sous-groupe defoid du Benoue-Congo, apparente au yoruba et a l'itsekiri)",
+      "historicalRegion": "Zone situee immediatement au sud de la confluence du Niger et de la Benoue (actuel sud-est de l'etat de Kogi)",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Idah Royal Chronicles", "Ethnologue (igb)"]
+    "ethnicities": [
+      "Igala-Mela — les neuf Igala fondateurs, ancetres des premiers etablissements",
+      "Clan Aj'Ameacho — l'une des quatre maisons royales",
+      "Clan Aj'Aku — maison royale",
+      "Clan Aj'Akogu — maison royale",
+      "Clan Aj'Ocholi — maison royale",
+      "Igalamela — confedération des neuf chefs qui elèvent l'Attah, tetes par l'Etemahi Igalamela",
+      "Communautes de l'Ibaji — groupe riverain au bord du Niger",
+      "Groupe d'Ankpa — zone orientale de l'Igalaland"
+    ],
+    "origins": {
+      "ancientOrigins": "La tradition orale igala raconte qu'un chasseur decouvrit le territoire ideal pour la chasse, et que son campement devint le berceau du peuplement igala. Certains villages portent d'ailleurs des noms de gibier, temoignant de l'importance de la chasse dans la culture originelle. Des recits historiques evoquent des liens ancestraux avec les peuples Igbo et Jukun. Selon la legende, Eri, ancetre mythique des Igbo, aurait engendre un fils (Ojoja) dont le descendant Onoja fonda le royaume d'Igala a Idah.",
+      "formationPeriod": "Le royaume d'Igala se consolide entre le XIVe et le XVIe siecle autour de la capitale Idah, sur la rive gauche du Niger. La formation d'une monarchie centralisee sous l'Attah a lieu progressivement, avec des influences igbo, yoruba, edo et jukun.",
+      "migrationRoutes": [
+        "Etablissements originels autour d'Idah (Kogi), capitale historique du royaume",
+        "Expansion du royaume au-dela de ses frontieres actuelles jusqu'au XVIIIe siecle",
+        "Communautes le long du Niger revendiquant une ethnogenese depuis Idah"
+      ],
+      "historicalSettlementZones": [
+        "Triangle de 14 000 km2 forme par la confluence Niger-Benoue (ancienne division d'Igala, province de Kabba)",
+        "Sud et est de l'etat de Kogi : zones de gouvernement local d'Idah, Igalamela/Odolu, Ajaka, Ofu, Olamaboro, Dekina, Ankpa, Ibaji",
+        "Minorites dans les etats d'Edo, Delta, Anambra et Enugu"
+      ],
+      "unificationsOrDivisions": "Le royaume d'Igala etait gouverne par l'Attah, monarque cerimoniellement et politiquement supreme. Des crises successorales au milieu du XIXe siecle ont affaibli le gouvernement central, provoquant des rebellions et la formation de colonies independantes. Les rivalites entre les quatre maisons royales ont genere des tensions economiques et politiques internes.",
+      "externalInfluences": "Le royaume d'Igala a subi la suzerainete du royaume de Benin sous l'Oba Esigie (XVIe siecle). Les Jukun ont domine l'Igalaland a une periode, jusqu'a la guerre de liberation menee par l'Attah Ayegba Oma Idoko. Le royaume a entretenu des echanges commerciaux et culturels intensifs avec les Igbo, Yoruba, Edo et Idoma.",
+      "majorHistoricalEvents": "Fondation du royaume d'Igala autour d'Idah ; domination jukun et guerre de liberation (XVIIe siecle) menee par l'Attah Ayegba, celebre pour le sacrifice de sa fille Inikpi pour la victoire ; suzerainete du royaume de Benin ; affaiblissement au XIXe siecle ; resistance a la colonisation britannique par l'Attah Ameh Oboni (mort par suicide pour eviter la destitution) ; integration dans le Nigeria independant en 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie theocratique dirigee par l'Attah (roi cerimoniellement et culturellement supreme). L'Attah est nomme par les quatre maisons royales (Aj'Ameacho, Aj'Aku, Aj'Akogu, Aj'Ocholi) et valide par les neuf grands chefs Igalamela (dont l'Etemahi Igalamela, chef de file). Le nom est ensuite transmis au Premier ministre (Achadu oko-ata) pour approbation du gouvernement de l'etat de Kogi. L'Attah actuel est Idakwo Micheal Ameh II (27e Attah, intronise en 2012).",
+      "clanOrganization": "Organisation en unites d'etablissements (efunyi ou ofigbeli) composees de deux clans ou plus, places sous un chef de famille (am'onofe-unyi). Appartenance aux etablissements fondee sur la parente agnatique (Am'om'onobule), les alliances matrimoniales (am'ana) ou l'absorption d'esclaves domestiques (am'adu).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages agnatiques determinent l'identite sociale, les droits de succession et la legitimite aux titres. Les quatre maisons royales conférent le droit a la nomination de l'Attah. Les ancetres (Ibegwu) jouent le role de messagers du dieu supreme Ojo et veillent sur la fertilite, l'agriculture et la cohesion sociale.",
+      "religiousAuthority": "L'Attah detient une autorite spirituelle supreme comme intermediaire entre les hommes et Ojo (dieu supreme). Les divinateurs et pretres traditionnels president aux ceremonies annuelles (festival de l'Ibegwu, festival de la Terre). Les mascarades Oloja representent les ancetres lors des ceremonies funeraires."
+    },
+    "languages": {
+      "mainLanguage": "Igala",
+      "isoCodes": ["igl"],
+      "dialects": [
+        "Idah — dialecte de la capitale",
+        "Dekina — zone centrale",
+        "Ankpa — zone orientale",
+        "Ibaji — groupe riverain",
+        "Ogugu — zone nord",
+        "Ebu — zone peripherique",
+        "Ife — zone meridionale",
+        "Anyugba — zone nord-est"
+      ],
+      "vehicularRole": "La langue igala est utilisee comme vehiculaire dans les zones avoisinantes ; les peuples Agatu, Idoma et Bassa l'emploient dans l'enseignement primaire. L'igala est classi dans le sous-groupe yoruboid et partage des similarites lexicales profondes avec le yoruba et l'itsekiri. L'anglais est la langue officielle d'education et d'administration."
+    },
+    "culture": {
+      "majorRites": "Festival Ibegwu (annuel, avant la recolte des ignames) : honore les ancetres pour leur protection et demande la benediction des recoltes. Festival de la Terre : debut de l'annee agricole ; chasse communale, restes d'animaux offerts a l'autel de la terre, premiere igname plantee par le roi. Ceremonie funeraire en trois etapes : Egwu omi omi eji (mise en terre), Ubi eche (apres l'enterrement), Akwu eche (dernieres larmes, mascarade Oloja). Ceremonies de chasse tout au long de l'annee.",
+      "symbols": "Mascarades royales et ancestrales (Oloja) representant les defunts et creant l'equilibre entre vivants et ancetres. Scarifications (Ina Ole) : trois incisions horizontales profondes pres de la bouche (zone d'Ankpa) pour identification sociale et ceremonies. Masques en bronze (influence du Benin). Tenues royales et insignes de l'Attah.",
+      "artsAndMusic": "Vannerie elaboree (contenants de stockage, pieges a poissons, tamis, paniers de transport) en palmier raphia et tiges souples. Decorations corporelles : peintures et teintures aux symboles culturels (peignes, anneaux, lettres). Industrie cinematographique Igawood preservant la culture igala. Musique rituelle : gongs en bois et metal, hochets, flute, sept tambours pour les ceremonies funeraires.",
+      "spiritualities": "Croyances traditionnelles centrees sur Ojo (etre supreme, trop divin pour le domaine humain), les ancetres Ibegwu (messagers d'Ojo, protecteurs de la fertilite et de l'agriculture), et les trois royaumes cosmiques (vie apres la naissance, vie adulte, vie apres la mort). Le destin de chaque individu est choisi avant sa naissance par Ojo. Le christianisme (protestantisme et catholicisme) et l'islam sont significativement repandus parmi les Igala contemporains."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume d'Igala : triangle de 14 000 km2 a la confluence Niger-Benoue, capital Idah. Le royaume a connu son apogee aux XVIe-XVIIIe siecles, s'etendant bien au-dela de ses frontieres actuelles. Il a exerce une influence sur les peuples Idoma et Igbo voisins et entretenu des relations diplomatiques avec le royaume de Benin.",
+      "relationsWithNeighbors": "Relations etroites et complexes avec les Igbo (liens ancestraux partages, commerce), les Idoma (affinites linguistiques et spirituelles), les Yoruba (appartenance linguistique commune au groupe yoruboid), et les Edo (hegemonie periodique du royaume de Benin sur l'Igalaland).",
+      "conflictsOrAlliances": "Guerre de liberation contre la domination jukun (XVIIe siecle) : l'Attah Ayegba Oma Idoko sacrifie sa fille Inikpi pour la victoire, episode fondateur de la memoire collective. Tensions periodiques avec Benin et Nupe. Resistance a la colonisation britannique, notamment par l'Attah Ameh Oboni au XXe siecle.",
+      "diaspora": "Presence igala dans les principales villes nigerianes (Abuja, Lagos, Benin City). Communautes minoritaires dans les etats d'Edo, Delta, Anambra et Enugu. Association Igala diaspora active au Nigeria et a l'etranger."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basee sur Wikipedia Igala people (plus de 2 millions), PeopleGroups.org (1 825 000), et publications Facebook recentes estimant environ 4 millions. Sources : https://en.wikipedia.org/wiki/Igala_people, https://peoplegroups.org/people_groups/pg013842/",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 4000000,
+          "note": "Principalement dans le sud et l'est de l'etat de Kogi ; minorites dans les etats d'Edo, Delta, Anambra et Enugu"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Igala people : https://en.wikipedia.org/wiki/Igala_people",
+      "Wikipedia — Igala language : https://en.wikipedia.org/wiki/Igala_language",
+      "Ethnologue (SIL International) — Igala language (igl) : https://www.ethnologue.com/language/igl/",
+      "101 Last Tribes — Igala : https://www.101lasttribes.com/tribes/igala.html",
+      "PeopleGroups.org — Igala of Nigeria : https://peoplegroups.org/people_groups/pg013842/",
+      "Idah Royal Chronicles — traditions orales du royaume d'Igala",
+      "Joshua Project — Igala in Nigeria : https://joshuaproject.net/people_groups/12186"
+    ]
   }
 }

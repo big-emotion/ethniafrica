@@ -1,34 +1,106 @@
 {
   "id": "PPL_FULANI",
-  "nameMain": "Fulɓe (Fula / Peul)",
+  "nameMain": "Fulbe (Fula / Peul)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["SEN", "GIN", "MLI", "BFA", "NER", "CMR", "TCD"],
   "content": {
     "appellations": {
-      "mainName": "Fulɓe (Fula / Peul)",
-      "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+      "mainName": "Fulbe (Fula / Peul)",
+      "selfAppellation": "Fulbe (pluriel), Pullo (singulier)",
+      "exonyms": ["Fulani", "Peul", "Peulh", "Fula", "Fellata"],
+      "originOfExonyms": "Fulani est la forme haoussa du terme, largement repandue au Nigeria et dans le monde anglophone. Peul derive du wolof Pel, utilise par les colonisateurs français. Fellata est un terme arabe (Soudan, Tchad) designe les Peuls en pelerinage ou installes en Afrique de l'Est.",
+      "whyProblematic": "Fulani designe souvent, de manière restrictive, les seuls pasteurs nomades et neglige les composantes sedentaires et semi-sedentaires du peuple. Le terme Fellata peut avoir une connotation de marginalisation dans certains contextes.",
+      "contemporaryUsage": "Fulani est dominant en anglais, particulierement au Nigeria et en Afrique anglophone. Peul reste prefere en français. Fulbe est utilise dans les cercles academiques et par les communautes elles-memes.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Bande sahélienne de l’Atlantique au Tchad",
+      "ethnoLinguisticGroup": "Atlantique (branche senegambienne)",
+      "historicalRegion": "Bande sahelienne de l'Atlantique (Senegal) au bassin du Tchad",
       "currentCountries": ["SEN", "GIN", "MLI", "BFA", "NER", "CMR", "TCD"]
     },
     "ethnicities": [
-      "Fulɓe Toroɓe",
-      "Fulɓe Wodaabe",
-      "Fulɓe Jalooɓe",
-      "Fulɓe Kuniari",
-      "Fulɓe Mbororo (pasteurs nomades)"
+      "Fulbe Torobe — clercs et erudits islamiques, fondateurs des jihads (Fouta Toro, Sokoto)",
+      "Fulbe Wodaabe — pasteurs nomades semi-arides (Niger, Nigeria, Cameroun), sous-groupe des Mbororo",
+      "Fulbe Jaloobe — sedentaires des hauts plateaux du Fouta Djallon (Guinee)",
+      "Fulbe Kuniari — zone de transition entre Fouta Toro et Massina",
+      "Fulbe Mbororo — grands nomades de l'Afrique centrale (Cameroun, Tchad, RCA)",
+      "Fulbe Jelgooji — pasteurs semi-nomades (Mali, Burkina Faso, Niger)",
+      "Fulbe Adamawa — sedentaires installes dans les emirats de l'Adamaoua (Nigeria, Cameroun)"
     ],
-    "origins": {},
-    "organization": {},
-    "languages": {},
-    "culture": {
-      "source_0": "Pastoralisme bovin.",
-      "source_1": "Poésie élogieuse *ɗiogal*.",
-      "source_2": "Cérémonies de beauté *sharo* chez certains groupes.",
-      "source_3": "Grande tradition islamique savante (Torooɓe)."
+    "origins": {
+      "ancientOrigins": "Les Fulani descendent de populations ayant migre du Sahara occidental vers la vallee du Senegal il y a plus de deux millenaires, poussees par la desertification et les incursions berberes. Leurs origines exactes restent debattues : les traditions orales evoquent l'Egypte ou le Moyen-Orient, tandis que les etudes linguistiques et genetiques privilegient une origine senegambienne avec une composante eurasienne nord-africaine (~21% d'admixture genetique).",
+      "formationPeriod": "La formation du peuple Fulani comme entite distincte est associee au royaume de Tekrur (IXe siecle) sur le fleuve Senegal. L'adoption precoce de l'islam (XIe siecle) a constitue le ciment identitaire permettant la cohesion entre groupes geographiquement disperses. La dynamique pastorale nomade a ensuite conduit a une expansion progressive vers l'est.",
+      "migrationRoutes": [
+        "Sahara occidental vers la vallee du Senegal (Fuuta Tooro) avant le Xe siecle",
+        "Fuuta Tooro vers l'est : Massina (Mali central) aux XIe-XIVe siecles",
+        "Penetration du Fouta Djallon (Guinee) a partir du XVIIe siecle",
+        "Expansion vers le Hausaland (Nigeria) et le Bornou aux XVe-XVIIe siecles",
+        "Expansion vers l'Adamaoua (Cameroun) et le bassin du Tchad a la fin du XVIIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Fuuta Tooro — basse vallee du Senegal et Mauritanie meridionale",
+        "Fouta Djallon — hauts plateaux de Guinee centrale",
+        "Massina — delta interieur du Niger (Mali)",
+        "Hausaland — nord Nigeria et sud Niger",
+        "Adamaoua — nord-est Nigeria et Cameroun central",
+        "Sahel saharien — Niger, Tchad (Wodaabe/Mbororo)"
+      ],
+      "unificationsOrDivisions": "Les Fulani sont reunis par le code moral Pulaaku (patience, pudeur, sagesse, courage) et par l'islam. Ils sont divises en trois grandes categories de vie : nomades-pastoraux (Mbororo), semi-nomades et sedentaires (Fulbe Wuro). La fragmentation politique en de nombreux Etats independants n'a pas empeche le maintien d'une conscience identitaire commune.",
+      "externalInfluences": "L'islam est l'influence externe determinante depuis le XIe siecle. Les contacts avec les peuples haoussa ont produit une culture Haoussa-Fulani distinctive (partage vestimentaire, linguistique et gastronomique) dans le nord Nigeria. Les colonisations française et britannique ont redessine les frontieres mais n'ont pas rompu l'unite culturelle des Fulani.",
+      "majorHistoricalEvents": "Jihad de Bundu (1690). Jihad du Fouta Djallon (XVIIIe s.). Jihad du Fouta Toro (1776). Jihad de Sokoto d'Usman dan Fodio (1804). Jihad de Macina de Seku Amadu (1818). Conquete coloniale française du Fouta Toro (1893) et britannique de Sokoto (1903)."
     },
-    "historicalRole": {},
-    "demography": {},
-    "sources": ["Ethnologue", "« Fulani History and Culture »", "UNFPA Sahel"]
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation duale : autorite pastorale de l'Ardo (chef de groupe nomade) pour les communautes mobiles; autorite politique des Lamido ou Almami (chefs d'emirats et d'imamates) pour les groupes sedentaires. Le code Pulaaku gouverne les comportements sociaux : Munyal (patience et endurance), Gacce ou Semteende (pudeur et respect), Hakkille (sagesse et hospitalite), Sagata ou Tiinaade (courage et travail).",
+      "clanOrganization": "Systeme clanique patrilineaire rigide avec hierarchie sociale bien marquee. Nobles libres (Rimbe/Dimo), artisans et griots (castes libres endogames : Lawbe — sculpteurs-boisiers, Maabuube — tisserands, Sakkeeybe — cordonniers, Wambaaɓe — bouchers, Jaawambe — marchands, Awlube — griots), et anciens captifs (Maccube/Rimmayybe). Le mariage est en priorite endogame (cousins croises).",
+      "ageClassSystems": "Classes d'age encadrant les activites pastorales, les epreuves initiatiques et les ceremonies. L'epreuve du Sharo (fouet initiatique), pratiquee chez les Wodaabe et groupes associes, marque le passage a l'age adulte masculin en testant le courage et la dignite.",
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, les droits sur les terres et paturages, et les alliances matrimoniales. La genealogie est soigneusement preservee et recitee par les griots (Awlube). L'origine noble (Torobe, Seediayanke) donne acces aux charges politiques et religieuses.",
+      "religiousAuthority": "Autorite islamique centrale : Almami (imamat), oulemas, chefs de confreries soufies (Qadiriyya, Tijaniyya). L'identite Fulani est intimement liee a l'islam depuis les jihads reformateurs du XVIIIe-XIXe siecle. Les Torobe sont historiquement la classe clericale et lettrée par excellence."
+    },
+    "languages": {
+      "mainLanguage": "Fulfulde / Pulaar / Pular",
+      "isoCodes": ["ful", "fuc", "fuf", "fub", "fuv"],
+      "dialects": [
+        "Pulaar Fuuta Tooro (fuc) — Senegal et Mauritanie",
+        "Pular Fuuta Jallon (fuf) — Guinee et Sierra Leone",
+        "Fulfulde Massinakoore — Mali (delta interieur du Niger)",
+        "Fulfulde Adamawa ou Fombinaare (fub) — Nigeria nord-est, Cameroun",
+        "Fulfulde Sokoto ou Woylaare (fuv) — Nigeria nord-ouest, Niger",
+        "Fulfulde Jelgoore — Burkina Faso, Mali, Niger"
+      ],
+      "vehicularRole": "Le Fulfulde Adamawa est une lingua franca dans la region Fombina (nord-est Nigeria, Cameroun). Le Pulaar est vehiculaire en Senegambie. L'arabe est utilise pour l'enseignement coranique. Les Fulani sont souvent bilingues ou trilingues (fulfulde + langue officielle + langue voisine : haoussa, bambara, wolof, french, anglais)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques : priere quotidienne, Ramadan, Aid el-Fitr, Aid el-Adha, Hajj. Epreuve du Sharo ou Shadi (fouet initiatique) : test de courage et d'endurance du jeune homme devant public, pratique notamment chez les Wodaabe. Gerewol (Wodaabe) : ceremonies de beaute et de seduction ou les hommes se maquillent et dansent pour seduire des femmes lors de festivals annuels. Mariage en etapes : Kabbal (engagement), Koowgal (installation), avec dot en betail. Dewgal : traversee annuelle du fleuve Niger par les troupeaux (Macina), inscrit au patrimoine immatériel de l'UNESCO.",
+      "symbols": "Le betail bovin (zebus blancs Aku, rouges Jafun, Sokoto Gudali) est le symbole premier de richesse, de statut et d'identite. Les calebasses gravees et decorees sont le symbole de l'artisanat feminin. Le code Pulaaku (patience, pudeur, sagesse, courage) constitue le socle moral et identitaire. L'ecriture Adlam (creee en 1989 par des jeunes Guinéens) est le nouveau symbole culturel.",
+      "artsAndMusic": "Instruments : Hoddu (luth a 4-5 cordes, ancetre possible du banjo), Riti ou Riiti (violon monocorde), flutes traversieres en bois ou bambou, Nianioru (idiophone), tambours Buuba et Bawdi. Griots Awlube gardiens de la poesie elogieuse (diogal) et de la genealogie. Tissage : femmes tissent calebasses decorees, paniers Mbeedu, brodent boubous. Artisanat du cuir (chaussures, fourreaux). Habitat nomade traditionnel : Suudu hudo ou Bukkaru (dome de nattes et de paille, mobile).",
+      "spiritualities": "Islam sunnite malekite majoritaire, avec influence forte des confreries soufies Qadiriyya et Tijaniyya. Grande tradition islamique lettrée (Torobe). Syncretisme persistant avec des pratiques pre-islamiques dans certaines communautes peripheriques : medecine traditionnelle, rituels pastoraux, culte des ancetres. Minorite chretienne dans les zones d'Afrique subsaharienne centrale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Tekrur (IXe s., vallée du Senegal). Grande Fulo (XVIe s., Koli Tenguella). Bundu (1690, Malick Sy). Imamat du Fouta Djallon (XVIIIe s., Guinee). Almamat du Fouta Toro (1776). Califat de Sokoto (1804, Usman dan Fodio) avec emirats subsidiaires : Adamaoua, Kano, Bauchi, Gombe, Katsina, Gwandu, Hadejia, Muri, Zazzau. Empire de Macina ou Diina (1818, Seku Amadu). Empire toucouleur (El Hadj Oumar Tall, XIXe s.).",
+      "relationsWithNeighbors": "Alliance et competition avec les Haoussa (culture Haoussa-Fulani distinctive). Tensions recurrentes avec les agriculteurs sedentaires (Dogon, Bamileke, Tiv, Jukun, Bwa, Bambara). Coexistence avec les Touaregs dans le Sahel. Rôle de vecteur islamique vers les populations non-musulmanes d'Afrique de l'Ouest et centrale.",
+      "conflictsOrAlliances": "Jihads reformateurs successifs : Fouta Djallon (XVIIIe s.), Fouta Toro (1769-1776), Sokoto (1804), Macina (1818). Resistance du Bornou aux Fulani (1808). Accord de 1785 avec la France (interdiction de la traite sur le Senegal). Conquetes coloniales françaises (Fouta Toro, 1893) et britanniques (Sokoto, 1903). Conflits eleveurs-agriculteurs contemporains (Nigeria, Mali, CAF, Cameroun).",
+      "diaspora": "Dispersion sur toute la bande sahelienne, de l'Atlantique a la mer Rouge. Comunautes Fellata au Soudan oriental (plus de 2 millions). Diaspora urbaine dans les capitales africaines et en Europe (France, Royaume-Uni) et aux Etats-Unis. Personnalites politiques majeures : Muhammadu Buhari (Nigeria), Macky Sall (Senegal), Adama Barrow (Gambie), Umaro Sissoco Embalo (Guinee-Bissau), Ahmadou Ahidjo (Cameroun)."
+    },
+    "demography": {
+      "totalPopulation": 35000000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Wikipedia (25-40 millions), ScienceDirect 2025 (environ 25 millions), CIA World Factbook et recensements nationaux. Le chiffre de 35 millions represente une estimation centrale pour les pays couverts par cette fiche (SEN, GIN, MLI, BFA, NER, CMR, TCD).",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 11000000 },
+        { "country": "GIN", "population": 4500000 },
+        { "country": "SEN", "population": 3500000 },
+        { "country": "MLI", "population": 3000000 },
+        { "country": "CMR", "population": 2800000 },
+        { "country": "NER", "population": 2500000 },
+        { "country": "BFA", "population": 1800000 },
+        { "country": "TCD", "population": 1500000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Fula people (Fulani). https://en.wikipedia.org/wiki/Fula_people",
+      "SIL Ethnologue — Fulfulde dialects. https://www.ethnologue.com/language/ful/",
+      "Joshua Project — Fulani, Maasina in Mali. https://joshuaproject.net/people_groups/11773/ml",
+      "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025). https://www.sciencedirect.com/science/article/pii/S0002929724004579",
+      "UNFPA — Sahel population data. https://www.unfpa.org/",
+      "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977."
+    ]
   }
 }

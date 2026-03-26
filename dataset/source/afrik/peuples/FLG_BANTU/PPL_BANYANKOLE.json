@@ -2,65 +2,94 @@
   "id": "PPL_BANYANKOLE",
   "nameMain": "Banyankole",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["UGA"],
+  "currentCountries": ["UGA", "RWA", "TZA"],
   "content": {
     "appellations": {
       "mainName": "Banyankole",
-      "selfAppellation": "",
-      "exonyms": ["Ankole"],
-      "originOfExonyms": "Le terme 'Ankole' vient du nom du royaume historique d'Ankole",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone J)",
-      "historicalRegion": "Sud-ouest de l'Ouganda",
-      "currentCountries": ["UGA"]
-    },
-    "ethnicities": ["Banyankole"],
-    "origins": {
-      "ancientOrigins": "Les Banyankole sont originaires du sud-ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume d'Ankole.",
-      "formationPeriod": "N/A",
-      "migrationRoutes": [
-        "Migrations depuis les régions des Grands Lacs. Expansion vers le sud-ouest de l'Ouganda. Déplacements vers les zones urbaines."
+      "selfAppellation": "Banyankole (ou Banyankore) ; Munyankole au singulier",
+      "exonyms": [
+        "Ankole",
+        "Ankori",
+        "Nkole",
+        "Nkore",
+        "Nyankole",
+        "Nyankore",
+        "Ouanyankori",
+        "Runyankole (parfois employe pour designer le peuple et non la langue)"
       ],
-      "historicalSettlementZones": ["Sud-ouest de l'Ouganda"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "originOfExonyms": "Le terme 'Ankole' vient du nom du royaume historique d'Ankole (Nkore), qui constituait l'entite politique de reference avant la colonisation. 'Runyankole' designe la langue du peuple. Le prefixe 'Ba-' est une marque de pluriel bantou ; 'Mu-' est le singulier.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes 'Banyankole' et 'Banyankore' sont tous deux utilises en Ouganda. 'Ankole' est employe pour le district administratif historique. 'Nkole' apparait dans la litterature ethnologique. Le Joshua Project utilise 'Banyankore'.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de la Zone J (Grands Lacs), branche Interlacustre",
+      "historicalRegion": "Royaume d'Ankole, sud-ouest de l'Ouganda (Ankole sub-region)",
+      "currentCountries": ["UGA", "RWA", "TZA"]
+    },
+    "ethnicities": ["Bahima (classe pastorale)", "Bairu (classe agricole)"],
+    "origins": {
+      "ancientOrigins": "Les Banyankole font partie des peuples bantous des Grands Lacs qui ont migre depuis l'Afrique centrale et occidentale il y a plus d'un millenaire. Les Bairu (agriculteurs) constituent le substrat bantou originel de la region d'Ankole. Les Bahima (eleveurs), probablement d'origine hamitique venue d'Ethiopie, migreraient du nord et auraient conquis les Bairu, formant une societe bicephalique caracteristique. Selon d'autres analyses, les Bahima auraient adopte la langue runyankole des Bairu mais maintenu leur identite pastorale distincte.",
+      "formationPeriod": "Le royaume d'Ankole (Nkore) se constitua vraisemblablement entre le XVe et le XVIIe siecle. Avant le XVIIe siecle, des eleveurs migrant du nord s'insererent dans la region et s'y imposerent politiquement. La population totale s'elevait a environ 149 469 personnes en 1919.",
+      "migrationRoutes": [
+        "Migration des peuples bantous (Bairu) depuis l'Afrique centrale vers les Grands Lacs",
+        "Migration des Bahima (pasteurs) depuis le nord (Ethiopie ou Nil superieur) vers le sud",
+        "Au XVIIe siecle, expansion vers le sud-ouest de l'Ouganda",
+        "Migrations recentes vers les zones urbaines d'Ouganda et vers la Tanzanie et le Rwanda"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Ankole, sud-ouest de l'Ouganda (districts de Mbarara, Ntungamo, Bushenyi, Kiruhura)",
+        "Environs du lac Edouard (a l'ouest)",
+        "Frontieres avec le Rwanda et la Tanzanie (au sud)"
+      ],
+      "unificationsOrDivisions": "Le royaume d'Ankole fut elargit en 1901 par les Britanniques en fusionnant les petits royaumes de Mpororo, Igara, Buhweju et Busongora. En 1967, le gouvernement de Milton Obote abolit tous les royaumes d'Ouganda, y compris l'Ankole. En 1993, la monarchie fut restauree dans trois anciens royaumes (Buganda, Bunyoro, Toro) mais pas dans l'Ankole, faute de consensus.",
+      "externalInfluences": "Protectorat britannique etabli en 1888 en Ouganda ; Ankole integre en 1901 par elargissement des frontieres. Missionaries chretiens (catholiques et anglicans) convertissant la population a partir du XIXe siecle. Independence de l'Ouganda en 1962.",
+      "majorHistoricalEvents": "XVe-XVIIe siecles : formation du royaume d'Ankole. 1888 : Uganda devient protectorat britannique. 1901 : elargissement du royaume d'Ankole par les Britanniques. 1962 : independence de l'Ouganda. 1966 : conflits entre le gouvernement central et le royaume de Buganda menant a la suspension de la constitution. 1967 : abolition des royaumes par Milton Obote. 1993 : restauration partielle des monarchies (Ankole exclue). Presente : debat non resolu sur la restauration du royaume d'Ankole."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Ankole). Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie absolue sous l'Omugabe (roi). Le royaume d'Ankole comptait 16 districts, chacun dirige par un chef (Mukungu) nomme par le roi. L'Omugabe disposait de pouvoirs physiques, magiques et religieux. Il prenait les decisions de guerre et de paix et supervisait les nominations politiques. Un Premier ministre (Enganzi) et des chefs locaux (Abakuru b'ebyanga) assistaient le roi.",
+      "clanOrganization": "Les Banyankole sont divises en au moins 131 clans (enganda) regroupes en 4 racines communes (ebibunu/ebisintsi) : Abahinda (16 clans, le clan royal), Abagahe (43 clans), Abashambo (56 clans) et Abaishikatwa (16 clans). Chaque clan possede un ou plusieurs totems. Le clan Abahinda avait deux totems : le singe Nkima et le millet bulo. La succession royale se faisait par combat entre les fils du roi, l'heritier le plus fort reclamant le tambour royal Bagyendanwa.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Organisation patrilineaire. Les lignages determinent l'appartenance clanique et les droits de succession. La societe est structuree en deux classes : les Bahima (eleveurs pastoraux, classe dominante) et les Bairu (agriculteurs, classe subalterne). Cette division a historiquement gouverne les roles sociaux, le mariage et l'acces aux ressources.",
+      "religiousAuthority": "Le roi (Omugabe) centralisait l'autorite religieuse. La tradition cosmogonoique Banyankole stipule que Ruhanga crea le premier homme (Rugabe) et la premiere femme (Nyamate). Les ancetres royaux deifies gouvernaient la fertilite, les tremblements de terre et le tonnerre. Chaque famille possedait un autel aux fantomes (ezimu), a qui on offrait du lait et parfois de la viande. Depuis la colonisation, le christianisme (catholique et anglican) est majoritaire."
     },
     "languages": {
-      "mainLanguage": "Runyankole (nyn)",
+      "mainLanguage": "Runyankole",
       "isoCodes": ["nyn"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Runyankore (variante orthographique)",
+        "Rukiga (etroitement lie, parle par les Bakiga voisins)"
+      ],
+      "vehicularRole": "Le Runyankole (code ISO 639-3 : nyn) est la langue bantoue de la Zone J parlee dans le sud-ouest de l'Ouganda. Il est mutuellement intelligible avec le Rukiga (Bakiga) et etroitement lie au Runyoro et au Rutooro. L'anglais est la langue officielle de l'Ouganda et la principale langue d'enseignement et de gouvernement."
     },
     "culture": {
-      "Rites majeurs": "Traditions pastorales, élevage de bovins à longues cornes (Ankole-Watusi). Cérémonies royales. Cérémonies de mariage traditionnelles. Rites de passage.",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de passage : des l'enfance, les garcons apprennent a distinguer les couleurs des bovins et a les soigner ; les filles a fabriquer des couvercles de pots a lait. Ceremonies de mariage impliquant le paiement de la dot (brideprice) : 2 vaches et 3 chevres chez les Bairu, jusqu'a 20 vaches chez les Bahima. Funerailles et succession royale (combat des fils pour le tambour Bagyendanwa). Traditions pastorales autour des bovins a longues cornes Ankole-Watusi.",
+      "symbols": "Les bovins a longues cornes Ankole-Watusi (Inyambo) sont le symbole central de la culture Banyankole. Le tambour royal Bagyendanwa est le symbole du pouvoir royal. Le millet (bulo) est le totem du clan royal Abahinda. La colline (les mille collines d'Ankole) est un symbole territorial.",
+      "artsAndMusic": "Poesie epique (collectee et traduite par le chercheur Morris) ; nombreux livres rediges en Runyankole. Style de tambour 'Entogoro'. Chants et danses lors des ceremonies de mariage et des rassemblements communautaires. Narration orale (contes, enigmes, proverbes) comme vecteur d'education morale. Artisanat : tissage, ceramique (pots a lait), fabrication de seaux en bois.",
+      "spiritualities": "Tradition animiste ancestrale : Ruhanga comme dieu createur, culte des ancetres royaux deifies, shrines familiaux aux esprits. Depuis le XIXe siecle, christianisme majoritaire : 52,6% anglicans et 34,8% catholiques (recensement 2002). Minorites : 5,2% musulmans, 4,6% pentecotistes. Tensions occasionnelles entre pratiques traditionnelles et prescriptions chretiennes (ex : polygamie)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Royaume d'Ankole (précolonial - présent). Traditions royales. Traditions pastorales.",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume d'Ankole (Nkore), puissance regionale du sud-ouest de l'Ouganda du XVe siecle jusqu'a son abolition en 1967. L'Omugabe etait chef absolu. Le royaume possedait 16 districts administratifs. Elargi par les Britanniques en 1901 (fusion avec Mpororo, Igara, Buhweju, Busongora).",
+      "relationsWithNeighbors": "Commerce historique avec les royaumes voisins de Buganda, Bunyoro et Toro ainsi qu'avec les peuples de Tanzanie, du Rwanda et du Congo. Echanges de bovins, de produits agricoles, de sel et de biere. Relations d'interdependance commerciale : les pasteurs Bahima echangeaient des produits laitiers contre les produits agricoles des Bairu.",
+      "conflictsOrAlliances": "Conflits et alliances avec les royaumes voisins (Bunyoro, Buganda). Resistance a l'abolition des royaumes par Obote (1967). Mouvement social Kunyamana ('se connaitre') proteste contre les inegalites Bahima/Bairu. Debat contemporain sur la restauration du royaume d'Ankole (non resolu en 2025).",
+      "diaspora": "Petites communautes Banyankore en Tanzanie (region de Kagera et Kigoma, a la frontiere) et au Rwanda. Migrations importantes vers les centres urbains d'Ouganda (Kampala, Mbarara)."
     },
     "demography": {
-      "totalPopulation": 3,
+      "totalPopulation": 4200000,
       "referenceYear": 2025,
-      "source": "Fiche pays UGA, estimations ONU"
+      "source": "Facebook Ethnic Groups of Uganda 2025 (estimation 4,2 millions, 8,2% de la population ougandaise) ; Joshua Project – Banyankore in Uganda",
+      "distributionByCountry": [
+        { "country": "UGA", "population": 4150000 },
+        { "country": "TZA", "population": 30000 },
+        { "country": "RWA", "population": 20000 }
+      ]
     },
     "sources": [
-      "Fiche pays UGA",
-      "SIL Ethnologue – Runyankole language (nyn)",
-      "CIA World Factbook – Uganda"
+      "Wikipedia EN – Nkole people (https://en.wikipedia.org/wiki/Nkole_people)",
+      "101 Last Tribes – Banyankole people (http://www.101lasttribes.com/tribes/banyankole.html)",
+      "Joshua Project – Banyankore in Uganda (https://joshuaproject.net/people_groups/12103/UG)",
+      "Encyclopedia.com – Banyankole (https://www.encyclopedia.com/places/africa/uganda-political-geography/banyankole)",
+      "Mulera, Muniini K. – Clans and totems of Banyankore, 2019 (https://blog.mulerasfireplace.com/engage/clans-and-totems-of-banyankore)",
+      "Achieve Global Safaris – The Banyankole in Uganda, 2025 (https://www.bwindinationalparkuganda.com/information-blog/the-banyankole-in-uganda/)",
+      "SIL Ethnologue – Runyankole language nyn (https://www.ethnologue.com/language/nyn/)"
     ]
   }
 }

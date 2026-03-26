@@ -6,54 +6,78 @@
   "content": {
     "appellations": {
       "mainName": "Majang",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Majangir",
+      "exonyms": ["Majangir", "Mesengo", "Mejengir", "Masongo"],
+      "originOfExonyms": "Majangir est a la fois l'auto-denomination et un exonyme courant : il s'agit du nom que les membres du groupe utilisent pour se designer collectivement. Mesengo et Masongo sont des formes utilisees par les voisins et dans les recensements ethiopiens. Mejengir est une autre variante orthographique frequente dans la litterature academique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Majang est l'appellation officielle en Ethiopie. La zone Majang dans la region Gambela porte leur nom. Majangir est utilise comme terme commun dans la litterature anthropologique et les profils de groupes ethniques.",
       "linguisticFamily": "FLG_NILOSAHARIENNE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Nilo-saharien, groupe Surmic (cluster surmique), sous-groupe Nord Surmic ; Majang est le membre le plus isole du groupe Surmic",
+      "historicalRegion": "Sud-ouest de l'Ethiopie, region Gambela, zone forestiere entre les hauts plateaux et les basses terres",
       "currentCountries": ["ETH"]
     },
     "ethnicities": ["Majang"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Majangir sont un peuple autochtone du sud-ouest de l'Ethiopie, habitant les forets d'une zone d'escarpement entre les hautes terres et les basses terres. Leur langue est le membre le plus isole du cluster surmique (nilo-saharien), ce qui suggere une longue presence independante dans la region. Dans le passe, ils subissaient des razzias des peuples des hautes terres pour les reduire en esclavage et survivaient en se cachant dans les forets denses.",
+      "formationPeriod": "Peuple forestier de longue date dans le sud-ouest ethiopien. Tradition documentee depuis au moins le XIXe siecle dans les sources ethnographiques. Organisation sociale egalitaire et nomade decrite par Jack Stauder en 1971.",
+      "migrationRoutes": [
+        "Occupation ancestrale de la zone forestiere d'escarpement entre Tepi, Metti et Mizan Teferi",
+        "Deplacements internes frequents dans le cadre de l'agriculture itinerante traditionnelle (tous les 3 a 5 ans)"
+      ],
+      "historicalSettlementZones": [
+        "Forets du sud-ouest de l'Ethiopie",
+        "Zone Majang (region Gambela)",
+        "Environs de Tepi, Metti et Mizan Teferi (region SNNPR)"
+      ],
+      "unificationsOrDivisions": "Societe traditionnellement tres egalitaire et decentralisee, sans chefs politiques permanents (Stauder 1971). Depuis la remapping ethnique de l'Ethiopie post-1991, le territoire des Majangir est divise entre trois regions administratives (kalil), ce qui provoque un sentiment profond de marginalisation politique et a conduit a quelques affrontements armes avec le gouvernement.",
+      "externalInfluences": "Razzias historiques par les peuples des hautes terres pour l'esclavage. Christianisation progressive depuis les annees 1960-1970 (missionnaires). Achat et location de terres par des etrangers dans la zone Majang depuis les annees 2000, entraинant deforestation et appauvrissement. Administration ethiopienne qui a divise leur territoire entre plusieurs regions.",
+      "majorHistoricalEvents": "Documentation ethnographique par Jack Stauder (1971, 1972) : premiere description scientifique approfondie de la societe majangir. Depuis 1971 : christianisation progressive. Depuis 1991 : remapping ethnique, division du territoire en trois regions, marginalisation politique, quelques affrontements armes avec le gouvernement. Depuis 2000 : deforestation et vente des terres, pauperisation acceleree."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe traditionnellement tres egalitaire sans chefs politiques permanents ni autorite coercitive (Stauder 1971, 1972). La seule fonction officielle est celle de tapad (chef rituel), issu du clan Meelanir, qui assure des fonctions cerimoniales. En cas de conflit grave, l'une des parties se deplace simplement, evitant l'affrontement. Il n'existe pas de mecanisme standard de reconciliation sociale comparable aux hautes terres ethiopiennes.",
+      "clanOrganization": "Plus de 70 clans avec filiation patrilineaire. Regles d'exogamie strictes : interdit d'epouser quelqu'un du meme clan ou du clan de la mere. Le clan Meelanir a un statut privilegie en fournissant les chefs rituels (tapad), un lien avec des clans privilegies similaires dans d'autres groupes surmiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation patrilineaire definit l'appartenance clanique et les regles matrimoniales. La relation fraternelle (freres et soeurs) est consideree comme plus etroite que la relation conjugale dans la structure sociale majangir.",
+      "religiousAuthority": "La fonction de tapad (chef rituel) est detenue par le clan Meelanir. Depuis les annees 1970, presence de pasteurs chretiens. Coexistence de croyances traditionnelles et du christianisme."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Majang",
+      "isoCodes": ["mpe"],
+      "dialects": [],
+      "vehicularRole": "Le majang est la langue maternelle du groupe, appartenant au sous-groupe surmique nord de la famille nilo-saharienne. C'est le membre le plus isole du cluster surmique (Fleming 1983). L'amharique est utilise comme langue nationale ethiopienne. Le recensement de 2007 signale 6 433 locuteurs pour la langue Majang (Messengo), mais le groupe ethnique compte 32 822 individus selon le meme recensement."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Traditions de beekeeping (apiculture) avec ruches dans des rondins creuses places dans les arbres. Ceremonies liees a la culture itinerante (changement de site tous les 3 a 5 ans historiquement). Boissons ceremoniales : taajan (boisson de grain, similaire au tella) et ogool (hydromel, similaire au tej). Depuis les annees 1980 : stabilisation dans des villages permanents.",
+      "symbols": "La foret est l'element central de l'identite et de la survie majangir. La deforestation actuelle est vecue comme une menace existentielle. La ruche en rondin est un symbole d'artisanat traditionnel.",
+      "artsAndMusic": "Instruments traditionnels multiples : lyre a cinq cordes, piano a pouces (sanza), tambour, hochets, flute de pan. Marimba suspendue verticalement avec trois barres de bois au minimum (instrument de passe-temps, garde des champs). Musique vocale en harmonie et en antiphonie : deux voix femmes et deux voix hommes. Le chant accompagne les activites collectives et les ceremonies.",
+      "spiritualities": "Religion traditionnelle avec chef rituel (tapad) du clan Meelanir. Christianisation progressive depuis ~1971 (Hoekstra 2003, Sato 2002). Coexistence du christianisme et des pratiques religieuses traditionnelles. Presence de missionnaires chretiens dans la region depuis les annees 1960."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume ni de chefferie centralise. Organisation politique egalitaire sans chef permanent. La seule figure d'autorite est le chef rituel tapad du clan Meelanir. Depuis 1991, la zone Majang (region Gambela) est une entite administrative ethiopienne portant leur nom.",
+      "relationsWithNeighbors": "Dans le passe, les Majangir subissaient des razzias des peuples des hautes terres pour l'esclavage, et survivaient en se cachant dans les forets. Ils sont interspersed avec d'autres groupes ethniques dans la region. Voisins : Anuak (Anywaa), Nuer, Me'en, Oromo, Anfillo. Depuis 1991, acheteurs et locataires exterieurs de terres creent des tensions autour des ressources forestieres.",
+      "conflictsOrAlliances": "Marginalisation politique post-1991 : territoire divise entre trois regions administratives, conduisant a des frustrations et quelques affrontements armes avec le gouvernement (Vaughan 2003). Pression fonciere et deforestation massive due a l'achat et la location de terres par des exterieurs, entraинant la pauperisation des Majangir.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 70000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2024 (70 000) ; recensement ethiopien 1998 : 15 341 (sous-estimation) ; recensement 2007 : 32 822 (groupe ethnique Messengo/Mejengir)",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 70000,
+          "note": "Zone Majang (region Gambela), environs de Tepi et Metti, sud-ouest de Mizan Teferi"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Majang people – Wikipedia (https://en.wikipedia.org/wiki/Majang_people)",
+      "Majang language – Wikipedia (https://en.wikipedia.org/wiki/Majang_language)",
+      "Majang Language (MPE) – Ethnologue, SIL International (https://www.ethnologue.com/language/mpe/)",
+      "Majang in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/13689)",
+      "Gambela Region – Wikipedia (https://en.wikipedia.org/wiki/Gambela_Region)",
+      "Stauder, Jack – The Majangir: Ecology and Society of a Southwest Ethiopian People, Cambridge University Press, 1971",
+      "Dimmendaal, Gerrit Jan et al. – The Majang Language (Scholarly Publications Leiden University, 2025, https://scholarlypublications.universiteitleiden.nl/access/item:2979180/view)"
+    ]
   }
 }

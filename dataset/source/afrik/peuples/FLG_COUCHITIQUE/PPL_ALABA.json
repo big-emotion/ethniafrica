@@ -1,23 +1,90 @@
 {
   "id": "PPL_ALABA",
-  "nameMain": "",
+  "nameMain": "Halaba",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Halaba",
+      "mainName": "Halaba",
+      "selfAppellation": "Halaba / Alaba",
+      "exonyms": ["Alaba", "Allaaba", "Halaba"],
+      "originOfExonyms": "Le terme Alaba est la forme orthographique alternative de Halaba, utilisee par les sources administratives et academiques ethiopiennes. Les deux formes renvoient au meme groupe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Halaba est le plus utilise en ethiopien et dans les sources locales. Alaba apparait dans les sources anglophones comme Ethnologue et Joshua Project. Le groupe jouit d'un statut administratif special depuis 2002 sous le nom de Zone Halaba.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Halaba Zone (Éthiopie Sud)",
+      "ethnoLinguisticGroup": "Couchitiques des hautes terres orientales (Highland East Cushitic)",
+      "historicalRegion": "Hauts plateaux centraux d'Ethiopie, Rift Valley au sud-ouest du lac Shala, zone Halaba (region Ethiopie Centrale)",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (alw)", "Halaba Zone Cultural Reports"]
+    "ethnicities": [
+      "Wanbasana (Alaba proprement dit)",
+      "K'abeena (sous-groupe linguistiquement proche)",
+      "Halaba urbains de Kulito",
+      "Communautes rurales de la vallee du Bilate"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Halaba revendiquent une origine arabe : selon la tradition orale, leurs ancetres descendent du clerc arabe Abadir qui s'etablit a Harar, dans l'est de l'Ethiopie. Ce fondateur mythique est partage avec d'autres groupes islamismes de la Corne de l'Afrique. Leur langue, le halaba-k'abeena, appartient cependant au rameau couchitique des hautes terres, ce qui temoigne d'une ancienne implantation africaine predatant ou independante de l'influence arabique.",
+      "formationPeriod": "Au Moyen Age, les Halaba faisaient partie de l'Etat de Hadiya, une confederation de peuples couchitiques islamisees du centre-sud de l'Ethiopie. Au 15e siecle, leur chef Garad etait en conflit avec le monarque abyssin Zara Yaqob. Une carte datant de 1628 identifie deja un Royaume de Halaba dans la region, attestant d'une entite politique distincte. L'islamisation intensive fut introduite vers 1830 par le cheikh Kana, descendant du celebre Nur Husain.",
+      "migrationRoutes": [
+        "Migration presumee depuis l'est de l'Ethiopie (region de Harar) vers les hauts plateaux du centre-sud"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux centraux d'Ethiopie, 250 a 300 km au sud-ouest d'Addis-Abeba",
+        "Rift Valley au sud-ouest du lac Shala",
+        "Zone comprise entre la rive gauche de la riviere Bilate et le lac Awasa"
+      ],
+      "unificationsOrDivisions": "Les Halaba ont ete administres pendant longtemps sous l'autorite des Kambaata. Ils ont obtenu un statut administratif autonome en 2002 dans le cadre de la region des Nations, Nationalites et Peuples du Sud (SNNPR), puis ont rejoint la nouvelle region Ethiopie Centrale en 2023.",
+      "externalInfluences": "Islamisation progressive depuis le 11e siecle ; influence de l'arabe comme langue de savoir et d'education religieuse ; contact avec les Kambaata, Sidama, Hadiya et Silte voisins ; colonisation et centralisation ethiopiennes aux 19e-20e siecles.",
+      "majorHistoricalEvents": "Appartenance a l'Etat de Hadiya au Moyen Age. Conflit du Garad avec Zara Yaqob au 15e siecle. Attestation d'un Royaume de Halaba en 1628. Introduction de l'islam par le cheikh Kana vers 1830. Obtention d'une zone administrative speciale en 2002. Transition vers la region Ethiopie Centrale en 2023."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La structure politique traditionnelle des Halaba est gouvernee par le systeme de la Sera, institution coutumieres qui fait office de loi, de principes, de normes, de valeurs et de reglement communautaire. La Sera est presidee par les anciens du groupe et les autorites religieuses. Elle inclut des sessions publiques de reconciliation entre parties en conflit, de transfert de responsabilites aux jeunes hommes et aux jeunes filles en age de se marier, et des discours appelant a la paix et a l'unite.",
+      "clanOrganization": "Organisation en familles etendues et lignages patrilineaires. Le groupe principal est les Halaba proprement dits (Wanbasana) avec le sous-groupe K'abeena linguistiquement proche.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'identite sociale et les alliances matrimoniales. La connaissance de sa lignee est indispensable pour les regles d'exogamie.",
+      "religiousAuthority": "Autorite des cheikhs et imams, notamment heritiers de la tradition du cheikh Kana. Le centre religieux de Bedeni est l'un des plus anciens de la zone, frequente depuis plus de 70 ans. La zone Halaba compte plus de 50 mosquees dont la grande mosquee Al-Noor."
+    },
+    "languages": {
+      "mainLanguage": "Halaba-K'abeena (Allabigna)",
+      "isoCodes": ["alw"],
+      "dialects": [
+        "Alaba (Wanbasana) — dialecte principal",
+        "K'abeena — variete proche, 81% de similitude lexicale avec le kambaata"
+      ],
+      "vehicularRole": "Le halaba-k'abeena est parle en milieu rural comme seule langue. En milieu urbain (Kulito), l'amharique est utilise dans l'administration et l'education. L'arabe est employe comme langue de savoir islamique et d'education coranique, avec une presence forte dans les ecoles et madrasas. Le halaba presente 81% de similitude lexicale avec le kambaata, 64% avec le sidamo et 56% avec le libido."
+    },
+    "culture": {
+      "majorRites": "Le festival annuel Sera (ou Sira), celebre en janvier apres les recoltes, est la ceremonie centrale de la vie sociale et spirituelle halaba. Il dure une semaine et comprend des seminaires, des spectacles culturels et patrimoniaux, des ceremonies de reconciliation entre parties en conflit, la transmission de responsabilites aux jeunes, et des assemblees publiques presidees par les anciens. Le mois de Ramadan est egalement une saison spirituelle majeure pour la communaute, marquee par la priere, le rapprochement de Dieu et la generosite.",
+      "symbols": "Le kufiya (couvre-chef traditionnel confectionne a partir d'herbes naturelles), porte en vert et blanc, est le symbole identitaire distinctif des hommes Halaba. Il protege contre la chaleur du soleil et est devenu un marqueur culturel de leur identite arabe et islamique.",
+      "artsAndMusic": "Musique et danses folkloriques lors du festival Sera : chants traditionnels, danses collectives. Artisanat local : maisons rondes en bois et boue a toit de chaume. Tradition de l'enseignement coranique et de la poetique orale arabo-custhitique. Groupes ethniques voisins (Kambaata, Sidama, Silte) participent aux celebrations, creant des echanges culturels.",
+      "spiritualities": "Les Halaba sont musulmans sunnites a plus de 90%. L'islam a ete introduit vers 1830 par le cheikh Kana, descendant du Nur Husain. La zone compte plus de 50 mosquees et plusieurs ecoles islamiques (Dar Al-Hadith, mosquees Al-Noor, Bilal, Al-Najashi). L'arabe est fortement present dans l'enseignement religieux. Une minorite pratique le christianisme orthodoxe ethiopien et le protestantisme, surtout en milieu urbain."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Halaba faisaient partie de l'Etat de Hadiya au Moyen Age. Un Royaume de Halaba independant est documente sur une carte de 1628. Le Garad (chef) halaba etait une figure politique importante, en contact conflictuel avec le pouvoir abyssin au 15e siecle. Sidi Mohammed, Garad de Hadiya, est cite comme ancetre fondateur des Halaba.",
+      "relationsWithNeighbors": "Relations historiques avec les Kambaata (a qui les Halaba etaient administrativement rattaches), les Sidama, les Hadiya, les Silte et les Tambaro. La riviere Bilate marque la frontiere occidentale avec les Kambaata. Relations commerciales a travers le marche de Kulito.",
+      "conflictsOrAlliances": "Conflit du Garad halaba avec Zara Yaqob, monarque abyssin, au 15e siecle. Maintien d'une autonomie relative pendant les periodes de centralisation ethiopienne. Resistance aux influences exterieures documentee par la fermeture longue aux ecoles modernes.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 448000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 (448 000 pour les Alaba en Ethiopie) ; Ethnologue alw : 162 000 locuteurs (1994) ; zone Halaba : 49 028 menages recenses avec 4,74 personnes par menage (CSA Ethiopie). Population projetee a la hausse pour 2025.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 448000,
+          "note": "Zone Halaba (region Ethiopie Centrale), principalement autour de Kulito, la capitale administrative, dans la Rift Valley au sud-ouest du lac Shala"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Halaba people. https://en.wikipedia.org/wiki/Halaba_people",
+      "Joshua Project — Alaba in Ethiopia. https://joshuaproject.net/people_groups/10255",
+      "Horn of Africa Evangelical Mission — Allaaba of Ethiopia (PDF). https://hornofafrica.org/wp-content/uploads/2019/12/Allaaba.pdf",
+      "Al Mujtama Magazine — Ethiopia's Halaba Ethnicity: Arabic Speakers Committed to Islamic Values. https://www.en.mugtama.com/public/index.php/articles/ethiopia_s_halaba_ethnicity_arabic_speakers_committed_to_islamic_values",
+      "Day Translations — Alaba-K'abeena language data (Ethnologue excerpt). https://www.daytranslations.com/blog/guide/ethiopia/4/",
+      "Wikipedia EN — Halaba Zone. https://en.wikipedia.org/wiki/Halaba",
+      "SIL Ethnologue — Alaba-K'abeena language (alw). https://www.ethnologue.com/language/alw/"
+    ]
   }
 }

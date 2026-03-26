@@ -1,0 +1,68 @@
+{
+  "id": "PPL_KONKOMBA",
+  "nameMain": "Konkomba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Konkomba",
+      "selfAppellation": "Konkomba",
+      "exonyms": ["Konkomba (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur",
+      "historicalRegion": "GHA, TGO",
+      "currentCountries": ["GHA", "TGO"]
+    },
+    "ethnicities": [
+      "Konkomba du Ghana",
+      "Konkomba du Togo",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Konkomba sont originaires de la région du Ghana et du Togo. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe gur.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Konkomba",
+      "vehicularRole": "Le konkomba est parlé par la majorité des Konkomba. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles culturels konkomba, symboles islamiques et chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (tambours, flûtes)",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Artisanat (tissage, poterie)",
+      "source_7": "Littérature orale",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora konkomba dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Konkomba language (xon)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples gur"
+    ]
+  }
+}

@@ -6,54 +6,69 @@
   "content": {
     "appellations": {
       "mainName": "Qabena",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "K'abeena",
+      "exonyms": ["Kebena", "Qebena", "Kabena", "Khabena"],
+      "originOfExonyms": "Les formes Kebena et Qebena sont des translitterations alternatives du nom local K'abeena utilise dans la litterature ethnographique et les recensements ethiopiens. Le nom est parfois associe au terme geographique de la zone de Gurage ou ils resident.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Qabena/Kebena est utilise dans les recensements ethiopiens officiels. Depuis 1994, ils disposent d'un woreda special (kebele special) dans la zone de Gurage, dont le chef-lieu est Welkite. Le groupe est reconnu comme groupe ethnique distinct.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Groupe cushitique des hautes terres orientales (Highland East Cushitic)",
+      "historicalRegion": "Zone de Gurage, region SNNPR, Ethiopie centrale",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Qabena"],
+    "ethnicities": ["Qabena", "Kebena"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Qabena sont associes au royaume islamique medieval de Hadiya, dont ils maintenaient l'appellation jusqu'au XIXe siecle. Selon la tradition orale, ils auraient primitivement parle une langue semitique proche du Silt'e avant d'adopter le cushitique Timbaro, puis le dialecte K'abeena de la langue Alaba-K'abeena.",
+      "formationPeriod": "Le groupe Qabena s'est constitue comme entite distincte a partir du XVe siecle, lorsqu'ils sont mentionnes dans la chronique de l'Empereur Zara Yaqob (XVe siecle) sous le nom de Garad de Kebena. En 1815, ils se separent formellement de leurs proches parents Halaba.",
+      "migrationRoutes": [
+        "Depuis la peripherie du royaume Hadiya vers la zone de Gurage, entre les fleuves Omo et Bilate"
+      ],
+      "historicalSettlementZones": [
+        "Zone de Gurage, entre les rivieres Omo et Bilate",
+        "Woreda special Kebena, chef-lieu Welkite"
+      ],
+      "unificationsOrDivisions": "En 1815, separation des Qabena de leurs parents Halaba. Au XIXe siecle, le royaume Kebena ou Hadya Womba etait un important centre commercial et islamique dans le Sud de l'Ethiopie.",
+      "externalInfluences": "Influence islamique croissante depuis le XIIIe siecle par les marchands et predicateurs arabes. Incorporation dans l'empire ethiopien a la fin du XIXe siecle sous Menelik II, dont le commandant Gobana Dacche ravagea les terres Kebena et les divisa entre les Neftenya.",
+      "majorHistoricalEvents": "Mention du Garad de Kebena dans les chroniques de Zara Yaqob au XVe siecle. Resistance du dernier Garad Hassan Enjamo contre l'invasion de Menelik II a la fin du XIXe siecle. Scission d'avec les Halaba en 1815."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Qabena etaient gouvernes par des chefs appeles Garads. Au XIXe siecle, Kebena formait un Etat autonome dirige par un Imam, puis par le Garad Hassan Enjamo. Apres la conquete de Menelik, le systeme de garade fut aboli.",
+      "clanOrganization": "Organisation clanique patrilineaire structuree en 23 groupes distincts selon les traditions de l'Alaba, groupes partages partiellement avec les Halaba dont ils se sont separes en 1815.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance aux clans et la gestion des terres ancestrales. La memoire genealogique joue un role important dans la vie sociale.",
+      "religiousAuthority": "L'autorite religieuse islamique (imams, anciens) joue un role central dans la vie communautaire. Le groupe a maintenu une identite islamique forte depuis le XIIIe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "K'abeena (dialecte de l'Alaba-K'abeena)",
+      "isoCodes": ["alw"],
+      "dialects": ["K'abeena", "Alaba"],
+      "vehicularRole": "La langue K'abeena (code ISO alw, partage avec l'Alaba) est la langue maternelle des Qabena. L'amharique est utilise comme langue vehiculaire avec l'administration et les autres groupes. Le taux d'alphabetisation en K'abeena est inferieur a 1%, tandis que le taux en langues secondes est de 8,6%. La langue est enseignee a l'ecole primaire."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les pratiques islamiques structurent les principaux rites de passage (mariage, circoncision, funerailles). Les Qabena sont musulmans sunnites et pratiquent des ceremonies liees au calendrier islamique.",
+      "symbols": "L'agriculture de subsistance (ble, teff, mais, sorgho, ensete, cafe, chat) et l'elevage sont les piliers de l'identite economique Qabena. La culture du cafe et du chat revêt une dimension economique et sociale importante.",
+      "artsAndMusic": "Une collection de plus de 400 proverbes en langue Alaba-K'abeena a ete publiee avec traductions anglaises, temoignant d'une riche tradition de sagesse orale.",
+      "spiritualities": "Islam sunnite predominant (89,52% de la population selon le recensement de 2007). Minorite chretienne orthodoxe ethiopienne (8,22%) et protestante (1,91%)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Qabena dirigeaient le royaume de Kebena (ou Hadya Womba) au XIXe siecle, important centre commercial et islamique de l'Ethiopie meridionale. Le systeme politique etait dirige par des Garads, dont le plus notable fut Hassan Enjamo.",
+      "relationsWithNeighbors": "Relations etroites avec les Halaba, dont ils se sont separes en 1815. Liens historiques avec le royaume de Hadiya. Au XIXe siecle, tensions avec l'expansion de l'empire Abyssin sous Menelik II. Relations commerciales avec les populations de la zone de Gurage (Silt'e, Amhara).",
+      "conflictsOrAlliances": "Resistance du Garad Hassan Enjamo contre l'invasion de Menelik II a la fin du XIXe siecle. Le commandant Gobana Dacche ravagea les terres Kebena et les divisa entre les Neftenya apres la conquete.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 85000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation 2025 fondee sur le recensement ethiopien de 2007 (34 379 personnes selon le CSA) et les donnees Joshua Project/Horn of Africa Evangelical Mission (72 600 en estimation plus recente). Projection moderee pour 2025.",
+      "distributionByCountry": [{ "country": "ETH", "population": 85000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kebena people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Kebena_people)",
+      "Alaba-K'abeena language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Alaba-K%CA%BCabeena_language)",
+      "K'abeena in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/21539/ET)",
+      "Kebena of Ethiopia – Horn of Africa Evangelical Mission, 2019 (https://hornofafrica.org/wp-content/uploads/2019/12/Kabena.pdf)",
+      "K'abeena phonology – Macrolinguistics and Microlinguistics, Yibekal Aemero, 2024 (https://mami.nyc/index.php/journal/article/view/31)",
+      "Cushitic Language Groups – Ethiopia Country Studies / Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
+    ]
   }
 }

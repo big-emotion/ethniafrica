@@ -1,23 +1,113 @@
 {
   "id": "PPL_GURMA",
-  "nameMain": "",
+  "nameMain": "Gurma",
   "languageFamilyId": "FLG_GUR",
   "currentCountries": ["BFA", "NER", "BEN", "TGO"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Gurma",
       "selfAppellation": "Gulimanceba / Gourmantché",
+      "exonyms": ["Gurma", "Gourma", "Gourmantché", "Gurmanche", "Binumba"],
+      "originOfExonyms": "Gourmantché est la transcription française du terme qui désigne ce peuple dans le contexte colonial francophone. Gurma est la variante anglophone. Gulimanceba est l'endonymme (singulier : Gulimanche ou Gulimanceba). Bigourmantcheba est une autre forme indigène. Binumba est une appellation alternative utilisée dans certains contextes. Fada N'Gourma (capitale régionale du Burkina Faso) tire son nom de ce peuple : Fada signifiant palais ou residence royale, et N'Gourma désignant la région.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Gourmantché est le terme courant en contexte francophone (Burkina Faso, Togo, Bénin). Gurma est utilisé dans la littérature anglophone. Les membres du groupe se désignent eux-mêmes Gulimanceba. Fada N'Gourma (Burkina Faso) est le centre politique et culturel du peuple Gurma.",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "BFA, NER, BEN, TGO",
+      "ethnoLinguisticGroup": "Gur central, sous-groupe Oti-Volta (Mabia)",
+      "historicalRegion": "Est du Burkina Faso, centré sur Fada N'Gourma ; extensions au nord du Togo, nord du Bénin, sud-ouest du Niger et nord-est du Ghana (bordure)",
       "currentCountries": ["BFA", "NER", "BEN", "TGO"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (gux)", "Burkina Faso Est — Archives culturelles"]
+    "ethnicities": [
+      "Gurma du Burkina Faso (centre du groupe, est du Burkina Faso, autour de Fada N'Gourma)",
+      "Gurma du Niger (provinces du sud-ouest du Niger, W du Niger)",
+      "Gurma du Togo (nord du Togo, région des Savanes)",
+      "Gurma du Bénin (nord du Bénin, département de l'Alibori et Atacora)",
+      "Bassaries (groupe apparenté du nord du Togo, parfois assimilé aux Gurma)",
+      "Bimoba (Moba) — groupe apparenté du nord du Togo et nord-est du Ghana, lié aux Gurma par l'histoire et la culture"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gurma, comme les Mossi et d'autres peuples Gur apparentés (Konkomba, Tallensi, LoDagaa), descendent de populations qui migrèrent depuis l'escarpement de Gambaga dans le nord-est du Ghana actuel. Une partie de ces migrants s'arrêta à Tenkodogo et y fonda le premier royaume Mossi, tandis qu'une autre continua vers le nord-est pour s'installer dans la région de Fada N'Gourma. Ce mouvement migratoire est daté approximativement entre le XIVe et le XVIe siècle. Certaines sources orales font remonter l'origine des Gurma à l'empire du Mali, et une connection avec l'empire Songhai est également évoquée.",
+      "formationPeriod": "L'identité Gurma et le royaume centré sur Fada N'Gourma se sont constitués entre le XIVe et le XVIe siècle, après la migration depuis l'escarpement de Gambaga. La frontière entre les territoires Mossi et Gurma fut disputée jusqu'à la conquête française. L'implantation coloniale française dans les années 1890-1900 figea les frontières et créa l'unité administrative de la Haute-Volta (aujourd'hui Burkina Faso), dans laquelle les Gurma forment le troisième groupe ethnique.",
+      "migrationRoutes": [
+        "Migration depuis l'escarpement de Gambaga (nord-est du Ghana) vers le nord-est jusqu'à Fada N'Gourma (Burkina Faso)",
+        "Extensions progressives vers le sud-ouest du Niger (W du Niger), le nord du Togo et le nord du Bénin",
+        "Migrations saisonnières vers les zones côtières d'Afrique de l'Ouest pour le travail"
+      ],
+      "historicalSettlementZones": [
+        "Est du Burkina Faso : région de l'Est, autour de Fada N'Gourma (centre politique et culturel)",
+        "Sud-ouest du Niger : région de Dosso, abords du parc du W",
+        "Nord du Togo : région des Savanes",
+        "Nord du Bénin : départements de l'Alibori et de l'Atacora",
+        "Nord-est du Ghana : bordure du royaume de Dagbon (Volta du nord)"
+      ],
+      "unificationsOrDivisions": "Les Gurma sont organisés en un système de chefferies reconnaissant l'autorité du morho naba, le paramount chief de Fada N'Gourma, sans former un État centralisé aussi cohérent que les royaumes Mossi. Les chefferies locales (arrondissements et cantons sous l'ère coloniale) incluent plusieurs villages, eux-mêmes composés de hameaux. La frontière Mossi-Gurma a été disputée jusqu'à la colonisation française.",
+      "externalInfluences": "Contacts et rivalités avec les royaumes Mossi voisins. Contacts avec l'empire Songhai (XVe-XVIe siècle). Colonisation française (fin XIXe siècle) : démarcation des frontières. Islam introduit via les réseaux commerciaux Haoussa et Dioula, mais adoption partielle (une majorité maintient les croyances traditionnelles). Influences chrétiennes missionnaires au XXe siècle. Migrations économiques vers les pays côtiers (Côte d'Ivoire, Ghana, Togo).",
+      "majorHistoricalEvents": "Fondation du premier royaume Mossi à Tenkodogo par des migrants issus du même mouvement migratoire que les Gurma. Disputes frontalières Mossi-Gurma jusqu'à la colonisation française. Incorporation dans la Haute-Volta française (1919, reconstituée en 1947). Indépendance du Burkina Faso (1960). Les Gurma forment le troisième groupe ethnique du Burkina Faso. Publication de l'oeuvre de Dr. Richard Alan Swanson (1985) présentant l'ethnoanthropologie Gourmantché. Depuis 2002, le parc du W (Niger), région Gurma, est inscrit au patrimoine mondial de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société Gurma est organisée en un système patrilinéaire de hameaux (compounds), de villages et de chefferies. Un village est un ensemble de hameaux. Les chefferies incluent plusieurs villages et reconnaissent l'autorité du morho naba (paramount chief) de Fada N'Gourma. Les chefferies correspondent souvent aux arrondissements et cantons de l'administration coloniale. Les chefs maintiennent un rôle politique et rituel important, tout en reconnaissant l'autorité de l'État burkinabé.",
+      "clanOrganization": "La filiation est patrilinéaire. Un homme et ses épouses, parfois un frère cadet ou une mère âgée, et les enfants de tous, forment une unité résidentielle. Les hameaux regroupent des membres du même lignage, du même clan, des personnes partageant la même religion introduite (islam ou christianisme) ou une compétence commune (forgeron). Ces associations culturelles sont généralement plus importantes que l'appartenance ethnique pour l'organisation sociale quotidienne.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'accès à la terre, les obligations cérémonielles et l'autorité. Des autels semi-circulaires de pierre (jingili) dans les cours des maisons servent de lieu d'offrandes aux ancêtres et aux esprits. La cosmologie Gurma assigne à chaque personne six composantes physiques et non physiques : gbannandi (corps physique), yienu (conscience divine), ciciliga (esprit guide), naano (âme), cabili (destin), naali (forme ancestrale pouvant se réincarner).",
+      "religiousAuthority": "Le système spirituel Gurma reconnaît le dieu créateur Otienu, des esprits ancestraux et des buli (esprits médiateurs entre Dieu et les humains). Les autels jingili dans les cours des maisons sont des lieux de culte et de sacrifice. L'islam est pratiqué par une partie de la population, notamment dans les centres urbains, mais la majorité maintient les croyances traditionnelles ou pratique un syncrétisme."
+    },
+    "languages": {
+      "mainLanguage": "Gourmanchéma (Gurma, Gourmanché)",
+      "isoCodes": ["gux"],
+      "dialects": [
+        "Gourmanchéma du Burkina Faso (dialecte central, région de Fada N'Gourma)",
+        "Gourmanchéma du Niger (variante du sud-ouest du Niger, W du Niger)",
+        "Variantes du Togo et du Bénin (parlers distincts mais mutuellement intelligibles)"
+      ],
+      "vehicularRole": "Le Gourmanchéma est une langue nationale reconnue au Burkina Faso. Il est parlé par environ 600 000 personnes (Britannica). Apparenté au Mossi (Moore), il appartient au sous-groupe Oti-Volta des langues Gur. La langue est utilisée dans l'enseignement primaire dans certaines écoles de l'est du Burkina Faso. Des traductions de la Bible ont été réalisées en Gourmanchéma."
+    },
+    "culture": {
+      "majorRites": "Les pratiques rituelles Gurma s'organisent autour du culte des ancêtres et des esprits médiateurs (buli). Les sacrifices sont offerts dans les autels semi-circulaires de pierre (jingili) présents dans les cours de chaque compound. Le calendrier agricole (saison des pluies juin-octobre pour le mil) est structuré par des rituels de protection et de fertilité. Les cérémonies funèbres et d'initiation sont également des moments importants. Des cérémonies communautaires marquent les étapes clés de la vie sociale (mariage, naissance, intronisation des chefs). La cosmologie Gurma très élaborée (six composantes de la personne) génère des pratiques rituelles complexes autour du destin (cabili), de l'âme (naano) et de la forme ancestrale (naali).",
+      "symbols": "Les autels jingili (semi-circulaires en pierres) sont les symboles matériels centraux de la spiritualité Gurma. La ville de Fada N'Gourma (dont le nom inclut le terme naba désignant le chef) est le symbole politique et culturel du peuple. L'habitat circulaire en brique de boue, entouré de clôtures en paille tressée, est le symbole architectural distinctif des Gurma dans le paysage du Sahel.",
+      "artsAndMusic": "Le tissage, la teinture, la poterie et la vannerie sont les arts et artisanats traditionnels majeurs des Gurma. Les femmes se spécialisent souvent dans la poterie et le tissage. Les textiles sont teints avec des teintures naturelles locales. L'architecture des compounds ronds en brique de boue, avec leurs clôtures en paille, constitue un art de bâtir caractéristique. La recherche ethnographique de Salif Titamba Lankoande (Les Gourmantché, 2006) et de João Pedro Galhano Alves (Anthropologie et écosystèmes au Niger, 2012) a documenté la richesse de la culture matérielle Gurma. La musique traditionnelle accompagne les cérémonies et les rituels communautaires.",
+      "spiritualities": "La cosmologie Gurma, exposée par le Dr. Richard Alan Swanson dans Gourmantché Ethnoanthropology (1985), est un système élaboré articulé autour des concepts de : Otienu (Dieu créateur), licabili (destin), gbannandi (corps physique), limiali (vie), mikuuma (mort). Chaque personne est composée de six éléments : gbannandi, yienu, ciciliga, naano, cabili et naali. Les buli (esprits médiateurs) font le lien entre le créateur et les humains. Les ancêtres jouent un rôle central. L'islam est présent mais coexiste souvent avec les croyances traditionnelles dans un syncrétisme pratique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gurma sont organisés en chefferies reconnaissant l'autorité du morho naba, paramount chief de Fada N'Gourma, sans État centralisé aussi développé que les royaumes Mossi voisins. Fada N'Gourma est le centre politique et spirituel du peuple Gurma. Le nom de la ville (Fada = palais, N'Gourma = pays des Gurma) témoigne de l'ancienneté de cette centralité. Certains Gurma, comme les Bimoba, peuvent retracer leurs origines à l'ancien royaume du Mali, ayant ensuite intégré l'empire Songhai.",
+      "relationsWithNeighbors": "Les Gurma sont étroitement liés aux Mossi (cousins culturels partageant des origines migratoires communes depuis l'escarpement de Gambaga). La frontière Mossi-Gurma fut historiquement disputée. Les Gurma sont également apparentés aux Konkomba, Tallensi et LoDagaa. La coexistence humaine-faune (notamment avec les lions) dans le W du Niger a été documentée comme une spécificité culturelle Gurma dans cette région.",
+      "conflictsOrAlliances": "Rivalités frontalières avec les Mossi jusqu'à la colonisation française. Incorporation dans la sphère coloniale française (Haute-Volta). Résistances ponctuelles à la colonisation au XIXe siècle. Les migrations saisonnières vers les zones côtières créent des réseaux transnationaux qui ont été des vecteurs d'échanges culturels et économiques. Des tensions persistent dans certaines zones frontalières du nord du Togo et du Bénin.",
+      "diaspora": "La diaspora Gurma est principalement interne à l'Afrique de l'Ouest. La plupart des hommes Gurma, et beaucoup de femmes, migrent vers les États côtiers d'Afrique de l'Ouest (Côte d'Ivoire, Ghana, Togo, Bénin) pour le travail salarié, mais retournent généralement dans leur pays natal."
+    },
+    "demography": {
+      "totalPopulation": 3500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Peoplegroups.org (3 414 500 en 2025, distribués au Ghana, Bénin, Burkina Faso, Niger, Nigeria et Togo), Joshua Project (Burkina Faso 1 248 000 ; Togo 351 000 ; Niger 86 000 ; Bénin 74 000), Wikipedia Gurma people (Ghana 1 845 255, Burkina Faso 1 496 786, Niger 188 846, données recensements 2021). Population projetée 2025.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 1550000,
+          "note": "Est du Burkina Faso, troisième groupe ethnique du pays, centré sur Fada N'Gourma et la région de l'Est"
+        },
+        {
+          "country": "TGO",
+          "population": 370000,
+          "note": "Nord du Togo, région des Savanes"
+        },
+        {
+          "country": "NER",
+          "population": 200000,
+          "note": "Sud-ouest du Niger, abords du parc national du W"
+        },
+        {
+          "country": "BEN",
+          "population": 80000,
+          "note": "Nord du Bénin, départements de l'Alibori et de l'Atacora"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gurma people. https://en.wikipedia.org/wiki/Gurma_people",
+      "Britannica — Gurma. https://www.britannica.com/topic/Gurma",
+      "101lasttribes — Gurma people. https://www.101lasttribes.com/tribes/gurma.html",
+      "Joshua Project — Gourma in Burkina Faso. https://joshuaproject.net/people_groups/12004/UV",
+      "Richard Alan Swanson — Gourmantché Ethnoanthropology: A Theory of Human Being. 1985.",
+      "Salif Titamba Lankoande — Les Gourmantché. Presses Africaines du Burkina, Ouagadougou, 2006.",
+      "João Pedro Galhano Alves — Anthropologie et écosystèmes au Niger. Humains, lions et esprits de la forêt dans la culture gourmantché. Editions l'Harmattan, Paris, 2012.",
+      "Qiraat Africa — The Gurma people of West Africa. https://qiraatafrican.com/en/18718/the-gurma-people-of-west-africa/"
+    ]
   }
 }

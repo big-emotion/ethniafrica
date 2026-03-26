@@ -1,0 +1,89 @@
+{
+  "id": "PPL_BAMBARA",
+  "nameMain": "Bambara",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Bambara",
+      "selfAppellation": "",
+      "originOfExonyms": "",
+      "whyProblematic": "",
+      "contemporaryUsage": "",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé central, sous-groupe Mandingue",
+      "historicalRegion": "Mali central et méridional (Bamako, Ségou, Koulikoro, Dioïla, Sikasso)",
+      "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"]
+    },
+    "ethnicities": [
+      "Bamana de Ségou – groupe central, région de Ségou, héritiers directs du royaume de Ségou",
+      "Bamana de Bamako – groupe urbain, région de Bamako (capitale du Mali)",
+      "Bamana de Koulikoro – groupe occidental, région de Koulikoro",
+      "Bamana de Dioïla – groupe méridional, région de Dioïla",
+      "Bamana de Sikasso – groupe oriental, région de Sikasso",
+      "Bamana de Niono – groupe septentrional, région de Niono",
+      "Les Bambara forment un peuple relativement homogène avec des subdivisions territoriales plutôt qu'ethniques, organisées autour des anciennes chefferies et des zones d'établissement historique"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Bambara (bamanankan)",
+      "dialects": [
+        "* Bambara de Ségou (dialecte central, considéré comme standard) * Bambara de Bamako (dialecte urbain, influence du français) * Bambara de Koulikoro (dialecte occidental) * Bambara de Dioïla (dialecte méridional) * Variations dialectales mineures, intercompréhension mutuelle"
+      ],
+      "vehicularRole": "* **Lingua franca du Mali** : Parlée par environ 80% de la population malienne comme langue première ou seconde * **Langue nationale** : Statut de langue nationale au Mali (avec le peul, le songhaï, etc.) * **Médias** : Utilisée dans les médias (radio, télévision, presse) * **Éducation** : Enseignée dans les écoles primaires, utilisée comme langue d'instruction * **Administration** : Utilisée dans l'administration locale * **Commerce** : Langue du commerce et des échanges * **Coexistence avec le français** : Langue officielle (français) et langues nationales (bambara, peul, songhaï)"
+    },
+    "culture": {
+      "divinitiesAndSpirits": {
+        "supremeDeity": {
+          "endonym": "Bemba",
+          "exonym": "\"Dieu\" (français), \"Allah\" (islam), \"God\" (anglais)",
+          "attributes": "omniscient, omnipotent, éternel, invisible - Pas de culte direct, mais vénération via les esprits et les ancêtres"
+        },
+        "natureSpirits": {}
+      },
+      "cosmology": {
+        "worldStructure": {},
+        "spiritualConcepts": {}
+      },
+      "ritesAndPractices": {
+        "initiationRites": {},
+        "funeraryRites": {},
+        "agriculturalRites": {},
+        "purificationRites": {}
+      }
+    },
+    "historicalRole": {},
+    "demography": {
+      "totalPopulation": 7787000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International), Joshua Project, PeopleGroups.org, recensements maliens, estimations AFRIK"
+    },
+    "sources": [
+      "Le N'domo, le Korè* (1960)",
+      "Zahan, Dominique. *La dialectique du verbe chez les Bambara* (1963)",
+      "Zahan, Dominique. *The Bambara* (1974) - Iconography of Religions series",
+      "Dieterlen, Germaine. *Essai sur la religion bambara* (1951)",
+      "Dieterlen, Germaine & Cissé, Youssouf. *Les fondements de la société d'initiation du Komo* (1972)",
+      "Article \"Cosmogonie bambara\" https://fr.wikipedia.org/wiki/Cosmogonie_bambara",
+      "Article \"Balafon\" https://en.wikipedia.org/wiki/Balafon",
+      "\"Umar Tal\" https://www.britannica.com/biography/Umar-Tal",
+      "Ethnologue (SIL International) – données linguistiques (code bam)",
+      "\"Bambara in Mali\" https://joshuaproject.net/people_groups/10530/ML",
+      "\"Bambara language\" https://peoplegroups.org/language/bam/",
+      "\"Bambara\" https://101lasttribes.com/tribes/bambara.html",
+      "\"Bambara religion\" https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/bambara-religion",
+      "\"Bamana Komo Society Mask\" https://bowers.org/collections-blog/bamana-komo-society-mask",
+      "\"Bambara people\" https://grokipedia.com/page/Bambara_people",
+      "\"Nyama\" https://www.bambara-noaam.org/works/",
+      "\"Kora\" https://music-connects.org/kora",
+      "\"Jaliya\" https://thekoracafe.com/about/jaliya/",
+      "\"Mande music\" https://www.melodigging.com/genre/mande-music-20936",
+      "\"Sudanic Agricultural Civilization - Nuclear Mande\" https://www.webafriqa.net/library/anthropology/part-three-sudanic-agricultural-civilization-nuclear-mande/",
+      "\"Bambara in Mali\" https://prayway.com/unreached/peoplegroups2/1815.html",
+      "\"Dan Na Ambassagou\" https://ecfr.eu/special/sahel_mapping/dan_na_ambassagou",
+      "\"Ethnic groups in central Mali sign three peace agreements\" https://www.aljazeera.com/news/2021/1/27/ethnic-groups-in-central-mali-sign-three-peace-agreements",
+      "Recherches web académiques (2025) – sources diverses sur cosmologie bambara, sociétés initiatiques, histoire, démographie"
+    ]
+  }
+}

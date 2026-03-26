@@ -1,22 +1,106 @@
 {
   "id": "PPL_NABT",
-  "nameMain": "",
+  "nameMain": "Nabit",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["GHA", "BFA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Nabit",
       "selfAppellation": "Nabit",
+      "exonyms": [
+        "Nabdam",
+        "Nabde",
+        "Nabte",
+        "Nabdug",
+        "Nabrug",
+        "Nabnam",
+        "Namnam"
+      ],
+      "originOfExonyms": "Le terme Nabdam designe a la fois le peuple et le district administratif actuel (Nabdam District) dans l'Upper East Region du Ghana. Les variantes orthographiques nombreuses (Nabde, Nabte, etc.) refletent les transcriptions coloniales et post-coloniales diverses du nom vernaculaire. Le terme Namnam est le nom par lequel les Nabit aiment se designer eux-mêmes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Nabit designe la langue, Nabdam le peuple et le district. Les locuteurs se designent comme les gens de Nangodi, capitale traditionnelle. Le terme Namnam est employe en usage interne.",
       "linguisticFamily": "FLG_GUR",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Frafra (Gurunsi), branche Gur, groupe Oti-Volta",
+      "historicalRegion": "District de Nabdam (anciennement district de Talensi-Nabdam), Upper East Region, nord-est du Ghana ; zones frontalieres du sud du Burkina Faso",
+      "currentCountries": ["GHA", "BFA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ghana Upper East Studies", "Ethnographic Reports"]
+    "ethnicities": [
+      "Nabit du secteur de Nangodi (capitale traditionnelle de la zone Nabit)",
+      "Nabit du secteur de Sakoti (deuxieme paramountcy du district de Nabdam)",
+      "Nabit du secteur de Zoliba",
+      "Nabdam-Gurune (locuteurs bilingues Nabit et Gurune dans le district)",
+      "Communautes nabit diasporiques dans les grandes villes du Ghana du sud (Accra, Kumasi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nabit font partie du grand ensemble Frafra (ou Gurunsi), peuples Gur etablis dans l'Upper East Region du Ghana et le sud du Burkina Faso. Selon la tradition orale rapportee dans les etudes locales, les Nabit etaient anciennement associes au royaume Mossi (Mamprugu). Leur installation dans la region actuelle de Nangodi resulte d'une migration depuis Nalerigu (Mamprugu), liee a une dispute de succession au sein du royaume mamprusi.",
+      "formationPeriod": "La tradition orale des Nabit retrace leur chieftaincy jusqu'au royaume de Mamprugu a travers le fondateur Na Atavya. L'histoire enregistre une migration depuis Nalerigu vers la zone de Nangodi autour du 14e-15e siecle. Le district de Nabdam a ete officiellement detache du Talensi-Nabdam District le 28 juin 2012 (L.I. 2105), avec Nangodi comme capitale.",
+      "migrationRoutes": [
+        "Migration depuis Nalerigu (Mamprugu, nord-est Ghana) vers la zone de Nangodi",
+        "Installation progressive dans les trois secteurs actuels : Nangodi, Sakoti, Zoliba",
+        "Liens maintenus avec des communautes jumelles au Burkina Faso (zone frontiere)"
+      ],
+      "historicalSettlementZones": [
+        "Nangodi (capitale traditionnelle et chef-lieu du district de Nabdam)",
+        "Sakoti (deuxieme paramountcy)",
+        "Zoliba (troisieme zone du district)",
+        "Sud du Burkina Faso (zone frontiere, communautes apparentees)"
+      ],
+      "unificationsOrDivisions": "Le district de Nabdam comprend deux paramountcies (Nangodi et Sakoti) et trois area councils. La chefferie de Nangodi est liee par la tradition a la chefferie de Mamprugu : les chefs de Nangodi doivent encore se rendre a Mamprugu pour les ceremonies d'enskinment. Le Nabdam District a ete cree en 2012 en se separant du Talensi-Nabdam District.",
+      "externalInfluences": "Influence du royaume de Mamprugu sur la chefferie et les pratiques rituelles. Periode coloniale britannique : integration dans la Frafra Native Authority (1952), puis Frafra District Council (1957). Contact avec les populations Gurune voisines (Frafra), conduisant a une coexistence bilingue dans le district.",
+      "majorHistoricalEvents": "Fondation de la chefferie de Nangodi par un prince mamprusi (Na Atavya) issu d'une dispute de succession a Mamprugu. Incorporation dans la Frafra Native Authority en 1952 sous l'administration coloniale britannique. Creation du Talensi-Nabdam District en 2004, puis du Nabdam District independant en 2012. La presence de ressources minieres (or) a Nangodi a marque l'histoire economique du peuple depuis l'epoque coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'organisation politique Nabit est fondee sur la chefferie sous l'autorite de Paramount Chiefs des deux paramountcies (Nangodi et Sakoti). Les chefs et les anciens assurent la paix, l'harmonie et le bien-être de la communaute. En matiere fonciere et spirituelle, le Tindana (custode du sanctuaire de la terre, au pluriel Tindamba) joue un role crucial. Le Tindana est plus revere que tout chef en raison de ses liens avec les ancetres et les esprits de la terre.",
+      "clanOrganization": "La societe Nabit est organisee en clans patrilineaires dont les chefs de famille (heads) dirigent les unites domestiques etendues. Les compounds (habitations) abritent des familles etendues. Les droits fonciers sont collectifs, geres par les chefs de famille et les Tindamba.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'acces a la terre et aux fonctions rituelles. Les Tindamba (pretres de la terre) constituent une fonction transmise au sein de lignages specifiques. Les ainés de lignage ont autorite dans les affaires communautaires et les mariages.",
+      "religiousAuthority": "Le Tindana (Tindamba au pluriel) est le custode du sanctuaire de la terre et des ancetres ; il prie pour la communaute, consulte les dieux et realise les sacrifices saisonniers. Un soothsayer (devin) peut etre consulte lors des deces pour etablir les causes de la mort. Les sanctuaires ancestraux sont maintenus dans et autour des compounds. Les pratiques traditionnelles animistes coexistent avec le christianisme et l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Nabit (Nabdam)",
+      "isoCodes": [],
+      "dialects": [
+        "Nabit proprement dit (parle dans la zone de Nangodi et Sakoti)",
+        "Variete frontaliere (zones proches du Burkina Faso)"
+      ],
+      "vehicularRole": "La langue Nabit (Nabdam) est une langue Gur parlée dans le district de Nabdam (Upper East Region du Ghana) et dans des zones frontieres du Burkina Faso. Elle est consideree comme une variete linguistique distincte au sein du continuum Frafra, bien que souvent classee comme dialecte. Une proposition d'attribution d'un code ISO 639-3 a ete rejetee en janvier 2017 ; la langue reste sans code ISO officiel. Le district de Nabdam est bilingue Nabit et Gurune (Farefare, ISO gur)."
+    },
+    "culture": {
+      "majorRites": "Le festival Kuri (celebre dans des zones comme Pelongo) est un rite agricole annuel precedant la saison des pluies : offrandes et prières communautaires pour les dieux de la terre, sacrifices d'animaux et rites de preparation du cycle agricole. Le festival Gulp (Bolob) est un festival annuel avant la saison des pluies celebrant la paix, l'unite et la gratitude pour la recolte precedente, avec sacrifices aux dieux de la terre. Le Tenlebgre est observe dans les zones Nabit-speaking. Les funerailles sont tres elaborees : un poulet est sacrifie avant le retrait du corps, un soothsayer peut etre consulte pour etablir les causes du deces.",
+      "symbols": "Le sanctuaire de la terre (Tindana shrine) est le symbole central de l'identite spirituelle et territoriale des Nabit. Les objets rituels lies au Tindana (batonnets, calebasses, cordes fines) ont une valeur symbolique forte. Les motifs geometriques dans la peinture murale des compounds (tradition feminine) sont un art symbolique du groupe.",
+      "artsAndMusic": "L'art Nabit inclut la peinture murale des habitations (tradition feminine, motifs geometriques colores), la poterie traditionnelle et le tressage de paniers et chapeaux en paille (artisanat important dans tout le groupe Frafra). Les percussions (tambours) et les instruments a vent accompagnent les festivals. Les griots locaux transmettent les genealogies orales. L'artisanat du cuir et le tissage de smocks (pagnes brodes) completent la production culturelle.",
+      "spiritualities": "Les Nabit adherent a une religion traditionnelle animiste centree sur les esprits de la terre (et les divinites associees), les ancetres (dont les sanctuaires sont maintenus en façade des habitations pour les hommes et a l'interieur pour les femmes), et le culte de la terre supervise par le Tindana. La divinite supremes est invoquee par des libations de farine d'eau et des sacrifices animaux. Les divinites de la pluie sont priees lors des secheresses. Des pratiques chretiennes et musulmanes coexistent avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Nangodi, capitale traditionnelle des Nabit, est fondee par un prince mamprusi (issu d'une dispute de succession a Mamprugu) qui obtint des terres aupres des Nabdam autochtones. La chefferie de Nangodi reste symboliquement liee a Mamprugu, dont le Nayiri exerce des droits cerimonials d'enskinment. Le district de Nabdam comprend deux paramountcies (Nangodi et Sakoti).",
+      "relationsWithNeighbors": "Les Nabit partagent des caracteristiques culturelles et ancestrales avec les Mossi et forment un sous-groupe du grand ensemble Frafra. Ils cohabitent avec les Gurune-speaking (Frafra proprement dit) dans le district, avec lesquels ils ont des rapports linguistiques et rituels etroits. Des liens ancestraux avec le royaume de Mamprugu sont maintenus a travers la tradition d'enskinment. Les Nabit partagent des frontieres avec les Kusasi a l'est.",
+      "conflictsOrAlliances": "Dispute de succession dans le royaume de Mamprugu ayant conduit a la fondation de Nangodi par un prince exile. Sous la colonisation britannique, incorporation progressive dans les structures administratives coloniales (Frafra Native Authority, 1952). La creation du Nabdam District en 2012 est le resultat de debats administratifs et politiques sur la representation de ce groupe au sein du systeme ghaneen.",
+      "diaspora": "Migration de travail saisonniere vers les villes du sud du Ghana (Accra, Kumasi, Tamale) depuis la periode coloniale, caracteristique de tout le groupe Frafra. La region etant enclavee avec peu d'infrastructures, les migrations de subsistance sont frequentes."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "DDHS Group - Nabdam District Profile (2025) : projection 2024 de la population du district a 56 698 habitants (locuteurs Nabit et Gurune confondus). Wikipedia - Nabdam District (2025) : 51 861 habitants (recensement 2021). Population totale des Nabit estimee a environ 100 000 en incluant les zones frontieres du Burkina Faso.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 90000,
+          "note": "District de Nabdam (Nangodi, Sakoti, Zoliba), Upper East Region"
+        },
+        {
+          "country": "BFA",
+          "population": 10000,
+          "note": "Zones frontieres du sud du Burkina Faso, communautes apparentees"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Nabit language. https://en.wikipedia.org/wiki/Nabit_language",
+      "Wikipedia EN - Nabdam District. https://en.wikipedia.org/wiki/Nabdam_(district)",
+      "DDHS Group - Nabdam District Profile (2025). https://ddhsgroup.org/portfolio-items/nabdam-district-profile/",
+      "101 Last Tribes - Frafra people. https://www.101lasttribes.com/tribes/nankana.html",
+      "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024). https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja",
+      "Facebook - Mamprusi People - The Nangodi Traditional Area. https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area"
+    ]
   }
 }

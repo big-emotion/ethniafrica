@@ -6,54 +6,83 @@
   "content": {
     "appellations": {
       "mainName": "Nchumuru",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nchumuru (denomination endogene; le peuple se nomme egalement Chumburung)",
+      "exonyms": [
+        "Nchumuru",
+        "Chumburung",
+        "Nchummuru",
+        "Nchumburu",
+        "Kyombaron"
+      ],
+      "originOfExonyms": "Chumburung est le nom de la langue tel qu'il est standardise par les linguistes (code Ethnologue ncu). Nchumburu et Nchummuru sont des variantes orthographiques du meme ethnyme. Kyombaron est un autre nom utilise pour ce groupe, notamment dans les classifications missionnaires et coloniales. La denomination Nchumuru est celle generalement employee dans la litterature anthropologique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nchumuru et Chumburung sont tous deux utilises dans la litterature et l'administration ghanéenne. Le district de Krachi Nchumuru (region Oti) porte le nom du groupe, attestant de sa reconnaissance officielle.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
+      "ethnoLinguisticGroup": "Guan (Guang Nord), branche Kwa, Niger-Congo",
+      "historicalRegion": "Volta lake area, Northern/Oti/Bono East regions, Ghana (zone de Kete Krachi et de la riviere Volta)",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Nchumuru"],
+    "ethnicities": ["Nchumuru", "Chumburung"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Nchumuru (Chumburung) font partie du groupe ethnique Guan du Ghana. Les sources coloniales indiquent qu'ils etaient etablis dans leur territoire actuel avant 1700, ce qui en fait l'un des groupes les plus anciens de la region de Volta. Selon les traditions Gonja, les Nchumuru faisaient partie de l'armee envahissante de Ndewura Jakpa, le fondateur legendaire du royaume Gonja au XVIIe siecle.",
+      "formationPeriod": "Avant 1700 pour leur etablissement dans la region de Kete Krachi. L'integration dans la sphere d'influence du royaume Gonja constitue un episode majeur de leur formation historique.",
+      "migrationRoutes": [
+        "Etablissement dans la zone de Kete Krachi et les deux rives de la riviere Volta avant 1700",
+        "Dispersion causee par la creation du lac Volta (barrage d'Akosombo, 1965) qui divisa le territoire en districts isoles",
+        "Exode partiel vers la region Volta suite aux raids Gonja dans les annees 1930"
+      ],
+      "historicalSettlementZones": [
+        "Zone de Kete Krachi sur les deux rives de la riviere Volta (Oti Region, Ghana)",
+        "Kpandai District, Northern Region, Ghana",
+        "Districts de Nkwanta North et Nkwanta South, Oti Region",
+        "Krachi Nchumuru District, Oti Region (970 km2 environ)"
+      ],
+      "unificationsOrDivisions": "Les Nchumuru ont ete divises par deux frontieres successives : d'abord les decoupages coloniaux britanniques qui soumettaient certains groupes Nchumuru au chef Gonja de Salaga, puis de maniere encore plus dramatique par les eaux du lac Volta (barrage d'Akosombo, inaugure en 1965) qui scinda physiquement leur territoire en cinq districts isoles couvrant environ 2 200 km2.",
+      "externalInfluences": "L'administration coloniale britannique soumit les Chumburung au chef Gonja de Salaga. Quand ils tenterent d'affirmer leur independance au debut des annees 1930, les Gonja razzierent plusieurs villages Chumburung, causant l'exode de nombreux refugies vers l'actuelle region Volta. La creation du lac Volta dans les annees 1960 fragmenta definitivement la communaute.",
+      "majorHistoricalEvents": "Integration presumee dans l'armee de Ndewura Jakpa (XVIIe siecle). Soumission coloniale au chef Gonja de Salaga. Raids Gonja et exode vers la region Volta (debut des annees 1930). Creation du lac Volta (1965) qui divisa le territoire Nchumuru en cinq zones isolees. Reconnaissance du district de Krachi Nchumuru dans la nouvelle region Oti (creee en 2019)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation politique decentralisee a base de chefferies villageoises. Les Nchumuru font partie du groupe Guan et n'ont pas developpe de royaume centralise comparable au Gonja ou au Dagbon. L'autorite locale repose sur des chefs de village et des anciens.",
+      "clanOrganization": "Organisation sociale par clans et lignages, comme dans la plupart des groupes Guan. Les droits fonciers et les affiliations communautaires sont determines par l'appartenance clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent l'acces a la terre et la transmission des fonctions rituelles et de leadership au niveau villageois. Les anciens des lignages jouent un role dans la resolution des conflits internes.",
+      "religiousAuthority": "Les pratiques religieuses traditionnelles sont structurees autour des ancetres : en cas de maladie, on consulte le devin pour savoir si l'on a offense un ancetre ; si oui, le devin identifie l'ancetre et prescrit des sacrifices a effectuer sur la tombe de cet ancetre. Le christianisme a ete introduit en 1944 par la mission WEC (Worldwide Evangelization for Christ) et plusieurs confessions travaillent desormais dans la zone (catholiques, Evangelical Church of Ghana, Presbyterians, Pentecotistes, Adventistes). Les musulmans sont peu nombreux parmi les Nchumuru."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Chumburung (Nchumbulu)",
+      "isoCodes": ["ncu", "nlu"],
+      "dialects": [
+        "Chumburung (ncu) – denomination principale selon Ethnologue",
+        "Nchumbulu (nlu) – variante codifiee dans les classifications Joshua Project"
+      ],
+      "vehicularRole": "Langue Guang (Guan Nord) appartenant a la branche Kwa du Niger-Congo. Le Chumburung est presque intelligible avec le Nawuri (naw), autre langue Guan de la region. Le Chumburung (ncu) est repertorie comme ayant une Bible complete (Complete Bible) selon Joshua Project. L'anglais et le dagbani servent de langues vehiculaires dans l'administration et l'education."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les noms sont donnes aux enfants par les anciens a l'age de 6 a 8 mois ; ils sont souvent appeles comme leurs grands-parents. Les meres tatouent des marques tribales sur leurs enfants a l'age de 6 mois. Ceremonie d'initiation pour les garcons et les filles a l'age de 15 ans : les jeunes portent des vetements speciaux et sont interroges par les anciens pour tester leur maturite. Rituels funeraires centres sur les ancetres, avec sacrifices sur les tombes.",
+      "symbols": "La riviere Volta et ses rives constituent le coeur du territoire symbolique Nchumuru. Les cinq districts divises par le lac Volta sont une blessure identitaire collective. La terre agricole est au centre de l'identite communautaire.",
+      "artsAndMusic": "Traditions musicales et de danse associees aux ceremonies rituelles et d'initiation. Agriculture de subsistance (ignames, manioc, haricots, mais) transmise de generation en generation comme patrimoine culturel. Artisanat traditionnel incluant la poterie et la vannerie.",
+      "spiritualities": "Croyances traditionnelles centrees sur le culte des ancetres : en cas de maladie ou de malheur, consultation du devin pour identifier l'ancetre offense et prescription de sacrifices sur sa tombe. Le christianisme, introduit en 1944, a une presence significative. L'islam est marginal parmi les Nchumuru, bien que des commercants musulmans soient presents dans plusieurs villages."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise Nchumuru propre. Ils ont historiquement ete places sous l'autorite du chef Gonja de Salaga par l'administration coloniale britannique, malgre leur identite distincte. Leurs chefferies villageoises maintiennent une autonomie locale.",
+      "relationsWithNeighbors": "Proches des Nawuri (groupe Guan voisin) avec qui leur langue est presque mutuellement intelligible. Relations tensionnees avec les Gonja au XVIIe siecle (integration presumee dans l'armee de Jakpa) et au XXe siecle (raids de 1930). La creation du lac Volta a apporte une proximite forcee avec d'autres groupes Guan et non-Guan dans les zones de relogement.",
+      "conflictsOrAlliances": "Raids et soumission forceee par les Gonja au debut des annees 1930, provoquant un exode de nombreuses familles Nchumuru. La division coloniale du territoire entre plusieurs chefferies superieures a engendre des revendications identitaires persistantes pour l'autonomie.",
+      "diaspora": "Les Nchumuru sont divises entre la Northern Region, la Savannah Region, la Bono East Region et l'Oti Region (Ghana). La creation du lac Volta a cree une dispersion involontaire au sein du territoire ancestral. Une migration economique vers Kumasi et Accra est documentee comme pour les autres groupes du nord du Ghana."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 85000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur le recensement ghaneen de 2021 (district de Krachi Nchumuru : 79 934 hab., Ghana Statistical Service). Le groupe Nchumuru est egalement present dans d'autres districts (Kpandai, Nkwanta). Estimation globale 2025 avec taux de croissance annuel de 2,2%.",
+      "distributionByCountry": [{ "country": "GHA", "population": 85000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Nawuri language – Wikipedia EN (https://en.wikipedia.org/wiki/Nawuri_language)",
+      "Nchumbulu language – Wikipedia EN (https://en.wikipedia.org/wiki/Nchumbulu_language)",
+      "Nchumburu, Kyombaron in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13266)",
+      "Nawuri in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13261)",
+      "Krachi Nchumuru District – City Population 2021 (https://www.citypopulation.de/en/ghana/admin/oti/1508__krachi_nchumuru/)",
+      "Languages of Ghana – Wikipedia EN (https://en.wikipedia.org/wiki/Languages_of_Ghana)",
+      "Ghana people groups, languages and religions – Joshua Project (https://joshuaproject.net/countries/gh)"
+    ]
   }
 }

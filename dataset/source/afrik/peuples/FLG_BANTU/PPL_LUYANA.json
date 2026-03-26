@@ -6,54 +6,72 @@
   "content": {
     "appellations": {
       "mainName": "Luyana",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Aluyana",
+      "exonyms": ["Luyi", "Lui", "Louyi", "Rouyi", "Luyaana"],
+      "originOfExonyms": "Luyi est la forme abregee ancienne utilisee avant le XIXe siecle. Louyi et Rouyi sont des transcriptions europeennes du XVIIIe-XIXe siecle. Le terme Lozi (ou Rotse) fut impose par les Makololo lors de la conquete vers 1840 et devint l'exonyme dominant colonial et postcolonial.",
+      "whyProblematic": "Le nom Lozi designe aujourd'hui l'ensemble du peuple du Barotseland, qui englobe de nombreux groupes absorbes par le royaume. Les Luyana proprement dits sont les fondateurs de la dynasty royale, distincts des autres composantes du peuple Lozi contemporain.",
+      "contemporaryUsage": "Dans l'usage contemporain, Luyana designe le sous-groupe fondateur du royaume Barotse, parfois appele Luyana proprement dit (Luyana proper) par opposition aux groupes assimiles. La langue luyana (ISO : lyn) est enseignee dans les ecoles primaires et secondaires de Zambie depuis 2011.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
+      "ethnoLinguisticGroup": "Bantu, branche divergente (Luyana)",
+      "historicalRegion": "Province occidentale de Zambie (Plaine du Bulozi, district de Kalabo)",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Luyana"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon les traditions Lozi, les Luyana seraient les premiers habitants de la Plaine du Bulozi, descendant du dieu Nyambe et d'une ancetre feminine Mbuyu. Les traditions des peuples voisins (Kazembe-Lunda, Ndembu-Lunda, Nkoya) tracent les origines des Luyana jusqu'a la dynastic Mwata Yamvo de l'Empire Lunda. Les historiens Mutumba Mainga, Bizeck Phiri et Lawrence Flint soutiennent cette these de l'origine lunda, notant que de nombreux groupes zambiens retracent leur origine au bassin du Congo.",
+      "formationPeriod": "Le royaume fut vraisemblablement fonde au XVIIe siecle dans le district de Kalabo (actuelle Zambie). La dynasty luyana s'etablit probablement des la fin du XVIe siecle. Le premier Litunga (roi) fut Mboo Mwanasilundu Muyunda.",
+      "migrationRoutes": [
+        "Depuis l'Empire Lunda (bassin du Congo) vers la Plaine du Bulozi (fin du XVIe ou debut du XVIIe siecle)",
+        "Etablissement dans le district de Kalabo, Province occidentale de Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Plaine du Bulozi (Barotseland), Province occidentale de Zambie",
+        "Vallees de la riviere Zambeze superieure",
+        "District de Kalabo, district de Mongu"
+      ],
+      "unificationsOrDivisions": "Sous le 4e Litunga Ngalama, les polities dissidentes de Mwanambinyi et Mange furent reconquises et l'ensemble de la Plaine du Bulozi unifiee. Vers 1840, la conquete Makololo dispersa les Luyana : certains se refugierent a Lukwakwa, Nyengo et dans la Vallee du Zambeze. En 1864, les sujets Luyana massacrerent les Makololo et reinstallerent Sipopa comme Litunga. La langue luyana fut progressivement remplacee par le lozi (derive du kololo) comme langue de cour.",
+      "externalInfluences": "La conquete Makololo (vers 1840) bouleversa la societe : les sujets Luyana adopterent la langue kololo pour creer le lozi moderne, tout en conservant l'essentiel des institutions du royaume. L'influence Mbunda et Luvale introduisit la sorcellerie et la divination. La colonisation britannique (concession Lewanika avec la BSAC, 1889-1900) reduisit le royaume a un protectorat puis une province de la Rhodesie du Nord (1911).",
+      "majorHistoricalEvents": "Fondation du royaume par Mboo (XVIIe siecle). Expansion sous Ngombala (6e Litunga). Conquete Makololo vers 1840. Rebellion et restauration Luyana en 1864 (Sipopa Litunga). Despotisme de Sipopa, assassine en 1876. Lewanika (Lubosi) Litunga de 1878 : renouveau des institutions pre-Kololo, concessions britanniques (1889-1899). Absorption dans la Rhodesie du Nord en 1911."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie centralisee dirigee par le Litunga (roi, signifiant litteralement proprietaire de la terre). Le Kuta (conseil national ou Mulongwanji) est compose des Manduna (conseillers), presides par le Ngambela (Premier ministre). Le Natamoyo (maitre/mere de la vie) peut opposer son veto aux decisions severes et octroyer le droit d'asile. Un centre de pouvoir subalterne au sud, Lwambi (Nalolo), est gouverne par un representant du Litunga. L'administration territoriale est organisee en Silalo (provinces) dirigees par des Manduna nommes par le roi.",
+      "clanOrganization": "Les Luyana ne possedent pas de clans a proprement parler. Le systeme de filiation repose sur les mushiku (noms ancestraux remontant aux arriere-grands-parents) : partager un meme mushiku implique une relation de parente, mais sans obligations formelles ni groupes constitues.",
+      "ageClassSystems": "Les garcons participent aux milaka (ecoles d'initiation) entre 9-11 ans et l'age adulte, apprenant l'elevage bovin et les metiers artisanaux comme la sculpture sur bois. Les filles passent par le sikenge apres leur premiere menstruation : periode de seclusion pour apprendre les competences sociales, religieuses et economiques.",
+      "roleOfLineages": "La succession royale est patrilineaire, transmise aux descendants males de Mbuyu, ce qui genere des crises dynastiques. Les Makwambuyu (aristocrates, cote droit du Kuta) nomment les administrateurs dont le Ngambela et le Natamoyo. Les Makolo (armees/travailleurs, patrilineaires) sont sous autorite du Litunga.",
+      "religiousAuthority": "Le culte de Nyambe (dieu createur omnipotent) est centre a Kalabo (colline Lilunda la Nyambe). Le culte des Tombeaux royaux (Litino) honore les esprits des Litunga defunts qui intercedent aupres de Nyambe. Les ancetres non-royaux sont veneres pour la sante et la prosperite. La sorcellerie et la divination (introduites apres l'exil, influence Mbunda/Luvale) font partie des croyances : les muloi (sorciers) causent les malheurs, contres par les naka (guerisseurs)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Luyana (Siluyana)",
+      "isoCodes": ["lyn"],
+      "dialects": ["Kwandi", "Mbowe", "Mbume", "Kwangwa"],
+      "vehicularRole": "Le luyana proprement dit est parle par un petit nombre de locuteurs (480 selon le recensement de 2010 pour le luyana strict; 2 900 pour l'ensemble du groupe Luyana incluant Kwandi, Kwangwa). Le lozi, derive du kololo et adopte par les Luyana apres la conquete Makololo, est aujourd'hui la langue vehiculaire dominante du Barotseland et l'une des 7 langues regionales officielles de Zambie. Le systeme d'ecriture luyana fut developpe en 2011 (alphabet latin)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie du Kuomboka est le rite annuel le plus important : lors des grandes crues, le Litunga quitte la plaine inondee pour les terres hautes, a bord de la barge royale Nalikwanda au son des grands tambours Maoma. Cette ceremonie remonte au XVIIe siecle. Des chasses nationales (Lisula) sont organisees annuellement sous la direction du Litunga. Les rites d'installation (coliso) incluent purification, presentations et sacrifices aux tombeaux des fondateurs Mbuyu et Mboo.",
+      "symbols": "Le Litunga est le symbole central du royaume. La barge royale Nalikwanda (depuis Yeta III) symbolise le pouvoir royal lors du Kuomboka. Les Maoma (grands tambours royaux) servent a convoquer les rameurs. Les termitieres elevees (mazulu) et les buttes artificielles (liuba) sont les signes distinctifs des villages Luyana dans la plaine inondable.",
+      "artsAndMusic": "La Fanfare Royale (Bambeti, une vingtaine de membres) joue des chants de louange et des compositions narratives, avec des critiques cryptiques a l'adresse du pouvoir. Instruments : silimba (xylophone), ng'oma (tambour), kahanzi (lamellophone). Danses : Ngomalume (danse de guerre des hommes, mouvement du ventre), Liwale (femmes, evenements royaux), Liimba, Lishemba, Sipelu (lignes opposees avec chants et tambours), Siyemboka (danse Mbunda, fetes de biere).",
+      "spiritualities": "Le dieu createur Nyambe (ou Mulimu) est omnipotent et omniscient. Les esprits ancestraux (balimu) et les ombres-esprits (miluti) medient entre les vivants et le divin. Le culte des tombeaux royaux (Litino) est central : les esprits des Litunga defunts intercedent aupres de Nyambe. La sorcellerie (muloi) et la divination sont pratiquees, notamment sous influence Mbunda et Luvale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Le Royaume Lozi (ou Barotseland), fonde au XVIIe siecle, fut un Etat centralise puissant couvrant environ 390 000 km2 a la fin du XIXe siecle. Il etait dirige par le Litunga et son conseil national (Kuta). Les Luyana/Lozi exercerent leur autorite jusqu'a la riviere Kwito a l'ouest, les rivieres Linyanti-Chobe et Zambeze au sud, la riviere Kafue a l'est, et la confluence Luena-Zambeze au nord.",
+      "relationsWithNeighbors": "Les Luyana conquirent les communautes forestieres voisines pour obtenir bois, pirogues et cire. Ils imposerent tributs (Namba) et corvees (Maketiso) aux peuples soumis. Le Litunga Mulambwa allia les Luyana aux Nkoya (Katusi au Kuta) et aux Mbunda contre les Luvale. Lewanika mena des raids extensifs pour esclaves et betail. Sous la colonisation, le royaume fut reduit a protectorat puis province de Rhodesie du Nord.",
+      "conflictsOrAlliances": "Conquetes de Ngalama (4e Litunga) pour reunifier la plaine. Guerres contre les Toka et les Ila pour boeuf et esclaves (bloquees par les Makololo et les Matabele). Conquete Makololo vers 1840; massacre des Makololo et restauration en 1864. Luttes factionnelles internes (1876-1885). Negociations et concessions avec la BSAC de Lewanika (1889-1900).",
+      "diaspora": "Quelques Luyana vivent en Namibie et en Angola, selon Wikipedia sur la langue luyana."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 5700,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (luyana proprement dit : 5 700 personnes en Zambie). Le groupe Luyana elargi (incluant Kwandi, Kwangwa) compte 2 900 locuteurs selon le recensement zambien de 2010. Ces chiffres refletent le luyana strict, la majorite des descendants etant aujourd'hui recenses comme Lozi.",
+      "distributionByCountry": [{ "country": "ZMB", "population": 5700 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lozi Kingdom – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Lozi_Kingdom)",
+      "Luyana language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Luyana_language)",
+      "Luyana Language (LYN) – Ethnologue, SIL International (https://www.ethnologue.com/language/lyn/)",
+      "Luyana in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)",
+      "How the Luyana people came to be known as Barotse – Barotse Network, Facebook, 2022 (https://www.facebook.com/Barotsenetwork/posts/4986331461405612/)",
+      "A history of the Lozi kingdom ca. 1750-1911 – African History Extra, 2024 (https://www.africanhistoryextra.com/p/a-history-of-the-lozi-kingdom-ca)",
+      "The Barotse Cultural Landscape – UNESCO World Heritage Centre (https://whc.unesco.org/fr/listesindicatives/5428/)"
+    ]
   }
 }

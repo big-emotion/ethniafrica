@@ -1,64 +1,103 @@
 {
   "id": "PPL_SWAHILI_YEMEN",
-  "nameMain": "Swahili (Yémen)",
+  "nameMain": "Swahili (Yemen)",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": [],
+  "currentCountries": ["YEM"],
   "content": {
     "appellations": {
-      "mainName": "Swahili (Yémen)",
-      "selfAppellation": "Swahili",
-      "exonyms": ["Swahili (terme utilisé par les Européens)"],
+      "mainName": "Communautes d'ascendance swahili au Yemen (Akhdam / Al-Muwalladeen)",
+      "selfAppellation": "Akhdam (Al-Akhdame) / Al-Muwalladeen",
+      "exonyms": [
+        "Akhdam (serviteurs)",
+        "Muhamasheen (marginalises)",
+        "Afro-Yemenites",
+        "Muwalladeen d'origine africaine"
+      ],
+      "originOfExonyms": "Le terme Akhdam (singulier khadami) signifie serviteurs en arabe et est utilise de maniere pejorative. Le terme Muwalladeen (singulier Muwallad) designe en arabe une personne d'ascendance mixte, ne completement arabe ; il est souvent employe de facon stigmatisante pour les personnes d'ascendance yemeno-africaine. Muhamasheen (marginalises) est un terme plus moderne utilise par les organisations de droits pour decrire leur situation sociale.",
+      "whyProblematic": "Les termes Akhdam et Muwalladeen sont charges de stigmatisation raciale et sociale. Les Akhdam sont considers comme intouchables par une partie de la societe yemenite et sont confines aux emplois menagers. Les Muwalladeen d'origine africaine sont plus racialises et discrimines que ceux d'autres origines (asiatiques, europeennes). Ces populations nient souvent leurs racines africaines pour eviter la stigmatisation.",
+      "contemporaryUsage": "Le terme Akhdam est employe couramment mais de maniere pejorative. Les organisations de defense des droits preferent le terme Muhamasheen. Les Muwalladeen d'ascendance africaine sont concentres principalement dans le sud du Yemen (Aden, Hadramawt), ou la discrimination est moins severe qu'a Sanaa. La guerre civile yemenite (depuis 2015) a aggrave leur situation economique tout en rendant plus difficile la distinction ethnique.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone G)",
-      "historicalRegion": "Côte est de l'Afrique, Yémen",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Bantou Sabaki (Zone G) — heritage linguistique principalement perdu, arabisation avancee",
+      "historicalRegion": "Aden (port historique du sud du Yemen), Hadramawt, Sana'a, Ta'izz, Al Hudaydah, Mukalla",
+      "currentCountries": ["YEM"]
     },
-    "ethnicities": ["Swahili du Yémen", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Akhdam (Al-Akhdame) — groupe socio-ethnique d'ascendance africaine etabli au Yemen, arabophone, au bas de la hierarchie sociale yemenite",
+      "Muwalladeen d'origine swahili et est-africaine — descendants de commerçants et marins swahili etablis a Aden et sur la cote yemenite",
+      "Muwalladeen yemeno-ethiopiens et yemeno-somalis — descendants de travailleurs migrants ethiopiens et somaliens ayant epouse des Yemenites",
+      "Descendants d'esclaves est-africains importes au Yemen (11e-19e siecles via les routes de traite de l'ocean Indien)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Swahili du Yémen sont originaires de la côte est de l'Afrique. Leur présence au Yémen remonte aux migrations historiques et aux contacts commerciaux.",
-      "unificationsOrDivisions": "Organisation en communautés distinctes mais partageant une identité culturelle et linguistique commune avec les Swahili de la côte est de l'Afrique.",
-      "externalInfluences": "Contacts avec les commerçants arabes, influence de l'islam."
+      "ancientOrigins": "Les communautes d'ascendance africaine et swahili au Yemen ont des origines multiples. Les Akhdam sont, selon la theorie savante dominante etayee par des analyses ADN, les descendants d'esclaves et captifs est-africains (tanzaniens et swahili) importes au Yemen via la traite de l'ocean Indien du 11e au 19e siecle. Une tradition locale les attribue aux soldats ethiopiens de l'occupation axoumite du Yemen au 6e siecle. Des commerçants swahili et hadhrami (du Hadramawt yemenite) entretinrent des liens commerciaux intenses avec la cote swahili pendant des siecles, certains s'etablissant durablement de part et d'autre. Aden, en tant que grand port de transit entre l'Afrique et l'Asie, attira des populations swahili et africaines.",
+      "formationPeriod": "La presence africaine au Yemen s'est constituee sur une tres longue duree : esclaves importes a partir du 8e siecle, intensification aux 11e-19e siecles avec la traite omanaise, yemenite (hadhrami) et arabe. Les Hadhramis du Yemen etaient parmi les principaux marchands de la cote swahili et certains etablirent des familles mixtes. Le port d'Aden sous domination britannique (1839-1967) attira egalement des travailleurs africains et somalis. La periode post-independance (1967-) a fige les inegalites et la discrimination.",
+      "migrationRoutes": [
+        "Traite d'esclaves est-africains vers le Yemen via les routes de l'ocean Indien (8e-19e siecles)",
+        "Commerce hadhrami-swahili : marchands et marins yemenites s'etablissant sur la cote swahili, certains revenant au Yemen avec des epouses africaines",
+        "Migration de travailleurs somaliens et ethiopiens vers Aden sous l'administration britannique (1839-1967)",
+        "Retour de commerçants yemenites de la cote swahili avec familles mixtes (19e-20e siecles)",
+        "Flux de refugies somaliens vers le Yemen (apres 1991)"
+      ],
+      "historicalSettlementZones": [
+        "Aden — principal port et centre de la communaute africaine et swahili du Yemen",
+        "Hadramawt — region d'origine des commerçants hadhramis actifs sur la cote swahili",
+        "Mukalla — port de l'est du Yemen avec des liens historiques avec l'ocean Indien",
+        "Sana'a — capitale avec une importante communaute Akhdam dans des bidonvilles segreges",
+        "Ta'izz, Lahij, Abyan, Al Hudaydah — autres centres de presence akhdam"
+      ],
+      "unificationsOrDivisions": "Les communautes d'ascendance africaine au Yemen sont divisees selon leur statut social. Les Akhdam constituent la couche la plus marginalisee, segregee spatialement dans des bidonvilles de peripherie. Les Muwalladeen d'ascendance mixte yemeno-africaine ont un statut legerement superieur mais font face a une discrimination systematique. Le sud du Yemen (Aden, Hadramawt) est plus tolerant que le nord (Sana'a) envers ces communautes.",
+      "externalInfluences": "L'occupation britannique d'Aden (1839-1967) introduisit des travailleurs africains et crea un environnement relativement pluraliste au port. L'independance du Yemen du Sud (1967) et l'unification yemenite (1990) n'ameliorerent pas le statut des Akhdam. La guerre civile yemenite (2015-) a aggrave leur situation en les laissant sans protection ni acces aux services de base. Les organisations internationales (Sana'a Center for Strategic Studies, HCR) documentent leur marginalisation.",
+      "majorHistoricalEvents": "8e-19e siecles : importation systematique d'esclaves est-africains et swahili au Yemen via les routes de l'ocean Indien. 1839 : occupation britannique d'Aden, afflux de travailleurs africains et somalis. 1967 : independance du Yemen du Sud (RPDY), persecution de la classe marchande incluant les Hadhramis ayant des liens avec l'Afrique. 1990 : unification yemenite, le statut des Akhdam reste inchange. 2004 : recensement officiel yemenite estimant les Akhdam a 500 000 personnes. 2013 : l'organisation Sawa'a estime leur nombre a plus de 3 millions. 2014-2015 : debut de la guerre civile yemenite aggravant la situation des communautes marginalisees."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en associations communautaires. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+      "traditionalPoliticalSystem": "Les Akhdam n'ont pas de structure politique propre reconnue. Ils vivent dans des enclaves segreguees sans representation politique. Les Muwalladeen tentent de s'organiser en associations civiles pour revendiquer l'egalite des droits. La conference du Dialogue national yemenite (2014) a recommande l'egalite de citoyennete pour tous, mais ces recommandations sont restees lettre morte avec la guerre civile.",
+      "clanOrganization": "Les Akhdam sont socialement segreges : les mariages avec des non-Akhdam sont tabous et pratiquement interdits. Les hommes non-Akhdam epousant une femme Akhdam risquent le bannissement familial. Les enfants nes de parents mixtes (Akhdam et non-Akhdam) sont appeles muwalladin et sont encore discrimines. Les communautes Akhdam ont des reseaux communautaires internes informels.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La patrilinearite determine l'appartenance au groupe. Un enfant ne d'un pere non-Akhdam et d'une mere Akhdam peut echapper a la stigmatisation mais garde souvent le marqueur physique (couleur de peau) de sa marginalisation. Les familles Muwalladeen cherchent souvent a cacher leurs origines africaines pour eviter la discrimination administrative (refus de cartes d'identite, de passeports).",
+      "religiousAuthority": "Islam sunnite (principalement shafii dans le sud yemenite, zaydite dans le nord). Les Akhdam participent a la vie islamique mais sont socialement exclus des mosquees traditionnelles dans certaines localites. Les Muwalladeen pratiquent l'islam de la meme maniere que les autres Yemenites. La pratique de la zayidiyya au nord et du shafisme au sud donne le cadre religieux de ces communautes."
     },
     "languages": {
-      "mainLanguage": "Swahili",
-      "vehicularRole": "Le swahili est parlé par une partie des Swahili du Yémen. L'arabe et d'autres langues sont également utilisés."
+      "mainLanguage": "Arabe yemenite (langue d'integration, langue maternelle actuelle de la grande majorite)",
+      "isoCodes": ["swa", "ara"],
+      "dialects": [
+        "Arabe yemenite meridional — langue dominante des Akhdam et Muwalladeen d'Aden",
+        "Heritage swahili vestigiel — quelques mots, chants et expressions maintenues dans certaines familles Akhdam, attestes par des geneticiens ayant note des connexions avec la langue et la culture swahili",
+        "Somali — langue de certains Muwalladeen d'origine somalie recente"
+      ],
+      "vehicularRole": "La langue swahili n'est pratiquement plus parlee au Yemen. L'arabisation est quasi-complete depuis des generations. Certains linguistes et geneticiens ont note des traces lexicales swahili et des connexions culturelles dans les communautes Akhdam, mais le swahili n'est plus une langue vivante dans ce contexte. L'arabe yemenite est la langue unique de ces communautes dans la vie quotidienne."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Célébrations culturelles",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles culturels swahili, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Architecture swahili (maisons en pierre)",
-      "source_5": "Musique traditionnelle (taarab)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+      "majorRites": "Pratiques islamiques sunnites standard (priere, jeune, pelerinage). Mariage : les Akhdam sont generalement limites aux mariages endogames (entre Akhdam) en raison du tabou social. Ceremonies de naissance, circoncision et funerailles selon le rite islamique local. Certaines traditions culturelles africaines se maintiennent dans des pratiques musicales et culinaires. Les femmes Akhdam travaillent souvent dans le domaine public (collecte de dechets, mendicite) contrairement a la norme yemenite.",
+      "symbols": "Le statut social marginalise est le principal marqueur identitaire des Akhdam. La couleur de peau foncee sert de stigmate social dans la societe yemenite. Les quartiers segregues en peripherie des grandes villes (bidonvilles) constituent des espaces identitaires de facto. Certaines familles Muwalladeen valorisent leur heritage africain dans la sphere privee tout en le cachant dans la sphere publique.",
+      "artsAndMusic": "Musique et chants d'influence africaine maintenus dans certaines celebrations communautaires Akhdam, documentant une memoire culturelle de leurs origines est-africaines. Cuisine avec des influences africaines dans certaines preparations. Les Muwalladeen d'Aden, moins stigmatises que ceux du nord, ont developpe une culture hybride yemeno-africaine plus assumee. Certains artistes et intellectuels yemenites d'ascendance africaine ont revendiquer leur heritage dans la litterature et la musique contemporaine yemenite (Mohamed Abdul-Wali, ecrivain yemeno-ethiopien, auteur de They Die Strangers).",
+      "spiritualities": "Islam sunnite shafiite (predominant dans le sud du Yemen ou se concentrent les Muwalladeen d'origine africaine). Certaines croyances et pratiques spirituelles d'origine africaine ont ete absorbees dans la pratique islamique populaire yemenite. La zaydiyya (branche chiite) domine dans le nord du Yemen. Quelques pratiques syncrétiques d'origine africaine documentees dans certaines ceremonies des communautes Akhdam."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Migration vers les grandes villes et la diaspora."
+      "kingdomsOrChiefdoms": "Les communautes d'ascendance swahili et africaine n'ont jamais constitue une entite politique autonome au Yemen. Historiquement, les esclaves et leurs descendants occupaient les positions les plus basses dans la hierarchie sociale yemenite. Certains commerçants africains et swahili etablis a Aden ont participe au commerce de l'ocean Indien dans des positions subalternees sous les Hadhramis et autres marchands arabes. Le port d'Aden etait un centre de transit important pour le commerce entre l'Afrique de l'est et l'Asie du sud.",
+      "relationsWithNeighbors": "Liens historiques avec la cote swahili via les routes commerciales de l'ocean Indien. Relations hadhrami-swahili : les marchands du Hadramawt yemenite etaient parmi les plus actifs sur la cote swahili (Kenya, Tanzanie, Mozambique) et ont contribue a l'islamisation de la region. Certains Muwalladeen maintiennent des contacts avec des familles en Ethiopie, en Somalie ou en Tanzanie. Flux de refugies somaliens vers le Yemen depuis 1991 cree une nouvelle communaute africaine au pays.",
+      "conflictsOrAlliances": "Pas de conflits armes impliquant specifiquement les Akhdam ou les Muwalladeen. Discrimination legale et institutionnelle persistante : refus de cartes d'identite et de passeports en raison de la couleur de peau et de l'incapacite a prouver l'ascendance yemenite. Des organisations comme Sawa'a Organisation for Anti-Discrimination luttent pour leurs droits civiques. La conference du Dialogue national (2014) a formule des recommandations d'egalite non mises en oeuvre.",
+      "diaspora": "Certains Muwalladeen ont migre vers l'Arabie saoudite, les Emirats arabes unis et d'autres pays du Golfe pour echapper a la discrimination et chercher de meilleures conditions economiques. La guerre civile yemenite (2015-) a provoque de nouveaux deplacements mais les Akhdam, etant les plus pauvres, ont le moins de capacite a migrer. Des associations de Muwalladeen existent dans certains pays d'accueil pour le soutien communautaire."
     },
     "demography": {
-      "totalPopulation": 30000,
+      "totalPopulation": 1500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement officiel yemenite 2004 : 500 000 Akhdam. Organisation Sawa'a for Anti-Discrimination (2013) : estimation entre 1,5 et 3 millions de Muhamasheen (Akhdam), soit environ 11% de la population totale du Yemen. Le Sana'a Center for Strategic Studies estime que les Muwalladeen d'ascendance africaine sont une fraction de ce total ; la population d'ascendance swahili specifiquement est difficile a quantifier separement. Ces chiffres incluent l'ensemble des Muhamasheen/Akhdam, pas uniquement ceux d'origine swahili.",
+      "distributionByCountry": [
+        {
+          "country": "YEM",
+          "population": 1500000,
+          "note": "Concentres a Sana'a, Aden, Ta'izz, Lahij, Al Hudaydah, Abyan et Mukalla dans des quartiers segregues. Chiffre incluant l'ensemble des Muhamasheen d'ascendance africaine."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Swahili language (swa)",
-      "CIA World Factbook – Yemen",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Akhdam. https://en.wikipedia.org/wiki/Akhdam",
+      "Sana'a Center for Strategic Studies — Muwalladeen in Yemen: Racialization, Stigmatization (2022). https://sanaacenter.org/publications/main-publications/18105",
+      "Al Jazeera — Yemen's Muwaladeen: The struggle for equal citizenship (2014). https://www.aljazeera.com/opinions/2014/4/5/yemens-muwaladeen-the-struggle-for-equal-citizenship",
+      "Scholarly Publishing Collective — We Are All Suffering Equally: The Impact of the War on Muwalladin (2022). https://scholarlypublishingcollective.org/msup/neas/article/22/1/165/381346/We-Are-All-Suffering-Equally-The-Impact-of-the-War",
+      "Joshua Project — Muhamasheen, Akhdam in Yemen. https://joshuaproject.net/people_groups/10380/ym",
+      "Pink Jinn — African Arabs: Migration and cultural exchange on the Swahili coast (2020). https://www.pinkjinn.com/2020/09/09/african-arabs-migration-and-cultural-exchange-on-the-swahili-coast/",
+      "CIA Reading Room — Southern Yemen (Aden): The Society. https://www.cia.gov/readingroom/docs/CIA-RDP01-00707R000200100018-6.pdf",
+      "Wikipedia EN — Swahili people. https://en.wikipedia.org/wiki/Swahili_people"
     ]
   }
 }

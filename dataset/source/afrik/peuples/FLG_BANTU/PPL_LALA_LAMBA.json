@@ -2,58 +2,84 @@
   "id": "PPL_LALA_LAMBA",
   "nameMain": "Lala-Lamba",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "COD"],
   "content": {
     "appellations": {
       "mainName": "Lala-Lamba",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Lamba",
+      "exonyms": ["Lamba", "Ilamba", "Aramba"],
+      "originOfExonyms": "Lamba signifie en langue Lamba l'acte de s'humilier, temoignant du caractere generalement humble de ce peuple. Ilamba designe le territoire Lamba (Lambaland). Aramba est une forme ancienne utilisee dans les sources portugaises de 1798 (voyage de Lacerda). Le terme Lala-Lamba est utilise dans la litterature ethnohistorique pour designer la relation etroite et la zone de contact entre Lala et Lamba.",
+      "whyProblematic": "Lala-Lamba est une denomination relationnelle/ethnohistorique plutot qu'une identite ethnique propre. Les Lamba sont un peuple distinct des Lala, bien que partageant des origines communes et des zones de contact. La classification Lala-Lamba renvoie aux relations historiques complexes entre ces deux groupes, notamment dans la region de Bukanda sur le Pedicule de Shaba.",
+      "contemporaryUsage": "Lamba est l'appellation usuelle pour ce peuple. Lala-Lamba est utilise dans les etudes academiques d'ethnohistoire pour decrire les interactions et l'histoire partagee des deux groupes dans la region transfrontaliere Zambie-RDC.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu du Centre, groupe Lamba-Lima (M.54)",
+      "historicalRegion": "Province du Copperbelt, Province Centrale, Province du Nord-Ouest (Zambie) ; Province du Katanga (RDC)",
+      "currentCountries": ["ZMB", "COD"]
     },
-    "ethnicities": ["Lala-Lamba"],
+    "ethnicities": ["Lamba", "Ilamba"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Lamba sont un peuple bantou dont les origines remontent au royaume Luba-Lunda du Congo. Ils font partie des peuples bantous centraux qui ont migre vers le sud au cours du premier millenaire. La mythologie Lamba attribue leur origine au chef mythique Chipimpi, dont les recits sont etroitement lies a ceux des Lala et d'autres peuples voisins.",
+      "formationPeriod": "Les Lamba sont mentionnes pour la premiere fois dans des sources historiques ecrites en 1798 (Lacerda). Avant la periode coloniale de la fin du 19e siecle, peu d'informations sont disponibles. Leur identite distincte s'est consolidee dans la region du Lambaland (Ilamba), principalement sur le Copperbelt et dans les zones adjacentes.",
+      "migrationRoutes": [
+        "Origine Luba-Lunda (Kola, RDC actuelle)",
+        "Migration vers le sud-est vers le plateau du Katanga/Shaba",
+        "Installation dans la region du Copperbelt (Zambie actuelle)",
+        "Extension vers la Province du Nord-Ouest et la Province Centrale de Zambie",
+        "Presence dans la Province du Katanga (RDC) autour de Likasi, Lubumbashi et Kipushi"
+      ],
+      "historicalSettlementZones": [
+        "Province du Copperbelt, Zambie (zone principale)",
+        "Province du Nord-Ouest, Zambie",
+        "Province Centrale, Zambie",
+        "Province du Katanga (Likasi, Lubumbashi, Kipushi), RDC"
+      ],
+      "unificationsOrDivisions": "Les Lamba sont gouvernes par un chef supreme (paramount chief) : Mushili, qui est le chef supreme des Lamba tant en Zambie qu'en RDC. Les Lamba se divisent entre ceux de la Province du Copperbelt (sous Mushili), ceux de la Province du Nord-Ouest (sous Senior Chief Kalilele) et ceux de la Province Centrale. Les Lamba du Katanga (RDC) reconnaissent egalement l'autorite de Mushili comme chef suprematrice.",
+      "externalInfluences": "Le roi Yeke Msiri (de Bunkeya) a conquis et asservi les Lamba et les peuples voisins dans le Katanga dans les annees 1870. La lignee Mushili des chefs Lala (clan Bena Nyendwa) a conquis les Lamba de la region de Bukanda (Zambie-RDC) au milieu du 19e siecle avant que les Belges ne retablissent la frontiere vers 1900. L'exploitation miniere du Copperbelt au 20e siecle a profondement transforme la societe Lamba.",
+      "majorHistoricalEvents": "21 septembre 1798 : Premier mention des Lamba dans le journal de l'explorateur portugais Francisco de Lacerda, notant leur commerce de cuivre et d'ivoire avec la Lunda de Kazembe. Milieu 19e siecle : Conquete des Lamba de Bukanda par la lignee Mushili Lala. Annees 1870 : Conquete et asservissement des Lamba par le roi Yeke Msiri a Bunkeya. Vers 1900 : Les Belges retablissent la riviere Munyengashi comme frontiere ethnique. 20e siecle : Essor minier du Copperbelt, urbanisation massive des populations Lamba."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Les Lamba sont gouvernes par un chef supreme, Mushili, qui est le paramount chief des Lamba en Zambie et en RDC. Dans la Province du Copperbelt, les chefs principaux incluent Mushili, Nkana (groupe chef), Nkambo, Chiwala, Shimukunami, Shibuchinga, Lumpuma, Fungulwe, Ndubeni, Mwinuna, Lesa, Malembeka, Kalunkumya et Machiya. Dans la Province du Nord-Ouest, le chef principal est Kalilele. Dans la Province Centrale : Nkole, Chitina, Chikupili, Mukonchi. En RDC : huit chefs Lamba dans la province du Katanga.",
+      "clanOrganization": "Les Lamba sont organises en clans matrilineaires exogames partages avec les peuples voisins (Lala, Aushi, Bemba, Bisa, etc.). Le clan royal Lamba est le Bena Mishishi (clan des Cheveux/Hair clan), appele aussi Bena Mishishi ya mutwe (cheveux de la tete). Ce clan est lie par des joking relationships au clan Bena Nyendwa (Vulva) des Lala, refletant des competitions historiques de legitimite.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance, le statut social, l'heritage et la succession sont matrilineaires. La lignee Mushili detient le pouvoir supreme. Les 299 mariages enregistres par Boswell chez les Lamba et Lima montrent 15 conjoints du clan Hair parmi les chefs Lamba, temoignant de strategies matrimoniales dynastiques.",
+      "religiousAuthority": "Les Lamba pratiquent traditionnellement le culte des ancetres et la veneration des esprits. Quatre ceremonies traditionnelles reconnues en Lambaland : Chabalankata (chef supreme Mushili), Ukwilimuna (chef Malembeka), Nsengele kunuka (chef Machiya) et Ukupupa (senior chief Kalilele). Le christianisme est majoritaire aujourd'hui."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Lamba",
+      "isoCodes": ["lam"],
+      "dialects": ["Lamba", "Lima"],
+      "vehicularRole": "Le Lamba (ISO lam, Glottolog lamb1271, code Guthrie M.54) est une langue bantoue stable parlee en Zambie et en RDC. Les deux principaux dialectes reconnus sont le Lamba et le Lima. On compte environ 210 000 locuteurs natifs dans le nord de la Zambie et la frange sud de la RDC. Le Bemba sert de lingua franca dans la region du Copperbelt."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Quatre ceremonies traditionnelles reconnues en Lambaland : Chabalankata (sous le chef supreme Mushili), Ukwilimuna (sous le chef Malembeka), Nsengele kunuka (sous le chef Machiya) et Ukupupa (sous le senior chief Kalilele). Ces ceremonies marquent les cycles agricoles, les passages saisonniers et le renforcement de l'identite communautaire.",
+      "symbols": "Le terme Lamba (l'acte de s'humilier) est lui-meme un symbole de l'identite culturelle de ce peuple, connu pour sa nature humble. Le clan Bena Mishishi (clan des Cheveux) est le symbole de l'autorite chiefly Lamba. La region Ilamba (Lambaland) est un symbole geographique de l'identite Lamba, s'etendant a travers les frontieres Zambie-RDC.",
+      "artsAndMusic": "Les Lamba partagent les traditions artistiques bantoues du Copperbelt : musique de tambours, danses ceremoniales, chants traditionnels et narration orale. L'artisanat comprend le travail du cuivre (historiquement important dans la region), la poterie et le tissage. Le cuivre et l'ivoire etaient les principaux articles d'echange commerciaux des Lamba au 18e-19e siecle.",
+      "spiritualities": "Les Lamba pratiquent le culte des ancetres avec des ceremonies specifiques maintenues par chaque chefferie. La relation joking (amatuka) entre clans Hair Lamba et Vulva Lala reflete une theologie des origines partagee mais competitive. Le christianisme est aujourd'hui predominant dans la communaute Lamba. Les pratiques ancestrales coexistent avec les croyances chretiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Lamba sont gouvernes par un paramount chief (Mushili), avec une structure decentralisee de nombreuses chefferies locales dans les provinces du Copperbelt, du Nord-Ouest, de la Province Centrale de Zambie et du Katanga en RDC. Le territoire Lamba ou Ilamba/Lambaland chevauche les deux cotes du Pedicule de Shaba (frontiere Zambie-RDC).",
+      "relationsWithNeighbors": "Les Lamba bordent les Ushi au nord, les Lala au nord-ouest, les Lenje au nord (limite sud de Ilamba), les Kaonde a l'ouest et les Lima au sud. Ils ont entretenu des relations commerciales avec la Lunda de Kazembe et les Nsenga. Les joking relationships claniques (balwani) existent avec les Lala, Aushi et autres peuples partageant le systeme de clans matrilineaires.",
+      "conflictsOrAlliances": "Au milieu du 19e siecle, la lignee Mushili des chefs Lala a conquis les Lamba de la region de Bukanda, a l'est de la riviere Munyengashi, integrant des villages Lamba et Lala dans une zone mixte. Dans les annees 1870, le roi Yeke Msiri a conquis et asservi les Lamba et peuples voisins du Katanga. La chef Lala Ngosa Mupeta (Nabayeke, Mere du Yeke) a epouse un Yeke du clan Chevre, entrainant la perte de sa chefferie au clan Hair Lamba (Mumbilima, aujourd'hui chef Kumbwa). Vers 1900, les Belges ont retabli la riviere Munyengashi comme frontiere apres une guerre du chef Lala.",
+      "diaspora": "L'exploitation miniere du Copperbelt a partir du 20e siecle a attire d'importantes populations Lamba vers les centres urbains de Kitwe, Ndola, Mufulira et Chingola. Cette urbanisation a transforme l'identite Lamba en milieu urbain multiethique. Des Lamba se trouvent egalement a Lubumbashi et Likasi en RDC."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 481000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025) – Lamba : 436 000 en Zambie + 45 000 en RDC. Zambia 2010 census : Lamba 2,1% de la population.",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 436000, "percentage": 91 },
+        { "country": "COD", "population": 45000, "percentage": 9 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Lamba people (Zambia) – Wikipedia (https://en.wikipedia.org/wiki/Lamba_people_(Zambia))",
+      "Lamba language – Wikipedia (https://en.wikipedia.org/wiki/Lamba_language)",
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Joshua Project – Zambia People Groups, Lamba (https://joshuaproject.net/countries/ZA)",
+      "Ethnologue – Lamba Language LAM (https://www.ethnologue.com/language/lam/)",
+      "Lamba language – Chalo Chatu, Zambia Encyclopedia (http://chalochatu.org/Lamba_language)",
+      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)",
+      "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory (https://www.africabib.org/rec.php?RID=326712321)"
+    ]
   }
 }

@@ -1,0 +1,71 @@
+{
+  "id": "PPL_GOLA",
+  "nameMain": "Gola",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SLE", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Gola",
+      "selfAppellation": "Gola",
+      "exonyms": ["Gola (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique",
+      "historicalRegion": "Libéria, SLE (zones forestières)",
+      "currentCountries": ["SLE", "LBR"]
+    },
+    "ethnicities": [
+      "Gola de l'Est",
+      "Gola de l'Ouest",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuple ancien des forêts de Haute Guinée. Lien historique avec les systèmes à sociétés secrètes.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Réseau d'interactions anciennes avec Kissi, Mende et Krio. Rôle politique local avant la période coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies lignagères. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Rôle important des sociétés secrètes (Poro). Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Gola",
+      "vehicularRole": "Le gola est parlé par la majorité des Gola. L'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Masques rituels Poro",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'agriculture",
+      "source_4": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Masques rituels Poro, symboles liés à l'agriculture, symboles culturels gola",
+      "Arts et musique": "",
+      "source_5": "Masques rituels Poro",
+      "source_6": "Musiques forestières",
+      "source_7": "Artisanat en bois",
+      "source_8": "Musique traditionnelle",
+      "source_9": "Danse traditionnelle",
+      "source_10": "Poésie orale",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des sociétés secrètes (Poro) et des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora gola dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 345000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Gola language (gol)",
+      "CIA World Factbook – LBR, SLE",
+      "Sierra Leone & Liberia Cultural Studies",
+      "Recensements nationaux"
+    ]
+  }
+}

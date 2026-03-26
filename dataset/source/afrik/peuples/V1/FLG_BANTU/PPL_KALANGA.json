@@ -1,0 +1,62 @@
+{
+  "id": "PPL_KALANGA",
+  "nameMain": "Kalanga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kalanga",
+      "selfAppellation": "",
+      "exonyms": ["Kalanga (terme utilisé par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Nord-est du BWA, frontière avec le Zimbabwe",
+      "currentCountries": ["BWA"]
+    },
+    "ethnicities": ["Kalanga"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": [
+        "Nord-est du BWA, frontière avec le Zimbabwe"
+      ],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Kalanga (kck)",
+      "isoCodes": ["kck"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 150,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

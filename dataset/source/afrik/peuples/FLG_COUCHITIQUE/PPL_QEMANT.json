@@ -1,23 +1,97 @@
 {
   "id": "PPL_QEMANT",
-  "nameMain": "",
+  "nameMain": "Qemant",
   "languageFamilyId": "FLG_COUCHITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Qemant",
       "selfAppellation": "Qemant / Qimant",
+      "exonyms": [
+        "Kemant",
+        "Kemantney",
+        "Agaw occidental",
+        "Western Agaw",
+        "Chemant",
+        "Dembiya"
+      ],
+      "originOfExonyms": "Le terme Western Agaw (Agaw occidental) est une designation academique qui les classe parmi les peuples Agaw (Cushitiques centraux) de l'Ethiopie du nord. Kemant est une variante orthographique de l'auto-designation. Dembiya designe leur territoire historique pres du lac Tana.",
+      "whyProblematic": "Les Qemant ont ete suppresses de l'identite officielle lors du recensement national de 2007. La plupart des membres ethniques s'identifient aujourd'hui comme Amhara. Des conflits entre activistes pour la reconnaissance qemant et les autorites amhara ont eclate depuis 2015. La classification linguistique dans la famille couchitique (branche Agaw) est etablie mais l'identite ethnique est contestee.",
+      "contemporaryUsage": "Les mouvements de revitalisation culturelle qemant ont resurgi depuis les annees 2010. La langue Qimant (code ISO ahg) est consideree comme gravement menacee d'extinction (moins de 1 650 locuteurs natifs, ages de plus de 30 ans). Des communautes tentent de preserver la culture et la langue.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "historicalRegion": "Nord-Ouest Éthiopie (Gondar)",
+      "ethnoLinguisticGroup": "Couchitique central (Agaw)",
+      "historicalRegion": "Nord-Ouest de l'Ethiopie, Gondar, region Amhara ; territoire traditionnel Qwara, axe d'Ayikel (Chilga woreda) a Kirakir et au nord jusqu'au lac Tana (woredas Lay Armachiho)",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (ahg)", "Qemant Cultural Studies"]
+    "ethnicities": [
+      "Moitie Kibbir (Keber) : rang superieur, pretre kamazana, wombers choisis dans certains lignages",
+      "Moitie Yetanti : rang inferieur, pretre abayegariya"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Qemant font partie des peuples Agaw, considers comme les habitants autochtones originels de l'Ethiopie du nord-centre. Selon la tradition orale qemant, ils descendent de Yaner (aussi appele Ayaner), petit-fils de Canaan, quatrieme fils de Cham, fils de Noe. La legende affirme que l'arche de Noe s'est posee au sommet du Mont Ararat, identifie dans la tradition qemant au Mont Guna (region Amhara du nord). Le mot guna signifie point de depart en qemant.",
+      "formationPeriod": "Selon la tradition, Noe et sa famille vecurent au mont Guna ; Sem et Japhet partirent vers l'Asie et le Moyen-Orient, tandis que Noe et Cham resterent en Ethiopie jusqu'a la mort de Noe. Noe aurait ete enterre dans l'actuel Fasil Ghebbi (Gondar), et sa femme Aykel dans la ville d'Aykel (nommee d'apres elle). Des legends evoquent aussi Arwadi, fils de Canaan, venu de la terre de Canaan pour fonder le groupe qemant. L'anthropologue americain George P. Murdock (1959) a decrit les ancetres Agaw comme l'un des peuples les plus createurs d'Afrique, qui ont developpe de nouvelles varietes de ble, d'orge, de sorgho, de teff et de millet.",
+      "migrationRoutes": [
+        "Populations autochtones du nord de l'Ethiopie, sans migration fondatrice documentee vers la region de Gondar",
+        "Repli progressif vers les zones rurales de Chilga et Lay Armachiho sous la pression de l'amharisation"
+      ],
+      "historicalSettlementZones": [
+        "Chilga Woreda (Semien Gondar Zone), entre Gondar et Metemma",
+        "Lay Armachiho Woreda",
+        "Environs d'Ayikel (40 km a l'ouest de Gondar)",
+        "Ville de Gondar et zones rurales environnantes (Gondar Zuria, Dembia, Wogera, Metema, Quara)"
+      ],
+      "unificationsOrDivisions": "La societe qemant est organisee en deux moities (groupes d'exogamie patrilineaire) : Kibbir (rang superieur, ou sont choisis les wombers) et Yetanti (rang inferieur). La societe est globalement endogame (mariage uniquement entre membres des deux moities qemant). Ce systeme de bipartition suggere une structure de chefferie de conquete selon certains anthropologues. La pratique du mariage levirat (semblable au yibbum judaque) etait en vigueur.",
+      "externalInfluences": "Pression de l'amharisation depuis des siecles : adoption de l'amharique, de la culture amhara et du christianisme orthodoxe ethiopien. Le missionnaire Samuel Gobat (XIXe siecle) les decrivait comme un petit peuple paien dans les montagnes pres de Gondar. L'anthropologue F. Gamst (1967) prevoyait une assimilation totale avec les Amhara en quelques decennies. Mouvements de revitalisation culturelle et linguistique depuis les annees 2000-2010. Conflits avec les Amhara depuis 2015.",
+      "majorHistoricalEvents": "Presence attestee pres de Gondar depuis au moins le XVIIIe siecle. Mort du dernier Womber de Karkar en 1955. Recensement de 1994 (172 327 Qemant). Suppression du groupe du recensement de 2007. Formation de milices armees qemant apres des violences interethniques (2015). Mouvements contemporains de revitalisation culturelle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le chef politique et religieux supreme est le Womber (terme amharique signifiant chaise ou siege), a la fois chef et grand pretre. Il existe historiquement deux wombers superieurs : le senior a Karkar et le junior a Chelga, plus des wombers subordonnes dans d'autres localites. Le womber senior de Karkar est decede en 1955. Chaque womber nomme un ou plusieurs afa liq (bouche du maitre) de la moitie Kibbir pour les affaires judiciaires (resolution des disputes, application des lois, amendes).",
+      "clanOrganization": "Division en deux moities patrilineaires exogames : Kibbir (rang superieur) et Yetanti (rang inferieur). La societe dans son ensemble est endogame. Le mariage levirat etait pratique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les wombers sont choisis dans certains lignages de la moitie Kibbir. Les lignages determinent l'acces aux fonctions sacerdotales (kamazana de la moitie Kibbir, abayegariya de la moitie Yetanti).",
+      "religiousAuthority": "Deux ordres de pretrise : les kamazana (ordre superieur, moitie Kibbir, tient le couteau lors des sacrifices) et les abayegariya (ordre inferieur, moitie Yetanti, tient les pattes de la victime). Chaque localite qemant a au moins un pretre de chaque ordre. Les pretres ont egalement une fonction judiciaire. Le Womber est le chef religieux supreme."
+    },
+    "languages": {
+      "mainLanguage": "Qimant (Kemantney)",
+      "isoCodes": ["ahg"],
+      "dialects": [
+        "Variete de Chilga Woreda",
+        "Variete de Lay Armachiho Woreda"
+      ],
+      "vehicularRole": "Le qimant (code ISO 639-3 : ahg) est une langue gravement menacee d'extinction. Sur 172 000 membres ethniques (recensement 1994), seulement 1 625 personnes le parlent en langue maternelle et 3 450 comme seconde langue. Tous les locuteurs ont plus de 30 ans, plus de 75% ont plus de 50 ans. La langue n'est plus transmise aux enfants et est reduite a un code secret. La majorite des Qemant parlent l'amharique comme langue principale."
+    },
+    "culture": {
+      "majorRites": "Pratiques religieuses hebraiques anciennes : lecture litterale du chapitre 11 du Levitique (regles kashrout), sacrifices d'animaux, entretien des bosquets sacres (degegna). Culte en plein air pres d'un arbre sacre (qole ou k'ole), enveloppe de bandelettes de tissu de differentes couleurs. Repas sacres servis par deux intendants (un de chaque moitie). Shabbat observe le samedi (interdiction d'allumer le feu). Ceremonies de sacrifice ou le kamazana brandit le couteau et l'abayegariya tient les pattes de la victime.",
+      "symbols": "L'arbre sacre qole est le symbole du lieu de culte. Le womber (la chaise du chef religieux) symbolise l'autorite supreme. Les bosquets sacres degegna sont des symboles de la connexion entre le peuple et le divin.",
+      "artsAndMusic": "Agriculture de subsistance comme activite principale. Artisanat rural traditionnel. Les Qemant etaient decrits au XIXe siecle comme un peuple industrieux et energique avec de bons paturages et des terres fertiles. Traditions orales transmettant la genealogie et les pratiques religieuses.",
+      "spiritualities": "La religion qemant traditionnelle est souvent decrite comme hebraique : forme ancienne non affectee par les changements hebraiques des deux derniers millenaires (selon l'anthropologue Frederic C. Gamst). Dieu est appele Yidara ou Mïzgänä (omnipresent, omnipotent, omniscient, anthropomorphique). Dieu est accessible directement ou par des figures appelees k'edus (saints), qui sont des anges ou des heros culturels. Environ 1% des Qemant pratiquent encore la religion traditionnelle, 99% se sont convertis au christianisme orthodoxe ethiopien. La religion traditionnelle est dans une situation tres precaire selon les enquetes sociolinguistiques recentes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Gouvernance traditionnelle par le systeme des wombers (chef politico-religieux) et des moities Kibbir/Yetanti. Pas de royaume centralise documente, mais une organisation chiefly avec des fonctions judiciaires et religieuses etablies.",
+      "relationsWithNeighbors": "Relations tendues avec les voisins amhara et chretiens, qui consideraient les Qemant comme des boudas (sorciers), aux cotes des Falasha (Beta Israel), des musulmans et de certains chretiens. Les Qemant et les Beta Israel sont historiquement apparentes mais distincts. Pression croissante de l'amharisation depuis des siecles.",
+      "conflictsOrAlliances": "Apres 2015, formation de milices armees qemant en reponse aux violences perpetrees par des Amhara. Conflits interethniques dans le Semien Gondar Zone lies aux revendications d'autonomie qemant.",
+      "diaspora": "Migration vers les villes ethiopiennes (Gondar, Addis-Abeba) pour l'emploi dans la fonction publique. La plupart des Qemant en milieu urbain s'identifient comme Amhara."
+    },
+    "demography": {
+      "totalPopulation": 172000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien 1994 (172 327 Qemant). Non comptabilises separement dans le recensement de 2007. Selon les militants qemant, la population serait estimee a plus de 900 000 personnes (rangeant le groupe au 12e rang des groupes ethniques ethiopiens). Chiffres officiels indisponibles pour 2025.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 172000,
+          "note": "Principalement dans la zone Semien Gondar (Amhara Region) : Chilga Woreda, Lay Armachiho Woreda, environs de Gondar. Selon les militants, la population serait de 900 000+."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Qemant people. https://en.wikipedia.org/wiki/Qemant_people",
+      "Wikipedia EN — Qimant language. https://en.wikipedia.org/wiki/Qimant_language",
+      "SIL Ethnologue / Glottolog — Qimant (ahg). https://glottolog.org/resource/languoid/id/qima1242",
+      "Joshua Project — Kemant in Ethiopia. https://joshuaproject.net/people_groups/12615",
+      "Frederick C. Gamst — The Qemant : A Pagan-Hebraic Peasantry of Ethiopia. Holt, Rinehart and Winston, 1969.",
+      "Ethiopia Insight — The Ethiopian Qemant of the Agaw in perspective, 2019. https://www.ethiopia-insight.com/2019/03/06/the-ethiopian-qemant-of-the-agaw-in-perspective/",
+      "101 Last Tribes — Qemant people. https://www.101lasttribes.com/tribes/qemant.html"
+    ]
   }
 }

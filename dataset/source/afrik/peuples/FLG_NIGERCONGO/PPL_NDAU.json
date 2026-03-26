@@ -2,67 +2,123 @@
   "id": "PPL_NDAU",
   "nameMain": "Ndau",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["MOZ", "ZWE"],
+  "currentCountries": ["MOZ", "ZWE", "MWI", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Ndau",
-      "selfAppellation": "Ndau",
-      "exonyms": ["Ndau (terme utilisé par les Européens)"],
+      "selfAppellation": "Ndau / VaNdau",
+      "exonyms": [
+        "ChiNdau",
+        "Chindau",
+        "Ndzawu",
+        "Njao",
+        "Sofala",
+        "Southeast Shona",
+        "Chidanda",
+        "Shangaan"
+      ],
+      "originOfExonyms": "Selon une étymologie, Ndau signifie terre dans leur langue, similairement au nom Manyika (Propriétaires de la Terre). Une autre étymologie suggère que le nom dérive des mots nguni Amading'indawo (ceux qui cherchent un lieu), utilisé par les Gaza Nguni pour décrire les Ndau déplacés lors des conquêtes des années 1820. Le terme Shangaan est parfois utilisé pour décrire les groupes Ndau-Nguni issus de la fusion avec les envahisseurs nguni de Soshangane.",
+      "whyProblematic": "Le statut des Ndau est débattu : ils sont parfois classés comme dialecte du shona (Southeast Shona), parfois comme langue et groupe ethnique distincts. Depuis 2013, le ChiNdau est reconnu comme langue officielle distincte par la Constitution du Zimbabwe (article 6). La forte influence nguni sur la langue et la culture ndau complique l'identification ethnique claire.",
+      "contemporaryUsage": "Le terme Ndau est universellement reconnu au Zimbabwe et au Mozambique. VaNdau est la forme au pluriel en ndau. ChiNdau désigne la langue. Depuis la reconnaissance constitutionnelle de 2013, une renaissance de l'identité ndau est en cours au Zimbabwe.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "MOZ, ZWE",
-      "currentCountries": ["MOZ", "ZWE"]
+      "ethnoLinguisticGroup": "Bantou (zone S, Shona orientaux)",
+      "historicalRegion": "Zimbabwe du Sud-Est (districts de Chipinge et Chimanimani) ; Mozambique central (province de Sofala, districts de Machanga, Chibabava, Machaze/Danda, Buzi, Nhamatanda, Dondo) ; Vallée du Zambèze",
+      "currentCountries": ["MOZ", "ZWE", "MWI", "ZAF"]
     },
     "ethnicities": [
-      "Ndau du Mozambique",
-      "Ndau du Zimbabwe",
-      "Sous-groupes régionaux"
+      "Magova — l'un des cinq sous-groupes historiques principaux des Ndau",
+      "Mashanga — sous-groupe ndau, zone de la province de Sofala",
+      "Vatomboti — sous-groupe ndau des hautes terres",
+      "Madanda — sous-groupe ndau, liés aux clans de Chipinge (Zimbabwe)",
+      "Teve — sous-groupe ndau, zone côtière du Mozambique",
+      "Ndau-Shangaan — groupes issus de la fusion avec les envahisseurs nguni de Soshangane (années 1820-1840)"
     ],
     "origins": {
-      "ancientOrigins": "Les Ndau sont originaires de la région du Mozambique et du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Ndau sont historiquement apparentés aux Karanga et Manyika (groupes Shona) et représentent l'une des populations bantoues les plus anciennement établies dans le sud-est du Zimbabwe et le Mozambique central. Leur présence dans la région est attestée par le missionnaire portugais João dos Santos depuis les années 1500. Ils participaient aux réseaux commerciaux centrés sur le site de Mapungubwe (littéralement lieu des chacals), commerçant avec les Khoisan et les marchands arabes ; leurs marchandises incluaient des herbes traditionnelles, articles rituels, peaux, os, et textiles distinctive (Mpalu, Njeti, Vukotlo — étoffes rouges, blanches et bleues) ainsi que des perles d'or.",
+      "formationPeriod": "L'identité ndau distinctive s'est formée au cours du premier millénaire apr. J.-C. au sein du mouvement bantou Shona dans le sud-est de l'Afrique. Dans les années 1820, lors d'une période de sécheresse intense, les armées nguni (Zulu, Swazi, Ndwandwe, Khumalo et autres) envahirent le territoire ndau depuis l'Afrique du Sud actuelle. Le chef nguni Soshangane établit l'Empire Gaza au sud du Mozambique et soumit de nombreux Ndau, intégrant des lignées nguni à travers les mariages forcés et les captures. Cette fusion créa l'identité Shangaan-Ndau.",
+      "migrationRoutes": [
+        "Migration bantoue depuis le nord (bassin du Congo) vers le Zimbabwe et le Mozambique actuels, plusieurs siècles avant l'ère chrétienne",
+        "Participation aux réseaux commerciaux de Mapungubwe (10e-13e siècles) reliant l'intérieur et la côte de l'océan Indien",
+        "Migrations forcées liées aux conquêtes nguni des années 1820 (mfecane/difaqane), certains Ndau se réfugiant chez les Chopi qui disposaient de fusils portugais",
+        "Migration de certains clans Ndau-Shangaan depuis la vallée du Zambèze le long du Limpopo vers l'Afrique du Sud (clans Sithole et autres)"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Chipinge et Chimanimani (Zimbabwe du Sud-Est)",
+        "Province de Sofala (Mozambique) : Machanga, Chibabava, Machaze (Danda), Buzi, Nhamatanda, Dondo, Beira (Bangwe)",
+        "Province d'Inhambane (Mozambique) : Mambone, Mossurize",
+        "Vallée du Zambèze (Zimbabwe et Mozambique)",
+        "Malawi central (présence documentée)",
+        "Bikita (Zimbabwe, présence minoritaire)"
+      ],
+      "unificationsOrDivisions": "Les Ndau se reconnaissent comme un seul peuple à travers l'ancêtre commun Musikavanthu/Mlambo, créateur de l'univers connu comme Mwari Musikavanthu chez les Shona. Les cinq sous-groupes (Magova, Mashanga, Vatomboti, Madanda, Teve) maintiennent des identités distinctes tout en partageant cette identité collective. La conquête nguni des années 1820 créa une division entre les Ndau purs et les Ndau-Shangaan. Depuis 1931, les jeunes locuteurs ndau du Zimbabwe avaient tendance à adopter l'identité shona ; la reconnaissance constitutionnelle de 2013 a renforcé la renaissance ndau.",
+      "externalInfluences": "Commerce avec les marchands arabes de la côte swahili (10e-15e siècles). Contacts avec les Portugais via leur base de Sofala (attestés dès 1500 par João dos Santos). Conquête de l'Empire Gaza par Soshangane (Nguni) dans les années 1820 : les hommes ndau furent tués, leurs femmes capturées, créant une forte imprégnation nguni dans la langue et la culture ndau. Colonisation portugaise du Mozambique. Activité missionnaire catholique : conversion au catholicisme. En 2013, la Constitution du Zimbabwe reconnut le ChiNdau comme l'une des seize langues officielles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies (chieftaincies) territoriales indépendantes, chaque clan ou sous-groupe reconnaissant un chef héréditaire. Avant la conquête nguni, les Ndau avaient des structures de chefferie bien établies, dont certaines subsistèrent sous l'Empire Gaza comme vassales. Les chefferies ndau de Chipinge (Zimbabwe) sont toujours actives. Les n'anga (tradipraticiens-devins) jouent un rôle important dans la prise de décision communautaire.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les totems (mitupo) protègent les groupes claniques et créent un lien spirituel entre les membres du clan, interdisant aux membres du même totem de se marier entre eux. Les clans ndau au Zimbabwe s'identifient par des noms de famille distinctifs : Sibanda, Moyo, Nyandoro, Magoro-Nkosho, Dube, Semwayo, Moyana. Ces noms reflètent souvent l'influence nguni sur la nomenclature clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (dzinza) déterminent l'appartenance clanique, les droits successoraux et les obligations rituelles. Les esprits ancestraux (vadzimu) — esprits familiaux bienveillants — peuvent entrer dans le corps d'un membre de la même famille et communiquer avec les vivants. Une personne possédée par un vadzimu devient généralement un n'anga dévoué à l'aide et à la protection de cette famille. Les totems claniques servent à protéger les groupes et à maintenir une connexion spirituelle entre membres.",
+      "religiousAuthority": "Les n'anga (tradipraticiens) sont les autorités religieuses traditionnelles centrales : ils guérissent ou nuisent par la médecine traditionnelle (mushonga), communiquent avec les esprits par divination, manipulent la météo en faisant appel aux esprits de la pluie (zvipunha). Le n'anga peut être homme ou femme, plus souvent femme. Les plus puissants sont possédés par des esprits ancestraux (vadzimu), les moins puissants par des mashavi (esprits d'étrangers morts loin de chez eux). Le dieu suprême ndau est Murungo ; il n'existe pas de concept du diable dans la cosmologie traditionnelle ndau. Suite à l'activité missionnaire, beaucoup de Ndau sont chrétiens, principalement catholiques."
     },
     "languages": {
-      "mainLanguage": "Ndau",
-      "vehicularRole": "Le ndau est parlé par la majorité des Ndau. Le portugais, l'anglais et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "ChiNdau (Ndau)",
+      "isoCodes": ["ndc"],
+      "dialects": [
+        "ChiNdau de Sofala (Mozambique) — parlé dans les districts de Machanga, Chibabava, Machaze, Buzi, Nhamatanda, Dondo et Beira",
+        "ChiNdau de Chipinge (Zimbabwe) — parlé dans les districts de Chipinge et Chimanimani",
+        "ChiNdau de Mossurize — variété de la zone frontalière Mozambique-Zimbabwe",
+        "Ndau de la vallée du Zambèze — variété influencée par les contacts avec les Tonga et autres groupes"
+      ],
+      "vehicularRole": "Le ChiNdau est une langue bantoue (zone S) parlée par environ 2,4 millions de personnes principalement au Mozambique central et au Zimbabwe du Sud-Est selon Omniglot (2025). Mutuellement intelligible avec le shona. Depuis 2013, le ChiNdau est reconnu comme l'une des seize langues officielles du Zimbabwe (Constitution, article 6). Le ndau est utilisé dans les services religieux à Beira (Mozambique). Au Zimbabwe, l'anglais est la principale langue d'administration ; au Mozambique, le portugais. Des locuteurs ndau existent également en Afrique du Sud."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels ndau, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La danse muchongoyo est pratiquée par les hommes de la région des hautes terres qui reviennent de Johannesburg : les communautés y participent en cérémonie d'accueil. La danse chinyambera est pratiquée par les femmes possédées par des esprits dans la région ndau élargie. La cérémonie ukufemba permet à un esprit de s'introduire et de se présenter, expliquant comment il s'est retrouvé dans la famille, comme manière pour l'esprit de chercher justice. Les rites funèbres incluent des offrandes (bière, nourriture, vêtements) aux esprits ancestraux. Rites agricoles avec appel aux zvipunha (esprits de la pluie) pour les saisons de culture.",
+      "symbols": "Les totems claniques (mitupo) sont des symboles identitaires fondamentaux, protégeant les clans et leur assurant une connexion spirituelle. Les textiles traditionnels mpalu, njeti et vukotlo (étoffes distinctives rouges, blanches et bleues) étaient des symboles d'identité et des biens d'échange. Les n'anga portent des tenues distinctives lors des cérémonies de divination et d'exorcisme. Le site de Mapungubwe, associé aux ancêtres ndau, est un patrimoine historique symbolique.",
+      "artsAndMusic": "Danse muchongoyo (danse de retour des mineurs de Johannesburg) et chinyambera (danse de possession féminine). Les Ndau ont participé aux réseaux d'échanges textiles historiques (mpalu, njeti, vukotlo). Artisanat : poterie, vannerie, travail du métal. Tradition de chants de louange (praise songs) dédiés aux guerriers décédés (esprits mhongos). Médecine traditionnelle : vaste connaissance des plantes médicinales (mushonga) ; les n'anga ndau sont reconnus dans toute la région pour leur expertise en herboristerie. Récits oraux et mythes fondateurs sur Musikavanthu.",
+      "spiritualities": "Cosmologie ndau centrée sur Murungo (Dieu suprême créateur). Les esprits ancestraux bienveillants (vadzimu) protègent, aident et guérissent ; ils peuvent posséder un membre de la famille pour communiquer. Les mashavi sont les esprits d'étrangers morts loin de chez eux ou de jeunes non mariés sans funérailles correctes, qui possèdent des personnes sans lien de parenté. Les nzuzu sont des esprits des eaux (sirènes) habitant ruisseaux et lacs. Les ngozi sont des esprits vengeurs de victimes de meurtres ou d'injustices. Les n'anga pratiquent la divination par possession (madzvoka) pour localiser personnes, objets perdus ou identifier des coupables. Les Ndau sont réputés pour leur maîtrise de la sorcellerie et de la médecine spirituelle, qui leur confère une réputation particulière au Zimbabwe et au Mozambique. Suite à l'évangélisation catholique, beaucoup se déclarent chrétiens tout en maintenant des pratiques traditionnelles."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora ndau dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Ndau avaient des chefferies organisées avant la conquête nguni. L'Empire Gaza de Soshangane (Nguni), établi dans les années 1840, soumit les chefferies ndau du Mozambique, les intégrant dans un ensemble Shangaan plus large. La résistance à l'Empire Gaza fut limitée : selon Earthy, certains Ndau se réfugièrent chez les Chopi armés de fusils portugais. Les chefferies ndau de Chipinge (Zimbabwe) maintinrent davantage leur cohérence. La chefferie de Musiwa à Chipinge est toujours active.",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Manyika et Karanga (groupes Shona voisins), avec lesquels ils partagent des origines bantoues communes. Commerce avec les marchands arabes de la côte swahili et les Portugais de Sofala depuis le 15e-16e siècle. Influence mutuelle avec les Chopi, qui résistèrent à l'Empire Gaza grâce à des armes à feu portugaises. Absorption partielle dans l'identité Shangaan sous l'Empire Gaza. Relations avec le RENAMO au Mozambique : le mouvement puise dans les communautés ndau de la province de Sofala.",
+      "conflictsOrAlliances": "Conquête et absorption par l'Empire Gaza de Soshangane (années 1820-1840) : les Ndau perdirent de nombreux hommes, leurs femmes furent capturées, créant une intégration forcée dans l'identité nguni-shangaan. Les warlords de la vallée du Zambèze (dont Manuel António de Sousa, dit Gouveia) dominèrent la région au 19e siècle, réduisant les anciennes chefferies. La colonisation portugaise intégra le Mozambique central. La guerre civile mozambicaine (1977-1992) affecta particulièrement la province de Sofala, zone d'implantation historique ndau. Le RENAMO puise ses soutiens dans les communautés ndau de Sofala.",
+      "diaspora": "Migrants de travail ndau vers les mines d'Afrique du Sud, particulièrement Johannesburg (depuis le début du 20e siècle), à l'origine de la danse muchongoyo. Communautés ndau-shangaan en Afrique du Sud (clans Sithole et autres de la vallée du Zambèze). Présence au Malawi central. Migrations vers les villes mozambicaines (Beira, Maputo) et zimbabwéennes (Harare, Mutare) pour l'éducation et le travail."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 2500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations 2025 basées sur : Omniglot — ChiNdau : 2,4 millions de locuteurs (2025) ; Wikipedia Ndau people : 581 000 locuteurs en 1997 au Mozambique seul (projection 2025) ; Joshua Project — Ndau au Mozambique et Zimbabwe ; projection de croissance démographique combinée du Mozambique (2,9%/an) et du Zimbabwe (1,5%/an)",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1800000,
+          "note": "Province de Sofala (principale zone ndau) : districts de Machanga, Chibabava, Machaze, Buzi, Nhamatanda, Dondo, Beira ; province d'Inhambane : Mambone, Mossurize"
+        },
+        {
+          "country": "ZWE",
+          "population": 600000,
+          "note": "Districts de Chipinge et Chimanimani du Zimbabwe du Sud-Est ; présence dans le district de Bikita et la vallée du Zambèze"
+        },
+        {
+          "country": "ZAF",
+          "population": 70000,
+          "note": "Clans Ndau-Shangaan dans les zones minières et urbaines d'Afrique du Sud (Johannesburg et environs)"
+        },
+        {
+          "country": "MWI",
+          "population": 30000,
+          "note": "Malawi central, présence minoritaire documentée"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Ndau language (ndc)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Ndau people. https://en.wikipedia.org/wiki/Ndau_people",
+      "Wikipedia EN — Ndau witchcraft and sorcery. https://en.wikipedia.org/wiki/Ndau_witchcraft_and_sorcery",
+      "Omniglot — Ndau language and alphabet. https://www.omniglot.com/writing/ndau.htm",
+      "Glottolog — Ndau (ndau1241). https://glottolog.org/resource/languoid/id/ndau1241",
+      "Joshua Project — Ndau, Shona in Mozambique. https://joshuaproject.net/people_groups/13273/MZ",
+      "Joshua Project — Ndau in Zimbabwe. https://joshuaproject.net/people_groups/13273/ZI",
+      "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007.",
+      "Earthy, E.D. Valenge Women. International African Institute, 1933."
     ]
   }
 }

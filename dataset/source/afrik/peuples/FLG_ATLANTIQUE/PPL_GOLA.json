@@ -1,23 +1,91 @@
 {
   "id": "PPL_GOLA",
-  "nameMain": "",
+  "nameMain": "Gola (Gula / Koya)",
   "languageFamilyId": "FLG_ATLANTIQUE",
   "currentCountries": ["LBR", "SLE"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Gola (Gula / Koya)",
       "selfAppellation": "Gola",
+      "exonyms": ["Gula", "Koya"],
+      "originOfExonyms": "Gola est a la fois l'auto-appellation et l'exonyme courant. Gula est une variante orthographique. Koya est un nom regional parfois utilise en Sierra Leone. Le terme Gola est egalement une source probable du nom Gullah, peuple afro-americain des cotes de Georgie et de Caroline du Sud (Etats-Unis).",
+      "whyProblematic": "Aucun exonyme specifiquement problematique. Le lien etymologique avec le nom Gullah reste debattu dans la litterature academique.",
+      "contemporaryUsage": "Gola est l'appellation standard dans les deux pays de residence (Liberia, Sierra Leone) et dans la litterature ethnographique et linguistique.",
       "linguisticFamily": "FLG_ATLANTIQUE",
-      "historicalRegion": "Liberia et Sierra Leone (zones forestières)",
+      "ethnoLinguisticGroup": "Groupe Mel (Niger-Congo), isolat linguistique classifie proche du Bullom et du Kissi",
+      "historicalRegion": "Forets pluviales de l'ouest du Liberia et de l'est de la Sierra Leone",
       "currentCountries": ["LBR", "SLE"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (gol)", "Sierra Leone & Liberia Cultural Studies"]
+    "ethnicities": [
+      "Gola de Grand Cape Mount — groupe cotier principal au nord-ouest du Liberia",
+      "Gola de Lofa — groupe de la zone forestiere frontiere Liberia/Sierra Leone",
+      "Gola de Bomi — groupe installe dans les zones forestieres de Bomi County",
+      "Gola de Gbarpolu — groupe du comte interieur du Liberia",
+      "Gola de Sierra Leone — communaute de Kenema et Pujehun (est de la Sierra Leone)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gola comptent parmi les plus anciens habitants de la region liberienne. Des etudes sur l'histoire de la colonisation du Liberia signalent leur presence (avec les Kpelle, Loma, Gbandi, Mende et Mano) dans la region depuis environ 6000 av. J.-C. Selon la tradition orale (Kabande), les Gola etaient gouvernes par une matriarchie a l'origine, les femmes tenant les pouvoirs politiques et spirituels suprêmes via la societe Sande.",
+      "formationPeriod": "Les migrations Gola et Kissi vers l'ouest du Liberia actuel ont commence vers le XIVe siecle depuis la Cote d'Ivoire et les regions voisines. Ces migrations les ont conduits dans une zone de foret pluviale alors peu peuplee. Ils y ont developpe des techniques agricoles avancees et des structures sociales sophistiquees organisees autour des societes d'initiation Sande et Poro.",
+      "migrationRoutes": [
+        "Migration depuis la Cote d'Ivoire et regions orientales vers l'ouest et le nord-ouest du Liberia actuel — a partir du XIVe siecle",
+        "Etablissement progressif dans les counties de Grand Cape Mount, Lofa, Bomi, Gbarpolu et Montserrado (Liberia)",
+        "Extension vers l'est de la Sierra Leone (zones de Kenema et Pujehun)"
+      ],
+      "historicalSettlementZones": [
+        "Counties de Lofa, Grand Cape Mount, Bomi et Gbarpolu (Liberia occidental) — zone principale",
+        "County de Montserrado (Liberia) — zone perimontserradeenne",
+        "Provinces de Kenema et Pujehun (Sierra Leone orientale)"
+      ],
+      "unificationsOrDivisions": "Les Gola sont organises en clans de type territorial plutot que de type lignager. Leur unite est maintenue par les institutions Sande et Poro qui traversent les distinctions claniques. Le roi Zolu Duma (roi Peter) a uni les zones Gola et Vai au debut du XIXe siecle. L'establishment du Poro, selon la tradition orale, a permis aux Gola de se reorganiser militairement apres des periodes de conflits et de redevenir une force regionale importante.",
+      "externalInfluences": "Influence de l'islam adoptee a partir du XVIe siecle via les marchands mandinka. Contacts avec les colons americains de Liberia (negociations de 1821 avec le roi Zolu Duma). Influence des Vai et Mende dans la region, et diffusion des institutions Sande et Poro vers ces groupes voisins (Gola reconnus comme les createurs originels des deux institutions).",
+      "majorHistoricalEvents": "Migration vers le Liberia actuel (XIVe s.). Fondation et expansion des societes Sande (originelle) et Poro. Negociations de 1821 entre le roi Zolu Duma et les colons americains de Liberia. Integration dans l'Etat libérien (XIXe-XXe siecle). Periodes difficiles lors des guerres civiles liberiennes (1989-2003). Personnalites gola marquantes : Ellen Johnson Sirleaf (presidente du Liberia 2006-2018) et Charles Taylor (president 1997-2003, d'ascendance mixte Gola/Americo-Liberien)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies (chiefdoms) composees de villages. Le chef (zoe ou chef de village) exerce une autorite politique et rituelle. Les clans Gola sont des unites territoriales plutot que des groupes de parente stricte. La gouvernance traditionnelle est partagee entre les chefs de village et les dirigeants des societes Sande et Poro qui exercent une autorite alterne (Sande pendant 2-3 ans, puis Poro pendant 4 ans). Les Sande et Poro siègent au National Council of Chiefs and Elders (NCCE) du Liberia.",
+      "clanOrganization": "Clans territoriaux plutot que lignagers. Les familles travaillent collectivement pour les recoltes. Noms masculins caracteristiques : Siaffa, Seh, Tarweh, Momolu, Varney, Jallah, Kanneh. Noms feminins : Ciatta, Miata, Satta, Gbelly, Jandi, Kemah, Jenneh. Noms des jumeaux : Konah, Sando, Zinnah.",
+      "ageClassSystems": "Les societes d'initiation Sande (femmes) et Poro (hommes) constituent les principales institutions d'encadrement des classes d'age. La Sande initie les filles a l'age adulte sur une periode de 2 a 3 ans (avant l'occidentalisation). Le Poro initie les garcons pendant plusieurs semaines en foret, incluant des enseignements sur les traditions, responsabilites sociales et le leadership.",
+      "roleOfLineages": "Les familles etendues jouent un role central dans l'agriculture cooperative. Les noms des ancetres sont recycles de generation en generation (croyance en la reincarnation au sein de la famille paternelle ou maternelle). Les ancêtres decedes sont consideres comme actifs dans la vie des vivants et doivent etre honores et nourris.",
+      "religiousAuthority": "Double autorite : la Mazo (grande pretresse de la Sande, 'la dame en blanc') pour les femmes; les chefs Poro (Dadewe) pour les hommes. Dans la tradition Gola, la societe Sande est primordiale et precedait le Poro. Les Zogbenya (esprits gardiens aquatiques de la Sande) sont des entites spirituelles centrales. Les marabouts islamiques exercent egalement une autorite religieuse dans les communautes musulmanes."
+    },
+    "languages": {
+      "mainLanguage": "Gola (gol)",
+      "isoCodes": ["gol"],
+      "dialects": [
+        "Deng (Todii) — dialecte septentrional",
+        "Kongba — dialecte central",
+        "Senje — dialecte meridional"
+      ],
+      "vehicularRole": "Le Gola est la langue exclusive de communication au sein de la communaute. Il est parle comme premiere langue par l'ensemble de l'ethnie. Il n'est pas enseigne dans les ecoles officielles. L'anglais est la langue officielle du Liberia et de la Sierra Leone, utilisee pour l'education formelle et l'administration. Le Gola est classe comme isolat du Niger-Congo, proche du Bullom et du Kissi selon la classification Fields (2004)."
+    },
+    "culture": {
+      "majorRites": "La Sande et le Poro sont les institutions rituelles majeures. La Sande (societe d'initiation feminine) initie les filles a l'âge adulte en foret; les ceremonies incluent des masques representant les Zogbenya (esprits aquatiques), l'enseignement des roles feminins, de la morale et de la gestion communautaire. Selon la tradition orale Kabande, la Sande est anterieure au Poro. Le Poro (societe d'initiation masculine) initie les garcons en foret; inclut l'instruction des traditions, responsabilites sociales et leadership (symbolise par Dadewe, l'esprit de la foret). Rites agricoles : offrandes des premices avant chaque recolte, ceremonies annuelles de l'igname et de l'arachide. En periode de secheresse, un ancien prie Da (dieu de la pluie) en tenant le crane d'un ancetre puis sacrifie un animal.",
+      "symbols": "Les masques Zogbe (Sande) sont les symboles identitaires majeurs : casques de bois sculptes representant les esprits aquatiques gardiens, portes par les initiees Sande lors des sorties publiques. La Mazo (grande pretresse) vetue de blanc symbolise la purete et l'autorite spirituelle feminine. Le riz (culture principale) est un symbole central de la vie communautaire et de la prosperite. Les cranes d'ancetres sont des objets rituels importants utilises lors de ceremonies de pluie.",
+      "artsAndMusic": "Sculptures sur bois : casques Zogbe de la Sande, masques Poro. Poterie et vannerie. Instruments de musique utilises dans les ceremonies Sande et Poro (tambours, hochets). Chants : les femmes Vai chantent les chants Sande en langue gola, mende ou dei, attestant du rayonnement culturel des Gola. Musique du guitariste Morris Dorley (ne en 1942) comme heritage artistique contemporain. Architecture : cases rondes a murs de terre (banco) et toits de chaume.",
+      "spiritualities": "Religion traditionnelle centrée sur Daya/Da (Dieu createur et dieu de la pluie), les esprits ancestraux et les Zogbenya (esprits gardiens aquatiques). Croyance en la reincarnation au sein de la famille (les noms des ancetres sont recycles). Les ancetres decedes sont actifs et doivent etre alimentes et honores sous peine de devenir des esprits malveillants. Islam majoritaire (adopte depuis le XVIe siecle via les marchands mandinka) avec maintien de pratiques animistes. Plus d'un cinquieme des Gola pratiquent encore les religions traditionnelles de maniere exclusive."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation historique en chefferies villageoises (village-chiefdom). Le roi Zolu Duma (roi Peter) a dirige les zones Gola et Vai au debut du XIXe siecle et a participe aux negociations avec les colons americains du Liberia en 1821. Les Gola sont reconnus comme l'un des peoples les plus anciens du Liberia, presents depuis environ 6000 av. J.-C.",
+      "relationsWithNeighbors": "Relations etroites avec les Vai (partage de territoires, de chants Sande, de noms), les Kissi (migrations conjointes, langues proches), les Mende et les Kpelle. Les Gola sont reconnus par les Vai et les Dei comme les inventeurs originels des societes Sande et Poro, institutions ensuite adoptees par de nombreux groupes voisins (Mende, Vai, Dei, Bassa, Kpelle, Kissi et autres). Influence mandinka apportant l'islam a partir du XVIe siecle.",
+      "conflictsOrAlliances": "Conflits anciens qui ont conduit, selon la tradition orale, a la creation du Poro pour permettre aux Gola de resister militairement. Negociations avec les colons americano-liberiens (1821). Periode de domination des colons americano-liberiens sur les communautes autochtones du Liberia (XIXe-XXe siecle). Impact des guerres civiles liberiennes (1989-1996, 1999-2003). Presence de Gola dans les hautes spheres politiques liberiennes contemporaines.",
+      "diaspora": "Presence principalement rurale au Liberia et en Sierra Leone, avec migration croissante vers les centres urbains (Monrovia). L'amelioration des routes depuis les annees 1950-1960 a facilite cette mobilite. Personnalites gola notables ayant influence la politique liberienne : Ellen Johnson Sirleaf (presidente 2006-2018, prix Nobel de la paix 2011), Charles Taylor (president 1997-2003, d'ascendance mixte gola/americo-liberien)."
+    },
+    "demography": {
+      "totalPopulation": 310000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (2015 : 278 000 locuteurs du gola); Joshua Project (Gola in Sierra Leone : 213 000 total toutes regions, dont 17 000 en Sierra Leone); Liberia Census (Gola representent 4,4% de la population liberienne estimee a 5,4 millions en 2025, soit environ 240 000 au Liberia). Estimation globale 2025 : environ 310 000 personnes.",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 293000 },
+        { "country": "SLE", "population": 17000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gola people. https://en.wikipedia.org/wiki/Gola_people",
+      "Wikipedia EN — Gola language. https://en.wikipedia.org/wiki/Gola_language",
+      "Wikipedia EN — Sande society. https://en.wikipedia.org/wiki/Sande_society",
+      "Joshua Project — Gola in Sierra Leone. https://joshuaproject.net/people_groups/11920/SL",
+      "101 Last Tribes — Gola people. https://www.101lasttribes.com/tribes/gola.html",
+      "SIL Ethnologue — Gola language (gol). https://www.ethnologue.com/language/gol/",
+      "The Advocates for Human Rights — Background on Liberia and the Conflict. https://www.theadvocatesforhumanrights.org/Res/chapter_4-background_on_liberia_and_the_conflict.pdf"
+    ]
   }
 }

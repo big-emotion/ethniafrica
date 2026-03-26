@@ -1,27 +1,102 @@
 {
   "id": "PPL_ARGOBBA",
-  "nameMain": "",
+  "nameMain": "Argobba",
   "languageFamilyId": "FLG_SEMITIQUE",
   "currentCountries": ["ETH"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Argobba",
       "selfAppellation": "Argobba",
+      "exonyms": [
+        "Ankober (terme historique)",
+        "Adiya (sous-groupe dans la region de Harar)",
+        "Ala (sous-groupe mixte oromo)"
+      ],
+      "originOfExonyms": "Le terme Argobba serait derive de l'expression arabe Arab geba (les Arabes sont entres), selon la tradition orale locale, faisant reference aux premiers marchands et missionnaires musulmans venus d'Arabie. D'autres etymologies proposent har geba (soie vue sur une montagne). Le sous-groupe de Harar se nomme Adiya.",
+      "whyProblematic": "Le terme Argobba designe a la fois le peuple et la region historique de Yifat (Shewa). Dans la tradition chretienne ethiopienne, Argobba et musulman sont parfois employes comme synonymes dans la region de Yifat, ce qui cree une ambiguite entre identite ethnique et identite religieuse.",
+      "contemporaryUsage": "Le terme Argobba est utilise en amharique, en oromo et dans la litterature academique. Les linguistes distinguent l'Argobba du Nord (Shewa et Wollo) et l'Argobba du Sud (region de Harar). La langue argobba est en declin grave et les communautes sont progressivement assimilees aux groupes voisins (Amhara, Oromo, Afar).",
       "linguisticFamily": "FLG_SEMITIQUE",
-      "historicalRegion": "Shewa, Afar, Amhara (vallées semi-arides)",
+      "ethnoLinguisticGroup": "Semitique ethiopien meridional (Ethio-semitique du Sud)",
+      "historicalRegion": "Yifat (Shewa septentrional), Wollo meridional, region de Harar — escarpements semi-arides de la vallee du Rift",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Argobba du Shewa", "Argobba du Harar"],
-    "origins": null,
-    "organization": null,
-    "languages": {},
-    "culture": {
-      "source_0": "Islam sunnite majoritaire.",
-      "source_1": "Architecture vernaculaire en pierre.",
-      "source_2": "Traditions marchandes anciennes."
+    "ethnicities": [
+      "Argobba du Nord (Shewa et Wollo) — comprenant les clans Doba et Shagura, fondateurs de la dynastie Walasma",
+      "Argobba Serte — consideres comme les Argobba purs dans le Wollo meridional",
+      "Argobba Wata — Argobba nomades, melanges avec les Oromo et Afar dans le Wollo",
+      "Adiya — Argobba de Harar (Fedis et Bisidemo), melanges avec les Oromo Arsi",
+      "Ala — sous-groupe de la region de Harar, fortement assimile par les Oromo",
+      "Argobba de Shonke et Tollaḥa — derniers villages ou l'argobba est encore parle comme langue quotidienne"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Argobba sont l'un des peuples semitiques ethiopiens issus de la migration nord-sud depuis le royaume d'Aksum a partir du 6e siecle apr. J.-C. Leurs ancetres les plus anciens seraient un peuple nomade nomme Gebal ou Galab, etabli dans l'est du Shewa sous domination aksumite, qui aurait accepte l'islam au 10e siecle. Certains historiens les relient aux premiers refugies musulmans de La Mecque (615 apr. J.-C.) accueillis par le roi aksumite, mais cette filiation est debattue. Le terme Argobba est associe a la formation du sultanat de Yifat en 1285 sous la dynastie Walasma.",
+      "formationPeriod": "L'identite argobba s'est cristallisee entre le 10e et le 13e siecle, lorsque des marchands et missionnaires musulmans se sont melanges aux populations locales du Shewa pour constituer une force politique islamisee. La fondation du sultanat de Shewa (vers 896) et du sultanat de Yifat (1285) par la dynastieMakhzumi puis Walasma marque la periode de consolidation. Les Argobba ont ete acteurs de l'expansion islamique en Ethiopie centrale et orientale.",
+      "migrationRoutes": [
+        "Migration depuis le nord via le port de Dahlak (Massaoua) puis Tigray vers le Shewa central, selon une tradition",
+        "Migration depuis l'est via le port de Zeila, traversant les plaines Afar jusqu'aux hautes terres du Shewa, selon une autre tradition",
+        "Dispersion vers le Wollo meridional (Sertu, Watta) depuis le Shewa au fil des siecles",
+        "Fuite vers la region de Harar au 15e siecle lors du conflit avec le royaume d'Abyssinie"
+      ],
+      "historicalSettlementZones": [
+        "Yifat (Shewa nord-est) — berceau historique du peuple argobba et siege du sultanat",
+        "Shewa septentrional — villages de Guze, Tollaḥa, Shenke, Berehet, Minjar, Kessem",
+        "Wollo meridional — regions Argobba Serte et Argobba Wata (Sertu, Wata)",
+        "Region de Harar — sous-groupes Adiya et Ala autour de Fedis et Bisidemo",
+        "Vallee du Rift — Yimlawo, Gusa, Berehet, Khayr Amba, Melka Jilo, Aliyu Amba, Metehara, Shewa Robit"
+      ],
+      "unificationsOrDivisions": "Les Argobba sont unis par leur identite islamique et leur langue mais divises geographiquement et dialectalement en groupes du Nord et du Sud. La fragmentation s'est accentuee apres la chute du sultanat d'Ifat (1415) et les persecutions abyssiniennes. De nombreux Argobba ont ete assimiles par les groupes voisins : langue amharique dans le Wollo, oromo dans le Shewa meridional et le Hararghe, afar dans la vallee du Rift.",
+      "externalInfluences": "Islam apporte par des marchands arabes via Zeila (10e siecle). Sultanat de Yifat puis d'Ifat (13e-15e siecles) : expansion politique argobba. Conquete d'Amde Seyon (14e siecle) et persecutions chretiennes : dispersion. Invasions oromo (16e siecle) : encerclement et marginalisation. Persecutions abyssiniennes du 19e siecle forcant l'exil vers l'emirat de Harar. Domination amhara et affaiblissement linguistique et culturel depuis le 19e siecle.",
+      "majorHistoricalEvents": "Le sultanat de Shewa (896-1285), premiere entite islamique de la region, est attribue en partie aux ancetres argobba. La fondation du sultanat de Yifat en 1285 sous la dynastie Walasma marque l'apogee politique argobba. Amde Seyon I (1314-1344) vainc Ifat et amorce le declin politique. Le sultanat d'Ifat est detruit en 1415 par Yeshaq I, dispersant les Argobba. Selon la tradition hararie, une porte de la ville de Harar (bab al-argobba) fut nommee d'apres les refugies argobba du 15e siecle. Au 19e siecle, des persecutions religieuses abyssiniennes obligent de nouveaux Argobba a quitter le Yifat pour l'emirat de Harar."
     },
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethiopian CSA", "Ethnologue (agj)"]
+    "organization": {
+      "traditionalPoliticalSystem": "Les Argobba sont gouvernes par la loi islamique (sharia) interpretee et adaptee aux coutumes locales. La communaute est administree par un qadi (juge islamique) et des anciens (elders) qui regulent les affaires civiles, les litiges fonciers, les mariages et les successions. L'organisation villageoise est traditionnellement centree sur la mosquee, la place publique et l'ecole coranique.",
+      "clanOrganization": "Les Argobba sont organises en clans : les principaux sont les Doba et les Shagura dans le nord (Shewa et Wollo), consideres comme les fondateurs de la dynastieWalasma. Dans le sud (Harar), les clans Adiya et Ala se distinguent, ces derniers etant fortement melanges avec les Oromo. Les villages portent souvent le nom de leur fondateur.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires sont importants pour determiner l'appartenance clanique et les droits fonciers. La famille elargie constitue l'unite sociale de base. L'exogamie avec des non-Argobba est socialement deconseilee mais pratiquee, ce qui a contribue historiquement a l'assimilation progressive du groupe.",
+      "religiousAuthority": "L'autorite religieuse est incarnee par le qadi et les imams des mosquees villageoises. Les Argobba se considerent comme les premiers a avoir accepte l'islam collectivement dans la Corne de l'Afrique. L'enseignement coranique (madrassa) est traditionnel et les Argobba de Shonke sont connus pour refuser d'envoyer leurs enfants a l'ecole publique de peur des influences non-islamiques."
+    },
+    "languages": {
+      "mainLanguage": "Argobba (Argobgna)",
+      "isoCodes": ["agj"],
+      "dialects": [
+        "Argobba du Nord (Shewa et Wollo) — parle dans les villages de Shonke, Tollaḥa et quelques localites du Wollo",
+        "Argobba du Sud (Harar) — parle dans la region de Fedis et Bisidemo, plus influence par l'oromo",
+        "Argobba de Shonke — considere comme la variete la plus conservatrice et la mieux preservee"
+      ],
+      "vehicularRole": "L'argobba est une langue ethiopienne semitique meridionale, proche de l'amharique et du harari, dont elle s'est distinguee comme langue independante selon les recherches de Getahun Amare. La langue est gravement en danger : selon Edward Ullendorff (annees 1960), elle etait deja en disparition rapide au profit de l'amharique. Aujourd'hui, seuls quelques milliers de locuteurs la pratiquent, concentres a Shonke et Tollaḥa. La majorite des Argobba sont bilingues ou trilingues en amharique, oromo et/ou afar."
+    },
+    "culture": {
+      "majorRites": "Les Argobba pratiquent exclusivement l'islam sunnite et leurs rites sont alignes sur les cinq piliers de l'islam (Shahada, Salat, Zakat, Sawm, Hajj). Le mariage est un evenement communautaire majeur celebre selon le droit islamique. La circoncision masculine est pratiquee comme rite de passage. Les funerailles suivent le rite islamique : inhumation rapide, priere funebre, condoleances pendant trois jours. Les villages argobba organisent des celebrations a l'occasion du Mawlid (naissance du Prophete) et de l'Eid. Le pelerinage a La Mecque (Hajj) est tres valorise socialement.",
+      "symbols": "L'architecture vernaculaire en pierre constitue le symbole le plus distinct des Argobba : maisons rectangulaires (idmo) avec hautes tours de garde, murs exterieurs servant de cloture, portes etroites faciles a defendre — un style architectural proche des maisons tigrinya et adare (harari). La mosquee villageoise occupe le centre symbolique et pratique de chaque communaute. La tradition marchande et l'identite islamique sont les marqueurs identitaires fondamentaux.",
+      "artsAndMusic": "L'artisanat traditionnel argobba inclut le tissage (les tisserands ont un atelier specifique dans le village traditionnel) et la construction en pierre seche. La poesie orale et les chants religieux islamiques (nashid, zikr) sont pratiques lors des celebrations. Les Argobba sont reconnus comme marchands habiles, une tradition qui se reflete dans leur culture materielle et leurs reseaux commerciaux historiques reliant le Shewa a Harar et a la cote.",
+      "spiritualities": "Les Argobba sont exclusivement musulmans sunnites et se considerent comme les pionniers de l'islamisation de la Corne de l'Afrique. Ils revendiquent une genealogie remontant aux premiers compagnons du Prophete Mohammed qui se refugierent en Ethiopie en 615 apr. J.-C. La foi islamique structure l'ensemble de la vie sociale, juridique et culturelle argobba. Il n'existe pas de pratiques religieuses synchretiques documentees, contrairement a certains groupes voisins."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Argobba sont etroitement associes a la fondation de plusieurs entites politiques islamiques en Ethiopie. Le sultanat de Shewa (vers 896-1285), premier etat musulman documente de la region, leur est partiellement attribue aux cotes des Werjih. La dynastie Makhzumi puis la dynastieWalasma (Doba) fondent le sultanat de Yifat (1285), qui s'etend sur le Shewa actuel, le Hararghe et Zeila. Ifat est le predecesseur direct du sultanat d'Adal. Selon certaines traditions, les Argobba auraient contribue a la creation de la ville de Harar et auraient donne naissance, par melange avec les Harla, au peuple harari.",
+      "relationsWithNeighbors": "Relations commerciales et religieuses anciennes avec les Arabes, Persans et autres marchands de l'Ocean Indien via les ports de Zeila et Dahlak. Conflits recurrents avec le royaume chretien d'Abyssinie, en particulier sous Amde Seyon I et Yeshaq I. Relations de voisinage complexes avec les Oromo, Afar et Amhara — a la fois integration par mariage et assimilation linguistique progressive. Relations historiques avec les Harari, etroites en raison de la proximite linguistique et de l'identite islamique partagee.",
+      "conflictsOrAlliances": "Alliance avec la dynasty Walasma pour former Yifat (1285). Guerres contre l'Ethiopie chretienne : batailles contre Amde Seyon I (14e siecle) et Yeshaq I (1415). Les Argobba ont soutenu Ahmed ibn Ibrahim al-Ghazi (Ahmed Gragn) lors de la conquete islamique de l'Ethiopie (1529-1543). Persecutions chretiennes du 19e siecle sous Yohannes IV (1872-1889), forcant de nouveaux deplacements vers Harar. Le 20e siecle a vu la marginalisation progressive dans le cadre de l'Etat ethiopien centralise.",
+      "diaspora": "Il n'existe pas de diaspora argobba significative hors d'Ethiopie. Le groupe reste concentre en Ethiopie, principalement dans les regions Amhara, Afar, Harari et Oromia. Des Argobba sont presents a Addis-Abeba dans le cadre de migrations economiques internes. La communaute argobba de Harar (sous-groupe Adiya) vit principalement hors de la cite fortifiee."
+    },
+    "demography": {
+      "totalPopulation": 210000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Ethnologue (SIL International, 2024, code agj), Joshua Project (Peoplegroups.org 2023 : 202 000), recensement ethiopien CSA 2007 (environ 168 000), et projections demographiques. Le groupe est en declin numerique relatif en raison de l'assimilation linguistique et culturelle.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 210000,
+          "note": "Regions Amhara (Wollo), Afar, Harari et Oromia — principalement dans les villages de Shonke, Tollaḥa, Berehet, Khayr Amba, Metehara, Shewa Robit, Aliyu Amba, Melka Jilo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Argobba people. https://en.wikipedia.org/wiki/Argobba_people",
+      "Ethnologue — Argobba language (agj). https://www.ethnologue.com/language/agj",
+      "Joshua Project — Argobba in Ethiopia. https://joshuaproject.net/people_groups/10422",
+      "Dergipark — The Gafat and Argobba of Ethiopia: A Historical Survey. https://dergipark.org.tr/en/pub/toplumsalbilimler/article/1352052",
+      "101 Last Tribes — Argobba people. https://www.101lasttribes.com/tribes/argobba.html",
+      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et",
+      "Encyclopaedia Aethiopica, vol. 1 (Uhlig ed.), Harrassowitz Verlag, 2003"
+    ]
   }
 }

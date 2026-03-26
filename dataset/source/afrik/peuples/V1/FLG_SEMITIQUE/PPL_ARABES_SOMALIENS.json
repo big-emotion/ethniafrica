@@ -1,0 +1,62 @@
+{
+  "id": "PPL_ARABES_SOMALIENS",
+  "nameMain": "Arabes somaliens",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["SOM"],
+  "content": {
+    "appellations": {
+      "mainName": "Arabes somaliens",
+      "selfAppellation": "",
+      "exonyms": ["\"Arabes\" (terme générique)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Zones côtières (Mogadiscio, Merca, Barawa)",
+      "currentCountries": ["SOM"]
+    },
+    "ethnicities": ["Arabes somaliens"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": [
+        "Zones côtières (Mogadiscio, Merca, Barawa)"
+      ],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Arabes somaliens (arb)",
+      "isoCodes": ["arb"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 450,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

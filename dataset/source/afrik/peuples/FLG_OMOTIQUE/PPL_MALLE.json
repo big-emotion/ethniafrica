@@ -6,59 +6,85 @@
   "content": {
     "appellations": {
       "mainName": "Malle",
-      "selfAppellation": "Malle",
-      "exonyms": ["Malle (terme utilisé par les Européens)"],
+      "selfAppellation": "Malle (habitants de la zone Malle Awaki)",
+      "exonyms": ["Malle", "Male", "Malo"],
+      "originOfExonyms": "Le terme Malle désigne le peuple habitant la zone Malle Awaki dans la zone Debub Omo. Il est distinct des Maale (ISO mdy, aussi orthographié Male), qui sont des pasteurs omotiques voisins. La similitude orthographique entre Malle et Maale/Male génère des confusions fréquentes dans la littérature touristique et administrative. Les Malle sont parfois regroupés avec les Male sous le code mdy dans certaines bases de données, mais constituent un sous-groupe régional avec des traits culturels distincts.",
+      "whyProblematic": "Ne pas confondre avec les Maale (PPL_MAATS), peuple pasteur omotique voisin dont le chef est un roi sacré. Les Malle sont principalement des agriculteurs organisés autour d'un chef spirituel appelé Kati, avec des rituels agraires distincts (rituel de la pluie, rituel des premiers fruits). L'identité malle est liée à leur territoire spécifique (Malle Awaki) et à leur organisation politique propre.",
+      "contemporaryUsage": "Le terme Malle est utilisé dans le contexte régional sud-omotique pour désigner les habitants de la zone Malle Awaki. La langue malle est parfois considérée comme une variante du Male (mdy) ou comme un dialecte distinct selon les sources. Les Malle constituent le second groupe ethnique en importance dans la zone South Omo.",
       "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique",
-      "historicalRegion": "Sud-ouest de l'Éthiopie",
+      "ethnoLinguisticGroup": "Omotique du Nord (famille ometo, branche sud-omo)",
+      "historicalRegion": "Zone Malle Awaki, zone Debub Omo (ex-South Omo), Etat régional de l'Ethiopie du Sud — voisin au nord des Maale, à l'ouest des Ari",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Malle du Nord", "Malle du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Malle des hautes terres (agriculteurs, horticulture dominante)",
+      "Malle des basses terres (agriculture mixte, élevage complémentaire)",
+      "Sous-groupes territoriaux organisés autour des chefferies Kati",
+      "Nobles (Kati, Goda) et roturiers (Geto et population commune)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Malle sont originaires du sud-ouest de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Malle sont un peuple omotique originaire de la zone Malle Awaki dans la région Debub Omo d'Ethiopie méridionale. Selon la tradition orale, ils sont liés à la même origine ethnolinguistique que les peuples Ometo du sud-ouest éthiopien. Ils se distinguent des Maale (Male, ISO mdy) par leur économie agricole prépondérante, leur organisation politique centrée sur le Kati, et leur territoire spécifique. La zone Malle Awaki est l'une des plus peuplées de la zone South Omo, les Malle étant le second groupe ethnique en importance de cette zone.",
+      "formationPeriod": "L'identité distincte des Malle s'est consolidée autour de leur territoire (Malle Awaki) et de leur organisation politique et spirituelle propre, différente de la royauté sacrée des Maale voisins. Leur chef traditionnel Kati cumule les fonctions de chef politique et de leader spirituel, différenciant clairement leur modèle de gouvernance.",
+      "migrationRoutes": [
+        "Population autochtone de la zone Malle Awaki, sans migration fondatrice bien documentée",
+        "Relations historiques avec les Maale au nord, les Ari à l'ouest, et les Banna au sud"
+      ],
+      "historicalSettlementZones": [
+        "Zone Malle Awaki, zone Debub Omo, Ethiopie méridionale",
+        "Hautes terres : agriculture (teff, maïs, sorgho, ensète, légumineuses)",
+        "Basses terres : agriculture mixte et chasse (antilopes, sangliers sauvages)"
+      ],
+      "unificationsOrDivisions": "Les Malle sont organisés en chefferies locales sous l'autorité du Kati. La société est stratifiée en trois rangs nobles héréditaires : Kati (chef et leader spirituel), Goda (juge et intercesseur), et Geto (porte-parole de la communauté). Cette hiérarchie est distincte de la royauté sacrée des Maale voisins et implique une distribution différente des fonctions rituelles et politiques.",
+      "externalInfluences": "Incorporation dans l'empire éthiopien à la fin du 19e siècle. Contacts avec les Maale, les Ari et les Banna. Influence du christianisme protestant et de l'Eglise orthodoxe éthiopienne. Pression de l'amharisation dans le domaine de l'administration et de l'éducation depuis les années 1950.",
+      "majorHistoricalEvents": "Incorporation à l'empire éthiopien sous Menelik II. Revolution éthiopienne de 1974 : transformations de la structure des chefferies traditionnelles. Réformes agraires du Derg (1974-1991) modifiant les droits fonciers traditionnels. Etablissement de la zone administrative South Omo intégrant les Malle dans le système régional éthiopien."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Chefferie héréditaire dirigée par le Kati, qui cumule fonctions politiques et religieuses. Trois rangs nobles héréditaires : Kati (chef suprême et autorité spirituelle), Goda (juge traditionnel, intercesseur en cas de difficulté, prie en période de sécheresse ou de conflit), Geto (porte-parole de la communauté auprès des étrangers et médiateur). Les décisions importantes sont prises par un conseil des anciens sous la présidence du Kati.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les familles sont regroupées en lignages qui déterminent les alliances matrimoniales, les droits sur la terre et l'accès aux ressources. L'exogamie clanique est pratiquée.",
+      "ageClassSystems": "Rites de passage marquant la naissance, la puberté et le mariage. Les hommes adultes participent aux activités de chasse collective et aux assemblées communautaires.",
+      "roleOfLineages": "Les lignages patrilinéaires organisent l'accès à la terre, la transmission du patrimoine et les alliances. Les familles de rang noble (Kati, Goda) transmettent leurs fonctions par voie héréditaire patrilinéaire.",
+      "religiousAuthority": "Le Kati est simultanément chef politique et intercesseur spirituel auprès des forces surnaturelles. Il préside les rituels agraires (ritual de la pluie en cas de sécheresse ou d'excès de pluie, rituel des premiers fruits). Les anciens participent aux cérémonies rituelles et préservent la mémoire orale des traditions. Influence croissante des Eglises protestantes (Evangéliques)."
     },
     "languages": {
-      "mainLanguage": "Malle",
-      "vehicularRole": "Le malle est parlé par la majorité des Malle. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+      "mainLanguage": "Malle (variante dialectale du Male/Maale, ISO mdy ou dialecte distinct selon les sources)",
+      "isoCodes": ["mdy"],
+      "dialects": [
+        "Malle des hautes terres (zone agricole)",
+        "Malle des basses terres (zone de chasse et d'agriculture mixte)"
+      ],
+      "vehicularRole": "La langue malle est parlée comme première langue par les Malle. Elle est considérée comme étroitement apparentée au Male (mdy) des Maale, avec lesquels une intercompréhension partielle est possible. L'amharique est utilisé dans l'administration et l'éducation. En contexte de marché, des langues véhiculaires régionales comme l'amharique et parfois le bench sont utilisées."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels malle, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Rituel de la pluie (Gome) : en cas de sécheresse ou d'excès de pluie, le Kati identifie les coupables (inceste ou transgression sociale), fait couper leurs cheveux et leurs ongles, les jette dans la rivière en lançant une branche de l'arbre Qune sur les accusés ; les familles prient pour la purification collective. Rituel des premiers fruits (Khashi-Goshi) : avant de consommer la première récolte, le membre senior de la famille accomplit un rituel familial : il fait rôtir le grain sur un petit champ qui mûrit en premier, appelle les noms des ancêtres morts, en disperse une partie sur le sol pour eux, puis distribue le reste à la famille — à partir de là, la récolte peut être consommée librement. Rites de mariage : trois types — kubsina (mariage arrangé), sora (mariage consensuel), ardetin (mariage par héritage). Le paiement de la dot se fait en argent et en nature (bétail) ; la mère de la fiancée reçoit une couverture en symbole de sa souffrance.",
+      "symbols": "La couverture offerte à la mère de la mariée symbolise la souffrance et la fécondité. L'arc et les flèches sont des symboles de protection et de courage masculins — les Malle n'utilisent pas les armes à feu modernes pour la chasse ni pour la protection, préférant leurs techniques traditionnelles. Le Qune (arbre rituel) est un symbole de purification. Les trois rangs nobles (Kati, Goda, Geto) sont symbolisés par des marqueurs vestimentaires et des prérogatives cérémonielles distincts.",
+      "artsAndMusic": "Chant et musique lors des cérémonies de mariage, de naissance et des rituels agraires. Poésie orale transmettant la généalogie et les traditions du Kati. Artisanat : vannerie, poterie (surtout féminine), travail du cuir et des peaux d'animaux. La chasse à l'arc est à la fois une activité de subsistance et une pratique culturelle valorisée (trophées, récits oraux). Danse collective lors des cérémonies communautaires.",
+      "spiritualities": "Croyances religieuses traditionnelles centrées sur le Kati comme intercesseur entre la communauté et les forces surnaturelles (divinité de la pluie, esprits des ancêtres). Le concept de Gome (transgression — notamment l'inceste) est la cause principale des malheurs collectifs (sécheresse, maladie). Les rites de purification (rituel de la pluie) visent à restaurer l'ordre cosmique. Le rituel des premiers fruits honore les ancêtres et assure la continuité entre les vivants et les morts. Influence croissante du protestantisme évangélique depuis la seconde moitié du 20e siècle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora malle dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Chefferies Kati héréditaires organisées au niveau local. Les Malle constituent le second groupe ethnique de la zone South Omo par leur importance démographique. Leur organisation en chefferies distinctes de la royauté sacrée des Maale voisins leur confère une identité politique propre dans le paysage ethno-politique de la région.",
+      "relationsWithNeighbors": "Relations d'échange et de voisinage avec les Maale au nord (malgré la similitude linguistique, les deux peuples ont des organisations politiques distinctes), les Ari à l'ouest, et les Banna au sud. La chasse aux grands animaux (antilopes, sangliers) constitue un domaine de contact et parfois de compétition territoriale avec les groupes voisins.",
+      "conflictsOrAlliances": "Incorporation dans l'empire éthiopien à la fin du 19e siècle. Conflits territoriaux historiques avec les groupes voisins, résolus par des mécanismes d'arbitrage du Kati et des anciens. La période du Derg a transformé les structures de chefferie traditionnelle.",
+      "diaspora": "Migrations internes vers les villes éthiopiennes (Jinka, Arba Minch, Addis-Abeba) pour des raisons économiques et d'éducation. Diaspora internationale très limitée."
     },
     "demography": {
-      "totalPopulation": 20000,
+      "totalPopulation": 120000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basée sur les données de recensement éthiopien (2007 : Male/Malle comptabilisés ensemble à 98 114) et les projections démographiques de la zone Debub Omo. Les Malle constituent le second groupe ethnique de la zone South Omo (Omo Region Tours, 2024). Projection 2025 estimée entre 100 000 et 140 000 en tenant compte de la croissance démographique éthiopienne.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 120000,
+          "note": "Zone Malle Awaki, zone Debub Omo, Ethiopie méridionale ; et dans les grandes villes éthiopiennes"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Malle language",
-      "CIA World Factbook – Ethiopia",
-      "Recensements éthiopiens",
-      "Études anthropologiques sur les peuples omotiques"
+      "Omo Region Tours — Malle Tribe. https://omoregiontours.com/malle-tribe/",
+      "Wikipedia EN — List of ethnic groups in Ethiopia. https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia",
+      "Wikipedia EN — Male (woreda). https://en.wikipedia.org/wiki/Male_(woreda)",
+      "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy. https://glottolog.org/resource/languoid/id/male1284",
+      "Donham, Donald L. Divine Kingship in Malle, Southwest Ethiopia. Cambridge Journal of Anthropology, vol. 6, 1980. https://www.africabib.org/rec.php?RID=P00016096",
+      "Recensement éthiopien 2007 — List of ethnic groups in Ethiopia (Male : 98 114 individus)."
     ]
   }
 }

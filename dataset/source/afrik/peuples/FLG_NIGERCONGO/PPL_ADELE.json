@@ -2,58 +2,79 @@
   "id": "PPL_ADELE",
   "nameMain": "Adele",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": ["GHA", "TGO"],
   "content": {
     "appellations": {
       "mainName": "Adele",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Gidire",
+      "exonyms": ["Bedere", "Bidire", "Gadre", "Gidere"],
+      "originOfExonyms": "Le nom Adele est l'exonyme utilise par les voisins et les administrations coloniales ; les locuteurs de la langue appellent leur propre langue Gidire. Les variantes Bedere, Bidire, Gadre et Gidere sont des transcriptions differentes du meme terme endonymique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Adele est le nom standard dans la litterature academique, les bases de donnees linguistiques (Ethnologue, Glottolog) et les documents officiels ghaneen et togolais. Gidire est utilise par les locuteurs pour designer leur propre langue.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["GHA"]
+      "ethnoLinguisticGroup": "Langues Ghana-Togo Mountain (Togorestsprachen / Togo Remnant), branche Kwa du Niger-Congo",
+      "historicalRegion": "Zone frontaliere Ghana-Togo, districts de Jasikan, Nkwanta South, Nkwanta North (region Volta, Ghana) et prefecture de Sotouboua (region Centrale, Togo)",
+      "currentCountries": ["GHA", "TGO"]
     },
     "ethnicities": ["Adele"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon les traditions orales, les Adele pretendent etre descendus du ciel par une chaine, emmenant avec eux leurs deux dieux, Nayo et Efriko. Leur premier etablissement connu est un lieu nomme Dibenkpa, a partir duquel ils ont fonde de nouvelles localites au fil de leur expansion demographique.",
+      "formationPeriod": null,
+      "migrationRoutes": [
+        "Depuis le lieu d'origine mythique Dibenkpa vers les etablissements actuels de Dadiasi et Dutukpene (Ghana)",
+        "Migration vers le nord dans le village de Nkwanta",
+        "Presence transfrontaliere dans la prefecture de Sotouboua (Togo) autour d'Assouma-Kedeme et Tiefouma"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Jasikan, Nkwanta South et Nkwanta North (region Volta, Ghana)",
+        "Prefecture de Sotouboua, region Centrale (Togo)",
+        "Villes principales : Dadiasi et Dutukpene (Ghana), Assouma-Kedeme et Tiefouma (Togo)"
+      ],
+      "unificationsOrDivisions": "Les Adele se sont divises lors de leur expansion, fondant de nouveaux etablissements depuis leur site d'origine. Des conflits avec les Challa et les Akyode ont marque leur migration vers le nord en direction de Nkwanta.",
+      "externalInfluences": "Contacts avec les peuples voisins de la zone frontaliere Ghana-Togo : Atwode, Basari, Bimoba, Buems, Chokosi, Ewe, Guang, Konkomba, Kotokoli et Likpe. Influence de la Bible traduite par le GILLBT (Ghana Institute of Linguistics, Literacy and Bible Translation).",
+      "majorHistoricalEvents": "Conflit avec les Challa et les Akyode lors de la migration vers Nkwanta ; colonisation britannique (Ghana) et francaise (Togo) divisant le territoire Adele entre deux Etats ; traduction de la Bible en langue adele par le GILLBT au Ghana."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation villageoise traditionnelle avec chefferies locales. Les villages sont nucleaires et structures autour de petits composes familiaux.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": "Les deux dieux traditionnels Nayo et Efriko occupent une place centrale dans la spiritualite adele. Des sacrifices traditionnels sont maintenus en parallee de la foi chretienne. L'Eglise catholique est appreciee pour ses cliniques et ses ecoles ; les eglises pentecotistes (Eglise du Pentecote, Assemblees chretiennes) connaissent une croissance rapide."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Adele (Gidire)",
+      "isoCodes": ["ade"],
+      "dialects": [],
+      "vehicularRole": "La langue adele est utilisee comme langue maternelle par les Adele des deux cotes de la frontiere Ghana-Togo. Le GILLBT a developpe un alphabet pour la traduction de la Bible au Ghana. L'ewe, l'akan et le francais (Togo) / l'anglais (Ghana) servent de langues vehiculaires regionales."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Sacrifices traditionnels aux dieux Nayo et Efriko, maintenus en parallee des pratiques chretiennes. Rites lies au cycle agricole (culture de l'igname, du manioc, de la banane plantain, du cocoyam, des haricots et du riz).",
+      "symbols": "Les deux dieux Nayo et Efriko, apportes selon la tradition depuis le ciel, constituent les symboles fondateurs de l'identite adele.",
+      "artsAndMusic": null,
+      "spiritualities": "Croyance en deux divinites fondatrices (Nayo et Efriko) ; pratiques syncrêtiques melant animisme traditionnel et christianisme (catholique et pentecotiste). Les sacrifices traditionnels coexistent avec la profession de foi chretienne."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Adele partagent la zone frontaliere Ghana-Togo avec les Atwode, Basari, Bimoba, Buems, Chokosi, Ewe, Guang, Konkomba, Kotokoli et Likpe. Des conflits fonciers et de territoire ont oppose les Adele aux Challa et Akyode lors de leur migration vers Nkwanta.",
+      "conflictsOrAlliances": "Conflits et violences avec les Challa et les Akyode lors de la revendication du territoire de Nkwanta.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 37400,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Omniglot (2023) : environ 37 400 locuteurs (26 400 au Togo, 11 000 au Ghana) ; recensement ghaneen de 1960 estimait 2 400 Adele au Ghana.",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 11000 },
+        { "country": "TGO", "population": 26400 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN - Adele people (https://en.wikipedia.org/wiki/Adele_people)",
+      "Wikipedia EN - Adele language (https://en.wikipedia.org/wiki/Adele_language)",
+      "Omniglot - Adele language and alphabet, 2023 (https://www.omniglot.com/writing/adele.htm)",
+      "Joshua Project - Adele in Ghana (https://joshuaproject.net/people_groups/10156/gh)",
+      "Ethnologue - Adele Language (ADE) (https://www.ethnologue.com/language/ade/)",
+      "PeopleGroups.org - Adele of Ghana (https://peoplegroups.org/people_groups/pg013251/)"
+    ]
   }
 }

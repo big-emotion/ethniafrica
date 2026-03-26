@@ -2,63 +2,104 @@
   "id": "PPL_ALUR",
   "nameMain": "Alur",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["UGA"],
+  "currentCountries": ["UGA", "COD"],
   "content": {
     "appellations": {
       "mainName": "Alur",
       "selfAppellation": "Alur",
-      "exonyms": ["Alur (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Aloro (variante orthographique coloniale)",
+        "Alur (terme europeen adopte de l'auto-denomination)"
+      ],
+      "originOfExonyms": "Le nom Alur est a la fois l'endonyme et l'exonyme : le peuple se nomme lui-meme Alur. Le terme a ete adopte tel quel par les administrateurs coloniaux britanniques et belges. Il designe l'ensemble du peuple et de son royaume (Ker Alur).",
+      "whyProblematic": "La distinction entre sous-groupes Alur des Highlands (Okoro) et des plaines lacustres (Jonam) est parfois source de tensions identitaires. La frontiere Ouganda-RDC divise le peuple Alur depuis l'epoque coloniale.",
+      "contemporaryUsage": "Le terme Alur est utilise en anglais, francais et en langue alur. Le royaume Alur (Ker Alur), dont le Rwoth Ubimu reside a Kaal Atyak Winam (district de Zombo, Ouganda), est l'une des rares institutions royales africaines a ne pas avoir ete supprimee lors des reformes politiques ougandaises de 1966.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique occidental",
-      "historicalRegion": "Nord-ouest de l'UGA, Nord-est de la RDC",
-      "currentCountries": ["UGA"]
+      "ethnoLinguisticGroup": "Nilotique occidental (sous-groupe Luo)",
+      "historicalRegion": "Region du lac Albert — nord-ouest de l'Ouganda (districts de Nebbi, Zombo, Pakwach, Arua) et nord-est de la RDC (province de l'Ituri)",
+      "currentCountries": ["UGA", "COD"]
     },
-    "ethnicities": ["Alur d'Ouganda", "Alur de RDC", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Ukuru (chefferie la plus puissante, clan royal Atyak, district de Zombo)",
+      "Paidha (chefferie fondee par Magwar, fils d'Omyer Dhyang)",
+      "PaNduru (chefferie rivale d'Ukuru, fondee par Nduru)",
+      "Jonam (Alur des basses terres et rives du lac Albert, district de Pakwach)",
+      "Okoro (Alur des Highlands, nord-ouest ougandais, district de Zombo)",
+      "Angal, Juganda, Jukoth, Musongwa, Panyimur, Ragem, Ruvinga (chefferies historiques en Ouganda)",
+      "Alur de l'Ituri (RDC) — 8 chefferies dans la province de l'Ituri, nord du lac Albert"
+    ],
     "origins": {
-      "ancientOrigins": "Les Alur sont originaires du nord-ouest de l'Ouganda et du nord-est de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique occidental (Luo).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Acholi et les Luo.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Alur font partie du grand ensemble Luo (Lwo) nilotique occidental, issu de migrations depuis la vallee du Nil superieur. Ils partagent un ancetre commun avec les Acholi, les Luo du Kenya et les Shilluk du Soudan du Sud. Leur installation dans la region du lac Albert remonte a plusieurs siecles, avec une integration progressive des populations bantoues et soudaniques indigenes qui Alur-iserent sous leur influence culturelle.",
+      "formationPeriod": "En 1630, la chefferie d'Ukuru fut fondee par Ngira (clan Atyak), issue de la division du royaume d'Atyak lors d'une migration depuis les plaines de l'actuel district de Nebbi vers les Highlands du district de Zombo (Ouganda) et l'Ituri (Congo). Ce mouvement fonda l'ordre politique alur classique : un reseau de 64 chefferies (56 en Ouganda, 8 en RDC) sous la suprematie symbolique du Rwoth Ubimu d'Ukuru.",
+      "migrationRoutes": [
+        "Migration depuis les plaines de Nebbi vers les Highlands de Zombo (district actuel, Ouganda), vers 1630",
+        "Extension vers le nord-est de la RDC (Ituri) et les rives nord du lac Albert",
+        "Absorption des populations bantoues et soudaniques locales dans la sphere culturelle alur"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Nebbi, Zombo, Pakwach, Arua (nord-ouest Ouganda)",
+        "Province de l'Ituri (nord du lac Albert, RDC)",
+        "Rives nord et nord-ouest du lac Albert"
+      ],
+      "unificationsOrDivisions": "Le royaume Alur (Ker Alur) comprend 64 chefferies organisees hierachiquement sous le Rwoth Ubimu. La rivalite historique entre Ukuru et PaNduru est fondatrice : en 1789, Ukuru domina PaNduru, s'affirmant comme la chefferie la plus puissante. La guerre de 1878 (renouveau du conflit Ukuru-PaNduru) vit toutefois la defaite d'Ukuru avec environ 600 morts. Le chef Amula (1871-1942), fils d'Alworunga, reconcilia et reorganisa le royaume.",
+      "externalInfluences": "Administration coloniale britannique (Ouganda) et belge (Congo). Le chef Amula (1871-1942) fut exile par les Britanniques en 1917 pour s'etre oppose au recrutement militaire force, puis rintegre en 1922. L'islam et le christianisme ont penetre la societe alur au 20e siecle. Les tensions ethniques en Ituri (RDC) ont oppose Alur, Lendu et Hema depuis les annees 1990.",
+      "majorHistoricalEvents": "1630 : fondation de la chefferie d'Ukuru par Ngira. 1789 : victoire decisive d'Ukuru sur PaNduru, consolidant la suprematie du clan Atyak. 1878 : guerre renouvelee entre Ukuru et PaNduru ; Alworunga brule vif par les forces Panduru. 1890 : election du chef Amula (19 ans), qui venge la mort de son pere. 1914 : Ukuru comptait 10 000 hommes adultes ; le chef Amula enjoignit son peuple de ne pas combattre les Britanniques. 1917 : exil du chef Amula par les Britanniques. 1966 : interdiction ougandaise des monarchies traditionnelles — Ker Alur reste la seule monarchie non affectee. 2010 : couronnement de Phillip Rauni Olarker III comme Rwoth Ubimu, capital a Kaal Atyak Winam."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie segmentaire : le Rwoth Ubimu (roi des rois Alur) est le chef supreme, distinct des autres chefs (rwoth). Le titre Ubimu distingue le roi supreme des chefs subordonnes. Sous lui, 64 chefferies (dont 56 en Ouganda et 8 en RDC). Le Premier ministre royal est le prince Lawrence Opar Angala (Jadipu, parent male le plus proche du roi). La societe est strictement hierarchique avec des rangs sociaux bases sur la vaillance, les alliances, les performances a la guerre, a la chasse et a la peche.",
+      "clanOrganization": "Clans patrilineaires vivant ensemble (kaka). Les principaux clans royaux incluent Palei, Patek Puduk, Pakia, Ukuru, Anyola, Juloka (proches du roi). Clans rituels non royaux : Pagei, Panywer, Parombo, Pangieth, Padere, Panyonga. La famille Abira descend des hommes bantous originels d'Ukuru ; l'ascendance maternelle bantoue est commune a Ukuru.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les alliances et les droits au sein des chefferies. Les hommes restent dans leur clan de naissance ; les femmes se marient et quittent leur clan (stricte evitement de l'inceste au sein du patrilineage). Les patrilineages maintiennent des arbres genealogiques detailles : la famille Parombo a Ukuru comptait 2 000 hommes en 1949.",
+      "religiousAuthority": "Les rois (Rwoth) sont couronnes selon la tradition du trophee de lance royale (royal spear head bearing tradition). La legitimite du pouvoir est liee aux traditions ancestrales et aux rituels de couronnement. Aujourd'hui coexistent croyances traditionnelles, christianisme (catholique, protestant) et islam dans les zones frontieres."
     },
     "languages": {
-      "mainLanguage": "Alur",
-      "vehicularRole": "L'alur est parlé par la majorité des Alur. Le français, l'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Alur (Dha-Alur)",
+      "isoCodes": ["alz"],
+      "dialects": [
+        "Okoro (dialecte des Highlands, nord-ouest de l'Ouganda, district de Zombo)",
+        "Jonam (dialecte des basses terres et du lac Albert, district de Pakwach)",
+        "Alur de l'Ituri (variantes parlees en RDC)"
+      ],
+      "vehicularRole": "L'alur (code ISO 639-3 : alz) est une langue nilotique occidentale du groupe Luo, parlee par environ 800 000 a 900 000 locuteurs en Ouganda et plus de un million en RDC (Ituri). Proche de l'acholi, du luo du Kenya et du padhola. Certains Alur de RDC parlent egalement le lendu ou le kebu. L'alur est utilise dans les echanges communautaires et les ceremonies royales."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture et à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture et à l'élevage, symboles culturels alur, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "{\"initiationRites\": {\"description\": \"Rites de passage marques par des ceremonies communautaires. Le mariage est le principal rite de transition, associe au paiement d'une dot en betail.\"}, \"funeraryRites\": {\"burial\": \"Inhumation dans les terres ancestrales du clan. Ceremonies de deuil avec chants et rituels d'apaisement des esprits des ancetres.\"}, \"royalRites\": {\"coronation\": \"Couronnement du Rwoth selon la tradition du trophee de lance royale (royal spear head bearing). Festivals royaux annuels avec la danse Agwara pour reunir la communaute.\"}}",
+      "symbols": "La lance royale (royal spear) est le symbole supreme du pouvoir Alur. Le roi (Rwoth Ubimu) incarne l'unite du peuple. Le lac Albert (Mwitanzige) est un symbole geographique et spirituel central pour les Alur des basses terres (Jonam). Le betail represente richesse et statut social.",
+      "artsAndMusic": "{\"dances\": {\"agwara\": \"Danse royale Alur executee exclusivement en presence du roi lors des rituels communautaires et festivals. Dansee par hommes et femmes ensemble, l'Agwara incarne la cohesion sociale et l'autorite royale.\"}, \"musicalInstruments\": [\"Tambour royal (bul)\", \"Flutes en roseau\", \"Adungu (harpe en arc)\", \"Hochets et instruments a percussion\"], \"crafts\": \"Poterie (activite feminine), tissage, forge artisanale. Les Alur de l'Ituri sont egalement connus pour leurs travaux de forge.\", \"oralLiterature\": \"Tradition de proverbes, de genealogies royales et de recits historiques transmis oralement. Les griots maintiennent la memoire des lignees royales.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Jok\", \"attributes\": \"Force spirituelle supreme englobant le divin et les esprits des ancetres. Jok peut designer Dieu ou les esprits (bons et mauvais) qui influencent la vie des vivants.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les ancetres jouent un role fondamental dans la protection et le guidage des vivants. Les rituels de propitiation sont effectues pour maintenir l'harmonie entre le monde des vivants et celui des morts.\"}, \"christianity\": {\"specificPractices\": \"Penetration du christianisme (catholicisme, protestantisme) depuis le 20e siecle. Syncrétisme frequent entre croyances Jok et pratiques chretiennes.\"}}}"
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora alur dans les grandes villes ougandaises et congolaises, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume Alur (Ker Alur) est le seul royaume ougandais n'ayant pas ete affecte par l'interdiction des monarchies traditionnelles de 1966 par le president Obote. Il comprend 64 chefferies (56 en Ouganda, 8 en RDC). La chefferie d'Ukuru, dirigee par le clan Atyak, est la plus puissante depuis 1789. Le Rwoth Ubimu actuel (Philippe Rauni Olarker III, couronne en 2010) siege a Kaal Atyak Winam dans le district de Zombo.",
+      "relationsWithNeighbors": "Relations complexes avec les peuples bantous voisins (Banyoro, Bari) qui furent progressivement absorbes ou Alur-ises. En Ituri (RDC), les Alur ont cohabite et compete avec les Lendu (agriculteurs) et les Hema (pasteurs). Les conflits ethniques en Ituri depuis les annees 1990 (guerres civiles congolaises) ont touche les communautes alur de RDC. En Ouganda, les Alur entretiennent des relations de parenté avec les Acholi et les Luo.",
+      "conflictsOrAlliances": "La guerre Ukuru-PaNduru (1789, 1878) est constitutive de l'histoire politique alur. La resistance au recrutement britannique (chef Amula exile en 1917) illustre l'opposition a la domination coloniale. Pendant les guerres du Congo (1996-2003), les Alur de l'Ituri ont ete affectes par les violences ethniques entre Lendu et Hema, et par l'instabilite generale de la province. L'Union des Patriotes Congolais (UPC) et les milices Lendu ont commis des atrocites dans la region (repressailles entre groupes a partir de 1999).",
+      "diaspora": "Diaspora alur presente dans les grandes villes ougandaises (Kampala, Arua) et congolaises (Bunia, Kinshasa), ainsi que dans les pays occidentaux (Belgique, Royaume-Uni, Etats-Unis, Canada). Le Rwoth Ubimu actuel a pour objectif de reconnecter la diaspora au royaume et de promouvoir le developpement economique."
     },
     "demography": {
-      "totalPopulation": 800000,
+      "totalPopulation": 1800000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "SIL Ethnologue — Alur (alz, 2024). Recensement ougandais 2014 : environ 800 000 en Ouganda. Estimations pour la RDC : plus d'un million (zones de Ituri nord). CIA World Factbook — Uganda, DRC. Population totale 2025 estimee a environ 1,8 million.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 850000,
+          "note": "Districts de Nebbi, Zombo, Pakwach, Arua (nord-ouest Ouganda)"
+        },
+        {
+          "country": "COD",
+          "population": 950000,
+          "note": "Province de l'Ituri, nord du lac Albert (RDC)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Alur language (alz)",
-      "CIA World Factbook – Uganda, DRC",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Alur people. https://en.wikipedia.org/wiki/Alur_people",
+      "SIL Ethnologue — Alur language (alz). https://www.ethnologue.com/language/alz/",
+      "Southall, Aidan — Alur Society: A Study in Processes and Types of Domination. Cambridge : Heffer, 1953.",
+      "Glottolog — Alur. https://glottolog.org/resource/languoid/id/alur1250",
+      "CIA World Factbook — Uganda. https://www.cia.gov/the-world-factbook/countries/uganda/",
+      "CIA World Factbook — Democratic Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+      "Wikipedia EN — Ituri conflict. https://en.wikipedia.org/wiki/Ituri_conflict",
+      "Joshua Project — Alur people profile. https://joshuaproject.net/people_groups/10023"
     ]
   }
 }

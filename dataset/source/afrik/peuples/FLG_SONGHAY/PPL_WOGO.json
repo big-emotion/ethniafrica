@@ -2,63 +2,97 @@
   "id": "PPL_WOGO",
   "nameMain": "Wogo",
   "languageFamilyId": "FLG_SONGHAY",
-  "currentCountries": ["MLI"],
+  "currentCountries": ["NER", "MLI"],
   "content": {
     "appellations": {
       "mainName": "Wogo",
       "selfAppellation": "Wogo",
-      "exonyms": ["Wogo (terme utilisé par les Européens)"],
+      "exonyms": ["Wogo Ciine", "Songhay des iles"],
+      "originOfExonyms": "Le terme Wogo est l'ethnonyme propre de ce sous-groupe songhay. Wogo Ciine signifie la langue (ciine) des Wogo. Le terme Songhay des iles (Islands Songhay) est utilise dans la litterature anglophone pour decrire leur specificite geographique — les iles et les berges du fleuve Niger dans la region de Tillabery (Niger) et pres de Boura (Mali).",
+      "whyProblematic": "Les Wogo sont parfois confondus avec les Songhay ou les Zarma en raison de la proximite linguistique. Certaines sources les integrent dans le groupe Songhay sans les distinguer. Leur specificite culturelle — notamment la pratique des danses de possession holey, que les Songhay stricto sensu ne pratiquent pas — les singularise. Leur population est numeriquement petite et peu documentee dans la litterature ethnographique.",
+      "contemporaryUsage": "Le terme Wogo est utilise par les membres du groupe eux-memes et par les habitants de la region de Tillabery. Ils sont bien connus au Niger comme pecheurs et artisans des iles du Niger. Le francais est la langue d'administration et d'education au Niger et au Mali.",
       "linguisticFamily": "FLG_SONGHAY",
-      "ethnoLinguisticGroup": "Songhay",
-      "historicalRegion": "Mali",
-      "currentCountries": ["MLI"]
+      "ethnoLinguisticGroup": "Songhay meridional (dialecte Wogo Ciine)",
+      "historicalRegion": "Iles et berges du fleuve Niger dans la region de Tillabery (Niger) et autour de Boura (Mali) — zone fluviale entre Ayerou et Tillabery",
+      "currentCountries": ["NER", "MLI"]
     },
-    "ethnicities": ["Wogo du Nord", "Wogo du Sud", "Sous-groupes régionaux"],
+    "ethnicities": [
+      "Wogo d'Ayorou — communaute principale dans la plus grande ville wogo du Niger, pres de la frontiere malienne",
+      "Wogo de Boura — communaute principale au Mali sur les iles du Niger",
+      "Wogo de Tillabery — communautes dispersees sur les iles et berges de la region de Tillabery (Niger)",
+      "Wogo de Bentia et Kandadji — villages wogo dans les environs de Say (Niger)"
+    ],
     "origins": {
-      "ancientOrigins": "Les Wogo sont originaires du MLI, dans la région du fleuve Niger. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les autres peuples songhay.",
-      "externalInfluences": "Contacts avec les peuples touareg et autres groupes, influence de l'islam."
+      "ancientOrigins": "Les Wogo sont un sous-groupe songhay dont l'origine se confond avec celle du peuple Songhay en general. Leur specificite est avant tout geographique : ils se sont installes sur les iles et les berges du fleuve Niger, developpant une culture adaptee a la vie fluviale. Leur presence dans les iles du Niger de la region de Tillabery remonte probablement a plusieurs siecles, associee aux migrations des populations songhay apres la chute de l'empire (1591). Les Wogo partagent l'origine commune songhay de la vallee du Niger moyen autour de Gao.",
+      "formationPeriod": "L'identite wogo comme sous-groupe distinct semble s'etre cristallisee avec l'occupation permanente des iles du Niger dans la region de Tillabery. Leur specialisation dans la peche, la navigation fluviale et l'artisanat (tissage, vannerie) les distingua des communautes songhay et zarma de l'arriere-pays. Les Wogo partagent avec les Kurtey l'occupation de zones insulaires du Niger.",
+      "migrationRoutes": [
+        "Implantation sur les iles du fleuve Niger dans la region de Tillabery, liee au peuplement songhay post-empire",
+        "Extension vers les iles maliennes autour de Boura au nord-ouest, pres de la frontiere Niger-Mali"
+      ],
+      "historicalSettlementZones": [
+        "Iles du Niger dans la region de Tillabery (Niger) — zone principale de peuplement",
+        "Ville d'Ayorou (Niger) — plus grande agglomeration wogo, carrefour commercial fluvial",
+        "Iles autour de Boura (Mali) — communautes au nord-ouest, pres de la frontiere malienne",
+        "Berges du Niger entre Ayerou et Tillabery — villages insulaires"
+      ],
+      "unificationsOrDivisions": "Les Wogo forment un ensemble culturellement coherent organise en communautes insulaires et riveraines distinctes. Ils partagent le territoire du fleuve Niger avec les Zarma, les Kurtey et les Songhay. Leur specificite culturelle (pratique des holey, artisanat specialise) leur confere une identite propre au sein du macro-groupe songhay.",
+      "externalInfluences": "Relations etroites avec les Songhay et les Zarma voisins dont ils partagent la langue. Contacts avec les Touareg pour le commerce. Islamisation a partir de l'empire Songhay. Colonisation francaise integrant la region dans la colonie du Niger. Frontiere coloniale France-Grande-Bretagne partageant les communautes wogo entre le Niger et les zones d'influence du Mali.",
+      "majorHistoricalEvents": "Heritage de l'empire Songhay (15e-16e siecles). Etablissement dans les iles du Niger post-1591. Integration dans la colonie francaise du Niger (1900). Independance du Niger (1960). Construction du barrage de Kandadji (en cours depuis les annees 2000) qui modifie le regime du fleuve et affecte les communautes fluviales wogo."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises dirigees par un chef (koy) hereditaire issu des lignages fondateurs. Les chefs wogo coordonnent la gestion des droits de peche sur les portions de fleuve et d'iles relevant de leur communaute. Les conseils d'anciens reglent les litiges liees a la peche, aux droits sur les iles et aux mariages.",
+      "clanOrganization": "Structure patrilineaire. Les Wogo maintiennent une distinction entre lignages anciens (fondateurs des villages insulaires) et communautes plus recentes. Comme les Sorko (pecheurs songhay du Niger), ils ont developpe des lignages specialises dans la connaissance des esprits du fleuve et des techniques de peche. Les femmes sont reconnues pour leur maitrise du tissage et de la vannerie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent les droits de peche sur des portions du fleuve et des iles. Les titres de chefferie sont transmis dans les lignages fondateurs. Les unions matrimoniales renforcent les alliances entre communautes insulaires.",
+      "religiousAuthority": "L'imam dirige les prieres quotidiennes et les ceremonies islamiques. Les zima (pretres des esprits) ont un role particulierement important chez les Wogo, qui pratiquent les danses de possession holey — une specificite qui les distingue des Songhay stricto sensu. Les esprits du fleuve (notamment Harakoy Dikko, maitresse du Niger) sont propitie avant les peches importantes."
     },
     "languages": {
-      "mainLanguage": "Wogo (variété songhay)",
-      "vehicularRole": "Le wogo est parlé par la majorité des Wogo. Le français est utilisé dans l'éducation et l'administration."
+      "mainLanguage": "Wogo Ciine (dialecte songhay des Wogo)",
+      "isoCodes": ["ses"],
+      "dialects": [
+        "Wogo Ciine — dialecte propre aux Wogo, proche du Songhoyboro Ciine et du Koyraboro Senni",
+        "Variete d'Ayorou — parlee dans la principale agglomeration wogo du Niger",
+        "Variete de Boura — parlee au Mali, avec quelques influences du koyra chiini"
+      ],
+      "vehicularRole": "Le Wogo Ciine est un dialecte proche des autres varietes songhay meridionales. Les locuteurs wogo comprennent generalement le zarma et le songhay nigerien. Le zarma est utilise comme lingua franca dans les echanges avec les communautes voisines. Le francais est la langue administrative. La population wogo est estimee entre 5 000 et 15 000 personnes selon les sources, groupe numeriquement petit mais culturellement distinct."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels songhay.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture wogo."
+      "majorRites": "Ceremonies islamiques : Tabaski (Aid el-Kebir), Ramadan, Mawlid. Rites de passage : circoncision des garcons, ceremonies de nommage au 7e jour. Ceremonies de possession holey hori — specificite wogo par rapport aux Songhay voisins : les Wogo pratiquent ces danses de possession par les esprits, presidees par des zima, lors des periodes de transition (debut de la saison des peches, periodes de maladies). Ceremonies de propitiation du fleuve avant les grandes peches, impliquant des offrandes aux esprits de l'eau (notamment Harakoy).",
+      "symbols": "Le fleuve Niger et ses iles sont le symbole central de l'identite wogo. Les pirogues de peche artisanales, sculptees et decorees, representent le savoir-faire et la tradition fluviale. Les paniers et nattes tisses par les femmes wogo sont des objets symboliques et economiques importants. Les instruments du culte holey (kuunde, calebasse-tambour) symbolisent le lien entre le monde des vivants et celui des esprits.",
+      "artsAndMusic": "Tissage et vannerie feminins : les femmes wogo sont renommees pour leurs paniers et nattes en feuilles de doum-palmier (Hyphaene thebaica), decores de motifs geometriques. Peche artisanale avec des techniques transmises dans les lignages. Musique des ceremonies holey : percussions (kuunde, gourd-tambour), chants rituels. Sculpture de pirogues et d'ustensiles de peche. Les griots (jesere) conservent la genealogie et les epopees songhay lors des ceremonies.",
+      "spiritualities": "Islam sunnite malekite dominant. Culte holey distinct : les Wogo, contrairement aux Songhay de Gao, pratiquent les danses de possession (holey hori). Ce trait culturel specifique les distingue. Le pantheon holey comprend Harakoy Dikko (esprit feminin du fleuve Niger, protectrice des pecheurs), Dongo (esprit du tonnerre et de la pluie), et les esprits des eaux (genji). Les zima organisent les ceremonies et servent d'intermediaires entre les vivants et les esprits. Syncretisme marque entre pratiques islamiques et animistes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques maliennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora wogo dans les grandes villes maliennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Wogo n'ont pas forme d'entite politique propre independante. Ils vivaient sous la protection et dans l'orbite des chefferies songhay et zarma de la region de Tillabery. Leur autonomie etait relative et fondee sur la specificite de leur niche economique (les iles du fleuve) plutot que sur un pouvoir politique propre.",
+      "relationsWithNeighbors": "Relations etroites de complementarite economique avec les Zarma et les Songhay (peche contre cereales), les Peuls et Touareg (peche contre lait et produits d'elevage). Partage du fleuve Niger avec les Kurtey et les Sorko, communautes fluviales voisines. Relations commerciales avec les marchands de la ville fluviale d'Ayorou (marche hebdomadaire majeur avec la participation de groupes touaregs et peuls du Mali, du Niger et du Burkina Faso).",
+      "conflictsOrAlliances": "Les Wogo ont generalement maintenu des relations pacifiques avec leurs voisins en raison de leur position geographique insulaire. Exposition aux razzias esclavagistes des 18e-19e siecles qui affecterent les communautes fluviales. Integration dans la colonie francaise du Niger (1900). Impact du barrage de Kandadji (dont la construction depuis 2008 modifie le regime des iles du Niger et affecte les zones de peche traditionnelles).",
+      "diaspora": "Migration de jeunes Wogo vers Niamey et les villes du Niger pour le commerce et le travail saisonnier. Petites communautes dans les grandes villes nigeriennes. Emigration vers la cote (Abidjan, Accra) pour le travail, pattern commun aux peuples songhay du Niger."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 12000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements maliens, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN – Wogo people : groupe de petite taille, quelques milliers de locuteurs. 101 Last Tribes – Wogo people. SIL Ethnologue : le dialecte wogo est comptabilise dans le Songhoyboro Ciine (ses). Estimation basee sur la densite de population des iles de Tillabery et les sources anthropologiques disponibles.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 9000,
+          "note": "Iles et berges du Niger dans la region de Tillabery, Ayorou et environs"
+        },
+        {
+          "country": "MLI",
+          "population": 3000,
+          "note": "Iles autour de Boura et pres de la frontiere Niger-Mali"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Wogo language",
-      "CIA World Factbook – Mali",
-      "Recensements maliens",
-      "Études anthropologiques sur les peuples songhay"
+      "Wikipedia EN – Wogo people. https://en.wikipedia.org/wiki/Wogo_people",
+      "101 Last Tribes – Wogo people. https://www.101lasttribes.com/tribes/wogo.html",
+      "Wikipedia EN – Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "African Spiritualities – Holle Hori : Songhay spirit possession in Niger. https://afrospiritualities.com/2021/11/12/spirit-possession-a-return-to-wholeness-strong/",
+      "SIL Ethnologue – Koyraboro Senni (ses). https://www.ethnologue.com/language/ses/",
+      "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960.",
+      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
     ]
   }
 }

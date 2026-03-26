@@ -1,0 +1,68 @@
+{
+  "id": "PPL_BRONG",
+  "nameMain": "Brong",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Brong",
+      "selfAppellation": "Brong",
+      "exonyms": ["Brong (terme utilisé par les Européens), Abron"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa",
+      "historicalRegion": "GHA, CIV",
+      "currentCountries": ["GHA", "CIV"]
+    },
+    "ethnicities": [
+      "Brong du Ghana",
+      "Brong de Côte d'Ivoire",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Brong sont originaires du Ghana et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo. Relations étroites avec les Akan.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Akan.",
+      "externalInfluences": "Contacts avec les peuples akan, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Brong",
+      "vehicularRole": "Le brong est parlé par la majorité des Brong. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels brong, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage, sculpture)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora brong dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Brong language (abr)",
+      "CIA World Factbook – GHA, CIV",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples kwa"
+    ]
+  }
+}

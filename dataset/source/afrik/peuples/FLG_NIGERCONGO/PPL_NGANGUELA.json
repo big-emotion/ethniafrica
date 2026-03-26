@@ -6,54 +6,85 @@
   "content": {
     "appellations": {
       "mainName": "Nganguela",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Nganguela (forme que les groupes de l'est de l'Angola utilisent pour se designer; signifie 'source du soleil' ou 'lieu du soleil levant' en Luchazi)",
+      "exonyms": ["Ganguela", "Ngangela", "Nganguela"],
+      "originOfExonyms": "Ganguela (prononce gang'ela) est le terme pejoratif applique par les Ovimbundu aux peuples vivant a l'est et au sud-est d'eux. Ce terme fut adopte par les Portugais comme categorie de recensement colonial regroupant des peuples distincts. Nganguela est la transcription plus fidele de la denomination endogene et fut utilisee par les missionnaires et commerçants Vimbundu des le XVIIIe siecle pour designer les tribus de l'est-central de l'Angola.",
+      "whyProblematic": "PPL_NGANGUELA est quasi-identique a PPL_GANGUELA (deja traite dans ce projet). Les deux fiches designent le meme ensemble de peuples de l'est de l'Angola, PPL_GANGUELA utilisant la forme coloniale portugaise et PPL_NGANGUELA la forme endogene. Il s'agit d'un probable doublon resultant d'une double indexation du meme groupe ethnographique sous deux orthographes. La fiche PPL_NGANGUELA est maintenue pour indexer specificite de la designation endogene Nganguela par opposition a la designation exonyme Ganguela.",
+      "contemporaryUsage": "En Angola, Ganguela est la designation officielle administrative. Dans la litterature academique, Nganguela ou Ngangela sont preferes. Les groupes individuels (Luchazi, Mbunda, Lwena/Luena, Nyemba, Nkangala, etc.) preferent leurs propres appellations distinctes.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Bantu zone K (Ngangela-Nyemba, Chokwe-Luchazi), Niger-Congo",
+      "historicalRegion": "Est de l'Angola (est du plateau du Bie, provinces de Moxico, Cuando Cubango, Bie, Cunene)",
       "currentCountries": ["AGO"]
     },
-    "ethnicities": ["Nganguela"],
+    "ethnicities": [
+      "Nganguela proprement dit",
+      "Luchazi",
+      "Mbunda",
+      "Lwena (Luena / Luvale)",
+      "Nyemba",
+      "Lwimbi",
+      "Camachi",
+      "Nkangala"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les groupes Nganguela parlent des langues apparentees a celles des Ruund, des Lunda du Sud et des Chokwe, indiquant une origine commune dans la grande famille bantu de zone K. La designation Nganguela (Ganguela) fut introduite par les commerçants Ovimbundu (Vimbundu) au XVIIIe siecle pour designer les peuples de l'est du plateau du Bie qu'ils contactaient dans le cadre du commerce caravanier. Le terme Nganguela signifie en luchazi 'le lieu du soleil levant'.",
+      "formationPeriod": "Ces groupes etaient connus des Portugais depuis le XVIIe siecle via les activites commerciales des comptoirs de Luanda et Benguela. La categorie Nganguela comme concept administratif se consolida sous la colonisation portugaise. Avant la colonisation, ces groupes etaient des unites independantes sans identite supra-ethnique commune.",
+      "migrationRoutes": [
+        "Penetration vers le sud des Chokwe (fin XIXe-debut XXe siecle) deplacant les groupes Nganguela vers l'est",
+        "Exode en Zambie et Namibie pendant la guerre anti-coloniale (1961-1974) et la guerre civile angolaise (1975-2002)",
+        "Retours progressifs en Angola apres la fin de la guerre civile en 2002"
+      ],
+      "historicalSettlementZones": [
+        "Est du plateau du Bie, Angola (provinces de Cuando Cubango, Moxico, Bie)",
+        "Frontieres avec la Zambie (Mbunda en Zambie de l'Ouest) et la Namibie"
+      ],
+      "unificationsOrDivisions": "Les groupes Nganguela n'ont jamais forme une entite politique unifiee. Ils etaient essentiellement independants les uns des autres, sans identite collective englobante. La penetration Chokwe vers le sud divisa davantage les groupes. La guerre civile angolaise (1975-2002) provoqua l'exode de nombreuses familles Nganguela vers la Zambie et la Namibie.",
+      "externalInfluences": "Commerce caravanier organise par les Ovimbundu pour les Portugais a Benguela (XIXe et debut XXe siecle). Traite esclavagiste : les Ovimbundu pratiquaient des razzias dans les zones Nganguela pour alimenter le commerce d'esclaves vers la cote. Colonisation portugaise tardive ; les Nganguela ne furent pas soumis a un travail missionnaire systematique ni a une fiscalite lourde, preservant leur mode de vie traditionnel.",
+      "majorHistoricalEvents": "Penetration Chokwe vers le sud (fin XIXe-debut XXe siecle) fragmentant les groupes Nganguela. Guerre anti-coloniale portugaise (1961-1974). Independance de l'Angola (1975). Guerre civile angolaise (1975-2002) avec l'insurrection UNITA dans les zones frontalieres Nganguela. Retour et reconstruction post-guerre apres 2002."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Groupes essentiellement independants sans centralisation politique supra-ethnique. La plupart des entites Nganguela ne developpèrent pas de pouvoir centralise. Le Mbunda fait exception avec ses autorites traditionnelles maintenant une coherence trans-nationale entre Angola et Zambie.",
+      "clanOrganization": "Chaque sous-groupe possede sa propre organisation sociale et identite distincte. L'organisation lignagere varie selon les sous-groupes entre matrilinaearite et patrilinearite.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'organisation sociale repose sur des lignages (matrilineaires ou patrilineaires selon les sous-groupes). Les structures lignageres determinent les droits fonciers, la succession et l'appartenance communautaire.",
+      "religiousAuthority": "Des autorites rituelles locales existent dans chaque sous-groupe. Les traditions spirituelles liees aux ancetres et aux forces naturelles sont centrales. L'influence chretienne missionnaire est historiquement limitee dans cette region, bien que presente depuis le milieu du XXe siecle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Luchazi (langue principale du groupe Nganguela)",
+      "isoCodes": ["lch", "mck", "nkn"],
+      "dialects": [
+        "Luchazi / Chiluchazi (lch) – langue principale du groupe Nganguela, Angola et Zambie",
+        "Mbunda (mck) – parle par les Mbunda d'Angola et de l'ouest de la Zambie",
+        "Nkangala (nkn) – parle dans l'est de l'Angola (province de Moxico)"
+      ],
+      "vehicularRole": "Le Luchazi est la langue de reference du groupe Nganguela et sert de vehiculaire inter-groupes. Les langues Nganguela appartiennent a la sous-famille Ngangela-Nyemba et sont apparentees au Chokwe et aux langues Lunda (zone K bantu). Le portugais est la langue officielle de l'Angola et s'utilise dans l'administration et l'education."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituels d'initiation masculine et feminine marques les passages de vie dans les differents sous-groupes Nganguela. Ceremonies liees aux ancetres et aux forces naturelles structurant le calendrier rituel. Le Mbunda maintient des ceremonies d'investiture pour ses autorites traditionnelles tant en Angola qu'en Zambie.",
+      "symbols": "La relation a la terre et aux ressources naturelles (agriculture de subsistance, elevage de petits animaux, cueillette de fruits sauvages, miel) est centrale dans l'identite Nganguela. La foret et les cours d'eau (peche dans les affluents du Zambeze) sont des espaces symboliques fondamentaux.",
+      "artsAndMusic": "Traditions artisanales comprenant la sculpture sur bois, la vannerie et la production de miel et de cire. Chant et musique accompagnant les ceremonies d'initiation et les rituels communautaires. Traditions de chasse et de peche constituant un patrimoine culturel, notamment dans les divisions orientales proches du Zambeze.",
+      "spiritualities": "Systemes de croyances centres sur les ancetres et les forces spirituelles naturelles (eau, foret). La production de miel et la recolte de produits de la foret sont souvent associees a des pratiques rituelles. Les pratiques spirituelles ancestrales ont ete preservees grace au contact limite avec les missions pendant la periode coloniale."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises comparables aux Ovimbundu ou aux Chokwe voisins. Structures de gouvernance locales basees sur des chefs de village et des anciens. La sphere Lunda-Ruund influenca certains groupes Nganguela, notamment les sections Lwena.",
+      "relationsWithNeighbors": "Relations commerciales asymetriques avec les Ovimbundu qui organisaient le commerce caravanier et pratiquaient des razzias esclavagistes dans les zones Nganguela. Les Chokwe, dont la penetration vers le sud fragmenta les groupes Nganguela a la fin du XIXe siecle, sont des voisins linguistiquement proches. Les Ruund et les Lunda du Sud sont des peuples de langues apparentees.",
+      "conflictsOrAlliances": "Razzias esclavagistes des Ovimbundu (XIXe siecle). Penetration Chokwe divisant les groupes (fin XIXe-debut XXe siecle). Pendant la guerre civile, la division angolaise des Nganguela fut marquee par des affiliations differentes au MPLA et a l'UNITA selon les zones. Le Mbunda offrit une resistance plus marquee a la colonisation que les autres sous-groupes.",
+      "diaspora": "Pres de la moitie des Mbunda s'installèrent en Zambie de l'Ouest, maintenant une coherence identitaire via leurs autorites traditionnelles. Refuge en Namibie pendant les guerres. Retours progressifs en Angola apres 2002."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur les donnees du recensement angolais et les estimations de la Banque mondiale. La categorie Ganguela representait environ 6% de la population angolaise selon les statistiques coloniales. Population de l'Angola 2025 environ 37 millions. Chiffre inferieur a celui de PPL_GANGUELA (1 500 000) car PPL_NGANGUELA se concentre sur le territoire angolais sans inclure les Mbunda de Zambie deja comptabilises dans PPL_GANGUELA.",
+      "distributionByCountry": [{ "country": "AGO", "population": 1200000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ganguela / Nganguela – Wikipedia EN (https://en.wikipedia.org/wiki/Ganguela)",
+      "Luchazi – Wikipedia EN (https://en.wikipedia.org/wiki/Luchazi)",
+      "Luchazi Language Blog – Signification du terme Nganguela (https://luchazilanguage.blogspot.com)",
+      "Ganguela Facts for Kids – Kiddle (https://kids.kiddle.co/Ganguela)",
+      "Nkangala Language – Ethnologue (https://www.ethnologue.com/language/nkn/)",
+      "Nyemba, Ngangela in Angola – Joshua Project (https://joshuaproject.net/people_groups/14092/AO)",
+      "Angola – Ethnic Groups – Country Studies (https://countrystudies.us/angola/56.htm)"
+    ]
   }
 }

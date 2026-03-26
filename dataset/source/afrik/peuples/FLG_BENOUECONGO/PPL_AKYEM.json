@@ -6,54 +6,83 @@
   "content": {
     "appellations": {
       "mainName": "Akyem",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Akyem",
+      "exonyms": ["Akim", "Great Akim", "Acchem", "Akan Grande"],
+      "originOfExonyms": "Les formes Akim et Great Akim sont d'origine europeenne (portugaise, hollandaise et anglaise), apparaissant dans les documents commerciaux du XVIIe siecle pour designer les royaumes akyem comme principale source d'or du Golfe de Guinee. La forme Acchem apparait dans les chroniques europeennes anterieures au XVIIIe siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Akyem est officialise dans les denominations administratives du Ghana (municipalites Abuakwa Nord, Abuakwa Sud, Akyemansa, West Akim). Les trois divisions historiques – Abuakwa, Kotoku et Bosome – restent des entites de chefferie actives avec leurs Omanhene respectifs.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
+      "ethnoLinguisticGroup": "Akan (sous-groupe Twi)",
+      "historicalRegion": "Region orientale du Ghana, vallee du Birem-Pra, foret du Sud-Est",
       "currentCountries": ["GHA"]
     },
-    "ethnicities": ["Akyem"],
+    "ethnicities": ["Akyem Abuakwa", "Akyem Kotoku", "Akyem Bosome"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Akyem sont issus de trois communautes de la frontiere orientale de l'etat d'Adansi, qui faisaient partie du vaste reseau akan Accany (ou Arcania) qui incluait aussi Adanse et Denkyira. Leurs premiers etablissements connus sont Kokobiante, Akrokerri et Sebenso. La lignee royale d'Abuakwa descend du clan Asona. L'historien Willem Bosman (1705) notait qu'Akyem fournissait autant d'or que n'importe quel autre pays de la region.",
+      "formationPeriod": "A partir de la seconde moitie du XVIIe siecle, les groupes akyem traversent graduellement la riviere Pra depuis l'interieur de l'Adanse. Abuakwa sous Aninkwatia s'installe d'abord a Sebenso, puis se deplace vers la riche vallee Birem-Pra. Kotoku et Bosome restent pres du lac Bosomtwe. Au milieu du XVIIe siecle, Akyem Abuakwa se constitue en monarchie centralisee ; le premier dirigeant connu est Aninkwatia, reigne depuis Banso.",
+      "migrationRoutes": [
+        "Migration depuis l'Adanse interior, traversee graduelle de la riviere Pra (seconde moitie du XVIIe siecle)",
+        "Abuakwa : de Sebenso vers la vallee Birem-Pra (capitale eventual Kyebi via Kyebirie)",
+        "Kotoku et Bosome : etablissements pres du lac Bosomtwe, puis separation progressive"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Birem-Pra (Abuakwa – capitale Kyebi)",
+        "Abords du lac Bosomtwe (Kotoku et Bosome)",
+        "Region orientale du Ghana actuel",
+        "Oda (Kotoku apres deplacement de Gyadam)",
+        "Koforidua (hote des refugies Juaben, devenu New Juaben)"
+      ],
+      "unificationsOrDivisions": "Les trois etats akyem – Abuakwa, Kotoku et Bosome – maintiennent des liens de parente tout en evoluant comme entites politiques separees. Ils cooperent souvent (ex. : guerre commune contre l'Akwamu vers 1730) mais s'opposent parfois (Kotoku avec Asante contre Abuakwa en 1731-1737). Apres 1730, ils coupent l'empire Akwamu, creant l'etat d'Akuapem sur les terres conquises.",
+      "externalInfluences": "Pression de Denkyira puis d'Asante (guerres de 1742, 1744-1745, 1765). En 1717, les forces akyem tendent une embuscade a l'Asantehene Osei Tutu et le tuent pres de la riviere Pra. Alliance avec les Britanniques au XIXe siecle. Influence missionnaire et coloniale a partir du XIXe siecle.",
+      "majorHistoricalEvents": "1717 : mort de l'Asantehene Osei Tutu dans une embuscade akyem. 1730 : Grande guerre Akyem-Akwamu, victoire akyem, demantellement de l'empire Akwamu, prise de controle des territories Ga et Adangbe. 1742 : Opoku Ware Ier conquer Abuakwa et Kotoku. 1764 : bataille d'Atakpame. Sous Nana Dokua (1817-1835) : periode de paix relative et consolidation. Fin XIXe-XXe siecle : role prominent dans les mouvements pan-africains et nationalistes ghaneen (membres du Big Six d'origine akyem)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie centralisee pour Abuakwa (la plus importante), chefferies organisees pour Kotoku et Bosome. Chef paramount d'Abuakwa : l'Okyenhene, siege a Kyebi. Le systeme comprend un conseil de chefs de sous-communautes. Tradition de double pouvoir symbolique : Okyenhene et Ohemaa (reine mere). Akyem est matrilineaire : l'heritage et la succession passent par la ligne maternelle.",
+      "clanOrganization": "La lignee royale d'Abuakwa descend du clan Asona, partage avec d'autres groupes akan. Chaque sous-groupe akyem possede ses propres affiliations claniques matrilineaires (abusua).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee maternelle (abusua) determine la succession au trone, l'heritage de la terre et l'appartenance au clan. La reine mere (Ohemaa) joue un role crucial dans la selection du chef.",
+      "religiousAuthority": "Veneration traditionnelle de la riviere Birim comme symbole sacre de vie, de force et de renouvellement (source de diamants industriels). Festival Ohum biannuel (juin-juillet et septembre-octobre) rendant hommage aux ancetres et aux divinites protectrices. Depuis la colonisation, le christianisme (protestantisme et catholicisme) est largement adopte."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Akan (Twi, dialecte akyem)",
+      "isoCodes": ["aka", "tw"],
+      "dialects": [
+        "Akyem Twi (partie du groupe dialectal Asante-Akyem-Kwahu)",
+        "Variantes locales entre Abuakwa, Kotoku et Bosome"
+      ],
+      "vehicularRole": "Le twi akyem est mutuellemet intelligible avec les autres dialectes twi (asante, akuapem, kwahu). L'akan est la langue la plus parlee du Ghana, par environ 80% de la population comme langue premiere ou seconde. L'akyem participe au standard literate du twi au sein de l'Akan Orthography Committee."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Ohum (biannuel, en juin-juillet et septembre-octobre) : celebration de la recolte de l'igname, veneration des ancetres et des divinites, avec la riviere Birim comme element sacre central. Funerailles elaborees avec deuil public et ceremonies de transition vers le monde spirituel. Rites d'intronisation des chefs impliquant les tabourets sacres.",
+      "symbols": "La riviere Birim (riviere sacree, source de vie et de diamants, symbole de renouvellement). Le tabouret sacre (siege de l'autorite et de l'ame de la communaute). L'inhumation symbolique dans une pierre a Akuapem comme promesse de protection. Les regalia royaux de l'Okyenhene.",
+      "artsAndMusic": "Artisanat akan : tissage de kente, orfevrerie (tradition ancienne liee au commerce de l'or), sculpture sur bois (tabourets, statues). Musique ceremonielle avec tambours, percussions et chants rituels. La region est connue pour ses riches traditions orales et genealogiques.",
+      "spiritualities": "Religion traditionnelle akan : veneration des ancetres, croyance en les obosom (divinites de la nature), culte de la riviere Birim. Depuis le XIXe siecle, le christianisme (protestantisme methodiste, presbyterien, adventiste, catholique) est largement repandu. Societe matrilineaire avec forte coherence clanique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Trois royaumes : Akyem Abuakwa (le plus puissant, capital Kyebi, dirigé par l'Okyenhene), Akyem Kotoku (capital Oda) et Akyem Bosome. Ils constituent ensemble les Royaumes d'Akyem, aussi appeles Grand Akyem. Apres 1730, creation de l'etat client d'Akuapem sur les terres Akwamu conquises.",
+      "relationsWithNeighbors": "Resistance continue contre l'empire Akwamu (debut XVIIIe siecle) et l'empire Asante (XVIIIe-XIXe siecles). Alliance avec les Ga et Adangbe apres 1730. Accueil des refugies Juaben a Koforidua (devenu New Juaben). Conflits et alliances alternants avec Fante, Wassa, Denkyira et Twifo.",
+      "conflictsOrAlliances": "Alliance Akyem-Akwamu contre leur occupant commun (vers 1730). Guerres contre Asante : 1718-1719, 1742, 1744-1745, 1765. Alliance avec Wassa, Denkyira, Twifo, Fante contre Asante (milieu XVIIIe siecle). Soutien a Ada contre Anlo a la bataille de Nonombe (vers 1752). Vers 1838, gouverneur britannique George Maclean rapporte Akyem et Akuapem comme provinces asante (possiblement exagere).",
+      "diaspora": "Au XXe siecle, certains membres de la communaute akyem jouent un role prominent dans les mouvements nationalistes et pan-africains ghaneen. Des personnalites d'origine akyem font partie des Big Six, les fondateurs du mouvement d'independance du Ghana."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1128000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Akan-Akyem in Ghana : 1 128 000)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1128000,
+          "note": "Region orientale principalement, districts de Abuakwa Nord, Abuakwa Sud, Akyemansa, West Akim, Birim et Kwaebibirem"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Akyem Kingdoms – Wikipedia EN (https://en.wikipedia.org/wiki/Akyem)",
+      "Joshua Project – Akan-Akyem in Ghana, 2025 (https://joshuaproject.net/countries/gh)",
+      "Akan language – Wikipedia EN (https://en.wikipedia.org/wiki/Akan_language)",
+      "LearnAkan – Akan Language dialects (https://learnakan.com/akan-language/)",
+      "Old Akyem – Wikipedia EN (https://en.wikipedia.org/wiki/Old_Akyem)",
+      "Asante dialect – Wikipedia EN (https://en.wikipedia.org/wiki/Asante_dialect)"
+    ]
   }
 }

@@ -6,64 +6,95 @@
   "content": {
     "appellations": {
       "mainName": "Makonde (Mozambique)",
-      "selfAppellation": "Makonde",
-      "exonyms": ["Makonde (terme utilisé par les Européens)"],
+      "selfAppellation": "Maconde / WaMakonde",
+      "exonyms": [
+        "Maconde (variante portugaise officielle)",
+        "Makonde (usage anglophone)"
+      ],
+      "originOfExonyms": "Le terme Maconde est la graphie portugaise adoptée officiellement au Mozambique pour désigner ce peuple. Le terme Makonde est utilisé en anglais et en swahili. Les deux graphies renvoient au même peuple, divisé par la rivière Ruvuma entre le Mozambique et la Tanzanie.",
+      "whyProblematic": "La distinction entre Makonde du Mozambique (Maconde) et Makonde de Tanzanie est parfois ignorée. Les deux populations partagent une origine commune sur le plateau de Mueda mais ont développé des langues, des expériences coloniales et des trajectoires politiques distinctes. Au Mozambique, le terme Maconde est politiquement chargé du fait du rôle central des Makonde dans la guerre d'indépendance contre le Portugal.",
+      "contemporaryUsage": "Le terme Maconde est couramment utilisé au Mozambique dans les contextes officiels et médiatiques. Les Makonde mozambicains sont reconnus comme un groupe ethnique de premier plan dans la politique nationale, notamment grâce à leur rôle dans le mouvement de libération FRELIMO.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone P)",
-      "historicalRegion": "Mozambique",
+      "ethnoLinguisticGroup": "Bantou (zone P, groupe P.30)",
+      "historicalRegion": "Plateau de Mueda, province de Cabo Delgado, Mozambique septentrional",
       "currentCountries": ["MOZ"]
     },
     "ethnicities": [
-      "Makonde du Nord",
-      "Makonde du Sud",
-      "Sous-groupes régionaux"
+      "Maconde du plateau de Mueda (groupe central, Cabo Delgado)",
+      "Maconde de la côte (installés sur le littoral depuis les accords de paix de 1992)",
+      "Clan des Shikombokombo (originaires du nord de la rivière Messalo)",
+      "Clan des Shitunguli (présents à la fois dans la région de Mueda et sur l'île d'Ibo)",
+      "Groupes de la vallée du Rovuma (fusion historique avec des Yao et des Makua)"
     ],
     "origins": {
-      "ancientOrigins": "Les Makonde du Mozambique sont originaires de la région du Mozambique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Makonde de Tanzanie.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Makonde du Mozambique ont développé leur culture sur le plateau de Mueda, une zone d'altitude dans le nord du Mozambique actuel. Ils font partie des peuples bantous de la zone P et sont étroitement apparentés aux Yao. Selon les sources ethnohistoriques, leurs ancêtres ont migré progressivement vers ce plateau aride et isolé, qui leur a servi de refuge face aux razzias esclavagistes arabes et africaines. Ils ont réussi à résister aux prédateurs africains, arabes et européens pendant des siècles.",
+      "formationPeriod": "L'identité distincte des Makonde mozambicains s'est consolidée sur le plateau de Mueda au cours du second millénaire. Ils ne sont tombés sous la domination coloniale portugaise effective qu'autour des années 1920. La période de formation identitaire forte correspond à la résistance à l'esclavage et à la colonisation, puis à la guerre d'indépendance (1964-1975), dont les Makonde ont été la colonne vertébrale.",
+      "migrationRoutes": [
+        "Migration bantou originelle depuis le nord-est vers le plateau de Mueda",
+        "Retraite historique vers le plateau de Mueda face aux razzias esclavagistes swahili et arabes du 18e au 19e siècle",
+        "Déplacements vers les zones côtières de Cabo Delgado après la fin de la guerre civile mozambicaine (1992)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Mueda, province de Cabo Delgado (zone historique centrale)",
+        "Mueda (chef-lieu du district, centre culturel makonde)",
+        "Districts de Muidumbe, Nangade et Mocimboa da Praia (Cabo Delgado)",
+        "Zones côtières de Cabo Delgado (installation croissante depuis 1992)"
+      ],
+      "unificationsOrDivisions": "Les Makonde mozambicains sont organisés en unités villageoises matrilinéaires relativement autonomes. Bien que partageant une identité culturelle commune avec les Makonde de Tanzanie, les deux groupes ont développé des langues distinctes depuis leur séparation par la rivière Ruvuma. La guerre d'indépendance (1964-1975) a renforcé la cohésion identitaire des Maconde mozambicains, dont le MANU (Mozambique African National Union) fut l'une des trois organisations fondatrices du FRELIMO.",
+      "externalInfluences": "Contacts anciens avec les commerçants arabes swahili de la côte (islamisation partielle). Colonisation portugaise effective à partir des années 1920. Rôle central dans la guerre d'indépendance (1964-1975) menée depuis le plateau de Mueda et depuis la Tanzanie. Le massacre de Mueda (16 juin 1960), où les autorités portugaises ont ouvert le feu sur des manifestants makonde, a catalysé la résistance armée.",
+      "majorHistoricalEvents": "Le massacre de Mueda du 16 juin 1960 est l'événement fondateur de la conscience politique makonde mozambicaine : le gouverneur colonial a fait arrêter des représentants makonde venus présenter des revendications, déclenchant une réaction de la foule, puis un tir des forces portugaises faisant plusieurs dizaines à plusieurs centaines de morts. Cet événement a catalysé la création du FRELIMO en 1962. Pendant la guerre d'indépendance (1964-1975), le plateau de Mueda était la principale zone d'opérations de guérilla. Les Maconde ont fourni l'essentiel des combattants du FRELIMO et ont soutenu financièrement le mouvement grâce à la vente de leurs sculptures. L'indépendance du Mozambique fut proclamée le 25 juin 1975."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La société makonde mozambicaine est organisée en chefferies villageoises matrilinéaires. L'autorité traditionnelle repose sur les anciens (wadawa) et les chefs de clan. Les décisions importantes sont prises collectivement au sein du conseil des anciens. Le système est distinct des monarchies centralisées : il n'y a pas de chef suprême unique mais une organisation décentralisée par village et par clan.",
+      "clanOrganization": "La société makonde mozambicaine est strictement matrilinéaire : la filiation, l'héritage et l'identité clanique passent par la lignée maternelle. Les clans (mitaa, sing. mtaa) regroupent les familles partageant une ancêtre maternelle commune. La résidence est matrilocale : l'époux vient s'installer dans le village de son épouse.",
+      "ageClassSystems": "Les rites d'initiation structurent le passage entre les générations. Les garçons non initiés (wavulana) sont distingués des hommes initiés. L'initiation masculine (shiputu) marque l'entrée dans le monde adulte et donne accès aux responsabilités communautaires.",
+      "roleOfLineages": "Les lignages matrilinéaires déterminent l'appartenance clanique, les droits fonciers, les alliances matrimoniales et la succession aux fonctions de chef. L'oncle maternel (mjomba) joue un rôle central dans l'éducation et la socialisation des enfants, plus important que le père biologique dans certaines décisions.",
+      "religiousAuthority": "L'autorité spirituelle repose sur les guérisseurs-médecins traditionnels (waganga) et les chefs de rites. Le culte des ancêtres est central : les esprits des défunts (mizimu) veillent sur les vivants et peuvent causer maladies ou malheurs si mal honorés. La majorité des Maconde du Mozambique pratiquent un syncrétisme entre catholicisme (héritage missionnaire portugais) ou islam et les croyances traditionnelles animistes."
     },
     "languages": {
-      "mainLanguage": "Makonde",
-      "vehicularRole": "Le makonde est parlé par la majorité des Makonde du Mozambique. Le portugais et d'autres langues sont également utilisés."
+      "mainLanguage": "Makonde (ChiMakonde / Kimakonde)",
+      "isoCodes": ["kde"],
+      "dialects": [
+        "Maconde du plateau de Mueda (dialecte central mozambicain)",
+        "Matambwe / Matembwe (dialecte divergent, frontière Mozambique-Tanzanie)",
+        "Mabiha / Maviha (dialecte divergent du côté tanzanien, compréhension limitée)"
+      ],
+      "vehicularRole": "Le chimakonde est la langue première de l'ensemble de la communauté ethnique. Au Mozambique, le portugais est la langue officielle et est utilisé dans l'administration, l'éducation et les médias. Le makua est également compris dans certaines zones de contact. La langue makonde mozambicaine a divergé de celle des Makonde tanzaniens au point que certains linguistes les considèrent comme deux langues distinctes."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels makonde, symboles islamiques et chrétiens",
-      "Arts et musique": "",
-      "source_4": "Sculpture sur bois (masques, statues)",
-      "source_5": "Musique traditionnelle",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Poésie orale",
-      "source_8": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les rites d'initiation sont au coeur de la vie sociale makonde. L'initiation masculine (shiputu ou mapiko) implique une période de réclusion, la circoncision, et un enseignement sur les responsabilités adultes, la discipline, le respect des aînés et la culture makonde. Une figure rituelle clé est le danseur masqué mapiko. L'initiation féminine (unyago ou ciputu) marque la puberté : les filles sont réunies en groupe, instruites sur leurs devoirs d'épouses et de mères par les femmes aînées de la famille, puis célébrées lors d'une cérémonie avec bain rituel, chants et tambours. Les rites funéraires impliquent des veillées (kesha) et des offrandes aux ancêtres. Le tatouage facial et les scarifications corporelles (aujourd'hui moins pratiqués) marquaient traditionnellement le statut social et les transitions rituelles.",
+      "symbols": "Le masque mapiko est le symbole culturel le plus emblématique des Makonde mozambicains. Ces masques en bois peints, portés lors des danses d'initiation masculine, représentent des esprits ancestraux et servent à transmettre les valeurs culturelles aux jeunes initiés. L'arbre généalogique sculpt (ujamaa, littéralement communauté) illustre l'interconnexion des générations. La sculpture en ébène (mpingo, Dalbergia melanoxylon, bois de fer noir) est le médium artistique par excellence.",
+      "artsAndMusic": "Les Makonde du Mozambique sont mondialement reconnus pour leur sculpture sur ébène noire (mpingo). Trois styles principaux : le binadamu (représentations réalistes de la vie quotidienne humaine et animale), l'ujamaa (sculptures en colonne représentant l'interdépendance familiale et communautaire), et le shetani (sculptures abstraites représentant des esprits du monde invisible, inspirées des rêves et des visions). La tradition sculpturale remonte au moins au 19e siècle et s'est développée commercialement à partir des années 1950-1960. La danse mapiko accompagnée de tambours est pratiquée lors des cérémonies d'initiation. La poterie, le tissage et la fabrication de paniers complètent l'artisanat traditionnel. La poésie orale et les contes (ngano) constituent un patrimoine littéraire oral riche.",
+      "spiritualities": "La religion traditionnelle makonde est une forme d'animisme centré sur le culte des ancêtres. Les esprits des défunts (mizimu) restent présents dans le monde des vivants et influencent le quotidien. Le guérisseur-médecin (mganga) joue un rôle crucial d'intermédiaire entre le monde des vivants et celui des ancêtres. La sorcellerie (uchawi) est une réalité socialement reconnue : les sorciers (wachawi) sont craints et respectés comme leaders communautaires, guérisseurs et protecteurs. La grande divinité créatrice est distante des affaires humaines ; ce sont les ancêtres qui interviennent dans le quotidien. La majorité des Maconde du Mozambique pratiquent aujourd'hui un syncrétisme entre catholicisme ou islam d'une part, et croyances animistes ancestrales d'autre part."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora makonde dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Makonde du Mozambique n'ont pas développé de royaumes centralisés. Leur organisation politique traditionnelle est décentralisée, basée sur des chefferies villageoises et des conseils d'anciens matrilinéaires. Cette structure décentralisée leur a permis de résister efficacement aux prédateurs esclavagistes et aux colonisateurs. Le district de Mueda est historiquement le centre politique et culturel de la communauté.",
+      "relationsWithNeighbors": "Les Makonde ont entretenu des relations complexes avec les peuples voisins : commerciales et parfois tendues avec les Mwani (peuples côtiers swahili de Cabo Delgado), relations de voisinage avec les Makua à l'ouest et au sud, et liens culturels forts avec les Makonde de Tanzanie de l'autre côté de la rivière Ruvuma. Des tensions historiques avec les commerçants arabes et swahili ont marqué la résistance à l'esclavage.",
+      "conflictsOrAlliances": "Les Makonde ont résisté avec succès aux razzias esclavagistes africaines, arabes et européennes pendant des siècles. Ils ne sont tombés sous la domination coloniale portugaise qu'autour des années 1920. Le massacre de Mueda (16 juin 1960) a catalysé la résistance armée. Le MANU (Mozambique African National Union), fondé par des Makonde en exil en Tanzanie, est devenu l'une des trois organisations fondatrices du FRELIMO (1962). Les Makonde ont constitué la colonne vertébrale de l'armée de libération du FRELIMO pendant la guerre d'indépendance (1964-1975). Après l'indépendance, plusieurs dirigeants makonde ont occupé des postes importants dans l'État mozambicain.",
+      "diaspora": "Une diaspora makonde mozambicaine s'est formée en Tanzanie à partir des années 1950-1960, lorsque des Makonde ont traversé la rivière Ruvuma pour travailler et commercer leurs sculptures à Dar es Salaam et Mtwara. De nombreux combattants du FRELIMO en exil en Tanzanie étaient d'origine makonde. Aujourd'hui, une migration vers les grandes villes mozambicaines (Maputo, Pemba, Nampula) est observée, ainsi qu'une petite diaspora dans les pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 300000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Recensement national du Mozambique 1997 : 233 358 Maconde au Mozambique. Estimations actualisées 2025 basées sur SIL Ethnologue (kde), Joshua Project (2025), et CIA World Factbook – Mozambique. La population est concentrée dans la province de Cabo Delgado.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 300000,
+          "note": "Province de Cabo Delgado (plateau de Mueda, districts de Mueda, Muidumbe, Nangade, Mocimboa da Praia). Recensement 1997 : 233 358. Estimation 2025 tenant compte de la croissance démographique."
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Makonde language (kde)",
-      "CIA World Factbook – Mozambique",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Makonde people. https://en.wikipedia.org/wiki/Makonde_people",
+      "Wikipedia EN — Makonde language. https://en.wikipedia.org/wiki/Makonde_language",
+      "SIL Ethnologue — Makonde (kde). https://www.ethnologue.com/language/kde/",
+      "Joshua Project — Makonde in Mozambique. https://joshuaproject.net/people_groups/13427/MZ",
+      "Museu do Aljube — Mueda Plateau Meeting 1960. https://www.museudoaljube.pt/en/2023/06/17/mueda-plateau-meeting/",
+      "African Blackwood Conservation Project — Makonde Art. https://www.blackwoodconservation.org/makonde-art/",
+      "Wikipedia EN — Mueda. https://en.wikipedia.org/wiki/Mueda",
+      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
+      "Mozambique High Commission — Cabo Delgado. http://www.mozambiquehighcommission.org.uk/cabo-delgado.html"
     ]
   }
 }

@@ -2,58 +2,77 @@
   "id": "PPL_LUVALE",
   "nameMain": "Luvale",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "AGO"],
   "content": {
     "appellations": {
       "mainName": "Luvale",
-      "selfAppellation": "",
-      "exonyms": ["Lwena"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Luvale",
+      "exonyms": ["Lovale", "Balovale", "Lubale", "Lwena", "Luena"],
+      "originOfExonyms": "Lwena et Luena sont les noms utilises en Angola pour designer le meme peuple. Balovale est une forme avec le prefixe Ba- usuel en bantou. Lovale et Lubale sont des variantes orthographiques europeennes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Luvale est aujourd'hui officiel en Zambie. En Angola, Lwena ou Luena reste en usage. La ville de Zambezi en Zambie etait anciennement appelee Balovale.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Ouest",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu du Centre-Ouest, sous-groupe Chokwe-Luchazi",
+      "historicalRegion": "Province du Nord-Ouest, Zambie; Province du Moxico, Angola",
+      "currentCountries": ["ZMB", "AGO"]
     },
     "ethnicities": ["Luvale"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Luvale sont originaires des regions situees au nord du lac Tanganyika, entre les montagnes du Rift oriental et le lac Victoria. Leur dynastie fondatrice remonte a Konde Mateti, etabli dans l'actuelle Republique democratique du Congo. La tradition orale rapporte que les ancetres migrerent depuis le nord-est africain avant de s'etablir dans le bassin du Congo.",
+      "formationPeriod": "La chefferie Kakenge, fondement de l'identite Luvale, fut etablie vers 1747 par Chinyama cha Mukwamayi pres du ruisseau Lumbala en Angola. La separation d'avec la confederation Lunda eut lieu apres que Lueji, reine Lunda, epousa le prince Luba Tshibinda Ilunga, provoquant la dissidence de ses freres Chinguli et Chinyama.",
+      "migrationRoutes": [
+        "Depuis le nord du lac Tanganyika vers le bassin du Congo",
+        "Du Congo vers le sud-ouest de l'Angola (province du Moxico)",
+        "De l'Angola vers la Province du Nord-Ouest de la Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Province du Nord-Ouest de la Zambie (district de Zambezi)",
+        "Province du Moxico, Angola orientale"
+      ],
+      "unificationsOrDivisions": "La rupture avec la Lunda fut provoquee par le mariage de Lueji avec Tshibinda Ilunga. Chinguli parti le premier vers le sud-ouest, puis Chinyama cha Mukwamayi fonda la chefferie Luvale. Ndonji, troisieme frere, est associe au peuple Chokwe. En 1941, Balovale fut officiellement separe du Barotseland et dote de ses propres institutions (tribunaux, autorites, tresoreries) par proclamation du commissaire britannique Philip MacDonell.",
+      "externalInfluences": "Participation active au commerce des esclaves atlantique aux XVIIIe et XIXe siecles avec les negociants Ovimbundu d'Angola. Domination coloniale britannique via la British South Africa Company a partir de 1890 (concession Lochner). Soumission nominale au royaume Barotse sous la colonisation.",
+      "majorHistoricalEvents": "Guerres de l'Ulamba dans les annees 1890 : raids Luvale contre les Lunda, arretes par l'intervention militaire Barotse de Lewanika puis par la conquete britannique. Liberation des esclaves en 1907 dans le Haut-Zambeze britannique. Independance administrative vis-a-vis du Barotseland proclamee le 9 juillet 1941. Conflits interethniques Luvale-Lunda dans les annees 1940-1950 et en 1998."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe sans chef supreme traditionnel : chaque chefferie locale est independante, le chef heritant matrilineairement de son oncle maternel. Les chefs, appeles Mwana nganga, gouvernent avec un conseil d'anciens et de specialistes rituels. Sous la colonisation, le chef Ndungu devint le chef superieur coutumier. En 2020, Chinyama Ngundu fut designe comme nouveau chef superieur, une nomination disputee par d'autres chefs Luvale.",
+      "clanOrganization": "La societe Luvale est organisee en treize clans (miyachi). Seuls les membres du clan NamaKungu peuvent acceder au trone. Chaque clan possede un totem (generalement un animal : faucons, hiboux, poissons) et une recitation genealogique (kulisasula jikumbu) permettant d'identifier ses membres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descendance est matrilineaire : seuls les enfants d'une femme chef (vamyangana) peuvent gouverner. L'enfant d'un chef masculin est appele Mwana Uta (enfant de l'arc) et est exclu de la succession. Les villages sont divises en sections dirigees par des chefs de famille. La societe distingue les descendants des lignees fondatrices matrilineaires et les descendants d'anciens esclaves.",
+      "religiousAuthority": "Les devins (nganga) jouent un role central dans la societe Luvale : ils utilisent la divination par panier (jusqu'a 60 objets lances et interpretes) pour diagnostiquer maladies et malheurs causes par les esprits mauvais actives par les sorciers (orwanga). Les specialistes rituels participent aux conseils des chefs."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Luvale (Chiluvale)",
+      "isoCodes": ["lue"],
+      "dialects": [],
+      "vehicularRole": "Le luvale est reconnue comme langue regionale officielle en Zambie pour l'education et l'administration. En Angola (province du Moxico), il est utilise en milieu domestique et communautaire. Environ 168 000 locuteurs en Zambie (2006) et 180 000 en Angola (2024)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La ceremonie Likumbi Lya Mize est la grande ceremonie traditionnelle annuelle, celebree le dernier week-end d'aout au siege de Mize a Zambezi (Province du Nord-Ouest). Elle dure une semaine et comprend les initiations des filles (wali) et des garcons (mukanda), les danses des masques makishi et des discours. L'initiation wali a lieu a la premiere menstruation : la jeune fille est secuestree 4 a 6 mois (desormais 1 semaine a 1 mois), instruite par une chilombola, puis presentee couverte d'huile et d'ocre rouge. Le mukanda est l'initiation des garcons de 8 a 12 ans pendant la saison seche : circoncision, seclusion en brousse, apprentissage des masques makishi, sculpture sur bois, vannerie, forge et jeux; l'initiation se termine par un grand spectacle de masques et les garcons reviennent en hommes.",
+      "symbols": "Les masques makishi sont le symbole central de la culture Luvale. Chaque masque represente un ancetre ou une force spirituelle : Chisaluke (homme puissant), Mupala (roi du mukanda, esprit protecteur), Pwebo (ideal feminin), Chileya (fou), Chiwigi (femme vaniteuse), Chikungila (esprit ambivalent), Utenu (l'irascible), Katoyo/Chindele (moquant les etrangers). Les masques sont en bois, fibre vegetale, ficelle et perles.",
+      "artsAndMusic": "Artisanat : paniers (mbango pour le grain, visalo nattes), poterie, travail du metal (utengo), tabourets (likupu en cuir et bois). Instruments de musique : xylophone (jinjimba), piano a pouce (likembe), tambours. La musique est omnipresen lors des ceremonies d'initiation, des funerailles et des rassemblements communautaires.",
+      "spiritualities": "Le dieu supreme est Kalunga, dieu celeste de la creation, omniscient, maitre de toutes les divinites et des esprits des vivants et des morts. Les mahamba sont des esprits de la nature et des ancetres (individuels, familiaux ou communautaires) que l'on apaise par des offrandes pour obtenir prosperite et sante. Les esprits malveillants, actives par des sorciers, causent maladies et malheurs et sont contrecarres par le devin nganga."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "La chefferie Kakenge, fondee vers 1747 par Chinyama cha Mukwamayi, est l'unite politique fondatrice des Luvale. Les treize chefferies Luvale n'ont jamais forme de royaume centralise ; chacune reste autonome avec son chef matrilineaire. La chefferie superieure de Ndungu fut instituee sous la colonisation britannique.",
+      "relationsWithNeighbors": "Les Luvale sont etroitement apparentes aux Lunda et Ndembu (au nord-est), et ont des similitudes culturelles avec les Kaonde (a l'est), les Chokwe et les Luchazi (Angola oriental). Ils ont mene des raids esclavagistes contre les Lunda aux XVIIIe et XIXe siecles (Guerres de l'Ulamba). Ils s'opposerent durablement a l'influence Barotse (au sud) et furent en conflit avec les chefferies Lunda meridionales. Les negociants Ovimbundu d'Angola furent leurs principaux partenaires commerciaux lors du commerce atlantique des esclaves.",
+      "conflictsOrAlliances": "Raids Luvale contre les Lunda (Guerres de l'Ulamba, 1890s), stoppes par Lewanika (Barotse) et la conquete britannique. Conflits territoriaux avec les Lunda dans les annees 1940-1950 et en 1998 (centaines de deplaces). Opposition commune aux Barotse avec les Lunda durant la colonisation.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 570000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation a partir de 168 000 locuteurs en Zambie (2006, Ethnologue) et 180 000 en Angola (2024, Wikipedia Luvale language). Projections 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 350000 },
+        { "country": "AGO", "population": 220000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Luvale people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Luvale_people)",
+      "Luvale language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Luvale_language)",
+      "Luvale Language (LUE) – Ethnologue, SIL International (https://www.ethnologue.com/language/lue/)",
+      "Luvale, Lwena in Angola – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
+      "Luvale in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)"
+    ]
   }
 }

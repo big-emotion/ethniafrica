@@ -2,58 +2,84 @@
   "id": "PPL_KUNDA",
   "nameMain": "Kunda",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "ZWE", "MOZ"],
   "content": {
     "appellations": {
       "mainName": "Kunda",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Akunda",
+      "exonyms": ["Chikunda", "Awetwe"],
+      "originOfExonyms": "Le terme Akunda est l'auto-denomination du peuple avec le prefixe bantu A-. Chikunda designe aussi bien la langue que certains groupes apparentes au Zimbabwe et au Mozambique. Awetwe est un ancien nom mentionne par les anciens du peuple.",
+      "whyProblematic": "Le nom Kunda est partage par plusieurs groupes distincts en Afrique, notamment les Seba (aussi appeles Kunda) du nord-ouest de la RDC, ce qui cree des confusions dans les bases de donnees linguistiques.",
+      "contemporaryUsage": "Le nom Kunda est utilise en Zambie orientale pour designer ce groupe et sa langue. La distinction avec le Chikunda [kdn] du Zimbabwe et du Mozambique reste importante pour les linguistes.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bisa-Lamba (M.55), Bantu central",
+      "historicalRegion": "Vallee du Luangwa, Province Orientale de Zambie",
+      "currentCountries": ["ZMB", "ZWE", "MOZ"]
     },
-    "ethnicities": ["Kunda"],
+    "ethnicities": ["Kunda", "Akunda"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Kunda sont une ramification du peuple Bisa, lui-meme issu de l'Empire Luba du bassin du Congo. Leur ancetre fondateur, Mambwe, etait fils d'une femme Bisa qui l'avait cache pour le soustraire aux ordres infanticides du chef Bisa Chawala Makumba. Mambwe grandit en exil et finit par conduire son peuple vers l'est, franchi l'escarpement Muchinga et descendit dans la vallee du Luangwa.",
+      "formationPeriod": "Vers 1840, lors de la separation d'avec les Bisa installes le long de la riviere Luapula. L'explorateur portugais Silva Porto mentionne les Cunda des 1852 lors de sa traversee du Luangwa.",
+      "migrationRoutes": [
+        "Bassin du Congo (Empire Luba) vers la riviere Luapula",
+        "Luapula vers l'escarpement Muchinga",
+        "Muchinga vers la vallee du Luangwa (appelee Marambo par les Kunda)",
+        "Division: un groupe sous Malama traversa vers l'est du Luangwa et se melea aux Nsenga ; un autre sous Mambwe remonta vers le nord jusqu'a la riviere Ulanda"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Luangwa, Province Orientale de Zambie",
+        "District de Mambwe, wards 5 a 11",
+        "Zone de gestion de la faune de Lupande et Nsefu",
+        "Zones frontieres du Zimbabwe et du Mozambique"
+      ],
+      "unificationsOrDivisions": "Apres la mort de Mambwe tue par les Bisa, le groupe se divisa en plusieurs chefferies : celle de Chief Jumbe (fondee par Mchacha, frere de Mambwe) et celle de Nsefu (descendant du premier Chief Sandwe, fils de Malama et d'une femme Nsenga). La periode des raids Ngoni et Bemba au XIXe siecle desorga nisa profondement les Kunda, forçant l'exil de l'heritier legitime Nsefu au Malawi jusqu'a la paix britannique de 1899.",
+      "externalInfluences": "Raids Ngoni (arrives au Luangwa apres 1835), raids Bemba allies aux negriers swahilis au XIXe siecle, colonisation britannique via la British South Africa Company (paix etablie en 1899), creation du Parc national de South Luangwa dans les annees 1930 avec deplacement des populations.",
+      "majorHistoricalEvents": "Separation d'avec les Bisa vers 1840 ; mentionne par Silva Porto en 1852 ; raids Ngoni et Bemba au XIXe siecle ; retour de Chief Nsefu en 1899 sous administration britannique ; creation de la Reserve de gibier de South Luangwa dans les annees 1930 ; collaboration entre Chief Nsefu et Norman Carr pour la conservation de la faune."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de chefferies patrilineaires. Les principaux chefs sont Chief Nsefu (zone nord, parc de South Luangwa) et Chief Msoro (zone sud, village de Malama). Le totem royal est Chulu (fourmiliere), certains utilisent Mbawo (petit insecte).",
+      "clanOrganization": "Organisation clanique avec totems distinctifs. Le clan royal porte le totem Chulu. L'appartenance clanique determine les droits fonciers et les obligations rituelles.",
+      "roleOfLineages": "Les lignages patrilineaires structurent la succession des chefs et la transmission des terres. Les ancetres fondateurs (Mambwe, Malama, Mchacha) restent des figures de reference dans la memoire collective.",
+      "religiousAuthority": "Les chefs traditionnels cumulent pouvoir politique et autorite spirituelle, notamment pour les rites de premiere recolte et la mediation avec les esprits ancestraux. La Malaila Traditional Ceremony est la principale celebration culturelle du peuple Kunda."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kunda (Chikunda)",
+      "isoCodes": ["kdn"],
+      "dialects": [
+        "Seba (kdn, parfois distingue)",
+        "Kunda de la vallee du Luangwa"
+      ],
+      "vehicularRole": "Langue vernaculaire locale dans le district de Mambwe. Le nyanja et l'anglais sont utilises comme langues vehiculaires regionalement. La langue est en cours d'assimilation avec les langues voisines (Bisa, Nsenga)."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "La Malaila Traditional Ceremony est la principale ceremonie culturelle du peuple Kunda, celebree dans le district de Mambwe, Province Orientale. Elle celebre l'histoire du peuple, les recoltes et la relation avec les esprits ancestraux.",
+      "symbols": "Le totem Chulu (fourmiliere) est le symbole du clan royal. Les villages fortifies (stockades) du XIXe siecle evoquent la resilience face aux raids.",
+      "artsAndMusic": "Traditions orales riches autour de la saga de Mambwe et de la fondation du peuple. Musique de ceremonies avec tambours et chants collectifs lors de la Malaila Ceremony.",
+      "spiritualities": "Croyances animistes centrees sur les esprits ancestraux et les forces de la nature. L'essor du christianisme (evangelisme, catholiques) est important depuis la colonisation britannique. Certains ont adopte l'islam sous influence commerciale swahilie au XIXe siecle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies de Nsefu et de Msoro (anciennement village de Malama) dans la vallee du Luangwa. Pas de royaume centralise, mais un reseau de chefferies liees par l'ascendance commune a Mambwe.",
+      "relationsWithNeighbors": "Relations avec les Bisa (peuple d'origine), les Nsenga (intermariage, fusion partielle), les Ngoni (conflits et captures au XIXe siecle), les Bemba (conflits). Coexistence avec les Ambo et les Lenge de Chief Mukuni dans la Province Centrale.",
+      "conflictsOrAlliances": "Conflit fondateur avec les Bisa de Chawala Makumba lors de la migration. Raids Ngoni depuis 1835 ayant force de nombreux Kunda a fuir ou rejoindre les Ngoni. Raids Bemba allies aux negriers swahilis dans les annees 1880. Retour a la paix sous administration britannique en 1899.",
+      "diaspora": "Petites communautes Kunda au Zimbabwe et au Mozambique, partageant une langue apparentee (Chikunda [kdn]). Ces communautes sont considerees moins evangelisees que celles de Zambie selon le Joshua Project."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 250000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation basee sur 101lasttribes.com (250 000) et Partners in Bible Translation Survey 2015 (83 467 Zambiens se reclamant Kunda ; 40 029 locuteurs primaires). Population totale incluant Zimbabwe et Mozambique.",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 200000 },
+        { "country": "ZWE", "population": 30000 },
+        { "country": "MOZ", "population": 20000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kunda – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/kunda-2/)",
+      "The Kunda of Zambia – Partners in Bible Translation Survey, 2015 (http://partnersinbibletranslation.org/wp-content/uploads/2018/03/KundaSurvey_2015.pdf)",
+      "Kunda people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/kunda.html)",
+      "Kunda in Zambia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12852/ZA)",
+      "Zambia: Tracing History of the Kunda – allAfrica.com, 2006 (https://allafrica.com/stories/200611020687.html)",
+      "Kunda Language (KDN) – Ethnologue, SIL International (https://www.ethnologue.com/language/kdn/)"
+    ]
   }
 }

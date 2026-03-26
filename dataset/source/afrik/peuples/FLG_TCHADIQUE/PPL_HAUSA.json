@@ -2,30 +2,152 @@
   "id": "PPL_HAUSA",
   "nameMain": "Hausa",
   "languageFamilyId": "FLG_TCHADIQUE",
-  "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN"],
+  "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN", "BEN", "CIV"],
   "content": {
     "appellations": {
       "mainName": "Hausa",
-      "selfAppellation": "Hausawa",
+      "selfAppellation": "Hausawa (pluriel) ; Bahaushe (singulier masculin) ; Bahaushiya (singulier feminin)",
+      "exonyms": [
+        "Ausa (exonyme historique en usage dans certaines sources europeennes anciennes)",
+        "Hausa-Fulani (terme politique moderne designant la classe dirigeante islamisee du nord du Nigeria, fruit de l'integration post-jihad de Sokoto)"
+      ],
+      "originOfExonyms": "Le terme Hausa (aussi ecrit Haoussa en français) designe a la fois le peuple et sa langue. L'exonyme Ausa est une ancienne deformation phonetique europeenne. Le terme composite Hausa-Fulani est un label sociopolitique apparu apres le jihad de Usman dan Fodio (1804-1808), designant l'elite islamique bilingue du nord du Nigeria ; il ne reflète pas une fusion ethnique ou genetique reelle.",
+      "whyProblematic": "L'amalgame entre Hausa et Fulani (Hausa-Fulani) est un raccourci politique courant dans le discours nigerian contemporain. Les Haoussa sont fondamentalement des agriculteurs sedentaires d'origine tchadique, tandis que les Peuls sont des pasteurs d'origine ouest-sahelienne. Leur integration politique post-jihad masque des distinctions culturelles, linguistiques et genetiques importantes.",
+      "contemporaryUsage": "Hausa est utilise en francais (Haoussa), en anglais, en haoussa et dans toutes les langues de l'Afrique de l'Ouest comme designation standard. Hausawa est le terme que les locuteurs utilisent pour se designer eux-memes. Le haoussa est une des trois langues nationales du Nigeria et la deuxieme langue vehiculaire d'Afrique subsaharienne apres le swahili.",
       "linguisticFamily": "FLG_TCHADIQUE",
-      "ethnoLinguisticGroup": "Tchadique occidental",
-      "historicalRegion": "Sahel central (Kano, Katsina, Zaria)",
-      "currentCountries": ["NGA", "NER", "CMR", "GHA", "TCD", "SDN"]
+      "ethnoLinguisticGroup": "Tchadique occidental (West Chadic A.1, groupe Hausa-Gwandara)",
+      "historicalRegion": "Hausaland (Kasar Hausa) — nord du Nigeria et sud du Niger, des villes historiques de Kano, Katsina, Zaria (Zazzau), Sokoto, Daura, Gobir, Biram",
+      "currentCountries": [
+        "NGA",
+        "NER",
+        "CMR",
+        "GHA",
+        "TCD",
+        "SDN",
+        "BEN",
+        "CIV"
+      ]
     },
-    "ethnicities": ["Kano", "Katsina", "Zaria (Zazzau)"],
-    "origins": {},
-    "organization": {},
+    "ethnicities": [
+      "Habe (Haoussa purs, autochtones de Kasar Hausa) : Gobirawa, Kabawa, Rumawa, Adarawa, Maouri et autres — dirigeants des royaumes haoussa avant le jihad de 1804",
+      "Hausa-Fulani ou Kado (Peuls hausanises, d'origine mixte Haoussa-Peule, parlant une variante haoussa) : Jobawa, Dambazawa, Mudubawa, Mallawa, Sullubawa — issus des migrations peules (XVe-XIXe siecles) et du califat de Sokoto",
+      "Banza (tribus anciennes aux langues eteintes integrees dans Hausaland) : Ajawa, Gere, Bankal et autres",
+      "Maguzawa (Haoussa non-islamises, pratiquants de la religion traditionnelle Bori)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Haoussa sont un peuple autochtone d'Afrique de l'Ouest dont les ancetres tchadiques peuplaient la region du lac Tchad et du Sahel central depuis des millenaires. Au VIIe siecle apres J.-C., une communaute haoussa etablie sur la colline Dalla de Kano (venue de Gaya) pratiquait la forge. Selon la legende de Bayajidda, les etats haoussa furent fondes par les fils et petits-fils de Bayajidda, un prince de Bagdad qui tua un serpent dans le puits de Daura (Kusugu) et epousa la reine Daurama, derniere souveraine matriarcale. Les sept etats issus de cette union (Hausa Bakwai) sont : Daura (ville-mere), Kano, Katsina, Zazzau (Zaria), Gobir, Rano et Biram. Les erudits considerent generalement la legende de Bayajidda comme un mythe de fondation et non comme un recit historique.",
+      "formationPeriod": "Les royaumes haoussa se formerent entre le VIIe et le XIe siecle apres J.-C. L'urbanisation du nord du Nigeria crea des centres de pouvoir fortifies (birane). L'islam fut introduit vers le XIVe siecle via le commerce avec les Wangara (Soninke) ; Muhammad Korau de Gobir fut le premier souverain haoussa converti (milieu XIVe siecle). Le XVe et le XVIe siecle virent l'apogee des etats haoussa en tant que puissantes cites marchandes du commerce transsaharien (cuir, or, tissus, sel, noix de kola, esclaves). En 1804-1808, le jihad de Usman dan Fodio renversa les royaumes haoussa et crea le califat de Sokoto, transformant profondement la structure politique haoussa.",
+      "migrationRoutes": [
+        "Peuplement autochtone de la zone sahelo-soudanienne entre le lac Tchad et le fleuve Niger",
+        "VIIe siecle : migration de Gaya vers la colline Dalla (Kano)",
+        "Expansion commerciale du XIVe au XVIe siecle le long des routes transsahariennes (Kano, Katsina, Agadez, Tripoli, Le Caire)",
+        "Dispersion progressive vers le Ghana, la Cote d'Ivoire, le Benin, le Togo, le Soudan (XIVe-XXe siecles) via le commerce et le hajj",
+        "Migrations modernes vers les cotes ouest-africaines (Lagos, Accra, Abidjan, Cotonou)"
+      ],
+      "historicalSettlementZones": [
+        "Kano — ancienne capitale de la forge, du commerce et de l'artisanat (textile, teinture a l'indigo)",
+        "Katsina — grand centre islamique et commercial du Hausaland medieval",
+        "Zazzau (Zaria) — fournisseur de main-d'oeuvre servile pour les autres etats haoussa",
+        "Daura — ville-mere mythique, berceau de la civilisation haoussa",
+        "Gobir — etat le plus septentrional, gardien militaire du Hausaland",
+        "Sokoto — capitale du califat de Sokoto depuis 1809",
+        "Agadez (Niger) — relais majeur du commerce haoussa au Sahara"
+      ],
+      "unificationsOrDivisions": "Les sept etats Hausa Bakwai (Daura, Kano, Katsina, Zazzau, Gobir, Rano, Biram) et les sept etats Banza Bakwai (Zamfara, Kebbi, Yauri, Gwari, Kwararafa, Nupe, Yoruba) n'ont jamais forme une unite politique unique. Ils partageaient une langue, une culture et l'islam, mais restaient des entites independantes. Le califat de Sokoto (1804-1808) crea une structure imperiale unificatrice sous domination peule, abolissant de fait les anciens royaumes haoussa souverains. En 1903, la conquete britannique incorpora le Nord-Nigeria dans le Protectorat du Nord-Nigeria.",
+      "externalInfluences": "Commerce transsaharien (XIVe-XIXe siecles) avec l'Afrique du Nord, l'Egypte, le Maroc. Influence islamique via les Wangara (Soninke), les ulemas du Caire, de Tunis et du Maroc invites a Kano par Muhammad Rumfa (1463-1499). Expansion du Califat de Bornou (XVe siecle) : vassalisation temporaire des etats haoussa. Ascendant de Songhai (XVIe siecle) selon Leo Africanus. Jihad peul de Usman dan Fodio (1804-1808) : renversement de l'elite haoussa et creation du califat de Sokoto. Colonisation britannique (1903) : administration indirecte via le systeme des emirs.",
+      "majorHistoricalEvents": "VIIe siecle : installation sur la colline Dalla, Kano. XIVe siecle : Yaji Ier de Kano (r. 1349-1385) se convertit a l'islam. Vers 1463-1499 : Muhammad Rumfa, sultan de Kano, etend les murailles, fonde le Gidan Rumfa (palais), etablit le marche Kurmi (toujours en activite), invite des erudits islamiques d'Egypte et du Maroc. Milieu XVIe siecle : la reine Amina de Zazzau (Zaria) regna 34 ans, etendit le territoire haoussa du Kwararafa au Nupe, fit construire les murailles en tubali (Ganuwar Amina). 1804-1808 : jihad de Usman dan Fodio, creation du califat de Sokoto sous direction peule. 1903 : conquete britannique, mort du calife Muhammadu Attahiru Ier. 1930 : officialisation de l'alphabet boko (latin) pour le haoussa par les administrations britannique et francaise. 2024 : le festival Durbar inscrit par l'UNESCO au patrimoine culturel immateriel."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme emiral (Sarauta) profondement hierarchise : Sultan de Sokoto (Sarkin Musulmi, leader spirituel supreme des Haoussa-Peuls sunnites) ; emirs de premiere et deuxieme classe (Sarki) dans chaque emirat ; chefs de district (Hakimi) ; chefs de village (Dagaci) ; chefs de quartier (Mai-unguwa) ; masse populaire (Talakawa). L'emir cumule autorite religieuse, judiciaire et executive. La Sharia est le droit applicable. La succession a l'emirat est hereditaire.",
+      "clanOrganization": "Distinction fondamentale entre la classe dirigeante (masusarauta) et le peuple (talakawa). Trois sous-groupes historiques : Habe (Haoussa purs), Hausa-Fulani ou Kado (Peuls hausanises), Banza (peuples assimiles). Organisation en groupes d'occupation avec leurs propres titres et hierarchies internes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance a la noblesse (sarautun gargajiya) ou au peuple. Les titres occupationnels (sarautu) sont souvent hereditaires et transmis dans les familles specialisees. L'unite sociale de base est le foyer (gida) sous l'autorite du mai gida.",
+      "religiousAuthority": "Islam sunnite malekite predominant depuis le XIe siecle, renforce par le jihad de Sokoto. Le Sultan de Sokoto est le Sarkin Musulmi, chef spirituel de tous les Haoussa-Peuls sunnites du Nigeria. Influence soufie (saints Wali Muhammad dan Masani, d.1667 ; Wali Muhammad dan Marina, d.1655). Pre-islam : religion Maguzanci (ATR) avec le culte de possession des esprits (Bori) et les sacrifices animaux."
+    },
     "languages": {
-      "mainLanguage": "Hausa"
+      "mainLanguage": "Haoussa (Hausa)",
+      "isoCodes": ["hau"],
+      "dialects": [
+        "Kano Hausa — variete de prestige, standard de reference",
+        "Sokoto Hausa",
+        "Katsina Hausa",
+        "Zaria Hausa",
+        "Niger Hausa (varietes du Niger, influence de l'administration francaise)",
+        "Shuwa Hausa (parle au Soudan, Blue Nile area)",
+        "Ajami (haoussa ecrit en script arabe, pre-colonial et islamique)"
+      ],
+      "vehicularRole": "Le haoussa est la deuxieme langue la plus parlee dans la famille afro-asiatique apres l'arabe. Il compte environ 50 millions de locuteurs natifs et 30 millions de locuteurs secondaires. C'est la lingua franca du nord du Nigeria et du sud du Niger, et une langue vehiculaire majeure en Afrique de l'Ouest. Officiel dans les etats du nord du Nigeria ; vehicule de l'enseignement, de la radiodiffusion (BBC Hausa, VOA Hausa, Radio Nigeria), de la litterature et de la presse. L'alphabet boko (latin) est officiel depuis 1930 ; l'ajami (arabe) est toujours utilise dans les ecoles islamiques. Le haoussa est visible sur les billets de naira nigerians."
     },
     "culture": {
-      "source_0": "Musique griotique (mawaka).",
-      "source_1": "Architecture en banco.",
-      "source_2": "Marchés urbains historiques (Kano Kurmi).",
-      "source_3": "Poésie et littérature en ajami (hausa en écriture arabe)."
+      "majorRites": "Durbar (Hawan Sallah) : festival equestre annuel celebre dans les grandes villes emirales (Kano, Katsina, Sokoto, Zaria, Bauchi) apres le Ramadan (Aid al-Fitr) et pour Aid al-Adha. Inscrit au patrimoine culturel immateriel de l'UNESCO en decembre 2024. Le festival commence par la priere a l'aube, suivi d'une somptueuse cavalcade de l'emir et de sa suite (cavaliers, musiciens, artilleurs). Le clou est le Jahi (salut des cavaliers). Rites de passage islamiques : naissance (akika, sacrifice), circoncision (kaciya), mariage (aure avec dot et ceremonies familiales), funerailles (inhumation dans les 24h, prieres). Hajj (pelerinage a La Mecque) : obligation pour les musulmans en capacite.",
+      "symbols": "Architecture en tubali (briques de terre seche, bâtiments cubiques multi-etages, creneaux, stuc blanc, reliefs abstraits) — les murailles de Kano (fondees vers 1095-1134) et les murailles de la reine Amina (Ganuwar Amina) sont des symboles culturels majeurs. Le cheval est un symbole de statut et de noblesse (present lors des ceremonies de l'Aid). Le noeud Dagin Arewa (etoile geometrique du Nord) orne l'architecture, la broderie et les tissus. Le marche Kurmi de Kano (fonde par Muhammad Rumfa, XVe siecle, toujours en activite) symbolise la tradition commerciale haoussa. Habillement : grand boubou (babban riga), turban Alasho, coiffe hula.",
+      "artsAndMusic": "Musique : griots (mawaka), instruments traditionnels (luth gurmi, luth garaya, vielle goje, hautbois algaita, trompette kakaki). Architecture en tubali (brique d'argile seche, style Hausa). Textiles : tissage et teinture a l'indigo (les Haoussa etaient appeles bluemen par les Europeens en raison de leur peau teintee d'indigo). Broderie et travail du cuir. Boxe Dambe : sport traditionnel (origine chez les bouchers ; le poing dominant enroule de tissu est la lance, le bras faible est le bouclier ; victoire par KO, mise a terre ou inactivite ; recompenses en argent, betail, bijoux). Litterature en ajami depuis la periode pre-coloniale (ex. Ruwayar Annabi Musa, XVIIe siecle par Abdullah Suka) ; marche litteraire de Kano (littattafan soyayya). Gastronomie : tuwo (bouillie) avec miya (sauce), suya (brochettes), kilishi (suya sechee), kosai (galettes de haricots), kunu (boisson de millet).",
+      "spiritualities": "Islam sunnite malekite : religion dominante depuis le XIe siecle, renforce par le califat de Sokoto (1804-1808). Confréries soufies influentes. Pre-islam : Maguzanci (religion traditionnelle haoussa) incluant le culte de possession Bori (invocation des esprits iskoki), les sacrifices animaux et les ceremonies de guerison. Les Maguzawa (Haoussa non-islamises) maintiennent ces pratiques. La langue haoussa elle-meme conserve des traces de la cosmologie pre-islamique dans son vocabulaire des esprits (iskoki)."
     },
-    "historicalRole": {},
-    "demography": {},
-    "sources": ["Ethnologue (hau)", "Sokoto Studies", "UNFPA Sahara"]
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Hausa Bakwai (sept etats haoussa authentiques) : Daura (ville-mere, berceau de la legende Bayajidda), Kano (centre textile et commercial, fondateur Bagauda), Katsina (centre du savoir islamique, fondateur Kumayau), Zazzau/Zaria (fournisseur de main-d'oeuvre, fondateur Gunguma), Gobir (gardien militaire du Nord, fondateur Duma), Rano (centre textile, fondateur Zamna Kogi), Biram (fondateur Biram, fils de Bayajidda et de la princesse kanuri Magira). Les Hausa Banza (sept etats annexes) : Zamfara, Kebbi, Yauri, Gwari, Kwararafa, Nupe, Yoruba. Apogee au XVIe siecle comme puissants etats-villes marchands du commerce transsaharien. Califat de Sokoto (1809) : empire islamique sous direction peule, incluant tous les anciens royaumes haoussa transformes en emirats.",
+      "relationsWithNeighbors": "Alliances commerciales avec les marches du Maghreb (Tripoli, Tunis, Le Caire) via les routes transsahariennes. Relations tributaires avec Bornou (XVe siecle) et Songhai (XVIe siecle). Assimilation des groupes Peuls migrants (XVe-XIXe siecles). Jihad de Sokoto : transformation des relations avec les Peuls d'une domination haoussa vers une domination peule. Commerce avec les Yoruba au sud (tissu, cola, sel). Relations avec les Touaregs a Agadez.",
+      "conflictsOrAlliances": "Vassalisation par Bornou (XVe siecle). Tributaires de Songhai (XVIe siecle selon Leo Africanus). Jihad de Usman dan Fodio (1804-1808) : defaite des royaumes haoussa, creation du califat de Sokoto. Conquete britannique (1903) : mort du calife Muhammadu Attahiru Ier, fin du califat ; resistance finale a Hadejia (1906). Les emirs haoussa-peuls sont maintenus sous administration indirecte britannique.",
+      "diaspora": "La diaspora haoussa est l'une des plus etendues d'Afrique de l'Ouest. Depuis 1000 ans, les Haoussa ont traversé l'Afrique pour le commerce, le service militaire, la chasse, le hajj et la fuite des rois oppressifs. Communautes importantes au Ghana, Cote d'Ivoire, Togo, Benin, Cameroun, Tchad, Soudan (Blue Nile area), Eritree. Agadez (Niger) est un grand centre haoussa sur la route du hajj. Presence dans les grandes villes cotieres (Lagos, Port Harcourt, Accra, Abidjan, Cotonou) et en Libye."
+    },
+    "demography": {
+      "totalPopulation": 86000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Hausa people) : environ 86 millions. Niger : ~15,8 millions (60% de la population). Soudan : ~9 millions. Cameroun : ~8 millions. Nigeria : majorite dans les etats du nord (Kano, Katsina, Sokoto, Zamfara, Jigawa, Kebbi, etc.). Source : Ethnologue (hau), CIA World Factbook, UNFPA Nigeria et Niger, projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 50000000,
+          "note": "Nord du Nigeria : etats de Kano, Katsina, Sokoto, Zamfara, Jigawa, Kebbi, Kaduna, ainsi que diaspora a Lagos et autres grandes villes"
+        },
+        {
+          "country": "NER",
+          "population": 15800000,
+          "note": "Sud du Niger, environ 60% de la population nationale ; diaspora majeure a Agadez"
+        },
+        {
+          "country": "CMR",
+          "population": 8000000,
+          "note": "Villes du nord : Garoua, Maroua, Ngaounderé"
+        },
+        {
+          "country": "SDN",
+          "population": 9000000,
+          "note": "Darfour, Kordofan, Khartoum — diaspora historique"
+        },
+        {
+          "country": "GHA",
+          "population": 1500000,
+          "note": "Nord du Ghana et grandes villes (Accra, Kumasi)"
+        },
+        {
+          "country": "TCD",
+          "population": 1000000,
+          "note": "Tchad occidental, route du hajj"
+        },
+        {
+          "country": "BEN",
+          "population": 500000,
+          "note": "Nord du Benin et Cotonou"
+        },
+        {
+          "country": "CIV",
+          "population": 200000,
+          "note": "Communautes commercantes a Abidjan et dans le nord"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hausa people. https://en.wikipedia.org/wiki/Hausa_people",
+      "Wikipedia EN — Hausa Kingdoms. https://en.wikipedia.org/wiki/Hausa_Kingdoms",
+      "Wikipedia EN — Durbar festival. https://en.wikipedia.org/wiki/Durbar_festival",
+      "SIL Ethnologue — Hausa language (hau). https://www.ethnologue.com/language/hau/",
+      "UNESCO — Durbar festival inscrit au patrimoine immatériel, décembre 2024. https://www.unesco.org/",
+      "NKENNE — History of the Seven Original Hausa States. https://www.nkenne.com/blog/hausa-bakwai-seven-original-hausa-states-history",
+      "European Union Agency for Asylum — Nigeria Country Focus. https://www.euaa.europa.eu/nigeria-country-focus/13-demographics",
+      "Last Places — Durbar Festival. https://lastplaces.com/en/travel-is-knowledge/durbar-festival-hausa/",
+      "Hausa and the Chadic Languages (IU ScholarWorks). https://scholarworks.iu.edu/dspace/bitstreams/b175371d-4472-4485-abd1-f96698068937/download",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+    ]
   }
 }

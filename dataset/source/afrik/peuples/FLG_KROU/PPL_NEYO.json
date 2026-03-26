@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Neyo",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Néyo",
+      "exonyms": ["Néouolé", "Neyau", "Néwolé", "Gwibwen", "Towi"],
+      "originOfExonyms": "L'ethnonyme Néyo est probablement la contraction de Néné-yo (les enfants de Néné), désignant les descendants des premiers occupants de l'embouchure du Sassandra, les Gnagbia (aujourd'hui disparus). Une autre interprétation fait de Nè yo une expression signifiant enfants de la même mère et donc frères, en référence à la diversité d'origines des groupes fondateurs. Néouolé et Neyau sont des variantes orthographiques anciennes utilisées par les explorateurs et administrateurs coloniaux français.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Néyo est la forme officielle en Côte d'Ivoire et dans les publications scientifiques. Gwibwen et Towi sont des désignations alternatives utilisées dans certaines sources linguistiques.",
       "linguisticFamily": "FLG_KROU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud-Ouest",
+      "ethnoLinguisticGroup": "Krou oriental (sous-groupe krou de Côte d'Ivoire)",
+      "historicalRegion": "Sous-préfecture et commune de Sassandra, région du Gbôklè, sud-ouest de la Côte d'Ivoire",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Neyo"],
+    "ethnicities": ["Neyo", "Néyo"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud-Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Néyo ont des origines multiples et disparates. L'entité néyo s'est constituée entre le XVe siècle et la fin du XIXe siècle, de part et d'autre de l'embouchure du Sassandra, à partir de groupements venus des pays Krou, Guéré, Bété, Bakwè et Godié. Ces groupes furent attirés par les possibilités commerciales de la côte, depuis que les Portugais jetèrent l'ancre devant le rio Sao Andre en 1471. La tradition désigne les Gnagbia comme les premiers occupants de l'embouchure, dont les Néyo seraient les enfants symboliques.",
+      "formationPeriod": "XVe-XIXe siecle : formation progressive par agrégation de groupes d'origines diverses (krou, guéré, bété, bakwè, godié) autour des opportunités commerciales de l'embouchure du Sassandra.",
+      "migrationRoutes": [
+        "Migration originelle depuis le Liberia vers le sud-ouest de la Côte d'Ivoire",
+        "Fixation progressive autour de l'embouchure du fleuve Sassandra"
+      ],
+      "historicalSettlementZones": [
+        "Embouchure et rives du fleuve Sassandra (Kébé et Neyo, cantons de la sous-préfecture de Sassandra)",
+        "Région côtière du golfe de Guinée entre Monogaga et Sassandra"
+      ],
+      "unificationsOrDivisions": "La société néyo est structurée en dix tribus (gbini), chaque tribu constituant une fédération de patriclans ou un patriclan. Ces dix tribus se subdivisent en lolokpa (ensembles exogamiques) puis en lolohuri (lignages mineurs). La dispersion en 24-25 villages côtiers reflète cette organisation décentralisée.",
+      "externalInfluences": "Contact avec les Portugais dès 1471, puis avec les navigateurs hollandais, danois, anglais et finalement français. Les Néyo ont joué le rôle d'intermédiaires commerciaux obligatoires entre l'arrière-pays (Bété, Wè) et les navires européens. La colonisation française débute en 1893 avec Georges Thomann qui crée le premier Cercle de Sassandra.",
+      "majorHistoricalEvents": "1471 : premier contact avec les Portugais au rio Sao Andre (Sassandra). XVIIe-XIXe s. : commerce actif avec les navires européens (esclaves, caoutchouc, ivoire contre cuivre, sel marin, tissus, alcool, armes). 1893 : arrivée de l'administrateur Georges Thomann qui documente la langue et les coutumes néyo. XXe s. : déclin de la pêche face à la concurrence ghanéenne ; reconversion vers l'agriculture."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Société patriarcale organisée en groupes familiaux et en villages. Le pouvoir est exercé par un conseil de sages composé des doyens et des chefs de lignages du village, auquel s'adjoint un chef de village désigné en assemblée. Le pouvoir n'est pas héréditaire : il se conquiert avec l'âge, la richesse, la puissance, l'importance de la descendance et la sagesse.",
+      "clanOrganization": "Dix tribus (gbini), chacune subdivisée en lolokpa (unité exogamique, ensemble de descendants en ligne agnatique d'un même ancêtre) et en lolohuri (lignages mineurs ou minimaux). Le lolohuri tend à supplanter le lolokpa comme cadre de l'exogamie dans la société contemporaine.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le patrilignage (lolokpa/lolohuri) est l'unité sociale fondamentale. Il détermine les droits fonciers, les alliances matrimoniales et l'accès aux fonctions d'autorité. Les femmes ne participent pas aux assemblées des hommes et n'ont aucun rôle politique traditionnel.",
+      "religiousAuthority": "Autorité religieuse exercée par les anciens gardiens des cultes animistes. Chaque famille vénère un esprit protecteur particulier ; chaque village possède une divinité propre. La communauté néyo vénère un esprit protecteur commun censé préserver tout Néyo de la noyade. Christianisme (catholique d'abord, puis évangélique) largement répandu depuis le XXe siècle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "néyo",
+      "isoCodes": ["ney"],
+      "dialects": [
+        "néyo (parler de la sous-préfecture de Sassandra)",
+        "variantes entre les cantons Kébé et Neyo"
+      ],
+      "vehicularRole": "Le néyo est la langue maternelle des Néyo, parlée dans les 24-27 villages de la sous-préfecture de Sassandra. C'est une langue de la branche krou oriental de la famille nigéro-congolaise. La langue n'a pas d'écriture propre mais peut être retranscrite avec l'alphabet latin selon l'Orthographe pratique des langues ivoiriennes (OPLI). Une traduction de la Bible a été publiée par Wycliffe Bible Translators. Environ 9 000 à 10 000 locuteurs recensés. La syntaxe est de type SVO (sujet-verbe-objet) ; les noms se répartissent en huit classes nominales."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Pratiques animistes structurées autour du culte des esprits familiaux et villageois. L'esprit protecteur contre la noyade est central dans la spiritualité néyo, peuple côtier anciennement pêcheur. Des cérémonies liées aux cycles agricoles (riz) jalonnent l'année. Le christianisme (catholique puis protestant évangélique) a largement remplacé les pratiques animistes, sans toutefois effacer la croyance en la sorcellerie et dans le pouvoir des sorciers.",
+      "symbols": "Le fleuve Sassandra est le symbole territorial fondateur des Néyo, dont les villages s'organisent de part et d'autre de son embouchure. L'activité maritime (pêche, commerce côtier) a longtemps défini l'identité néyo.",
+      "artsAndMusic": "Traditions musicales et chorégraphiques héritées de la culture krou, avec chants en choeur, percussions et danses cérémonielles. La transmission orale (contes, proverbes, généalogies) constitue la mémoire collective. La langue néyo a été documentée dès 1903 par Georges Thomann (Essai de manuel de la langue néouolé).",
+      "spiritualities": "Animisme traditionnel : chaque famille possède un esprit protecteur particulier ; chaque village vénère une divinité propre. La croyance en la mort non naturelle (mort toujours causée par la sorcellerie) est très répandue, même parmi les convertis. Christianisme (catholique en recul, protestantisme évangélique en hausse) ; très rares Néyo musulmans."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé. Les Néyo formaient une confédération décentralisée de villages-tribus (gbini) dont le chef (kè, de l'anglais king) dirigeait une fédération de patriclans. L'autorité s'exerçait à l'échelle du village et du lignage.",
+      "relationsWithNeighbors": "Proches des Bakwè (proximité géographique et alliances matrimoniales), des Bété, des Godié et des Wè. Les Néyo ont servi d'intermédiaires commerciaux entre les peuples de l'arrière-pays (Bété, Kodia, Wè) et les navires européens du XVe au XIXe siècle. La concurrence des pêcheurs ghanéens au XXe siècle a conduit les Néyo à abandonner la pêche pour l'agriculture.",
+      "conflictsOrAlliances": "Les Néyo ont maintenu leur position commerciale côtière grâce à leur rôle d'intermédiaires. Les guerres et conflits avec les populations voisines ont historiquement conditionné leurs migrations et leur installation définitive à Sassandra. Situation de minorité démographique croissante au XXe-XXIe siècle : les allochtones sont quatre fois plus nombreux que les autochtones dans la zone de Sassandra.",
+      "diaspora": "Présence de Néyo à Abidjan et dans quelques villes françaises et américaines, sans diaspora internationale significativement documentée."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 19500,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "101lasttribes.com (2023) : environ 19 500 personnes (Peoplegroups.org 2023). Wikipedia FR : moins de 10 000 dans les villages, mais diaspora non comptabilisée. Joshua Project : entre 3 000 et 10 000 dans les 25 villages côtiers.",
+      "distributionByCountry": [{ "countryCode": "CIV", "population": 19500 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Néyo (peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/N%C3%A9yo_(peuple))",
+      "Néyo (langue) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/N%C3%A9yo_(langue))",
+      "Neyo in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13323)",
+      "Ethnologue – Neyo language (ney), SIL International, 2024 (https://www.ethnologue.com/language/ney/)",
+      "Omniglot – Neyo language and alphabet, 2021 (https://www.omniglot.com/writing/neyo.htm)",
+      "Neyo people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/neyo.html)",
+      "Thomann Georges, Essai de manuel de la langue néouolé parlée dans la partie occidentale de la Côte d'Ivoire – E. Leroux, 1905"
+    ]
   }
 }

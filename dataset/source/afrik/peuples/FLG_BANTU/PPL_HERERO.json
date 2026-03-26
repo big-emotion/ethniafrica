@@ -7,63 +7,108 @@
     "appellations": {
       "mainName": "Herero",
       "selfAppellation": "Ovaherero",
-      "exonyms": ["Herero (terme utilisé par les Européens)"],
+      "exonyms": [
+        "Herero (terme europeen courant)",
+        "OvaHerero (forme longue de l'endonyme)"
+      ],
+      "originOfExonyms": "Le nom Herero signifie litteralement 'possesseur de betail' en otjiherero, reflet de leur identite pastorale. Ovaherero est le pluriel de OmuHerero (singulier). Les locuteurs designent leur langue Otjiherero.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ovaherero est l'endonyme collectif prefere. Herero est le terme universellement utilise en anglais, francais et dans les medias internationaux.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone R)",
-      "historicalRegion": "NAM, BWA, AGO",
+      "ethnoLinguisticGroup": "Bantou du sud-ouest (Zone R, Guthrie R30 - Otjiherero)",
+      "historicalRegion": "Hereroland (Ehi rOvaherero) - Namibie centrale et septentrionale, regions de Kunene, Omaheke et Otjozondjupa ; presences historiques en Botswana (Ghanzi) et Angola (Namibe, Huila, Cunene)",
       "currentCountries": ["NAM", "BWA", "AGO"]
     },
     "ethnicities": [
-      "Herero de Namibie",
-      "Herero du Botswana",
-      "Herero d'Angola"
+      "Herero proprement dits (Namibie centrale, Hereroland)",
+      "Mbanderu (Namibie orientale et Botswana, appeles aussi Ovambanderu)",
+      "Himba (Kaokoland, Namibie nord-occidentale ; mode de vie pastoral traditionnel precolonial)",
+      "Tjimba / Cimba (Namibie nord-occidentale ; chasseurs-cueilleurs historiques absorbant des elements herero)",
+      "Kwandu (Angola et Namibie nordiste)",
+      "OvaKuvale / Mucubal (Angola, provinces de Namibe et Huila)",
+      "OvaZemba / Zemba (Angola et Namibie ; langue Otjizemba apparentee)",
+      "OvaHakawona (Angola et Namibie nord-occidentale)",
+      "OvaTjavikwa (Angola)"
     ],
     "origins": {
-      "ancientOrigins": "Les Herero sont originaires de la NAM, du Botswana et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone R).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples khoïsan, influence du christianisme."
+      "ancientOrigins": "Les Herero, peuples bantouphones, migrerent vers la Namibie actuelle depuis le nord, peut-etre des le XIIe siecle selon certaines estimations historiques. Ils vivaient essentiellement comme pasteurs nomades, le betail etant au centre de leur economie et de leur identite culturelle. Leur nom lui-meme - Herero - signifie 'possesseur de betail'. Avant la colonisation, ils etaient en conflit periodique sur les paturages et les points d'eau avec les groupes khoi-khoi, notamment les Nama au sud.",
+      "formationPeriod": "Le premier gouvernement central ovaherero fut etabli en 1863 lors d'une reunion a Otjizingue/Otjimbingwe, ou Maharero ka Tjamuaha fut elu premier chef supreme (paramount chief) le 15 juin 1863. Cette unite politique emergea face a la menace commune des Nama sous Jonker Afrikaner. La genealogie des chefs supremes court de Maharero ka Tjamuaha (1861-1890) a Samuel Maharero (1890-1917) en passant par Hosea Kutako (1917-1970), Clemens Kapuuo (1970-1978), Kuaima Riruako (1978-2014) et Vekuii Rukoro (2014-2021).",
+      "migrationRoutes": [
+        "Migration depuis le nord (Afrique centrale) vers la Namibie actuelle du XIIe au XVIe siecle",
+        "Dispersion post-genocide (1904-1908) vers le Bechuanaland (Botswana actuel) et l'Angola"
+      ],
+      "historicalSettlementZones": [
+        "Hereroland (Namibie centrale et nord, regions Omaheke, Otjozondjupa, Kunene)",
+        "Kaokoland (Himba, nord-ouest de la Namibie)",
+        "District de Ghanzi (Botswana occidental)",
+        "Provinces de Namibe, Huila et Cunene (Angola sud-ouest)"
+      ],
+      "unificationsOrDivisions": "La colonisation allemande (a partir de 1884) fragmenta progressivement les structures politiques herero. La rebellion de 1904 et le genocide qui s'ensuivit divisa irremediablement les Ovaherero entre ceux restes en Namibie (survivants des camps de concentration) et ceux qui s'exilerent au Botswana et en Angola. Depuis l'independance namibienne (1990), plusieurs autorites royales coexistent (Ovaherero Traditional Authority, Maharero Royal Traditional Authority, Zeraeua Royal Traditional Authority, Ovambanderu Royal Traditional Authority, Onguatjindu Royal Traditional Authority).",
+      "externalInfluences": "Contacts historiques avec les Khoikhoi (Nama) et les San. Colonisation portugaise en Angola. Colonisation allemande en Namibie (1884-1919) : le premier genocide du XXe siecle (1904-1908). Colonisation sud-africaine (1915-1990). Independance namibienne en 1990. Influence du christianisme (premierement de la mission rhenane, dont le missionnaire Gottlieb Viehe translata la Bible en otjiherero a la fin du XIXe siecle).",
+      "majorHistoricalEvents": "Soulèvement herero du 12 janvier 1904 sous le chef Samuel Maharero. Bataille de Waterberg (11 aout 1904) : defaite decisive face aux renforts allemands du general Lothar von Trotha. Ordonnance d'extermination (Vernichtungsbefehl) de von Trotha (automne 1904). Genocide des Herero et Nama (1904-1908) : 40 000 a 80 000 Herero tues (80% de la population d'avant-guerre), suivis par l'internement dans des camps de concentration. En 2021, l'Allemagne reconnait officiellement le genocide et annonce une aide financiere de plus de 1,1 milliard d'euros. Independance de la Namibie : 21 mars 1990."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Chef supreme (paramount chief) sur l'ensemble des clans depuis 1863. Plusieurs autorites royales reconnues dans le cadre de la loi namibienne sur les autorites traditionnelles (Traditional Authorities Act 25 de 2000). Chaque grande autorite royale est presidee par un chef hereditaire. Le feu sacre (okuruuo ou OtjikaTjamuaha) symbolise le lien aux ancetres et le pouvoir du chef.",
+      "clanOrganization": "Systeme de double descendance : lignage maternel (eanda, pluriel omaanda) pour la transmission du patrimoine ; lignage paternel (oruzo, pluriel otuzo) pour la direction du clan. Les principaux clans/maisons royales sont : Ovaherero Traditional Authority (chef Mutjinde Katjiua), Maharero Royal Traditional Authority (chef Tjinaani Maharero), Zeraeua Royal Traditional Authority a Omaruru, Ovambanderu Royal Traditional Authority (chef Eben Nguvauva), Onguatjindu Royal Traditional Authority a Okakarara.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages maternels (omaanda) transmettent le patrimoine et les droits successoraux economiques. Les lignages paternels (otuzo) determinent l'appartenance clanique et l'autorite politique. Ce systeme de double descendance est caracteristique et unique parmi les peuples bantou.",
+      "religiousAuthority": "Le feu sacre (okuruuo) maintenu par le chef supreme permet de communiquer avec l'ancetre fondateur Ndjambi (dieu supreme). Syncrétisme marque avec le christianisme depuis la fin du XIXe siecle. Eglise lutherienne tres presente (heritage des missions rhenanes). L'autorite du chef inclut une dimension sacree liee aux ancetres."
     },
     "languages": {
-      "mainLanguage": "Herero",
-      "vehicularRole": "Le herero est parlé par la majorité des Herero. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Otjiherero",
+      "isoCodes": ["her"],
+      "dialects": [
+        "Otjihimba (dialecte du nord-ouest namibien, parle par les Himba)",
+        "Otjizemba / Oluthimba (dialecte le plus courant en Angola)",
+        "Otjikuvale (dialecte distinct, frontiere namibiano-angolaise)",
+        "Otjimbanderu (dialecte de la Namibie orientale et du Botswana)"
+      ],
+      "vehicularRole": "L'otjiherero est une langue stable, langue d'enseignement dans les ecoles namibiennes et matiere d'etude a l'Universite de Namibie. Diffuse a la radio nationale namibienne (NBC) dans l'une des six langues minoritaires. Premiere transcription ecrite par le missionnaire Gottlieb Viehe (fin XIXe siecle, traduction biblique). Un dictionnaire de reference existe (Gamsberg Macmillan, 2008). L'afrikaans est tres utilise en Namibie comme langue vehiculaire intergroupes. L'anglais est la langue officielle de la Namibie depuis 1990."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'élevage",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels herero (vêtements traditionnels), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Feu sacre (okuruuo, aussi appele OtjikaTjamuaha a Okahandja) : feu ancestral maintenu en permanence par le chef, lien aux ancetres pour communiquer avec Ndjambi. Il est eteint et rallume lors des migrations importantes. Veneration des ancetres : sacrifices de vaches ou d'autres animaux. Ceremonies de mariage : consommation de betail, ceremonies collectives. Ceremonies du Herero Day : commemorations annuelles de la resistance et du genocide, avec port des tenues militaires historiques.",
+      "symbols": "Le betail (mainstay de l'economie et symbole central de richesse : plus de betail = plus riche). La coiffe feminine otjikaiva (forme evoquant des cornes de vache, roulee dans du journal recouvert de tissu assortie a la robe, decoree de broches). La robe traditionnelle ohorokova (longue robe jusqu'au sol, col haut, jupes volumineuses avec de nombreuses jupons et jusqu'a 10 metres de tissu ; heritage de l'habit des missionnaires allemands du XIXe siecle, reinterpretes en couleurs vives). La tenue militaire ceremonielle des hommes (casquettes a visiere, berets, epaulettes, aiguillettes, guerres ; pour honorer les ancetres tombes au combat et s'approprier symboliquement la puissance colonisatrice).",
+      "artsAndMusic": "Artisanat traditionnel : bijoux (colliers, bracelets en cuivre et en perles), travail du cuir (vetements, chaussures, objets du quotidien). Couture et creation de tenues traditionnelles ohorokova : art tres elaborate chez les femmes, avec des createurs contemporains comme McBright Kavari (gagnant du prix Best Herero Dress trois fois). Architecture traditionnelle : campements pastoraux, dormitoires sur peaux de vaches. Chants et danses ceremoniales lors du Herero Day et des mariages. Poesie orale et recits genealogiques.",
+      "spiritualities": "Croyance en Ndjambi comme divinite supreme (priere via le feu sacre). Veneration intense des ancetres (bazimu dans la tradition) : les ancetres protegent les vivants et sont consultes via le feu sacre. Syncrétisme avec le christianisme lutherien (tres repandu depuis les missions rhenanes du XIXe siecle). L'Eglise lutherienne evangelique de Namibie (ELCIN) compte de nombreux fideles herero."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora herero dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Systeme de chefferies (chiefdoms) depuis le XVIIe siecle. Unite politique etablie en 1863 sous Maharero ka Tjamuaha, premier paramount chief elu a Otjizingue/Otjimbingwe. Genealogie continue des chefs supremes jusqu'a aujourd'hui. Cinq autorites royales reconnues par la loi namibienne : Ovaherero, Maharero, Zeraeua (Omaruru), Ovambanderu, Onguatjindu (Okakarara).",
+      "relationsWithNeighbors": "Conflits seculaires avec les Nama pour les paturages et l'eau. Alliance temporaire avec les Allemands contre les Nama avant 1904. Relations complexes avec les Ovambo au nord. Relations avec les Damara (Namibie). Voisinage avec les San (Bushmen) au Botswana. Echanges commerciaux transfrontaliers entre Namibie et Angola pour les troupeaux.",
+      "conflictsOrAlliances": "Le genocide des Herero et Nama (1904-1908), reconnu par l'Allemagne en 2021 comme le premier genocide du XXe siecle. 40 000 a 80 000 Herero tues (80% de la population) et 10 000 Nama tues (50% de la population). Camp de concentration de Shark Island. Ordonnance d'extermination du general Lothar von Trotha. Dispossession de toutes les terres herero. Resistance passive sous Hosea Kutako (1917-1970) via des petitions a la Societe des Nations et l'ONU. Independance namibienne en 1990.",
+      "diaspora": "Botswana : communautes importantes a Maun, Sepopa, Toromuja, Karee, Etsha, Mahalapye, Pilane, Kgalagadi South (Tsabong, Omawaneni, Draaihoek, Makopong) ; descendants des refugies du genocide de 1904-1908 (environ 22 000 en 2024 selon Joshua Project). Angola : populations significatives (environ 28 000 en 2024 selon Joshua Project) dans les provinces de Namibe, Huila et Cunene. Afrique du Sud : petite communaute de descendants de refugies."
     },
     "demography": {
-      "totalPopulation": 200000,
+      "totalPopulation": 330000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project 2024 : Namibie 279 000, Botswana 22 000, Angola 28 000 (total 329 000). Recensement namibien 2023 : 178 987 identifies comme Ovaherero. Omniglot : environ 250 000 locuteurs otjiherero. Projection 2025.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 280000,
+          "note": "Principalement regions d'Omaheke, Otjozondjupa, Kunene, Erongo et Windhoek"
+        },
+        {
+          "country": "BWA",
+          "population": 25000,
+          "note": "District de Ghanzi (ouest) et villes de Maun, Mahalapye, Pilane"
+        },
+        {
+          "country": "AGO",
+          "population": 25000,
+          "note": "Provinces de Namibe, Huila et Cunene (sud-ouest de l'Angola)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Herero language (her)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le génocide des Herero"
+      "Wikipedia EN - Herero people : https://en.wikipedia.org/wiki/Herero_people",
+      "Wikipedia EN - Herero and Nama genocide : https://en.wikipedia.org/wiki/Herero_and_Nama_genocide",
+      "SIL Ethnologue - Herero language (her) : https://www.ethnologue.com/language/her/",
+      "Omniglot - Herero language : https://www.omniglot.com/writing/herero.php",
+      "Joshua Project - Herero language resources : https://joshuaproject.net/languages/her",
+      "BBC News - Germany recognises colonial-era Namibia genocide, 28 mai 2021 : https://www.bbc.com/news/world-europe-57279008",
+      "South African History Online - Herero Revolt 1904-1907 : https://sahistory.org.za/article/herero-revolt-1904-1907",
+      "JFCS Holocaust Center - Herero and Nama Genocide : https://holocaustcenter.jfcs.org/remembering-the-forgotten-genocide-of-the-herero-and-nama/",
+      "Oxford Guide to Bantu Languages - Otjiherero : https://academic.oup.com/book/61440/chapter/534774683"
     ]
   }
 }

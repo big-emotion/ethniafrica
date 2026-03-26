@@ -1,23 +1,86 @@
 {
   "id": "PPL_BASSA_NIGERIA",
-  "nameMain": "",
+  "nameMain": "Bassa Nge",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Bassa / Basa",
+      "mainName": "Bassa Nge",
+      "selfAppellation": "Bassa Nge (le suffixe Nge est un marqueur linguistique nupe désignant ce sous-groupe)",
+      "exonyms": ["Basa Nge", "Bassa-Nge", "Bassangi"],
+      "originOfExonyms": "Le terme Bassa Nge fut officialisé par les administrateurs coloniaux britanniques pour distinguer ce peuple des Bassa Komu, deux groupes ethniquement distincts qui avaient migré presque simultanément vers la même province coloniale dite Province de Bassa. Le suffixe Nge vient du nupe. Sans cette distinction administrative, les deux groupes auraient été confondus sous le seul nom Bassa, malgré des origines, cultures et langues totalement différentes.",
+      "whyProblematic": "Confusion fréquente avec les Bassa Komu (qui parlent une langue benue-congo distincte) et avec d'autres groupes bassa d'Afrique (Bassa du Cameroun, Bassa du Liberia). Ces groupes n'ont en commun que le toponyme colonial. Les Bassa Nge sont une communauté d'origine nupe distincte de toutes les autres.",
+      "contemporaryUsage": "Bassa Nge est l'appellation officielle utilisée par les communautés locales, les autorités de Kogi State et les ONG de la diaspora (ex. Bassa Nge Community of North America).",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "historicalRegion": "Nigeria (Plateau State, Kogi State)",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Nupoid (branche des langues nupe, Volta-Niger/Benue-Congo occidental)",
+      "historicalRegion": "Bassa Province (confluence des fleuves Niger et Bénoué), aujourd'hui Bassa Local Government Area, Kogi State, Nigeria",
+      "currentCountries": ["NGA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue", "Nigeria Middle Belt studies"]
+    "ethnicities": [
+      "District de Gboloko (siège du royaume Bassa Nge, capitale Gboloko)",
+      "District de Kpata (rive orientale du Niger)",
+      "District de Eforo (zone méridionale du royaume)",
+      "Communautés de Shintaku (principal port fluvial, traversée vers Lokoja)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bassa Nge sont originaires de Gbara, ancienne capitale du royaume nupe (Nigeria central). Ils sont une tribu de langue nupe, ethniquement et culturellement liée au grand peuple nupe, distinct des Bassa Komu qui sont d'origine et de langue benue-congo. Leur présence dans la région de la confluence Niger-Bénoué remonte à leurs migrations du XIXe siècle depuis le territoire nupe.",
+      "formationPeriod": "Vers 1805-1850 : migration depuis Gbara (capitale nupe) suite à des troubles dynastiques internes au royaume nupe, contemporaine de la période du djihad de Sokoto",
+      "migrationRoutes": [
+        "Gbara (ancienne capitale du royaume nupe) → traversée du fleuve Niger → installation sur la rive orientale de la confluence Niger-Bénoué",
+        "Établissement progressif sur les basses terres longeant le fleuve Niger face à Lokoja (actuel siège de Kogi State)"
+      ],
+      "historicalSettlementZones": [
+        "Basse-terre de la confluence Niger-Bénoué : zone bornée au nord par la Bénoué, à l'est par les districts Bassa Komu, Dekina et Biraidu, à l'ouest par le Niger",
+        "Gboloko (siège administratif du royaume Bassa Nge, environ 100 km²)",
+        "Shintaku (port principal sur le Niger, face à Lokoja)",
+        "Quelques communautés à Lokoja, rive du Niger, Kogi State"
+      ],
+      "unificationsOrDivisions": "La cohabitation avec les Bassa Komu dans la même Province de Bassa coloniale a conduit à une confusion nominale entretenue jusqu'à aujourd'hui. Les deux communautés sont cependant totalement distinctes par l'origine, la langue, la culture et l'histoire. Le royaume Bassa Nge est organisé en trois districts (Gboloko, Kpata, Eforo) autour d'un Etsu Bassa Nge (chef suprême).",
+      "externalInfluences": "Période coloniale britannique : désignation officielle de Bassa Nge par les coloniaux pour distinguer le groupe des Bassa Komu. Islamisation progressive liée à la proximité du sultanat de Nupe et aux routes commerciales. Influence contemporaine de l'État fédéral nigérian et de Kogi State sur l'administration locale.",
+      "majorHistoricalEvents": "Migration depuis Gbara suite à la crise dynastique nupe (vers 1805-1820). Traversée du Niger et installation dans la Province de Bassa coloniale. Recensement colonial distinguant Bassa Nge et Bassa Komu. Recensement de la population en 2006 (environ 140 000 individus). Intégration dans le cadre administratif de Kogi State au Nigeria indépendant."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle dirigée par l'Etsu Bassa Nge, chef suprême reconnu par le gouvernement de Kogi State. Le royaume comprend trois districts : Gboloko (siège), Kpata et Eforo. Le titre Etsu est hérité de la tradition politique nupe. Sous l'Etsu, des conseils d'anciens et des chefs de district assurent l'administration locale.",
+      "clanOrganization": "Organisation clanique de type nupe : groupes de filiation patrilinéaire organisés autour de lignages fondateurs. Les familles étendues constituent la base de l'organisation sociale et foncière. Les composés familiaux (type nupe) regroupent les membres du lignage.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires régissent la succession au titre d'Etsu, la propriété foncière et les alliances matrimoniales. L'homme le plus âgé du lignage est chef de composé (umwamwa) et assure les fonctions rituelles et de médiation au sein du groupe familial.",
+      "religiousAuthority": "L'Etsu Bassa Nge tient également un rôle de médiateur entre la communauté et les puissances spirituelles. L'imam de Gboloko assure le leadership religieux islamique, tandis que les responsables des cultes traditionnels (Ijile, divinité protectrice du village) maintiennent les rites anciens."
+    },
+    "languages": {
+      "mainLanguage": "Nupe (langue principale des Bassa Nge, variant nupe de la famille Nupoid)",
+      "isoCodes": ["nup"],
+      "dialects": [
+        "Variante Bassa Nge du nupe : légèrement distincte du nupe standard, avec des affinités phonétiques spécifiques à la zone de la confluence",
+        "Usage du haoussa comme langue de communication inter-ethnique régionale"
+      ],
+      "vehicularRole": "Le nupe est la langue maternelle. Le haoussa et le yoruba servent de langues véhiculaires dans la région de Lokoja et de la confluence. L'anglais est la langue officielle de l'administration et de l'éducation."
+    },
+    "culture": {
+      "majorRites": "Festival Ugunu : festival culturel d'initiation et de célébration de l'identité communautaire, avec danses, mascarades et rites de passage. Mascarade Ikɛ : mascarade traditionnelle à forte dimension spirituelle et communautaire. Danse Araga : danse cérémonielle collective. Rites de nommage de l'enfant réalisés par le chef de composé le plus âgé. Cérémonies funéraires avec libations aux dieux et sacrifices expiatoires.",
+      "symbols": "L'uhangwu (espace sacré entourant les arbres sacrés et les huttes-sanctuaires du dieu protecteur du village Ijile). Pots en terre cuite (symboles du savoir-faire artisanal). Tenues traditionnelles colorées portées lors des festivals.",
+      "artsAndMusic": "Artisanat : poterie (modelage de jarres en terre), tissage, travail du bois. Danse du masque Ikɛ : costumes élaborés, présence d'entités spirituelles. Musique percussive : tambours, hochets, cloches utilisés lors des cérémonies. Tradition orale riche : contes, proverbes, généalogies des lignages fondateurs.",
+      "spiritualities": "Pratiques religieuses plurielles : islam sunnite (dominant depuis l'islamisation progressive liée à la proximité nupe), christianisme (minoritaire), et religion traditionnelle (culte du dieu Ijile protecteur du village, culte d'Ozomoyiko). Le dieu suprême est appelé Agwatana dans toutes les variantes dialectales bassa. Les anciens du composé réalisent des sacrifices rituels à l'uhangwu pour protéger le village et les familles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Bassa Nge, localisé dans le Bassa Local Government Area de Kogi State. Organisé en trois districts autour de la capitale Gboloko. Le titre royal est Etsu Bassa Nge. Le royaume contrôle une superficie d'environ 100 km² sur les basses terres de la confluence Niger-Bénoué, avec un accès fluvial stratégique sur le Niger face à Lokoja.",
+      "relationsWithNeighbors": "Relations complexes avec les Bassa Komu (cohabitation forcée dans la même Province coloniale, distinctions maintenues). Relations commerciales avec Lokoja (capitale de Kogi State) via le port de Shintaku. Relations de bon voisinage avec les Nupe (peuple parent d'origine). Tensions périodiques liées à des revendications foncières avec d'autres groupes du Middle Belt.",
+      "conflictsOrAlliances": "Troubles dynastiques internes au royaume nupe (vers 1805-1820) à l'origine de la migration fondatrice. Période du djihad de Sokoto (XIXe siècle) : pression sur les groupes non-musulmans du Middle Belt. Cohabitation avec Bassa Komu dans la même province coloniale. Conflits fonciers contemporains dans le contexte des tensions ethnoreligieuses récurrentes du Middle Belt nigérian.",
+      "diaspora": "Communauté diasporique active en Amérique du Nord : Bassa Nge Community of North America (BNC-NA), engagée dans le soutien au développement de Gboloko (financement d'infrastructures médicales, dons de médicaments). Migration interne vers Lokoja, Abuja et autres grandes villes nigérianes."
+    },
+    "demography": {
+      "totalPopulation": 175000,
+      "referenceYear": 2025,
+      "source": "Recensement nigérian 2006 : environ 140 000 individus (Bassa Nge Community of North America). Projection 2025 estimée à environ 175 000 en appliquant le taux de croissance nigérian moyen (2,5% annuel). Les chiffres exacts sont difficiles à vérifier car le Nigeria ne distingue pas tous les sous-groupes ethniques dans ses recensements officiels.",
+      "distributionByCountry": [{ "country": "NGA", "population": 175000 }]
+    },
+    "sources": [
+      "Bassa Nge Community of North America : Our History https://www.bassangecommunityna.org/our-ministries",
+      "Wikipedia EN : Bassa people (Nigeria) https://en.wikipedia.org/wiki/Bassa_people_(Nigeria)",
+      "Facebook Historical Nigeria : The Bassa Nge people https://www.facebook.com/HistoricalNigeria/posts/the-bassa-nge-people-are-an-ethnic-group-in-nigeria",
+      "Glottolog : Nupoid (classification linguistique) https://glottolog.org/resource/languoid/id/nupo1239",
+      "Wikipedia EN : Middle Belt Nigeria https://en.wikipedia.org/wiki/Middle_Belt",
+      "Ethnologue : Nupe-Nupe-Tako (NUP) https://www.ethnologue.com/language/nup/",
+      "YouTube : The History of Bassa Nigeria https://www.youtube.com/watch?v=UVGnthv_d7w"
+    ]
   }
 }

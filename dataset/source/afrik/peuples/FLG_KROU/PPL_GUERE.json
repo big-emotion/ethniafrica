@@ -1,23 +1,112 @@
 {
   "id": "PPL_GUERE",
-  "nameMain": "",
+  "nameMain": "Guéré",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["LBR"],
+  "currentCountries": ["CIV", "LBR"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Guéré",
       "selfAppellation": "Wè",
+      "exonyms": [
+        "Gere",
+        "Gewo",
+        "Ngere",
+        "Gwere",
+        "Wee",
+        "Wé",
+        "Kran",
+        "Krahn"
+      ],
+      "originOfExonyms": "Le terme Guéré est un exonyme introduit par l'administration coloniale française à la suite d'un malentendu géographique et linguistique. Avant la colonisation, la population se désignait uniquement comme Wè (dont le sens est hommes qui pardonnent facilement). La distinction Guéré / Wobé a été imposée par les Français pour distinguer les groupes du sud (Guéré) et du nord (Wobé) d'un même peuple. Au Liberia, les Wè sont désignés sous le nom de Kran ou Krahn.",
+      "whyProblematic": "La partition Guéré / Wobé est une construction coloniale artificielle qui ne correspondait à aucune frontière culturelle, linguistique ou identitaire préexistante. Elle a engendré des divisions qui se sont progressivement institutionnalisées malgré leur caractère arbitraire.",
+      "contemporaryUsage": "Le terme Guéré reste l'appellation courante en Côte d'Ivoire et dans la littérature francophone. Les populations elles-mêmes utilisent Wè pour désigner l'ensemble ethno-culturel, et Guéré pour désigner le sous-groupe méridional par opposition aux Wobé du nord.",
       "linguisticFamily": "FLG_KROU",
-      "historicalRegion": "Ouest ivoirien (Duékoué, Guiglo), LBR",
-      "currentCountries": ["LBR"]
+      "ethnoLinguisticGroup": "Krou occidental (Wè)",
+      "historicalRegion": "Forêts de l'Ouest ivoirien (Duékoué, Guiglo, Taï) et Est du Liberia",
+      "currentCountries": ["CIV", "LBR"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue", "Archives culturelles de l’Ouest ivoirien"]
+    "ethnicities": [
+      "Guéré proprement dits (zone de Guiglo et Duékoué, Côte d'Ivoire)",
+      "Wobé (sous-groupe nord du peuple Wè, CIV)",
+      "Kran / Krahn (nom des Wè au Liberia, Grand Gedeh et Nimba Counties)",
+      "Wè méridionaux (zone de Taï et Grabo)",
+      "Wè du Moyen-Cavally (zone frontalière CIV-LBR)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Wè (Guéré) font partie du grand ensemble Krou dont les origines remontent au moins au XVe siècle dans les régions forestières entre le fleuve Cavally et le fleuve Bandama. Ils descendent de populations autochtones de la forêt équatoriale ouest-africaine. Des traditions orales et des études linguistiques suggèrent que les ancêtres des Wè ont migré depuis les hautes terres nord-est (région de la Guinée actuelle) vers la forêt littorale, poussés par des pressions des royaumes mandingues esclavagistes.",
+      "formationPeriod": "L'identité Wè distincte se consolide entre le XVIe et le XVIIIe siècle dans les forêts de l'Ouest ivoirien. La distinction Guéré / Wobé est imposée par l'administration coloniale française à partir de la fin du XIXe siècle et formalisée au XXe siècle.",
+      "migrationRoutes": [
+        "Migration depuis les plateaux guinéo-ivoiriens vers le sud, par les vallées forestières",
+        "Expansion le long du fleuve Cavally, frontière naturelle entre CIV et Liberia",
+        "Dispersion vers l'ouest libérien (peuple Kran / Krahn)"
+      ],
+      "historicalSettlementZones": [
+        "Département de Guiglo (Côte d'Ivoire)",
+        "Département de Duékoué (Côte d'Ivoire)",
+        "Zone de Taï (Côte d'Ivoire, forêt tropicale)",
+        "Grand Gedeh County et Nimba County (Liberia)",
+        "Vallée du Cavally (zone frontalière CIV-LBR)"
+      ],
+      "unificationsOrDivisions": "Les Wè n'ont jamais formé d'entité politique centralisée. Ils vivaient en communautés villageoises autonomes reliées par la langue, les rites communs et les alliances matrimoniales. La division Guéré / Wobé imposée par la colonisation française s'est progressivement intégrée dans les identités locales malgré son origine arbitraire.",
+      "externalInfluences": "Contacts anciens avec les peuples Dan (Yacouba) au nord, qui partagent des similarités artistiques (masques). Influence des royaumes mandingues par le commerce de la kola. Colonisation française (1905-1960) : pacification militaire et fixation des frontières. Influence du christianisme évangélique et du catholicisme depuis le XXe siècle.",
+      "majorHistoricalEvents": "Résistances aux incursions mandingues et à la colonisation française au début du XXe siècle. La crise politico-militaire ivoirienne (2002-2011) a durement affecté la région de l'Ouest ivoirien, peuplée de Wè, entraînant des déplacements massifs et des violences intercommunautaires dans les zones de Duékoué et Guiglo. Opération militaire ivoirienne de 2016 dans le Parc du Mont Péko, entraînant le déplacement de plusieurs milliers de Guéré."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation non centralisée en communautés villageoises autonomes. Chaque village est dirigé par un chef (headman) dont l'autorité repose sur ses mérites personnels (travail agricole, succès à la chasse, prestige). Les chefs entretiennent leur statut par la redistribution de richesses lors de fêtes communautaires. Les confédérations guerrières constituent le niveau d'organisation le plus élevé, conduites par un chef militaire ayant également une autorité civile.",
+      "clanOrganization": "Société patrilinéaire organisée en clans (familles étendues). Le patriarche (père ou aîné du lignage) supervise les mariages, règle les conflits internes et influence la vie religieuse du clan. Chaque famille étendue constitue une unité économique et sociale.",
+      "ageClassSystems": "Système de classes d'âge similaire à celui des Dan voisins. Les jeunes hommes sont regroupés par tranches d'âge pour accomplir des travaux collectifs, participer aux initiations et aux activités guerrières. Les classes d'âge jouent un rôle dans la transmission des savoirs culturels et rituels.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'organisation sociale, l'accès à la terre et les alliances matrimoniales. L'identité clanique détermine les droits fonciers, les obligations rituelles et les allégeances politiques.",
+      "religiousAuthority": "L'autorité religieuse est incarnée par les gardiens et porteurs de masques sacrés, initiés à des rites spécifiques. Le masque est le principal médiateur entre le monde des vivants et celui des ancêtres et des esprits. Les devins (voyants) jouent également un rôle central dans la gestion des crises spirituelles et sociales."
+    },
+    "languages": {
+      "mainLanguage": "Wè méridional (guéré)",
+      "isoCodes": ["gxx"],
+      "dialects": [
+        "Guéré (zone de Guiglo, dialecte méridional)",
+        "Wobé (zone nord, proche parent)",
+        "Krahn occidental (Liberia, forme libérienne du wè)",
+        "Krahn oriental (Liberia)"
+      ],
+      "vehicularRole": "Le wè / guéré est la langue maternelle de l'ensemble de la communauté. Le français est la langue officielle et d'enseignement en Côte d'Ivoire. L'anglais est utilisé au Liberia. Le dioula sert de langue véhiculaire régionale pour les échanges commerciaux."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation masculins (circoncision) organisés hors du village, en brousse, durant lesquels les jeunes initiés apprennent les traditions, la discipline et les valeurs communautaires. Ces rites durent traditionnellement deux mois, commençant en août avec la récolte du premier riz. Rites des hommes-panthères, initiation durant sept mois (de juillet à janvier en brousse). Funérailles élaborées (koh) organisées en mars (tohbo-coh), mobilisant d'importantes ressources humaines, matérielles et financières. Fêtes de récolte présidées par les masques pour remercier les ancêtres et les dieux. Rites de passage à l'âge adulte pour les jeunes femmes, marqués par l'excision traditionnellement.",
+      "symbols": "Le masque (gle) est le symbole central de la civilisation Wè. Il est une entité spirituelle complète comprenant une coiffe, un visage sculpté en bois, une jupe de fibre végétale et un tissu couvrant le haut du corps. Les masques Wè sont caractérisés par des traits puissants aux yeux tubulaires, un visage triangulaire, des cornes, et sont ornés de coquillages cauris, clochettes, clous et plumes. Chaque type de masque (sacré, guerrier, joyeux) incarne une fonction sociale et spirituelle spécifique.",
+      "artsAndMusic": "Sculpture sur bois des masques : art majeur des Wè, masques aux traits puissants avec ornements (cauris, clochettes, clous, plumes) renforçant leur pouvoir spirituel. Musique de percussion (tambours, sanza) appelant les masques à sortir de la forêt. Danses cérémonielles accompagnant les sorties de masques. Poésie orale transmettant les traditions et l'histoire clanique. Chants féminins rituels lors des sorties de masques, femmes vêtues de blanc ou ornées de craie blanche. Artisanat : tissage, poterie et forge traditionnelle.",
+      "spiritualities": "Animisme profond : croyance que tous les éléments naturels (animaux, plantes, objets) possèdent une essence spirituelle. Culte des ancêtres et des esprits de la brousse (esprits du bush) auxquels des pouvoirs surnaturels sont attribués. Le masque est le principal intermédiaire entre Dieu, les ancêtres et les vivants. Cosmologie dualiste : opposition entre village (monde contrôlé) et brousse (monde des esprits). Influences croissantes du christianisme évangélique et catholique depuis le milieu du XXe siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaumes ou chefferies centralisées. L'organisation en confédérations guerrières (confederation militaire) est la plus haute forme de regroupement politique. Les confédérations étaient formées pour la défense contre les incursions extérieures et n'avaient pas de permanence institutionnelle.",
+      "relationsWithNeighbors": "Relations complexes avec les Dan (Yacouba) au nord, avec qui les Wè partagent des similarités artistiques et culturelles (masques). Tensions historiques avec les peuples mandingues (Dioula, Malinké) liées aux incursions esclavagistes. Relations de voisinage et d'échanges avec les Wobé (peuple frère), les Bété à l'est, et les Grebo au Liberia.",
+      "conflictsOrAlliances": "Résistance aux incursions mandingues esclavagistes qui ont provoqué des migrations vers la forêt. Résistance à la pacification coloniale française. Forte implication dans la crise politico-militaire ivoirienne (2002-2011) : les milices Wè (FLGO) ont participé aux affrontements, et la région de Duékoué-Guiglo a été le théâtre de violences intercommunautaires entre Guéré et allogènes. Accusation de crimes de guerre lors de la crise post-électorale de 2010-2011.",
+      "diaspora": "Diaspora interne importante dans les villes ivoiriennes (Abidjan, Daloa, San Pedro). Présence au Liberia comme Krahn. Diaspora internationale modeste (France, Europe, États-Unis) principalement composée d'étudiants et de réfugiés politiques issus des crises ivoiriennes."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org 2023 (562 000 en CIV), ECOI/IRB Canada 2018 (estimation Afriki Presse : 2,4 millions pour l'ensemble Wè), Minority Rights Group. Estimation 2025 tenant compte de la croissance démographique et de la présence au Liberia (Krahn : env. 139 000 au recensement 2008).",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 600000,
+          "note": "Régions du Guémon (Guiglo) et de Cavally (Côte d'Ivoire occidentale), sous-préfectures de Duékoué, Guiglo, Taï, Grabo"
+        },
+        {
+          "country": "LBR",
+          "population": 100000,
+          "note": "Krahn de l'est libérien, Grand Gedeh County et Nimba County, proches parents des Guéré"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR — Guéré (peuple). https://fr.wikipedia.org/wiki/Gu%C3%A9r%C3%A9_(peuple)",
+      "101 Last Tribes — Guere people. https://www.101lasttribes.com/tribes/guere.html",
+      "Joshua Project — Guere in Côte d'Ivoire. https://joshuaproject.net/people_groups/11124",
+      "ECOI/IRB Canada — Côte d'Ivoire : information sur l'ethnie Wé, 2018. https://www.ecoi.net/de/dokument/2041625.html",
+      "Minority Rights Group — Côte d'Ivoire. https://minorityrights.org/country/cote-divoire/",
+      "Guiblehon, Bi Drombé — La conception du temps chez les Wè en Côte d'Ivoire. Sycomore 5.1, 2011. https://translation.bible/publications/sycomore/5.1/Guiblehon_Syc_5.1_2011_25-39.pdf",
+      "Holsoe, Svend E. & Lauer, Joseph — Who Are the Kran/Guere and the Gio/Yacouba? African Studies Review 19(1), 1976. https://www.cambridge.org/core/journals/african-studies-review/article/who-are-the-kranguere-and-the-gioyacouba-ethnic-identifications-along-the-liberiaivory-coast-border/4E33CA4D6CDC5962A21AEE535A3E10AD",
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people"
+    ]
   }
 }

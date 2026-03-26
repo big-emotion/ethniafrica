@@ -2,67 +2,111 @@
   "id": "PPL_KGALAGADI",
   "nameMain": "Kgalagadi",
   "languageFamilyId": "FLG_KHOE",
-  "currentCountries": ["BWA"],
+  "currentCountries": ["BWA", "NAM", "ZAF"],
   "content": {
     "appellations": {
       "mainName": "Kgalagadi",
-      "selfAppellation": "Kgalagadi",
-      "exonyms": ["Kgalagadi (terme utilisé par les Européens)"],
+      "selfAppellation": "Bakgalagadi",
+      "exonyms": ["Khalagari", "Kalahari people", "Bakgalagari", "Kgalagari"],
+      "originOfExonyms": "Le terme Khalagari est une variante orthographique ancienne utilisee par les explorateurs europeens et Tswana des 18e-19e siecles. Bakgalagadi est la forme correcte avec le prefixe nominal Ba- (pluriel des personnes), Kgalagadi etant derive du terme signifiant 'lieu de la soif' ou 'grande soif' en sotho-tswana, referant au desert du Kalahari.",
+      "whyProblematic": "Les Kgalagadi ont ete categorises comme sous-groupe 'inferieur' des Batswana par l'administration coloniale britannique (Bechuanaland), ce qui leur a valu une exclusion du systeme des huit tribus tswana officielles dotees de droits et d'autonomie administrative. Ce classement discriminatoire a influence leur representation politique jusqu'a l'independance du Botswana (1966).",
+      "contemporaryUsage": "Le terme Bakgalagadi est la designation courante en tswana et en anglais. En botswana officiel, Kgalagadi designe egalement le district administratif du sud-ouest et le parc transfrontalier (Kgalagadi Transfrontier Park). Certains membres se definissent d'abord par leur clan (Bashaga, Bangologa, etc.).",
       "linguisticFamily": "FLG_KHOE",
-      "ethnoLinguisticGroup": "Khoe",
-      "historicalRegion": "BWA, Afrique du Sud",
-      "currentCountries": ["BWA"]
+      "ethnoLinguisticGroup": "Sotho-Tswana (branche bantoue), avec influences phonetiques Khoisan",
+      "historicalRegion": "Bassin du Kalahari : ouest et sud-ouest du Botswana, nord du Cap-Occidental (Afrique du Sud), est de la Namibie",
+      "currentCountries": ["BWA", "NAM", "ZAF"]
     },
     "ethnicities": [
-      "Kgalagadi du Botswana",
-      "Kgalagadi d'Afrique du Sud",
-      "Sous-groupes régionaux"
+      "Bangologa (clan principal, region de Ghanzi et Kgalagadi District, le plus nombreux ; sous-groupes : Baeharu, Baehazwana, Bakgala, Batjhaga, Baselebe)",
+      "Bashaga (clan majeur du Kalahari central)",
+      "Baphaleng (clan etabli dans le Kalahari meridional)",
+      "Bakgwatheng (clan du Kalahari occidental)",
+      "Bakhena (clan du serpent, lies a la symbolique totémique du serpent)",
+      "Balala (sous-groupe meridional, contacts avec Afrique du Sud)",
+      "Badiwana (clan des zones frontalieres Botswana-Afrique du Sud)",
+      "Pavalagadi (sous-groupe de la region de Tsabong)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kgalagadi sont originaires du Botswana et d'Afrique du Sud, dans la région du désert du Kalahari. Leur présence dans la région remonte à plusieurs millénaires.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples khoisan voisins, influence du christianisme et des croyances traditionnelles."
+      "ancientOrigins": "Les Bakgalagadi sont parmi les plus anciens peuples bantoues du bassin du Kalahari. Les etudes linguistiques et anthropologiques suggerent qu'ils furent parmi les premiers peuples bantous a traverser le Limpopo vers l'ouest et le sud-ouest, il y a environ 1 000 ans. Leur langue, le Shekgalagadi (ou Sekgalagadi), est une langue bantoue orientale etroitement apparentee au Tswana mais avec des caracteristiques phonetiques et lexicales propres, en partie influencees par les langues Khoisan voisines (phonemes clicks assimiles).",
+      "formationPeriod": "Formation comme groupe distinct entre le 10e et le 14e siecle, lors de leur migration vers l'ouest et leur etablissement dans le Kalahari. Leur nom derive de 'Kgalagadi' (lieu de la soif), refletant leur adaptation remarquable a l'environnement aride. Ils occupaient initialement les regions fertiles de l'est du Botswana avant d'etre pousses plus profondement dans le desert par les vagues de migration tswana (Bangwato, Bangwaketse) entre le 17e et le 19e siecle.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis le Transvaal (Afrique du Sud actuelle) vers le nord-ouest, il y a environ 1 000 ans",
+        "Traversee du Limpopo vers le Botswana meridional, puis progression vers l'ouest du Kalahari",
+        "Repli progressif vers le Kalahari profond sous la pression des migrations tswana aux 17e-19e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Kalahari meridional et occidental (Kgalagadi District, Botswana) — zone principale actuelle",
+        "Region de Ghanzi (Botswana central-ouest)",
+        "Kalahari septentrional (Namibie orientale, region de Gobabis)",
+        "Kalahari transfrontalier (nord du Cap-Nord, Afrique du Sud)"
+      ],
+      "unificationsOrDivisions": "Les Bakgalagadi ne forment pas une entite politique unifiee : ils sont organises en clans distincts (Bangologa, Bashaga, Baphaleng, etc.) qui reconnurent des ancetres communs et partagerent une langue et une culture proches. Sous la colonisation britannique (Bechuanaland), ils furent classes comme tribu 'mineure' sans representation au Conseil des Chefs. Depuis l'independance (1966), des efforts progressifs de reconnaissance ont abouti a l'octroi de statuts administratifs a certains chefs kgalagadi.",
+      "externalInfluences": "Contacts seculaires avec les San (Bushmen) : adoption de techniques de chasse, connaissance des plantes desertes, creation de relations de dependance economique (San comme gardiens de troupeaux). Pression des migrations tswana (Bangwato) aux 17e-19e siecles. Colonisation britannique (Bechuanaland, 1885-1966) : classification comme groupe inferieur. Arrivee de missionnaires chretiens aux 19e-20e siecles."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+      "traditionalPoliticalSystem": "Systeme hierarchique fonde sur la chefferie clanique (Kgosi au niveau du village ou du clan). La Kgotla (assemblee publique) est l'institution centrale : forum de deliberation collective, resolution des conflits, allocation des terres et prise de decisions collectives. L'autorite du chef local reste tres respectee dans les affaires coutumières. Les chefs Bakgalagadi se battent depuis l'independance pour etre reconnus au meme niveau que les chefs tswana dans la Chambre des Chefs.",
+      "clanOrganization": "Organisation en clans patrilineaires distincts (Bangologa, Bashaga, Baphaleng, Bakgwatheng, Bakhena, Balala), chacun avec son ancetre fondateur. Les clans Bangologa reconnaissent un ancetre commun (Morolong) dont les fils sont Moeharu, Motjhaga, Moselebe, Moritji et Mokgwatheng. Le systeme totémique (animal ou element naturel associe au clan) structure les interdits alimentaires et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, l'acces aux terres, les alliances matrimoniales et la transmission du betail (principale richesse). Le betail (bovins, ovins, caprins) est le marqueur central de statut social. Les droits sur les puits et les ressources en eau sont transmis au sein des lignages.",
+      "religiousAuthority": "Autorite des anciens (bagolo) et des chefs de clan dans les ceremonies traditionnelles. Les tradipraticiens (ngaka ya setso) assurent les rituels de guerison, de divination et de protection. Depuis le 19e siecle, forte penetration du christianisme (eglises protestantes de mission, puis eglises independantes africaines)."
     },
     "languages": {
-      "mainLanguage": "Kgalagadi (variété Khoe)",
-      "vehicularRole": "Le kgalagadi est parlé par la majorité des Kgalagadi. Le tswana, l'afrikaans et l'anglais sont également utilisés."
+      "mainLanguage": "Shekgalagadi (Sekgalagadi, langue bantoue orientale du groupe Sotho-Tswana)",
+      "isoCodes": ["xkv"],
+      "dialects": [
+        "Shengologa (dialecte des Bangologa, Kgalagadi District)",
+        "Sheshaga (dialecte des Bashaga)",
+        "Shebolaongwe (dialecte meridional, Kalahari meridional)",
+        "Shelala (dialecte des Balala, zones frontalieres)",
+        "Shekhena (dialecte des Bakhena)",
+        "Shekgwatheng (dialecte des Bakgwatheng, Kalahari occidental)"
+      ],
+      "vehicularRole": "Le Shekgalagadi est classe comme langue distincte (ISO 639-3 : xkv) bien qu'etroitement apparentee au Setswana. Il compte environ 75 000 locuteurs au Botswana et 5 900 en Namibie selon le Joshua Project. Le Setswana est la langue nationale du Botswana et vehicule de scolarisation. L'anglais est la langue officielle. Le Shekgalagadi subit une pression forte du Setswana chez les jeunes generations."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels kgalagadi, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme et de l'islam."
+      "majorRites": "Ceremonies de mariage (letsema) : transfert de betail du lignage du fiance vers celui de la fiancee (lobola), celebration collective avec biere de sorgho (bojwala), danses et chants. Rites funeraires : inhumation dans les 24 heures, deuil collectif communautaire, elimination rituelle des affaires personnelles du defunt. Rites agricoles de debut de saison : invocations aux ancetres avant les semailles pour la pluie et la fertilite. Initiations masculines et feminines : les jeunes hommes passent par un enseignement traditionnel collective des responsabilites d'adultes.",
+      "symbols": "Le betail (bovins) est le symbole central de richesse, de prestige et de liens sociaux. Le puits (motswedi) symbolise la survie et la communaute dans le Kalahari aride. Les motifs geometriques sur poterie et tissage sont les marqueurs visuels de l'identite clanique.",
+      "artsAndMusic": "Musique : chants collectifs de travail et de celebration (dikgafela), danses de mariage avec percussions (tambours de bois), chants rituels lors des ceremonies d'initiation. La dance Chokoma (danse de celebration) est caracteristique. Instruments : tambours (moropa), hochets, cloches. Artisanat : poterie traditionnelle (dikhan) avec motifs geometriques, vannerie (dikolo), tissage de nattes, confection de vetements en peau. Architecture : maisons rondes a murs en torchis (argile melangee a de la bouse de vache) et toits coniques en chaume, concus pour l'isolation thermique dans le desert.",
+      "spiritualities": "Croyance traditionnelle en un etre supreme (Modimo) et en des forces spirituelles liees aux ancetres (badimo) et a la nature. Les ancetres jouent un role protecteur et peuvent interceder en cas de maladie ou de malheur. Les ceremonies de communion avec les ancetres se font lors des mariages, des funerailles et des transitions saisonnieres. Le christianisme (protestantisme, adventisme, eglises independantes africaines) est adopte par la majorite depuis le 19e-20e siecle, en syncretisme partiel avec les croyances traditionnelles. Les rites de passage restent marques par le melange des pratiques ancestrales et chretiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques botswanaises et sud-africaines.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kgalagadi dans les grandes villes botswanaises et sud-africaines, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bakgalagadi n'ont pas forme de royaume centralise comparable aux etats tswana (Bangwato, Bangwaketse). Ils sont organises en chefferies claniques independantes. Sous le Bechuanaland britannique, ils furent exclus du conseil des huit grandes tribus tswana, creant un deficit de representation persistant. Depuis l'independance (1966), certains chefs Bakgalagadi obtinrent progressivement une reconnaissance administrative.",
+      "relationsWithNeighbors": "Relations complexes et seculaires avec les San (Basarwa/Bushmen) : adoption de leur connaissance du desert, creation de relations de travail (San comme bergers), parfois d'integration matrimoniale. Pression des migrations tswana (Bangwato, Bangwaketse) qui les pousserent vers le Kalahari profond. Relations commerciales avec les colons afrikaners et britanniques. Gestion du Kgalagadi Transfrontier Park (cree en 2000, couvrant le Kalahari meridional entre Botswana et Afrique du Sud) impliquant leurs terres ancestrales.",
+      "conflictsOrAlliances": "Repli force vers le Kalahari profond sous la pression des migrations tswana (17e-19e siecles). Marginalisation coloniale sous le Bechuanaland britannique (classification comme tribu mineure). Lutte post-independance pour la representation equitable dans la Chambre des Chefs du Botswana. Contentieux foncier lie au Kgalagadi Transfrontier Park et au Central Kalahari Game Reserve.",
+      "diaspora": "Presence en Namibie (region de Gobabis, 5 900 personnes selon Joshua Project) et en Afrique du Sud (nord du Cap-Nord). Migration interne vers les villes botswanaises (Gaborone, Francistown) sous l'effet de l'exode rural."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 85000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Joshua Project — Bangologa, Kgalagadi in Botswana (75 000) et Namibia (5 900) ; Statistics Botswana, Census 2022 (langue Shekgalagari : 2,4% de la population botswanaise soit ~60 000 locuteurs) ; Languages of Botswana Wikipedia (2,4% = Shekgalagari). Estimation totale incluant Botswana, Namibie et Afrique du Sud.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 75000,
+          "note": "Kgalagadi District, region de Ghanzi, Kalahari central et occidental"
+        },
+        {
+          "country": "NAM",
+          "population": 5900,
+          "note": "Region de Gobabis (Omaheke), est de la Namibie"
+        },
+        {
+          "country": "ZAF",
+          "population": 4100,
+          "note": "Nord du Cap-Nord, zones frontalieres du Kgalagadi Transfrontier Park"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kgalagadi language (xkv)",
-      "CIA World Factbook – BWA, South Africa",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples khoisan"
+      "Qiraat Africa — The Kgalagadi of Botswana. https://qiraatafrican.com/en/19023/the-kgalagadi-of-botswana/",
+      "Wikipedia EN — Kgalagadi people. https://en.wikipedia.org/wiki/Kgalagadi_people",
+      "Wikipedia EN — Kgalagadi District. https://en.wikipedia.org/wiki/Kgalagadi_District",
+      "Joshua Project — Bangologa, Kgalagadi in Botswana. https://joshuaproject.net/people_groups/12646/BC",
+      "Ethnologue SIL International — Kgalagadi language (xkv). https://www.ethnologue.com/language/xkv/",
+      "Britannica — Kgalagadi people. https://www.britannica.com/topic/Kgalagadi",
+      "Wikipedia EN — Languages of Botswana. https://en.wikipedia.org/wiki/Languages_of_Botswana",
+      "Statistics Botswana — Population Distribution 2022. https://statsbots.org.bw/",
+      "Global Recordings Network — Kgalagadi (xkv). https://globalrecordings.net/en/language/xkv"
     ]
   }
 }

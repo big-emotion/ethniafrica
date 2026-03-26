@@ -2,67 +2,93 @@
   "id": "PPL_BELANDA",
   "nameMain": "Belanda",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["SDN"],
+  "currentCountries": ["SSD"],
   "content": {
     "appellations": {
       "mainName": "Belanda",
-      "selfAppellation": "Belanda",
-      "exonyms": ["Belanda (terme utilisé par les Européens)"],
+      "selfAppellation": "Balanda Boor",
+      "exonyms": [
+        "Belanda Bor",
+        "Balanda Boor",
+        "Balanda Bviri (groupe apparente mais distinct)"
+      ],
+      "originOfExonyms": "Le terme Belanda (ou Balanda, Balanda Boor) est utilise a la fois comme endonyme et exonyme dans les sources coloniales britanniques et les etudes anthropologiques du Soudan du Sud. Boor signifie homme ou personne dans la langue locale. Les deux groupes principaux — Balanda Boor et Balanda Bviri — sont distincts ethniquement et linguistiquement : les premiers parlent le belanda bor (nilotique), les seconds le bviri (ubangien).",
+      "whyProblematic": "La confusion entre Balanda Boor (groupe nilotique, Nilo-Saharien) et Balanda Bviri (groupe Ubangien, Niger-Congo) est frequente dans les sources, les deux groupes cohabitant dans les memes etats du Soudan du Sud et etant souvent collectivement designes Belanda. Ils partagent un nom geographique mais appartiennent a des familles linguistiques differentes.",
+      "contemporaryUsage": "Le terme Belanda ou Balanda est utilise dans les documents officiels du Soudan du Sud. Les deux sous-groupes — Boor et Bviri — sont generalement distingues dans la litterature scientifique. Les Balanda Boor et les Balanda Bviri vivent dans les memes zones des etats du Bahr el Ghazal occidental et de l'Equatoria occidental.",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central",
-      "historicalRegion": "Sud-Soudan",
-      "currentCountries": ["SDN"]
+      "ethnoLinguisticGroup": "Nilotique occidental, sous-groupe Luo (Belanda Boor) — Nilo-Saharien",
+      "historicalRegion": "Bahr el Ghazal occidental et Equatoria occidental (Soudan du Sud)",
+      "currentCountries": ["SSD"]
     },
     "ethnicities": [
-      "Belanda du Nord",
-      "Belanda du Sud",
-      "Sous-groupes régionaux"
+      "Balanda Boor (groupe nilotique Luo, locuteurs du belanda bor, bxb)",
+      "Balanda Bviri (groupe Ubangien apparente, locuteurs du bviri, bvi, souvent bilingues belanda bor)"
     ],
     "origins": {
-      "ancientOrigins": "Les Belanda sont originaires du Soudan du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques, influence du christianisme."
+      "ancientOrigins": "Les Balanda Boor sont un peuple nilotique appartenant au sous-groupe Luo (Lawoo) des langues nilotiques occidentales. Ils constituent donc un groupe Nilo-Saharien distinct des Balanda Bviri, qui sont Ubangiens. Les Balanda Boor font partie du vaste ensemble des peuples nilotiques du Soudan du Sud, partageant des traditions culturelles communes avec les Dinka, Nuer et Luo voisins. Leur installation dans le Bahr el Ghazal occidental et l'Equatoria occidental est ancienne.",
+      "formationPeriod": "L'identite belanda s'est consolidee dans le cadre des mouvements de populations nilotiques dans le Soudan du Sud. La cohabitation avec les Balanda Bviri (groupe Ubangien) dans les memes zones a conduit a un important bilinguisme et a des echanges culturels. La periode coloniale britannique (Anglo-Egyptian Sudan) a fixe les frontieres administratives qui definissent leur zone de residence actuelle.",
+      "migrationRoutes": [
+        "Mouvements nilotiques depuis le nord et l'est vers le Bahr el Ghazal occidental",
+        "Installation historique dans les zones de l'Equatoria occidental (Tambura, Nagero, Namatina, Mopoi, Yangiri, Nadiangere)",
+        "Installation dans le Bahr el Ghazal occidental (Bazia, Bagari, Dem Zubier)"
+      ],
+      "historicalSettlementZones": [
+        "Bahr el Ghazal occidental (South Sudan) : districts de Bazia, Bagari et Dem Zubier",
+        "Equatoria occidental (South Sudan) : Tambura, Nagero, Namatina, Mopoi, Yangiri, Nadiangere, Kobir Bawo"
+      ],
+      "unificationsOrDivisions": "Les Belanda (Balanda Boor et Bviri) constituent deux peuples cohabitants distincts mais souvent traites ensemble en raison de leur zone de peuplement commune. Les Balanda Boor sont bilingues en belanda bviri du fait de leur proximite. En 2021, des conflits armes impliquant les Azande et les Balanda Bviri ont ete documentes par Amnesty International.",
+      "externalInfluences": "Influence de l'administration coloniale britannique dans le cadre de l'Anglo-Egyptian Sudan (1899-1956). Contacts avec les Azande voisins (groupe historiquement conquérant dans la region). Influence des missions chretiennes au 20e siecle. Conflits armes recents au Soudan du Sud (depuis 2013) affectant les communautes belanda.",
+      "majorHistoricalEvents": "L'histoire pre-coloniale des Belanda est peu documentee dans les sources accessibles. Sous la periode coloniale britannique, leur region fut administree dans le cadre du Soudan du Sud. L'independance du Soudan du Sud en 2011 a integre les Belanda dans le nouvel Etat. En 2021, Amnesty International a documente des crimes de guerre commis contre les Balanda Bviri et les Azande dans la region de l'Equatoria occidental."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles avec des chefs locaux (rwodi ou equivalents nilotiques). Les decisions communautaires sont prises par les conseils d'anciens. L'organisation politique est de type segmentaire, sans structure royale centralisee.",
+      "clanOrganization": "Structure clanique patrilineaire, comparable aux autres peuples nilotiques du Soudan du Sud. Les clans constituent les groupes de reference pour les alliances matrimoniales, les droits fonciers et les obligations de solidarite. L'appartenance clanique determine l'identite sociale fondamentale.",
+      "ageClassSystems": "Des classes d'age structurent la vie sociale masculine, determinant les responsabilites et les privileges selon l'etape de vie (jeunesse, age adulte, ancienneté). Ce systeme est commun aux peuples nilotiques voisins.",
+      "roleOfLineages": "Les lignages patrilineaires determinent la residence, les droits sur le betail et la terre, et les obligations matrimoniales. Le mariage traditionnel requiert un bridewealth en betail, pratique commune aux peuples nilotiques du Soudan du Sud.",
+      "religiousAuthority": "La majorite des Belanda pratique des religions traditionnelles, dont la croyance en Juok (etre supreme) et les esprits ancestraux, communicants via des devins, des mediums et des guerisseurs. Environ 16% s'identifient comme chretiens. Les guerisseurs traditionnels et les mediums ont une autorite spirituelle importante dans les communautes rurales."
     },
     "languages": {
-      "mainLanguage": "Belanda",
-      "vehicularRole": "Le belanda est parlé par la majorité des Belanda. L'anglais, l'arabe et d'autres langues sont également utilisés."
+      "mainLanguage": "Belanda Bor (aussi appele Bor)",
+      "isoCodes": ["bxb", "bvi"],
+      "dialects": [
+        "Belanda Bor (bxb) : langue nilotique Luo, langue maternelle des Balanda Boor, entre 40 000 et 50 000 locuteurs",
+        "Belanda Viri / Bviri (bvi) : langue ubangienne, parlée par les Balanda Bviri voisins avec lesquels les Balanda Boor sont largement bilingues"
+      ],
+      "vehicularRole": "Le belanda bor (ISO 639-3 : bxb) est une langue nilotique du sous-groupe Luo occidental (Lawoo), classee dans le Nilo-Saharien. La majorite des locuteurs de belanda bor est aussi bilingue en belanda viri (bvi), une langue ubangienne appartenant au Niger-Congo — ces deux langues sont distinctes mais pratiquees conjointement dans la region. L'arabe juba et l'anglais sont les langues officielles du Soudan du Sud utilisees pour la communication inter-ethnique."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels belanda, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les Belanda pratiquent des ceremonies traditionnelles de rites de passage : initiation des jeunes a l'age adulte, ceremonies de mariage avec bridewealth en betail, ceremonies funebres impliquant la communaute. Les consultations de devins, mediums et guerisseurs sont des pratiques courantes pour les decisions importantes, les maladies et les conflits. Les ceremonies agricoles et de chasse marquent les saisons.",
+      "symbols": "Le betail (particulierement les bovins) est un symbole de richesse, de statut et de dot dans la culture belanda, comme chez de nombreux peuples nilotiques du Soudan du Sud. Les objets rituels utilises par les guerisseurs et mediums sont des symboles de l'autorite spirituelle.",
+      "artsAndMusic": "Les traditions musicales comprennent des chants collectifs, des danses lors des ceremonies de mariage et d'initiation, et la musique instrumentale (tambours, instruments a cordes). La tradition orale (contes, proverbes, chants genealogiques) constitue un patrimoine culturel vivant. L'artisanat inclut la fabrication de poterie, de nattes, de paniers tresses et d'objets en cuir. Comme chez les autres peuples nilotiques, la decoration corporelle et les scarifications peuvent avoir une signification identitaire.",
+      "spiritualities": "La religion traditionnelle predomine chez les Belanda (84% de pratiquants de religions ethniques selon le Joshua Project). Le systeme spirituel centre sur la croyance en Juok, etre supreme, et les esprits ancestraux. Les devins (fortune tellers), les mediums et les guerisseurs (medicine men and women) sont les intermediaires entre le monde des vivants et celui des esprits. Environ 16% des Belanda s'identifient comme chretiens (5% comme evangeliques). Les croyances traditionnelles persistent souvent en syncretisme avec les pratiques chretiennes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora belanda dans les grandes villes soudanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Belanda n'ont pas developpe de structure royale centralisee. Leur organisation politique traditionnelle repose sur des chefferies locales et des conseils d'anciens, selon un modele segmentaire nilotique. Les chefs locaux jouent un role de mediation et d'arbitrage des conflits.",
+      "relationsWithNeighbors": "Les Belanda (Boor et Bviri) cohabitent dans la meme zone geographique et sont largement bilingues. Les relations avec les Azande voisins, groupe historiquement conquérant dans la region, ont ete complexes. Les Belanda entretiennent des relations avec les autres peuples nilotiques du Bahr el Ghazal occidental. En 2021, des conflits armes entre Azande et Balanda Bviri ont ete documentes dans la region de l'Equatoria occidental.",
+      "conflictsOrAlliances": "Les Belanda ont ete affectes par les conflits armes du Soudan du Sud, notamment la guerre civile debutant en 2013. En 2021, Amnesty International a documente des attaques contre les Balanda Bviri et les Azande par des forces Dinka et Nuer dans l'Equatoria occidental, qualifiees de crimes de guerre. Ces conflits ont provoque des deplacements de population importants dans la region.",
+      "diaspora": "Des communautes belanda sont presentes dans les villes du Soudan du Sud, notamment Wau (capitale du Bahr el Ghazal occidental) et Djouba. Des refugies belanda se trouvent en Ouganda et en RDC du fait des conflits armes dans leur region."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 60000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements soudanais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia EN — Belanda Bor language (40 000 a 50 000 locuteurs du belanda bor bxb). Joshua Project — Belanda Bor in South Sudan. Estimation 2025 incluant les deux sous-groupes Boor et Bviri dans leur zone commune du Bahr el Ghazal occidental et de l'Equatoria occidental.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 60000,
+          "note": "Bahr el Ghazal occidental (Bazia, Bagari, Dem Zubier) et Equatoria occidental (Tambura, Nagero, Namatina, Mopoi, Yangiri, Nadiangere, Kobir Bawo)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Belanda language (bex)",
-      "CIA World Factbook – South Sudan",
-      "Recensements soudanais",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Belanda Bor language. https://en.wikipedia.org/wiki/Belanda_Bor_language",
+      "Wikipedia EN — Balanda Boor people. https://en.wikipedia.org/wiki/Balanda_Boor_people",
+      "Wikipedia EN — Balanda Bviri people. https://en.wikipedia.org/wiki/Balanda_Bviri_people",
+      "Joshua Project — Belanda Bor in South Sudan. https://joshuaproject.net/people_groups/10773",
+      "SIL Ethnologue — Belanda Bor (bxb). https://www.ethnologue.com/language/bxb/",
+      "SIL Ethnologue — Belanda Viri (bvi). https://www.ethnologue.com/language/bvi/",
+      "Amnesty International — South Sudan: War crimes against Azande and Balanda Bviri (2021)",
+      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/"
     ]
   }
 }

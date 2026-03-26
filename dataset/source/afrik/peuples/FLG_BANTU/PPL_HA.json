@@ -6,54 +6,75 @@
   "content": {
     "appellations": {
       "mainName": "Ha",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abaha (endonyme ; Waha en swahili, la langue du groupe est le Kiha ou Giha)",
+      "exonyms": ["Ha", "Waha", "Abaha"],
+      "originOfExonyms": "Ha est le nom abrege utilise dans la litterature scientifique. Waha est la forme swahilisee du nom (prefixe de classe bantoue Wa- + Ha). Abaha est l'endonyme en langue ha.",
+      "whyProblematic": "Le nom Ha est tres court et peut preter a confusion avec d'autres designations. La denomination Buha (pays des Ha) est utilisee pour designer leur territoire.",
+      "contemporaryUsage": "Le peuple Ha est officiellement reconnu en Tanzanie sous le nom Waha. Selon le recensement de 1948 du Tanganyika Territory, les Ha etaient le troisieme plus grand groupe ethnique du pays. Ils habitent aujourd'hui principalement la region de Kigoma au nord-ouest de la Tanzanie.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
+      "ethnoLinguisticGroup": "Bantu interlacustre (groupe des Grands Lacs : proche du kirundi et du kinyarwanda)",
+      "historicalRegion": "Region de Kigoma, nord-ouest de la Tanzanie, bordant le lac Tanganyika",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Ha"],
+    "ethnicities": ["Ha (Waha/Abaha)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Ha appartiennent au groupe bantoue interlacustre d'Afrique orientale, etroitement lies aux peuples du Rwanda et du Burundi voisins. Leur langue Kiha est directement apparentee au kirundi et au kinyarwanda. Depuis environ le XVIIIe siecle, des pasteurs tutsi (representant 2% de la population) se sont installes parmi les Ha dans un role aristocratique, introduisant des formes de royaute des Grands Lacs.",
+      "formationPeriod": "Periode precoloniale, probablement plusieurs siecles avant le XIXe siecle. Les royaumes ha (Buha) sont attestes avant la colonisation allemande.",
+      "migrationRoutes": [
+        "Migration depuis la region des Grands Lacs (Rwanda-Burundi) vers l'ouest de la Tanzanie",
+        "Influence tutsi venue du Rwanda-Burundi a partir du XVIIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Region de Kigoma, nord-ouest de la Tanzanie (districts de Kasulu et Kibondo principalement)",
+        "Zone bordant le lac Tanganyika (Buha : prairies et forets claires)"
+      ],
+      "unificationsOrDivisions": "Le territoire ha (Buha) etait divise en plusieurs petits royaumes : dans le district de Kasulu : Heru, Kunkanda, Nkalinzi ou Manyovu, et Bushingo ; dans le district de Kibondo : Muhambwe et Banyingu. Bujiji, geographiquement separe de Kasulu, etait rattache au district de Kigoma. Ces royaumes partageaient une langue commune et des coutumes culturelles similaires.",
+      "externalInfluences": "Activite missionnaire islamique des Arabes depuis la periode precoloniale. Activite missionnaire chretienne pendant la colonisation allemande et britannique (catholiques romains, anglicans, lutheriens). La colonisation allemande (Deutsch-Ostafrika) puis britannique (Tanganyika Trust Territory) introduisit l'administration directe. Beaucoup d'hommes ha sont partis travailler dans les plantations de sisal sur la cote tanzanienne.",
+      "majorHistoricalEvents": "XVIIIe siecle : installation des Tutsi en tant que minorite aristocratique (2%) parmi les Ha. 1948 : recensement du Tanganyika Territory plaçant les Ha au troisieme rang des groupes ethniques. 1961 : independance de la Tanzanie. Presence de refugies burundais et rwandais dans la region de Kigoma depuis les annees 1990 (proximite geographique et linguistique)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Systeme de royaumes divises en plusieurs petits etats : Buyunga, Muhambwe, Heru, Luguru (Kunkanda), Bushingo et Bujiji (Nkalinzi). Ces royaumes partageaient une langue et une culture communes. Depuis le XVIIIe siecle, des Tutsi representaient une minorite aristocratique (2%) vivant parmi les Ha dans un role semi-aristocratique, tout en partageant substantiellement leur langue et culture et en s'unissant avec eux par mariage.",
+      "clanOrganization": "Organisation sociale patrilineaire. La famille elargie dont les membres masculins sont lies par la filiation patrilineaire constitue l'unite de base residentielle. Les foyers sont disperses dans les prairies et les forets claires du Buha.",
+      "roleOfLineages": "Les lineages patrilineaires determinent l'heritage, les alliances matrimoniales et l'acces aux terres. Le betail (bovins, chevres) est tres value et utilise comme don lors des mariages. La societe est patrilineaire : les hommes gerent la construction et les travaux agricoles lourds, les femmes s'occupent des taches domestiques, de la cuisine et des soins aux enfants.",
+      "religiousAuthority": "La religion traditionnelle ha inclut Imana comme divinite supreme et createur. Le culte des ancetres et la croyance en esprits de la nature (champs, forets, sources) sont centraux. Des sanctuaires ancestraux et des rituels sont au coeur de la vie spirituelle. Aujourd'hui, un peu plus de la moitie des Ha se declarent chretiens (catholiques romains, anglicans, lutheriens, pentecotistes, adventistes du septieme jour). Environ un quart sont musulmans. Une minorite notable suit uniquement la religion traditionnelle. Le syncretisme (melange de croyances traditionnelles avec le christianisme ou l'islam) est courant."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Ha (Kiha, Giha, Ikiha)",
+      "isoCodes": ["haq"],
+      "dialects": [],
+      "vehicularRole": "Le Ha (ISO 639-3 : haq) appartient a la famille Niger-Congo et est directement apparente au kirundi (Burundi) et au kinyarwanda (Rwanda). Il est parle dans la region de Kigoma. Des ressources bibliques existent en Kiha mais le corpus complet n'est pas encore traduit. Le swahili est utilise comme langue vehiculaire nationale de la Tanzanie."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les femmes ha portent le Kitindi (bracelets de fil de cuivre enroule portes pres du coude), tradition partagee avec les groupes ethniques voisins. L'elevage de betail (bovins, chevres) est fortement valorise et les animaux servent de dons lors des mariages. La chasse et la collecte du miel sont pratiquees dans les zones a mouche tse-tse. L'agriculture de subsistance (sorgho, millet, mais, manioc, igname, arachides) est la principale activite.",
+      "symbols": "Le Kitindi (bracelet de cuivre) est le symbole culturel feminin distinctif des Ha. Le betail symbolise la richesse et le prestige social ; il est utilise comme dots et cadeaux lors des mariages.",
+      "artsAndMusic": "Traditions musicales et de danse propres aux Grands Lacs. Artisanat de poterie et de vannerie. L'architecture traditionnelle consiste en foyers disperses (habitations individuelles d'une famille elargie) dans les prairies et forets claires. Le Buha (nom ha pour leur territoire et le lac bordant leur region) est cite comme heritage culturel.",
+      "spiritualities": "Animisme traditionnel centrant sur Imana (divinite supreme et createur), veneration des ancetres et croyances en esprits de la nature habitant champs, forets et sources. Synchretisme chretien-animiste et islamo-animiste repandu. Les eglises Adventiste du septieme jour, lutherienne, anglicane, catholique romaine et pentecotiste sont toutes presentes. Environ 25% de musulmans, heritage de l'activite missionnaire arabe precoloniale. Rituels centres sur des autels ancestraux et des prieres aux esprits."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Ha avaient plusieurs royaumes (Buha) partages entre les districts de Kasulu et Kibondo : Heru, Kunkanda, Nkalinzi/Manyovu, Bushingo, Muhambwe, Banyingu et Bujiji. Ces royaumes fonctionnaient de maniere semi-independante sous des rois ha, avec une influence aristocratique tutsi a partir du XVIIIe siecle.",
+      "relationsWithNeighbors": "Les Ha partagent le nord-ouest de la Tanzanie avec les Sukuma, les Haya, les Zinza, les Hangaza et les Subi. Ils ont des liens linguistiques et culturels etroits avec les Rundi du Burundi voisin et les Rwandais (langue proche : kirundi/kinyarwanda). La presence de refugies burundais et rwandais dans la region de Kigoma cree des liens contemporains.",
+      "conflictsOrAlliances": "La region de Kigoma a accueilli d'importantes vagues de refugies burundais (crises de 1972 et 1993) et rwandais (genocide de 1994) du fait de la proximite geographique et linguistique. Ces flux migratoires ont cree des tensions mais aussi des solidarites avec les populations ha.",
+      "diaspora": "Les Ha sont essentiellement concentres dans la region de Kigoma en Tanzanie. Une migration interne vers la cote tanzanienne (plantations de sisal) est documentee. Presence de Ha dans d'autres villes tanzaniennes."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1850000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org, 2023 (via Africa 101 Last Tribes) : 1 850 000. Estimation 2001 (Wikipedia) : 1 a 1,5 million.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1850000,
+          "note": "Region de Kigoma (districts de Kasulu, Kibondo et Kigoma), nord-ouest de la Tanzanie"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Ha people – Wikipedia EN (https://en.wikipedia.org/wiki/Ha_people)",
+      "Ha in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12023)",
+      "Ha – Encyclopaedia Britannica (https://www.britannica.com/topic/Ha)",
+      "Ha people – Africa 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/ha.html)",
+      "Ha language – Wikipedia EN (https://en.wikipedia.org/wiki/Ha_language)",
+      "Scherer, J.H. – Marriage and Bride-Wealth in the Highlands of Buha (Tanganyika), Dissertation Utrecht University, 1965"
+    ]
   }
 }

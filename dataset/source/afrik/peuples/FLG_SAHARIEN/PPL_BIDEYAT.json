@@ -2,67 +2,108 @@
   "id": "PPL_BIDEYAT",
   "nameMain": "Bideyat",
   "languageFamilyId": "FLG_SAHARIEN",
-  "currentCountries": ["TCD", "SDN"],
+  "currentCountries": ["TCD", "SDN", "LBY"],
   "content": {
     "appellations": {
       "mainName": "Bideyat",
-      "selfAppellation": "Bideyat",
-      "exonyms": ["Bideyat (terme utilisé par les Européens)"],
+      "selfAppellation": "Tuba / Biria",
+      "exonyms": [
+        "Bideyat (terme arabe, utilise par les populations arabophones et dans la litterature)",
+        "Borogat (nom alternatif pour le sous-clan Brogat)",
+        "Beri (terme englobant l'ensemble du groupe Zaghawa dont les Bideyat font partie)"
+      ],
+      "originOfExonyms": "Le terme Bideyat est un exonyme arabe designant le sous-groupe Tuba du peuple Beri (Zaghawa). L'endonyme est Tuba ou Biria (Brogat pour le sous-clan). Le terme Bideyat est utilise dans la classification linguistique et ethnographique arabe et occidentale pour distinguer ce sous-groupe des Zaghawa proprement dits (Kube). Les Bideyat resident principalement dans la region de l'Ennedi et les zones frontieres du nord-est du Tchad et du Darfour soudanais.",
+      "whyProblematic": "La classification des Bideyat est source de confusion : ils sont tantot decrits comme un sous-groupe des Zaghawa/Beri (partageant la langue zaghawa, dialecte Tuba), tantot comme un peuple distinct. La denomination Bideyat dans les sources arabes les assimile parfois aux Toubou (Toubou etant geographiquement voisins dans l'Ennedi), alors qu'ils sont linguistiquement et culturellement proches des Zaghawa.",
+      "contemporaryUsage": "Le terme Bideyat est utilise dans la litterature academique, les rapports humanitaires et les sources journalistiques pour designer ce groupe de l'Ennedi. Leur lien avec l'identite Beri/Zaghawa est reconnu par les chercheurs. PeopleGroups.org les recense comme un sous-groupe distinct du peuple Beri.",
       "linguisticFamily": "FLG_SAHARIEN",
-      "ethnoLinguisticGroup": "Saharien (Zaghawa)",
-      "historicalRegion": "TCD, SDN",
-      "currentCountries": ["TCD", "SDN"]
+      "ethnoLinguisticGroup": "Groupe saharien oriental, sous-groupe Zaghawa (dialecte Tuba)",
+      "historicalRegion": "Region de l'Ennedi (nord-est du Tchad), zone frontaliere avec le Soudan (Darfour du Nord), extensions vers la Libye meridionale",
+      "currentCountries": ["TCD", "SDN", "LBY"]
     },
     "ethnicities": [
-      "Bideyat du Tchad",
-      "Bideyat du Soudan",
-      "Sous-groupes régionaux"
+      "Biria (sous-clan principal du groupe Tuba/Bideyat au Tchad)",
+      "Brogat (sous-clan Borogat; zone de l'Ennedi et frontieres tchado-soudanaises)",
+      "Groupes Tuba dans la sous-prefecture de Bao Bilia (Tchad)",
+      "Groupes Tuba dans la sous-prefecture de Kalaïti (Ennedi, Tchad)",
+      "Communautes transfrontalieres dans le Darfour du Nord (Soudan)"
     ],
     "origins": {
-      "ancientOrigins": "Les Bideyat sont originaires du Tchad et du SDN, dans la région du Sahel. Leur présence dans la région remonte à plusieurs siècles. Ils sont liés aux Zaghawa.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Zaghawa.",
-      "externalInfluences": "Contacts avec les peuples sahariens voisins, influence de l'islam."
+      "ancientOrigins": "Les Bideyat (Tuba) partagent les origines communes des Beri (Zaghawa), un peuple de la branche saharienne nilo-saharienne mentionnes dans les sources islamiques des le 8e-9e siecle. Leur installation dans la region aride de l'Ennedi (massif rocheux dans le nord-est du Tchad, frontiere naturelle entre Sahara et Sahel) est ancienne. La region de l'Ennedi a toujours constitue un espace de passage et de refuge entre le Tchad, le Soudan et la Libye. Les Bideyat sont proches des Toubou-Teda geographiquement, mais leur appartenance linguistique les rattache aux Zaghawa.",
+      "formationPeriod": "La distinction entre les Bideyat (Tuba) et les autres groupes Beri/Zaghawa resulte probablement d'une divergence progressive liee a l'isolement dans les massifs de l'Ennedi et aux contacts avec les populations toubou voisines. La classification dialectale zaghawa (quatre dialectes principaux : Tuba, Dirong-Guruf, Kube, Wegi) reflete ces distinctions historiques. La population Tuba/Bideyat est estimee a environ 15 000 locuteurs (Wikipedia, Zaghawa language).",
+      "migrationRoutes": [
+        "Presence ancestrale dans la zone Ennedi-Borkou (nord-est du Tchad)",
+        "Mouvements saisonniers transfrontaliers entre le Tchad et le Darfour soudanais pour les paturages",
+        "Contacts et echanges avec les Toubou-Teda voisins dans la region de l'Ennedi"
+      ],
+      "historicalSettlementZones": [
+        "Canton Kobe-Nord-Est, sous-prefecture d'Iriba (Tchad)",
+        "Sous-prefectures de Bao Bilia et Kalaïti (prefecture de l'Ennedi, Tchad)",
+        "Darfour du Nord, pres de la frontiere tchadienne (Soudan)",
+        "Localites de Bahaï, Bao Bilia et Kalaïti"
+      ],
+      "unificationsOrDivisions": "Les Bideyat sont divises en deux sous-clans principaux : Biria et Brogat. Ils s'integrent dans la structure sociale plus large des Beri (Zaghawa), partageant la stratification sociale en nobles-guerriers, marchands, castes artisanales (Hadaheed) et anciennement esclaves. Leurs relations avec les autres sous-groupes Zaghawa (Kube, Wegi) et avec les Toubou voisins sont complexes, alternant cooperation et competition pour les ressources en milieu aride.",
+      "externalInfluences": "Islamisation a l'instar des autres Zaghawa. Periode coloniale francaise dans le BET (Borkou-Ennedi-Tibesti). Integration dans l'Etat tchadien post-independance. Impact des guerres civiles tchadiennes et du conflit du Darfour sur les communautes frontalieres. Interventions humanitaires dans les zones d'accueil de refugies du Darfour (Bahaï est un point d'entree important).",
+      "majorHistoricalEvents": "Independance du Tchad (1960) : integration dans l'Etat tchadien. Guerres civiles tchadiennes (1966-1979, puis cycles ulterieurs) : perturbations des routes traditionnelles et des paturages saisonniers. Conflit du Darfour (2003-present) : la region de l'Ennedi et de Bahaï devient une zone frontaliere de transit pour les refugies zaghawa soudanais. Secheresses sahariennes (annees 1970-1980) ayant fragilise les moyens de subsistance pastoraux."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas et des chefs religieux. L'islam sunnite structure la vie sociale."
+      "traditionalPoliticalSystem": "Systeme de chefferies claniques avec chefs (sultan, melk) exercant une autorite sur les terres ancestrales, les puits et les routes de paturage. Les conseils d'anciens regulent les conflits interclaniques et les decisions importantes selon la loi coutumiere et islamique. La structure politique est similaire au modele Beri/Zaghawa general.",
+      "clanOrganization": "Structure clanique patrilineaire avec deux sous-clans principaux : Biria et Brogat. Les castes artisanales Hadaheed (forgerons, musiciens, tanneurs) sont endogames et hereditaires, segreguees du reste de la societe. Les droits sur les puits, oasis et paturages sont determines par l'appartenance clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Le mariage est generalement pratique entre membres du meme groupe Beri mais hors du clan proche. Les obligations d'hospitalite (envers les membres du clan en deplacement) sont importantes dans ce milieu pastoral et nomade.",
+      "religiousAuthority": "Islam sunnite malekite pratique comme chez les autres Zaghawa. Les oulémas locaux administrent la justice islamique. Maintien de pratiques rituelles pre-islamiques (sacrifice, croyances en esprits des lieux). La piete islamique est renforcee dans certains groupes par l'influence de la confrerie tijaniste."
     },
     "languages": {
-      "mainLanguage": "Bideyat (variété Zaghawa)",
-      "vehicularRole": "Le bideyat est parlé par la majorité des Bideyat. L'arabe, le français et d'autres langues sont également utilisés."
+      "mainLanguage": "Zaghawa, dialecte Tuba (appele Bideyat dans les sources arabes)",
+      "isoCodes": ["zag"],
+      "dialects": [
+        "Tuba (Bideyat selon la terminologie arabe) : dialecte principal des Bideyat; environ 15 000 locuteurs; canton Kobe-Nord-Est, Ennedi (Tchad) et Darfour du Nord (Soudan)",
+        "Brogat (Borogat) : variante proche du Tuba"
+      ],
+      "vehicularRole": "La langue zaghawa (dialecte Tuba) est langue maternelle des Bideyat. L'arabe tchadien est la langue vehiculaire regionale, utilise dans les echanges commerciaux et avec l'administration. Le francais est utilise dans l'administration officielle au Tchad. La mutuelle intelligibilite entre les dialectes zaghawa est variable : les Teda (toubou) comprennent moins le Dazaga que l'inverse, et les Bideyat maintiennent des contacts linguistiques avec les populations toubou voisines."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
-      "source_3": "Pèlerinage à La Mecque (Hajj)",
-      "Symboles": "Symboles islamiques, symboles culturels bideyat.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Islam sunnite majoritaire. Rôle central de l'islam dans la culture bideyat."
+      "majorRites": "Celebrations islamiques : Ramadan, Aid el-Fitr, Aid el-Adha avec sacrifices d'animaux. Ceremonies de mariage avec dot en betail, chants traditionnels et participation clanique. Circoncision masculine comme rite de passage a l'age adulte. Karama (sacrifice rituel pre-islamique pour eloigner les mauvais esprits), partagee avec les autres Zaghawa. Funerailles islamiques (inhumation rapide, condoleances communautaires). Rites liees aux transhumances saisonnieres entre les paturages.",
+      "symbols": "Le chameau est le symbole principal de richesse, de mobilite et de statut dans cet environnement saharien. Les massifs rocheuses de l'Ennedi (avec leurs peintures rupestres prehistoriques celebres) constituent un repere territorial et identitaire majeur. Les oasis et puits representent des points de convergence clanique et des ressources strategiques.",
+      "artsAndMusic": "Poesie orale et recits genealogiques conserves par tradition orale. Musique des castes Hadaheed lors des ceremonies (percussions, chants). Artisanat en cuir (selles, outres, sandales) adapte a la vie nomade saharienne. Decoration des tentes et vetements avec motifs geometriques. Les peintures rupestres de l'Ennedi (prehistoriques) sont un heritage culturel majeur du territoire historique bideyat.",
+      "spiritualities": "Islam sunnite malekite predominant. Maintien de pratiques pre-islamiques comme le karama (sacrifice rituel d'animaux). Croyances en des forces spirituelles liees aux elements naturels (rochers, eau, vent) dans l'environnement saharien. Respect des ancetres et des saints locaux (marabouts)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques tchadiennes et soudanaises.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora bideyat dans les grandes villes tchadiennes et soudanaises, et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Bideyat s'inscrivent dans le cadre politique plus large du groupe Beri/Zaghawa, qui exerqa une hegemonie sur le Sahel central avant le 13e siecle. Dans la region de l'Ennedi, ils ont maintenu une presence semi-independante, protegee par la nature aride et rocheuse du territoire. Leur integration dans les structures administratives coloniales francaises (prefecture du BET) s'est faite progressivement au 20e siecle.",
+      "relationsWithNeighbors": "Relations avec les Toubou-Teda voisins dans l'Ennedi : coexistence et contacts culturels dus a la proximite geographique. Relations avec les autres sous-groupes Zaghawa (Kube, Wegi) au Tchad et au Soudan. Competition pour les ressources en eau et en paturages avec les autres groupes nomades de la region. La frontiere poreuse entre le Tchad et le Soudan a toujours ete une zone de relations transnationales.",
+      "conflictsOrAlliances": "Implication indirecte dans les guerres civiles tchadiennes via les affiliations ethniques Zaghawa. Impact du conflit du Darfour : la zone de Bahaï, habitee par des Bideyat, est devenue un point de transit majeur pour les refugies zaghawa fuyant le Soudan depuis 2003. Les Bideyat ont subi des pressions liees a l'afflux massif de populations deplacees et aux tensions frontieres tchadio-soudanaises.",
+      "diaspora": "Pas de diaspora importante documentee hors de la region. Des mouvements saisonniers transfrontaliers entre le Tchad et le Soudan font partie du mode de vie traditionnel pastoral. Certains individus se sont installes dans les villes tchadiennes (Abeche, N'Djamena) pour des activites commerciales ou d'enseignement."
     },
     "demography": {
-      "totalPopulation": 100000,
+      "totalPopulation": 30000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation basee sur les donnees dialectales de la langue zaghawa (Wikipedia : dialecte Tuba environ 15 000 locuteurs) et PeopleGroups.org (12 000 Bideyat au Tchad). En tenant compte des communautes soudanaises et de la croissance demographique, la population totale est estimee a environ 25 000-30 000 personnes en 2025. Les conditions d'acces difficiles dans l'Ennedi et les flux de refugies rendent les recensements imprecis.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 20000,
+          "note": "Region de l'Ennedi : cantons Kobe-Nord-Est, sous-prefectures de Bao Bilia et Kalaïti; localites de Bahaï et Kalaïti"
+        },
+        {
+          "country": "SDN",
+          "population": 8000,
+          "note": "Darfour du Nord, pres de la frontiere tchadienne; communaute melangee avec d'autres Zaghawa"
+        },
+        {
+          "country": "LBY",
+          "population": 2000,
+          "note": "Petite communaute dans le sud de la Libye"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Bideyat language",
-      "CIA World Factbook – Chad, Sudan",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples sahariens"
+      "Wikipedia EN — Zaghawa language (dialecte Tuba/Bideyat). https://en.wikipedia.org/wiki/Zaghawa_language",
+      "Wikipedia EN — Zaghawa people. https://en.wikipedia.org/wiki/Zaghawa_people",
+      "PeopleGroups.org — Bideyat of Chad. https://peoplegroups.org/people_groups/pg011322/",
+      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
+      "Ethnologue — Zaghawa (ZAG). https://www.ethnologue.com/language/zag/",
+      "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982.",
+      "UNESCO — Ennedi Massif, patrimoine mondial. https://whc.unesco.org/en/list/1475/"
     ]
   }
 }

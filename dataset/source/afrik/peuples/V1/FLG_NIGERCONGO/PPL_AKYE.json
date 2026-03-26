@@ -1,0 +1,64 @@
+{
+  "id": "PPL_AKYE",
+  "nameMain": "Akye",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Akye",
+      "selfAppellation": "Akye",
+      "exonyms": ["Akye (terme utilisé par les Européens), Attié"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa",
+      "historicalRegion": "Sud-est de la Côte d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Akye du Nord", "Akye du Sud", "Sous-groupes régionaux"],
+    "origins": {
+      "ancientOrigins": "Les Akye sont originaires du sud-est de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples ouest-africains, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Akye",
+      "vehicularRole": "L'akye est parlé par la majorité des Akye. Le français et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels akye, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora akye dans les grandes villes ivoiriennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements ivoiriens, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Akye language (ati)",
+      "CIA World Factbook – Côte d'Ivoire",
+      "Recensements ivoiriens",
+      "Études anthropologiques sur les peuples kwa"
+    ]
+  }
+}

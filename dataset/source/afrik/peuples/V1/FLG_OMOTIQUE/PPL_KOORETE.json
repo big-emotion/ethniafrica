@@ -1,0 +1,23 @@
+{
+  "id": "PPL_KOORETE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Koorete / Koreta",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "historicalRegion": "Région du Sud (South Ethiopia)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (kqy)"]
+  }
+}

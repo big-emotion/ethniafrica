@@ -6,54 +6,63 @@
   "content": {
     "appellations": {
       "mainName": "Mukulu",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Mukulu",
+      "exonyms": [],
+      "originOfExonyms": "Le nom Mukulu est leur propre designation. En langue bemba et dans plusieurs langues bantoues de Zambie, mukulu signifie 'grand' ou 'aine', mais il s'agit ici d'une denomination ethnique distincte. A noter que le titre Chitimukulu (roi des Bemba) inclut le meme radical mukulu avec le meme sens de 'grand'.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mukulu est utilise dans les contextes officiels zambiens. Les Mukulu figurent dans la liste officielle des tribus de Zambie.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Ouest",
+      "ethnoLinguisticGroup": "Bantu, groupe Centre-Sud de Zambie",
+      "historicalRegion": "Province de l'Ouest de la Zambie",
       "currentCountries": ["ZMB"]
     },
     "ethnicities": ["Mukulu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Ouest"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Peuple bantou de Zambie appartenant au cluster Bantu Centre-Sud. Comme la plupart des peuples bantous de Zambie, leur origine remonte aux vagues de migrations bantoues qui penetrerent la Zambie a partir du XIIe siecle depuis le bassin du Congo.",
+      "formationPeriod": "XIIe-XVIIe siecles, dans le cadre des migrations bantoues progressives qui peuplèrent la Zambie centrale et occidentale.",
+      "migrationRoutes": [
+        "Bassin du Congo vers la Zambie dans le cadre de l'expansion bantoue meridionale"
+      ],
+      "historicalSettlementZones": ["Province de l'Ouest de la Zambie"],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Influence des royaumes lozi et bemba voisins. Colonisation britannique de la Rhodesie du Nord (Zambie actuelle). Influence des missions chretiennes.",
+      "majorHistoricalEvents": "Integration dans le systeme colonial britannique de Rhodesie du Nord. Independence de la Zambie (1964) et integration dans le systeme administratif zambian."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation cheffale traditionnelle typique des societes bantoues de la region. Autorite des chefs et anciens a l'echelle villageoise et locale.",
+      "clanOrganization": "Organisation clanique bantou. La vie sociale est structuree par les clans et les lignages.",
+      "roleOfLineages": "Les lignages structurent les droits fonciers, les heritages et les relations de parenté dans les communautes rurales.",
+      "religiousAuthority": "Pratiques religieuses traditionnelles (ethnoreligion) toujours predominantes selon les sources. Les guerisseurs et chefs spirituels traditionnels conservent une autorite dans les communautes rurales."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Bemba (langue vehiculaire principale utilisee par les Mukulu selon PeopleGroups.org)",
+      "isoCodes": ["bem"],
+      "dialects": [],
+      "vehicularRole": "Les Mukulu utilisent le bemba (ISO 639-3 : bem) comme langue principale selon PeopleGroups.org. Le bemba est l'une des sept langues officielles de Zambie et la lingua franca des provinces du Nord, du Copperbelt et de Muchinga. L'anglais est la langue officielle nationale."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies traditionnelles bantoues liees aux cycles de vie (naissance, initiation, mariage, mort). Pratiques ancestrales de veneration des esprits des ancetres.",
+      "symbols": null,
+      "artsAndMusic": "Traditions orales, musique et danse ceremoniale caracteristiques des societes bantoues de la Zambie occidentale.",
+      "spiritualities": "Ethnoreligion predominante selon PeopleGroups.org : croyances animistes et culte des ancetres. Pratiques syncrethiques avec des elements chretiens dans certaines communautes."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies locales traditionnelles. Presence historique dans la zone d'influence des royaumes lozi et bemba de la Zambie.",
+      "relationsWithNeighbors": "Relations avec les autres peuples bantous de la province de l'Ouest de Zambie, notamment dans la sphere d'influence du royaume lozi (Barotseland).",
+      "conflictsOrAlliances": null,
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 40500,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2025 (langue Mukulu moz : 40 500 locuteurs)",
+      "distributionByCountry": [{ "country": "ZMB", "population": 40500 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mukulu of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015611/)",
+      "Mukulu in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13860)",
+      "List of Zambian tribes – Wikipedia EN (https://en.wikipedia.org/wiki/List_of_Zambian_tribes)",
+      "ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+    ]
   }
 }

@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_IRAQW",
   "nameMain": "Iraqw",
   "languageFamilyId": "FLG_COUCHITIQUE",
@@ -6,54 +11,72 @@
   "content": {
     "appellations": {
       "mainName": "Iraqw",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
-      "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Centre",
-      "currentCountries": ["TZA"]
+      "selfAppellation": "Iraqw",
+      "exonyms": ["Mbulu", "Iraku", "Wambulu"],
+      "originOfExonyms": "Mbulu est l'exonyme swahili et bantou le plus courant, emprunté au nom du plus grand établissement iraqw (la ville de Mbulu). Wambulu est la forme bantoue plurielle de Mbulu. Iraku est une variante orthographique employée dans certaines publications coloniales et administratives.",
+      "whyProblematic": "L'exonyme Mbulu peut créer une confusion avec les Gorowa, qui adoptent de plus en plus cette identité dans les zones urbaines ; le terme subsume les deux groupes (Iraqw et Gorowa) dans une identité Mbulu commune chez les jeunes.",
+      "contemporaryUsage": "Iraqw est le terme académique standard et l'auto-désignation officielle. Mbulu reste très courant dans les contextes administratifs et populaires tanzaniens. La région de Manyara et le district de Karatu (région d'Arusha) sont les centres historiques et contemporains du peuple iraqw."
     },
     "ethnicities": ["Iraqw"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Centre"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Iraqw sont un peuple couchitique méridional (South Cushitic, branche West-Rift de l'Afroasiatique). Leurs ancêtres appartiennent à la tradition de la Stone Bowl Culture (complexe culturel des tailleurs de bol en pierre), groupe de premiers agriculteurs-pasteurs néolithiques présents dans la région des Grands Lacs avant les migrations bantoues et nilotiques. La tradition orale iraqw désigne le lac Manyara comme Tlawta Moyar tsar (Deuxième lac Moya), le premier lac Moya étant probablement le lac Turkana (Kenya-Éthiopie). Les Ameru du Kenya décrivent des ancêtres de culture Sirikwa (équivalent probable des Iraqw) comme Lumbwa, Humba et Humbua. Ces peuples auraient entretenu des relations avec des chasseurs-cueilleurs kalenjin avant les expansions maasaï.",
+      "formationPeriod": "Le dernier mouvement migratoire significatif des Iraqw vers leur territoire actuel (sud-est du cratère de Ngorongoro, district de Karatu) date d'environ deux à trois siècles, soit entre 1700 et 1750 selon les traditions orales, coïncidant avec l'abandon du complexe d'Engaruka et le tarissement progressif de la rivière Engaruka.",
+      "migrationRoutes": [
+        "Depuis un foyer d'origine couchitique septentrional (probablement région du lac Turkana ou du Nil éthiopien) vers le sud",
+        "Occupation probable du complexe d'Engaruka (district de Monduli, région d'Arusha) avant l'abandon estimé entre 1700 et 1750",
+        "Migration finale vers le sud-est du cratère de Ngorongoro, district de Karatu (région d'Arusha), sous la pression des Barbaig (sous-groupe Datog)"
+      ],
+      "historicalSettlementZones": [
+        "Complexe d'Engaruka, district de Monduli, région d'Arusha (site archéologique abandonné c. 1700-1750)",
+        "Hautes terres de Mbulu (Iraqw'ar Da/aw), région de Manyara",
+        "District de Karatu, région d'Arusha (zone de peuplement actuelle principale)",
+        "District de Babati, région de Manyara (contact avec les Gorowa)"
+      ],
+      "unificationsOrDivisions": "Les Iraqw constituent le groupe couchitique méridional le plus important de Tanzanie, absorbant des groupes voisins et en expansion démographique constante. La langue iraqw est classifiée comme langue en développement (statut EGIDS 5). Les Iraqw et les Gorowa, malgré une haute intelligibilité mutuelle, se considèrent comme deux groupes ethniques distincts. Une identité Mbulu commune tend à subsumer les deux groupes parmi les jeunes urbains.",
+      "externalInfluences": "Long contact avec les Barbaig (Datog), pasteurs nilotiques qui occupaient les hautes terres du cratère de Ngorongoro avant l'arrivée des Maasaï, conduisant à la migration des Iraqw vers leur territoire actuel. Emprunts datooga importants dans la poésie et le vocabulaire iraqw. Contact ethnique et linguistique documenté avec les Kalenjin (Kenya), les Turkana et les Somali. Influence coloniale britannique sur l'administration administrative du territoire iraqw.",
+      "majorHistoricalEvents": "Abandon du complexe agraire d'Engaruka (estimé vers 1700-1750), attribué par la tradition orale à des conflits avec les Barbaig et par les données environnementales au tarissement des rivières du Ngorongoro. Arrivée des Maasaï au XVIIIe siècle comme nouvelle pression migratoire. Traduction de l'Ancien Testament iraqw par la Tanzania Bible Society en 1977. Expansion démographique continue depuis le XIXe siècle par absorption de groupes voisins."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation clanique décentralisée sans chefferie centralisée de type royale. L'autorité locale repose sur des conseils d'anciens et des leaders rituels. La prophète fondatrice de la religion populaire iraqw est Saigilo (Mama Issara), figure de référence spirituelle historique dans les hautes terres de Mbulu.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent les droits fonciers, les héritages et les alliances matrimoniales. Le système d'agriculture intensive auto-suffisante (Iraqw'ar Da/aw) repose sur des savoirs fonciers transmis par lignage, incluant des techniques de canaux, digues et terrasses comparables aux vestiges archéologiques d'Engaruka.",
+      "religiousAuthority": "La religion populaire iraqw (Iraqw'ar Da/aw, parfois appelée Mama Issara) est organisée autour d'un panthéon de praticiens rituels. Saigilo est la figure prophétique principale. Les praticiens rituels supervisent les rites agraires, les cycles saisonniers et les relations avec les esprits associés aux grands arbres et aux sources d'eau."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Iraqw (irk)",
+      "isoCodes": ["irk"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue nationale et d'instruction en Tanzanie ; les Iraqw sont bilingues iraqw-swahili. La langue iraqw est en expansion numérique, absorbant les locuteurs de groupes voisins. Elle est classifiée comme langue en développement (statut EGIDS 5) avec environ 460 000 locuteurs (Ethnologue). La langue gorowa, très proche, est parfois écrite avec l'orthographe iraqw. Le système nominal iraqw distingue trois genres : masculin, féminin et neutre."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Les rites agraires (cycles de plantation et de récolte) sont centraux dans la vie iraqw, liés à une agriculture intensive d'auto-subsistance. Les rites de la religion populaire Mama Issara sont conduits par des praticiens rituels spécialisés. Les rites de passage sont organisés à l'échelle clanique.",
+      "symbols": "Le lac Manyara porte dans la tradition iraqw le nom de Tlawta Moyar tsar (Deuxième lac Moya), évoquant un foyer d'origine nordique lointain. Les canaux d'irrigation et les terrasses agricoles sont des marqueurs identitaires forts, rappelant l'héritage du complexe d'Engaruka. Le système agricole auto-suffisant des hautes terres de Mbulu est une fierté culturelle documentée.",
+      "artsAndMusic": "Tradition orale riche transmettant les légendes d'origine, les récits de migration et les généalogies claniques. La recherche académique (Mous 1993) a constitué un corpus linguistique important, complété par le travail de documentation de Harvey (2015-2018) sur le gorwaa, langue soeur de l'iraqw.",
+      "spiritualities": "Religion populaire iraqw (Iraqw'ar Da/aw), fondée sur le culte de la nature et des esprits ancestraux. Saigilo (Mama Issara) est le prophète fondateur de la religion populaire, vénéré dans les hautes terres de Mbulu. Les pratiques religieuses incluent des rites saisonniers liés aux cycles agricoles et des invocations aux esprits protecteurs de l'eau et des forêts. Le christianisme est présent mais coexiste avec la religion traditionnelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé documenté. La société iraqw est organisée en communautés agricoles décentralisées avec une autorité rituelle et des conseils d'anciens. Les Iraqw sont culturellement dominants dans leur région, absorbant les groupes voisins.",
+      "relationsWithNeighbors": "Relations intenses avec les Gorowa (groupe linguistiquement frère, haute intelligibilité mutuelle, convergence rituelle, émergence d'une identité Mbulu commune). Rapports historiques conflictuels avec les Barbaig (Datog), qui les ont contraints à migrer. Relations avec les Maasaï, présents dans la même région depuis le XVIIIe siècle (les Maasaï attestent la présence iraqw à Engaruka lors de leur propre arrivée). Contacts ethniques et culturels avec les Rangi, Mbugwe et Alagwa.",
+      "conflictsOrAlliances": "Conflits historiques avec les Barbaig (Datog) ayant conduit à l'abandon d'Engaruka et à la migration vers le district de Karatu. Les Iraqw ont progressivement occupé et absorbé les zones de peuplement de leurs voisins, devenant le groupe dominant de la région de Manyara. Alliance culturelle rituelle contemporaine avec les Gorowa.",
+      "diaspora": "Des communautés iraqw vivent dans les villes tanzaniennes, notamment Arusha, Dar es Salaam et Babati. Ces communautés maintiennent leur langue et leur identité iraqw, contribuant à l'expansion numérique du groupe."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1000000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation démographique courante : environ 1 000 000 Iraqw (Wikipedia Iraqw people) ; Ethnologue 2021 : 460 000 locuteurs iraqw. La divergence reflète le taux d'expansion par absorption de groupes voisins. Estimation 2025 convergente avec le million – Iraqw people Wikipedia / Ethnologue (irk)",
+      "distributionByCountry": [
+        { "country": "TZA", "population": 1000000, "percentage": 100 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Iraqw people – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_people)",
+      "Iraqw language – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_language)",
+      "Iraqw Language (IRK) – Ethnologue (https://www.ethnologue.com/language/irk/)",
+      "Iraqw – Glottolog iraq1241 (https://glottolog.org/resource/languoid/id/iraq1241)",
+      "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
+      "Mous M., A Grammar of Iraqw, 1993 – référence académique standard sur la langue iraqw",
+      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+    ]
   }
 }

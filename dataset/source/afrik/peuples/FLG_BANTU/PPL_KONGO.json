@@ -6,65 +6,126 @@
   "content": {
     "appellations": {
       "mainName": "Kongo",
-      "selfAppellation": "Bakongo",
-      "exonyms": ["Kongo (terme utilisé par les Européens), Bakongo"],
+      "selfAppellation": "Bakongo (pluriel) / Mukongo (singulier)",
+      "exonyms": [
+        "Kongo (denomination europeenne, devenue standard)",
+        "Bakongo (forme plurielle avec prefixe bantou ba-)",
+        "Kongo dia Ntotila (designant les Kongo du royaume central)"
+      ],
+      "originOfExonyms": "Le terme Kongo designait a l'origine le royaume fonde au XIVe siecle dont la capitale etait Mbanza Kongo (actuelle province du Kongo Central, RDC). Les Portugais, premiers Europeens a entrer en contact en 1483, adopteent ce nom pour designer le peuple et la langue. Le prefixe Ba- (peuple de) donne Bakongo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bakongo et Kongo sont utilises indifferemment selon les contextes. La langue est officellement appelee Kikongo (ki- designant la langue en bantou). Le terme Kongo est aussi le nom du fleuve Congo, du royaume historique et de la province RDC du Kongo Central.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantou (Zone H)",
-      "historicalRegion": "COD, AGO, COG, GAB",
+      "ethnoLinguisticGroup": "Bantou de la zone H (bantou occidental, Guthrie H.10-H.16)",
+      "historicalRegion": "Bassin du Congo occidental : Kongo Central (RDC), Cabinda et nord de l'Angola, departement du Kouilou et Pool (Congo-Brazzaville), Ogooue-Maritime (Gabon)",
       "currentCountries": ["COD", "AGO", "COG", "GAB"]
     },
     "ethnicities": [
-      "Kongo de RDC",
-      "Kongo d'Angola",
-      "Kongo du Congo",
-      "Kongo du Gabon"
+      "Sundi (Bas-Congo, RDC)",
+      "Yombe (Mayombe, RDC et Congo-Brazzaville)",
+      "Vili (cote atlantique, Congo-Brazzaville et Gabon)",
+      "Beembe (region de Brazzaville)",
+      "Bwende (Pool, Congo-Brazzaville)",
+      "Dondo (Bouenza, Congo-Brazzaville)",
+      "Lari (pool, region de Brazzaville, Congo)",
+      "Koongo (Kongo central, RDC, autour de Mbanza Ngungu)",
+      "Kunyi (plateau Niari, Congo-Brazzaville)",
+      "Kongo dia Ntotila (descendants du royaume de Kongo central, RDC nord-Angola)",
+      "Solongo (cote atlantique angolaise)",
+      "Woyo (embouchure du fleuve Congo, Angola-Congo)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kongo sont originaires de la COD, de l'AGO, du Congo et du Gabon. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H). Formation du royaume Kongo.",
-      "unificationsOrDivisions": "Formation du royaume Kongo. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples bantous voisins, influence du christianisme."
+      "ancientOrigins": "Les Bakongo font partie de la grande expansion bantoue depuis le bassin du Congo. Avant la fondation du royaume, ils vivaient comme sujets du royaume de Vungu (sur la rive sud du Congo). Apres l'effondrement de ce royaume, ils se regroupent dans les royaumes de Kongo, Loango et Kakongo. Le royaume de Kongo fut fonde au XIVe siecle par absorption des sept royaumes de Kongo dia Nlaza et du royaume de Vungu, avec pour capitale Mbanza Kongo (situee a ~200 km de la cote atlantique).",
+      "formationPeriod": "Le royaume de Kongo atteignit son apogee aux XVe-XVIe siecles. Le contact avec les Portugais (1483) accelera a la fois le commerce et la penetration chretienne. La conversion au catholicisme du roi Nzinga a Nkuwu (baptise Joao I en 1491) inaugurant une ere de Kongo chretien. Le commerce des esclaves (surtout apres 1500) destabilisa progressivement le royaume jusqu'a sa fragmentation apres la bataille de Mbwila (1665).",
+      "migrationRoutes": [
+        "Expansion bantoue depuis l'Afrique centrale (bassin du Congo) vers l'ouest et le sud-ouest",
+        "Peuplement des rives du fleuve Congo et de ses affluents (Inkisi, Niari, Chiloango)",
+        "Dispersion par l'esclavage transatlantique vers le Bresil, Cuba, Haiti, Jamaique, Louisiane (XVIe-XIXe s.)"
+      ],
+      "historicalSettlementZones": [
+        "Mbanza Kongo / Sao Salvador (capitale, actuel Angola)",
+        "Bas-Congo / Kongo Central (RDC, entre le fleuve Congo et l'Atlantique)",
+        "Cabinda (enclave angolaise)",
+        "Departement du Pool et Kouilou (Congo-Brazzaville)",
+        "Province du Mayombe (RDC et Congo-Brazzaville)",
+        "Cote sud-ouest du Gabon (Ogooue-Maritime)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Kongo unifia de nombreux peuples sous un seul roi (Manikongo) elu par les nobles de la cour. L'adoption du christianisme par la famille royale (1491) crea une culture kongo chretienne unique. La bataille de Mbwila (1665) - victoire portugaise, mort du Manikongo Antonio I - fragmente le royaume en principautes rivales. Des guerres civiles (1665-1709) affaiblirent davantage le pouvoir central. Dona Beatriz Kimpa Vita (brulee en 1706) tenta une renovation spirituelle nationaliste. Pedro IV reconquit une partie du territoire avec l'aide portugaise.",
+      "externalInfluences": "Le commerce portugais (ivoire, cuivre puis esclaves) transforma l'economie du royaume. Le catholicisme s'implanta profondement : lettres du roi Afonso I au Portugal protestant contre la traite (1510s-1520s). Plus de 5,6 millions d'esclaves furent exportes depuis l'Afrique centrale occidentale entre 1501 et 1867, devastant la population kongo. La colonisation du XIXe s. divisa les Bakongo entre la France (nord, Congo-Brazzaville et Gabon), la Belgique (centre, RDC) et le Portugal (sud, Angola).",
+      "majorHistoricalEvents": "1483 : premier contact avec les Portugais. 1491 : bapteme du Manikongo Joao I. 1514 : lettres d'Afonso I protestanti contre la traite des esclaves. 1568 : invasion des Jaga, intervention portuguaise. 1665 : bataille de Mbwila, mort du Manikongo, fragmentation du royaume. 1706 : execution de Dona Beatriz Kimpa Vita. 1884-1885 : demembrement du territoire Kongo lors de la Conference de Berlin."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Kongo). Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Monarchie electiveà legitimite religieuse : le Manikongo (roi du Kongo) etait elu par les nobles de la cour (ne pas heredite stricte) et legitimise par la reconnaissance de ses pairs, les regalia royaux et le ritualisme religieux. La cour de Mbanza Kongo comptait des gouverneurs provinciaux (ducs, marques, comtes) souvent de la famille royale. Apres 1665 : fragmentation en principautes dirigees par des familles nobles alliees aux Portugais. Les regions etaient administrees par des nobles hereditaires.",
+      "clanOrganization": "Systeme de descent matrilineaire (kanda) : l'appartenance clanique se transmet par la mere. Les kanda sont les unites sociales fondamentales pour l'heritage, l'alliance et l'identite. Les sous-groupes (Beembe, Vili, Yombe, Sundi, etc.) constituent des unites semi-autonomes au sein de la culture kongo globale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (kanda) detiennent les droits fonciers et de succession. Le chef de kanda gere les conflits, les mariages et les rites. La descendance matrilineaire coexiste avec une residence patrilocale, creant une tension entre le lignage du pere et celui de la mere dans les droits de l'enfant.",
+      "religiousAuthority": "Pretres traditionnels (nganga) specialises selon les domaines (nganga nkisi pour les amulettes, nganga a bilongo pour la medecine). Les nkisi (objets-forts charges de puissance spirituelle) sont actives par des nganga. L'Eglise catholique, implantee depuis 1491, a joue un role majeur dans la vie kongo. Le mouvement Kimbanguiste (fonde au Congo belge en 1921 par Simon Kimbangu) est un exemple de religion kongo syncretique tres influente."
     },
     "languages": {
       "mainLanguage": "Kikongo",
-      "vehicularRole": "Le kikongo est parlé par la majorité des Kongo. Le français, le portugais, le lingala et d'autres langues sont également utilisés selon les pays."
+      "isoCodes": ["kon"],
+      "dialects": [
+        "Koongo (dialecte central, autour de Mbanza Ngungu, RDC)",
+        "Laari / Lari (region de Brazzaville, Congo)",
+        "Yombe (Mayombe, RDC et Congo-Brazzaville)",
+        "Vili / Kivili (cote nord, Pointe-Noire, Congo-Brazzaville et Gabon)",
+        "Sundi (Bas-Congo, RDC)",
+        "Doondo / Dondo (Bouenza, Congo-Brazzaville)",
+        "Beembe (region du Pool, Congo-Brazzaville)",
+        "Kongo-San-Salvador (autour de l'ancienne capitale, Angola)",
+        "Kunyi (plateau du Niari, Congo)",
+        "Kituba / Kikongo ya Leta (creole a base kikongo, vehiculaire en RDC et Congo-Brazzaville)"
+      ],
+      "vehicularRole": "Le kikongo est la langue maternelle des Bakongo au sens large. Le Kituba (Kikongo ya Leta) est un creole vehiculaire tres repandu au Congo-Brazzaville et dans l'ouest de la RDC. En RDC, le lingala est la lingua franca principale dans les villes. Le francais est langue officielle en RDC, Congo-Brazzaville et Gabon ; le portugais en Angola."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies royales",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (initiation, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'agriculture",
-      "Symboles": "Symboles royaux kongo, symboles liés à l'agriculture, symboles culturels kongo, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage, sculpture)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Les ceremonies royales (intronisation du Manikongo avec regalia, musique de tambours et danses) etaient les rites les plus prestigieux. Les rites de mariage comportent des negociations de dots et des ceremonies communautaires. Les rites de passage (initiation, scarifications, circoncision selon les sous-groupes) marques l'entree dans l'age adulte. Les funerailles impliquent des pleurs rituels, veillees, chants et la preservation de l'esprit de l'ancetre. Les ceremonies de consultation des nkisi sont pratiquees pour la protection, la guerison et la divination.",
+      "symbols": "Le cosmogramme kongo (dikenga) - un cercle avec une croix representant les quatre moments du soleil (naissance, zenith, coucher, minuit) et les quatre etapes de la vie - est le symbole spirituel central, utilise dans les arts, les rituels et retrouve dans des sites de l'Amerique africaine (prisons, plantations). Les nkisi (objets-forts : statuettes clouees, sachets medicinaux, contenants en bois ou coquillages) sont des concentres de puissance spirituelle. La couleur blanche signifie la mort et le monde des esprits (mpemba).",
+      "artsAndMusic": "La sculpture kongo est remarquable : statuettes nkisi nkondi (figurines a clous, chargees de serments et de guerison), figures de maternite (pfemba), masques ceremonials. La musique repose sur tambours bidimba, marimba, sanza (lamellophone) et chants polyphoniques. Les chansons comme Malele (avertissant de l'arrivee des Portugais) ont traverse les siecles. Dans la diaspora americaine, les Bakongo ont influence la musique cubaine (rumba, son), le jazz de Nouvelle-Orleans, la samba bresilienne (via Candomble Bantu), et les pratiques Palo Mayombe (Cuba) et Kumina (Jamaique). La poterie, le tissage et le travail de raphia sont des arts artisanaux importants.",
+      "spiritualities": "La cosmologie kongo est dualiste : le monde visible (nza yayi) et le monde invisible des esprits (mpemba, domaine des morts) sont en interaction permanente. Nzambi Mpungu est le dieu createur supreme. Les ancetres (bakulu) intercedent entre vivants et Nzambi. Les nkisi sont des vehicules de puissance spirituelle actives par des nganga. Le christianisme (catholicisme) s'est implante depuis 1491, creant des formes syncretiques originales (Antonianism de Dona Beatriz). Le Kimbanguisme (Eglise de Jesus-Christ sur la Terre par le Prophete Simon Kimbangu, 1921) est une expression chretienne africaine tres repandue en RDC et en Angola."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kongo dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Kongo (XIVe-XIXe s.) fut l'un des plus grands et des mieux organises d'Afrique subsaharienne : capitale Mbanza Kongo, monnaie (nzimbu), infrastructure commerciale, ecriture adoptee pour la correspondance royale en portugais. Les rois Kongo (Manikongo) maintinrent une diplomatie active avec le Portugal, le Vatican et d'autres cours europeennes. Des royaumes vassaux ou affilies incluaient Loango, Kakongo, Ngoyo.",
+      "relationsWithNeighbors": "Le royaume de Kongo absorbait et commercait avec les peuples voisins : Teke (au nord), Yaka et Mbundu (au sud et sud-est), Pende (est). Les Bakongo etaient mineurs de fer et forgerons, producteurs de cuivre et commergants d'ivoire. La relation avec les Portugais d'Angola (Luanda fondee en 1575 sur terres kongo avec cooperation d'une famille noble) evolua de l'alliance vers la domination.",
+      "conflictsOrAlliances": "1568 : invasion des Jaga (Imbangala), repousses avec l'aide portugaise ; cela facilita la traite des esclaves via Luanda. Trois guerres avec l'Angola portugais. Bataille de Mbwila (1665) : defaite catastrophique, Manikongo Antonio I tue. Guerres civiles de succession (1665-1709) exploitees par les marchands d'esclaves. Pedro IV reunifia partiellement le royaume vers 1709 avec l'aide portugaise. La Conference de Berlin (1884-85) divisa les territoires kongo entre France, Belgique et Portugal.",
+      "diaspora": "La diaspora kongo est l'une des plus importantes du monde atlantique : entre 1501 et 1867, des millions de Bakongo furent exportes en esclaves vers le Bresil (4,7 millions), les Caraibes (4,1 millions), l'Amerique du Nord (0,4 millions). Leur influence est visible dans la religion (Candomble Bantu au Bresil, Palo Mayombe a Cuba, Kumina en Jamaique, Hoodoo aux Etats-Unis), la musique (rumba cubaine, samba bresilienne, jazz) et le langage (Habla Congo a Cuba, Palenquero, Gullah). Des personnalites issues des Bakongo comprennent Ganga Zumba et Zumbi dos Palmares (leaders du quilombo de Palmares, Bresil)."
     },
     "demography": {
-      "totalPopulation": 10000000,
+      "totalPopulation": 11000000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation 2025 : environ 10 a 12 millions de Bakongo dans les quatre pays. Donnees de base : Kongo people en 1975 : 4 040 000 (Wikipedia EN). Groupe ethnique majoritaire en Republique du Congo ; groupe important en RDC (province du Kongo Central ~6M habitants, proportion kongo elevee) et au nord de l'Angola. Sources : SIL Ethnologue, CIA World Factbook, recensements nationaux RDC, Congo-Brazzaville, Angola.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 7000000,
+          "note": "province du Kongo Central et communautes de Kinshasa, estimation"
+        },
+        {
+          "country": "COG",
+          "population": 2500000,
+          "note": "principal groupe ethnique de la Republique du Congo (~40-50% de la population)"
+        },
+        {
+          "country": "AGO",
+          "population": 1300000,
+          "note": "nord de l'Angola, Cabinda, estimation"
+        },
+        {
+          "country": "GAB",
+          "population": 200000,
+          "note": "Ogooue-Maritime, Vili et groupes apparentes, estimation"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kikongo language (kon)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous",
-      "Études historiques sur le royaume Kongo"
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Wikipedia EN — Kingdom of Kongo. https://en.wikipedia.org/wiki/Kingdom_of_Kongo",
+      "Ethnologue (SIL) — Kongo [kon]. https://www.ethnologue.com/language/kon",
+      "Wikipedia EN — Kikongo language. https://en.wikipedia.org/wiki/Kikongo_language",
+      "Jan Vansina — Kingdoms of the Savanna. University of Wisconsin Press, 1966.",
+      "Simon Bockie — Death and the Invisible Powers: The World of Kongo Belief. Indiana University Press, 1993.",
+      "CIA World Factbook — Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+      "SimpleLocalize — Language Kongo (kon). https://simplelocalize.io/data/language/kg/"
     ]
   }
 }

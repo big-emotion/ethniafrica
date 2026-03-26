@@ -1,25 +1,142 @@
 {
   "id": "PPL_BENOUECONGO_MACRO",
-  "nameMain": "",
+  "nameMain": "Peuples Bénoué-Congo",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["NGA", "BEN", "TGO", "GHA", "CMR"],
+  "currentCountries": [
+    "NGA",
+    "CMR",
+    "COD",
+    "TZA",
+    "KEN",
+    "UGA",
+    "MOZ",
+    "ZWE",
+    "ZAF",
+    "AGO",
+    "GAB",
+    "COG",
+    "GHA",
+    "BEN",
+    "TGO"
+  ],
   "content": {
     "appellations": {
-      "mainName": "",
-      "selfAppellation": "Diverses selon les sous-groupes",
+      "mainName": "Peuples Bénoué-Congo",
+      "selfAppellation": "Diverses selon les sous-groupes (chaque peuple possède son propre ethnonyme)",
+      "exonyms": [
+        "Benue-Congo peoples",
+        "Bantoid peoples",
+        "Niger-Congo eastern branch speakers"
+      ],
+      "originOfExonyms": "La désignation Bénoué-Congo (Benue-Congo en anglais) est une classification académique proposée par le linguiste Joseph Greenberg en 1963 dans sa classification des langues niger-congo. Elle fait référence au confluent des fleuves Bénoué et Niger (Nigeria central) considéré comme la zone d'origine probable des proto-locuteurs. Le terme n'est pas un auto-désignation ethnique mais une catégorie linguistique regroupant des centaines de peuples.",
+      "whyProblematic": "Cette macro-catégorie n'est pas une identité ethnique vécue mais une classification linguistique académique. Aucun des peuples concernés ne se désigne comme bénoué-congolais. La diversité interne est extrême : des Yoruba du Nigeria aux Zulu d'Afrique du Sud, en passant par les Igbo, les Tiv, les Bantu de l'Afrique centrale et australe, tous appartiennent à cette famille mais n'ont aucune conscience collective commune.",
+      "contemporaryUsage": "Utilisé exclusivement en linguistique comparative, en ethnologie et en classification des bases de données culturelles comme EthniAfrica. Non utilisé par les communautés elles-mêmes.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "currentCountries": ["NGA", "BEN", "TGO", "GHA", "CMR"]
+      "ethnoLinguisticGroup": "Ensemble de 11 branches linguistiques regroupant environ 976 langues (Ethnologue 2017)",
+      "historicalRegion": "Zone d'origine probable : confluence des fleuves Niger et Bénoué (Nigeria central). Diffusion sur l'ensemble de l'Afrique subsaharienne, dominante en Afrique centrale, orientale et australe.",
+      "currentCountries": [
+        "NGA",
+        "CMR",
+        "COD",
+        "TZA",
+        "KEN",
+        "UGA",
+        "MOZ",
+        "ZWE",
+        "ZAF",
+        "AGO",
+        "GAB",
+        "COG",
+        "GHA",
+        "BEN",
+        "TGO"
+      ]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
+    "ethnicities": [
+      "Branche Défoid : Yoruba (20 millions, SW Nigeria et Bénin), Igala, Itsekiri, Ede",
+      "Branche Édoïde : Edo (Bénin City), Urhobo, Isoko, Yekhee (S. Nigeria)",
+      "Branche Nupoïde : Nupe, Gbagyi, Ebira (Nigeria central)",
+      "Branche Idomoïde : Idoma, Igede (Nigeria central)",
+      "Branche Igboïde : Igbo (20 millions, SE Nigeria), Ikwere, Ekpeye",
+      "Branche Kainji : environ 60 langues, 1 million de locuteurs (N. Nigeria)",
+      "Branche Platoïde : langues du Plateau State (Nigeria central), Jukunoid, Tiv",
+      "Branche Cross River : Ibibio, Efik (3,5 millions), Anang, Ogoni (SE Nigeria et Cameroun)",
+      "Branche Bantoid : 700+ langues dont Tiv, Tikar (E. Nigeria, Cameroun)",
+      "Branche Bantu (Bantoid méridional) : Swahili, Zulu, Xhosa, Shona, Lingala, Kikuyu, Yoruba, Kongo, Sotho, Tswana (Afrique centrale, orientale et australe)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les proto-locuteurs bénoué-congo auraient peuplé la région de la confluence des fleuves Niger et Bénoué (Nigeria central) il y a plusieurs millénaires. Cette zone de concentration maximale de la diversité linguistique bénoué-congo est considérée par Kay Williamson et d'autres linguistes comme la patrie ancestrale probable, sur la base du principe du mouvement minimum (least moves). La famille est l'une des plus vieilles branches linguistiques distinctes actuellement identifiées, avec des racines archéologiques liées à l'introduction de la poterie dans la région des Grassfields (Cameroun-Nigeria), estimée à plus de 4 000 ans.",
+      "formationPeriod": "Proto-bénoué-congo : formation probable entre 4 000 et 2 000 ans avant notre ère. Divergence des principales branches au cours du 1er millénaire avant J.-C. Expansion bantu (la plus grande migration de la famille) : entre 4 000 et 1 500 ans avant notre ère, depuis le berceau camerounais-nigérian vers l'Afrique centrale, orientale et australe.",
+      "migrationRoutes": [
+        "Expansion occidentale des Bantu : le long de la côte atlantique d'Afrique centrale, atteignant l'Angola vers 500 av. J.-C.",
+        "Expansion orientale des Bantu : le long de la lisière nord de la forêt congolaise ou du fleuve Oubangui, atteignant l'ouest du lac Victoria vers 500 av. J.-C.",
+        "Dispersion vers l'Afrique australe : depuis la région des Grands Lacs, atteignant le KwaZulu-Natal vers 300 apr. J.-C.",
+        "Consolidation des branches non-bantu dans la zone Nigeria-Cameroun : Défoid, Édoïde, Igboïde, Nupoïde, Idomoïde, Cross River, Platoid"
+      ],
+      "historicalSettlementZones": [
+        "Nigeria (SW, S, SE, Centre) : Défoid, Édoïde, Igboïde, Nupoïde, Idomoïde, Kainji, Platoid, Cross River",
+        "Cameroun : Bantoid, Grassfields, Cross River, Mambiloid",
+        "Afrique centrale : République démocratique du Congo, Congo-Brazzaville, Gabon (Bantu)",
+        "Afrique orientale : Kenya, Tanzanie, Ouganda (Bantu swahili et variantes)",
+        "Afrique australe : Mozambique, Zimbabwe, Afrique du Sud (Zulu, Xhosa, Shona, Sotho, Tswana)"
+      ],
+      "unificationsOrDivisions": "La famille bénoué-congo n'a jamais constitué une unité politique. Elle reflète un processus de divergence linguistique progressive sur des millénaires. La grande rupture interne est la séparation entre les branches non-bantu (majoritairement au Nigeria et au Cameroun) et la branche bantu qui a colonisé la moitié sud du continent africain. Le nom de famille doit son existence à la classification académique de Greenberg (1963), reclassifiée et affinée par Kay Williamson, Roger Blench et d'autres depuis.",
+      "externalInfluences": "Contacts avec les familles Kwa et Gur (au sein du phylum Niger-Congo) dans les zones de transition. Influence de l'islam sur plusieurs peuples (Yoruba, Nupe, certains peuples du Nigeria central). Colonisation européenne (XVe-XXe siècles) : commerce atlantique des esclaves impliquant massivement des peuples bénoué-congo (Igbo, Yoruba, Bantou côtiers). Influences khoïsan sur les Bantu australs.",
+      "majorHistoricalEvents": "Expansion bantu : une des plus grandes migrations humaines préhistoriques (4 000 à 1 500 ans av. J.-C.). Formation des empires yoruba (Oyo, Ile-Ife), igbo (sociétés sans État), edo (royaume du Bénin), nupe, tiv. Commerce atlantique des esclaves (XVIe-XIXe siècles) : impact démographique et culturel majeur sur les peuples du golfe de Guinée. Colonisation européenne et partage de l'Afrique (Conférence de Berlin, 1884-1885). Indépendances africaines (1957-1975). Inscription de plusieurs savoirs bénoué-congo au patrimoine UNESCO (attiéké ivoirien, 2024)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Extrême diversité des systèmes politiques selon les peuples : monarchies sacrées (royaumes yoruba, edo, nupe), sociétés acéphales à gouvernement par les anciens (Igbo, Tiv), chefferies confédérées (Ibibio), royaumes bantu centralisés (Zulu, Kongo, Luba, Lunda). Point commun : importance des conseils d'anciens, des lignages et des sociétés secrètes dans la régulation du pouvoir.",
+      "clanOrganization": "Diversité entre systèmes matrilinéaires (Akan, certains Bantu centraux) et patrilinéaires (Igbo, Tiv, Yoruba, plupart des Bantu australs). Les clans et lignages constituent partout la base de l'organisation sociale, foncière et politique.",
+      "ageClassSystems": "Fréquents dans de nombreux groupes bénoué-congo : classes d'âge chez les Igbo, Tiv, peuples du Cross River, peuples bantou d'Afrique de l'Est (Kikuyu, Maasai) assurant la transition entre générations et le service communautaire.",
+      "roleOfLineages": "Les lignages sont universellement le socle de l'organisation sociale bénoué-congo : ils déterminent l'héritage, les droits sur la terre, les alliances matrimoniales et l'accès aux fonctions rituelles. La profondeur généalogique varie de 3-5 générations chez certains peuples à plusieurs dizaines chez d'autres (ex. clans royaux bantu).",
+      "religiousAuthority": "Grande diversité : prêtres des divinités (Awo chez les Yoruba, Onowu chez les Igbo), chefs religieux islamiques (Emirats nupe, Yoruba du nord), leaders chrétiens (Église anglicane, catholique, pentecôtistes), devins, guérisseurs traditionnels (nganga chez les Bantu). Coexistence fréquente des traditions religieuses."
+    },
+    "languages": {
+      "mainLanguage": "Famille bénoué-congo (métalangue académique, pas une langue unique)",
+      "isoCodes": [],
+      "dialects": [
+        "11 branches internes selon la classification de Greenberg/Blench : Défoid (yoruba, igala), Édoïde (edo, urhobo), Nupoïde (nupe, gbagyi), Idomoïde (idoma), Igboïde (igbo), Kainji (60 langues, N. Nigeria), Platoïde (plateau et jukunoid), Cross River (ibibio, efik), Bantoid (tiv, grassfields), Bantu (700 langues : swahili, zulu, lingala, kikuyu, etc.), Isolats (Ukaan, Oko, Akpes)",
+        "Le swahili est la langue bénoué-congo la plus parlée au monde (5 millions en langue maternelle, 30+ millions en L2)",
+        "Le yoruba est la plus grande langue maternelle bénoué-congo (20 millions)"
+      ],
+      "vehicularRole": "Le swahili joue un rôle de lingua franca en Afrique orientale. Le yoruba est dominant au SW Nigeria et au Bénin. L'igbo au SE Nigeria. Le haoussa (non bénoué-congo) est la lingua franca du Nigeria central. Les langues bantu sont véhiculaires dans une grande partie de l'Afrique centrale, orientale et australe."
+    },
+    "culture": {
+      "majorRites": "Extrême diversité. Points communs transversaux : rites de passage (naissance, initiation, mariage, mort) dans tous les groupes. Rites funéraires avec masques et danses rituelles (Igbo, Yoruba, Bantou). Fêtes des ignames et des premières récoltes (peuples de forêt). Initiations masculines et féminines (Dipo chez les Dangme, Sande chez les Temne, rites bantou).",
+      "symbols": "Masques rituels en bois, bronze ou ivoire (masques Gelede yoruba, masques Ekpe du Cross River, masques bantou). Tambours sacrés (omniprésents comme symboles d'autorité). Tissage, poterie et broderie dans la quasi-totalité des groupes.",
+      "artsAndMusic": "La famille bénoué-congo inclut certaines des traditions artistiques les plus riches d'Afrique : bronzes et ivoires du royaume du Bénin (Edo), masques yoruba, art Nok (terres cuites, 1 500 av. J.-C.), musique afrobeat (dérivée du yoruba), highlife (peuples côtiers d'Afrique de l'Ouest), rumba congolaise (Bantu), musique zouk et afropop. Tradition de sculpture sur bois, de tissage (kente akan, pagne hausa, bassin du Congo). Griots et traditions orales dans l'ensemble de la famille.",
+      "spiritualities": "Mosaïque religieuse complexe. Religions traditionnelles : Ifá (yoruba), Odinani (igbo), Vodun (Fon-Ewe), cultes des ancêtres et des forces naturelles (quasi-universels). Islam : dominant chez les Yoruba du nord, les Nupe, les Haoussa, certains peuples du Sahel. Christianisme : dominant en Afrique du Sud, Kenya, Nigeria du Sud, Cameroun, Tanzanie. Syncrétismes multiples (Candomblé brésilien, Vodou haïtien : diaspora bénoué-congo)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Quelques grands royaumes et empires historiques issus des peuples bénoué-congo : Empire yoruba d'Oyo (XVIIe-XIXe s.), Royaume du Bénin/Edo (XIVe-XIXe s.), Royaume nupe, Royaumes tiv (sans État centralisé mais confédérations), Royaume kongo (XVe-XIXe s.), Empire luba, Royaume lunda, Royaumes zulu et ndebele (XIXe s.). La grande majorité des peuples bénoué-congo avaient des structures décentralisées (sociétés segmentaires, chefferies de village).",
+      "relationsWithNeighbors": "Relations interactives permanentes avec les familles Kwa (akan, éwé), Gur (mossi, dagomba), Afro-Asiatique (haoussa, berbère), Nilo-Saharienne (masaï, dinka). La traite atlantique des esclaves (XVIe-XIXe siècles) a profondément marqué les relations inter-ethniques en créant des réseaux de capture et de vente impliquant des peuples bénoué-congo dans tous les rôles.",
+      "conflictsOrAlliances": "Jihads soudanais et pression de l'islam sur les peuples du Nigeria central et du Sahel. Expansion zulu (difaqane) du XIXe siècle en Afrique australe. Guerres de résistance à la colonisation (résistance igbo, yoruba, zulu, ndebele). Conflits post-coloniaux : guerres civiles au Nigeria (guerre du Biafra 1967-1970), au Congo, en Angola, au Mozambique, au Zimbabwe.",
+      "diaspora": "Diaspora bénoué-congo massive issue de la traite atlantique : Afro-Américains, Afro-Caribéens (Yoruba au Brésil via le Candomblé, Bantu en Haïti via le Vodou). Diaspora économique contemporaine : millions de Nigérians, Congolais, Kenyans, Sud-Africains dans le monde entier. Mobilité intra-africaine des travailleurs (mineurs, commerçants)."
+    },
+    "demography": {
+      "totalPopulation": 500000000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2017) : environ 350 à 500 millions de locuteurs de langues bénoué-congo. Britannica et Benue-Congo Languages Research Starters (EBSCO) : environ 500 millions de personnes parlant des langues bénoué-congo. Ce chiffre inclut l'ensemble de l'Afrique subsaharienne parlant des langues bantu et non-bantu de la famille.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 130000000 },
+        { "country": "COD", "population": 100000000 },
+        { "country": "TZA", "population": 65000000 },
+        { "country": "KEN", "population": 55000000 },
+        { "country": "ZAF", "population": 60000000 },
+        { "country": "UGA", "population": 50000000 },
+        { "country": "MOZ", "population": 33000000 },
+        { "country": "CMR", "population": 28000000 },
+        { "country": "AGO", "population": 34000000 }
+      ]
+    },
     "sources": [
-      "Synthèse AFRIK 2025",
-      "UNESCO / Ethnologue / archives historiques du NGA, BEN, TGO, GHA"
+      "Wikipedia EN : Benue-Congo languages https://en.wikipedia.org/wiki/Benue%E2%80%93Congo_languages",
+      "Britannica : Benue-Congo languages https://www.britannica.com/topic/Benue-Congo-languages",
+      "EBSCO Research Starters : Benue-Congo Languages https://www.ebsco.com/research-starters/language-and-linguistics/benue-congo-languages",
+      "LanguagesGulper : Benue-Congo Languages https://www.languagesgulper.com/eng/Benue.html",
+      "Wikipedia EN : Bantu expansion https://en.wikipedia.org/wiki/Bantu_expansion",
+      "Wikipedia EN : Tiv people https://en.wikipedia.org/wiki/Tiv_people",
+      "Ethnologue (SIL International, 2017) : 976 langues bénoué-congo https://www.ethnologue.com"
     ]
   }
 }

@@ -6,54 +6,74 @@
   "content": {
     "appellations": {
       "mainName": "Kwa",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Gwa",
+      "exonyms": ["Gwa", "M'bato", "Mbato", "Goua"],
+      "originOfExonyms": "Le terme Gwa (ou Goua) est le nom originel du peuple, transformé au fil du temps par les peuples voisins. M'bato est le surnom le plus courant dans les usages administratifs et populaires ivoiriens. Le mot Kwa, dans les langues kwa, signifie peuple ou homme, d'où le nom du groupe linguistique Kwa attribué à l'ensemble de la famille par Gottlob Krause en 1885.",
+      "whyProblematic": "La confusion est fréquente entre le peuple Gwa/M'bato et le groupe linguistique Kwa (famille de langues parlées en Côte d'Ivoire, au Ghana et au Togo). Le peuple Gwa est un groupe ethnique distinct et minoritaire appartenant aux Akan lagunaires.",
+      "contemporaryUsage": "M'bato est le terme le plus courant en Côte d'Ivoire. Gwa tend à être utilisé dans les publications académiques récentes. La sous-préfecture d'Oghlwapo (maison des Gwa) constitue leur chef-lieu administratif.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Akan lagunaires (Potou-Tano, Kwa)",
+      "historicalRegion": "Sud-Est de la Côte d'Ivoire, région de la Mé, département d'Alépé",
       "currentCountries": ["CIV"]
     },
-    "ethnicities": ["Kwa"],
+    "ethnicities": ["Gwa", "M'bato"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Peuple ivoirien originaire du Ghana, appartenant au grand groupe Akan (Ashanti). Leur migration depuis le Ghana vers la Côte d'Ivoire est similaire à celle des Baoulé : une légende raconte qu'au moment de traverser un fleuve, le dieu du cours d'eau exigea un sacrifice humain. Le chef voulait immoler son fils, mais sa sœur offrit le sien à sa place. Le peuple put passer à pied. En mémoire de cet acte, le droit d'héritage fut accordé aux neveux utérins, instaurant un système matrilinéaire. Cette migration est liée aux guerres entre le Denkyra et la confédération ashanti à partir de 1701, et aux crises de succession ashanti.",
+      "formationPeriod": "A partir du XVIe siècle (début de la traite négrière) et surtout après 1701 (guerre Denkyra-Ashanti) ; installation progressive dans le Sud-Est de la Côte d'Ivoire.",
+      "migrationRoutes": [
+        "Du Ghana (Akan Ashanti) vers le Sud-Est de la Côte d'Ivoire",
+        "Migration motivée par les querelles interclaniques, la traite négrière, les guerres ashanti et les crises de succession"
+      ],
+      "historicalSettlementZones": [
+        "Sud-Est de la Côte d'Ivoire, environ 50 km à l'est d'Abidjan",
+        "Région de la Mé, département d'Alépé, sous-préfecture d'Oghlwapo",
+        "Villages bordant la lagune Potou côté Bingerville"
+      ],
+      "unificationsOrDivisions": "Les Gwa sont organisés en deux branches principales : Lablon (gens d'en-haut) et Domlon (gens d'en-bas). Ces deux branches correspondent aux deux villages-mères : Dabré (branche Lablon) et Domolon (branche Domlon), fusionnés sous la sous-préfecture d'Oghlwapo.",
+      "externalInfluences": "Contact précoce avec la colonisation française (dernier village Motobé à moins de 20 km de la mer, lieu de débarquement des missionnaires). Influence des peuples voisins : Attié, Abbey, Ebrié, Abouré, N'zima. Passage progressif de la pêche aux cultures industrielles (café, cacao, palmier, hévéa).",
+      "majorHistoricalEvents": "Parmi les premiers peuples à subir l'influence de la colonisation française en Côte d'Ivoire. La langue gwa est proche de l'ébrié (surtout à Mbato-Bouaké, près de Bingerville), ce qui témoigne de contacts intenses avec les Ebrié."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Démocratie fondée sur le système des générations, similaire à celui des Ebrié et des Adjoukrou (peuples lagunaires Akan). Les générations se succèdent au pouvoir par rotation : chaque génération de 15 ans gère d'abord la sécurité, puis les affaires politiques. Ce système diffère de la monarchie des Baoulé et des Agni.",
+      "clanOrganization": "Deux branches : Lablon et Domlon. Onze villages principaux : branche Lablon (Dabré, Akouré, M'bato-Bouaké, N'kouyaté, Ouguédoumé) ; branche Domlon (Domolon, Monga, Ingrakou, Andoum-M'bato, N'gokro, Motobé).",
+      "ageClassSystems": "Quatre générations : Nyondon (actuellement au pouvoir), Dougbo, Nouakwon, Bechuwons. Chaque génération dure 15 ans ; cycle complet de 60 ans. Chaque génération est subdivisée en cinq sous-groupes : Djéon, Togba, Mondonin, Adjénon, Atogba (les deux derniers facultatifs) ; répartition par âge et rang dans la fratrie. Le terme Dougbo est commun à la fois chez les Gwa et les Ebrié.",
+      "roleOfLineages": "Système matrilinéaire instauré en mémoire du sacrifice lors de la migration fondatrice. L'héritage est transmis aux neveux utérins. Similaire au système des Baoulé.",
+      "religiousAuthority": "Origines animistes ; majorité christianisée sous influence coloniale et missionnaire. La religion traditionnelle honore les dieux des cours d'eau et les ancêtres, comme en témoigne la légende de migration."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Gwa (langue gwa, m'bato)",
+      "isoCodes": ["gwx"],
+      "dialects": [
+        "Parler de M'bato-Bouaké (proche de l'ébrié)",
+        "Parler de Gwa d'Alépé"
+      ],
+      "vehicularRole": "Langue vernaculaire des Gwa/M'bato. Appartient au groupe Niger-Congo > Kwa Akan lagunaires (Potou). Langue à tons (haut et bas, Hérault 1982). Très proche de l'ébrié (atchan) à M'bato-Bouaké, avec forte intercompréhension et emprunts mutuels. Les Gwa d'Alépé sont moins familiers avec l'ébrié de Bingerville."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Fêtes de générations similaires à celles des Ebrié : initiation militaire des jeunes via ces cérémonies. Mariage traditionnel avec cérémonie de dot dont les modalités varient selon la génération au pouvoir (pour la génération Nyondon : boissons alcoolisées, cadeaux pour la mariée incluant miroir, savons, boucles d'oreilles en or, argent).",
+      "symbols": "Le nom Oghlwapo (maison des Gwa) est le symbole territorial du peuple. La légende du sacrifice au fleuve et du système matrilinéaire est au coeur de l'identité gwa.",
+      "artsAndMusic": "Littérature orale riche : contes, récits, proverbes. Exemple : Badjo Bernadette (2003), Les mensonges de la nuit, Contes du pays gwa (valeur ludique, informative et culturelle). Salutations avec code de politesse élaboré.",
+      "spiritualities": "Origines animistes avec croyance aux dieux des cours d'eau (le dieu du fleuve traversé lors de la migration fondatrice). Christianisation presque totale sous influence coloniale et missionnaire (dernier village Motobé était lieu de débarquement des missionnaires)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de grande chefferie centralisée. Organisation démocratique par générations. La sous-préfecture d'Oghlwapo, fusion de Dabré et Domolon, constitue le coeur institutionnel du territoire gwa.",
+      "relationsWithNeighbors": "Fronts nord : Attié d'Alépé et Agni d'Aboisso ; sud-est : Abouré et N'zima de la préfecture de Grand-Bassam ; ouest : Ebrié de la préfecture de Bingerville. Peuple combattu par les Attié, Abbey, Ebrié, Abouré et certains Akan du sud, ce qui explique leur faible population.",
+      "conflictsOrAlliances": "Conflits historiques avec les peuples voisins (Attié, Abbey, Ebrié, Abouré) ayant contribué à leur faiblesse numérique. Migration forcée depuis le Ghana en réponse aux guerres Denkyra-Ashanti et à la traite négrière.",
+      "diaspora": "Très peu de diaspora : peuple minoritaire concentré dans le sud-est de la Côte d'Ivoire, à environ 35-50 km au nord-est d'Abidjan."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 12000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation (pas de données officielles disponibles, peuple très minoritaire parmi les 48 ethnies de Côte d'Ivoire). Source : Kouassi Magloire Koroko, Regards croisés sur un peuple ivoirien peu connu : les Gwa, Djiboul, 2024.",
+      "distributionByCountry": [{ "country": "CIV", "population": 12000 }]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Kouassi Magloire Koroko – Regards croisés sur un peuple ivoirien peu connu : les Gwa, Djiboul, 2024 (http://djiboul.org/wp-content/uploads/2024/01/Tire-a-part-Kouassi-Magloire-KOROKO.pdf)",
+      "Langues kwa – Wikipédia (https://fr.wikipedia.org/wiki/Langues_kwa)",
+      "Kwa languages – Wikipedia (https://en.wikipedia.org/wiki/Kwa_languages)",
+      "Kwa Languages – EBSCO Research Starters (https://www.ebsco.com/research-starters/language-and-linguistics/kwa-languages)",
+      "Côte d'Ivoire – Ethnic groups and languages – Country Studies (https://countrystudies.us/ivory-coast/20.htm)",
+      "Akan people – Wikipedia (https://en.wikipedia.org/wiki/Akan_people)"
+    ]
   }
 }

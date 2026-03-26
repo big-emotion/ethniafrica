@@ -6,30 +6,93 @@
   "content": {
     "appellations": {
       "mainName": "Chenoua",
-      "selfAppellation": "Ic̱enwa / Ach-chinwa (variantes locales)",
+      "selfAppellation": "Icenwiyen / Ichenwiyen",
+      "exonyms": [
+        "Chenouis",
+        "Shenwa",
+        "Chelhas du Tell",
+        "Kabyles de l'Ouest"
+      ],
+      "originOfExonyms": "Le nom Chenoua (ou Chenoui) derive du mont Chenoua (Jebel Chenoua) qui domine la ville de Tipaza, 70 km a l'ouest d'Alger. En berbere, le nom propre du peuple est Icenwiyen (Ichenwiyen). Certains les appelaient Chelhas du Tell ou Kabyles de l'Ouest en raison de similarites linguistiques et culturelles avec ces groupes voisins.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chenoua et Shenwa sont tous deux utilises dans la litterature scientifique. Icenwiyen est le terme endonymique prefere par la communaute. La langue shenwa/chenoua est egalement appelee Haqbaylit par ses locuteurs.",
       "linguisticFamily": "FLG_BERBERE",
-      "ethnoLinguisticGroup": "Berbère nord-algérien (Zenati)",
-      "historicalRegion": "Mont Chenoua (Tipasa – Algérie)",
+      "ethnoLinguisticGroup": "Berbere nord-algerien (branche Zenati)",
+      "historicalRegion": "Mont Chenoua et sa region (Tipaza, wilaya de Tipaza), entre Fouka a l'est et Tenes a l'ouest, nord de l'Algerie",
       "currentCountries": ["DZA"]
     },
     "ethnicities": [
-      "Communautés berbérophones de Tipasa",
-      "Groupes des environs de Cherchell"
+      "Communautes berberophones de Tipaza et du Mont Chenoua",
+      "Beni Menacer (tribu principale de la region, dialecte propre)",
+      "Groupes des environs de Cherchell (ancienne Caesarea romaine)",
+      "Communautes de Fouka et de la region d'Ain Defla nord",
+      "Beni Haoua (parler apparente, Chlef oriental)"
     ],
-    "origins": {},
-    "organization": {},
-    "languages": {},
-    "culture": {
-      "source_0": "Traditions agricoles méditerranéennes.",
-      "source_1": "Cérémonies liées aux saisons (Yennayer).",
-      "Artisanat local": "poterie, tissage."
+    "origins": {
+      "ancientOrigins": "Les Chenoua sont les descendants des populations berberes autochtones de la cote algerienne occidentale, occupant la region depuis l'Antiquite. Leur territoire correspond en partie a la Mauritanie cesarienne romaine, dont Cherchell (ancienne Caesarea) etait la capitale. Les inscriptions et les vestiges de la ville antique de Tipaza (fondee par les Pheniciens puis developpee par les Romains) attestent la longue presence de populations berberes dans la region.",
+      "formationPeriod": "Le maintien de la langue et de l'identite chenouie malgre les invasions successives (Pheniciens, Romains, Vandales, Byzantins, Arabes, Ottomans, Francais) s'explique par l'isolement geographique du Mont Chenoua et des reliefs de la Dahra. L'arabisation et la francisation ont accelere le declin de la langue au 20e et 21e siecle.",
+      "migrationRoutes": [
+        "Sedentaires depuis l'Antiquite dans la zone littorale et sub-littorale entre Tenes et Fouka",
+        "Emigration vers Alger et les villes du nord depuis les annees 1960-1970"
+      ],
+      "historicalSettlementZones": [
+        "Wilaya de Tipaza (noyau principal)",
+        "Parties de la wilaya de Chlef (Beni Haoua)",
+        "Nord de la wilaya d'Ain Defla",
+        "Commune de Fouka (Tipaza) a l'est jusqu'a Tenes (Chlef) a l'ouest"
+      ],
+      "unificationsOrDivisions": "La grande tribu des Beni Menacer est la principale confederation chenouie. Trois dialectes principaux : Chenoui proprement dit (autour du Mont Chenoua et Tipaza), Beni Menacer (groupe tribal elargi), Djebel Bissa (montagne de l'est de la region). La ville de Cherchell constitue un centre urbain de reference.",
+      "externalInfluences": "Influence phenicienne et romaine (ville antique de Tipaza, site classe UNESCO ; ancienne Caesarea de Cherchell). Islamisation aux 7e-8e siecles. Arabisation progressive depuis le Moyen Age. Colonisation francaise (1830-1962). Declin accelere par la guerre civile algerienne (annees 1990) et les migrations urbaines.",
+      "majorHistoricalEvents": "La ville antique de Tipaza (site de ruines romaines et protohistoriques, classee patrimoine mondial UNESCO en 1982) et Cherchell (ex-Caesarea Mauretaniae) sont les marqueurs historiques majeurs de la region. Migration forcee de nombreuses familles chenouies vers les villes durant la decennie noire (annees 1990)."
     },
-    "historicalRole": {},
-    "demography": {},
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale villageoise. Conseil d'anciens (jmaa) deliberant selon le droit coutumier local. Autonomie des villages, coordination au niveau tribal pour les affaires communes (paturage, eau, securite). Associations culturelles contemporaines preservant la langue et les traditions.",
+      "clanOrganization": "Division en tribus et fractions (tikhsiwin) traces depuis des ancetres masculins communs. Les Beni Menacer forment la confederation principale. Chaque fraction constitue une unite endogame ou semi-endogame.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Societe patrilineaire. L'appartenance tribale, les droits fonciers et les alliances matrimoniales se transmettent par le pere. Solidarite de lignage (twiza) pour les travaux agricoles et les ceremonies.",
+      "religiousAuthority": "Islam sunnite malekite. Influence des saints locaux et du maraboutisme. La region de Tipaza est aussi connue pour ses vestiges chretiens de l'epoque romaine (basilique sainte Salsa), mais les Chenoua sont aujourd'hui tous musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Shenwa (Chenoua, Haqbaylit)",
+      "isoCodes": ["cnu"],
+      "dialects": [
+        "Chenoui proprement dit (Mont Chenoua, Tipaza)",
+        "Beni Menacer (tribu principale, parler propre)",
+        "Djebel Bissa (variante orientale de la region)"
+      ],
+      "vehicularRole": "La langue shenwa est menacee de disparition. On estime a 76 000 le nombre de locuteurs actifs (2007, Ethnologue). La population chenouie est estimee a 106 000-111 000 personnes (Joshua Project 2025), mais beaucoup ne parlent plus la langue maternelle. L'arabe algerien est la langue dominante dans les echanges quotidiens. De nombreux parents preferent transmettre l'arabe a leurs enfants pour des raisons educatives."
+    },
+    "culture": {
+      "majorRites": "Traditions agricoles mediterraneennes : ceremonies liees aux saisons, Yennayer (Nouvel An amazigh, 13 janvier), rites de la moisson. Mariage traditionnel avec musique et danses locales. Funerailles islamiques. Celebration de l'Achoura. Les femmes participent activement a la transmission des traditions orales et artisanales.",
+      "symbols": "Les motifs geometriques berberes sur la poterie et le tissage sont des symboles identitaires. L'alphabet tifinagh est revendiquer comme marqueur identitaire par les associations culturelles contemporaines.",
+      "artsAndMusic": "Artisanat local : poterie utilitaire et decorative, tissage de tapis et de couvertures en laine aux motifs geometriques berberes. Chants collectifs lors des mariages et des fetes saisonnieres. Instruments de musique : bendir, gasba. La tradition orale (contes, poesie) est le vecteur principal de la transmission culturelle. Des associations locales organisent des evenements pour la promotion de la langue et de la culture chenouie.",
+      "spiritualities": "Islam sunnite malekite. Culte des saints locaux (sidi, marabouts). Croyances persistantes dans la baraka, le mauvais oeil et les esprits. Celebration des fetes islamiques et des fetes amazighes (Yennayer)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le territoire chenoui correspond a la partie occidentale de l'ancienne Mauretanie cesarienne romaine, dont Cherchell (Caesarea) etait la capitale. Des communautes pheniciennes et romaines se sont implantees a Tipaza et Cherchell sans effacer les populations berberes autochtones.",
+      "relationsWithNeighbors": "Relations historiques avec les Kabyles (langue et culture apparentees), appeles parfois Kabyles de l'Ouest. Echanges avec les populations arabophones de la Mitidja et du Chelif. Commerce littoral avec les marins et marchands mediterraneens.",
+      "conflictsOrAlliances": "Resistance passive a l'arabisation durant le Moyen Age. La region a ete peu affectee par les grandes revoltes berberes des 18e et 19e siecles. Participation a la guerre d'independance algerienne (1954-1962). Declin linguistique accelere par la guerre civile (1990-2000) et les migrations.",
+      "diaspora": "Emigration vers Alger et les grandes villes algeriennes depuis les annees 1960. Petite diaspora en France et en Europe. Les associations de la diaspora soutiennent la preservation de la culture et de la langue chenouie."
+    },
+    "demography": {
+      "totalPopulation": 111000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 - Berber Chenoua in Algeria (111 000 personnes, langue Chenoua ISO cnu). Wikipedia EN - Chenouas (106 000 personnes, dont 76 000 locuteurs de la langue shenwa en 2007). Ethnologue SIL International (code cnu). Cascadia Department of Bioregion (plus de 750 000 dans la region elargie, mais chiffre contestable car incluant les arabises).",
+      "distributionByCountry": [
+        {
+          "country": "DZA",
+          "population": 111000
+        }
+      ]
+    },
     "sources": [
-      "Ethnologue (cbv)",
-      "CNRS Berbère",
-      "Études linguistiques algériennes"
+      "Wikipedia EN - Chenouas : https://en.wikipedia.org/wiki/Chenouas",
+      "Wikipedia EN - Shenwa language : https://en.wikipedia.org/wiki/Shenwa_language",
+      "Joshua Project - Berber Chenoua in Algeria : https://joshuaproject.net/people_groups/11321",
+      "Ethnologue SIL International - Chenoua (cnu) : https://www.ethnologue.com/language/cnu/",
+      "The Tribal Society - The Chenouis : https://thetribalsociety.com/the-chenouis/",
+      "Glottolog - Shenwa (chen1266) : https://glottolog.org/resource/languoid/id/chen1266",
+      "UNESCO World Heritage - Tipaza : https://whc.unesco.org/en/list/193/"
     ]
   }
 }

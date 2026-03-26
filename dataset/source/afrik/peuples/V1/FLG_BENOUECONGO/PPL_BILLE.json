@@ -1,0 +1,23 @@
+{
+  "id": "PPL_BILLE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Bille",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "historicalRegion": "Nigeria (Rivers State – Delta du Niger)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (okx)", "Niger Delta Cultural Records"]
+  }
+}

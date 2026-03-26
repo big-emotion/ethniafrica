@@ -6,54 +6,91 @@
   "content": {
     "appellations": {
       "mainName": "Ari",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Aari (auto-désignation)",
+      "exonyms": [
+        "Ara",
+        "Aro",
+        "Aarai",
+        "Baco (sous-groupe)",
+        "Ubamer (sous-groupe)"
+      ],
+      "originOfExonyms": "Les variations Ara, Aro, Aarai résultent de translittérations différentes de l'auto-désignation Aari. Baco et Ubamer sont des noms de dialectes ou sous-groupes géographiques. La forme Ari est la plus courante dans la litterature française.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Aari est le terme officiel utilisé dans les recensements éthiopiens et la litterature académique. Le peuple utilise lui-meme Aari comme auto-désignation. La constitution éthiopienne de 1995 reconnaît le peuple Aari dans le cadre du fédéralisme ethnique.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
+      "ethnoLinguisticGroup": "Omotique méridional (South Omotic), famille afro-asiatique",
+      "historicalRegion": "Zone du Sud-Omo, région des Nations, Nationalités et Peuples du Sud, Éthiopie",
       "currentCountries": ["ETH"]
     },
-    "ethnicities": ["Ari"],
+    "ethnicities": ["Aari"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Aari sont un peuple omotique autochtone de la vallée de l'Omo, en Éthiopie du sud-ouest. Leur langue appartient au groupe omotique méridional de la famille afro-asiatique. Ils ont vécu sous des chefferies indépendantes jusqu'au 19e siècle, gouvernées par un chef divin appelé baabi. Leur système de castes fondé sur l'occupation est l'un des plus anciens d'Éthiopie, confirmé par des données d'archéogénétique.",
+      "formationPeriod": "Peuple autochtone de la vallée de l'Omo avec une presence historique continue. Chefferies indépendantes documentées jusqu'a la conquête par l'Empire éthiopien a la fin du 19e siècle.",
+      "migrationRoutes": [
+        "Peuple autochtone de la région de la vallée de l'Omo ; pas de migration majeure documentée"
+      ],
+      "historicalSettlementZones": [
+        "Zone du Sud-Omo, région des Nations, Nationalités et Peuples du Sud, Éthiopie du sud-ouest",
+        "Région montagneuse autour de Jinka (chef-lieu de la zone du Sud-Omo)"
+      ],
+      "unificationsOrDivisions": "Historiquement divisés en chefferies indépendantes. Unification forcée sous l'Empire éthiopien de Menelik II a la fin du 19e siècle, suivie d'une période de servage. Regroupement administratif sous le régime du Derg (1974-1991), puis reconnaissance formelle sous le fédéralisme éthiopien après 1991.",
+      "externalInfluences": "Conquête par l'Empire éthiopien sous Menelik II (fin 19e siècle) : adoption massive de la culture amharique, servage généralisé, déclin culturel. 1974 : renversement de la monarchie par le Derg, fin du système féodal et amélioration des conditions de vie. 1991 : fédéralisme éthiopien, auto-détermination reconnue. Missions protestantes occidentales (SIM) dans les années 1950 : conversion massive au protestantisme.",
+      "majorHistoricalEvents": "Conquête par Menelik II et incorporation dans l'Empire éthiopien (vers 1890-1900). Periode du Derg (1974-1991) : fin du féodalisme. Régime fédéral éthiopien (1991) : auto-détermination et recouvrement de la souveraineté sur les terres. Depuis 2000 : amélioration socio-économique marquée, développement de l'éducation primaire."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Chefferies indépendantes traditionnelles dirigées par un chef divin (baabi). Après la conquête éthiopienne, le système politique traditionnel a été progressivement remplace par l'administration impériale puis fédérale éthiopienne.",
+      "clanOrganization": "Société divisée en groupes de statut fondés sur l'occupation : les kantsa (agriculteurs, groupe privilégié) et les mana (artisans de basse caste : potiers/tanneurs tila mana et forgerons faka mana, inférieurs aux potiers). L'endogamie de caste est strictement observée : les mariages entre mana et kantsa sont tabous. Ce système de castes est l'un des plus anciens et continus d'Éthiopie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages déterminent l'appartenance aux castes occupationnelles et régulent les mariages et l'héritage. L'endogamie intra-caste est la règle traditionnelle.",
+      "religiousAuthority": "Traditionnellement : culte des deux divinités Saabi (dieu) et Beri (déesse). Après l'introduction du christianisme : l'autorité religieuse est désormais principalement exercée par les pasteurs protestants (Église évangélique Bethel, issue du travail de SIM dans les années 1950)."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Aari",
+      "isoCodes": ["aiw"],
+      "dialects": [
+        "Bako (Baco)",
+        "Biyo (Bio)",
+        "Gayil (Galila)",
+        "Laydo",
+        "Seyki",
+        "Shangama",
+        "Sido",
+        "Wubahamer (Ubamer)",
+        "Zeddo"
+      ],
+      "vehicularRole": "La langue aari (ISO 639-3 : aiw) est parlée comme langue maternelle par la quasi-totalité du peuple Aari. Plus de la moitié des Aari sont multilingues et parlent également l'amharique, langue nationale éthiopienne. L'aari est utilise au foyer et dans les marchés locaux."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rituels liés aux chefferies traditionnelles (culte du baabi). Cérémonies d'endogamie de caste (mariages intra-kastsa ou intra-mana). Après l'introduction du protestantisme : cérémonies liturgiques évangéliques. Pratiques de marquage corporel et de scarification.",
+      "symbols": "Le boeuf est un symbole de richesse et de statut. Les spécialités artisanales (poterie des femmes, forge des hommes) sont des marqueurs identitaires de caste. Le body painting et la scarification caractérisent certains sous-groupes.",
+      "artsAndMusic": "Artisanat de poterie (femmes du groupe tila mana), forge et travail du bois (hommes du groupe faka mana). Agriculture intensive dans les terres fertiles de la région. Chants et danses rituels. Marché de Jinka : principal lieu d'échange pour les Aari.",
+      "spiritualities": "Traditionnellement : culte de Saabi (dieu male) et Beri (déesse). Religion ancestrale avec croyances en des forces spirituelles naturelles. Depuis le 19e siècle : introduction forcée du christianisme orthodoxe éthiopien, mal acceptée car associée aux envahisseurs. Depuis les années 1950 : christianisme protestant (via la mission SIM) très majoritaire. Aujourd'hui la grande majorité des Aari chrétiens sont protestants, bien que des fidèles des croyances traditionnelles subsistent."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Chefferies divines indépendantes (baabi) jusqu'a la fin du 19e siècle. Pas de royaume centralise. Les Aari sont le plus grand peuple de la zone du Sud-Omo.",
+      "relationsWithNeighbors": "Coexistence avec les autres peuples de la vallée de l'Omo (Banna, Hamer, Karo, Mursi, Kwegu). Commerce sur les marchés locaux, notamment a Jinka. Relations d'échange et parfois de tension avec les peuples voisins.",
+      "conflictsOrAlliances": "Résistance a la conquête impériale éthiopienne de Menelik II (fin 19e siècle). Période de servage sous l'Empire. Conflits inter-ethniques locaux avec les peuples voisins de la zone du Sud-Omo.",
+      "diaspora": null
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 465000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "PeopleGroups.org 2025 : 465 000 ; Joshua Project 2025 : 558 000 ; recensement éthiopien 2007 : 289 835",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 465000,
+          "note": "Zone du Sud-Omo, région des Nations, Nationalités et Peuples du Sud, Éthiopie du sud-ouest ; principale ville Jinka"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Aari people – Wikipedia EN (https://en.wikipedia.org/wiki/Aari_people)",
+      "Aari language – Wikipedia EN (https://en.wikipedia.org/wiki/Aari_language)",
+      "Joshua Project – Aari in Ethiopia (https://joshuaproject.net/people_groups/10424)",
+      "PeopleGroups.org – Ari of Ethiopia (https://peoplegroups.org/people_groups/pg011548/)",
+      "Ethnologue – Aari [aiw] (https://www.ethnologue.com/language/aiw/)",
+      "Recensement éthiopien 2007, Central Statistical Agency of Ethiopia"
+    ]
   }
 }

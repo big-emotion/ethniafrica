@@ -1,0 +1,22 @@
+{
+  "id": "PPL_EWE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["TGO", "BEN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Eʋe / Eʋegbe",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "currentCountries": ["TGO", "BEN"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (ewe)", "Ghana & Togo Gbe Studies"]
+  }
+}

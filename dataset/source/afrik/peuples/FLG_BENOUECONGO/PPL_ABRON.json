@@ -2,58 +2,76 @@
   "id": "PPL_ABRON",
   "nameMain": "Abron",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["CIV"],
+  "currentCountries": ["CIV", "GHA"],
   "content": {
     "appellations": {
       "mainName": "Abron",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Abron",
+      "exonyms": ["Brong", "Bono", "Bonofoɔ", "Gyaman"],
+      "originOfExonyms": "Le terme Brong est utilise par les voisins Ashanti et Gonja pour designer les peuples proches de Bono Manso. Gyaman (aussi ecrit Gyaaman ou Jamang) designe a la fois le royaume et le peuple, signifiant approximativement ceux qui ont quitte le pays en reference a la migration fondatrice depuis Akwamu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Abron est utilise en Cote d'Ivoire, tandis que Brong ou Bono predomine au Ghana. La region administrative ghaneenne Brong-Ahafo (aujourd'hui Bono Region) tire son nom de ce peuple.",
       "linguisticFamily": "FLG_BENOUECONGO",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Est",
-      "currentCountries": ["CIV"]
+      "ethnoLinguisticGroup": "Akan (sous-groupe Bono)",
+      "historicalRegion": "Nord-est de la Cote d'Ivoire (Bondoukou), nord-ouest du Ghana (Brong-Ahafo)",
+      "currentCountries": ["CIV", "GHA"]
     },
-    "ethnicities": ["Abron"],
+    "ethnicities": ["Abron", "Brong"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Abron sont un peuple Akan du sous-groupe Bono, dont les ancetres etaient installes autour de Bono Manso (Ghana central) depuis au moins le 12e siecle. Selon la tradition orale, leurs ancetres sont issus d'Akwamu, une puissance Akan situee au sud-est du Ghana pres de la riviere Volta. A la suite d'une dispute de succession, la branche cadette migre vers l'ouest avec son chef, cherchant refuge d'abord aupres des Ashanti puis dans la region de Doma (Wam) au Ghana.",
+      "formationPeriod": "Le royaume de Gyaman est fonde vers 1690 par le Gyamanhene Taa Date (aussi appele Tan-date), qui etablit l'autorite Abron sur les populations Kulango, Nafana, Ligbi et Hwela de la region de Bondoukou.",
+      "migrationRoutes": [
+        "Akwamu (Gold Coast, pres de la riviere Volta) -> Kumasi (refuge temporaire chez les Ashanti) -> region de Doma/Wam (Ghana) -> Bondoukou (Cote d'Ivoire actuelle, vers 1680)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Bondoukou (nord-est CIV, Zanzan)",
+        "Bono Region et Bono East Region (Ghana)",
+        "Corridor entre la riviere Komoe et la Volta Noire"
+      ],
+      "unificationsOrDivisions": "Au debut du 18e siecle, le royaume de Gyaman tombe sous domination Ashanti (vers 1720) et reste vassal pendant environ 135 ans malgre de nombreuses revoltes (1750, 1768, 1802-1804). L'independance est recouverlee en 1875 apres la defaite Ashanti face aux Britanniques. En 1897, la partition coloniale divise le royaume entre la Cote d'Ivoire francaise et la Gold Coast britannique.",
+      "externalInfluences": "Forte influence commerciale et culturelle Dyula (Mande) a Bondoukou, qui devient un carrefour islamique et commercial majeur. Presence Ashanti dominante du 18e au 19e siecle. Colonisation francaise a partir de 1897 du cote ivoirien, britannique du cote ghaneen.",
+      "majorHistoricalEvents": "Fondation du royaume de Gyaman vers 1690 ; soumission a l'Ashanti vers 1720 ; revoltes repetees (1750, 1768, 1802) ; Badu Bonso II capture et execute par les Neerlandais en 1838 ; independance recouverlee en 1875 ; partition coloniale franco-britannique en 1897 ; creation de la region Brong-Ahafo au Ghana en 1959."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Monarchie de type Akan avec roi (Gyamanhene) assiste de chefs provinciaux. Le roi est entoure d'un conseil. La succession au trone principal suit la ligne maternelle (de l'oncle au neveu ou de frere en frere), tandis que les trones provinciaux suivent la ligne paternelle. La societe est divisee en trois grandes strates : nobles, hommes libres et serviteurs. Le roi centralise les revenus issus du tribut, de la justice et du commerce de l'or.",
+      "clanOrganization": "Organisation matrilineaire Akan en clans (abusua). Le clan Aduana est le clan royal fondateur de Gyaman. Les clans fournissent les fonctions de pretres, guerriers et administrateurs.",
+      "roleOfLineages": "La filiation matrilineaire determine la succession politique et l'heritage. Apres la ceremonie initiatique, l'appartenance clanique maternelle prime sur la lignee paternelle pour les droits politiques.",
+      "religiousAuthority": "Les institutions religieuses Akan traditionnelles restent fondamentales dans les rites royaux et les festivals. La presence islamique, apportee par les Dyula, coexiste avec les pratiques religieuses autochtones. Les pretres-feticheurs assurent la legitimite spirituelle du pouvoir."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Abron (Bono)",
+      "isoCodes": ["abr"],
+      "dialects": ["Bono Twi", "Brong"],
+      "vehicularRole": "L'abron (Bono Twi) est mutellement intelligible avec l'akan ashanti. Le koulango et le dioula (jula) servent de langues vehiculaires regionales dans la zone de Bondoukou. La plupart des locuteurs sont bi-dialectaux en ashanti."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Festival Sacraboutou a Bondoukou, festival de l'igname (Yam Festival) marquant le debut des recoltes. Funerailles elaborees avec arts funeraires remarques par les historiens. Lors du festival annuel, le roi et les chefs provinciaux recoivent tribut et offrandes des villages Kulango et Abron.",
+      "symbols": "Regalia royaux de type Akan : parasols ceremonials, tabourets sacres, ornements en or, epees, sandales en or, ivoire sculpte. Les symboles Adinkra, profondement ancres dans la cosmologie de la cour Bono/Abron, leur sont attribues comme lieu d'origine. Le tisserand kente est pratique par les specialistes Abron.",
+      "artsAndMusic": "Tissage (Abron et specialistes Dyula), orfevrerie et bijouterie en or, poterie. Musique ceremoniale Kete, Adowa et Fontomfrom lors des festivals royaux et funerailles. Art funeraire developpe et riche.",
+      "spiritualities": "Religion traditionnelle Akan centree sur la veneration des ancetres et des tabourets sacres. Culte aux abosom (divinites). L'islam sunnite est pratique par une partie de la population depuis l'influence Dyula, faisant de Bondoukou un centre islamique avec universite coranique historique. Coexistence de la chefferie sacree et du savoir islamique."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Gyaman (aussi appele Gyaaman, Jamang ou Jaman), fonde vers 1690, centre sur Bondoukou. Le royaume s'etend entre la riviere Komoe et la Volta Noire, a la frontiere entre savane et foret. Bondoukou reste aujourd'hui le principal centre culturel et symbolique des Abron en Cote d'Ivoire.",
+      "relationsWithNeighbors": "Relations complexes et ambivalentes avec l'Empire Ashanti : vassalite forcee (vers 1720-1875), malgre plusieurs revoltes. Alliance formelle avec les Nafana de Gontougou lors de l'installation initiale (serment de non-belligerance du chef Tan-date avec le chef Nafana Akomi). Relations commerciales etroites avec les Dyula (Mande), qui beneficiaient de franchises fiscales et d'immunite judiciaire en echange de leur role de catalyseur commercial.",
+      "conflictsOrAlliances": "Soumission a l'Ashanti vers 1720 sous Opoku Ware I avec destruction de Bono Manso. Revoltes repetees : 1750, 1768, 1802-1804. Guerre de 1877 avec Dormaa contre Berekuip. Soumission a Samory Toure en 1895. Liberation en 1875 apres la defaite Ashanti face aux Britanniques. Traite de Butre entre Ahanta et Neerlandais (1656) mentionne dans le contexte regional.",
+      "diaspora": "La partition coloniale cree une diaspora Abron de part et d'autre de la frontiere ivoiro-ghaneenne. Des communautes Abron/Brong subsistent dans les deux pays avec des identites administratives distinctes (Zanzan/Bondoukou en CIV ; districts de Jaman au Ghana)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1500000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Ethnologue (ABR) : environ 1,2 million de locuteurs au Ghana (Bono Region, Bono East Region) ; plus de 300 000 en Cote d'Ivoire (region du Zanzan/Bondoukou). Total estime a 1,5 million (2025).",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 1200000 },
+        { "country": "CIV", "population": 300000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Wikipedia EN - Bono people (https://en.wikipedia.org/wiki/Bono_people)",
+      "Wikipedia EN - Kingdom of Gyaman (https://en.wikipedia.org/wiki/Kingdom_of_Gyaman)",
+      "Ethnologue - Abron language ABR (https://www.ethnologue.com/language/abr/)",
+      "Joshua Project - Brong in Ghana (https://joshuaproject.net/people_groups/10971/GH)",
+      "Terray, Emmanuel - A History of the Abron Kingdom of Gyaman, Michigan State University, 1980 (https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F1980v12n1%2Fasrv012001002.pdf)",
+      "Wikipedia EN - Bono dialect (https://en.wikipedia.org/wiki/Bono_dialect)"
+    ]
   }
 }

@@ -1,23 +1,91 @@
 {
   "id": "PPL_TAAL",
-  "nameMain": "",
+  "nameMain": "Taal",
   "languageFamilyId": "FLG_GUR",
-  "currentCountries": [],
+  "currentCountries": ["BFA"],
   "content": {
     "appellations": {
-      "mainName": "",
+      "mainName": "Taal",
       "selfAppellation": "Talomsi",
+      "exonyms": ["Taal", "Taale", "Talomsi"],
+      "originOfExonyms": "Le terme Taal est le nom exonyme donne par les voisins mossi et par l'administration coloniale francaise a ce groupe. Le terme Talomsi est l'auto-denomination du peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Taal est utilise dans les sources administratives et academiques au Burkina Faso. Talomsi reste l'appellation usuelle au sein de la communaute.",
       "linguisticFamily": "FLG_GUR",
-      "historicalRegion": "Burkina Faso",
-      "currentCountries": []
+      "ethnoLinguisticGroup": "Gur central, sous-branche Gurunsi (Grusi occidental)",
+      "historicalRegion": "Centre-ouest du Burkina Faso, provinces du Sanguie et du Boulkiemde",
+      "currentCountries": ["BFA"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Études régionales Burkina Faso"]
+    "ethnicities": [
+      "Talomsi du nord (provinces du Sanguie)",
+      "Talomsi du sud (regions frontieres avec les Nuna)",
+      "Sous-groupes territoriaux du plateau central burkinabe",
+      "Communautes villageoises autonomes de la region de Koudougou"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Taal (Talomsi) sont un peuple Gur du centre-ouest du Burkina Faso, appartenant au vaste ensemble ethno-linguistique des Gurunsi. Leurs ancetres occupaient les plateaux du centre burkinabe bien avant la formation des royaumes Mossi. Comme les autres groupes Gurunsi, ils ont preserve leur autonomie face aux conquetes Mossi grace a leur organisation defensive en villages fortifies.",
+      "formationPeriod": "L'identite Talomsi s'est consolide au cours du premier millenaire de l'ere commune dans les plateaux du centre-ouest du Burkina Faso actuel. Leurs communautes formaient des villages independants sans structures etatiques centralisees, resistants aux expeditions des royaumes Mossi (15e-19e siecles).",
+      "migrationRoutes": [
+        "Populations autochtones du plateau central burkinabe sans migration fondatrice documentee",
+        "Repli vers les villages fortifies lors des razzias Mossi et des expeditions Djerma (fin 19e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau central du Burkina Faso, provinces du Sanguie et du Boulkiemde",
+        "Region de Koudougou et villages environnants",
+        "Zone de contact avec les peuples Nuna et Lyele"
+      ],
+      "unificationsOrDivisions": "Organisation en villages independants (acephalous) sans unite politique centralisee. Chaque village forme une communaute autonome liee aux autres par des relations de parente, d'alliance matrimoniale et de culte commun de la terre.",
+      "externalInfluences": "Pression des royaumes Mossi (15e-19e siecles) qui tenterent en vain de soumettre les Gurunsi. Razzias des Djerma de Babatu dans les annees 1880-1890. Colonisation francaise a partir de 1896, integrant le territoire dans la Haute-Volta. Influences contemporaines de l'islam et du christianisme.",
+      "majorHistoricalEvents": "Resistance aux expansions du Mogho Naaba (empire Mossi). Razzias des cavaliers Djerma de Babatu (1880-1896) qui depopulerent certaines regions. Incorporation dans la colonie de Haute-Volta (1919). Independance du Burkina Faso en 1960. Politique d'alphabetisation dans les langues nationales depuis les annees 1980."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation acephale en villages autonomes. Chaque village est dirige par un conseil d'anciens (chefs de lignages) et un chef de terre (tengsoaba), gardien des rapports avec la terre et les ancetres. Absence de chefferie politiquement centralisee supra-villageoise.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans (lignages patriclineaires) controlent la terre et organisent la vie rituelle. Les relations entre clans sont regulees par des interdits alimentaires, des alliances matrimoniales et des cultes communs.",
+      "ageClassSystems": "Systeme de classes d'age organisant les travaux collectifs (culture, construction, defense), les ceremonies initiatiques et la transmission des savoirs traditionnels.",
+      "roleOfLineages": "Les lignages patrilineaires sont les unites sociales fondamentales. Ils contr-lent la terre, organisent les mariages (dot en biens materiels), gerent les conflits et maintiennent le culte des ancetres. L'appartenance au lignage determine l'identite, les droits fonciers et les obligations rituelles.",
+      "religiousAuthority": "L'autorite religieuse est detenue par les pretres de la terre (tengsoaba) et les anciens des lignages, gardiens des autels ancestraux. Aucune hierarchie religieuse institutionnalisee. Influence croissante du christianisme evangelique et de l'islam depuis le 20e siecle."
+    },
+    "languages": {
+      "mainLanguage": "Taal (Talomsi)",
+      "isoCodes": ["tql"],
+      "dialects": [
+        "Variante du nord (Sanguie)",
+        "Variante du sud (contact avec le Nuna)"
+      ],
+      "vehicularRole": "Le Taal est utilise comme langue maternelle au sein de la communaute. Le moore (langue des Mossi) sert de lingua franca regionale. Le francais est utilise dans l'administration et l'enseignement. La plupart des locuteurs sont multilingues (taal, moore, francais)."
+    },
+    "culture": {
+      "majorRites": "Rites de passage masculins et feminins incluant des ceremonies d'initiation. Rites agraires autour des semailles et de la recolte, avec sacrifices aux autels de la terre (tengban). Ceremonies funeraires elaborees avec sacrifices aux ancetres et rites de deuil communautaire. Rites de purification apres souillure rituelle. Festivals cycliques lies au calendrier agricole.",
+      "symbols": "Masques zoomorphes en bois utilises lors des ceremonies initiatiques et funeraires, caracteristiques des peuples Gurunsi. Peintures murales geometriques ornant les maisons (motifs en noir, blanc et rouge), symboles d'identite clanique et de protection. Autels de la terre (tengban) comme centres symboliques des communautes villageoises.",
+      "artsAndMusic": "Sculpture de masques en bois (style Gurunsi) aux motifs geometriques avec effets polychromes. Poterie feminine utilitaire et rituelle. Musique de balafon et de percussions lors des ceremonies. Chants collectifs lors des travaux agricoles et des fetes villageoises. Architecture traditionnelle en banco avec terrasses plates et peintures murales caracteristiques.",
+      "spiritualities": "Religion traditionnelle centree sur le culte de la terre (tengban) et le culte des ancetres. La terre est consideree comme une puissance sacree dont le pretre (tengsoaba) est le mediateur. Les ancetres veillent sur les vivants et sont sollicites par des libations et des sacrifices d'animaux. Croyance en des esprits de la nature (forets, cours d'eau, rochers). Presence croissante du christianisme (protestants evangeliques) et de l'islam sunnite."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Les Taal (Talomsi), comme les autres Gurunsi, s'organisaient en villages autonomes fortifies resistants aux conquetes exterieures. L'autorite locale reposait sur les anciens et les pretres de la terre.",
+      "relationsWithNeighbors": "Relations complexes avec les Mossi voisins (tensions historiques liees aux razzias et aux tentatives de soumission), les Nuna et les Lyele (groupes gurunsi freres partageant des pratiques culturelles proches). Echanges commerciaux avec les peuples voisins (mil, sorgho, coton, fer). Relations diplomatiques par le biais des alliances matrimoniales inter-villageoises.",
+      "conflictsOrAlliances": "Resistance aux expeditions Mossi (15e-19e siecles). Victimes des razzias des cavaliers Djerma de Babatu (fin 19e siecle) qui depopulerent et disperserent de nombreuses communautes Gurunsi. Integration passive dans la colonie francaise de Haute-Volta (1896-1960).",
+      "diaspora": "Migration saisonniere et permanente vers les villes burkinabes (Koudougou, Ouagadougou) et les pays voisins (Cote d'Ivoire, Ghana) pour des raisons economiques, tendance commune a tous les peuples du Burkina Faso."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur SIL Ethnologue (langue tql), etudes demographiques regionales du Burkina Faso, INSD Burkina Faso. Population difficile a isoler statistiquement, souvent comptee dans l'ensemble Gurunsi.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 15000,
+          "note": "Provinces du Sanguie et du Boulkiemde, centre-ouest du Burkina Faso"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue – Taal language (tql): https://www.ethnologue.com/language/tql/",
+      "SIL Burkina Faso – Gur languages of Burkina Faso: https://sil-burkina.org/en/content/gur-languages",
+      "Wikipedia EN – Gurunsi people: https://en.wikipedia.org/wiki/Gurunsi_people",
+      "Wikipedia EN – Gurunsi languages: https://en.wikipedia.org/wiki/Gurunsi_languages",
+      "Wikipedia EN – Demographics of Burkina Faso: https://en.wikipedia.org/wiki/Demographics_of_Burkina_Faso",
+      "101 Last Tribes – Gurunsi people: https://www.101lasttribes.com/tribes/gurunsi.html",
+      "Britannica – Grusi: https://www.britannica.com/topic/Grusi"
+    ]
   }
 }

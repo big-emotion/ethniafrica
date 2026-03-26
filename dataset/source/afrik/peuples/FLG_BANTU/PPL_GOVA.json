@@ -1,59 +1,116 @@
 {
   "id": "PPL_GOVA",
-  "nameMain": "Gova",
+  "nameMain": "Gova (Hambukushu)",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": ["ZMB", "BWA", "NAM", "AGO"],
   "content": {
     "appellations": {
-      "mainName": "Gova",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "mainName": "Gova (Hambukushu)",
+      "selfAppellation": "Hambukushu (endonyme collectif ; un individu est Mbukushu, leur langue est Simbukushu ou thiMbukushu)",
+      "exonyms": [
+        "Gova",
+        "Mbukushu",
+        "Bukushu",
+        "Bukusu",
+        "Hambukushu",
+        "Humbukushu",
+        "Haguva",
+        "Haghuva",
+        "Ghuva",
+        "Cusso",
+        "Kusso",
+        "Hakokohu",
+        "Havamasiko",
+        "Mamakush",
+        "Mampakush",
+        "Mbukuschu"
+      ],
+      "originOfExonyms": "Les Tswana du Botswana appellent ce peuple Mbukushu. En Zambie, le terme Gova est utilise comme nom alternatif (Joshua Project enregistre Gova et Kusso comme noms alternatifs). Le terme Hambukushu est l'endonyme collectif que le peuple s'est lui-meme attribue. Haguva (les gens) et Havamasiko etaient des appellations anterieures avant leur arrivee sur l'Okavango.",
+      "whyProblematic": "La multiplicite des exonymes reflete les contacts avec de nombreux peuples voisins (Tswana, Lozi, Europeens) et la dispersion geographique du groupe. Le terme Gova est surtout utilise en Zambie tandis que Mbukushu est prefere au Botswana et Namibie.",
+      "contemporaryUsage": "Les Hambukushu sont connus au Botswana pour leur artisanat de paniers (vendus a prix eleve en ville) et comme peuples faiseurs de pluie sur le delta de l'Okavango. En Zambie, ils vivent le long de la riviere Kwando dans la province occidentale (region de Mashi). Au Botswana, ils occupent le couloir nord-ouest du delta de l'Okavango (Shakawe, Etsha 6, Seronga).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Sud",
-      "currentCountries": ["ZMB"]
+      "ethnoLinguisticGroup": "Bantu meridional, groupe Zambie-Botswana-Namibie (langue Simbukushu, code ISO mhw)",
+      "historicalRegion": "Barotseland (Zambie), fleuve Kwando, delta de l'Okavango (Botswana), nord de la Namibie",
+      "currentCountries": ["ZMB", "BWA", "NAM", "AGO"]
     },
-    "ethnicities": ["Gova"],
+    "ethnicities": ["Hambukushu"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Sud"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Selon la mythologie hambukushu, leur dieu supreme Nyembe crea les premiers ancetres et les descendit du ciel jusqu'aux collines de Tsodilo (aujourd'hui site UNESCO au Botswana) au moyen d'une corde. Les Hambukushu sont decrits comme un peuple amalgame bantoue de Barotseland avec des origines en Afrique equatoriale.",
+      "formationPeriod": "Le groupe s'identifie historiquement depuis la periode precoloniale dans la region de Barotseland. Leur arrivee documentee sur le fleuve Okavango remonte au debut du XIXe siecle ; le peuplement de la region d'Etsha au nord-ouest du Botswana date de 1967 pour les communautes refugiees modernes.",
+      "migrationRoutes": [
+        "Depuis l'Afrique equatoriale (origines ancestrales non precisees) vers le Barotseland (Zambie actuelle)",
+        "Migration le long du fleuve Kwando et de la riviere Okavango vers le nord-ouest du Botswana (colonie d'Etsha, 1967)",
+        "Presence le long de l'Okavango au nord de la Namibie (Kavango Est, de Andara a la frontiere botswanaise)",
+        "Presence au sud-est de l'Angola (province de Cuando Cubango)"
+      ],
+      "historicalSettlementZones": [
+        "Barotseland, region de Mashi, riviere Kwando (Zambie, province occidentale)",
+        "Delta de l'Okavango, couloir nord-ouest : villages de Shakawe, Etsha 6, Mohembo, Seronga, Kauxwi (Botswana)",
+        "Riviere Okavango, Kavango Est, nord-est de la Namibie",
+        "Province de Cuando Cubango, Angola"
+      ],
+      "unificationsOrDivisions": "Les Hambukushu sont historiquement signales comme un peuple tributaire de l'empire Lozi (Barotseland). Le chef Lozi Mulambwa (debut XIXe s.) prit le controle de territoires habites par les Hambukushu et les Subiya. Des mouvements migratoires lies aux conflits dans la region (guerres lozi, colonisation) ont conduit a leur dispersion sur quatre pays.",
+      "externalInfluences": "Domination Lozi en Barotseland (XIXe siecle). Colonisation britannique (Rhodesie du Nord, actuelle Zambie ; Bechuanaland, actuel Botswana). Deplacement force en 1967 lors de la construction du barrage de Kariba et des violences au Caprivi (Namibie). Contact avec les missions chretiennes (traduction du Nouveau Testament en Simbukushu).",
+      "majorHistoricalEvents": "XIXe siecle : incorporation dans la sphere d'influence lozi. 1967 : installation d'une communaute hambukushu a Etsha (nord-ouest du Botswana) suite a des troubles dans la region du Caprivi namibien. La langue simbukushu est designee langue nationale en Namibie et enseignee dans les ecoles namibiennes et botswanaises. Le Nouveau Testament a ete traduit en simbukushu."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Organisation en villages de foyers etendus et communautes plus grandes le long des fleuves. La structure sociale est peu centralisee ; les decisions importantes sont prises collectivement par les anciens du village. Les medecins traditionnels (guerisseurs) jouent un role d'autorite significatif.",
+      "clanOrganization": "Organisation clanique patrilineaire. Les Hambukushu sont un peuple amalgame qui a integre des elements de differents groupes bantous de la region de Barotseland.",
+      "roleOfLineages": "Les lineages patrilineaires structurent l'heritage et les alliances matrimoniales. Les foyers elargis constituent l'unite de base de la production agricole et de la peche.",
+      "religiousAuthority": "Croyances animistes traditionnelles predominantes : medecins traditionnels (nganga), divination et magie. La cosmologie hambukushu inclut le dieu supreme Nyembe. Les Hambukushu sont reconnus comme peuples faiseurs de pluie dans le delta de l'Okavango. Synchretisme chretien-animiste : environ 40% se declarent chretiens (diverses denominations evangeliques), mais les croyances traditionnelles restent tres presentes."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Simbukushu (thiMbukushu)",
+      "isoCodes": ["mhw"],
+      "dialects": [],
+      "vehicularRole": "La langue simbukushu (ISO 639-3 : mhw) est parlee par environ 95 000 personnes a travers la Namibie, le Botswana, la Zambie et l'Angola. Elle est langue nationale en Namibie et langue d'enseignement dans les ecoles namibiennes et botswanaises. Le Nouveau Testament a ete traduit dans cette langue. En Zambie, les Hambukushu parlent aussi le lozi et le tonga."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Ceremonies de pluie (les Hambukushu sont reconnus au Botswana comme les Rain-makers de l'Okavango). Pratiques de divination et de medecine traditionnelle. Artisanat de paniers en roseaux (tres elabores, vendus comme objets d'art). Techniques de peche par trappes (les femmes sont specialisees dans la pose de pieges a poissons dans les zones marecageuses du delta de l'Okavango).",
+      "symbols": "Les paniers tresses hambukushu sont des symboles culturels reconnus internationalement ; ils combinent formes geometriques et ornements caracteristiques. Les collines de Tsodilo (Botswana, site UNESCO) sont considerees comme le lieu d'origine mythique du peuple. L'elephant, frequemment present dans la region et destructeur de cultures, fait partie du contexte ecologique et symbolique.",
+      "artsAndMusic": "Le tissage de paniers est l'expression artistique la plus connue des Hambukushu, realise par les femmes avec des roseaux locaux. Les paniers sont vendus dans les grandes villes du Botswana pour des sommes importantes. Architecture en torchis et paille (maisons rondes a toit de chaume). Peche et agriculture de subsistance dans les zones inondables du delta de l'Okavango.",
+      "spiritualities": "Animisme avec croyance en esprits de la nature, medecins traditionnels (nganga) et pratiques de divination. Mythe de creation centree sur Nyembe (dieu supreme) qui descendit les premiers ancetres du ciel aux collines de Tsodilo par une corde. Synchretisme avec le christianisme (diverses eglises evangeliques). Selon le Joshua Project, des systemes de croyances synchretistes incorpores dans des eglises qui ne transmettent pas l'Evangile sont courants."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Les Hambukushu faisaient partie de la sphere d'influence de l'empire Lozi (Barotseland) au XIXe siecle et etaient tributaires de ce royaume. Ils n'ont pas forme de royaume independant. Leur territoire s'etendait le long du fleuve Kwando et dans les plaines de Barotseland avant d'etre repousse ou deplace sous la pression des expansions lozi et coloniales.",
+      "relationsWithNeighbors": "Relations historiques avec les Lozi (hegemonie politique), les Subiya (voisins dans le Caprivi), les Tswana (contact commercial au Botswana), les Yei et les Khoesan (San) du delta de l'Okavango. Forte interaction culturelle avec les peuples des fleuves voisins.",
+      "conflictsOrAlliances": "Incorporation sous l'hegemonie Lozi au XIXe siecle. Deplacement en 1967 vers Etsha (Botswana) suite aux violences dans le Caprivi namibien lors de la guerre pour l'independance namibienne. Relations avec les populations refugiees angolaises lors de la guerre civile angolaise (1975-2002).",
+      "diaspora": "Repartition sur quatre pays (Zambie, Botswana, Namibie, Angola) : total estime a 64 500 personnes (Peoplegroups.org, 2025). Au Zambie, ils vivent le long du fleuve Kwando dans la province occidentale (13 000 personnes, Joshua Project 2025). Au Botswana, principal centre dans le couloir de l'Okavango (Ngamiland nord-ouest). En Namibie, le long de l'Okavango dans le Kavango Est (~45 000 locuteurs)."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 64500,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Peoplegroups.org, 2025 (total 4 pays) ; Joshua Project 2025 : 13 000 en Zambie, population globale 126 000",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 13000,
+          "note": "Province occidentale, region de Mashi, fleuve Kwando (Joshua Project 2025)"
+        },
+        {
+          "country": "BWA",
+          "population": 30000,
+          "note": "Nord-ouest du Botswana, delta de l'Okavango (Shakawe, Etsha, Seronga)"
+        },
+        {
+          "country": "NAM",
+          "population": 45000,
+          "note": "Kavango Est, le long de l'Okavango (Omniglot : ~45 000 locuteurs en Namibie)"
+        },
+        {
+          "country": "AGO",
+          "population": 13500,
+          "note": "Province de Cuando Cubango (PeopleGroups.org)"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Mbukushu in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13639/ZA)",
+      "Mbukushu, Gova in Botswana – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13639/BC)",
+      "Mbukushu people – Africa 101 Last Tribes, 2025 (https://www.101lasttribes.com/tribes/mbukushu.html)",
+      "Mbukushu language and alphabet – Omniglot, 2025 (https://www.omniglot.com/writing/mbukushu.htm)",
+      "Zambia people groups – Joshua Project (https://joshuaproject.net/countries/ZA)",
+      "Mbukushu of Angola – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015190/)"
+    ]
   }
 }

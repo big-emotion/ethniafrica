@@ -2,22 +2,94 @@
   "id": "PPL_BULU",
   "nameMain": "Bulu",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["CMR"],
+  "currentCountries": ["CMR", "GNQ", "GAB"],
   "content": {
     "appellations": {
       "mainName": "Bulu",
       "selfAppellation": "Bulu",
+      "exonyms": [
+        "Boulou (orthographe francisée)",
+        "Pahuin (terme colonial générique pour les Beti-Pahuin)"
+      ],
+      "originOfExonyms": "Le terme Boulou est la transcription française du nom Bulu. Pahuin est un ancien terme colonial désignant l'ensemble des peuples Beti.",
+      "whyProblematic": "Pahuin est perçu comme réducteur car il efface les identités spécifiques des sous-groupes Beti.",
+      "contemporaryUsage": "Bulu est le terme courant et accepté. Boulou reste utilisé dans la littérature francophone ancienne.",
       "linguisticFamily": "FLG_BANTU",
-      "historicalRegion": "Sud Cameroun",
-      "currentCountries": ["CMR"]
+      "ethnoLinguisticGroup": "Beti-Pahuin (groupe Bulu)",
+      "historicalRegion": "Forêt équatoriale du sud Cameroun (régions de l'Océan, du Sud et du Centre)",
+      "currentCountries": ["CMR", "GNQ", "GAB"]
     },
-    "ethnicities": [],
-    "origins": null,
-    "organization": null,
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
-    "sources": ["Ethnologue (bum)", "Cameroon Cultural Archives"]
+    "ethnicities": [
+      "Bulu proprement dit (Sangmélima, Kribi, Ebolowa)",
+      "Fong (vallée du Dja)",
+      "Zaman (vallée du Dja)",
+      "Yengono (vallée du Nyong)",
+      "Yembama (vallée du Nyong)",
+      "Yelinda (vallée du Nyong)",
+      "Yesum",
+      "Yebekanga",
+      "Yebekolo",
+      "Mvele"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bulu font partie des peuples Beti-Pahuin dont les origines sont attribuées à une migration depuis le bassin du Congo ou le sud-est du Tchad. Une pression exercée par les Foulani expansionnistes au nord aurait poussé ces peuples vers le sud.",
+      "formationPeriod": "Migration et installation progressive dans la foret equatoriale entre le XVIe et XIXe siècle. La poussee vers le littoral fut stoppée par les forces coloniales allemandes a la fin du XIXe siècle.",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo ou le sud-est du Tchad vers les forets equatoriales du centre et du sud Cameroun",
+        "Tentative d'extension vers le nord du Gabon, bloquée par les Français"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sud (Ebolowa, Sangmélima, Kribi)",
+        "Province du Centre (Nyong-et-Mfoumou)",
+        "Province de l'Est (Haut-Nyong)",
+        "Nord du Gabon et Guinée Equatoriale continentale"
+      ],
+      "unificationsOrDivisions": "En période coloniale tardive, les Bulu fondèrent une union tribale formelle réunissant tous les clans pour coordonner les politiques communes et le bien-être social.",
+      "externalInfluences": "Contact avec les commerçants européens depuis le XVIe siècle. Fort impact des missions protestantes américaines (Presbyterians) à partir du XIXe siècle, qui ont codifié la langue et créé une littérature Bulu.",
+      "majorHistoricalEvents": "Arrêt de la migration vers le sud par les forces coloniales allemandes à la fin du XIXe siècle. Forte intégration dans l'économie cacaoyère et caféière coloniale et postcoloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation patrilinéaire par clans et villages. Plusieurs familles d'une même lignée vivent dans un village; plusieurs villages apparentés forment un clan. Les clans sont placés sous l'autorité nominale d'un chef, considéré aussi comme autorité religieuse.",
+      "clanOrganization": "Descent patrilinéaire. Les clans Bulu portent généralement le préfixe Be- ou Ye- suivi du nom d'un ancêtre fondateur. Exemples: Yesum, Yebekanga, Yebekolo.",
+      "ageClassSystems": "Des associations et classes d'âge assurent la cohésion sociale et l'identité au-delà du village.",
+      "roleOfLineages": "Les lignages gèrent les terres, organisent les cérémonies funéraires, et encadrent les alliances matrimoniales.",
+      "religiousAuthority": "Le chef de clan exerce aussi une autorité religieuse traditionnelle. Les sociétés secrètes comme le Ngi jouent un rôle rituel important."
+    },
+    "languages": {
+      "mainLanguage": "Bulu",
+      "isoCodes": ["bum"],
+      "dialects": ["Bene", "Yelinda", "Yembana", "Yengono", "Zaman"],
+      "vehicularRole": "Le Bulu fut utilisé comme lingua franca par les missions coloniales et protestantes dans le Sud-Cameroun pour l'enseignement, le commerce et la religion. Ce rôle vehiculaire a décliné avec l'essor du français et de l'ewondo."
+    },
+    "culture": {
+      "majorRites": "Rite du Ngi (société secrète anti-sorcellerie liée au gorille, animal totémique): le candidat s'identifie au gorille après initiation. Rites funéraires collectifs avec repas communautaires. Cérémonies de mariage impliquant négociation de dots entre familles.",
+      "symbols": "Le gorille (totem du Ngi), les masques à face humaine (parfois cornus, colorés en blanc et noir), les cultures du cacao et du café comme marqueurs d'identité économique, la forêt équatoriale comme territoire ancestral.",
+      "artsAndMusic": "Sculpture sur bois, ivoire et stéatite, notamment des masques vivants à représentation humaine. Poterie traditionnelle. Chants et danses communautaires, dont le bikutsi dans les groupes Beti voisins. L'art Bulu a été largement réorienté vers le marché touristique depuis la période coloniale sous influence des missions protestantes.",
+      "spiritualities": "Religion traditionnelle fondée sur le culte des ancêtres et des sociétés secrètes (Ngi, Melan). Christianisation massive par les missions presbytériennes américaines à partir du XIXe siècle. Syncrétisme courant: pratique simultanée du christianisme et des rites traditionnels. Résurgence contemporaine de la religion traditionnelle incluant le Bwiti."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé: organisation en chefferies claniques décentralisées. En période coloniale tardive, création d'une union tribale formelle réunissant tous les clans.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles avec les Fang, Ewondo, Eton (peuples Beti apparentés). Contacts anciens avec les Kwele à l'est. Tensions historiques avec les Bassa et Bakoko lors des migrations.",
+      "conflictsOrAlliances": "Résistance à l'avancée coloniale allemande à la fin du XIXe siècle. Rôle dans le commerce atlantique avec les Européens à partir du XVIe siècle.",
+      "diaspora": "Présence Bulu dans les grandes villes camerounaises (Yaoundé, Douala) et à l'étranger (France, Europe). La diaspora contribue au développement local par les transferts de fonds."
+    },
+    "demography": {
+      "totalPopulation": 1390000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025): 1 390 000 Bulu au Cameroun. Estimation 101lasttribes.com: 660 000 se considèrent Bulu, plus de 800 000 locuteurs de la langue. Britannica (fin XXe s.): environ 660 000.",
+      "distributionByCountry": [
+        { "country": "CMR", "population": 1350000 },
+        { "country": "GNQ", "population": 25000 },
+        { "country": "GAB", "population": 15000 }
+      ]
+    },
+    "sources": [
+      "Encyclopaedia Britannica, article Bulu: https://www.britannica.com/topic/Bulu",
+      "101 Last Tribes, Bulu people: http://www.101lasttribes.com/tribes/bulu.html",
+      "Wikipedia, Beti-Pahuin peoples: https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia, Bulu language: https://en.wikipedia.org/wiki/Bulu_language",
+      "Ethnologue, Bulu (bum): https://www.ethnologue.com/language/bum/",
+      "PeopleGroups.org, Bulu of Cameroon: https://peoplegroups.org/people_groups/pg012558/"
+    ]
   }
 }

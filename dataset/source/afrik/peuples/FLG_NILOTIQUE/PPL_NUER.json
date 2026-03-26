@@ -2,67 +2,114 @@
   "id": "PPL_NUER",
   "nameMain": "Nuer",
   "languageFamilyId": "FLG_NILOTIQUE",
-  "currentCountries": ["SDN", "ETH"],
+  "currentCountries": ["SSD", "ETH"],
   "content": {
     "appellations": {
       "mainName": "Nuer",
-      "selfAppellation": "Naath",
-      "exonyms": ["Nuer (terme utilisé par les Européens)"],
+      "selfAppellation": "Naath (pluriel de Naath : les gens, les etres humains par excellence)",
+      "exonyms": [
+        "Nuer (terme europeen introduit par les colonisateurs britanniques)",
+        "Nei ti Naath (peuple de Naath, formule developpee)"
+      ],
+      "originOfExonyms": "Le terme Nuer est un exonyme d'origine obscure utilise par les colonisateurs europeens au 19e siecle. Les Nuer se designent eux-memes comme Naath (les gens), considerant que seuls eux sont veritablement humains au sens plein. Nei ti Naath signifie litteralement les gens qui sont des gens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Nuer est universellement accepte dans les contextes academiques, politiques et diplomatiques. Naath est l'autonyme utilise dans les discours politiques et culturels internes. Les Nuer constituent le deuxieme groupe ethnique du Soudan du Sud et le premier de la region Gambella en Ethiopie.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique central",
-      "historicalRegion": "Sud-SDN, ETH",
-      "currentCountries": ["SDN", "ETH"]
+      "ethnoLinguisticGroup": "Nilotique occidental (groupe Dinka-Nuer)",
+      "historicalRegion": "Region du Grand Haut-Nil, rives du Nil superieur et du fleuve Sobat (Soudan du Sud); region de Gambella (Ethiopie occidentale)",
+      "currentCountries": ["SSD", "ETH"]
     },
     "ethnicities": [
-      "Nuer du Soudan du Sud",
-      "Nuer d'Éthiopie",
-      "Sous-groupes régionaux"
+      "Jikany Nuer (Jikany Oriental : sections Gajak et Gajok en Ethiopie; Jikany Occidental : Cieng, Nasir — le long du Sobat)",
+      "Lou Nuer : section orientale, region d'Akobo, Jonglei",
+      "Gawaar Nuer : section centrale, bassin du Zeraf",
+      "Haak Nuer (Bakol-kuoth / Gatbakol-kuoth) : comte de Mayiandit, Unity State",
+      "Jagei Nuer : comte de Koch, Unity State",
+      "Dok Nuer : comte de Leer, Unity State",
+      "Nyuong Nuer (sous-tribus Nyaal et Nyawaar) : comte de Payinjiar",
+      "Thiang Nuer : Jonglei",
+      "Laak Nuer : Jonglei",
+      "Bul Nuer (Chol Geah) : comte de Mayom, Unity State — connu pour ses motifs de scarification en points",
+      "Leek Nuer : comte de Rubkona, Unity State"
     ],
     "origins": {
-      "ancientOrigins": "Les Nuer sont originaires du Soudan du Sud et de l'ETH, dans la région du Nil supérieur. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Dinka.",
-      "externalInfluences": "Contacts avec les peuples nilotiques voisins, influence du christianisme."
+      "ancientOrigins": "Les Nuer sont un groupe ethnique nilotique occidental originaire du bassin du Haut-Nil. Selon la tradition orale, Naath (ancetre eponyme) surgit d'un grand arbre appele Liech, d'ou naquit la nation nuer. Les linguistes et historiens estiment que les Nuer se sont separes des Dinka il y a plusieurs siecles, probablement au debut du 18e siecle dans la region de Bul. Leur langue (thok Naath) est tres proche du dinka et de l'atuot, attestant d'une origine commune.",
+      "formationPeriod": "Les Nuer se sont constitues en peuple distinct des Dinka au debut du 18e siecle dans la region de Bul, sous l'effet d'isolement, d'influences luo et de dynamiques migratoires propres. Les Arabes baggara et leurs raids d'esclaves a la fin du 18e siecle declencherent leur migration massive depuis le Kordofan meridional (Kwer Kwong) vers Bentiu. Au milieu du 19e siecle, de nouveaux raids, des inondations et la surpopulation pousserent les Nuer vers l'ouest de l'Ethiopie, ou ils absorberent des Dinka, des Anyuak et des Burun.",
+      "migrationRoutes": [
+        "Origine au Gezira, migration vers Kwer Kwong (Kordofan meridional) : separation d'avec les Dinka",
+        "Fin 18e siecle : fuite des raids baggara vers Bentiu (Unity State actuel)",
+        "Vers 1850 : migration est depuis Bentiu vers les franges occidentales de l'Ethiopie (region Gambella)",
+        "Expansion territoriale continue aux 18e-19e siecles aux depens des Dinka, Anyuak et Burun"
+      ],
+      "historicalSettlementZones": [
+        "Greater Upper Nile : Unity State (Bentiu et environs — sections occidentales)",
+        "Etat de Jonglei : sections Lou, Gawaar, Thiang, Laak",
+        "Haut-Nil : sections Jikany (Nasir)",
+        "Region de Gambella, Ethiopie : Jikany Nuer (sections Gajak et Gajok)",
+        "Nuerland : plaines inondables du Sudd, couloirs fluviaux du Zeraf et Sobat"
+      ],
+      "unificationsOrDivisions": "Les Nuer sont organises en sections territoriales autonomes (Lou, Jikany, Gawaar, Bul, etc.) fonctionnant comme une federation segmentaire sans chef central. E. E. Evans-Pritchard decrivit ce systeme comme une anarchie ordonnee. Les alliances entre sections se forment face a l'ennemi commun (Dinka, Anyuak), puis se dissipent. La fission et la fusion sont caracteristiques de la dynamique politique nuer.",
+      "externalInfluences": "Raids d'esclaves arabes baggara (fin 18e siecle) declenchant les migrations. Influence luo sur la langue et la culture durant les siecles d'isolement au Kordofan. Penetration missionnaire (Eglise presbyterienne, Sudan Interior Mission) des annees 1940 : traduction de la Genese en 1954, Nouveau Testament en 1968; environ 200 congregations dans les annees 1970. Exploitation petroliere Chevron (1975-1984) dans la region de Bentiu.",
+      "majorHistoricalEvents": "Formation comme peuple distinct des Dinka (18e siecle). Expansion territoriale massive au 19e siecle (absorption de populations dinka, anyuak, burun). Resistance a la colonisation britannique (expeditions punitives britanniques aux 19e-20e siecles). 1940 : ethnographie classique d'Evans-Pritchard (The Nuer). 1982 : le commandant Ruai et Liah Diu Deng contraignent Chevron a suspendre ses operations petrolieres. 1984 : attaques SPLA sur les forages Chevron a Bentiu. 1990s : localisation de communautes nuer en Australie et aux Etats-Unis parmi les Lost Boys of Sudan. 2006 : resistance au desarmament (Armee Blanche nuer). 2011-2013 : conflits nuer-murle dans le Jonglei. 2013 : declenchement de la guerre civile sud-soudanaise opposant les forces de Salva Kiir (dinka) et Riek Machar (nuer)."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe segmentaire acephale : absence de chef central ou d'Etat structure. L'autorite politique est diffuse dans les sections, les clans et les lignages. Dans chaque communaute, les hommes sont divises en six classes d'age (ric). Les conflits sont regles par des paiements de betail (compensation, wergeld) via la mediation d'un pretre (kuar muon, chef de terre/pretre de leopard). Evans-Pritchard decrivit ce systeme comme une anarchie ordonnee dans laquelle l'unite se forme face a l'ennemi.",
+      "clanOrganization": "Les Nuer sont organises en clans (diel) patrilineaires exogames. Chaque clan est subdivise en lignages mineurs et majeurs. Les membres d'un clan partagent un totem et croient descendre de ce totem. Les prohibitions de mariage et de sexualite sont fondees sur l'appartenance clanique. Les clans sont organises en sections territoriales (les onze grandes sections principales) qui sont les unites politiques operationnelles.",
+      "ageClassSystems": "Les hommes sont organises en six classes d'age (ric) qui structurent la vie sociale et politique de chaque communaute locale. L'initiation a l'age adulte (passage du statut de dholni a celui de wut) comprend l'extraction des quatre incisives et quatre canines inferieures chez les deux sexes, et la scarification frontale (gaar) chez les garcons. L'appartenance a une meme classe d'age cree une fraternite quasi-filiale : les filles de ses pairs d'age ne peuvent etre epousees (tabou de l'incest symbolique).",
+      "roleOfLineages": "Les lignages (gol) sont les unites sociales les plus intimes et significatives, plus que la parente biologique directe (mar). La filiation est patrilineaire mais la societe reconnait les liens maternels dans les occasions formelles. Le degre de parente determine la proximite du voisinage : les membres d'un lignage partageant un territoire se considerent comme une communaute residentielle. La filiation patrilineaire determine les droits sur le betail, les obligations de dot et l'appartenance a un clan.",
+      "religiousAuthority": "Kwoth Nhial (Dieu du Ciel) : dieu supreme, createur, esprit du ciel. Il se manifeste dans la pluie, la foudre, le tonnerre; l'arc-en-ciel est son collier. Spirits of air (esprits de l'air) : les plus puissants spirits apres Kwoth, associes aux clans. Notamment WiW, esprit de la guerre, associe au tonnerre et aux lances claniques. Kuar muon (pretre de terre/pretre de leopard) : pretre mediateur jouant un role central dans la resolution des conflits. A la mort : la chair retourne a la terre, le souffle (kwoth) retourne a Dieu, l'ame (le reflet) suit le boeuf sacrifie vers le pays des esprits."
     },
     "languages": {
-      "mainLanguage": "Nuer",
-      "vehicularRole": "Le nuer est parlé par la majorité des Nuer. L'anglais, l'arabe et d'autres langues sont également utilisés."
+      "mainLanguage": "Nuer (thok Naath, langue du peuple)",
+      "isoCodes": ["nus"],
+      "dialects": [
+        "Nuer oriental — Lou (Akobo), Gawaar (Zeraf), Jikany de Nasir, Thiang, Laak",
+        "Nuer occidental (Bentiu) — Bul (Chol Geah), Leek, Jagei, Dok, Nyuong, Ador, Jikany Cieng",
+        "Abigar — variete utilisee a l'est, dialect Haak",
+        "Nuer de Gambella — proche du Jikany oriental; etudie comme une variete distincte"
+      ],
+      "vehicularRole": "Le nuer (thok Naath) est parle par environ 900 000 a 1 600 000 locuteurs en Soudan du Sud et en Ethiopie. C'est la langue preferee pour la radio et les actualites dans le camp de protection UNMISS de Bentiu (120 000 personnes). La Bible a ete traduite en nuer (Nouveau Testament 1968, base de l'orthographe nuer standard). L'anglais est langue officielle au Soudan du Sud; l'arabe soudanais est vehiculaire dans les echanges commerciaux."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels nuer (scarifications), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Initiation a l'age adulte (wut) : extraction des quatre incisives et canines inferieures pour les deux sexes; chez les garcons, scarification frontale (gaar) de six lignes horizontales paralleles avec un creux au-dessus du nez, pratiquee avec une lame, marquant definitivement l'entree dans l'age adulte. Mariage (ngut) : transfert du betail de dot (35 a 45 bovins selon les sections) du lignage du mari a celui de l'epouse; la femme n'est pleinement mariee qu'apres la naissance du premier enfant. Mariage posthume (ghost marriage) : un homme peut engendrer des enfants apres sa mort, un parent mettant en grossesse la veuve, les enfants appartenant au defunt; mecansime de continuite dynastique. Femme-epoux (woman-husband) : une femme infertile peut epouser une autre femme, dont les enfants appartiennent au lignage de la femme-epoux. Sacrifice bovin : chaque rite (mariage, funerailles, reconciliation, guerison) est marque par un sacrifice de boeuf.",
+      "symbols": "Le betail est le symbole central absolu de la societe nuer. E. E. Evans-Pritchard : ils dependent des troupeaux pour leur existence; le betail est le fil qui traverse toutes les institutions, le langage, les rites de passage, la politique, l'economie et les allegeances nuer. Les bovins sont compagnons, bien sacre, intermediaires avec les ancetres, monnaie des alliances. Les individus portent des surnoms derives des caracteristiques de leur boeuf favori (forme, couleur). La lance est le symbole du guerrier. La scarification gaar est le symbole de l'identite nuer par excellence.",
+      "artsAndMusic": "Poesie orale tres riche : chants de boeufs composant des vers celebrant les caracteristiques de leur animal favori; epopees genealogiques et elegies. Musique vocale collective lors des ceremonies et des rassemblements. Instruments : tambours (dont les tambours rituels), cornes, flutes. Danse : danses ceremonielles mixtes, danses de cour des jeunes guerriers. Artisanat : poterie feminine pour le stockage et la cuisine; travail du cuir (couvertures, contenants); construction de pirogues (navigation dans le Sudd). Decoration corporelle : scarification gaar (frontale), peintures a l'ocre et a la cendre.",
+      "spiritualities": "Religion traditionnelle (Naath) : Kwoth Nhial (Dieu du Ciel, aussi graphie Kuoth) est le dieu supreme, createur et esprit omnipresent manifesté dans les phénomènes naturels. Les esprits de l'air (kuuth) sont des esprits intermediaires, les plus puissants apres Kwoth, associes aux clans et aux forces de la nature. Notamment WiW, esprit de la guerre et du tonnerre. Les esprits de la terre et les ancetres jouent un role important. Les pretres de leopard (kuar muon) medient les conflits et maintiennent la paix. L'inceste (rual) attire catastrophes et maladies (syphilis, noyade, mort violente). Le christianisme (presbyte rien, catholique) est pratique par environ 25% des Nuer selon le Joshua Project; apres 1968, environ 200 congregations existaient deja."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora nuer dans les grandes villes soudanaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Nuer ne forment pas de royaume centralise. Leur systeme politique segmentaire acephale s'est montre extremement resilient face aux tentatives exterieures de domination. Les chefs (chef de terre, kuar muon) ont un role religieux et mediateur, non executif. E. E. Evans-Pritchard conceptualisa ce systeme comme modele d'anarchie ordonnee, influencant l'anthropologie politique mondiale. Des chefs executives et des chefs paramont ne sont apparus qu'avec la colonisation britannique.",
+      "relationsWithNeighbors": "Relations seculaires avec les Dinka : origine commune, mais expansion nuer aux depens des Dinka (raids, absorptions de populations). Selon l'historien Jared Diamond, les Nuer raident les Dinka, volent leur betail, tuent les hommes et capturent femmes et enfants. Avec les Anyuak : annexion de terres lors des migrations du 19e siecle. Avec les Murle : cycles de raids de betail et d'enlevements d'enfants. Avec les Shilluk : conflits territoriaux a la frontiere de Nuerland.",
+      "conflictsOrAlliances": "Expansion territoriale massive au 18e-19e siecles aux depens des Dinka, Anyuak et Burun. Resistance aux expeditions punitives coloniales britanniques. 1955-1972 : premiere guerre civile soudanaise (nord-sud). 1983-2005 : deuxieme guerre civile; role du SPLA. 1982 et 1984 : attaques contre les operations petrolieres Chevron a Bentiu. 2006 : Armee Blanche nuer refuse le desarmement; le SPLA confisque le betail. 2011-2013 : conflits nuer-murle dans le Jonglei. 2013-2020 : guerre civile sud-soudanaise opposant les factions Kiir (Dinka) et Machar (Nuer); massacres a Juba en decembre 2013.",
+      "diaspora": "Diaspora nuer importante aux Etats-Unis depuis les annees 1990 (Lost Boys of Sudan) : communautes a Omaha (Nebraska), Minnesota, Tennessee, Dakota du Sud, Texas (4 288 refugies soudanais entre 1990 et 1997 dans 36 Etats, 17% au Texas). Presence en Australie, au Canada, en Suede et dans les pays voisins (Kenya, Ouganda, Ethiopie)."
     },
     "demography": {
-      "totalPopulation": 2000000,
+      "totalPopulation": 2500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimations croisees : CIA World Factbook 2025 (Nuer = 15,6% de la population du Soudan du Sud, soit environ 1,9 a 2,5 millions), Ethnologue (NUS), SFASID (Nuer 15,6% des 10,5 millions sud-soudanais en 2020), source Facebook citant des statistiques independantes de 4,5 a 5 millions (probable surestimation). Projection 2025 tenant compte de la croissance demographique et des pertes de la guerre civile.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 2200000,
+          "note": "Greater Upper Nile (Unity State, Jonglei, Haut-Nil) — deuxieme groupe ethnique du Soudan du Sud"
+        },
+        {
+          "country": "ETH",
+          "population": 300000,
+          "note": "Region de Gambella — premier groupe ethnique de la region; sections Jikany (Gajak et Gajok)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Nuer language (nus)",
-      "CIA World Factbook – South Sudan, Ethiopia",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Evans-Pritchard, E. E. The Nuer: A Description of the Modes of Livelihood and Political Institutions of a Nilotic People. Oxford: Clarendon Press, 1940.",
+      "Evans-Pritchard, E. E. Nuer Religion. Oxford: Clarendon Press, 1956.",
+      "Evans-Pritchard, E. E. Kinship and Marriage among the Nuer. Oxford: Clarendon Press, 1951.",
+      "Hutchinson, Sharon E. Nuer Dilemmas: Coping with Money, War, and the State. Berkeley: University of California Press, 1996.",
+      "Wikipedia EN — Nuer people. https://en.wikipedia.org/wiki/Nuer_people",
+      "101 Last Tribes — Nuer people. http://www.101lasttribes.com/tribes/nuer.html",
+      "Ethnologue — Nuer (NUS). https://www.ethnologue.com/language/nus/",
+      "University of Edinburgh Research Explorer — Nuer Collection (dialectologie). https://www.research.ed.ac.uk/en/datasets/nuer-collection/",
+      "Joshua Project — Nuer in Ethiopia. https://joshuaproject.net/people_groups/13909/ET",
+      "Britannica — Nuer. https://www.britannica.com/topic/Nuer"
     ]
   }
 }

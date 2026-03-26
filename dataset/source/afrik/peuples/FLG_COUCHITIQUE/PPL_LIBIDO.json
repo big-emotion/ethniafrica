@@ -7,62 +7,87 @@
     "appellations": {
       "mainName": "Libido (Marako)",
       "selfAppellation": "Libido / Marako",
-      "exonyms": ["Libido, Marako (termes utilisés par les Européens)"],
+      "exonyms": ["Maraqo", "Mareko", "Marekinga", "Libixxiso"],
+      "originOfExonyms": "Le terme Marako (ou Maraqo, Mareko) designe le groupe selon le nom de leur territoire principal, le district de Mareko dans la zone Gurage. Libido est le nom de leur langue selon la classification SIL/Ethnologue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Libido et Marako sont tous deux en usage. Libido est preferentiellement employe dans les classifications linguistiques academiques, tandis que Marako est plus courant dans les contextes administratifs ethiopiens.",
       "linguisticFamily": "FLG_COUCHITIQUE",
-      "ethnoLinguisticGroup": "Couchitiques orientaux (Highland East Cushitic)",
-      "historicalRegion": "Sud de l'Éthiopie (région Oromia)",
+      "ethnoLinguisticGroup": "Couchitique oriental des hautes terres (Highland East Cushitic)",
+      "historicalRegion": "Centre-sud de l'Ethiopie, district de Mareko, zone Gurage, Region des Nations, Nationalites et Peuples du Sud",
       "currentCountries": ["ETH"]
     },
     "ethnicities": [
+      "Clans du Mareko Woreda (49 clans permanents)",
+      "Clans du district Meskan voisin",
+      "Clans de la zone Silte, district Lanfaro",
       "Libido du Nord",
-      "Libido du Sud",
-      "Sous-groupes régionaux"
+      "Libido du Sud"
     ],
     "origins": {
-      "ancientOrigins": "Les Libido sont originaires du sud de l'ETH, dans la région actuelle de l'Oromia. Leur présence dans la région remonte à plusieurs siècles.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples couchitiques voisins (Oromo, Sidamo), influence du christianisme et de l'islam."
+      "ancientOrigins": "Les Libido-Marako sont un peuple couchitique des hautes terres d'Ethiopie. Selon les traditions orales, une partie du groupe est issue d'une migration depuis la region Hadiya vers leur habitat actuel, avec lequel ils se sont melanges par mariage et ont adopte des elements culturels hadiya. Leur presence dans la zone Gurage actuelle est attestee depuis plusieurs siecles.",
+      "formationPeriod": "L'identite Libido-Marako s'est consolidee dans le district de Mareko, zone Gurage. Jusqu'en 2004, les Mareko et les Meskan-Gurage formaient une seule entite administrative. Depuis 2004, le Mareko Woreda est devenu un district independant de la zone Gurage.",
+      "migrationRoutes": [
+        "Migration depuis la region Hadiya vers l'habitat actuel dans le district de Mareko",
+        "Dispersion secondaire vers les districts voisins de Meskan et la zone Silte"
+      ],
+      "historicalSettlementZones": [
+        "District de Mareko, zone Gurage (26 kebeles ruraux et une ville)",
+        "District Meskan voisin",
+        "Zone Silte, district Lanfaro"
+      ],
+      "unificationsOrDivisions": "Le groupe comprend 66 clans et des centaines de sous-clans. 49 clans vivent de facon permanente dans le district de Mareko, les autres dans les districts voisins. L'organisation clanique structure les relations sociales et politiques.",
+      "externalInfluences": "Contacts historiques avec les peuples couchitiques voisins (Oromo, Sidamo, Hadiya). Influence du christianisme (orthodoxe, catholique, protestant) et de l'islam. Integration progressive dans les structures administratives de l'empire ethiopien puis de l'Etat federal.",
+      "majorHistoricalEvents": "Resistance de la population Mareko contre l'occupation italienne fasciste dans les annees 1930. Integration dans la structure federale ethiopienne. Creation du Mareko Woreda independant en 2004."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et de l'islam."
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles avec un conseil d'anciens appele dummichcha. Le libidan dummichcha (conseil des sages Libido) se reunit regulierement une fois par semaine a Koshe, capitale du Mareko Woreda, en plein air sous un grand arbre dans l'enceinte de l'ancienne mosquee. En cas de questions urgentes, il se reunit dans un lieu historique appele abba Deshelee warka.",
+      "clanOrganization": "Structure clanique patrilineaire avec 66 clans et des centaines de sous-clans. 49 clans resident en permanence dans le district de Mareko, les autres dans les districts voisins de Meskan et la zone Silte.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les alliances matrimoniales et les droits fonciers. L'appartenance clanique structure la vie sociale et la resolution des conflits.",
+      "religiousAuthority": "Presence d'une institution spirituelle traditionnelle : le Mete, gardien spirituel commun a toute la nation Mareko-Libido, independamment de la religion pratiquee (islam, christianisme orthodox, catholique, protestant ou religion traditionnelle). Institution de resolution des conflits par la mediation (Maaga)."
     },
     "languages": {
       "mainLanguage": "Libido (Marako)",
-      "vehicularRole": "Le libido est parlé par la majorité des Libido. L'oromo et l'amharique sont utilisés dans l'éducation et l'administration. L'anglais est également utilisé."
+      "isoCodes": ["liq"],
+      "dialects": [
+        "Dialecte du Mareko Woreda (central)",
+        "Variete du district Meskan",
+        "Variete de la zone Silte"
+      ],
+      "vehicularRole": "Le libido (code ISO 639-3 : liq) est parle par environ 64 000 personnes (recensement ethiopien 2007) comme langue maternelle. Il appartient a la branche Highland East Cushitic des langues couchitiques. Il est tres proche du hadiyya (similarite lexicale d'environ 82%). L'oromo et l'amharique sont utilises dans l'education et l'administration."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies de réconciliation",
-      "Symboles": "Symboles culturels libido, art traditionnel.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme) et de l'islam."
+      "majorRites": "Rites de passage (naissance, circoncision, mariage, mort) marques par des ceremonies familiales et communautaires. Ceremonies de reconciliation via l'institution Maaga, mecanisme traditionnel de resolution des conflits existant dans chaque localite habitee par les Libido-Mareko. Ceremonies en lien avec le gardien spirituel Mete, commun a toute la nation Mareko independamment des croyances religieuses individuelles.",
+      "symbols": "Le gardien spirituel Mete est un symbole d'identite collective unificateur de toute la nation Libido-Marako. L'arbre historique abba Deshelee warka, lieu de reunion du conseil des anciens, est un symbole de l'autorite traditionnelle.",
+      "artsAndMusic": "Musique et danse traditionnelles lors des fetes et ceremonies. Poesie orale transmise par les anciens. Artisanat comprenant la poterie et le tissage. Chants rituels lies aux ceremonies agricoles et aux rites de passage.",
+      "spiritualities": "Les Libido-Marako pratiquent diverses religions : islam, christianisme (orthodoxe ethiopien, catholique, protestant) et croyances traditionnelles. Tous partagent cependant une identite spirituelle commune centree sur le gardien ancestral Mete, indifferemment de leur appartenance religieuse formelle. Cette dualite reflete une stratification entre religion institutionnelle et identite spirituelle ethnique traditionnelle."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora libido dans les grandes villes éthiopiennes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Organisation traditionnelle en chefferies avec le conseil dummichcha comme instance supreme de gouvernance locale. Integration dans les structures politiques de l'empire ethiopien puis de l'Etat federal.",
+      "relationsWithNeighbors": "Relations avec les peuples voisins de la zone Gurage (Meskan, Sebat Bet Gurage), les Hadiya au sud, les Oromo et les Silte. Des mariages inter-ethniques ont facilite des echanges culturels avec les Hadiya. Cohabitation dans le district Meskanena Mareko avec les Silte et les Gurage.",
+      "conflictsOrAlliances": "Resistance patriotique de la population Mareko contre l'occupation italienne fasciste dans les annees 1930. Conflits locaux interclans geres par l'institution de reconciliation traditionnelle Maaga. Implication dans les structures politiques ethiopiennes modernes.",
+      "diaspora": "Migration vers les grandes villes ethiopiennes, notamment Addis-Abeba, en quete d'emploi et d'education. Emigration vers l'etranger dans une proportion moindre."
     },
     "demography": {
-      "totalPopulation": 50000,
+      "totalPopulation": 228400,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+      "source": "Projection basee sur le recensement ethiopien CSA 2007 (64 381 locuteurs du libido comme langue maternelle ; population du Mareko Woreda 64 512 en 2007 ; 228 400 en projection 2020). Joshua Project (2025) estime le groupe Maraqo a environ 100 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 228400,
+          "note": "Principalement dans le district de Mareko (zone Gurage), les districts Meskan et Silte, Region des Nations, Nationalites et Peuples du Sud"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Libido language (liq)",
-      "CIA World Factbook – Ethiopia",
-      "Recensements éthiopiens",
-      "Études anthropologiques sur les peuples couchitiques du sud de l'Éthiopie"
+      "Wikipedia EN — Libido language. https://en.wikipedia.org/wiki/Libido_language",
+      "SIL Ethnologue — Libido (liq). https://www.ethnologue.com/language/liq/",
+      "Glottolog — Libido (libi1250). https://glottolog.org/resource/languoid/id/libi1250",
+      "Joshua Project — Maraqo in Ethiopia. https://joshuaproject.net/people_groups/13053",
+      "Getachew & Jima — A History of the Mareko People (Southern Ethiopia), Jimma University repository, 2017. https://repository.ju.edu.et/bitstream/handle/123456789/1309/",
+      "Maaga Indigenous Conflict Resolution Institution among Libido People. International Journal of Scientific and Research Publications, 2016. https://www.ijsrp.org/research-paper-0116/ijsrp-p4949.pdf",
+      "Wikipedia EN — Meskanena Mareko. https://en.wikipedia.org/wiki/Meskanena_Mareko"
     ]
   }
 }

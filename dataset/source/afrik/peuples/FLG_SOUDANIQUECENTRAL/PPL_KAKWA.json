@@ -2,67 +2,104 @@
   "id": "PPL_KAKWA",
   "nameMain": "Kakwa",
   "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
-  "currentCountries": ["UGA", "SDN", "COD"],
+  "currentCountries": ["UGA", "SSD", "COD"],
   "content": {
     "appellations": {
       "mainName": "Kakwa",
-      "selfAppellation": "Kakwa",
-      "exonyms": ["Kakwa (terme utilisé par les Européens)"],
+      "selfAppellation": "Kakwa Salia Musala",
+      "exonyms": ["Kakwa", "Kutuk na Kakwa (nom de la langue)"],
+      "originOfExonyms": "Le nom Kakwa designe ce peuple dans toutes les langues regionales et internationales. L'expression Kakwa Salia Musala, qui se traduit litteralement par Kakwa trois pays, est la formule par laquelle les Kakwa eux-memes soulignent leur unite culturelle malgre leur dispersion politique en trois etats. Ils se designent collectivement autour d'un arbre unique situe a la frontiere de l'Ouganda, de la RDC et du Soudan du Sud.",
+      "whyProblematic": "La classification linguistique des Kakwa est discutee: certaines sources (Wikipedia) les designent comme Nilotiques orientaux (groupe Karo avec les Bari, Pojulu, Mundari), tandis que leur classement dans le groupe soudanique central est aussi atteste. Cette ambiguite reflète les debats academiques sur la classification des langues de l'Equatoria.",
+      "contemporaryUsage": "Le terme Kakwa est utilise en anglais, en arabe soudanais et dans les langues officielles des trois pays (anglais en Ouganda et au Soudan du Sud, francais en RDC). Suite au regime d'Idi Amin (1971-1979), le terme Kakwa a acquis une resonance politique particuliere en Ouganda.",
       "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
-      "ethnoLinguisticGroup": "Soudanique central",
-      "historicalRegion": "UGA, SDN du Sud, COD",
-      "currentCountries": ["UGA", "SDN", "COD"]
+      "ethnoLinguisticGroup": "Soudanique central / Nilotique oriental (Karo); frontiere de classification linguistique contestee",
+      "historicalRegion": "Region frontaliere du nord-ouest de l'Ouganda (Koboko, Arua), du sud-ouest du Soudan du Sud (Yei, Morobo) et du nord-est de la RDC (Imgbokolo, Aba)",
+      "currentCountries": ["UGA", "SSD", "COD"]
     },
     "ethnicities": [
-      "Kakwa d'Ouganda",
-      "Kakwa du Soudan du Sud",
-      "Kakwa de RDC"
+      "Kakwa d'Ouganda (district de Koboko et parties d'Arua, region du West Nile)",
+      "Kakwa du Soudan du Sud (Yei River State, comte de Morobo, ville de Yei)",
+      "Kakwa de la RDC (nord-est de l'Ituri, villes d'Imgbokolo et Aba)",
+      "Clan Dada (notable: ancetres d'Idi Amin, suivis sur treize generations selon l'histoire orale)",
+      "Groupe des Kakwa islamisés (frontieres ougandaises, convertis au malikisme dans l'ere medievale)"
     ],
     "origins": {
-      "ancientOrigins": "Les Kakwa sont originaires de l'UGA, du Soudan du Sud et de la RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe soudanique central.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples nilotiques et bantous, influence du christianisme."
+      "ancientOrigins": "Selon la tradition orale kakwa, leurs ancetres ont migre depuis l'Afrique orientale (region nubienne) depuis la cite antique de Kawa, situee entre les troisieme et quatrieme cataractes du Nil. Ils se sont d'abord installes au Soudan du Sud, puis ont migre vers le sud en Ouganda et en RDC. Le fondateur legendaire Jaki aurait vecu sur une colline appelee Karobe au Soudan du Sud, avant de s'installer sur le mont Liru dans le district de Koboko en Ouganda, avec ses douze enfants qui se disperserent dans la region.",
+      "formationPeriod": "Les Kakwa font partie du groupe Karo, un ensemble de peuples nilotiques orientaux intermarides incluant les Bari, Pojulu, Mundari, Kuku, Ngepo et Nyangwara. Certains Kakwa frontaliers de l'Ouganda se convertirent a l'islam (ecole malikite sunnite) a l'epoque medievale. En 1889, la region fut annexee a l'Equatoria par Tewfik Pasha, successeur du Khedive ismailien d'Egypte, puis integree au Protectorat britannique de l'Ouganda a mesure que l'empire colonial britannique s'etendait.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis la region nubienne (cite de Kawa, entre 3e et 4e cataractes du Nil) vers le Soudan du Sud",
+        "Dispersion vers le sud en Ouganda (mont Liru, district de Koboko) et vers l'ouest en RDC"
+      ],
+      "historicalSettlementZones": [
+        "Nord-ouest de l'Ouganda: district de Koboko et partie du district d'Arua (region du West Nile)",
+        "Sud-ouest du Soudan du Sud: Yei River State (ville de Yei, comte de Morobo)",
+        "Nord-est de la RDC: Imgbokolo et Aba (province de l'Ituri)"
+      ],
+      "unificationsOrDivisions": "Malgre leur dispersion politique en trois etats modernes, les Kakwa maintiennent une identite culturelle et linguistique commune. Ils crisscrossent les frontieres pour les ceremonies culturelles, les mariages et les obligations communautaires. Certains Kakwa ougandais ont leurs fermes au Soudan du Sud et vice-versa. Cette transfrontalierite est une caracteristique identitaire fondamentale.",
+      "externalInfluences": "Annexion egyptienne de l'Equatoria (1889). Integration au Protectorat britannique de l'Ouganda. Islamisation partielle a l'epoque medievale (malikisme). Christianisation par les missions protestantes et catholiques au 20e siecle. Impact du regime d'Idi Amin (1971-1979): promotion puis retombees violentes pour les Kakwa apres sa chute. Guerres civiles soudanaises et conflit du Soudan du Sud (2013-2018) affectant les Kakwa equatoriens.",
+      "majorHistoricalEvents": "En 1971, Idi Amin Dada, d'ascendance kakwa (pere ethniquement kakwa, mere d'origine kakwa-lugbara), s'empara du pouvoir en Ouganda par un coup d'etat militaire. Il nomma des membres de son groupe ethnique a des postes militaires et civils cles, et fournit des armes aux Kakwa soudanais durant la premiere guerre civile du Soudan. Apres sa destitution en 1979, de nombreux Kakwa furent tues dans des violences de represailles et d'autres s'exilerent au Soudan. A partir de 2016, lors de la guerre civile du Soudan du Sud, les Kakwa furent vises par des violences ethniques dans l'Equatoria, des soldats dinka ayant menace d'exterminer les Kakwa pour leur soutien presume a Riek Machar."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Organisation en villages diriges par des conseils d'anciens (temezi). Les chefs de clan (Mataki) guidaient leurs clans (ketimito) avec sagesse. La prise de decision etait collective, fondee sur le consensus des anciens. Polygamie acceptee et pratiquee. Pas de royaume centralise historique.",
+      "clanOrganization": "Structure clanique patrilineaire. Les villages kakwa sont lies par des lignages, les hommes formant des conseils d'anciens. Les clans (ketimito) sous la direction de chefs (Mataki) constituent l'unite organisationnelle fondamentale. Le clan Dada, auquel appartenait Idi Amin (nom personnel d'un clan kakwa observe sur treize generations selon les historiens), est notable. Les terres ancestrales sont appelees melesingo en langue kakwa.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, les alliances matrimoniales et les obligations communautaires. Les anciens (temezi) sont respectes et consultes pour toutes les decisions importantes. Les liens familiaux transfrontaliers facilitent l'accueil des refugies lors des conflits.",
+      "religiousAuthority": "Autorite des anciens du clan dans les affaires rituelles. Syncrétisme entre croyances traditionnelles, islam sunnite malikite et christianisme. Dans la religion traditionnelle, un serpent sacre a sept tetes appele Nakan joue un role dans la mythologie kakwa (selon les recits sur l'enfance d'Idi Amin). Les rites traditionnels guerriers, decrits par certains sources comme incluant des pratiques rituelles sur les ennemis vaincus, ont ete documentes par Henry Kyemba (1977)."
     },
     "languages": {
-      "mainLanguage": "Kakwa",
-      "vehicularRole": "Le kakwa est parlé par la majorité des Kakwa. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Kutuk na Kakwa (Kakwa)",
+      "isoCodes": ["keo"],
+      "dialects": [
+        "Kakwa d'Ouganda (district de Koboko, West Nile)",
+        "Kakwa du Soudan du Sud (Yei River State)",
+        "Kakwa de la RDC (Imgbokolo, Aba)"
+      ],
+      "vehicularRole": "Le kakwa est parle par environ 200 000 personnes reparties dans trois pays. Il fait partie du groupe Karo avec les langues bari, pojulu, mundari et kuku. L'anglais est langue officielle en Ouganda et au Soudan du Sud; le francais en RDC. Le kakwa est une langue nilotique orientale de la famille nilo-saharienne. Il est utilise comme langue d'identite communautaire pour maintenir les liens transfrontaliers. ISO 639-3: keo."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels kakwa, symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "Rites de mariage: la polygamie est acceptee et pratiquee dans le cadre des traditions kakwa. Rites funeraires respectant le role des ancetres. Rites de passage pour les jeunes garcons. Ceremonies culturelles transfrontalières maintenant les liens entre les Kakwa des trois pays. Agriculture de subsistance: mais, mil, manioc, peche et elevage de betail forment la base de l'economie traditionnelle.",
+      "symbols": "Arbre symbolique unique situe a la frontiere des trois pays (Ouganda, RDC, Soudan du Sud), utilisé comme symbole de l'unite kakwa. Le mont Liru (district de Koboko, Ouganda), lieu d'installation ancestrale de Jaki. Le serpent sacre Nakan (serpent a sept tetes de la religion folklorique kakwa). L'expression Kakwa Salia Musala (Kakwa trois pays) comme affirmation identitaire.",
+      "artsAndMusic": "Tradition de chants et danses traditionnels. Transmission orale des histoires, coutumes et traditions ancestrales. Artisanat: poterie, tissage. Les femmes kakwa menent des initiatives d'autonomisation economique par des groupes d'epargne. Les jeunes kakwa preservent leur heritage culturel en apprenant les chants et danses traditionnels et en publiant des recits sur l'identite culturelle. Habillement traditionnel et ornements culturels distinctifs.",
+      "spiritualities": "Religion traditionnelle avec croyance en des forces spirituelles ancestrales. Le serpent sacre Nakan (a sept tetes) apparait dans la mythologie folklorique kakwa et aurait protege Idi Amin dans son enfance selon les recits familiaux. Islam sunnite malikite: une partie des Kakwa de la frontiere ougandaise s'est convertie a l'islam des l'epoque medievale; Idi Amin et sa famille etaient musulmans. Christianisme: les missions protestantes et catholiques ont converti une large partie de la communaute au 20e siecle. Syncrétisme entre pratiques traditionnelles et religions abrahamiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora kakwa dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Kakwa n'ont pas forme de royaume centralise. Leur organisation traditionnelle etait fondee sur des chefferies de clan (ketimito sous un Mataki). En 1889, leur territoire fut incorpore dans la sphere egyptienne (Equatoria) avant de passer sous administration britannique comme partie du Protectorat de l'Ouganda. L'appartenance au groupe Karo (avec les Bari et autres) leur conferait une identite politique regionale.",
+      "relationsWithNeighbors": "Les Kakwa partagent des traditions linguistiques et culturelles communes avec les Acholi, Madi et Lugbara le long des frontieres Soudan du Sud-Ouganda. Des relations d'intermariage et d'echanges commerciaux existent avec les peuples voisins. Les Kakwa d'Ouganda ont souvent des fermes au Soudan du Sud, et ceux du Soudan du Sud peuvent avoir des fermes en Ouganda.",
+      "conflictsOrAlliances": "Idi Amin Dada (30 mai 1928 - 16 aout 2003), de pere ethniquement kakwa et de mere d'origine kakwa-lugbara, s'empara du pouvoir en Ouganda le 25 janvier 1971 par un coup d'etat. Troisieme president de l'Ouganda (1971-1979), son regime fut marque par des violations massives des droits humains et l'expulsion des Asiens en 1972. Il favorisa systematiquement ses coreligionnaires kakwa, lugbara, soudanais et nubiens: en 1977, ces trois groupes representaient 60% des 22 generaux et 75% du cabinet. Il fournit des armes aux Kakwa soudanais pendant la premiere guerre civile du Soudan. Apres sa chute en 1979, de nombreux Kakwa furent tues en represailles, d'autres s'enfuirent au Soudan. Durant la guerre civile du Soudan du Sud (2016), les Kakwa equatoriens furent vises par des violences ethniques.",
+      "diaspora": "Apres la chute d'Idi Amin (1979), une diaspora kakwa importante s'est formee au Soudan du Sud (refuge des Kakwa ougandais fuyant les represailles). Des communautes kakwa existent dans les grandes villes d'Ouganda (Kampala, Arua), au Soudan du Sud (Djouba, Yei) et en RDC. La nature transfrontaliere des Kakwa signifie qu'ils ont toujours maintenu des liens entre les trois pays."
     },
     "demography": {
       "totalPopulation": 200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation de 200 000 personnes mentionnee dans les sources communautaires (Facebook, Preserving the Kakwa Language). SIL Ethnologue code keo. Repartis dans trois pays: Ouganda (district de Koboko, West Nile), Soudan du Sud (Yei River State) et RDC (nord-est de l'Ituri). Les estimations precisement par pays sont difficiles a etablir.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 100000,
+          "note": "District de Koboko et partie du district d'Arua, region du West Nile"
+        },
+        {
+          "country": "SSD",
+          "population": 70000,
+          "note": "Yei River State (anciennement Central Equatoria), ville de Yei et comte de Morobo"
+        },
+        {
+          "country": "COD",
+          "population": 30000,
+          "note": "Nord-est de la RDC, villes d'Imgbokolo et Aba (province de l'Ituri)"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Kakwa language (keo)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples soudaniques centraux"
+      "Wikipedia EN — Kakwa people. https://en.wikipedia.org/wiki/Kakwa_people",
+      "Wikipedia EN — Idi Amin. https://en.wikipedia.org/wiki/Idi_Amin",
+      "Britannica — Idi Amin. https://www.britannica.com/biography/Idi-Amin",
+      "SIL Ethnologue — Kakwa language (keo).",
+      "Muwado — My Kakwa Culture. https://muwado.com/my-kakwa-culture/",
+      "ACCORD — The Hidden Population (2020). https://www.accord.org.za/conflict-trends/the-hidden-population/",
+      "Kyemba, Henry. State of Blood: The Inside Story of Idi Amin. 1977.",
+      "Wikipedia EN — Yakan movement. https://en.wikipedia.org/wiki/Yakan_movement",
+      "IJESSR — The East African Community: People Who Straddle Borders. https://ijessr.com/uploads2026/ijessr_09_1193.pdf"
     ]
   }
 }

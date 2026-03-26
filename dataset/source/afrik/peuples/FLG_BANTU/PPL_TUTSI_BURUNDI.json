@@ -2,34 +2,97 @@
   "id": "PPL_TUTSI_BURUNDI",
   "nameMain": "Tutsi du Burundi",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["BDI", "RWA"],
+  "currentCountries": ["BDI"],
   "content": {
     "appellations": {
       "mainName": "Tutsi du Burundi",
-      "selfAppellation": "Abatutsi",
-      "exonyms": ["« Hamites » (terme colonial raciste, totalement rejeté)"],
+      "selfAppellation": "Abatutsi (pl.), Umututsi (sg.)",
+      "exonyms": [
+        "Watutsi",
+        "Watusi (forme ancienne)",
+        "Hamites (terme colonial raciste, completement rejete)"
+      ],
+      "originOfExonyms": "Le terme hamite fut forge par les colonisateurs europeens (theorie hamitique) pour justifier la pretendue superiorite raciale des Tutsi et legitimer leur domination sous supervision belge. Cette theorie pseudo-scientifique a ete totalement demolie par l'anthropologie moderne. Les Tutsi comme les Hutu partagent la meme langue (Kirundi), la meme religion et la meme culture.",
+      "whyProblematic": "La distinction Tutsi/Hutu est plus sociale qu'ethnique dans son origine historique. Instrumentalisee par la colonisation belge (cartes d'identite ethniques introduites en 1933), elle est devenue un marqueur de violence politique. Les Ganwa constituent une categorie aristocratique historiquement distincte des Tutsi communs. Selon les historiens, un Hutu riche en betail pouvait devenir Tutsi socialement (kwihutura), et un Tutsi appauvri pouvait descendre au rang social des Hutu (gukora).",
+      "contemporaryUsage": "Abatutsi est l'autodesignation courante. La Constitution de 2005 et les accords d'Arusha (2000) maintiennent les quotas ethniques (60% Hutu, 40% Tutsi) dans les institutions publiques, l'armee et la police. La categorie Tutsi est legalement reconnue mais contestee dans ses fondements anthropologiques.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "Bantous des Grands Lacs",
-      "historicalRegion": "Plateaux du Burundi",
-      "currentCountries": ["BDI", "RWA"]
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Rwanda-Rundi)",
+      "historicalRegion": "Plateaux du Burundi, collines centrales et hauts plateaux",
+      "currentCountries": ["BDI"]
     },
     "ethnicities": [
-      "Tutsi des collines centrales",
-      "Tutsi des régions du nord et sud",
-      "Lignages nobles (Ganwa → catégorie historique distincte mais liée)"
+      "Tutsi-Banyaruguru (Tutsi des hauts plateaux du nord, Kayanza, Ngozi — consideres comme l'aristocratie tutsi originelle du Burundi septentrional)",
+      "Tutsi-Hima (Tutsi du sud et des regions pastorales — associes a l'elevage extensif de betail)",
+      "Ganwa (aristocratie royale princiere issue des deux maisons Bezi et Batare, historiquement distincte des Tutsi ordinaires selon les historiens comme Rene Lemarchand)",
+      "Tutsi urbains (Bujumbura, Gitega — integration dans l'economie moderne depuis l'independance)"
     ],
     "origins": {
-      "externalInfluences": "Reconfiguration coloniale belge au XXe siècle."
+      "ancientOrigins": "Les Tutsi du Burundi, comme les Hutu et les Twa, sont des peuples bantous des Grands Lacs installes dans la region depuis le 1er millenaire de notre ere. La distinction Tutsi/Hutu refletait a l'origine une difference socio-economique (eleveurs de betail versus agriculteurs) plutot qu'une origine ethnique distincte. Des etudes genetiques recentes confirment la proximite biologique de toutes les composantes de la population burundaise.",
+      "formationPeriod": "XVIe siecle : formation du royaume du Burundi sous une monarchie Ganwa. Les Tutsi occupaient generalement des fonctions d'encadrement du betail et d'administration territoriale via le systeme d'ubugabire (clientelisme pastoral). La distinction sociale Tutsi/Hutu s'accentua sous la colonisation allemande (1885-1916) puis belge (1916-1962), culminant avec l'introduction des cartes d'identite ethniques en 1933 par l'administration belge.",
+      "migrationRoutes": [
+        "Peuplement bantou ancien des Grands Lacs depuis le 1er millenaire",
+        "Migrations internes au sein du Burundi liees aux conflits et crises (1972, 1988, 1993-2005)",
+        "Exil de refugies tutsi au Rwanda, en Tanzanie, en RDC et en Uganda lors des crises politiques"
+      ],
+      "historicalSettlementZones": [
+        "Collines centrales du Burundi (Gitega, Muramvya) — coeur du royaume",
+        "Hauts plateaux du nord (Kayanza, Ngozi) — berceau des Tutsi-Banyaruguru",
+        "Plateaux de l'est et du sud (Rutana, Bururi) — zone Tutsi-Hima"
+      ],
+      "unificationsOrDivisions": "Le royaume du Burundi (XVIe-1966) unifiait Hutu, Tutsi et Twa sous l'autorite du mwami Ganwa. La colonisation belge (1916-1962) amplifia la division Tutsi/Hutu en creant une hierarchie raciale formelle et en privilégiant les Tutsi dans l'administration. Apres l'independance (1962), les Tutsi dominerent militairement et politiquement jusqu'aux accords d'Arusha (2000) et la constitution de 2005 instaurant le partage du pouvoir.",
+      "externalInfluences": "Colonisation allemande (1885-1916) puis belge (1916-1962) du Ruanda-Urundi. Decret belge du 25 aout 1925 du roi Albert Ier affirmant la pretendue superiorite Tutsi. Introduction des cartes d'identite ethniques en 1933. Independance en 1962. Pression internationale pour les accords d'Arusha (2000). Commission Verite et Reconciliation (TRC) etablie en 2014.",
+      "majorHistoricalEvents": "1962 : independance du Burundi sous le roi Mwambutsa IV. 1966 : coup d'etat de Michel Micombero, proclamation de la republique, fin de la monarchie. 1972 : genocide des Hutu — apres une insurrection hutu (29 avril 1972), les forces gouvernementales tutsies perpetrerent un genocide systematique contre les elites hutu educquees : entre 100 000 et 200 000 morts en quatre mois ; plus de 4 700 fosses communs identifies par la TRC. 1988 : massacres dans le nord (Ntega, Marangara) : plus de 20 000 morts hutu. 1993 : assassinat du president Ndadaye (21 octobre), premier president hutu elu democratiquement ; 50 000 a 150 000 morts dans les violences retaliatives. 1993-2005 : guerre civile (300 000 morts totaux). 2000 : accords d'Arusha. 2005 : constitution consacrant les quotas ethniques."
     },
-    "organization": {},
-    "languages": null,
-    "culture": null,
-    "historicalRole": null,
-    "demography": null,
+    "organization": {
+      "traditionalPoliticalSystem": "Le royaume du Burundi (XVIe-1966) etait dirige par un mwami (roi) issu de l'aristocratie Ganwa. Le Ganwa etait une aristocratie princiere qui possedait la plupart des terres et percevait un tribut (ubutaka) aupres des agriculteurs et eleveurs. Le mwami dirigeait par l'intermediaire des Ganwa locaux, des Tutsi-Banyaruguru et des Tutsi-Hima. Les Hutu pouvaient acceder a certains postes par faveur royale (gushingantahe), les Tutsi par droit hereditaire. L'institution du bashingantahe (conseil de sages) arbitrait les conflits a l'echelon de la colline.",
+      "clanOrganization": "Organisation en clans (inzu) avec des lignages patrilineaires. Un clan peut comprendre a la fois des membres Hutu et Tutsi (ex : clan Bajiji). Les clans Ganwa se divisent en deux maisons princières rivales : les Bezi (descendants de Ntare II) et les Batare (descendants de Ntare III), dont la rivalite a structure la politique burundaise depuis le XVIIIe s.",
+      "ageClassSystems": "Pas de classes d'age formalisees comparables aux societes Bantou de l'est. La hierarchie sociale etait structuree par le statut clanique (Ganwa, Tutsi-Banyaruguru, Tutsi-Hima) et par le systeme pastoral d'ubugabire (clientelisme par dons de betail).",
+      "roleOfLineages": "Lignages patrilineaires determinant le statut social, l'acces aux terres et les fonctions. Le systeme d'ubugabire liait un patron tutsi (shebuja) a un client hutu (umugaragu) par un don de betail, creant des relations de dependance economique et de protection. Sous le royaume, les lignages Ganwa avaient le monopole des postes de gouverneurs provinciaux.",
+      "religiousAuthority": "Les tambours royaux (karyenda) etaient des symboles sacres du pouvoir royal et de l'identite nationale burundaise — leur destruction symbolisait la fin d'un regne. Institution du bashingantahe : conseil traditionnel de sages (mushingantahe) charges de la justice et de la reconciliation communautaire, reconnu comme patrimoine institutionnel. L'investiture d'un mushingantahe impliquait un contrat moral solennel avec la communaute. Le catholicisme (plus de 60% de la population) est profondement ancre depuis la colonisation belge."
+    },
+    "languages": {
+      "mainLanguage": "Kirundi (rundi)",
+      "isoCodes": ["run"],
+      "dialects": [
+        "Kirundi standard (langue commune a tous les Burundais : Hutu, Tutsi et Twa)",
+        "Variantes regionales mineures selon les provinces"
+      ],
+      "vehicularRole": "Kirundi est la langue nationale et officielle du Burundi, partagee par l'ensemble de la population. C'est un fait exceptionnel en Afrique subsaharienne que deux groupes en conflit ethnique majeur partagent la meme langue maternelle. Le français est langue co-officielle et langue d'administration. Le swahili est la langue du commerce, particulierement a Bujumbura et dans les echanges regionaux. L'anglais a ete introduit comme langue officielle en 2014."
+    },
+    "culture": {
+      "majorRites": "Danse rituelle des tambours royaux (karyenda ou ingoma) : spectacle de tambours synchronises combine avec danse, poesie heroique (ibivugo) et chants traditionnels, inscrit au patrimoine culturel immateriel de l'UNESCO en 2014. La tradition remonte a plus de quatre siecles sur le site de Gishora (province de Gitega). Investiture du mushingantahe : ceremonie de reconnaissance d'un sage mediateur, scellant son engagement moral envers la communaute par un contrat public. Imigani (fables orales) comme pedagogie de valeurs. Umuganuro (fete nationale ancienne des premiers fruits et de la semence royale).",
+      "symbols": "Les tambours royaux karyenda comme symboles supremes du pouvoir, de l'identite et de la continuite nationale burundaise. Le troupeau de betail longhorn (inyambo, vaches a longues cornes) comme symbole de richesse, de statut social et de beaute. La colline (umusozi) comme unite fondamentale d'habitat, d'identite et d'organisation sociale burundaise.",
+      "artsAndMusic": "Tambours karyenda / ingoma : tradition musicale nationale (UNESCO 2014) transmise de generation en generation a Gishora. Les tambourinaires (abatimbo) jouent en ensembles choreographies depuis plus de 400 ans. Chants heroiques (imigani, ibivugo), poesie dynastique et genealogique (ubuganwa). Danse de cour (intore) avec sauts acrobatiques. Artisanat de vannerie fine (imigara), de tressage et de bijoux traditionnels. Peinture et decoration corporelle lors des ceremonies.",
+      "spiritualities": "Christianisme tres majoritaire : environ 60% catholiques, plus de 12% protestants. Syncrétisme avec les pratiques animistes traditionnelles : veneration des ancetres (guterekera), invocation des esprits tutelaires (imandwa) dans le culte kubandwa. L'islam est pratique par moins de 5% de la population, principalement dans les zones commerciales de Bujumbura. Les tambours royaux avaient une dimension sacree liee a la fertilite, a la protection du royaume et a la communication avec les ancetres royaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Burundi (XVIe-1966) : monarchie Ganwa dirigeant l'ensemble du territoire actuel du Burundi avec un systeme tributaire hierarchise (ubutaka). Le mwami regnait sur Hutu, Tutsi et Twa via les princes Ganwa et les batware (chefs locaux). Le royaume fut place sous protectorat allemand (1885), puis administre par la Belgique (1916) dans le cadre du mandat de la Societe des Nations, maintenu comme entite administrative jusqu'a l'independance (1962) et l'abolition de la monarchie par Micombero (1966).",
+      "relationsWithNeighbors": "Relations dynastiques avec le Rwanda voisin (mwami du Rwanda, tensions Tutsi/Hutu paralleles). Commerce et echanges avec le Congo (RDC) et la Tanzanie via le lac Tanganyika. Flux massifs de refugies transfrontaliers lors des crises de 1972 (vers Tanzania, Zaire), de 1993-2005 (vers Rwanda, Tanzania, RDC, Uganda). Cooperation regionale dans les Grands Lacs depuis les accords d'Arusha (2000).",
+      "conflictsOrAlliances": "1972 : genocide des Hutu par le gouvernement tutsi (100 000 a 200 000 morts en quatre mois) — qualifie de genocide par la Commission Verite et Reconciliation du Burundi. 1988 : massacres dans les provinces du nord (Ntega, Marangara). 1993 : assassinat du president Ndadaye et massacres retaliateurs (50 000 a 150 000 morts). 1993-2005 : guerre civile (300 000 morts, enfants-soldats des deux cotes). 2000 : accords d'Arusha pour la paix et la reconciliation. 2005 : constitution consacrant les quotas ethniques 60/40 dans les institutions. 2015 : crise politique autour du troisieme mandat du president Nkurunziza.",
+      "diaspora": "Refugies tutsi en Tanzanie, Rwanda, Uganda et RDC lors des crises de 1972, 1993 et 2015. Retours partiels apres les accords d'Arusha. Diaspora burundaise (toutes ethnies) estimee a plusieurs centaines de milliers en Europe (Belgique, France, Suisse) et en Amerique du Nord. La diaspora tutsi a joue un role dans certains mouvements politiques armes (FDD, CNDD, etc.)."
+    },
+    "demography": {
+      "totalPopulation": 1700000,
+      "referenceYear": 2025,
+      "source": "CIA World Factbook et Wikipedia (Demographics of Burundi) : Hutu 85%, Tutsi 14%, Twa 1%. Population totale du Burundi 2024 estimee a ~14 millions (PopulationPyramid.net). Estimation Tutsi du Burundi 2025 : 14% de ~12,1 millions = environ 1,7 million (chiffre conservateur base sur les estimations de la Commission nationale des droits de l'homme du Burundi).",
+      "distributionByCountry": [
+        {
+          "country": "BDI",
+          "population": 1700000,
+          "notes": "14% de la population nationale burundaise; concentres dans les zones urbaines (Bujumbura, Gitega) et les hauts plateaux du nord (Kayanza, Ngozi)"
+        }
+      ]
+    },
     "sources": [
-      "Travaux anthropologiques Grands Lacs",
-      "Ethnologue (run)",
-      "Archives du royaume du Burundi"
+      "Wikipedia EN — Burundian Civil War : https://en.wikipedia.org/wiki/Burundian_Civil_War",
+      "Wikipedia EN — Kingdom of Burundi : https://en.wikipedia.org/wiki/Kingdom_of_Burundi",
+      "UNESCO — Ritual dance of the royal drum (2014) : https://ich.unesco.org/en/RL/ritual-dance-of-the-royal-drum-00989",
+      "World Without Genocide — Burundi 1972 : https://worldwithoutgenocide.org/genocides-and-conflicts/burundi",
+      "Encyclopaedia Britannica — Burundi, Ethnic Conflict : https://www.britannica.com/place/Burundi/The-Third-Republic",
+      "Global Voices — Burundis troubled history 1972 (2023) : https://globalvoices.org/2023/07/13/burundis-troubled-history-of-the-untold-1972-hutu-genocide/",
+      "Africa Faith and Justice Network — Ubushingantahe Council (2009) : https://afjn.org/post-conflict-burundi-and-the-role-of-ubushingantahe-council/",
+      "USF Digital Commons — Burundi Building Democracy on Ethnically Divided Society : https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1264&context=jacaps",
+      "Western Washington University RWI — Genocide Burundi (historical overview) : https://rwi.wwu.edu/genocide-burundi"
     ]
   }
 }

@@ -6,54 +6,84 @@
   "content": {
     "appellations": {
       "mainName": "Shambaa",
-      "selfAppellation": "",
-      "exonyms": ["Shambala"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Wasambaa (pluriel), Msambaa (singulier)",
+      "exonyms": ["Shambala", "Sambaa", "Sambala", "Sambara", "Schambala"],
+      "originOfExonyms": "Les exonymes derivent du nom du peuple et de sa langue. Wasambaa est le terme swahili designe le peuple. Shambala est la forme la plus repandue en anglais. Le territoire est appele Usambaa ou Usambara.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Shambaa ou Shambala est utilise dans les contextes academiques et officiels. Les membres du groupe se designent eux-memes comme Wasambaa. Les collectifs de trois peuples apparentes (Bondei, Shambaa, Zigua) utilisent l'acronyme Boshazi.",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord-Est",
+      "ethnoLinguisticGroup": "Bantu de la cote nord-est (North East Coastal Bantu)",
+      "historicalRegion": "Monts Usambara, region de Tanga, nord-est de la Tanzanie",
       "currentCountries": ["TZA"]
     },
-    "ethnicities": ["Shambaa"],
+    "ethnicities": ["Shambaa", "Wasambaa"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord-Est"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Shambaa sont etablis dans les monts Usambara depuis au moins plusieurs siecles. La plupart des lignages fondateurs revendiquent des origines dans les regions de Ngulu, Zigua, Pare et Taita. Le nom de leur territoire, Shambaai, signifie 'la ou les bananiers prosperent' en kisambaa, distinguant les hauteurs fertiles des plaines arides environnantes.",
+      "formationPeriod": "La formation du peuple Shambaa comme entite politique distincte remonte au milieu du XVIIIe siecle, avec l'arrivee du premier roi Kilindi, Mbegha, venu de Ngulu. Avant cela, la region etait peuplee de clans independants partages entre Vugha et Bumbuli.",
+      "migrationRoutes": [
+        "Depuis Ngulu et les zones montagneuses de Zigua vers le sud de l'Usambara",
+        "Des migrations depuis les regions de Pare et Taita vers le nord de l'Usambara",
+        "Arrivee des groupes Mbughu et Nango depuis le plateau du Laikipia au nord-ouest du mont Kenya"
+      ],
+      "historicalSettlementZones": [
+        "Monts Usambara Occidentaux (district de Lushoto)",
+        "Monts Usambara Orientaux (district de Muheza)",
+        "Plaines de Korogwe et Bumbuli",
+        "Regions de Bondei a l'est"
+      ],
+      "unificationsOrDivisions": "Mbegha, fondateur de la dynastie Kilindi, unifia les clans rivaux de Vugha et Bumbuli grace a des alliances matrimoniales et sa reputation de chasseur genereux. Son fils Bughe consolida le royaume en integrant les groupes Nango. Le royaume se divisa apres la mort de Kimweri ye Nyumbai (annees 1860) entre les partisans de Shekulwavu et ceux de Semboja. La rebellion de Kiva en 1869 vit les Bondei se reveler contre la domination Kilindi.",
+      "externalInfluences": "Les raids Masai au XVIIIe siecle accelererent la centralisation politique en poussant les populations a se regrouper. Le commerce de la cote swahili, puis l'arrivee des Allemands dans les annees 1880, transformerent l'economie et les structures politiques. Les missions lutheriennes jouerent un role important depuis la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Fondation du royaume Shambaa par Mbegha (milieu XVIIIe siecle). Apogee sous Kimweri ye Nyumbai (debut XIXe siecle-annees 1860). Rebellion de Kiva (1869) et eclatement du royaume. Execution du roi Mputa par les Allemands. Abolition du royaume par le gouvernement tanzanien en 1962."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Royaume centralise sous la dynastie Kilindi. Le roi (Simba Mwene) exercait une autorite basee sur la magie des pluies et des pouvoirs judiciaires uniques. Des chefs regionaux (souvent fils du roi) administraient les differentes parties du royaume et rendaient des comptes au roi via leurs proches maternels. Le systeme permettait la destitution des chefs incompetents.",
+      "clanOrganization": "La societe Shambaa est organisee en clans patrilineaires. Les principaux clans fondateurs incluent les Wakina Tui (fournisseurs de la capitale royale), les gens de Ziai (premiers a accueillir Mbegha) et les Nango (integres dans le royaume par Bughe). Les Mbughu maintinrent une identite separee jusqu'a l'ere coloniale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans l'organisation sociale et politique. Les alliances matrimoniales entre villages et lignages servaient a cimenter la cohesion politique. Les conflits inter-villages etaient arbitres par des anciens de la zone plus large. Les lignages maternels garantissaient la responsabilite des chefs regionaux.",
+      "religiousAuthority": "Le roi Kilindi tenait sa legitimite de la magie des pluies (pouvoir de retenir ou d'accorder la pluie). Des leaders rituels exterieurs aux villages presidaient les sacrifices aux ancetres et les rites de passage. Les Nango, integres dans le royaume, conserverent leurs propres pratiques religieuses, notamment les rassemblements periodiques a Shume."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Kisambaa (Shambala)",
+      "isoCodes": ["ksb"],
+      "dialects": [
+        "Dialecte de Lushoto (Usambara Occidental)",
+        "Dialecte de Mlalo et Mtae (nord de l'Usambara)",
+        "Dialecte de l'Usambara Oriental"
+      ],
+      "vehicularRole": "Le swahili est la langue de l'enseignement primaire et de la vie publique nationale. L'anglais est utilise dans l'enseignement secondaire et superieur. Le kisambaa est principalement oral; une traduction du Nouveau Testament existe. Les jeunes des zones urbaines tendent a privilegier le swahili."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Sacrifices aux ancetres pour maintenir la fertilite de la terre et la sante de la communaute (Mufika). Rites de passage a l'age adulte. Les mariages formaient des alliances politiques entre villages. Des rassemblements communautaires pour les festins et les danses etaient necessaires aux pratiques religieuses.",
+      "symbols": "Les bananiers sont le symbole central du territoire Shambaai (le nom signifie 'ou les bananiers prosperent'). Le systeme d'irrigation collectif symbolisait la cooperation communautaire. Les ornements en coquillages, le sel et les outils en fer servaient de moyens d'echange et de marqueurs de statut.",
+      "artsAndMusic": "Riche tradition musicale incluant des styles varies. Les jeunes generations preferent la musique occidentale (reggae, pop, rap). La memoire orale de l'histoire du royaume Kilindi est preserve dans des recits transmis de generation en generation. Des enregistrements des valeurs culturelles et de l'histoire sont en cours pour lutter contre l'erosion culturelle.",
+      "spiritualities": "Croyances traditionnelles Shambaa centrees sur la guerison de la terre et du corps. Culte des ancetres (Mufika). L'islam est la religion principale, adopte sous l'influence de la cote swahili. Le christianisme est present depuis les missions lutheriennes du XIXe siecle. Les pratiques ancestrales coexistent avec les religions abrahamiques."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Royaume de Shambaa (aussi appele Royaume d'Usambara), fonde au milieu du XVIIIe siecle par Mbegha. La dynaste Kilindi gouverna pendant plus de 232 ans. A son apogee sous Kimweri ye Nyumbai (debut XIXe siecle), le royaume couvrait de larges portions du Bonde et du Pare. Le nom Tanganyika lui-meme derive du kisambaa (tanga = terre cultivee, nyika = terres broussailleuses).",
+      "relationsWithNeighbors": "Relations complexes avec les Bondei (sujets qui se revolterent en 1869), les Zigua (parfois allies, parfois ennemis), les Pare (relations commerciales et culturelles), les Taita (partage de connaissances medicales et agricoles). Commerce intense avec les cites-etats de la cote swahili, notamment Pangani.",
+      "conflictsOrAlliances": "Raids Masai au XVIIIe siecle (catalyseurs de la centralisation politique). Guerre de Mbaruk. Rebellion de Kiva (1869) menee par les Bondei. Resistance a la penetration allemande a la fin du XIXe siecle. Execution du roi Mputa par les Allemands. Alliance avec les missionnaires de l'Universities Mission to Central Africa par certaines factions.",
+      "diaspora": "Une diaspora Shambaa est presente dans les villes tanzaniennes, notamment a Dar es Salaam, Kilimanjaro et Arusha. Les jeunes urbains sont encourages a retourner dans le Shambaai pour reapprendre les traditions et la langue. Des efforts communautaires sont en cours pour enregistrer l'histoire et les valeurs culturelles afin de lutter contre la perte d'identite culturelle."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 1461000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project (2025), PeopleGroups.org (2024)",
+      "distributionByCountry": [
+        {
+          "countryCode": "TZA",
+          "population": 1461000,
+          "notes": "Principalement dans les districts de Lushoto, Korogwe, Bumbuli et Muheza, region de Tanga"
+        }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Shambaa people – Wikipedia (https://en.wikipedia.org/wiki/Shambaa_people)",
+      "Shambaa Kingdom – Wikipedia (https://en.wikipedia.org/wiki/Shambaa_Kingdom)",
+      "Shambala language – Wikipedia (https://en.wikipedia.org/wiki/Shambala_language)",
+      "Shambala in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14890)",
+      "Shambaa – Encyclopedia.com (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/shambaa)",
+      "101 Last Tribes – Shambaa people (http://www.101lasttribes.com/tribes/shambaa.html)",
+      "Omniglot – Shambala language (https://www.omniglot.com/writing/shambala.htm)"
+    ]
   }
 }

@@ -2,67 +2,109 @@
   "id": "PPL_VENDA",
   "nameMain": "Venda",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": ["ZWE", "ZAF"],
+  "currentCountries": ["ZAF", "ZWE"],
   "content": {
     "appellations": {
       "mainName": "Venda",
-      "selfAppellation": "Venda",
-      "exonyms": ["Venda (terme utilisé par les Européens)"],
+      "selfAppellation": "Vhavenda",
+      "exonyms": [
+        "Venda",
+        "Bavenda",
+        "Vhangona (designation des habitants originels)"
+      ],
+      "originOfExonyms": "Le terme Venda est utilise en anglais et en afrikaans pour designer ce peuple. L'auto-designation est Vhavenda (singulier: Muvenda), signifiant le peuple venda. Les termes Vhangona et Vhambedzi designent les groupes consideres comme les plus anciens habitants de la region.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Vhavenda est l'auto-designation officielle. Le terme Venda est employe dans les contextes administratifs et academiques sud-africains. Le Tshivenda (ou Luvenda) est l'une des onze langues officielles de l'Afrique du Sud depuis 1994.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone S)",
-      "historicalRegion": "Afrique du Sud, ZWE",
-      "currentCountries": ["ZWE", "ZAF"]
+      "ethnoLinguisticGroup": "Bantou (Zone S, sous-groupe Sotho-Makua-Venda)",
+      "historicalRegion": "Region de Vhembe (province de Limpopo, Afrique du Sud), Montagne de Soutpansberg, et zone frontaliere Zimbabwe-Afrique du Sud",
+      "currentCountries": ["ZAF", "ZWE"]
     },
     "ethnicities": [
-      "Venda d'Afrique du Sud",
-      "Venda du Zimbabwe",
-      "Sous-groupes régionaux"
+      "Vhangona (habitants originels, including Vhadau, Vhakwevho, Vhafamadi, Vhania, Vhalea et Vhaluvhu)",
+      "Vhambedzi (consideres comme les premiers occupants de la terre venda)",
+      "Takalani / Ungani (groupe historique distinct)",
+      "Masingo (arrivants tardifs d'Afrique centrale et orientale)",
+      "Vhalaudzi (arrivants tardifs)",
+      "Clans Karanga-Rodzvi venus du Zimbabwe: Vhatwanamba, Vhanyai, Vhatavhatsindi, Vhalembethu"
     ],
     "origins": {
-      "ancientOrigins": "Les Venda sont originaires de la région de l'Afrique du Sud et du Zimbabwe. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S).",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
-      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+      "ancientOrigins": "Les Vhavenda sont etroitement associes au royaume de Mapungubwe (13e siecle), l'un des premiers etats complexes d'Afrique australe, dont la tradition orale fait du roi Shiriyadenga le premier roi venda. Ce royaume, situe a la confluence du Limpopo et du Shashe (site UNESCO), comptait environ 5 000 habitants en son centre et produisait de l'or, du cuivre et des ceramiques. Apres l'effondrement de Mapungubwe vers 1300 (en partie lie a un changement climatique), le pouvoir se deplaca vers le nord, vers le Grand Zimbabwe. Les Vhavenda d'aujourd'hui sont le resultat de migrations complexes combinant des populations autochtones Vhangona, des groupes Karanga-Rodzvi venus du Zimbabwe (a partir du 14e-15e siecle) et d'autres migrants bantous.",
+      "formationPeriod": "La langue tshivenda emerge comme dialecte distinct a partir du 16e siecle, suite aux interactions avec les groupes Sotho-Tswana et Kalanga. L'identite venda distincte se consolide sous la chefferie de Thoho-ya-Ndou (Tete-de-l'elephant), dont le kraal royal D'zata (ou Dzata) dans la montagne du Soutpansberg devient la capitale du royaume venda.",
+      "migrationRoutes": [
+        "Migration des ancetres bantous depuis l'Afrique centrale vers l'Afrique australe entre le 1er et le 15e siecle",
+        "Arrivee des groupes Karanga-Rodzvi depuis le Zimbabwe vers le 14e-15e siecle",
+        "Mouvement vers le sud depuis la Grande Zimbabwe vers le Limpopo apres l'effondrement de Mapungubwe",
+        "Migrations tardives des Masingo depuis l'Afrique centrale orientale via le rift est-africain"
+      ],
+      "historicalSettlementZones": [
+        "Mapungubwe (site UNESCO, confluence Limpopo-Shashe, actuellement province de Limpopo, ZAF)",
+        "Montagne du Soutpansberg (province de Limpopo, communes de Makhado et Thulamela)",
+        "Dzata / D'zata (capitale historique du royaume venda, Limpopo)",
+        "Thulamela (site archeologique, Parc national Kruger, ZAF)",
+        "Sud du Zimbabwe (Matobo, region frontaliere)"
+      ],
+      "unificationsOrDivisions": "Le royaume venda fut unifie sous la chefferie de Thoho-ya-Ndou (Tete-de-l'elephant) qui imposa son pouvoir sur les differents clans de la region. Apres sa mort, le royaume se fragmenta en plusieurs chefferies concurrentes (maisons des Ramabulana, Mphaphuli, Tshivhase et Netshiavha). Sous l'apartheid sud-africain, le bantoustan de Venda fut cree en 1979 et devint nominalement independant jusqu'a la reintegration en 1994 dans la nouvelle Afrique du Sud.",
+      "externalInfluences": "Influences shona et kalanga du Zimbabwe (langue, architecture en pierre). Contacts avec les Lemba (peuple aux traditions proches du judaisme) ayant integre une partie de la societe venda. Influence du christianisme a partir du 19e siecle (missions protestantes). Colonisation boer et britannique. Systeme d'apartheid (1948-1994) et creation du bantoustan de Venda (1979-1994).",
+      "majorHistoricalEvents": "Le royaume de Mapungubwe (1220-1300 env.) constitue l'apogee precoce de la civilisation venda. La capital D'zata de Thoho-ya-Ndou est declaree monument national en Afrique du Sud. Le bantoustan de Venda (1979) fut le seul etat venda formellement independant (non reconnu par la communaute internationale). Reintegration dans l'Afrique du Sud democratique en 1994. Le site de Mapungubwe est inscrit au patrimoine mondial de l'UNESCO en 2003. En 2010, la maison royale venda est officiellement reconnue par le gouvernement sud-africain."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "La societe vhavenda est organisee en chefferies hereditaires placees sous l'autorite d'un chef supremo (khosi ou kgosi). Les chefs (mahosi) gouvernent des territoires definis par l'appartenance clanique et la descendance patrilincaire. Un systeme de tribunaux traditionnels (makhadzi) permet de resoudre les conflits. La maison royale Ramabulana constitue la principale lignee royale, bien qu'elle ait ete contestee par la princesse Masindi Mphephu en 2016-2020 devant la Cour supreme.",
+      "clanOrganization": "Organisation en une trentaine de clans principaux (parmi lesquels: Lubimbi, Dzindou Dza Manenzhe, Vhafamadi, Vhadau, Rambuda, Vhakwevho, Vhambedzi, Vhania, Vhalea, Ndou, Vhasekwa, Vhaluvhu, Masingo et Rambau). Chaque clan a un totem animal. La structure patrilineaire determine appartenance clanique, heritage foncier et alliances matrimoniales.",
+      "ageClassSystems": "Les rituels d'initiation Domba et Vhusha organisent les transitions entre les groupes d'age. Le Domba est une initiation collective des jeunes filles avant le mariage. Le Murundu est le rite de circoncision pour les garcons. Les ainesse et le passage par ces rites conferent un statut social specifique.",
+      "roleOfLineages": "Les lignages patrilineaires (mahiga) sont les unites fondamentales de l'organisation sociale et fonciere. Le chef de lignage (nduna) joue un role de mediateur dans les conflits et d'intercesseur aupres des ancetres. Les femmes de lignage royal (makhadzi, soeurs du chef) detiennent un pouvoir spirituel et politique important, servant de gardiennes des traditions et de conseilleres du chef.",
+      "religiousAuthority": "Les chefs religieux traditionnels, les sangoma (devins-guerisseurs) et les profetes detiennent une autorite spirituelle importante. Le culte des ancetres (midzimu) est central dans la vie spirituelle venda. Le lac sacre Fundudzi, considere comme demeure des esprits ancestraux, est sous l'autorite spirituelle des pretresses venda. Les eglises chretiennes (catholiques, methodistes, africaines independantes) sont egalement tres presentes."
     },
     "languages": {
-      "mainLanguage": "Venda",
-      "vehicularRole": "Le venda est parlé par la majorité des Venda. L'anglais, l'afrikaans et d'autres langues sont également utilisés selon les pays."
+      "mainLanguage": "Tshivenda (Luvenda)",
+      "isoCodes": ["ven"],
+      "dialects": [
+        "Vhembe (dialecte principal, region de Makhado et Thulamela, Limpopo)",
+        "Tshivhula (variante avec des influences shona plus prononcees)",
+        "Phani (dialecte parle pres de la frontiere zimbabweenne)"
+      ],
+      "vehicularRole": "Le tshivenda est l'une des onze langues officielles de l'Afrique du Sud (depuis 1994). Il est parle par environ 1,48 million de personnes en Afrique du Sud (recensement 2022, 2,5% de la population), principalement dans la province de Limpopo (74,6% des locuteurs) et a Gauteng (23,2%). Le tshivenda est une langue isolee dans sa sous-famille, partageant davantage de similitudes grammaticales avec les langues shona du Zimbabwe qu'avec les autres langues bantous voisines. Il est enseigne dans les ecoles primaires de Limpopo."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies de mariage traditionnelles",
-      "source_1": "Rites de passage (initiation, fêtes de naissance)",
-      "source_2": "Cérémonies liées à l'agriculture",
-      "source_3": "Cérémonies religieuses chrétiennes",
-      "Symboles": "Symboles liés à l'agriculture, symboles culturels venda, symboles chrétiens",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (poterie, tissage)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+      "majorRites": "La danse Domba (danse du python) est le rite d'initiation feminin le plus celebre des Vhavenda. Les jeunes filles non mariees participent a cette initiation collective, dansant en file en formant une chaine sinueuse imitant le mouvement d'un serpent python, symbolisant la fertilite et le passage a l'age adulte. La ceremonie se deroule annuellement au bord du lac sacre Fundudzi ou dans d'autres sites sacres, accompagnee de chants, de tambours et d'un khorofela (tambour-calebasse). Le Vhusha est une phase prealable d'initiation feminine (apprentissage des devoirs conjugaux). Le Murundu est la circoncision masculine. Les rites de deuil et d'apaisement des ancetres (malombo) impliquent des sacrifices d'animaux et des ceremonies nocturnes de possession.",
+      "symbols": "Le python (Ndzou ya Tshivhula) est le symbole sacre le plus important, associe a la fertilite et aux ancetres. Le lac Fundudzi, lac sacre dans les montagnes du Soutpansberg (seul lac de montagne naturel du Limpopo), est le site le plus sacre des Vhavenda, considere comme demeure des esprits ancestraux et du serpent python sacre. L'etoile du matin (Tshelede) joue un role important dans l'astronomie venda traditionnelle. L'or de Mapungubwe (le rhinoceros en or de Mapungubwe) est le symbole historique national le plus celebre.",
+      "artsAndMusic": "La poterie venda est mondialement reconnue pour ses motifs geometriques caracteristiques. La sculpture sur bois produit notamment des statuettes et des instruments de musique. La musique est centrale dans la culture venda: les instruments incluent le tshihwana (harpe-arc), le mbila (xylophone), le mirliton (khavhikhavhi), les tambours tshikona et le flageolet. La danse tshikona (danse nationale venda pour hommes) est executee lors des ceremonies royales. L'art de la peinture murale geometrique (decorations en noir, blanc et rouge sur les murs des habitations) est une tradition feminine transmise de generation en generation.",
+      "spiritualities": "La religion traditionnelle venda (vhudzimu) est fondee sur le culte des ancetres (midzimu): les esprits des defunts veillent sur les vivants et peuvent etre invoques par des ceremonies specifiques. Le mwali (Dieu supreme, createur) est venere, souvent identifie a l'oracle Mwali du Zimbabwe. Le malombo est une ceremonie de possession par les esprits ancestraux, conduisant a la transe et utilisee dans la guerison. Les sangoma (devins-guerisseurs) jouent un role central entre le monde des vivants et des esprits. La christianisation est forte (missions du 19e siecle) et la grande majorite des Vhavenda se declare chretienne tout en maintenant des pratiques traditionnelles (syncrétisme)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora venda dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Le royaume de Mapungubwe (env. 1220-1300) fut l'un des premiers etats complexes d'Afrique australe, avec un commerce intercontinental (ivoire, or, ceramiques) atteignant la cote swahilie et l'Asie. Les ruines de Dzata (capitale de Thoho-ya-Ndou) constituent le monument historique venda le plus important. Les chefferies historiques principales etaient celles des Ramabulana (chefferie royale principale), Mphaphuli, Tshivhase et Netshiavha. Le site de Thulamela (Parc national Kruger, environ 1400-1700) est un autre temoignage archeologique de la civilisation venda.",
+      "relationsWithNeighbors": "Les Vhavenda ont entretenu des relations complexes avec les Lemba (communaute partageant des pratiques proches du judaisme, integree partiellement dans la societe venda), les Tsonga-Shangaan (voisins de l'est), les Pedi/Sepedi (voisins du sud-ouest) et les groupes shona du Zimbabwe (influences linguistiques et culturelles mutuelles). Le lac Fundudzi a servi de site de pelerinage regional depassant les frontieres ethniques.",
+      "conflictsOrAlliances": "Au 19e siecle, les Vhavenda resisterent aux incursions des Boers du Transvaal. La guerre venda (1898) opposa le chef Mphephu aux forces du Transvaal, aboutissant a la defaite et au repli du chef au Zimbabwe. Sous l'apartheid, la creation du bantoustan de Venda (1979) fut contestee par de nombreux Vhavenda, et les mouvements de liberation (dont le SACP et l'ANC) eurent des sympathisants au sein de la communaute.",
+      "diaspora": "Une diaspora venda se trouve notamment a Johannesburg et a Pretoria (province de Gauteng), ou 23,2% des locuteurs du tshivenda resident. Des communautes vhavenda existent egalement au Zimbabwe (estimees a plusieurs centaines de milliers de personnes), au Mozambique et dans les pays occidentaux."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 2500000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Statistics South Africa, recensement 2022: 1 480 565 locuteurs du tshivenda en Afrique du Sud (2,5% de la population). Estimations pour le Zimbabwe non officielles (peut-etre 800 000 a 1 million). Population totale estimee a environ 2,5 millions en 2025. Minority Rights Group et SIL Ethnologue.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 1600000,
+          "note": "Principalement province de Limpopo (district de Vhembe: Makhado, Thulamela, Musina, Mutale) et Gauteng"
+        },
+        {
+          "country": "ZWE",
+          "population": 900000,
+          "note": "Principalement dans le sud du Zimbabwe, frontalier avec le Limpopo; statistiques non officielles"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Venda language (ven)",
-      "CIA World Factbook – Country profiles",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Venda people. https://en.wikipedia.org/wiki/Venda_people",
+      "Wikipedia EN — Venda language. https://en.wikipedia.org/wiki/Venda_language",
+      "Kruger Park — African Tribe: Venda Culture. https://www.krugerpark.co.za/africa_venda.html",
+      "South Africa NET — Meet the Venda: Sacred People in a Sacred Place. https://southafrica.net/gl/en/travel/article/meet-the-venda-sacred-people-in-a-sacred-place",
+      "Minority Rights Group — Vhavenda in South Africa. https://minorityrights.org/communities/vhavenda-in-south-africa/",
+      "Statistics South Africa — Census 2022, Cultural Dynamics in South Africa (March 2025). https://www.statssa.gov.za",
+      "SIL Ethnologue — Venda language (ven). https://www.ethnologue.com/language/ven/",
+      "South Africa Info — Languages of South Africa (Tshivenda). https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
+      "UNESCO World Heritage — Mapungubwe Cultural Landscape. https://whc.unesco.org/en/list/1099",
+      "African History Extra — On the history of the Bantu expansion. https://www.africanhistoryextra.com/p/on-the-history-of-the-bantu-expansion"
     ]
   }
 }

@@ -1,0 +1,70 @@
+{
+  "id": "PPL_FULA_NOMADES",
+  "nameMain": "Fula (Nomades)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Fula (Nomades)",
+      "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (branche sénégambienne)",
+      "historicalRegion": "Bande sahélienne de l'Atlantique au Tchad",
+      "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"]
+    },
+    "ethnicities": [
+      "Fulɓe Mbororo (pasteurs nomades)",
+      "Fulɓe Wodaabe (pasteurs nomades)",
+      "Autres groupes nomades fula"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fula nomades sont originaires de la bande sahélienne. Leur mode de vie pastoral nomade remonte à plusieurs siècles. Ils font partie du groupe Atlantique de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes pastoraux distincts mais partageant une identité culturelle et linguistique commune. Mode de vie nomade pastoral.",
+      "externalInfluences": "Influence de l'islam, contacts avec les peuples sédentaires et autres pasteurs nomades."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en groupes pastoraux dirigés par des chefs traditionnels (Ardo). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Hiérarchie lignagère importante.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances pastorales.",
+      "religiousAuthority": "Autorité des oulémas (savants religieux) et des chefs religieux. L'islam sunnite structure la vie sociale."
+    },
+    "languages": {
+      "mainLanguage": "Fulfulde / Pulaar / Pular",
+      "vehicularRole": "Le fulfulde/pulaar est parlé par la majorité des Fula nomades. L'arabe, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses islamiques (Ramadan, Aïd)",
+      "source_1": "Cérémonies de beauté (sharo) chez les Wodaabe",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Cérémonies pastorales liées au bétail",
+      "source_4": "Rituels de transhumance",
+      "Symboles": "Bétail (bovins) comme symbole de richesse et de statut. Poésie élogieuse (ɗiogal). Calligraphie arabe.",
+      "Arts et musique": "",
+      "source_5": "Poésie élogieuse traditionnelle (ɗiogal)",
+      "source_6": "Musique traditionnelle (tambours, flûtes)",
+      "source_7": "Danse traditionnelle (notamment chez les Wodaabe)",
+      "source_8": "Artisanat lié au pastoralisme",
+      "Spiritualités": "Islam sunnite majoritaire (école malékite). Rôle central de l'islam dans la culture fula."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Migration limitée vers les zones urbaines et la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, UNFPA, recensements nationaux, et études démographiques régionales"
+    },
+    "sources": [
+      "SIL Ethnologue – Fulfulde language (ful)",
+      "CIA World Factbook – Country profiles",
+      "UNFPA – Sahel population data",
+      "A Study of the Wodaabe Pastoral Fulani*",
+      "Riesman, Paul – *Freedom in Fulani Social Life*",
+      "Recensements nationaux"
+    ]
+  }
+}

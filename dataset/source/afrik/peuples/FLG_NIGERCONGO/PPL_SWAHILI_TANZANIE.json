@@ -5,64 +5,100 @@
   "currentCountries": ["TZA"],
   "content": {
     "appellations": {
-      "mainName": "Swahili (Tanzanie)",
-      "selfAppellation": "Swahili",
-      "exonyms": ["Swahili (terme utilisé par les Européens)"],
+      "mainName": "Waswahili de Tanzanie",
+      "selfAppellation": "Waswahili / Waungwana",
+      "exonyms": ["Swahili", "Zanzibari", "Shirazi (sur l'ile de Zanzibar)"],
+      "originOfExonyms": "Le terme Swahili vient de l'arabe sawahil (cotes). Waungwana (hommes libres, civilises) etait l'auto-designation historique des Swahili pour se distinguer des autres groupes bantoues. Le terme Shirazi designe les descendants des migrants persans de Shiraz ayant fonde les dynasties cotières selon la tradition orale swahili (Chronique de Kilwa). Les Afro-Shirazis constituent aujourd'hui environ la moitie de la population de Zanzibar.",
+      "whyProblematic": null,
+      "contemporaryUsage": "En Tanzanie, les Waswahili sont l'ethnie nationale par excellence : le swahili est la langue officielle et nationale, et l'identite swahili s'est elargie pour englober quiconque parle swahili comme langue maternelle, est musulman et vit dans un centre urbain cotier. Zanzibar maintient une identite swahili particulierement vivace, marquee par l'architecture de Stone Town, la musique taarab et les cites-etats historiques de Kilwa.",
       "linguisticFamily": "FLG_NIGERCONGO",
-      "ethnoLinguisticGroup": "Bantou (Zone G)",
-      "historicalRegion": "Côte est de l'Afrique",
+      "ethnoLinguisticGroup": "Bantou Sabaki (Zone G)",
+      "historicalRegion": "Zanzibar (Unguja et Pemba), Kilwa Kisiwani, Dar es Salaam, Bagamoyo, Pangani, Mafia",
       "currentCountries": ["TZA"]
     },
     "ethnicities": [
-      "Swahili du Nord",
-      "Swahili du Sud",
-      "Sous-groupes régionaux"
+      "Shirazi (Afro-Shirazi) — descendants des migrants persans selon la tradition orale, environ 50% de la population de Zanzibar",
+      "Hadimu — groupe originel de l'ile d'Unguja (Zanzibar), souvent forces de travailler dans les plantations",
+      "Tumbatu — habitants de l'ile de Tumbatu, pres de Zanzibar, avec un dialecte swahili specifique (Kitumbatu)",
+      "Waswahili de Kilwa — descendants des habitants de la grande cite-etat medievale de Kilwa Kisiwani",
+      "Waswahili de Bagamoyo et Pangani — communautes cotieres continentales, historiquement importantes dans le commerce caravanier",
+      "Waswahili de Dar es Salaam — population urbaine swahili de la capitale economique"
     ],
     "origins": {
-      "ancientOrigins": "Les Swahili de Tanzanie sont originaires de la côte est de l'Afrique. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone G). Civilisation swahili ancienne.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Swahili du Kenya et du Mozambique.",
-      "externalInfluences": "Contacts avec les commerçants arabes, indiens et européens, influence de l'islam."
+      "ancientOrigins": "Les Swahili de Tanzanie descendent des populations bantoues qui s'etaient etablies sur la cote est-africaine et les iles adjacentes des le 6e siecle au plus tard. Des fouilles a Fukuchani (nord-ouest de Zanzibar) revelent une communaute agricole et halieutique etablie des le 6e siecle, avec moins de 1% de poterie importee du golfe Persique (5e-8e siecles). Des le milieu du 8e siecle, le commerce avec l'ocean Indien s'accelera. La Chronique de Kilwa (15e siecle) decrit l'arrivee de sultans persans de Shiraz au 10e siecle, fondateurs des dynasties cotieres, confirme par des analyses ADN de 2022-2023 qui montrent un melange africain (maternel, ~50%) et asiatique principalement persan (paternel, ~50%) dans les elites medievales de Kilwa et d'autres cites swahili.",
+      "formationPeriod": "Entre 900 et 1500 apr. J.-C. : emergence et apogee des cites-etats swahili. Kilwa Kisiwani atteignit son apogee aux 13e et 14e siecles, frappant sa propre monnaie et controlant le commerce de l'or du Zimbabwe. Stone Town de Zanzibar se developpa comme grand centre commercial sous les sultans omanais au 19e siecle. Zanzibar devint la capitale de l'empire commercial omanais en 1832 sous Said bin Sultan. Apres la revolution de 1964, la Tanzanie independante fit du swahili sa langue nationale.",
+      "migrationRoutes": [
+        "Expansion bantoue sabaki vers la cote et les iles (1er millenaire)",
+        "Arrivee de marchands persans et arabes (Shirazi) a partir du 10e siecle",
+        "Migration de marchands arabes omanais pendant la periode du sultanat omanais (17e-19e siecles)",
+        "Penetration commerciale vers l'interieur depuis Zanzibar et Bagamoyo (19e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Zanzibar (Unguja) — Stone Town (Mji Mkongwe) au centre-ouest de l'ile",
+        "Zanzibar (Pemba) — ile a forte production de girofle",
+        "Kilwa Kisiwani — cite insulaire au sud de Dar es Salaam, inscrite au patrimoine mondial UNESCO",
+        "Songo Mnara — ile proche de Kilwa, egalement site UNESCO",
+        "Bagamoyo — tete de pont du commerce caravanier vers l'interieur",
+        "Dar es Salaam — fondee par le Sultan Majid de Zanzibar vers 1865"
+      ],
+      "unificationsOrDivisions": "Les Swahili de Tanzanie sont historiquement divises entre les habitants des iles (Zanzibar, Pemba, Mafia) et ceux du continent (Kilwa, Bagamoyo, Dar es Salaam, Pangani). Les distinctions internes incluent les Shirazi (ascendance persane revendiquee), les Hadimu (population originelle de Zanzibar) et les descendants d'esclaves importes du continent. La revolution zanzibarie de 1964 effaça formellement ces distinctions, mais des tensions subsistent entre Zanzibar et le gouvernement central tanzanien.",
+      "externalInfluences": "Commerce arabe et islamisation (9e-15e siecles). Arrivee des Portugais (1498-1698) qui tenterent sans succes de dominer le commerce de l'ocean Indien. Domination omanaise (1698-1964) : les sultans omanais Al-Busaidi leverent Zanzibar au rang de capitale d'un empire commercial. Colonisation allemande du Tanganyika (1884-1918). Colonisation britannique (1918-1961 pour le Tanganyika, jusqu'en 1963 pour le protectorat de Zanzibar). Union Tanzanie (1964) fusionnant Tanganyika et Zanzibar.",
+      "majorHistoricalEvents": "13e-14e siecles : apogee du Sultanat de Kilwa, qui controlait la totalite de la cote swahili et frappait sa propre monnaie. 1498 : arrivee de Vasco da Gama a Zanzibar et Mombasa. 1698 : Oman expulse les Portugais de Mombasa et etablit son controle sur la cote. 1832 : Said bin Sultan deplace sa capitale de Muscat a Stone Town. 12 janvier 1964 : revolution de Zanzibar renversant le sultanat arabe. 26 avril 1964 : union de Zanzibar et du Tanganyika pour former la Tanzanie. 2000 : classement de Stone Town de Zanzibar au patrimoine mondial de l'UNESCO."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en cités-États traditionnelles. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+      "traditionalPoliticalSystem": "Les cites-etats swahili medievales (Kilwa, Zanzibar, Mafia) etaient gouvernees par des sultans dont l'autorite etait legitimee par la genealogie arabe ou shirazi et par le statut islamique. Le sultan exerçait un pouvoir absolu sur le commerce et levait des taxes sur les marchandises transitant par le port. A l'echelon local, des conseils d'anciens (wazee) et des cadis (kadhi) gereraient les affaires communautaires selon la loi islamique.",
+      "clanOrganization": "Organisation en lignages patrilineaires (ukoo). Les distinctions sociales historiques entre Waungwana (libres), esclaves et artisans ont ete formellement abolies mais subsistent dans les memoires. A Zanzibar, les Shirazi et les familles arabes omanaises occupaient historiquement les positions sociales les plus elevees.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, les droits fonciers et les alliances matrimoniales. La revendication d'une ascendance shirazi (persane) ou arabe conferait un prestige eleve. La transmission de la culture et de la langue swahili se fait cependant principalement par la ligne maternelle, comme le confirment les analyses ADN medievales.",
+      "religiousAuthority": "Islam sunnite shafiite majoritaire. Forte presence de confreries soufies (Qadiriyya, Shadhiliyya, Alawiyya). Les kadhi regissent le droit familial a Zanzibar. Le Mufti de Zanzibar joue un role d'autorite religieuse important. Culte des saints (ziara) et pratiques de divination islamique (ramli) coexistent avec l'orthodoxie."
     },
     "languages": {
-      "mainLanguage": "Swahili",
-      "vehicularRole": "Le swahili est parlé par la majorité des Swahili de Tanzanie. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Kiswahili (swahili de Zanzibar, Kiunguja)",
+      "isoCodes": ["swa", "swh"],
+      "dialects": [
+        "Kiunguja — dialecte de Zanzibar (Unguja), base du swahili standard depuis le 19e siecle",
+        "Kitumbatu — dialecte de l'ile de Tumbatu (nord de Zanzibar), plus conservateur et moins arabise",
+        "Kimrima — dialecte cotier de la Tanzanie continentale (Dar es Salaam, Bagamoyo, Tanga)",
+        "Kimakunduchi — dialecte du sud de Zanzibar, plus archaique",
+        "Kipemba — dialecte de l'ile de Pemba"
+      ],
+      "vehicularRole": "Le swahili (Kiswahili) est la langue nationale et officielle de la Tanzanie, co-officielle avec l'anglais. C'est la langue d'instruction de base a l'ecole primaire et la principale langue administrative. Avec 150 a 200 millions de locuteurs (natifs et seconde langue) dans toute l'Afrique, le swahili est la langue africaine la plus parlee. Il est egalement langue officielle au Kenya, en Ouganda, au Rwanda, en RDC et dans l'Union africaine."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
-      "source_2": "Festivals traditionnels",
-      "source_3": "Cérémonies religieuses islamiques",
-      "Symboles": "Symboles culturels swahili, symboles islamiques",
-      "Arts et musique": "",
-      "source_4": "Architecture swahili (maisons en pierre)",
-      "source_5": "Musique traditionnelle (taarab)",
-      "source_6": "Danse traditionnelle",
-      "source_7": "Artisanat (tissage, poterie)",
-      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+      "majorRites": "Taarab : genre musical et ceremoniel swahili par excellence, joue lors des mariages et celebrations, alliant instruments arabes (oud, qanun), indiens (tabla) et africains (ngoma). Circoncision (tohara) : rite de passage masculin accompagne de celebrations. Mariage islamique (nikah) en plusieurs etapes, avec hena (mehndi), ceremonies de benediction et grande fete communautaire. Unyago (rite d'initiation feminin) : ceremonies marquant la puberte feminine avec chants et enseignements. Funerailles islamiques : inhumation rapide, prieres, condoleances pendant trois jours.",
+      "symbols": "Stone Town de Zanzibar (Mji Mkongwe) : symbole par excellence de la civilisation swahili, avec ses portes en bois sculpte (milango ya kuchonga) ornees de clous de cuivre. Architecture en pierre de corail et chaux melant influences arabes, indiennes et africaines. Le kanga (tissu imprime feminin avec citation) et le kikoy (tissu masculin) sont des marqueurs identitaires forts. Les epices de Zanzibar (girofle, cannelle, cardamome, poivre) symbolisent l'histoire commerciale de l'ile.",
+      "artsAndMusic": "Taarab : genre musical emblematique de Zanzibar, developpe a la fin du 19e siecle sous l'influence du sultan Bargash bin Said qui invita un musicien egyptien a Zanzibar. Orchestres comportant oud, qanun (cithare), violon, violoncelle, contrebasse, accordeon, tabla, riqq (tambourin) et la voix, souvent feminine. Deux styles majeurs : le taarab classique (orchestres en tenue formelle) et le modern taarab popularise depuis les annees 1980. Architecture swahili de Zanzibar et Kilwa : chefs-d'oeuvre de la construction en pierre corail avec cours interieures, balcons en bois sculpte et niches decoratives. Poesie classique swahili (mashairi, utenzi) : tradition litteraire ecrite en caracteres arabes (ajami) depuis le 17e siecle. Artisanat : sculpture sur bois, fabrication de bijoux en or et argent, poterie.",
+      "spiritualities": "Islam sunnite shafiite, present depuis le 9e siecle. Confreries soufies (Qadiriyya, Shadhiliyya) actives dans les ceremonies de mawlid et les pratiques spirituelles. Croyances en les djinns (majini) et practiques de protection : hirizi (amulettes coraniques), ruqya (exorcisme coranique). Culte des ancetres integre dans la pratique islamique. Ceremonies de possession par les esprits (zar) maintenues dans certaines communautes. Certaines populations pratiquent un christianisme coastal. La tradition sorcellerie (uchawi) et contrebalancee par les pratiques islamiques de protection."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora swahili dans les grandes villes et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Sultanat de Kilwa (10e-16e siecles) : l'une des plus puissantes cites-etats swahili, qui a son apogee aux 13e et 14e siecles controlait toute la cote swahili et dominait le commerce de l'or du Zimbabwe. Kilwa frappait sa propre monnaie en cuivre et en argent. Ibn Battuta visita la cite en 1331-1332 et la decrivit comme l'une des plus belles villes du monde. Sultanat de Zanzibar (1856-1964) : sultanat omanais puis autonome, qui controla une vaste region de l'Afrique de l'est. Royaumes de Mafia, Mombasa, Malindi et autres cites-etats swahili entre le 9e et le 16e siecles.",
+      "relationsWithNeighbors": "Relations commerciales avec l'arriere-pays africain pour l'ivoire, l'or, les esclaves et les produits alimentaires. Partenariats avec les marchands arabes, indiens et persans dans les reseaux de l'ocean Indien. Relations avec les peuples Makonde, Zaramo, Nyamwezi de l'interieur de la Tanzanie via les routes caravanieres. Contacts avec Madagascar et les Comores. Sous Zanzibar, les routes commerciales s'etendaient jusqu'au Congo.",
+      "conflictsOrAlliances": "1498-1698 : tentatives portugaises de monopoliser le commerce de l'ocean Indien, resistance des cites-etats swahili. 1698 : Oman expulse les Portugais de Mombasa avec l'aide des cites swahili locales. 19e siecle : tensions entre le sultanat de Zanzibar et les puissances europeennes (Allemagne, Royaume-Uni) lors du scramble for Africa. 1888-1889 : revolte de l'Arabie (Abushiri revolt) contre la colonisation allemande de la cote tanzanienne. 1964 : revolution de Zanzibar renversant le sultanat arabe, tuant plusieurs milliers d'Arabes et d'Asiatiques.",
+      "diaspora": "La diaspora swahili de Tanzanie est internationale. Des communautes existent en Oman (voir fiche PPL_SWAHILI_OMAN), au Kenya, en Ouganda, au Rwanda et dans de nombreux pays d'Afrique de l'est. Des Tanzaniens d'identite swahili sont presents en Europe, en Amerique du Nord et dans le Golfe. Zanzibar envoie egalement des travailleurs saisonniers vers les pays arabes et les pays du Golfe."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 1200000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+      "source": "Estimation difficile car l'identite swahili est fluide en Tanzanie. La population de Zanzibar est d'environ 1,6 million (recensement tanzanien 2022), dont la grande majorite est d'identite swahili. Les Waswahili stricto sensu (locuteurs natifs, musulmans, vivant dans les centres urbains cotiers) representent entre 1 et 1,5 million de personnes en Tanzanie. Ethnologue SIL (2024) estime a environ 2 millions les locuteurs natifs du swahili en Tanzanie. Population totale du pays : environ 65 millions (2025).",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1200000,
+          "note": "Concentres a Zanzibar (Unguja et Pemba), Dar es Salaam, Kilwa, Bagamoyo, Pangani et autres villes cotieres"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Swahili language (swa)",
-      "CIA World Factbook – Tanzania",
-      "Recensements nationaux",
-      "Études anthropologiques sur les peuples bantous"
+      "Wikipedia EN — Swahili people. https://en.wikipedia.org/wiki/Swahili_people",
+      "Wikipedia EN — Stone Town. https://en.wikipedia.org/wiki/Stone_Town",
+      "Wikipedia EN — Kilwa Kisiwani. https://en.wikipedia.org/wiki/Kilwa_Kisiwani",
+      "UNESCO World Heritage Centre — Ruins of Kilwa Kisiwani and Ruins of Songo Mnara. https://whc.unesco.org/en/list/144/",
+      "Wikipedia EN — Taarab. https://en.wikipedia.org/wiki/Taarab",
+      "NPR — The Hot New Musical Trend In Zanzibar Is From The 1880s. https://www.npr.org/sections/goatsandsoda/2018/09/29/650073622/the-hot-new-musical-trend-in-zanzibar-is-from-the-80s-the-1880s",
+      "National Geographic — Tanzania's Zanzibar is the cradle of African Swahili culture. https://www.nationalgeographic.com/travel/article/why-tanzanias-zanzibar-is-the-cradle-of-african-swahili-culture",
+      "The Conversation — Ancient DNA is restoring the origin story of the Swahili people. https://theconversation.com/ancient-dna-is-restoring-the-origin-story-of-the-swahili-people-of-the-east-african-coast-201154",
+      "Pan African Music — Taarab in Zanzibar. https://pan-african-music.com/en/taarab-zanzibar/",
+      "Ethnologue SIL — Swahili (swa). https://www.ethnologue.com/language/swa"
     ]
   }
 }

@@ -2,59 +2,108 @@
   "id": "PPL_TONGA",
   "nameMain": "Tonga",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["MWI"],
+  "currentCountries": ["ZMB", "ZWE", "MOZ"],
   "content": {
     "appellations": {
       "mainName": "Tonga",
-      "selfAppellation": "",
-      "exonyms": ["Tonga (terme utilisé par les Européens)"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Batonga",
+      "exonyms": [
+        "Batonga",
+        "Ba-Tonga",
+        "We (Tonga des vallees)",
+        "Tonga du Plateau",
+        "Tonga du Gwembe",
+        "Gwembe Tonga"
+      ],
+      "originOfExonyms": "Batonga utilise le prefixe bantou Ba- (peuple). We (ou Tone Valley Tonga) designe specifiquement les Tonga de la vallee du Gwembe deplaces par le barrage de Kariba. Le nom Tonga derive vraisemblablement du proto-bantou; selon des sources orales Tonga, le Zambeze s'appelait MWEELU a l'origine.",
+      "whyProblematic": "Le nom Tonga est partage par plusieurs peuples sans lien de parente: les Tonga du Malawi (groupe Tumbuka), les Tsonga d'Afrique du Sud et du Mozambique, et les Tonga de Zambie/Zimbabwe. Ces denominations homonymes causent des confusions frequentes dans les sources.",
+      "contemporaryUsage": "Batonga est l'appellation usuelle dans les communautes. Tonga est le terme officiel en Zambie (14% de la population, deuxieme groupe ethnique) et au Zimbabwe (300 000 personnes dans le district de Binga).",
       "linguisticFamily": "FLG_BANTU",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord du Malawi (lac Malawi)",
-      "currentCountries": ["MWI"]
+      "ethnoLinguisticGroup": "Bantu du Sud (groupe Tonga-Leya-Ila)",
+      "historicalRegion": "Province du Sud (Zambie), Plateau et Vallee du Gwembe, District de Binga (Zimbabwe)",
+      "currentCountries": ["ZMB", "ZWE", "MOZ"]
     },
-    "ethnicities": ["Tonga"],
+    "ethnicities": [
+      "Tonga du Plateau",
+      "Gwembe Tonga (We)",
+      "Toka (Tokaleya)",
+      "Tonga du Zimbabwe (Binga)"
+    ],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord du Malawi (lac Malawi)"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Tonga sont consideres comme les habitants bantous originels de Zambie. Selon la tradition orale, ils seraient arrives depuis l'est, pres de la grande mer (region des Grands Lacs, Kenya/Ouganda actuels), vers 1100 apr. J.-C. Certaines sources orales evoquent une presence depuis 900 av. J.-C. L'historiographie zambienne les identifie comme faisant partie des premieres vagues bantoues arrivees via la route orientale des Grands Lacs, avant les grandes migrations luba-lunda.",
+      "formationPeriod": "Etablissement bantou initial entre le Ier et le IIe millenaire; organisation definitive avant le XIVe siecle. Les Tonga ont participe aux echanges commerciaux d'Ingombe Ilede avec le Grand Zimbabwe et les marchands swahili.",
+      "migrationRoutes": [
+        "Migration depuis les Grands Lacs (est) vers le plateau et la vallee du Zambeze (sud de la Zambie actuelle)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Sud de la Zambie (plateau de Kalomo-Monze)",
+        "Vallee du Gwembe (le long du Zambeze)",
+        "District de Binga (nord-ouest du Zimbabwe)",
+        "Bandes le long du Chirundu, Kariba, Mola et Victoria Falls"
+      ],
+      "unificationsOrDivisions": "Les Tonga n'ont jamais forme d'entite politique unique. Societe acephale traditionnelle organisee en communautes villageoises independantes, sans chefs centralises. Apres 1923, les Britanniques organiserent trois conseils (Native Authorities): Plateau Tonga, Toka-Leya et Gwembe Tonga.",
+      "externalInfluences": "Au XIXe siecle, les Ndebele (Matabele) de Mzilikazi et Lobengula consideraient les Tonga comme tres pacifiques. Arrivee des missionnaires en debut du XXe siecle. Construction du barrage de Kariba (1957-1959): deplacement force de 57 000 Tonga de la vallee du Gwembe (environ 34 000 cote zambienne, 23 000 cote rhodesienne). Allocation de terres infertiles sur les plateaux.",
+      "majorHistoricalEvents": "1100 apr. J.-C. (estimation): arrivee dans la region. Echanges a Ingombe Ilede avec le Grand Zimbabwe (XIVe-XVe siecles). 1835-1868: incursions ndebele; les Tonga resistent passivement. 1900-1924: etablissement des reservations autochtones coloniales. 1957-1959: construction du barrage de Kariba; 57 000 Tonga deplaces de force (evenement traumatique central). 1964: independance de la Zambie. 1980: independance du Zimbabwe. 2024: le president zambien Hakainde Hichilema (Tonga) represente ce peuple au plus haut niveau de l'Etat."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe traditionnellement acephale et egalitaire: pas de chefs hereditaires centralises. Les decisions etaient prises par consensus communautaire. Chaque village fonctionnait de maniere independante. Sous la colonisation britannique, trois autorites natives (Plateau Tonga, Toka-Leya, Gwembe Tonga) ont ete creees par l'administration.",
+      "clanOrganization": "Organisation matrilineaire. Les lignages maternels transmettent l'identite clanique, les droits fonciers et les obligations rituelles. Les clans (mwiiyo) jouent un role central dans les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages matrilineaires structurant: transmission du nom, des droits sur les terres et des responsabilites rituelles. Les rainmakers (basimushishi) heritent leurs pouvoirs de facon matrilineaire.",
+      "religiousAuthority": "Les rainmakers (basimushishi) sont les autorites rituelles les plus importantes. Ils medient avec les esprits ancestraux (mizimu) pour obtenir les pluies et les bonnes recoltes. Chaque clan possede ses propres esprits ancestraux."
     },
     "languages": {
-      "mainLanguage": "Tonga (toi)",
+      "mainLanguage": "Chitonga (Tonga du Plateau)",
       "isoCodes": ["toi"],
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "dialects": [
+        "Chitonga du Plateau (toi)",
+        "We (dialecte de la vallee du Gwembe)",
+        "Chitokaleya (dialecte Toka-Leya)"
+      ],
+      "vehicularRole": "Le chitonga est parle par environ 1,38 million de personnes en Zambie et 137 000 au Zimbabwe. C'est l'une des sept langues officiellement reconnues comme langues regionales en Zambie (langue de la Province du Sud). L'anglais est la langue officielle nationale. La langue tonga du Malawi (chitonga de Nkhatabay) est une langue differente classee dans une autre zone bantoue."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Lwiindi Gonde: festival annuel de la Province du Sud, ceremonie d'action de graces aux dieux pour les bonnes pluies et les recoltes; rassemblement de toutes les communautes tonga. Ceremonies des rainmakers (basimushishi): rituels propitiatoires pour la pluie, notamment le Lwiindi. Rites d'initiation feminins (bwali). Ceremonies mortuaires avec role important des esprits mizimu des ancetres.",
+      "symbols": "Nyami Nyami: esprit-serpent du Zambeze, figure mythologique centrale des Tonga de la vallee; la construction du barrage de Kariba est interpretee comme une separation forcee de Nyami Nyami de son epouse. Le Zambeze est sacre. Le betail (bovins) est un symbole de richesse et de prestige.",
+      "artsAndMusic": "Musique a la ngoma (tambour). Paniers tresses et poteries decorees caracteristiques. Chants ceremonials lors du Lwiindi. Danse traditionnelle. Artisanat lie au fleuve: pirogue, instruments de peche.",
+      "spiritualities": "Culte des ancetres: les esprits mizimu des defunts peuvent benir ou punir les vivants. Les basimushishi (rainmakers) communiquent avec les esprits pour les pluies. Croyance en Nyami Nyami, esprit protecteur du Zambeze. Syncretisme avec le christianisme (depuis les missionnaires du debut du XXe siecle). Croyances animistes liees a la nature (arbres, rivieres, rochers)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises. Organisation en chefferies villageoises autonomes. Sous la colonisation: Plateau Tonga Native Council, Toka-Leya Native Authority, Gwembe Tonga Native Authority. Commerce a Ingombe Ilede (XIVe-XVe siecles) avec le Grand Zimbabwe.",
+      "relationsWithNeighbors": "Relations commerciales avec les marchands swahili via Ingombe Ilede. Coexistence avec les Tokaleya (Toka-Leya), groupes apparentes dans la region de Livingstone. Patronage des Kafue Twa (peuple pygmoide de la region). Pression ndebele au XIXe siecle. Tensions avec l'Etat colonial lors du deplacement de Kariba (1957-1959).",
+      "conflictsOrAlliances": "1957-1959: resistance au deplacement pour le barrage de Kariba. Les Tonga du Gwembe tenterent de resister physiquement mais furent deplaces de force par les gouvernements de Rhodesie du Nord et de Rhodesie du Sud. Leurs sanctuaires et tombes ancestrales furent noyes. Un groupe de Tonga du Zimbabwe fut a nouveau deplace en 1976-1977 par la guerre de liberation rhodesienne.",
+      "diaspora": "Presence tonga dans les grandes villes zambiennes (Lusaka, Livingstone, Mazabuka). Le president zambien Hakainde Hichilema (elu en 2021) est Tonga."
     },
     "demography": {
-      "totalPopulation": 800,
+      "totalPopulation": 1900000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Estimation: 1,38 million de locuteurs chitonga en Zambie + 300 000 au Zimbabwe + minorites au Mozambique (Wikipedia, Chalo Chatu)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 1500000,
+          "note": "Zambie - Province du Sud, environ 14% de la population nationale (etude.com)"
+        },
+        {
+          "country": "ZWE",
+          "population": 300000,
+          "note": "Zimbabwe - District de Binga, region de Kariba et Matabeleland"
+        },
+        {
+          "country": "MOZ",
+          "population": 100000,
+          "note": "Mozambique - minorite dans les provinces du nord-ouest"
+        }
+      ]
     },
-    "sources": []
+    "sources": [
+      "Tonga people (Zambia and Zimbabwe) – Wikipedia EN (https://en.wikipedia.org/wiki/Tonga_people_(Zambia_and_Zimbabwe))",
+      "Tonga – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/tonga/)",
+      "The Tonga: Left High and Dry – The New Humanitarian, 2007 (https://www.thenewhumanitarian.org/report/74139/zambia-zimbabwe-tonga-left-high-and-dry)",
+      "Tonga people – Chalo Chatu, Zambia Online Encyclopedia (http://www.chalochatu.org/index.php?title=Tonga_people)",
+      "History of Zambia – Wikipedia EN (https://en.wikipedia.org/wiki/History_of_Zambia)",
+      "Tonga (Batonga) Tribe – TribeGuess (https://www.tribeguess.com/learn/tonga-zambia)",
+      "Mashingaidze T.M., The Zimbabwean Tonga in the aftermath of the Kariba Dam Induced Displacements – Journal of African Historical Studies, 2024 (https://www.jstage.jst.go.jp/article/jahss/9/1/9_21/_pdf)"
+    ]
   }
 }

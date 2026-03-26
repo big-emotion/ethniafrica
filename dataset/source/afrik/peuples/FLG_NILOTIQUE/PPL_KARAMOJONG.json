@@ -6,63 +6,99 @@
   "content": {
     "appellations": {
       "mainName": "Karamojong",
-      "selfAppellation": "Karamojong",
-      "exonyms": ["Karamojong (terme utilisé par les Européens)"],
+      "selfAppellation": "Ngikarimojon / Ngakarimojong (langue : ngakarimojong)",
+      "exonyms": ["Karimojong", "Karamojon", "Karamojong"],
+      "originOfExonyms": "Le nom Karamojong derive de la formule ekar ngimojong signifiant les vieux hommes ne peuvent plus marcher ou les vieux hommes se sont assis, en reference aux anciens qui refuserent de poursuivre la migration vers le sud depuis le pays Jie (Najie) lors de la fragmentation du proto-groupe Ateker. Ceux qui continuerent la migration vers l'ouest formerent les Iteso, les Kumam et les Langi. Dans la langue ngakarimojong, le prefixe ngi- designe les gens, nga- la langue, et l'absence de prefixe la terre.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Karamojong (ou Karimojong dans certaines sources) est couramment utilise en anglais et en ougandais. La communaute se designe elle-meme Ngikarimojon. La region habitee est appelee Karamoja.",
       "linguisticFamily": "FLG_NILOTIQUE",
-      "ethnoLinguisticGroup": "Nilotique oriental",
-      "historicalRegion": "Nord-est de l'Ouganda",
+      "ethnoLinguisticGroup": "Nilotique oriental — cluster Ateker (ou cluster Karamojong), sous-groupe Teso-Turkana",
+      "historicalRegion": "Karamoja, sous-region du nord-est de l'Ouganda (environ 27 200 km carres de savane semi-aride)",
       "currentCountries": ["UGA"]
     },
     "ethnicities": [
-      "Karamojong du Nord",
-      "Karamojong du Sud",
-      "Sous-groupes régionaux"
+      "Matheniko (section est, autour du mont Moroto, district de Moroto)",
+      "Pian (section sud, districts de Nakapiripirit et Nabilatuk)",
+      "Bokora (section ouest, district de Napak)",
+      "Dodoth (section nord, district de Kaabong — parfois traites comme groupe distinct)",
+      "Jie (section centrale, district de Kotido — souvent traites comme groupe distinct, voir PPL_JIE)",
+      "Tepeth (groupe distinct sur le mont Moroto, absorbant partiellement dans la sphere karamojong)",
+      "Pokot (district d'Amudat, frontier Kenya-Ouganda)"
     ],
     "origins": {
-      "ancientOrigins": "Les Karamojong sont originaires du nord-est de l'UGA, dans la région aride. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe nilotique oriental.",
-      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Tradition pastorale forte.",
-      "externalInfluences": "Contacts avec les peuples bantous, influence du christianisme."
+      "ancientOrigins": "Les Karamojong font partie du cluster Ateker (ou cluster Karamojong), ensemble de peuples nilotiques orientaux apparentes incluant les Jie, les Dodoth, les Turkana (Kenya), les Iteso, les Kumam, les Toposa, les Jiye (Soudan du Sud) et les Nyangatom. Selon la tradition orale et les recherches ethnographiques (Gulliver, Dyson-Hudson), ce groupe migra d'Abyssinie (Ethiopie actuelle) vers 1600-1700 apr. J.-C. Lors de leur migration vers le sud-ouest, ils se fragmenterent : les Turkana partirent vers le Kenya, les Dodoth s'etablirent dans le nord de la Karamoja (Apule), les Jie se separerrent pour occuper Kotido, et le groupe principal (sept clans) continua vers le sud pour occuper la Karamoja meridionale. Une partie continua encore vers l'ouest pour former les Iteso, les Kumam et les Langi.",
+      "formationPeriod": "Identite karamojong consolidee entre le 17e et le 19e siecle. Les sept clans originels du groupe principal fusionnerent en trois grandes sections : Matheniko (est), Pian (sud) et Bokora (ouest). Les Karamojong acquirent rapidement des armes a feu aupres des commercants arabes, swahili et europeens au 19e siecle (commerce de l'ivoire), ce qui transforma profondement leur capacite guerriere.",
+      "migrationRoutes": [
+        "Migration depuis l'Abyssinie (Ethiopie) vers le sud-ouest, avec le proto-groupe Ateker, vers 1600-1700",
+        "Fragmentation pres de la frontiere kenya-ethiopienne : Turkana vers le Kenya, Dodoth vers le nord de la Karamoja (Apule)",
+        "Le groupe principal (sept clans) descend vers la Karamoja meridionale et se divise en Matheniko, Pian et Bokora",
+        "Un groupe secondaire continue vers l'ouest pour former les Iteso, Kumam et Langi"
+      ],
+      "historicalSettlementZones": [
+        "Karamoja (nord-est de l'Ouganda) : plateaux semi-arides, savane, zones de paturage",
+        "District de Moroto (Matheniko, autour du mont Moroto)",
+        "Districts de Nakapiripirit et Nabilatuk (Pian)",
+        "District de Napak (Bokora)",
+        "Zones de transhumance dans les districts voisins d'Abim, Kotido, Kaabong et vers le Kenya (Turkana)"
+      ],
+      "unificationsOrDivisions": "Les trois grands clans (Matheniko, Pian, Bokora) constituent les subdivisions principales des Karamojong proprement dits, issus de la fusion des sept clans originels. Les Dodoth (nord, Kaabong) et les Jie (centre, Kotido) sont parfois traites comme des groupes distincts du cluster Karamojong. L'identite karamojong est renforcee par la langue commune (ngakarimojong), le systeme de classes de generation (asapan/akiriket) et la culture pastorale.",
+      "externalInfluences": "Commerce de l'ivoire au 19e siecle : introduction des armes a feu (fusils). Resistance a la colonisation britannique (sous-developpement delibere de la Karamoja par les Britanniques puis par le gouvernement post-independance). Maxime de Milton Obote (1963) : Nous n'attendrons pas que la Karamoja se developpe. Programmes de desarmement du gouvernement ougandais : 2001-2011 (campagne KIDDP) puis repris en 2023. Influence des ONG et des missions chretiennes depuis le 20e siecle.",
+      "majorHistoricalEvents": "1600-1700 : migration depuis l'Ethiopie et etablissement en Karamoja. 19e siecle : acquisition de fusils via le commerce de l'ivoire (transformation de la capacite guerriere). 1911 : premiere pacification par les King's African Rifles britanniques. 1963 : declaration du premier ministre Obote abandonnant le developpement de la Karamoja. 2000 : estimation de 100 000 a 150 000 armes en circulation. Decembre 2000 : tentative de desarmement volontaire (moins de 10 000 armes collectees). 2001-2002 : desarmement militaire (UPDF) : plus de 10 000 armes collectees. 2005 : lancement du Karamoja Integrated Disarmament and Development Programme (KIDDP). 2011 : fin de la campagne de desarmement. 2019-2020 : reprise des raids de betail sous forme criminelle commercialisee. 2023 : reprise du desarmement par l'UPDF."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Organisation en groupes d'âge. Système de conseils d'anciens pour la gouvernance.",
-      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
-      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
-      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+      "traditionalPoliticalSystem": "Societe acephale fondee sur un systeme de classes de generation (asapan) et un systeme d'assemblees sacrees (akiriket). L'akiriket est le nom donne a la fois au terrain ceremoniel sacre de chaque quartier (neighbourhood) et a l'assemblee des hommes inities qui s'y reunit. Le terme akiriket signifie se joindre ensemble et aussi guider, diriger. Chaque generation a son arbre sacre sous lequel elle s'assied en demi-cercle lors des assemblees, face a Apule (lieu de dispersion ancestrale). Les anciens de la generation ainee siegent en premier sous l'arbre, suivis des membres de la generation cadette sur les cotes du demi-cercle. Les femmes et les non-inities, s'ils sont presents, doivent rester a distance.",
+      "clanOrganization": "Organisation en trois grandes sections territoriales (Matheniko, Pian, Bokora), elles-memes divisees en sous-sections et en clans patrilineaires exogames. La fidelite va d'abord au clan, puis a la section, puis a l'ensemble karamojong. Le systeme de classes de generation transcende les divisions claniques en creant des solidarites horizontales entre hommes d'une meme generation.",
+      "ageClassSystems": "Systeme de classes de generation base sur la generation et non sur l'age (ce qui le distingue de nombreux systemes d'age-set africains). Deux classes de generation alternees : la generation ainee (ngikasuban) et la generation cadette (ngikoria). Chaque classe gouverne pendant environ 50 ans, puis transfiere le pouvoir a la generation suivante. La tension non resolue entre generations conduit au changement de pouvoir. Le prochain transfert etait attendu vers 2013 selon Wikipedia. L'initiation (asapan) se fait autour de 30 ans et implique l'abattage d'un taureau sacrificiel. Le rituel akiriket accompagnant les assemblees comprend l'abattage d'un boeuf, le partage rituel de la viande selon un ordre de precedence strict, et l'onction au chyme (liquide stomacal) des participants, de l'arbre sacre et du betail.",
+      "roleOfLineages": "Lignages patrilineaires structurant l'identite, les droits sur les troupeaux et les terres de paturage, et les alliances matrimoniales. La richesse en betail definit le statut social et permet les negociations de mariage (dot en betail). Les homesteads (ekol) sont organises autour des troupeaux.",
+      "religiousAuthority": "Les anciens inities de la generation ainee exercent l'autorite religieuse lors des ceremonies akiriket. Le rituel de l'arbre sacre et l'onction au chyme conferent une dimension sacree aux assemblees politiques. Les devins et guerisseurs traditionnels jouent un role complementaire. L'influence chretienne (catholique et protestante) est presente depuis le 20e siecle."
     },
     "languages": {
-      "mainLanguage": "Karamojong",
-      "vehicularRole": "Le karamojong est parlé par la majorité des Karamojong. L'anglais et d'autres langues sont également utilisés."
+      "mainLanguage": "Ngakarimojong (ngakarimojong ou ngakaramojon)",
+      "isoCodes": ["kdj"],
+      "dialects": [
+        "Matheniko (dialecte de la section est)",
+        "Pian (dialecte de la section sud)",
+        "Bokora (dialecte de la section ouest)",
+        "Dodoth (dialecte du nord, district de Kaabong)",
+        "Ngajie (dialecte jie, district de Kotido)"
+      ],
+      "vehicularRole": "Le ngakarimojong (ISO 639-3 : kdj) est une langue nilotique orientale de la famille nilo-saharienne, parlee par environ 370 000 a 691 000 personnes en Ouganda (selon les sources). Elle est mutuellement intelligible avec le turkana (Kenya), le toposa (Soudan du Sud), le jie, l'iteso, le kumam et le jiye. Le lango est ethniquement proche mais a adopte un dialecte luo. L'alphabet ngakarimojong inclut les lettres eng (ng) et nya (ny). L'anglais est la langue d'enseignement officiel et d'administration."
     },
     "culture": {
-      "Rites majeurs": "",
-      "source_0": "Cérémonies d'initiation",
-      "source_1": "Cérémonies de mariage traditionnelles",
-      "source_2": "Rites de passage (scarification, fêtes de naissance)",
-      "source_3": "Cérémonies liées à l'élevage",
-      "Symboles": "Symboles liés à l'élevage, symboles culturels karamojong (scarifications, bijoux), symboles chrétiens.",
-      "Arts et musique": "",
-      "source_4": "Musique traditionnelle",
-      "source_5": "Danse traditionnelle",
-      "source_6": "Poésie orale",
-      "source_7": "Artisanat (bijoux, armes)",
-      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres et de la nature."
+      "majorRites": "Initiation asapan : rite de passage central pour les hommes (vers 30 ans), marquant l'entree dans la classe de generation adulte. Chaque initie doit tuer un taureau sacrificiel d'un coup de lance au coeur, assurant une mort rapide et sans douleur. Assemblee akiriket : reunion des hommes inities sur le terrain ceremoniel sacre, avec abattage d'un boeuf, partage rituel de la viande et onction au chyme. La cour de mariage : un jeune homme lutte avec la femme desiree ; la victoire prouve sa virilite et permet les negociations de la dot. Un homme non-karamojong souhaitant epouser une femme karamojong doit egalement lutter. La dot en betail est centrale dans le mariage. Rites funereaires communautaires. Ceremonies liees a la transhumance et aux mouvements saisonniers des troupeaux.",
+      "symbols": "Le betail (vaches, boeufs) est le symbole fondamental de la richesse, du prestige et de l'identite karamojong : il est au centre de toutes les ceremonies sociales, des negociations de mariage, des conflits et des alliances. L'arbre sacre de l'akiriket symbolise l'autorite des anciens et la continuite du groupe. Les scarifications corporelles et les coiffures (ochre et graisse) sont des marques identitaires. La lance (symbole de virilite et de statut de guerrier). Les bracelets et ornements en metal et en perles portes par les femmes et les guerriers.",
+      "artsAndMusic": "Danse traditionnelle remarquable, consideree comme ayant resiste a l'epreuve du temps (Wikipedia). Chants rituels lors des ceremonies akiriket et des evenements communautaires. Poesie orale et louanges du betail (chaque guerrier compose des poemes pour ses animaux favoris). Artisanat : fabrication de lances, d'arcs et de massues, de bijoux en metal et perles. Les femmes fabriquent des nattes, des recipients en fibres et des ornements. La poterie est pratiquee par certaines sections. Tradition orale riche (contes, proverbes, recits genealogiques).",
+      "spiritualities": "Croyance en Akuj, divinite supreme du ciel et de la pluie, commune aux peuples du cluster Ateker. Les ancetres sont invoques lors des ceremonies pour leur protection et leurs benedictions. Le rituel de l'akiriket a une dimension profondement sacree : l'onction au chyme de l'arbre sacre et du betail symbolise la connexion entre le monde des vivants, les ancetres et la divinite. Les devins (ngimuron) et guerisseurs traditionnels jouent un role de mediation entre le monde spirituel et les communautes. Influence croissante du christianisme (catholique et protestant) depuis le 20e siecle, avec syncrétisme."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "",
-      "relationsWithNeighbors": "",
-      "conflictsOrAlliances": "",
-      "diaspora": "Diaspora karamojong dans les grandes villes ougandaises et dans les pays occidentaux."
+      "kingdomsOrChiefdoms": "Les Karamojong n'ont jamais developpe de structure politique centralisee. Leur systeme acephale de classes de generation et d'assemblees akiriket constitue le cadre politique fondamental. Ils font partie du cluster Karamojong (Ateker), l'un des groupes culturellement les plus homogenes de l'Afrique de l'Est pastorale. Leur reputation de guerriers redoutables et de raideurs de betail a marque leur image historique.",
+      "relationsWithNeighbors": "Conflits permanents avec les voisins en Ouganda, au Soudan du Sud et au Kenya en raison des raids de betail frequents. Le betail etant central pour les negociations de mariage, les raids constituent a la fois un rite de passage pour les jeunes hommes et un moyen d'accroitre le cheptel et le statut. Les relations se sont aggravees avec l'acquisition de fusils AK-47 a partir des annees 1980-1990. Relations historiques avec les Jie (parents proches, alliés occasionnels contre des tiers), les Turkana (Kenya), les Toposa (Soudan du Sud). Discrimination historique : resistance aux colonisateurs britanniques, sous-developpement delibere, puis abandon par le gouvernement Obote.",
+      "conflictsOrAlliances": "Résistance à la pacification britannique (1911). Raids de bétail récurrents contre les Jie, les Dodoth, les Turkana et les communautés agricultrices voisines. Campagne de désarmement 2001-2002 (UPDF) : plus de 10 000 armes collectées, puis échec partiel dû au redéploiement de l'armée vers le nord (LRA). 2005 : lancement du KIDDP (Karamoja Integrated Disarmament and Development Programme) sous la supervision du bureau du Premier ministre, approche coercitive. 2006 : augmentation de 40% des raids pendant le désarmement (insécurité interne). 2011 : fin de la campagne de désarmement, succès relatif à court terme. 2019-2023 : reprise des raids sous forme criminelle commercialisée. 2023 : reprise des opérations de désarmement par l'UPDF.",
+      "diaspora": "Migration limitee de Karamojong vers les centres urbains ougandais (Kampala, Moroto, Kotido) sous pression economique et effets du desarmement. La communaute reste essentiellement rurale et pastorale en Karamoja. Certains jeunes hommes desarmes ont ete integres dans des unites de defense locales (LDU) ou dans d'autres emplois."
     },
     "demography": {
-      "totalPopulation": 1000000,
+      "totalPopulation": 700000,
       "referenceYear": 2025,
-      "source": "Estimations basées sur recensements ougandais, SIL Ethnologue, et études démographiques"
+      "source": "Wikipedia (475 000 estimees) ; Omniglot (691 000 locuteurs de ngakarimojong en Ouganda) ; recensements ougandais. Note : les chiffres varient selon que l'on inclut les Jie, les Dodoth et les autres sous-groupes du cluster. L'estimation de 700 000 pour 2025 inclut les Matheniko, Pian, Bokora et groupes associes.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 700000,
+          "note": "Concentres dans la sous-region de Karamoja (nord-est de l'Ouganda), principalement dans les districts de Moroto, Napak, Nakapiripirit, Nabilatuk, Amudat et partiellement Kotido et Kaabong"
+        }
+      ]
     },
     "sources": [
-      "SIL Ethnologue – Karamojong language (kdj)",
-      "CIA World Factbook – Uganda",
-      "Recensements ougandais",
-      "Études anthropologiques sur les peuples nilotiques"
+      "Wikipedia EN — Karamojong people. https://en.wikipedia.org/wiki/Karamojong_people",
+      "Wikipedia EN — Karamojong language. https://en.wikipedia.org/wiki/Karamojong_language",
+      "Comboni Missionaries — Uganda. Karimojong. Akiriket - Joint Togetherness. https://combonimissionaries.co.uk/index.php/2026/01/15/uganda-karimojong-akiriket-joint-togetherness/",
+      "Omniglot — Karamojong language and alphabet. https://www.omniglot.com/writing/karamojong.php",
+      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj. https://map.swordshare.com/kdj",
+      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/",
+      "Brookings Institution — Karamoja Integrated Disarmament and Development Programme (KIDDP) 2007. https://www.brookings.edu/wp-content/uploads/2016/07/Uganda_Karamoja_2007.pdf",
+      "Conciliation Resources — Part 2: Karamoja-Turkana - Interlocking insecurities. https://www.c-r.org/accord/peace-and-security-pastoralist-communities-african-borderlands/part-2-karamoja%E2%80%93turkana-0",
+      "The New Humanitarian — Uganda's fight against cattle raiders is dividing Karamoja communities (2024). https://www.thenewhumanitarian.org/analysis/2024/04/12/ugandas-fight-against-cattle-raiders-dividing-karamoja-communities",
+      "University of Wisconsin — Ngakarimojong: Animals and the Age Set System. https://wisc.pb.unizin.org/lctlresources/chapter/ngakarimojong-animals-and-the-age-set-system/"
     ]
   }
 }

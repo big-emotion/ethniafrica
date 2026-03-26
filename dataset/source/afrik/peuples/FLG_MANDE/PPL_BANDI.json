@@ -2,58 +2,91 @@
   "id": "PPL_BANDI",
   "nameMain": "Bandi",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["LBR"],
+  "currentCountries": ["LBR", "GIN"],
   "content": {
     "appellations": {
       "mainName": "Bandi",
-      "selfAppellation": "",
-      "exonyms": ["N/A"],
-      "originOfExonyms": "N/A",
-      "whyProblematic": "N/A (si applicable) :",
-      "contemporaryUsage": "N/A",
+      "selfAppellation": "Gbandi (forme que le peuple utilise pour se designer lui-meme)",
+      "exonyms": [
+        "Gbandi (forme largement utilisee dans la litterature anglophone)",
+        "Bande (variante orthographique)",
+        "Gbande",
+        "Gbunde"
+      ],
+      "originOfExonyms": "Gbandi est l'ethnonyme original du peuple. La forme Bandi est une simplification phonetique adoptee par les administrateurs coloniaux britanniques et americains au Liberia. Le nom signifie force qui calcule ou chaud selon les traditions orales du groupe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Au Liberia, la forme officielle utilisee dans les recensements est Gbande. Bandi est courant dans les sources anglophones academiques et les ressources chretiennes. Gbandi reste l'appellation preferee par la communaute elle-meme.",
       "linguisticFamily": "FLG_MANDE",
-      "ethnoLinguisticGroup": "N/A",
-      "historicalRegion": "Nord du Libéria",
-      "currentCountries": ["LBR"]
+      "ethnoLinguisticGroup": "Mande du Sud-Ouest (branche mandingue)",
+      "historicalRegion": "Comte de Lofa, nord du Liberia ; zone frontaliere avec la Guinee",
+      "currentCountries": ["LBR", "GIN"]
     },
-    "ethnicities": ["Bandi"],
+    "ethnicities": ["Gbandi", "Lokos (ramification en Sierra Leone)"],
     "origins": {
-      "ancientOrigins": "N/A",
-      "formationPeriod": "N/A",
-      "migrationRoutes": ["N/A"],
-      "historicalSettlementZones": ["Nord du Libéria"],
-      "unificationsOrDivisions": "N/A",
-      "externalInfluences": "N/A",
-      "majorHistoricalEvents": "N/A"
+      "ancientOrigins": "Les Gbandi sont originaires du Soudan (region soudano-sahelienne) selon les traditions orales recueillies par les ethnographes. Une autre tradition les relie aux migrations mondees depuis la Guinee au milieu du XVIe siecle, lorsqu'une partie d'entre eux se deplaca avec les Mende en tant que refugies politiques fuyant l'expansion mandingue.",
+      "formationPeriod": "Fin du XVIIe siecle pour la migration principale depuis le Soudan. La migration guineo-mandingue est datee du milieu du XVIe siecle pour certains sous-groupes.",
+      "migrationRoutes": [
+        "Migration depuis la region soudano-sahelienne vers le nord-ouest de l'Afrique de l'Ouest (fin XVIIe siecle)",
+        "Sous-migration depuis la Guinee vers le nord du Liberia (milieu XVIe siecle) avec les Mende",
+        "Installation definitive dans le comte de Lofa, au nord du Liberia"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Lofa, nord du Liberia (zone principale)",
+        "Region de Guinee forestiere, frontaliere avec le Liberia",
+        "Sierra Leone pour les Lokos, ramification gbandi"
+      ],
+      "unificationsOrDivisions": "Les Gbandi sont l'un des seize groupes ethniques originels du Liberia. Leur peuple est delimite par les Kissi au nord, les Mende a l'ouest, les Gola et Kuwaa au sud et les Loma a l'est. Les Lokos de Sierra Leone sont consideres comme une ramification des Gbandi qui s'est etablie dans ce pays voisin.",
+      "externalInfluences": "Influence mandingue sur la langue (le gbandi est classe comme langue mandingue du Sud-Ouest). Contact avec les missionnaires chretiens et les organisations islamiques aux XIXe et XXe siecles. Perturbations majeures liees aux guerres civiles liberienne de 1989-2003, qui pousserent de nombreux Gbandi a se refugier en Guinee et en Sierra Leone.",
+      "majorHistoricalEvents": "Migration et installation dans le comte de Lofa (XVIIe siecle) ; integration comme l'un des seize peuples fondateurs du Liberia (1847) ; guerres civiles liberienne (1989-2003) provoquant exodes et deplacements massifs de la population gbandi."
     },
     "organization": {
-      "traditionalPoliticalSystem": "N/A",
-      "clanOrganization": "N/A",
-      "roleOfLineages": "N/A",
-      "religiousAuthority": "N/A"
+      "traditionalPoliticalSystem": "Societe a obligations reciproques entre familles : le mariage et le mode de vie sont regis par des engagements mutuels. Les chefs traditionnels (elders) exercent une autorite reconnue dans les villages. Les chefs historiques pouvaient avoir de nombreuses epouses (30 a 50 pour les grands chefs), ce qui refletait la taille de leurs champs de riz.",
+      "clanOrganization": "Organisation fondee sur la famille elargie et les alliances matrimoniales. Les mariages sont arranges des l'enfance (souvent en bas age). La polygamie est traditionnellement pratiquee. Les enfants sont consideres comme des reincarnations des ancetres familiaux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'aine prend les decisions au sein de la famille. Les veuves epousent traditionnellement le frere de leur mari defunt (mariage du levirat). Les enfants elevent considerablement le statut social de leurs parents. Le mariage entre cousins est interdit : les cousins sont appeles freres et soeurs.",
+      "religiousAuthority": "Predominance des religions traditionnelles (animisme, croyance aux esprits ancestraux) pour 80 % de la population. Les ancetres occupent la place la plus haute dans la hierarchie spirituelle. Des guisseurs et devins exercent une autorite rituelle."
     },
     "languages": {
-      "mainLanguage": "N/A",
-      "dialects": ["N/A"],
-      "vehicularRole": "N/A"
+      "mainLanguage": "Bandi (gbandi)",
+      "isoCodes": ["bza"],
+      "dialects": [
+        "Tahamba (dialecte principal utilise pour la litterature)",
+        "Wawana",
+        "Wulukoha",
+        "Hasala",
+        "Lukasa",
+        "Hembeh"
+      ],
+      "vehicularRole": "La langue gbandi n'est pas utilisee comme vehiculaire hors de la communaute. L'anglais est la langue officielle du Liberia. Le dialecte Tahamba est utilise comme standard ecrit. Les six dialectes ont une similitude lexicale de 96 % entre eux et de 83 % avec le dialecte mende le plus proche."
     },
     "culture": {
-      "Rites majeurs": "N/A",
-      "Symboles": "N/A",
-      "Arts et musique": "N/A",
-      "Spiritualités": "N/A"
+      "majorRites": "Rites de mariage (arrangements des l'enfance, dot versee par le fiancer) ; rites de purete premaritale pour les filles (ostracisme en cas de manquement) ; pratiques liees au deuil (ancestors comme cause principale de mort). Les affaires extraconjugales feminines sont traditionnellement socialement valides et conferent un statut eleve.",
+      "symbols": "Riz (culture centrale, identite agricole du peuple) ; ancetres (figures spirituelles supremes) ; champs de riz comme indicateur de puissance et de richesse.",
+      "artsAndMusic": null,
+      "spiritualities": "Systeme religieux polytheiste permeant toutes les spheres de la vie. Les esprits ancestraux sont au sommet de la hierarchie spirituelle. La reincarnation est une croyance centrale : les enfants sont vus comme des ancetres reincarneis. La mort est interpretee comme l'appel des ancetres, un envoûtement par une sorciere, ou une sorcellerie interne. La transgression envers les ancetres (mensonge, malice) est l'offense la plus grave. Practiques animistes majoritaires (80 %), avec des minorites chretiennes (10 %) et musulmanes (10 %)."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "N/A",
-      "relationsWithNeighbors": "N/A",
-      "conflictsOrAlliances": "N/A",
-      "diaspora": "N/A"
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Autorite exercee par des chefs villageois et des anciens dans un systeme decentralise. Les Gbandi sont reconnus comme l'un des seize peuples fondateurs de la Republique du Liberia (1847).",
+      "relationsWithNeighbors": "Voisins des peuples Kissi (nord), Mende (ouest), Gola, Kuwaa et Loma (est et sud). Relations historiques de voisinage incluant echanges matrimoniaux et tensions territoriales. La forte similitude linguistique avec les Mende (83 %) temoigne de contacts anciens etroits.",
+      "conflictsOrAlliances": "La guerre civile liberienne (1989-2003) a particulierement affecte le comte de Lofa, zone gbandi. De nombreux Gbandi ont fui vers la Guinee et la Sierra Leone, augmentant la population diasporique.",
+      "diaspora": "Communautes diasporiques en Guinee (estimees a 15 000 personnes selon Joshua Project 2025) et en Sierra Leone (Lokos). Exodes lies aux guerres civiles de 1989-2003."
     },
     "demography": {
-      "totalPopulation": 0,
+      "totalPopulation": 180000,
       "referenceYear": 2025,
-      "source": "N/A"
+      "source": "Joshua Project 2025 (Bandi in Liberia : 165 000 ; Guinea : 15 000)",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 165000 },
+        { "country": "GIN", "population": 15000 }
+      ]
     },
-    "sources": ["Recherche web"]
+    "sources": [
+      "Gbandi people – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_people)",
+      "Gbandi language – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_language)",
+      "Bandi in Liberia – Joshua Project 2025 (https://joshuaproject.net/people_groups/16125/LI)",
+      "Bandi people group in all countries – Joshua Project 2025 (https://joshuaproject.net/people_groups/16125)",
+      "Minority Rights Group – Liberia (https://minorityrights.org/country/liberia/)",
+      "Ethnologue, Bandi [bza] (https://www.ethnologue.com/language/bza/)"
+    ]
   }
 }
