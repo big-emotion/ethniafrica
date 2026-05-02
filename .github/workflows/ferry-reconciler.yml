@@ -1,0 +1,18 @@
+# Managed by ferry-init. Re-run `npx -p @big-emotion/ferry ferry-init` to update.
+# Required variables: FERRY_AUDIT_ISSUE (GitHub Issue number for the audit log)
+
+name: Ferry — Reconciler
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: ferry-reconciler
+  cancel-in-progress: true
+
+jobs:
+  reconciler:
+    uses: big-emotion/ferry/.github/workflows/reconciler.yml@v0.3.0
+    secrets: inherit

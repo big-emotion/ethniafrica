@@ -1,0 +1,135 @@
+{
+  "workflow_version": "1.2.0",
+  "timestamps": {
+    "started": "2026-04-13T00:00:00Z",
+    "last_updated": "2026-04-13T00:00:00Z"
+  },
+  "mode": "initial_scan",
+  "scan_level": "deep",
+  "project_root": "/Users/jnk/Documents/Dev/ethniafrica",
+  "project_knowledge": "/Users/jnk/Documents/Dev/ethniafrica/docs",
+  "repository_type": "monolith",
+  "project_parts": [
+    {
+      "part_id": "root",
+      "root_path": "/Users/jnk/Documents/Dev/ethniafrica",
+      "project_type_id": "web",
+      "display_name": "EthniAfrica (Next.js web app)"
+    }
+  ],
+  "project_classification": {
+    "repository_type": "monolith",
+    "parts_count": 1,
+    "primary_tech": "Next.js 16 + React 18 + TypeScript + Supabase"
+  },
+  "findings": {
+    "technology_stack": {
+      "framework": "Next.js 16.0.8 (App Router)",
+      "language": "TypeScript 5.8.3 (strict: false)",
+      "ui": "Tailwind CSS 3.4 + shadcn/ui (Radix)",
+      "state": "TanStack Query 5.83",
+      "backend": "Supabase (PostgreSQL) @supabase/supabase-js 2.81",
+      "testing": "Vitest 4 + Testing Library + happy-dom",
+      "storybook": "@storybook/react-vite 8.6"
+    },
+    "api": {
+      "public_v2_endpoints": 7,
+      "internal_v2_endpoints": 3,
+      "other_endpoints": "download, contributions, admin, docs",
+      "openapi_spec": "src/lib/api/openapiV2.ts",
+      "pattern": "route → handler → service"
+    },
+    "data": {
+      "tables": [
+        "afrik_countries",
+        "afrik_language_families",
+        "afrik_languages",
+        "afrik_peoples",
+        "afrik_people_countries",
+        "contributions"
+      ],
+      "migrations": "001–007 (007 not yet applied to prod)",
+      "schema_file": "supabase/migrations/006_afrik_schema.sql"
+    },
+    "components": {
+      "groups": [
+        "ui",
+        "layout",
+        "pages",
+        "views",
+        "detail",
+        "country",
+        "search",
+        "charts"
+      ],
+      "primitive_base": "shadcn/ui (Radix)"
+    },
+    "existing_docs": [
+      "CLAUDE.md",
+      "README.md",
+      "_bmad-output/project-context.md",
+      "docs/DEPLOYMENT.md",
+      "docs/INSTRUCTIONS_AFRIK.txt",
+      "docs/PRÉREQUIS_AFRIK.txt",
+      "src/api/v2/README.md",
+      "src/api/v2/API_REFERENCE.md",
+      "src/api/v2/ARCHITECTURE.md"
+    ]
+  },
+  "completed_steps": [
+    {
+      "step": "step_1",
+      "status": "completed",
+      "summary": "Classified as monolith / web"
+    },
+    {
+      "step": "step_2",
+      "status": "completed",
+      "summary": "Existing docs inventoried"
+    },
+    {
+      "step": "step_3",
+      "status": "completed",
+      "summary": "Tech stack: Next.js 16 + React 18 + Supabase"
+    },
+    {
+      "step": "step_4",
+      "status": "completed",
+      "summary": "API, data models, components scanned"
+    },
+    {
+      "step": "step_5",
+      "status": "completed",
+      "summary": "Source tree annotated"
+    },
+    { "step": "step_6", "status": "completed", "summary": "Dev guide written" },
+    {
+      "step": "step_8",
+      "status": "completed",
+      "summary": "Architecture doc written"
+    },
+    {
+      "step": "step_9",
+      "status": "completed",
+      "summary": "Supporting docs written"
+    },
+    {
+      "step": "step_10",
+      "status": "completed",
+      "summary": "Master index generated"
+    }
+  ],
+  "current_step": "done",
+  "outputs_generated": [
+    "docs/index.md",
+    "docs/project-overview.md",
+    "docs/architecture.md",
+    "docs/source-tree-analysis.md",
+    "docs/api-contracts.md",
+    "docs/data-models.md",
+    "docs/component-inventory.md",
+    "docs/development-guide.md",
+    "docs/project-scan-report.json"
+  ],
+  "resume_instructions": "Scan complete. Re-run the workflow and choose option 1 to full-rescan, or option 2 for a deep-dive into a specific area."
+}

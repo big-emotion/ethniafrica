@@ -1,0 +1,135 @@
+# generated: 2026-05-02
+# last_updated: 2026-05-02
+# project: ethniafrica
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: {project-root}/_bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - Developer typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-05-02
+last_updated: 2026-05-02
+project: ethniafrica
+project_key: NOKEY
+tracking_system: file-system
+story_location: "{project-root}/_bmad-output/implementation-artifacts"
+
+development_status:
+  epic-0: backlog
+  0-1-apply-migration-007-and-scaffold-migrations-008-011: backlog
+  0-2-execute-pre-mvp-afrik-data-cleanup: backlog
+  0-3-automated-ci-data-integrity-gate: backlog
+  0-4-ci-lighthouse-gate-on-mobile-reference-routes: backlog
+  0-5-ci-axe-core-and-openapi-diff-gates: backlog
+  0-6-sentry-error-tracking-with-pii-scrubbing: backlog
+  0-7-plausible-cookie-less-analytics: backlog
+  0-8-structured-logger-enforcement-via-eslint: backlog
+  0-9-supabase-auth-bootstrap-with-user-roles: backlog
+  0-10-security-headers-tls-hardening-middleware: backlog
+  0-11-cookie-consent-surface-and-privacy-policy: backlog
+  0-12-rebrand-readiness-single-source-of-truth: backlog
+  0-13-data-residency-verification: backlog
+  epic-0-retrospective: optional
+  epic-1: backlog
+  1-1-africa-history-design-system-tokens-typography-foundation: backlog
+  1-2-database-schema-for-module-0-fabric: backlog
+  1-3-postgres-triggers-assertions-required-confidence-recomputation: backlog
+  1-4-n-1-batch-data-helpers-for-module-0-reads: backlog
+  1-5-confidencechip-l3-component: backlog
+  1-6-classificationbadge-l3-component: backlog
+  1-7-sourcechainsheet-l3-component: backlog
+  1-8-doctrinelinkcard-l3-component: backlog
+  1-9-module-0-public-read-api-endpoints: backlog
+  1-10-editorial-doctrine-seed-mdx-rendering-page: backlog
+  1-11-unaudited-fiche-disclaimer-last-audit-tracking: backlog
+  1-12-editorial-ci-rules-endonym-enforcement-classification-source-count: backlog
+  epic-1-retrospective: optional
+  epic-2: backlog
+  2-1-autonymexonymheading-l3-component: backlog
+  2-2-peopledatatransformer: backlog
+  2-3-peopledetailviewv2-orchestrator-8-section-components: backlog
+  2-4-direction-d-prose-with-inline-chips-layout: backlog
+  2-5-postgres-fts-search-infrastructure: backlog
+  2-6-v2-search-api-endpoint: backlog
+  2-7-fr-recherche-search-page: backlog
+  2-8-navigation-shell-breadcrumbs-keyboard-shortcuts: backlog
+  2-9-browse-index-pages-familles-peuples-pays: backlog
+  2-10-related-entities-navigation-from-fiche: backlog
+  2-11-loading-empty-error-404-surfaces: backlog
+  2-12-reading-surface-performance-accessibility-integration-validation: backlog
+  epic-2-retrospective: optional
+  epic-3: backlog
+  3-1-revisions-table-ddl-append-only-invariant: backlog
+  3-2-pinned-url-routing-isr-semantics: backlog
+  3-3-pg-notify-cache-invalidation-wiring: backlog
+  3-4-citationblock-l3-component: backlog
+  3-5-revisiondrawer-l3-component-audit-log-rendering: backlog
+  3-6-pinnedversionbanner-l3-component: backlog
+  3-7-api-revisions-list-pinned-version-endpoints: backlog
+  3-8-feed-endpoint-v2-feed-revisions: backlog
+  3-9-pinned-doctrine-version-resolution: backlog
+  epic-3-retrospective: optional
+  epic-4: backlog
+  4-1-flags-table-ddl-state-machine-rls: backlog
+  4-2-supabase-auth-contributor-registration-email-verification-login-ui: backlog
+  4-3-coppa-gdpr-k-age-gate-at-registration: backlog
+  4-4-contributor-profile-page-gdpr-right-to-erasure: backlog
+  4-5-flagform-l3-component-unified-flag-correction-proposal: backlog
+  4-6-flagtarget-l3-component-full-implementation-wiring: backlog
+  4-7-flagpublicstatus-public-flag-permalink-page: backlog
+  4-8-public-moderation-queue-index-fr-signalements: backlog
+  4-9-api-endpoints-post-v2-flags-get-v2-flags-get-v2-flags-id: backlog
+  4-10-cloudflare-turnstile-anti-spam-wiring: backlog
+  4-11-contributor-flag-rate-limiting-via-upstash: backlog
+  epic-4-retrospective: optional
+  epic-5: backlog
+  5-1-moderator-role-column-audit-log-table-rls-hardening: backlog
+  5-2-admin-authentication-route-protection-via-supabase-auth: backlog
+  5-3-moderator-dashboard-fr-admin: backlog
+  5-4-flag-review-page-fr-admin-signalements-slug-state-transitions: backlog
+  5-5-revision-drafting-editor-fr-admin-entity-id-editer: backlog
+  5-6-revision-publication-flow: backlog
+  5-7-editorial-doctrine-editor-version-bump: backlog
+  5-8-moderator-action-api-patch-v2-flags-id-post-v2-revisions: backlog
+  5-9-email-notifications-on-flag-state-change: backlog
+  5-10-moderator-audit-log-view-fr-admin-journal: backlog
+  epic-5-retrospective: optional
+  epic-6: backlog
+  6-1-openapi-3-1-spec-completion-openapi-diff-ci-gate: backlog
+  6-2-developer-portal-fr-api-interactive-swagger-ui: backlog
+  6-3-api-versioning-headers-strategy-documentation: backlog
+  6-4-public-api-rate-limiting-via-upstash-anonymous-keyed-tiers: backlog
+  6-5-response-envelope-error-taxonomy-audit-across-all-v2-endpoints: backlog
+  6-6-full-text-search-endpoint-get-v2-search: backlog
+  6-7-api-key-self-service-api-keys-table-management-ui-key-in-header-auth: backlog
+  6-8-atom-json-feed-get-v2-feed-revisions: backlog
+  6-9-getting-started-guide-code-examples-on-developer-portal: backlog
+  6-10-api-contract-tests-integration-test-suite: backlog
+  epic-6-retrospective: optional

@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **Before writing any code, read `_bmad-output/project-context.md`** — it contains the critical, unobvious rules (Supabase client isolation, AFRIK data discipline, Storybook framework constraint, V1→V2 invariants, etc.) that AI agents must follow.
+
 ## Project Overview
 
 **EthniAfrica** is a Next.js web application providing comprehensive data on African peoples, languages, linguistic families, and countries. It uses the **AFRIK methodology** to organize ethnographic and linguistic data in a decolonial approach.
